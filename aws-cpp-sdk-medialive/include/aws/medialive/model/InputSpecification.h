@@ -134,13 +134,13 @@ namespace Model
   private:
 
     InputCodec m_codec;
-    bool m_codecHasBeenSet;
+    bool m_codecHasBeenSet = false;
 
     InputMaximumBitrate m_maximumBitrate;
-    bool m_maximumBitrateHasBeenSet;
+    bool m_maximumBitrateHasBeenSet = false;
 
     InputResolution m_resolution;
-    bool m_resolutionHasBeenSet;
+    bool m_resolutionHasBeenSet = false;
   };
 
 } // namespace Model

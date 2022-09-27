@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -193,16 +193,16 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_publicKeyMaterial;
-    bool m_publicKeyMaterialHasBeenSet;
+    bool m_publicKeyMaterialHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -239,22 +239,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     int m_controlsCountByNoncompliantEvidence;
-    bool m_controlsCountByNoncompliantEvidenceHasBeenSet;
+    bool m_controlsCountByNoncompliantEvidenceHasBeenSet = false;
 
     int m_totalControlsCount;
-    bool m_totalControlsCountHasBeenSet;
+    bool m_totalControlsCountHasBeenSet = false;
 
     EvidenceInsights m_evidenceInsights;
-    bool m_evidenceInsightsHasBeenSet;
+    bool m_evidenceInsightsHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
   };
 
 } // namespace Model

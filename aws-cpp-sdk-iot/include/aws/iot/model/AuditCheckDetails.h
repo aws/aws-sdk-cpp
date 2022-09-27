@@ -269,25 +269,25 @@ namespace Model
   private:
 
     AuditCheckRunStatus m_checkRunStatus;
-    bool m_checkRunStatusHasBeenSet;
+    bool m_checkRunStatusHasBeenSet = false;
 
     bool m_checkCompliant;
-    bool m_checkCompliantHasBeenSet;
+    bool m_checkCompliantHasBeenSet = false;
 
     long long m_totalResourcesCount;
-    bool m_totalResourcesCountHasBeenSet;
+    bool m_totalResourcesCountHasBeenSet = false;
 
     long long m_nonCompliantResourcesCount;
-    bool m_nonCompliantResourcesCountHasBeenSet;
+    bool m_nonCompliantResourcesCountHasBeenSet = false;
 
     long long m_suppressedNonCompliantResourcesCount;
-    bool m_suppressedNonCompliantResourcesCountHasBeenSet;
+    bool m_suppressedNonCompliantResourcesCountHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

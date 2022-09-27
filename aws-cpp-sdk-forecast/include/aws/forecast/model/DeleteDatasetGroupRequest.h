@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_datasetGroupArn;
-    bool m_datasetGroupArnHasBeenSet;
+    bool m_datasetGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -249,19 +249,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ProviderType m_providerType;
-    bool m_providerTypeHasBeenSet;
+    bool m_providerTypeHasBeenSet = false;
 
     Aws::String m_providerEndpoint;
-    bool m_providerEndpointHasBeenSet;
+    bool m_providerEndpointHasBeenSet = false;
 
     VpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

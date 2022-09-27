@@ -215,16 +215,16 @@ namespace Model
   private:
 
     ProviderType m_providerType;
-    bool m_providerTypeHasBeenSet;
+    bool m_providerTypeHasBeenSet = false;
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_hostArn;
-    bool m_hostArnHasBeenSet;
+    bool m_hostArnHasBeenSet = false;
   };
 
 } // namespace Model

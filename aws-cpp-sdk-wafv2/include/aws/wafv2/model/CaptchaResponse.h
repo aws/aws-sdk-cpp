@@ -125,13 +125,13 @@ namespace Model
   private:
 
     int m_responseCode;
-    bool m_responseCodeHasBeenSet;
+    bool m_responseCodeHasBeenSet = false;
 
     long long m_solveTimestamp;
-    bool m_solveTimestampHasBeenSet;
+    bool m_solveTimestampHasBeenSet = false;
 
     FailureReason m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

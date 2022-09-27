@@ -186,10 +186,10 @@ namespace Model
   private:
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
   };
 
 } // namespace Model

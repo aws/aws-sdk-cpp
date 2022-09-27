@@ -95,10 +95,10 @@ namespace Model
   private:
 
     int m_executionTimeout;
-    bool m_executionTimeoutHasBeenSet;
+    bool m_executionTimeoutHasBeenSet = false;
 
     bool m_delayUntilElbConnectionsDrained;
-    bool m_delayUntilElbConnectionsDrainedHasBeenSet;
+    bool m_delayUntilElbConnectionsDrainedHasBeenSet = false;
   };
 
 } // namespace Model

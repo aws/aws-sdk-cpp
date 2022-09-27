@@ -343,22 +343,22 @@ namespace Model
   private:
 
     Aws::String m_selectionId;
-    bool m_selectionIdHasBeenSet;
+    bool m_selectionIdHasBeenSet = false;
 
     Aws::String m_selectionName;
-    bool m_selectionNameHasBeenSet;
+    bool m_selectionNameHasBeenSet = false;
 
     Aws::String m_backupPlanId;
-    bool m_backupPlanIdHasBeenSet;
+    bool m_backupPlanIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

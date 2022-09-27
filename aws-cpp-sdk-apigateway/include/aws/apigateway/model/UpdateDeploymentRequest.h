@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::Vector<PatchOperation> m_patchOperations;
-    bool m_patchOperationsHasBeenSet;
+    bool m_patchOperationsHasBeenSet = false;
   };
 
 } // namespace Model

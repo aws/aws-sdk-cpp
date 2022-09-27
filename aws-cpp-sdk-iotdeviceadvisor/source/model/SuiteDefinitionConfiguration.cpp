@@ -23,8 +23,12 @@ SuiteDefinitionConfiguration::SuiteDefinitionConfiguration() :
     m_devicesHasBeenSet(false),
     m_intendedForQualification(false),
     m_intendedForQualificationHasBeenSet(false),
+    m_isLongDurationTest(false),
+    m_isLongDurationTestHasBeenSet(false),
     m_rootGroupHasBeenSet(false),
-    m_devicePermissionRoleArnHasBeenSet(false)
+    m_devicePermissionRoleArnHasBeenSet(false),
+    m_protocol(Protocol::NOT_SET),
+    m_protocolHasBeenSet(false)
 {
 }
 
@@ -33,8 +37,12 @@ SuiteDefinitionConfiguration::SuiteDefinitionConfiguration(JsonView jsonValue) :
     m_devicesHasBeenSet(false),
     m_intendedForQualification(false),
     m_intendedForQualificationHasBeenSet(false),
+    m_isLongDurationTest(false),
+    m_isLongDurationTestHasBeenSet(false),
     m_rootGroupHasBeenSet(false),
-    m_devicePermissionRoleArnHasBeenSet(false)
+    m_devicePermissionRoleArnHasBeenSet(false),
+    m_protocol(Protocol::NOT_SET),
+    m_protocolHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +73,13 @@ SuiteDefinitionConfiguration& SuiteDefinitionConfiguration::operator =(JsonView 
     m_intendedForQualificationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("isLongDurationTest"))
+  {
+    m_isLongDurationTest = jsonValue.GetBool("isLongDurationTest");
+
+    m_isLongDurationTestHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("rootGroup"))
   {
     m_rootGroup = jsonValue.GetString("rootGroup");
@@ -77,6 +92,13 @@ SuiteDefinitionConfiguration& SuiteDefinitionConfiguration::operator =(JsonView 
     m_devicePermissionRoleArn = jsonValue.GetString("devicePermissionRoleArn");
 
     m_devicePermissionRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("protocol"))
+  {
+    m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("protocol"));
+
+    m_protocolHasBeenSet = true;
   }
 
   return *this;
@@ -109,6 +131,12 @@ JsonValue SuiteDefinitionConfiguration::Jsonize() const
 
   }
 
+  if(m_isLongDurationTestHasBeenSet)
+  {
+   payload.WithBool("isLongDurationTest", m_isLongDurationTest);
+
+  }
+
   if(m_rootGroupHasBeenSet)
   {
    payload.WithString("rootGroup", m_rootGroup);
@@ -119,6 +147,11 @@ JsonValue SuiteDefinitionConfiguration::Jsonize() const
   {
    payload.WithString("devicePermissionRoleArn", m_devicePermissionRoleArn);
 
+  }
+
+  if(m_protocolHasBeenSet)
+  {
+   payload.WithString("protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
   }
 
   return payload;

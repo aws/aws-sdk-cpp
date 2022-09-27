@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     int m_retentionPeriodHours;
-    bool m_retentionPeriodHoursHasBeenSet;
+    bool m_retentionPeriodHoursHasBeenSet = false;
 
     EncryptionConfig m_encryptionConfig;
-    bool m_encryptionConfigHasBeenSet;
+    bool m_encryptionConfigHasBeenSet = false;
   };
 
 } // namespace Model

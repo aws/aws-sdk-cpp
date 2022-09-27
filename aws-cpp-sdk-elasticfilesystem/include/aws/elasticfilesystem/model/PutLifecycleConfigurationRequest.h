@@ -230,10 +230,10 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::Vector<LifecyclePolicy> m_lifecyclePolicies;
-    bool m_lifecyclePoliciesHasBeenSet;
+    bool m_lifecyclePoliciesHasBeenSet = false;
   };
 
 } // namespace Model

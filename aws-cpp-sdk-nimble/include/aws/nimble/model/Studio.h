@@ -34,8 +34,8 @@ namespace Model
    * can be created. All other resources you create and manage in Nimble Studio are
    * contained within a studio.</p> <p>When creating a studio, you must provides two
    * IAM roles for use with the Nimble Studio portal. These roles are assumed by your
-   * users when they log in to the Nimble Studio portal via Amazon Web Services SSO
-   * and your identity source.</p> <p>The user role must have the
+   * users when they log in to the Nimble Studio portal via IAM Identity Center and
+   * your identity source.</p> <p>The user role must have the
    * AmazonNimbleStudio-StudioUser managed policy attached for the portal to function
    * properly.</p> <p>The admin role must have the AmazonNimbleStudio-StudioAdmin
    * managed policy attached for the portal to function properly.</p> <p>Your studio
@@ -265,58 +265,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services SSO application client ID used to integrate with
-     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble Studio portal.</p>
+     * <p>The IAM Identity Center application client ID used to integrate with IAM
+     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
+     * portal.</p>
      */
     inline const Aws::String& GetSsoClientId() const{ return m_ssoClientId; }
 
     /**
-     * <p>The Amazon Web Services SSO application client ID used to integrate with
-     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble Studio portal.</p>
+     * <p>The IAM Identity Center application client ID used to integrate with IAM
+     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
+     * portal.</p>
      */
     inline bool SsoClientIdHasBeenSet() const { return m_ssoClientIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services SSO application client ID used to integrate with
-     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble Studio portal.</p>
+     * <p>The IAM Identity Center application client ID used to integrate with IAM
+     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
+     * portal.</p>
      */
     inline void SetSsoClientId(const Aws::String& value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId = value; }
 
     /**
-     * <p>The Amazon Web Services SSO application client ID used to integrate with
-     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble Studio portal.</p>
+     * <p>The IAM Identity Center application client ID used to integrate with IAM
+     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
+     * portal.</p>
      */
     inline void SetSsoClientId(Aws::String&& value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services SSO application client ID used to integrate with
-     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble Studio portal.</p>
+     * <p>The IAM Identity Center application client ID used to integrate with IAM
+     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
+     * portal.</p>
      */
     inline void SetSsoClientId(const char* value) { m_ssoClientIdHasBeenSet = true; m_ssoClientId.assign(value); }
 
     /**
-     * <p>The Amazon Web Services SSO application client ID used to integrate with
-     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble Studio portal.</p>
+     * <p>The IAM Identity Center application client ID used to integrate with IAM
+     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
+     * portal.</p>
      */
     inline Studio& WithSsoClientId(const Aws::String& value) { SetSsoClientId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services SSO application client ID used to integrate with
-     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble Studio portal.</p>
+     * <p>The IAM Identity Center application client ID used to integrate with IAM
+     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
+     * portal.</p>
      */
     inline Studio& WithSsoClientId(Aws::String&& value) { SetSsoClientId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services SSO application client ID used to integrate with
-     * Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to
-     * Nimble Studio portal.</p>
+     * <p>The IAM Identity Center application client ID used to integrate with IAM
+     * Identity Center to enable IAM Identity Center users to log in to Nimble Studio
+     * portal.</p>
      */
     inline Studio& WithSsoClientId(const char* value) { SetSsoClientId(value); return *this;}
 
@@ -755,52 +755,52 @@ namespace Model
   private:
 
     Aws::String m_adminRoleArn;
-    bool m_adminRoleArnHasBeenSet;
+    bool m_adminRoleArnHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_homeRegion;
-    bool m_homeRegionHasBeenSet;
+    bool m_homeRegionHasBeenSet = false;
 
     Aws::String m_ssoClientId;
-    bool m_ssoClientIdHasBeenSet;
+    bool m_ssoClientIdHasBeenSet = false;
 
     StudioState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     StudioStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     StudioEncryptionConfiguration m_studioEncryptionConfiguration;
-    bool m_studioEncryptionConfigurationHasBeenSet;
+    bool m_studioEncryptionConfigurationHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
 
     Aws::String m_studioName;
-    bool m_studioNameHasBeenSet;
+    bool m_studioNameHasBeenSet = false;
 
     Aws::String m_studioUrl;
-    bool m_studioUrlHasBeenSet;
+    bool m_studioUrlHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_userRoleArn;
-    bool m_userRoleArnHasBeenSet;
+    bool m_userRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

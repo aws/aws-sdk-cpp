@@ -137,13 +137,13 @@ namespace Model
   private:
 
     BotExportSpecification m_botExportSpecification;
-    bool m_botExportSpecificationHasBeenSet;
+    bool m_botExportSpecificationHasBeenSet = false;
 
     BotLocaleExportSpecification m_botLocaleExportSpecification;
-    bool m_botLocaleExportSpecificationHasBeenSet;
+    bool m_botLocaleExportSpecificationHasBeenSet = false;
 
     CustomVocabularyExportSpecification m_customVocabularyExportSpecification;
-    bool m_customVocabularyExportSpecificationHasBeenSet;
+    bool m_customVocabularyExportSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

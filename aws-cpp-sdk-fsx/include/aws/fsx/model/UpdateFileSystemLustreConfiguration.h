@@ -461,25 +461,25 @@ namespace Model
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     AutoImportPolicyType m_autoImportPolicy;
-    bool m_autoImportPolicyHasBeenSet;
+    bool m_autoImportPolicyHasBeenSet = false;
 
     DataCompressionType m_dataCompressionType;
-    bool m_dataCompressionTypeHasBeenSet;
+    bool m_dataCompressionTypeHasBeenSet = false;
 
     LustreLogCreateConfiguration m_logConfiguration;
-    bool m_logConfigurationHasBeenSet;
+    bool m_logConfigurationHasBeenSet = false;
 
     LustreRootSquashConfiguration m_rootSquashConfiguration;
-    bool m_rootSquashConfigurationHasBeenSet;
+    bool m_rootSquashConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

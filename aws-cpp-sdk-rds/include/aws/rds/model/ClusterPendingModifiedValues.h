@@ -211,19 +211,19 @@ namespace Model
   private:
 
     PendingCloudwatchLogsExports m_pendingCloudwatchLogsExports;
-    bool m_pendingCloudwatchLogsExportsHasBeenSet;
+    bool m_pendingCloudwatchLogsExportsHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     bool m_iAMDatabaseAuthenticationEnabled;
-    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
+    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
   };
 
 } // namespace Model

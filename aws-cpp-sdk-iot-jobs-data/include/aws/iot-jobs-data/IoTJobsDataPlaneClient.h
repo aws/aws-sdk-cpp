@@ -5,78 +5,15 @@
 
 #pragma once
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
-#include <aws/iot-jobs-data/IoTJobsDataPlaneErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/iot-jobs-data/model/DescribeJobExecutionResult.h>
-#include <aws/iot-jobs-data/model/GetPendingJobExecutionsResult.h>
-#include <aws/iot-jobs-data/model/StartNextPendingJobExecutionResult.h>
-#include <aws/iot-jobs-data/model/UpdateJobExecutionResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/iot-jobs-data/IoTJobsDataPlaneServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace IoTJobsDataPlane
 {
-
-namespace Model
-{
-        class DescribeJobExecutionRequest;
-        class GetPendingJobExecutionsRequest;
-        class StartNextPendingJobExecutionRequest;
-        class UpdateJobExecutionRequest;
-
-        typedef Aws::Utils::Outcome<DescribeJobExecutionResult, IoTJobsDataPlaneError> DescribeJobExecutionOutcome;
-        typedef Aws::Utils::Outcome<GetPendingJobExecutionsResult, IoTJobsDataPlaneError> GetPendingJobExecutionsOutcome;
-        typedef Aws::Utils::Outcome<StartNextPendingJobExecutionResult, IoTJobsDataPlaneError> StartNextPendingJobExecutionOutcome;
-        typedef Aws::Utils::Outcome<UpdateJobExecutionResult, IoTJobsDataPlaneError> UpdateJobExecutionOutcome;
-
-        typedef std::future<DescribeJobExecutionOutcome> DescribeJobExecutionOutcomeCallable;
-        typedef std::future<GetPendingJobExecutionsOutcome> GetPendingJobExecutionsOutcomeCallable;
-        typedef std::future<StartNextPendingJobExecutionOutcome> StartNextPendingJobExecutionOutcomeCallable;
-        typedef std::future<UpdateJobExecutionOutcome> UpdateJobExecutionOutcomeCallable;
-} // namespace Model
-
-  class IoTJobsDataPlaneClient;
-
-    typedef std::function<void(const IoTJobsDataPlaneClient*, const Model::DescribeJobExecutionRequest&, const Model::DescribeJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobExecutionResponseReceivedHandler;
-    typedef std::function<void(const IoTJobsDataPlaneClient*, const Model::GetPendingJobExecutionsRequest&, const Model::GetPendingJobExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPendingJobExecutionsResponseReceivedHandler;
-    typedef std::function<void(const IoTJobsDataPlaneClient*, const Model::StartNextPendingJobExecutionRequest&, const Model::StartNextPendingJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNextPendingJobExecutionResponseReceivedHandler;
-    typedef std::function<void(const IoTJobsDataPlaneClient*, const Model::UpdateJobExecutionRequest&, const Model::UpdateJobExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobExecutionResponseReceivedHandler;
-
   /**
    * <p>AWS IoT Jobs is a service that allows you to define a set of jobs — remote
    * operations that are sent to and executed on one or more devices connected to AWS
@@ -107,14 +44,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTJobsDataPlaneClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IoTJobsDataPlaneClient(const Aws::Auth::AWSCredentials& credentials,
+                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         IoTJobsDataPlaneClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~IoTJobsDataPlaneClient();
 
@@ -193,10 +131,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DescribeJobExecutionAsyncHelper(const Model::DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPendingJobExecutionsAsyncHelper(const Model::GetPendingJobExecutionsRequest& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartNextPendingJobExecutionAsyncHelper(const Model::StartNextPendingJobExecutionRequest& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateJobExecutionAsyncHelper(const Model::UpdateJobExecutionRequest& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

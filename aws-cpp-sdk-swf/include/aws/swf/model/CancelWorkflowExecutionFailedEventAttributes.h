@@ -140,10 +140,10 @@ namespace Model
   private:
 
     CancelWorkflowExecutionFailedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 
 } // namespace Model

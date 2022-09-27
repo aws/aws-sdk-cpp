@@ -346,22 +346,22 @@ namespace Model
   private:
 
     Aws::String m_layerName;
-    bool m_layerNameHasBeenSet;
+    bool m_layerNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     LayerVersionContentInput m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::Vector<Runtime> m_compatibleRuntimes;
-    bool m_compatibleRuntimesHasBeenSet;
+    bool m_compatibleRuntimesHasBeenSet = false;
 
     Aws::String m_licenseInfo;
-    bool m_licenseInfoHasBeenSet;
+    bool m_licenseInfoHasBeenSet = false;
 
     Aws::Vector<Architecture> m_compatibleArchitectures;
-    bool m_compatibleArchitecturesHasBeenSet;
+    bool m_compatibleArchitecturesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,33 +33,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "qldb";
 static const char* ALLOCATION_TAG = "QLDBSessionClient";
 
-
 QLDBSessionClient::QLDBSessionClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<QLDBSessionErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<QLDBSessionErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-QLDBSessionClient::QLDBSessionClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+QLDBSessionClient::QLDBSessionClient(const AWSCredentials& credentials,
+                                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<QLDBSessionErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<QLDBSessionErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 QLDBSessionClient::QLDBSessionClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<QLDBSessionErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<QLDBSessionErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -71,7 +77,7 @@ QLDBSessionClient::~QLDBSessionClient()
 
 void QLDBSessionClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("QLDB Session");
+  AWSClient::SetServiceClientName("QLDB Session");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -111,11 +117,9 @@ SendCommandOutcomeCallable QLDBSessionClient::SendCommandCallable(const SendComm
 
 void QLDBSessionClient::SendCommandAsync(const SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendCommandAsyncHelper( request, handler, context ); } );
-}
-
-void QLDBSessionClient::SendCommandAsyncHelper(const SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendCommand(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendCommand(request), context);
+    } );
 }
 

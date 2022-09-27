@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Frequency m_centerFrequency;
-    bool m_centerFrequencyHasBeenSet;
+    bool m_centerFrequencyHasBeenSet = false;
 
     Polarization m_polarization;
-    bool m_polarizationHasBeenSet;
+    bool m_polarizationHasBeenSet = false;
   };
 
 } // namespace Model

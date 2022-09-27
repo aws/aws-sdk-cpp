@@ -396,19 +396,19 @@ namespace Model
   private:
 
     bool m_enableAcceptEncodingGzip;
-    bool m_enableAcceptEncodingGzipHasBeenSet;
+    bool m_enableAcceptEncodingGzipHasBeenSet = false;
 
     bool m_enableAcceptEncodingBrotli;
-    bool m_enableAcceptEncodingBrotliHasBeenSet;
+    bool m_enableAcceptEncodingBrotliHasBeenSet = false;
 
     CachePolicyHeadersConfig m_headersConfig;
-    bool m_headersConfigHasBeenSet;
+    bool m_headersConfigHasBeenSet = false;
 
     CachePolicyCookiesConfig m_cookiesConfig;
-    bool m_cookiesConfigHasBeenSet;
+    bool m_cookiesConfigHasBeenSet = false;
 
     CachePolicyQueryStringsConfig m_queryStringsConfig;
-    bool m_queryStringsConfigHasBeenSet;
+    bool m_queryStringsConfigHasBeenSet = false;
   };
 
 } // namespace Model

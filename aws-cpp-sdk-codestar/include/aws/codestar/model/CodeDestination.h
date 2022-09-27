@@ -129,10 +129,10 @@ namespace Model
   private:
 
     CodeCommitCodeDestination m_codeCommit;
-    bool m_codeCommitHasBeenSet;
+    bool m_codeCommitHasBeenSet = false;
 
     GitHubCodeDestination m_gitHub;
-    bool m_gitHubHasBeenSet;
+    bool m_gitHubHasBeenSet = false;
   };
 
 } // namespace Model

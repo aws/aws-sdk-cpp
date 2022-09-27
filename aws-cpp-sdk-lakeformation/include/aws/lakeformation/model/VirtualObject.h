@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_uri;
-    bool m_uriHasBeenSet;
+    bool m_uriHasBeenSet = false;
 
     Aws::String m_eTag;
-    bool m_eTagHasBeenSet;
+    bool m_eTagHasBeenSet = false;
   };
 
 } // namespace Model

@@ -92,10 +92,10 @@ namespace Model
   private:
 
     bool m_insightsEnabled;
-    bool m_insightsEnabledHasBeenSet;
+    bool m_insightsEnabledHasBeenSet = false;
 
     bool m_notificationsEnabled;
-    bool m_notificationsEnabledHasBeenSet;
+    bool m_notificationsEnabledHasBeenSet = false;
   };
 
 } // namespace Model

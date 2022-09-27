@@ -65,7 +65,7 @@ namespace Model
   private:
 
     int m_tdtInterval;
-    bool m_tdtIntervalHasBeenSet;
+    bool m_tdtIntervalHasBeenSet = false;
   };
 
 } // namespace Model

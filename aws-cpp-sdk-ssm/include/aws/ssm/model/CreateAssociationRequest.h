@@ -12,8 +12,10 @@
 #include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 #include <aws/ssm/model/AssociationComplianceSeverity.h>
 #include <aws/ssm/model/AssociationSyncCompliance.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/TargetLocation.h>
+#include <aws/ssm/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -1371,61 +1373,159 @@ namespace Model
      */
     inline CreateAssociationRequest& AddTargetMaps(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_targetMapsHasBeenSet = true; m_targetMaps.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
+     */
+    inline CreateAssociationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
+     */
+    inline CreateAssociationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
+     */
+    inline CreateAssociationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an association to identify the
+     * type of resource to which it applies, the environment, or the purpose of the
+     * association.</p>
+     */
+    inline CreateAssociationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    
+    inline CreateAssociationRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    
+    inline CreateAssociationRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_documentVersion;
-    bool m_documentVersionHasBeenSet;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::Vector<Target> m_targets;
-    bool m_targetsHasBeenSet;
+    bool m_targetsHasBeenSet = false;
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
 
     InstanceAssociationOutputLocation m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
 
     Aws::String m_associationName;
-    bool m_associationNameHasBeenSet;
+    bool m_associationNameHasBeenSet = false;
 
     Aws::String m_automationTargetParameterName;
-    bool m_automationTargetParameterNameHasBeenSet;
+    bool m_automationTargetParameterNameHasBeenSet = false;
 
     Aws::String m_maxErrors;
-    bool m_maxErrorsHasBeenSet;
+    bool m_maxErrorsHasBeenSet = false;
 
     Aws::String m_maxConcurrency;
-    bool m_maxConcurrencyHasBeenSet;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     AssociationComplianceSeverity m_complianceSeverity;
-    bool m_complianceSeverityHasBeenSet;
+    bool m_complianceSeverityHasBeenSet = false;
 
     AssociationSyncCompliance m_syncCompliance;
-    bool m_syncComplianceHasBeenSet;
+    bool m_syncComplianceHasBeenSet = false;
 
     bool m_applyOnlyAtCronInterval;
-    bool m_applyOnlyAtCronIntervalHasBeenSet;
+    bool m_applyOnlyAtCronIntervalHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_calendarNames;
-    bool m_calendarNamesHasBeenSet;
+    bool m_calendarNamesHasBeenSet = false;
 
     Aws::Vector<TargetLocation> m_targetLocations;
-    bool m_targetLocationsHasBeenSet;
+    bool m_targetLocationsHasBeenSet = false;
 
     int m_scheduleOffset;
-    bool m_scheduleOffsetHasBeenSet;
+    bool m_scheduleOffsetHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_targetMaps;
-    bool m_targetMapsHasBeenSet;
+    bool m_targetMapsHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_relationalDatabaseName;
-    bool m_relationalDatabaseNameHasBeenSet;
+    bool m_relationalDatabaseNameHasBeenSet = false;
 
     RelationalDatabasePasswordVersion m_passwordVersion;
-    bool m_passwordVersionHasBeenSet;
+    bool m_passwordVersionHasBeenSet = false;
   };
 
 } // namespace Model

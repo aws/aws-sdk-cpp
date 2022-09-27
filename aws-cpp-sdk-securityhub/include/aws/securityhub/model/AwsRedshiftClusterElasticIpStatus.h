@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_elasticIp;
-    bool m_elasticIpHasBeenSet;
+    bool m_elasticIpHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

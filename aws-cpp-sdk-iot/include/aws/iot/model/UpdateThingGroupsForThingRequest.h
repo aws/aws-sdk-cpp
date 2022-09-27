@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_thingGroupsToAdd;
-    bool m_thingGroupsToAddHasBeenSet;
+    bool m_thingGroupsToAddHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_thingGroupsToRemove;
-    bool m_thingGroupsToRemoveHasBeenSet;
+    bool m_thingGroupsToRemoveHasBeenSet = false;
 
     bool m_overrideDynamicGroups;
-    bool m_overrideDynamicGroupsHasBeenSet;
+    bool m_overrideDynamicGroupsHasBeenSet = false;
   };
 
 } // namespace Model

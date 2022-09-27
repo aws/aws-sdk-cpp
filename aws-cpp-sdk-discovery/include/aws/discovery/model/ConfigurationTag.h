@@ -249,19 +249,19 @@ namespace Model
   private:
 
     ConfigurationItemType m_configurationType;
-    bool m_configurationTypeHasBeenSet;
+    bool m_configurationTypeHasBeenSet = false;
 
     Aws::String m_configurationId;
-    bool m_configurationIdHasBeenSet;
+    bool m_configurationIdHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     Aws::Utils::DateTime m_timeOfCreation;
-    bool m_timeOfCreationHasBeenSet;
+    bool m_timeOfCreationHasBeenSet = false;
   };
 
 } // namespace Model

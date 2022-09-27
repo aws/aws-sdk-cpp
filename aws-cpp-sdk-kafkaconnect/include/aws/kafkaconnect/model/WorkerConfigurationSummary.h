@@ -226,19 +226,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     WorkerConfigurationRevisionSummary m_latestRevision;
-    bool m_latestRevisionHasBeenSet;
+    bool m_latestRevisionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_workerConfigurationArn;
-    bool m_workerConfigurationArnHasBeenSet;
+    bool m_workerConfigurationArnHasBeenSet = false;
   };
 
 } // namespace Model

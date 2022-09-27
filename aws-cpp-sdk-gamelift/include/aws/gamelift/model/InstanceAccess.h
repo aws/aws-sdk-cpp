@@ -227,19 +227,19 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     OperatingSystem m_operatingSystem;
-    bool m_operatingSystemHasBeenSet;
+    bool m_operatingSystemHasBeenSet = false;
 
     InstanceCredentials m_credentials;
-    bool m_credentialsHasBeenSet;
+    bool m_credentialsHasBeenSet = false;
   };
 
 } // namespace Model

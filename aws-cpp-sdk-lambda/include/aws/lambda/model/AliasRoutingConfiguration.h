@@ -88,7 +88,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, double> m_additionalVersionWeights;
-    bool m_additionalVersionWeightsHasBeenSet;
+    bool m_additionalVersionWeightsHasBeenSet = false;
   };
 
 } // namespace Model

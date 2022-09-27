@@ -244,16 +244,16 @@ namespace Model
   private:
 
     RoutingStrategyType m_routingStrategyType;
-    bool m_routingStrategyTypeHasBeenSet;
+    bool m_routingStrategyTypeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

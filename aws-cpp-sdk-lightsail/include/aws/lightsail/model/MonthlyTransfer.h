@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_gbPerMonthAllocated;
-    bool m_gbPerMonthAllocatedHasBeenSet;
+    bool m_gbPerMonthAllocatedHasBeenSet = false;
   };
 
 } // namespace Model

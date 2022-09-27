@@ -5,108 +5,15 @@
 
 #pragma once
 #include <aws/rum/CloudWatchRUM_EXPORTS.h>
-#include <aws/rum/CloudWatchRUMErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/rum/model/CreateAppMonitorResult.h>
-#include <aws/rum/model/DeleteAppMonitorResult.h>
-#include <aws/rum/model/GetAppMonitorResult.h>
-#include <aws/rum/model/GetAppMonitorDataResult.h>
-#include <aws/rum/model/ListAppMonitorsResult.h>
-#include <aws/rum/model/ListTagsForResourceResult.h>
-#include <aws/rum/model/PutRumEventsResult.h>
-#include <aws/rum/model/TagResourceResult.h>
-#include <aws/rum/model/UntagResourceResult.h>
-#include <aws/rum/model/UpdateAppMonitorResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/rum/CloudWatchRUMServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CloudWatchRUM
 {
-
-namespace Model
-{
-        class CreateAppMonitorRequest;
-        class DeleteAppMonitorRequest;
-        class GetAppMonitorRequest;
-        class GetAppMonitorDataRequest;
-        class ListAppMonitorsRequest;
-        class ListTagsForResourceRequest;
-        class PutRumEventsRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateAppMonitorRequest;
-
-        typedef Aws::Utils::Outcome<CreateAppMonitorResult, CloudWatchRUMError> CreateAppMonitorOutcome;
-        typedef Aws::Utils::Outcome<DeleteAppMonitorResult, CloudWatchRUMError> DeleteAppMonitorOutcome;
-        typedef Aws::Utils::Outcome<GetAppMonitorResult, CloudWatchRUMError> GetAppMonitorOutcome;
-        typedef Aws::Utils::Outcome<GetAppMonitorDataResult, CloudWatchRUMError> GetAppMonitorDataOutcome;
-        typedef Aws::Utils::Outcome<ListAppMonitorsResult, CloudWatchRUMError> ListAppMonitorsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchRUMError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutRumEventsResult, CloudWatchRUMError> PutRumEventsOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, CloudWatchRUMError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, CloudWatchRUMError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateAppMonitorResult, CloudWatchRUMError> UpdateAppMonitorOutcome;
-
-        typedef std::future<CreateAppMonitorOutcome> CreateAppMonitorOutcomeCallable;
-        typedef std::future<DeleteAppMonitorOutcome> DeleteAppMonitorOutcomeCallable;
-        typedef std::future<GetAppMonitorOutcome> GetAppMonitorOutcomeCallable;
-        typedef std::future<GetAppMonitorDataOutcome> GetAppMonitorDataOutcomeCallable;
-        typedef std::future<ListAppMonitorsOutcome> ListAppMonitorsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutRumEventsOutcome> PutRumEventsOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateAppMonitorOutcome> UpdateAppMonitorOutcomeCallable;
-} // namespace Model
-
-  class CloudWatchRUMClient;
-
-    typedef std::function<void(const CloudWatchRUMClient*, const Model::CreateAppMonitorRequest&, const Model::CreateAppMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppMonitorResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchRUMClient*, const Model::DeleteAppMonitorRequest&, const Model::DeleteAppMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppMonitorResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchRUMClient*, const Model::GetAppMonitorRequest&, const Model::GetAppMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppMonitorResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchRUMClient*, const Model::GetAppMonitorDataRequest&, const Model::GetAppMonitorDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppMonitorDataResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchRUMClient*, const Model::ListAppMonitorsRequest&, const Model::ListAppMonitorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppMonitorsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchRUMClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchRUMClient*, const Model::PutRumEventsRequest&, const Model::PutRumEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRumEventsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchRUMClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchRUMClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchRUMClient*, const Model::UpdateAppMonitorRequest&, const Model::UpdateAppMonitorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAppMonitorResponseReceivedHandler;
-
   /**
    * <p>With Amazon CloudWatch RUM, you can perform real-user monitoring to collect
    * client-side data about your web application performance from actual user
@@ -135,14 +42,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudWatchRUMClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudWatchRUMClient(const Aws::Auth::AWSCredentials& credentials,
+                            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CloudWatchRUMClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CloudWatchRUMClient();
 
@@ -369,20 +277,10 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateAppMonitorAsyncHelper(const Model::CreateAppMonitorRequest& request, const CreateAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAppMonitorAsyncHelper(const Model::DeleteAppMonitorRequest& request, const DeleteAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAppMonitorAsyncHelper(const Model::GetAppMonitorRequest& request, const GetAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAppMonitorDataAsyncHelper(const Model::GetAppMonitorDataRequest& request, const GetAppMonitorDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAppMonitorsAsyncHelper(const Model::ListAppMonitorsRequest& request, const ListAppMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRumEventsAsyncHelper(const Model::PutRumEventsRequest& request, const PutRumEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAppMonitorAsyncHelper(const Model::UpdateAppMonitorRequest& request, const UpdateAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_baseUri;
       Aws::String m_scheme;
-      bool m_enableHostPrefixInjection;
+      bool m_enableHostPrefixInjection = false;
       Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };

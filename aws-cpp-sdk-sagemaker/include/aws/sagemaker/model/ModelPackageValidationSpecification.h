@@ -140,10 +140,10 @@ namespace Model
   private:
 
     Aws::String m_validationRole;
-    bool m_validationRoleHasBeenSet;
+    bool m_validationRoleHasBeenSet = false;
 
     Aws::Vector<ModelPackageValidationProfile> m_validationProfiles;
-    bool m_validationProfilesHasBeenSet;
+    bool m_validationProfilesHasBeenSet = false;
   };
 
 } // namespace Model

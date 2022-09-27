@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_directoryArn;
-    bool m_directoryArnHasBeenSet;
+    bool m_directoryArnHasBeenSet = false;
 
     Aws::String m_schemaArn;
-    bool m_schemaArnHasBeenSet;
+    bool m_schemaArnHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

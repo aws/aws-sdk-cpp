@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -103,12 +104,17 @@ protected:
 
     void QueueMockResponse(HttpResponseCode code, const HeaderValueCollection& headers)
     {
+        QueueMockResponse(code, headers, "ss");
+    }
+
+    void QueueMockResponse(HttpResponseCode code, const HeaderValueCollection& headers, const Aws::String& body)
+    {
         auto httpRequest = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                 HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         httpRequest->SetResolvedRemoteHost("127.0.0.1");
         auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
         httpResponse->SetResponseCode(code);
-        httpResponse->GetResponseBody() << "";
+        httpResponse->GetResponseBody() << body;
         for(auto&& header : headers)
         {
             httpResponse->AddHeader(header.first, header.second);
@@ -337,7 +343,7 @@ TEST_F(AWSClientTestSuite, TestRetryHeaders)
     QueueMockResponse(HttpResponseCode::OK, HeaderValueCollection{std::make_pair("Date", serverTime3.ToGmtString(DateFormat::RFC822))});
     AmazonWebServiceRequestMock request;
     auto outcome = client->MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(2, client->GetRequestAttemptedRetries());
     const auto& requests = mockHttpClient->GetAllRequestsMade();
     ASSERT_EQ(3u, requests.size());
@@ -401,7 +407,7 @@ TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
     QueueMockResponse(HttpResponseCode::OK, responseHeaders);
     AmazonWebServiceRequestMock request;
     auto outcome = clientWithStandardRetryStrategy.MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(0, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
     ASSERT_EQ(500, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 
@@ -421,7 +427,7 @@ TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
     QueueMockResponse(requestTimeoutError, responseHeaders); // Acquire 10 tokens
     QueueMockResponse(HttpResponseCode::OK, responseHeaders); // Release 10 tokens
     outcome = clientWithStandardRetryStrategy.MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(2, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
     ASSERT_EQ(480, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 
@@ -444,7 +450,7 @@ TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
     // 6. Successful request.
     QueueMockResponse(HttpResponseCode::OK, responseHeaders); // Release 1 token
     outcome = clientWithStandardRetryStrategy.MakeRequest(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(0, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
     ASSERT_EQ(3, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 }
@@ -517,7 +523,7 @@ TEST_F(AWSClientTestSuite, TestRecursionDetection)
 
         // Make request
         auto outcome = mockedClient.MakeRequest(request);
-        ASSERT_TRUE(outcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(outcome);
 
         // Validate actual headers set
         const auto& requestsMade = mockHttpClient->GetAllRequestsMade();
@@ -548,6 +554,19 @@ TEST_F(AWSClientTestSuite, TestRecursionDetection)
         }
         mockHttpClient->Reset();
     }
+}
+
+TEST_F(AWSClientTestSuite, TestErrorInBodyOfResponse)
+{
+    HeaderValueCollection responseHeaders;
+    AmazonWebServiceRequestMock request;
+    QueueMockResponse(HttpResponseCode::OK, responseHeaders, "<Error><Code>SomeException</Code><Message>TestErrorInBodyOfResponse</Message></Error>");
+    auto outcome = client->MakeRequest(request);
+
+    ASSERT_FALSE(outcome.IsSuccess());
+    ASSERT_EQ(outcome.GetError().GetErrorType(), CoreErrors::SLOW_DOWN);
+    ASSERT_EQ(outcome.GetError().GetMessage(), "TestErrorInBodyOfResponse");
+    ASSERT_EQ(outcome.GetError().GetExceptionName(), "TestErrorInBodyOfResponse");
 }
 
 TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
@@ -718,7 +737,7 @@ TEST_F(AWSConfigTestSuite, TestClientConfigurationSetsRegionToProfile)
 {
     // create a config file with profile named Dijkstra
     Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-    configFileNew << "[Dijkstra]" << std::endl;
+    configFileNew << "[profile Dijkstra]" << std::endl;  // profile keyword is mandatory per specification
     configFileNew << "region = " << Aws::Region::US_WEST_2 << std::endl;
 
     configFileNew.flush();

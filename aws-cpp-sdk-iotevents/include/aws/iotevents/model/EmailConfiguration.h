@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::String m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     EmailContent m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     EmailRecipients m_recipients;
-    bool m_recipientsHasBeenSet;
+    bool m_recipientsHasBeenSet = false;
   };
 
 } // namespace Model

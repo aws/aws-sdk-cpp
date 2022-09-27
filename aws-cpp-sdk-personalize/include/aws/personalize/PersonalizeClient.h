@@ -5,350 +5,15 @@
 
 #pragma once
 #include <aws/personalize/Personalize_EXPORTS.h>
-#include <aws/personalize/PersonalizeErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/personalize/model/CreateBatchInferenceJobResult.h>
-#include <aws/personalize/model/CreateBatchSegmentJobResult.h>
-#include <aws/personalize/model/CreateCampaignResult.h>
-#include <aws/personalize/model/CreateDatasetResult.h>
-#include <aws/personalize/model/CreateDatasetExportJobResult.h>
-#include <aws/personalize/model/CreateDatasetGroupResult.h>
-#include <aws/personalize/model/CreateDatasetImportJobResult.h>
-#include <aws/personalize/model/CreateEventTrackerResult.h>
-#include <aws/personalize/model/CreateFilterResult.h>
-#include <aws/personalize/model/CreateRecommenderResult.h>
-#include <aws/personalize/model/CreateSchemaResult.h>
-#include <aws/personalize/model/CreateSolutionResult.h>
-#include <aws/personalize/model/CreateSolutionVersionResult.h>
-#include <aws/personalize/model/DescribeAlgorithmResult.h>
-#include <aws/personalize/model/DescribeBatchInferenceJobResult.h>
-#include <aws/personalize/model/DescribeBatchSegmentJobResult.h>
-#include <aws/personalize/model/DescribeCampaignResult.h>
-#include <aws/personalize/model/DescribeDatasetResult.h>
-#include <aws/personalize/model/DescribeDatasetExportJobResult.h>
-#include <aws/personalize/model/DescribeDatasetGroupResult.h>
-#include <aws/personalize/model/DescribeDatasetImportJobResult.h>
-#include <aws/personalize/model/DescribeEventTrackerResult.h>
-#include <aws/personalize/model/DescribeFeatureTransformationResult.h>
-#include <aws/personalize/model/DescribeFilterResult.h>
-#include <aws/personalize/model/DescribeRecipeResult.h>
-#include <aws/personalize/model/DescribeRecommenderResult.h>
-#include <aws/personalize/model/DescribeSchemaResult.h>
-#include <aws/personalize/model/DescribeSolutionResult.h>
-#include <aws/personalize/model/DescribeSolutionVersionResult.h>
-#include <aws/personalize/model/GetSolutionMetricsResult.h>
-#include <aws/personalize/model/ListBatchInferenceJobsResult.h>
-#include <aws/personalize/model/ListBatchSegmentJobsResult.h>
-#include <aws/personalize/model/ListCampaignsResult.h>
-#include <aws/personalize/model/ListDatasetExportJobsResult.h>
-#include <aws/personalize/model/ListDatasetGroupsResult.h>
-#include <aws/personalize/model/ListDatasetImportJobsResult.h>
-#include <aws/personalize/model/ListDatasetsResult.h>
-#include <aws/personalize/model/ListEventTrackersResult.h>
-#include <aws/personalize/model/ListFiltersResult.h>
-#include <aws/personalize/model/ListRecipesResult.h>
-#include <aws/personalize/model/ListRecommendersResult.h>
-#include <aws/personalize/model/ListSchemasResult.h>
-#include <aws/personalize/model/ListSolutionVersionsResult.h>
-#include <aws/personalize/model/ListSolutionsResult.h>
-#include <aws/personalize/model/ListTagsForResourceResult.h>
-#include <aws/personalize/model/StartRecommenderResult.h>
-#include <aws/personalize/model/StopRecommenderResult.h>
-#include <aws/personalize/model/TagResourceResult.h>
-#include <aws/personalize/model/UntagResourceResult.h>
-#include <aws/personalize/model/UpdateCampaignResult.h>
-#include <aws/personalize/model/UpdateRecommenderResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/personalize/PersonalizeServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Personalize
 {
-
-namespace Model
-{
-        class CreateBatchInferenceJobRequest;
-        class CreateBatchSegmentJobRequest;
-        class CreateCampaignRequest;
-        class CreateDatasetRequest;
-        class CreateDatasetExportJobRequest;
-        class CreateDatasetGroupRequest;
-        class CreateDatasetImportJobRequest;
-        class CreateEventTrackerRequest;
-        class CreateFilterRequest;
-        class CreateRecommenderRequest;
-        class CreateSchemaRequest;
-        class CreateSolutionRequest;
-        class CreateSolutionVersionRequest;
-        class DeleteCampaignRequest;
-        class DeleteDatasetRequest;
-        class DeleteDatasetGroupRequest;
-        class DeleteEventTrackerRequest;
-        class DeleteFilterRequest;
-        class DeleteRecommenderRequest;
-        class DeleteSchemaRequest;
-        class DeleteSolutionRequest;
-        class DescribeAlgorithmRequest;
-        class DescribeBatchInferenceJobRequest;
-        class DescribeBatchSegmentJobRequest;
-        class DescribeCampaignRequest;
-        class DescribeDatasetRequest;
-        class DescribeDatasetExportJobRequest;
-        class DescribeDatasetGroupRequest;
-        class DescribeDatasetImportJobRequest;
-        class DescribeEventTrackerRequest;
-        class DescribeFeatureTransformationRequest;
-        class DescribeFilterRequest;
-        class DescribeRecipeRequest;
-        class DescribeRecommenderRequest;
-        class DescribeSchemaRequest;
-        class DescribeSolutionRequest;
-        class DescribeSolutionVersionRequest;
-        class GetSolutionMetricsRequest;
-        class ListBatchInferenceJobsRequest;
-        class ListBatchSegmentJobsRequest;
-        class ListCampaignsRequest;
-        class ListDatasetExportJobsRequest;
-        class ListDatasetGroupsRequest;
-        class ListDatasetImportJobsRequest;
-        class ListDatasetsRequest;
-        class ListEventTrackersRequest;
-        class ListFiltersRequest;
-        class ListRecipesRequest;
-        class ListRecommendersRequest;
-        class ListSchemasRequest;
-        class ListSolutionVersionsRequest;
-        class ListSolutionsRequest;
-        class ListTagsForResourceRequest;
-        class StartRecommenderRequest;
-        class StopRecommenderRequest;
-        class StopSolutionVersionCreationRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateCampaignRequest;
-        class UpdateRecommenderRequest;
-
-        typedef Aws::Utils::Outcome<CreateBatchInferenceJobResult, PersonalizeError> CreateBatchInferenceJobOutcome;
-        typedef Aws::Utils::Outcome<CreateBatchSegmentJobResult, PersonalizeError> CreateBatchSegmentJobOutcome;
-        typedef Aws::Utils::Outcome<CreateCampaignResult, PersonalizeError> CreateCampaignOutcome;
-        typedef Aws::Utils::Outcome<CreateDatasetResult, PersonalizeError> CreateDatasetOutcome;
-        typedef Aws::Utils::Outcome<CreateDatasetExportJobResult, PersonalizeError> CreateDatasetExportJobOutcome;
-        typedef Aws::Utils::Outcome<CreateDatasetGroupResult, PersonalizeError> CreateDatasetGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateDatasetImportJobResult, PersonalizeError> CreateDatasetImportJobOutcome;
-        typedef Aws::Utils::Outcome<CreateEventTrackerResult, PersonalizeError> CreateEventTrackerOutcome;
-        typedef Aws::Utils::Outcome<CreateFilterResult, PersonalizeError> CreateFilterOutcome;
-        typedef Aws::Utils::Outcome<CreateRecommenderResult, PersonalizeError> CreateRecommenderOutcome;
-        typedef Aws::Utils::Outcome<CreateSchemaResult, PersonalizeError> CreateSchemaOutcome;
-        typedef Aws::Utils::Outcome<CreateSolutionResult, PersonalizeError> CreateSolutionOutcome;
-        typedef Aws::Utils::Outcome<CreateSolutionVersionResult, PersonalizeError> CreateSolutionVersionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteCampaignOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteDatasetOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteDatasetGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteEventTrackerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteFilterOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteRecommenderOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteSchemaOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> DeleteSolutionOutcome;
-        typedef Aws::Utils::Outcome<DescribeAlgorithmResult, PersonalizeError> DescribeAlgorithmOutcome;
-        typedef Aws::Utils::Outcome<DescribeBatchInferenceJobResult, PersonalizeError> DescribeBatchInferenceJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeBatchSegmentJobResult, PersonalizeError> DescribeBatchSegmentJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeCampaignResult, PersonalizeError> DescribeCampaignOutcome;
-        typedef Aws::Utils::Outcome<DescribeDatasetResult, PersonalizeError> DescribeDatasetOutcome;
-        typedef Aws::Utils::Outcome<DescribeDatasetExportJobResult, PersonalizeError> DescribeDatasetExportJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeDatasetGroupResult, PersonalizeError> DescribeDatasetGroupOutcome;
-        typedef Aws::Utils::Outcome<DescribeDatasetImportJobResult, PersonalizeError> DescribeDatasetImportJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventTrackerResult, PersonalizeError> DescribeEventTrackerOutcome;
-        typedef Aws::Utils::Outcome<DescribeFeatureTransformationResult, PersonalizeError> DescribeFeatureTransformationOutcome;
-        typedef Aws::Utils::Outcome<DescribeFilterResult, PersonalizeError> DescribeFilterOutcome;
-        typedef Aws::Utils::Outcome<DescribeRecipeResult, PersonalizeError> DescribeRecipeOutcome;
-        typedef Aws::Utils::Outcome<DescribeRecommenderResult, PersonalizeError> DescribeRecommenderOutcome;
-        typedef Aws::Utils::Outcome<DescribeSchemaResult, PersonalizeError> DescribeSchemaOutcome;
-        typedef Aws::Utils::Outcome<DescribeSolutionResult, PersonalizeError> DescribeSolutionOutcome;
-        typedef Aws::Utils::Outcome<DescribeSolutionVersionResult, PersonalizeError> DescribeSolutionVersionOutcome;
-        typedef Aws::Utils::Outcome<GetSolutionMetricsResult, PersonalizeError> GetSolutionMetricsOutcome;
-        typedef Aws::Utils::Outcome<ListBatchInferenceJobsResult, PersonalizeError> ListBatchInferenceJobsOutcome;
-        typedef Aws::Utils::Outcome<ListBatchSegmentJobsResult, PersonalizeError> ListBatchSegmentJobsOutcome;
-        typedef Aws::Utils::Outcome<ListCampaignsResult, PersonalizeError> ListCampaignsOutcome;
-        typedef Aws::Utils::Outcome<ListDatasetExportJobsResult, PersonalizeError> ListDatasetExportJobsOutcome;
-        typedef Aws::Utils::Outcome<ListDatasetGroupsResult, PersonalizeError> ListDatasetGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListDatasetImportJobsResult, PersonalizeError> ListDatasetImportJobsOutcome;
-        typedef Aws::Utils::Outcome<ListDatasetsResult, PersonalizeError> ListDatasetsOutcome;
-        typedef Aws::Utils::Outcome<ListEventTrackersResult, PersonalizeError> ListEventTrackersOutcome;
-        typedef Aws::Utils::Outcome<ListFiltersResult, PersonalizeError> ListFiltersOutcome;
-        typedef Aws::Utils::Outcome<ListRecipesResult, PersonalizeError> ListRecipesOutcome;
-        typedef Aws::Utils::Outcome<ListRecommendersResult, PersonalizeError> ListRecommendersOutcome;
-        typedef Aws::Utils::Outcome<ListSchemasResult, PersonalizeError> ListSchemasOutcome;
-        typedef Aws::Utils::Outcome<ListSolutionVersionsResult, PersonalizeError> ListSolutionVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListSolutionsResult, PersonalizeError> ListSolutionsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, PersonalizeError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartRecommenderResult, PersonalizeError> StartRecommenderOutcome;
-        typedef Aws::Utils::Outcome<StopRecommenderResult, PersonalizeError> StopRecommenderOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> StopSolutionVersionCreationOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, PersonalizeError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, PersonalizeError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateCampaignResult, PersonalizeError> UpdateCampaignOutcome;
-        typedef Aws::Utils::Outcome<UpdateRecommenderResult, PersonalizeError> UpdateRecommenderOutcome;
-
-        typedef std::future<CreateBatchInferenceJobOutcome> CreateBatchInferenceJobOutcomeCallable;
-        typedef std::future<CreateBatchSegmentJobOutcome> CreateBatchSegmentJobOutcomeCallable;
-        typedef std::future<CreateCampaignOutcome> CreateCampaignOutcomeCallable;
-        typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
-        typedef std::future<CreateDatasetExportJobOutcome> CreateDatasetExportJobOutcomeCallable;
-        typedef std::future<CreateDatasetGroupOutcome> CreateDatasetGroupOutcomeCallable;
-        typedef std::future<CreateDatasetImportJobOutcome> CreateDatasetImportJobOutcomeCallable;
-        typedef std::future<CreateEventTrackerOutcome> CreateEventTrackerOutcomeCallable;
-        typedef std::future<CreateFilterOutcome> CreateFilterOutcomeCallable;
-        typedef std::future<CreateRecommenderOutcome> CreateRecommenderOutcomeCallable;
-        typedef std::future<CreateSchemaOutcome> CreateSchemaOutcomeCallable;
-        typedef std::future<CreateSolutionOutcome> CreateSolutionOutcomeCallable;
-        typedef std::future<CreateSolutionVersionOutcome> CreateSolutionVersionOutcomeCallable;
-        typedef std::future<DeleteCampaignOutcome> DeleteCampaignOutcomeCallable;
-        typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
-        typedef std::future<DeleteDatasetGroupOutcome> DeleteDatasetGroupOutcomeCallable;
-        typedef std::future<DeleteEventTrackerOutcome> DeleteEventTrackerOutcomeCallable;
-        typedef std::future<DeleteFilterOutcome> DeleteFilterOutcomeCallable;
-        typedef std::future<DeleteRecommenderOutcome> DeleteRecommenderOutcomeCallable;
-        typedef std::future<DeleteSchemaOutcome> DeleteSchemaOutcomeCallable;
-        typedef std::future<DeleteSolutionOutcome> DeleteSolutionOutcomeCallable;
-        typedef std::future<DescribeAlgorithmOutcome> DescribeAlgorithmOutcomeCallable;
-        typedef std::future<DescribeBatchInferenceJobOutcome> DescribeBatchInferenceJobOutcomeCallable;
-        typedef std::future<DescribeBatchSegmentJobOutcome> DescribeBatchSegmentJobOutcomeCallable;
-        typedef std::future<DescribeCampaignOutcome> DescribeCampaignOutcomeCallable;
-        typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
-        typedef std::future<DescribeDatasetExportJobOutcome> DescribeDatasetExportJobOutcomeCallable;
-        typedef std::future<DescribeDatasetGroupOutcome> DescribeDatasetGroupOutcomeCallable;
-        typedef std::future<DescribeDatasetImportJobOutcome> DescribeDatasetImportJobOutcomeCallable;
-        typedef std::future<DescribeEventTrackerOutcome> DescribeEventTrackerOutcomeCallable;
-        typedef std::future<DescribeFeatureTransformationOutcome> DescribeFeatureTransformationOutcomeCallable;
-        typedef std::future<DescribeFilterOutcome> DescribeFilterOutcomeCallable;
-        typedef std::future<DescribeRecipeOutcome> DescribeRecipeOutcomeCallable;
-        typedef std::future<DescribeRecommenderOutcome> DescribeRecommenderOutcomeCallable;
-        typedef std::future<DescribeSchemaOutcome> DescribeSchemaOutcomeCallable;
-        typedef std::future<DescribeSolutionOutcome> DescribeSolutionOutcomeCallable;
-        typedef std::future<DescribeSolutionVersionOutcome> DescribeSolutionVersionOutcomeCallable;
-        typedef std::future<GetSolutionMetricsOutcome> GetSolutionMetricsOutcomeCallable;
-        typedef std::future<ListBatchInferenceJobsOutcome> ListBatchInferenceJobsOutcomeCallable;
-        typedef std::future<ListBatchSegmentJobsOutcome> ListBatchSegmentJobsOutcomeCallable;
-        typedef std::future<ListCampaignsOutcome> ListCampaignsOutcomeCallable;
-        typedef std::future<ListDatasetExportJobsOutcome> ListDatasetExportJobsOutcomeCallable;
-        typedef std::future<ListDatasetGroupsOutcome> ListDatasetGroupsOutcomeCallable;
-        typedef std::future<ListDatasetImportJobsOutcome> ListDatasetImportJobsOutcomeCallable;
-        typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
-        typedef std::future<ListEventTrackersOutcome> ListEventTrackersOutcomeCallable;
-        typedef std::future<ListFiltersOutcome> ListFiltersOutcomeCallable;
-        typedef std::future<ListRecipesOutcome> ListRecipesOutcomeCallable;
-        typedef std::future<ListRecommendersOutcome> ListRecommendersOutcomeCallable;
-        typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
-        typedef std::future<ListSolutionVersionsOutcome> ListSolutionVersionsOutcomeCallable;
-        typedef std::future<ListSolutionsOutcome> ListSolutionsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<StartRecommenderOutcome> StartRecommenderOutcomeCallable;
-        typedef std::future<StopRecommenderOutcome> StopRecommenderOutcomeCallable;
-        typedef std::future<StopSolutionVersionCreationOutcome> StopSolutionVersionCreationOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateCampaignOutcome> UpdateCampaignOutcomeCallable;
-        typedef std::future<UpdateRecommenderOutcome> UpdateRecommenderOutcomeCallable;
-} // namespace Model
-
-  class PersonalizeClient;
-
-    typedef std::function<void(const PersonalizeClient*, const Model::CreateBatchInferenceJobRequest&, const Model::CreateBatchInferenceJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchInferenceJobResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::CreateBatchSegmentJobRequest&, const Model::CreateBatchSegmentJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchSegmentJobResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::CreateCampaignRequest&, const Model::CreateCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCampaignResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetExportJobRequest&, const Model::CreateDatasetExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetExportJobResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetGroupRequest&, const Model::CreateDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetGroupResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetImportJobRequest&, const Model::CreateDatasetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetImportJobResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::CreateEventTrackerRequest&, const Model::CreateEventTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventTrackerResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::CreateFilterRequest&, const Model::CreateFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFilterResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::CreateRecommenderRequest&, const Model::CreateRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRecommenderResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::CreateSchemaRequest&, const Model::CreateSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSchemaResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::CreateSolutionRequest&, const Model::CreateSolutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSolutionResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::CreateSolutionVersionRequest&, const Model::CreateSolutionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSolutionVersionResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DeleteCampaignRequest&, const Model::DeleteCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCampaignResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DeleteDatasetGroupRequest&, const Model::DeleteDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetGroupResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DeleteEventTrackerRequest&, const Model::DeleteEventTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventTrackerResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DeleteFilterRequest&, const Model::DeleteFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFilterResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DeleteRecommenderRequest&, const Model::DeleteRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecommenderResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DeleteSchemaRequest&, const Model::DeleteSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSchemaResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DeleteSolutionRequest&, const Model::DeleteSolutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSolutionResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeAlgorithmRequest&, const Model::DescribeAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlgorithmResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeBatchInferenceJobRequest&, const Model::DescribeBatchInferenceJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBatchInferenceJobResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeBatchSegmentJobRequest&, const Model::DescribeBatchSegmentJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBatchSegmentJobResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeCampaignRequest&, const Model::DescribeCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCampaignResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetExportJobRequest&, const Model::DescribeDatasetExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetExportJobResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetGroupRequest&, const Model::DescribeDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetGroupResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetImportJobRequest&, const Model::DescribeDatasetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetImportJobResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeEventTrackerRequest&, const Model::DescribeEventTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventTrackerResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeFeatureTransformationRequest&, const Model::DescribeFeatureTransformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFeatureTransformationResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeFilterRequest&, const Model::DescribeFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFilterResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeRecipeRequest&, const Model::DescribeRecipeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecipeResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeRecommenderRequest&, const Model::DescribeRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecommenderResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeSchemaRequest&, const Model::DescribeSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSchemaResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeSolutionRequest&, const Model::DescribeSolutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSolutionResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::DescribeSolutionVersionRequest&, const Model::DescribeSolutionVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSolutionVersionResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::GetSolutionMetricsRequest&, const Model::GetSolutionMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSolutionMetricsResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListBatchInferenceJobsRequest&, const Model::ListBatchInferenceJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBatchInferenceJobsResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListBatchSegmentJobsRequest&, const Model::ListBatchSegmentJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBatchSegmentJobsResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListCampaignsRequest&, const Model::ListCampaignsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCampaignsResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetExportJobsRequest&, const Model::ListDatasetExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetExportJobsResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetGroupsRequest&, const Model::ListDatasetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetGroupsResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetImportJobsRequest&, const Model::ListDatasetImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetImportJobsResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetsRequest&, const Model::ListDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetsResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListEventTrackersRequest&, const Model::ListEventTrackersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventTrackersResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListFiltersRequest&, const Model::ListFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFiltersResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListRecipesRequest&, const Model::ListRecipesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecipesResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListRecommendersRequest&, const Model::ListRecommendersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecommendersResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListSchemasRequest&, const Model::ListSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemasResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListSolutionVersionsRequest&, const Model::ListSolutionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSolutionVersionsResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListSolutionsRequest&, const Model::ListSolutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSolutionsResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::StartRecommenderRequest&, const Model::StartRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRecommenderResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::StopRecommenderRequest&, const Model::StopRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopRecommenderResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::StopSolutionVersionCreationRequest&, const Model::StopSolutionVersionCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopSolutionVersionCreationResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::UpdateCampaignRequest&, const Model::UpdateCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCampaignResponseReceivedHandler;
-    typedef std::function<void(const PersonalizeClient*, const Model::UpdateRecommenderRequest&, const Model::UpdateRecommenderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRecommenderResponseReceivedHandler;
-
   /**
    * <p>Amazon Personalize is a machine learning service that makes it easy to add
    * individualized recommendations to customers.</p>
@@ -368,14 +33,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        PersonalizeClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        PersonalizeClient(const Aws::Auth::AWSCredentials& credentials,
+                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         PersonalizeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~PersonalizeClient();
 
@@ -598,12 +264,14 @@ namespace Model
          * processes it internally. For information on granting access to your Amazon S3
          * bucket, see <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
-         * Amazon Personalize Access to Amazon S3 Resources</a>. </p>  <p>The
-         * dataset import job replaces any existing data in the dataset that you imported
-         * in bulk.</p>  <p> <b>Status</b> </p> <p>A dataset import job can be
-         * in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
-         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status
-         * of the import job, call <a
+         * Amazon Personalize Access to Amazon S3 Resources</a>. </p>  <p>By
+         * default, a dataset import job replaces any existing data in the dataset that you
+         * imported in bulk. To add new records without replacing existing data, specify
+         * INCREMENTAL for the import mode in the CreateDatasetImportJob operation.</p>
+         *  <p> <b>Status</b> </p> <p>A dataset import job can be in one of the
+         * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
+         * ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status of the import
+         * job, call <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>,
          * providing the Amazon Resource Name (ARN) of the dataset import job. The dataset
          * import is complete when the status shows as ACTIVE. If the status shows as
@@ -1846,66 +1514,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateBatchInferenceJobAsyncHelper(const Model::CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateBatchSegmentJobAsyncHelper(const Model::CreateBatchSegmentJobRequest& request, const CreateBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateCampaignAsyncHelper(const Model::CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDatasetAsyncHelper(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDatasetExportJobAsyncHelper(const Model::CreateDatasetExportJobRequest& request, const CreateDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDatasetGroupAsyncHelper(const Model::CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDatasetImportJobAsyncHelper(const Model::CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateEventTrackerAsyncHelper(const Model::CreateEventTrackerRequest& request, const CreateEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateFilterAsyncHelper(const Model::CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRecommenderAsyncHelper(const Model::CreateRecommenderRequest& request, const CreateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSchemaAsyncHelper(const Model::CreateSchemaRequest& request, const CreateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSolutionAsyncHelper(const Model::CreateSolutionRequest& request, const CreateSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSolutionVersionAsyncHelper(const Model::CreateSolutionVersionRequest& request, const CreateSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCampaignAsyncHelper(const Model::DeleteCampaignRequest& request, const DeleteCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDatasetAsyncHelper(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDatasetGroupAsyncHelper(const Model::DeleteDatasetGroupRequest& request, const DeleteDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteEventTrackerAsyncHelper(const Model::DeleteEventTrackerRequest& request, const DeleteEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteFilterAsyncHelper(const Model::DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRecommenderAsyncHelper(const Model::DeleteRecommenderRequest& request, const DeleteRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSchemaAsyncHelper(const Model::DeleteSchemaRequest& request, const DeleteSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSolutionAsyncHelper(const Model::DeleteSolutionRequest& request, const DeleteSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAlgorithmAsyncHelper(const Model::DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBatchInferenceJobAsyncHelper(const Model::DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBatchSegmentJobAsyncHelper(const Model::DescribeBatchSegmentJobRequest& request, const DescribeBatchSegmentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCampaignAsyncHelper(const Model::DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDatasetAsyncHelper(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDatasetExportJobAsyncHelper(const Model::DescribeDatasetExportJobRequest& request, const DescribeDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDatasetGroupAsyncHelper(const Model::DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDatasetImportJobAsyncHelper(const Model::DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeEventTrackerAsyncHelper(const Model::DescribeEventTrackerRequest& request, const DescribeEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeFeatureTransformationAsyncHelper(const Model::DescribeFeatureTransformationRequest& request, const DescribeFeatureTransformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeFilterAsyncHelper(const Model::DescribeFilterRequest& request, const DescribeFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRecipeAsyncHelper(const Model::DescribeRecipeRequest& request, const DescribeRecipeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRecommenderAsyncHelper(const Model::DescribeRecommenderRequest& request, const DescribeRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSchemaAsyncHelper(const Model::DescribeSchemaRequest& request, const DescribeSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSolutionAsyncHelper(const Model::DescribeSolutionRequest& request, const DescribeSolutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSolutionVersionAsyncHelper(const Model::DescribeSolutionVersionRequest& request, const DescribeSolutionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSolutionMetricsAsyncHelper(const Model::GetSolutionMetricsRequest& request, const GetSolutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBatchInferenceJobsAsyncHelper(const Model::ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBatchSegmentJobsAsyncHelper(const Model::ListBatchSegmentJobsRequest& request, const ListBatchSegmentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCampaignsAsyncHelper(const Model::ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDatasetExportJobsAsyncHelper(const Model::ListDatasetExportJobsRequest& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDatasetGroupsAsyncHelper(const Model::ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDatasetImportJobsAsyncHelper(const Model::ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDatasetsAsyncHelper(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEventTrackersAsyncHelper(const Model::ListEventTrackersRequest& request, const ListEventTrackersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListFiltersAsyncHelper(const Model::ListFiltersRequest& request, const ListFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRecipesAsyncHelper(const Model::ListRecipesRequest& request, const ListRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRecommendersAsyncHelper(const Model::ListRecommendersRequest& request, const ListRecommendersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSchemasAsyncHelper(const Model::ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSolutionVersionsAsyncHelper(const Model::ListSolutionVersionsRequest& request, const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSolutionsAsyncHelper(const Model::ListSolutionsRequest& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartRecommenderAsyncHelper(const Model::StartRecommenderRequest& request, const StartRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopRecommenderAsyncHelper(const Model::StopRecommenderRequest& request, const StopRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopSolutionVersionCreationAsyncHelper(const Model::StopSolutionVersionCreationRequest& request, const StopSolutionVersionCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateCampaignAsyncHelper(const Model::UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRecommenderAsyncHelper(const Model::UpdateRecommenderRequest& request, const UpdateRecommenderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

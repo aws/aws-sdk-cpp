@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Specifies the workflow ID for the workflow to assign and the execution role
-   * used for executing the workflow.</p><p><h3>See Also:</h3>   <a
+   * that's used for executing the workflow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/WorkflowDetail">AWS
    * API Reference</a></p>
    */
@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
 
     Aws::String m_executionRole;
-    bool m_executionRoleHasBeenSet;
+    bool m_executionRoleHasBeenSet = false;
   };
 
 } // namespace Model

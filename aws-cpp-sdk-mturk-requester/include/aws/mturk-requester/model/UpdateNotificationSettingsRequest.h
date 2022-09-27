@@ -150,13 +150,13 @@ namespace Model
   private:
 
     Aws::String m_hITTypeId;
-    bool m_hITTypeIdHasBeenSet;
+    bool m_hITTypeIdHasBeenSet = false;
 
     NotificationSpecification m_notification;
-    bool m_notificationHasBeenSet;
+    bool m_notificationHasBeenSet = false;
 
     bool m_active;
-    bool m_activeHasBeenSet;
+    bool m_activeHasBeenSet = false;
   };
 
 } // namespace Model

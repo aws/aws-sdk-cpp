@@ -193,16 +193,16 @@ namespace Model
   private:
 
     DomainInformationContainer m_localDomainInfo;
-    bool m_localDomainInfoHasBeenSet;
+    bool m_localDomainInfoHasBeenSet = false;
 
     DomainInformationContainer m_remoteDomainInfo;
-    bool m_remoteDomainInfoHasBeenSet;
+    bool m_remoteDomainInfoHasBeenSet = false;
 
     Aws::String m_connectionId;
-    bool m_connectionIdHasBeenSet;
+    bool m_connectionIdHasBeenSet = false;
 
     InboundConnectionStatus m_connectionStatus;
-    bool m_connectionStatusHasBeenSet;
+    bool m_connectionStatusHasBeenSet = false;
   };
 
 } // namespace Model

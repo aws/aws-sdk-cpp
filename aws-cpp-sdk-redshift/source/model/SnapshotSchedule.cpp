@@ -95,7 +95,7 @@ SnapshotSchedule& SnapshotSchedule::operator =(const XmlNode& xmlNode)
       XmlNode nextInvocationsMember = nextInvocationsNode.FirstChild("SnapshotTime");
       while(!nextInvocationsMember.IsNull())
       {
-        m_nextInvocations.push_back(DateTime(StringUtils::Trim(nextInvocationsMember.GetText().c_str()).c_str(), DateFormat::ISO_8601));
+        m_nextInvocations.push_back(DateTime(StringUtils::Trim(nextInvocationsMember.GetText().c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601));
         nextInvocationsMember = nextInvocationsMember.NextNode("SnapshotTime");
       }
 
@@ -161,7 +161,7 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned nextInvocationsIdx = 1;
       for(auto& item : m_nextInvocations)
       {
-        oStream << location << index << locationValue << ".SnapshotTime." << nextInvocationsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+        oStream << location << index << locationValue << ".SnapshotTime." << nextInvocationsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
       }
   }
 
@@ -223,7 +223,7 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
       unsigned nextInvocationsIdx = 1;
       for(auto& item : m_nextInvocations)
       {
-        oStream << location << ".SnapshotTime." << nextInvocationsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+        oStream << location << ".SnapshotTime." << nextInvocationsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
       }
   }
   if(m_associatedClusterCountHasBeenSet)

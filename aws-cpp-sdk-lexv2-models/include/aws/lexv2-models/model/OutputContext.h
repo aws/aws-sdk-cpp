@@ -135,13 +135,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_timeToLiveInSeconds;
-    bool m_timeToLiveInSecondsHasBeenSet;
+    bool m_timeToLiveInSecondsHasBeenSet = false;
 
     int m_turnsToLive;
-    bool m_turnsToLiveHasBeenSet;
+    bool m_turnsToLiveHasBeenSet = false;
   };
 
 } // namespace Model

@@ -225,19 +225,19 @@ namespace Model
   private:
 
     Aws::String m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nameQuery;
-    bool m_nameQueryHasBeenSet;
+    bool m_nameQueryHasBeenSet = false;
 
     Aws::String m_customerId;
-    bool m_customerIdHasBeenSet;
+    bool m_customerIdHasBeenSet = false;
 
     bool m_includeValues;
-    bool m_includeValuesHasBeenSet;
+    bool m_includeValuesHasBeenSet = false;
   };
 
 } // namespace Model

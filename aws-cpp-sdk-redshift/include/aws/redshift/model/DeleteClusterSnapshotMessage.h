@@ -171,10 +171,10 @@ namespace Model
   private:
 
     Aws::String m_snapshotIdentifier;
-    bool m_snapshotIdentifierHasBeenSet;
+    bool m_snapshotIdentifierHasBeenSet = false;
 
     Aws::String m_snapshotClusterIdentifier;
-    bool m_snapshotClusterIdentifierHasBeenSet;
+    bool m_snapshotClusterIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

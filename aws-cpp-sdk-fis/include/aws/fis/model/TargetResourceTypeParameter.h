@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_required;
-    bool m_requiredHasBeenSet;
+    bool m_requiredHasBeenSet = false;
   };
 
 } // namespace Model

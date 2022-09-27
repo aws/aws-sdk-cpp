@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_destinationIdentity;
-    bool m_destinationIdentityHasBeenSet;
+    bool m_destinationIdentityHasBeenSet = false;
 
     Aws::String m_otp;
-    bool m_otpHasBeenSet;
+    bool m_otpHasBeenSet = false;
 
     Aws::String m_referenceId;
-    bool m_referenceIdHasBeenSet;
+    bool m_referenceIdHasBeenSet = false;
   };
 
 } // namespace Model

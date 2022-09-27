@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_quickConnectId;
-    bool m_quickConnectIdHasBeenSet;
+    bool m_quickConnectIdHasBeenSet = false;
 
     QuickConnectConfig m_quickConnectConfig;
-    bool m_quickConnectConfigHasBeenSet;
+    bool m_quickConnectConfigHasBeenSet = false;
   };
 
 } // namespace Model

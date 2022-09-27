@@ -125,7 +125,7 @@ namespace Model
   private:
 
     Aws::String m_languageModelName;
-    bool m_languageModelNameHasBeenSet;
+    bool m_languageModelNameHasBeenSet = false;
   };
 
 } // namespace Model

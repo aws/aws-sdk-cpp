@@ -155,13 +155,13 @@ namespace Model
   private:
 
     Aws::String m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     Aws::String m_externalExecutionId;
-    bool m_externalExecutionIdHasBeenSet;
+    bool m_externalExecutionIdHasBeenSet = false;
 
     int m_percentComplete;
-    bool m_percentCompleteHasBeenSet;
+    bool m_percentCompleteHasBeenSet = false;
   };
 
 } // namespace Model

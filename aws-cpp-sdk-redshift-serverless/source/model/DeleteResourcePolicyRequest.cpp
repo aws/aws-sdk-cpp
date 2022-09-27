@@ -33,7 +33,7 @@ Aws::String DeleteResourcePolicyRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection DeleteResourcePolicyRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.DeleteResourcePolicy"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.DeleteResourcePolicy"));
   return headers;
 
 }

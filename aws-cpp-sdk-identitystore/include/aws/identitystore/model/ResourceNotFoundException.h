@@ -40,44 +40,44 @@ namespace Model
 
 
     /**
-     * <p>The type of resource in the Identity Store service, which is an enum object.
+     * <p>An enum object indicating the type of resource in the identity store service.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource in the Identity Store service, which is an enum object.
+     * <p>An enum object indicating the type of resource in the identity store service.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of resource in the Identity Store service, which is an enum object.
+     * <p>An enum object indicating the type of resource in the identity store service.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource in the Identity Store service, which is an enum object.
+     * <p>An enum object indicating the type of resource in the identity store service.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource in the Identity Store service, which is an enum object.
+     * <p>An enum object indicating the type of resource in the identity store service.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline ResourceNotFoundException& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource in the Identity Store service, which is an enum object.
+     * <p>An enum object indicating the type of resource in the identity store service.
      * Valid values include USER, GROUP, and IDENTITY_STORE.</p>
      */
     inline ResourceNotFoundException& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
@@ -91,7 +91,7 @@ namespace Model
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
@@ -105,7 +105,7 @@ namespace Model
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
@@ -119,7 +119,7 @@ namespace Model
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
@@ -133,7 +133,7 @@ namespace Model
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
@@ -147,7 +147,7 @@ namespace Model
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
@@ -161,7 +161,7 @@ namespace Model
     inline ResourceNotFoundException& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
@@ -175,7 +175,7 @@ namespace Model
     inline ResourceNotFoundException& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for a resource in the identity store, which can be used as
+     * <p>The identifier for a resource in the identity store that can be used as
      * <code>UserId</code> or <code>GroupId</code>. The format for
      * <code>ResourceId</code> is either <code>UUID</code> or
      * <code>1234567890-UUID</code>, where <code>UUID</code> is a randomly generated
@@ -216,56 +216,56 @@ namespace Model
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline ResourceNotFoundException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline ResourceNotFoundException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for each request. This value is a globally unique ID that is
-     * generated by the Identity Store service for each sent request, and is then
+     * generated by the identity store service for each sent request, and is then
      * returned inside the exception if the request fails.</p>
      */
     inline ResourceNotFoundException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
@@ -273,16 +273,16 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

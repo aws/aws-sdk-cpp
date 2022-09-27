@@ -149,13 +149,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_queueId;
-    bool m_queueIdHasBeenSet;
+    bool m_queueIdHasBeenSet = false;
 
     int m_maxContacts;
-    bool m_maxContactsHasBeenSet;
+    bool m_maxContactsHasBeenSet = false;
   };
 
 } // namespace Model

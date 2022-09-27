@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
 
     Aws::String m_propertyName;
-    bool m_propertyNameHasBeenSet;
+    bool m_propertyNameHasBeenSet = false;
 
     DataValue m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

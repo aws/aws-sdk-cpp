@@ -21,6 +21,7 @@
 #include <aws/forecastquery/ForecastQueryServiceEndpoint.h>
 #include <aws/forecastquery/ForecastQueryServiceErrorMarshaller.h>
 #include <aws/forecastquery/model/QueryForecastRequest.h>
+#include <aws/forecastquery/model/QueryWhatIfForecastRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -33,33 +34,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "forecast";
 static const char* ALLOCATION_TAG = "ForecastQueryServiceClient";
 
-
 ForecastQueryServiceClient::ForecastQueryServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ForecastQueryServiceErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ForecastQueryServiceErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-ForecastQueryServiceClient::ForecastQueryServiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+ForecastQueryServiceClient::ForecastQueryServiceClient(const AWSCredentials& credentials,
+                                                       const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ForecastQueryServiceErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ForecastQueryServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 ForecastQueryServiceClient::ForecastQueryServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                                       const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ForecastQueryServiceErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ForecastQueryServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -71,7 +78,7 @@ ForecastQueryServiceClient::~ForecastQueryServiceClient()
 
 void ForecastQueryServiceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("forecastquery");
+  AWSClient::SetServiceClientName("forecastquery");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -111,11 +118,31 @@ QueryForecastOutcomeCallable ForecastQueryServiceClient::QueryForecastCallable(c
 
 void ForecastQueryServiceClient::QueryForecastAsync(const QueryForecastRequest& request, const QueryForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->QueryForecastAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, QueryForecast(request), context);
+    } );
 }
 
-void ForecastQueryServiceClient::QueryForecastAsyncHelper(const QueryForecastRequest& request, const QueryForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+QueryWhatIfForecastOutcome ForecastQueryServiceClient::QueryWhatIfForecast(const QueryWhatIfForecastRequest& request) const
 {
-  handler(this, request, QueryForecast(request), context);
+  Aws::Http::URI uri = m_uri;
+  return QueryWhatIfForecastOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+QueryWhatIfForecastOutcomeCallable ForecastQueryServiceClient::QueryWhatIfForecastCallable(const QueryWhatIfForecastRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< QueryWhatIfForecastOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->QueryWhatIfForecast(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastQueryServiceClient::QueryWhatIfForecastAsync(const QueryWhatIfForecastRequest& request, const QueryWhatIfForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, QueryWhatIfForecast(request), context);
+    } );
 }
 

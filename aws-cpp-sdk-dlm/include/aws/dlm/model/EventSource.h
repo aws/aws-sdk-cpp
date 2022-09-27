@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies an event that triggers an event-based policy.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p> <b>[Event-based policies only]</b> Specifies an event that activates an
+   * event-based policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/EventSource">AWS API
    * Reference</a></p>
    */
@@ -109,10 +109,10 @@ namespace Model
   private:
 
     EventSourceValues m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     EventParameters m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

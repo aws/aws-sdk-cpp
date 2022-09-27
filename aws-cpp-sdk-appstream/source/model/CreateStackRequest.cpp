@@ -23,7 +23,8 @@ CreateStackRequest::CreateStackRequest() :
     m_applicationSettingsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_accessEndpointsHasBeenSet(false),
-    m_embedHostDomainsHasBeenSet(false)
+    m_embedHostDomainsHasBeenSet(false),
+    m_streamingExperienceSettingsHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,12 @@ Aws::String CreateStackRequest::SerializePayload() const
      embedHostDomainsJsonList[embedHostDomainsIndex].AsString(m_embedHostDomains[embedHostDomainsIndex]);
    }
    payload.WithArray("EmbedHostDomains", std::move(embedHostDomainsJsonList));
+
+  }
+
+  if(m_streamingExperienceSettingsHasBeenSet)
+  {
+   payload.WithObject("StreamingExperienceSettings", m_streamingExperienceSettings.Jsonize());
 
   }
 

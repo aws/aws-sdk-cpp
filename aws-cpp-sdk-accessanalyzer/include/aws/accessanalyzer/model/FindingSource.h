@@ -110,10 +110,10 @@ namespace Model
   private:
 
     FindingSourceDetail m_detail;
-    bool m_detailHasBeenSet;
+    bool m_detailHasBeenSet = false;
 
     FindingSourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

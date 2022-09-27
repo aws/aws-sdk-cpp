@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cloudformation/model/AccountFilterType.h>
 #include <utility>
 
 namespace Aws
@@ -196,16 +197,128 @@ namespace Model
      */
     inline DeploymentTargets& AddOrganizationalUnitIds(const char* value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>Limit deployment targets to individual accounts or include additional
+     * accounts with provided OUs.</p> <p>The following is a list of possible values
+     * for the <code>AccountFilterType</code> operation.</p> <ul> <li> <p>
+     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in
+     * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
+     * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
+     * This enables user to avoid certain accounts within an OU such as suspended
+     * accounts.</p> </li> <li> <p> <code>UNION</code>: (default value) StackSets
+     * includes additional accounts deployment targets. </p> <p>This is the default
+     * value if <code>AccountFilterType</code> is not provided. This enables user to
+     * update an entire OU and individual accounts from a different OU in one request,
+     * which used to be two separate requests.</p> </li> <li> <p> <code>NONE</code>:
+     * Deploys to all the accounts in specified organizational units (OU).</p> </li>
+     * </ul>
+     */
+    inline const AccountFilterType& GetAccountFilterType() const{ return m_accountFilterType; }
+
+    /**
+     * <p>Limit deployment targets to individual accounts or include additional
+     * accounts with provided OUs.</p> <p>The following is a list of possible values
+     * for the <code>AccountFilterType</code> operation.</p> <ul> <li> <p>
+     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in
+     * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
+     * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
+     * This enables user to avoid certain accounts within an OU such as suspended
+     * accounts.</p> </li> <li> <p> <code>UNION</code>: (default value) StackSets
+     * includes additional accounts deployment targets. </p> <p>This is the default
+     * value if <code>AccountFilterType</code> is not provided. This enables user to
+     * update an entire OU and individual accounts from a different OU in one request,
+     * which used to be two separate requests.</p> </li> <li> <p> <code>NONE</code>:
+     * Deploys to all the accounts in specified organizational units (OU).</p> </li>
+     * </ul>
+     */
+    inline bool AccountFilterTypeHasBeenSet() const { return m_accountFilterTypeHasBeenSet; }
+
+    /**
+     * <p>Limit deployment targets to individual accounts or include additional
+     * accounts with provided OUs.</p> <p>The following is a list of possible values
+     * for the <code>AccountFilterType</code> operation.</p> <ul> <li> <p>
+     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in
+     * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
+     * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
+     * This enables user to avoid certain accounts within an OU such as suspended
+     * accounts.</p> </li> <li> <p> <code>UNION</code>: (default value) StackSets
+     * includes additional accounts deployment targets. </p> <p>This is the default
+     * value if <code>AccountFilterType</code> is not provided. This enables user to
+     * update an entire OU and individual accounts from a different OU in one request,
+     * which used to be two separate requests.</p> </li> <li> <p> <code>NONE</code>:
+     * Deploys to all the accounts in specified organizational units (OU).</p> </li>
+     * </ul>
+     */
+    inline void SetAccountFilterType(const AccountFilterType& value) { m_accountFilterTypeHasBeenSet = true; m_accountFilterType = value; }
+
+    /**
+     * <p>Limit deployment targets to individual accounts or include additional
+     * accounts with provided OUs.</p> <p>The following is a list of possible values
+     * for the <code>AccountFilterType</code> operation.</p> <ul> <li> <p>
+     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in
+     * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
+     * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
+     * This enables user to avoid certain accounts within an OU such as suspended
+     * accounts.</p> </li> <li> <p> <code>UNION</code>: (default value) StackSets
+     * includes additional accounts deployment targets. </p> <p>This is the default
+     * value if <code>AccountFilterType</code> is not provided. This enables user to
+     * update an entire OU and individual accounts from a different OU in one request,
+     * which used to be two separate requests.</p> </li> <li> <p> <code>NONE</code>:
+     * Deploys to all the accounts in specified organizational units (OU).</p> </li>
+     * </ul>
+     */
+    inline void SetAccountFilterType(AccountFilterType&& value) { m_accountFilterTypeHasBeenSet = true; m_accountFilterType = std::move(value); }
+
+    /**
+     * <p>Limit deployment targets to individual accounts or include additional
+     * accounts with provided OUs.</p> <p>The following is a list of possible values
+     * for the <code>AccountFilterType</code> operation.</p> <ul> <li> <p>
+     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in
+     * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
+     * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
+     * This enables user to avoid certain accounts within an OU such as suspended
+     * accounts.</p> </li> <li> <p> <code>UNION</code>: (default value) StackSets
+     * includes additional accounts deployment targets. </p> <p>This is the default
+     * value if <code>AccountFilterType</code> is not provided. This enables user to
+     * update an entire OU and individual accounts from a different OU in one request,
+     * which used to be two separate requests.</p> </li> <li> <p> <code>NONE</code>:
+     * Deploys to all the accounts in specified organizational units (OU).</p> </li>
+     * </ul>
+     */
+    inline DeploymentTargets& WithAccountFilterType(const AccountFilterType& value) { SetAccountFilterType(value); return *this;}
+
+    /**
+     * <p>Limit deployment targets to individual accounts or include additional
+     * accounts with provided OUs.</p> <p>The following is a list of possible values
+     * for the <code>AccountFilterType</code> operation.</p> <ul> <li> <p>
+     * <code>INTERSECTION</code>: StackSets deploys to the accounts specified in
+     * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
+     * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
+     * This enables user to avoid certain accounts within an OU such as suspended
+     * accounts.</p> </li> <li> <p> <code>UNION</code>: (default value) StackSets
+     * includes additional accounts deployment targets. </p> <p>This is the default
+     * value if <code>AccountFilterType</code> is not provided. This enables user to
+     * update an entire OU and individual accounts from a different OU in one request,
+     * which used to be two separate requests.</p> </li> <li> <p> <code>NONE</code>:
+     * Deploys to all the accounts in specified organizational units (OU).</p> </li>
+     * </ul>
+     */
+    inline DeploymentTargets& WithAccountFilterType(AccountFilterType&& value) { SetAccountFilterType(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_accounts;
-    bool m_accountsHasBeenSet;
+    bool m_accountsHasBeenSet = false;
 
     Aws::String m_accountsUrl;
-    bool m_accountsUrlHasBeenSet;
+    bool m_accountsUrlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_organizationalUnitIds;
-    bool m_organizationalUnitIdsHasBeenSet;
+    bool m_organizationalUnitIdsHasBeenSet = false;
+
+    AccountFilterType m_accountFilterType;
+    bool m_accountFilterTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_signingProfileVersionArns;
-    bool m_signingProfileVersionArnsHasBeenSet;
+    bool m_signingProfileVersionArnsHasBeenSet = false;
   };
 
 } // namespace Model

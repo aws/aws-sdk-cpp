@@ -26,8 +26,8 @@ namespace Model
   class Value;
 
   /**
-   * <p>A structure value returned by a call.</p>  <p>This data structure
-   * is only used with the deprecated <code>ExecuteSql</code> operation. Use the
+   * <p>A structure value returned by a call.</p>  <p>This data structure is
+   * only used with the deprecated <code>ExecuteSql</code> operation. Use the
    * <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation
    * instead.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/StructValue">AWS
@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::Vector<Value> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
   };
 
 } // namespace Model

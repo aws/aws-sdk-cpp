@@ -605,46 +605,46 @@ namespace Model
   private:
 
     Aws::String m_datasetName;
-    bool m_datasetNameHasBeenSet;
+    bool m_datasetNameHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;
-    bool m_encryptionKeyArnHasBeenSet;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
     EncryptionMode m_encryptionMode;
-    bool m_encryptionModeHasBeenSet;
+    bool m_encryptionModeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     LogSubscription m_logSubscription;
-    bool m_logSubscriptionHasBeenSet;
+    bool m_logSubscriptionHasBeenSet = false;
 
     int m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     int m_maxRetries;
-    bool m_maxRetriesHasBeenSet;
+    bool m_maxRetriesHasBeenSet = false;
 
     S3Location m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
 
     ProfileConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
 
     Aws::Vector<ValidationConfiguration> m_validationConfigurations;
-    bool m_validationConfigurationsHasBeenSet;
+    bool m_validationConfigurationsHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     JobSample m_jobSample;
-    bool m_jobSampleHasBeenSet;
+    bool m_jobSampleHasBeenSet = false;
   };
 
 } // namespace Model

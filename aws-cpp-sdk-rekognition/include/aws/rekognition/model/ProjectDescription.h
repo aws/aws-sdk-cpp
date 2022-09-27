@@ -188,16 +188,16 @@ namespace Model
   private:
 
     Aws::String m_projectArn;
-    bool m_projectArnHasBeenSet;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     ProjectStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<DatasetMetadata> m_datasets;
-    bool m_datasetsHasBeenSet;
+    bool m_datasetsHasBeenSet = false;
   };
 
 } // namespace Model

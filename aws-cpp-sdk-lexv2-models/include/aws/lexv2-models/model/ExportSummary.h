@@ -246,22 +246,22 @@ namespace Model
   private:
 
     Aws::String m_exportId;
-    bool m_exportIdHasBeenSet;
+    bool m_exportIdHasBeenSet = false;
 
     ExportResourceSpecification m_resourceSpecification;
-    bool m_resourceSpecificationHasBeenSet;
+    bool m_resourceSpecificationHasBeenSet = false;
 
     ImportExportFileFormat m_fileFormat;
-    bool m_fileFormatHasBeenSet;
+    bool m_fileFormatHasBeenSet = false;
 
     ExportStatus m_exportStatus;
-    bool m_exportStatusHasBeenSet;
+    bool m_exportStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

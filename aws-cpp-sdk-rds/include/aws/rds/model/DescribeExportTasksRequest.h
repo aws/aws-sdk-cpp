@@ -361,19 +361,19 @@ namespace Model
   private:
 
     Aws::String m_exportTaskIdentifier;
-    bool m_exportTaskIdentifierHasBeenSet;
+    bool m_exportTaskIdentifierHasBeenSet = false;
 
     Aws::String m_sourceArn;
-    bool m_sourceArnHasBeenSet;
+    bool m_sourceArnHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
   };
 
 } // namespace Model

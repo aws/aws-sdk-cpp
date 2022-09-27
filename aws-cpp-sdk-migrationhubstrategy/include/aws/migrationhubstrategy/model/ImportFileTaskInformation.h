@@ -431,37 +431,37 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_importName;
-    bool m_importNameHasBeenSet;
+    bool m_importNameHasBeenSet = false;
 
     Aws::String m_inputS3Bucket;
-    bool m_inputS3BucketHasBeenSet;
+    bool m_inputS3BucketHasBeenSet = false;
 
     Aws::String m_inputS3Key;
-    bool m_inputS3KeyHasBeenSet;
+    bool m_inputS3KeyHasBeenSet = false;
 
     int m_numberOfRecordsFailed;
-    bool m_numberOfRecordsFailedHasBeenSet;
+    bool m_numberOfRecordsFailedHasBeenSet = false;
 
     int m_numberOfRecordsSuccess;
-    bool m_numberOfRecordsSuccessHasBeenSet;
+    bool m_numberOfRecordsSuccessHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     ImportFileTaskStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReportS3Bucket;
-    bool m_statusReportS3BucketHasBeenSet;
+    bool m_statusReportS3BucketHasBeenSet = false;
 
     Aws::String m_statusReportS3Key;
-    bool m_statusReportS3KeyHasBeenSet;
+    bool m_statusReportS3KeyHasBeenSet = false;
   };
 
 } // namespace Model

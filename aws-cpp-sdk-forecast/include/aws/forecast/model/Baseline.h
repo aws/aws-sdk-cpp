@@ -96,7 +96,7 @@ namespace Model
   private:
 
     PredictorBaseline m_predictorBaseline;
-    bool m_predictorBaselineHasBeenSet;
+    bool m_predictorBaselineHasBeenSet = false;
   };
 
 } // namespace Model

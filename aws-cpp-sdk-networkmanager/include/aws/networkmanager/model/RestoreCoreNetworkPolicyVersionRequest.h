@@ -96,10 +96,10 @@ namespace Model
   private:
 
     Aws::String m_coreNetworkId;
-    bool m_coreNetworkIdHasBeenSet;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     int m_policyVersionId;
-    bool m_policyVersionIdHasBeenSet;
+    bool m_policyVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

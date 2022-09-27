@@ -397,16 +397,16 @@ You specify only the
   private:
 
     Aws::String m_copyrightHolder;
-    bool m_copyrightHolderHasBeenSet;
+    bool m_copyrightHolderHasBeenSet = false;
 
     EbuTtDFillLineGapControl m_fillLineGap;
-    bool m_fillLineGapHasBeenSet;
+    bool m_fillLineGapHasBeenSet = false;
 
     Aws::String m_fontFamily;
-    bool m_fontFamilyHasBeenSet;
+    bool m_fontFamilyHasBeenSet = false;
 
     EbuTtDDestinationStyleControl m_styleControl;
-    bool m_styleControlHasBeenSet;
+    bool m_styleControlHasBeenSet = false;
   };
 
 } // namespace Model

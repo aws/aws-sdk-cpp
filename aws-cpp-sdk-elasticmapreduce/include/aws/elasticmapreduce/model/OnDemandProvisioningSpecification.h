@@ -124,10 +124,10 @@ namespace Model
   private:
 
     OnDemandProvisioningAllocationStrategy m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
 
     OnDemandCapacityReservationOptions m_capacityReservationOptions;
-    bool m_capacityReservationOptionsHasBeenSet;
+    bool m_capacityReservationOptionsHasBeenSet = false;
   };
 
 } // namespace Model

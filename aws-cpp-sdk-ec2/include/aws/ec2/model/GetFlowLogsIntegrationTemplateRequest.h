@@ -193,16 +193,16 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_flowLogId;
-    bool m_flowLogIdHasBeenSet;
+    bool m_flowLogIdHasBeenSet = false;
 
     Aws::String m_configDeliveryS3DestinationArn;
-    bool m_configDeliveryS3DestinationArnHasBeenSet;
+    bool m_configDeliveryS3DestinationArnHasBeenSet = false;
 
     IntegrateServices m_integrateServices;
-    bool m_integrateServicesHasBeenSet;
+    bool m_integrateServicesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     Aws::Vector<ExpressionVariable> m_variables;
-    bool m_variablesHasBeenSet;
+    bool m_variablesHasBeenSet = false;
 
     TransformProcessingConfig m_processingConfig;
-    bool m_processingConfigHasBeenSet;
+    bool m_processingConfigHasBeenSet = false;
   };
 
 } // namespace Model

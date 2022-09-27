@@ -393,19 +393,19 @@ namespace Model
   private:
 
     Aws::String m_organizationConfigRuleName;
-    bool m_organizationConfigRuleNameHasBeenSet;
+    bool m_organizationConfigRuleNameHasBeenSet = false;
 
     OrganizationRuleStatus m_organizationRuleStatus;
-    bool m_organizationRuleStatusHasBeenSet;
+    bool m_organizationRuleStatusHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -79,10 +79,10 @@ namespace Model
   private:
 
     Aws::String m_checkName;
-    bool m_checkNameHasBeenSet;
+    bool m_checkNameHasBeenSet = false;
 
     ResourceIdentifier m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

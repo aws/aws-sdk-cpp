@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::Vector<InstanceCapacity> m_availableInstanceCapacity;
-    bool m_availableInstanceCapacityHasBeenSet;
+    bool m_availableInstanceCapacityHasBeenSet = false;
 
     int m_availableVCpus;
-    bool m_availableVCpusHasBeenSet;
+    bool m_availableVCpusHasBeenSet = false;
   };
 
 } // namespace Model

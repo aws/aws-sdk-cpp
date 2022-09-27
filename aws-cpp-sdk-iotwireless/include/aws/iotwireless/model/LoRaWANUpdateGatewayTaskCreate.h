@@ -164,16 +164,16 @@ namespace Model
   private:
 
     Aws::String m_updateSignature;
-    bool m_updateSignatureHasBeenSet;
+    bool m_updateSignatureHasBeenSet = false;
 
     long long m_sigKeyCrc;
-    bool m_sigKeyCrcHasBeenSet;
+    bool m_sigKeyCrcHasBeenSet = false;
 
     LoRaWANGatewayVersion m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     LoRaWANGatewayVersion m_updateVersion;
-    bool m_updateVersionHasBeenSet;
+    bool m_updateVersionHasBeenSet = false;
   };
 
 } // namespace Model

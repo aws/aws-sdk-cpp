@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::String m_s3ModelArtifacts;
-    bool m_s3ModelArtifactsHasBeenSet;
+    bool m_s3ModelArtifactsHasBeenSet = false;
   };
 
 } // namespace Model

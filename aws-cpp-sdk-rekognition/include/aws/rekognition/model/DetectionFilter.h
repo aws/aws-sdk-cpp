@@ -125,13 +125,13 @@ namespace Model
   private:
 
     double m_minConfidence;
-    bool m_minConfidenceHasBeenSet;
+    bool m_minConfidenceHasBeenSet = false;
 
     double m_minBoundingBoxHeight;
-    bool m_minBoundingBoxHeightHasBeenSet;
+    bool m_minBoundingBoxHeightHasBeenSet = false;
 
     double m_minBoundingBoxWidth;
-    bool m_minBoundingBoxWidthHasBeenSet;
+    bool m_minBoundingBoxWidthHasBeenSet = false;
   };
 
 } // namespace Model

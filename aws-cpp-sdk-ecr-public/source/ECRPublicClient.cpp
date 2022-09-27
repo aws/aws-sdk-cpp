@@ -55,33 +55,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "ecr-public";
 static const char* ALLOCATION_TAG = "ECRPublicClient";
 
-
 ECRPublicClient::ECRPublicClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ECRPublicErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ECRPublicErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-ECRPublicClient::ECRPublicClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+ECRPublicClient::ECRPublicClient(const AWSCredentials& credentials,
+                                 const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ECRPublicErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ECRPublicErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 ECRPublicClient::ECRPublicClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                 const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ECRPublicErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ECRPublicErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -93,7 +99,7 @@ ECRPublicClient::~ECRPublicClient()
 
 void ECRPublicClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("ECR PUBLIC");
+  AWSClient::SetServiceClientName("ECR PUBLIC");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -133,12 +139,10 @@ BatchCheckLayerAvailabilityOutcomeCallable ECRPublicClient::BatchCheckLayerAvail
 
 void ECRPublicClient::BatchCheckLayerAvailabilityAsync(const BatchCheckLayerAvailabilityRequest& request, const BatchCheckLayerAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchCheckLayerAvailabilityAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::BatchCheckLayerAvailabilityAsyncHelper(const BatchCheckLayerAvailabilityRequest& request, const BatchCheckLayerAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchCheckLayerAvailability(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchCheckLayerAvailability(request), context);
+    } );
 }
 
 BatchDeleteImageOutcome ECRPublicClient::BatchDeleteImage(const BatchDeleteImageRequest& request) const
@@ -157,12 +161,10 @@ BatchDeleteImageOutcomeCallable ECRPublicClient::BatchDeleteImageCallable(const 
 
 void ECRPublicClient::BatchDeleteImageAsync(const BatchDeleteImageRequest& request, const BatchDeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchDeleteImageAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::BatchDeleteImageAsyncHelper(const BatchDeleteImageRequest& request, const BatchDeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchDeleteImage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDeleteImage(request), context);
+    } );
 }
 
 CompleteLayerUploadOutcome ECRPublicClient::CompleteLayerUpload(const CompleteLayerUploadRequest& request) const
@@ -181,12 +183,10 @@ CompleteLayerUploadOutcomeCallable ECRPublicClient::CompleteLayerUploadCallable(
 
 void ECRPublicClient::CompleteLayerUploadAsync(const CompleteLayerUploadRequest& request, const CompleteLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CompleteLayerUploadAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::CompleteLayerUploadAsyncHelper(const CompleteLayerUploadRequest& request, const CompleteLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CompleteLayerUpload(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CompleteLayerUpload(request), context);
+    } );
 }
 
 CreateRepositoryOutcome ECRPublicClient::CreateRepository(const CreateRepositoryRequest& request) const
@@ -205,12 +205,10 @@ CreateRepositoryOutcomeCallable ECRPublicClient::CreateRepositoryCallable(const 
 
 void ECRPublicClient::CreateRepositoryAsync(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRepositoryAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::CreateRepositoryAsyncHelper(const CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRepository(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRepository(request), context);
+    } );
 }
 
 DeleteRepositoryOutcome ECRPublicClient::DeleteRepository(const DeleteRepositoryRequest& request) const
@@ -229,12 +227,10 @@ DeleteRepositoryOutcomeCallable ECRPublicClient::DeleteRepositoryCallable(const 
 
 void ECRPublicClient::DeleteRepositoryAsync(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRepositoryAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::DeleteRepositoryAsyncHelper(const DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRepository(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRepository(request), context);
+    } );
 }
 
 DeleteRepositoryPolicyOutcome ECRPublicClient::DeleteRepositoryPolicy(const DeleteRepositoryPolicyRequest& request) const
@@ -253,12 +249,10 @@ DeleteRepositoryPolicyOutcomeCallable ECRPublicClient::DeleteRepositoryPolicyCal
 
 void ECRPublicClient::DeleteRepositoryPolicyAsync(const DeleteRepositoryPolicyRequest& request, const DeleteRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRepositoryPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::DeleteRepositoryPolicyAsyncHelper(const DeleteRepositoryPolicyRequest& request, const DeleteRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRepositoryPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRepositoryPolicy(request), context);
+    } );
 }
 
 DescribeImageTagsOutcome ECRPublicClient::DescribeImageTags(const DescribeImageTagsRequest& request) const
@@ -277,12 +271,10 @@ DescribeImageTagsOutcomeCallable ECRPublicClient::DescribeImageTagsCallable(cons
 
 void ECRPublicClient::DescribeImageTagsAsync(const DescribeImageTagsRequest& request, const DescribeImageTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImageTagsAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::DescribeImageTagsAsyncHelper(const DescribeImageTagsRequest& request, const DescribeImageTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeImageTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeImageTags(request), context);
+    } );
 }
 
 DescribeImagesOutcome ECRPublicClient::DescribeImages(const DescribeImagesRequest& request) const
@@ -301,12 +293,10 @@ DescribeImagesOutcomeCallable ECRPublicClient::DescribeImagesCallable(const Desc
 
 void ECRPublicClient::DescribeImagesAsync(const DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeImagesAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::DescribeImagesAsyncHelper(const DescribeImagesRequest& request, const DescribeImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeImages(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeImages(request), context);
+    } );
 }
 
 DescribeRegistriesOutcome ECRPublicClient::DescribeRegistries(const DescribeRegistriesRequest& request) const
@@ -325,12 +315,10 @@ DescribeRegistriesOutcomeCallable ECRPublicClient::DescribeRegistriesCallable(co
 
 void ECRPublicClient::DescribeRegistriesAsync(const DescribeRegistriesRequest& request, const DescribeRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRegistriesAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::DescribeRegistriesAsyncHelper(const DescribeRegistriesRequest& request, const DescribeRegistriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRegistries(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRegistries(request), context);
+    } );
 }
 
 DescribeRepositoriesOutcome ECRPublicClient::DescribeRepositories(const DescribeRepositoriesRequest& request) const
@@ -349,12 +337,10 @@ DescribeRepositoriesOutcomeCallable ECRPublicClient::DescribeRepositoriesCallabl
 
 void ECRPublicClient::DescribeRepositoriesAsync(const DescribeRepositoriesRequest& request, const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRepositoriesAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::DescribeRepositoriesAsyncHelper(const DescribeRepositoriesRequest& request, const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRepositories(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRepositories(request), context);
+    } );
 }
 
 GetAuthorizationTokenOutcome ECRPublicClient::GetAuthorizationToken(const GetAuthorizationTokenRequest& request) const
@@ -373,12 +359,10 @@ GetAuthorizationTokenOutcomeCallable ECRPublicClient::GetAuthorizationTokenCalla
 
 void ECRPublicClient::GetAuthorizationTokenAsync(const GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAuthorizationTokenAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::GetAuthorizationTokenAsyncHelper(const GetAuthorizationTokenRequest& request, const GetAuthorizationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAuthorizationToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAuthorizationToken(request), context);
+    } );
 }
 
 GetRegistryCatalogDataOutcome ECRPublicClient::GetRegistryCatalogData(const GetRegistryCatalogDataRequest& request) const
@@ -397,12 +381,10 @@ GetRegistryCatalogDataOutcomeCallable ECRPublicClient::GetRegistryCatalogDataCal
 
 void ECRPublicClient::GetRegistryCatalogDataAsync(const GetRegistryCatalogDataRequest& request, const GetRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRegistryCatalogDataAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::GetRegistryCatalogDataAsyncHelper(const GetRegistryCatalogDataRequest& request, const GetRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRegistryCatalogData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRegistryCatalogData(request), context);
+    } );
 }
 
 GetRepositoryCatalogDataOutcome ECRPublicClient::GetRepositoryCatalogData(const GetRepositoryCatalogDataRequest& request) const
@@ -421,12 +403,10 @@ GetRepositoryCatalogDataOutcomeCallable ECRPublicClient::GetRepositoryCatalogDat
 
 void ECRPublicClient::GetRepositoryCatalogDataAsync(const GetRepositoryCatalogDataRequest& request, const GetRepositoryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRepositoryCatalogDataAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::GetRepositoryCatalogDataAsyncHelper(const GetRepositoryCatalogDataRequest& request, const GetRepositoryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRepositoryCatalogData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRepositoryCatalogData(request), context);
+    } );
 }
 
 GetRepositoryPolicyOutcome ECRPublicClient::GetRepositoryPolicy(const GetRepositoryPolicyRequest& request) const
@@ -445,12 +425,10 @@ GetRepositoryPolicyOutcomeCallable ECRPublicClient::GetRepositoryPolicyCallable(
 
 void ECRPublicClient::GetRepositoryPolicyAsync(const GetRepositoryPolicyRequest& request, const GetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRepositoryPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::GetRepositoryPolicyAsyncHelper(const GetRepositoryPolicyRequest& request, const GetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRepositoryPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRepositoryPolicy(request), context);
+    } );
 }
 
 InitiateLayerUploadOutcome ECRPublicClient::InitiateLayerUpload(const InitiateLayerUploadRequest& request) const
@@ -469,12 +447,10 @@ InitiateLayerUploadOutcomeCallable ECRPublicClient::InitiateLayerUploadCallable(
 
 void ECRPublicClient::InitiateLayerUploadAsync(const InitiateLayerUploadRequest& request, const InitiateLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InitiateLayerUploadAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::InitiateLayerUploadAsyncHelper(const InitiateLayerUploadRequest& request, const InitiateLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, InitiateLayerUpload(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, InitiateLayerUpload(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome ECRPublicClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -493,12 +469,10 @@ ListTagsForResourceOutcomeCallable ECRPublicClient::ListTagsForResourceCallable(
 
 void ECRPublicClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PutImageOutcome ECRPublicClient::PutImage(const PutImageRequest& request) const
@@ -517,12 +491,10 @@ PutImageOutcomeCallable ECRPublicClient::PutImageCallable(const PutImageRequest&
 
 void ECRPublicClient::PutImageAsync(const PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutImageAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::PutImageAsyncHelper(const PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutImage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutImage(request), context);
+    } );
 }
 
 PutRegistryCatalogDataOutcome ECRPublicClient::PutRegistryCatalogData(const PutRegistryCatalogDataRequest& request) const
@@ -541,12 +513,10 @@ PutRegistryCatalogDataOutcomeCallable ECRPublicClient::PutRegistryCatalogDataCal
 
 void ECRPublicClient::PutRegistryCatalogDataAsync(const PutRegistryCatalogDataRequest& request, const PutRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRegistryCatalogDataAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::PutRegistryCatalogDataAsyncHelper(const PutRegistryCatalogDataRequest& request, const PutRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutRegistryCatalogData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutRegistryCatalogData(request), context);
+    } );
 }
 
 PutRepositoryCatalogDataOutcome ECRPublicClient::PutRepositoryCatalogData(const PutRepositoryCatalogDataRequest& request) const
@@ -565,12 +535,10 @@ PutRepositoryCatalogDataOutcomeCallable ECRPublicClient::PutRepositoryCatalogDat
 
 void ECRPublicClient::PutRepositoryCatalogDataAsync(const PutRepositoryCatalogDataRequest& request, const PutRepositoryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutRepositoryCatalogDataAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::PutRepositoryCatalogDataAsyncHelper(const PutRepositoryCatalogDataRequest& request, const PutRepositoryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutRepositoryCatalogData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutRepositoryCatalogData(request), context);
+    } );
 }
 
 SetRepositoryPolicyOutcome ECRPublicClient::SetRepositoryPolicy(const SetRepositoryPolicyRequest& request) const
@@ -589,12 +557,10 @@ SetRepositoryPolicyOutcomeCallable ECRPublicClient::SetRepositoryPolicyCallable(
 
 void ECRPublicClient::SetRepositoryPolicyAsync(const SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetRepositoryPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::SetRepositoryPolicyAsyncHelper(const SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetRepositoryPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetRepositoryPolicy(request), context);
+    } );
 }
 
 TagResourceOutcome ECRPublicClient::TagResource(const TagResourceRequest& request) const
@@ -613,12 +579,10 @@ TagResourceOutcomeCallable ECRPublicClient::TagResourceCallable(const TagResourc
 
 void ECRPublicClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome ECRPublicClient::UntagResource(const UntagResourceRequest& request) const
@@ -637,12 +601,10 @@ UntagResourceOutcomeCallable ECRPublicClient::UntagResourceCallable(const UntagR
 
 void ECRPublicClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UploadLayerPartOutcome ECRPublicClient::UploadLayerPart(const UploadLayerPartRequest& request) const
@@ -661,11 +623,9 @@ UploadLayerPartOutcomeCallable ECRPublicClient::UploadLayerPartCallable(const Up
 
 void ECRPublicClient::UploadLayerPartAsync(const UploadLayerPartRequest& request, const UploadLayerPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UploadLayerPartAsyncHelper( request, handler, context ); } );
-}
-
-void ECRPublicClient::UploadLayerPartAsyncHelper(const UploadLayerPartRequest& request, const UploadLayerPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UploadLayerPart(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UploadLayerPart(request), context);
+    } );
 }
 

@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::Vector<Aws::String>> m_matchingAttributesList;
-    bool m_matchingAttributesListHasBeenSet;
+    bool m_matchingAttributesListHasBeenSet = false;
   };
 
 } // namespace Model

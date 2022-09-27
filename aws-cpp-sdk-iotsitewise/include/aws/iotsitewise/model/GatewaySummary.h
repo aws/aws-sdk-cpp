@@ -271,22 +271,22 @@ namespace Model
   private:
 
     Aws::String m_gatewayId;
-    bool m_gatewayIdHasBeenSet;
+    bool m_gatewayIdHasBeenSet = false;
 
     Aws::String m_gatewayName;
-    bool m_gatewayNameHasBeenSet;
+    bool m_gatewayNameHasBeenSet = false;
 
     GatewayPlatform m_gatewayPlatform;
-    bool m_gatewayPlatformHasBeenSet;
+    bool m_gatewayPlatformHasBeenSet = false;
 
     Aws::Vector<GatewayCapabilitySummary> m_gatewayCapabilitySummaries;
-    bool m_gatewayCapabilitySummariesHasBeenSet;
+    bool m_gatewayCapabilitySummariesHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateDate;
-    bool m_lastUpdateDateHasBeenSet;
+    bool m_lastUpdateDateHasBeenSet = false;
   };
 
 } // namespace Model

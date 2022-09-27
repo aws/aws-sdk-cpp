@@ -79,10 +79,10 @@ namespace Model
   private:
 
     SupportedRfRegion m_rfRegion;
-    bool m_rfRegionHasBeenSet;
+    bool m_rfRegionHasBeenSet = false;
 
     DlClass m_dlClass;
-    bool m_dlClassHasBeenSet;
+    bool m_dlClassHasBeenSet = false;
   };
 
 } // namespace Model

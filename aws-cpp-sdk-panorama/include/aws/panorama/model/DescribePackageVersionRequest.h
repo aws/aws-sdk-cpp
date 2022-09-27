@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::String m_packageId;
-    bool m_packageIdHasBeenSet;
+    bool m_packageIdHasBeenSet = false;
 
     Aws::String m_packageVersion;
-    bool m_packageVersionHasBeenSet;
+    bool m_packageVersionHasBeenSet = false;
 
     Aws::String m_patchVersion;
-    bool m_patchVersionHasBeenSet;
+    bool m_patchVersionHasBeenSet = false;
   };
 
 } // namespace Model

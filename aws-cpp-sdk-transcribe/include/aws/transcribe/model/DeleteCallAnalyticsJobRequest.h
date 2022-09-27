@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_callAnalyticsJobName;
-    bool m_callAnalyticsJobNameHasBeenSet;
+    bool m_callAnalyticsJobNameHasBeenSet = false;
   };
 
 } // namespace Model

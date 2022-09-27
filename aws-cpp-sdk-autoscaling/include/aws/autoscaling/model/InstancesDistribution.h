@@ -51,7 +51,8 @@ namespace Model
      * remaining capacity using the second priority instance type, and so on.</p>
      * <p>Default: <code>lowest-price</code> for Auto Scaling groups that specify
      * <a>InstanceRequirements</a> in the overrides and <code>prioritized</code> for
-     * Auto Scaling groups that don't.</p>
+     * Auto Scaling groups that don't.</p> <p>Valid values: <code>lowest-price</code> |
+     * <code>prioritized</code> </p>
      */
     inline const Aws::String& GetOnDemandAllocationStrategy() const{ return m_onDemandAllocationStrategy; }
 
@@ -66,7 +67,8 @@ namespace Model
      * remaining capacity using the second priority instance type, and so on.</p>
      * <p>Default: <code>lowest-price</code> for Auto Scaling groups that specify
      * <a>InstanceRequirements</a> in the overrides and <code>prioritized</code> for
-     * Auto Scaling groups that don't.</p>
+     * Auto Scaling groups that don't.</p> <p>Valid values: <code>lowest-price</code> |
+     * <code>prioritized</code> </p>
      */
     inline bool OnDemandAllocationStrategyHasBeenSet() const { return m_onDemandAllocationStrategyHasBeenSet; }
 
@@ -81,7 +83,8 @@ namespace Model
      * remaining capacity using the second priority instance type, and so on.</p>
      * <p>Default: <code>lowest-price</code> for Auto Scaling groups that specify
      * <a>InstanceRequirements</a> in the overrides and <code>prioritized</code> for
-     * Auto Scaling groups that don't.</p>
+     * Auto Scaling groups that don't.</p> <p>Valid values: <code>lowest-price</code> |
+     * <code>prioritized</code> </p>
      */
     inline void SetOnDemandAllocationStrategy(const Aws::String& value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy = value; }
 
@@ -96,7 +99,8 @@ namespace Model
      * remaining capacity using the second priority instance type, and so on.</p>
      * <p>Default: <code>lowest-price</code> for Auto Scaling groups that specify
      * <a>InstanceRequirements</a> in the overrides and <code>prioritized</code> for
-     * Auto Scaling groups that don't.</p>
+     * Auto Scaling groups that don't.</p> <p>Valid values: <code>lowest-price</code> |
+     * <code>prioritized</code> </p>
      */
     inline void SetOnDemandAllocationStrategy(Aws::String&& value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy = std::move(value); }
 
@@ -111,7 +115,8 @@ namespace Model
      * remaining capacity using the second priority instance type, and so on.</p>
      * <p>Default: <code>lowest-price</code> for Auto Scaling groups that specify
      * <a>InstanceRequirements</a> in the overrides and <code>prioritized</code> for
-     * Auto Scaling groups that don't.</p>
+     * Auto Scaling groups that don't.</p> <p>Valid values: <code>lowest-price</code> |
+     * <code>prioritized</code> </p>
      */
     inline void SetOnDemandAllocationStrategy(const char* value) { m_onDemandAllocationStrategyHasBeenSet = true; m_onDemandAllocationStrategy.assign(value); }
 
@@ -126,7 +131,8 @@ namespace Model
      * remaining capacity using the second priority instance type, and so on.</p>
      * <p>Default: <code>lowest-price</code> for Auto Scaling groups that specify
      * <a>InstanceRequirements</a> in the overrides and <code>prioritized</code> for
-     * Auto Scaling groups that don't.</p>
+     * Auto Scaling groups that don't.</p> <p>Valid values: <code>lowest-price</code> |
+     * <code>prioritized</code> </p>
      */
     inline InstancesDistribution& WithOnDemandAllocationStrategy(const Aws::String& value) { SetOnDemandAllocationStrategy(value); return *this;}
 
@@ -141,7 +147,8 @@ namespace Model
      * remaining capacity using the second priority instance type, and so on.</p>
      * <p>Default: <code>lowest-price</code> for Auto Scaling groups that specify
      * <a>InstanceRequirements</a> in the overrides and <code>prioritized</code> for
-     * Auto Scaling groups that don't.</p>
+     * Auto Scaling groups that don't.</p> <p>Valid values: <code>lowest-price</code> |
+     * <code>prioritized</code> </p>
      */
     inline InstancesDistribution& WithOnDemandAllocationStrategy(Aws::String&& value) { SetOnDemandAllocationStrategy(std::move(value)); return *this;}
 
@@ -156,7 +163,8 @@ namespace Model
      * remaining capacity using the second priority instance type, and so on.</p>
      * <p>Default: <code>lowest-price</code> for Auto Scaling groups that specify
      * <a>InstanceRequirements</a> in the overrides and <code>prioritized</code> for
-     * Auto Scaling groups that don't.</p>
+     * Auto Scaling groups that don't.</p> <p>Valid values: <code>lowest-price</code> |
+     * <code>prioritized</code> </p>
      */
     inline InstancesDistribution& WithOnDemandAllocationStrategy(const char* value) { SetOnDemandAllocationStrategy(value); return *this;}
 
@@ -255,7 +263,9 @@ namespace Model
      * in the list of launch template overrides from highest to lowest priority (from
      * first to last in the list). Amazon EC2 Auto Scaling honors the instance type
      * priorities on a best-effort basis but optimizes for capacity first. </p>
-     * <p>Default: <code>lowest-price</code> </p>
+     * <p>Default: <code>lowest-price</code> </p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> |
+     * <code>capacity-optimized-prioritized</code> </p>
      */
     inline const Aws::String& GetSpotAllocationStrategy() const{ return m_spotAllocationStrategy; }
 
@@ -271,7 +281,9 @@ namespace Model
      * in the list of launch template overrides from highest to lowest priority (from
      * first to last in the list). Amazon EC2 Auto Scaling honors the instance type
      * priorities on a best-effort basis but optimizes for capacity first. </p>
-     * <p>Default: <code>lowest-price</code> </p>
+     * <p>Default: <code>lowest-price</code> </p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> |
+     * <code>capacity-optimized-prioritized</code> </p>
      */
     inline bool SpotAllocationStrategyHasBeenSet() const { return m_spotAllocationStrategyHasBeenSet; }
 
@@ -287,7 +299,9 @@ namespace Model
      * in the list of launch template overrides from highest to lowest priority (from
      * first to last in the list). Amazon EC2 Auto Scaling honors the instance type
      * priorities on a best-effort basis but optimizes for capacity first. </p>
-     * <p>Default: <code>lowest-price</code> </p>
+     * <p>Default: <code>lowest-price</code> </p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> |
+     * <code>capacity-optimized-prioritized</code> </p>
      */
     inline void SetSpotAllocationStrategy(const Aws::String& value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy = value; }
 
@@ -303,7 +317,9 @@ namespace Model
      * in the list of launch template overrides from highest to lowest priority (from
      * first to last in the list). Amazon EC2 Auto Scaling honors the instance type
      * priorities on a best-effort basis but optimizes for capacity first. </p>
-     * <p>Default: <code>lowest-price</code> </p>
+     * <p>Default: <code>lowest-price</code> </p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> |
+     * <code>capacity-optimized-prioritized</code> </p>
      */
     inline void SetSpotAllocationStrategy(Aws::String&& value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy = std::move(value); }
 
@@ -319,7 +335,9 @@ namespace Model
      * in the list of launch template overrides from highest to lowest priority (from
      * first to last in the list). Amazon EC2 Auto Scaling honors the instance type
      * priorities on a best-effort basis but optimizes for capacity first. </p>
-     * <p>Default: <code>lowest-price</code> </p>
+     * <p>Default: <code>lowest-price</code> </p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> |
+     * <code>capacity-optimized-prioritized</code> </p>
      */
     inline void SetSpotAllocationStrategy(const char* value) { m_spotAllocationStrategyHasBeenSet = true; m_spotAllocationStrategy.assign(value); }
 
@@ -335,7 +353,9 @@ namespace Model
      * in the list of launch template overrides from highest to lowest priority (from
      * first to last in the list). Amazon EC2 Auto Scaling honors the instance type
      * priorities on a best-effort basis but optimizes for capacity first. </p>
-     * <p>Default: <code>lowest-price</code> </p>
+     * <p>Default: <code>lowest-price</code> </p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> |
+     * <code>capacity-optimized-prioritized</code> </p>
      */
     inline InstancesDistribution& WithSpotAllocationStrategy(const Aws::String& value) { SetSpotAllocationStrategy(value); return *this;}
 
@@ -351,7 +371,9 @@ namespace Model
      * in the list of launch template overrides from highest to lowest priority (from
      * first to last in the list). Amazon EC2 Auto Scaling honors the instance type
      * priorities on a best-effort basis but optimizes for capacity first. </p>
-     * <p>Default: <code>lowest-price</code> </p>
+     * <p>Default: <code>lowest-price</code> </p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> |
+     * <code>capacity-optimized-prioritized</code> </p>
      */
     inline InstancesDistribution& WithSpotAllocationStrategy(Aws::String&& value) { SetSpotAllocationStrategy(std::move(value)); return *this;}
 
@@ -367,7 +389,9 @@ namespace Model
      * in the list of launch template overrides from highest to lowest priority (from
      * first to last in the list). Amazon EC2 Auto Scaling honors the instance type
      * priorities on a best-effort basis but optimizes for capacity first. </p>
-     * <p>Default: <code>lowest-price</code> </p>
+     * <p>Default: <code>lowest-price</code> </p> <p>Valid values:
+     * <code>lowest-price</code> | <code>capacity-optimized</code> |
+     * <code>capacity-optimized-prioritized</code> </p>
      */
     inline InstancesDistribution& WithSpotAllocationStrategy(const char* value) { SetSpotAllocationStrategy(value); return *this;}
 
@@ -414,7 +438,9 @@ namespace Model
      * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
      * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
      * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>
+     * for the value.</p>  <p>If your maximum price is lower than the Spot
+     * price for the instance types that you selected, your Spot Instances are not
+     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline const Aws::String& GetSpotMaxPrice() const{ return m_spotMaxPrice; }
 
@@ -423,7 +449,9 @@ namespace Model
      * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
      * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
      * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>
+     * for the value.</p>  <p>If your maximum price is lower than the Spot
+     * price for the instance types that you selected, your Spot Instances are not
+     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline bool SpotMaxPriceHasBeenSet() const { return m_spotMaxPriceHasBeenSet; }
 
@@ -432,7 +460,9 @@ namespace Model
      * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
      * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
      * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>
+     * for the value.</p>  <p>If your maximum price is lower than the Spot
+     * price for the instance types that you selected, your Spot Instances are not
+     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline void SetSpotMaxPrice(const Aws::String& value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice = value; }
 
@@ -441,7 +471,9 @@ namespace Model
      * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
      * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
      * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>
+     * for the value.</p>  <p>If your maximum price is lower than the Spot
+     * price for the instance types that you selected, your Spot Instances are not
+     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline void SetSpotMaxPrice(Aws::String&& value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice = std::move(value); }
 
@@ -450,7 +482,9 @@ namespace Model
      * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
      * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
      * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>
+     * for the value.</p>  <p>If your maximum price is lower than the Spot
+     * price for the instance types that you selected, your Spot Instances are not
+     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline void SetSpotMaxPrice(const char* value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice.assign(value); }
 
@@ -459,7 +493,9 @@ namespace Model
      * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
      * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
      * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>
+     * for the value.</p>  <p>If your maximum price is lower than the Spot
+     * price for the instance types that you selected, your Spot Instances are not
+     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(const Aws::String& value) { SetSpotMaxPrice(value); return *this;}
 
@@ -468,7 +504,9 @@ namespace Model
      * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
      * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
      * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>
+     * for the value.</p>  <p>If your maximum price is lower than the Spot
+     * price for the instance types that you selected, your Spot Instances are not
+     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(Aws::String&& value) { SetSpotMaxPrice(std::move(value)); return *this;}
 
@@ -477,29 +515,31 @@ namespace Model
      * Instance. If you keep the value at its default (unspecified), Amazon EC2 Auto
      * Scaling uses the On-Demand price as the maximum Spot price. To remove a value
      * that you previously set, include the property but specify an empty string ("")
-     * for the value.</p>
+     * for the value.</p>  <p>If your maximum price is lower than the Spot
+     * price for the instance types that you selected, your Spot Instances are not
+     * launched.</p>  <p>Valid Range: Minimum value of 0.001</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(const char* value) { SetSpotMaxPrice(value); return *this;}
 
   private:
 
     Aws::String m_onDemandAllocationStrategy;
-    bool m_onDemandAllocationStrategyHasBeenSet;
+    bool m_onDemandAllocationStrategyHasBeenSet = false;
 
     int m_onDemandBaseCapacity;
-    bool m_onDemandBaseCapacityHasBeenSet;
+    bool m_onDemandBaseCapacityHasBeenSet = false;
 
     int m_onDemandPercentageAboveBaseCapacity;
-    bool m_onDemandPercentageAboveBaseCapacityHasBeenSet;
+    bool m_onDemandPercentageAboveBaseCapacityHasBeenSet = false;
 
     Aws::String m_spotAllocationStrategy;
-    bool m_spotAllocationStrategyHasBeenSet;
+    bool m_spotAllocationStrategyHasBeenSet = false;
 
     int m_spotInstancePools;
-    bool m_spotInstancePoolsHasBeenSet;
+    bool m_spotInstancePoolsHasBeenSet = false;
 
     Aws::String m_spotMaxPrice;
-    bool m_spotMaxPriceHasBeenSet;
+    bool m_spotMaxPriceHasBeenSet = false;
   };
 
 } // namespace Model

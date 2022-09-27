@@ -199,13 +199,13 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     Aws::String m_resourcePolicy;
-    bool m_resourcePolicyHasBeenSet;
+    bool m_resourcePolicyHasBeenSet = false;
 
     bool m_blockPublicPolicy;
-    bool m_blockPublicPolicyHasBeenSet;
+    bool m_blockPublicPolicyHasBeenSet = false;
   };
 
 } // namespace Model

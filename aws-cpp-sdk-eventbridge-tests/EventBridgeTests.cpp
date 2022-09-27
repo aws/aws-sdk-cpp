@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 
 #include <aws/core/auth/AWSCredentials.h>
@@ -86,7 +87,7 @@ TEST_F(EventBridgeTests, TestPutEventsBasic)
 
     //request.SetEndpointId("awscppsdk");
     Aws::EventBridge::Model::PutEventsOutcome outcome = eventBridgeClient.PutEvents(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(eventIdToReply, outcome.GetResult().GetEntries()[0].GetEventId());
 
     auto requestsMade = mockHttpClient->GetAllRequestsMade();
@@ -112,7 +113,7 @@ TEST_F(EventBridgeTests, TestPutEventsMultiRegional)
 
     request.SetEndpointId("awscppsdk");
     Aws::EventBridge::Model::PutEventsOutcome outcome = eventBridgeClient.PutEvents(request);
-    ASSERT_TRUE(outcome.IsSuccess());
+    AWS_ASSERT_SUCCESS(outcome);
     ASSERT_EQ(eventIdToReply, outcome.GetResult().GetEntries()[0].GetEventId());
 
     auto requestsMade = mockHttpClient->GetAllRequestsMade();
@@ -195,7 +196,7 @@ TEST_F(EventBridgeTests, TestPutEventsEndpointTests)
             ASSERT_TRUE(mockHttpClient->GetAllRequestsMade().empty()) << "Expected no outgoing request at test case #" << tcIdx;;
             ASSERT_EQ(Aws::String(testCase.expectedException), outcome.GetError().GetMessage());
         } else {
-            ASSERT_TRUE(outcome.IsSuccess()) << "Expected success outcome at test case #" << tcIdx;
+            AWS_ASSERT_SUCCESS(outcome) << "; Expected success outcome at test case #" << tcIdx;
             ASSERT_EQ(eventIdToReply, outcome.GetResult().GetEntries()[0].GetEventId());
 
             auto requestsMade = mockHttpClient->GetAllRequestsMade();

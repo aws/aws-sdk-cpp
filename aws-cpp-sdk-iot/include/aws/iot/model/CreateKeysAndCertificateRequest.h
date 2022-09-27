@@ -65,7 +65,7 @@ namespace Model
   private:
 
     bool m_setAsActive;
-    bool m_setAsActiveHasBeenSet;
+    bool m_setAsActiveHasBeenSet = false;
   };
 
 } // namespace Model

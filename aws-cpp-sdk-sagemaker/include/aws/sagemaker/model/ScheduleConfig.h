@@ -217,7 +217,7 @@ namespace Model
   private:
 
     Aws::String m_scheduleExpression;
-    bool m_scheduleExpressionHasBeenSet;
+    bool m_scheduleExpressionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -53,7 +53,7 @@ namespace Model
   private:
 
     BrokerLogs m_brokerLogs;
-    bool m_brokerLogsHasBeenSet;
+    bool m_brokerLogsHasBeenSet = false;
   };
 
 } // namespace Model

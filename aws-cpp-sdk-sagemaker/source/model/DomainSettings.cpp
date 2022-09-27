@@ -20,13 +20,17 @@ namespace Model
 
 DomainSettings::DomainSettings() : 
     m_securityGroupIdsHasBeenSet(false),
-    m_rStudioServerProDomainSettingsHasBeenSet(false)
+    m_rStudioServerProDomainSettingsHasBeenSet(false),
+    m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
+    m_executionRoleIdentityConfigHasBeenSet(false)
 {
 }
 
 DomainSettings::DomainSettings(JsonView jsonValue) : 
     m_securityGroupIdsHasBeenSet(false),
-    m_rStudioServerProDomainSettingsHasBeenSet(false)
+    m_rStudioServerProDomainSettingsHasBeenSet(false),
+    m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
+    m_executionRoleIdentityConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +52,13 @@ DomainSettings& DomainSettings::operator =(JsonView jsonValue)
     m_rStudioServerProDomainSettings = jsonValue.GetObject("RStudioServerProDomainSettings");
 
     m_rStudioServerProDomainSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExecutionRoleIdentityConfig"))
+  {
+    m_executionRoleIdentityConfig = ExecutionRoleIdentityConfigMapper::GetExecutionRoleIdentityConfigForName(jsonValue.GetString("ExecutionRoleIdentityConfig"));
+
+    m_executionRoleIdentityConfigHasBeenSet = true;
   }
 
   return *this;
@@ -72,6 +83,11 @@ JsonValue DomainSettings::Jsonize() const
   {
    payload.WithObject("RStudioServerProDomainSettings", m_rStudioServerProDomainSettings.Jsonize());
 
+  }
+
+  if(m_executionRoleIdentityConfigHasBeenSet)
+  {
+   payload.WithString("ExecutionRoleIdentityConfig", ExecutionRoleIdentityConfigMapper::GetNameForExecutionRoleIdentityConfig(m_executionRoleIdentityConfig));
   }
 
   return payload;

@@ -8,6 +8,7 @@
 #include <aws/chime-sdk-media-pipelines/model/AudioArtifactsConfiguration.h>
 #include <aws/chime-sdk-media-pipelines/model/VideoArtifactsConfiguration.h>
 #include <aws/chime-sdk-media-pipelines/model/ContentArtifactsConfiguration.h>
+#include <aws/chime-sdk-media-pipelines/model/CompositedVideoArtifactsConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -131,16 +132,50 @@ namespace Model
      */
     inline ArtifactsConfiguration& WithContent(ContentArtifactsConfiguration&& value) { SetContent(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enables video compositing.</p>
+     */
+    inline const CompositedVideoArtifactsConfiguration& GetCompositedVideo() const{ return m_compositedVideo; }
+
+    /**
+     * <p>Enables video compositing.</p>
+     */
+    inline bool CompositedVideoHasBeenSet() const { return m_compositedVideoHasBeenSet; }
+
+    /**
+     * <p>Enables video compositing.</p>
+     */
+    inline void SetCompositedVideo(const CompositedVideoArtifactsConfiguration& value) { m_compositedVideoHasBeenSet = true; m_compositedVideo = value; }
+
+    /**
+     * <p>Enables video compositing.</p>
+     */
+    inline void SetCompositedVideo(CompositedVideoArtifactsConfiguration&& value) { m_compositedVideoHasBeenSet = true; m_compositedVideo = std::move(value); }
+
+    /**
+     * <p>Enables video compositing.</p>
+     */
+    inline ArtifactsConfiguration& WithCompositedVideo(const CompositedVideoArtifactsConfiguration& value) { SetCompositedVideo(value); return *this;}
+
+    /**
+     * <p>Enables video compositing.</p>
+     */
+    inline ArtifactsConfiguration& WithCompositedVideo(CompositedVideoArtifactsConfiguration&& value) { SetCompositedVideo(std::move(value)); return *this;}
+
   private:
 
     AudioArtifactsConfiguration m_audio;
-    bool m_audioHasBeenSet;
+    bool m_audioHasBeenSet = false;
 
     VideoArtifactsConfiguration m_video;
-    bool m_videoHasBeenSet;
+    bool m_videoHasBeenSet = false;
 
     ContentArtifactsConfiguration m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
+
+    CompositedVideoArtifactsConfiguration m_compositedVideo;
+    bool m_compositedVideoHasBeenSet = false;
   };
 
 } // namespace Model

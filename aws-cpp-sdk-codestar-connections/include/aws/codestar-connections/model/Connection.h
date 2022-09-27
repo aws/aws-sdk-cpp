@@ -325,22 +325,22 @@ namespace Model
   private:
 
     Aws::String m_connectionName;
-    bool m_connectionNameHasBeenSet;
+    bool m_connectionNameHasBeenSet = false;
 
     Aws::String m_connectionArn;
-    bool m_connectionArnHasBeenSet;
+    bool m_connectionArnHasBeenSet = false;
 
     ProviderType m_providerType;
-    bool m_providerTypeHasBeenSet;
+    bool m_providerTypeHasBeenSet = false;
 
     Aws::String m_ownerAccountId;
-    bool m_ownerAccountIdHasBeenSet;
+    bool m_ownerAccountIdHasBeenSet = false;
 
     ConnectionStatus m_connectionStatus;
-    bool m_connectionStatusHasBeenSet;
+    bool m_connectionStatusHasBeenSet = false;
 
     Aws::String m_hostArn;
-    bool m_hostArnHasBeenSet;
+    bool m_hostArnHasBeenSet = false;
   };
 
 } // namespace Model

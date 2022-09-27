@@ -304,19 +304,19 @@ namespace Model
   private:
 
     AgentOrchestrationConfig m_agentOrchestrationConfig;
-    bool m_agentOrchestrationConfigHasBeenSet;
+    bool m_agentOrchestrationConfigHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     ComputePlatform m_computePlatform;
-    bool m_computePlatformHasBeenSet;
+    bool m_computePlatformHasBeenSet = false;
 
     Aws::String m_profilingGroupName;
-    bool m_profilingGroupNameHasBeenSet;
+    bool m_profilingGroupNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

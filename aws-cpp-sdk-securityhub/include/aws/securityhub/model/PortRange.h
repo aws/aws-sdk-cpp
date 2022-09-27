@@ -79,10 +79,10 @@ namespace Model
   private:
 
     int m_begin;
-    bool m_beginHasBeenSet;
+    bool m_beginHasBeenSet = false;
 
     int m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
   };
 
 } // namespace Model

@@ -164,10 +164,10 @@ namespace Model
   private:
 
     Aws::Vector<StatelessRule> m_statelessRules;
-    bool m_statelessRulesHasBeenSet;
+    bool m_statelessRulesHasBeenSet = false;
 
     Aws::Vector<CustomAction> m_customActions;
-    bool m_customActionsHasBeenSet;
+    bool m_customActionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -134,7 +134,7 @@ namespace Model
   private:
 
     Aws::String m_repositoryCredentialsProviderArn;
-    bool m_repositoryCredentialsProviderArnHasBeenSet;
+    bool m_repositoryCredentialsProviderArnHasBeenSet = false;
   };
 
 } // namespace Model

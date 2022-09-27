@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::Vector<OriginationRoute> m_routes;
-    bool m_routesHasBeenSet;
+    bool m_routesHasBeenSet = false;
 
     bool m_disabled;
-    bool m_disabledHasBeenSet;
+    bool m_disabledHasBeenSet = false;
   };
 
 } // namespace Model

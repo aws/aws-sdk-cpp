@@ -425,19 +425,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     VPC m_vPC;
-    bool m_vPCHasBeenSet;
+    bool m_vPCHasBeenSet = false;
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     HostedZoneConfig m_hostedZoneConfig;
-    bool m_hostedZoneConfigHasBeenSet;
+    bool m_hostedZoneConfigHasBeenSet = false;
 
     Aws::String m_delegationSetId;
-    bool m_delegationSetIdHasBeenSet;
+    bool m_delegationSetIdHasBeenSet = false;
   };
 
 } // namespace Model

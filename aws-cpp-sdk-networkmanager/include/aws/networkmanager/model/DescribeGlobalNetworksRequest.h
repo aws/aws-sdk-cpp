@@ -149,13 +149,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_globalNetworkIds;
-    bool m_globalNetworkIdsHasBeenSet;
+    bool m_globalNetworkIdsHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

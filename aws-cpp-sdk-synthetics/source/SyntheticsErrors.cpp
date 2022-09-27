@@ -19,7 +19,11 @@ namespace SyntheticsErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
+static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
+static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int REQUEST_ENTITY_TOO_LARGE_HASH = HashingUtils::HashString("RequestEntityTooLargeException");
 
 
@@ -31,9 +35,25 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::CONFLICT), false);
   }
+  else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::SERVICE_QUOTA_EXCEEDED), false);
+  }
+  else if (hashCode == NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::NOT_FOUND), false);
+  }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::INTERNAL_SERVER), false);
+  }
+  else if (hashCode == TOO_MANY_REQUESTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::TOO_MANY_REQUESTS), true);
+  }
+  else if (hashCode == BAD_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SyntheticsErrors::BAD_REQUEST), false);
   }
   else if (hashCode == REQUEST_ENTITY_TOO_LARGE_HASH)
   {

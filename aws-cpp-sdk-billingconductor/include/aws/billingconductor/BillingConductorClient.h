@@ -5,208 +5,15 @@
 
 #pragma once
 #include <aws/billingconductor/BillingConductor_EXPORTS.h>
-#include <aws/billingconductor/BillingConductorErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/billingconductor/model/AssociateAccountsResult.h>
-#include <aws/billingconductor/model/AssociatePricingRulesResult.h>
-#include <aws/billingconductor/model/BatchAssociateResourcesToCustomLineItemResult.h>
-#include <aws/billingconductor/model/BatchDisassociateResourcesFromCustomLineItemResult.h>
-#include <aws/billingconductor/model/CreateBillingGroupResult.h>
-#include <aws/billingconductor/model/CreateCustomLineItemResult.h>
-#include <aws/billingconductor/model/CreatePricingPlanResult.h>
-#include <aws/billingconductor/model/CreatePricingRuleResult.h>
-#include <aws/billingconductor/model/DeleteBillingGroupResult.h>
-#include <aws/billingconductor/model/DeleteCustomLineItemResult.h>
-#include <aws/billingconductor/model/DeletePricingPlanResult.h>
-#include <aws/billingconductor/model/DeletePricingRuleResult.h>
-#include <aws/billingconductor/model/DisassociateAccountsResult.h>
-#include <aws/billingconductor/model/DisassociatePricingRulesResult.h>
-#include <aws/billingconductor/model/ListAccountAssociationsResult.h>
-#include <aws/billingconductor/model/ListBillingGroupCostReportsResult.h>
-#include <aws/billingconductor/model/ListBillingGroupsResult.h>
-#include <aws/billingconductor/model/ListCustomLineItemsResult.h>
-#include <aws/billingconductor/model/ListPricingPlansResult.h>
-#include <aws/billingconductor/model/ListPricingPlansAssociatedWithPricingRuleResult.h>
-#include <aws/billingconductor/model/ListPricingRulesResult.h>
-#include <aws/billingconductor/model/ListPricingRulesAssociatedToPricingPlanResult.h>
-#include <aws/billingconductor/model/ListResourcesAssociatedToCustomLineItemResult.h>
-#include <aws/billingconductor/model/ListTagsForResourceResult.h>
-#include <aws/billingconductor/model/TagResourceResult.h>
-#include <aws/billingconductor/model/UntagResourceResult.h>
-#include <aws/billingconductor/model/UpdateBillingGroupResult.h>
-#include <aws/billingconductor/model/UpdateCustomLineItemResult.h>
-#include <aws/billingconductor/model/UpdatePricingPlanResult.h>
-#include <aws/billingconductor/model/UpdatePricingRuleResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/billingconductor/BillingConductorServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace BillingConductor
 {
-
-namespace Model
-{
-        class AssociateAccountsRequest;
-        class AssociatePricingRulesRequest;
-        class BatchAssociateResourcesToCustomLineItemRequest;
-        class BatchDisassociateResourcesFromCustomLineItemRequest;
-        class CreateBillingGroupRequest;
-        class CreateCustomLineItemRequest;
-        class CreatePricingPlanRequest;
-        class CreatePricingRuleRequest;
-        class DeleteBillingGroupRequest;
-        class DeleteCustomLineItemRequest;
-        class DeletePricingPlanRequest;
-        class DeletePricingRuleRequest;
-        class DisassociateAccountsRequest;
-        class DisassociatePricingRulesRequest;
-        class ListAccountAssociationsRequest;
-        class ListBillingGroupCostReportsRequest;
-        class ListBillingGroupsRequest;
-        class ListCustomLineItemsRequest;
-        class ListPricingPlansRequest;
-        class ListPricingPlansAssociatedWithPricingRuleRequest;
-        class ListPricingRulesRequest;
-        class ListPricingRulesAssociatedToPricingPlanRequest;
-        class ListResourcesAssociatedToCustomLineItemRequest;
-        class ListTagsForResourceRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateBillingGroupRequest;
-        class UpdateCustomLineItemRequest;
-        class UpdatePricingPlanRequest;
-        class UpdatePricingRuleRequest;
-
-        typedef Aws::Utils::Outcome<AssociateAccountsResult, BillingConductorError> AssociateAccountsOutcome;
-        typedef Aws::Utils::Outcome<AssociatePricingRulesResult, BillingConductorError> AssociatePricingRulesOutcome;
-        typedef Aws::Utils::Outcome<BatchAssociateResourcesToCustomLineItemResult, BillingConductorError> BatchAssociateResourcesToCustomLineItemOutcome;
-        typedef Aws::Utils::Outcome<BatchDisassociateResourcesFromCustomLineItemResult, BillingConductorError> BatchDisassociateResourcesFromCustomLineItemOutcome;
-        typedef Aws::Utils::Outcome<CreateBillingGroupResult, BillingConductorError> CreateBillingGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateCustomLineItemResult, BillingConductorError> CreateCustomLineItemOutcome;
-        typedef Aws::Utils::Outcome<CreatePricingPlanResult, BillingConductorError> CreatePricingPlanOutcome;
-        typedef Aws::Utils::Outcome<CreatePricingRuleResult, BillingConductorError> CreatePricingRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteBillingGroupResult, BillingConductorError> DeleteBillingGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteCustomLineItemResult, BillingConductorError> DeleteCustomLineItemOutcome;
-        typedef Aws::Utils::Outcome<DeletePricingPlanResult, BillingConductorError> DeletePricingPlanOutcome;
-        typedef Aws::Utils::Outcome<DeletePricingRuleResult, BillingConductorError> DeletePricingRuleOutcome;
-        typedef Aws::Utils::Outcome<DisassociateAccountsResult, BillingConductorError> DisassociateAccountsOutcome;
-        typedef Aws::Utils::Outcome<DisassociatePricingRulesResult, BillingConductorError> DisassociatePricingRulesOutcome;
-        typedef Aws::Utils::Outcome<ListAccountAssociationsResult, BillingConductorError> ListAccountAssociationsOutcome;
-        typedef Aws::Utils::Outcome<ListBillingGroupCostReportsResult, BillingConductorError> ListBillingGroupCostReportsOutcome;
-        typedef Aws::Utils::Outcome<ListBillingGroupsResult, BillingConductorError> ListBillingGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListCustomLineItemsResult, BillingConductorError> ListCustomLineItemsOutcome;
-        typedef Aws::Utils::Outcome<ListPricingPlansResult, BillingConductorError> ListPricingPlansOutcome;
-        typedef Aws::Utils::Outcome<ListPricingPlansAssociatedWithPricingRuleResult, BillingConductorError> ListPricingPlansAssociatedWithPricingRuleOutcome;
-        typedef Aws::Utils::Outcome<ListPricingRulesResult, BillingConductorError> ListPricingRulesOutcome;
-        typedef Aws::Utils::Outcome<ListPricingRulesAssociatedToPricingPlanResult, BillingConductorError> ListPricingRulesAssociatedToPricingPlanOutcome;
-        typedef Aws::Utils::Outcome<ListResourcesAssociatedToCustomLineItemResult, BillingConductorError> ListResourcesAssociatedToCustomLineItemOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, BillingConductorError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, BillingConductorError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, BillingConductorError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateBillingGroupResult, BillingConductorError> UpdateBillingGroupOutcome;
-        typedef Aws::Utils::Outcome<UpdateCustomLineItemResult, BillingConductorError> UpdateCustomLineItemOutcome;
-        typedef Aws::Utils::Outcome<UpdatePricingPlanResult, BillingConductorError> UpdatePricingPlanOutcome;
-        typedef Aws::Utils::Outcome<UpdatePricingRuleResult, BillingConductorError> UpdatePricingRuleOutcome;
-
-        typedef std::future<AssociateAccountsOutcome> AssociateAccountsOutcomeCallable;
-        typedef std::future<AssociatePricingRulesOutcome> AssociatePricingRulesOutcomeCallable;
-        typedef std::future<BatchAssociateResourcesToCustomLineItemOutcome> BatchAssociateResourcesToCustomLineItemOutcomeCallable;
-        typedef std::future<BatchDisassociateResourcesFromCustomLineItemOutcome> BatchDisassociateResourcesFromCustomLineItemOutcomeCallable;
-        typedef std::future<CreateBillingGroupOutcome> CreateBillingGroupOutcomeCallable;
-        typedef std::future<CreateCustomLineItemOutcome> CreateCustomLineItemOutcomeCallable;
-        typedef std::future<CreatePricingPlanOutcome> CreatePricingPlanOutcomeCallable;
-        typedef std::future<CreatePricingRuleOutcome> CreatePricingRuleOutcomeCallable;
-        typedef std::future<DeleteBillingGroupOutcome> DeleteBillingGroupOutcomeCallable;
-        typedef std::future<DeleteCustomLineItemOutcome> DeleteCustomLineItemOutcomeCallable;
-        typedef std::future<DeletePricingPlanOutcome> DeletePricingPlanOutcomeCallable;
-        typedef std::future<DeletePricingRuleOutcome> DeletePricingRuleOutcomeCallable;
-        typedef std::future<DisassociateAccountsOutcome> DisassociateAccountsOutcomeCallable;
-        typedef std::future<DisassociatePricingRulesOutcome> DisassociatePricingRulesOutcomeCallable;
-        typedef std::future<ListAccountAssociationsOutcome> ListAccountAssociationsOutcomeCallable;
-        typedef std::future<ListBillingGroupCostReportsOutcome> ListBillingGroupCostReportsOutcomeCallable;
-        typedef std::future<ListBillingGroupsOutcome> ListBillingGroupsOutcomeCallable;
-        typedef std::future<ListCustomLineItemsOutcome> ListCustomLineItemsOutcomeCallable;
-        typedef std::future<ListPricingPlansOutcome> ListPricingPlansOutcomeCallable;
-        typedef std::future<ListPricingPlansAssociatedWithPricingRuleOutcome> ListPricingPlansAssociatedWithPricingRuleOutcomeCallable;
-        typedef std::future<ListPricingRulesOutcome> ListPricingRulesOutcomeCallable;
-        typedef std::future<ListPricingRulesAssociatedToPricingPlanOutcome> ListPricingRulesAssociatedToPricingPlanOutcomeCallable;
-        typedef std::future<ListResourcesAssociatedToCustomLineItemOutcome> ListResourcesAssociatedToCustomLineItemOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateBillingGroupOutcome> UpdateBillingGroupOutcomeCallable;
-        typedef std::future<UpdateCustomLineItemOutcome> UpdateCustomLineItemOutcomeCallable;
-        typedef std::future<UpdatePricingPlanOutcome> UpdatePricingPlanOutcomeCallable;
-        typedef std::future<UpdatePricingRuleOutcome> UpdatePricingRuleOutcomeCallable;
-} // namespace Model
-
-  class BillingConductorClient;
-
-    typedef std::function<void(const BillingConductorClient*, const Model::AssociateAccountsRequest&, const Model::AssociateAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateAccountsResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::AssociatePricingRulesRequest&, const Model::AssociatePricingRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePricingRulesResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::BatchAssociateResourcesToCustomLineItemRequest&, const Model::BatchAssociateResourcesToCustomLineItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAssociateResourcesToCustomLineItemResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::BatchDisassociateResourcesFromCustomLineItemRequest&, const Model::BatchDisassociateResourcesFromCustomLineItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisassociateResourcesFromCustomLineItemResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::CreateBillingGroupRequest&, const Model::CreateBillingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBillingGroupResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::CreateCustomLineItemRequest&, const Model::CreateCustomLineItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomLineItemResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::CreatePricingPlanRequest&, const Model::CreatePricingPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePricingPlanResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::CreatePricingRuleRequest&, const Model::CreatePricingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePricingRuleResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::DeleteBillingGroupRequest&, const Model::DeleteBillingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBillingGroupResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::DeleteCustomLineItemRequest&, const Model::DeleteCustomLineItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomLineItemResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::DeletePricingPlanRequest&, const Model::DeletePricingPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePricingPlanResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::DeletePricingRuleRequest&, const Model::DeletePricingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePricingRuleResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::DisassociateAccountsRequest&, const Model::DisassociateAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAccountsResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::DisassociatePricingRulesRequest&, const Model::DisassociatePricingRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePricingRulesResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::ListAccountAssociationsRequest&, const Model::ListAccountAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountAssociationsResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::ListBillingGroupCostReportsRequest&, const Model::ListBillingGroupCostReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBillingGroupCostReportsResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::ListBillingGroupsRequest&, const Model::ListBillingGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBillingGroupsResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::ListCustomLineItemsRequest&, const Model::ListCustomLineItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomLineItemsResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::ListPricingPlansRequest&, const Model::ListPricingPlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPricingPlansResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::ListPricingPlansAssociatedWithPricingRuleRequest&, const Model::ListPricingPlansAssociatedWithPricingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPricingPlansAssociatedWithPricingRuleResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::ListPricingRulesRequest&, const Model::ListPricingRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPricingRulesResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::ListPricingRulesAssociatedToPricingPlanRequest&, const Model::ListPricingRulesAssociatedToPricingPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPricingRulesAssociatedToPricingPlanResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::ListResourcesAssociatedToCustomLineItemRequest&, const Model::ListResourcesAssociatedToCustomLineItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesAssociatedToCustomLineItemResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::UpdateBillingGroupRequest&, const Model::UpdateBillingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBillingGroupResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::UpdateCustomLineItemRequest&, const Model::UpdateCustomLineItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCustomLineItemResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::UpdatePricingPlanRequest&, const Model::UpdatePricingPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePricingPlanResponseReceivedHandler;
-    typedef std::function<void(const BillingConductorClient*, const Model::UpdatePricingRuleRequest&, const Model::UpdatePricingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePricingRuleResponseReceivedHandler;
-
   /**
    * <p>Amazon Web Services Billing Conductor is a fully managed service that you can
    * use to customize a <a
@@ -244,14 +51,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        BillingConductorClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        BillingConductorClient(const Aws::Auth::AWSCredentials& credentials,
+                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         BillingConductorClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~BillingConductorClient();
 
@@ -813,36 +621,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateAccountsAsyncHelper(const Model::AssociateAccountsRequest& request, const AssociateAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociatePricingRulesAsyncHelper(const Model::AssociatePricingRulesRequest& request, const AssociatePricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchAssociateResourcesToCustomLineItemAsyncHelper(const Model::BatchAssociateResourcesToCustomLineItemRequest& request, const BatchAssociateResourcesToCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchDisassociateResourcesFromCustomLineItemAsyncHelper(const Model::BatchDisassociateResourcesFromCustomLineItemRequest& request, const BatchDisassociateResourcesFromCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateBillingGroupAsyncHelper(const Model::CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateCustomLineItemAsyncHelper(const Model::CreateCustomLineItemRequest& request, const CreateCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePricingPlanAsyncHelper(const Model::CreatePricingPlanRequest& request, const CreatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePricingRuleAsyncHelper(const Model::CreatePricingRuleRequest& request, const CreatePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBillingGroupAsyncHelper(const Model::DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCustomLineItemAsyncHelper(const Model::DeleteCustomLineItemRequest& request, const DeleteCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePricingPlanAsyncHelper(const Model::DeletePricingPlanRequest& request, const DeletePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePricingRuleAsyncHelper(const Model::DeletePricingRuleRequest& request, const DeletePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateAccountsAsyncHelper(const Model::DisassociateAccountsRequest& request, const DisassociateAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociatePricingRulesAsyncHelper(const Model::DisassociatePricingRulesRequest& request, const DisassociatePricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAccountAssociationsAsyncHelper(const Model::ListAccountAssociationsRequest& request, const ListAccountAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBillingGroupCostReportsAsyncHelper(const Model::ListBillingGroupCostReportsRequest& request, const ListBillingGroupCostReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBillingGroupsAsyncHelper(const Model::ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCustomLineItemsAsyncHelper(const Model::ListCustomLineItemsRequest& request, const ListCustomLineItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPricingPlansAsyncHelper(const Model::ListPricingPlansRequest& request, const ListPricingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPricingPlansAssociatedWithPricingRuleAsyncHelper(const Model::ListPricingPlansAssociatedWithPricingRuleRequest& request, const ListPricingPlansAssociatedWithPricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPricingRulesAsyncHelper(const Model::ListPricingRulesRequest& request, const ListPricingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPricingRulesAssociatedToPricingPlanAsyncHelper(const Model::ListPricingRulesAssociatedToPricingPlanRequest& request, const ListPricingRulesAssociatedToPricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListResourcesAssociatedToCustomLineItemAsyncHelper(const Model::ListResourcesAssociatedToCustomLineItemRequest& request, const ListResourcesAssociatedToCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateBillingGroupAsyncHelper(const Model::UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateCustomLineItemAsyncHelper(const Model::UpdateCustomLineItemRequest& request, const UpdateCustomLineItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePricingPlanAsyncHelper(const Model::UpdatePricingPlanRequest& request, const UpdatePricingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePricingRuleAsyncHelper(const Model::UpdatePricingRuleRequest& request, const UpdatePricingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

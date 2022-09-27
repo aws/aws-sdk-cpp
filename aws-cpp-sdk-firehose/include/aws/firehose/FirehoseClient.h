@@ -5,118 +5,15 @@
 
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
-#include <aws/firehose/FirehoseErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/firehose/model/CreateDeliveryStreamResult.h>
-#include <aws/firehose/model/DeleteDeliveryStreamResult.h>
-#include <aws/firehose/model/DescribeDeliveryStreamResult.h>
-#include <aws/firehose/model/ListDeliveryStreamsResult.h>
-#include <aws/firehose/model/ListTagsForDeliveryStreamResult.h>
-#include <aws/firehose/model/PutRecordResult.h>
-#include <aws/firehose/model/PutRecordBatchResult.h>
-#include <aws/firehose/model/StartDeliveryStreamEncryptionResult.h>
-#include <aws/firehose/model/StopDeliveryStreamEncryptionResult.h>
-#include <aws/firehose/model/TagDeliveryStreamResult.h>
-#include <aws/firehose/model/UntagDeliveryStreamResult.h>
-#include <aws/firehose/model/UpdateDestinationResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/firehose/FirehoseServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Firehose
 {
-
-namespace Model
-{
-        class CreateDeliveryStreamRequest;
-        class DeleteDeliveryStreamRequest;
-        class DescribeDeliveryStreamRequest;
-        class ListDeliveryStreamsRequest;
-        class ListTagsForDeliveryStreamRequest;
-        class PutRecordRequest;
-        class PutRecordBatchRequest;
-        class StartDeliveryStreamEncryptionRequest;
-        class StopDeliveryStreamEncryptionRequest;
-        class TagDeliveryStreamRequest;
-        class UntagDeliveryStreamRequest;
-        class UpdateDestinationRequest;
-
-        typedef Aws::Utils::Outcome<CreateDeliveryStreamResult, FirehoseError> CreateDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<DeleteDeliveryStreamResult, FirehoseError> DeleteDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeliveryStreamResult, FirehoseError> DescribeDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<ListDeliveryStreamsResult, FirehoseError> ListDeliveryStreamsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForDeliveryStreamResult, FirehoseError> ListTagsForDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<PutRecordResult, FirehoseError> PutRecordOutcome;
-        typedef Aws::Utils::Outcome<PutRecordBatchResult, FirehoseError> PutRecordBatchOutcome;
-        typedef Aws::Utils::Outcome<StartDeliveryStreamEncryptionResult, FirehoseError> StartDeliveryStreamEncryptionOutcome;
-        typedef Aws::Utils::Outcome<StopDeliveryStreamEncryptionResult, FirehoseError> StopDeliveryStreamEncryptionOutcome;
-        typedef Aws::Utils::Outcome<TagDeliveryStreamResult, FirehoseError> TagDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<UntagDeliveryStreamResult, FirehoseError> UntagDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<UpdateDestinationResult, FirehoseError> UpdateDestinationOutcome;
-
-        typedef std::future<CreateDeliveryStreamOutcome> CreateDeliveryStreamOutcomeCallable;
-        typedef std::future<DeleteDeliveryStreamOutcome> DeleteDeliveryStreamOutcomeCallable;
-        typedef std::future<DescribeDeliveryStreamOutcome> DescribeDeliveryStreamOutcomeCallable;
-        typedef std::future<ListDeliveryStreamsOutcome> ListDeliveryStreamsOutcomeCallable;
-        typedef std::future<ListTagsForDeliveryStreamOutcome> ListTagsForDeliveryStreamOutcomeCallable;
-        typedef std::future<PutRecordOutcome> PutRecordOutcomeCallable;
-        typedef std::future<PutRecordBatchOutcome> PutRecordBatchOutcomeCallable;
-        typedef std::future<StartDeliveryStreamEncryptionOutcome> StartDeliveryStreamEncryptionOutcomeCallable;
-        typedef std::future<StopDeliveryStreamEncryptionOutcome> StopDeliveryStreamEncryptionOutcomeCallable;
-        typedef std::future<TagDeliveryStreamOutcome> TagDeliveryStreamOutcomeCallable;
-        typedef std::future<UntagDeliveryStreamOutcome> UntagDeliveryStreamOutcomeCallable;
-        typedef std::future<UpdateDestinationOutcome> UpdateDestinationOutcomeCallable;
-} // namespace Model
-
-  class FirehoseClient;
-
-    typedef std::function<void(const FirehoseClient*, const Model::CreateDeliveryStreamRequest&, const Model::CreateDeliveryStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeliveryStreamResponseReceivedHandler;
-    typedef std::function<void(const FirehoseClient*, const Model::DeleteDeliveryStreamRequest&, const Model::DeleteDeliveryStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeliveryStreamResponseReceivedHandler;
-    typedef std::function<void(const FirehoseClient*, const Model::DescribeDeliveryStreamRequest&, const Model::DescribeDeliveryStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeliveryStreamResponseReceivedHandler;
-    typedef std::function<void(const FirehoseClient*, const Model::ListDeliveryStreamsRequest&, const Model::ListDeliveryStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeliveryStreamsResponseReceivedHandler;
-    typedef std::function<void(const FirehoseClient*, const Model::ListTagsForDeliveryStreamRequest&, const Model::ListTagsForDeliveryStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForDeliveryStreamResponseReceivedHandler;
-    typedef std::function<void(const FirehoseClient*, const Model::PutRecordRequest&, const Model::PutRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordResponseReceivedHandler;
-    typedef std::function<void(const FirehoseClient*, const Model::PutRecordBatchRequest&, const Model::PutRecordBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordBatchResponseReceivedHandler;
-    typedef std::function<void(const FirehoseClient*, const Model::StartDeliveryStreamEncryptionRequest&, const Model::StartDeliveryStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDeliveryStreamEncryptionResponseReceivedHandler;
-    typedef std::function<void(const FirehoseClient*, const Model::StopDeliveryStreamEncryptionRequest&, const Model::StopDeliveryStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDeliveryStreamEncryptionResponseReceivedHandler;
-    typedef std::function<void(const FirehoseClient*, const Model::TagDeliveryStreamRequest&, const Model::TagDeliveryStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagDeliveryStreamResponseReceivedHandler;
-    typedef std::function<void(const FirehoseClient*, const Model::UntagDeliveryStreamRequest&, const Model::UntagDeliveryStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagDeliveryStreamResponseReceivedHandler;
-    typedef std::function<void(const FirehoseClient*, const Model::UpdateDestinationRequest&, const Model::UpdateDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDestinationResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Kinesis Data Firehose API Reference</fullname> <p>Amazon
    * Kinesis Data Firehose is a fully managed service that delivers real-time
@@ -138,14 +35,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        FirehoseClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        FirehoseClient(const Aws::Auth::AWSCredentials& credentials,
+                       const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         FirehoseClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                       const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~FirehoseClient();
 
@@ -625,18 +523,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateDeliveryStreamAsyncHelper(const Model::CreateDeliveryStreamRequest& request, const CreateDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDeliveryStreamAsyncHelper(const Model::DeleteDeliveryStreamRequest& request, const DeleteDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDeliveryStreamAsyncHelper(const Model::DescribeDeliveryStreamRequest& request, const DescribeDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDeliveryStreamsAsyncHelper(const Model::ListDeliveryStreamsRequest& request, const ListDeliveryStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForDeliveryStreamAsyncHelper(const Model::ListTagsForDeliveryStreamRequest& request, const ListTagsForDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRecordAsyncHelper(const Model::PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRecordBatchAsyncHelper(const Model::PutRecordBatchRequest& request, const PutRecordBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartDeliveryStreamEncryptionAsyncHelper(const Model::StartDeliveryStreamEncryptionRequest& request, const StartDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopDeliveryStreamEncryptionAsyncHelper(const Model::StopDeliveryStreamEncryptionRequest& request, const StopDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagDeliveryStreamAsyncHelper(const Model::TagDeliveryStreamRequest& request, const TagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagDeliveryStreamAsyncHelper(const Model::UntagDeliveryStreamRequest& request, const UntagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDestinationAsyncHelper(const Model::UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

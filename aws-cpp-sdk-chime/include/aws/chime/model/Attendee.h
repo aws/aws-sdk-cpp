@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_externalUserId;
-    bool m_externalUserIdHasBeenSet;
+    bool m_externalUserIdHasBeenSet = false;
 
     Aws::String m_attendeeId;
-    bool m_attendeeIdHasBeenSet;
+    bool m_attendeeIdHasBeenSet = false;
 
     Aws::String m_joinToken;
-    bool m_joinTokenHasBeenSet;
+    bool m_joinTokenHasBeenSet = false;
   };
 
 } // namespace Model

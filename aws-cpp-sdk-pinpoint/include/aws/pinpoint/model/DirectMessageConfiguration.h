@@ -399,31 +399,31 @@ namespace Model
   private:
 
     ADMMessage m_aDMMessage;
-    bool m_aDMMessageHasBeenSet;
+    bool m_aDMMessageHasBeenSet = false;
 
     APNSMessage m_aPNSMessage;
-    bool m_aPNSMessageHasBeenSet;
+    bool m_aPNSMessageHasBeenSet = false;
 
     BaiduMessage m_baiduMessage;
-    bool m_baiduMessageHasBeenSet;
+    bool m_baiduMessageHasBeenSet = false;
 
     DefaultMessage m_defaultMessage;
-    bool m_defaultMessageHasBeenSet;
+    bool m_defaultMessageHasBeenSet = false;
 
     DefaultPushNotificationMessage m_defaultPushNotificationMessage;
-    bool m_defaultPushNotificationMessageHasBeenSet;
+    bool m_defaultPushNotificationMessageHasBeenSet = false;
 
     EmailMessage m_emailMessage;
-    bool m_emailMessageHasBeenSet;
+    bool m_emailMessageHasBeenSet = false;
 
     GCMMessage m_gCMMessage;
-    bool m_gCMMessageHasBeenSet;
+    bool m_gCMMessageHasBeenSet = false;
 
     SMSMessage m_sMSMessage;
-    bool m_sMSMessageHasBeenSet;
+    bool m_sMSMessageHasBeenSet = false;
 
     VoiceMessage m_voiceMessage;
-    bool m_voiceMessageHasBeenSet;
+    bool m_voiceMessageHasBeenSet = false;
   };
 
 } // namespace Model

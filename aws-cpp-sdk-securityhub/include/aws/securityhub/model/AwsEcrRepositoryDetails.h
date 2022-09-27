@@ -113,42 +113,50 @@ namespace Model
 
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline const Aws::String& GetImageTagMutability() const{ return m_imageTagMutability; }
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline bool ImageTagMutabilityHasBeenSet() const { return m_imageTagMutabilityHasBeenSet; }
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline void SetImageTagMutability(const Aws::String& value) { m_imageTagMutabilityHasBeenSet = true; m_imageTagMutability = value; }
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline void SetImageTagMutability(Aws::String&& value) { m_imageTagMutabilityHasBeenSet = true; m_imageTagMutability = std::move(value); }
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline void SetImageTagMutability(const char* value) { m_imageTagMutabilityHasBeenSet = true; m_imageTagMutability.assign(value); }
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline AwsEcrRepositoryDetails& WithImageTagMutability(const Aws::String& value) { SetImageTagMutability(value); return *this;}
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline AwsEcrRepositoryDetails& WithImageTagMutability(Aws::String&& value) { SetImageTagMutability(std::move(value)); return *this;}
 
     /**
-     * <p>The tag mutability setting for the repository.</p>
+     * <p>The tag mutability setting for the repository. Valid values are
+     * <code>IMMUTABLE</code> or <code>MUTABLE</code>.</p>
      */
     inline AwsEcrRepositoryDetails& WithImageTagMutability(const char* value) { SetImageTagMutability(value); return *this;}
 
@@ -268,22 +276,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     AwsEcrRepositoryImageScanningConfigurationDetails m_imageScanningConfiguration;
-    bool m_imageScanningConfigurationHasBeenSet;
+    bool m_imageScanningConfigurationHasBeenSet = false;
 
     Aws::String m_imageTagMutability;
-    bool m_imageTagMutabilityHasBeenSet;
+    bool m_imageTagMutabilityHasBeenSet = false;
 
     AwsEcrRepositoryLifecyclePolicyDetails m_lifecyclePolicy;
-    bool m_lifecyclePolicyHasBeenSet;
+    bool m_lifecyclePolicyHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_repositoryPolicyText;
-    bool m_repositoryPolicyTextHasBeenSet;
+    bool m_repositoryPolicyTextHasBeenSet = false;
   };
 
 } // namespace Model

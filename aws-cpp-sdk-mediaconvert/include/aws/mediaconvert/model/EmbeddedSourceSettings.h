@@ -188,16 +188,16 @@ namespace Model
   private:
 
     EmbeddedConvert608To708 m_convert608To708;
-    bool m_convert608To708HasBeenSet;
+    bool m_convert608To708HasBeenSet = false;
 
     int m_source608ChannelNumber;
-    bool m_source608ChannelNumberHasBeenSet;
+    bool m_source608ChannelNumberHasBeenSet = false;
 
     int m_source608TrackNumber;
-    bool m_source608TrackNumberHasBeenSet;
+    bool m_source608TrackNumberHasBeenSet = false;
 
     EmbeddedTerminateCaptions m_terminateCaptions;
-    bool m_terminateCaptionsHasBeenSet;
+    bool m_terminateCaptionsHasBeenSet = false;
   };
 
 } // namespace Model

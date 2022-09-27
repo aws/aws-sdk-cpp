@@ -11,6 +11,7 @@
 #include <aws/chime-sdk-meetings/model/NotificationsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/chime-sdk-meetings/model/CreateAttendeeRequestItem.h>
+#include <aws/chime-sdk-meetings/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -444,31 +445,133 @@ namespace Model
      */
     inline CreateMeetingWithAttendeesRequest& WithPrimaryMeetingId(const char* value) { SetPrimaryMeetingId(value); return *this;}
 
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTenantIds() const{ return m_tenantIds; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline bool TenantIdsHasBeenSet() const { return m_tenantIdsHasBeenSet; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline void SetTenantIds(const Aws::Vector<Aws::String>& value) { m_tenantIdsHasBeenSet = true; m_tenantIds = value; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline void SetTenantIds(Aws::Vector<Aws::String>&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds = std::move(value); }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& WithTenantIds(const Aws::Vector<Aws::String>& value) { SetTenantIds(value); return *this;}
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& WithTenantIds(Aws::Vector<Aws::String>&& value) { SetTenantIds(std::move(value)); return *this;}
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& AddTenantIds(const Aws::String& value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(value); return *this; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& AddTenantIds(Aws::String&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& AddTenantIds(const char* value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>The tags in the request.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags in the request.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags in the request.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags in the request.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags in the request.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags in the request.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags in the request.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags in the request.</p>
+     */
+    inline CreateMeetingWithAttendeesRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_mediaRegion;
-    bool m_mediaRegionHasBeenSet;
+    bool m_mediaRegionHasBeenSet = false;
 
     Aws::String m_meetingHostId;
-    bool m_meetingHostIdHasBeenSet;
+    bool m_meetingHostIdHasBeenSet = false;
 
     Aws::String m_externalMeetingId;
-    bool m_externalMeetingIdHasBeenSet;
+    bool m_externalMeetingIdHasBeenSet = false;
 
     MeetingFeaturesConfiguration m_meetingFeatures;
-    bool m_meetingFeaturesHasBeenSet;
+    bool m_meetingFeaturesHasBeenSet = false;
 
     NotificationsConfiguration m_notificationsConfiguration;
-    bool m_notificationsConfigurationHasBeenSet;
+    bool m_notificationsConfigurationHasBeenSet = false;
 
     Aws::Vector<CreateAttendeeRequestItem> m_attendees;
-    bool m_attendeesHasBeenSet;
+    bool m_attendeesHasBeenSet = false;
 
     Aws::String m_primaryMeetingId;
-    bool m_primaryMeetingIdHasBeenSet;
+    bool m_primaryMeetingIdHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_tenantIds;
+    bool m_tenantIdsHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

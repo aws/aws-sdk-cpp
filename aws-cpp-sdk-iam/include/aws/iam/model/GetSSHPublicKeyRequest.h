@@ -220,13 +220,13 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_sSHPublicKeyId;
-    bool m_sSHPublicKeyIdHasBeenSet;
+    bool m_sSHPublicKeyIdHasBeenSet = false;
 
     EncodingType m_encoding;
-    bool m_encodingHasBeenSet;
+    bool m_encodingHasBeenSet = false;
   };
 
 } // namespace Model

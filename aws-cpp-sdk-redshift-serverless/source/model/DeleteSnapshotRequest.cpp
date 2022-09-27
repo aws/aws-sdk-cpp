@@ -33,7 +33,7 @@ Aws::String DeleteSnapshotRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection DeleteSnapshotRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.DeleteSnapshot"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.DeleteSnapshot"));
   return headers;
 
 }

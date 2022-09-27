@@ -97,7 +97,7 @@ namespace Model
   private:
 
     TlsPolicy m_tlsPolicy;
-    bool m_tlsPolicyHasBeenSet;
+    bool m_tlsPolicyHasBeenSet = false;
   };
 
 } // namespace Model

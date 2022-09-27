@@ -109,7 +109,7 @@ namespace Model
   private:
 
     Aws::String m_autoScalingConfigurationArn;
-    bool m_autoScalingConfigurationArnHasBeenSet;
+    bool m_autoScalingConfigurationArnHasBeenSet = false;
   };
 
 } // namespace Model

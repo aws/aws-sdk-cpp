@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     int m_permanentDeletionTimeInDays;
-    bool m_permanentDeletionTimeInDaysHasBeenSet;
+    bool m_permanentDeletionTimeInDaysHasBeenSet = false;
   };
 
 } // namespace Model

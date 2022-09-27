@@ -49,8 +49,7 @@ namespace Model
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
-     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If
      * you specify <code>TargetDevice</code>, don't specify
      * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
      * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
@@ -59,8 +58,7 @@ namespace Model
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
-     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If
      * you specify <code>TargetDevice</code>, don't specify
      * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
      * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
@@ -69,8 +67,7 @@ namespace Model
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
-     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If
      * you specify <code>TargetDevice</code>, don't specify
      * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
      * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
@@ -79,8 +76,7 @@ namespace Model
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
-     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If
      * you specify <code>TargetDevice</code>, don't specify
      * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
      * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
@@ -89,8 +85,7 @@ namespace Model
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
-     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If
      * you specify <code>TargetDevice</code>, don't specify
      * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
      * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
@@ -99,8 +94,7 @@ namespace Model
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
-     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If
      * you specify <code>TargetDevice</code>, don't specify
      * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
      * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
@@ -109,8 +103,7 @@ namespace Model
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
-     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If
      * you specify <code>TargetDevice</code>, don't specify
      * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
      * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
@@ -119,8 +112,7 @@ namespace Model
 
     /**
      * <p>Additional compiler options for the Greengrass component. Currently, only
-     * NVIDIA Graphics Processing Units (GPU) are supported. If you specify
-     * <code>TargetPlatform</code>, you must specify <code>CompilerOptions</code>. If
+     * NVIDIA Graphics Processing Units (GPU) and CPU accelerators are supported. If
      * you specify <code>TargetDevice</code>, don't specify
      * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
      * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
@@ -427,28 +419,28 @@ namespace Model
   private:
 
     Aws::String m_compilerOptions;
-    bool m_compilerOptionsHasBeenSet;
+    bool m_compilerOptionsHasBeenSet = false;
 
     TargetDevice m_targetDevice;
-    bool m_targetDeviceHasBeenSet;
+    bool m_targetDeviceHasBeenSet = false;
 
     TargetPlatform m_targetPlatform;
-    bool m_targetPlatformHasBeenSet;
+    bool m_targetPlatformHasBeenSet = false;
 
     S3Location m_s3OutputLocation;
-    bool m_s3OutputLocationHasBeenSet;
+    bool m_s3OutputLocationHasBeenSet = false;
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentVersion;
-    bool m_componentVersionHasBeenSet;
+    bool m_componentVersionHasBeenSet = false;
 
     Aws::String m_componentDescription;
-    bool m_componentDescriptionHasBeenSet;
+    bool m_componentDescriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

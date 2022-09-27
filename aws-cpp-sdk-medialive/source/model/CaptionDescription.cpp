@@ -19,6 +19,8 @@ namespace Model
 {
 
 CaptionDescription::CaptionDescription() : 
+    m_accessibility(AccessibilityType::NOT_SET),
+    m_accessibilityHasBeenSet(false),
     m_captionSelectorNameHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
     m_languageCodeHasBeenSet(false),
@@ -28,6 +30,8 @@ CaptionDescription::CaptionDescription() :
 }
 
 CaptionDescription::CaptionDescription(JsonView jsonValue) : 
+    m_accessibility(AccessibilityType::NOT_SET),
+    m_accessibilityHasBeenSet(false),
     m_captionSelectorNameHasBeenSet(false),
     m_destinationSettingsHasBeenSet(false),
     m_languageCodeHasBeenSet(false),
@@ -39,6 +43,13 @@ CaptionDescription::CaptionDescription(JsonView jsonValue) :
 
 CaptionDescription& CaptionDescription::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("accessibility"))
+  {
+    m_accessibility = AccessibilityTypeMapper::GetAccessibilityTypeForName(jsonValue.GetString("accessibility"));
+
+    m_accessibilityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("captionSelectorName"))
   {
     m_captionSelectorName = jsonValue.GetString("captionSelectorName");
@@ -80,6 +91,11 @@ CaptionDescription& CaptionDescription::operator =(JsonView jsonValue)
 JsonValue CaptionDescription::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accessibilityHasBeenSet)
+  {
+   payload.WithString("accessibility", AccessibilityTypeMapper::GetNameForAccessibilityType(m_accessibility));
+  }
 
   if(m_captionSelectorNameHasBeenSet)
   {

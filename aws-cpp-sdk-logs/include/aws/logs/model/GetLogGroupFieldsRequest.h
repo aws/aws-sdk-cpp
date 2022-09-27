@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     long long m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
   };
 
 } // namespace Model

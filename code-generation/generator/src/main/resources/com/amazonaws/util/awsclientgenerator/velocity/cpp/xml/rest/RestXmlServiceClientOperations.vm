@@ -53,12 +53,10 @@ ${operation.name}OutcomeCallable ${className}::${operation.name}Callable(${const
 
 void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, ${refText}request, handler, context](){ this->${operation.name}AsyncHelper( request, handler, context ); } );
-}
-
-void ${className}::${operation.name}AsyncHelper(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ${operation.name}(request), context);
+  m_executor->Submit( [this, ${refText}request, handler, context]()
+    {
+      handler(this, request, ${operation.name}(request), context);
+    } );
 }
 
 #else
@@ -73,6 +71,7 @@ ${operation.name}Outcome ${className}::${operation.name}() const
   }
   ss << computeEndpointOutcome.GetResult().endpoint;
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/EndpointRulesNoRequestUriComputation.vm")
 #if($operation.result && $operation.result.shape.hasStreamMembers())
   return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride}));
 #elseif($operation.request)
@@ -92,12 +91,10 @@ ${operation.name}OutcomeCallable ${className}::${operation.name}Callable() const
 
 void ${className}::${operation.name}Async(${constText}${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, handler, context](){ this->${operation.name}AsyncHelper( handler, context ); } );
-}
-
-void ${className}::${operation.name}AsyncHelper(${constText}${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, ${operation.name}(), context);
+  m_executor->Submit( [this, handler, context]()
+    {
+      handler(this, ${operation.name}(), context);
+    } );
 }
 
 #end

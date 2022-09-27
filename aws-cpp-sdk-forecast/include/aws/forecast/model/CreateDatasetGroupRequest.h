@@ -423,16 +423,16 @@ namespace Model
   private:
 
     Aws::String m_datasetGroupName;
-    bool m_datasetGroupNameHasBeenSet;
+    bool m_datasetGroupNameHasBeenSet = false;
 
     Domain m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_datasetArns;
-    bool m_datasetArnsHasBeenSet;
+    bool m_datasetArnsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -780,7 +780,7 @@ namespace Aws
 
             /**
              * If we had actual data that overflowed a block left over from the packing, then let BCrypt handle the padding.
-             * Otherwise, we have to manally encrypt the padding indicating that a full block is in the previous block.
+             * Otherwise, we have to manually encrypt the padding indicating that a full block is in the previous block.
              */
             CryptoBuffer AES_CBC_Cipher_BCrypt::FinalizeEncryption()
             {

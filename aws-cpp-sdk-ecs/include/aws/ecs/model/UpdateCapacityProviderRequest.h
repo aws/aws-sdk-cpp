@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AutoScalingGroupProviderUpdate m_autoScalingGroupProvider;
-    bool m_autoScalingGroupProviderHasBeenSet;
+    bool m_autoScalingGroupProviderHasBeenSet = false;
   };
 
 } // namespace Model

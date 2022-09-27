@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_protectionGroupId;
-    bool m_protectionGroupIdHasBeenSet;
+    bool m_protectionGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

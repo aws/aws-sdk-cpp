@@ -406,25 +406,25 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_organizationalUnit;
-    bool m_organizationalUnitHasBeenSet;
+    bool m_organizationalUnitHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_domainControllers;
-    bool m_domainControllersHasBeenSet;
+    bool m_domainControllersHasBeenSet = false;
 
     int m_timeoutInSeconds;
-    bool m_timeoutInSecondsHasBeenSet;
+    bool m_timeoutInSecondsHasBeenSet = false;
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
   };
 
 } // namespace Model

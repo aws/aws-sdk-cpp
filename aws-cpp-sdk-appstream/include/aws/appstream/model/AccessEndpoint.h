@@ -117,10 +117,10 @@ namespace Model
   private:
 
     AccessEndpointType m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_vpceId;
-    bool m_vpceIdHasBeenSet;
+    bool m_vpceIdHasBeenSet = false;
   };
 
 } // namespace Model

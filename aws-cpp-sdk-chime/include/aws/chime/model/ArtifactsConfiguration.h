@@ -134,13 +134,13 @@ namespace Model
   private:
 
     AudioArtifactsConfiguration m_audio;
-    bool m_audioHasBeenSet;
+    bool m_audioHasBeenSet = false;
 
     VideoArtifactsConfiguration m_video;
-    bool m_videoHasBeenSet;
+    bool m_videoHasBeenSet = false;
 
     ContentArtifactsConfiguration m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
   };
 
 } // namespace Model

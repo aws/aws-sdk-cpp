@@ -17,9 +17,6 @@ namespace Model
 {
 
   /**
-   * <p>The request body for UpdateRevision.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateRevisionRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DATAEXCHANGE_API UpdateRevisionRequest : public DataExchangeRequest
   {
@@ -189,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_comment;
-    bool m_commentHasBeenSet;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     bool m_finalized;
-    bool m_finalizedHasBeenSet;
+    bool m_finalizedHasBeenSet = false;
 
     Aws::String m_revisionId;
-    bool m_revisionIdHasBeenSet;
+    bool m_revisionIdHasBeenSet = false;
   };
 
 } // namespace Model

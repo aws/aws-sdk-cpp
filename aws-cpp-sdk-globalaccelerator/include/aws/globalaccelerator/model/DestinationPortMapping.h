@@ -223,42 +223,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region for the endpoint group.</p>
+     * <p>The Amazon Web Services Region for the endpoint group.</p>
      */
     inline const Aws::String& GetEndpointGroupRegion() const{ return m_endpointGroupRegion; }
 
     /**
-     * <p>The AWS Region for the endpoint group.</p>
+     * <p>The Amazon Web Services Region for the endpoint group.</p>
      */
     inline bool EndpointGroupRegionHasBeenSet() const { return m_endpointGroupRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region for the endpoint group.</p>
+     * <p>The Amazon Web Services Region for the endpoint group.</p>
      */
     inline void SetEndpointGroupRegion(const Aws::String& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = value; }
 
     /**
-     * <p>The AWS Region for the endpoint group.</p>
+     * <p>The Amazon Web Services Region for the endpoint group.</p>
      */
     inline void SetEndpointGroupRegion(Aws::String&& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region for the endpoint group.</p>
+     * <p>The Amazon Web Services Region for the endpoint group.</p>
      */
     inline void SetEndpointGroupRegion(const char* value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion.assign(value); }
 
     /**
-     * <p>The AWS Region for the endpoint group.</p>
+     * <p>The Amazon Web Services Region for the endpoint group.</p>
      */
     inline DestinationPortMapping& WithEndpointGroupRegion(const Aws::String& value) { SetEndpointGroupRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region for the endpoint group.</p>
+     * <p>The Amazon Web Services Region for the endpoint group.</p>
      */
     inline DestinationPortMapping& WithEndpointGroupRegion(Aws::String&& value) { SetEndpointGroupRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region for the endpoint group.</p>
+     * <p>The Amazon Web Services Region for the endpoint group.</p>
      */
     inline DestinationPortMapping& WithEndpointGroupRegion(const char* value) { SetEndpointGroupRegion(value); return *this;}
 
@@ -301,32 +301,38 @@ namespace Model
 
 
     /**
-     * <p>The IP address type, which must be IPv4.</p>
+     * <p>The IP address type that an accelerator supports. For a custom routing
+     * accelerator, the value must be IPV4.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
-     * <p>The IP address type, which must be IPv4.</p>
+     * <p>The IP address type that an accelerator supports. For a custom routing
+     * accelerator, the value must be IPV4.</p>
      */
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
-     * <p>The IP address type, which must be IPv4.</p>
+     * <p>The IP address type that an accelerator supports. For a custom routing
+     * accelerator, the value must be IPV4.</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
 
     /**
-     * <p>The IP address type, which must be IPv4.</p>
+     * <p>The IP address type that an accelerator supports. For a custom routing
+     * accelerator, the value must be IPV4.</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
 
     /**
-     * <p>The IP address type, which must be IPv4.</p>
+     * <p>The IP address type that an accelerator supports. For a custom routing
+     * accelerator, the value must be IPV4.</p>
      */
     inline DestinationPortMapping& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
-     * <p>The IP address type, which must be IPv4.</p>
+     * <p>The IP address type that an accelerator supports. For a custom routing
+     * accelerator, the value must be IPV4.</p>
      */
     inline DestinationPortMapping& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 
@@ -376,28 +382,28 @@ namespace Model
   private:
 
     Aws::String m_acceleratorArn;
-    bool m_acceleratorArnHasBeenSet;
+    bool m_acceleratorArnHasBeenSet = false;
 
     Aws::Vector<SocketAddress> m_acceleratorSocketAddresses;
-    bool m_acceleratorSocketAddressesHasBeenSet;
+    bool m_acceleratorSocketAddressesHasBeenSet = false;
 
     Aws::String m_endpointGroupArn;
-    bool m_endpointGroupArnHasBeenSet;
+    bool m_endpointGroupArnHasBeenSet = false;
 
     Aws::String m_endpointId;
-    bool m_endpointIdHasBeenSet;
+    bool m_endpointIdHasBeenSet = false;
 
     Aws::String m_endpointGroupRegion;
-    bool m_endpointGroupRegionHasBeenSet;
+    bool m_endpointGroupRegionHasBeenSet = false;
 
     SocketAddress m_destinationSocketAddress;
-    bool m_destinationSocketAddressHasBeenSet;
+    bool m_destinationSocketAddressHasBeenSet = false;
 
     IpAddressType m_ipAddressType;
-    bool m_ipAddressTypeHasBeenSet;
+    bool m_ipAddressTypeHasBeenSet = false;
 
     CustomRoutingDestinationTrafficState m_destinationTrafficState;
-    bool m_destinationTrafficStateHasBeenSet;
+    bool m_destinationTrafficStateHasBeenSet = false;
   };
 
 } // namespace Model

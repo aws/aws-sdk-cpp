@@ -22,7 +22,8 @@ PackageSummary::PackageSummary() :
     m_format(PackageFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_packageHasBeenSet(false)
+    m_packageHasBeenSet(false),
+    m_originConfigurationHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ PackageSummary::PackageSummary(JsonView jsonValue) :
     m_format(PackageFormat::NOT_SET),
     m_formatHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_packageHasBeenSet(false)
+    m_packageHasBeenSet(false),
+    m_originConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ PackageSummary& PackageSummary::operator =(JsonView jsonValue)
     m_packageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("originConfiguration"))
+  {
+    m_originConfiguration = jsonValue.GetObject("originConfiguration");
+
+    m_originConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +88,12 @@ JsonValue PackageSummary::Jsonize() const
   if(m_packageHasBeenSet)
   {
    payload.WithString("package", m_package);
+
+  }
+
+  if(m_originConfigurationHasBeenSet)
+  {
+   payload.WithObject("originConfiguration", m_originConfiguration.Jsonize());
 
   }
 

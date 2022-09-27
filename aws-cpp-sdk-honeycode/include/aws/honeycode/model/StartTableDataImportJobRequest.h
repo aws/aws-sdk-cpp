@@ -351,22 +351,22 @@ namespace Model
   private:
 
     Aws::String m_workbookId;
-    bool m_workbookIdHasBeenSet;
+    bool m_workbookIdHasBeenSet = false;
 
     ImportDataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     ImportSourceDataFormat m_dataFormat;
-    bool m_dataFormatHasBeenSet;
+    bool m_dataFormatHasBeenSet = false;
 
     Aws::String m_destinationTableId;
-    bool m_destinationTableIdHasBeenSet;
+    bool m_destinationTableIdHasBeenSet = false;
 
     ImportOptions m_importOptions;
-    bool m_importOptionsHasBeenSet;
+    bool m_importOptionsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

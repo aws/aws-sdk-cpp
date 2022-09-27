@@ -103,10 +103,10 @@ namespace Model
   private:
 
     EfsStorageConfiguration m_efs;
-    bool m_efsHasBeenSet;
+    bool m_efsHasBeenSet = false;
 
     FsxStorageConfiguration m_fsx;
-    bool m_fsxHasBeenSet;
+    bool m_fsxHasBeenSet = false;
   };
 
 } // namespace Model

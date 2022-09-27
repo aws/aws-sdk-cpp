@@ -204,25 +204,25 @@ namespace Model
   private:
 
     Aws::String m_shareId;
-    bool m_shareIdHasBeenSet;
+    bool m_shareIdHasBeenSet = false;
 
     Aws::String m_sharedBy;
-    bool m_sharedByHasBeenSet;
+    bool m_sharedByHasBeenSet = false;
 
     Aws::String m_sharedWith;
-    bool m_sharedWithHasBeenSet;
+    bool m_sharedWithHasBeenSet = false;
 
     PermissionType m_permissionType;
-    bool m_permissionTypeHasBeenSet;
+    bool m_permissionTypeHasBeenSet = false;
 
     ShareStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_workloadName;
-    bool m_workloadNameHasBeenSet;
+    bool m_workloadNameHasBeenSet = false;
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
   };
 
 } // namespace Model

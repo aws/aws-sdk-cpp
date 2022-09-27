@@ -173,19 +173,19 @@ namespace Model
   private:
 
     bool m_disableAutomatedBackup;
-    bool m_disableAutomatedBackupHasBeenSet;
+    bool m_disableAutomatedBackupHasBeenSet = false;
 
     int m_backupRetentionCount;
-    bool m_backupRetentionCountHasBeenSet;
+    bool m_backupRetentionCountHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
   };
 
 } // namespace Model

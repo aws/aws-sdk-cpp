@@ -128,10 +128,10 @@ namespace Model
   private:
 
     Aws::Vector<PortInfo> m_portInfos;
-    bool m_portInfosHasBeenSet;
+    bool m_portInfosHasBeenSet = false;
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
   };
 
 } // namespace Model

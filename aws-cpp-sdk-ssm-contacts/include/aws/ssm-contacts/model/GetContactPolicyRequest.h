@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_contactArn;
-    bool m_contactArnHasBeenSet;
+    bool m_contactArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -157,7 +157,7 @@ JsonValue ApiGatewayApiAsset::Jsonize() const
 
   if(m_apiSpecificationDownloadUrlExpiresAtHasBeenSet)
   {
-   payload.WithString("ApiSpecificationDownloadUrlExpiresAt", m_apiSpecificationDownloadUrlExpiresAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("ApiSpecificationDownloadUrlExpiresAt", m_apiSpecificationDownloadUrlExpiresAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_protocolTypeHasBeenSet)

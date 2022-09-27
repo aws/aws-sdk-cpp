@@ -28,13 +28,18 @@
 #include <aws/cloudtrail/model/DeleteTrailRequest.h>
 #include <aws/cloudtrail/model/DescribeQueryRequest.h>
 #include <aws/cloudtrail/model/DescribeTrailsRequest.h>
+#include <aws/cloudtrail/model/GetChannelRequest.h>
 #include <aws/cloudtrail/model/GetEventDataStoreRequest.h>
 #include <aws/cloudtrail/model/GetEventSelectorsRequest.h>
+#include <aws/cloudtrail/model/GetImportRequest.h>
 #include <aws/cloudtrail/model/GetInsightSelectorsRequest.h>
 #include <aws/cloudtrail/model/GetQueryResultsRequest.h>
 #include <aws/cloudtrail/model/GetTrailRequest.h>
 #include <aws/cloudtrail/model/GetTrailStatusRequest.h>
+#include <aws/cloudtrail/model/ListChannelsRequest.h>
 #include <aws/cloudtrail/model/ListEventDataStoresRequest.h>
+#include <aws/cloudtrail/model/ListImportFailuresRequest.h>
+#include <aws/cloudtrail/model/ListImportsRequest.h>
 #include <aws/cloudtrail/model/ListPublicKeysRequest.h>
 #include <aws/cloudtrail/model/ListQueriesRequest.h>
 #include <aws/cloudtrail/model/ListTagsRequest.h>
@@ -44,8 +49,10 @@
 #include <aws/cloudtrail/model/PutInsightSelectorsRequest.h>
 #include <aws/cloudtrail/model/RemoveTagsRequest.h>
 #include <aws/cloudtrail/model/RestoreEventDataStoreRequest.h>
+#include <aws/cloudtrail/model/StartImportRequest.h>
 #include <aws/cloudtrail/model/StartLoggingRequest.h>
 #include <aws/cloudtrail/model/StartQueryRequest.h>
+#include <aws/cloudtrail/model/StopImportRequest.h>
 #include <aws/cloudtrail/model/StopLoggingRequest.h>
 #include <aws/cloudtrail/model/UpdateEventDataStoreRequest.h>
 #include <aws/cloudtrail/model/UpdateTrailRequest.h>
@@ -61,33 +68,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "cloudtrail";
 static const char* ALLOCATION_TAG = "CloudTrailClient";
 
-
 CloudTrailClient::CloudTrailClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<CloudTrailErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CloudTrailErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-CloudTrailClient::CloudTrailClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+CloudTrailClient::CloudTrailClient(const AWSCredentials& credentials,
+                                   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<CloudTrailErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CloudTrailErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 CloudTrailClient::CloudTrailClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<CloudTrailErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CloudTrailErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -99,7 +112,7 @@ CloudTrailClient::~CloudTrailClient()
 
 void CloudTrailClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("CloudTrail");
+  AWSClient::SetServiceClientName("CloudTrail");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -139,12 +152,10 @@ AddTagsOutcomeCallable CloudTrailClient::AddTagsCallable(const AddTagsRequest& r
 
 void CloudTrailClient::AddTagsAsync(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddTagsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::AddTagsAsyncHelper(const AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddTags(request), context);
+    } );
 }
 
 CancelQueryOutcome CloudTrailClient::CancelQuery(const CancelQueryRequest& request) const
@@ -163,12 +174,10 @@ CancelQueryOutcomeCallable CloudTrailClient::CancelQueryCallable(const CancelQue
 
 void CloudTrailClient::CancelQueryAsync(const CancelQueryRequest& request, const CancelQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelQueryAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::CancelQueryAsyncHelper(const CancelQueryRequest& request, const CancelQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelQuery(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelQuery(request), context);
+    } );
 }
 
 CreateEventDataStoreOutcome CloudTrailClient::CreateEventDataStore(const CreateEventDataStoreRequest& request) const
@@ -187,12 +196,10 @@ CreateEventDataStoreOutcomeCallable CloudTrailClient::CreateEventDataStoreCallab
 
 void CloudTrailClient::CreateEventDataStoreAsync(const CreateEventDataStoreRequest& request, const CreateEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEventDataStoreAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::CreateEventDataStoreAsyncHelper(const CreateEventDataStoreRequest& request, const CreateEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateEventDataStore(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateEventDataStore(request), context);
+    } );
 }
 
 CreateTrailOutcome CloudTrailClient::CreateTrail(const CreateTrailRequest& request) const
@@ -211,12 +218,10 @@ CreateTrailOutcomeCallable CloudTrailClient::CreateTrailCallable(const CreateTra
 
 void CloudTrailClient::CreateTrailAsync(const CreateTrailRequest& request, const CreateTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrailAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::CreateTrailAsyncHelper(const CreateTrailRequest& request, const CreateTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateTrail(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTrail(request), context);
+    } );
 }
 
 DeleteEventDataStoreOutcome CloudTrailClient::DeleteEventDataStore(const DeleteEventDataStoreRequest& request) const
@@ -235,12 +240,10 @@ DeleteEventDataStoreOutcomeCallable CloudTrailClient::DeleteEventDataStoreCallab
 
 void CloudTrailClient::DeleteEventDataStoreAsync(const DeleteEventDataStoreRequest& request, const DeleteEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventDataStoreAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::DeleteEventDataStoreAsyncHelper(const DeleteEventDataStoreRequest& request, const DeleteEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteEventDataStore(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteEventDataStore(request), context);
+    } );
 }
 
 DeleteTrailOutcome CloudTrailClient::DeleteTrail(const DeleteTrailRequest& request) const
@@ -259,12 +262,10 @@ DeleteTrailOutcomeCallable CloudTrailClient::DeleteTrailCallable(const DeleteTra
 
 void CloudTrailClient::DeleteTrailAsync(const DeleteTrailRequest& request, const DeleteTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTrailAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::DeleteTrailAsyncHelper(const DeleteTrailRequest& request, const DeleteTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTrail(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTrail(request), context);
+    } );
 }
 
 DescribeQueryOutcome CloudTrailClient::DescribeQuery(const DescribeQueryRequest& request) const
@@ -283,12 +284,10 @@ DescribeQueryOutcomeCallable CloudTrailClient::DescribeQueryCallable(const Descr
 
 void CloudTrailClient::DescribeQueryAsync(const DescribeQueryRequest& request, const DescribeQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeQueryAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::DescribeQueryAsyncHelper(const DescribeQueryRequest& request, const DescribeQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeQuery(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeQuery(request), context);
+    } );
 }
 
 DescribeTrailsOutcome CloudTrailClient::DescribeTrails(const DescribeTrailsRequest& request) const
@@ -307,12 +306,32 @@ DescribeTrailsOutcomeCallable CloudTrailClient::DescribeTrailsCallable(const Des
 
 void CloudTrailClient::DescribeTrailsAsync(const DescribeTrailsRequest& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTrailsAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTrails(request), context);
+    } );
 }
 
-void CloudTrailClient::DescribeTrailsAsyncHelper(const DescribeTrailsRequest& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+GetChannelOutcome CloudTrailClient::GetChannel(const GetChannelRequest& request) const
 {
-  handler(this, request, DescribeTrails(request), context);
+  Aws::Http::URI uri = m_uri;
+  return GetChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetChannelOutcomeCallable CloudTrailClient::GetChannelCallable(const GetChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::GetChannelAsync(const GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetChannel(request), context);
+    } );
 }
 
 GetEventDataStoreOutcome CloudTrailClient::GetEventDataStore(const GetEventDataStoreRequest& request) const
@@ -331,12 +350,10 @@ GetEventDataStoreOutcomeCallable CloudTrailClient::GetEventDataStoreCallable(con
 
 void CloudTrailClient::GetEventDataStoreAsync(const GetEventDataStoreRequest& request, const GetEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEventDataStoreAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::GetEventDataStoreAsyncHelper(const GetEventDataStoreRequest& request, const GetEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetEventDataStore(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEventDataStore(request), context);
+    } );
 }
 
 GetEventSelectorsOutcome CloudTrailClient::GetEventSelectors(const GetEventSelectorsRequest& request) const
@@ -355,12 +372,32 @@ GetEventSelectorsOutcomeCallable CloudTrailClient::GetEventSelectorsCallable(con
 
 void CloudTrailClient::GetEventSelectorsAsync(const GetEventSelectorsRequest& request, const GetEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEventSelectorsAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEventSelectors(request), context);
+    } );
 }
 
-void CloudTrailClient::GetEventSelectorsAsyncHelper(const GetEventSelectorsRequest& request, const GetEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+GetImportOutcome CloudTrailClient::GetImport(const GetImportRequest& request) const
 {
-  handler(this, request, GetEventSelectors(request), context);
+  Aws::Http::URI uri = m_uri;
+  return GetImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetImportOutcomeCallable CloudTrailClient::GetImportCallable(const GetImportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::GetImportAsync(const GetImportRequest& request, const GetImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetImport(request), context);
+    } );
 }
 
 GetInsightSelectorsOutcome CloudTrailClient::GetInsightSelectors(const GetInsightSelectorsRequest& request) const
@@ -379,12 +416,10 @@ GetInsightSelectorsOutcomeCallable CloudTrailClient::GetInsightSelectorsCallable
 
 void CloudTrailClient::GetInsightSelectorsAsync(const GetInsightSelectorsRequest& request, const GetInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetInsightSelectorsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::GetInsightSelectorsAsyncHelper(const GetInsightSelectorsRequest& request, const GetInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetInsightSelectors(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetInsightSelectors(request), context);
+    } );
 }
 
 GetQueryResultsOutcome CloudTrailClient::GetQueryResults(const GetQueryResultsRequest& request) const
@@ -403,12 +438,10 @@ GetQueryResultsOutcomeCallable CloudTrailClient::GetQueryResultsCallable(const G
 
 void CloudTrailClient::GetQueryResultsAsync(const GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetQueryResultsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::GetQueryResultsAsyncHelper(const GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetQueryResults(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetQueryResults(request), context);
+    } );
 }
 
 GetTrailOutcome CloudTrailClient::GetTrail(const GetTrailRequest& request) const
@@ -427,12 +460,10 @@ GetTrailOutcomeCallable CloudTrailClient::GetTrailCallable(const GetTrailRequest
 
 void CloudTrailClient::GetTrailAsync(const GetTrailRequest& request, const GetTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTrailAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::GetTrailAsyncHelper(const GetTrailRequest& request, const GetTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTrail(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTrail(request), context);
+    } );
 }
 
 GetTrailStatusOutcome CloudTrailClient::GetTrailStatus(const GetTrailStatusRequest& request) const
@@ -451,12 +482,32 @@ GetTrailStatusOutcomeCallable CloudTrailClient::GetTrailStatusCallable(const Get
 
 void CloudTrailClient::GetTrailStatusAsync(const GetTrailStatusRequest& request, const GetTrailStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTrailStatusAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTrailStatus(request), context);
+    } );
 }
 
-void CloudTrailClient::GetTrailStatusAsyncHelper(const GetTrailStatusRequest& request, const GetTrailStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+ListChannelsOutcome CloudTrailClient::ListChannels(const ListChannelsRequest& request) const
 {
-  handler(this, request, GetTrailStatus(request), context);
+  Aws::Http::URI uri = m_uri;
+  return ListChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListChannelsOutcomeCallable CloudTrailClient::ListChannelsCallable(const ListChannelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListChannelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListChannels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChannels(request), context);
+    } );
 }
 
 ListEventDataStoresOutcome CloudTrailClient::ListEventDataStores(const ListEventDataStoresRequest& request) const
@@ -475,12 +526,54 @@ ListEventDataStoresOutcomeCallable CloudTrailClient::ListEventDataStoresCallable
 
 void CloudTrailClient::ListEventDataStoresAsync(const ListEventDataStoresRequest& request, const ListEventDataStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEventDataStoresAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEventDataStores(request), context);
+    } );
 }
 
-void CloudTrailClient::ListEventDataStoresAsyncHelper(const ListEventDataStoresRequest& request, const ListEventDataStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+ListImportFailuresOutcome CloudTrailClient::ListImportFailures(const ListImportFailuresRequest& request) const
 {
-  handler(this, request, ListEventDataStores(request), context);
+  Aws::Http::URI uri = m_uri;
+  return ListImportFailuresOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImportFailuresOutcomeCallable CloudTrailClient::ListImportFailuresCallable(const ListImportFailuresRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListImportFailuresOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImportFailures(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::ListImportFailuresAsync(const ListImportFailuresRequest& request, const ListImportFailuresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListImportFailures(request), context);
+    } );
+}
+
+ListImportsOutcome CloudTrailClient::ListImports(const ListImportsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListImportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImportsOutcomeCallable CloudTrailClient::ListImportsCallable(const ListImportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListImportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::ListImportsAsync(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListImports(request), context);
+    } );
 }
 
 ListPublicKeysOutcome CloudTrailClient::ListPublicKeys(const ListPublicKeysRequest& request) const
@@ -499,12 +592,10 @@ ListPublicKeysOutcomeCallable CloudTrailClient::ListPublicKeysCallable(const Lis
 
 void CloudTrailClient::ListPublicKeysAsync(const ListPublicKeysRequest& request, const ListPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPublicKeysAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::ListPublicKeysAsyncHelper(const ListPublicKeysRequest& request, const ListPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPublicKeys(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPublicKeys(request), context);
+    } );
 }
 
 ListQueriesOutcome CloudTrailClient::ListQueries(const ListQueriesRequest& request) const
@@ -523,12 +614,10 @@ ListQueriesOutcomeCallable CloudTrailClient::ListQueriesCallable(const ListQueri
 
 void CloudTrailClient::ListQueriesAsync(const ListQueriesRequest& request, const ListQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListQueriesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::ListQueriesAsyncHelper(const ListQueriesRequest& request, const ListQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListQueries(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListQueries(request), context);
+    } );
 }
 
 ListTagsOutcome CloudTrailClient::ListTags(const ListTagsRequest& request) const
@@ -547,12 +636,10 @@ ListTagsOutcomeCallable CloudTrailClient::ListTagsCallable(const ListTagsRequest
 
 void CloudTrailClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTags(request), context);
+    } );
 }
 
 ListTrailsOutcome CloudTrailClient::ListTrails(const ListTrailsRequest& request) const
@@ -571,12 +658,10 @@ ListTrailsOutcomeCallable CloudTrailClient::ListTrailsCallable(const ListTrailsR
 
 void CloudTrailClient::ListTrailsAsync(const ListTrailsRequest& request, const ListTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrailsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::ListTrailsAsyncHelper(const ListTrailsRequest& request, const ListTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTrails(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTrails(request), context);
+    } );
 }
 
 LookupEventsOutcome CloudTrailClient::LookupEvents(const LookupEventsRequest& request) const
@@ -595,12 +680,10 @@ LookupEventsOutcomeCallable CloudTrailClient::LookupEventsCallable(const LookupE
 
 void CloudTrailClient::LookupEventsAsync(const LookupEventsRequest& request, const LookupEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->LookupEventsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::LookupEventsAsyncHelper(const LookupEventsRequest& request, const LookupEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, LookupEvents(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, LookupEvents(request), context);
+    } );
 }
 
 PutEventSelectorsOutcome CloudTrailClient::PutEventSelectors(const PutEventSelectorsRequest& request) const
@@ -619,12 +702,10 @@ PutEventSelectorsOutcomeCallable CloudTrailClient::PutEventSelectorsCallable(con
 
 void CloudTrailClient::PutEventSelectorsAsync(const PutEventSelectorsRequest& request, const PutEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEventSelectorsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::PutEventSelectorsAsyncHelper(const PutEventSelectorsRequest& request, const PutEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutEventSelectors(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutEventSelectors(request), context);
+    } );
 }
 
 PutInsightSelectorsOutcome CloudTrailClient::PutInsightSelectors(const PutInsightSelectorsRequest& request) const
@@ -643,12 +724,10 @@ PutInsightSelectorsOutcomeCallable CloudTrailClient::PutInsightSelectorsCallable
 
 void CloudTrailClient::PutInsightSelectorsAsync(const PutInsightSelectorsRequest& request, const PutInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutInsightSelectorsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::PutInsightSelectorsAsyncHelper(const PutInsightSelectorsRequest& request, const PutInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutInsightSelectors(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutInsightSelectors(request), context);
+    } );
 }
 
 RemoveTagsOutcome CloudTrailClient::RemoveTags(const RemoveTagsRequest& request) const
@@ -667,12 +746,10 @@ RemoveTagsOutcomeCallable CloudTrailClient::RemoveTagsCallable(const RemoveTagsR
 
 void CloudTrailClient::RemoveTagsAsync(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::RemoveTagsAsyncHelper(const RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveTags(request), context);
+    } );
 }
 
 RestoreEventDataStoreOutcome CloudTrailClient::RestoreEventDataStore(const RestoreEventDataStoreRequest& request) const
@@ -691,12 +768,32 @@ RestoreEventDataStoreOutcomeCallable CloudTrailClient::RestoreEventDataStoreCall
 
 void CloudTrailClient::RestoreEventDataStoreAsync(const RestoreEventDataStoreRequest& request, const RestoreEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreEventDataStoreAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RestoreEventDataStore(request), context);
+    } );
 }
 
-void CloudTrailClient::RestoreEventDataStoreAsyncHelper(const RestoreEventDataStoreRequest& request, const RestoreEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+StartImportOutcome CloudTrailClient::StartImport(const StartImportRequest& request) const
 {
-  handler(this, request, RestoreEventDataStore(request), context);
+  Aws::Http::URI uri = m_uri;
+  return StartImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartImportOutcomeCallable CloudTrailClient::StartImportCallable(const StartImportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartImport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::StartImportAsync(const StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartImport(request), context);
+    } );
 }
 
 StartLoggingOutcome CloudTrailClient::StartLogging(const StartLoggingRequest& request) const
@@ -715,12 +812,10 @@ StartLoggingOutcomeCallable CloudTrailClient::StartLoggingCallable(const StartLo
 
 void CloudTrailClient::StartLoggingAsync(const StartLoggingRequest& request, const StartLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartLoggingAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::StartLoggingAsyncHelper(const StartLoggingRequest& request, const StartLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartLogging(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartLogging(request), context);
+    } );
 }
 
 StartQueryOutcome CloudTrailClient::StartQuery(const StartQueryRequest& request) const
@@ -739,12 +834,32 @@ StartQueryOutcomeCallable CloudTrailClient::StartQueryCallable(const StartQueryR
 
 void CloudTrailClient::StartQueryAsync(const StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartQueryAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartQuery(request), context);
+    } );
 }
 
-void CloudTrailClient::StartQueryAsyncHelper(const StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+StopImportOutcome CloudTrailClient::StopImport(const StopImportRequest& request) const
 {
-  handler(this, request, StartQuery(request), context);
+  Aws::Http::URI uri = m_uri;
+  return StopImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopImportOutcomeCallable CloudTrailClient::StopImportCallable(const StopImportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopImport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::StopImportAsync(const StopImportRequest& request, const StopImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopImport(request), context);
+    } );
 }
 
 StopLoggingOutcome CloudTrailClient::StopLogging(const StopLoggingRequest& request) const
@@ -763,12 +878,10 @@ StopLoggingOutcomeCallable CloudTrailClient::StopLoggingCallable(const StopLoggi
 
 void CloudTrailClient::StopLoggingAsync(const StopLoggingRequest& request, const StopLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopLoggingAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::StopLoggingAsyncHelper(const StopLoggingRequest& request, const StopLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopLogging(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopLogging(request), context);
+    } );
 }
 
 UpdateEventDataStoreOutcome CloudTrailClient::UpdateEventDataStore(const UpdateEventDataStoreRequest& request) const
@@ -787,12 +900,10 @@ UpdateEventDataStoreOutcomeCallable CloudTrailClient::UpdateEventDataStoreCallab
 
 void CloudTrailClient::UpdateEventDataStoreAsync(const UpdateEventDataStoreRequest& request, const UpdateEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventDataStoreAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::UpdateEventDataStoreAsyncHelper(const UpdateEventDataStoreRequest& request, const UpdateEventDataStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateEventDataStore(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateEventDataStore(request), context);
+    } );
 }
 
 UpdateTrailOutcome CloudTrailClient::UpdateTrail(const UpdateTrailRequest& request) const
@@ -811,11 +922,9 @@ UpdateTrailOutcomeCallable CloudTrailClient::UpdateTrailCallable(const UpdateTra
 
 void CloudTrailClient::UpdateTrailAsync(const UpdateTrailRequest& request, const UpdateTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTrailAsyncHelper( request, handler, context ); } );
-}
-
-void CloudTrailClient::UpdateTrailAsyncHelper(const UpdateTrailRequest& request, const UpdateTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTrail(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTrail(request), context);
+    } );
 }
 

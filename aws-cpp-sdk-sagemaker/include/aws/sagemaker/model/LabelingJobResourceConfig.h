@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/VpcConfig.h>
 #include <utility>
 
 namespace Aws
@@ -199,10 +200,32 @@ namespace Model
      */
     inline LabelingJobResourceConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
 
+
+    
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    
+    inline LabelingJobResourceConfig& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    
+    inline LabelingJobResourceConfig& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_volumeKmsKeyId;
-    bool m_volumeKmsKeyIdHasBeenSet;
+    bool m_volumeKmsKeyIdHasBeenSet = false;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

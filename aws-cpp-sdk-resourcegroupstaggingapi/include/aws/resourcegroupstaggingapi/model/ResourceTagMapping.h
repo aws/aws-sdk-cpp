@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     ComplianceDetails m_complianceDetails;
-    bool m_complianceDetailsHasBeenSet;
+    bool m_complianceDetailsHasBeenSet = false;
   };
 
 } // namespace Model

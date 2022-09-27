@@ -200,16 +200,16 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_readinessCheckName;
-    bool m_readinessCheckNameHasBeenSet;
+    bool m_readinessCheckNameHasBeenSet = false;
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

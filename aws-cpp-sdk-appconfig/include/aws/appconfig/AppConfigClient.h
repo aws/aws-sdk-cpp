@@ -5,211 +5,15 @@
 
 #pragma once
 #include <aws/appconfig/AppConfig_EXPORTS.h>
-#include <aws/appconfig/AppConfigErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/appconfig/model/CreateApplicationResult.h>
-#include <aws/appconfig/model/CreateConfigurationProfileResult.h>
-#include <aws/appconfig/model/CreateDeploymentStrategyResult.h>
-#include <aws/appconfig/model/CreateEnvironmentResult.h>
-#include <aws/appconfig/model/CreateHostedConfigurationVersionResult.h>
-#include <aws/appconfig/model/GetApplicationResult.h>
-#include <aws/appconfig/model/GetConfigurationProfileResult.h>
-#include <aws/appconfig/model/GetDeploymentResult.h>
-#include <aws/appconfig/model/GetDeploymentStrategyResult.h>
-#include <aws/appconfig/model/GetEnvironmentResult.h>
-#include <aws/appconfig/model/GetHostedConfigurationVersionResult.h>
-#include <aws/appconfig/model/ListApplicationsResult.h>
-#include <aws/appconfig/model/ListConfigurationProfilesResult.h>
-#include <aws/appconfig/model/ListDeploymentStrategiesResult.h>
-#include <aws/appconfig/model/ListDeploymentsResult.h>
-#include <aws/appconfig/model/ListEnvironmentsResult.h>
-#include <aws/appconfig/model/ListHostedConfigurationVersionsResult.h>
-#include <aws/appconfig/model/ListTagsForResourceResult.h>
-#include <aws/appconfig/model/StartDeploymentResult.h>
-#include <aws/appconfig/model/StopDeploymentResult.h>
-#include <aws/appconfig/model/UpdateApplicationResult.h>
-#include <aws/appconfig/model/UpdateConfigurationProfileResult.h>
-#include <aws/appconfig/model/UpdateDeploymentStrategyResult.h>
-#include <aws/appconfig/model/UpdateEnvironmentResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/appconfig/AppConfigServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace AppConfig
 {
-
-namespace Model
-{
-        class CreateApplicationRequest;
-        class CreateConfigurationProfileRequest;
-        class CreateDeploymentStrategyRequest;
-        class CreateEnvironmentRequest;
-        class CreateHostedConfigurationVersionRequest;
-        class DeleteApplicationRequest;
-        class DeleteConfigurationProfileRequest;
-        class DeleteDeploymentStrategyRequest;
-        class DeleteEnvironmentRequest;
-        class DeleteHostedConfigurationVersionRequest;
-        class GetApplicationRequest;
-        class GetConfigurationProfileRequest;
-        class GetDeploymentRequest;
-        class GetDeploymentStrategyRequest;
-        class GetEnvironmentRequest;
-        class GetHostedConfigurationVersionRequest;
-        class ListApplicationsRequest;
-        class ListConfigurationProfilesRequest;
-        class ListDeploymentStrategiesRequest;
-        class ListDeploymentsRequest;
-        class ListEnvironmentsRequest;
-        class ListHostedConfigurationVersionsRequest;
-        class ListTagsForResourceRequest;
-        class StartDeploymentRequest;
-        class StopDeploymentRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateApplicationRequest;
-        class UpdateConfigurationProfileRequest;
-        class UpdateDeploymentStrategyRequest;
-        class UpdateEnvironmentRequest;
-        class ValidateConfigurationRequest;
-
-        typedef Aws::Utils::Outcome<CreateApplicationResult, AppConfigError> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateConfigurationProfileResult, AppConfigError> CreateConfigurationProfileOutcome;
-        typedef Aws::Utils::Outcome<CreateDeploymentStrategyResult, AppConfigError> CreateDeploymentStrategyOutcome;
-        typedef Aws::Utils::Outcome<CreateEnvironmentResult, AppConfigError> CreateEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<CreateHostedConfigurationVersionResult, AppConfigError> CreateHostedConfigurationVersionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteConfigurationProfileOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteDeploymentStrategyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> DeleteHostedConfigurationVersionOutcome;
-        typedef Aws::Utils::Outcome<GetApplicationResult, AppConfigError> GetApplicationOutcome;
-        typedef Aws::Utils::Outcome<GetConfigurationProfileResult, AppConfigError> GetConfigurationProfileOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentResult, AppConfigError> GetDeploymentOutcome;
-        typedef Aws::Utils::Outcome<GetDeploymentStrategyResult, AppConfigError> GetDeploymentStrategyOutcome;
-        typedef Aws::Utils::Outcome<GetEnvironmentResult, AppConfigError> GetEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<GetHostedConfigurationVersionResult, AppConfigError> GetHostedConfigurationVersionOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationsResult, AppConfigError> ListApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListConfigurationProfilesResult, AppConfigError> ListConfigurationProfilesOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentStrategiesResult, AppConfigError> ListDeploymentStrategiesOutcome;
-        typedef Aws::Utils::Outcome<ListDeploymentsResult, AppConfigError> ListDeploymentsOutcome;
-        typedef Aws::Utils::Outcome<ListEnvironmentsResult, AppConfigError> ListEnvironmentsOutcome;
-        typedef Aws::Utils::Outcome<ListHostedConfigurationVersionsResult, AppConfigError> ListHostedConfigurationVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppConfigError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartDeploymentResult, AppConfigError> StartDeploymentOutcome;
-        typedef Aws::Utils::Outcome<StopDeploymentResult, AppConfigError> StopDeploymentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResult, AppConfigError> UpdateApplicationOutcome;
-        typedef Aws::Utils::Outcome<UpdateConfigurationProfileResult, AppConfigError> UpdateConfigurationProfileOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeploymentStrategyResult, AppConfigError> UpdateDeploymentStrategyOutcome;
-        typedef Aws::Utils::Outcome<UpdateEnvironmentResult, AppConfigError> UpdateEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AppConfigError> ValidateConfigurationOutcome;
-
-        typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
-        typedef std::future<CreateConfigurationProfileOutcome> CreateConfigurationProfileOutcomeCallable;
-        typedef std::future<CreateDeploymentStrategyOutcome> CreateDeploymentStrategyOutcomeCallable;
-        typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
-        typedef std::future<CreateHostedConfigurationVersionOutcome> CreateHostedConfigurationVersionOutcomeCallable;
-        typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
-        typedef std::future<DeleteConfigurationProfileOutcome> DeleteConfigurationProfileOutcomeCallable;
-        typedef std::future<DeleteDeploymentStrategyOutcome> DeleteDeploymentStrategyOutcomeCallable;
-        typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
-        typedef std::future<DeleteHostedConfigurationVersionOutcome> DeleteHostedConfigurationVersionOutcomeCallable;
-        typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
-        typedef std::future<GetConfigurationProfileOutcome> GetConfigurationProfileOutcomeCallable;
-        typedef std::future<GetDeploymentOutcome> GetDeploymentOutcomeCallable;
-        typedef std::future<GetDeploymentStrategyOutcome> GetDeploymentStrategyOutcomeCallable;
-        typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
-        typedef std::future<GetHostedConfigurationVersionOutcome> GetHostedConfigurationVersionOutcomeCallable;
-        typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
-        typedef std::future<ListConfigurationProfilesOutcome> ListConfigurationProfilesOutcomeCallable;
-        typedef std::future<ListDeploymentStrategiesOutcome> ListDeploymentStrategiesOutcomeCallable;
-        typedef std::future<ListDeploymentsOutcome> ListDeploymentsOutcomeCallable;
-        typedef std::future<ListEnvironmentsOutcome> ListEnvironmentsOutcomeCallable;
-        typedef std::future<ListHostedConfigurationVersionsOutcome> ListHostedConfigurationVersionsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<StartDeploymentOutcome> StartDeploymentOutcomeCallable;
-        typedef std::future<StopDeploymentOutcome> StopDeploymentOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
-        typedef std::future<UpdateConfigurationProfileOutcome> UpdateConfigurationProfileOutcomeCallable;
-        typedef std::future<UpdateDeploymentStrategyOutcome> UpdateDeploymentStrategyOutcomeCallable;
-        typedef std::future<UpdateEnvironmentOutcome> UpdateEnvironmentOutcomeCallable;
-        typedef std::future<ValidateConfigurationOutcome> ValidateConfigurationOutcomeCallable;
-} // namespace Model
-
-  class AppConfigClient;
-
-    typedef std::function<void(const AppConfigClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::CreateConfigurationProfileRequest&, const Model::CreateConfigurationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationProfileResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::CreateDeploymentStrategyRequest&, const Model::CreateDeploymentStrategyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeploymentStrategyResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::CreateEnvironmentRequest&, const Model::CreateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::CreateHostedConfigurationVersionRequest&, Model::CreateHostedConfigurationVersionOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHostedConfigurationVersionResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::DeleteConfigurationProfileRequest&, const Model::DeleteConfigurationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationProfileResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::DeleteDeploymentStrategyRequest&, const Model::DeleteDeploymentStrategyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeploymentStrategyResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::DeleteEnvironmentRequest&, const Model::DeleteEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::DeleteHostedConfigurationVersionRequest&, const Model::DeleteHostedConfigurationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHostedConfigurationVersionResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::GetConfigurationProfileRequest&, const Model::GetConfigurationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationProfileResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::GetDeploymentRequest&, const Model::GetDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::GetDeploymentStrategyRequest&, const Model::GetDeploymentStrategyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentStrategyResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::GetEnvironmentRequest&, const Model::GetEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::GetHostedConfigurationVersionRequest&, Model::GetHostedConfigurationVersionOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostedConfigurationVersionResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::ListConfigurationProfilesRequest&, const Model::ListConfigurationProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationProfilesResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::ListDeploymentStrategiesRequest&, const Model::ListDeploymentStrategiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeploymentStrategiesResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::ListDeploymentsRequest&, const Model::ListDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeploymentsResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::ListEnvironmentsRequest&, const Model::ListEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentsResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::ListHostedConfigurationVersionsRequest&, const Model::ListHostedConfigurationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHostedConfigurationVersionsResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::StartDeploymentRequest&, const Model::StartDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDeploymentResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::StopDeploymentRequest&, const Model::StopDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDeploymentResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::UpdateConfigurationProfileRequest&, const Model::UpdateConfigurationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationProfileResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::UpdateDeploymentStrategyRequest&, const Model::UpdateDeploymentStrategyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeploymentStrategyResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const AppConfigClient*, const Model::ValidateConfigurationRequest&, const Model::ValidateConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateConfigurationResponseReceivedHandler;
-
   /**
    * <p>Use AppConfig, a capability of Amazon Web Services Systems Manager, to
    * create, manage, and quickly deploy application configurations. AppConfig
@@ -258,24 +62,25 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AppConfigClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AppConfigClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AppConfigClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~AppConfigClient();
 
 
         /**
-         * <p>Creates an application. An application in AppConfig is a logical unit of code
-         * that provides capabilities for your customers. For example, an application can
-         * be a microservice that runs on Amazon EC2 instances, a mobile application
-         * installed by your users, a serverless application using Amazon API Gateway and
-         * Lambda, or any system you run on behalf of others.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an application. In AppConfig, an application is simply an
+         * organizational construct like a folder. This organizational construct has a
+         * relationship with some unit of executable code. For example, you could create an
+         * application called MyMobileApp to organize and manage configuration data for a
+         * mobile application installed by your users.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateApplication">AWS
          * API Reference</a></p>
          */
@@ -345,13 +150,13 @@ namespace Model
 
         /**
          * <p>Creates an environment. For each application, you define one or more
-         * environments. An environment is a logical deployment group of AppConfig targets,
-         * such as applications in a <code>Beta</code> or <code>Production</code>
-         * environment. You can also define environments for application subcomponents such
-         * as the <code>Web</code>, <code>Mobile</code> and <code>Back-end</code>
-         * components for your application. You can configure Amazon CloudWatch alarms for
-         * each environment. The system monitors alarms during a configuration deployment.
-         * If an alarm is triggered, the system rolls back the configuration.</p><p><h3>See
+         * environments. An environment is a deployment group of AppConfig targets, such as
+         * applications in a <code>Beta</code> or <code>Production</code> environment. You
+         * can also define environments for application subcomponents such as the
+         * <code>Web</code>, <code>Mobile</code> and <code>Back-end</code> components for
+         * your application. You can configure Amazon CloudWatch alarms for each
+         * environment. The system monitors alarms during a configuration deployment. If an
+         * alarm is triggered, the system rolls back the configuration.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateEnvironment">AWS
          * API Reference</a></p>
@@ -367,6 +172,62 @@ namespace Model
          * An Async wrapper for CreateEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an AppConfig extension. An extension augments your ability to inject
+         * logic or behavior at different points during the AppConfig workflow of creating
+         * or deploying a configuration.</p> <p>You can create your own extensions or use
+         * the Amazon Web Services-authored extensions provided by AppConfig. For most
+         * use-cases, to create your own extension, you must create an Lambda function to
+         * perform any computation and processing defined in the extension. For more
+         * information about extensions, see <a
+         * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+         * with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtension">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateExtensionOutcome CreateExtension(const Model::CreateExtensionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateExtension that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateExtensionOutcomeCallable CreateExtensionCallable(const Model::CreateExtensionRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateExtension that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateExtensionAsync(const Model::CreateExtensionRequest& request, const CreateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>When you create an extension or configure an Amazon Web Services-authored
+         * extension, you associate the extension with an AppConfig application,
+         * environment, or configuration profile. For example, you can choose to run the
+         * <code>AppConfig deployment events to Amazon SNS</code> Amazon Web
+         * Services-authored extension and receive notifications on an Amazon SNS topic
+         * anytime a configuration deployment is started for a specific application.
+         * Defining which extension to associate with an AppConfig resource is called an
+         * <i>extension association</i>. An extension association is a specified
+         * relationship between an extension and an AppConfig resource, such as an
+         * application or a configuration profile. For more information about extensions
+         * and associations, see <a
+         * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+         * with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateExtensionAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateExtensionAssociationOutcome CreateExtensionAssociation(const Model::CreateExtensionAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateExtensionAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateExtensionAssociationOutcomeCallable CreateExtensionAssociationCallable(const Model::CreateExtensionAssociationRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateExtensionAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateExtensionAssociationAsync(const Model::CreateExtensionAssociationRequest& request, const CreateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new configuration in the AppConfig hosted configuration
@@ -457,6 +318,42 @@ namespace Model
          * An Async wrapper for DeleteEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEnvironmentAsync(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an AppConfig extension. You must delete all associations to an
+         * extension before you delete the extension.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtension">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteExtensionOutcome DeleteExtension(const Model::DeleteExtensionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteExtension that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteExtensionOutcomeCallable DeleteExtensionCallable(const Model::DeleteExtensionRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteExtension that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteExtensionAsync(const Model::DeleteExtensionRequest& request, const DeleteExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an extension association. This action doesn't delete extensions
+         * defined in the association.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteExtensionAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteExtensionAssociationOutcome DeleteExtensionAssociation(const Model::DeleteExtensionAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteExtensionAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteExtensionAssociationOutcomeCallable DeleteExtensionAssociationCallable(const Model::DeleteExtensionAssociationRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteExtensionAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteExtensionAssociationAsync(const Model::DeleteExtensionAssociationRequest& request, const DeleteExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a version of a configuration from the AppConfig hosted configuration
@@ -552,8 +449,8 @@ namespace Model
         virtual void GetDeploymentStrategyAsync(const Model::GetDeploymentStrategyRequest& request, const GetDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about an environment. An environment is a logical
-         * deployment group of AppConfig applications, such as applications in a
+         * <p>Retrieves information about an environment. An environment is a deployment
+         * group of AppConfig applications, such as applications in a
          * <code>Production</code> environment or in an <code>EU_Region</code> environment.
          * Each configuration deployment targets an environment. You can enable one or more
          * Amazon CloudWatch alarms for an environment. If an alarm is triggered during a
@@ -573,6 +470,45 @@ namespace Model
          * An Async wrapper for GetEnvironment that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEnvironmentAsync(const Model::GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about an AppConfig extension.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtension">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetExtensionOutcome GetExtension(const Model::GetExtensionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetExtension that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetExtensionOutcomeCallable GetExtensionCallable(const Model::GetExtensionRequest& request) const;
+
+        /**
+         * An Async wrapper for GetExtension that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetExtensionAsync(const Model::GetExtensionRequest& request, const GetExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about an AppConfig extension association. For more
+         * information about extensions and associations, see <a
+         * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+         * with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetExtensionAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetExtensionAssociationOutcome GetExtensionAssociation(const Model::GetExtensionAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetExtensionAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetExtensionAssociationOutcomeCallable GetExtensionAssociationCallable(const Model::GetExtensionAssociationRequest& request) const;
+
+        /**
+         * An Async wrapper for GetExtensionAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetExtensionAssociationAsync(const Model::GetExtensionAssociationRequest& request, const GetExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about a specific configuration version.</p><p><h3>See
@@ -679,6 +615,48 @@ namespace Model
          * An Async wrapper for ListEnvironments that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEnvironmentsAsync(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all AppConfig extension associations in the account. For more
+         * information about extensions and associations, see <a
+         * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+         * with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensionAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExtensionAssociationsOutcome ListExtensionAssociations(const Model::ListExtensionAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListExtensionAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExtensionAssociationsOutcomeCallable ListExtensionAssociationsCallable(const Model::ListExtensionAssociationsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListExtensionAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExtensionAssociationsAsync(const Model::ListExtensionAssociationsRequest& request, const ListExtensionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all custom and Amazon Web Services-authored AppConfig extensions in the
+         * account. For more information about extensions, see <a
+         * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+         * with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListExtensions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExtensionsOutcome ListExtensions(const Model::ListExtensionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListExtensions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExtensionsOutcomeCallable ListExtensionsCallable(const Model::ListExtensionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListExtensions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExtensionsAsync(const Model::ListExtensionsRequest& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists configurations stored in the AppConfig hosted configuration store by
@@ -859,6 +837,47 @@ namespace Model
         virtual void UpdateEnvironmentAsync(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an AppConfig extension. For more information about extensions, see <a
+         * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+         * with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtension">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateExtensionOutcome UpdateExtension(const Model::UpdateExtensionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateExtension that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateExtensionOutcomeCallable UpdateExtensionCallable(const Model::UpdateExtensionRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateExtension that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateExtensionAsync(const Model::UpdateExtensionRequest& request, const UpdateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates an association. For more information about extensions and
+         * associations, see <a
+         * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+         * with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/UpdateExtensionAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateExtensionAssociationOutcome UpdateExtensionAssociation(const Model::UpdateExtensionAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateExtensionAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateExtensionAssociationOutcomeCallable UpdateExtensionAssociationCallable(const Model::UpdateExtensionAssociationRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateExtensionAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateExtensionAssociationAsync(const Model::UpdateExtensionAssociationRequest& request, const UpdateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Uses the validators in a configuration profile to validate a
          * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ValidateConfiguration">AWS
@@ -880,38 +899,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateConfigurationProfileAsyncHelper(const Model::CreateConfigurationProfileRequest& request, const CreateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDeploymentStrategyAsyncHelper(const Model::CreateDeploymentStrategyRequest& request, const CreateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateEnvironmentAsyncHelper(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateHostedConfigurationVersionAsyncHelper(const Model::CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteConfigurationProfileAsyncHelper(const Model::DeleteConfigurationProfileRequest& request, const DeleteConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDeploymentStrategyAsyncHelper(const Model::DeleteDeploymentStrategyRequest& request, const DeleteDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteEnvironmentAsyncHelper(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteHostedConfigurationVersionAsyncHelper(const Model::DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetConfigurationProfileAsyncHelper(const Model::GetConfigurationProfileRequest& request, const GetConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDeploymentAsyncHelper(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDeploymentStrategyAsyncHelper(const Model::GetDeploymentStrategyRequest& request, const GetDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEnvironmentAsyncHelper(const Model::GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetHostedConfigurationVersionAsyncHelper(const Model::GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListConfigurationProfilesAsyncHelper(const Model::ListConfigurationProfilesRequest& request, const ListConfigurationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDeploymentStrategiesAsyncHelper(const Model::ListDeploymentStrategiesRequest& request, const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDeploymentsAsyncHelper(const Model::ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEnvironmentsAsyncHelper(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListHostedConfigurationVersionsAsyncHelper(const Model::ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartDeploymentAsyncHelper(const Model::StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopDeploymentAsyncHelper(const Model::StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateConfigurationProfileAsyncHelper(const Model::UpdateConfigurationProfileRequest& request, const UpdateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDeploymentStrategyAsyncHelper(const Model::UpdateDeploymentStrategyRequest& request, const UpdateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateEnvironmentAsyncHelper(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ValidateConfigurationAsyncHelper(const Model::ValidateConfigurationRequest& request, const ValidateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

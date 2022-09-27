@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_insightArn;
-    bool m_insightArnHasBeenSet;
+    bool m_insightArnHasBeenSet = false;
   };
 
 } // namespace Model

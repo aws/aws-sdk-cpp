@@ -307,19 +307,19 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     LaunchType m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
 
     SchedulingStrategy m_schedulingStrategy;
-    bool m_schedulingStrategyHasBeenSet;
+    bool m_schedulingStrategyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,7 +26,11 @@ namespace Model
 {
 
   /**
-   * <p>The search criteria to be used to return users.</p><p><h3>See Also:</h3>   <a
+   * <p>The search criteria to be used to return users.</p>  <p>The
+   * <code>Username</code>, <code>Firstname</code>, and <code>Lastname</code> fields
+   * support "contains" queries with a minimum of 2 characters and a maximum of 25
+   * characters. Any queries with character lengths outside of this range result in
+   * empty results. </p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserSearchCriteria">AWS
    * API Reference</a></p>
    */
@@ -207,16 +211,16 @@ namespace Model
   private:
 
     Aws::Vector<UserSearchCriteria> m_orConditions;
-    bool m_orConditionsHasBeenSet;
+    bool m_orConditionsHasBeenSet = false;
 
     Aws::Vector<UserSearchCriteria> m_andConditions;
-    bool m_andConditionsHasBeenSet;
+    bool m_andConditionsHasBeenSet = false;
 
     StringCondition m_stringCondition;
-    bool m_stringConditionHasBeenSet;
+    bool m_stringConditionHasBeenSet = false;
 
     HierarchyGroupCondition m_hierarchyGroupCondition;
-    bool m_hierarchyGroupConditionHasBeenSet;
+    bool m_hierarchyGroupConditionHasBeenSet = false;
   };
 
 } // namespace Model

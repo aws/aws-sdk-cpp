@@ -429,25 +429,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::String m_detailType;
-    bool m_detailTypeHasBeenSet;
+    bool m_detailTypeHasBeenSet = false;
 
     Aws::String m_detail;
-    bool m_detailHasBeenSet;
+    bool m_detailHasBeenSet = false;
 
     Aws::String m_eventBusName;
-    bool m_eventBusNameHasBeenSet;
+    bool m_eventBusNameHasBeenSet = false;
 
     Aws::String m_traceHeader;
-    bool m_traceHeaderHasBeenSet;
+    bool m_traceHeaderHasBeenSet = false;
   };
 
 } // namespace Model

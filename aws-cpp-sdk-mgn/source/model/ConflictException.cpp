@@ -20,6 +20,7 @@ namespace Model
 
 ConflictException::ConflictException() : 
     m_codeHasBeenSet(false),
+    m_errorsHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
@@ -28,6 +29,7 @@ ConflictException::ConflictException() :
 
 ConflictException::ConflictException(JsonView jsonValue) : 
     m_codeHasBeenSet(false),
+    m_errorsHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
@@ -42,6 +44,16 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
     m_code = jsonValue.GetString("code");
 
     m_codeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("errors"))
+  {
+    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
+    {
+      m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
+    }
+    m_errorsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("message"))
@@ -75,6 +87,17 @@ JsonValue ConflictException::Jsonize() const
   if(m_codeHasBeenSet)
   {
    payload.WithString("code", m_code);
+
+  }
+
+  if(m_errorsHasBeenSet)
+  {
+   Array<JsonValue> errorsJsonList(m_errors.size());
+   for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
+   {
+     errorsJsonList[errorsIndex].AsObject(m_errors[errorsIndex].Jsonize());
+   }
+   payload.WithArray("errors", std::move(errorsJsonList));
 
   }
 

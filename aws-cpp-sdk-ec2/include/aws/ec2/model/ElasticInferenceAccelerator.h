@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
   };
 
 } // namespace Model

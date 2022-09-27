@@ -268,22 +268,22 @@ namespace Model
   private:
 
     UrlReference m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     AttachmentReference m_attachment;
-    bool m_attachmentHasBeenSet;
+    bool m_attachmentHasBeenSet = false;
 
     StringReference m_string;
-    bool m_stringHasBeenSet;
+    bool m_stringHasBeenSet = false;
 
     NumberReference m_number;
-    bool m_numberHasBeenSet;
+    bool m_numberHasBeenSet = false;
 
     DateReference m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
 
     EmailReference m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
   };
 
 } // namespace Model

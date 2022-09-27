@@ -32,7 +32,8 @@ AwsOpenSearchServiceDomainDetails::AwsOpenSearchServiceDomainDetails() :
     m_domainEndpointOptionsHasBeenSet(false),
     m_vpcOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
-    m_domainEndpointsHasBeenSet(false)
+    m_domainEndpointsHasBeenSet(false),
+    m_advancedSecurityOptionsHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ AwsOpenSearchServiceDomainDetails::AwsOpenSearchServiceDomainDetails(JsonView js
     m_domainEndpointOptionsHasBeenSet(false),
     m_vpcOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
-    m_domainEndpointsHasBeenSet(false)
+    m_domainEndpointsHasBeenSet(false),
+    m_advancedSecurityOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -158,6 +160,13 @@ AwsOpenSearchServiceDomainDetails& AwsOpenSearchServiceDomainDetails::operator =
     m_domainEndpointsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdvancedSecurityOptions"))
+  {
+    m_advancedSecurityOptions = jsonValue.GetObject("AdvancedSecurityOptions");
+
+    m_advancedSecurityOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -251,6 +260,12 @@ JsonValue AwsOpenSearchServiceDomainDetails::Jsonize() const
      domainEndpointsJsonMap.WithString(domainEndpointsItem.first, domainEndpointsItem.second);
    }
    payload.WithObject("DomainEndpoints", std::move(domainEndpointsJsonMap));
+
+  }
+
+  if(m_advancedSecurityOptionsHasBeenSet)
+  {
+   payload.WithObject("AdvancedSecurityOptions", m_advancedSecurityOptions.Jsonize());
 
   }
 

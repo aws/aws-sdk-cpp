@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_collectorName;
-    bool m_collectorNameHasBeenSet;
+    bool m_collectorNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_serviceAccessRoleArn;
-    bool m_serviceAccessRoleArnHasBeenSet;
+    bool m_serviceAccessRoleArnHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
   };
 
 } // namespace Model

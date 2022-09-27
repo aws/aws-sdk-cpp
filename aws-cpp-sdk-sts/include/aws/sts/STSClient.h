@@ -5,105 +5,16 @@
 
 #pragma once
 #include <aws/sts/STS_EXPORTS.h>
-#include <aws/sts/STSErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/sts/model/AssumeRoleResult.h>
-#include <aws/sts/model/AssumeRoleWithSAMLResult.h>
-#include <aws/sts/model/AssumeRoleWithWebIdentityResult.h>
-#include <aws/sts/model/DecodeAuthorizationMessageResult.h>
-#include <aws/sts/model/GetAccessKeyInfoResult.h>
-#include <aws/sts/model/GetCallerIdentityResult.h>
-#include <aws/sts/model/GetFederationTokenResult.h>
-#include <aws/sts/model/GetSessionTokenResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/sts/STSServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace STS
 {
-
-namespace Model
-{
-        class AssumeRoleRequest;
-        class AssumeRoleWithSAMLRequest;
-        class AssumeRoleWithWebIdentityRequest;
-        class DecodeAuthorizationMessageRequest;
-        class GetAccessKeyInfoRequest;
-        class GetCallerIdentityRequest;
-        class GetFederationTokenRequest;
-        class GetSessionTokenRequest;
-
-        typedef Aws::Utils::Outcome<AssumeRoleResult, STSError> AssumeRoleOutcome;
-        typedef Aws::Utils::Outcome<AssumeRoleWithSAMLResult, STSError> AssumeRoleWithSAMLOutcome;
-        typedef Aws::Utils::Outcome<AssumeRoleWithWebIdentityResult, STSError> AssumeRoleWithWebIdentityOutcome;
-        typedef Aws::Utils::Outcome<DecodeAuthorizationMessageResult, STSError> DecodeAuthorizationMessageOutcome;
-        typedef Aws::Utils::Outcome<GetAccessKeyInfoResult, STSError> GetAccessKeyInfoOutcome;
-        typedef Aws::Utils::Outcome<GetCallerIdentityResult, STSError> GetCallerIdentityOutcome;
-        typedef Aws::Utils::Outcome<GetFederationTokenResult, STSError> GetFederationTokenOutcome;
-        typedef Aws::Utils::Outcome<GetSessionTokenResult, STSError> GetSessionTokenOutcome;
-
-        typedef std::future<AssumeRoleOutcome> AssumeRoleOutcomeCallable;
-        typedef std::future<AssumeRoleWithSAMLOutcome> AssumeRoleWithSAMLOutcomeCallable;
-        typedef std::future<AssumeRoleWithWebIdentityOutcome> AssumeRoleWithWebIdentityOutcomeCallable;
-        typedef std::future<DecodeAuthorizationMessageOutcome> DecodeAuthorizationMessageOutcomeCallable;
-        typedef std::future<GetAccessKeyInfoOutcome> GetAccessKeyInfoOutcomeCallable;
-        typedef std::future<GetCallerIdentityOutcome> GetCallerIdentityOutcomeCallable;
-        typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
-        typedef std::future<GetSessionTokenOutcome> GetSessionTokenOutcomeCallable;
-} // namespace Model
-
-  class STSClient;
-
-    typedef std::function<void(const STSClient*, const Model::AssumeRoleRequest&, const Model::AssumeRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssumeRoleResponseReceivedHandler;
-    typedef std::function<void(const STSClient*, const Model::AssumeRoleWithSAMLRequest&, const Model::AssumeRoleWithSAMLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssumeRoleWithSAMLResponseReceivedHandler;
-    typedef std::function<void(const STSClient*, const Model::AssumeRoleWithWebIdentityRequest&, const Model::AssumeRoleWithWebIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssumeRoleWithWebIdentityResponseReceivedHandler;
-    typedef std::function<void(const STSClient*, const Model::DecodeAuthorizationMessageRequest&, const Model::DecodeAuthorizationMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DecodeAuthorizationMessageResponseReceivedHandler;
-    typedef std::function<void(const STSClient*, const Model::GetAccessKeyInfoRequest&, const Model::GetAccessKeyInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessKeyInfoResponseReceivedHandler;
-    typedef std::function<void(const STSClient*, const Model::GetCallerIdentityRequest&, const Model::GetCallerIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCallerIdentityResponseReceivedHandler;
-    typedef std::function<void(const STSClient*, const Model::GetFederationTokenRequest&, const Model::GetFederationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFederationTokenResponseReceivedHandler;
-    typedef std::function<void(const STSClient*, const Model::GetSessionTokenRequest&, const Model::GetSessionTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionTokenResponseReceivedHandler;
-
   /**
    * <fullname>Security Token Service</fullname> <p>Security Token Service (STS)
    * enables you to request temporary, limited-privilege credentials for Identity and
@@ -128,14 +39,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        STSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        STSClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         STSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~STSClient();
 
@@ -803,14 +715,6 @@ namespace Model
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssumeRoleAsyncHelper(const Model::AssumeRoleRequest& request, const AssumeRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssumeRoleWithSAMLAsyncHelper(const Model::AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssumeRoleWithWebIdentityAsyncHelper(const Model::AssumeRoleWithWebIdentityRequest& request, const AssumeRoleWithWebIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DecodeAuthorizationMessageAsyncHelper(const Model::DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAccessKeyInfoAsyncHelper(const Model::GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCallerIdentityAsyncHelper(const Model::GetCallerIdentityRequest& request, const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFederationTokenAsyncHelper(const Model::GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSessionTokenAsyncHelper(const Model::GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
         Aws::String m_uri;
         Aws::String m_configScheme;

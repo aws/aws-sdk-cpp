@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_objectIdentifiers;
-    bool m_objectIdentifiersHasBeenSet;
+    bool m_objectIdentifiersHasBeenSet = false;
   };
 
 } // namespace Model

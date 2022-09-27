@@ -80,6 +80,12 @@ UpdateLaunchConfigurationResult& UpdateLaunchConfigurationResult::operator =(con
 
   }
 
+  if(jsonValue.ValueExists("postLaunchActions"))
+  {
+    m_postLaunchActions = jsonValue.GetObject("postLaunchActions");
+
+  }
+
   if(jsonValue.ValueExists("sourceServerID"))
   {
     m_sourceServerID = jsonValue.GetString("sourceServerID");

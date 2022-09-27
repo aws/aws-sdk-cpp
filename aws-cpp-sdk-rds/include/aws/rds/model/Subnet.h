@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_subnetIdentifier;
-    bool m_subnetIdentifierHasBeenSet;
+    bool m_subnetIdentifierHasBeenSet = false;
 
     AvailabilityZone m_subnetAvailabilityZone;
-    bool m_subnetAvailabilityZoneHasBeenSet;
+    bool m_subnetAvailabilityZoneHasBeenSet = false;
 
     Outpost m_subnetOutpost;
-    bool m_subnetOutpostHasBeenSet;
+    bool m_subnetOutpostHasBeenSet = false;
 
     Aws::String m_subnetStatus;
-    bool m_subnetStatusHasBeenSet;
+    bool m_subnetStatusHasBeenSet = false;
   };
 
 } // namespace Model

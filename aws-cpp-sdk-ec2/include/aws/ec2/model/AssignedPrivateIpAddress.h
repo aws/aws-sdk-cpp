@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
   };
 
 } // namespace Model

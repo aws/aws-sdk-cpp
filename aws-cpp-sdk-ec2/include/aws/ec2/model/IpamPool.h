@@ -505,29 +505,33 @@ namespace Model
 
     /**
      * <p>The depth of pools in your IPAM pool. The pool depth quota is 10. For more
-     * information, see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline int GetPoolDepth() const{ return m_poolDepth; }
 
     /**
      * <p>The depth of pools in your IPAM pool. The pool depth quota is 10. For more
-     * information, see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline bool PoolDepthHasBeenSet() const { return m_poolDepthHasBeenSet; }
 
     /**
      * <p>The depth of pools in your IPAM pool. The pool depth quota is 10. For more
-     * information, see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline void SetPoolDepth(int value) { m_poolDepthHasBeenSet = true; m_poolDepth = value; }
 
     /**
      * <p>The depth of pools in your IPAM pool. The pool depth quota is 10. For more
-     * information, see <a href="/vpc/latest/ipam/quotas-ipam.html">Quotas in IPAM</a>
-     * in the <i>Amazon VPC IPAM User Guide</i>. </p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
+     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline IpamPool& WithPoolDepth(int value) { SetPoolDepth(value); return *this;}
 
@@ -1044,70 +1048,70 @@ namespace Model
   private:
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_ipamPoolId;
-    bool m_ipamPoolIdHasBeenSet;
+    bool m_ipamPoolIdHasBeenSet = false;
 
     Aws::String m_sourceIpamPoolId;
-    bool m_sourceIpamPoolIdHasBeenSet;
+    bool m_sourceIpamPoolIdHasBeenSet = false;
 
     Aws::String m_ipamPoolArn;
-    bool m_ipamPoolArnHasBeenSet;
+    bool m_ipamPoolArnHasBeenSet = false;
 
     Aws::String m_ipamScopeArn;
-    bool m_ipamScopeArnHasBeenSet;
+    bool m_ipamScopeArnHasBeenSet = false;
 
     IpamScopeType m_ipamScopeType;
-    bool m_ipamScopeTypeHasBeenSet;
+    bool m_ipamScopeTypeHasBeenSet = false;
 
     Aws::String m_ipamArn;
-    bool m_ipamArnHasBeenSet;
+    bool m_ipamArnHasBeenSet = false;
 
     Aws::String m_ipamRegion;
-    bool m_ipamRegionHasBeenSet;
+    bool m_ipamRegionHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     int m_poolDepth;
-    bool m_poolDepthHasBeenSet;
+    bool m_poolDepthHasBeenSet = false;
 
     IpamPoolState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateMessage;
-    bool m_stateMessageHasBeenSet;
+    bool m_stateMessageHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_autoImport;
-    bool m_autoImportHasBeenSet;
+    bool m_autoImportHasBeenSet = false;
 
     bool m_publiclyAdvertisable;
-    bool m_publiclyAdvertisableHasBeenSet;
+    bool m_publiclyAdvertisableHasBeenSet = false;
 
     AddressFamily m_addressFamily;
-    bool m_addressFamilyHasBeenSet;
+    bool m_addressFamilyHasBeenSet = false;
 
     int m_allocationMinNetmaskLength;
-    bool m_allocationMinNetmaskLengthHasBeenSet;
+    bool m_allocationMinNetmaskLengthHasBeenSet = false;
 
     int m_allocationMaxNetmaskLength;
-    bool m_allocationMaxNetmaskLengthHasBeenSet;
+    bool m_allocationMaxNetmaskLengthHasBeenSet = false;
 
     int m_allocationDefaultNetmaskLength;
-    bool m_allocationDefaultNetmaskLengthHasBeenSet;
+    bool m_allocationDefaultNetmaskLengthHasBeenSet = false;
 
     Aws::Vector<IpamResourceTag> m_allocationResourceTags;
-    bool m_allocationResourceTagsHasBeenSet;
+    bool m_allocationResourceTagsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     IpamPoolAwsService m_awsService;
-    bool m_awsServiceHasBeenSet;
+    bool m_awsServiceHasBeenSet = false;
   };
 
 } // namespace Model

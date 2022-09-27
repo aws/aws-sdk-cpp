@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_developerName;
-    bool m_developerNameHasBeenSet;
+    bool m_developerNameHasBeenSet = false;
 
     Aws::String m_privacyPolicy;
-    bool m_privacyPolicyHasBeenSet;
+    bool m_privacyPolicyHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

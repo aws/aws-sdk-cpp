@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_metricArn;
-    bool m_metricArnHasBeenSet;
+    bool m_metricArnHasBeenSet = false;
   };
 
 } // namespace Model

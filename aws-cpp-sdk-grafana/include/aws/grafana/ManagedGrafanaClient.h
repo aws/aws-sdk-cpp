@@ -5,138 +5,15 @@
 
 #pragma once
 #include <aws/grafana/ManagedGrafana_EXPORTS.h>
-#include <aws/grafana/ManagedGrafanaErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/grafana/model/AssociateLicenseResult.h>
-#include <aws/grafana/model/CreateWorkspaceResult.h>
-#include <aws/grafana/model/CreateWorkspaceApiKeyResult.h>
-#include <aws/grafana/model/DeleteWorkspaceResult.h>
-#include <aws/grafana/model/DeleteWorkspaceApiKeyResult.h>
-#include <aws/grafana/model/DescribeWorkspaceResult.h>
-#include <aws/grafana/model/DescribeWorkspaceAuthenticationResult.h>
-#include <aws/grafana/model/DisassociateLicenseResult.h>
-#include <aws/grafana/model/ListPermissionsResult.h>
-#include <aws/grafana/model/ListTagsForResourceResult.h>
-#include <aws/grafana/model/ListWorkspacesResult.h>
-#include <aws/grafana/model/TagResourceResult.h>
-#include <aws/grafana/model/UntagResourceResult.h>
-#include <aws/grafana/model/UpdatePermissionsResult.h>
-#include <aws/grafana/model/UpdateWorkspaceResult.h>
-#include <aws/grafana/model/UpdateWorkspaceAuthenticationResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/grafana/ManagedGrafanaServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ManagedGrafana
 {
-
-namespace Model
-{
-        class AssociateLicenseRequest;
-        class CreateWorkspaceRequest;
-        class CreateWorkspaceApiKeyRequest;
-        class DeleteWorkspaceRequest;
-        class DeleteWorkspaceApiKeyRequest;
-        class DescribeWorkspaceRequest;
-        class DescribeWorkspaceAuthenticationRequest;
-        class DisassociateLicenseRequest;
-        class ListPermissionsRequest;
-        class ListTagsForResourceRequest;
-        class ListWorkspacesRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdatePermissionsRequest;
-        class UpdateWorkspaceRequest;
-        class UpdateWorkspaceAuthenticationRequest;
-
-        typedef Aws::Utils::Outcome<AssociateLicenseResult, ManagedGrafanaError> AssociateLicenseOutcome;
-        typedef Aws::Utils::Outcome<CreateWorkspaceResult, ManagedGrafanaError> CreateWorkspaceOutcome;
-        typedef Aws::Utils::Outcome<CreateWorkspaceApiKeyResult, ManagedGrafanaError> CreateWorkspaceApiKeyOutcome;
-        typedef Aws::Utils::Outcome<DeleteWorkspaceResult, ManagedGrafanaError> DeleteWorkspaceOutcome;
-        typedef Aws::Utils::Outcome<DeleteWorkspaceApiKeyResult, ManagedGrafanaError> DeleteWorkspaceApiKeyOutcome;
-        typedef Aws::Utils::Outcome<DescribeWorkspaceResult, ManagedGrafanaError> DescribeWorkspaceOutcome;
-        typedef Aws::Utils::Outcome<DescribeWorkspaceAuthenticationResult, ManagedGrafanaError> DescribeWorkspaceAuthenticationOutcome;
-        typedef Aws::Utils::Outcome<DisassociateLicenseResult, ManagedGrafanaError> DisassociateLicenseOutcome;
-        typedef Aws::Utils::Outcome<ListPermissionsResult, ManagedGrafanaError> ListPermissionsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ManagedGrafanaError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListWorkspacesResult, ManagedGrafanaError> ListWorkspacesOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, ManagedGrafanaError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, ManagedGrafanaError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdatePermissionsResult, ManagedGrafanaError> UpdatePermissionsOutcome;
-        typedef Aws::Utils::Outcome<UpdateWorkspaceResult, ManagedGrafanaError> UpdateWorkspaceOutcome;
-        typedef Aws::Utils::Outcome<UpdateWorkspaceAuthenticationResult, ManagedGrafanaError> UpdateWorkspaceAuthenticationOutcome;
-
-        typedef std::future<AssociateLicenseOutcome> AssociateLicenseOutcomeCallable;
-        typedef std::future<CreateWorkspaceOutcome> CreateWorkspaceOutcomeCallable;
-        typedef std::future<CreateWorkspaceApiKeyOutcome> CreateWorkspaceApiKeyOutcomeCallable;
-        typedef std::future<DeleteWorkspaceOutcome> DeleteWorkspaceOutcomeCallable;
-        typedef std::future<DeleteWorkspaceApiKeyOutcome> DeleteWorkspaceApiKeyOutcomeCallable;
-        typedef std::future<DescribeWorkspaceOutcome> DescribeWorkspaceOutcomeCallable;
-        typedef std::future<DescribeWorkspaceAuthenticationOutcome> DescribeWorkspaceAuthenticationOutcomeCallable;
-        typedef std::future<DisassociateLicenseOutcome> DisassociateLicenseOutcomeCallable;
-        typedef std::future<ListPermissionsOutcome> ListPermissionsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListWorkspacesOutcome> ListWorkspacesOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdatePermissionsOutcome> UpdatePermissionsOutcomeCallable;
-        typedef std::future<UpdateWorkspaceOutcome> UpdateWorkspaceOutcomeCallable;
-        typedef std::future<UpdateWorkspaceAuthenticationOutcome> UpdateWorkspaceAuthenticationOutcomeCallable;
-} // namespace Model
-
-  class ManagedGrafanaClient;
-
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::AssociateLicenseRequest&, const Model::AssociateLicenseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateLicenseResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::CreateWorkspaceRequest&, const Model::CreateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::CreateWorkspaceApiKeyRequest&, const Model::CreateWorkspaceApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceApiKeyResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::DeleteWorkspaceRequest&, const Model::DeleteWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::DeleteWorkspaceApiKeyRequest&, const Model::DeleteWorkspaceApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceApiKeyResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::DescribeWorkspaceRequest&, const Model::DescribeWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::DescribeWorkspaceAuthenticationRequest&, const Model::DescribeWorkspaceAuthenticationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceAuthenticationResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::DisassociateLicenseRequest&, const Model::DisassociateLicenseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateLicenseResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::ListPermissionsRequest&, const Model::ListPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionsResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::ListWorkspacesRequest&, const Model::ListWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkspacesResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::UpdatePermissionsRequest&, const Model::UpdatePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePermissionsResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::UpdateWorkspaceRequest&, const Model::UpdateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceResponseReceivedHandler;
-    typedef std::function<void(const ManagedGrafanaClient*, const Model::UpdateWorkspaceAuthenticationRequest&, const Model::UpdateWorkspaceAuthenticationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceAuthenticationResponseReceivedHandler;
-
   /**
    * <p>Amazon Managed Grafana is a fully managed and secure data visualization
    * service that you can use to instantly query, correlate, and visualize
@@ -163,14 +40,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ManagedGrafanaClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ManagedGrafanaClient(const Aws::Auth::AWSCredentials& credentials,
+                             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ManagedGrafanaClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ManagedGrafanaClient();
 
@@ -499,22 +377,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateLicenseAsyncHelper(const Model::AssociateLicenseRequest& request, const AssociateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateWorkspaceAsyncHelper(const Model::CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateWorkspaceApiKeyAsyncHelper(const Model::CreateWorkspaceApiKeyRequest& request, const CreateWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteWorkspaceAsyncHelper(const Model::DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteWorkspaceApiKeyAsyncHelper(const Model::DeleteWorkspaceApiKeyRequest& request, const DeleteWorkspaceApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeWorkspaceAsyncHelper(const Model::DescribeWorkspaceRequest& request, const DescribeWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeWorkspaceAuthenticationAsyncHelper(const Model::DescribeWorkspaceAuthenticationRequest& request, const DescribeWorkspaceAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateLicenseAsyncHelper(const Model::DisassociateLicenseRequest& request, const DisassociateLicenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPermissionsAsyncHelper(const Model::ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListWorkspacesAsyncHelper(const Model::ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePermissionsAsyncHelper(const Model::UpdatePermissionsRequest& request, const UpdatePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateWorkspaceAsyncHelper(const Model::UpdateWorkspaceRequest& request, const UpdateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateWorkspaceAuthenticationAsyncHelper(const Model::UpdateWorkspaceAuthenticationRequest& request, const UpdateWorkspaceAuthenticationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

@@ -21,14 +21,26 @@ namespace Model
 PostFulfillmentStatusSpecification::PostFulfillmentStatusSpecification() : 
     m_successResponseHasBeenSet(false),
     m_failureResponseHasBeenSet(false),
-    m_timeoutResponseHasBeenSet(false)
+    m_timeoutResponseHasBeenSet(false),
+    m_successNextStepHasBeenSet(false),
+    m_successConditionalHasBeenSet(false),
+    m_failureNextStepHasBeenSet(false),
+    m_failureConditionalHasBeenSet(false),
+    m_timeoutNextStepHasBeenSet(false),
+    m_timeoutConditionalHasBeenSet(false)
 {
 }
 
 PostFulfillmentStatusSpecification::PostFulfillmentStatusSpecification(JsonView jsonValue) : 
     m_successResponseHasBeenSet(false),
     m_failureResponseHasBeenSet(false),
-    m_timeoutResponseHasBeenSet(false)
+    m_timeoutResponseHasBeenSet(false),
+    m_successNextStepHasBeenSet(false),
+    m_successConditionalHasBeenSet(false),
+    m_failureNextStepHasBeenSet(false),
+    m_failureConditionalHasBeenSet(false),
+    m_timeoutNextStepHasBeenSet(false),
+    m_timeoutConditionalHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +68,48 @@ PostFulfillmentStatusSpecification& PostFulfillmentStatusSpecification::operator
     m_timeoutResponseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("successNextStep"))
+  {
+    m_successNextStep = jsonValue.GetObject("successNextStep");
+
+    m_successNextStepHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("successConditional"))
+  {
+    m_successConditional = jsonValue.GetObject("successConditional");
+
+    m_successConditionalHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureNextStep"))
+  {
+    m_failureNextStep = jsonValue.GetObject("failureNextStep");
+
+    m_failureNextStepHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureConditional"))
+  {
+    m_failureConditional = jsonValue.GetObject("failureConditional");
+
+    m_failureConditionalHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("timeoutNextStep"))
+  {
+    m_timeoutNextStep = jsonValue.GetObject("timeoutNextStep");
+
+    m_timeoutNextStepHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("timeoutConditional"))
+  {
+    m_timeoutConditional = jsonValue.GetObject("timeoutConditional");
+
+    m_timeoutConditionalHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +132,42 @@ JsonValue PostFulfillmentStatusSpecification::Jsonize() const
   if(m_timeoutResponseHasBeenSet)
   {
    payload.WithObject("timeoutResponse", m_timeoutResponse.Jsonize());
+
+  }
+
+  if(m_successNextStepHasBeenSet)
+  {
+   payload.WithObject("successNextStep", m_successNextStep.Jsonize());
+
+  }
+
+  if(m_successConditionalHasBeenSet)
+  {
+   payload.WithObject("successConditional", m_successConditional.Jsonize());
+
+  }
+
+  if(m_failureNextStepHasBeenSet)
+  {
+   payload.WithObject("failureNextStep", m_failureNextStep.Jsonize());
+
+  }
+
+  if(m_failureConditionalHasBeenSet)
+  {
+   payload.WithObject("failureConditional", m_failureConditional.Jsonize());
+
+  }
+
+  if(m_timeoutNextStepHasBeenSet)
+  {
+   payload.WithObject("timeoutNextStep", m_timeoutNextStep.Jsonize());
+
+  }
+
+  if(m_timeoutConditionalHasBeenSet)
+  {
+   payload.WithObject("timeoutConditional", m_timeoutConditional.Jsonize());
 
   }
 

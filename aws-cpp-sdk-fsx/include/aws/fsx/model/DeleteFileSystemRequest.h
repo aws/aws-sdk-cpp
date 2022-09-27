@@ -217,19 +217,19 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     DeleteFileSystemWindowsConfiguration m_windowsConfiguration;
-    bool m_windowsConfigurationHasBeenSet;
+    bool m_windowsConfigurationHasBeenSet = false;
 
     DeleteFileSystemLustreConfiguration m_lustreConfiguration;
-    bool m_lustreConfigurationHasBeenSet;
+    bool m_lustreConfigurationHasBeenSet = false;
 
     DeleteFileSystemOpenZFSConfiguration m_openZFSConfiguration;
-    bool m_openZFSConfigurationHasBeenSet;
+    bool m_openZFSConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     FileBatchJobDefinition m_fileBatchJobDefinition;
-    bool m_fileBatchJobDefinitionHasBeenSet;
+    bool m_fileBatchJobDefinitionHasBeenSet = false;
 
     ScriptBatchJobDefinition m_scriptBatchJobDefinition;
-    bool m_scriptBatchJobDefinitionHasBeenSet;
+    bool m_scriptBatchJobDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

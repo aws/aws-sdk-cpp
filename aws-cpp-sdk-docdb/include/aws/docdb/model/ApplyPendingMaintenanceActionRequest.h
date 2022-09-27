@@ -229,13 +229,13 @@ namespace Model
   private:
 
     Aws::String m_resourceIdentifier;
-    bool m_resourceIdentifierHasBeenSet;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     Aws::String m_applyAction;
-    bool m_applyActionHasBeenSet;
+    bool m_applyActionHasBeenSet = false;
 
     Aws::String m_optInType;
-    bool m_optInTypeHasBeenSet;
+    bool m_optInTypeHasBeenSet = false;
   };
 
 } // namespace Model

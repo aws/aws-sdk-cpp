@@ -21,6 +21,7 @@
 #include <aws/rekognition/RekognitionEndpoint.h>
 #include <aws/rekognition/RekognitionErrorMarshaller.h>
 #include <aws/rekognition/model/CompareFacesRequest.h>
+#include <aws/rekognition/model/CopyProjectVersionRequest.h>
 #include <aws/rekognition/model/CreateCollectionRequest.h>
 #include <aws/rekognition/model/CreateDatasetRequest.h>
 #include <aws/rekognition/model/CreateProjectRequest.h>
@@ -30,6 +31,7 @@
 #include <aws/rekognition/model/DeleteDatasetRequest.h>
 #include <aws/rekognition/model/DeleteFacesRequest.h>
 #include <aws/rekognition/model/DeleteProjectRequest.h>
+#include <aws/rekognition/model/DeleteProjectPolicyRequest.h>
 #include <aws/rekognition/model/DeleteProjectVersionRequest.h>
 #include <aws/rekognition/model/DeleteStreamProcessorRequest.h>
 #include <aws/rekognition/model/DescribeCollectionRequest.h>
@@ -58,8 +60,10 @@
 #include <aws/rekognition/model/ListDatasetEntriesRequest.h>
 #include <aws/rekognition/model/ListDatasetLabelsRequest.h>
 #include <aws/rekognition/model/ListFacesRequest.h>
+#include <aws/rekognition/model/ListProjectPoliciesRequest.h>
 #include <aws/rekognition/model/ListStreamProcessorsRequest.h>
 #include <aws/rekognition/model/ListTagsForResourceRequest.h>
+#include <aws/rekognition/model/PutProjectPolicyRequest.h>
 #include <aws/rekognition/model/RecognizeCelebritiesRequest.h>
 #include <aws/rekognition/model/SearchFacesRequest.h>
 #include <aws/rekognition/model/SearchFacesByImageRequest.h>
@@ -91,33 +95,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "rekognition";
 static const char* ALLOCATION_TAG = "RekognitionClient";
 
-
 RekognitionClient::RekognitionClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<RekognitionErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<RekognitionErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-RekognitionClient::RekognitionClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+RekognitionClient::RekognitionClient(const AWSCredentials& credentials,
+                                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<RekognitionErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<RekognitionErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 RekognitionClient::RekognitionClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<RekognitionErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<RekognitionErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -129,7 +139,7 @@ RekognitionClient::~RekognitionClient()
 
 void RekognitionClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Rekognition");
+  AWSClient::SetServiceClientName("Rekognition");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -169,12 +179,32 @@ CompareFacesOutcomeCallable RekognitionClient::CompareFacesCallable(const Compar
 
 void RekognitionClient::CompareFacesAsync(const CompareFacesRequest& request, const CompareFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CompareFacesAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CompareFaces(request), context);
+    } );
 }
 
-void RekognitionClient::CompareFacesAsyncHelper(const CompareFacesRequest& request, const CompareFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+CopyProjectVersionOutcome RekognitionClient::CopyProjectVersion(const CopyProjectVersionRequest& request) const
 {
-  handler(this, request, CompareFaces(request), context);
+  Aws::Http::URI uri = m_uri;
+  return CopyProjectVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CopyProjectVersionOutcomeCallable RekognitionClient::CopyProjectVersionCallable(const CopyProjectVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CopyProjectVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopyProjectVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::CopyProjectVersionAsync(const CopyProjectVersionRequest& request, const CopyProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CopyProjectVersion(request), context);
+    } );
 }
 
 CreateCollectionOutcome RekognitionClient::CreateCollection(const CreateCollectionRequest& request) const
@@ -193,12 +223,10 @@ CreateCollectionOutcomeCallable RekognitionClient::CreateCollectionCallable(cons
 
 void RekognitionClient::CreateCollectionAsync(const CreateCollectionRequest& request, const CreateCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCollectionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::CreateCollectionAsyncHelper(const CreateCollectionRequest& request, const CreateCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCollection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCollection(request), context);
+    } );
 }
 
 CreateDatasetOutcome RekognitionClient::CreateDataset(const CreateDatasetRequest& request) const
@@ -217,12 +245,10 @@ CreateDatasetOutcomeCallable RekognitionClient::CreateDatasetCallable(const Crea
 
 void RekognitionClient::CreateDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::CreateDatasetAsyncHelper(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDataset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDataset(request), context);
+    } );
 }
 
 CreateProjectOutcome RekognitionClient::CreateProject(const CreateProjectRequest& request) const
@@ -241,12 +267,10 @@ CreateProjectOutcomeCallable RekognitionClient::CreateProjectCallable(const Crea
 
 void RekognitionClient::CreateProjectAsync(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProjectAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::CreateProjectAsyncHelper(const CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateProject(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateProject(request), context);
+    } );
 }
 
 CreateProjectVersionOutcome RekognitionClient::CreateProjectVersion(const CreateProjectVersionRequest& request) const
@@ -265,12 +289,10 @@ CreateProjectVersionOutcomeCallable RekognitionClient::CreateProjectVersionCalla
 
 void RekognitionClient::CreateProjectVersionAsync(const CreateProjectVersionRequest& request, const CreateProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProjectVersionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::CreateProjectVersionAsyncHelper(const CreateProjectVersionRequest& request, const CreateProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateProjectVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateProjectVersion(request), context);
+    } );
 }
 
 CreateStreamProcessorOutcome RekognitionClient::CreateStreamProcessor(const CreateStreamProcessorRequest& request) const
@@ -289,12 +311,10 @@ CreateStreamProcessorOutcomeCallable RekognitionClient::CreateStreamProcessorCal
 
 void RekognitionClient::CreateStreamProcessorAsync(const CreateStreamProcessorRequest& request, const CreateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStreamProcessorAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::CreateStreamProcessorAsyncHelper(const CreateStreamProcessorRequest& request, const CreateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateStreamProcessor(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateStreamProcessor(request), context);
+    } );
 }
 
 DeleteCollectionOutcome RekognitionClient::DeleteCollection(const DeleteCollectionRequest& request) const
@@ -313,12 +333,10 @@ DeleteCollectionOutcomeCallable RekognitionClient::DeleteCollectionCallable(cons
 
 void RekognitionClient::DeleteCollectionAsync(const DeleteCollectionRequest& request, const DeleteCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCollectionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DeleteCollectionAsyncHelper(const DeleteCollectionRequest& request, const DeleteCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCollection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCollection(request), context);
+    } );
 }
 
 DeleteDatasetOutcome RekognitionClient::DeleteDataset(const DeleteDatasetRequest& request) const
@@ -337,12 +355,10 @@ DeleteDatasetOutcomeCallable RekognitionClient::DeleteDatasetCallable(const Dele
 
 void RekognitionClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDatasetAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DeleteDatasetAsyncHelper(const DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDataset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDataset(request), context);
+    } );
 }
 
 DeleteFacesOutcome RekognitionClient::DeleteFaces(const DeleteFacesRequest& request) const
@@ -361,12 +377,10 @@ DeleteFacesOutcomeCallable RekognitionClient::DeleteFacesCallable(const DeleteFa
 
 void RekognitionClient::DeleteFacesAsync(const DeleteFacesRequest& request, const DeleteFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFacesAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DeleteFacesAsyncHelper(const DeleteFacesRequest& request, const DeleteFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFaces(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFaces(request), context);
+    } );
 }
 
 DeleteProjectOutcome RekognitionClient::DeleteProject(const DeleteProjectRequest& request) const
@@ -385,12 +399,32 @@ DeleteProjectOutcomeCallable RekognitionClient::DeleteProjectCallable(const Dele
 
 void RekognitionClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteProject(request), context);
+    } );
 }
 
-void RekognitionClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+DeleteProjectPolicyOutcome RekognitionClient::DeleteProjectPolicy(const DeleteProjectPolicyRequest& request) const
 {
-  handler(this, request, DeleteProject(request), context);
+  Aws::Http::URI uri = m_uri;
+  return DeleteProjectPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteProjectPolicyOutcomeCallable RekognitionClient::DeleteProjectPolicyCallable(const DeleteProjectPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteProjectPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProjectPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::DeleteProjectPolicyAsync(const DeleteProjectPolicyRequest& request, const DeleteProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteProjectPolicy(request), context);
+    } );
 }
 
 DeleteProjectVersionOutcome RekognitionClient::DeleteProjectVersion(const DeleteProjectVersionRequest& request) const
@@ -409,12 +443,10 @@ DeleteProjectVersionOutcomeCallable RekognitionClient::DeleteProjectVersionCalla
 
 void RekognitionClient::DeleteProjectVersionAsync(const DeleteProjectVersionRequest& request, const DeleteProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectVersionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DeleteProjectVersionAsyncHelper(const DeleteProjectVersionRequest& request, const DeleteProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteProjectVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteProjectVersion(request), context);
+    } );
 }
 
 DeleteStreamProcessorOutcome RekognitionClient::DeleteStreamProcessor(const DeleteStreamProcessorRequest& request) const
@@ -433,12 +465,10 @@ DeleteStreamProcessorOutcomeCallable RekognitionClient::DeleteStreamProcessorCal
 
 void RekognitionClient::DeleteStreamProcessorAsync(const DeleteStreamProcessorRequest& request, const DeleteStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStreamProcessorAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DeleteStreamProcessorAsyncHelper(const DeleteStreamProcessorRequest& request, const DeleteStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStreamProcessor(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStreamProcessor(request), context);
+    } );
 }
 
 DescribeCollectionOutcome RekognitionClient::DescribeCollection(const DescribeCollectionRequest& request) const
@@ -457,12 +487,10 @@ DescribeCollectionOutcomeCallable RekognitionClient::DescribeCollectionCallable(
 
 void RekognitionClient::DescribeCollectionAsync(const DescribeCollectionRequest& request, const DescribeCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCollectionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DescribeCollectionAsyncHelper(const DescribeCollectionRequest& request, const DescribeCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeCollection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeCollection(request), context);
+    } );
 }
 
 DescribeDatasetOutcome RekognitionClient::DescribeDataset(const DescribeDatasetRequest& request) const
@@ -481,12 +509,10 @@ DescribeDatasetOutcomeCallable RekognitionClient::DescribeDatasetCallable(const 
 
 void RekognitionClient::DescribeDatasetAsync(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DescribeDatasetAsyncHelper(const DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDataset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDataset(request), context);
+    } );
 }
 
 DescribeProjectVersionsOutcome RekognitionClient::DescribeProjectVersions(const DescribeProjectVersionsRequest& request) const
@@ -505,12 +531,10 @@ DescribeProjectVersionsOutcomeCallable RekognitionClient::DescribeProjectVersion
 
 void RekognitionClient::DescribeProjectVersionsAsync(const DescribeProjectVersionsRequest& request, const DescribeProjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProjectVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DescribeProjectVersionsAsyncHelper(const DescribeProjectVersionsRequest& request, const DescribeProjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeProjectVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeProjectVersions(request), context);
+    } );
 }
 
 DescribeProjectsOutcome RekognitionClient::DescribeProjects(const DescribeProjectsRequest& request) const
@@ -529,12 +553,10 @@ DescribeProjectsOutcomeCallable RekognitionClient::DescribeProjectsCallable(cons
 
 void RekognitionClient::DescribeProjectsAsync(const DescribeProjectsRequest& request, const DescribeProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProjectsAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DescribeProjectsAsyncHelper(const DescribeProjectsRequest& request, const DescribeProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeProjects(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeProjects(request), context);
+    } );
 }
 
 DescribeStreamProcessorOutcome RekognitionClient::DescribeStreamProcessor(const DescribeStreamProcessorRequest& request) const
@@ -553,12 +575,10 @@ DescribeStreamProcessorOutcomeCallable RekognitionClient::DescribeStreamProcesso
 
 void RekognitionClient::DescribeStreamProcessorAsync(const DescribeStreamProcessorRequest& request, const DescribeStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStreamProcessorAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DescribeStreamProcessorAsyncHelper(const DescribeStreamProcessorRequest& request, const DescribeStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStreamProcessor(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStreamProcessor(request), context);
+    } );
 }
 
 DetectCustomLabelsOutcome RekognitionClient::DetectCustomLabels(const DetectCustomLabelsRequest& request) const
@@ -577,12 +597,10 @@ DetectCustomLabelsOutcomeCallable RekognitionClient::DetectCustomLabelsCallable(
 
 void RekognitionClient::DetectCustomLabelsAsync(const DetectCustomLabelsRequest& request, const DetectCustomLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectCustomLabelsAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DetectCustomLabelsAsyncHelper(const DetectCustomLabelsRequest& request, const DetectCustomLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DetectCustomLabels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DetectCustomLabels(request), context);
+    } );
 }
 
 DetectFacesOutcome RekognitionClient::DetectFaces(const DetectFacesRequest& request) const
@@ -601,12 +619,10 @@ DetectFacesOutcomeCallable RekognitionClient::DetectFacesCallable(const DetectFa
 
 void RekognitionClient::DetectFacesAsync(const DetectFacesRequest& request, const DetectFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectFacesAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DetectFacesAsyncHelper(const DetectFacesRequest& request, const DetectFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DetectFaces(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DetectFaces(request), context);
+    } );
 }
 
 DetectLabelsOutcome RekognitionClient::DetectLabels(const DetectLabelsRequest& request) const
@@ -625,12 +641,10 @@ DetectLabelsOutcomeCallable RekognitionClient::DetectLabelsCallable(const Detect
 
 void RekognitionClient::DetectLabelsAsync(const DetectLabelsRequest& request, const DetectLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectLabelsAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DetectLabelsAsyncHelper(const DetectLabelsRequest& request, const DetectLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DetectLabels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DetectLabels(request), context);
+    } );
 }
 
 DetectModerationLabelsOutcome RekognitionClient::DetectModerationLabels(const DetectModerationLabelsRequest& request) const
@@ -649,12 +663,10 @@ DetectModerationLabelsOutcomeCallable RekognitionClient::DetectModerationLabelsC
 
 void RekognitionClient::DetectModerationLabelsAsync(const DetectModerationLabelsRequest& request, const DetectModerationLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectModerationLabelsAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DetectModerationLabelsAsyncHelper(const DetectModerationLabelsRequest& request, const DetectModerationLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DetectModerationLabels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DetectModerationLabels(request), context);
+    } );
 }
 
 DetectProtectiveEquipmentOutcome RekognitionClient::DetectProtectiveEquipment(const DetectProtectiveEquipmentRequest& request) const
@@ -673,12 +685,10 @@ DetectProtectiveEquipmentOutcomeCallable RekognitionClient::DetectProtectiveEqui
 
 void RekognitionClient::DetectProtectiveEquipmentAsync(const DetectProtectiveEquipmentRequest& request, const DetectProtectiveEquipmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectProtectiveEquipmentAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DetectProtectiveEquipmentAsyncHelper(const DetectProtectiveEquipmentRequest& request, const DetectProtectiveEquipmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DetectProtectiveEquipment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DetectProtectiveEquipment(request), context);
+    } );
 }
 
 DetectTextOutcome RekognitionClient::DetectText(const DetectTextRequest& request) const
@@ -697,12 +707,10 @@ DetectTextOutcomeCallable RekognitionClient::DetectTextCallable(const DetectText
 
 void RekognitionClient::DetectTextAsync(const DetectTextRequest& request, const DetectTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetectTextAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DetectTextAsyncHelper(const DetectTextRequest& request, const DetectTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DetectText(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DetectText(request), context);
+    } );
 }
 
 DistributeDatasetEntriesOutcome RekognitionClient::DistributeDatasetEntries(const DistributeDatasetEntriesRequest& request) const
@@ -721,12 +729,10 @@ DistributeDatasetEntriesOutcomeCallable RekognitionClient::DistributeDatasetEntr
 
 void RekognitionClient::DistributeDatasetEntriesAsync(const DistributeDatasetEntriesRequest& request, const DistributeDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DistributeDatasetEntriesAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::DistributeDatasetEntriesAsyncHelper(const DistributeDatasetEntriesRequest& request, const DistributeDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DistributeDatasetEntries(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DistributeDatasetEntries(request), context);
+    } );
 }
 
 GetCelebrityInfoOutcome RekognitionClient::GetCelebrityInfo(const GetCelebrityInfoRequest& request) const
@@ -745,12 +751,10 @@ GetCelebrityInfoOutcomeCallable RekognitionClient::GetCelebrityInfoCallable(cons
 
 void RekognitionClient::GetCelebrityInfoAsync(const GetCelebrityInfoRequest& request, const GetCelebrityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCelebrityInfoAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::GetCelebrityInfoAsyncHelper(const GetCelebrityInfoRequest& request, const GetCelebrityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCelebrityInfo(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCelebrityInfo(request), context);
+    } );
 }
 
 GetCelebrityRecognitionOutcome RekognitionClient::GetCelebrityRecognition(const GetCelebrityRecognitionRequest& request) const
@@ -769,12 +773,10 @@ GetCelebrityRecognitionOutcomeCallable RekognitionClient::GetCelebrityRecognitio
 
 void RekognitionClient::GetCelebrityRecognitionAsync(const GetCelebrityRecognitionRequest& request, const GetCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCelebrityRecognitionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::GetCelebrityRecognitionAsyncHelper(const GetCelebrityRecognitionRequest& request, const GetCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCelebrityRecognition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCelebrityRecognition(request), context);
+    } );
 }
 
 GetContentModerationOutcome RekognitionClient::GetContentModeration(const GetContentModerationRequest& request) const
@@ -793,12 +795,10 @@ GetContentModerationOutcomeCallable RekognitionClient::GetContentModerationCalla
 
 void RekognitionClient::GetContentModerationAsync(const GetContentModerationRequest& request, const GetContentModerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetContentModerationAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::GetContentModerationAsyncHelper(const GetContentModerationRequest& request, const GetContentModerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetContentModeration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetContentModeration(request), context);
+    } );
 }
 
 GetFaceDetectionOutcome RekognitionClient::GetFaceDetection(const GetFaceDetectionRequest& request) const
@@ -817,12 +817,10 @@ GetFaceDetectionOutcomeCallable RekognitionClient::GetFaceDetectionCallable(cons
 
 void RekognitionClient::GetFaceDetectionAsync(const GetFaceDetectionRequest& request, const GetFaceDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFaceDetectionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::GetFaceDetectionAsyncHelper(const GetFaceDetectionRequest& request, const GetFaceDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFaceDetection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFaceDetection(request), context);
+    } );
 }
 
 GetFaceSearchOutcome RekognitionClient::GetFaceSearch(const GetFaceSearchRequest& request) const
@@ -841,12 +839,10 @@ GetFaceSearchOutcomeCallable RekognitionClient::GetFaceSearchCallable(const GetF
 
 void RekognitionClient::GetFaceSearchAsync(const GetFaceSearchRequest& request, const GetFaceSearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFaceSearchAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::GetFaceSearchAsyncHelper(const GetFaceSearchRequest& request, const GetFaceSearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFaceSearch(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFaceSearch(request), context);
+    } );
 }
 
 GetLabelDetectionOutcome RekognitionClient::GetLabelDetection(const GetLabelDetectionRequest& request) const
@@ -865,12 +861,10 @@ GetLabelDetectionOutcomeCallable RekognitionClient::GetLabelDetectionCallable(co
 
 void RekognitionClient::GetLabelDetectionAsync(const GetLabelDetectionRequest& request, const GetLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLabelDetectionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::GetLabelDetectionAsyncHelper(const GetLabelDetectionRequest& request, const GetLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetLabelDetection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLabelDetection(request), context);
+    } );
 }
 
 GetPersonTrackingOutcome RekognitionClient::GetPersonTracking(const GetPersonTrackingRequest& request) const
@@ -889,12 +883,10 @@ GetPersonTrackingOutcomeCallable RekognitionClient::GetPersonTrackingCallable(co
 
 void RekognitionClient::GetPersonTrackingAsync(const GetPersonTrackingRequest& request, const GetPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPersonTrackingAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::GetPersonTrackingAsyncHelper(const GetPersonTrackingRequest& request, const GetPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPersonTracking(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPersonTracking(request), context);
+    } );
 }
 
 GetSegmentDetectionOutcome RekognitionClient::GetSegmentDetection(const GetSegmentDetectionRequest& request) const
@@ -913,12 +905,10 @@ GetSegmentDetectionOutcomeCallable RekognitionClient::GetSegmentDetectionCallabl
 
 void RekognitionClient::GetSegmentDetectionAsync(const GetSegmentDetectionRequest& request, const GetSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSegmentDetectionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::GetSegmentDetectionAsyncHelper(const GetSegmentDetectionRequest& request, const GetSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSegmentDetection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSegmentDetection(request), context);
+    } );
 }
 
 GetTextDetectionOutcome RekognitionClient::GetTextDetection(const GetTextDetectionRequest& request) const
@@ -937,12 +927,10 @@ GetTextDetectionOutcomeCallable RekognitionClient::GetTextDetectionCallable(cons
 
 void RekognitionClient::GetTextDetectionAsync(const GetTextDetectionRequest& request, const GetTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTextDetectionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::GetTextDetectionAsyncHelper(const GetTextDetectionRequest& request, const GetTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTextDetection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTextDetection(request), context);
+    } );
 }
 
 IndexFacesOutcome RekognitionClient::IndexFaces(const IndexFacesRequest& request) const
@@ -961,12 +949,10 @@ IndexFacesOutcomeCallable RekognitionClient::IndexFacesCallable(const IndexFaces
 
 void RekognitionClient::IndexFacesAsync(const IndexFacesRequest& request, const IndexFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->IndexFacesAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::IndexFacesAsyncHelper(const IndexFacesRequest& request, const IndexFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, IndexFaces(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, IndexFaces(request), context);
+    } );
 }
 
 ListCollectionsOutcome RekognitionClient::ListCollections(const ListCollectionsRequest& request) const
@@ -985,12 +971,10 @@ ListCollectionsOutcomeCallable RekognitionClient::ListCollectionsCallable(const 
 
 void RekognitionClient::ListCollectionsAsync(const ListCollectionsRequest& request, const ListCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCollectionsAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::ListCollectionsAsyncHelper(const ListCollectionsRequest& request, const ListCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListCollections(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCollections(request), context);
+    } );
 }
 
 ListDatasetEntriesOutcome RekognitionClient::ListDatasetEntries(const ListDatasetEntriesRequest& request) const
@@ -1009,12 +993,10 @@ ListDatasetEntriesOutcomeCallable RekognitionClient::ListDatasetEntriesCallable(
 
 void RekognitionClient::ListDatasetEntriesAsync(const ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetEntriesAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::ListDatasetEntriesAsyncHelper(const ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDatasetEntries(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDatasetEntries(request), context);
+    } );
 }
 
 ListDatasetLabelsOutcome RekognitionClient::ListDatasetLabels(const ListDatasetLabelsRequest& request) const
@@ -1033,12 +1015,10 @@ ListDatasetLabelsOutcomeCallable RekognitionClient::ListDatasetLabelsCallable(co
 
 void RekognitionClient::ListDatasetLabelsAsync(const ListDatasetLabelsRequest& request, const ListDatasetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetLabelsAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::ListDatasetLabelsAsyncHelper(const ListDatasetLabelsRequest& request, const ListDatasetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDatasetLabels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDatasetLabels(request), context);
+    } );
 }
 
 ListFacesOutcome RekognitionClient::ListFaces(const ListFacesRequest& request) const
@@ -1057,12 +1037,32 @@ ListFacesOutcomeCallable RekognitionClient::ListFacesCallable(const ListFacesReq
 
 void RekognitionClient::ListFacesAsync(const ListFacesRequest& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFacesAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFaces(request), context);
+    } );
 }
 
-void RekognitionClient::ListFacesAsyncHelper(const ListFacesRequest& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+ListProjectPoliciesOutcome RekognitionClient::ListProjectPolicies(const ListProjectPoliciesRequest& request) const
 {
-  handler(this, request, ListFaces(request), context);
+  Aws::Http::URI uri = m_uri;
+  return ListProjectPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListProjectPoliciesOutcomeCallable RekognitionClient::ListProjectPoliciesCallable(const ListProjectPoliciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListProjectPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProjectPolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::ListProjectPoliciesAsync(const ListProjectPoliciesRequest& request, const ListProjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListProjectPolicies(request), context);
+    } );
 }
 
 ListStreamProcessorsOutcome RekognitionClient::ListStreamProcessors(const ListStreamProcessorsRequest& request) const
@@ -1081,12 +1081,10 @@ ListStreamProcessorsOutcomeCallable RekognitionClient::ListStreamProcessorsCalla
 
 void RekognitionClient::ListStreamProcessorsAsync(const ListStreamProcessorsRequest& request, const ListStreamProcessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStreamProcessorsAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::ListStreamProcessorsAsyncHelper(const ListStreamProcessorsRequest& request, const ListStreamProcessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStreamProcessors(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStreamProcessors(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome RekognitionClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1105,12 +1103,32 @@ ListTagsForResourceOutcomeCallable RekognitionClient::ListTagsForResourceCallabl
 
 void RekognitionClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
-void RekognitionClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+PutProjectPolicyOutcome RekognitionClient::PutProjectPolicy(const PutProjectPolicyRequest& request) const
 {
-  handler(this, request, ListTagsForResource(request), context);
+  Aws::Http::URI uri = m_uri;
+  return PutProjectPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutProjectPolicyOutcomeCallable RekognitionClient::PutProjectPolicyCallable(const PutProjectPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutProjectPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutProjectPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::PutProjectPolicyAsync(const PutProjectPolicyRequest& request, const PutProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutProjectPolicy(request), context);
+    } );
 }
 
 RecognizeCelebritiesOutcome RekognitionClient::RecognizeCelebrities(const RecognizeCelebritiesRequest& request) const
@@ -1129,12 +1147,10 @@ RecognizeCelebritiesOutcomeCallable RekognitionClient::RecognizeCelebritiesCalla
 
 void RekognitionClient::RecognizeCelebritiesAsync(const RecognizeCelebritiesRequest& request, const RecognizeCelebritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RecognizeCelebritiesAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::RecognizeCelebritiesAsyncHelper(const RecognizeCelebritiesRequest& request, const RecognizeCelebritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RecognizeCelebrities(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RecognizeCelebrities(request), context);
+    } );
 }
 
 SearchFacesOutcome RekognitionClient::SearchFaces(const SearchFacesRequest& request) const
@@ -1153,12 +1169,10 @@ SearchFacesOutcomeCallable RekognitionClient::SearchFacesCallable(const SearchFa
 
 void RekognitionClient::SearchFacesAsync(const SearchFacesRequest& request, const SearchFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchFacesAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::SearchFacesAsyncHelper(const SearchFacesRequest& request, const SearchFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchFaces(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchFaces(request), context);
+    } );
 }
 
 SearchFacesByImageOutcome RekognitionClient::SearchFacesByImage(const SearchFacesByImageRequest& request) const
@@ -1177,12 +1191,10 @@ SearchFacesByImageOutcomeCallable RekognitionClient::SearchFacesByImageCallable(
 
 void RekognitionClient::SearchFacesByImageAsync(const SearchFacesByImageRequest& request, const SearchFacesByImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SearchFacesByImageAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::SearchFacesByImageAsyncHelper(const SearchFacesByImageRequest& request, const SearchFacesByImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SearchFacesByImage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SearchFacesByImage(request), context);
+    } );
 }
 
 StartCelebrityRecognitionOutcome RekognitionClient::StartCelebrityRecognition(const StartCelebrityRecognitionRequest& request) const
@@ -1201,12 +1213,10 @@ StartCelebrityRecognitionOutcomeCallable RekognitionClient::StartCelebrityRecogn
 
 void RekognitionClient::StartCelebrityRecognitionAsync(const StartCelebrityRecognitionRequest& request, const StartCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartCelebrityRecognitionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::StartCelebrityRecognitionAsyncHelper(const StartCelebrityRecognitionRequest& request, const StartCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartCelebrityRecognition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartCelebrityRecognition(request), context);
+    } );
 }
 
 StartContentModerationOutcome RekognitionClient::StartContentModeration(const StartContentModerationRequest& request) const
@@ -1225,12 +1235,10 @@ StartContentModerationOutcomeCallable RekognitionClient::StartContentModerationC
 
 void RekognitionClient::StartContentModerationAsync(const StartContentModerationRequest& request, const StartContentModerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartContentModerationAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::StartContentModerationAsyncHelper(const StartContentModerationRequest& request, const StartContentModerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartContentModeration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartContentModeration(request), context);
+    } );
 }
 
 StartFaceDetectionOutcome RekognitionClient::StartFaceDetection(const StartFaceDetectionRequest& request) const
@@ -1249,12 +1257,10 @@ StartFaceDetectionOutcomeCallable RekognitionClient::StartFaceDetectionCallable(
 
 void RekognitionClient::StartFaceDetectionAsync(const StartFaceDetectionRequest& request, const StartFaceDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartFaceDetectionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::StartFaceDetectionAsyncHelper(const StartFaceDetectionRequest& request, const StartFaceDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartFaceDetection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartFaceDetection(request), context);
+    } );
 }
 
 StartFaceSearchOutcome RekognitionClient::StartFaceSearch(const StartFaceSearchRequest& request) const
@@ -1273,12 +1279,10 @@ StartFaceSearchOutcomeCallable RekognitionClient::StartFaceSearchCallable(const 
 
 void RekognitionClient::StartFaceSearchAsync(const StartFaceSearchRequest& request, const StartFaceSearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartFaceSearchAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::StartFaceSearchAsyncHelper(const StartFaceSearchRequest& request, const StartFaceSearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartFaceSearch(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartFaceSearch(request), context);
+    } );
 }
 
 StartLabelDetectionOutcome RekognitionClient::StartLabelDetection(const StartLabelDetectionRequest& request) const
@@ -1297,12 +1301,10 @@ StartLabelDetectionOutcomeCallable RekognitionClient::StartLabelDetectionCallabl
 
 void RekognitionClient::StartLabelDetectionAsync(const StartLabelDetectionRequest& request, const StartLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartLabelDetectionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::StartLabelDetectionAsyncHelper(const StartLabelDetectionRequest& request, const StartLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartLabelDetection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartLabelDetection(request), context);
+    } );
 }
 
 StartPersonTrackingOutcome RekognitionClient::StartPersonTracking(const StartPersonTrackingRequest& request) const
@@ -1321,12 +1323,10 @@ StartPersonTrackingOutcomeCallable RekognitionClient::StartPersonTrackingCallabl
 
 void RekognitionClient::StartPersonTrackingAsync(const StartPersonTrackingRequest& request, const StartPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartPersonTrackingAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::StartPersonTrackingAsyncHelper(const StartPersonTrackingRequest& request, const StartPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartPersonTracking(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartPersonTracking(request), context);
+    } );
 }
 
 StartProjectVersionOutcome RekognitionClient::StartProjectVersion(const StartProjectVersionRequest& request) const
@@ -1345,12 +1345,10 @@ StartProjectVersionOutcomeCallable RekognitionClient::StartProjectVersionCallabl
 
 void RekognitionClient::StartProjectVersionAsync(const StartProjectVersionRequest& request, const StartProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartProjectVersionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::StartProjectVersionAsyncHelper(const StartProjectVersionRequest& request, const StartProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartProjectVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartProjectVersion(request), context);
+    } );
 }
 
 StartSegmentDetectionOutcome RekognitionClient::StartSegmentDetection(const StartSegmentDetectionRequest& request) const
@@ -1369,12 +1367,10 @@ StartSegmentDetectionOutcomeCallable RekognitionClient::StartSegmentDetectionCal
 
 void RekognitionClient::StartSegmentDetectionAsync(const StartSegmentDetectionRequest& request, const StartSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSegmentDetectionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::StartSegmentDetectionAsyncHelper(const StartSegmentDetectionRequest& request, const StartSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartSegmentDetection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartSegmentDetection(request), context);
+    } );
 }
 
 StartStreamProcessorOutcome RekognitionClient::StartStreamProcessor(const StartStreamProcessorRequest& request) const
@@ -1393,12 +1389,10 @@ StartStreamProcessorOutcomeCallable RekognitionClient::StartStreamProcessorCalla
 
 void RekognitionClient::StartStreamProcessorAsync(const StartStreamProcessorRequest& request, const StartStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartStreamProcessorAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::StartStreamProcessorAsyncHelper(const StartStreamProcessorRequest& request, const StartStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartStreamProcessor(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartStreamProcessor(request), context);
+    } );
 }
 
 StartTextDetectionOutcome RekognitionClient::StartTextDetection(const StartTextDetectionRequest& request) const
@@ -1417,12 +1411,10 @@ StartTextDetectionOutcomeCallable RekognitionClient::StartTextDetectionCallable(
 
 void RekognitionClient::StartTextDetectionAsync(const StartTextDetectionRequest& request, const StartTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartTextDetectionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::StartTextDetectionAsyncHelper(const StartTextDetectionRequest& request, const StartTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartTextDetection(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartTextDetection(request), context);
+    } );
 }
 
 StopProjectVersionOutcome RekognitionClient::StopProjectVersion(const StopProjectVersionRequest& request) const
@@ -1441,12 +1433,10 @@ StopProjectVersionOutcomeCallable RekognitionClient::StopProjectVersionCallable(
 
 void RekognitionClient::StopProjectVersionAsync(const StopProjectVersionRequest& request, const StopProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopProjectVersionAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::StopProjectVersionAsyncHelper(const StopProjectVersionRequest& request, const StopProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopProjectVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopProjectVersion(request), context);
+    } );
 }
 
 StopStreamProcessorOutcome RekognitionClient::StopStreamProcessor(const StopStreamProcessorRequest& request) const
@@ -1465,12 +1455,10 @@ StopStreamProcessorOutcomeCallable RekognitionClient::StopStreamProcessorCallabl
 
 void RekognitionClient::StopStreamProcessorAsync(const StopStreamProcessorRequest& request, const StopStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopStreamProcessorAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::StopStreamProcessorAsyncHelper(const StopStreamProcessorRequest& request, const StopStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopStreamProcessor(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopStreamProcessor(request), context);
+    } );
 }
 
 TagResourceOutcome RekognitionClient::TagResource(const TagResourceRequest& request) const
@@ -1489,12 +1477,10 @@ TagResourceOutcomeCallable RekognitionClient::TagResourceCallable(const TagResou
 
 void RekognitionClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome RekognitionClient::UntagResource(const UntagResourceRequest& request) const
@@ -1513,12 +1499,10 @@ UntagResourceOutcomeCallable RekognitionClient::UntagResourceCallable(const Unta
 
 void RekognitionClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateDatasetEntriesOutcome RekognitionClient::UpdateDatasetEntries(const UpdateDatasetEntriesRequest& request) const
@@ -1537,12 +1521,10 @@ UpdateDatasetEntriesOutcomeCallable RekognitionClient::UpdateDatasetEntriesCalla
 
 void RekognitionClient::UpdateDatasetEntriesAsync(const UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDatasetEntriesAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::UpdateDatasetEntriesAsyncHelper(const UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDatasetEntries(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDatasetEntries(request), context);
+    } );
 }
 
 UpdateStreamProcessorOutcome RekognitionClient::UpdateStreamProcessor(const UpdateStreamProcessorRequest& request) const
@@ -1561,11 +1543,9 @@ UpdateStreamProcessorOutcomeCallable RekognitionClient::UpdateStreamProcessorCal
 
 void RekognitionClient::UpdateStreamProcessorAsync(const UpdateStreamProcessorRequest& request, const UpdateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStreamProcessorAsyncHelper( request, handler, context ); } );
-}
-
-void RekognitionClient::UpdateStreamProcessorAsyncHelper(const UpdateStreamProcessorRequest& request, const UpdateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateStreamProcessor(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateStreamProcessor(request), context);
+    } );
 }
 

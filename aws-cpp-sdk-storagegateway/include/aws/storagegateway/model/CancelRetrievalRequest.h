@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_gatewayARN;
-    bool m_gatewayARNHasBeenSet;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::String m_tapeARN;
-    bool m_tapeARNHasBeenSet;
+    bool m_tapeARNHasBeenSet = false;
   };
 
 } // namespace Model

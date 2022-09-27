@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_ipAddresses;
-    bool m_ipAddressesHasBeenSet;
+    bool m_ipAddressesHasBeenSet = false;
   };
 
 } // namespace Model

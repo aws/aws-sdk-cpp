@@ -140,55 +140,55 @@ namespace Model
 
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline const Aws::String& GetStudioId() const{ return m_studioId; }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline bool StudioIdHasBeenSet() const { return m_studioIdHasBeenSet; }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline void SetStudioId(const Aws::String& value) { m_studioIdHasBeenSet = true; m_studioId = value; }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline void SetStudioId(Aws::String&& value) { m_studioIdHasBeenSet = true; m_studioId = std::move(value); }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline void SetStudioId(const char* value) { m_studioIdHasBeenSet = true; m_studioId.assign(value); }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline AcceptEulasRequest& WithStudioId(const Aws::String& value) { SetStudioId(value); return *this;}
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline AcceptEulasRequest& WithStudioId(Aws::String&& value) { SetStudioId(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline AcceptEulasRequest& WithStudioId(const char* value) { SetStudioId(value); return *this;}
 
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_eulaIds;
-    bool m_eulaIdsHasBeenSet;
+    bool m_eulaIdsHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -259,16 +259,16 @@ namespace Model
   private:
 
     int m_timeoutDurationMinutes;
-    bool m_timeoutDurationMinutesHasBeenSet;
+    bool m_timeoutDurationMinutesHasBeenSet = false;
 
     SpotProvisioningTimeoutAction m_timeoutAction;
-    bool m_timeoutActionHasBeenSet;
+    bool m_timeoutActionHasBeenSet = false;
 
     int m_blockDurationMinutes;
-    bool m_blockDurationMinutesHasBeenSet;
+    bool m_blockDurationMinutesHasBeenSet = false;
 
     SpotProvisioningAllocationStrategy m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
   };
 
 } // namespace Model

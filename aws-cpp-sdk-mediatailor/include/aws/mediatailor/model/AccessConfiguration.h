@@ -192,10 +192,10 @@ namespace Model
   private:
 
     AccessType m_accessType;
-    bool m_accessTypeHasBeenSet;
+    bool m_accessTypeHasBeenSet = false;
 
     SecretsManagerAccessTokenConfiguration m_secretsManagerAccessTokenConfiguration;
-    bool m_secretsManagerAccessTokenConfigurationHasBeenSet;
+    bool m_secretsManagerAccessTokenConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

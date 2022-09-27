@@ -76,7 +76,7 @@ ManagedAction& ManagedAction::operator =(const XmlNode& xmlNode)
     XmlNode windowStartTimeNode = resultNode.FirstChild("WindowStartTime");
     if(!windowStartTimeNode.IsNull())
     {
-      m_windowStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(windowStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_windowStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(windowStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_windowStartTimeHasBeenSet = true;
     }
   }
@@ -108,7 +108,7 @@ void ManagedAction::OutputToStream(Aws::OStream& oStream, const char* location, 
 
   if(m_windowStartTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".WindowStartTime=" << StringUtils::URLEncode(m_windowStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".WindowStartTime=" << StringUtils::URLEncode(m_windowStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -133,7 +133,7 @@ void ManagedAction::OutputToStream(Aws::OStream& oStream, const char* location) 
   }
   if(m_windowStartTimeHasBeenSet)
   {
-      oStream << location << ".WindowStartTime=" << StringUtils::URLEncode(m_windowStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".WindowStartTime=" << StringUtils::URLEncode(m_windowStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

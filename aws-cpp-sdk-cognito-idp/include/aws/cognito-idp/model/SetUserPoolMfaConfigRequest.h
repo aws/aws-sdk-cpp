@@ -215,16 +215,16 @@ namespace Model
   private:
 
     Aws::String m_userPoolId;
-    bool m_userPoolIdHasBeenSet;
+    bool m_userPoolIdHasBeenSet = false;
 
     SmsMfaConfigType m_smsMfaConfiguration;
-    bool m_smsMfaConfigurationHasBeenSet;
+    bool m_smsMfaConfigurationHasBeenSet = false;
 
     SoftwareTokenMfaConfigType m_softwareTokenMfaConfiguration;
-    bool m_softwareTokenMfaConfigurationHasBeenSet;
+    bool m_softwareTokenMfaConfigurationHasBeenSet = false;
 
     UserPoolMfaType m_mfaConfiguration;
-    bool m_mfaConfigurationHasBeenSet;
+    bool m_mfaConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

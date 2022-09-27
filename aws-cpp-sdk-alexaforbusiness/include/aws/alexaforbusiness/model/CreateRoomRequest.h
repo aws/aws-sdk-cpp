@@ -293,22 +293,22 @@ namespace Model
   private:
 
     Aws::String m_roomName;
-    bool m_roomNameHasBeenSet;
+    bool m_roomNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_profileArn;
-    bool m_profileArnHasBeenSet;
+    bool m_profileArnHasBeenSet = false;
 
     Aws::String m_providerCalendarId;
-    bool m_providerCalendarIdHasBeenSet;
+    bool m_providerCalendarIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

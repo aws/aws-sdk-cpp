@@ -359,22 +359,22 @@ namespace Model
   private:
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_memberAccountId;
-    bool m_memberAccountIdHasBeenSet;
+    bool m_memberAccountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * With AWS Elemental MediaConvert, you can create profile 5 or 8.1 Dolby Vision
-   * outputs from MXF and IMF sources.<p><h3>See Also:</h3>   <a
+   * Create Dolby Vision Profile 5 or Profile 8.1  compatible video output.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DolbyVision">AWS
    * API Reference</a></p>
    */
@@ -195,66 +195,72 @@ namespace Model
 
 
     /**
-     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only
-     * include frame-interleaved Dolby Vision metadata in your output. Set Profile to
-     * Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10
-     * metadata in your output.
+     * Required when you enable Dolby Vision. Use Profile 5 to include
+     * frame-interleaved Dolby Vision metadata in your output. Your input must include
+     * Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include
+     * frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your
+     * input must include Dolby Vision metadata.
      */
     inline const DolbyVisionProfile& GetProfile() const{ return m_profile; }
 
     /**
-     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only
-     * include frame-interleaved Dolby Vision metadata in your output. Set Profile to
-     * Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10
-     * metadata in your output.
+     * Required when you enable Dolby Vision. Use Profile 5 to include
+     * frame-interleaved Dolby Vision metadata in your output. Your input must include
+     * Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include
+     * frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your
+     * input must include Dolby Vision metadata.
      */
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
 
     /**
-     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only
-     * include frame-interleaved Dolby Vision metadata in your output. Set Profile to
-     * Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10
-     * metadata in your output.
+     * Required when you enable Dolby Vision. Use Profile 5 to include
+     * frame-interleaved Dolby Vision metadata in your output. Your input must include
+     * Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include
+     * frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your
+     * input must include Dolby Vision metadata.
      */
     inline void SetProfile(const DolbyVisionProfile& value) { m_profileHasBeenSet = true; m_profile = value; }
 
     /**
-     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only
-     * include frame-interleaved Dolby Vision metadata in your output. Set Profile to
-     * Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10
-     * metadata in your output.
+     * Required when you enable Dolby Vision. Use Profile 5 to include
+     * frame-interleaved Dolby Vision metadata in your output. Your input must include
+     * Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include
+     * frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your
+     * input must include Dolby Vision metadata.
      */
     inline void SetProfile(DolbyVisionProfile&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
 
     /**
-     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only
-     * include frame-interleaved Dolby Vision metadata in your output. Set Profile to
-     * Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10
-     * metadata in your output.
+     * Required when you enable Dolby Vision. Use Profile 5 to include
+     * frame-interleaved Dolby Vision metadata in your output. Your input must include
+     * Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include
+     * frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your
+     * input must include Dolby Vision metadata.
      */
     inline DolbyVision& WithProfile(const DolbyVisionProfile& value) { SetProfile(value); return *this;}
 
     /**
-     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only
-     * include frame-interleaved Dolby Vision metadata in your output. Set Profile to
-     * Profile 8.1 to include both frame-interleaved Dolby Vision metadata and HDR10
-     * metadata in your output.
+     * Required when you enable Dolby Vision. Use Profile 5 to include
+     * frame-interleaved Dolby Vision metadata in your output. Your input must include
+     * Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include
+     * frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your
+     * input must include Dolby Vision metadata.
      */
     inline DolbyVision& WithProfile(DolbyVisionProfile&& value) { SetProfile(std::move(value)); return *this;}
 
   private:
 
     DolbyVisionLevel6Metadata m_l6Metadata;
-    bool m_l6MetadataHasBeenSet;
+    bool m_l6MetadataHasBeenSet = false;
 
     DolbyVisionLevel6Mode m_l6Mode;
-    bool m_l6ModeHasBeenSet;
+    bool m_l6ModeHasBeenSet = false;
 
     DolbyVisionMapping m_mapping;
-    bool m_mappingHasBeenSet;
+    bool m_mappingHasBeenSet = false;
 
     DolbyVisionProfile m_profile;
-    bool m_profileHasBeenSet;
+    bool m_profileHasBeenSet = false;
   };
 
 } // namespace Model

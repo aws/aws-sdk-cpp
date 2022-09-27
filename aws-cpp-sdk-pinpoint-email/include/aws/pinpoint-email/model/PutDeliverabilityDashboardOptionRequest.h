@@ -125,10 +125,10 @@ namespace Model
   private:
 
     bool m_dashboardEnabled;
-    bool m_dashboardEnabledHasBeenSet;
+    bool m_dashboardEnabledHasBeenSet = false;
 
     Aws::Vector<DomainDeliverabilityTrackingOption> m_subscribedDomains;
-    bool m_subscribedDomainsHasBeenSet;
+    bool m_subscribedDomainsHasBeenSet = false;
   };
 
 } // namespace Model

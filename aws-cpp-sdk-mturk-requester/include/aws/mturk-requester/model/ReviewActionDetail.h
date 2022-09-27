@@ -373,28 +373,28 @@ namespace Model
   private:
 
     Aws::String m_actionId;
-    bool m_actionIdHasBeenSet;
+    bool m_actionIdHasBeenSet = false;
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     Aws::String m_targetType;
-    bool m_targetTypeHasBeenSet;
+    bool m_targetTypeHasBeenSet = false;
 
     ReviewActionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_completeTime;
-    bool m_completeTimeHasBeenSet;
+    bool m_completeTimeHasBeenSet = false;
 
     Aws::String m_result;
-    bool m_resultHasBeenSet;
+    bool m_resultHasBeenSet = false;
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
   };
 
 } // namespace Model

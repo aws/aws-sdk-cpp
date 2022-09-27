@@ -199,16 +199,16 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     BookingOptions m_bookingOptions;
-    bool m_bookingOptionsHasBeenSet;
+    bool m_bookingOptionsHasBeenSet = false;
   };
 
 } // namespace Model

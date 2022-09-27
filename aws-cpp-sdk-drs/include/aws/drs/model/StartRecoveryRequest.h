@@ -165,13 +165,13 @@ namespace Model
   private:
 
     bool m_isDrill;
-    bool m_isDrillHasBeenSet;
+    bool m_isDrillHasBeenSet = false;
 
     Aws::Vector<StartRecoveryRequestSourceServer> m_sourceServers;
-    bool m_sourceServersHasBeenSet;
+    bool m_sourceServersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

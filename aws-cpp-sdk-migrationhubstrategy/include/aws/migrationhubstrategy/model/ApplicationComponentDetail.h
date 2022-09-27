@@ -753,61 +753,61 @@ namespace Model
   private:
 
     SrcCodeOrDbAnalysisStatus m_analysisStatus;
-    bool m_analysisStatusHasBeenSet;
+    bool m_analysisStatusHasBeenSet = false;
 
     S3Object m_antipatternReportS3Object;
-    bool m_antipatternReportS3ObjectHasBeenSet;
+    bool m_antipatternReportS3ObjectHasBeenSet = false;
 
     AntipatternReportStatus m_antipatternReportStatus;
-    bool m_antipatternReportStatusHasBeenSet;
+    bool m_antipatternReportStatusHasBeenSet = false;
 
     Aws::String m_antipatternReportStatusMessage;
-    bool m_antipatternReportStatusMessageHasBeenSet;
+    bool m_antipatternReportStatusMessageHasBeenSet = false;
 
     AppType m_appType;
-    bool m_appTypeHasBeenSet;
+    bool m_appTypeHasBeenSet = false;
 
     Aws::String m_associatedServerId;
-    bool m_associatedServerIdHasBeenSet;
+    bool m_associatedServerIdHasBeenSet = false;
 
     DatabaseConfigDetail m_databaseConfigDetail;
-    bool m_databaseConfigDetailHasBeenSet;
+    bool m_databaseConfigDetailHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     InclusionStatus m_inclusionStatus;
-    bool m_inclusionStatusHasBeenSet;
+    bool m_inclusionStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAnalyzedTimestamp;
-    bool m_lastAnalyzedTimestampHasBeenSet;
+    bool m_lastAnalyzedTimestampHasBeenSet = false;
 
     Aws::Vector<AntipatternSeveritySummary> m_listAntipatternSeveritySummary;
-    bool m_listAntipatternSeveritySummaryHasBeenSet;
+    bool m_listAntipatternSeveritySummaryHasBeenSet = false;
 
     bool m_moreServerAssociationExists;
-    bool m_moreServerAssociationExistsHasBeenSet;
+    bool m_moreServerAssociationExistsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_osDriver;
-    bool m_osDriverHasBeenSet;
+    bool m_osDriverHasBeenSet = false;
 
     Aws::String m_osVersion;
-    bool m_osVersionHasBeenSet;
+    bool m_osVersionHasBeenSet = false;
 
     RecommendationSet m_recommendationSet;
-    bool m_recommendationSetHasBeenSet;
+    bool m_recommendationSetHasBeenSet = false;
 
     ResourceSubType m_resourceSubType;
-    bool m_resourceSubTypeHasBeenSet;
+    bool m_resourceSubTypeHasBeenSet = false;
 
     Aws::Vector<SourceCodeRepository> m_sourceCodeRepositories;
-    bool m_sourceCodeRepositoriesHasBeenSet;
+    bool m_sourceCodeRepositoriesHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

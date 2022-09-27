@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_ticketId;
-    bool m_ticketIdHasBeenSet;
+    bool m_ticketIdHasBeenSet = false;
   };
 
 } // namespace Model

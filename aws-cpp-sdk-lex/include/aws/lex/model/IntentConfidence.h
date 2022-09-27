@@ -68,7 +68,7 @@ namespace Model
   private:
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::Vector<Filter> m_roomFilters;
-    bool m_roomFiltersHasBeenSet;
+    bool m_roomFiltersHasBeenSet = false;
 
     Content m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     int m_timeToLiveInSeconds;
-    bool m_timeToLiveInSecondsHasBeenSet;
+    bool m_timeToLiveInSecondsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

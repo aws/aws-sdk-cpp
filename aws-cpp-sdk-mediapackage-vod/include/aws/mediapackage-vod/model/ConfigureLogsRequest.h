@@ -98,10 +98,10 @@ namespace Model
   private:
 
     EgressAccessLogs m_egressAccessLogs;
-    bool m_egressAccessLogsHasBeenSet;
+    bool m_egressAccessLogsHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
   };
 
 } // namespace Model

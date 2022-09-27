@@ -167,13 +167,13 @@ namespace Model
   private:
 
     bool m_allowAdminCreateUserOnly;
-    bool m_allowAdminCreateUserOnlyHasBeenSet;
+    bool m_allowAdminCreateUserOnlyHasBeenSet = false;
 
     int m_unusedAccountValidityDays;
-    bool m_unusedAccountValidityDaysHasBeenSet;
+    bool m_unusedAccountValidityDaysHasBeenSet = false;
 
     MessageTemplateType m_inviteMessageTemplate;
-    bool m_inviteMessageTemplateHasBeenSet;
+    bool m_inviteMessageTemplateHasBeenSet = false;
   };
 
 } // namespace Model

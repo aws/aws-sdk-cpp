@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_regex;
-    bool m_regexHasBeenSet;
+    bool m_regexHasBeenSet = false;
   };
 
 } // namespace Model

@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     ImageFile m_file;
-    bool m_fileHasBeenSet;
+    bool m_fileHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,9 @@ CreateMeetingWithAttendeesRequest::CreateMeetingWithAttendeesRequest() :
     m_meetingFeaturesHasBeenSet(false),
     m_notificationsConfigurationHasBeenSet(false),
     m_attendeesHasBeenSet(false),
-    m_primaryMeetingIdHasBeenSet(false)
+    m_primaryMeetingIdHasBeenSet(false),
+    m_tenantIdsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,28 @@ Aws::String CreateMeetingWithAttendeesRequest::SerializePayload() const
   if(m_primaryMeetingIdHasBeenSet)
   {
    payload.WithString("PrimaryMeetingId", m_primaryMeetingId);
+
+  }
+
+  if(m_tenantIdsHasBeenSet)
+  {
+   Array<JsonValue> tenantIdsJsonList(m_tenantIds.size());
+   for(unsigned tenantIdsIndex = 0; tenantIdsIndex < tenantIdsJsonList.GetLength(); ++tenantIdsIndex)
+   {
+     tenantIdsJsonList[tenantIdsIndex].AsString(m_tenantIds[tenantIdsIndex]);
+   }
+   payload.WithArray("TenantIds", std::move(tenantIdsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

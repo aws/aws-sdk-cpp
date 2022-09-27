@@ -95,7 +95,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_fileShareARNList;
-    bool m_fileShareARNListHasBeenSet;
+    bool m_fileShareARNListHasBeenSet = false;
   };
 
 } // namespace Model

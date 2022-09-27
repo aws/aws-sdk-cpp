@@ -306,10 +306,10 @@ namespace Model
   private:
 
     Aws::String m_transcriptFileUri;
-    bool m_transcriptFileUriHasBeenSet;
+    bool m_transcriptFileUriHasBeenSet = false;
 
     Aws::String m_redactedTranscriptFileUri;
-    bool m_redactedTranscriptFileUriHasBeenSet;
+    bool m_redactedTranscriptFileUriHasBeenSet = false;
   };
 
 } // namespace Model

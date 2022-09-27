@@ -224,26 +224,29 @@ namespace Model
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
-     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>T1 node types:</b>
+     * <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b>
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
      * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node
      * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
-     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
-     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
-     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
-     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
-     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
-     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
-     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
-     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
-     * <p>For region availability, see <a
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>C1 node types:</b>
+     * <code>cache.c1.xlarge</code> </p> </li> </ul> </li> <li> <p>Memory optimized
+     * with data tiering:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6gd node
+     * types</b> (available only for Redis engine version 6.2 onward).</p> <p>
+     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>,
+     * <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>,
+     * <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>
+     * </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation: </p>
+     * <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward
+     * and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R5 node types:</b>
      * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
@@ -252,8 +255,9 @@ namespace Model
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
-     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
-     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <p>Previous generation: (not recommended. Existing clusters are still supported
+     * but creation of new clusters is not supported for these types.)</p> <p> <b>M2
+     * node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b>
      * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
@@ -295,26 +299,29 @@ namespace Model
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
-     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>T1 node types:</b>
+     * <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b>
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
      * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node
      * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
-     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
-     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
-     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
-     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
-     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
-     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
-     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
-     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
-     * <p>For region availability, see <a
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>C1 node types:</b>
+     * <code>cache.c1.xlarge</code> </p> </li> </ul> </li> <li> <p>Memory optimized
+     * with data tiering:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6gd node
+     * types</b> (available only for Redis engine version 6.2 onward).</p> <p>
+     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>,
+     * <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>,
+     * <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>
+     * </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation: </p>
+     * <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward
+     * and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R5 node types:</b>
      * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
@@ -323,8 +330,9 @@ namespace Model
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
-     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
-     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <p>Previous generation: (not recommended. Existing clusters are still supported
+     * but creation of new clusters is not supported for these types.)</p> <p> <b>M2
+     * node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b>
      * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
@@ -366,26 +374,29 @@ namespace Model
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
-     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>T1 node types:</b>
+     * <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b>
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
      * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node
      * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
-     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
-     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
-     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
-     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
-     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
-     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
-     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
-     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
-     * <p>For region availability, see <a
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>C1 node types:</b>
+     * <code>cache.c1.xlarge</code> </p> </li> </ul> </li> <li> <p>Memory optimized
+     * with data tiering:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6gd node
+     * types</b> (available only for Redis engine version 6.2 onward).</p> <p>
+     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>,
+     * <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>,
+     * <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>
+     * </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation: </p>
+     * <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward
+     * and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R5 node types:</b>
      * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
@@ -394,8 +405,9 @@ namespace Model
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
-     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
-     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <p>Previous generation: (not recommended. Existing clusters are still supported
+     * but creation of new clusters is not supported for these types.)</p> <p> <b>M2
+     * node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b>
      * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
@@ -437,26 +449,29 @@ namespace Model
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
-     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>T1 node types:</b>
+     * <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b>
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
      * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node
      * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
-     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
-     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
-     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
-     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
-     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
-     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
-     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
-     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
-     * <p>For region availability, see <a
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>C1 node types:</b>
+     * <code>cache.c1.xlarge</code> </p> </li> </ul> </li> <li> <p>Memory optimized
+     * with data tiering:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6gd node
+     * types</b> (available only for Redis engine version 6.2 onward).</p> <p>
+     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>,
+     * <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>,
+     * <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>
+     * </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation: </p>
+     * <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward
+     * and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R5 node types:</b>
      * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
@@ -465,8 +480,9 @@ namespace Model
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
-     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
-     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <p>Previous generation: (not recommended. Existing clusters are still supported
+     * but creation of new clusters is not supported for these types.)</p> <p> <b>M2
+     * node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b>
      * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
@@ -508,26 +524,29 @@ namespace Model
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
-     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>T1 node types:</b>
+     * <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b>
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
      * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node
      * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
-     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
-     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
-     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
-     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
-     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
-     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
-     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
-     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
-     * <p>For region availability, see <a
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>C1 node types:</b>
+     * <code>cache.c1.xlarge</code> </p> </li> </ul> </li> <li> <p>Memory optimized
+     * with data tiering:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6gd node
+     * types</b> (available only for Redis engine version 6.2 onward).</p> <p>
+     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>,
+     * <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>,
+     * <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>
+     * </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation: </p>
+     * <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward
+     * and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R5 node types:</b>
      * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
@@ -536,8 +555,9 @@ namespace Model
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
-     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
-     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <p>Previous generation: (not recommended. Existing clusters are still supported
+     * but creation of new clusters is not supported for these types.)</p> <p> <b>M2
+     * node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b>
      * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
@@ -579,26 +599,29 @@ namespace Model
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
-     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>T1 node types:</b>
+     * <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b>
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
      * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node
      * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
-     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
-     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
-     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
-     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
-     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
-     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
-     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
-     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
-     * <p>For region availability, see <a
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>C1 node types:</b>
+     * <code>cache.c1.xlarge</code> </p> </li> </ul> </li> <li> <p>Memory optimized
+     * with data tiering:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6gd node
+     * types</b> (available only for Redis engine version 6.2 onward).</p> <p>
+     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>,
+     * <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>,
+     * <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>
+     * </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation: </p>
+     * <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward
+     * and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R5 node types:</b>
      * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
@@ -607,8 +630,9 @@ namespace Model
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
-     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
-     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <p>Previous generation: (not recommended. Existing clusters are still supported
+     * but creation of new clusters is not supported for these types.)</p> <p> <b>M2
+     * node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b>
      * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
@@ -650,26 +674,29 @@ namespace Model
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
-     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>T1 node types:</b>
+     * <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b>
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
      * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node
      * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
-     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
-     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
-     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
-     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
-     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
-     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
-     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
-     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
-     * <p>For region availability, see <a
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>C1 node types:</b>
+     * <code>cache.c1.xlarge</code> </p> </li> </ul> </li> <li> <p>Memory optimized
+     * with data tiering:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6gd node
+     * types</b> (available only for Redis engine version 6.2 onward).</p> <p>
+     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>,
+     * <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>,
+     * <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>
+     * </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation: </p>
+     * <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward
+     * and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R5 node types:</b>
      * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
@@ -678,8 +705,9 @@ namespace Model
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
-     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
-     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <p>Previous generation: (not recommended. Existing clusters are still supported
+     * but creation of new clusters is not supported for these types.)</p> <p> <b>M2
+     * node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b>
      * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
@@ -721,26 +749,29 @@ namespace Model
      * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
-     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>T1 node types:</b>
+     * <code>cache.t1.micro</code> </p> <p> <b>M1 node types:</b>
+     * <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
      * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> <p> <b>M3 node
      * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
      * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> </li> </ul>
      * </li> <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
-     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
-     * </li> </ul> </li> <li> <p>Memory optimized with data tiering:</p> <ul> <li>
-     * <p>Current generation: </p> <p> <b>R6gd node types</b> (available only for Redis
-     * engine version 6.2 onward).</p> <p> <code>cache.r6gd.xlarge</code>,
-     * <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>,
-     * <code>cache.r6gd.16xlarge</code> </p> </li> </ul> </li> <li> <p>Memory
-     * optimized:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6g node types</b>
-     * (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     * version 1.5.16 onward).</p> <p> <code>cache.r6g.large</code>,
-     * <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
-     * <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> </p> 
-     * <p>For region availability, see <a
+     * recommended. Existing clusters are still supported but creation of new clusters
+     * is not supported for these types.)</p> <p> <b>C1 node types:</b>
+     * <code>cache.c1.xlarge</code> </p> </li> </ul> </li> <li> <p>Memory optimized
+     * with data tiering:</p> <ul> <li> <p>Current generation: </p> <p> <b>R6gd node
+     * types</b> (available only for Redis engine version 6.2 onward).</p> <p>
+     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>,
+     * <code>cache.r6gd.4xlarge</code>, <code>cache.r6gd.8xlarge</code>,
+     * <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code> </p> </li>
+     * </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation: </p>
+     * <p> <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward
+     * and for Memcached engine version 1.5.16 onward).</p> <p>
+     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     * <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>,
+     * <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code> </p>  <p>For region availability, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported
      * Node Types</a> </p>  <p> <b>R5 node types:</b>
      * <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
@@ -749,8 +780,9 @@ namespace Model
      * node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
      * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
      * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
-     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
-     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <p>Previous generation: (not recommended. Existing clusters are still supported
+     * but creation of new clusters is not supported for these types.)</p> <p> <b>M2
+     * node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
      * <code>cache.m2.4xlarge</code> </p> <p> <b>R3 node types:</b>
      * <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
      * <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>,
@@ -1864,94 +1896,94 @@ namespace Model
   private:
 
     Aws::String m_cacheClusterId;
-    bool m_cacheClusterIdHasBeenSet;
+    bool m_cacheClusterIdHasBeenSet = false;
 
     Endpoint m_configurationEndpoint;
-    bool m_configurationEndpointHasBeenSet;
+    bool m_configurationEndpointHasBeenSet = false;
 
     Aws::String m_clientDownloadLandingPage;
-    bool m_clientDownloadLandingPageHasBeenSet;
+    bool m_clientDownloadLandingPageHasBeenSet = false;
 
     Aws::String m_cacheNodeType;
-    bool m_cacheNodeTypeHasBeenSet;
+    bool m_cacheNodeTypeHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_cacheClusterStatus;
-    bool m_cacheClusterStatusHasBeenSet;
+    bool m_cacheClusterStatusHasBeenSet = false;
 
     int m_numCacheNodes;
-    bool m_numCacheNodesHasBeenSet;
+    bool m_numCacheNodesHasBeenSet = false;
 
     Aws::String m_preferredAvailabilityZone;
-    bool m_preferredAvailabilityZoneHasBeenSet;
+    bool m_preferredAvailabilityZoneHasBeenSet = false;
 
     Aws::String m_preferredOutpostArn;
-    bool m_preferredOutpostArnHasBeenSet;
+    bool m_preferredOutpostArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_cacheClusterCreateTime;
-    bool m_cacheClusterCreateTimeHasBeenSet;
+    bool m_cacheClusterCreateTimeHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     PendingModifiedValues m_pendingModifiedValues;
-    bool m_pendingModifiedValuesHasBeenSet;
+    bool m_pendingModifiedValuesHasBeenSet = false;
 
     NotificationConfiguration m_notificationConfiguration;
-    bool m_notificationConfigurationHasBeenSet;
+    bool m_notificationConfigurationHasBeenSet = false;
 
     Aws::Vector<CacheSecurityGroupMembership> m_cacheSecurityGroups;
-    bool m_cacheSecurityGroupsHasBeenSet;
+    bool m_cacheSecurityGroupsHasBeenSet = false;
 
     CacheParameterGroupStatus m_cacheParameterGroup;
-    bool m_cacheParameterGroupHasBeenSet;
+    bool m_cacheParameterGroupHasBeenSet = false;
 
     Aws::String m_cacheSubnetGroupName;
-    bool m_cacheSubnetGroupNameHasBeenSet;
+    bool m_cacheSubnetGroupNameHasBeenSet = false;
 
     Aws::Vector<CacheNode> m_cacheNodes;
-    bool m_cacheNodesHasBeenSet;
+    bool m_cacheNodesHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::Vector<SecurityGroupMembership> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     int m_snapshotRetentionLimit;
-    bool m_snapshotRetentionLimitHasBeenSet;
+    bool m_snapshotRetentionLimitHasBeenSet = false;
 
     Aws::String m_snapshotWindow;
-    bool m_snapshotWindowHasBeenSet;
+    bool m_snapshotWindowHasBeenSet = false;
 
     bool m_authTokenEnabled;
-    bool m_authTokenEnabledHasBeenSet;
+    bool m_authTokenEnabledHasBeenSet = false;
 
     Aws::Utils::DateTime m_authTokenLastModifiedDate;
-    bool m_authTokenLastModifiedDateHasBeenSet;
+    bool m_authTokenLastModifiedDateHasBeenSet = false;
 
     bool m_transitEncryptionEnabled;
-    bool m_transitEncryptionEnabledHasBeenSet;
+    bool m_transitEncryptionEnabledHasBeenSet = false;
 
     bool m_atRestEncryptionEnabled;
-    bool m_atRestEncryptionEnabledHasBeenSet;
+    bool m_atRestEncryptionEnabledHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     bool m_replicationGroupLogDeliveryEnabled;
-    bool m_replicationGroupLogDeliveryEnabledHasBeenSet;
+    bool m_replicationGroupLogDeliveryEnabledHasBeenSet = false;
 
     Aws::Vector<LogDeliveryConfiguration> m_logDeliveryConfigurations;
-    bool m_logDeliveryConfigurationsHasBeenSet;
+    bool m_logDeliveryConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

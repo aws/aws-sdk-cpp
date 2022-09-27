@@ -828,28 +828,28 @@ namespace Model
   private:
 
     Aws::String m_paginationToken;
-    bool m_paginationTokenHasBeenSet;
+    bool m_paginationTokenHasBeenSet = false;
 
     Aws::Vector<TagFilter> m_tagFilters;
-    bool m_tagFiltersHasBeenSet;
+    bool m_tagFiltersHasBeenSet = false;
 
     int m_resourcesPerPage;
-    bool m_resourcesPerPageHasBeenSet;
+    bool m_resourcesPerPageHasBeenSet = false;
 
     int m_tagsPerPage;
-    bool m_tagsPerPageHasBeenSet;
+    bool m_tagsPerPageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypeFilters;
-    bool m_resourceTypeFiltersHasBeenSet;
+    bool m_resourceTypeFiltersHasBeenSet = false;
 
     bool m_includeComplianceDetails;
-    bool m_includeComplianceDetailsHasBeenSet;
+    bool m_includeComplianceDetailsHasBeenSet = false;
 
     bool m_excludeCompliantResources;
-    bool m_excludeCompliantResourcesHasBeenSet;
+    bool m_excludeCompliantResourcesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceARNList;
-    bool m_resourceARNListHasBeenSet;
+    bool m_resourceARNListHasBeenSet = false;
   };
 
 } // namespace Model

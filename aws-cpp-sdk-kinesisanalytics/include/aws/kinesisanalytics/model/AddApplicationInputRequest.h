@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     long long m_currentApplicationVersionId;
-    bool m_currentApplicationVersionIdHasBeenSet;
+    bool m_currentApplicationVersionIdHasBeenSet = false;
 
     Input m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
   };
 
 } // namespace Model

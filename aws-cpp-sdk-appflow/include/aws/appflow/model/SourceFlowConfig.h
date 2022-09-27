@@ -244,19 +244,19 @@ namespace Model
   private:
 
     ConnectorType m_connectorType;
-    bool m_connectorTypeHasBeenSet;
+    bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_apiVersion;
-    bool m_apiVersionHasBeenSet;
+    bool m_apiVersionHasBeenSet = false;
 
     Aws::String m_connectorProfileName;
-    bool m_connectorProfileNameHasBeenSet;
+    bool m_connectorProfileNameHasBeenSet = false;
 
     SourceConnectorProperties m_sourceConnectorProperties;
-    bool m_sourceConnectorPropertiesHasBeenSet;
+    bool m_sourceConnectorPropertiesHasBeenSet = false;
 
     IncrementalPullConfig m_incrementalPullConfig;
-    bool m_incrementalPullConfigHasBeenSet;
+    bool m_incrementalPullConfigHasBeenSet = false;
   };
 
 } // namespace Model

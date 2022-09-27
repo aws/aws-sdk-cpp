@@ -41,33 +41,39 @@ using namespace Aws::Utils::Xml;
 static const char* SERVICE_NAME = "sts";
 static const char* ALLOCATION_TAG = "STSClient";
 
-
 STSClient::STSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-STSClient::STSClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+STSClient::STSClient(const AWSCredentials& credentials,
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 STSClient::STSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<STSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -79,7 +85,7 @@ STSClient::~STSClient()
 
 void STSClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("STS");
+  AWSClient::SetServiceClientName("STS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -129,12 +135,10 @@ AssumeRoleOutcomeCallable STSClient::AssumeRoleCallable(const AssumeRoleRequest&
 
 void STSClient::AssumeRoleAsync(const AssumeRoleRequest& request, const AssumeRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssumeRoleAsyncHelper( request, handler, context ); } );
-}
-
-void STSClient::AssumeRoleAsyncHelper(const AssumeRoleRequest& request, const AssumeRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssumeRole(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssumeRole(request), context);
+    } );
 }
 
 AssumeRoleWithSAMLOutcome STSClient::AssumeRoleWithSAML(const AssumeRoleWithSAMLRequest& request) const
@@ -153,12 +157,10 @@ AssumeRoleWithSAMLOutcomeCallable STSClient::AssumeRoleWithSAMLCallable(const As
 
 void STSClient::AssumeRoleWithSAMLAsync(const AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssumeRoleWithSAMLAsyncHelper( request, handler, context ); } );
-}
-
-void STSClient::AssumeRoleWithSAMLAsyncHelper(const AssumeRoleWithSAMLRequest& request, const AssumeRoleWithSAMLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssumeRoleWithSAML(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssumeRoleWithSAML(request), context);
+    } );
 }
 
 AssumeRoleWithWebIdentityOutcome STSClient::AssumeRoleWithWebIdentity(const AssumeRoleWithWebIdentityRequest& request) const
@@ -177,12 +179,10 @@ AssumeRoleWithWebIdentityOutcomeCallable STSClient::AssumeRoleWithWebIdentityCal
 
 void STSClient::AssumeRoleWithWebIdentityAsync(const AssumeRoleWithWebIdentityRequest& request, const AssumeRoleWithWebIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssumeRoleWithWebIdentityAsyncHelper( request, handler, context ); } );
-}
-
-void STSClient::AssumeRoleWithWebIdentityAsyncHelper(const AssumeRoleWithWebIdentityRequest& request, const AssumeRoleWithWebIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssumeRoleWithWebIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssumeRoleWithWebIdentity(request), context);
+    } );
 }
 
 DecodeAuthorizationMessageOutcome STSClient::DecodeAuthorizationMessage(const DecodeAuthorizationMessageRequest& request) const
@@ -201,12 +201,10 @@ DecodeAuthorizationMessageOutcomeCallable STSClient::DecodeAuthorizationMessageC
 
 void STSClient::DecodeAuthorizationMessageAsync(const DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DecodeAuthorizationMessageAsyncHelper( request, handler, context ); } );
-}
-
-void STSClient::DecodeAuthorizationMessageAsyncHelper(const DecodeAuthorizationMessageRequest& request, const DecodeAuthorizationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DecodeAuthorizationMessage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DecodeAuthorizationMessage(request), context);
+    } );
 }
 
 GetAccessKeyInfoOutcome STSClient::GetAccessKeyInfo(const GetAccessKeyInfoRequest& request) const
@@ -225,12 +223,10 @@ GetAccessKeyInfoOutcomeCallable STSClient::GetAccessKeyInfoCallable(const GetAcc
 
 void STSClient::GetAccessKeyInfoAsync(const GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccessKeyInfoAsyncHelper( request, handler, context ); } );
-}
-
-void STSClient::GetAccessKeyInfoAsyncHelper(const GetAccessKeyInfoRequest& request, const GetAccessKeyInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAccessKeyInfo(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAccessKeyInfo(request), context);
+    } );
 }
 
 GetCallerIdentityOutcome STSClient::GetCallerIdentity(const GetCallerIdentityRequest& request) const
@@ -249,12 +245,10 @@ GetCallerIdentityOutcomeCallable STSClient::GetCallerIdentityCallable(const GetC
 
 void STSClient::GetCallerIdentityAsync(const GetCallerIdentityRequest& request, const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCallerIdentityAsyncHelper( request, handler, context ); } );
-}
-
-void STSClient::GetCallerIdentityAsyncHelper(const GetCallerIdentityRequest& request, const GetCallerIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCallerIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCallerIdentity(request), context);
+    } );
 }
 
 GetFederationTokenOutcome STSClient::GetFederationToken(const GetFederationTokenRequest& request) const
@@ -273,12 +267,10 @@ GetFederationTokenOutcomeCallable STSClient::GetFederationTokenCallable(const Ge
 
 void STSClient::GetFederationTokenAsync(const GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFederationTokenAsyncHelper( request, handler, context ); } );
-}
-
-void STSClient::GetFederationTokenAsyncHelper(const GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFederationToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFederationToken(request), context);
+    } );
 }
 
 GetSessionTokenOutcome STSClient::GetSessionToken(const GetSessionTokenRequest& request) const
@@ -297,11 +289,9 @@ GetSessionTokenOutcomeCallable STSClient::GetSessionTokenCallable(const GetSessi
 
 void STSClient::GetSessionTokenAsync(const GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSessionTokenAsyncHelper( request, handler, context ); } );
-}
-
-void STSClient::GetSessionTokenAsyncHelper(const GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSessionToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSessionToken(request), context);
+    } );
 }
 

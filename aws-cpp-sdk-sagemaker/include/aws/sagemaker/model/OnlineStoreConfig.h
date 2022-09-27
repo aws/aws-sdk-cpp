@@ -113,10 +113,10 @@ namespace Model
   private:
 
     OnlineStoreSecurityConfig m_securityConfig;
-    bool m_securityConfigHasBeenSet;
+    bool m_securityConfigHasBeenSet = false;
 
     bool m_enableOnlineStore;
-    bool m_enableOnlineStoreHasBeenSet;
+    bool m_enableOnlineStoreHasBeenSet = false;
   };
 
 } // namespace Model

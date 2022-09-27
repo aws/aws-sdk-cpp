@@ -73,7 +73,7 @@ namespace Model
   private:
 
     LoadBalancerDescription m_loadBalancer;
-    bool m_loadBalancerHasBeenSet;
+    bool m_loadBalancerHasBeenSet = false;
   };
 
 } // namespace Model

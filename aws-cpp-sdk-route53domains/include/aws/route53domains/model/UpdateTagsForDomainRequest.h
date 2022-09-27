@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagsToUpdate;
-    bool m_tagsToUpdateHasBeenSet;
+    bool m_tagsToUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,7 +31,7 @@ namespace Model
    * with the specified <code>targetCapacity</code> value as the target value for the
    * metric. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using
-   * Managed Scaling</a> in the <i>Amazon Elastic Container Service Developer
+   * managed scaling</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p> <p>If managed scaling is disabled, the user must manage the
    * scaling of the Auto Scaling group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ManagedScaling">AWS
@@ -199,19 +199,19 @@ namespace Model
   private:
 
     ManagedScalingStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_targetCapacity;
-    bool m_targetCapacityHasBeenSet;
+    bool m_targetCapacityHasBeenSet = false;
 
     int m_minimumScalingStepSize;
-    bool m_minimumScalingStepSizeHasBeenSet;
+    bool m_minimumScalingStepSizeHasBeenSet = false;
 
     int m_maximumScalingStepSize;
-    bool m_maximumScalingStepSizeHasBeenSet;
+    bool m_maximumScalingStepSizeHasBeenSet = false;
 
     int m_instanceWarmupPeriod;
-    bool m_instanceWarmupPeriodHasBeenSet;
+    bool m_instanceWarmupPeriodHasBeenSet = false;
   };
 
 } // namespace Model

@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_acceptanceThreshold;
-    bool m_acceptanceThresholdHasBeenSet;
+    bool m_acceptanceThresholdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -180,13 +180,13 @@ namespace Model
   private:
 
     Aws::String m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
 
     Aws::String m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     Aws::String m_versionDate;
-    bool m_versionDateHasBeenSet;
+    bool m_versionDateHasBeenSet = false;
   };
 
 } // namespace Model

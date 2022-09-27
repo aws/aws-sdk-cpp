@@ -28,6 +28,7 @@ namespace Aws
         static const int st2110_jpegxs_HASH = HashingUtils::HashString("st2110-jpegxs");
         static const int cdi_HASH = HashingUtils::HashString("cdi");
         static const int srt_listener_HASH = HashingUtils::HashString("srt-listener");
+        static const int srt_caller_HASH = HashingUtils::HashString("srt-caller");
         static const int fujitsu_qos_HASH = HashingUtils::HashString("fujitsu-qos");
 
 
@@ -66,6 +67,10 @@ namespace Aws
           {
             return Protocol::srt_listener;
           }
+          else if (hashCode == srt_caller_HASH)
+          {
+            return Protocol::srt_caller;
+          }
           else if (hashCode == fujitsu_qos_HASH)
           {
             return Protocol::fujitsu_qos;
@@ -100,6 +105,8 @@ namespace Aws
             return "cdi";
           case Protocol::srt_listener:
             return "srt-listener";
+          case Protocol::srt_caller:
+            return "srt-caller";
           case Protocol::fujitsu_qos:
             return "fujitsu-qos";
           default:

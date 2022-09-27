@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_messageId;
-    bool m_messageIdHasBeenSet;
+    bool m_messageIdHasBeenSet = false;
 
     WirelessDeviceType m_wirelessDeviceType;
-    bool m_wirelessDeviceTypeHasBeenSet;
+    bool m_wirelessDeviceTypeHasBeenSet = false;
   };
 
 } // namespace Model

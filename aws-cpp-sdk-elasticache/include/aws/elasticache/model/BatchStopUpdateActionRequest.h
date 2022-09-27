@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_replicationGroupIds;
-    bool m_replicationGroupIdsHasBeenSet;
+    bool m_replicationGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cacheClusterIds;
-    bool m_cacheClusterIdsHasBeenSet;
+    bool m_cacheClusterIdsHasBeenSet = false;
 
     Aws::String m_serviceUpdateName;
-    bool m_serviceUpdateNameHasBeenSet;
+    bool m_serviceUpdateNameHasBeenSet = false;
   };
 
 } // namespace Model

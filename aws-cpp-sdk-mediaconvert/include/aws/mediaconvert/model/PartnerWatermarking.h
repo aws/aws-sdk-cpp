@@ -84,7 +84,7 @@ namespace Model
   private:
 
     NexGuardFileMarkerSettings m_nexguardFileMarkerSettings;
-    bool m_nexguardFileMarkerSettingsHasBeenSet;
+    bool m_nexguardFileMarkerSettingsHasBeenSet = false;
   };
 
 } // namespace Model

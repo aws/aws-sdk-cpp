@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     ScanningRepositoryFilterType m_filterType;
-    bool m_filterTypeHasBeenSet;
+    bool m_filterTypeHasBeenSet = false;
   };
 
 } // namespace Model

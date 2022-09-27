@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_userProfileArn;
-    bool m_userProfileArnHasBeenSet;
+    bool m_userProfileArnHasBeenSet = false;
 
     Aws::String m_userProfileName;
-    bool m_userProfileNameHasBeenSet;
+    bool m_userProfileNameHasBeenSet = false;
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
   };
 
 } // namespace Model

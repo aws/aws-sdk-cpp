@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_batchInferenceJobArn;
-    bool m_batchInferenceJobArnHasBeenSet;
+    bool m_batchInferenceJobArnHasBeenSet = false;
   };
 
 } // namespace Model

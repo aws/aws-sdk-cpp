@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_callbackToken;
-    bool m_callbackTokenHasBeenSet;
+    bool m_callbackTokenHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,63 +38,63 @@ namespace Model
   public:
 
     /**
-     * <p>The IDs of the instances. If you omit this parameter, all Auto Scaling
+     * <p>The IDs of the instances. If you omit this property, all Auto Scaling
      * instances are described. If you specify an ID that does not exist, it is ignored
      * with no error.</p> <p>Array Members: Maximum number of 50 items.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
     /**
-     * <p>The IDs of the instances. If you omit this parameter, all Auto Scaling
+     * <p>The IDs of the instances. If you omit this property, all Auto Scaling
      * instances are described. If you specify an ID that does not exist, it is ignored
      * with no error.</p> <p>Array Members: Maximum number of 50 items.</p>
      */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the instances. If you omit this parameter, all Auto Scaling
+     * <p>The IDs of the instances. If you omit this property, all Auto Scaling
      * instances are described. If you specify an ID that does not exist, it is ignored
      * with no error.</p> <p>Array Members: Maximum number of 50 items.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
     /**
-     * <p>The IDs of the instances. If you omit this parameter, all Auto Scaling
+     * <p>The IDs of the instances. If you omit this property, all Auto Scaling
      * instances are described. If you specify an ID that does not exist, it is ignored
      * with no error.</p> <p>Array Members: Maximum number of 50 items.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
     /**
-     * <p>The IDs of the instances. If you omit this parameter, all Auto Scaling
+     * <p>The IDs of the instances. If you omit this property, all Auto Scaling
      * instances are described. If you specify an ID that does not exist, it is ignored
      * with no error.</p> <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribeAutoScalingInstancesRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
     /**
-     * <p>The IDs of the instances. If you omit this parameter, all Auto Scaling
+     * <p>The IDs of the instances. If you omit this property, all Auto Scaling
      * instances are described. If you specify an ID that does not exist, it is ignored
      * with no error.</p> <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribeAutoScalingInstancesRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the instances. If you omit this parameter, all Auto Scaling
+     * <p>The IDs of the instances. If you omit this property, all Auto Scaling
      * instances are described. If you specify an ID that does not exist, it is ignored
      * with no error.</p> <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribeAutoScalingInstancesRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the instances. If you omit this parameter, all Auto Scaling
+     * <p>The IDs of the instances. If you omit this property, all Auto Scaling
      * instances are described. If you specify an ID that does not exist, it is ignored
      * with no error.</p> <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribeAutoScalingInstancesRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the instances. If you omit this parameter, all Auto Scaling
+     * <p>The IDs of the instances. If you omit this property, all Auto Scaling
      * instances are described. If you specify an ID that does not exist, it is ignored
      * with no error.</p> <p>Array Members: Maximum number of 50 items.</p>
      */
@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_instanceIds;
-    bool m_instanceIdsHasBeenSet;
+    bool m_instanceIdsHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

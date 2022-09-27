@@ -71,7 +71,7 @@ namespace Model
   private:
 
     InputLambdaProcessorUpdate m_inputLambdaProcessorUpdate;
-    bool m_inputLambdaProcessorUpdateHasBeenSet;
+    bool m_inputLambdaProcessorUpdateHasBeenSet = false;
   };
 
 } // namespace Model

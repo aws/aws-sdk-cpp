@@ -48,7 +48,9 @@ AssociationDescription::AssociationDescription() :
     m_targetLocationsHasBeenSet(false),
     m_scheduleOffset(0),
     m_scheduleOffsetHasBeenSet(false),
-    m_targetMapsHasBeenSet(false)
+    m_targetMapsHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false),
+    m_triggeredAlarmsHasBeenSet(false)
 {
 }
 
@@ -82,7 +84,9 @@ AssociationDescription::AssociationDescription(JsonView jsonValue) :
     m_targetLocationsHasBeenSet(false),
     m_scheduleOffset(0),
     m_scheduleOffsetHasBeenSet(false),
-    m_targetMapsHasBeenSet(false)
+    m_targetMapsHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false),
+    m_triggeredAlarmsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -306,6 +310,23 @@ AssociationDescription& AssociationDescription::operator =(JsonView jsonValue)
     m_targetMapsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AlarmConfiguration"))
+  {
+    m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
+
+    m_alarmConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TriggeredAlarms"))
+  {
+    Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
+    for(unsigned triggeredAlarmsIndex = 0; triggeredAlarmsIndex < triggeredAlarmsJsonList.GetLength(); ++triggeredAlarmsIndex)
+    {
+      m_triggeredAlarms.push_back(triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject());
+    }
+    m_triggeredAlarmsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -500,6 +521,23 @@ JsonValue AssociationDescription::Jsonize() const
      targetMapsJsonList[targetMapsIndex].AsObject(std::move(targetMapJsonMap));
    }
    payload.WithArray("TargetMaps", std::move(targetMapsJsonList));
+
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("AlarmConfiguration", m_alarmConfiguration.Jsonize());
+
+  }
+
+  if(m_triggeredAlarmsHasBeenSet)
+  {
+   Array<JsonValue> triggeredAlarmsJsonList(m_triggeredAlarms.size());
+   for(unsigned triggeredAlarmsIndex = 0; triggeredAlarmsIndex < triggeredAlarmsJsonList.GetLength(); ++triggeredAlarmsIndex)
+   {
+     triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject(m_triggeredAlarms[triggeredAlarmsIndex].Jsonize());
+   }
+   payload.WithArray("TriggeredAlarms", std::move(triggeredAlarmsJsonList));
 
   }
 

@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<NodeInputPort> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     Aws::Vector<NodeOutputPort> m_outputs;
-    bool m_outputsHasBeenSet;
+    bool m_outputsHasBeenSet = false;
   };
 
 } // namespace Model

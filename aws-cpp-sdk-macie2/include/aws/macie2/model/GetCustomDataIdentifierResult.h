@@ -264,82 +264,85 @@ namespace Model
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. Keywords aren't case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeywords() const{ return m_keywords; }
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(const Aws::Vector<Aws::String>& value) { m_keywords = value; }
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(Aws::Vector<Aws::String>&& value) { m_keywords = std::move(value); }
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& WithKeywords(const Aws::Vector<Aws::String>& value) { SetKeywords(value); return *this;}
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& WithKeywords(Aws::Vector<Aws::String>&& value) { SetKeywords(std::move(value)); return *this;}
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddKeywords(const Aws::String& value) { m_keywords.push_back(value); return *this; }
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddKeywords(Aws::String&& value) { m_keywords.push_back(std::move(value)); return *this; }
 
     /**
      * <p>An array that lists specific character sequences (<i>keywords</i>), one of
-     * which must be within proximity (maximumMatchDistance) of the regular expression
-     * to match. Keywords aren't case sensitive.</p>
+     * which must precede and be within proximity (maximumMatchDistance) of the regular
+     * expression to match. Keywords aren't case sensitive.</p>
      */
     inline GetCustomDataIdentifierResult& AddKeywords(const char* value) { m_keywords.push_back(value); return *this; }
 
 
     /**
-     * <p>The maximum number of characters that can exist between text that matches the
-     * regular expression and the character sequences specified by the keywords array.
-     * Amazon Macie includes or excludes a result based on the proximity of a keyword
-     * to text that matches the regular expression.</p>
+     * <p>The maximum number of characters that can exist between the end of at least
+     * one complete character sequence specified by the keywords array and the end of
+     * the text that matches the regex pattern. If a complete keyword precedes all the
+     * text that matches the pattern and the keyword is within the specified distance,
+     * Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
      */
     inline int GetMaximumMatchDistance() const{ return m_maximumMatchDistance; }
 
     /**
-     * <p>The maximum number of characters that can exist between text that matches the
-     * regular expression and the character sequences specified by the keywords array.
-     * Amazon Macie includes or excludes a result based on the proximity of a keyword
-     * to text that matches the regular expression.</p>
+     * <p>The maximum number of characters that can exist between the end of at least
+     * one complete character sequence specified by the keywords array and the end of
+     * the text that matches the regex pattern. If a complete keyword precedes all the
+     * text that matches the pattern and the keyword is within the specified distance,
+     * Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
      */
     inline void SetMaximumMatchDistance(int value) { m_maximumMatchDistance = value; }
 
     /**
-     * <p>The maximum number of characters that can exist between text that matches the
-     * regular expression and the character sequences specified by the keywords array.
-     * Amazon Macie includes or excludes a result based on the proximity of a keyword
-     * to text that matches the regular expression.</p>
+     * <p>The maximum number of characters that can exist between the end of at least
+     * one complete character sequence specified by the keywords array and the end of
+     * the text that matches the regex pattern. If a complete keyword precedes all the
+     * text that matches the pattern and the keyword is within the specified distance,
+     * Amazon Macie includes the result. Otherwise, Macie excludes the result.</p>
      */
     inline GetCustomDataIdentifierResult& WithMaximumMatchDistance(int value) { SetMaximumMatchDistance(value); return *this;}
 

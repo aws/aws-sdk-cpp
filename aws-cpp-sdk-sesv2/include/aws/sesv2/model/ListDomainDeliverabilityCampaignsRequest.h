@@ -262,19 +262,19 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     Aws::String m_subscribedDomain;
-    bool m_subscribedDomainHasBeenSet;
+    bool m_subscribedDomainHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -138,13 +138,13 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     long long m_currentApplicationVersionId;
-    bool m_currentApplicationVersionIdHasBeenSet;
+    bool m_currentApplicationVersionIdHasBeenSet = false;
 
     ApplicationUpdate m_applicationUpdate;
-    bool m_applicationUpdateHasBeenSet;
+    bool m_applicationUpdateHasBeenSet = false;
   };
 
 } // namespace Model

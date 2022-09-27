@@ -65,7 +65,7 @@ namespace Model
   private:
 
     SampleDataS3SourceConfig m_s3SourceConfig;
-    bool m_s3SourceConfigHasBeenSet;
+    bool m_s3SourceConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -139,16 +139,16 @@ namespace Model
   private:
 
     long long m_resourcesProcessed;
-    bool m_resourcesProcessedHasBeenSet;
+    bool m_resourcesProcessedHasBeenSet = false;
 
     long long m_resourcesFlagged;
-    bool m_resourcesFlaggedHasBeenSet;
+    bool m_resourcesFlaggedHasBeenSet = false;
 
     long long m_resourcesIgnored;
-    bool m_resourcesIgnoredHasBeenSet;
+    bool m_resourcesIgnoredHasBeenSet = false;
 
     long long m_resourcesSuppressed;
-    bool m_resourcesSuppressedHasBeenSet;
+    bool m_resourcesSuppressedHasBeenSet = false;
   };
 
 } // namespace Model

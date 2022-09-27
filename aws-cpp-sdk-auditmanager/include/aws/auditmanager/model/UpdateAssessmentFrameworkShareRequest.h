@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::String m_requestId;
-    bool m_requestIdHasBeenSet;
+    bool m_requestIdHasBeenSet = false;
 
     ShareRequestType m_requestType;
-    bool m_requestTypeHasBeenSet;
+    bool m_requestTypeHasBeenSet = false;
 
     ShareRequestAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -38,33 +38,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "ebs";
 static const char* ALLOCATION_TAG = "EBSClient";
 
-
 EBSClient::EBSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-EBSClient::EBSClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+EBSClient::EBSClient(const AWSCredentials& credentials,
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 EBSClient::EBSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -76,7 +82,7 @@ EBSClient::~EBSClient()
 
 void EBSClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("EBS");
+  AWSClient::SetServiceClientName("EBS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -128,12 +134,10 @@ CompleteSnapshotOutcomeCallable EBSClient::CompleteSnapshotCallable(const Comple
 
 void EBSClient::CompleteSnapshotAsync(const CompleteSnapshotRequest& request, const CompleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CompleteSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void EBSClient::CompleteSnapshotAsyncHelper(const CompleteSnapshotRequest& request, const CompleteSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CompleteSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CompleteSnapshot(request), context);
+    } );
 }
 
 GetSnapshotBlockOutcome EBSClient::GetSnapshotBlock(const GetSnapshotBlockRequest& request) const
@@ -171,12 +175,10 @@ GetSnapshotBlockOutcomeCallable EBSClient::GetSnapshotBlockCallable(const GetSna
 
 void EBSClient::GetSnapshotBlockAsync(const GetSnapshotBlockRequest& request, const GetSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSnapshotBlockAsyncHelper( request, handler, context ); } );
-}
-
-void EBSClient::GetSnapshotBlockAsyncHelper(const GetSnapshotBlockRequest& request, const GetSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSnapshotBlock(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSnapshotBlock(request), context);
+    } );
 }
 
 ListChangedBlocksOutcome EBSClient::ListChangedBlocks(const ListChangedBlocksRequest& request) const
@@ -203,12 +205,10 @@ ListChangedBlocksOutcomeCallable EBSClient::ListChangedBlocksCallable(const List
 
 void EBSClient::ListChangedBlocksAsync(const ListChangedBlocksRequest& request, const ListChangedBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChangedBlocksAsyncHelper( request, handler, context ); } );
-}
-
-void EBSClient::ListChangedBlocksAsyncHelper(const ListChangedBlocksRequest& request, const ListChangedBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChangedBlocks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChangedBlocks(request), context);
+    } );
 }
 
 ListSnapshotBlocksOutcome EBSClient::ListSnapshotBlocks(const ListSnapshotBlocksRequest& request) const
@@ -235,12 +235,10 @@ ListSnapshotBlocksOutcomeCallable EBSClient::ListSnapshotBlocksCallable(const Li
 
 void EBSClient::ListSnapshotBlocksAsync(const ListSnapshotBlocksRequest& request, const ListSnapshotBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSnapshotBlocksAsyncHelper( request, handler, context ); } );
-}
-
-void EBSClient::ListSnapshotBlocksAsyncHelper(const ListSnapshotBlocksRequest& request, const ListSnapshotBlocksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSnapshotBlocks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSnapshotBlocks(request), context);
+    } );
 }
 
 PutSnapshotBlockOutcome EBSClient::PutSnapshotBlock(const PutSnapshotBlockRequest& request) const
@@ -288,12 +286,10 @@ PutSnapshotBlockOutcomeCallable EBSClient::PutSnapshotBlockCallable(const PutSna
 
 void EBSClient::PutSnapshotBlockAsync(const PutSnapshotBlockRequest& request, const PutSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutSnapshotBlockAsyncHelper( request, handler, context ); } );
-}
-
-void EBSClient::PutSnapshotBlockAsyncHelper(const PutSnapshotBlockRequest& request, const PutSnapshotBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutSnapshotBlock(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutSnapshotBlock(request), context);
+    } );
 }
 
 StartSnapshotOutcome EBSClient::StartSnapshot(const StartSnapshotRequest& request) const
@@ -313,11 +309,9 @@ StartSnapshotOutcomeCallable EBSClient::StartSnapshotCallable(const StartSnapsho
 
 void EBSClient::StartSnapshotAsync(const StartSnapshotRequest& request, const StartSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSnapshotAsyncHelper( request, handler, context ); } );
-}
-
-void EBSClient::StartSnapshotAsyncHelper(const StartSnapshotRequest& request, const StartSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartSnapshot(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartSnapshot(request), context);
+    } );
 }
 

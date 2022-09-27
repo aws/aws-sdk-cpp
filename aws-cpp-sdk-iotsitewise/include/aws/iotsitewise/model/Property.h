@@ -365,25 +365,25 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     PropertyNotification m_notification;
-    bool m_notificationHasBeenSet;
+    bool m_notificationHasBeenSet = false;
 
     PropertyDataType m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     PropertyType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

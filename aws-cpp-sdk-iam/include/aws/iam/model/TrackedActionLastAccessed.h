@@ -266,16 +266,16 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     Aws::String m_lastAccessedEntity;
-    bool m_lastAccessedEntityHasBeenSet;
+    bool m_lastAccessedEntityHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccessedTime;
-    bool m_lastAccessedTimeHasBeenSet;
+    bool m_lastAccessedTimeHasBeenSet = false;
 
     Aws::String m_lastAccessedRegion;
-    bool m_lastAccessedRegionHasBeenSet;
+    bool m_lastAccessedRegionHasBeenSet = false;
   };
 
 } // namespace Model

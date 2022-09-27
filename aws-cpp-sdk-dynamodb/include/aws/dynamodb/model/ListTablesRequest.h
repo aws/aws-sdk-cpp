@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_exclusiveStartTableName;
-    bool m_exclusiveStartTableNameHasBeenSet;
+    bool m_exclusiveStartTableNameHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

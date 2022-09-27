@@ -217,16 +217,16 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     S3Location m_tempDirectory;
-    bool m_tempDirectoryHasBeenSet;
+    bool m_tempDirectoryHasBeenSet = false;
   };
 
 } // namespace Model

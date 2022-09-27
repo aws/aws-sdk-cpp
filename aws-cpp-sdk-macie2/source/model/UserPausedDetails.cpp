@@ -65,7 +65,7 @@ JsonValue UserPausedDetails::Jsonize() const
 
   if(m_jobExpiresAtHasBeenSet)
   {
-   payload.WithString("jobExpiresAt", m_jobExpiresAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("jobExpiresAt", m_jobExpiresAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_jobImminentExpirationHealthEventArnHasBeenSet)
@@ -76,7 +76,7 @@ JsonValue UserPausedDetails::Jsonize() const
 
   if(m_jobPausedAtHasBeenSet)
   {
-   payload.WithString("jobPausedAt", m_jobPausedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("jobPausedAt", m_jobPausedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

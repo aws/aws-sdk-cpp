@@ -156,10 +156,10 @@ namespace Model
   private:
 
     Aws::Vector<Message> m_messages;
-    bool m_messagesHasBeenSet;
+    bool m_messagesHasBeenSet = false;
 
     Aws::String m_responseCard;
-    bool m_responseCardHasBeenSet;
+    bool m_responseCardHasBeenSet = false;
   };
 
 } // namespace Model

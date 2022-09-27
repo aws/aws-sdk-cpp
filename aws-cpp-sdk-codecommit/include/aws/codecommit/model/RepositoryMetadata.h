@@ -430,34 +430,34 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_repositoryId;
-    bool m_repositoryIdHasBeenSet;
+    bool m_repositoryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_repositoryDescription;
-    bool m_repositoryDescriptionHasBeenSet;
+    bool m_repositoryDescriptionHasBeenSet = false;
 
     Aws::String m_defaultBranch;
-    bool m_defaultBranchHasBeenSet;
+    bool m_defaultBranchHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_cloneUrlHttp;
-    bool m_cloneUrlHttpHasBeenSet;
+    bool m_cloneUrlHttpHasBeenSet = false;
 
     Aws::String m_cloneUrlSsh;
-    bool m_cloneUrlSshHasBeenSet;
+    bool m_cloneUrlSshHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

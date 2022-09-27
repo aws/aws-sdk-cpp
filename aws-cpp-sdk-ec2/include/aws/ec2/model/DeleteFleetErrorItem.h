@@ -115,10 +115,10 @@ namespace Model
   private:
 
     DeleteFleetError m_error;
-    bool m_errorHasBeenSet;
+    bool m_errorHasBeenSet = false;
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
   };
 
 } // namespace Model

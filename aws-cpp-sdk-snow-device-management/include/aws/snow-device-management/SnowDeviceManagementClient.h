@@ -5,122 +5,15 @@
 
 #pragma once
 #include <aws/snow-device-management/SnowDeviceManagement_EXPORTS.h>
-#include <aws/snow-device-management/SnowDeviceManagementErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/snow-device-management/model/CancelTaskResult.h>
-#include <aws/snow-device-management/model/CreateTaskResult.h>
-#include <aws/snow-device-management/model/DescribeDeviceResult.h>
-#include <aws/snow-device-management/model/DescribeDeviceEc2InstancesResult.h>
-#include <aws/snow-device-management/model/DescribeExecutionResult.h>
-#include <aws/snow-device-management/model/DescribeTaskResult.h>
-#include <aws/snow-device-management/model/ListDeviceResourcesResult.h>
-#include <aws/snow-device-management/model/ListDevicesResult.h>
-#include <aws/snow-device-management/model/ListExecutionsResult.h>
-#include <aws/snow-device-management/model/ListTagsForResourceResult.h>
-#include <aws/snow-device-management/model/ListTasksResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/snow-device-management/SnowDeviceManagementServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SnowDeviceManagement
 {
-
-namespace Model
-{
-        class CancelTaskRequest;
-        class CreateTaskRequest;
-        class DescribeDeviceRequest;
-        class DescribeDeviceEc2InstancesRequest;
-        class DescribeExecutionRequest;
-        class DescribeTaskRequest;
-        class ListDeviceResourcesRequest;
-        class ListDevicesRequest;
-        class ListExecutionsRequest;
-        class ListTagsForResourceRequest;
-        class ListTasksRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-
-        typedef Aws::Utils::Outcome<CancelTaskResult, SnowDeviceManagementError> CancelTaskOutcome;
-        typedef Aws::Utils::Outcome<CreateTaskResult, SnowDeviceManagementError> CreateTaskOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeviceResult, SnowDeviceManagementError> DescribeDeviceOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeviceEc2InstancesResult, SnowDeviceManagementError> DescribeDeviceEc2InstancesOutcome;
-        typedef Aws::Utils::Outcome<DescribeExecutionResult, SnowDeviceManagementError> DescribeExecutionOutcome;
-        typedef Aws::Utils::Outcome<DescribeTaskResult, SnowDeviceManagementError> DescribeTaskOutcome;
-        typedef Aws::Utils::Outcome<ListDeviceResourcesResult, SnowDeviceManagementError> ListDeviceResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListDevicesResult, SnowDeviceManagementError> ListDevicesOutcome;
-        typedef Aws::Utils::Outcome<ListExecutionsResult, SnowDeviceManagementError> ListExecutionsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SnowDeviceManagementError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTasksResult, SnowDeviceManagementError> ListTasksOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SnowDeviceManagementError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SnowDeviceManagementError> UntagResourceOutcome;
-
-        typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
-        typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
-        typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
-        typedef std::future<DescribeDeviceEc2InstancesOutcome> DescribeDeviceEc2InstancesOutcomeCallable;
-        typedef std::future<DescribeExecutionOutcome> DescribeExecutionOutcomeCallable;
-        typedef std::future<DescribeTaskOutcome> DescribeTaskOutcomeCallable;
-        typedef std::future<ListDeviceResourcesOutcome> ListDeviceResourcesOutcomeCallable;
-        typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
-        typedef std::future<ListExecutionsOutcome> ListExecutionsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListTasksOutcome> ListTasksOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-} // namespace Model
-
-  class SnowDeviceManagementClient;
-
-    typedef std::function<void(const SnowDeviceManagementClient*, const Model::CancelTaskRequest&, const Model::CancelTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelTaskResponseReceivedHandler;
-    typedef std::function<void(const SnowDeviceManagementClient*, const Model::CreateTaskRequest&, const Model::CreateTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTaskResponseReceivedHandler;
-    typedef std::function<void(const SnowDeviceManagementClient*, const Model::DescribeDeviceRequest&, const Model::DescribeDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeviceResponseReceivedHandler;
-    typedef std::function<void(const SnowDeviceManagementClient*, const Model::DescribeDeviceEc2InstancesRequest&, const Model::DescribeDeviceEc2InstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeviceEc2InstancesResponseReceivedHandler;
-    typedef std::function<void(const SnowDeviceManagementClient*, const Model::DescribeExecutionRequest&, const Model::DescribeExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExecutionResponseReceivedHandler;
-    typedef std::function<void(const SnowDeviceManagementClient*, const Model::DescribeTaskRequest&, const Model::DescribeTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTaskResponseReceivedHandler;
-    typedef std::function<void(const SnowDeviceManagementClient*, const Model::ListDeviceResourcesRequest&, const Model::ListDeviceResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeviceResourcesResponseReceivedHandler;
-    typedef std::function<void(const SnowDeviceManagementClient*, const Model::ListDevicesRequest&, const Model::ListDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevicesResponseReceivedHandler;
-    typedef std::function<void(const SnowDeviceManagementClient*, const Model::ListExecutionsRequest&, const Model::ListExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExecutionsResponseReceivedHandler;
-    typedef std::function<void(const SnowDeviceManagementClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const SnowDeviceManagementClient*, const Model::ListTasksRequest&, const Model::ListTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTasksResponseReceivedHandler;
-    typedef std::function<void(const SnowDeviceManagementClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const SnowDeviceManagementClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-
   /**
    * <p>Amazon Web Services Snow Device Management documentation.</p>
    */
@@ -139,14 +32,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SnowDeviceManagementClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SnowDeviceManagementClient(const Aws::Auth::AWSCredentials& credentials,
+                                   const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SnowDeviceManagementClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                   const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~SnowDeviceManagementClient();
 
@@ -394,19 +288,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CancelTaskAsyncHelper(const Model::CancelTaskRequest& request, const CancelTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateTaskAsyncHelper(const Model::CreateTaskRequest& request, const CreateTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDeviceAsyncHelper(const Model::DescribeDeviceRequest& request, const DescribeDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDeviceEc2InstancesAsyncHelper(const Model::DescribeDeviceEc2InstancesRequest& request, const DescribeDeviceEc2InstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeExecutionAsyncHelper(const Model::DescribeExecutionRequest& request, const DescribeExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTaskAsyncHelper(const Model::DescribeTaskRequest& request, const DescribeTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDeviceResourcesAsyncHelper(const Model::ListDeviceResourcesRequest& request, const ListDeviceResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDevicesAsyncHelper(const Model::ListDevicesRequest& request, const ListDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListExecutionsAsyncHelper(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTasksAsyncHelper(const Model::ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

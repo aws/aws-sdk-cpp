@@ -352,22 +352,22 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_cacheParameterGroupFamily;
-    bool m_cacheParameterGroupFamilyHasBeenSet;
+    bool m_cacheParameterGroupFamilyHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     bool m_defaultOnly;
-    bool m_defaultOnlyHasBeenSet;
+    bool m_defaultOnlyHasBeenSet = false;
   };
 
 } // namespace Model

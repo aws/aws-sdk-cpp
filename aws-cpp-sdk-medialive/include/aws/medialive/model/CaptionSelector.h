@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     CaptionSelectorSettings m_selectorSettings;
-    bool m_selectorSettingsHasBeenSet;
+    bool m_selectorSettingsHasBeenSet = false;
   };
 
 } // namespace Model

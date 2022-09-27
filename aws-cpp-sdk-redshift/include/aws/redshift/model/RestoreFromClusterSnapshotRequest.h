@@ -132,51 +132,124 @@ namespace Model
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive.</p> <p>Example: <code>my-snapshot-id</code> </p>
+     * isn't case sensitive. You can specify this parameter or
+     * <code>snapshotArn</code>, but not both.</p> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive.</p> <p>Example: <code>my-snapshot-id</code> </p>
+     * isn't case sensitive. You can specify this parameter or
+     * <code>snapshotArn</code>, but not both.</p> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive.</p> <p>Example: <code>my-snapshot-id</code> </p>
+     * isn't case sensitive. You can specify this parameter or
+     * <code>snapshotArn</code>, but not both.</p> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive.</p> <p>Example: <code>my-snapshot-id</code> </p>
+     * isn't case sensitive. You can specify this parameter or
+     * <code>snapshotArn</code>, but not both.</p> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::move(value); }
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive.</p> <p>Example: <code>my-snapshot-id</code> </p>
+     * isn't case sensitive. You can specify this parameter or
+     * <code>snapshotArn</code>, but not both.</p> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive.</p> <p>Example: <code>my-snapshot-id</code> </p>
+     * isn't case sensitive. You can specify this parameter or
+     * <code>snapshotArn</code>, but not both.</p> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline RestoreFromClusterSnapshotRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive.</p> <p>Example: <code>my-snapshot-id</code> </p>
+     * isn't case sensitive. You can specify this parameter or
+     * <code>snapshotArn</code>, but not both.</p> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline RestoreFromClusterSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The name of the snapshot from which to create the new cluster. This parameter
-     * isn't case sensitive.</p> <p>Example: <code>my-snapshot-id</code> </p>
+     * isn't case sensitive. You can specify this parameter or
+     * <code>snapshotArn</code>, but not both.</p> <p>Example:
+     * <code>my-snapshot-id</code> </p>
      */
     inline RestoreFromClusterSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster. You can specify this parameter or
+     * <code>snapshotIdentifier</code>, but not both.</p>
+     */
+    inline const Aws::String& GetSnapshotArn() const{ return m_snapshotArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster. You can specify this parameter or
+     * <code>snapshotIdentifier</code>, but not both.</p>
+     */
+    inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster. You can specify this parameter or
+     * <code>snapshotIdentifier</code>, but not both.</p>
+     */
+    inline void SetSnapshotArn(const Aws::String& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster. You can specify this parameter or
+     * <code>snapshotIdentifier</code>, but not both.</p>
+     */
+    inline void SetSnapshotArn(Aws::String&& value) { m_snapshotArnHasBeenSet = true; m_snapshotArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster. You can specify this parameter or
+     * <code>snapshotIdentifier</code>, but not both.</p>
+     */
+    inline void SetSnapshotArn(const char* value) { m_snapshotArnHasBeenSet = true; m_snapshotArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster. You can specify this parameter or
+     * <code>snapshotIdentifier</code>, but not both.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithSnapshotArn(const Aws::String& value) { SetSnapshotArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster. You can specify this parameter or
+     * <code>snapshotIdentifier</code>, but not both.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithSnapshotArn(Aws::String&& value) { SetSnapshotArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the snapshot associated with the message to
+     * restore from a cluster. You can specify this parameter or
+     * <code>snapshotIdentifier</code>, but not both.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithSnapshotArn(const char* value) { SetSnapshotArn(value); return *this;}
 
 
     /**
@@ -1606,62 +1679,44 @@ namespace Model
 
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) after the cluster is restored. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline const AquaConfigurationStatus& GetAquaConfigurationStatus() const{ return m_aquaConfigurationStatus; }
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) after the cluster is restored. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline bool AquaConfigurationStatusHasBeenSet() const { return m_aquaConfigurationStatusHasBeenSet; }
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) after the cluster is restored. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline void SetAquaConfigurationStatus(const AquaConfigurationStatus& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = value; }
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) after the cluster is restored. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline void SetAquaConfigurationStatus(AquaConfigurationStatus&& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = std::move(value); }
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) after the cluster is restored. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithAquaConfigurationStatus(const AquaConfigurationStatus& value) { SetAquaConfigurationStatus(value); return *this;}
 
     /**
-     * <p>The value represents how the cluster is configured to use AQUA (Advanced
-     * Query Accelerator) after the cluster is restored. Possible values include the
-     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
-     * current Amazon Web Services Region and Amazon Redshift node type.</p> </li> <li>
-     * <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift
-     * determines whether to use AQUA.</p> </li> </ul>
+     * <p>This parameter is retired. It does not set the AQUA configuration status.
+     * Amazon Redshift automatically determines whether to use AQUA (Advanced Query
+     * Accelerator).</p>
      */
     inline RestoreFromClusterSnapshotRequest& WithAquaConfigurationStatus(AquaConfigurationStatus&& value) { SetAquaConfigurationStatus(std::move(value)); return *this;}
 
@@ -1832,100 +1887,103 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_snapshotIdentifier;
-    bool m_snapshotIdentifierHasBeenSet;
+    bool m_snapshotIdentifierHasBeenSet = false;
+
+    Aws::String m_snapshotArn;
+    bool m_snapshotArnHasBeenSet = false;
 
     Aws::String m_snapshotClusterIdentifier;
-    bool m_snapshotClusterIdentifierHasBeenSet;
+    bool m_snapshotClusterIdentifierHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     bool m_allowVersionUpgrade;
-    bool m_allowVersionUpgradeHasBeenSet;
+    bool m_allowVersionUpgradeHasBeenSet = false;
 
     Aws::String m_clusterSubnetGroupName;
-    bool m_clusterSubnetGroupNameHasBeenSet;
+    bool m_clusterSubnetGroupNameHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::String m_ownerAccount;
-    bool m_ownerAccountHasBeenSet;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::String m_hsmClientCertificateIdentifier;
-    bool m_hsmClientCertificateIdentifierHasBeenSet;
+    bool m_hsmClientCertificateIdentifierHasBeenSet = false;
 
     Aws::String m_hsmConfigurationIdentifier;
-    bool m_hsmConfigurationIdentifierHasBeenSet;
+    bool m_hsmConfigurationIdentifierHasBeenSet = false;
 
     Aws::String m_elasticIp;
-    bool m_elasticIpHasBeenSet;
+    bool m_elasticIpHasBeenSet = false;
 
     Aws::String m_clusterParameterGroupName;
-    bool m_clusterParameterGroupNameHasBeenSet;
+    bool m_clusterParameterGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_clusterSecurityGroups;
-    bool m_clusterSecurityGroupsHasBeenSet;
+    bool m_clusterSecurityGroupsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     int m_automatedSnapshotRetentionPeriod;
-    bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+    bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
 
     int m_manualSnapshotRetentionPeriod;
-    bool m_manualSnapshotRetentionPeriodHasBeenSet;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     bool m_enhancedVpcRouting;
-    bool m_enhancedVpcRoutingHasBeenSet;
+    bool m_enhancedVpcRoutingHasBeenSet = false;
 
     Aws::String m_additionalInfo;
-    bool m_additionalInfoHasBeenSet;
+    bool m_additionalInfoHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_iamRoles;
-    bool m_iamRolesHasBeenSet;
+    bool m_iamRolesHasBeenSet = false;
 
     Aws::String m_maintenanceTrackName;
-    bool m_maintenanceTrackNameHasBeenSet;
+    bool m_maintenanceTrackNameHasBeenSet = false;
 
     Aws::String m_snapshotScheduleIdentifier;
-    bool m_snapshotScheduleIdentifierHasBeenSet;
+    bool m_snapshotScheduleIdentifierHasBeenSet = false;
 
     int m_numberOfNodes;
-    bool m_numberOfNodesHasBeenSet;
+    bool m_numberOfNodesHasBeenSet = false;
 
     bool m_availabilityZoneRelocation;
-    bool m_availabilityZoneRelocationHasBeenSet;
+    bool m_availabilityZoneRelocationHasBeenSet = false;
 
     AquaConfigurationStatus m_aquaConfigurationStatus;
-    bool m_aquaConfigurationStatusHasBeenSet;
+    bool m_aquaConfigurationStatusHasBeenSet = false;
 
     Aws::String m_defaultIamRoleArn;
-    bool m_defaultIamRoleArnHasBeenSet;
+    bool m_defaultIamRoleArnHasBeenSet = false;
 
     Aws::String m_reservedNodeId;
-    bool m_reservedNodeIdHasBeenSet;
+    bool m_reservedNodeIdHasBeenSet = false;
 
     Aws::String m_targetReservedNodeOfferingId;
-    bool m_targetReservedNodeOfferingIdHasBeenSet;
+    bool m_targetReservedNodeOfferingIdHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
   };
 
 } // namespace Model

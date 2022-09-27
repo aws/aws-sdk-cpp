@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_topicName;
-    bool m_topicNameHasBeenSet;
+    bool m_topicNameHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     SubscriptionStatus m_defaultSubscriptionStatus;
-    bool m_defaultSubscriptionStatusHasBeenSet;
+    bool m_defaultSubscriptionStatusHasBeenSet = false;
   };
 
 } // namespace Model

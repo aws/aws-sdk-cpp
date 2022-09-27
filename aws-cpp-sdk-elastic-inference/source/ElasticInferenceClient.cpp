@@ -38,33 +38,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "elastic-inference";
 static const char* ALLOCATION_TAG = "ElasticInferenceClient";
 
-
 ElasticInferenceClient::ElasticInferenceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ElasticInferenceErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ElasticInferenceErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-ElasticInferenceClient::ElasticInferenceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+ElasticInferenceClient::ElasticInferenceClient(const AWSCredentials& credentials,
+                                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ElasticInferenceErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ElasticInferenceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 ElasticInferenceClient::ElasticInferenceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ElasticInferenceErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ElasticInferenceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -76,7 +82,7 @@ ElasticInferenceClient::~ElasticInferenceClient()
 
 void ElasticInferenceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Elastic Inference");
+  AWSClient::SetServiceClientName("Elastic Inference");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -117,12 +123,10 @@ DescribeAcceleratorOfferingsOutcomeCallable ElasticInferenceClient::DescribeAcce
 
 void ElasticInferenceClient::DescribeAcceleratorOfferingsAsync(const DescribeAcceleratorOfferingsRequest& request, const DescribeAcceleratorOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAcceleratorOfferingsAsyncHelper( request, handler, context ); } );
-}
-
-void ElasticInferenceClient::DescribeAcceleratorOfferingsAsyncHelper(const DescribeAcceleratorOfferingsRequest& request, const DescribeAcceleratorOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAcceleratorOfferings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAcceleratorOfferings(request), context);
+    } );
 }
 
 DescribeAcceleratorTypesOutcome ElasticInferenceClient::DescribeAcceleratorTypes(const DescribeAcceleratorTypesRequest& request) const
@@ -142,12 +146,10 @@ DescribeAcceleratorTypesOutcomeCallable ElasticInferenceClient::DescribeAccelera
 
 void ElasticInferenceClient::DescribeAcceleratorTypesAsync(const DescribeAcceleratorTypesRequest& request, const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAcceleratorTypesAsyncHelper( request, handler, context ); } );
-}
-
-void ElasticInferenceClient::DescribeAcceleratorTypesAsyncHelper(const DescribeAcceleratorTypesRequest& request, const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAcceleratorTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAcceleratorTypes(request), context);
+    } );
 }
 
 DescribeAcceleratorsOutcome ElasticInferenceClient::DescribeAccelerators(const DescribeAcceleratorsRequest& request) const
@@ -167,12 +169,10 @@ DescribeAcceleratorsOutcomeCallable ElasticInferenceClient::DescribeAccelerators
 
 void ElasticInferenceClient::DescribeAcceleratorsAsync(const DescribeAcceleratorsRequest& request, const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAcceleratorsAsyncHelper( request, handler, context ); } );
-}
-
-void ElasticInferenceClient::DescribeAcceleratorsAsyncHelper(const DescribeAcceleratorsRequest& request, const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAccelerators(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAccelerators(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome ElasticInferenceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -198,12 +198,10 @@ ListTagsForResourceOutcomeCallable ElasticInferenceClient::ListTagsForResourceCa
 
 void ElasticInferenceClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ElasticInferenceClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 TagResourceOutcome ElasticInferenceClient::TagResource(const TagResourceRequest& request) const
@@ -229,12 +227,10 @@ TagResourceOutcomeCallable ElasticInferenceClient::TagResourceCallable(const Tag
 
 void ElasticInferenceClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ElasticInferenceClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome ElasticInferenceClient::UntagResource(const UntagResourceRequest& request) const
@@ -265,11 +261,9 @@ UntagResourceOutcomeCallable ElasticInferenceClient::UntagResourceCallable(const
 
 void ElasticInferenceClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ElasticInferenceClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 

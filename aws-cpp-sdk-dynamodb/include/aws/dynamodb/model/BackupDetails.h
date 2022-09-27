@@ -124,22 +124,26 @@ namespace Model
 
 
     /**
-     * <p>Size of the backup in bytes.</p>
+     * <p>Size of the backup in bytes. DynamoDB updates this value approximately every
+     * six hours. Recent changes might not be reflected in this value.</p>
      */
     inline long long GetBackupSizeBytes() const{ return m_backupSizeBytes; }
 
     /**
-     * <p>Size of the backup in bytes.</p>
+     * <p>Size of the backup in bytes. DynamoDB updates this value approximately every
+     * six hours. Recent changes might not be reflected in this value.</p>
      */
     inline bool BackupSizeBytesHasBeenSet() const { return m_backupSizeBytesHasBeenSet; }
 
     /**
-     * <p>Size of the backup in bytes.</p>
+     * <p>Size of the backup in bytes. DynamoDB updates this value approximately every
+     * six hours. Recent changes might not be reflected in this value.</p>
      */
     inline void SetBackupSizeBytes(long long value) { m_backupSizeBytesHasBeenSet = true; m_backupSizeBytes = value; }
 
     /**
-     * <p>Size of the backup in bytes.</p>
+     * <p>Size of the backup in bytes. DynamoDB updates this value approximately every
+     * six hours. Recent changes might not be reflected in this value.</p>
      */
     inline BackupDetails& WithBackupSizeBytes(long long value) { SetBackupSizeBytes(value); return *this;}
 
@@ -330,25 +334,25 @@ namespace Model
   private:
 
     Aws::String m_backupArn;
-    bool m_backupArnHasBeenSet;
+    bool m_backupArnHasBeenSet = false;
 
     Aws::String m_backupName;
-    bool m_backupNameHasBeenSet;
+    bool m_backupNameHasBeenSet = false;
 
     long long m_backupSizeBytes;
-    bool m_backupSizeBytesHasBeenSet;
+    bool m_backupSizeBytesHasBeenSet = false;
 
     BackupStatus m_backupStatus;
-    bool m_backupStatusHasBeenSet;
+    bool m_backupStatusHasBeenSet = false;
 
     BackupType m_backupType;
-    bool m_backupTypeHasBeenSet;
+    bool m_backupTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_backupCreationDateTime;
-    bool m_backupCreationDateTimeHasBeenSet;
+    bool m_backupCreationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_backupExpiryDateTime;
-    bool m_backupExpiryDateTimeHasBeenSet;
+    bool m_backupExpiryDateTimeHasBeenSet = false;
   };
 
 } // namespace Model

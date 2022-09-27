@@ -127,10 +127,10 @@ namespace Model
   private:
 
     Aws::String m_datasetId;
-    bool m_datasetIdHasBeenSet;
+    bool m_datasetIdHasBeenSet = false;
 
     Aws::String m_changesetId;
-    bool m_changesetIdHasBeenSet;
+    bool m_changesetIdHasBeenSet = false;
   };
 
 } // namespace Model

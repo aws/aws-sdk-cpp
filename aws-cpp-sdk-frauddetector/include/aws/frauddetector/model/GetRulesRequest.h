@@ -221,19 +221,19 @@ namespace Model
   private:
 
     Aws::String m_ruleId;
-    bool m_ruleIdHasBeenSet;
+    bool m_ruleIdHasBeenSet = false;
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_ruleVersion;
-    bool m_ruleVersionHasBeenSet;
+    bool m_ruleVersionHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -280,22 +280,22 @@ namespace Model
   private:
 
     Aws::String m_branch;
-    bool m_branchHasBeenSet;
+    bool m_branchHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     RepositoryProvider m_repositoryProvider;
-    bool m_repositoryProviderHasBeenSet;
+    bool m_repositoryProviderHasBeenSet = false;
 
     Aws::String m_subdirectory;
-    bool m_subdirectoryHasBeenSet;
+    bool m_subdirectoryHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     TemplateType m_templateType;
-    bool m_templateTypeHasBeenSet;
+    bool m_templateTypeHasBeenSet = false;
   };
 
 } // namespace Model

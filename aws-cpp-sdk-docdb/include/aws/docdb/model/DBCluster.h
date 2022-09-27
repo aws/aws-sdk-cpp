@@ -1329,6 +1329,47 @@ namespace Model
 
 
     /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline const Aws::String& GetCloneGroupId() const{ return m_cloneGroupId; }
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline bool CloneGroupIdHasBeenSet() const { return m_cloneGroupIdHasBeenSet; }
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline void SetCloneGroupId(const Aws::String& value) { m_cloneGroupIdHasBeenSet = true; m_cloneGroupId = value; }
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline void SetCloneGroupId(Aws::String&& value) { m_cloneGroupIdHasBeenSet = true; m_cloneGroupId = std::move(value); }
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline void SetCloneGroupId(const char* value) { m_cloneGroupIdHasBeenSet = true; m_cloneGroupId.assign(value); }
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline DBCluster& WithCloneGroupId(const Aws::String& value) { SetCloneGroupId(value); return *this;}
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline DBCluster& WithCloneGroupId(Aws::String&& value) { SetCloneGroupId(std::move(value)); return *this;}
+
+    /**
+     * <p>Identifies the clone group to which the DB cluster is associated.</p>
+     */
+    inline DBCluster& WithCloneGroupId(const char* value) { SetCloneGroupId(value); return *this;}
+
+
+    /**
      * <p>Specifies the time when the cluster was created, in Universal Coordinated
      * Time (UTC).</p>
      */
@@ -1459,97 +1500,100 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_dBClusterParameterGroup;
-    bool m_dBClusterParameterGroupHasBeenSet;
+    bool m_dBClusterParameterGroupHasBeenSet = false;
 
     Aws::String m_dBSubnetGroup;
-    bool m_dBSubnetGroupHasBeenSet;
+    bool m_dBSubnetGroupHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_percentProgress;
-    bool m_percentProgressHasBeenSet;
+    bool m_percentProgressHasBeenSet = false;
 
     Aws::Utils::DateTime m_earliestRestorableTime;
-    bool m_earliestRestorableTimeHasBeenSet;
+    bool m_earliestRestorableTimeHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_readerEndpoint;
-    bool m_readerEndpointHasBeenSet;
+    bool m_readerEndpointHasBeenSet = false;
 
     bool m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestRestorableTime;
-    bool m_latestRestorableTimeHasBeenSet;
+    bool m_latestRestorableTimeHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::String m_replicationSourceIdentifier;
-    bool m_replicationSourceIdentifierHasBeenSet;
+    bool m_replicationSourceIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readReplicaIdentifiers;
-    bool m_readReplicaIdentifiersHasBeenSet;
+    bool m_readReplicaIdentifiersHasBeenSet = false;
 
     Aws::Vector<DBClusterMember> m_dBClusterMembers;
-    bool m_dBClusterMembersHasBeenSet;
+    bool m_dBClusterMembersHasBeenSet = false;
 
     Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
-    bool m_vpcSecurityGroupsHasBeenSet;
+    bool m_vpcSecurityGroupsHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_dbClusterResourceId;
-    bool m_dbClusterResourceIdHasBeenSet;
+    bool m_dbClusterResourceIdHasBeenSet = false;
 
     Aws::String m_dBClusterArn;
-    bool m_dBClusterArnHasBeenSet;
+    bool m_dBClusterArnHasBeenSet = false;
 
     Aws::Vector<DBClusterRole> m_associatedRoles;
-    bool m_associatedRolesHasBeenSet;
+    bool m_associatedRolesHasBeenSet = false;
+
+    Aws::String m_cloneGroupId;
+    bool m_cloneGroupIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_clusterCreateTime;
-    bool m_clusterCreateTimeHasBeenSet;
+    bool m_clusterCreateTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
-    bool m_enabledCloudwatchLogsExportsHasBeenSet;
+    bool m_enabledCloudwatchLogsExportsHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
   };
 
 } // namespace Model

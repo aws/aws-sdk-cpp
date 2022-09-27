@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_messageGroupId;
-    bool m_messageGroupIdHasBeenSet;
+    bool m_messageGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

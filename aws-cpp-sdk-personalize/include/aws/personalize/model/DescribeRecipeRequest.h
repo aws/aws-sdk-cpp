@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_recipeArn;
-    bool m_recipeArnHasBeenSet;
+    bool m_recipeArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_dataType;
-    bool m_dataTypeHasBeenSet;
+    bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_binaryValue;
-    bool m_binaryValueHasBeenSet;
+    bool m_binaryValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ObjectLockRetentionMode m_mode;
-    bool m_modeHasBeenSet;
+    bool m_modeHasBeenSet = false;
 
     Aws::Utils::DateTime m_retainUntilDate;
-    bool m_retainUntilDateHasBeenSet;
+    bool m_retainUntilDateHasBeenSet = false;
   };
 
 } // namespace Model

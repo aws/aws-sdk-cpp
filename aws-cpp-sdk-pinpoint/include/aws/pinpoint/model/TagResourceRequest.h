@@ -95,10 +95,10 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     TagsModel m_tagsModel;
-    bool m_tagsModelHasBeenSet;
+    bool m_tagsModelHasBeenSet = false;
   };
 
 } // namespace Model

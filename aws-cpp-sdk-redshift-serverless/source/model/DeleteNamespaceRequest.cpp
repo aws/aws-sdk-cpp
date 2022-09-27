@@ -48,7 +48,7 @@ Aws::String DeleteNamespaceRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection DeleteNamespaceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.DeleteNamespace"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.DeleteNamespace"));
   return headers;
 
 }

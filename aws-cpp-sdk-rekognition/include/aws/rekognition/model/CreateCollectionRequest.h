@@ -157,10 +157,10 @@ namespace Model
   private:
 
     Aws::String m_collectionId;
-    bool m_collectionIdHasBeenSet;
+    bool m_collectionIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

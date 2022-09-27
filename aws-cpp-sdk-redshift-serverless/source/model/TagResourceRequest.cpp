@@ -45,7 +45,7 @@ Aws::String TagResourceRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection TagResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.TagResource"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.TagResource"));
   return headers;
 
 }

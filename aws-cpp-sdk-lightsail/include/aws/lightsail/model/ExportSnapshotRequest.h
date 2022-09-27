@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_sourceSnapshotName;
-    bool m_sourceSnapshotNameHasBeenSet;
+    bool m_sourceSnapshotNameHasBeenSet = false;
   };
 
 } // namespace Model

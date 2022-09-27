@@ -274,19 +274,19 @@ namespace Model
   private:
 
     Aws::String m_clusterSecurityGroupName;
-    bool m_clusterSecurityGroupNameHasBeenSet;
+    bool m_clusterSecurityGroupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<EC2SecurityGroup> m_eC2SecurityGroups;
-    bool m_eC2SecurityGroupsHasBeenSet;
+    bool m_eC2SecurityGroupsHasBeenSet = false;
 
     Aws::Vector<IPRange> m_iPRanges;
-    bool m_iPRangesHasBeenSet;
+    bool m_iPRangesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

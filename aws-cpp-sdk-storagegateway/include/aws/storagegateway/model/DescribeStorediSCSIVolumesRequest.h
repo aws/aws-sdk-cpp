@@ -105,7 +105,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_volumeARNs;
-    bool m_volumeARNsHasBeenSet;
+    bool m_volumeARNsHasBeenSet = false;
   };
 
 } // namespace Model

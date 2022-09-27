@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_integrationAssociationId;
-    bool m_integrationAssociationIdHasBeenSet;
+    bool m_integrationAssociationIdHasBeenSet = false;
 
     Aws::String m_useCaseId;
-    bool m_useCaseIdHasBeenSet;
+    bool m_useCaseIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -183,10 +183,10 @@ namespace Model
   private:
 
     Aws::Vector<Range> m_excludedTimeRanges;
-    bool m_excludedTimeRangesHasBeenSet;
+    bool m_excludedTimeRangesHasBeenSet = false;
 
     Aws::String m_metricTimezone;
-    bool m_metricTimezoneHasBeenSet;
+    bool m_metricTimezoneHasBeenSet = false;
   };
 
 } // namespace Model

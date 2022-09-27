@@ -24,8 +24,9 @@ namespace Model
 {
 
   /**
-   * <p> SidewalkEventNotificationConfigurations object Event configuration object
-   * for Sidewalk related event topics.</p><p><h3>See Also:</h3>   <a
+   * <p> <code>SidewalkEventNotificationConfigurations</code> object, which is the
+   * event configuration object for Sidewalk-related event topics.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SidewalkEventNotificationConfigurations">AWS
    * API Reference</a></p>
    */
@@ -39,39 +40,39 @@ namespace Model
 
 
     /**
-     * <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+     * <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
      */
     inline const EventNotificationTopicStatus& GetAmazonIdEventTopic() const{ return m_amazonIdEventTopic; }
 
     /**
-     * <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+     * <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
      */
     inline bool AmazonIdEventTopicHasBeenSet() const { return m_amazonIdEventTopicHasBeenSet; }
 
     /**
-     * <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+     * <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
      */
     inline void SetAmazonIdEventTopic(const EventNotificationTopicStatus& value) { m_amazonIdEventTopicHasBeenSet = true; m_amazonIdEventTopic = value; }
 
     /**
-     * <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+     * <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
      */
     inline void SetAmazonIdEventTopic(EventNotificationTopicStatus&& value) { m_amazonIdEventTopicHasBeenSet = true; m_amazonIdEventTopic = std::move(value); }
 
     /**
-     * <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+     * <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
      */
     inline SidewalkEventNotificationConfigurations& WithAmazonIdEventTopic(const EventNotificationTopicStatus& value) { SetAmazonIdEventTopic(value); return *this;}
 
     /**
-     * <p>Enum to denote whether amazon id event topic is enabled or disabled.</p>
+     * <p>Denotes whether the Amazon ID event topic is enabled or disabled.</p>
      */
     inline SidewalkEventNotificationConfigurations& WithAmazonIdEventTopic(EventNotificationTopicStatus&& value) { SetAmazonIdEventTopic(std::move(value)); return *this;}
 
   private:
 
     EventNotificationTopicStatus m_amazonIdEventTopic;
-    bool m_amazonIdEventTopicHasBeenSet;
+    bool m_amazonIdEventTopicHasBeenSet = false;
   };
 
 } // namespace Model

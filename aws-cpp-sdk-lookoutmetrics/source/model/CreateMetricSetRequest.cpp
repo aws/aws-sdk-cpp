@@ -25,7 +25,8 @@ CreateMetricSetRequest::CreateMetricSetRequest() :
     m_metricSetFrequencyHasBeenSet(false),
     m_metricSourceHasBeenSet(false),
     m_timezoneHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_dimensionFilterListHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,17 @@ Aws::String CreateMetricSetRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_dimensionFilterListHasBeenSet)
+  {
+   Array<JsonValue> dimensionFilterListJsonList(m_dimensionFilterList.size());
+   for(unsigned dimensionFilterListIndex = 0; dimensionFilterListIndex < dimensionFilterListJsonList.GetLength(); ++dimensionFilterListIndex)
+   {
+     dimensionFilterListJsonList[dimensionFilterListIndex].AsObject(m_dimensionFilterList[dimensionFilterListIndex].Jsonize());
+   }
+   payload.WithArray("DimensionFilterList", std::move(dimensionFilterListJsonList));
 
   }
 

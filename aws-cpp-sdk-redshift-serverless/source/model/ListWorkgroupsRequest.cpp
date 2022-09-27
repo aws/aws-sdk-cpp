@@ -41,7 +41,7 @@ Aws::String ListWorkgroupsRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection ListWorkgroupsRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.ListWorkgroups"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.ListWorkgroups"));
   return headers;
 
 }

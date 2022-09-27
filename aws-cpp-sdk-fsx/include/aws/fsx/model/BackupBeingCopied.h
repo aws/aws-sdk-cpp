@@ -90,10 +90,10 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_backupId;
-    bool m_backupIdHasBeenSet;
+    bool m_backupIdHasBeenSet = false;
   };
 
 } // namespace Model

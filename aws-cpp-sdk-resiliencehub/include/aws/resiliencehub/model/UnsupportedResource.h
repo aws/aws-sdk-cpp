@@ -145,13 +145,13 @@ namespace Model
   private:
 
     LogicalResourceId m_logicalResourceId;
-    bool m_logicalResourceIdHasBeenSet;
+    bool m_logicalResourceIdHasBeenSet = false;
 
     PhysicalResourceId m_physicalResourceId;
-    bool m_physicalResourceIdHasBeenSet;
+    bool m_physicalResourceIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

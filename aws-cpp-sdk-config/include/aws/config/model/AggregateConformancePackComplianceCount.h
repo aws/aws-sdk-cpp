@@ -80,10 +80,10 @@ namespace Model
   private:
 
     int m_compliantConformancePackCount;
-    bool m_compliantConformancePackCountHasBeenSet;
+    bool m_compliantConformancePackCountHasBeenSet = false;
 
     int m_nonCompliantConformancePackCount;
-    bool m_nonCompliantConformancePackCountHasBeenSet;
+    bool m_nonCompliantConformancePackCountHasBeenSet = false;
   };
 
 } // namespace Model

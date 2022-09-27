@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_logicalResourceId;
-    bool m_logicalResourceIdHasBeenSet;
+    bool m_logicalResourceIdHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     ChangeAction m_resourceAction;
-    bool m_resourceActionHasBeenSet;
+    bool m_resourceActionHasBeenSet = false;
   };
 
 } // namespace Model

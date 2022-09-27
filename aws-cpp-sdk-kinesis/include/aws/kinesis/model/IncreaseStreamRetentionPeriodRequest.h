@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     int m_retentionPeriodHours;
-    bool m_retentionPeriodHoursHasBeenSet;
+    bool m_retentionPeriodHoursHasBeenSet = false;
   };
 
 } // namespace Model

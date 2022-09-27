@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_mapName;
-    bool m_mapNameHasBeenSet;
+    bool m_mapNameHasBeenSet = false;
   };
 
 } // namespace Model

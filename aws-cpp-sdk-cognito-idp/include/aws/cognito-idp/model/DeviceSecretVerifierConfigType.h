@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_passwordVerifier;
-    bool m_passwordVerifierHasBeenSet;
+    bool m_passwordVerifierHasBeenSet = false;
 
     Aws::String m_salt;
-    bool m_saltHasBeenSet;
+    bool m_saltHasBeenSet = false;
   };
 
 } // namespace Model

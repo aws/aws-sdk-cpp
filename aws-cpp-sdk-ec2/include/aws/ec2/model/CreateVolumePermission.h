@@ -115,10 +115,10 @@ namespace Model
   private:
 
     PermissionGroup m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -173,16 +173,16 @@ namespace Model
   private:
 
     CSVInput m_cSV;
-    bool m_cSVHasBeenSet;
+    bool m_cSVHasBeenSet = false;
 
     CompressionType m_compressionType;
-    bool m_compressionTypeHasBeenSet;
+    bool m_compressionTypeHasBeenSet = false;
 
     JSONInput m_jSON;
-    bool m_jSONHasBeenSet;
+    bool m_jSONHasBeenSet = false;
 
     ParquetInput m_parquet;
-    bool m_parquetHasBeenSet;
+    bool m_parquetHasBeenSet = false;
   };
 
 } // namespace Model

@@ -182,13 +182,13 @@ namespace Model
   private:
 
     PlaybackInterruptionReason m_eventReason;
-    bool m_eventReasonHasBeenSet;
+    bool m_eventReasonHasBeenSet = false;
 
     Aws::String m_causedByEventId;
-    bool m_causedByEventIdHasBeenSet;
+    bool m_causedByEventIdHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
   };
 
 } // namespace Model

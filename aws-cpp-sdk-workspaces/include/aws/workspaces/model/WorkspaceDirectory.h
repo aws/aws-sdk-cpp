@@ -13,6 +13,7 @@
 #include <aws/workspaces/model/WorkspaceAccessProperties.h>
 #include <aws/workspaces/model/Tenancy.h>
 #include <aws/workspaces/model/SelfservicePermissions.h>
+#include <aws/workspaces/model/SamlProperties.h>
 #include <utility>
 
 namespace Aws
@@ -760,55 +761,101 @@ namespace Model
      */
     inline WorkspaceDirectory& WithSelfservicePermissions(SelfservicePermissions&& value) { SetSelfservicePermissions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the enablement status, user access URL, and relay state parameter
+     * name that are used for configuring federation with an SAML 2.0 identity
+     * provider.</p>
+     */
+    inline const SamlProperties& GetSamlProperties() const{ return m_samlProperties; }
+
+    /**
+     * <p>Describes the enablement status, user access URL, and relay state parameter
+     * name that are used for configuring federation with an SAML 2.0 identity
+     * provider.</p>
+     */
+    inline bool SamlPropertiesHasBeenSet() const { return m_samlPropertiesHasBeenSet; }
+
+    /**
+     * <p>Describes the enablement status, user access URL, and relay state parameter
+     * name that are used for configuring federation with an SAML 2.0 identity
+     * provider.</p>
+     */
+    inline void SetSamlProperties(const SamlProperties& value) { m_samlPropertiesHasBeenSet = true; m_samlProperties = value; }
+
+    /**
+     * <p>Describes the enablement status, user access URL, and relay state parameter
+     * name that are used for configuring federation with an SAML 2.0 identity
+     * provider.</p>
+     */
+    inline void SetSamlProperties(SamlProperties&& value) { m_samlPropertiesHasBeenSet = true; m_samlProperties = std::move(value); }
+
+    /**
+     * <p>Describes the enablement status, user access URL, and relay state parameter
+     * name that are used for configuring federation with an SAML 2.0 identity
+     * provider.</p>
+     */
+    inline WorkspaceDirectory& WithSamlProperties(const SamlProperties& value) { SetSamlProperties(value); return *this;}
+
+    /**
+     * <p>Describes the enablement status, user access URL, and relay state parameter
+     * name that are used for configuring federation with an SAML 2.0 identity
+     * provider.</p>
+     */
+    inline WorkspaceDirectory& WithSamlProperties(SamlProperties&& value) { SetSamlProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_alias;
-    bool m_aliasHasBeenSet;
+    bool m_aliasHasBeenSet = false;
 
     Aws::String m_directoryName;
-    bool m_directoryNameHasBeenSet;
+    bool m_directoryNameHasBeenSet = false;
 
     Aws::String m_registrationCode;
-    bool m_registrationCodeHasBeenSet;
+    bool m_registrationCodeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsIpAddresses;
-    bool m_dnsIpAddressesHasBeenSet;
+    bool m_dnsIpAddressesHasBeenSet = false;
 
     Aws::String m_customerUserName;
-    bool m_customerUserNameHasBeenSet;
+    bool m_customerUserNameHasBeenSet = false;
 
     Aws::String m_iamRoleId;
-    bool m_iamRoleIdHasBeenSet;
+    bool m_iamRoleIdHasBeenSet = false;
 
     WorkspaceDirectoryType m_directoryType;
-    bool m_directoryTypeHasBeenSet;
+    bool m_directoryTypeHasBeenSet = false;
 
     Aws::String m_workspaceSecurityGroupId;
-    bool m_workspaceSecurityGroupIdHasBeenSet;
+    bool m_workspaceSecurityGroupIdHasBeenSet = false;
 
     WorkspaceDirectoryState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     DefaultWorkspaceCreationProperties m_workspaceCreationProperties;
-    bool m_workspaceCreationPropertiesHasBeenSet;
+    bool m_workspaceCreationPropertiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipGroupIds;
-    bool m_ipGroupIdsHasBeenSet;
+    bool m_ipGroupIdsHasBeenSet = false;
 
     WorkspaceAccessProperties m_workspaceAccessProperties;
-    bool m_workspaceAccessPropertiesHasBeenSet;
+    bool m_workspaceAccessPropertiesHasBeenSet = false;
 
     Tenancy m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
 
     SelfservicePermissions m_selfservicePermissions;
-    bool m_selfservicePermissionsHasBeenSet;
+    bool m_selfservicePermissionsHasBeenSet = false;
+
+    SamlProperties m_samlProperties;
+    bool m_samlPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,333 +5,30 @@
 
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
-#include <aws/ecs/ECSErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/ecs/model/CreateCapacityProviderResult.h>
-#include <aws/ecs/model/CreateClusterResult.h>
-#include <aws/ecs/model/CreateServiceResult.h>
-#include <aws/ecs/model/CreateTaskSetResult.h>
-#include <aws/ecs/model/DeleteAccountSettingResult.h>
-#include <aws/ecs/model/DeleteAttributesResult.h>
-#include <aws/ecs/model/DeleteCapacityProviderResult.h>
-#include <aws/ecs/model/DeleteClusterResult.h>
-#include <aws/ecs/model/DeleteServiceResult.h>
-#include <aws/ecs/model/DeleteTaskSetResult.h>
-#include <aws/ecs/model/DeregisterContainerInstanceResult.h>
-#include <aws/ecs/model/DeregisterTaskDefinitionResult.h>
-#include <aws/ecs/model/DescribeCapacityProvidersResult.h>
-#include <aws/ecs/model/DescribeClustersResult.h>
-#include <aws/ecs/model/DescribeContainerInstancesResult.h>
-#include <aws/ecs/model/DescribeServicesResult.h>
-#include <aws/ecs/model/DescribeTaskDefinitionResult.h>
-#include <aws/ecs/model/DescribeTaskSetsResult.h>
-#include <aws/ecs/model/DescribeTasksResult.h>
-#include <aws/ecs/model/DiscoverPollEndpointResult.h>
-#include <aws/ecs/model/ExecuteCommandResult.h>
-#include <aws/ecs/model/ListAccountSettingsResult.h>
-#include <aws/ecs/model/ListAttributesResult.h>
-#include <aws/ecs/model/ListClustersResult.h>
-#include <aws/ecs/model/ListContainerInstancesResult.h>
-#include <aws/ecs/model/ListServicesResult.h>
-#include <aws/ecs/model/ListTagsForResourceResult.h>
-#include <aws/ecs/model/ListTaskDefinitionFamiliesResult.h>
-#include <aws/ecs/model/ListTaskDefinitionsResult.h>
-#include <aws/ecs/model/ListTasksResult.h>
-#include <aws/ecs/model/PutAccountSettingResult.h>
-#include <aws/ecs/model/PutAccountSettingDefaultResult.h>
-#include <aws/ecs/model/PutAttributesResult.h>
-#include <aws/ecs/model/PutClusterCapacityProvidersResult.h>
-#include <aws/ecs/model/RegisterContainerInstanceResult.h>
-#include <aws/ecs/model/RegisterTaskDefinitionResult.h>
-#include <aws/ecs/model/RunTaskResult.h>
-#include <aws/ecs/model/StartTaskResult.h>
-#include <aws/ecs/model/StopTaskResult.h>
-#include <aws/ecs/model/SubmitAttachmentStateChangesResult.h>
-#include <aws/ecs/model/SubmitContainerStateChangeResult.h>
-#include <aws/ecs/model/SubmitTaskStateChangeResult.h>
-#include <aws/ecs/model/TagResourceResult.h>
-#include <aws/ecs/model/UntagResourceResult.h>
-#include <aws/ecs/model/UpdateCapacityProviderResult.h>
-#include <aws/ecs/model/UpdateClusterResult.h>
-#include <aws/ecs/model/UpdateClusterSettingsResult.h>
-#include <aws/ecs/model/UpdateContainerAgentResult.h>
-#include <aws/ecs/model/UpdateContainerInstancesStateResult.h>
-#include <aws/ecs/model/UpdateServiceResult.h>
-#include <aws/ecs/model/UpdateServicePrimaryTaskSetResult.h>
-#include <aws/ecs/model/UpdateTaskSetResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/ecs/ECSServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ECS
 {
-
-namespace Model
-{
-        class CreateCapacityProviderRequest;
-        class CreateClusterRequest;
-        class CreateServiceRequest;
-        class CreateTaskSetRequest;
-        class DeleteAccountSettingRequest;
-        class DeleteAttributesRequest;
-        class DeleteCapacityProviderRequest;
-        class DeleteClusterRequest;
-        class DeleteServiceRequest;
-        class DeleteTaskSetRequest;
-        class DeregisterContainerInstanceRequest;
-        class DeregisterTaskDefinitionRequest;
-        class DescribeCapacityProvidersRequest;
-        class DescribeClustersRequest;
-        class DescribeContainerInstancesRequest;
-        class DescribeServicesRequest;
-        class DescribeTaskDefinitionRequest;
-        class DescribeTaskSetsRequest;
-        class DescribeTasksRequest;
-        class DiscoverPollEndpointRequest;
-        class ExecuteCommandRequest;
-        class ListAccountSettingsRequest;
-        class ListAttributesRequest;
-        class ListClustersRequest;
-        class ListContainerInstancesRequest;
-        class ListServicesRequest;
-        class ListTagsForResourceRequest;
-        class ListTaskDefinitionFamiliesRequest;
-        class ListTaskDefinitionsRequest;
-        class ListTasksRequest;
-        class PutAccountSettingRequest;
-        class PutAccountSettingDefaultRequest;
-        class PutAttributesRequest;
-        class PutClusterCapacityProvidersRequest;
-        class RegisterContainerInstanceRequest;
-        class RegisterTaskDefinitionRequest;
-        class RunTaskRequest;
-        class StartTaskRequest;
-        class StopTaskRequest;
-        class SubmitAttachmentStateChangesRequest;
-        class SubmitContainerStateChangeRequest;
-        class SubmitTaskStateChangeRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateCapacityProviderRequest;
-        class UpdateClusterRequest;
-        class UpdateClusterSettingsRequest;
-        class UpdateContainerAgentRequest;
-        class UpdateContainerInstancesStateRequest;
-        class UpdateServiceRequest;
-        class UpdateServicePrimaryTaskSetRequest;
-        class UpdateTaskSetRequest;
-
-        typedef Aws::Utils::Outcome<CreateCapacityProviderResult, ECSError> CreateCapacityProviderOutcome;
-        typedef Aws::Utils::Outcome<CreateClusterResult, ECSError> CreateClusterOutcome;
-        typedef Aws::Utils::Outcome<CreateServiceResult, ECSError> CreateServiceOutcome;
-        typedef Aws::Utils::Outcome<CreateTaskSetResult, ECSError> CreateTaskSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteAccountSettingResult, ECSError> DeleteAccountSettingOutcome;
-        typedef Aws::Utils::Outcome<DeleteAttributesResult, ECSError> DeleteAttributesOutcome;
-        typedef Aws::Utils::Outcome<DeleteCapacityProviderResult, ECSError> DeleteCapacityProviderOutcome;
-        typedef Aws::Utils::Outcome<DeleteClusterResult, ECSError> DeleteClusterOutcome;
-        typedef Aws::Utils::Outcome<DeleteServiceResult, ECSError> DeleteServiceOutcome;
-        typedef Aws::Utils::Outcome<DeleteTaskSetResult, ECSError> DeleteTaskSetOutcome;
-        typedef Aws::Utils::Outcome<DeregisterContainerInstanceResult, ECSError> DeregisterContainerInstanceOutcome;
-        typedef Aws::Utils::Outcome<DeregisterTaskDefinitionResult, ECSError> DeregisterTaskDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DescribeCapacityProvidersResult, ECSError> DescribeCapacityProvidersOutcome;
-        typedef Aws::Utils::Outcome<DescribeClustersResult, ECSError> DescribeClustersOutcome;
-        typedef Aws::Utils::Outcome<DescribeContainerInstancesResult, ECSError> DescribeContainerInstancesOutcome;
-        typedef Aws::Utils::Outcome<DescribeServicesResult, ECSError> DescribeServicesOutcome;
-        typedef Aws::Utils::Outcome<DescribeTaskDefinitionResult, ECSError> DescribeTaskDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DescribeTaskSetsResult, ECSError> DescribeTaskSetsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTasksResult, ECSError> DescribeTasksOutcome;
-        typedef Aws::Utils::Outcome<DiscoverPollEndpointResult, ECSError> DiscoverPollEndpointOutcome;
-        typedef Aws::Utils::Outcome<ExecuteCommandResult, ECSError> ExecuteCommandOutcome;
-        typedef Aws::Utils::Outcome<ListAccountSettingsResult, ECSError> ListAccountSettingsOutcome;
-        typedef Aws::Utils::Outcome<ListAttributesResult, ECSError> ListAttributesOutcome;
-        typedef Aws::Utils::Outcome<ListClustersResult, ECSError> ListClustersOutcome;
-        typedef Aws::Utils::Outcome<ListContainerInstancesResult, ECSError> ListContainerInstancesOutcome;
-        typedef Aws::Utils::Outcome<ListServicesResult, ECSError> ListServicesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ECSError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTaskDefinitionFamiliesResult, ECSError> ListTaskDefinitionFamiliesOutcome;
-        typedef Aws::Utils::Outcome<ListTaskDefinitionsResult, ECSError> ListTaskDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ListTasksResult, ECSError> ListTasksOutcome;
-        typedef Aws::Utils::Outcome<PutAccountSettingResult, ECSError> PutAccountSettingOutcome;
-        typedef Aws::Utils::Outcome<PutAccountSettingDefaultResult, ECSError> PutAccountSettingDefaultOutcome;
-        typedef Aws::Utils::Outcome<PutAttributesResult, ECSError> PutAttributesOutcome;
-        typedef Aws::Utils::Outcome<PutClusterCapacityProvidersResult, ECSError> PutClusterCapacityProvidersOutcome;
-        typedef Aws::Utils::Outcome<RegisterContainerInstanceResult, ECSError> RegisterContainerInstanceOutcome;
-        typedef Aws::Utils::Outcome<RegisterTaskDefinitionResult, ECSError> RegisterTaskDefinitionOutcome;
-        typedef Aws::Utils::Outcome<RunTaskResult, ECSError> RunTaskOutcome;
-        typedef Aws::Utils::Outcome<StartTaskResult, ECSError> StartTaskOutcome;
-        typedef Aws::Utils::Outcome<StopTaskResult, ECSError> StopTaskOutcome;
-        typedef Aws::Utils::Outcome<SubmitAttachmentStateChangesResult, ECSError> SubmitAttachmentStateChangesOutcome;
-        typedef Aws::Utils::Outcome<SubmitContainerStateChangeResult, ECSError> SubmitContainerStateChangeOutcome;
-        typedef Aws::Utils::Outcome<SubmitTaskStateChangeResult, ECSError> SubmitTaskStateChangeOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, ECSError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, ECSError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateCapacityProviderResult, ECSError> UpdateCapacityProviderOutcome;
-        typedef Aws::Utils::Outcome<UpdateClusterResult, ECSError> UpdateClusterOutcome;
-        typedef Aws::Utils::Outcome<UpdateClusterSettingsResult, ECSError> UpdateClusterSettingsOutcome;
-        typedef Aws::Utils::Outcome<UpdateContainerAgentResult, ECSError> UpdateContainerAgentOutcome;
-        typedef Aws::Utils::Outcome<UpdateContainerInstancesStateResult, ECSError> UpdateContainerInstancesStateOutcome;
-        typedef Aws::Utils::Outcome<UpdateServiceResult, ECSError> UpdateServiceOutcome;
-        typedef Aws::Utils::Outcome<UpdateServicePrimaryTaskSetResult, ECSError> UpdateServicePrimaryTaskSetOutcome;
-        typedef Aws::Utils::Outcome<UpdateTaskSetResult, ECSError> UpdateTaskSetOutcome;
-
-        typedef std::future<CreateCapacityProviderOutcome> CreateCapacityProviderOutcomeCallable;
-        typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
-        typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
-        typedef std::future<CreateTaskSetOutcome> CreateTaskSetOutcomeCallable;
-        typedef std::future<DeleteAccountSettingOutcome> DeleteAccountSettingOutcomeCallable;
-        typedef std::future<DeleteAttributesOutcome> DeleteAttributesOutcomeCallable;
-        typedef std::future<DeleteCapacityProviderOutcome> DeleteCapacityProviderOutcomeCallable;
-        typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
-        typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
-        typedef std::future<DeleteTaskSetOutcome> DeleteTaskSetOutcomeCallable;
-        typedef std::future<DeregisterContainerInstanceOutcome> DeregisterContainerInstanceOutcomeCallable;
-        typedef std::future<DeregisterTaskDefinitionOutcome> DeregisterTaskDefinitionOutcomeCallable;
-        typedef std::future<DescribeCapacityProvidersOutcome> DescribeCapacityProvidersOutcomeCallable;
-        typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
-        typedef std::future<DescribeContainerInstancesOutcome> DescribeContainerInstancesOutcomeCallable;
-        typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
-        typedef std::future<DescribeTaskDefinitionOutcome> DescribeTaskDefinitionOutcomeCallable;
-        typedef std::future<DescribeTaskSetsOutcome> DescribeTaskSetsOutcomeCallable;
-        typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
-        typedef std::future<DiscoverPollEndpointOutcome> DiscoverPollEndpointOutcomeCallable;
-        typedef std::future<ExecuteCommandOutcome> ExecuteCommandOutcomeCallable;
-        typedef std::future<ListAccountSettingsOutcome> ListAccountSettingsOutcomeCallable;
-        typedef std::future<ListAttributesOutcome> ListAttributesOutcomeCallable;
-        typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
-        typedef std::future<ListContainerInstancesOutcome> ListContainerInstancesOutcomeCallable;
-        typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListTaskDefinitionFamiliesOutcome> ListTaskDefinitionFamiliesOutcomeCallable;
-        typedef std::future<ListTaskDefinitionsOutcome> ListTaskDefinitionsOutcomeCallable;
-        typedef std::future<ListTasksOutcome> ListTasksOutcomeCallable;
-        typedef std::future<PutAccountSettingOutcome> PutAccountSettingOutcomeCallable;
-        typedef std::future<PutAccountSettingDefaultOutcome> PutAccountSettingDefaultOutcomeCallable;
-        typedef std::future<PutAttributesOutcome> PutAttributesOutcomeCallable;
-        typedef std::future<PutClusterCapacityProvidersOutcome> PutClusterCapacityProvidersOutcomeCallable;
-        typedef std::future<RegisterContainerInstanceOutcome> RegisterContainerInstanceOutcomeCallable;
-        typedef std::future<RegisterTaskDefinitionOutcome> RegisterTaskDefinitionOutcomeCallable;
-        typedef std::future<RunTaskOutcome> RunTaskOutcomeCallable;
-        typedef std::future<StartTaskOutcome> StartTaskOutcomeCallable;
-        typedef std::future<StopTaskOutcome> StopTaskOutcomeCallable;
-        typedef std::future<SubmitAttachmentStateChangesOutcome> SubmitAttachmentStateChangesOutcomeCallable;
-        typedef std::future<SubmitContainerStateChangeOutcome> SubmitContainerStateChangeOutcomeCallable;
-        typedef std::future<SubmitTaskStateChangeOutcome> SubmitTaskStateChangeOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateCapacityProviderOutcome> UpdateCapacityProviderOutcomeCallable;
-        typedef std::future<UpdateClusterOutcome> UpdateClusterOutcomeCallable;
-        typedef std::future<UpdateClusterSettingsOutcome> UpdateClusterSettingsOutcomeCallable;
-        typedef std::future<UpdateContainerAgentOutcome> UpdateContainerAgentOutcomeCallable;
-        typedef std::future<UpdateContainerInstancesStateOutcome> UpdateContainerInstancesStateOutcomeCallable;
-        typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
-        typedef std::future<UpdateServicePrimaryTaskSetOutcome> UpdateServicePrimaryTaskSetOutcomeCallable;
-        typedef std::future<UpdateTaskSetOutcome> UpdateTaskSetOutcomeCallable;
-} // namespace Model
-
-  class ECSClient;
-
-    typedef std::function<void(const ECSClient*, const Model::CreateCapacityProviderRequest&, const Model::CreateCapacityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCapacityProviderResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::CreateServiceRequest&, const Model::CreateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::CreateTaskSetRequest&, const Model::CreateTaskSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTaskSetResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DeleteAccountSettingRequest&, const Model::DeleteAccountSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountSettingResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DeleteAttributesRequest&, const Model::DeleteAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAttributesResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DeleteCapacityProviderRequest&, const Model::DeleteCapacityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCapacityProviderResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DeleteServiceRequest&, const Model::DeleteServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DeleteTaskSetRequest&, const Model::DeleteTaskSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTaskSetResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DeregisterContainerInstanceRequest&, const Model::DeregisterContainerInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterContainerInstanceResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DeregisterTaskDefinitionRequest&, const Model::DeregisterTaskDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTaskDefinitionResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DescribeCapacityProvidersRequest&, const Model::DescribeCapacityProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCapacityProvidersResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DescribeClustersRequest&, const Model::DescribeClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClustersResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DescribeContainerInstancesRequest&, const Model::DescribeContainerInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContainerInstancesResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DescribeServicesRequest&, const Model::DescribeServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServicesResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DescribeTaskDefinitionRequest&, const Model::DescribeTaskDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTaskDefinitionResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DescribeTaskSetsRequest&, const Model::DescribeTaskSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTaskSetsResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DescribeTasksRequest&, const Model::DescribeTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTasksResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::DiscoverPollEndpointRequest&, const Model::DiscoverPollEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DiscoverPollEndpointResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::ExecuteCommandRequest&, const Model::ExecuteCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteCommandResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::ListAccountSettingsRequest&, const Model::ListAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountSettingsResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::ListAttributesRequest&, const Model::ListAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttributesResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::ListContainerInstancesRequest&, const Model::ListContainerInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainerInstancesResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::ListServicesRequest&, const Model::ListServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServicesResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::ListTaskDefinitionFamiliesRequest&, const Model::ListTaskDefinitionFamiliesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTaskDefinitionFamiliesResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::ListTaskDefinitionsRequest&, const Model::ListTaskDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTaskDefinitionsResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::ListTasksRequest&, const Model::ListTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTasksResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::PutAccountSettingRequest&, const Model::PutAccountSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSettingResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::PutAccountSettingDefaultRequest&, const Model::PutAccountSettingDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSettingDefaultResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::PutAttributesRequest&, const Model::PutAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAttributesResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::PutClusterCapacityProvidersRequest&, const Model::PutClusterCapacityProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutClusterCapacityProvidersResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::RegisterContainerInstanceRequest&, const Model::RegisterContainerInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterContainerInstanceResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::RegisterTaskDefinitionRequest&, const Model::RegisterTaskDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTaskDefinitionResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::RunTaskRequest&, const Model::RunTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunTaskResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::StartTaskRequest&, const Model::StartTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTaskResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::StopTaskRequest&, const Model::StopTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTaskResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::SubmitAttachmentStateChangesRequest&, const Model::SubmitAttachmentStateChangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitAttachmentStateChangesResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::SubmitContainerStateChangeRequest&, const Model::SubmitContainerStateChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitContainerStateChangeResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::SubmitTaskStateChangeRequest&, const Model::SubmitTaskStateChangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubmitTaskStateChangeResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::UpdateCapacityProviderRequest&, const Model::UpdateCapacityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCapacityProviderResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::UpdateClusterRequest&, const Model::UpdateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::UpdateClusterSettingsRequest&, const Model::UpdateClusterSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterSettingsResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::UpdateContainerAgentRequest&, const Model::UpdateContainerAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContainerAgentResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::UpdateContainerInstancesStateRequest&, const Model::UpdateContainerInstancesStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContainerInstancesStateResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::UpdateServicePrimaryTaskSetRequest&, const Model::UpdateServicePrimaryTaskSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServicePrimaryTaskSetResponseReceivedHandler;
-    typedef std::function<void(const ECSClient*, const Model::UpdateTaskSetRequest&, const Model::UpdateTaskSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTaskSetResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Elastic Container Service</fullname> <p>Amazon Elastic
    * Container Service (Amazon ECS) is a highly scalable, fast, container management
-   * service. It makes it easy to run, stop, and manage Docker containers on a
-   * cluster. You can host your cluster on a serverless infrastructure that's managed
-   * by Amazon ECS by launching your services or tasks on Fargate. For more control,
-   * you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon
-   * EC2) instances that you manage.</p> <p>Amazon ECS makes it easy to launch and
-   * stop container-based applications with simple API calls. This makes it easy to
-   * get the state of your cluster from a centralized service, and gives you access
-   * to many familiar Amazon EC2 features.</p> <p>You can use Amazon ECS to schedule
-   * the placement of containers across your cluster based on your resource needs,
-   * isolation policies, and availability requirements. With Amazon ECS, you don't
-   * need to operate your own cluster management and configuration management
-   * systems. You also don't need to worry about scaling your management
+   * service. It makes it easy to run, stop, and manage Docker containers. You can
+   * host your cluster on a serverless infrastructure that's managed by Amazon ECS by
+   * launching your services or tasks on Fargate. For more control, you can host your
+   * tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) or External
+   * (on-premises) instances that you manage.</p> <p>Amazon ECS makes it easy to
+   * launch and stop container-based applications with simple API calls. This makes
+   * it easy to get the state of your cluster from a centralized service, and gives
+   * you access to many familiar Amazon EC2 features.</p> <p>You can use Amazon ECS
+   * to schedule the placement of containers across your cluster based on your
+   * resource needs, isolation policies, and availability requirements. With Amazon
+   * ECS, you don't need to operate your own cluster management and configuration
+   * management systems. You also don't need to worry about scaling your management
    * infrastructure.</p>
    */
   class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient
@@ -349,14 +46,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ECSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ECSClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ECSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ECSClient();
 
@@ -395,7 +93,7 @@ namespace Model
          * IAM user that makes the call doesn't have permissions to create the
          * service-linked role, it isn't created. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-         * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+         * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster">AWS
          * API Reference</a></p>
@@ -416,13 +114,13 @@ namespace Model
          * <p>Runs and maintains your desired number of tasks from a specified task
          * definition. If the number of tasks running in a service drops below the
          * <code>desiredCount</code>, Amazon ECS runs another copy of the task in the
-         * specified cluster. To update an existing service, see the UpdateService
+         * specified cluster. To update an existing service, see the <a>UpdateService</a>
          * action.</p> <p>In addition to maintaining the desired count of tasks in your
          * service, you can optionally run your service behind one or more load balancers.
          * The load balancers distribute traffic across the tasks that are associated with
          * the service. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
-         * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
+         * load balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>Tasks for services that don't use a load balancer are
          * considered healthy if they're in the <code>RUNNING</code> state. Tasks for
          * services that use a load balancer are considered healthy if they're in the
@@ -434,7 +132,7 @@ namespace Model
          * and constraints to customize task placement decisions. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
-         * Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer
+         * scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> </li> <li> <p> <code>DAEMON</code> - The daemon scheduling
          * strategy deploys exactly one task on each active container instance that meets
          * all of the task placement constraints that you specify in your cluster. The
@@ -444,7 +142,7 @@ namespace Model
          * placement strategy, or use Service Auto Scaling policies. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
-         * Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer
+         * scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> </li> </ul> <p>You can optionally specify a deployment
          * configuration for your service. The deployment is initiated by changing
          * properties. For example, the deployment might be initiated by the task
@@ -492,23 +190,13 @@ namespace Model
          * service name. You control your services using the <a>CreateTaskSet</a>
          * operation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>When the service scheduler launches new tasks, it determines
-         * task placement in your cluster using the following logic:</p> <ul> <li>
-         * <p>Determine which of the container instances in your cluster can support the
-         * task definition of your service. For example, they have the required CPU,
-         * memory, ports, and container instance attributes.</p> </li> <li> <p>By default,
-         * the service scheduler attempts to balance tasks across Availability Zones in
-         * this manner. This is the case even if you can choose a different placement
-         * strategy with the <code>placementStrategy</code> parameter.</p> <ul> <li>
-         * <p>Sort the valid container instances, giving priority to instances that have
-         * the fewest number of running tasks for this service in their respective
-         * Availability Zone. For example, if zone A has one running service task and zones
-         * B and C each have zero, valid container instances in either zone B or C are
-         * considered optimal for placement.</p> </li> <li> <p>Place the new service task
-         * on a valid container instance in an optimal Availability Zone based on the
-         * previous steps, favoring container instances with the fewest number of running
-         * tasks for this service.</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * task placement. For information about task placement and task placement
+         * strategies, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement.html">Amazon
+         * ECS task placement</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
          * API Reference</a></p>
          */
@@ -529,7 +217,7 @@ namespace Model
          * service uses the <code>EXTERNAL</code> deployment controller type. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">AWS
          * API Reference</a></p>
@@ -678,7 +366,7 @@ namespace Model
          * uses the <code>EXTERNAL</code> deployment controller type. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
-         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">AWS
          * API Reference</a></p>
@@ -870,7 +558,8 @@ namespace Model
         virtual void DescribeTaskSetsAsync(const Model::DescribeTaskSetsRequest& request, const DescribeTaskSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a specified task or tasks.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a specified task or tasks.</p> <p>Currently, stopped tasks appear
+         * in the returned results for at least one hour.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks">AWS
          * API Reference</a></p>
          */
@@ -906,7 +595,11 @@ namespace Model
         virtual void DiscoverPollEndpointAsync(const Model::DiscoverPollEndpointRequest& request, const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Runs a command remotely on a container within a task.</p><p><h3>See
+         * <p>Runs a command remotely on a container within a task.</p> <p>If you use a
+         * condition key in your IAM policy to refine the conditions for the policy
+         * statement, for example limit the actions to a specific cluster, you recevie an
+         * <code>AccessDeniedException</code> when there is a mismatch between the
+         * condition key value and the corresponding parameter value.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">AWS
          * API Reference</a></p>
@@ -1609,23 +1302,18 @@ namespace Model
         virtual void UpdateContainerInstancesStateAsync(const Model::UpdateContainerInstancesStateRequest& request, const UpdateContainerInstancesStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         *  <p>Updating the task placement strategies and constraints on an
-         * Amazon ECS service remains in preview and is a Beta Service as defined by and
-         * subject to the Beta Service Participation Service Terms located at <a
-         * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
-         * ("Beta Terms"). These Beta Terms apply to your participation in this
-         * preview.</p>  <p>Modifies the parameters of a service.</p> <p>For
-         * services using the rolling update (<code>ECS</code>) you can update the desired
-         * count, deployment configuration, network configuration, load balancers, service
-         * registries, enable ECS managed tags option, propagate tags option, task
-         * placement constraints and strategies, and task definition. When you update any
-         * of these parameters, Amazon ECS starts new tasks with the new configuration.
-         * </p> <p>For services using the blue/green (<code>CODE_DEPLOY</code>) deployment
-         * controller, only the desired count, deployment configuration, health check grace
-         * period, task placement constraints and strategies, enable ECS managed tags
-         * option, and propagate tags can be updated using this API. If the network
-         * configuration, platform version, task definition, or load balancer need to be
-         * updated, create a new CodeDeploy deployment. For more information, see <a
+         * <p>Modifies the parameters of a service.</p> <p>For services using the rolling
+         * update (<code>ECS</code>) you can update the desired count, deployment
+         * configuration, network configuration, load balancers, service registries, enable
+         * ECS managed tags option, propagate tags option, task placement constraints and
+         * strategies, and task definition. When you update any of these parameters, Amazon
+         * ECS starts new tasks with the new configuration. </p> <p>For services using the
+         * blue/green (<code>CODE_DEPLOY</code>) deployment controller, only the desired
+         * count, deployment configuration, health check grace period, task placement
+         * constraints and strategies, enable ECS managed tags option, and propagate tags
+         * can be updated using this API. If the network configuration, platform version,
+         * task definition, or load balancer need to be updated, create a new CodeDeploy
+         * deployment. For more information, see <a
          * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
          * in the <i>CodeDeploy API Reference</i>.</p> <p>For services using an external
          * deployment controller, you can update only the desired count, task placement
@@ -1767,58 +1455,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateCapacityProviderAsyncHelper(const Model::CreateCapacityProviderRequest& request, const CreateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateServiceAsyncHelper(const Model::CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateTaskSetAsyncHelper(const Model::CreateTaskSetRequest& request, const CreateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAccountSettingAsyncHelper(const Model::DeleteAccountSettingRequest& request, const DeleteAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAttributesAsyncHelper(const Model::DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCapacityProviderAsyncHelper(const Model::DeleteCapacityProviderRequest& request, const DeleteCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteServiceAsyncHelper(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteTaskSetAsyncHelper(const Model::DeleteTaskSetRequest& request, const DeleteTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterContainerInstanceAsyncHelper(const Model::DeregisterContainerInstanceRequest& request, const DeregisterContainerInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterTaskDefinitionAsyncHelper(const Model::DeregisterTaskDefinitionRequest& request, const DeregisterTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCapacityProvidersAsyncHelper(const Model::DescribeCapacityProvidersRequest& request, const DescribeCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeClustersAsyncHelper(const Model::DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeContainerInstancesAsyncHelper(const Model::DescribeContainerInstancesRequest& request, const DescribeContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeServicesAsyncHelper(const Model::DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTaskDefinitionAsyncHelper(const Model::DescribeTaskDefinitionRequest& request, const DescribeTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTaskSetsAsyncHelper(const Model::DescribeTaskSetsRequest& request, const DescribeTaskSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTasksAsyncHelper(const Model::DescribeTasksRequest& request, const DescribeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DiscoverPollEndpointAsyncHelper(const Model::DiscoverPollEndpointRequest& request, const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ExecuteCommandAsyncHelper(const Model::ExecuteCommandRequest& request, const ExecuteCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAccountSettingsAsyncHelper(const Model::ListAccountSettingsRequest& request, const ListAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAttributesAsyncHelper(const Model::ListAttributesRequest& request, const ListAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListContainerInstancesAsyncHelper(const Model::ListContainerInstancesRequest& request, const ListContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListServicesAsyncHelper(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTaskDefinitionFamiliesAsyncHelper(const Model::ListTaskDefinitionFamiliesRequest& request, const ListTaskDefinitionFamiliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTaskDefinitionsAsyncHelper(const Model::ListTaskDefinitionsRequest& request, const ListTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTasksAsyncHelper(const Model::ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutAccountSettingAsyncHelper(const Model::PutAccountSettingRequest& request, const PutAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutAccountSettingDefaultAsyncHelper(const Model::PutAccountSettingDefaultRequest& request, const PutAccountSettingDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutAttributesAsyncHelper(const Model::PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutClusterCapacityProvidersAsyncHelper(const Model::PutClusterCapacityProvidersRequest& request, const PutClusterCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterContainerInstanceAsyncHelper(const Model::RegisterContainerInstanceRequest& request, const RegisterContainerInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterTaskDefinitionAsyncHelper(const Model::RegisterTaskDefinitionRequest& request, const RegisterTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RunTaskAsyncHelper(const Model::RunTaskRequest& request, const RunTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartTaskAsyncHelper(const Model::StartTaskRequest& request, const StartTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopTaskAsyncHelper(const Model::StopTaskRequest& request, const StopTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SubmitAttachmentStateChangesAsyncHelper(const Model::SubmitAttachmentStateChangesRequest& request, const SubmitAttachmentStateChangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SubmitContainerStateChangeAsyncHelper(const Model::SubmitContainerStateChangeRequest& request, const SubmitContainerStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SubmitTaskStateChangeAsyncHelper(const Model::SubmitTaskStateChangeRequest& request, const SubmitTaskStateChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateCapacityProviderAsyncHelper(const Model::UpdateCapacityProviderRequest& request, const UpdateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateClusterAsyncHelper(const Model::UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateClusterSettingsAsyncHelper(const Model::UpdateClusterSettingsRequest& request, const UpdateClusterSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateContainerAgentAsyncHelper(const Model::UpdateContainerAgentRequest& request, const UpdateContainerAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateContainerInstancesStateAsyncHelper(const Model::UpdateContainerInstancesStateRequest& request, const UpdateContainerInstancesStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateServiceAsyncHelper(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateServicePrimaryTaskSetAsyncHelper(const Model::UpdateServicePrimaryTaskSetRequest& request, const UpdateServicePrimaryTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateTaskSetAsyncHelper(const Model::UpdateTaskSetRequest& request, const UpdateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

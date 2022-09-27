@@ -213,13 +213,13 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_urlExpiry;
-    bool m_urlExpiryHasBeenSet;
+    bool m_urlExpiryHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_headersToInclude;
-    bool m_headersToIncludeHasBeenSet;
+    bool m_headersToIncludeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -244,16 +244,16 @@ namespace Model
   private:
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     InventorySchemaDeleteOption m_schemaDeleteOption;
-    bool m_schemaDeleteOptionHasBeenSet;
+    bool m_schemaDeleteOptionHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -346,28 +346,28 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_networkInsightsAccessScopeAnalysisIds;
-    bool m_networkInsightsAccessScopeAnalysisIdsHasBeenSet;
+    bool m_networkInsightsAccessScopeAnalysisIdsHasBeenSet = false;
 
     Aws::String m_networkInsightsAccessScopeId;
-    bool m_networkInsightsAccessScopeIdHasBeenSet;
+    bool m_networkInsightsAccessScopeIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_analysisStartTimeBegin;
-    bool m_analysisStartTimeBeginHasBeenSet;
+    bool m_analysisStartTimeBeginHasBeenSet = false;
 
     Aws::Utils::DateTime m_analysisStartTimeEnd;
-    bool m_analysisStartTimeEndHasBeenSet;
+    bool m_analysisStartTimeEndHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

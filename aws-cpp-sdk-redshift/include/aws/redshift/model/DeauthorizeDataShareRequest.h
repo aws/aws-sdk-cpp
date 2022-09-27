@@ -144,10 +144,10 @@ namespace Model
   private:
 
     Aws::String m_dataShareArn;
-    bool m_dataShareArnHasBeenSet;
+    bool m_dataShareArnHasBeenSet = false;
 
     Aws::String m_consumerIdentifier;
-    bool m_consumerIdentifierHasBeenSet;
+    bool m_consumerIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

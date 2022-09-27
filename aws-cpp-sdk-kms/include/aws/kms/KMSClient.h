@@ -5,294 +5,15 @@
 
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
-#include <aws/kms/KMSErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/kms/model/CancelKeyDeletionResult.h>
-#include <aws/kms/model/ConnectCustomKeyStoreResult.h>
-#include <aws/kms/model/CreateCustomKeyStoreResult.h>
-#include <aws/kms/model/CreateGrantResult.h>
-#include <aws/kms/model/CreateKeyResult.h>
-#include <aws/kms/model/DecryptResult.h>
-#include <aws/kms/model/DeleteCustomKeyStoreResult.h>
-#include <aws/kms/model/DescribeCustomKeyStoresResult.h>
-#include <aws/kms/model/DescribeKeyResult.h>
-#include <aws/kms/model/DisconnectCustomKeyStoreResult.h>
-#include <aws/kms/model/EncryptResult.h>
-#include <aws/kms/model/GenerateDataKeyResult.h>
-#include <aws/kms/model/GenerateDataKeyPairResult.h>
-#include <aws/kms/model/GenerateDataKeyPairWithoutPlaintextResult.h>
-#include <aws/kms/model/GenerateDataKeyWithoutPlaintextResult.h>
-#include <aws/kms/model/GenerateMacResult.h>
-#include <aws/kms/model/GenerateRandomResult.h>
-#include <aws/kms/model/GetKeyPolicyResult.h>
-#include <aws/kms/model/GetKeyRotationStatusResult.h>
-#include <aws/kms/model/GetParametersForImportResult.h>
-#include <aws/kms/model/GetPublicKeyResult.h>
-#include <aws/kms/model/ImportKeyMaterialResult.h>
-#include <aws/kms/model/ListAliasesResult.h>
-#include <aws/kms/model/ListGrantsResult.h>
-#include <aws/kms/model/ListKeyPoliciesResult.h>
-#include <aws/kms/model/ListKeysResult.h>
-#include <aws/kms/model/ListResourceTagsResult.h>
-#include <aws/kms/model/ListRetirableGrantsResult.h>
-#include <aws/kms/model/ReEncryptResult.h>
-#include <aws/kms/model/ReplicateKeyResult.h>
-#include <aws/kms/model/ScheduleKeyDeletionResult.h>
-#include <aws/kms/model/SignResult.h>
-#include <aws/kms/model/UpdateCustomKeyStoreResult.h>
-#include <aws/kms/model/VerifyResult.h>
-#include <aws/kms/model/VerifyMacResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/kms/KMSServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace KMS
 {
-
-namespace Model
-{
-        class CancelKeyDeletionRequest;
-        class ConnectCustomKeyStoreRequest;
-        class CreateAliasRequest;
-        class CreateCustomKeyStoreRequest;
-        class CreateGrantRequest;
-        class CreateKeyRequest;
-        class DecryptRequest;
-        class DeleteAliasRequest;
-        class DeleteCustomKeyStoreRequest;
-        class DeleteImportedKeyMaterialRequest;
-        class DescribeCustomKeyStoresRequest;
-        class DescribeKeyRequest;
-        class DisableKeyRequest;
-        class DisableKeyRotationRequest;
-        class DisconnectCustomKeyStoreRequest;
-        class EnableKeyRequest;
-        class EnableKeyRotationRequest;
-        class EncryptRequest;
-        class GenerateDataKeyRequest;
-        class GenerateDataKeyPairRequest;
-        class GenerateDataKeyPairWithoutPlaintextRequest;
-        class GenerateDataKeyWithoutPlaintextRequest;
-        class GenerateMacRequest;
-        class GenerateRandomRequest;
-        class GetKeyPolicyRequest;
-        class GetKeyRotationStatusRequest;
-        class GetParametersForImportRequest;
-        class GetPublicKeyRequest;
-        class ImportKeyMaterialRequest;
-        class ListAliasesRequest;
-        class ListGrantsRequest;
-        class ListKeyPoliciesRequest;
-        class ListKeysRequest;
-        class ListResourceTagsRequest;
-        class ListRetirableGrantsRequest;
-        class PutKeyPolicyRequest;
-        class ReEncryptRequest;
-        class ReplicateKeyRequest;
-        class RetireGrantRequest;
-        class RevokeGrantRequest;
-        class ScheduleKeyDeletionRequest;
-        class SignRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateAliasRequest;
-        class UpdateCustomKeyStoreRequest;
-        class UpdateKeyDescriptionRequest;
-        class UpdatePrimaryRegionRequest;
-        class VerifyRequest;
-        class VerifyMacRequest;
-
-        typedef Aws::Utils::Outcome<CancelKeyDeletionResult, KMSError> CancelKeyDeletionOutcome;
-        typedef Aws::Utils::Outcome<ConnectCustomKeyStoreResult, KMSError> ConnectCustomKeyStoreOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> CreateAliasOutcome;
-        typedef Aws::Utils::Outcome<CreateCustomKeyStoreResult, KMSError> CreateCustomKeyStoreOutcome;
-        typedef Aws::Utils::Outcome<CreateGrantResult, KMSError> CreateGrantOutcome;
-        typedef Aws::Utils::Outcome<CreateKeyResult, KMSError> CreateKeyOutcome;
-        typedef Aws::Utils::Outcome<DecryptResult, KMSError> DecryptOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> DeleteAliasOutcome;
-        typedef Aws::Utils::Outcome<DeleteCustomKeyStoreResult, KMSError> DeleteCustomKeyStoreOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> DeleteImportedKeyMaterialOutcome;
-        typedef Aws::Utils::Outcome<DescribeCustomKeyStoresResult, KMSError> DescribeCustomKeyStoresOutcome;
-        typedef Aws::Utils::Outcome<DescribeKeyResult, KMSError> DescribeKeyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> DisableKeyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> DisableKeyRotationOutcome;
-        typedef Aws::Utils::Outcome<DisconnectCustomKeyStoreResult, KMSError> DisconnectCustomKeyStoreOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> EnableKeyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> EnableKeyRotationOutcome;
-        typedef Aws::Utils::Outcome<EncryptResult, KMSError> EncryptOutcome;
-        typedef Aws::Utils::Outcome<GenerateDataKeyResult, KMSError> GenerateDataKeyOutcome;
-        typedef Aws::Utils::Outcome<GenerateDataKeyPairResult, KMSError> GenerateDataKeyPairOutcome;
-        typedef Aws::Utils::Outcome<GenerateDataKeyPairWithoutPlaintextResult, KMSError> GenerateDataKeyPairWithoutPlaintextOutcome;
-        typedef Aws::Utils::Outcome<GenerateDataKeyWithoutPlaintextResult, KMSError> GenerateDataKeyWithoutPlaintextOutcome;
-        typedef Aws::Utils::Outcome<GenerateMacResult, KMSError> GenerateMacOutcome;
-        typedef Aws::Utils::Outcome<GenerateRandomResult, KMSError> GenerateRandomOutcome;
-        typedef Aws::Utils::Outcome<GetKeyPolicyResult, KMSError> GetKeyPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetKeyRotationStatusResult, KMSError> GetKeyRotationStatusOutcome;
-        typedef Aws::Utils::Outcome<GetParametersForImportResult, KMSError> GetParametersForImportOutcome;
-        typedef Aws::Utils::Outcome<GetPublicKeyResult, KMSError> GetPublicKeyOutcome;
-        typedef Aws::Utils::Outcome<ImportKeyMaterialResult, KMSError> ImportKeyMaterialOutcome;
-        typedef Aws::Utils::Outcome<ListAliasesResult, KMSError> ListAliasesOutcome;
-        typedef Aws::Utils::Outcome<ListGrantsResult, KMSError> ListGrantsOutcome;
-        typedef Aws::Utils::Outcome<ListKeyPoliciesResult, KMSError> ListKeyPoliciesOutcome;
-        typedef Aws::Utils::Outcome<ListKeysResult, KMSError> ListKeysOutcome;
-        typedef Aws::Utils::Outcome<ListResourceTagsResult, KMSError> ListResourceTagsOutcome;
-        typedef Aws::Utils::Outcome<ListRetirableGrantsResult, KMSError> ListRetirableGrantsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> PutKeyPolicyOutcome;
-        typedef Aws::Utils::Outcome<ReEncryptResult, KMSError> ReEncryptOutcome;
-        typedef Aws::Utils::Outcome<ReplicateKeyResult, KMSError> ReplicateKeyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> RetireGrantOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> RevokeGrantOutcome;
-        typedef Aws::Utils::Outcome<ScheduleKeyDeletionResult, KMSError> ScheduleKeyDeletionOutcome;
-        typedef Aws::Utils::Outcome<SignResult, KMSError> SignOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> UpdateAliasOutcome;
-        typedef Aws::Utils::Outcome<UpdateCustomKeyStoreResult, KMSError> UpdateCustomKeyStoreOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> UpdateKeyDescriptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> UpdatePrimaryRegionOutcome;
-        typedef Aws::Utils::Outcome<VerifyResult, KMSError> VerifyOutcome;
-        typedef Aws::Utils::Outcome<VerifyMacResult, KMSError> VerifyMacOutcome;
-
-        typedef std::future<CancelKeyDeletionOutcome> CancelKeyDeletionOutcomeCallable;
-        typedef std::future<ConnectCustomKeyStoreOutcome> ConnectCustomKeyStoreOutcomeCallable;
-        typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
-        typedef std::future<CreateCustomKeyStoreOutcome> CreateCustomKeyStoreOutcomeCallable;
-        typedef std::future<CreateGrantOutcome> CreateGrantOutcomeCallable;
-        typedef std::future<CreateKeyOutcome> CreateKeyOutcomeCallable;
-        typedef std::future<DecryptOutcome> DecryptOutcomeCallable;
-        typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
-        typedef std::future<DeleteCustomKeyStoreOutcome> DeleteCustomKeyStoreOutcomeCallable;
-        typedef std::future<DeleteImportedKeyMaterialOutcome> DeleteImportedKeyMaterialOutcomeCallable;
-        typedef std::future<DescribeCustomKeyStoresOutcome> DescribeCustomKeyStoresOutcomeCallable;
-        typedef std::future<DescribeKeyOutcome> DescribeKeyOutcomeCallable;
-        typedef std::future<DisableKeyOutcome> DisableKeyOutcomeCallable;
-        typedef std::future<DisableKeyRotationOutcome> DisableKeyRotationOutcomeCallable;
-        typedef std::future<DisconnectCustomKeyStoreOutcome> DisconnectCustomKeyStoreOutcomeCallable;
-        typedef std::future<EnableKeyOutcome> EnableKeyOutcomeCallable;
-        typedef std::future<EnableKeyRotationOutcome> EnableKeyRotationOutcomeCallable;
-        typedef std::future<EncryptOutcome> EncryptOutcomeCallable;
-        typedef std::future<GenerateDataKeyOutcome> GenerateDataKeyOutcomeCallable;
-        typedef std::future<GenerateDataKeyPairOutcome> GenerateDataKeyPairOutcomeCallable;
-        typedef std::future<GenerateDataKeyPairWithoutPlaintextOutcome> GenerateDataKeyPairWithoutPlaintextOutcomeCallable;
-        typedef std::future<GenerateDataKeyWithoutPlaintextOutcome> GenerateDataKeyWithoutPlaintextOutcomeCallable;
-        typedef std::future<GenerateMacOutcome> GenerateMacOutcomeCallable;
-        typedef std::future<GenerateRandomOutcome> GenerateRandomOutcomeCallable;
-        typedef std::future<GetKeyPolicyOutcome> GetKeyPolicyOutcomeCallable;
-        typedef std::future<GetKeyRotationStatusOutcome> GetKeyRotationStatusOutcomeCallable;
-        typedef std::future<GetParametersForImportOutcome> GetParametersForImportOutcomeCallable;
-        typedef std::future<GetPublicKeyOutcome> GetPublicKeyOutcomeCallable;
-        typedef std::future<ImportKeyMaterialOutcome> ImportKeyMaterialOutcomeCallable;
-        typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
-        typedef std::future<ListGrantsOutcome> ListGrantsOutcomeCallable;
-        typedef std::future<ListKeyPoliciesOutcome> ListKeyPoliciesOutcomeCallable;
-        typedef std::future<ListKeysOutcome> ListKeysOutcomeCallable;
-        typedef std::future<ListResourceTagsOutcome> ListResourceTagsOutcomeCallable;
-        typedef std::future<ListRetirableGrantsOutcome> ListRetirableGrantsOutcomeCallable;
-        typedef std::future<PutKeyPolicyOutcome> PutKeyPolicyOutcomeCallable;
-        typedef std::future<ReEncryptOutcome> ReEncryptOutcomeCallable;
-        typedef std::future<ReplicateKeyOutcome> ReplicateKeyOutcomeCallable;
-        typedef std::future<RetireGrantOutcome> RetireGrantOutcomeCallable;
-        typedef std::future<RevokeGrantOutcome> RevokeGrantOutcomeCallable;
-        typedef std::future<ScheduleKeyDeletionOutcome> ScheduleKeyDeletionOutcomeCallable;
-        typedef std::future<SignOutcome> SignOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
-        typedef std::future<UpdateCustomKeyStoreOutcome> UpdateCustomKeyStoreOutcomeCallable;
-        typedef std::future<UpdateKeyDescriptionOutcome> UpdateKeyDescriptionOutcomeCallable;
-        typedef std::future<UpdatePrimaryRegionOutcome> UpdatePrimaryRegionOutcomeCallable;
-        typedef std::future<VerifyOutcome> VerifyOutcomeCallable;
-        typedef std::future<VerifyMacOutcome> VerifyMacOutcomeCallable;
-} // namespace Model
-
-  class KMSClient;
-
-    typedef std::function<void(const KMSClient*, const Model::CancelKeyDeletionRequest&, const Model::CancelKeyDeletionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelKeyDeletionResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::ConnectCustomKeyStoreRequest&, const Model::ConnectCustomKeyStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ConnectCustomKeyStoreResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::CreateAliasRequest&, const Model::CreateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAliasResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::CreateCustomKeyStoreRequest&, const Model::CreateCustomKeyStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomKeyStoreResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::CreateGrantRequest&, const Model::CreateGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGrantResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::CreateKeyRequest&, const Model::CreateKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKeyResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::DecryptRequest&, const Model::DecryptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DecryptResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::DeleteAliasRequest&, const Model::DeleteAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAliasResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::DeleteCustomKeyStoreRequest&, const Model::DeleteCustomKeyStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomKeyStoreResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::DeleteImportedKeyMaterialRequest&, const Model::DeleteImportedKeyMaterialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImportedKeyMaterialResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::DescribeCustomKeyStoresRequest&, const Model::DescribeCustomKeyStoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomKeyStoresResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::DescribeKeyRequest&, const Model::DescribeKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeKeyResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::DisableKeyRequest&, const Model::DisableKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableKeyResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::DisableKeyRotationRequest&, const Model::DisableKeyRotationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableKeyRotationResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::DisconnectCustomKeyStoreRequest&, const Model::DisconnectCustomKeyStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisconnectCustomKeyStoreResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::EnableKeyRequest&, const Model::EnableKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableKeyResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::EnableKeyRotationRequest&, const Model::EnableKeyRotationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableKeyRotationResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::EncryptRequest&, const Model::EncryptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EncryptResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::GenerateDataKeyRequest&, const Model::GenerateDataKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateDataKeyResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::GenerateDataKeyPairRequest&, const Model::GenerateDataKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateDataKeyPairResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::GenerateDataKeyPairWithoutPlaintextRequest&, const Model::GenerateDataKeyPairWithoutPlaintextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateDataKeyPairWithoutPlaintextResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::GenerateDataKeyWithoutPlaintextRequest&, const Model::GenerateDataKeyWithoutPlaintextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateDataKeyWithoutPlaintextResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::GenerateMacRequest&, const Model::GenerateMacOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateMacResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::GenerateRandomRequest&, const Model::GenerateRandomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateRandomResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::GetKeyPolicyRequest&, const Model::GetKeyPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetKeyPolicyResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::GetKeyRotationStatusRequest&, const Model::GetKeyRotationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetKeyRotationStatusResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::GetParametersForImportRequest&, const Model::GetParametersForImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetParametersForImportResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::GetPublicKeyRequest&, const Model::GetPublicKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPublicKeyResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::ImportKeyMaterialRequest&, const Model::ImportKeyMaterialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportKeyMaterialResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAliasesResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::ListGrantsRequest&, const Model::ListGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGrantsResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::ListKeyPoliciesRequest&, const Model::ListKeyPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeyPoliciesResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::ListKeysRequest&, const Model::ListKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKeysResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::ListResourceTagsRequest&, const Model::ListResourceTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceTagsResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::ListRetirableGrantsRequest&, const Model::ListRetirableGrantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRetirableGrantsResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::PutKeyPolicyRequest&, const Model::PutKeyPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutKeyPolicyResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::ReEncryptRequest&, const Model::ReEncryptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReEncryptResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::ReplicateKeyRequest&, const Model::ReplicateKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplicateKeyResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::RetireGrantRequest&, const Model::RetireGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetireGrantResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::RevokeGrantRequest&, const Model::RevokeGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeGrantResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::ScheduleKeyDeletionRequest&, const Model::ScheduleKeyDeletionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ScheduleKeyDeletionResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::SignRequest&, const Model::SignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SignResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::UpdateAliasRequest&, const Model::UpdateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAliasResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::UpdateCustomKeyStoreRequest&, const Model::UpdateCustomKeyStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCustomKeyStoreResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::UpdateKeyDescriptionRequest&, const Model::UpdateKeyDescriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateKeyDescriptionResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::UpdatePrimaryRegionRequest&, const Model::UpdatePrimaryRegionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePrimaryRegionResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::VerifyRequest&, const Model::VerifyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyResponseReceivedHandler;
-    typedef std::function<void(const KMSClient*, const Model::VerifyMacRequest&, const Model::VerifyMacOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyMacResponseReceivedHandler;
-
   /**
    * <fullname>Key Management Service</fullname> <p>Key Management Service (KMS) is
    * an encryption and key management web service. This guide describes the KMS
@@ -372,14 +93,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KMSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KMSClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         KMSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~KMSClient();
 
@@ -535,8 +257,8 @@ namespace Model
          * key store</a> that is associated with an <a
          * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html">CloudHSM
          * cluster</a> that you own and manage.</p> <p>This operation is part of the <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-         * Key Store feature</a> feature in KMS, which combines the convenience and
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+         * key store feature</a> feature in KMS, which combines the convenience and
          * extensive integration of KMS with the isolation and control of a single-tenant
          * key store.</p> <p>Before you create the custom key store, you must assemble the
          * required elements, including an CloudHSM cluster that fulfills the requirements
@@ -645,25 +367,28 @@ namespace Model
          * aren't required to specify any parameters. The default value for
          * <code>KeySpec</code>, <code>SYMMETRIC_DEFAULT</code>, and the default value for
          * <code>KeyUsage</code>, <code>ENCRYPT_DECRYPT</code>, create a symmetric
-         * encryption KMS key.</p> <p>If you need a key for basic encryption and decryption
-         * or you are creating a KMS key to protect your resources in an Amazon Web
-         * Services service, create a symmetric encryption KMS key. The key material in a
-         * symmetric encryption key never leaves KMS unencrypted. You can use a symmetric
-         * encryption KMS key to encrypt and decrypt data up to 4,096 bytes, but they are
-         * typically used to generate data keys and data keys pairs. For details, see
+         * encryption KMS key. For technical details, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+         * SYMMETRIC_DEFAULT key spec</a> in the <i>Key Management Service Developer
+         * Guide</i>.</p> <p>If you need a key for basic encryption and decryption or you
+         * are creating a KMS key to protect your resources in an Amazon Web Services
+         * service, create a symmetric encryption KMS key. The key material in a symmetric
+         * encryption key never leaves KMS unencrypted. You can use a symmetric encryption
+         * KMS key to encrypt and decrypt data up to 4,096 bytes, but they are typically
+         * used to generate data keys and data keys pairs. For details, see
          * <a>GenerateDataKey</a> and <a>GenerateDataKeyPair</a>.</p> <p> </p> </dd>
          * <dt>Asymmetric KMS keys</dt> <dd> <p>To create an asymmetric KMS key, use the
          * <code>KeySpec</code> parameter to specify the type of key material in the KMS
          * key. Then, use the <code>KeyUsage</code> parameter to determine whether the KMS
          * key will be used to encrypt and decrypt or sign and verify. You can't change
          * these properties after the KMS key is created.</p> <p>Asymmetric KMS keys
-         * contain an RSA key pair or an Elliptic Curve (ECC) key pair. The private key in
-         * an asymmetric KMS key never leaves KMS unencrypted. However, you can use the
-         * <a>GetPublicKey</a> operation to download the public key so it can be used
-         * outside of KMS. KMS keys with RSA key pairs can be used to encrypt or decrypt
-         * data or sign and verify messages (but not both). KMS keys with ECC key pairs can
-         * be used only to sign and verify messages. For information about asymmetric KMS
-         * keys, see <a
+         * contain an RSA key pair, Elliptic Curve (ECC) key pair, or an SM2 key pair
+         * (China Regions only). The private key in an asymmetric KMS key never leaves KMS
+         * unencrypted. However, you can use the <a>GetPublicKey</a> operation to download
+         * the public key so it can be used outside of KMS. KMS keys with RSA or SM2 key
+         * pairs can be used to encrypt or decrypt data or sign and verify messages (but
+         * not both). KMS keys with ECC key pairs can be used only to sign and verify
+         * messages. For information about asymmetric KMS keys, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
          * KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p> <p> </p>
          * </dd> <dt>HMAC KMS key</dt> <dd> <p>To create an HMAC KMS key, set the
@@ -879,7 +604,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
          * key store</a>. This operation does not delete the CloudHSM cluster that is
          * associated with the custom key store, or affect any users or keys in the
-         * cluster.</p> <p>The custom key store that you delete cannot contain any KMS <a
+         * cluster.</p> <p>The custom key store that you delete cannot contain any <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS
          * keys</a>. Before deleting the key store, verify that you will never need to use
          * any of the KMS keys in the key store for any <a
@@ -899,8 +624,8 @@ namespace Model
          * you do not need to delete KMS keys and you can reconnect a disconnected custom
          * key store at any time.</p> <p>If the operation succeeds, it returns a JSON
          * object with no properties.</p> <p>This operation is part of the <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-         * Key Store feature</a> feature in KMS, which combines the convenience and
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+         * key store feature</a> feature in KMS, which combines the convenience and
          * extensive integration of KMS with the isolation and control of a single-tenant
          * key store.</p> <p> <b>Cross-account use</b>: No. You cannot perform this
          * operation on a custom key store in a different Amazon Web Services account.</p>
@@ -967,8 +692,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
          * key stores</a> in the account and Region.</p> <p>This operation is part of the
          * <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-         * Key Store feature</a> feature in KMS, which combines the convenience and
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+         * key store feature</a> feature in KMS, which combines the convenience and
          * extensive integration of KMS with the isolation and control of a single-tenant
          * key store.</p> <p>By default, this operation returns information about all
          * custom key stores in the account and Region. To get only information about a
@@ -1034,7 +759,7 @@ namespace Model
          * information, use <a>GetKeyRotationStatus</a>. Also, some key states prevent a
          * KMS key from being automatically rotated. For details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-how-it-works">How
-         * Automatic Key Rotation Works</a> in <i>Key Management Service Developer
+         * Automatic Key Rotation Works</a> in the <i>Key Management Service Developer
          * Guide</i>.</p> </li> <li> <p>Tags on the KMS key. To get this information, use
          * <a>ListResourceTags</a>.</p> </li> <li> <p>Key policies and grants on the KMS
          * key. To get this information, use <a>GetKeyPolicy</a> and <a>ListGrants</a>.</p>
@@ -1172,8 +897,8 @@ namespace Model
          * a custom key store, use the <a>ConnectCustomKeyStore</a> operation.</p> <p>If
          * the operation succeeds, it returns a JSON object with no properties.</p> <p>This
          * operation is part of the <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-         * Key Store feature</a> feature in KMS, which combines the convenience and
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+         * key store feature</a> feature in KMS, which combines the convenience and
          * extensive integration of KMS with the isolation and control of a single-tenant
          * key store.</p> <p> <b>Cross-account use</b>: No. You cannot perform this
          * operation on a custom key store in a different Amazon Web Services account.</p>
@@ -1309,7 +1034,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
          * Context</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>If you
          * specify an asymmetric KMS key, you must also specify the encryption algorithm.
-         * The algorithm must be compatible with the KMS key type.</p>  <p>When
+         * The algorithm must be compatible with the KMS key spec.</p>  <p>When
          * you use an asymmetric KMS key to encrypt or reencrypt data, be sure to record
          * the KMS key and encryption algorithm that you choose. You will be required to
          * provide the same KMS key and encryption algorithm when you decrypt the data. If
@@ -1329,8 +1054,9 @@ namespace Model
          * bytes</p> </li> <li> <p> <code>RSAES_OAEP_SHA_256</code>: 318 bytes</p> </li>
          * </ul> </li> <li> <p> <code>RSA_4096</code> </p> <ul> <li> <p>
          * <code>RSAES_OAEP_SHA_1</code>: 470 bytes</p> </li> <li> <p>
-         * <code>RSAES_OAEP_SHA_256</code>: 446 bytes</p> </li> </ul> </li> </ul> <p>The
-         * KMS key that you use for this operation must be in a compatible key state. For
+         * <code>RSAES_OAEP_SHA_256</code>: 446 bytes</p> </li> </ul> </li> <li> <p>
+         * <code>SM2PKE</code>: 1024 bytes (China Regions only)</p> </li> </ul> <p>The KMS
+         * key that you use for this operation must be in a compatible key state. For
          * details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
          * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -1366,19 +1092,23 @@ namespace Model
          * key with the encrypted data.</p> <p>To generate a data key, specify the
          * symmetric encryption KMS key that will be used to encrypt the data key. You
          * cannot use an asymmetric KMS key to encrypt data keys. To get the type of your
-         * KMS key, use the <a>DescribeKey</a> operation. You must also specify the length
-         * of the data key. Use either the <code>KeySpec</code> or
+         * KMS key, use the <a>DescribeKey</a> operation.</p> <p>You must also specify the
+         * length of the data key. Use either the <code>KeySpec</code> or
          * <code>NumberOfBytes</code> parameters (but not both). For 128-bit and 256-bit
-         * data keys, use the <code>KeySpec</code> parameter. </p> <p>To get only an
-         * encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>. To
-         * generate an asymmetric data key pair, use the <a>GenerateDataKeyPair</a> or
-         * <a>GenerateDataKeyPairWithoutPlaintext</a> operation. To get a cryptographically
-         * secure random byte string, use <a>GenerateRandom</a>.</p> <p>You can use an
-         * optional encryption context to add additional security to the encryption
-         * operation. If you specify an <code>EncryptionContext</code>, you must specify
-         * the same encryption context (a case-sensitive exact match) when decrypting the
-         * encrypted data key. Otherwise, the request to decrypt fails with an
-         * <code>InvalidCiphertextException</code>. For more information, see <a
+         * data keys, use the <code>KeySpec</code> parameter.</p> <p>To generate an SM4
+         * data key (China Regions only), specify a <code>KeySpec</code> value of
+         * <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>128</code>.
+         * The symmetric encryption key used in China Regions to encrypt your data key is
+         * an SM4 encryption key.</p> <p>To get only an encrypted copy of the data key, use
+         * <a>GenerateDataKeyWithoutPlaintext</a>. To generate an asymmetric data key pair,
+         * use the <a>GenerateDataKeyPair</a> or <a>GenerateDataKeyPairWithoutPlaintext</a>
+         * operation. To get a cryptographically secure random byte string, use
+         * <a>GenerateRandom</a>.</p> <p>You can use an optional encryption context to add
+         * additional security to the encryption operation. If you specify an
+         * <code>EncryptionContext</code>, you must specify the same encryption context (a
+         * case-sensitive exact match) when decrypting the encrypted data key. Otherwise,
+         * the request to decrypt fails with an <code>InvalidCiphertextException</code>.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
          * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
          * <p>Applications in Amazon Web Services Nitro Enclaves can call this operation by
@@ -1451,12 +1181,13 @@ namespace Model
          * in a data key pair. You cannot use an asymmetric KMS key or a KMS key in a
          * custom key store. To get the type and origin of your KMS key, use the
          * <a>DescribeKey</a> operation. </p> <p>Use the <code>KeyPairSpec</code> parameter
-         * to choose an RSA or Elliptic Curve (ECC) data key pair. KMS recommends that your
-         * use ECC key pairs for signing, and use RSA key pairs for either encryption or
-         * signing, but not both. However, KMS cannot enforce any restrictions on the use
-         * of data key pairs outside of KMS.</p> <p>If you are using the data key pair to
-         * encrypt data, or for any operation where you don't immediately need a private
-         * key, consider using the <a>GenerateDataKeyPairWithoutPlaintext</a> operation.
+         * to choose an RSA or Elliptic Curve (ECC) data key pair. In China Regions, you
+         * can also choose an SM2 data key pair. KMS recommends that you use ECC key pairs
+         * for signing, and use RSA and SM2 key pairs for either encryption or signing, but
+         * not both. However, KMS cannot enforce any restrictions on the use of data key
+         * pairs outside of KMS.</p> <p>If you are using the data key pair to encrypt data,
+         * or for any operation where you don't immediately need a private key, consider
+         * using the <a>GenerateDataKeyPairWithoutPlaintext</a> operation.
          * <code>GenerateDataKeyPairWithoutPlaintext</code> returns a plaintext public key
          * and an encrypted private key, but omits the plaintext private key that you need
          * only to decrypt ciphertext or sign a message. Later, when you need to decrypt
@@ -1522,9 +1253,10 @@ namespace Model
          * asymmetric KMS key or a KMS key in a custom key store. To get the type and
          * origin of your KMS key, use the <a>DescribeKey</a> operation. </p> <p>Use the
          * <code>KeyPairSpec</code> parameter to choose an RSA or Elliptic Curve (ECC) data
-         * key pair. KMS recommends that your use ECC key pairs for signing, and use RSA
-         * key pairs for either encryption or signing, but not both. However, KMS cannot
-         * enforce any restrictions on the use of data key pairs outside of KMS.</p> <p>
+         * key pair. In China Regions, you can also choose an SM2 data key pair. KMS
+         * recommends that you use ECC key pairs for signing, and use RSA and SM2 key pairs
+         * for either encryption or signing, but not both. However, KMS cannot enforce any
+         * restrictions on the use of data key pairs outside of KMS.</p> <p>
          * <code>GenerateDataKeyPairWithoutPlaintext</code> returns a unique data key pair
          * for each request. The bytes in the key are not related to the caller or KMS key
          * that is used to encrypt the private key. The public key is a DER-encoded X.509
@@ -1670,7 +1402,9 @@ namespace Model
         virtual void GenerateMacAsync(const Model::GenerateMacRequest& request, const GenerateMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a random byte string that is cryptographically secure.</p> <p>By
+         * <p>Returns a random byte string that is cryptographically secure.</p> <p>You
+         * must use the <code>NumberOfBytes</code> parameter to specify the length of the
+         * random byte string. There is no default value for string length.</p> <p>By
          * default, the random byte string is generated in KMS. To generate the byte string
          * in the CloudHSM cluster that is associated with a <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
@@ -1684,8 +1418,9 @@ namespace Model
          * Developer Guide</i>.</p> <p>For more information about entropy and random number
          * generation, see <a
          * href="https://docs.aws.amazon.com/kms/latest/cryptographic-details/">Key
-         * Management Service Cryptographic Details</a>.</p> <p> <b>Required
-         * permissions</b>: <a
+         * Management Service Cryptographic Details</a>.</p> <p> <b>Cross-account use</b>:
+         * Not applicable. <code>GenerateRandom</code> does not use any account-specific
+         * resources, such as KMS keys.</p> <p> <b>Required permissions</b>: <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GenerateRandom</a>
          * (IAM policy)</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateRandom">AWS
@@ -1852,13 +1587,15 @@ namespace Model
          * with the identifier of an asymmetric KMS key. When you use the public key within
          * KMS, you benefit from the authentication, authorization, and logging that are
          * part of every KMS operation. You also reduce of risk of encrypting data that
-         * cannot be decrypted. These features are not effective outside of KMS. For
-         * details, see <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/download-public-key.html#download-public-key-considerations">Special
-         * Considerations for Downloading Public Keys</a>.</p> <p>To help you use the
-         * public key safely outside of KMS, <code>GetPublicKey</code> returns important
-         * information about the public key in the response, including:</p> <ul> <li> <p>
-         * <a
+         * cannot be decrypted. These features are not effective outside of KMS.</p> <p>To
+         * verify a signature outside of KMS with an SM2 public key (China Regions only),
+         * you must specify the distinguishing ID. By default, KMS uses
+         * <code>1234567812345678</code> as the distinguishing ID. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
+         * verification with SM2 key pairs</a>.</p> <p>To help you use the public key
+         * safely outside of KMS, <code>GetPublicKey</code> returns important information
+         * about the public key in the response, including:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html#KMS-GetPublicKey-response-KeySpec">KeySpec</a>:
          * The type of key material in the public key, such as <code>RSA_4096</code> or
          * <code>ECC_NIST_P521</code>.</p> </li> <li> <p> <a
@@ -2762,8 +2499,8 @@ namespace Model
          * deleted, or when you need to create or restore a cluster from a backup. </p>
          * </li> </ul> <p>If the operation succeeds, it returns a JSON object with no
          * properties.</p> <p>This operation is part of the <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-         * Key Store feature</a> feature in KMS, which combines the convenience and
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+         * key store feature</a> feature in KMS, which combines the convenience and
          * extensive integration of KMS with the isolation and control of a single-tenant
          * key store.</p> <p> <b>Cross-account use</b>: No. You cannot perform this
          * operation on a custom key store in a different Amazon Web Services account. </p>
@@ -2914,13 +2651,18 @@ namespace Model
          * used to produce the signature.</p> <p>You can also verify the digital signature
          * by using the public key of the KMS key outside of KMS. Use the
          * <a>GetPublicKey</a> operation to download the public key in the asymmetric KMS
-         * key and then use the public key to verify the signature outside of KMS. The
-         * advantage of using the <code>Verify</code> operation is that it is performed
-         * within KMS. As a result, it's easy to call, the operation is performed within
-         * the FIPS boundary, it is logged in CloudTrail, and you can use key policy and
-         * IAM policy to determine who is authorized to use the KMS key to verify
-         * signatures.</p> <p>The KMS key that you use for this operation must be in a
-         * compatible key state. For details, see <a
+         * key and then use the public key to verify the signature outside of KMS. To
+         * verify a signature outside of KMS with an SM2 public key, you must specify the
+         * distinguishing ID. By default, KMS uses <code>1234567812345678</code> as the
+         * distinguishing ID. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
+         * verification with SM2 key pairs</a> in <i>Key Management Service Developer
+         * Guide</i>. The advantage of using the <code>Verify</code> operation is that it
+         * is performed within KMS. As a result, it's easy to call, the operation is
+         * performed within the FIPS boundary, it is logged in CloudTrail, and you can use
+         * key policy and IAM policy to determine who is authorized to use the KMS key to
+         * verify signatures.</p> <p>The KMS key that you use for this operation must be in
+         * a compatible key state. For details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
          * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
          * <p> <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a
@@ -2987,56 +2729,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CancelKeyDeletionAsyncHelper(const Model::CancelKeyDeletionRequest& request, const CancelKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ConnectCustomKeyStoreAsyncHelper(const Model::ConnectCustomKeyStoreRequest& request, const ConnectCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAliasAsyncHelper(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateCustomKeyStoreAsyncHelper(const Model::CreateCustomKeyStoreRequest& request, const CreateCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateGrantAsyncHelper(const Model::CreateGrantRequest& request, const CreateGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateKeyAsyncHelper(const Model::CreateKeyRequest& request, const CreateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DecryptAsyncHelper(const Model::DecryptRequest& request, const DecryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAliasAsyncHelper(const Model::DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCustomKeyStoreAsyncHelper(const Model::DeleteCustomKeyStoreRequest& request, const DeleteCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteImportedKeyMaterialAsyncHelper(const Model::DeleteImportedKeyMaterialRequest& request, const DeleteImportedKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCustomKeyStoresAsyncHelper(const Model::DescribeCustomKeyStoresRequest& request, const DescribeCustomKeyStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeKeyAsyncHelper(const Model::DescribeKeyRequest& request, const DescribeKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisableKeyAsyncHelper(const Model::DisableKeyRequest& request, const DisableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisableKeyRotationAsyncHelper(const Model::DisableKeyRotationRequest& request, const DisableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisconnectCustomKeyStoreAsyncHelper(const Model::DisconnectCustomKeyStoreRequest& request, const DisconnectCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EnableKeyAsyncHelper(const Model::EnableKeyRequest& request, const EnableKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EnableKeyRotationAsyncHelper(const Model::EnableKeyRotationRequest& request, const EnableKeyRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EncryptAsyncHelper(const Model::EncryptRequest& request, const EncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GenerateDataKeyAsyncHelper(const Model::GenerateDataKeyRequest& request, const GenerateDataKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GenerateDataKeyPairAsyncHelper(const Model::GenerateDataKeyPairRequest& request, const GenerateDataKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GenerateDataKeyPairWithoutPlaintextAsyncHelper(const Model::GenerateDataKeyPairWithoutPlaintextRequest& request, const GenerateDataKeyPairWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GenerateDataKeyWithoutPlaintextAsyncHelper(const Model::GenerateDataKeyWithoutPlaintextRequest& request, const GenerateDataKeyWithoutPlaintextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GenerateMacAsyncHelper(const Model::GenerateMacRequest& request, const GenerateMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GenerateRandomAsyncHelper(const Model::GenerateRandomRequest& request, const GenerateRandomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetKeyPolicyAsyncHelper(const Model::GetKeyPolicyRequest& request, const GetKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetKeyRotationStatusAsyncHelper(const Model::GetKeyRotationStatusRequest& request, const GetKeyRotationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetParametersForImportAsyncHelper(const Model::GetParametersForImportRequest& request, const GetParametersForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPublicKeyAsyncHelper(const Model::GetPublicKeyRequest& request, const GetPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ImportKeyMaterialAsyncHelper(const Model::ImportKeyMaterialRequest& request, const ImportKeyMaterialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAliasesAsyncHelper(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListGrantsAsyncHelper(const Model::ListGrantsRequest& request, const ListGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListKeyPoliciesAsyncHelper(const Model::ListKeyPoliciesRequest& request, const ListKeyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListKeysAsyncHelper(const Model::ListKeysRequest& request, const ListKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListResourceTagsAsyncHelper(const Model::ListResourceTagsRequest& request, const ListResourceTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRetirableGrantsAsyncHelper(const Model::ListRetirableGrantsRequest& request, const ListRetirableGrantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutKeyPolicyAsyncHelper(const Model::PutKeyPolicyRequest& request, const PutKeyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ReEncryptAsyncHelper(const Model::ReEncryptRequest& request, const ReEncryptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ReplicateKeyAsyncHelper(const Model::ReplicateKeyRequest& request, const ReplicateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RetireGrantAsyncHelper(const Model::RetireGrantRequest& request, const RetireGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RevokeGrantAsyncHelper(const Model::RevokeGrantRequest& request, const RevokeGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ScheduleKeyDeletionAsyncHelper(const Model::ScheduleKeyDeletionRequest& request, const ScheduleKeyDeletionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SignAsyncHelper(const Model::SignRequest& request, const SignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAliasAsyncHelper(const Model::UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateCustomKeyStoreAsyncHelper(const Model::UpdateCustomKeyStoreRequest& request, const UpdateCustomKeyStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateKeyDescriptionAsyncHelper(const Model::UpdateKeyDescriptionRequest& request, const UpdateKeyDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePrimaryRegionAsyncHelper(const Model::UpdatePrimaryRegionRequest& request, const UpdatePrimaryRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void VerifyAsyncHelper(const Model::VerifyRequest& request, const VerifyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void VerifyMacAsyncHelper(const Model::VerifyMacRequest& request, const VerifyMacResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

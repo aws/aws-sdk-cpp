@@ -113,10 +113,10 @@ namespace Model
   private:
 
     S3ObjectOwner m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::Vector<S3Grant> m_grants;
-    bool m_grantsHasBeenSet;
+    bool m_grantsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -418,28 +418,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_datacenterName;
-    bool m_datacenterNameHasBeenSet;
+    bool m_datacenterNameHasBeenSet = false;
 
     Aws::String m_hostname;
-    bool m_hostnameHasBeenSet;
+    bool m_hostnameHasBeenSet = false;
 
     Aws::String m_lastSeenDatetime;
-    bool m_lastSeenDatetimeHasBeenSet;
+    bool m_lastSeenDatetimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_sourceServerTags;
-    bool m_sourceServerTagsHasBeenSet;
+    bool m_sourceServerTagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vcenterClientID;
-    bool m_vcenterClientIDHasBeenSet;
+    bool m_vcenterClientIDHasBeenSet = false;
 
     Aws::String m_vcenterUUID;
-    bool m_vcenterUUIDHasBeenSet;
+    bool m_vcenterUUIDHasBeenSet = false;
   };
 
 } // namespace Model

@@ -102,10 +102,10 @@ namespace Model
   private:
 
     FindingAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     FindingActor m_actor;
-    bool m_actorHasBeenSet;
+    bool m_actorHasBeenSet = false;
   };
 
 } // namespace Model

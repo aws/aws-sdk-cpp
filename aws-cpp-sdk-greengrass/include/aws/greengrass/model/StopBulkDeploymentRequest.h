@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_bulkDeploymentId;
-    bool m_bulkDeploymentIdHasBeenSet;
+    bool m_bulkDeploymentIdHasBeenSet = false;
   };
 
 } // namespace Model

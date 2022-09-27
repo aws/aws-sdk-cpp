@@ -185,13 +185,13 @@ namespace Model
   private:
 
     Aws::String m_tokenUrl;
-    bool m_tokenUrlHasBeenSet;
+    bool m_tokenUrlHasBeenSet = false;
 
     Aws::String m_authCodeUrl;
-    bool m_authCodeUrlHasBeenSet;
+    bool m_authCodeUrlHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_oAuthScopes;
-    bool m_oAuthScopesHasBeenSet;
+    bool m_oAuthScopesHasBeenSet = false;
   };
 
 } // namespace Model

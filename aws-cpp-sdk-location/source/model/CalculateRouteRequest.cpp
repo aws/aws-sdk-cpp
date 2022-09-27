@@ -60,7 +60,7 @@ Aws::String CalculateRouteRequest::SerializePayload() const
 
   if(m_departureTimeHasBeenSet)
   {
-   payload.WithString("DepartureTime", m_departureTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("DepartureTime", m_departureTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_destinationPositionHasBeenSet)

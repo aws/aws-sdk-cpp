@@ -169,13 +169,13 @@ namespace Model
   private:
 
     Aws::String m_tagKey;
-    bool m_tagKeyHasBeenSet;
+    bool m_tagKeyHasBeenSet = false;
 
     CostAllocationTagType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     CostAllocationTagStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

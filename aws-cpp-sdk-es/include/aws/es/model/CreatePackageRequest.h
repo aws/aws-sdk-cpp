@@ -190,16 +190,16 @@ namespace Model
   private:
 
     Aws::String m_packageName;
-    bool m_packageNameHasBeenSet;
+    bool m_packageNameHasBeenSet = false;
 
     PackageType m_packageType;
-    bool m_packageTypeHasBeenSet;
+    bool m_packageTypeHasBeenSet = false;
 
     Aws::String m_packageDescription;
-    bool m_packageDescriptionHasBeenSet;
+    bool m_packageDescriptionHasBeenSet = false;
 
     PackageSource m_packageSource;
-    bool m_packageSourceHasBeenSet;
+    bool m_packageSourceHasBeenSet = false;
   };
 
 } // namespace Model

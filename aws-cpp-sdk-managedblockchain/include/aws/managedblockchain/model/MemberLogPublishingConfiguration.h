@@ -77,7 +77,7 @@ namespace Model
   private:
 
     MemberFabricLogPublishingConfiguration m_fabric;
-    bool m_fabricHasBeenSet;
+    bool m_fabricHasBeenSet = false;
   };
 
 } // namespace Model

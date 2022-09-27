@@ -102,10 +102,10 @@ namespace Model
   private:
 
     ConnectionType m_connectionType;
-    bool m_connectionTypeHasBeenSet;
+    bool m_connectionTypeHasBeenSet = false;
 
     StaticIpConnectionInfo m_staticIpConnectionInfo;
-    bool m_staticIpConnectionInfoHasBeenSet;
+    bool m_staticIpConnectionInfoHasBeenSet = false;
   };
 
 } // namespace Model

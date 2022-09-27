@@ -15,13 +15,22 @@ using namespace Aws::Utils;
 
 UpdateChannelReadMarkerRequest::UpdateChannelReadMarkerRequest() : 
     m_channelArnHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
+    m_chimeBearerHasBeenSet(false),
+    m_subChannelIdHasBeenSet(false)
 {
 }
 
 Aws::String UpdateChannelReadMarkerRequest::SerializePayload() const
 {
-  return {};
+  JsonValue payload;
+
+  if(m_subChannelIdHasBeenSet)
+  {
+   payload.WithString("SubChannelId", m_subChannelId);
+
+  }
+
+  return payload.View().WriteReadable();
 }
 
 Aws::Http::HeaderValueCollection UpdateChannelReadMarkerRequest::GetRequestSpecificHeaders() const

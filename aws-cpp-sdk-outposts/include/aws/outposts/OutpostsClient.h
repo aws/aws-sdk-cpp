@@ -5,178 +5,15 @@
 
 #pragma once
 #include <aws/outposts/Outposts_EXPORTS.h>
-#include <aws/outposts/OutpostsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/outposts/model/CancelOrderResult.h>
-#include <aws/outposts/model/CreateOrderResult.h>
-#include <aws/outposts/model/CreateOutpostResult.h>
-#include <aws/outposts/model/CreateSiteResult.h>
-#include <aws/outposts/model/DeleteOutpostResult.h>
-#include <aws/outposts/model/DeleteSiteResult.h>
-#include <aws/outposts/model/GetCatalogItemResult.h>
-#include <aws/outposts/model/GetOrderResult.h>
-#include <aws/outposts/model/GetOutpostResult.h>
-#include <aws/outposts/model/GetOutpostInstanceTypesResult.h>
-#include <aws/outposts/model/GetSiteResult.h>
-#include <aws/outposts/model/GetSiteAddressResult.h>
-#include <aws/outposts/model/ListAssetsResult.h>
-#include <aws/outposts/model/ListCatalogItemsResult.h>
-#include <aws/outposts/model/ListOrdersResult.h>
-#include <aws/outposts/model/ListOutpostsResult.h>
-#include <aws/outposts/model/ListSitesResult.h>
-#include <aws/outposts/model/ListTagsForResourceResult.h>
-#include <aws/outposts/model/TagResourceResult.h>
-#include <aws/outposts/model/UntagResourceResult.h>
-#include <aws/outposts/model/UpdateOutpostResult.h>
-#include <aws/outposts/model/UpdateSiteResult.h>
-#include <aws/outposts/model/UpdateSiteAddressResult.h>
-#include <aws/outposts/model/UpdateSiteRackPhysicalPropertiesResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/outposts/OutpostsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Outposts
 {
-
-namespace Model
-{
-        class CancelOrderRequest;
-        class CreateOrderRequest;
-        class CreateOutpostRequest;
-        class CreateSiteRequest;
-        class DeleteOutpostRequest;
-        class DeleteSiteRequest;
-        class GetCatalogItemRequest;
-        class GetOrderRequest;
-        class GetOutpostRequest;
-        class GetOutpostInstanceTypesRequest;
-        class GetSiteRequest;
-        class GetSiteAddressRequest;
-        class ListAssetsRequest;
-        class ListCatalogItemsRequest;
-        class ListOrdersRequest;
-        class ListOutpostsRequest;
-        class ListSitesRequest;
-        class ListTagsForResourceRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateOutpostRequest;
-        class UpdateSiteRequest;
-        class UpdateSiteAddressRequest;
-        class UpdateSiteRackPhysicalPropertiesRequest;
-
-        typedef Aws::Utils::Outcome<CancelOrderResult, OutpostsError> CancelOrderOutcome;
-        typedef Aws::Utils::Outcome<CreateOrderResult, OutpostsError> CreateOrderOutcome;
-        typedef Aws::Utils::Outcome<CreateOutpostResult, OutpostsError> CreateOutpostOutcome;
-        typedef Aws::Utils::Outcome<CreateSiteResult, OutpostsError> CreateSiteOutcome;
-        typedef Aws::Utils::Outcome<DeleteOutpostResult, OutpostsError> DeleteOutpostOutcome;
-        typedef Aws::Utils::Outcome<DeleteSiteResult, OutpostsError> DeleteSiteOutcome;
-        typedef Aws::Utils::Outcome<GetCatalogItemResult, OutpostsError> GetCatalogItemOutcome;
-        typedef Aws::Utils::Outcome<GetOrderResult, OutpostsError> GetOrderOutcome;
-        typedef Aws::Utils::Outcome<GetOutpostResult, OutpostsError> GetOutpostOutcome;
-        typedef Aws::Utils::Outcome<GetOutpostInstanceTypesResult, OutpostsError> GetOutpostInstanceTypesOutcome;
-        typedef Aws::Utils::Outcome<GetSiteResult, OutpostsError> GetSiteOutcome;
-        typedef Aws::Utils::Outcome<GetSiteAddressResult, OutpostsError> GetSiteAddressOutcome;
-        typedef Aws::Utils::Outcome<ListAssetsResult, OutpostsError> ListAssetsOutcome;
-        typedef Aws::Utils::Outcome<ListCatalogItemsResult, OutpostsError> ListCatalogItemsOutcome;
-        typedef Aws::Utils::Outcome<ListOrdersResult, OutpostsError> ListOrdersOutcome;
-        typedef Aws::Utils::Outcome<ListOutpostsResult, OutpostsError> ListOutpostsOutcome;
-        typedef Aws::Utils::Outcome<ListSitesResult, OutpostsError> ListSitesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, OutpostsError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, OutpostsError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, OutpostsError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateOutpostResult, OutpostsError> UpdateOutpostOutcome;
-        typedef Aws::Utils::Outcome<UpdateSiteResult, OutpostsError> UpdateSiteOutcome;
-        typedef Aws::Utils::Outcome<UpdateSiteAddressResult, OutpostsError> UpdateSiteAddressOutcome;
-        typedef Aws::Utils::Outcome<UpdateSiteRackPhysicalPropertiesResult, OutpostsError> UpdateSiteRackPhysicalPropertiesOutcome;
-
-        typedef std::future<CancelOrderOutcome> CancelOrderOutcomeCallable;
-        typedef std::future<CreateOrderOutcome> CreateOrderOutcomeCallable;
-        typedef std::future<CreateOutpostOutcome> CreateOutpostOutcomeCallable;
-        typedef std::future<CreateSiteOutcome> CreateSiteOutcomeCallable;
-        typedef std::future<DeleteOutpostOutcome> DeleteOutpostOutcomeCallable;
-        typedef std::future<DeleteSiteOutcome> DeleteSiteOutcomeCallable;
-        typedef std::future<GetCatalogItemOutcome> GetCatalogItemOutcomeCallable;
-        typedef std::future<GetOrderOutcome> GetOrderOutcomeCallable;
-        typedef std::future<GetOutpostOutcome> GetOutpostOutcomeCallable;
-        typedef std::future<GetOutpostInstanceTypesOutcome> GetOutpostInstanceTypesOutcomeCallable;
-        typedef std::future<GetSiteOutcome> GetSiteOutcomeCallable;
-        typedef std::future<GetSiteAddressOutcome> GetSiteAddressOutcomeCallable;
-        typedef std::future<ListAssetsOutcome> ListAssetsOutcomeCallable;
-        typedef std::future<ListCatalogItemsOutcome> ListCatalogItemsOutcomeCallable;
-        typedef std::future<ListOrdersOutcome> ListOrdersOutcomeCallable;
-        typedef std::future<ListOutpostsOutcome> ListOutpostsOutcomeCallable;
-        typedef std::future<ListSitesOutcome> ListSitesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateOutpostOutcome> UpdateOutpostOutcomeCallable;
-        typedef std::future<UpdateSiteOutcome> UpdateSiteOutcomeCallable;
-        typedef std::future<UpdateSiteAddressOutcome> UpdateSiteAddressOutcomeCallable;
-        typedef std::future<UpdateSiteRackPhysicalPropertiesOutcome> UpdateSiteRackPhysicalPropertiesOutcomeCallable;
-} // namespace Model
-
-  class OutpostsClient;
-
-    typedef std::function<void(const OutpostsClient*, const Model::CancelOrderRequest&, const Model::CancelOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelOrderResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::CreateOrderRequest&, const Model::CreateOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOrderResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::CreateOutpostRequest&, const Model::CreateOutpostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOutpostResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::CreateSiteRequest&, const Model::CreateSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSiteResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::DeleteOutpostRequest&, const Model::DeleteOutpostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOutpostResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::DeleteSiteRequest&, const Model::DeleteSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSiteResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::GetCatalogItemRequest&, const Model::GetCatalogItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCatalogItemResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::GetOrderRequest&, const Model::GetOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrderResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::GetOutpostRequest&, const Model::GetOutpostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOutpostResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::GetOutpostInstanceTypesRequest&, const Model::GetOutpostInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOutpostInstanceTypesResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::GetSiteRequest&, const Model::GetSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSiteResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::GetSiteAddressRequest&, const Model::GetSiteAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSiteAddressResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::ListAssetsRequest&, const Model::ListAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetsResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::ListCatalogItemsRequest&, const Model::ListCatalogItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCatalogItemsResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::ListOrdersRequest&, const Model::ListOrdersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrdersResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::ListOutpostsRequest&, const Model::ListOutpostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOutpostsResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::ListSitesRequest&, const Model::ListSitesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSitesResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::UpdateOutpostRequest&, const Model::UpdateOutpostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOutpostResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::UpdateSiteRequest&, const Model::UpdateSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSiteResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::UpdateSiteAddressRequest&, const Model::UpdateSiteAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSiteAddressResponseReceivedHandler;
-    typedef std::function<void(const OutpostsClient*, const Model::UpdateSiteRackPhysicalPropertiesRequest&, const Model::UpdateSiteRackPhysicalPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSiteRackPhysicalPropertiesResponseReceivedHandler;
-
   /**
    * <p>Amazon Web Services Outposts is a fully managed service that extends Amazon
    * Web Services infrastructure, APIs, and tools to customer premises. By providing
@@ -201,14 +38,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        OutpostsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        OutpostsClient(const Aws::Auth::AWSCredentials& credentials,
+                       const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         OutpostsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                       const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~OutpostsClient();
 
@@ -332,6 +170,32 @@ namespace Model
          * An Async wrapper for GetCatalogItem that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCatalogItemAsync(const Model::GetCatalogItemRequest& request, const GetCatalogItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         *  <p> Amazon Web Services uses this action to install Outpost servers.</p>
+         *  <p> Gets information about a specified connection. </p> <p> Use
+         * CloudTrail to monitor this action or Amazon Web Services managed policy for
+         * Amazon Web Services Outposts to secure it. For more information, see <a
+         * href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html">
+         * Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a
+         * href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html">
+         * Logging Amazon Web Services Outposts API calls with Amazon Web Services
+         * CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConnectionOutcome GetConnection(const Model::GetConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetConnectionOutcomeCallable GetConnectionCallable(const Model::GetConnectionRequest& request) const;
+
+        /**
+         * An Async wrapper for GetConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetConnectionAsync(const Model::GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets an order.</p><p><h3>See Also:</h3>   <a
@@ -541,6 +405,32 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         *  <p> Amazon Web Services uses this action to install Outpost servers.</p>
+         *  <p> Starts the connection required for Outpost server installation. </p>
+         * <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy
+         * for Amazon Web Services Outposts to secure it. For more information, see <a
+         * href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html">
+         * Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a
+         * href="https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html">
+         * Logging Amazon Web Services Outposts API calls with Amazon Web Services
+         * CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartConnectionOutcome StartConnection(const Model::StartConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartConnectionOutcomeCallable StartConnectionCallable(const Model::StartConnectionRequest& request) const;
+
+        /**
+         * An Async wrapper for StartConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartConnectionAsync(const Model::StartConnectionRequest& request, const StartConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds tags to the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/TagResource">AWS
          * API Reference</a></p>
@@ -656,30 +546,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CancelOrderAsyncHelper(const Model::CancelOrderRequest& request, const CancelOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateOrderAsyncHelper(const Model::CreateOrderRequest& request, const CreateOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateOutpostAsyncHelper(const Model::CreateOutpostRequest& request, const CreateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSiteAsyncHelper(const Model::CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteOutpostAsyncHelper(const Model::DeleteOutpostRequest& request, const DeleteOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSiteAsyncHelper(const Model::DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCatalogItemAsyncHelper(const Model::GetCatalogItemRequest& request, const GetCatalogItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetOrderAsyncHelper(const Model::GetOrderRequest& request, const GetOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetOutpostAsyncHelper(const Model::GetOutpostRequest& request, const GetOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetOutpostInstanceTypesAsyncHelper(const Model::GetOutpostInstanceTypesRequest& request, const GetOutpostInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSiteAsyncHelper(const Model::GetSiteRequest& request, const GetSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSiteAddressAsyncHelper(const Model::GetSiteAddressRequest& request, const GetSiteAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAssetsAsyncHelper(const Model::ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCatalogItemsAsyncHelper(const Model::ListCatalogItemsRequest& request, const ListCatalogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListOrdersAsyncHelper(const Model::ListOrdersRequest& request, const ListOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListOutpostsAsyncHelper(const Model::ListOutpostsRequest& request, const ListOutpostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSitesAsyncHelper(const Model::ListSitesRequest& request, const ListSitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateOutpostAsyncHelper(const Model::UpdateOutpostRequest& request, const UpdateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSiteAsyncHelper(const Model::UpdateSiteRequest& request, const UpdateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSiteAddressAsyncHelper(const Model::UpdateSiteAddressRequest& request, const UpdateSiteAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSiteRackPhysicalPropertiesAsyncHelper(const Model::UpdateSiteRackPhysicalPropertiesRequest& request, const UpdateSiteRackPhysicalPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

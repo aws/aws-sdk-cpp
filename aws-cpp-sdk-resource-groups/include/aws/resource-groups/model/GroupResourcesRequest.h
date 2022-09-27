@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_group;
-    bool m_groupHasBeenSet;
+    bool m_groupHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceArns;
-    bool m_resourceArnsHasBeenSet;
+    bool m_resourceArnsHasBeenSet = false;
   };
 
 } // namespace Model

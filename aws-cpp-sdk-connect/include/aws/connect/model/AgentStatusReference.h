@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_statusStartTimestamp;
-    bool m_statusStartTimestampHasBeenSet;
+    bool m_statusStartTimestampHasBeenSet = false;
 
     Aws::String m_statusArn;
-    bool m_statusArnHasBeenSet;
+    bool m_statusArnHasBeenSet = false;
   };
 
 } // namespace Model

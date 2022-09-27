@@ -476,25 +476,25 @@ namespace Model
   private:
 
     Aws::String m_ledgerName;
-    bool m_ledgerNameHasBeenSet;
+    bool m_ledgerNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_inclusiveStartTime;
-    bool m_inclusiveStartTimeHasBeenSet;
+    bool m_inclusiveStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_exclusiveEndTime;
-    bool m_exclusiveEndTimeHasBeenSet;
+    bool m_exclusiveEndTimeHasBeenSet = false;
 
     KinesisConfiguration m_kinesisConfiguration;
-    bool m_kinesisConfigurationHasBeenSet;
+    bool m_kinesisConfigurationHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
   };
 
 } // namespace Model

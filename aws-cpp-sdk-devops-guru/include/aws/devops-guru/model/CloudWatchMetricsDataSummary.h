@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::Vector<TimestampMetricValuePair> m_timestampMetricValuePairList;
-    bool m_timestampMetricValuePairListHasBeenSet;
+    bool m_timestampMetricValuePairListHasBeenSet = false;
 
     CloudWatchMetricDataStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
   };
 
 } // namespace Model

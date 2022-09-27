@@ -310,25 +310,25 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_laterTime;
-    bool m_laterTimeHasBeenSet;
+    bool m_laterTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_earlierTime;
-    bool m_earlierTimeHasBeenSet;
+    bool m_earlierTimeHasBeenSet = false;
 
     ChronologicalOrder m_chronologicalOrder;
-    bool m_chronologicalOrderHasBeenSet;
+    bool m_chronologicalOrderHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

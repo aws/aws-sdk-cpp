@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_policyInJson;
-    bool m_policyInJsonHasBeenSet;
+    bool m_policyInJsonHasBeenSet = false;
 
     Aws::String m_policyHash;
-    bool m_policyHashHasBeenSet;
+    bool m_policyHashHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
-    bool m_updateTimeHasBeenSet;
+    bool m_updateTimeHasBeenSet = false;
   };
 
 } // namespace Model

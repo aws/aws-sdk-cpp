@@ -41,40 +41,40 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether Amazon Kendra should index personal spaces. Users can add
-     * restrictions to items in personal spaces. If personal spaces are indexed,
-     * queries without user context information may return restricted items from a
-     * personal space in their results. For more information, see <a
+     * <p> <code>TRUE</code> to index personal spaces. You can add restrictions to
+     * items in personal spaces. If personal spaces are indexed, queries without user
+     * context information may return restricted items from a personal space in their
+     * results. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
      * on user context</a>.</p>
      */
     inline bool GetCrawlPersonalSpaces() const{ return m_crawlPersonalSpaces; }
 
     /**
-     * <p>Specifies whether Amazon Kendra should index personal spaces. Users can add
-     * restrictions to items in personal spaces. If personal spaces are indexed,
-     * queries without user context information may return restricted items from a
-     * personal space in their results. For more information, see <a
+     * <p> <code>TRUE</code> to index personal spaces. You can add restrictions to
+     * items in personal spaces. If personal spaces are indexed, queries without user
+     * context information may return restricted items from a personal space in their
+     * results. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
      * on user context</a>.</p>
      */
     inline bool CrawlPersonalSpacesHasBeenSet() const { return m_crawlPersonalSpacesHasBeenSet; }
 
     /**
-     * <p>Specifies whether Amazon Kendra should index personal spaces. Users can add
-     * restrictions to items in personal spaces. If personal spaces are indexed,
-     * queries without user context information may return restricted items from a
-     * personal space in their results. For more information, see <a
+     * <p> <code>TRUE</code> to index personal spaces. You can add restrictions to
+     * items in personal spaces. If personal spaces are indexed, queries without user
+     * context information may return restricted items from a personal space in their
+     * results. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
      * on user context</a>.</p>
      */
     inline void SetCrawlPersonalSpaces(bool value) { m_crawlPersonalSpacesHasBeenSet = true; m_crawlPersonalSpaces = value; }
 
     /**
-     * <p>Specifies whether Amazon Kendra should index personal spaces. Users can add
-     * restrictions to items in personal spaces. If personal spaces are indexed,
-     * queries without user context information may return restricted items from a
-     * personal space in their results. For more information, see <a
+     * <p> <code>TRUE</code> to index personal spaces. You can add restrictions to
+     * items in personal spaces. If personal spaces are indexed, queries without user
+     * context information may return restricted items from a personal space in their
+     * results. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
      * on user context</a>.</p>
      */
@@ -82,22 +82,22 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether Amazon Kendra should index archived spaces.</p>
+     * <p> <code>TRUE</code> to index archived spaces.</p>
      */
     inline bool GetCrawlArchivedSpaces() const{ return m_crawlArchivedSpaces; }
 
     /**
-     * <p>Specifies whether Amazon Kendra should index archived spaces.</p>
+     * <p> <code>TRUE</code> to index archived spaces.</p>
      */
     inline bool CrawlArchivedSpacesHasBeenSet() const { return m_crawlArchivedSpacesHasBeenSet; }
 
     /**
-     * <p>Specifies whether Amazon Kendra should index archived spaces.</p>
+     * <p> <code>TRUE</code> to index archived spaces.</p>
      */
     inline void SetCrawlArchivedSpaces(bool value) { m_crawlArchivedSpacesHasBeenSet = true; m_crawlArchivedSpaces = value; }
 
     /**
-     * <p>Specifies whether Amazon Kendra should index archived spaces.</p>
+     * <p> <code>TRUE</code> to index archived spaces.</p>
      */
     inline ConfluenceSpaceConfiguration& WithCrawlArchivedSpaces(bool value) { SetCrawlArchivedSpaces(value); return *this;}
 
@@ -365,19 +365,19 @@ namespace Model
   private:
 
     bool m_crawlPersonalSpaces;
-    bool m_crawlPersonalSpacesHasBeenSet;
+    bool m_crawlPersonalSpacesHasBeenSet = false;
 
     bool m_crawlArchivedSpaces;
-    bool m_crawlArchivedSpacesHasBeenSet;
+    bool m_crawlArchivedSpacesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includeSpaces;
-    bool m_includeSpacesHasBeenSet;
+    bool m_includeSpacesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeSpaces;
-    bool m_excludeSpacesHasBeenSet;
+    bool m_excludeSpacesHasBeenSet = false;
 
     Aws::Vector<ConfluenceSpaceToIndexFieldMapping> m_spaceFieldMappings;
-    bool m_spaceFieldMappingsHasBeenSet;
+    bool m_spaceFieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -155,13 +155,13 @@ namespace Model
   private:
 
     LogLevel m_level;
-    bool m_levelHasBeenSet;
+    bool m_levelHasBeenSet = false;
 
     bool m_includeExecutionData;
-    bool m_includeExecutionDataHasBeenSet;
+    bool m_includeExecutionDataHasBeenSet = false;
 
     Aws::Vector<LogDestination> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
   };
 
 } // namespace Model

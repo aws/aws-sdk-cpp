@@ -140,10 +140,10 @@ namespace Model
   private:
 
     LastFrameClippingBehavior m_lastFrameClippingBehavior;
-    bool m_lastFrameClippingBehaviorHasBeenSet;
+    bool m_lastFrameClippingBehaviorHasBeenSet = false;
 
     Aws::String m_timecode;
-    bool m_timecodeHasBeenSet;
+    bool m_timecodeHasBeenSet = false;
   };
 
 } // namespace Model

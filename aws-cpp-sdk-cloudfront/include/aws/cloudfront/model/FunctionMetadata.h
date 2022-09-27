@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_functionARN;
-    bool m_functionARNHasBeenSet;
+    bool m_functionARNHasBeenSet = false;
 
     FunctionStage m_stage;
-    bool m_stageHasBeenSet;
+    bool m_stageHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

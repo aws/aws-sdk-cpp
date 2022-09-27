@@ -103,10 +103,10 @@ namespace Model
   private:
 
     MultiRegionAccessPointsAsyncResponse m_multiRegionAccessPointDetails;
-    bool m_multiRegionAccessPointDetailsHasBeenSet;
+    bool m_multiRegionAccessPointDetailsHasBeenSet = false;
 
     AsyncErrorDetails m_errorDetails;
-    bool m_errorDetailsHasBeenSet;
+    bool m_errorDetailsHasBeenSet = false;
   };
 
 } // namespace Model

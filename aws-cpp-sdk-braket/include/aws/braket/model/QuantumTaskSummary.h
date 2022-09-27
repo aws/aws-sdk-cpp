@@ -386,31 +386,31 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_deviceArn;
-    bool m_deviceArnHasBeenSet;
+    bool m_deviceArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_endedAt;
-    bool m_endedAtHasBeenSet;
+    bool m_endedAtHasBeenSet = false;
 
     Aws::String m_outputS3Bucket;
-    bool m_outputS3BucketHasBeenSet;
+    bool m_outputS3BucketHasBeenSet = false;
 
     Aws::String m_outputS3Directory;
-    bool m_outputS3DirectoryHasBeenSet;
+    bool m_outputS3DirectoryHasBeenSet = false;
 
     Aws::String m_quantumTaskArn;
-    bool m_quantumTaskArnHasBeenSet;
+    bool m_quantumTaskArnHasBeenSet = false;
 
     long long m_shots;
-    bool m_shotsHasBeenSet;
+    bool m_shotsHasBeenSet = false;
 
     QuantumTaskStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

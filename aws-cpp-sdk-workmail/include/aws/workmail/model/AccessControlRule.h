@@ -548,37 +548,37 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     AccessControlRuleEffect m_effect;
-    bool m_effectHasBeenSet;
+    bool m_effectHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipRanges;
-    bool m_ipRangesHasBeenSet;
+    bool m_ipRangesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notIpRanges;
-    bool m_notIpRangesHasBeenSet;
+    bool m_notIpRangesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notActions;
-    bool m_notActionsHasBeenSet;
+    bool m_notActionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userIds;
-    bool m_userIdsHasBeenSet;
+    bool m_userIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notUserIds;
-    bool m_notUserIdsHasBeenSet;
+    bool m_notUserIdsHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateModified;
-    bool m_dateModifiedHasBeenSet;
+    bool m_dateModifiedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -163,22 +163,22 @@ namespace Model
   private:
 
     int m_timeoutCount;
-    bool m_timeoutCountHasBeenSet;
+    bool m_timeoutCountHasBeenSet = false;
 
     int m_connectionRefusedCount;
-    bool m_connectionRefusedCountHasBeenSet;
+    bool m_connectionRefusedCountHasBeenSet = false;
 
     int m_hTTPCode4XXCount;
-    bool m_hTTPCode4XXCountHasBeenSet;
+    bool m_hTTPCode4XXCountHasBeenSet = false;
 
     int m_hTTPCode5XXCount;
-    bool m_hTTPCode5XXCountHasBeenSet;
+    bool m_hTTPCode5XXCountHasBeenSet = false;
 
     int m_unknownHostCount;
-    bool m_unknownHostCountHasBeenSet;
+    bool m_unknownHostCountHasBeenSet = false;
 
     int m_otherCount;
-    bool m_otherCountHasBeenSet;
+    bool m_otherCountHasBeenSet = false;
   };
 
 } // namespace Model

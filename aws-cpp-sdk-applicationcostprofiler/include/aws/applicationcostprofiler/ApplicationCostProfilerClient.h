@@ -5,88 +5,15 @@
 
 #pragma once
 #include <aws/applicationcostprofiler/ApplicationCostProfiler_EXPORTS.h>
-#include <aws/applicationcostprofiler/ApplicationCostProfilerErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/applicationcostprofiler/model/DeleteReportDefinitionResult.h>
-#include <aws/applicationcostprofiler/model/GetReportDefinitionResult.h>
-#include <aws/applicationcostprofiler/model/ImportApplicationUsageResult.h>
-#include <aws/applicationcostprofiler/model/ListReportDefinitionsResult.h>
-#include <aws/applicationcostprofiler/model/PutReportDefinitionResult.h>
-#include <aws/applicationcostprofiler/model/UpdateReportDefinitionResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/applicationcostprofiler/ApplicationCostProfilerServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ApplicationCostProfiler
 {
-
-namespace Model
-{
-        class DeleteReportDefinitionRequest;
-        class GetReportDefinitionRequest;
-        class ImportApplicationUsageRequest;
-        class ListReportDefinitionsRequest;
-        class PutReportDefinitionRequest;
-        class UpdateReportDefinitionRequest;
-
-        typedef Aws::Utils::Outcome<DeleteReportDefinitionResult, ApplicationCostProfilerError> DeleteReportDefinitionOutcome;
-        typedef Aws::Utils::Outcome<GetReportDefinitionResult, ApplicationCostProfilerError> GetReportDefinitionOutcome;
-        typedef Aws::Utils::Outcome<ImportApplicationUsageResult, ApplicationCostProfilerError> ImportApplicationUsageOutcome;
-        typedef Aws::Utils::Outcome<ListReportDefinitionsResult, ApplicationCostProfilerError> ListReportDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<PutReportDefinitionResult, ApplicationCostProfilerError> PutReportDefinitionOutcome;
-        typedef Aws::Utils::Outcome<UpdateReportDefinitionResult, ApplicationCostProfilerError> UpdateReportDefinitionOutcome;
-
-        typedef std::future<DeleteReportDefinitionOutcome> DeleteReportDefinitionOutcomeCallable;
-        typedef std::future<GetReportDefinitionOutcome> GetReportDefinitionOutcomeCallable;
-        typedef std::future<ImportApplicationUsageOutcome> ImportApplicationUsageOutcomeCallable;
-        typedef std::future<ListReportDefinitionsOutcome> ListReportDefinitionsOutcomeCallable;
-        typedef std::future<PutReportDefinitionOutcome> PutReportDefinitionOutcomeCallable;
-        typedef std::future<UpdateReportDefinitionOutcome> UpdateReportDefinitionOutcomeCallable;
-} // namespace Model
-
-  class ApplicationCostProfilerClient;
-
-    typedef std::function<void(const ApplicationCostProfilerClient*, const Model::DeleteReportDefinitionRequest&, const Model::DeleteReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReportDefinitionResponseReceivedHandler;
-    typedef std::function<void(const ApplicationCostProfilerClient*, const Model::GetReportDefinitionRequest&, const Model::GetReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReportDefinitionResponseReceivedHandler;
-    typedef std::function<void(const ApplicationCostProfilerClient*, const Model::ImportApplicationUsageRequest&, const Model::ImportApplicationUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportApplicationUsageResponseReceivedHandler;
-    typedef std::function<void(const ApplicationCostProfilerClient*, const Model::ListReportDefinitionsRequest&, const Model::ListReportDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportDefinitionsResponseReceivedHandler;
-    typedef std::function<void(const ApplicationCostProfilerClient*, const Model::PutReportDefinitionRequest&, const Model::PutReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutReportDefinitionResponseReceivedHandler;
-    typedef std::function<void(const ApplicationCostProfilerClient*, const Model::UpdateReportDefinitionRequest&, const Model::UpdateReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReportDefinitionResponseReceivedHandler;
-
   /**
    * <p>This reference provides descriptions of the AWS Application Cost Profiler
    * API.</p> <p>The AWS Application Cost Profiler API provides programmatic access
@@ -111,14 +38,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ApplicationCostProfilerClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ApplicationCostProfilerClient(const Aws::Auth::AWSCredentials& credentials,
+                                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ApplicationCostProfilerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ApplicationCostProfilerClient();
 
@@ -239,12 +167,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DeleteReportDefinitionAsyncHelper(const Model::DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetReportDefinitionAsyncHelper(const Model::GetReportDefinitionRequest& request, const GetReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ImportApplicationUsageAsyncHelper(const Model::ImportApplicationUsageRequest& request, const ImportApplicationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListReportDefinitionsAsyncHelper(const Model::ListReportDefinitionsRequest& request, const ListReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutReportDefinitionAsyncHelper(const Model::PutReportDefinitionRequest& request, const PutReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateReportDefinitionAsyncHelper(const Model::UpdateReportDefinitionRequest& request, const UpdateReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

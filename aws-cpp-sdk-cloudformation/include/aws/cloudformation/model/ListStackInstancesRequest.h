@@ -432,25 +432,25 @@ namespace Model
   private:
 
     Aws::String m_stackSetName;
-    bool m_stackSetNameHasBeenSet;
+    bool m_stackSetNameHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<StackInstanceFilter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_stackInstanceAccount;
-    bool m_stackInstanceAccountHasBeenSet;
+    bool m_stackInstanceAccountHasBeenSet = false;
 
     Aws::String m_stackInstanceRegion;
-    bool m_stackInstanceRegionHasBeenSet;
+    bool m_stackInstanceRegionHasBeenSet = false;
 
     CallAs m_callAs;
-    bool m_callAsHasBeenSet;
+    bool m_callAsHasBeenSet = false;
   };
 
 } // namespace Model

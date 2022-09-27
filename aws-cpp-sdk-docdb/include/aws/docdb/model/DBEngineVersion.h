@@ -377,28 +377,28 @@ namespace Model
   private:
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_dBParameterGroupFamily;
-    bool m_dBParameterGroupFamilyHasBeenSet;
+    bool m_dBParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_dBEngineDescription;
-    bool m_dBEngineDescriptionHasBeenSet;
+    bool m_dBEngineDescriptionHasBeenSet = false;
 
     Aws::String m_dBEngineVersionDescription;
-    bool m_dBEngineVersionDescriptionHasBeenSet;
+    bool m_dBEngineVersionDescriptionHasBeenSet = false;
 
     Aws::Vector<UpgradeTarget> m_validUpgradeTarget;
-    bool m_validUpgradeTargetHasBeenSet;
+    bool m_validUpgradeTargetHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exportableLogTypes;
-    bool m_exportableLogTypesHasBeenSet;
+    bool m_exportableLogTypesHasBeenSet = false;
 
     bool m_supportsLogExportsToCloudwatchLogs;
-    bool m_supportsLogExportsToCloudwatchLogsHasBeenSet;
+    bool m_supportsLogExportsToCloudwatchLogsHasBeenSet = false;
   };
 
 } // namespace Model

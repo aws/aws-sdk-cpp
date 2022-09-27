@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_linux;
-    bool m_linuxHasBeenSet;
+    bool m_linuxHasBeenSet = false;
 
     Aws::String m_windows;
-    bool m_windowsHasBeenSet;
+    bool m_windowsHasBeenSet = false;
   };
 
 } // namespace Model

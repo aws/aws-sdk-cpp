@@ -286,22 +286,22 @@ namespace Model
   private:
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
 
     Aws::String m_direction;
-    bool m_directionHasBeenSet;
+    bool m_directionHasBeenSet = false;
 
     Aws::String m_securityGroupId;
-    bool m_securityGroupIdHasBeenSet;
+    bool m_securityGroupIdHasBeenSet = false;
 
     PortRange m_portRange;
-    bool m_portRangeHasBeenSet;
+    bool m_portRangeHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
 
     Aws::String m_protocol;
-    bool m_protocolHasBeenSet;
+    bool m_protocolHasBeenSet = false;
   };
 
 } // namespace Model

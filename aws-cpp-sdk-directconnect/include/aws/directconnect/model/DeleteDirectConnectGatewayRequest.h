@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_directConnectGatewayId;
-    bool m_directConnectGatewayIdHasBeenSet;
+    bool m_directConnectGatewayIdHasBeenSet = false;
   };
 
 } // namespace Model

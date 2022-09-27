@@ -167,10 +167,10 @@ namespace Model
   private:
 
     Aws::String m_smsAuthenticationMessage;
-    bool m_smsAuthenticationMessageHasBeenSet;
+    bool m_smsAuthenticationMessageHasBeenSet = false;
 
     SmsConfigurationType m_smsConfiguration;
-    bool m_smsConfigurationHasBeenSet;
+    bool m_smsConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

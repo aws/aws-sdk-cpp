@@ -11,10 +11,13 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOptionMod
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOptionJsonDeserializer;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.BaseOptionModifierJsonDeserializer;
 import com.amazonaws.util.awsclientgenerator.domainmodels.defaults.DefaultClientConfigs;
+import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointTests;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.OutputStream;
 
 
 public class DirectFromC2jGenerator {
@@ -25,15 +28,22 @@ public class DirectFromC2jGenerator {
        this.mainClientGenerator = mainClientGenerator;
     }
 
-    public File generateServiceSourceFromJson(String rawJson, String languageBinding, String serviceName, String namespace,
-                                              String licenseText, boolean generateStandalonePackage,
-                                              boolean enableVirtualOperations) throws Exception {
+    public ByteArrayOutputStream generateServiceSourceFromJson(String rawJson, String endpointRules, String endpointRulesTests,
+                                                               String languageBinding, String serviceName, String namespace,
+                                                               String licenseText, boolean generateStandalonePackage,
+                                                               boolean enableVirtualOperations) throws Exception {
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
 
         C2jServiceModel c2jServiceModel = gson.fromJson(rawJson, C2jServiceModel.class);
         c2jServiceModel.setServiceName(serviceName);
-        return mainClientGenerator.generateSourceFromC2jModel(c2jServiceModel, serviceName, languageBinding, namespace, licenseText, generateStandalonePackage, enableVirtualOperations);
+        c2jServiceModel.setEndpointRules(endpointRules);
+        if (endpointRulesTests != null) {
+            EndpointTests endpointTestsModel = gson.fromJson(endpointRulesTests, EndpointTests.class);
+            c2jServiceModel.setEndpointTests(endpointTestsModel);
+        }
+        return mainClientGenerator.generateSourceFromC2jModel(c2jServiceModel, serviceName, languageBinding, namespace,
+                licenseText, generateStandalonePackage, enableVirtualOperations);
     }
 
     /**
@@ -49,9 +59,9 @@ public class DirectFromC2jGenerator {
      * @return C++ generated code
      * @throws Exception
      */
-    public File generateDefaultsSourceFromJson(String rawJson, String languageBinding, String serviceName,
-                                               String namespace, String licenseText,
-                                               boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
+    public ByteArrayOutputStream generateDefaultsSourceFromJson(String rawJson, String languageBinding, String serviceName,
+                                                                String namespace, String licenseText,
+                                                                boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
         DefaultClientConfigs clientConfigBom = parseRawJson(rawJson);
 
         return mainClientGenerator.generateDefaultsSourceFromModel(clientConfigBom, languageBinding, namespace, licenseText);

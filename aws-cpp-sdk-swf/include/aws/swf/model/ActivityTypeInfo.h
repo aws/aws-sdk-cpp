@@ -221,19 +221,19 @@ namespace Model
   private:
 
     ActivityType m_activityType;
-    bool m_activityTypeHasBeenSet;
+    bool m_activityTypeHasBeenSet = false;
 
     RegistrationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_deprecationDate;
-    bool m_deprecationDateHasBeenSet;
+    bool m_deprecationDateHasBeenSet = false;
   };
 
 } // namespace Model

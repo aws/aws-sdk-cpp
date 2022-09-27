@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::String m_serviceUpdateName;
-    bool m_serviceUpdateNameHasBeenSet;
+    bool m_serviceUpdateNameHasBeenSet = false;
 
     Aws::Vector<ServiceUpdateStatus> m_serviceUpdateStatus;
-    bool m_serviceUpdateStatusHasBeenSet;
+    bool m_serviceUpdateStatusHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

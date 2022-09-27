@@ -5,82 +5,23 @@
 
 #pragma once
 #include <aws/pricing/Pricing_EXPORTS.h>
-#include <aws/pricing/PricingErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/pricing/model/DescribeServicesResult.h>
-#include <aws/pricing/model/GetAttributeValuesResult.h>
-#include <aws/pricing/model/GetProductsResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/pricing/PricingServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Pricing
 {
-
-namespace Model
-{
-        class DescribeServicesRequest;
-        class GetAttributeValuesRequest;
-        class GetProductsRequest;
-
-        typedef Aws::Utils::Outcome<DescribeServicesResult, PricingError> DescribeServicesOutcome;
-        typedef Aws::Utils::Outcome<GetAttributeValuesResult, PricingError> GetAttributeValuesOutcome;
-        typedef Aws::Utils::Outcome<GetProductsResult, PricingError> GetProductsOutcome;
-
-        typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
-        typedef std::future<GetAttributeValuesOutcome> GetAttributeValuesOutcomeCallable;
-        typedef std::future<GetProductsOutcome> GetProductsOutcomeCallable;
-} // namespace Model
-
-  class PricingClient;
-
-    typedef std::function<void(const PricingClient*, const Model::DescribeServicesRequest&, const Model::DescribeServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServicesResponseReceivedHandler;
-    typedef std::function<void(const PricingClient*, const Model::GetAttributeValuesRequest&, const Model::GetAttributeValuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttributeValuesResponseReceivedHandler;
-    typedef std::function<void(const PricingClient*, const Model::GetProductsRequest&, const Model::GetProductsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProductsResponseReceivedHandler;
-
   /**
-   * <p>Amazon Web Services Price List Service API (Amazon Web Services Price List
-   * Service) is a centralized and convenient way to programmatically query Amazon
-   * Web Services for services, products, and pricing information. The Amazon Web
-   * Services Price List Service uses standardized product attributes such as
-   * <code>Location</code>, <code>Storage Class</code>, and <code>Operating
-   * System</code>, and provides prices at the SKU level. You can use the Amazon Web
-   * Services Price List Service to build cost control and scenario planning tools,
-   * reconcile billing data, forecast future spend for budgeting purposes, and
+   * <p>Amazon Web Services Price List API is a centralized and convenient way to
+   * programmatically query Amazon Web Services for services, products, and pricing
+   * information. The Amazon Web Services Price List uses standardized product
+   * attributes such as <code>Location</code>, <code>Storage Class</code>, and
+   * <code>Operating System</code>, and provides prices at the SKU level. You can use
+   * the Amazon Web Services Price List to build cost control and scenario planning
+   * tools, reconcile billing data, forecast future spend for budgeting purposes, and
    * provide cost benefit analysis that compare your internal workloads with Amazon
    * Web Services.</p> <p>Use <code>GetServices</code> without a service code to
    * retrieve the service codes for all AWS services, then <code>GetServices</code>
@@ -91,7 +32,7 @@ namespace Model
    * <code>GetProducts</code> to find specific products that you're interested in,
    * such as an <code>AmazonEC2</code> instance, with a <code>Provisioned IOPS</code>
    * <code>volumeType</code>.</p> <p>Service Endpoint</p> <p>Amazon Web Services
-   * Price List Service API provides the following two endpoints:</p> <ul> <li>
+   * Price List service API provides the following two endpoints:</p> <ul> <li>
    * <p>https://api.pricing.us-east-1.amazonaws.com</p> </li> <li>
    * <p>https://api.pricing.ap-south-1.amazonaws.com</p> </li> </ul>
    */
@@ -110,14 +51,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        PricingClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        PricingClient(const Aws::Auth::AWSCredentials& credentials,
+                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         PricingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~PricingClient();
 
@@ -151,9 +93,8 @@ namespace Model
          * a Price List API offer file. For a list of available attributes, see <a
          * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer
          * File Definitions</a> in the <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Amazon
-         * Web Services Billing and Cost Management User Guide</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Billing
+         * and Cost Management User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetAttributeValues">AWS
          * API Reference</a></p>
          */
@@ -191,9 +132,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DescribeServicesAsyncHelper(const Model::DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAttributeValuesAsyncHelper(const Model::GetAttributeValuesRequest& request, const GetAttributeValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetProductsAsyncHelper(const Model::GetProductsRequest& request, const GetProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

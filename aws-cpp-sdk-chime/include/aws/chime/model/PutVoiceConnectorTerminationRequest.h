@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     Termination m_termination;
-    bool m_terminationHasBeenSet;
+    bool m_terminationHasBeenSet = false;
   };
 
 } // namespace Model

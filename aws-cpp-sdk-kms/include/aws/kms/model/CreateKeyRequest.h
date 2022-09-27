@@ -61,13 +61,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
      * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
-     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
-     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
-     * <p>The only Unicode characters that are permitted in a key policy document are
-     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * document can include only the following characters:</p> <ul> <li> <p>Printable
+     * ASCII characters from the space character (<code>\u0020</code>) through the end
+     * of the ASCII character range.</p> </li> <li> <p>Printable characters in the
+     * Basic Latin and Latin-1 Supplement character set (through
+     * <code>\u00FF</code>).</p> </li> <li> <p>The tab (<code>\u0009</code>), line feed
+     * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
+     * characters</p> </li> </ul> <p>For information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -97,13 +99,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
      * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
-     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
-     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
-     * <p>The only Unicode characters that are permitted in a key policy document are
-     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * document can include only the following characters:</p> <ul> <li> <p>Printable
+     * ASCII characters from the space character (<code>\u0020</code>) through the end
+     * of the ASCII character range.</p> </li> <li> <p>Printable characters in the
+     * Basic Latin and Latin-1 Supplement character set (through
+     * <code>\u00FF</code>).</p> </li> <li> <p>The tab (<code>\u0009</code>), line feed
+     * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
+     * characters</p> </li> </ul> <p>For information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -133,13 +137,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
      * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
-     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
-     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
-     * <p>The only Unicode characters that are permitted in a key policy document are
-     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * document can include only the following characters:</p> <ul> <li> <p>Printable
+     * ASCII characters from the space character (<code>\u0020</code>) through the end
+     * of the ASCII character range.</p> </li> <li> <p>Printable characters in the
+     * Basic Latin and Latin-1 Supplement character set (through
+     * <code>\u00FF</code>).</p> </li> <li> <p>The tab (<code>\u0009</code>), line feed
+     * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
+     * characters</p> </li> </ul> <p>For information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -169,13 +175,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
      * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
-     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
-     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
-     * <p>The only Unicode characters that are permitted in a key policy document are
-     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * document can include only the following characters:</p> <ul> <li> <p>Printable
+     * ASCII characters from the space character (<code>\u0020</code>) through the end
+     * of the ASCII character range.</p> </li> <li> <p>Printable characters in the
+     * Basic Latin and Latin-1 Supplement character set (through
+     * <code>\u00FF</code>).</p> </li> <li> <p>The tab (<code>\u0009</code>), line feed
+     * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
+     * characters</p> </li> </ul> <p>For information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -205,13 +213,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
      * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
-     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
-     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
-     * <p>The only Unicode characters that are permitted in a key policy document are
-     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * document can include only the following characters:</p> <ul> <li> <p>Printable
+     * ASCII characters from the space character (<code>\u0020</code>) through the end
+     * of the ASCII character range.</p> </li> <li> <p>Printable characters in the
+     * Basic Latin and Latin-1 Supplement character set (through
+     * <code>\u00FF</code>).</p> </li> <li> <p>The tab (<code>\u0009</code>), line feed
+     * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
+     * characters</p> </li> </ul> <p>For information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -241,13 +251,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
      * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
-     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
-     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
-     * <p>The only Unicode characters that are permitted in a key policy document are
-     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * document can include only the following characters:</p> <ul> <li> <p>Printable
+     * ASCII characters from the space character (<code>\u0020</code>) through the end
+     * of the ASCII character range.</p> </li> <li> <p>Printable characters in the
+     * Basic Latin and Latin-1 Supplement character set (through
+     * <code>\u00FF</code>).</p> </li> <li> <p>The tab (<code>\u0009</code>), line feed
+     * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
+     * characters</p> </li> </ul> <p>For information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -277,13 +289,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
      * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
-     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
-     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
-     * <p>The only Unicode characters that are permitted in a key policy document are
-     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * document can include only the following characters:</p> <ul> <li> <p>Printable
+     * ASCII characters from the space character (<code>\u0020</code>) through the end
+     * of the ASCII character range.</p> </li> <li> <p>Printable characters in the
+     * Basic Latin and Latin-1 Supplement character set (through
+     * <code>\u00FF</code>).</p> </li> <li> <p>The tab (<code>\u0009</code>), line feed
+     * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
+     * characters</p> </li> </ul> <p>For information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -313,13 +327,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>Amazon Web Services
      * Identity and Access Management User Guide</i>.</p> </li> </ul> <p>A key policy
-     * document must conform to the following rules.</p> <ul> <li> <p>Up to 32
-     * kilobytes (32768 bytes)</p> </li> <li> <p>Must be UTF-8 encoded</p> </li> <li>
-     * <p>The only Unicode characters that are permitted in a key policy document are
-     * the horizontal tab (U+0009), linefeed (U+000A), carriage return (U+000D), and
-     * characters in the range U+0020 to U+00FF.</p> </li> <li> <p>The <code>Sid</code>
-     * element in a key policy statement can include spaces. (Spaces are prohibited in
-     * the <code>Sid</code> element of an IAM policy document.)</p> </li> </ul> <p>For
+     * document can include only the following characters:</p> <ul> <li> <p>Printable
+     * ASCII characters from the space character (<code>\u0020</code>) through the end
+     * of the ASCII character range.</p> </li> <li> <p>Printable characters in the
+     * Basic Latin and Latin-1 Supplement character set (through
+     * <code>\u00FF</code>).</p> </li> <li> <p>The tab (<code>\u0009</code>), line feed
+     * (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special
+     * characters</p> </li> </ul> <p>For information about key policies, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key
+     * policies in KMS</a> in the <i>Key Management Service Developer Guide</i>. For
      * help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
      * JSON Policy Reference</a> in the <i> <i>Identity and Access Management User
@@ -406,6 +422,8 @@ namespace Model
      * <p>For asymmetric KMS keys with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+     * </li> <li> <p>For asymmetric KMS keys with SM2 key material (China Regions
+     * only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
      */
     inline const KeyUsageType& GetKeyUsage() const{ return m_keyUsage; }
@@ -423,6 +441,8 @@ namespace Model
      * <p>For asymmetric KMS keys with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+     * </li> <li> <p>For asymmetric KMS keys with SM2 key material (China Regions
+     * only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
      */
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
@@ -440,6 +460,8 @@ namespace Model
      * <p>For asymmetric KMS keys with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+     * </li> <li> <p>For asymmetric KMS keys with SM2 key material (China Regions
+     * only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
      */
     inline void SetKeyUsage(const KeyUsageType& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
@@ -457,6 +479,8 @@ namespace Model
      * <p>For asymmetric KMS keys with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+     * </li> <li> <p>For asymmetric KMS keys with SM2 key material (China Regions
+     * only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
      */
     inline void SetKeyUsage(KeyUsageType&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::move(value); }
@@ -474,6 +498,8 @@ namespace Model
      * <p>For asymmetric KMS keys with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+     * </li> <li> <p>For asymmetric KMS keys with SM2 key material (China Regions
+     * only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
      */
     inline CreateKeyRequest& WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
@@ -491,6 +517,8 @@ namespace Model
      * <p>For asymmetric KMS keys with RSA key material, specify
      * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
      * asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+     * </li> <li> <p>For asymmetric KMS keys with SM2 key material (China Regions
+     * only), specify <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p>
      * </li> </ul>
      */
     inline CreateKeyRequest& WithKeyUsage(KeyUsageType&& value) { SetKeyUsage(std::move(value)); return *this;}
@@ -498,9 +526,10 @@ namespace Model
 
     /**
      * <p>Specifies the type of KMS key to create. The default value,
-     * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key
-     * for encryption and decryption. For help choosing a key spec for your KMS key,
-     * see <a
+     * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key
+     * that is used for encryption and decryption, except in China Regions, where it
+     * creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a
+     * key spec for your KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
      * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
@@ -521,8 +550,8 @@ namespace Model
      * keys to protect your data. These services do not support asymmetric KMS keys or
      * HMAC KMS keys.</p>  <p>KMS supports the following key specs for KMS
      * keys:</p> <ul> <li> <p>Symmetric encryption key (default)</p> <ul> <li> <p>
-     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li> <p>HMAC
-     * keys (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> </p> </li> </ul> </li> <li> <p>HMAC keys
+     * (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
      * <code>HMAC_256</code> </p> </li> <li> <p> <code>HMAC_384</code> </p> </li> <li>
      * <p> <code>HMAC_512</code> </p> </li> </ul> </li> <li> <p>Asymmetric RSA key
      * pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
@@ -533,15 +562,17 @@ namespace Model
      * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
      * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
      * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
-     * cryptocurrencies.</p> </li> </ul> </li> </ul>
+     * cryptocurrencies.</p> </li> </ul> </li> <li> <p>SM2 key pairs (China Regions
+     * only)</p> <ul> <li> <p> <code>SM2</code> </p> </li> </ul> </li> </ul>
      */
     inline const KeySpec& GetKeySpec() const{ return m_keySpec; }
 
     /**
      * <p>Specifies the type of KMS key to create. The default value,
-     * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key
-     * for encryption and decryption. For help choosing a key spec for your KMS key,
-     * see <a
+     * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key
+     * that is used for encryption and decryption, except in China Regions, where it
+     * creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a
+     * key spec for your KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
      * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
@@ -562,8 +593,8 @@ namespace Model
      * keys to protect your data. These services do not support asymmetric KMS keys or
      * HMAC KMS keys.</p>  <p>KMS supports the following key specs for KMS
      * keys:</p> <ul> <li> <p>Symmetric encryption key (default)</p> <ul> <li> <p>
-     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li> <p>HMAC
-     * keys (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> </p> </li> </ul> </li> <li> <p>HMAC keys
+     * (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
      * <code>HMAC_256</code> </p> </li> <li> <p> <code>HMAC_384</code> </p> </li> <li>
      * <p> <code>HMAC_512</code> </p> </li> </ul> </li> <li> <p>Asymmetric RSA key
      * pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
@@ -574,15 +605,17 @@ namespace Model
      * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
      * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
      * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
-     * cryptocurrencies.</p> </li> </ul> </li> </ul>
+     * cryptocurrencies.</p> </li> </ul> </li> <li> <p>SM2 key pairs (China Regions
+     * only)</p> <ul> <li> <p> <code>SM2</code> </p> </li> </ul> </li> </ul>
      */
     inline bool KeySpecHasBeenSet() const { return m_keySpecHasBeenSet; }
 
     /**
      * <p>Specifies the type of KMS key to create. The default value,
-     * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key
-     * for encryption and decryption. For help choosing a key spec for your KMS key,
-     * see <a
+     * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key
+     * that is used for encryption and decryption, except in China Regions, where it
+     * creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a
+     * key spec for your KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
      * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
@@ -603,8 +636,8 @@ namespace Model
      * keys to protect your data. These services do not support asymmetric KMS keys or
      * HMAC KMS keys.</p>  <p>KMS supports the following key specs for KMS
      * keys:</p> <ul> <li> <p>Symmetric encryption key (default)</p> <ul> <li> <p>
-     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li> <p>HMAC
-     * keys (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> </p> </li> </ul> </li> <li> <p>HMAC keys
+     * (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
      * <code>HMAC_256</code> </p> </li> <li> <p> <code>HMAC_384</code> </p> </li> <li>
      * <p> <code>HMAC_512</code> </p> </li> </ul> </li> <li> <p>Asymmetric RSA key
      * pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
@@ -615,15 +648,17 @@ namespace Model
      * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
      * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
      * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
-     * cryptocurrencies.</p> </li> </ul> </li> </ul>
+     * cryptocurrencies.</p> </li> </ul> </li> <li> <p>SM2 key pairs (China Regions
+     * only)</p> <ul> <li> <p> <code>SM2</code> </p> </li> </ul> </li> </ul>
      */
     inline void SetKeySpec(const KeySpec& value) { m_keySpecHasBeenSet = true; m_keySpec = value; }
 
     /**
      * <p>Specifies the type of KMS key to create. The default value,
-     * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key
-     * for encryption and decryption. For help choosing a key spec for your KMS key,
-     * see <a
+     * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key
+     * that is used for encryption and decryption, except in China Regions, where it
+     * creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a
+     * key spec for your KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
      * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
@@ -644,8 +679,8 @@ namespace Model
      * keys to protect your data. These services do not support asymmetric KMS keys or
      * HMAC KMS keys.</p>  <p>KMS supports the following key specs for KMS
      * keys:</p> <ul> <li> <p>Symmetric encryption key (default)</p> <ul> <li> <p>
-     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li> <p>HMAC
-     * keys (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> </p> </li> </ul> </li> <li> <p>HMAC keys
+     * (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
      * <code>HMAC_256</code> </p> </li> <li> <p> <code>HMAC_384</code> </p> </li> <li>
      * <p> <code>HMAC_512</code> </p> </li> </ul> </li> <li> <p>Asymmetric RSA key
      * pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
@@ -656,15 +691,17 @@ namespace Model
      * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
      * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
      * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
-     * cryptocurrencies.</p> </li> </ul> </li> </ul>
+     * cryptocurrencies.</p> </li> </ul> </li> <li> <p>SM2 key pairs (China Regions
+     * only)</p> <ul> <li> <p> <code>SM2</code> </p> </li> </ul> </li> </ul>
      */
     inline void SetKeySpec(KeySpec&& value) { m_keySpecHasBeenSet = true; m_keySpec = std::move(value); }
 
     /**
      * <p>Specifies the type of KMS key to create. The default value,
-     * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key
-     * for encryption and decryption. For help choosing a key spec for your KMS key,
-     * see <a
+     * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key
+     * that is used for encryption and decryption, except in China Regions, where it
+     * creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a
+     * key spec for your KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
      * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
@@ -685,8 +722,8 @@ namespace Model
      * keys to protect your data. These services do not support asymmetric KMS keys or
      * HMAC KMS keys.</p>  <p>KMS supports the following key specs for KMS
      * keys:</p> <ul> <li> <p>Symmetric encryption key (default)</p> <ul> <li> <p>
-     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li> <p>HMAC
-     * keys (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> </p> </li> </ul> </li> <li> <p>HMAC keys
+     * (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
      * <code>HMAC_256</code> </p> </li> <li> <p> <code>HMAC_384</code> </p> </li> <li>
      * <p> <code>HMAC_512</code> </p> </li> </ul> </li> <li> <p>Asymmetric RSA key
      * pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
@@ -697,15 +734,17 @@ namespace Model
      * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
      * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
      * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
-     * cryptocurrencies.</p> </li> </ul> </li> </ul>
+     * cryptocurrencies.</p> </li> </ul> </li> <li> <p>SM2 key pairs (China Regions
+     * only)</p> <ul> <li> <p> <code>SM2</code> </p> </li> </ul> </li> </ul>
      */
     inline CreateKeyRequest& WithKeySpec(const KeySpec& value) { SetKeySpec(value); return *this;}
 
     /**
      * <p>Specifies the type of KMS key to create. The default value,
-     * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit symmetric key
-     * for encryption and decryption. For help choosing a key spec for your KMS key,
-     * see <a
+     * <code>SYMMETRIC_DEFAULT</code>, creates a KMS key with a 256-bit AES-GCM key
+     * that is used for encryption and decryption, except in China Regions, where it
+     * creates a 128-bit symmetric key that uses SM4 encryption. For help choosing a
+     * key spec for your KMS key, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-types.html#symm-asymm-choose">Choosing
      * a KMS key type</a> in the <i> <i>Key Management Service Developer Guide</i>
      * </i>.</p> <p>The <code>KeySpec</code> determines whether the KMS key contains a
@@ -726,8 +765,8 @@ namespace Model
      * keys to protect your data. These services do not support asymmetric KMS keys or
      * HMAC KMS keys.</p>  <p>KMS supports the following key specs for KMS
      * keys:</p> <ul> <li> <p>Symmetric encryption key (default)</p> <ul> <li> <p>
-     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li> <p>HMAC
-     * keys (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> </p> </li> </ul> </li> <li> <p>HMAC keys
+     * (symmetric)</p> <ul> <li> <p> <code>HMAC_224</code> </p> </li> <li> <p>
      * <code>HMAC_256</code> </p> </li> <li> <p> <code>HMAC_384</code> </p> </li> <li>
      * <p> <code>HMAC_512</code> </p> </li> </ul> </li> <li> <p>Asymmetric RSA key
      * pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li> <li> <p>
@@ -738,7 +777,8 @@ namespace Model
      * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
      * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
      * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
-     * cryptocurrencies.</p> </li> </ul> </li> </ul>
+     * cryptocurrencies.</p> </li> </ul> </li> <li> <p>SM2 key pairs (China Regions
+     * only)</p> <ul> <li> <p> <code>SM2</code> </p> </li> </ul> </li> </ul>
      */
     inline CreateKeyRequest& WithKeySpec(KeySpec&& value) { SetKeySpec(std::move(value)); return *this;}
 
@@ -865,8 +905,8 @@ namespace Model
      * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
      * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
      * operation is part of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-     * Key Store feature</a> feature in KMS, which combines the convenience and
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+     * key store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
      * key store.</p>
      */
@@ -885,8 +925,8 @@ namespace Model
      * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
      * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
      * operation is part of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-     * Key Store feature</a> feature in KMS, which combines the convenience and
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+     * key store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
      * key store.</p>
      */
@@ -905,8 +945,8 @@ namespace Model
      * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
      * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
      * operation is part of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-     * Key Store feature</a> feature in KMS, which combines the convenience and
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+     * key store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
      * key store.</p>
      */
@@ -925,8 +965,8 @@ namespace Model
      * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
      * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
      * operation is part of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-     * Key Store feature</a> feature in KMS, which combines the convenience and
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+     * key store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
      * key store.</p>
      */
@@ -945,8 +985,8 @@ namespace Model
      * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
      * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
      * operation is part of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-     * Key Store feature</a> feature in KMS, which combines the convenience and
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+     * key store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
      * key store.</p>
      */
@@ -965,8 +1005,8 @@ namespace Model
      * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
      * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
      * operation is part of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-     * Key Store feature</a> feature in KMS, which combines the convenience and
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+     * key store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
      * key store.</p>
      */
@@ -985,8 +1025,8 @@ namespace Model
      * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
      * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
      * operation is part of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-     * Key Store feature</a> feature in KMS, which combines the convenience and
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+     * key store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
      * key store.</p>
      */
@@ -1005,8 +1045,8 @@ namespace Model
      * key store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
      * includes the custom key store ID and the ID of the CloudHSM cluster.</p> <p>This
      * operation is part of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
-     * Key Store feature</a> feature in KMS, which combines the convenience and
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
+     * key store feature</a> feature in KMS, which combines the convenience and
      * extensive integration of KMS with the isolation and control of a single-tenant
      * key store.</p>
      */
@@ -1342,31 +1382,31 @@ namespace Model
   private:
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     KeyUsageType m_keyUsage;
-    bool m_keyUsageHasBeenSet;
+    bool m_keyUsageHasBeenSet = false;
 
     KeySpec m_keySpec;
-    bool m_keySpecHasBeenSet;
+    bool m_keySpecHasBeenSet = false;
 
     OriginType m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
 
     Aws::String m_customKeyStoreId;
-    bool m_customKeyStoreIdHasBeenSet;
+    bool m_customKeyStoreIdHasBeenSet = false;
 
     bool m_bypassPolicyLockoutSafetyCheck;
-    bool m_bypassPolicyLockoutSafetyCheckHasBeenSet;
+    bool m_bypassPolicyLockoutSafetyCheckHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_multiRegion;
-    bool m_multiRegionHasBeenSet;
+    bool m_multiRegionHasBeenSet = false;
   };
 
 } // namespace Model

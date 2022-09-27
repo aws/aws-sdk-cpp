@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_replicationInstanceArn;
-    bool m_replicationInstanceArnHasBeenSet;
+    bool m_replicationInstanceArnHasBeenSet = false;
 
     bool m_forceFailover;
-    bool m_forceFailoverHasBeenSet;
+    bool m_forceFailoverHasBeenSet = false;
 
     bool m_forcePlannedFailover;
-    bool m_forcePlannedFailoverHasBeenSet;
+    bool m_forcePlannedFailoverHasBeenSet = false;
   };
 
 } // namespace Model

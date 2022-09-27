@@ -271,19 +271,19 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_computerName;
-    bool m_computerNameHasBeenSet;
+    bool m_computerNameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::String m_organizationalUnitDistinguishedName;
-    bool m_organizationalUnitDistinguishedNameHasBeenSet;
+    bool m_organizationalUnitDistinguishedNameHasBeenSet = false;
 
     Aws::Vector<Attribute> m_computerAttributes;
-    bool m_computerAttributesHasBeenSet;
+    bool m_computerAttributesHasBeenSet = false;
   };
 
 } // namespace Model

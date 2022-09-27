@@ -117,7 +117,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
-    SetServiceClientName("AWSBaseClient");
+    AWSClient::SetServiceClientName("AWSBaseClient");
 }
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
@@ -136,7 +136,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
-    SetServiceClientName("AWSBaseClient");
+    AWSClient::SetServiceClientName("AWSBaseClient");
 }
 
 void AWSClient::SetServiceClientName(const Aws::String& name)
@@ -529,7 +529,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<HttpReque
         }
     }
 
-    if (DoesResponseGenerateError(httpResponse))
+    if (DoesResponseGenerateError(httpResponse) || request.HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders()))
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
         auto error = BuildAWSError(httpResponse);
@@ -669,7 +669,7 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
             }
             else
             {
-                httpRequest->SetHeaderValue("x-amz-checksum-crc32", HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(*(request.GetBody()))));
+                httpRequest->SetHeaderValue("x-amz-checksum-crc32", HashingUtils::Base64Encode(HashingUtils::CalculateCRC32(*(GetBodyStream(request)))));
             }
         }
         else if (checksumAlgorithmName == "crc32c")
@@ -680,7 +680,7 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
             }
             else
             {
-                httpRequest->SetHeaderValue("x-amz-checksum-crc32c", HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C(*(request.GetBody()))));
+                httpRequest->SetHeaderValue("x-amz-checksum-crc32c", HashingUtils::Base64Encode(HashingUtils::CalculateCRC32C(*(GetBodyStream(request)))));
             }
         }
         else if (checksumAlgorithmName == "sha256")
@@ -691,7 +691,7 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
             }
             else
             {
-                httpRequest->SetHeaderValue("x-amz-checksum-sha256", HashingUtils::Base64Encode(HashingUtils::CalculateSHA256(*(request.GetBody()))));
+                httpRequest->SetHeaderValue("x-amz-checksum-sha256", HashingUtils::Base64Encode(HashingUtils::CalculateSHA256(*(GetBodyStream(request)))));
             }
         }
         else if (checksumAlgorithmName == "sha1")
@@ -702,12 +702,12 @@ void AWSClient::AddChecksumToRequest(const std::shared_ptr<Aws::Http::HttpReques
             }
             else
             {
-                httpRequest->SetHeaderValue("x-amz-checksum-sha1", HashingUtils::Base64Encode(HashingUtils::CalculateSHA1(*(request.GetBody()))));
+                httpRequest->SetHeaderValue("x-amz-checksum-sha1", HashingUtils::Base64Encode(HashingUtils::CalculateSHA1(*(GetBodyStream(request)))));
             }
         }
         else if (checksumAlgorithmName == "md5")
         {
-            httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*(request.GetBody()))));
+            httpRequest->SetHeaderValue(Http::CONTENT_MD5_HEADER, HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*(GetBodyStream(request)))));
         }
         else
         {
@@ -757,7 +757,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
 
     //If there is no body, we have a content length of 0
     //note: we also used to remove content-type, but S3 actually needs content-type on InitiateMultipartUpload and it isn't
-    //forbiden by the spec. If we start getting weird errors related to this, make sure it isn't caused by this removal.
+    //forbidden by the spec. If we start getting weird errors related to this, make sure it isn't caused by this removal.
     if (!body)
     {
         AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "No content body, content-length headers");
@@ -1027,6 +1027,14 @@ std::shared_ptr<Aws::Http::HttpRequest> AWSClient::ConvertToRequestForPresigning
     return httpRequest;
 }
 
+std::shared_ptr<Aws::IOStream> AWSClient::GetBodyStream(const Aws::AmazonWebServiceRequest& request) const {
+    if (request.GetBody() != nullptr) {
+        return request.GetBody();
+    }
+    // Return an empty string stream for no body
+    return Aws::MakeShared<Aws::StringStream>(AWS_CLIENT_LOG_TAG, "");
+}
+
 std::shared_ptr<Aws::Http::HttpResponse> AWSClient::MakeHttpRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const
 {
     return m_httpClient->MakeRequest(request, m_readRateLimiter.get(), m_writeRateLimiter.get());
@@ -1289,8 +1297,6 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
     }
     else
     {
-        assert(httpResponse->GetResponseCode() != HttpResponseCode::OK);
-
         // When trying to build an AWS Error from a response which is an FStream, we need to rewind the
         // file pointer back to the beginning in order to correctly read the input using the XML string iterator
         if ((httpResponse->GetResponseBody().tellp() > 0)

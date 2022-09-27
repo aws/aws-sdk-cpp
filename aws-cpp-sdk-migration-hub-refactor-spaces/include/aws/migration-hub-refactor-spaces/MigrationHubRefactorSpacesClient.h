@@ -5,173 +5,15 @@
 
 #pragma once
 #include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpaces_EXPORTS.h>
-#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/migration-hub-refactor-spaces/model/CreateApplicationResult.h>
-#include <aws/migration-hub-refactor-spaces/model/CreateEnvironmentResult.h>
-#include <aws/migration-hub-refactor-spaces/model/CreateRouteResult.h>
-#include <aws/migration-hub-refactor-spaces/model/CreateServiceResult.h>
-#include <aws/migration-hub-refactor-spaces/model/DeleteApplicationResult.h>
-#include <aws/migration-hub-refactor-spaces/model/DeleteEnvironmentResult.h>
-#include <aws/migration-hub-refactor-spaces/model/DeleteResourcePolicyResult.h>
-#include <aws/migration-hub-refactor-spaces/model/DeleteRouteResult.h>
-#include <aws/migration-hub-refactor-spaces/model/DeleteServiceResult.h>
-#include <aws/migration-hub-refactor-spaces/model/GetApplicationResult.h>
-#include <aws/migration-hub-refactor-spaces/model/GetEnvironmentResult.h>
-#include <aws/migration-hub-refactor-spaces/model/GetResourcePolicyResult.h>
-#include <aws/migration-hub-refactor-spaces/model/GetRouteResult.h>
-#include <aws/migration-hub-refactor-spaces/model/GetServiceResult.h>
-#include <aws/migration-hub-refactor-spaces/model/ListApplicationsResult.h>
-#include <aws/migration-hub-refactor-spaces/model/ListEnvironmentVpcsResult.h>
-#include <aws/migration-hub-refactor-spaces/model/ListEnvironmentsResult.h>
-#include <aws/migration-hub-refactor-spaces/model/ListRoutesResult.h>
-#include <aws/migration-hub-refactor-spaces/model/ListServicesResult.h>
-#include <aws/migration-hub-refactor-spaces/model/ListTagsForResourceResult.h>
-#include <aws/migration-hub-refactor-spaces/model/PutResourcePolicyResult.h>
-#include <aws/migration-hub-refactor-spaces/model/TagResourceResult.h>
-#include <aws/migration-hub-refactor-spaces/model/UntagResourceResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/migration-hub-refactor-spaces/MigrationHubRefactorSpacesServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MigrationHubRefactorSpaces
 {
-
-namespace Model
-{
-        class CreateApplicationRequest;
-        class CreateEnvironmentRequest;
-        class CreateRouteRequest;
-        class CreateServiceRequest;
-        class DeleteApplicationRequest;
-        class DeleteEnvironmentRequest;
-        class DeleteResourcePolicyRequest;
-        class DeleteRouteRequest;
-        class DeleteServiceRequest;
-        class GetApplicationRequest;
-        class GetEnvironmentRequest;
-        class GetResourcePolicyRequest;
-        class GetRouteRequest;
-        class GetServiceRequest;
-        class ListApplicationsRequest;
-        class ListEnvironmentVpcsRequest;
-        class ListEnvironmentsRequest;
-        class ListRoutesRequest;
-        class ListServicesRequest;
-        class ListTagsForResourceRequest;
-        class PutResourcePolicyRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-
-        typedef Aws::Utils::Outcome<CreateApplicationResult, MigrationHubRefactorSpacesError> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateEnvironmentResult, MigrationHubRefactorSpacesError> CreateEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<CreateRouteResult, MigrationHubRefactorSpacesError> CreateRouteOutcome;
-        typedef Aws::Utils::Outcome<CreateServiceResult, MigrationHubRefactorSpacesError> CreateServiceOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationResult, MigrationHubRefactorSpacesError> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<DeleteEnvironmentResult, MigrationHubRefactorSpacesError> DeleteEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, MigrationHubRefactorSpacesError> DeleteResourcePolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteRouteResult, MigrationHubRefactorSpacesError> DeleteRouteOutcome;
-        typedef Aws::Utils::Outcome<DeleteServiceResult, MigrationHubRefactorSpacesError> DeleteServiceOutcome;
-        typedef Aws::Utils::Outcome<GetApplicationResult, MigrationHubRefactorSpacesError> GetApplicationOutcome;
-        typedef Aws::Utils::Outcome<GetEnvironmentResult, MigrationHubRefactorSpacesError> GetEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<GetResourcePolicyResult, MigrationHubRefactorSpacesError> GetResourcePolicyOutcome;
-        typedef Aws::Utils::Outcome<GetRouteResult, MigrationHubRefactorSpacesError> GetRouteOutcome;
-        typedef Aws::Utils::Outcome<GetServiceResult, MigrationHubRefactorSpacesError> GetServiceOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationsResult, MigrationHubRefactorSpacesError> ListApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListEnvironmentVpcsResult, MigrationHubRefactorSpacesError> ListEnvironmentVpcsOutcome;
-        typedef Aws::Utils::Outcome<ListEnvironmentsResult, MigrationHubRefactorSpacesError> ListEnvironmentsOutcome;
-        typedef Aws::Utils::Outcome<ListRoutesResult, MigrationHubRefactorSpacesError> ListRoutesOutcome;
-        typedef Aws::Utils::Outcome<ListServicesResult, MigrationHubRefactorSpacesError> ListServicesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, MigrationHubRefactorSpacesError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutResourcePolicyResult, MigrationHubRefactorSpacesError> PutResourcePolicyOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, MigrationHubRefactorSpacesError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, MigrationHubRefactorSpacesError> UntagResourceOutcome;
-
-        typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
-        typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
-        typedef std::future<CreateRouteOutcome> CreateRouteOutcomeCallable;
-        typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
-        typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
-        typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
-        typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
-        typedef std::future<DeleteRouteOutcome> DeleteRouteOutcomeCallable;
-        typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
-        typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
-        typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
-        typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
-        typedef std::future<GetRouteOutcome> GetRouteOutcomeCallable;
-        typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
-        typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
-        typedef std::future<ListEnvironmentVpcsOutcome> ListEnvironmentVpcsOutcomeCallable;
-        typedef std::future<ListEnvironmentsOutcome> ListEnvironmentsOutcomeCallable;
-        typedef std::future<ListRoutesOutcome> ListRoutesOutcomeCallable;
-        typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-} // namespace Model
-
-  class MigrationHubRefactorSpacesClient;
-
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::CreateEnvironmentRequest&, const Model::CreateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::CreateRouteRequest&, const Model::CreateRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRouteResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::CreateServiceRequest&, const Model::CreateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::DeleteEnvironmentRequest&, const Model::DeleteEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::DeleteRouteRequest&, const Model::DeleteRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRouteResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::DeleteServiceRequest&, const Model::DeleteServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::GetEnvironmentRequest&, const Model::GetEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnvironmentResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::GetRouteRequest&, const Model::GetRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRouteResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::GetServiceRequest&, const Model::GetServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::ListEnvironmentVpcsRequest&, const Model::ListEnvironmentVpcsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentVpcsResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::ListEnvironmentsRequest&, const Model::ListEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentsResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::ListRoutesRequest&, const Model::ListRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoutesResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::ListServicesRequest&, const Model::ListServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServicesResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const MigrationHubRefactorSpacesClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-
   /**
    * <p><fullname>Amazon Web Services Migration Hub Refactor Spaces</fullname></p>
    * <pre><code> &lt;p&gt;This API reference provides descriptions, syntax, and other
@@ -204,14 +46,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MigrationHubRefactorSpacesClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MigrationHubRefactorSpacesClient(const Aws::Auth::AWSCredentials& credentials,
+                                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         MigrationHubRefactorSpacesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~MigrationHubRefactorSpacesClient();
 
@@ -268,27 +111,36 @@ namespace Model
          * regardless of which account creates the route. Routes target a service in the
          * application. If an application does not have any routes, then the first route
          * must be created as a <code>DEFAULT</code> <code>RouteType</code>.</p> <p>When
-         * you create a route, Refactor Spaces configures the Amazon API Gateway to send
-         * traffic to the target service as follows:</p> <ul> <li> <p>If the service has a
-         * URL endpoint, and the endpoint resolves to a private IP address, Refactor Spaces
-         * routes traffic using the API Gateway VPC link. </p> </li> <li> <p>If the service
-         * has a URL endpoint, and the endpoint resolves to a public IP address, Refactor
-         * Spaces routes traffic over the public internet.</p> </li> <li> <p>If the service
-         * has an Lambda function endpoint, then Refactor Spaces configures the Lambda
-         * function's resource policy to allow the application's API Gateway to invoke the
-         * function.</p> </li> </ul> <p>A one-time health check is performed on the service
-         * when the route is created. If the health check fails, the route transitions to
-         * <code>FAILED</code>, and no traffic is sent to the service.</p> <p>For Lambda
-         * functions, the Lambda function state is checked. If the function is not active,
-         * the function configuration is updated so that Lambda resources are provisioned.
-         * If the Lambda state is <code>Failed</code>, then the route creation fails. For
-         * more information, see the <a
+         * created, the default route defaults to an active state so state is not a
+         * required input. However, like all other state values the state of the default
+         * route can be updated after creation, but only when all other routes are also
+         * inactive. Conversely, no route can be active without the default route also
+         * being active.</p> <p>When you create a route, Refactor Spaces configures the
+         * Amazon API Gateway to send traffic to the target service as follows:</p> <ul>
+         * <li> <p>If the service has a URL endpoint, and the endpoint resolves to a
+         * private IP address, Refactor Spaces routes traffic using the API Gateway VPC
+         * link. </p> </li> <li> <p>If the service has a URL endpoint, and the endpoint
+         * resolves to a public IP address, Refactor Spaces routes traffic over the public
+         * internet.</p> </li> <li> <p>If the service has an Lambda function endpoint, then
+         * Refactor Spaces configures the Lambda function's resource policy to allow the
+         * application's API Gateway to invoke the function.</p> </li> </ul> <p>A one-time
+         * health check is performed on the service when either the route is updated from
+         * inactive to active, or when it is created with an active state. If the health
+         * check fails, the route transitions the route state to <code>FAILED</code>, an
+         * error code of <code>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</code> is provided,
+         * and no traffic is sent to the service.</p> <p>For Lambda functions, the Lambda
+         * function state is checked. If the function is not active, the function
+         * configuration is updated so that Lambda resources are provisioned. If the Lambda
+         * state is <code>Failed</code>, then the route creation fails. For more
+         * information, see the <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's
          * State response parameter</a> in the <i>Lambda Developer Guide</i>.</p> <p>For
+         * Lambda endpoints, a check is performed to determine that a Lambda function with
+         * the specified ARN exists. If it does not exist, the health check fails. For
          * public URLs, a connection is opened to the public endpoint. If the URL is not
-         * reachable, the health check fails. For private URLs, a target group is created
-         * and the target group health check is run.</p> <p>The
-         * <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and
+         * reachable, the health check fails. </p> <p>For private URLS, a target group is
+         * created on the Elastic Load Balancing and the target group health check is run.
+         * The <code>HealthCheckProtocol</code>, <code>HealthCheckPort</code>, and
          * <code>HealthCheckPath</code> are the same protocol, port, and path specified in
          * the URL or health URL, if used. All other settings use the default values, as
          * described in <a
@@ -297,7 +149,7 @@ namespace Model
          * at least one target within the target group transitions to a healthy state.</p>
          * <p>Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs,
          * publicly-signed certificates are supported. Private Certificate Authorities
-         * (CAs) are permitted only if the CA's domain is publicly
+         * (CAs) are permitted only if the CA's domain is also publicly
          * resolvable.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/CreateRoute">AWS
          * API Reference</a></p>
@@ -696,33 +548,28 @@ namespace Model
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p> Updates an Amazon Web Services Migration Hub Refactor Spaces route.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/migration-hub-refactor-spaces-2021-10-26/UpdateRoute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRouteOutcome UpdateRoute(const Model::UpdateRouteRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRoute that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRouteOutcomeCallable UpdateRouteCallable(const Model::UpdateRouteRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateRoute that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRouteAsync(const Model::UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateEnvironmentAsyncHelper(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRouteAsyncHelper(const Model::CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateServiceAsyncHelper(const Model::CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteEnvironmentAsyncHelper(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteResourcePolicyAsyncHelper(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRouteAsyncHelper(const Model::DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteServiceAsyncHelper(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetEnvironmentAsyncHelper(const Model::GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetResourcePolicyAsyncHelper(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRouteAsyncHelper(const Model::GetRouteRequest& request, const GetRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetServiceAsyncHelper(const Model::GetServiceRequest& request, const GetServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEnvironmentVpcsAsyncHelper(const Model::ListEnvironmentVpcsRequest& request, const ListEnvironmentVpcsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListEnvironmentsAsyncHelper(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRoutesAsyncHelper(const Model::ListRoutesRequest& request, const ListRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListServicesAsyncHelper(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

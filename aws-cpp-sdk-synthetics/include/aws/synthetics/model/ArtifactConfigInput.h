@@ -102,7 +102,7 @@ namespace Model
   private:
 
     S3EncryptionConfig m_s3Encryption;
-    bool m_s3EncryptionHasBeenSet;
+    bool m_s3EncryptionHasBeenSet = false;
   };
 
 } // namespace Model

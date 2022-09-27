@@ -515,13 +515,13 @@ namespace Model
   private:
 
     Aws::Vector<AttributeType> m_userAttributes;
-    bool m_userAttributesHasBeenSet;
+    bool m_userAttributesHasBeenSet = false;
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_clientMetadata;
-    bool m_clientMetadataHasBeenSet;
+    bool m_clientMetadataHasBeenSet = false;
   };
 
 } // namespace Model

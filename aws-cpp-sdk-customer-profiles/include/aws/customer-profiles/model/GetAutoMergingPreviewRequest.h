@@ -142,16 +142,44 @@ namespace Model
      */
     inline GetAutoMergingPreviewRequest& WithConflictResolution(ConflictResolution&& value) { SetConflictResolution(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Minimum confidence score required for profiles within a matching group to be
+     * merged during the auto-merge process.</p>
+     */
+    inline double GetMinAllowedConfidenceScoreForMerging() const{ return m_minAllowedConfidenceScoreForMerging; }
+
+    /**
+     * <p>Minimum confidence score required for profiles within a matching group to be
+     * merged during the auto-merge process.</p>
+     */
+    inline bool MinAllowedConfidenceScoreForMergingHasBeenSet() const { return m_minAllowedConfidenceScoreForMergingHasBeenSet; }
+
+    /**
+     * <p>Minimum confidence score required for profiles within a matching group to be
+     * merged during the auto-merge process.</p>
+     */
+    inline void SetMinAllowedConfidenceScoreForMerging(double value) { m_minAllowedConfidenceScoreForMergingHasBeenSet = true; m_minAllowedConfidenceScoreForMerging = value; }
+
+    /**
+     * <p>Minimum confidence score required for profiles within a matching group to be
+     * merged during the auto-merge process.</p>
+     */
+    inline GetAutoMergingPreviewRequest& WithMinAllowedConfidenceScoreForMerging(double value) { SetMinAllowedConfidenceScoreForMerging(value); return *this;}
+
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Consolidation m_consolidation;
-    bool m_consolidationHasBeenSet;
+    bool m_consolidationHasBeenSet = false;
 
     ConflictResolution m_conflictResolution;
-    bool m_conflictResolutionHasBeenSet;
+    bool m_conflictResolutionHasBeenSet = false;
+
+    double m_minAllowedConfidenceScoreForMerging;
+    bool m_minAllowedConfidenceScoreForMergingHasBeenSet = false;
   };
 
 } // namespace Model

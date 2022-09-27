@@ -113,10 +113,10 @@ namespace Model
   private:
 
     EngineType m_engineType;
-    bool m_engineTypeHasBeenSet;
+    bool m_engineTypeHasBeenSet = false;
 
     Aws::Vector<EngineVersion> m_engineVersions;
-    bool m_engineVersionsHasBeenSet;
+    bool m_engineVersionsHasBeenSet = false;
   };
 
 } // namespace Model

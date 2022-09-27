@@ -153,13 +153,13 @@ namespace Model
   private:
 
     DeliveryMethod m_deliveryMethod;
-    bool m_deliveryMethodHasBeenSet;
+    bool m_deliveryMethodHasBeenSet = false;
 
     EmailSettings m_emailSettings;
-    bool m_emailSettingsHasBeenSet;
+    bool m_emailSettingsHasBeenSet = false;
 
     SmsSettings m_smsSettings;
-    bool m_smsSettingsHasBeenSet;
+    bool m_smsSettingsHasBeenSet = false;
   };
 
 } // namespace Model

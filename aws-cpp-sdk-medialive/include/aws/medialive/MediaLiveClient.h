@@ -5,342 +5,15 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
-#include <aws/medialive/MediaLiveErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/medialive/model/AcceptInputDeviceTransferResult.h>
-#include <aws/medialive/model/BatchDeleteResult.h>
-#include <aws/medialive/model/BatchStartResult.h>
-#include <aws/medialive/model/BatchStopResult.h>
-#include <aws/medialive/model/BatchUpdateScheduleResult.h>
-#include <aws/medialive/model/CancelInputDeviceTransferResult.h>
-#include <aws/medialive/model/ClaimDeviceResult.h>
-#include <aws/medialive/model/CreateChannelResult.h>
-#include <aws/medialive/model/CreateInputResult.h>
-#include <aws/medialive/model/CreateInputSecurityGroupResult.h>
-#include <aws/medialive/model/CreateMultiplexResult.h>
-#include <aws/medialive/model/CreateMultiplexProgramResult.h>
-#include <aws/medialive/model/CreatePartnerInputResult.h>
-#include <aws/medialive/model/DeleteChannelResult.h>
-#include <aws/medialive/model/DeleteInputResult.h>
-#include <aws/medialive/model/DeleteInputSecurityGroupResult.h>
-#include <aws/medialive/model/DeleteMultiplexResult.h>
-#include <aws/medialive/model/DeleteMultiplexProgramResult.h>
-#include <aws/medialive/model/DeleteReservationResult.h>
-#include <aws/medialive/model/DeleteScheduleResult.h>
-#include <aws/medialive/model/DescribeChannelResult.h>
-#include <aws/medialive/model/DescribeInputResult.h>
-#include <aws/medialive/model/DescribeInputDeviceResult.h>
-#include <aws/medialive/model/DescribeInputDeviceThumbnailResult.h>
-#include <aws/medialive/model/DescribeInputSecurityGroupResult.h>
-#include <aws/medialive/model/DescribeMultiplexResult.h>
-#include <aws/medialive/model/DescribeMultiplexProgramResult.h>
-#include <aws/medialive/model/DescribeOfferingResult.h>
-#include <aws/medialive/model/DescribeReservationResult.h>
-#include <aws/medialive/model/DescribeScheduleResult.h>
-#include <aws/medialive/model/ListChannelsResult.h>
-#include <aws/medialive/model/ListInputDeviceTransfersResult.h>
-#include <aws/medialive/model/ListInputDevicesResult.h>
-#include <aws/medialive/model/ListInputSecurityGroupsResult.h>
-#include <aws/medialive/model/ListInputsResult.h>
-#include <aws/medialive/model/ListMultiplexProgramsResult.h>
-#include <aws/medialive/model/ListMultiplexesResult.h>
-#include <aws/medialive/model/ListOfferingsResult.h>
-#include <aws/medialive/model/ListReservationsResult.h>
-#include <aws/medialive/model/ListTagsForResourceResult.h>
-#include <aws/medialive/model/PurchaseOfferingResult.h>
-#include <aws/medialive/model/RejectInputDeviceTransferResult.h>
-#include <aws/medialive/model/StartChannelResult.h>
-#include <aws/medialive/model/StartMultiplexResult.h>
-#include <aws/medialive/model/StopChannelResult.h>
-#include <aws/medialive/model/StopMultiplexResult.h>
-#include <aws/medialive/model/TransferInputDeviceResult.h>
-#include <aws/medialive/model/UpdateChannelResult.h>
-#include <aws/medialive/model/UpdateChannelClassResult.h>
-#include <aws/medialive/model/UpdateInputResult.h>
-#include <aws/medialive/model/UpdateInputDeviceResult.h>
-#include <aws/medialive/model/UpdateInputSecurityGroupResult.h>
-#include <aws/medialive/model/UpdateMultiplexResult.h>
-#include <aws/medialive/model/UpdateMultiplexProgramResult.h>
-#include <aws/medialive/model/UpdateReservationResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/medialive/MediaLiveServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MediaLive
 {
-
-namespace Model
-{
-        class AcceptInputDeviceTransferRequest;
-        class BatchDeleteRequest;
-        class BatchStartRequest;
-        class BatchStopRequest;
-        class BatchUpdateScheduleRequest;
-        class CancelInputDeviceTransferRequest;
-        class ClaimDeviceRequest;
-        class CreateChannelRequest;
-        class CreateInputRequest;
-        class CreateInputSecurityGroupRequest;
-        class CreateMultiplexRequest;
-        class CreateMultiplexProgramRequest;
-        class CreatePartnerInputRequest;
-        class CreateTagsRequest;
-        class DeleteChannelRequest;
-        class DeleteInputRequest;
-        class DeleteInputSecurityGroupRequest;
-        class DeleteMultiplexRequest;
-        class DeleteMultiplexProgramRequest;
-        class DeleteReservationRequest;
-        class DeleteScheduleRequest;
-        class DeleteTagsRequest;
-        class DescribeChannelRequest;
-        class DescribeInputRequest;
-        class DescribeInputDeviceRequest;
-        class DescribeInputDeviceThumbnailRequest;
-        class DescribeInputSecurityGroupRequest;
-        class DescribeMultiplexRequest;
-        class DescribeMultiplexProgramRequest;
-        class DescribeOfferingRequest;
-        class DescribeReservationRequest;
-        class DescribeScheduleRequest;
-        class ListChannelsRequest;
-        class ListInputDeviceTransfersRequest;
-        class ListInputDevicesRequest;
-        class ListInputSecurityGroupsRequest;
-        class ListInputsRequest;
-        class ListMultiplexProgramsRequest;
-        class ListMultiplexesRequest;
-        class ListOfferingsRequest;
-        class ListReservationsRequest;
-        class ListTagsForResourceRequest;
-        class PurchaseOfferingRequest;
-        class RejectInputDeviceTransferRequest;
-        class StartChannelRequest;
-        class StartMultiplexRequest;
-        class StopChannelRequest;
-        class StopMultiplexRequest;
-        class TransferInputDeviceRequest;
-        class UpdateChannelRequest;
-        class UpdateChannelClassRequest;
-        class UpdateInputRequest;
-        class UpdateInputDeviceRequest;
-        class UpdateInputSecurityGroupRequest;
-        class UpdateMultiplexRequest;
-        class UpdateMultiplexProgramRequest;
-        class UpdateReservationRequest;
-
-        typedef Aws::Utils::Outcome<AcceptInputDeviceTransferResult, MediaLiveError> AcceptInputDeviceTransferOutcome;
-        typedef Aws::Utils::Outcome<BatchDeleteResult, MediaLiveError> BatchDeleteOutcome;
-        typedef Aws::Utils::Outcome<BatchStartResult, MediaLiveError> BatchStartOutcome;
-        typedef Aws::Utils::Outcome<BatchStopResult, MediaLiveError> BatchStopOutcome;
-        typedef Aws::Utils::Outcome<BatchUpdateScheduleResult, MediaLiveError> BatchUpdateScheduleOutcome;
-        typedef Aws::Utils::Outcome<CancelInputDeviceTransferResult, MediaLiveError> CancelInputDeviceTransferOutcome;
-        typedef Aws::Utils::Outcome<ClaimDeviceResult, MediaLiveError> ClaimDeviceOutcome;
-        typedef Aws::Utils::Outcome<CreateChannelResult, MediaLiveError> CreateChannelOutcome;
-        typedef Aws::Utils::Outcome<CreateInputResult, MediaLiveError> CreateInputOutcome;
-        typedef Aws::Utils::Outcome<CreateInputSecurityGroupResult, MediaLiveError> CreateInputSecurityGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateMultiplexResult, MediaLiveError> CreateMultiplexOutcome;
-        typedef Aws::Utils::Outcome<CreateMultiplexProgramResult, MediaLiveError> CreateMultiplexProgramOutcome;
-        typedef Aws::Utils::Outcome<CreatePartnerInputResult, MediaLiveError> CreatePartnerInputOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, MediaLiveError> CreateTagsOutcome;
-        typedef Aws::Utils::Outcome<DeleteChannelResult, MediaLiveError> DeleteChannelOutcome;
-        typedef Aws::Utils::Outcome<DeleteInputResult, MediaLiveError> DeleteInputOutcome;
-        typedef Aws::Utils::Outcome<DeleteInputSecurityGroupResult, MediaLiveError> DeleteInputSecurityGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteMultiplexResult, MediaLiveError> DeleteMultiplexOutcome;
-        typedef Aws::Utils::Outcome<DeleteMultiplexProgramResult, MediaLiveError> DeleteMultiplexProgramOutcome;
-        typedef Aws::Utils::Outcome<DeleteReservationResult, MediaLiveError> DeleteReservationOutcome;
-        typedef Aws::Utils::Outcome<DeleteScheduleResult, MediaLiveError> DeleteScheduleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, MediaLiveError> DeleteTagsOutcome;
-        typedef Aws::Utils::Outcome<DescribeChannelResult, MediaLiveError> DescribeChannelOutcome;
-        typedef Aws::Utils::Outcome<DescribeInputResult, MediaLiveError> DescribeInputOutcome;
-        typedef Aws::Utils::Outcome<DescribeInputDeviceResult, MediaLiveError> DescribeInputDeviceOutcome;
-        typedef Aws::Utils::Outcome<DescribeInputDeviceThumbnailResult, MediaLiveError> DescribeInputDeviceThumbnailOutcome;
-        typedef Aws::Utils::Outcome<DescribeInputSecurityGroupResult, MediaLiveError> DescribeInputSecurityGroupOutcome;
-        typedef Aws::Utils::Outcome<DescribeMultiplexResult, MediaLiveError> DescribeMultiplexOutcome;
-        typedef Aws::Utils::Outcome<DescribeMultiplexProgramResult, MediaLiveError> DescribeMultiplexProgramOutcome;
-        typedef Aws::Utils::Outcome<DescribeOfferingResult, MediaLiveError> DescribeOfferingOutcome;
-        typedef Aws::Utils::Outcome<DescribeReservationResult, MediaLiveError> DescribeReservationOutcome;
-        typedef Aws::Utils::Outcome<DescribeScheduleResult, MediaLiveError> DescribeScheduleOutcome;
-        typedef Aws::Utils::Outcome<ListChannelsResult, MediaLiveError> ListChannelsOutcome;
-        typedef Aws::Utils::Outcome<ListInputDeviceTransfersResult, MediaLiveError> ListInputDeviceTransfersOutcome;
-        typedef Aws::Utils::Outcome<ListInputDevicesResult, MediaLiveError> ListInputDevicesOutcome;
-        typedef Aws::Utils::Outcome<ListInputSecurityGroupsResult, MediaLiveError> ListInputSecurityGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListInputsResult, MediaLiveError> ListInputsOutcome;
-        typedef Aws::Utils::Outcome<ListMultiplexProgramsResult, MediaLiveError> ListMultiplexProgramsOutcome;
-        typedef Aws::Utils::Outcome<ListMultiplexesResult, MediaLiveError> ListMultiplexesOutcome;
-        typedef Aws::Utils::Outcome<ListOfferingsResult, MediaLiveError> ListOfferingsOutcome;
-        typedef Aws::Utils::Outcome<ListReservationsResult, MediaLiveError> ListReservationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaLiveError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PurchaseOfferingResult, MediaLiveError> PurchaseOfferingOutcome;
-        typedef Aws::Utils::Outcome<RejectInputDeviceTransferResult, MediaLiveError> RejectInputDeviceTransferOutcome;
-        typedef Aws::Utils::Outcome<StartChannelResult, MediaLiveError> StartChannelOutcome;
-        typedef Aws::Utils::Outcome<StartMultiplexResult, MediaLiveError> StartMultiplexOutcome;
-        typedef Aws::Utils::Outcome<StopChannelResult, MediaLiveError> StopChannelOutcome;
-        typedef Aws::Utils::Outcome<StopMultiplexResult, MediaLiveError> StopMultiplexOutcome;
-        typedef Aws::Utils::Outcome<TransferInputDeviceResult, MediaLiveError> TransferInputDeviceOutcome;
-        typedef Aws::Utils::Outcome<UpdateChannelResult, MediaLiveError> UpdateChannelOutcome;
-        typedef Aws::Utils::Outcome<UpdateChannelClassResult, MediaLiveError> UpdateChannelClassOutcome;
-        typedef Aws::Utils::Outcome<UpdateInputResult, MediaLiveError> UpdateInputOutcome;
-        typedef Aws::Utils::Outcome<UpdateInputDeviceResult, MediaLiveError> UpdateInputDeviceOutcome;
-        typedef Aws::Utils::Outcome<UpdateInputSecurityGroupResult, MediaLiveError> UpdateInputSecurityGroupOutcome;
-        typedef Aws::Utils::Outcome<UpdateMultiplexResult, MediaLiveError> UpdateMultiplexOutcome;
-        typedef Aws::Utils::Outcome<UpdateMultiplexProgramResult, MediaLiveError> UpdateMultiplexProgramOutcome;
-        typedef Aws::Utils::Outcome<UpdateReservationResult, MediaLiveError> UpdateReservationOutcome;
-
-        typedef std::future<AcceptInputDeviceTransferOutcome> AcceptInputDeviceTransferOutcomeCallable;
-        typedef std::future<BatchDeleteOutcome> BatchDeleteOutcomeCallable;
-        typedef std::future<BatchStartOutcome> BatchStartOutcomeCallable;
-        typedef std::future<BatchStopOutcome> BatchStopOutcomeCallable;
-        typedef std::future<BatchUpdateScheduleOutcome> BatchUpdateScheduleOutcomeCallable;
-        typedef std::future<CancelInputDeviceTransferOutcome> CancelInputDeviceTransferOutcomeCallable;
-        typedef std::future<ClaimDeviceOutcome> ClaimDeviceOutcomeCallable;
-        typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
-        typedef std::future<CreateInputOutcome> CreateInputOutcomeCallable;
-        typedef std::future<CreateInputSecurityGroupOutcome> CreateInputSecurityGroupOutcomeCallable;
-        typedef std::future<CreateMultiplexOutcome> CreateMultiplexOutcomeCallable;
-        typedef std::future<CreateMultiplexProgramOutcome> CreateMultiplexProgramOutcomeCallable;
-        typedef std::future<CreatePartnerInputOutcome> CreatePartnerInputOutcomeCallable;
-        typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
-        typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
-        typedef std::future<DeleteInputOutcome> DeleteInputOutcomeCallable;
-        typedef std::future<DeleteInputSecurityGroupOutcome> DeleteInputSecurityGroupOutcomeCallable;
-        typedef std::future<DeleteMultiplexOutcome> DeleteMultiplexOutcomeCallable;
-        typedef std::future<DeleteMultiplexProgramOutcome> DeleteMultiplexProgramOutcomeCallable;
-        typedef std::future<DeleteReservationOutcome> DeleteReservationOutcomeCallable;
-        typedef std::future<DeleteScheduleOutcome> DeleteScheduleOutcomeCallable;
-        typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
-        typedef std::future<DescribeChannelOutcome> DescribeChannelOutcomeCallable;
-        typedef std::future<DescribeInputOutcome> DescribeInputOutcomeCallable;
-        typedef std::future<DescribeInputDeviceOutcome> DescribeInputDeviceOutcomeCallable;
-        typedef std::future<DescribeInputDeviceThumbnailOutcome> DescribeInputDeviceThumbnailOutcomeCallable;
-        typedef std::future<DescribeInputSecurityGroupOutcome> DescribeInputSecurityGroupOutcomeCallable;
-        typedef std::future<DescribeMultiplexOutcome> DescribeMultiplexOutcomeCallable;
-        typedef std::future<DescribeMultiplexProgramOutcome> DescribeMultiplexProgramOutcomeCallable;
-        typedef std::future<DescribeOfferingOutcome> DescribeOfferingOutcomeCallable;
-        typedef std::future<DescribeReservationOutcome> DescribeReservationOutcomeCallable;
-        typedef std::future<DescribeScheduleOutcome> DescribeScheduleOutcomeCallable;
-        typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
-        typedef std::future<ListInputDeviceTransfersOutcome> ListInputDeviceTransfersOutcomeCallable;
-        typedef std::future<ListInputDevicesOutcome> ListInputDevicesOutcomeCallable;
-        typedef std::future<ListInputSecurityGroupsOutcome> ListInputSecurityGroupsOutcomeCallable;
-        typedef std::future<ListInputsOutcome> ListInputsOutcomeCallable;
-        typedef std::future<ListMultiplexProgramsOutcome> ListMultiplexProgramsOutcomeCallable;
-        typedef std::future<ListMultiplexesOutcome> ListMultiplexesOutcomeCallable;
-        typedef std::future<ListOfferingsOutcome> ListOfferingsOutcomeCallable;
-        typedef std::future<ListReservationsOutcome> ListReservationsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PurchaseOfferingOutcome> PurchaseOfferingOutcomeCallable;
-        typedef std::future<RejectInputDeviceTransferOutcome> RejectInputDeviceTransferOutcomeCallable;
-        typedef std::future<StartChannelOutcome> StartChannelOutcomeCallable;
-        typedef std::future<StartMultiplexOutcome> StartMultiplexOutcomeCallable;
-        typedef std::future<StopChannelOutcome> StopChannelOutcomeCallable;
-        typedef std::future<StopMultiplexOutcome> StopMultiplexOutcomeCallable;
-        typedef std::future<TransferInputDeviceOutcome> TransferInputDeviceOutcomeCallable;
-        typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
-        typedef std::future<UpdateChannelClassOutcome> UpdateChannelClassOutcomeCallable;
-        typedef std::future<UpdateInputOutcome> UpdateInputOutcomeCallable;
-        typedef std::future<UpdateInputDeviceOutcome> UpdateInputDeviceOutcomeCallable;
-        typedef std::future<UpdateInputSecurityGroupOutcome> UpdateInputSecurityGroupOutcomeCallable;
-        typedef std::future<UpdateMultiplexOutcome> UpdateMultiplexOutcomeCallable;
-        typedef std::future<UpdateMultiplexProgramOutcome> UpdateMultiplexProgramOutcomeCallable;
-        typedef std::future<UpdateReservationOutcome> UpdateReservationOutcomeCallable;
-} // namespace Model
-
-  class MediaLiveClient;
-
-    typedef std::function<void(const MediaLiveClient*, const Model::AcceptInputDeviceTransferRequest&, const Model::AcceptInputDeviceTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptInputDeviceTransferResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::BatchDeleteRequest&, const Model::BatchDeleteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::BatchStartRequest&, const Model::BatchStartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStartResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::BatchStopRequest&, const Model::BatchStopOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStopResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::BatchUpdateScheduleRequest&, const Model::BatchUpdateScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateScheduleResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::CancelInputDeviceTransferRequest&, const Model::CancelInputDeviceTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelInputDeviceTransferResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::ClaimDeviceRequest&, const Model::ClaimDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClaimDeviceResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::CreateInputRequest&, const Model::CreateInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInputResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::CreateInputSecurityGroupRequest&, const Model::CreateInputSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInputSecurityGroupResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::CreateMultiplexRequest&, const Model::CreateMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMultiplexResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::CreateMultiplexProgramRequest&, const Model::CreateMultiplexProgramOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMultiplexProgramResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::CreatePartnerInputRequest&, const Model::CreatePartnerInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePartnerInputResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DeleteInputRequest&, const Model::DeleteInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInputResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DeleteInputSecurityGroupRequest&, const Model::DeleteInputSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInputSecurityGroupResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DeleteMultiplexRequest&, const Model::DeleteMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMultiplexResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DeleteMultiplexProgramRequest&, const Model::DeleteMultiplexProgramOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMultiplexProgramResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DeleteReservationRequest&, const Model::DeleteReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReservationResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DeleteScheduleRequest&, const Model::DeleteScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScheduleResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DescribeChannelRequest&, const Model::DescribeChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DescribeInputRequest&, const Model::DescribeInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInputResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DescribeInputDeviceRequest&, const Model::DescribeInputDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInputDeviceResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DescribeInputDeviceThumbnailRequest&, Model::DescribeInputDeviceThumbnailOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInputDeviceThumbnailResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DescribeInputSecurityGroupRequest&, const Model::DescribeInputSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInputSecurityGroupResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DescribeMultiplexRequest&, const Model::DescribeMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMultiplexResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DescribeMultiplexProgramRequest&, const Model::DescribeMultiplexProgramOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMultiplexProgramResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DescribeOfferingRequest&, const Model::DescribeOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOfferingResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DescribeReservationRequest&, const Model::DescribeReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservationResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::DescribeScheduleRequest&, const Model::DescribeScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduleResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::ListInputDeviceTransfersRequest&, const Model::ListInputDeviceTransfersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputDeviceTransfersResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::ListInputDevicesRequest&, const Model::ListInputDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputDevicesResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::ListInputSecurityGroupsRequest&, const Model::ListInputSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputSecurityGroupsResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::ListInputsRequest&, const Model::ListInputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputsResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::ListMultiplexProgramsRequest&, const Model::ListMultiplexProgramsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultiplexProgramsResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::ListMultiplexesRequest&, const Model::ListMultiplexesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultiplexesResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::ListOfferingsRequest&, const Model::ListOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOfferingsResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::ListReservationsRequest&, const Model::ListReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReservationsResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::PurchaseOfferingRequest&, const Model::PurchaseOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseOfferingResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::RejectInputDeviceTransferRequest&, const Model::RejectInputDeviceTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInputDeviceTransferResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::StartChannelRequest&, const Model::StartChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChannelResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::StartMultiplexRequest&, const Model::StartMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMultiplexResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::StopChannelRequest&, const Model::StopChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopChannelResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::StopMultiplexRequest&, const Model::StopMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMultiplexResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::TransferInputDeviceRequest&, const Model::TransferInputDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TransferInputDeviceResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::UpdateChannelClassRequest&, const Model::UpdateChannelClassOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelClassResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::UpdateInputRequest&, const Model::UpdateInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInputResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::UpdateInputDeviceRequest&, const Model::UpdateInputDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInputDeviceResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::UpdateInputSecurityGroupRequest&, const Model::UpdateInputSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInputSecurityGroupResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::UpdateMultiplexRequest&, const Model::UpdateMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMultiplexResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::UpdateMultiplexProgramRequest&, const Model::UpdateMultiplexProgramOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMultiplexProgramResponseReceivedHandler;
-    typedef std::function<void(const MediaLiveClient*, const Model::UpdateReservationRequest&, const Model::UpdateReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReservationResponseReceivedHandler;
-
   /**
    * API for AWS Elemental MediaLive
    */
@@ -359,14 +32,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MediaLiveClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MediaLiveClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         MediaLiveClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~MediaLiveClient();
 
@@ -1113,6 +787,26 @@ namespace Model
         virtual void PurchaseOfferingAsync(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Send a reboot command to the specified input device. The device will begin
+         * rebooting within a few seconds of sending the command. When the reboot is
+         * complete, the device’s connection status will change to connected.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RebootInputDevice">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RebootInputDeviceOutcome RebootInputDevice(const Model::RebootInputDeviceRequest& request) const;
+
+        /**
+         * A Callable wrapper for RebootInputDevice that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RebootInputDeviceOutcomeCallable RebootInputDeviceCallable(const Model::RebootInputDeviceRequest& request) const;
+
+        /**
+         * An Async wrapper for RebootInputDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RebootInputDeviceAsync(const Model::RebootInputDeviceRequest& request, const RebootInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Reject the transfer of the specified input device to your AWS account.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RejectInputDeviceTransfer">AWS
@@ -1146,6 +840,30 @@ namespace Model
          * An Async wrapper for StartChannel that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartChannelAsync(const Model::StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Start a maintenance window for the specified input device. Starting a
+         * maintenance window will give the device up to two hours to install software. If
+         * the device was streaming prior to the maintenance, it will resume streaming when
+         * the software is fully installed. Devices automatically install updates while
+         * they are powered on and their MediaLive channels are stopped. A maintenance
+         * window allows you to update a device without having to stop MediaLive channels
+         * that use the device. The device must remain powered on and connected to the
+         * internet for the duration of the maintenance.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDeviceMaintenanceWindow">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartInputDeviceMaintenanceWindowOutcome StartInputDeviceMaintenanceWindow(const Model::StartInputDeviceMaintenanceWindowRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartInputDeviceMaintenanceWindow that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartInputDeviceMaintenanceWindowOutcomeCallable StartInputDeviceMaintenanceWindowCallable(const Model::StartInputDeviceMaintenanceWindowRequest& request) const;
+
+        /**
+         * An Async wrapper for StartInputDeviceMaintenanceWindow that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartInputDeviceMaintenanceWindowAsync(const Model::StartInputDeviceMaintenanceWindowRequest& request, const StartInputDeviceMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Start (run) the multiplex. Starting the multiplex does not start the channels.
@@ -1359,63 +1077,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AcceptInputDeviceTransferAsyncHelper(const Model::AcceptInputDeviceTransferRequest& request, const AcceptInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchDeleteAsyncHelper(const Model::BatchDeleteRequest& request, const BatchDeleteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchStartAsyncHelper(const Model::BatchStartRequest& request, const BatchStartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchStopAsyncHelper(const Model::BatchStopRequest& request, const BatchStopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchUpdateScheduleAsyncHelper(const Model::BatchUpdateScheduleRequest& request, const BatchUpdateScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelInputDeviceTransferAsyncHelper(const Model::CancelInputDeviceTransferRequest& request, const CancelInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ClaimDeviceAsyncHelper(const Model::ClaimDeviceRequest& request, const ClaimDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateChannelAsyncHelper(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateInputAsyncHelper(const Model::CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateInputSecurityGroupAsyncHelper(const Model::CreateInputSecurityGroupRequest& request, const CreateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateMultiplexAsyncHelper(const Model::CreateMultiplexRequest& request, const CreateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateMultiplexProgramAsyncHelper(const Model::CreateMultiplexProgramRequest& request, const CreateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePartnerInputAsyncHelper(const Model::CreatePartnerInputRequest& request, const CreatePartnerInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateTagsAsyncHelper(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteChannelAsyncHelper(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteInputAsyncHelper(const Model::DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteInputSecurityGroupAsyncHelper(const Model::DeleteInputSecurityGroupRequest& request, const DeleteInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteMultiplexAsyncHelper(const Model::DeleteMultiplexRequest& request, const DeleteMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteMultiplexProgramAsyncHelper(const Model::DeleteMultiplexProgramRequest& request, const DeleteMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteReservationAsyncHelper(const Model::DeleteReservationRequest& request, const DeleteReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteScheduleAsyncHelper(const Model::DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeChannelAsyncHelper(const Model::DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInputAsyncHelper(const Model::DescribeInputRequest& request, const DescribeInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInputDeviceAsyncHelper(const Model::DescribeInputDeviceRequest& request, const DescribeInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInputDeviceThumbnailAsyncHelper(const Model::DescribeInputDeviceThumbnailRequest& request, const DescribeInputDeviceThumbnailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInputSecurityGroupAsyncHelper(const Model::DescribeInputSecurityGroupRequest& request, const DescribeInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeMultiplexAsyncHelper(const Model::DescribeMultiplexRequest& request, const DescribeMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeMultiplexProgramAsyncHelper(const Model::DescribeMultiplexProgramRequest& request, const DescribeMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeOfferingAsyncHelper(const Model::DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeReservationAsyncHelper(const Model::DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeScheduleAsyncHelper(const Model::DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInputDeviceTransfersAsyncHelper(const Model::ListInputDeviceTransfersRequest& request, const ListInputDeviceTransfersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInputDevicesAsyncHelper(const Model::ListInputDevicesRequest& request, const ListInputDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInputSecurityGroupsAsyncHelper(const Model::ListInputSecurityGroupsRequest& request, const ListInputSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInputsAsyncHelper(const Model::ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListMultiplexProgramsAsyncHelper(const Model::ListMultiplexProgramsRequest& request, const ListMultiplexProgramsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListMultiplexesAsyncHelper(const Model::ListMultiplexesRequest& request, const ListMultiplexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListOfferingsAsyncHelper(const Model::ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListReservationsAsyncHelper(const Model::ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PurchaseOfferingAsyncHelper(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RejectInputDeviceTransferAsyncHelper(const Model::RejectInputDeviceTransferRequest& request, const RejectInputDeviceTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartChannelAsyncHelper(const Model::StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartMultiplexAsyncHelper(const Model::StartMultiplexRequest& request, const StartMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopChannelAsyncHelper(const Model::StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopMultiplexAsyncHelper(const Model::StopMultiplexRequest& request, const StopMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TransferInputDeviceAsyncHelper(const Model::TransferInputDeviceRequest& request, const TransferInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateChannelAsyncHelper(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateChannelClassAsyncHelper(const Model::UpdateChannelClassRequest& request, const UpdateChannelClassResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateInputAsyncHelper(const Model::UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateInputDeviceAsyncHelper(const Model::UpdateInputDeviceRequest& request, const UpdateInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateInputSecurityGroupAsyncHelper(const Model::UpdateInputSecurityGroupRequest& request, const UpdateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateMultiplexAsyncHelper(const Model::UpdateMultiplexRequest& request, const UpdateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateMultiplexProgramAsyncHelper(const Model::UpdateMultiplexProgramRequest& request, const UpdateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateReservationAsyncHelper(const Model::UpdateReservationRequest& request, const UpdateReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

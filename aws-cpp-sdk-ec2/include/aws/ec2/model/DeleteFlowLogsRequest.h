@@ -127,10 +127,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_flowLogIds;
-    bool m_flowLogIdsHasBeenSet;
+    bool m_flowLogIdsHasBeenSet = false;
   };
 
 } // namespace Model

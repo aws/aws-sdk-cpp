@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_featureGroupName;
-    bool m_featureGroupNameHasBeenSet;
+    bool m_featureGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

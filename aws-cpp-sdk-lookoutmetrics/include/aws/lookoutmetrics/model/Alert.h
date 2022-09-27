@@ -10,6 +10,7 @@
 #include <aws/lookoutmetrics/model/AlertType.h>
 #include <aws/lookoutmetrics/model/AlertStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lookoutmetrics/model/AlertFilters.h>
 #include <utility>
 
 namespace Aws
@@ -381,37 +382,77 @@ namespace Model
      */
     inline Alert& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilter.</p>
+     */
+    inline const AlertFilters& GetAlertFilters() const{ return m_alertFilters; }
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilter.</p>
+     */
+    inline bool AlertFiltersHasBeenSet() const { return m_alertFiltersHasBeenSet; }
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilter.</p>
+     */
+    inline void SetAlertFilters(const AlertFilters& value) { m_alertFiltersHasBeenSet = true; m_alertFilters = value; }
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilter.</p>
+     */
+    inline void SetAlertFilters(AlertFilters&& value) { m_alertFiltersHasBeenSet = true; m_alertFilters = std::move(value); }
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilter.</p>
+     */
+    inline Alert& WithAlertFilters(const AlertFilters& value) { SetAlertFilters(value); return *this;}
+
+    /**
+     * <p>The configuration of the alert filters, containing MetricList and
+     * DimensionFilter.</p>
+     */
+    inline Alert& WithAlertFilters(AlertFilters&& value) { SetAlertFilters(std::move(value)); return *this;}
+
   private:
 
     Action m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_alertDescription;
-    bool m_alertDescriptionHasBeenSet;
+    bool m_alertDescriptionHasBeenSet = false;
 
     Aws::String m_alertArn;
-    bool m_alertArnHasBeenSet;
+    bool m_alertArnHasBeenSet = false;
 
     Aws::String m_anomalyDetectorArn;
-    bool m_anomalyDetectorArnHasBeenSet;
+    bool m_anomalyDetectorArnHasBeenSet = false;
 
     Aws::String m_alertName;
-    bool m_alertNameHasBeenSet;
+    bool m_alertNameHasBeenSet = false;
 
     int m_alertSensitivityThreshold;
-    bool m_alertSensitivityThresholdHasBeenSet;
+    bool m_alertSensitivityThresholdHasBeenSet = false;
 
     AlertType m_alertType;
-    bool m_alertTypeHasBeenSet;
+    bool m_alertTypeHasBeenSet = false;
 
     AlertStatus m_alertStatus;
-    bool m_alertStatusHasBeenSet;
+    bool m_alertStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModificationTime;
-    bool m_lastModificationTimeHasBeenSet;
+    bool m_lastModificationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
+
+    AlertFilters m_alertFilters;
+    bool m_alertFiltersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::String m_property;
-    bool m_propertyHasBeenSet;
+    bool m_propertyHasBeenSet = false;
   };
 
 } // namespace Model

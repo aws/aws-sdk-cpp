@@ -60,7 +60,7 @@ namespace Model
   private:
 
     int m_maxParallelExecutionSteps;
-    bool m_maxParallelExecutionStepsHasBeenSet;
+    bool m_maxParallelExecutionStepsHasBeenSet = false;
   };
 
 } // namespace Model

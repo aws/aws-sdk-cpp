@@ -209,19 +209,19 @@ namespace Model
   private:
 
     Aws::String m_instanceClass;
-    bool m_instanceClassHasBeenSet;
+    bool m_instanceClassHasBeenSet = false;
 
     Aws::String m_instanceSize;
-    bool m_instanceSizeHasBeenSet;
+    bool m_instanceSizeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     bool m_currentGeneration;
-    bool m_currentGenerationHasBeenSet;
+    bool m_currentGenerationHasBeenSet = false;
 
     bool m_sizeFlexEligible;
-    bool m_sizeFlexEligibleHasBeenSet;
+    bool m_sizeFlexEligibleHasBeenSet = false;
   };
 
 } // namespace Model

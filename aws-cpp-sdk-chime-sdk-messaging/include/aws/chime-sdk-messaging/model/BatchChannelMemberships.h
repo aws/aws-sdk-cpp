@@ -184,19 +184,63 @@ namespace Model
      */
     inline BatchChannelMemberships& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
 
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline bool SubChannelIdHasBeenSet() const { return m_subChannelIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline void SetSubChannelId(const Aws::String& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = value; }
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline void SetSubChannelId(Aws::String&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::move(value); }
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline void SetSubChannelId(const char* value) { m_subChannelIdHasBeenSet = true; m_subChannelId.assign(value); }
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline BatchChannelMemberships& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline BatchChannelMemberships& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the SubChannel.</p>
+     */
+    inline BatchChannelMemberships& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+
   private:
 
     Identity m_invitedBy;
-    bool m_invitedByHasBeenSet;
+    bool m_invitedByHasBeenSet = false;
 
     ChannelMembershipType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Identity> m_members;
-    bool m_membersHasBeenSet;
+    bool m_membersHasBeenSet = false;
 
     Aws::String m_channelArn;
-    bool m_channelArnHasBeenSet;
+    bool m_channelArnHasBeenSet = false;
+
+    Aws::String m_subChannelId;
+    bool m_subChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

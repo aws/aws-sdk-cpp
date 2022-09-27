@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_parameterGroupName;
-    bool m_parameterGroupNameHasBeenSet;
+    bool m_parameterGroupNameHasBeenSet = false;
 
     bool m_resetAllParameters;
-    bool m_resetAllParametersHasBeenSet;
+    bool m_resetAllParametersHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

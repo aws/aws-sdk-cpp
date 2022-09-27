@@ -378,22 +378,22 @@ namespace Model
   private:
 
     Aws::String m_clientIP;
-    bool m_clientIPHasBeenSet;
+    bool m_clientIPHasBeenSet = false;
 
     Aws::String m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
 
     Aws::String m_uRI;
-    bool m_uRIHasBeenSet;
+    bool m_uRIHasBeenSet = false;
 
     Aws::String m_method;
-    bool m_methodHasBeenSet;
+    bool m_methodHasBeenSet = false;
 
     Aws::String m_hTTPVersion;
-    bool m_hTTPVersionHasBeenSet;
+    bool m_hTTPVersionHasBeenSet = false;
 
     Aws::Vector<HTTPHeader> m_headers;
-    bool m_headersHasBeenSet;
+    bool m_headersHasBeenSet = false;
   };
 
 } // namespace Model

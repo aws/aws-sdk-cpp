@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_datastoreId;
-    bool m_datastoreIdHasBeenSet;
+    bool m_datastoreIdHasBeenSet = false;
   };
 
 } // namespace Model

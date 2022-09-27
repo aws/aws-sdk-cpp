@@ -416,26 +416,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the Capacity Reservation supports instances with temporary,
-     * block-level storage.</p>
+     * <p> <i>Deprecated.</i> </p>
      */
     inline bool GetEphemeralStorage() const{ return m_ephemeralStorage; }
 
     /**
-     * <p>Indicates whether the Capacity Reservation supports instances with temporary,
-     * block-level storage.</p>
+     * <p> <i>Deprecated.</i> </p>
      */
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
 
     /**
-     * <p>Indicates whether the Capacity Reservation supports instances with temporary,
-     * block-level storage.</p>
+     * <p> <i>Deprecated.</i> </p>
      */
     inline void SetEphemeralStorage(bool value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
 
     /**
-     * <p>Indicates whether the Capacity Reservation supports instances with temporary,
-     * block-level storage.</p>
+     * <p> <i>Deprecated.</i> </p>
      */
     inline CreateCapacityReservationRequest& WithEphemeralStorage(bool value) { SetEphemeralStorage(value); return *this;}
 
@@ -887,52 +883,52 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     CapacityReservationInstancePlatform m_instancePlatform;
-    bool m_instancePlatformHasBeenSet;
+    bool m_instancePlatformHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
-    bool m_availabilityZoneIdHasBeenSet;
+    bool m_availabilityZoneIdHasBeenSet = false;
 
     CapacityReservationTenancy m_tenancy;
-    bool m_tenancyHasBeenSet;
+    bool m_tenancyHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     bool m_ephemeralStorage;
-    bool m_ephemeralStorageHasBeenSet;
+    bool m_ephemeralStorageHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     EndDateType m_endDateType;
-    bool m_endDateTypeHasBeenSet;
+    bool m_endDateTypeHasBeenSet = false;
 
     InstanceMatchCriteria m_instanceMatchCriteria;
-    bool m_instanceMatchCriteriaHasBeenSet;
+    bool m_instanceMatchCriteriaHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_outpostArn;
-    bool m_outpostArnHasBeenSet;
+    bool m_outpostArnHasBeenSet = false;
 
     Aws::String m_placementGroupArn;
-    bool m_placementGroupArnHasBeenSet;
+    bool m_placementGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

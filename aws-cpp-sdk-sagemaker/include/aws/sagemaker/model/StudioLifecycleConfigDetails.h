@@ -222,19 +222,19 @@ namespace Model
   private:
 
     Aws::String m_studioLifecycleConfigArn;
-    bool m_studioLifecycleConfigArnHasBeenSet;
+    bool m_studioLifecycleConfigArnHasBeenSet = false;
 
     Aws::String m_studioLifecycleConfigName;
-    bool m_studioLifecycleConfigNameHasBeenSet;
+    bool m_studioLifecycleConfigNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     StudioLifecycleConfigAppType m_studioLifecycleConfigAppType;
-    bool m_studioLifecycleConfigAppTypeHasBeenSet;
+    bool m_studioLifecycleConfigAppTypeHasBeenSet = false;
   };
 
 } // namespace Model

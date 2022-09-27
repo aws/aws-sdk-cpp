@@ -124,10 +124,10 @@ namespace Model
   private:
 
     MFADelete m_mFADelete;
-    bool m_mFADeleteHasBeenSet;
+    bool m_mFADeleteHasBeenSet = false;
 
     BucketVersioningStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

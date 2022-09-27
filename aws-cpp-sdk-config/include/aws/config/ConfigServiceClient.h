@@ -5,479 +5,15 @@
 
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
-#include <aws/config/ConfigServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/config/model/BatchGetAggregateResourceConfigResult.h>
-#include <aws/config/model/BatchGetResourceConfigResult.h>
-#include <aws/config/model/DeleteEvaluationResultsResult.h>
-#include <aws/config/model/DeleteRemediationConfigurationResult.h>
-#include <aws/config/model/DeleteRemediationExceptionsResult.h>
-#include <aws/config/model/DeleteStoredQueryResult.h>
-#include <aws/config/model/DeliverConfigSnapshotResult.h>
-#include <aws/config/model/DescribeAggregateComplianceByConfigRulesResult.h>
-#include <aws/config/model/DescribeAggregateComplianceByConformancePacksResult.h>
-#include <aws/config/model/DescribeAggregationAuthorizationsResult.h>
-#include <aws/config/model/DescribeComplianceByConfigRuleResult.h>
-#include <aws/config/model/DescribeComplianceByResourceResult.h>
-#include <aws/config/model/DescribeConfigRuleEvaluationStatusResult.h>
-#include <aws/config/model/DescribeConfigRulesResult.h>
-#include <aws/config/model/DescribeConfigurationAggregatorSourcesStatusResult.h>
-#include <aws/config/model/DescribeConfigurationAggregatorsResult.h>
-#include <aws/config/model/DescribeConfigurationRecorderStatusResult.h>
-#include <aws/config/model/DescribeConfigurationRecordersResult.h>
-#include <aws/config/model/DescribeConformancePackComplianceResult.h>
-#include <aws/config/model/DescribeConformancePackStatusResult.h>
-#include <aws/config/model/DescribeConformancePacksResult.h>
-#include <aws/config/model/DescribeDeliveryChannelStatusResult.h>
-#include <aws/config/model/DescribeDeliveryChannelsResult.h>
-#include <aws/config/model/DescribeOrganizationConfigRuleStatusesResult.h>
-#include <aws/config/model/DescribeOrganizationConfigRulesResult.h>
-#include <aws/config/model/DescribeOrganizationConformancePackStatusesResult.h>
-#include <aws/config/model/DescribeOrganizationConformancePacksResult.h>
-#include <aws/config/model/DescribePendingAggregationRequestsResult.h>
-#include <aws/config/model/DescribeRemediationConfigurationsResult.h>
-#include <aws/config/model/DescribeRemediationExceptionsResult.h>
-#include <aws/config/model/DescribeRemediationExecutionStatusResult.h>
-#include <aws/config/model/DescribeRetentionConfigurationsResult.h>
-#include <aws/config/model/GetAggregateComplianceDetailsByConfigRuleResult.h>
-#include <aws/config/model/GetAggregateConfigRuleComplianceSummaryResult.h>
-#include <aws/config/model/GetAggregateConformancePackComplianceSummaryResult.h>
-#include <aws/config/model/GetAggregateDiscoveredResourceCountsResult.h>
-#include <aws/config/model/GetAggregateResourceConfigResult.h>
-#include <aws/config/model/GetComplianceDetailsByConfigRuleResult.h>
-#include <aws/config/model/GetComplianceDetailsByResourceResult.h>
-#include <aws/config/model/GetComplianceSummaryByConfigRuleResult.h>
-#include <aws/config/model/GetComplianceSummaryByResourceTypeResult.h>
-#include <aws/config/model/GetConformancePackComplianceDetailsResult.h>
-#include <aws/config/model/GetConformancePackComplianceSummaryResult.h>
-#include <aws/config/model/GetCustomRulePolicyResult.h>
-#include <aws/config/model/GetDiscoveredResourceCountsResult.h>
-#include <aws/config/model/GetOrganizationConfigRuleDetailedStatusResult.h>
-#include <aws/config/model/GetOrganizationConformancePackDetailedStatusResult.h>
-#include <aws/config/model/GetOrganizationCustomRulePolicyResult.h>
-#include <aws/config/model/GetResourceConfigHistoryResult.h>
-#include <aws/config/model/GetStoredQueryResult.h>
-#include <aws/config/model/ListAggregateDiscoveredResourcesResult.h>
-#include <aws/config/model/ListDiscoveredResourcesResult.h>
-#include <aws/config/model/ListStoredQueriesResult.h>
-#include <aws/config/model/ListTagsForResourceResult.h>
-#include <aws/config/model/PutAggregationAuthorizationResult.h>
-#include <aws/config/model/PutConfigurationAggregatorResult.h>
-#include <aws/config/model/PutConformancePackResult.h>
-#include <aws/config/model/PutEvaluationsResult.h>
-#include <aws/config/model/PutExternalEvaluationResult.h>
-#include <aws/config/model/PutOrganizationConfigRuleResult.h>
-#include <aws/config/model/PutOrganizationConformancePackResult.h>
-#include <aws/config/model/PutRemediationConfigurationsResult.h>
-#include <aws/config/model/PutRemediationExceptionsResult.h>
-#include <aws/config/model/PutRetentionConfigurationResult.h>
-#include <aws/config/model/PutStoredQueryResult.h>
-#include <aws/config/model/SelectAggregateResourceConfigResult.h>
-#include <aws/config/model/SelectResourceConfigResult.h>
-#include <aws/config/model/StartConfigRulesEvaluationResult.h>
-#include <aws/config/model/StartRemediationExecutionResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/config/ConfigServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ConfigService
 {
-
-namespace Model
-{
-        class BatchGetAggregateResourceConfigRequest;
-        class BatchGetResourceConfigRequest;
-        class DeleteAggregationAuthorizationRequest;
-        class DeleteConfigRuleRequest;
-        class DeleteConfigurationAggregatorRequest;
-        class DeleteConfigurationRecorderRequest;
-        class DeleteConformancePackRequest;
-        class DeleteDeliveryChannelRequest;
-        class DeleteEvaluationResultsRequest;
-        class DeleteOrganizationConfigRuleRequest;
-        class DeleteOrganizationConformancePackRequest;
-        class DeletePendingAggregationRequestRequest;
-        class DeleteRemediationConfigurationRequest;
-        class DeleteRemediationExceptionsRequest;
-        class DeleteResourceConfigRequest;
-        class DeleteRetentionConfigurationRequest;
-        class DeleteStoredQueryRequest;
-        class DeliverConfigSnapshotRequest;
-        class DescribeAggregateComplianceByConfigRulesRequest;
-        class DescribeAggregateComplianceByConformancePacksRequest;
-        class DescribeAggregationAuthorizationsRequest;
-        class DescribeComplianceByConfigRuleRequest;
-        class DescribeComplianceByResourceRequest;
-        class DescribeConfigRuleEvaluationStatusRequest;
-        class DescribeConfigRulesRequest;
-        class DescribeConfigurationAggregatorSourcesStatusRequest;
-        class DescribeConfigurationAggregatorsRequest;
-        class DescribeConfigurationRecorderStatusRequest;
-        class DescribeConfigurationRecordersRequest;
-        class DescribeConformancePackComplianceRequest;
-        class DescribeConformancePackStatusRequest;
-        class DescribeConformancePacksRequest;
-        class DescribeDeliveryChannelStatusRequest;
-        class DescribeDeliveryChannelsRequest;
-        class DescribeOrganizationConfigRuleStatusesRequest;
-        class DescribeOrganizationConfigRulesRequest;
-        class DescribeOrganizationConformancePackStatusesRequest;
-        class DescribeOrganizationConformancePacksRequest;
-        class DescribePendingAggregationRequestsRequest;
-        class DescribeRemediationConfigurationsRequest;
-        class DescribeRemediationExceptionsRequest;
-        class DescribeRemediationExecutionStatusRequest;
-        class DescribeRetentionConfigurationsRequest;
-        class GetAggregateComplianceDetailsByConfigRuleRequest;
-        class GetAggregateConfigRuleComplianceSummaryRequest;
-        class GetAggregateConformancePackComplianceSummaryRequest;
-        class GetAggregateDiscoveredResourceCountsRequest;
-        class GetAggregateResourceConfigRequest;
-        class GetComplianceDetailsByConfigRuleRequest;
-        class GetComplianceDetailsByResourceRequest;
-        class GetComplianceSummaryByResourceTypeRequest;
-        class GetConformancePackComplianceDetailsRequest;
-        class GetConformancePackComplianceSummaryRequest;
-        class GetCustomRulePolicyRequest;
-        class GetDiscoveredResourceCountsRequest;
-        class GetOrganizationConfigRuleDetailedStatusRequest;
-        class GetOrganizationConformancePackDetailedStatusRequest;
-        class GetOrganizationCustomRulePolicyRequest;
-        class GetResourceConfigHistoryRequest;
-        class GetStoredQueryRequest;
-        class ListAggregateDiscoveredResourcesRequest;
-        class ListDiscoveredResourcesRequest;
-        class ListStoredQueriesRequest;
-        class ListTagsForResourceRequest;
-        class PutAggregationAuthorizationRequest;
-        class PutConfigRuleRequest;
-        class PutConfigurationAggregatorRequest;
-        class PutConfigurationRecorderRequest;
-        class PutConformancePackRequest;
-        class PutDeliveryChannelRequest;
-        class PutEvaluationsRequest;
-        class PutExternalEvaluationRequest;
-        class PutOrganizationConfigRuleRequest;
-        class PutOrganizationConformancePackRequest;
-        class PutRemediationConfigurationsRequest;
-        class PutRemediationExceptionsRequest;
-        class PutResourceConfigRequest;
-        class PutRetentionConfigurationRequest;
-        class PutStoredQueryRequest;
-        class SelectAggregateResourceConfigRequest;
-        class SelectResourceConfigRequest;
-        class StartConfigRulesEvaluationRequest;
-        class StartConfigurationRecorderRequest;
-        class StartRemediationExecutionRequest;
-        class StopConfigurationRecorderRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-
-        typedef Aws::Utils::Outcome<BatchGetAggregateResourceConfigResult, ConfigServiceError> BatchGetAggregateResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<BatchGetResourceConfigResult, ConfigServiceError> BatchGetResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteAggregationAuthorizationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteConfigurationAggregatorOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteConfigurationRecorderOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteConformancePackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteDeliveryChannelOutcome;
-        typedef Aws::Utils::Outcome<DeleteEvaluationResultsResult, ConfigServiceError> DeleteEvaluationResultsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteOrganizationConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteOrganizationConformancePackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeletePendingAggregationRequestOutcome;
-        typedef Aws::Utils::Outcome<DeleteRemediationConfigurationResult, ConfigServiceError> DeleteRemediationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteRemediationExceptionsResult, ConfigServiceError> DeleteRemediationExceptionsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> DeleteRetentionConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteStoredQueryResult, ConfigServiceError> DeleteStoredQueryOutcome;
-        typedef Aws::Utils::Outcome<DeliverConfigSnapshotResult, ConfigServiceError> DeliverConfigSnapshotOutcome;
-        typedef Aws::Utils::Outcome<DescribeAggregateComplianceByConfigRulesResult, ConfigServiceError> DescribeAggregateComplianceByConfigRulesOutcome;
-        typedef Aws::Utils::Outcome<DescribeAggregateComplianceByConformancePacksResult, ConfigServiceError> DescribeAggregateComplianceByConformancePacksOutcome;
-        typedef Aws::Utils::Outcome<DescribeAggregationAuthorizationsResult, ConfigServiceError> DescribeAggregationAuthorizationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeComplianceByConfigRuleResult, ConfigServiceError> DescribeComplianceByConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<DescribeComplianceByResourceResult, ConfigServiceError> DescribeComplianceByResourceOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigRuleEvaluationStatusResult, ConfigServiceError> DescribeConfigRuleEvaluationStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigRulesResult, ConfigServiceError> DescribeConfigRulesOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationAggregatorSourcesStatusResult, ConfigServiceError> DescribeConfigurationAggregatorSourcesStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationAggregatorsResult, ConfigServiceError> DescribeConfigurationAggregatorsOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationRecorderStatusResult, ConfigServiceError> DescribeConfigurationRecorderStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeConfigurationRecordersResult, ConfigServiceError> DescribeConfigurationRecordersOutcome;
-        typedef Aws::Utils::Outcome<DescribeConformancePackComplianceResult, ConfigServiceError> DescribeConformancePackComplianceOutcome;
-        typedef Aws::Utils::Outcome<DescribeConformancePackStatusResult, ConfigServiceError> DescribeConformancePackStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeConformancePacksResult, ConfigServiceError> DescribeConformancePacksOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeliveryChannelStatusResult, ConfigServiceError> DescribeDeliveryChannelStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeliveryChannelsResult, ConfigServiceError> DescribeDeliveryChannelsOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrganizationConfigRuleStatusesResult, ConfigServiceError> DescribeOrganizationConfigRuleStatusesOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrganizationConfigRulesResult, ConfigServiceError> DescribeOrganizationConfigRulesOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrganizationConformancePackStatusesResult, ConfigServiceError> DescribeOrganizationConformancePackStatusesOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrganizationConformancePacksResult, ConfigServiceError> DescribeOrganizationConformancePacksOutcome;
-        typedef Aws::Utils::Outcome<DescribePendingAggregationRequestsResult, ConfigServiceError> DescribePendingAggregationRequestsOutcome;
-        typedef Aws::Utils::Outcome<DescribeRemediationConfigurationsResult, ConfigServiceError> DescribeRemediationConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeRemediationExceptionsResult, ConfigServiceError> DescribeRemediationExceptionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeRemediationExecutionStatusResult, ConfigServiceError> DescribeRemediationExecutionStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeRetentionConfigurationsResult, ConfigServiceError> DescribeRetentionConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<GetAggregateComplianceDetailsByConfigRuleResult, ConfigServiceError> GetAggregateComplianceDetailsByConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<GetAggregateConfigRuleComplianceSummaryResult, ConfigServiceError> GetAggregateConfigRuleComplianceSummaryOutcome;
-        typedef Aws::Utils::Outcome<GetAggregateConformancePackComplianceSummaryResult, ConfigServiceError> GetAggregateConformancePackComplianceSummaryOutcome;
-        typedef Aws::Utils::Outcome<GetAggregateDiscoveredResourceCountsResult, ConfigServiceError> GetAggregateDiscoveredResourceCountsOutcome;
-        typedef Aws::Utils::Outcome<GetAggregateResourceConfigResult, ConfigServiceError> GetAggregateResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<GetComplianceDetailsByConfigRuleResult, ConfigServiceError> GetComplianceDetailsByConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<GetComplianceDetailsByResourceResult, ConfigServiceError> GetComplianceDetailsByResourceOutcome;
-        typedef Aws::Utils::Outcome<GetComplianceSummaryByConfigRuleResult, ConfigServiceError> GetComplianceSummaryByConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<GetComplianceSummaryByResourceTypeResult, ConfigServiceError> GetComplianceSummaryByResourceTypeOutcome;
-        typedef Aws::Utils::Outcome<GetConformancePackComplianceDetailsResult, ConfigServiceError> GetConformancePackComplianceDetailsOutcome;
-        typedef Aws::Utils::Outcome<GetConformancePackComplianceSummaryResult, ConfigServiceError> GetConformancePackComplianceSummaryOutcome;
-        typedef Aws::Utils::Outcome<GetCustomRulePolicyResult, ConfigServiceError> GetCustomRulePolicyOutcome;
-        typedef Aws::Utils::Outcome<GetDiscoveredResourceCountsResult, ConfigServiceError> GetDiscoveredResourceCountsOutcome;
-        typedef Aws::Utils::Outcome<GetOrganizationConfigRuleDetailedStatusResult, ConfigServiceError> GetOrganizationConfigRuleDetailedStatusOutcome;
-        typedef Aws::Utils::Outcome<GetOrganizationConformancePackDetailedStatusResult, ConfigServiceError> GetOrganizationConformancePackDetailedStatusOutcome;
-        typedef Aws::Utils::Outcome<GetOrganizationCustomRulePolicyResult, ConfigServiceError> GetOrganizationCustomRulePolicyOutcome;
-        typedef Aws::Utils::Outcome<GetResourceConfigHistoryResult, ConfigServiceError> GetResourceConfigHistoryOutcome;
-        typedef Aws::Utils::Outcome<GetStoredQueryResult, ConfigServiceError> GetStoredQueryOutcome;
-        typedef Aws::Utils::Outcome<ListAggregateDiscoveredResourcesResult, ConfigServiceError> ListAggregateDiscoveredResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, ConfigServiceError> ListDiscoveredResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListStoredQueriesResult, ConfigServiceError> ListStoredQueriesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConfigServiceError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutAggregationAuthorizationResult, ConfigServiceError> PutAggregationAuthorizationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<PutConfigurationAggregatorResult, ConfigServiceError> PutConfigurationAggregatorOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutConfigurationRecorderOutcome;
-        typedef Aws::Utils::Outcome<PutConformancePackResult, ConfigServiceError> PutConformancePackOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutDeliveryChannelOutcome;
-        typedef Aws::Utils::Outcome<PutEvaluationsResult, ConfigServiceError> PutEvaluationsOutcome;
-        typedef Aws::Utils::Outcome<PutExternalEvaluationResult, ConfigServiceError> PutExternalEvaluationOutcome;
-        typedef Aws::Utils::Outcome<PutOrganizationConfigRuleResult, ConfigServiceError> PutOrganizationConfigRuleOutcome;
-        typedef Aws::Utils::Outcome<PutOrganizationConformancePackResult, ConfigServiceError> PutOrganizationConformancePackOutcome;
-        typedef Aws::Utils::Outcome<PutRemediationConfigurationsResult, ConfigServiceError> PutRemediationConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<PutRemediationExceptionsResult, ConfigServiceError> PutRemediationExceptionsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> PutResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<PutRetentionConfigurationResult, ConfigServiceError> PutRetentionConfigurationOutcome;
-        typedef Aws::Utils::Outcome<PutStoredQueryResult, ConfigServiceError> PutStoredQueryOutcome;
-        typedef Aws::Utils::Outcome<SelectAggregateResourceConfigResult, ConfigServiceError> SelectAggregateResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<SelectResourceConfigResult, ConfigServiceError> SelectResourceConfigOutcome;
-        typedef Aws::Utils::Outcome<StartConfigRulesEvaluationResult, ConfigServiceError> StartConfigRulesEvaluationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> StartConfigurationRecorderOutcome;
-        typedef Aws::Utils::Outcome<StartRemediationExecutionResult, ConfigServiceError> StartRemediationExecutionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> StopConfigurationRecorderOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ConfigServiceError> UntagResourceOutcome;
-
-        typedef std::future<BatchGetAggregateResourceConfigOutcome> BatchGetAggregateResourceConfigOutcomeCallable;
-        typedef std::future<BatchGetResourceConfigOutcome> BatchGetResourceConfigOutcomeCallable;
-        typedef std::future<DeleteAggregationAuthorizationOutcome> DeleteAggregationAuthorizationOutcomeCallable;
-        typedef std::future<DeleteConfigRuleOutcome> DeleteConfigRuleOutcomeCallable;
-        typedef std::future<DeleteConfigurationAggregatorOutcome> DeleteConfigurationAggregatorOutcomeCallable;
-        typedef std::future<DeleteConfigurationRecorderOutcome> DeleteConfigurationRecorderOutcomeCallable;
-        typedef std::future<DeleteConformancePackOutcome> DeleteConformancePackOutcomeCallable;
-        typedef std::future<DeleteDeliveryChannelOutcome> DeleteDeliveryChannelOutcomeCallable;
-        typedef std::future<DeleteEvaluationResultsOutcome> DeleteEvaluationResultsOutcomeCallable;
-        typedef std::future<DeleteOrganizationConfigRuleOutcome> DeleteOrganizationConfigRuleOutcomeCallable;
-        typedef std::future<DeleteOrganizationConformancePackOutcome> DeleteOrganizationConformancePackOutcomeCallable;
-        typedef std::future<DeletePendingAggregationRequestOutcome> DeletePendingAggregationRequestOutcomeCallable;
-        typedef std::future<DeleteRemediationConfigurationOutcome> DeleteRemediationConfigurationOutcomeCallable;
-        typedef std::future<DeleteRemediationExceptionsOutcome> DeleteRemediationExceptionsOutcomeCallable;
-        typedef std::future<DeleteResourceConfigOutcome> DeleteResourceConfigOutcomeCallable;
-        typedef std::future<DeleteRetentionConfigurationOutcome> DeleteRetentionConfigurationOutcomeCallable;
-        typedef std::future<DeleteStoredQueryOutcome> DeleteStoredQueryOutcomeCallable;
-        typedef std::future<DeliverConfigSnapshotOutcome> DeliverConfigSnapshotOutcomeCallable;
-        typedef std::future<DescribeAggregateComplianceByConfigRulesOutcome> DescribeAggregateComplianceByConfigRulesOutcomeCallable;
-        typedef std::future<DescribeAggregateComplianceByConformancePacksOutcome> DescribeAggregateComplianceByConformancePacksOutcomeCallable;
-        typedef std::future<DescribeAggregationAuthorizationsOutcome> DescribeAggregationAuthorizationsOutcomeCallable;
-        typedef std::future<DescribeComplianceByConfigRuleOutcome> DescribeComplianceByConfigRuleOutcomeCallable;
-        typedef std::future<DescribeComplianceByResourceOutcome> DescribeComplianceByResourceOutcomeCallable;
-        typedef std::future<DescribeConfigRuleEvaluationStatusOutcome> DescribeConfigRuleEvaluationStatusOutcomeCallable;
-        typedef std::future<DescribeConfigRulesOutcome> DescribeConfigRulesOutcomeCallable;
-        typedef std::future<DescribeConfigurationAggregatorSourcesStatusOutcome> DescribeConfigurationAggregatorSourcesStatusOutcomeCallable;
-        typedef std::future<DescribeConfigurationAggregatorsOutcome> DescribeConfigurationAggregatorsOutcomeCallable;
-        typedef std::future<DescribeConfigurationRecorderStatusOutcome> DescribeConfigurationRecorderStatusOutcomeCallable;
-        typedef std::future<DescribeConfigurationRecordersOutcome> DescribeConfigurationRecordersOutcomeCallable;
-        typedef std::future<DescribeConformancePackComplianceOutcome> DescribeConformancePackComplianceOutcomeCallable;
-        typedef std::future<DescribeConformancePackStatusOutcome> DescribeConformancePackStatusOutcomeCallable;
-        typedef std::future<DescribeConformancePacksOutcome> DescribeConformancePacksOutcomeCallable;
-        typedef std::future<DescribeDeliveryChannelStatusOutcome> DescribeDeliveryChannelStatusOutcomeCallable;
-        typedef std::future<DescribeDeliveryChannelsOutcome> DescribeDeliveryChannelsOutcomeCallable;
-        typedef std::future<DescribeOrganizationConfigRuleStatusesOutcome> DescribeOrganizationConfigRuleStatusesOutcomeCallable;
-        typedef std::future<DescribeOrganizationConfigRulesOutcome> DescribeOrganizationConfigRulesOutcomeCallable;
-        typedef std::future<DescribeOrganizationConformancePackStatusesOutcome> DescribeOrganizationConformancePackStatusesOutcomeCallable;
-        typedef std::future<DescribeOrganizationConformancePacksOutcome> DescribeOrganizationConformancePacksOutcomeCallable;
-        typedef std::future<DescribePendingAggregationRequestsOutcome> DescribePendingAggregationRequestsOutcomeCallable;
-        typedef std::future<DescribeRemediationConfigurationsOutcome> DescribeRemediationConfigurationsOutcomeCallable;
-        typedef std::future<DescribeRemediationExceptionsOutcome> DescribeRemediationExceptionsOutcomeCallable;
-        typedef std::future<DescribeRemediationExecutionStatusOutcome> DescribeRemediationExecutionStatusOutcomeCallable;
-        typedef std::future<DescribeRetentionConfigurationsOutcome> DescribeRetentionConfigurationsOutcomeCallable;
-        typedef std::future<GetAggregateComplianceDetailsByConfigRuleOutcome> GetAggregateComplianceDetailsByConfigRuleOutcomeCallable;
-        typedef std::future<GetAggregateConfigRuleComplianceSummaryOutcome> GetAggregateConfigRuleComplianceSummaryOutcomeCallable;
-        typedef std::future<GetAggregateConformancePackComplianceSummaryOutcome> GetAggregateConformancePackComplianceSummaryOutcomeCallable;
-        typedef std::future<GetAggregateDiscoveredResourceCountsOutcome> GetAggregateDiscoveredResourceCountsOutcomeCallable;
-        typedef std::future<GetAggregateResourceConfigOutcome> GetAggregateResourceConfigOutcomeCallable;
-        typedef std::future<GetComplianceDetailsByConfigRuleOutcome> GetComplianceDetailsByConfigRuleOutcomeCallable;
-        typedef std::future<GetComplianceDetailsByResourceOutcome> GetComplianceDetailsByResourceOutcomeCallable;
-        typedef std::future<GetComplianceSummaryByConfigRuleOutcome> GetComplianceSummaryByConfigRuleOutcomeCallable;
-        typedef std::future<GetComplianceSummaryByResourceTypeOutcome> GetComplianceSummaryByResourceTypeOutcomeCallable;
-        typedef std::future<GetConformancePackComplianceDetailsOutcome> GetConformancePackComplianceDetailsOutcomeCallable;
-        typedef std::future<GetConformancePackComplianceSummaryOutcome> GetConformancePackComplianceSummaryOutcomeCallable;
-        typedef std::future<GetCustomRulePolicyOutcome> GetCustomRulePolicyOutcomeCallable;
-        typedef std::future<GetDiscoveredResourceCountsOutcome> GetDiscoveredResourceCountsOutcomeCallable;
-        typedef std::future<GetOrganizationConfigRuleDetailedStatusOutcome> GetOrganizationConfigRuleDetailedStatusOutcomeCallable;
-        typedef std::future<GetOrganizationConformancePackDetailedStatusOutcome> GetOrganizationConformancePackDetailedStatusOutcomeCallable;
-        typedef std::future<GetOrganizationCustomRulePolicyOutcome> GetOrganizationCustomRulePolicyOutcomeCallable;
-        typedef std::future<GetResourceConfigHistoryOutcome> GetResourceConfigHistoryOutcomeCallable;
-        typedef std::future<GetStoredQueryOutcome> GetStoredQueryOutcomeCallable;
-        typedef std::future<ListAggregateDiscoveredResourcesOutcome> ListAggregateDiscoveredResourcesOutcomeCallable;
-        typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
-        typedef std::future<ListStoredQueriesOutcome> ListStoredQueriesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutAggregationAuthorizationOutcome> PutAggregationAuthorizationOutcomeCallable;
-        typedef std::future<PutConfigRuleOutcome> PutConfigRuleOutcomeCallable;
-        typedef std::future<PutConfigurationAggregatorOutcome> PutConfigurationAggregatorOutcomeCallable;
-        typedef std::future<PutConfigurationRecorderOutcome> PutConfigurationRecorderOutcomeCallable;
-        typedef std::future<PutConformancePackOutcome> PutConformancePackOutcomeCallable;
-        typedef std::future<PutDeliveryChannelOutcome> PutDeliveryChannelOutcomeCallable;
-        typedef std::future<PutEvaluationsOutcome> PutEvaluationsOutcomeCallable;
-        typedef std::future<PutExternalEvaluationOutcome> PutExternalEvaluationOutcomeCallable;
-        typedef std::future<PutOrganizationConfigRuleOutcome> PutOrganizationConfigRuleOutcomeCallable;
-        typedef std::future<PutOrganizationConformancePackOutcome> PutOrganizationConformancePackOutcomeCallable;
-        typedef std::future<PutRemediationConfigurationsOutcome> PutRemediationConfigurationsOutcomeCallable;
-        typedef std::future<PutRemediationExceptionsOutcome> PutRemediationExceptionsOutcomeCallable;
-        typedef std::future<PutResourceConfigOutcome> PutResourceConfigOutcomeCallable;
-        typedef std::future<PutRetentionConfigurationOutcome> PutRetentionConfigurationOutcomeCallable;
-        typedef std::future<PutStoredQueryOutcome> PutStoredQueryOutcomeCallable;
-        typedef std::future<SelectAggregateResourceConfigOutcome> SelectAggregateResourceConfigOutcomeCallable;
-        typedef std::future<SelectResourceConfigOutcome> SelectResourceConfigOutcomeCallable;
-        typedef std::future<StartConfigRulesEvaluationOutcome> StartConfigRulesEvaluationOutcomeCallable;
-        typedef std::future<StartConfigurationRecorderOutcome> StartConfigurationRecorderOutcomeCallable;
-        typedef std::future<StartRemediationExecutionOutcome> StartRemediationExecutionOutcomeCallable;
-        typedef std::future<StopConfigurationRecorderOutcome> StopConfigurationRecorderOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-} // namespace Model
-
-  class ConfigServiceClient;
-
-    typedef std::function<void(const ConfigServiceClient*, const Model::BatchGetAggregateResourceConfigRequest&, const Model::BatchGetAggregateResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetAggregateResourceConfigResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::BatchGetResourceConfigRequest&, const Model::BatchGetResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetResourceConfigResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteAggregationAuthorizationRequest&, const Model::DeleteAggregationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAggregationAuthorizationResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfigRuleRequest&, const Model::DeleteConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigRuleResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfigurationAggregatorRequest&, const Model::DeleteConfigurationAggregatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationAggregatorResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfigurationRecorderRequest&, const Model::DeleteConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationRecorderResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConformancePackRequest&, const Model::DeleteConformancePackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConformancePackResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteDeliveryChannelRequest&, const Model::DeleteDeliveryChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeliveryChannelResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteEvaluationResultsRequest&, const Model::DeleteEvaluationResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEvaluationResultsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteOrganizationConfigRuleRequest&, const Model::DeleteOrganizationConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOrganizationConfigRuleResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteOrganizationConformancePackRequest&, const Model::DeleteOrganizationConformancePackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOrganizationConformancePackResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeletePendingAggregationRequestRequest&, const Model::DeletePendingAggregationRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePendingAggregationRequestResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRemediationConfigurationRequest&, const Model::DeleteRemediationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRemediationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRemediationExceptionsRequest&, const Model::DeleteRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRemediationExceptionsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteResourceConfigRequest&, const Model::DeleteResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceConfigResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRetentionConfigurationRequest&, const Model::DeleteRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRetentionConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteStoredQueryRequest&, const Model::DeleteStoredQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStoredQueryResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DeliverConfigSnapshotRequest&, const Model::DeliverConfigSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeliverConfigSnapshotResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeAggregateComplianceByConfigRulesRequest&, const Model::DescribeAggregateComplianceByConfigRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateComplianceByConfigRulesResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeAggregateComplianceByConformancePacksRequest&, const Model::DescribeAggregateComplianceByConformancePacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateComplianceByConformancePacksResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeAggregationAuthorizationsRequest&, const Model::DescribeAggregationAuthorizationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregationAuthorizationsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeComplianceByConfigRuleRequest&, const Model::DescribeComplianceByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComplianceByConfigRuleResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeComplianceByResourceRequest&, const Model::DescribeComplianceByResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComplianceByResourceResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConfigRuleEvaluationStatusRequest&, const Model::DescribeConfigRuleEvaluationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigRuleEvaluationStatusResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConfigRulesRequest&, const Model::DescribeConfigRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigRulesResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConfigurationAggregatorSourcesStatusRequest&, const Model::DescribeConfigurationAggregatorSourcesStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationAggregatorSourcesStatusResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConfigurationAggregatorsRequest&, const Model::DescribeConfigurationAggregatorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationAggregatorsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConfigurationRecorderStatusRequest&, const Model::DescribeConfigurationRecorderStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationRecorderStatusResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConfigurationRecordersRequest&, const Model::DescribeConfigurationRecordersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationRecordersResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConformancePackComplianceRequest&, const Model::DescribeConformancePackComplianceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConformancePackComplianceResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConformancePackStatusRequest&, const Model::DescribeConformancePackStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConformancePackStatusResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeConformancePacksRequest&, const Model::DescribeConformancePacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConformancePacksResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeDeliveryChannelStatusRequest&, const Model::DescribeDeliveryChannelStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeliveryChannelStatusResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeDeliveryChannelsRequest&, const Model::DescribeDeliveryChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDeliveryChannelsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeOrganizationConfigRuleStatusesRequest&, const Model::DescribeOrganizationConfigRuleStatusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationConfigRuleStatusesResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeOrganizationConfigRulesRequest&, const Model::DescribeOrganizationConfigRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationConfigRulesResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeOrganizationConformancePackStatusesRequest&, const Model::DescribeOrganizationConformancePackStatusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationConformancePackStatusesResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeOrganizationConformancePacksRequest&, const Model::DescribeOrganizationConformancePacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationConformancePacksResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribePendingAggregationRequestsRequest&, const Model::DescribePendingAggregationRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePendingAggregationRequestsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRemediationConfigurationsRequest&, const Model::DescribeRemediationConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRemediationConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRemediationExceptionsRequest&, const Model::DescribeRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRemediationExceptionsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRemediationExecutionStatusRequest&, const Model::DescribeRemediationExecutionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRemediationExecutionStatusResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRetentionConfigurationsRequest&, const Model::DescribeRetentionConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRetentionConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateComplianceDetailsByConfigRuleRequest&, const Model::GetAggregateComplianceDetailsByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateConfigRuleComplianceSummaryRequest&, const Model::GetAggregateConfigRuleComplianceSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateConformancePackComplianceSummaryRequest&, const Model::GetAggregateConformancePackComplianceSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateConformancePackComplianceSummaryResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateDiscoveredResourceCountsRequest&, const Model::GetAggregateDiscoveredResourceCountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateDiscoveredResourceCountsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateResourceConfigRequest&, const Model::GetAggregateResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateResourceConfigResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceDetailsByConfigRuleRequest&, const Model::GetComplianceDetailsByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceDetailsByConfigRuleResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceDetailsByResourceRequest&, const Model::GetComplianceDetailsByResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceDetailsByResourceResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceSummaryByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceSummaryByConfigRuleResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceSummaryByResourceTypeRequest&, const Model::GetComplianceSummaryByResourceTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceSummaryByResourceTypeResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetConformancePackComplianceDetailsRequest&, const Model::GetConformancePackComplianceDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConformancePackComplianceDetailsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetConformancePackComplianceSummaryRequest&, const Model::GetConformancePackComplianceSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConformancePackComplianceSummaryResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetCustomRulePolicyRequest&, const Model::GetCustomRulePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCustomRulePolicyResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetDiscoveredResourceCountsRequest&, const Model::GetDiscoveredResourceCountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiscoveredResourceCountsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetOrganizationConfigRuleDetailedStatusRequest&, const Model::GetOrganizationConfigRuleDetailedStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationConfigRuleDetailedStatusResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetOrganizationConformancePackDetailedStatusRequest&, const Model::GetOrganizationConformancePackDetailedStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationConformancePackDetailedStatusResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetOrganizationCustomRulePolicyRequest&, const Model::GetOrganizationCustomRulePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationCustomRulePolicyResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetResourceConfigHistoryRequest&, const Model::GetResourceConfigHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceConfigHistoryResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::GetStoredQueryRequest&, const Model::GetStoredQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStoredQueryResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::ListAggregateDiscoveredResourcesRequest&, const Model::ListAggregateDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAggregateDiscoveredResourcesResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::ListDiscoveredResourcesRequest&, const Model::ListDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDiscoveredResourcesResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::ListStoredQueriesRequest&, const Model::ListStoredQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStoredQueriesResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutAggregationAuthorizationRequest&, const Model::PutAggregationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAggregationAuthorizationResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutConfigRuleRequest&, const Model::PutConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigRuleResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutConfigurationAggregatorRequest&, const Model::PutConfigurationAggregatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationAggregatorResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutConfigurationRecorderRequest&, const Model::PutConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationRecorderResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutConformancePackRequest&, const Model::PutConformancePackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConformancePackResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutDeliveryChannelRequest&, const Model::PutDeliveryChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDeliveryChannelResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutEvaluationsRequest&, const Model::PutEvaluationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEvaluationsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutExternalEvaluationRequest&, const Model::PutExternalEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutExternalEvaluationResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutOrganizationConfigRuleRequest&, const Model::PutOrganizationConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutOrganizationConfigRuleResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutOrganizationConformancePackRequest&, const Model::PutOrganizationConformancePackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutOrganizationConformancePackResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutRemediationConfigurationsRequest&, const Model::PutRemediationConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRemediationConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutRemediationExceptionsRequest&, const Model::PutRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRemediationExceptionsResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutResourceConfigRequest&, const Model::PutResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourceConfigResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutRetentionConfigurationRequest&, const Model::PutRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionConfigurationResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::PutStoredQueryRequest&, const Model::PutStoredQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutStoredQueryResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::SelectAggregateResourceConfigRequest&, const Model::SelectAggregateResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectAggregateResourceConfigResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::SelectResourceConfigRequest&, const Model::SelectResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectResourceConfigResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigRulesEvaluationRequest&, const Model::StartConfigRulesEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigRulesEvaluationResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigurationRecorderRequest&, const Model::StartConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigurationRecorderResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::StartRemediationExecutionRequest&, const Model::StartRemediationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRemediationExecutionResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::StopConfigurationRecorderRequest&, const Model::StopConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopConfigurationRecorderResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const ConfigServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-
   /**
    * <fullname>Config</fullname> <p>Config provides a way to keep track of the
    * configurations of all the Amazon Web Services resources associated with your
@@ -518,14 +54,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ConfigServiceClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ConfigServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ConfigServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ConfigServiceClient();
 
@@ -1277,10 +814,21 @@ namespace Model
 
         /**
          * <p>Returns a list of organization Config rules. </p>  <p>When you specify
-         * the limit and the next token, you receive a paginated response. Limit and next
-         * token are not applicable if you specify organization Config rule names. It is
-         * only applicable, when you request all the organization Config rules.</p>
-         * <p><h3>See Also:</h3>   <a
+         * the limit and the next token, you receive a paginated response.</p> <p>Limit and
+         * next token are not applicable if you specify organization Config rule names. It
+         * is only applicable, when you request all the organization Config rules.</p> <p>
+         * <i>For accounts within an organzation</i> </p> <p>If you deploy an
+         * organizational rule or conformance pack in an organization administrator
+         * account, and then establish a delegated administrator and deploy an
+         * organizational rule or conformance pack in the delegated administrator account,
+         * you won't be able to see the organizational rule or conformance pack in the
+         * organization administrator account from the delegated administrator account or
+         * see the organizational rule or conformance pack in the delegated administrator
+         * account from organization administrator account. The
+         * <code>DescribeOrganizationConfigRules</code> and
+         * <code>DescribeOrganizationConformancePacks</code> APIs can only see and interact
+         * with the organization-related resource that were deployed from within the
+         * account calling those APIs.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules">AWS
          * API Reference</a></p>
          */
@@ -1325,7 +873,18 @@ namespace Model
          * specify the limit and the next token, you receive a paginated response. </p>
          * <p>Limit and next token are not applicable if you specify organization
          * conformance packs names. They are only applicable, when you request all the
-         * organization conformance packs. </p> <p><h3>See Also:</h3>   <a
+         * organization conformance packs. </p> <p> <i>For accounts within an
+         * organzation</i> </p> <p>If you deploy an organizational rule or conformance pack
+         * in an organization administrator account, and then establish a delegated
+         * administrator and deploy an organizational rule or conformance pack in the
+         * delegated administrator account, you won't be able to see the organizational
+         * rule or conformance pack in the organization administrator account from the
+         * delegated administrator account or see the organizational rule or conformance
+         * pack in the delegated administrator account from organization administrator
+         * account. The <code>DescribeOrganizationConfigRules</code> and
+         * <code>DescribeOrganizationConformancePacks</code> APIs can only see and interact
+         * with the organization-related resource that were deployed from within the
+         * account calling those APIs.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">AWS
          * API Reference</a></p>
          */
@@ -1849,6 +1408,31 @@ namespace Model
         virtual void ListAggregateDiscoveredResourcesAsync(const Model::ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of conformance pack compliance scores. A compliance score is
+         * the percentage of the number of compliant rule-resource combinations in a
+         * conformance pack compared to the number of total possible rule-resource
+         * combinations in the conformance pack. This metric provides you with a high-level
+         * view of the compliance state of your conformance packs, and can be used to
+         * identify, investigate, and understand the level of compliance in your
+         * conformance packs.</p>  <p>Conformance packs with no evaluation results
+         * will have a compliance score of <code>INSUFFICIENT_DATA</code>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConformancePackComplianceScores">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConformancePackComplianceScoresOutcome ListConformancePackComplianceScores(const Model::ListConformancePackComplianceScoresRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListConformancePackComplianceScores that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListConformancePackComplianceScoresOutcomeCallable ListConformancePackComplianceScoresCallable(const Model::ListConformancePackComplianceScoresRequest& request) const;
+
+        /**
+         * An Async wrapper for ListConformancePackComplianceScores that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListConformancePackComplianceScoresAsync(const Model::ListConformancePackComplianceScoresRequest& request, const ListConformancePackComplianceScoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Accepts a resource type and returns a list of resource identifiers for the
          * resources of that type. A resource identifier includes the resource type, ID,
          * and (if available) the custom resource name. The results consist of resources
@@ -1931,33 +1515,38 @@ namespace Model
         virtual void PutAggregationAuthorizationAsync(const Model::PutAggregationAuthorizationRequest& request, const PutAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or updates an Config rule for evaluating whether your Amazon Web
-         * Services resources comply with your desired configurations.</p> <p>You can use
-         * this action for Config custom rules and Config managed rules. A Config custom
-         * rule is a rule that you develop and maintain. An Config managed rule is a
-         * customizable, predefined rule that Config provides.</p> <p>If you are adding a
-         * new Config custom rule, you must first create the Lambda function that the rule
-         * invokes to evaluate your resources. When you use the <code>PutConfigRule</code>
-         * action to add the rule to Config, you must specify the Amazon Resource Name
-         * (ARN) that Lambda assigns to the function. Specify the ARN for the
+         * <p>Adds or updates an Config rule to evaluate if your Amazon Web Services
+         * resources comply with your desired configurations. For information on how many
+         * Config rules you can have per account, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+         * <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p> <p>There
+         * are two types of rules: Config Custom Rules and Config Managed Rules. You can
+         * use <code>PutConfigRule</code> to create both Config custom rules and Config
+         * managed rules.</p> <p>Custom rules are rules that you can create using either
+         * Guard or Lambda functions. Guard (<a
+         * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
+         * Repository</a>) is a policy-as-code language that allows you to write policies
+         * that are enforced by Config Custom Policy rules. Lambda uses custom code that
+         * you upload to evaluate a custom rule. If you are adding a new Custom Lambda
+         * rule, you first need to create an Lambda function that the rule invokes to
+         * evaluate your resources. When you use <code>PutConfigRule</code> to add a Custom
+         * Lambda rule to Config, you must specify the Amazon Resource Name (ARN) that
+         * Lambda assigns to the function. You specify the ARN in the
          * <code>SourceIdentifier</code> key. This key is part of the <code>Source</code>
-         * object, which is part of the <code>ConfigRule</code> object. </p> <p>If you are
-         * adding an Config managed rule, specify the rule's identifier for the
-         * <code>SourceIdentifier</code> key. To reference Config managed rule identifiers,
-         * see <a
-         * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About
-         * Config managed rules</a>.</p> <p>For any new rule that you add, specify the
-         * <code>ConfigRuleName</code> in the <code>ConfigRule</code> object. Do not
-         * specify the <code>ConfigRuleArn</code> or the <code>ConfigRuleId</code>. These
-         * values are generated by Config for new rules.</p> <p>If you are updating a rule
-         * that you added previously, you can specify the rule by
-         * <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
+         * object, which is part of the <code>ConfigRule</code> object. </p> <p>Managed
+         * rules are predefined, customizable rules created by Config. For a list of
+         * managed rules, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+         * of Config Managed Rules</a>. If you are adding an Config managed rule, you must
+         * specify the rule's identifier for the <code>SourceIdentifier</code> key.</p>
+         * <p>For any new rule that you add, specify the <code>ConfigRuleName</code> in the
+         * <code>ConfigRule</code> object. Do not specify the <code>ConfigRuleArn</code> or
+         * the <code>ConfigRuleId</code>. These values are generated by Config for new
+         * rules.</p> <p>If you are updating a rule that you added previously, you can
+         * specify the rule by <code>ConfigRuleName</code>, <code>ConfigRuleId</code>, or
          * <code>ConfigRuleArn</code> in the <code>ConfigRule</code> data type that you use
-         * in this request.</p> <p>The maximum number of rules that Config supports is
-         * 150.</p> <p>For information about requesting a rule limit increase, see <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config
-         * Limits</a> in the <i>Amazon Web Services General Reference Guide</i>.</p> <p>For
-         * more information about developing and using Config rules, see <a
+         * in this request.</p> <p>For more information about developing and using Config
+         * rules, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating
          * Amazon Web Services resource Configurations with Config</a> in the <i>Config
          * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1993,7 +1582,7 @@ namespace Model
          * is a valid delegated administrator.</p> <p>To register a delegated
          * administrator, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
-         * a Delegated Administrator</a> in the Config developer guide. </p>
+         * a Delegated Administrator</a> in the <i>Config developer guide</i>. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
@@ -2038,13 +1627,16 @@ namespace Model
         /**
          * <p>Creates or updates a conformance pack. A conformance pack is a collection of
          * Config rules that can be easily deployed in an account and a region and across
-         * Amazon Web Services Organization.</p> <p>This API creates a service linked role
-         * <code>AWSServiceRoleForConfigConforms</code> in your account. The service linked
-         * role is created only when the role does not exist in your account. </p> 
-         * <p>You must specify either the <code>TemplateS3Uri</code> or the
-         * <code>TemplateBody</code> parameter, but not both. If you provide both Config
-         * uses the <code>TemplateS3Uri</code> parameter and ignores the
-         * <code>TemplateBody</code> parameter.</p> <p><h3>See Also:</h3>   <a
+         * Amazon Web Services Organization. For information on how many conformance packs
+         * you can have per account, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+         * <b>Service Limits</b> </a> in the Config Developer Guide.</p> <p>This API
+         * creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in
+         * your account. The service-linked role is created only when the role does not
+         * exist in your account. </p>  <p>You must specify one and only one of
+         * the<code>TemplateS3Uri</code>, <code>TemplateBody</code> or
+         * <code>TemplateSSMDocumentDetails</code> parameters.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConformancePack">AWS
          * API Reference</a></p>
          */
@@ -2125,36 +1717,49 @@ namespace Model
         virtual void PutExternalEvaluationAsync(const Model::PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or updates organization Config rule for your entire organization
-         * evaluating whether your Amazon Web Services resources comply with your desired
-         * configurations.</p> <p> Only a master account and a delegated administrator can
-         * create or update an organization Config rule. When calling this API with a
-         * delegated administrator, you must ensure Organizations
-         * <code>ListDelegatedAdministrator</code> permissions are added. </p> <p>This API
-         * enables organization service access through the
-         * <code>EnableAWSServiceAccess</code> action and creates a service linked role
+         * <p>Adds or updates an Config rule for your entire organization to evaluate if
+         * your Amazon Web Services resources comply with your desired configurations. For
+         * information on how many organization Config rules you can have per account, see
+         * <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+         * <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p> <p> Only a
+         * master account and a delegated administrator can create or update an
+         * organization Config rule. When calling this API with a delegated administrator,
+         * you must ensure Organizations <code>ListDelegatedAdministrator</code>
+         * permissions are added. An organization can have up to 3 delegated
+         * administrators.</p> <p>This API enables organization service access through the
+         * <code>EnableAWSServiceAccess</code> action and creates a service-linked role
          * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
-         * administrator account of your organization. The service linked role is created
+         * administrator account of your organization. The service-linked role is created
          * only when the role does not exist in the caller account. Config verifies the
          * existence of role with <code>GetRole</code> action.</p> <p>To use this API with
          * delegated administrator, register a delegated administrator by calling Amazon
          * Web Services Organization <code>register-delegated-administrator</code> for
-         * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>You can use this
-         * action to create both Config custom rules and Config managed rules. If you are
-         * adding a new Config custom rule, you must first create Lambda function in the
-         * master account or a delegated administrator that the rule invokes to evaluate
-         * your resources. You also need to create an IAM role in the managed-account that
-         * can be assumed by the Lambda function. When you use the
-         * <code>PutOrganizationConfigRule</code> action to add the rule to Config, you
-         * must specify the Amazon Resource Name (ARN) that Lambda assigns to the function.
-         * If you are adding an Config managed rule, specify the rule's identifier for the
-         * <code>RuleIdentifier</code> key.</p> <p>The maximum number of organization
-         * Config rules that Config supports is 150 and 3 delegated administrator per
-         * organization. </p>  <p>Prerequisite: Ensure you call
-         * <code>EnableAllFeatures</code> API to enable all features in an
-         * organization.</p> <p>Specify either <code>OrganizationCustomRuleMetadata</code>
-         * or <code>OrganizationManagedRuleMetadata</code>.</p> <p><h3>See
-         * Also:</h3>   <a
+         * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p>There are two types
+         * of rules: Config Custom Rules and Config Managed Rules. You can use
+         * <code>PutOrganizationConfigRule</code> to create both Config custom rules and
+         * Config managed rules.</p> <p>Custom rules are rules that you can create using
+         * either Guard or Lambda functions. Guard (<a
+         * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub
+         * Repository</a>) is a policy-as-code language that allows you to write policies
+         * that are enforced by Config Custom Policy rules. Lambda uses custom code that
+         * you upload to evaluate a custom rule. If you are adding a new Custom Lambda
+         * rule, you first need to create an Lambda function in the master account or a
+         * delegated administrator that the rule invokes to evaluate your resources. You
+         * also need to create an IAM role in the managed account that can be assumed by
+         * the Lambda function. When you use <code>PutOrganizationConfigRule</code> to add
+         * a Custom Lambda rule to Config, you must specify the Amazon Resource Name (ARN)
+         * that Lambda assigns to the function.</p> <p>Managed rules are predefined,
+         * customizable rules created by Config. For a list of managed rules, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
+         * of Config Managed Rules</a>. If you are adding an Config managed rule, you must
+         * specify the rule's identifier for the <code>RuleIdentifier</code> key.</p>
+         *  <p>Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to
+         * enable all features in an organization.</p> <p>Make sure to specify one of
+         * either <code>OrganizationCustomPolicyRuleMetadata</code> for Custom Policy
+         * rules, <code>OrganizationCustomRuleMetadata</code> for Custom Lambda rules, or
+         * <code>OrganizationManagedRuleMetadata</code> for managed rules.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">AWS
          * API Reference</a></p>
          */
@@ -2172,14 +1777,18 @@ namespace Model
 
         /**
          * <p>Deploys conformance packs across member accounts in an Amazon Web Services
-         * Organization.</p> <p>Only a master account and a delegated administrator can
-         * call this API. When calling this API with a delegated administrator, you must
-         * ensure Organizations <code>ListDelegatedAdministrator</code> permissions are
-         * added.</p> <p>This API enables organization service access for
-         * <code>config-multiaccountsetup.amazonaws.com</code> through the
-         * <code>EnableAWSServiceAccess</code> action and creates a service linked role
+         * Organization. For information on how many organization conformance packs and how
+         * many Config rules you can have per account, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+         * <b>Service Limits</b> </a> in the Config Developer Guide.</p> <p>Only a master
+         * account and a delegated administrator can call this API. When calling this API
+         * with a delegated administrator, you must ensure Organizations
+         * <code>ListDelegatedAdministrator</code> permissions are added. An organization
+         * can have up to 3 delegated administrators.</p> <p>This API enables organization
+         * service access for <code>config-multiaccountsetup.amazonaws.com</code> through
+         * the <code>EnableAWSServiceAccess</code> action and creates a service-linked role
          * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
-         * administrator account of your organization. The service linked role is created
+         * administrator account of your organization. The service-linked role is created
          * only when the role does not exist in the caller account. To use this API with
          * delegated administrator, register a delegated administrator by calling Amazon
          * Web Services Organization <code>register-delegate-admin</code> for
@@ -2191,9 +1800,7 @@ namespace Model
          * <code>TemplateBody</code> parameter.</p> <p>Config sets the state of a
          * conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the
          * conformance pack is created or updated. You cannot update a conformance pack
-         * while it is in this state.</p> <p>You can create 50 conformance packs with 25
-         * Config rules in each pack and 3 delegated administrator per organization. </p>
-         * <p><h3>See Also:</h3>   <a
+         * while it is in this state.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">AWS
          * API Reference</a></p>
          */
@@ -2219,8 +1826,15 @@ namespace Model
          * this again to ensure the remediations can run.</p> <p>This API does not support
          * adding remediation configurations for service-linked Config Rules such as
          * Organization Config rules, the rules deployed by conformance packs, and rules
-         * deployed by Amazon Web Services Security Hub.</p> <p><h3>See Also:</h3>  
-         * <a
+         * deployed by Amazon Web Services Security Hub.</p>   <p>For manual
+         * remediation configuration, you need to provide a value for
+         * <code>automationAssumeRole</code> or use a value in the
+         * <code>assumeRole</code>field to remediate your resources. The SSM automation
+         * document can use either as long as it maps to a valid parameter.</p> <p>However,
+         * for automatic remediation configuration, the only valid <code>assumeRole</code>
+         * field value is <code>AutomationAssumeRole</code> and you need to provide a value
+         * for <code>AutomationAssumeRole</code> to remediate your resources.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationConfigurations">AWS
          * API Reference</a></p>
          */
@@ -2368,8 +1982,8 @@ namespace Model
          * performs the corresponding search, and returns resource configurations matching
          * the properties.</p> <p>For more information about query components, see the <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-         * <b>Query Components</b> </a> section in the Config Developer
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * <b>Query Components</b> </a> section in the <i>Config Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectResourceConfig">AWS
          * API Reference</a></p>
          */
@@ -2527,94 +2141,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void BatchGetAggregateResourceConfigAsyncHelper(const Model::BatchGetAggregateResourceConfigRequest& request, const BatchGetAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetResourceConfigAsyncHelper(const Model::BatchGetResourceConfigRequest& request, const BatchGetResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAggregationAuthorizationAsyncHelper(const Model::DeleteAggregationAuthorizationRequest& request, const DeleteAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteConfigRuleAsyncHelper(const Model::DeleteConfigRuleRequest& request, const DeleteConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteConfigurationAggregatorAsyncHelper(const Model::DeleteConfigurationAggregatorRequest& request, const DeleteConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteConfigurationRecorderAsyncHelper(const Model::DeleteConfigurationRecorderRequest& request, const DeleteConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteConformancePackAsyncHelper(const Model::DeleteConformancePackRequest& request, const DeleteConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDeliveryChannelAsyncHelper(const Model::DeleteDeliveryChannelRequest& request, const DeleteDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteEvaluationResultsAsyncHelper(const Model::DeleteEvaluationResultsRequest& request, const DeleteEvaluationResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteOrganizationConfigRuleAsyncHelper(const Model::DeleteOrganizationConfigRuleRequest& request, const DeleteOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteOrganizationConformancePackAsyncHelper(const Model::DeleteOrganizationConformancePackRequest& request, const DeleteOrganizationConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePendingAggregationRequestAsyncHelper(const Model::DeletePendingAggregationRequestRequest& request, const DeletePendingAggregationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRemediationConfigurationAsyncHelper(const Model::DeleteRemediationConfigurationRequest& request, const DeleteRemediationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRemediationExceptionsAsyncHelper(const Model::DeleteRemediationExceptionsRequest& request, const DeleteRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteResourceConfigAsyncHelper(const Model::DeleteResourceConfigRequest& request, const DeleteResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRetentionConfigurationAsyncHelper(const Model::DeleteRetentionConfigurationRequest& request, const DeleteRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStoredQueryAsyncHelper(const Model::DeleteStoredQueryRequest& request, const DeleteStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeliverConfigSnapshotAsyncHelper(const Model::DeliverConfigSnapshotRequest& request, const DeliverConfigSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAggregateComplianceByConfigRulesAsyncHelper(const Model::DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAggregateComplianceByConformancePacksAsyncHelper(const Model::DescribeAggregateComplianceByConformancePacksRequest& request, const DescribeAggregateComplianceByConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAggregationAuthorizationsAsyncHelper(const Model::DescribeAggregationAuthorizationsRequest& request, const DescribeAggregationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeComplianceByConfigRuleAsyncHelper(const Model::DescribeComplianceByConfigRuleRequest& request, const DescribeComplianceByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeComplianceByResourceAsyncHelper(const Model::DescribeComplianceByResourceRequest& request, const DescribeComplianceByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeConfigRuleEvaluationStatusAsyncHelper(const Model::DescribeConfigRuleEvaluationStatusRequest& request, const DescribeConfigRuleEvaluationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeConfigRulesAsyncHelper(const Model::DescribeConfigRulesRequest& request, const DescribeConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeConfigurationAggregatorSourcesStatusAsyncHelper(const Model::DescribeConfigurationAggregatorSourcesStatusRequest& request, const DescribeConfigurationAggregatorSourcesStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeConfigurationAggregatorsAsyncHelper(const Model::DescribeConfigurationAggregatorsRequest& request, const DescribeConfigurationAggregatorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeConfigurationRecorderStatusAsyncHelper(const Model::DescribeConfigurationRecorderStatusRequest& request, const DescribeConfigurationRecorderStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeConfigurationRecordersAsyncHelper(const Model::DescribeConfigurationRecordersRequest& request, const DescribeConfigurationRecordersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeConformancePackComplianceAsyncHelper(const Model::DescribeConformancePackComplianceRequest& request, const DescribeConformancePackComplianceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeConformancePackStatusAsyncHelper(const Model::DescribeConformancePackStatusRequest& request, const DescribeConformancePackStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeConformancePacksAsyncHelper(const Model::DescribeConformancePacksRequest& request, const DescribeConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDeliveryChannelStatusAsyncHelper(const Model::DescribeDeliveryChannelStatusRequest& request, const DescribeDeliveryChannelStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDeliveryChannelsAsyncHelper(const Model::DescribeDeliveryChannelsRequest& request, const DescribeDeliveryChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeOrganizationConfigRuleStatusesAsyncHelper(const Model::DescribeOrganizationConfigRuleStatusesRequest& request, const DescribeOrganizationConfigRuleStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeOrganizationConfigRulesAsyncHelper(const Model::DescribeOrganizationConfigRulesRequest& request, const DescribeOrganizationConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeOrganizationConformancePackStatusesAsyncHelper(const Model::DescribeOrganizationConformancePackStatusesRequest& request, const DescribeOrganizationConformancePackStatusesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeOrganizationConformancePacksAsyncHelper(const Model::DescribeOrganizationConformancePacksRequest& request, const DescribeOrganizationConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribePendingAggregationRequestsAsyncHelper(const Model::DescribePendingAggregationRequestsRequest& request, const DescribePendingAggregationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRemediationConfigurationsAsyncHelper(const Model::DescribeRemediationConfigurationsRequest& request, const DescribeRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRemediationExceptionsAsyncHelper(const Model::DescribeRemediationExceptionsRequest& request, const DescribeRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRemediationExecutionStatusAsyncHelper(const Model::DescribeRemediationExecutionStatusRequest& request, const DescribeRemediationExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRetentionConfigurationsAsyncHelper(const Model::DescribeRetentionConfigurationsRequest& request, const DescribeRetentionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAggregateComplianceDetailsByConfigRuleAsyncHelper(const Model::GetAggregateComplianceDetailsByConfigRuleRequest& request, const GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAggregateConfigRuleComplianceSummaryAsyncHelper(const Model::GetAggregateConfigRuleComplianceSummaryRequest& request, const GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAggregateConformancePackComplianceSummaryAsyncHelper(const Model::GetAggregateConformancePackComplianceSummaryRequest& request, const GetAggregateConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAggregateDiscoveredResourceCountsAsyncHelper(const Model::GetAggregateDiscoveredResourceCountsRequest& request, const GetAggregateDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAggregateResourceConfigAsyncHelper(const Model::GetAggregateResourceConfigRequest& request, const GetAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetComplianceDetailsByConfigRuleAsyncHelper(const Model::GetComplianceDetailsByConfigRuleRequest& request, const GetComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetComplianceDetailsByResourceAsyncHelper(const Model::GetComplianceDetailsByResourceRequest& request, const GetComplianceDetailsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetComplianceSummaryByConfigRuleAsyncHelper(const GetComplianceSummaryByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetComplianceSummaryByResourceTypeAsyncHelper(const Model::GetComplianceSummaryByResourceTypeRequest& request, const GetComplianceSummaryByResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetConformancePackComplianceDetailsAsyncHelper(const Model::GetConformancePackComplianceDetailsRequest& request, const GetConformancePackComplianceDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetConformancePackComplianceSummaryAsyncHelper(const Model::GetConformancePackComplianceSummaryRequest& request, const GetConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCustomRulePolicyAsyncHelper(const Model::GetCustomRulePolicyRequest& request, const GetCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDiscoveredResourceCountsAsyncHelper(const Model::GetDiscoveredResourceCountsRequest& request, const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetOrganizationConfigRuleDetailedStatusAsyncHelper(const Model::GetOrganizationConfigRuleDetailedStatusRequest& request, const GetOrganizationConfigRuleDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetOrganizationConformancePackDetailedStatusAsyncHelper(const Model::GetOrganizationConformancePackDetailedStatusRequest& request, const GetOrganizationConformancePackDetailedStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetOrganizationCustomRulePolicyAsyncHelper(const Model::GetOrganizationCustomRulePolicyRequest& request, const GetOrganizationCustomRulePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetResourceConfigHistoryAsyncHelper(const Model::GetResourceConfigHistoryRequest& request, const GetResourceConfigHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetStoredQueryAsyncHelper(const Model::GetStoredQueryRequest& request, const GetStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAggregateDiscoveredResourcesAsyncHelper(const Model::ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDiscoveredResourcesAsyncHelper(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStoredQueriesAsyncHelper(const Model::ListStoredQueriesRequest& request, const ListStoredQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutAggregationAuthorizationAsyncHelper(const Model::PutAggregationAuthorizationRequest& request, const PutAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutConfigRuleAsyncHelper(const Model::PutConfigRuleRequest& request, const PutConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutConfigurationAggregatorAsyncHelper(const Model::PutConfigurationAggregatorRequest& request, const PutConfigurationAggregatorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutConfigurationRecorderAsyncHelper(const Model::PutConfigurationRecorderRequest& request, const PutConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutConformancePackAsyncHelper(const Model::PutConformancePackRequest& request, const PutConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutDeliveryChannelAsyncHelper(const Model::PutDeliveryChannelRequest& request, const PutDeliveryChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutEvaluationsAsyncHelper(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutExternalEvaluationAsyncHelper(const Model::PutExternalEvaluationRequest& request, const PutExternalEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutOrganizationConfigRuleAsyncHelper(const Model::PutOrganizationConfigRuleRequest& request, const PutOrganizationConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutOrganizationConformancePackAsyncHelper(const Model::PutOrganizationConformancePackRequest& request, const PutOrganizationConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRemediationConfigurationsAsyncHelper(const Model::PutRemediationConfigurationsRequest& request, const PutRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRemediationExceptionsAsyncHelper(const Model::PutRemediationExceptionsRequest& request, const PutRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutResourceConfigAsyncHelper(const Model::PutResourceConfigRequest& request, const PutResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRetentionConfigurationAsyncHelper(const Model::PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutStoredQueryAsyncHelper(const Model::PutStoredQueryRequest& request, const PutStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SelectAggregateResourceConfigAsyncHelper(const Model::SelectAggregateResourceConfigRequest& request, const SelectAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SelectResourceConfigAsyncHelper(const Model::SelectResourceConfigRequest& request, const SelectResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartConfigRulesEvaluationAsyncHelper(const Model::StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartConfigurationRecorderAsyncHelper(const Model::StartConfigurationRecorderRequest& request, const StartConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartRemediationExecutionAsyncHelper(const Model::StartRemediationExecutionRequest& request, const StartRemediationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopConfigurationRecorderAsyncHelper(const Model::StopConfigurationRecorderRequest& request, const StopConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

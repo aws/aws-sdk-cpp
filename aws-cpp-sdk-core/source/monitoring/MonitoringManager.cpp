@@ -25,7 +25,7 @@ namespace Aws
         /**
          * Global factory to create global metrics instance.
          */
-        static Aws::UniquePtr<Monitors> s_monitors;
+        static Aws::UniquePtrSafeDeleted<Monitors> s_monitors(nullptr);
 
         Aws::Vector<void*> OnRequestStarted(const Aws::String& serviceName, const Aws::String& requestName, const std::shared_ptr<const Aws::Http::HttpRequest>& request)
         {
@@ -93,7 +93,7 @@ namespace Aws
             {
                 return;
             }
-            s_monitors = Aws::MakeUnique<Monitors>(MonitoringTag);
+            s_monitors = Aws::MakeUniqueSafeDeleted<Monitors>(MonitoringTag);
             for (const auto& function: monitoringFactoryCreateFunctions)
             {
                 auto factory = function();

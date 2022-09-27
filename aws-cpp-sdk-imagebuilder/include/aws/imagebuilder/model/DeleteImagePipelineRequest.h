@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_imagePipelineArn;
-    bool m_imagePipelineArnHasBeenSet;
+    bool m_imagePipelineArnHasBeenSet = false;
   };
 
 } // namespace Model

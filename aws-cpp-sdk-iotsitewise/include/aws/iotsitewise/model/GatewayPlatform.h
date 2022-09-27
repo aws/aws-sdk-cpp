@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Greengrass m_greengrass;
-    bool m_greengrassHasBeenSet;
+    bool m_greengrassHasBeenSet = false;
 
     GreengrassV2 m_greengrassV2;
-    bool m_greengrassV2HasBeenSet;
+    bool m_greengrassV2HasBeenSet = false;
   };
 
 } // namespace Model

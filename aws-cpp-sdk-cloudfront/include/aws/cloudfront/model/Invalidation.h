@@ -201,16 +201,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     InvalidationBatch m_invalidationBatch;
-    bool m_invalidationBatchHasBeenSet;
+    bool m_invalidationBatchHasBeenSet = false;
   };
 
 } // namespace Model

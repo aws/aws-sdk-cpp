@@ -115,10 +115,10 @@ namespace Model
   private:
 
     Aws::String m_delimiter;
-    bool m_delimiterHasBeenSet;
+    bool m_delimiterHasBeenSet = false;
 
     bool m_headerRow;
-    bool m_headerRowHasBeenSet;
+    bool m_headerRowHasBeenSet = false;
   };
 
 } // namespace Model

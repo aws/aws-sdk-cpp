@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ModifyTransitGatewayOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

@@ -1249,91 +1249,91 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_deploymentGroupName;
-    bool m_deploymentGroupNameHasBeenSet;
+    bool m_deploymentGroupNameHasBeenSet = false;
 
     Aws::String m_deploymentConfigName;
-    bool m_deploymentConfigNameHasBeenSet;
+    bool m_deploymentConfigNameHasBeenSet = false;
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     RevisionLocation m_previousRevision;
-    bool m_previousRevisionHasBeenSet;
+    bool m_previousRevisionHasBeenSet = false;
 
     RevisionLocation m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     DeploymentStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ErrorInformation m_errorInformation;
-    bool m_errorInformationHasBeenSet;
+    bool m_errorInformationHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completeTime;
-    bool m_completeTimeHasBeenSet;
+    bool m_completeTimeHasBeenSet = false;
 
     DeploymentOverview m_deploymentOverview;
-    bool m_deploymentOverviewHasBeenSet;
+    bool m_deploymentOverviewHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     DeploymentCreator m_creator;
-    bool m_creatorHasBeenSet;
+    bool m_creatorHasBeenSet = false;
 
     bool m_ignoreApplicationStopFailures;
-    bool m_ignoreApplicationStopFailuresHasBeenSet;
+    bool m_ignoreApplicationStopFailuresHasBeenSet = false;
 
     AutoRollbackConfiguration m_autoRollbackConfiguration;
-    bool m_autoRollbackConfigurationHasBeenSet;
+    bool m_autoRollbackConfigurationHasBeenSet = false;
 
     bool m_updateOutdatedInstancesOnly;
-    bool m_updateOutdatedInstancesOnlyHasBeenSet;
+    bool m_updateOutdatedInstancesOnlyHasBeenSet = false;
 
     RollbackInfo m_rollbackInfo;
-    bool m_rollbackInfoHasBeenSet;
+    bool m_rollbackInfoHasBeenSet = false;
 
     DeploymentStyle m_deploymentStyle;
-    bool m_deploymentStyleHasBeenSet;
+    bool m_deploymentStyleHasBeenSet = false;
 
     TargetInstances m_targetInstances;
-    bool m_targetInstancesHasBeenSet;
+    bool m_targetInstancesHasBeenSet = false;
 
     bool m_instanceTerminationWaitTimeStarted;
-    bool m_instanceTerminationWaitTimeStartedHasBeenSet;
+    bool m_instanceTerminationWaitTimeStartedHasBeenSet = false;
 
     BlueGreenDeploymentConfiguration m_blueGreenDeploymentConfiguration;
-    bool m_blueGreenDeploymentConfigurationHasBeenSet;
+    bool m_blueGreenDeploymentConfigurationHasBeenSet = false;
 
     LoadBalancerInfo m_loadBalancerInfo;
-    bool m_loadBalancerInfoHasBeenSet;
+    bool m_loadBalancerInfoHasBeenSet = false;
 
     Aws::String m_additionalDeploymentStatusInfo;
-    bool m_additionalDeploymentStatusInfoHasBeenSet;
+    bool m_additionalDeploymentStatusInfoHasBeenSet = false;
 
     FileExistsBehavior m_fileExistsBehavior;
-    bool m_fileExistsBehaviorHasBeenSet;
+    bool m_fileExistsBehaviorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deploymentStatusMessages;
-    bool m_deploymentStatusMessagesHasBeenSet;
+    bool m_deploymentStatusMessagesHasBeenSet = false;
 
     ComputePlatform m_computePlatform;
-    bool m_computePlatformHasBeenSet;
+    bool m_computePlatformHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     RelatedDeployments m_relatedDeployments;
-    bool m_relatedDeploymentsHasBeenSet;
+    bool m_relatedDeploymentsHasBeenSet = false;
   };
 
 } // namespace Model

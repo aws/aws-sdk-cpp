@@ -510,25 +510,25 @@ namespace Model
   private:
 
     Aws::Vector<MetricDataQuery> m_metricDataQueries;
-    bool m_metricDataQueriesHasBeenSet;
+    bool m_metricDataQueriesHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     ScanBy m_scanBy;
-    bool m_scanByHasBeenSet;
+    bool m_scanByHasBeenSet = false;
 
     int m_maxDatapoints;
-    bool m_maxDatapointsHasBeenSet;
+    bool m_maxDatapointsHasBeenSet = false;
 
     LabelOptions m_labelOptions;
-    bool m_labelOptionsHasBeenSet;
+    bool m_labelOptionsHasBeenSet = false;
   };
 
 } // namespace Model

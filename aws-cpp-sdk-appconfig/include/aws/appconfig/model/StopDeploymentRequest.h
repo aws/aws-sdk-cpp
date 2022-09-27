@@ -137,13 +137,13 @@ namespace Model
   private:
 
     Aws::String m_applicationId;
-    bool m_applicationIdHasBeenSet;
+    bool m_applicationIdHasBeenSet = false;
 
     Aws::String m_environmentId;
-    bool m_environmentIdHasBeenSet;
+    bool m_environmentIdHasBeenSet = false;
 
     int m_deploymentNumber;
-    bool m_deploymentNumberHasBeenSet;
+    bool m_deploymentNumberHasBeenSet = false;
   };
 
 } // namespace Model

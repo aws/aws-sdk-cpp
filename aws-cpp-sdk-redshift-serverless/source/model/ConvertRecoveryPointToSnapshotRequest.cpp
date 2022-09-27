@@ -48,7 +48,7 @@ Aws::String ConvertRecoveryPointToSnapshotRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection ConvertRecoveryPointToSnapshotRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.ConvertRecoveryPointToSnapshot"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.ConvertRecoveryPointToSnapshot"));
   return headers;
 
 }

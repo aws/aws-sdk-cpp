@@ -209,17 +209,17 @@ JsonValue ProxySession::Jsonize() const
 
   if(m_createdTimestampHasBeenSet)
   {
-   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("CreatedTimestamp", m_createdTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedTimestampHasBeenSet)
   {
-   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_endedTimestampHasBeenSet)
   {
-   payload.WithString("EndedTimestamp", m_endedTimestamp.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("EndedTimestamp", m_endedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_participantsHasBeenSet)

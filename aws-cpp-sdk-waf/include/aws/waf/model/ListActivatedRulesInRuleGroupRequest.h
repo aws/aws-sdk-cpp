@@ -211,13 +211,13 @@ namespace Model
   private:
 
     Aws::String m_ruleGroupId;
-    bool m_ruleGroupIdHasBeenSet;
+    bool m_ruleGroupIdHasBeenSet = false;
 
     Aws::String m_nextMarker;
-    bool m_nextMarkerHasBeenSet;
+    bool m_nextMarkerHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

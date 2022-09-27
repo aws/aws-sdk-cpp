@@ -362,20 +362,20 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     InvocationType m_invocationType;
-    bool m_invocationTypeHasBeenSet;
+    bool m_invocationTypeHasBeenSet = false;
 
     LogType m_logType;
-    bool m_logTypeHasBeenSet;
+    bool m_logTypeHasBeenSet = false;
 
     Aws::String m_clientContext;
-    bool m_clientContextHasBeenSet;
+    bool m_clientContextHasBeenSet = false;
 
 
     Aws::String m_qualifier;
-    bool m_qualifierHasBeenSet;
+    bool m_qualifierHasBeenSet = false;
   };
 
 } // namespace Model

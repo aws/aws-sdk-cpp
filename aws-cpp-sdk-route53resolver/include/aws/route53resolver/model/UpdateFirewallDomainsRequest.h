@@ -240,13 +240,13 @@ namespace Model
   private:
 
     Aws::String m_firewallDomainListId;
-    bool m_firewallDomainListIdHasBeenSet;
+    bool m_firewallDomainListIdHasBeenSet = false;
 
     FirewallDomainUpdateOperation m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_domains;
-    bool m_domainsHasBeenSet;
+    bool m_domainsHasBeenSet = false;
   };
 
 } // namespace Model

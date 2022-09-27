@@ -58,7 +58,7 @@ namespace Model
   private:
 
     SupportedRfRegion m_rfRegion;
-    bool m_rfRegionHasBeenSet;
+    bool m_rfRegionHasBeenSet = false;
   };
 
 } // namespace Model

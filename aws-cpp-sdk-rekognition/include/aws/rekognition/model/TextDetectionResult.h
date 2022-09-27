@@ -97,10 +97,10 @@ namespace Model
   private:
 
     long long m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     TextDetection m_textDetection;
-    bool m_textDetectionHasBeenSet;
+    bool m_textDetectionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,6 +10,7 @@
 #include <aws/mgn/model/LaunchDisposition.h>
 #include <aws/mgn/model/Licensing.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/model/PostLaunchActions.h>
 #include <aws/mgn/model/TargetInstanceTypeRightSizingMethod.h>
 #include <utility>
 
@@ -212,6 +213,25 @@ namespace Model
     inline UpdateLaunchConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
+    
+    inline const PostLaunchActions& GetPostLaunchActions() const{ return m_postLaunchActions; }
+
+    
+    inline bool PostLaunchActionsHasBeenSet() const { return m_postLaunchActionsHasBeenSet; }
+
+    
+    inline void SetPostLaunchActions(const PostLaunchActions& value) { m_postLaunchActionsHasBeenSet = true; m_postLaunchActions = value; }
+
+    
+    inline void SetPostLaunchActions(PostLaunchActions&& value) { m_postLaunchActionsHasBeenSet = true; m_postLaunchActions = std::move(value); }
+
+    
+    inline UpdateLaunchConfigurationRequest& WithPostLaunchActions(const PostLaunchActions& value) { SetPostLaunchActions(value); return *this;}
+
+    
+    inline UpdateLaunchConfigurationRequest& WithPostLaunchActions(PostLaunchActions&& value) { SetPostLaunchActions(std::move(value)); return *this;}
+
+
     /**
      * <p>Update Launch configuration by Source Server ID request.</p>
      */
@@ -286,28 +306,31 @@ namespace Model
   private:
 
     BootMode m_bootMode;
-    bool m_bootModeHasBeenSet;
+    bool m_bootModeHasBeenSet = false;
 
     bool m_copyPrivateIp;
-    bool m_copyPrivateIpHasBeenSet;
+    bool m_copyPrivateIpHasBeenSet = false;
 
     bool m_copyTags;
-    bool m_copyTagsHasBeenSet;
+    bool m_copyTagsHasBeenSet = false;
 
     LaunchDisposition m_launchDisposition;
-    bool m_launchDispositionHasBeenSet;
+    bool m_launchDispositionHasBeenSet = false;
 
     Licensing m_licensing;
-    bool m_licensingHasBeenSet;
+    bool m_licensingHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
+
+    PostLaunchActions m_postLaunchActions;
+    bool m_postLaunchActionsHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
 
     TargetInstanceTypeRightSizingMethod m_targetInstanceTypeRightSizingMethod;
-    bool m_targetInstanceTypeRightSizingMethodHasBeenSet;
+    bool m_targetInstanceTypeRightSizingMethodHasBeenSet = false;
   };
 
 } // namespace Model

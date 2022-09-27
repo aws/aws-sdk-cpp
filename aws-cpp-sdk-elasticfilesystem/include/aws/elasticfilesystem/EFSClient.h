@@ -5,186 +5,15 @@
 
 #pragma once
 #include <aws/elasticfilesystem/EFS_EXPORTS.h>
-#include <aws/elasticfilesystem/EFSErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/elasticfilesystem/model/CreateAccessPointResult.h>
-#include <aws/elasticfilesystem/model/CreateFileSystemResult.h>
-#include <aws/elasticfilesystem/model/CreateMountTargetResult.h>
-#include <aws/elasticfilesystem/model/CreateReplicationConfigurationResult.h>
-#include <aws/elasticfilesystem/model/DescribeAccessPointsResult.h>
-#include <aws/elasticfilesystem/model/DescribeAccountPreferencesResult.h>
-#include <aws/elasticfilesystem/model/DescribeBackupPolicyResult.h>
-#include <aws/elasticfilesystem/model/DescribeFileSystemPolicyResult.h>
-#include <aws/elasticfilesystem/model/DescribeFileSystemsResult.h>
-#include <aws/elasticfilesystem/model/DescribeLifecycleConfigurationResult.h>
-#include <aws/elasticfilesystem/model/DescribeMountTargetSecurityGroupsResult.h>
-#include <aws/elasticfilesystem/model/DescribeMountTargetsResult.h>
-#include <aws/elasticfilesystem/model/DescribeReplicationConfigurationsResult.h>
-#include <aws/elasticfilesystem/model/ListTagsForResourceResult.h>
-#include <aws/elasticfilesystem/model/PutAccountPreferencesResult.h>
-#include <aws/elasticfilesystem/model/PutBackupPolicyResult.h>
-#include <aws/elasticfilesystem/model/PutFileSystemPolicyResult.h>
-#include <aws/elasticfilesystem/model/PutLifecycleConfigurationResult.h>
-#include <aws/elasticfilesystem/model/UpdateFileSystemResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/elasticfilesystem/EFSServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace EFS
 {
-
-namespace Model
-{
-        class CreateAccessPointRequest;
-        class CreateFileSystemRequest;
-        class CreateMountTargetRequest;
-        class CreateReplicationConfigurationRequest;
-        class DeleteAccessPointRequest;
-        class DeleteFileSystemRequest;
-        class DeleteFileSystemPolicyRequest;
-        class DeleteMountTargetRequest;
-        class DeleteReplicationConfigurationRequest;
-        class DescribeAccessPointsRequest;
-        class DescribeAccountPreferencesRequest;
-        class DescribeBackupPolicyRequest;
-        class DescribeFileSystemPolicyRequest;
-        class DescribeFileSystemsRequest;
-        class DescribeLifecycleConfigurationRequest;
-        class DescribeMountTargetSecurityGroupsRequest;
-        class DescribeMountTargetsRequest;
-        class DescribeReplicationConfigurationsRequest;
-        class ListTagsForResourceRequest;
-        class ModifyMountTargetSecurityGroupsRequest;
-        class PutAccountPreferencesRequest;
-        class PutBackupPolicyRequest;
-        class PutFileSystemPolicyRequest;
-        class PutLifecycleConfigurationRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateFileSystemRequest;
-
-        typedef Aws::Utils::Outcome<CreateAccessPointResult, EFSError> CreateAccessPointOutcome;
-        typedef Aws::Utils::Outcome<CreateFileSystemResult, EFSError> CreateFileSystemOutcome;
-        typedef Aws::Utils::Outcome<CreateMountTargetResult, EFSError> CreateMountTargetOutcome;
-        typedef Aws::Utils::Outcome<CreateReplicationConfigurationResult, EFSError> CreateReplicationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteAccessPointOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteFileSystemOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteFileSystemPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteMountTargetOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteReplicationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccessPointsResult, EFSError> DescribeAccessPointsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccountPreferencesResult, EFSError> DescribeAccountPreferencesOutcome;
-        typedef Aws::Utils::Outcome<DescribeBackupPolicyResult, EFSError> DescribeBackupPolicyOutcome;
-        typedef Aws::Utils::Outcome<DescribeFileSystemPolicyResult, EFSError> DescribeFileSystemPolicyOutcome;
-        typedef Aws::Utils::Outcome<DescribeFileSystemsResult, EFSError> DescribeFileSystemsOutcome;
-        typedef Aws::Utils::Outcome<DescribeLifecycleConfigurationResult, EFSError> DescribeLifecycleConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribeMountTargetSecurityGroupsResult, EFSError> DescribeMountTargetSecurityGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeMountTargetsResult, EFSError> DescribeMountTargetsOutcome;
-        typedef Aws::Utils::Outcome<DescribeReplicationConfigurationsResult, EFSError> DescribeReplicationConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, EFSError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> ModifyMountTargetSecurityGroupsOutcome;
-        typedef Aws::Utils::Outcome<PutAccountPreferencesResult, EFSError> PutAccountPreferencesOutcome;
-        typedef Aws::Utils::Outcome<PutBackupPolicyResult, EFSError> PutBackupPolicyOutcome;
-        typedef Aws::Utils::Outcome<PutFileSystemPolicyResult, EFSError> PutFileSystemPolicyOutcome;
-        typedef Aws::Utils::Outcome<PutLifecycleConfigurationResult, EFSError> PutLifecycleConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateFileSystemResult, EFSError> UpdateFileSystemOutcome;
-
-        typedef std::future<CreateAccessPointOutcome> CreateAccessPointOutcomeCallable;
-        typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
-        typedef std::future<CreateMountTargetOutcome> CreateMountTargetOutcomeCallable;
-        typedef std::future<CreateReplicationConfigurationOutcome> CreateReplicationConfigurationOutcomeCallable;
-        typedef std::future<DeleteAccessPointOutcome> DeleteAccessPointOutcomeCallable;
-        typedef std::future<DeleteFileSystemOutcome> DeleteFileSystemOutcomeCallable;
-        typedef std::future<DeleteFileSystemPolicyOutcome> DeleteFileSystemPolicyOutcomeCallable;
-        typedef std::future<DeleteMountTargetOutcome> DeleteMountTargetOutcomeCallable;
-        typedef std::future<DeleteReplicationConfigurationOutcome> DeleteReplicationConfigurationOutcomeCallable;
-        typedef std::future<DescribeAccessPointsOutcome> DescribeAccessPointsOutcomeCallable;
-        typedef std::future<DescribeAccountPreferencesOutcome> DescribeAccountPreferencesOutcomeCallable;
-        typedef std::future<DescribeBackupPolicyOutcome> DescribeBackupPolicyOutcomeCallable;
-        typedef std::future<DescribeFileSystemPolicyOutcome> DescribeFileSystemPolicyOutcomeCallable;
-        typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
-        typedef std::future<DescribeLifecycleConfigurationOutcome> DescribeLifecycleConfigurationOutcomeCallable;
-        typedef std::future<DescribeMountTargetSecurityGroupsOutcome> DescribeMountTargetSecurityGroupsOutcomeCallable;
-        typedef std::future<DescribeMountTargetsOutcome> DescribeMountTargetsOutcomeCallable;
-        typedef std::future<DescribeReplicationConfigurationsOutcome> DescribeReplicationConfigurationsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ModifyMountTargetSecurityGroupsOutcome> ModifyMountTargetSecurityGroupsOutcomeCallable;
-        typedef std::future<PutAccountPreferencesOutcome> PutAccountPreferencesOutcomeCallable;
-        typedef std::future<PutBackupPolicyOutcome> PutBackupPolicyOutcomeCallable;
-        typedef std::future<PutFileSystemPolicyOutcome> PutFileSystemPolicyOutcomeCallable;
-        typedef std::future<PutLifecycleConfigurationOutcome> PutLifecycleConfigurationOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateFileSystemOutcome> UpdateFileSystemOutcomeCallable;
-} // namespace Model
-
-  class EFSClient;
-
-    typedef std::function<void(const EFSClient*, const Model::CreateAccessPointRequest&, const Model::CreateAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessPointResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::CreateFileSystemRequest&, const Model::CreateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFileSystemResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::CreateMountTargetRequest&, const Model::CreateMountTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMountTargetResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::CreateReplicationConfigurationRequest&, const Model::CreateReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DeleteAccessPointRequest&, const Model::DeleteAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DeleteFileSystemRequest&, const Model::DeleteFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DeleteFileSystemPolicyRequest&, const Model::DeleteFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemPolicyResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DeleteMountTargetRequest&, const Model::DeleteMountTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMountTargetResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DeleteReplicationConfigurationRequest&, const Model::DeleteReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DescribeAccessPointsRequest&, const Model::DescribeAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccessPointsResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DescribeAccountPreferencesRequest&, const Model::DescribeAccountPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountPreferencesResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DescribeBackupPolicyRequest&, const Model::DescribeBackupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupPolicyResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DescribeFileSystemPolicyRequest&, const Model::DescribeFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemPolicyResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DescribeFileSystemsRequest&, const Model::DescribeFileSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemsResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DescribeLifecycleConfigurationRequest&, const Model::DescribeLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLifecycleConfigurationResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DescribeMountTargetSecurityGroupsRequest&, const Model::DescribeMountTargetSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMountTargetSecurityGroupsResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DescribeMountTargetsRequest&, const Model::DescribeMountTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMountTargetsResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DescribeReplicationConfigurationsRequest&, const Model::DescribeReplicationConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplicationConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::ModifyMountTargetSecurityGroupsRequest&, const Model::ModifyMountTargetSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyMountTargetSecurityGroupsResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::PutAccountPreferencesRequest&, const Model::PutAccountPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountPreferencesResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::PutBackupPolicyRequest&, const Model::PutBackupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBackupPolicyResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::PutFileSystemPolicyRequest&, const Model::PutFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFileSystemPolicyResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::PutLifecycleConfigurationRequest&, const Model::PutLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecycleConfigurationResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::UpdateFileSystemRequest&, const Model::UpdateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFileSystemResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Elastic File System</fullname> <p>Amazon Elastic File System
    * (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2
@@ -212,14 +41,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        EFSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        EFSClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         EFSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~EFSClient();
 
@@ -1054,33 +884,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateAccessPointAsyncHelper(const Model::CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateFileSystemAsyncHelper(const Model::CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateMountTargetAsyncHelper(const Model::CreateMountTargetRequest& request, const CreateMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateReplicationConfigurationAsyncHelper(const Model::CreateReplicationConfigurationRequest& request, const CreateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAccessPointAsyncHelper(const Model::DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteFileSystemAsyncHelper(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteFileSystemPolicyAsyncHelper(const Model::DeleteFileSystemPolicyRequest& request, const DeleteFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteMountTargetAsyncHelper(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteReplicationConfigurationAsyncHelper(const Model::DeleteReplicationConfigurationRequest& request, const DeleteReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAccessPointsAsyncHelper(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAccountPreferencesAsyncHelper(const Model::DescribeAccountPreferencesRequest& request, const DescribeAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBackupPolicyAsyncHelper(const Model::DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeFileSystemPolicyAsyncHelper(const Model::DescribeFileSystemPolicyRequest& request, const DescribeFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeFileSystemsAsyncHelper(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLifecycleConfigurationAsyncHelper(const Model::DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeMountTargetSecurityGroupsAsyncHelper(const Model::DescribeMountTargetSecurityGroupsRequest& request, const DescribeMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeMountTargetsAsyncHelper(const Model::DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeReplicationConfigurationsAsyncHelper(const Model::DescribeReplicationConfigurationsRequest& request, const DescribeReplicationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ModifyMountTargetSecurityGroupsAsyncHelper(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutAccountPreferencesAsyncHelper(const Model::PutAccountPreferencesRequest& request, const PutAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutBackupPolicyAsyncHelper(const Model::PutBackupPolicyRequest& request, const PutBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutFileSystemPolicyAsyncHelper(const Model::PutFileSystemPolicyRequest& request, const PutFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutLifecycleConfigurationAsyncHelper(const Model::PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateFileSystemAsyncHelper(const Model::UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

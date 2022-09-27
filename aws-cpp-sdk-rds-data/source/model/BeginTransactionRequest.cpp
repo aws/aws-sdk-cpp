@@ -13,10 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 BeginTransactionRequest::BeginTransactionRequest() : 
-    m_databaseHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
+    m_secretArnHasBeenSet(false),
+    m_databaseHasBeenSet(false),
+    m_schemaHasBeenSet(false)
 {
 }
 
@@ -24,27 +24,27 @@ Aws::String BeginTransactionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_databaseHasBeenSet)
-  {
-   payload.WithString("database", m_database);
-
-  }
-
   if(m_resourceArnHasBeenSet)
   {
    payload.WithString("resourceArn", m_resourceArn);
 
   }
 
-  if(m_schemaHasBeenSet)
-  {
-   payload.WithString("schema", m_schema);
-
-  }
-
   if(m_secretArnHasBeenSet)
   {
    payload.WithString("secretArn", m_secretArn);
+
+  }
+
+  if(m_databaseHasBeenSet)
+  {
+   payload.WithString("database", m_database);
+
+  }
+
+  if(m_schemaHasBeenSet)
+  {
+   payload.WithString("schema", m_schema);
 
   }
 

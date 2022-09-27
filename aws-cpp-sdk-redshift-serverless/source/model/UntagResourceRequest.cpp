@@ -45,7 +45,7 @@ Aws::String UntagResourceRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection UntagResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.UntagResource"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.UntagResource"));
   return headers;
 
 }

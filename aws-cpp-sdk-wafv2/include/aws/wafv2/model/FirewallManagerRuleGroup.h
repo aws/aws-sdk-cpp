@@ -284,19 +284,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     FirewallManagerStatement m_firewallManagerStatement;
-    bool m_firewallManagerStatementHasBeenSet;
+    bool m_firewallManagerStatementHasBeenSet = false;
 
     OverrideAction m_overrideAction;
-    bool m_overrideActionHasBeenSet;
+    bool m_overrideActionHasBeenSet = false;
 
     VisibilityConfig m_visibilityConfig;
-    bool m_visibilityConfigHasBeenSet;
+    bool m_visibilityConfigHasBeenSet = false;
   };
 
 } // namespace Model

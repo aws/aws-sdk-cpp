@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::Vector<FieldInfo> m_selectFields;
-    bool m_selectFieldsHasBeenSet;
+    bool m_selectFieldsHasBeenSet = false;
   };
 
 } // namespace Model

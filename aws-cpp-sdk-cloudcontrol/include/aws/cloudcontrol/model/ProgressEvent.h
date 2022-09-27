@@ -533,34 +533,34 @@ namespace Model
   private:
 
     Aws::String m_typeName;
-    bool m_typeNameHasBeenSet;
+    bool m_typeNameHasBeenSet = false;
 
     Aws::String m_identifier;
-    bool m_identifierHasBeenSet;
+    bool m_identifierHasBeenSet = false;
 
     Aws::String m_requestToken;
-    bool m_requestTokenHasBeenSet;
+    bool m_requestTokenHasBeenSet = false;
 
     Operation m_operation;
-    bool m_operationHasBeenSet;
+    bool m_operationHasBeenSet = false;
 
     OperationStatus m_operationStatus;
-    bool m_operationStatusHasBeenSet;
+    bool m_operationStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_eventTime;
-    bool m_eventTimeHasBeenSet;
+    bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_resourceModel;
-    bool m_resourceModelHasBeenSet;
+    bool m_resourceModelHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     HandlerErrorCode m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_retryAfter;
-    bool m_retryAfterHasBeenSet;
+    bool m_retryAfterHasBeenSet = false;
   };
 
 } // namespace Model

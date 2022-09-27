@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_loaContent;
-    bool m_loaContentHasBeenSet;
+    bool m_loaContentHasBeenSet = false;
 
     LoaContentType m_loaContentType;
-    bool m_loaContentTypeHasBeenSet;
+    bool m_loaContentTypeHasBeenSet = false;
   };
 
 } // namespace Model

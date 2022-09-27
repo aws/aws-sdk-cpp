@@ -119,13 +119,73 @@ namespace Model
      */
     inline StatefulRuleGroup& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
+
+    /**
+     * <p>An integer setting that indicates the order in which to run the stateful rule
+     * groups in a single Network Firewall firewall policy. This setting only applies
+     * to firewall policies that specify the <code>STRICT_ORDER</code> rule order in
+     * the stateful engine options settings.</p> <p> Network Firewall evalutes each
+     * stateful rule group against a packet starting with the group that has the lowest
+     * priority setting. You must ensure that the priority settings are unique within
+     * each policy. For information about </p> <p> You can change the priority settings
+     * of your rule groups at any time. To make it easier to insert rule groups later,
+     * number them so there's a wide range in between, for example use 100, 200, and so
+     * on. </p>
+     */
+    inline int GetPriority() const{ return m_priority; }
+
+    /**
+     * <p>An integer setting that indicates the order in which to run the stateful rule
+     * groups in a single Network Firewall firewall policy. This setting only applies
+     * to firewall policies that specify the <code>STRICT_ORDER</code> rule order in
+     * the stateful engine options settings.</p> <p> Network Firewall evalutes each
+     * stateful rule group against a packet starting with the group that has the lowest
+     * priority setting. You must ensure that the priority settings are unique within
+     * each policy. For information about </p> <p> You can change the priority settings
+     * of your rule groups at any time. To make it easier to insert rule groups later,
+     * number them so there's a wide range in between, for example use 100, 200, and so
+     * on. </p>
+     */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p>An integer setting that indicates the order in which to run the stateful rule
+     * groups in a single Network Firewall firewall policy. This setting only applies
+     * to firewall policies that specify the <code>STRICT_ORDER</code> rule order in
+     * the stateful engine options settings.</p> <p> Network Firewall evalutes each
+     * stateful rule group against a packet starting with the group that has the lowest
+     * priority setting. You must ensure that the priority settings are unique within
+     * each policy. For information about </p> <p> You can change the priority settings
+     * of your rule groups at any time. To make it easier to insert rule groups later,
+     * number them so there's a wide range in between, for example use 100, 200, and so
+     * on. </p>
+     */
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
+
+    /**
+     * <p>An integer setting that indicates the order in which to run the stateful rule
+     * groups in a single Network Firewall firewall policy. This setting only applies
+     * to firewall policies that specify the <code>STRICT_ORDER</code> rule order in
+     * the stateful engine options settings.</p> <p> Network Firewall evalutes each
+     * stateful rule group against a packet starting with the group that has the lowest
+     * priority setting. You must ensure that the priority settings are unique within
+     * each policy. For information about </p> <p> You can change the priority settings
+     * of your rule groups at any time. To make it easier to insert rule groups later,
+     * number them so there's a wide range in between, for example use 100, 200, and so
+     * on. </p>
+     */
+    inline StatefulRuleGroup& WithPriority(int value) { SetPriority(value); return *this;}
+
   private:
 
     Aws::String m_ruleGroupName;
-    bool m_ruleGroupNameHasBeenSet;
+    bool m_ruleGroupNameHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
+
+    int m_priority;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

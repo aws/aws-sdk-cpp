@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Commitment m_commitment;
-    bool m_commitmentHasBeenSet;
+    bool m_commitmentHasBeenSet = false;
 
     RenewalType m_renewalType;
-    bool m_renewalTypeHasBeenSet;
+    bool m_renewalTypeHasBeenSet = false;
 
     int m_reservedSlots;
-    bool m_reservedSlotsHasBeenSet;
+    bool m_reservedSlotsHasBeenSet = false;
   };
 
 } // namespace Model

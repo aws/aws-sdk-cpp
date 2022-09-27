@@ -112,10 +112,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
+    bool m_publicIpHasBeenSet = false;
   };
 
 } // namespace Model

@@ -271,22 +271,22 @@ namespace Model
   private:
 
     Rule m_rule;
-    bool m_ruleHasBeenSet;
+    bool m_ruleHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_expression;
-    bool m_expressionHasBeenSet;
+    bool m_expressionHasBeenSet = false;
 
     Language m_language;
-    bool m_languageHasBeenSet;
+    bool m_languageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_outcomes;
-    bool m_outcomesHasBeenSet;
+    bool m_outcomesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

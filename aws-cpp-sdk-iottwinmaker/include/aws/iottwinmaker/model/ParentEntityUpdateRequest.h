@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_parentEntityId;
-    bool m_parentEntityIdHasBeenSet;
+    bool m_parentEntityIdHasBeenSet = false;
 
     ParentEntityUpdateType m_updateType;
-    bool m_updateTypeHasBeenSet;
+    bool m_updateTypeHasBeenSet = false;
   };
 
 } // namespace Model

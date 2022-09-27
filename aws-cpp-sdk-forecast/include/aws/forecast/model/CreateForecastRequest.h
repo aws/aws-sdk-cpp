@@ -478,19 +478,19 @@ namespace Model
   private:
 
     Aws::String m_forecastName;
-    bool m_forecastNameHasBeenSet;
+    bool m_forecastNameHasBeenSet = false;
 
     Aws::String m_predictorArn;
-    bool m_predictorArnHasBeenSet;
+    bool m_predictorArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_forecastTypes;
-    bool m_forecastTypesHasBeenSet;
+    bool m_forecastTypesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     TimeSeriesSelector m_timeSeriesSelector;
-    bool m_timeSeriesSelectorHasBeenSet;
+    bool m_timeSeriesSelectorHasBeenSet = false;
   };
 
 } // namespace Model

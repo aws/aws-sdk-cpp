@@ -526,34 +526,34 @@ namespace Model
   private:
 
     BrokerNodeGroupInfo m_brokerNodeGroupInfo;
-    bool m_brokerNodeGroupInfoHasBeenSet;
+    bool m_brokerNodeGroupInfoHasBeenSet = false;
 
     BrokerSoftwareInfo m_currentBrokerSoftwareInfo;
-    bool m_currentBrokerSoftwareInfoHasBeenSet;
+    bool m_currentBrokerSoftwareInfoHasBeenSet = false;
 
     ClientAuthentication m_clientAuthentication;
-    bool m_clientAuthenticationHasBeenSet;
+    bool m_clientAuthenticationHasBeenSet = false;
 
     EncryptionInfo m_encryptionInfo;
-    bool m_encryptionInfoHasBeenSet;
+    bool m_encryptionInfoHasBeenSet = false;
 
     EnhancedMonitoring m_enhancedMonitoring;
-    bool m_enhancedMonitoringHasBeenSet;
+    bool m_enhancedMonitoringHasBeenSet = false;
 
     OpenMonitoringInfo m_openMonitoring;
-    bool m_openMonitoringHasBeenSet;
+    bool m_openMonitoringHasBeenSet = false;
 
     LoggingInfo m_loggingInfo;
-    bool m_loggingInfoHasBeenSet;
+    bool m_loggingInfoHasBeenSet = false;
 
     int m_numberOfBrokerNodes;
-    bool m_numberOfBrokerNodesHasBeenSet;
+    bool m_numberOfBrokerNodesHasBeenSet = false;
 
     Aws::String m_zookeeperConnectString;
-    bool m_zookeeperConnectStringHasBeenSet;
+    bool m_zookeeperConnectStringHasBeenSet = false;
 
     Aws::String m_zookeeperConnectStringTls;
-    bool m_zookeeperConnectStringTlsHasBeenSet;
+    bool m_zookeeperConnectStringTlsHasBeenSet = false;
   };
 
 } // namespace Model

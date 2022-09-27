@@ -207,13 +207,13 @@ namespace Model
   private:
 
     Aws::String m_relationalDatabaseName;
-    bool m_relationalDatabaseNameHasBeenSet;
+    bool m_relationalDatabaseNameHasBeenSet = false;
 
     bool m_skipFinalSnapshot;
-    bool m_skipFinalSnapshotHasBeenSet;
+    bool m_skipFinalSnapshotHasBeenSet = false;
 
     Aws::String m_finalRelationalDatabaseSnapshotName;
-    bool m_finalRelationalDatabaseSnapshotNameHasBeenSet;
+    bool m_finalRelationalDatabaseSnapshotNameHasBeenSet = false;
   };
 
 } // namespace Model

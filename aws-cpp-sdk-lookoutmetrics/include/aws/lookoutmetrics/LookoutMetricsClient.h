@@ -5,198 +5,15 @@
 
 #pragma once
 #include <aws/lookoutmetrics/LookoutMetrics_EXPORTS.h>
-#include <aws/lookoutmetrics/LookoutMetricsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/lookoutmetrics/model/ActivateAnomalyDetectorResult.h>
-#include <aws/lookoutmetrics/model/BackTestAnomalyDetectorResult.h>
-#include <aws/lookoutmetrics/model/CreateAlertResult.h>
-#include <aws/lookoutmetrics/model/CreateAnomalyDetectorResult.h>
-#include <aws/lookoutmetrics/model/CreateMetricSetResult.h>
-#include <aws/lookoutmetrics/model/DeactivateAnomalyDetectorResult.h>
-#include <aws/lookoutmetrics/model/DeleteAlertResult.h>
-#include <aws/lookoutmetrics/model/DeleteAnomalyDetectorResult.h>
-#include <aws/lookoutmetrics/model/DescribeAlertResult.h>
-#include <aws/lookoutmetrics/model/DescribeAnomalyDetectionExecutionsResult.h>
-#include <aws/lookoutmetrics/model/DescribeAnomalyDetectorResult.h>
-#include <aws/lookoutmetrics/model/DescribeMetricSetResult.h>
-#include <aws/lookoutmetrics/model/DetectMetricSetConfigResult.h>
-#include <aws/lookoutmetrics/model/GetAnomalyGroupResult.h>
-#include <aws/lookoutmetrics/model/GetFeedbackResult.h>
-#include <aws/lookoutmetrics/model/GetSampleDataResult.h>
-#include <aws/lookoutmetrics/model/ListAlertsResult.h>
-#include <aws/lookoutmetrics/model/ListAnomalyDetectorsResult.h>
-#include <aws/lookoutmetrics/model/ListAnomalyGroupRelatedMetricsResult.h>
-#include <aws/lookoutmetrics/model/ListAnomalyGroupSummariesResult.h>
-#include <aws/lookoutmetrics/model/ListAnomalyGroupTimeSeriesResult.h>
-#include <aws/lookoutmetrics/model/ListMetricSetsResult.h>
-#include <aws/lookoutmetrics/model/ListTagsForResourceResult.h>
-#include <aws/lookoutmetrics/model/PutFeedbackResult.h>
-#include <aws/lookoutmetrics/model/TagResourceResult.h>
-#include <aws/lookoutmetrics/model/UntagResourceResult.h>
-#include <aws/lookoutmetrics/model/UpdateAnomalyDetectorResult.h>
-#include <aws/lookoutmetrics/model/UpdateMetricSetResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/lookoutmetrics/LookoutMetricsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace LookoutMetrics
 {
-
-namespace Model
-{
-        class ActivateAnomalyDetectorRequest;
-        class BackTestAnomalyDetectorRequest;
-        class CreateAlertRequest;
-        class CreateAnomalyDetectorRequest;
-        class CreateMetricSetRequest;
-        class DeactivateAnomalyDetectorRequest;
-        class DeleteAlertRequest;
-        class DeleteAnomalyDetectorRequest;
-        class DescribeAlertRequest;
-        class DescribeAnomalyDetectionExecutionsRequest;
-        class DescribeAnomalyDetectorRequest;
-        class DescribeMetricSetRequest;
-        class DetectMetricSetConfigRequest;
-        class GetAnomalyGroupRequest;
-        class GetFeedbackRequest;
-        class GetSampleDataRequest;
-        class ListAlertsRequest;
-        class ListAnomalyDetectorsRequest;
-        class ListAnomalyGroupRelatedMetricsRequest;
-        class ListAnomalyGroupSummariesRequest;
-        class ListAnomalyGroupTimeSeriesRequest;
-        class ListMetricSetsRequest;
-        class ListTagsForResourceRequest;
-        class PutFeedbackRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateAnomalyDetectorRequest;
-        class UpdateMetricSetRequest;
-
-        typedef Aws::Utils::Outcome<ActivateAnomalyDetectorResult, LookoutMetricsError> ActivateAnomalyDetectorOutcome;
-        typedef Aws::Utils::Outcome<BackTestAnomalyDetectorResult, LookoutMetricsError> BackTestAnomalyDetectorOutcome;
-        typedef Aws::Utils::Outcome<CreateAlertResult, LookoutMetricsError> CreateAlertOutcome;
-        typedef Aws::Utils::Outcome<CreateAnomalyDetectorResult, LookoutMetricsError> CreateAnomalyDetectorOutcome;
-        typedef Aws::Utils::Outcome<CreateMetricSetResult, LookoutMetricsError> CreateMetricSetOutcome;
-        typedef Aws::Utils::Outcome<DeactivateAnomalyDetectorResult, LookoutMetricsError> DeactivateAnomalyDetectorOutcome;
-        typedef Aws::Utils::Outcome<DeleteAlertResult, LookoutMetricsError> DeleteAlertOutcome;
-        typedef Aws::Utils::Outcome<DeleteAnomalyDetectorResult, LookoutMetricsError> DeleteAnomalyDetectorOutcome;
-        typedef Aws::Utils::Outcome<DescribeAlertResult, LookoutMetricsError> DescribeAlertOutcome;
-        typedef Aws::Utils::Outcome<DescribeAnomalyDetectionExecutionsResult, LookoutMetricsError> DescribeAnomalyDetectionExecutionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAnomalyDetectorResult, LookoutMetricsError> DescribeAnomalyDetectorOutcome;
-        typedef Aws::Utils::Outcome<DescribeMetricSetResult, LookoutMetricsError> DescribeMetricSetOutcome;
-        typedef Aws::Utils::Outcome<DetectMetricSetConfigResult, LookoutMetricsError> DetectMetricSetConfigOutcome;
-        typedef Aws::Utils::Outcome<GetAnomalyGroupResult, LookoutMetricsError> GetAnomalyGroupOutcome;
-        typedef Aws::Utils::Outcome<GetFeedbackResult, LookoutMetricsError> GetFeedbackOutcome;
-        typedef Aws::Utils::Outcome<GetSampleDataResult, LookoutMetricsError> GetSampleDataOutcome;
-        typedef Aws::Utils::Outcome<ListAlertsResult, LookoutMetricsError> ListAlertsOutcome;
-        typedef Aws::Utils::Outcome<ListAnomalyDetectorsResult, LookoutMetricsError> ListAnomalyDetectorsOutcome;
-        typedef Aws::Utils::Outcome<ListAnomalyGroupRelatedMetricsResult, LookoutMetricsError> ListAnomalyGroupRelatedMetricsOutcome;
-        typedef Aws::Utils::Outcome<ListAnomalyGroupSummariesResult, LookoutMetricsError> ListAnomalyGroupSummariesOutcome;
-        typedef Aws::Utils::Outcome<ListAnomalyGroupTimeSeriesResult, LookoutMetricsError> ListAnomalyGroupTimeSeriesOutcome;
-        typedef Aws::Utils::Outcome<ListMetricSetsResult, LookoutMetricsError> ListMetricSetsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, LookoutMetricsError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutFeedbackResult, LookoutMetricsError> PutFeedbackOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, LookoutMetricsError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, LookoutMetricsError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateAnomalyDetectorResult, LookoutMetricsError> UpdateAnomalyDetectorOutcome;
-        typedef Aws::Utils::Outcome<UpdateMetricSetResult, LookoutMetricsError> UpdateMetricSetOutcome;
-
-        typedef std::future<ActivateAnomalyDetectorOutcome> ActivateAnomalyDetectorOutcomeCallable;
-        typedef std::future<BackTestAnomalyDetectorOutcome> BackTestAnomalyDetectorOutcomeCallable;
-        typedef std::future<CreateAlertOutcome> CreateAlertOutcomeCallable;
-        typedef std::future<CreateAnomalyDetectorOutcome> CreateAnomalyDetectorOutcomeCallable;
-        typedef std::future<CreateMetricSetOutcome> CreateMetricSetOutcomeCallable;
-        typedef std::future<DeactivateAnomalyDetectorOutcome> DeactivateAnomalyDetectorOutcomeCallable;
-        typedef std::future<DeleteAlertOutcome> DeleteAlertOutcomeCallable;
-        typedef std::future<DeleteAnomalyDetectorOutcome> DeleteAnomalyDetectorOutcomeCallable;
-        typedef std::future<DescribeAlertOutcome> DescribeAlertOutcomeCallable;
-        typedef std::future<DescribeAnomalyDetectionExecutionsOutcome> DescribeAnomalyDetectionExecutionsOutcomeCallable;
-        typedef std::future<DescribeAnomalyDetectorOutcome> DescribeAnomalyDetectorOutcomeCallable;
-        typedef std::future<DescribeMetricSetOutcome> DescribeMetricSetOutcomeCallable;
-        typedef std::future<DetectMetricSetConfigOutcome> DetectMetricSetConfigOutcomeCallable;
-        typedef std::future<GetAnomalyGroupOutcome> GetAnomalyGroupOutcomeCallable;
-        typedef std::future<GetFeedbackOutcome> GetFeedbackOutcomeCallable;
-        typedef std::future<GetSampleDataOutcome> GetSampleDataOutcomeCallable;
-        typedef std::future<ListAlertsOutcome> ListAlertsOutcomeCallable;
-        typedef std::future<ListAnomalyDetectorsOutcome> ListAnomalyDetectorsOutcomeCallable;
-        typedef std::future<ListAnomalyGroupRelatedMetricsOutcome> ListAnomalyGroupRelatedMetricsOutcomeCallable;
-        typedef std::future<ListAnomalyGroupSummariesOutcome> ListAnomalyGroupSummariesOutcomeCallable;
-        typedef std::future<ListAnomalyGroupTimeSeriesOutcome> ListAnomalyGroupTimeSeriesOutcomeCallable;
-        typedef std::future<ListMetricSetsOutcome> ListMetricSetsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutFeedbackOutcome> PutFeedbackOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateAnomalyDetectorOutcome> UpdateAnomalyDetectorOutcomeCallable;
-        typedef std::future<UpdateMetricSetOutcome> UpdateMetricSetOutcomeCallable;
-} // namespace Model
-
-  class LookoutMetricsClient;
-
-    typedef std::function<void(const LookoutMetricsClient*, const Model::ActivateAnomalyDetectorRequest&, const Model::ActivateAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ActivateAnomalyDetectorResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::BackTestAnomalyDetectorRequest&, const Model::BackTestAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BackTestAnomalyDetectorResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::CreateAlertRequest&, const Model::CreateAlertOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAlertResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::CreateAnomalyDetectorRequest&, const Model::CreateAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAnomalyDetectorResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::CreateMetricSetRequest&, const Model::CreateMetricSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMetricSetResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::DeactivateAnomalyDetectorRequest&, const Model::DeactivateAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateAnomalyDetectorResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::DeleteAlertRequest&, const Model::DeleteAlertOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAlertResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::DeleteAnomalyDetectorRequest&, const Model::DeleteAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAnomalyDetectorResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::DescribeAlertRequest&, const Model::DescribeAlertOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlertResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::DescribeAnomalyDetectionExecutionsRequest&, const Model::DescribeAnomalyDetectionExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnomalyDetectionExecutionsResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::DescribeAnomalyDetectorRequest&, const Model::DescribeAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAnomalyDetectorResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::DescribeMetricSetRequest&, const Model::DescribeMetricSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMetricSetResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::DetectMetricSetConfigRequest&, const Model::DetectMetricSetConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectMetricSetConfigResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::GetAnomalyGroupRequest&, const Model::GetAnomalyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnomalyGroupResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::GetFeedbackRequest&, const Model::GetFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFeedbackResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::GetSampleDataRequest&, const Model::GetSampleDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSampleDataResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::ListAlertsRequest&, const Model::ListAlertsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAlertsResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::ListAnomalyDetectorsRequest&, const Model::ListAnomalyDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnomalyDetectorsResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::ListAnomalyGroupRelatedMetricsRequest&, const Model::ListAnomalyGroupRelatedMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnomalyGroupRelatedMetricsResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::ListAnomalyGroupSummariesRequest&, const Model::ListAnomalyGroupSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnomalyGroupSummariesResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::ListAnomalyGroupTimeSeriesRequest&, const Model::ListAnomalyGroupTimeSeriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnomalyGroupTimeSeriesResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::ListMetricSetsRequest&, const Model::ListMetricSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricSetsResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::PutFeedbackRequest&, const Model::PutFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFeedbackResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::UpdateAnomalyDetectorRequest&, const Model::UpdateAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAnomalyDetectorResponseReceivedHandler;
-    typedef std::function<void(const LookoutMetricsClient*, const Model::UpdateMetricSetRequest&, const Model::UpdateMetricSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMetricSetResponseReceivedHandler;
-
   /**
    * <p>This is the <i>Amazon Lookout for Metrics API Reference</i>. For an
    * introduction to the service with tutorials for getting started, visit <a
@@ -218,14 +35,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LookoutMetricsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LookoutMetricsClient(const Aws::Auth::AWSCredentials& credentials,
+                             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         LookoutMetricsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~LookoutMetricsClient();
 
@@ -484,6 +302,24 @@ namespace Model
         virtual void GetAnomalyGroupAsync(const Model::GetAnomalyGroupRequest& request, const GetAnomalyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns details about the requested data quality metrics.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetDataQualityMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDataQualityMetricsOutcome GetDataQualityMetrics(const Model::GetDataQualityMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDataQualityMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDataQualityMetricsOutcomeCallable GetDataQualityMetricsCallable(const Model::GetDataQualityMetricsRequest& request) const;
+
+        /**
+         * An Async wrapper for GetDataQualityMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDataQualityMetricsAsync(const Model::GetDataQualityMetricsRequest& request, const GetDataQualityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Get feedback for an anomaly group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/GetFeedback">AWS
          * API Reference</a></p>
@@ -706,6 +542,23 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Make changes to an existing alert.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAlert">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAlertOutcome UpdateAlert(const Model::UpdateAlertRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAlert that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAlertOutcomeCallable UpdateAlertCallable(const Model::UpdateAlertRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateAlert that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAlertAsync(const Model::UpdateAlertRequest& request, const UpdateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a detector. After activation, you can only change a detector's
          * ingestion delay and description.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAnomalyDetector">AWS
@@ -744,34 +597,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void ActivateAnomalyDetectorAsyncHelper(const Model::ActivateAnomalyDetectorRequest& request, const ActivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BackTestAnomalyDetectorAsyncHelper(const Model::BackTestAnomalyDetectorRequest& request, const BackTestAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAlertAsyncHelper(const Model::CreateAlertRequest& request, const CreateAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAnomalyDetectorAsyncHelper(const Model::CreateAnomalyDetectorRequest& request, const CreateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateMetricSetAsyncHelper(const Model::CreateMetricSetRequest& request, const CreateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeactivateAnomalyDetectorAsyncHelper(const Model::DeactivateAnomalyDetectorRequest& request, const DeactivateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAlertAsyncHelper(const Model::DeleteAlertRequest& request, const DeleteAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAnomalyDetectorAsyncHelper(const Model::DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAlertAsyncHelper(const Model::DescribeAlertRequest& request, const DescribeAlertResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAnomalyDetectionExecutionsAsyncHelper(const Model::DescribeAnomalyDetectionExecutionsRequest& request, const DescribeAnomalyDetectionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAnomalyDetectorAsyncHelper(const Model::DescribeAnomalyDetectorRequest& request, const DescribeAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeMetricSetAsyncHelper(const Model::DescribeMetricSetRequest& request, const DescribeMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetectMetricSetConfigAsyncHelper(const Model::DetectMetricSetConfigRequest& request, const DetectMetricSetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAnomalyGroupAsyncHelper(const Model::GetAnomalyGroupRequest& request, const GetAnomalyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFeedbackAsyncHelper(const Model::GetFeedbackRequest& request, const GetFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSampleDataAsyncHelper(const Model::GetSampleDataRequest& request, const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAlertsAsyncHelper(const Model::ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAnomalyDetectorsAsyncHelper(const Model::ListAnomalyDetectorsRequest& request, const ListAnomalyDetectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAnomalyGroupRelatedMetricsAsyncHelper(const Model::ListAnomalyGroupRelatedMetricsRequest& request, const ListAnomalyGroupRelatedMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAnomalyGroupSummariesAsyncHelper(const Model::ListAnomalyGroupSummariesRequest& request, const ListAnomalyGroupSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAnomalyGroupTimeSeriesAsyncHelper(const Model::ListAnomalyGroupTimeSeriesRequest& request, const ListAnomalyGroupTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListMetricSetsAsyncHelper(const Model::ListMetricSetsRequest& request, const ListMetricSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutFeedbackAsyncHelper(const Model::PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAnomalyDetectorAsyncHelper(const Model::UpdateAnomalyDetectorRequest& request, const UpdateAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateMetricSetAsyncHelper(const Model::UpdateMetricSetRequest& request, const UpdateMetricSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

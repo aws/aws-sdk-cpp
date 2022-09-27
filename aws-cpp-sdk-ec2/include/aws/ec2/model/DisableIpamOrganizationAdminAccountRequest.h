@@ -120,10 +120,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_delegatedAdminAccountId;
-    bool m_delegatedAdminAccountIdHasBeenSet;
+    bool m_delegatedAdminAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

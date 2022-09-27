@@ -71,7 +71,7 @@ namespace Model
   private:
 
     AwsSsmComplianceSummary m_complianceSummary;
-    bool m_complianceSummaryHasBeenSet;
+    bool m_complianceSummaryHasBeenSet = false;
   };
 
 } // namespace Model

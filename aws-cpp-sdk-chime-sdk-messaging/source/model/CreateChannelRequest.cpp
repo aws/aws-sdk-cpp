@@ -27,7 +27,8 @@ CreateChannelRequest::CreateChannelRequest() :
     m_chimeBearerHasBeenSet(false),
     m_channelIdHasBeenSet(false),
     m_memberArnsHasBeenSet(false),
-    m_moderatorArnsHasBeenSet(false)
+    m_moderatorArnsHasBeenSet(false),
+    m_elasticChannelConfigurationHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,12 @@ Aws::String CreateChannelRequest::SerializePayload() const
      moderatorArnsJsonList[moderatorArnsIndex].AsString(m_moderatorArns[moderatorArnsIndex]);
    }
    payload.WithArray("ModeratorArns", std::move(moderatorArnsJsonList));
+
+  }
+
+  if(m_elasticChannelConfigurationHasBeenSet)
+  {
+   payload.WithObject("ElasticChannelConfiguration", m_elasticChannelConfiguration.Jsonize());
 
   }
 

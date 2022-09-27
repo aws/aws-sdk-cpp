@@ -70,14 +70,14 @@ void ListBatchJobExecutionsRequest::AddQueryStringParameters(URI& uri) const
 
     if(m_startedAfterHasBeenSet)
     {
-      ss << m_startedAfter.ToGmtString(DateFormat::ISO_8601);
+      ss << m_startedAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("startedAfter", ss.str());
       ss.str("");
     }
 
     if(m_startedBeforeHasBeenSet)
     {
-      ss << m_startedBefore.ToGmtString(DateFormat::ISO_8601);
+      ss << m_startedBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("startedBefore", ss.str());
       ss.str("");
     }

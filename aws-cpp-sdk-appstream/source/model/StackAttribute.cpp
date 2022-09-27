@@ -31,6 +31,7 @@ namespace Aws
         static const int EMBED_HOST_DOMAINS_HASH = HashingUtils::HashString("EMBED_HOST_DOMAINS");
         static const int IAM_ROLE_ARN_HASH = HashingUtils::HashString("IAM_ROLE_ARN");
         static const int ACCESS_ENDPOINTS_HASH = HashingUtils::HashString("ACCESS_ENDPOINTS");
+        static const int STREAMING_EXPERIENCE_SETTINGS_HASH = HashingUtils::HashString("STREAMING_EXPERIENCE_SETTINGS");
 
 
         StackAttribute GetStackAttributeForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return StackAttribute::ACCESS_ENDPOINTS;
           }
+          else if (hashCode == STREAMING_EXPERIENCE_SETTINGS_HASH)
+          {
+            return StackAttribute::STREAMING_EXPERIENCE_SETTINGS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -116,6 +121,8 @@ namespace Aws
             return "IAM_ROLE_ARN";
           case StackAttribute::ACCESS_ENDPOINTS:
             return "ACCESS_ENDPOINTS";
+          case StackAttribute::STREAMING_EXPERIENCE_SETTINGS:
+            return "STREAMING_EXPERIENCE_SETTINGS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

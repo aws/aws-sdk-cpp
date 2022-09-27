@@ -21,14 +21,16 @@ namespace Model
 PredictedItem::PredictedItem() : 
     m_itemIdHasBeenSet(false),
     m_score(0.0),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_promotionNameHasBeenSet(false)
 {
 }
 
 PredictedItem::PredictedItem(JsonView jsonValue) : 
     m_itemIdHasBeenSet(false),
     m_score(0.0),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_promotionNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ PredictedItem& PredictedItem::operator =(JsonView jsonValue)
     m_scoreHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("promotionName"))
+  {
+    m_promotionName = jsonValue.GetString("promotionName");
+
+    m_promotionNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +74,12 @@ JsonValue PredictedItem::Jsonize() const
   if(m_scoreHasBeenSet)
   {
    payload.WithDouble("score", m_score);
+
+  }
+
+  if(m_promotionNameHasBeenSet)
+  {
+   payload.WithString("promotionName", m_promotionName);
 
   }
 

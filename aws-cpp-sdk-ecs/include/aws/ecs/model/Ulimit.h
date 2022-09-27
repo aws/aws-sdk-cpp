@@ -118,13 +118,13 @@ namespace Model
   private:
 
     UlimitName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_softLimit;
-    bool m_softLimitHasBeenSet;
+    bool m_softLimitHasBeenSet = false;
 
     int m_hardLimit;
-    bool m_hardLimitHasBeenSet;
+    bool m_hardLimitHasBeenSet = false;
   };
 
 } // namespace Model

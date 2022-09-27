@@ -5,98 +5,15 @@
 
 #pragma once
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
-#include <aws/iotsecuretunneling/IoTSecureTunnelingErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/iotsecuretunneling/model/CloseTunnelResult.h>
-#include <aws/iotsecuretunneling/model/DescribeTunnelResult.h>
-#include <aws/iotsecuretunneling/model/ListTagsForResourceResult.h>
-#include <aws/iotsecuretunneling/model/ListTunnelsResult.h>
-#include <aws/iotsecuretunneling/model/OpenTunnelResult.h>
-#include <aws/iotsecuretunneling/model/RotateTunnelAccessTokenResult.h>
-#include <aws/iotsecuretunneling/model/TagResourceResult.h>
-#include <aws/iotsecuretunneling/model/UntagResourceResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/iotsecuretunneling/IoTSecureTunnelingServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace IoTSecureTunneling
 {
-
-namespace Model
-{
-        class CloseTunnelRequest;
-        class DescribeTunnelRequest;
-        class ListTagsForResourceRequest;
-        class ListTunnelsRequest;
-        class OpenTunnelRequest;
-        class RotateTunnelAccessTokenRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-
-        typedef Aws::Utils::Outcome<CloseTunnelResult, IoTSecureTunnelingError> CloseTunnelOutcome;
-        typedef Aws::Utils::Outcome<DescribeTunnelResult, IoTSecureTunnelingError> DescribeTunnelOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTSecureTunnelingError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTunnelsResult, IoTSecureTunnelingError> ListTunnelsOutcome;
-        typedef Aws::Utils::Outcome<OpenTunnelResult, IoTSecureTunnelingError> OpenTunnelOutcome;
-        typedef Aws::Utils::Outcome<RotateTunnelAccessTokenResult, IoTSecureTunnelingError> RotateTunnelAccessTokenOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, IoTSecureTunnelingError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, IoTSecureTunnelingError> UntagResourceOutcome;
-
-        typedef std::future<CloseTunnelOutcome> CloseTunnelOutcomeCallable;
-        typedef std::future<DescribeTunnelOutcome> DescribeTunnelOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListTunnelsOutcome> ListTunnelsOutcomeCallable;
-        typedef std::future<OpenTunnelOutcome> OpenTunnelOutcomeCallable;
-        typedef std::future<RotateTunnelAccessTokenOutcome> RotateTunnelAccessTokenOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-} // namespace Model
-
-  class IoTSecureTunnelingClient;
-
-    typedef std::function<void(const IoTSecureTunnelingClient*, const Model::CloseTunnelRequest&, const Model::CloseTunnelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CloseTunnelResponseReceivedHandler;
-    typedef std::function<void(const IoTSecureTunnelingClient*, const Model::DescribeTunnelRequest&, const Model::DescribeTunnelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTunnelResponseReceivedHandler;
-    typedef std::function<void(const IoTSecureTunnelingClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const IoTSecureTunnelingClient*, const Model::ListTunnelsRequest&, const Model::ListTunnelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTunnelsResponseReceivedHandler;
-    typedef std::function<void(const IoTSecureTunnelingClient*, const Model::OpenTunnelRequest&, const Model::OpenTunnelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > OpenTunnelResponseReceivedHandler;
-    typedef std::function<void(const IoTSecureTunnelingClient*, const Model::RotateTunnelAccessTokenRequest&, const Model::RotateTunnelAccessTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RotateTunnelAccessTokenResponseReceivedHandler;
-    typedef std::function<void(const IoTSecureTunnelingClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const IoTSecureTunnelingClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-
   /**
    * <fullname>IoT Secure Tunneling</fullname> <p>IoT Secure Tunneling creates remote
    * connections to devices deployed in the field.</p> <p>For more information about
@@ -119,14 +36,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTSecureTunnelingClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IoTSecureTunnelingClient(const Aws::Auth::AWSCredentials& credentials,
+                                 const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         IoTSecureTunnelingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                 const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~IoTSecureTunnelingClient();
 
@@ -295,14 +213,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CloseTunnelAsyncHelper(const Model::CloseTunnelRequest& request, const CloseTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTunnelAsyncHelper(const Model::DescribeTunnelRequest& request, const DescribeTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTunnelsAsyncHelper(const Model::ListTunnelsRequest& request, const ListTunnelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void OpenTunnelAsyncHelper(const Model::OpenTunnelRequest& request, const OpenTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RotateTunnelAccessTokenAsyncHelper(const Model::RotateTunnelAccessTokenRequest& request, const RotateTunnelAccessTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

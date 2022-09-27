@@ -188,13 +188,13 @@ namespace Model
   private:
 
     Aws::Vector<AppCookieStickinessPolicy> m_appCookieStickinessPolicies;
-    bool m_appCookieStickinessPoliciesHasBeenSet;
+    bool m_appCookieStickinessPoliciesHasBeenSet = false;
 
     Aws::Vector<LBCookieStickinessPolicy> m_lBCookieStickinessPolicies;
-    bool m_lBCookieStickinessPoliciesHasBeenSet;
+    bool m_lBCookieStickinessPoliciesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_otherPolicies;
-    bool m_otherPoliciesHasBeenSet;
+    bool m_otherPoliciesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_emergencyPhoneNumber;
-    bool m_emergencyPhoneNumberHasBeenSet;
+    bool m_emergencyPhoneNumberHasBeenSet = false;
 
     Aws::String m_testPhoneNumber;
-    bool m_testPhoneNumberHasBeenSet;
+    bool m_testPhoneNumberHasBeenSet = false;
 
     Aws::String m_callingCountry;
-    bool m_callingCountryHasBeenSet;
+    bool m_callingCountryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -276,16 +276,16 @@ namespace Model
   private:
 
     Aws::String m_thirdPartyConfigurationUrl;
-    bool m_thirdPartyConfigurationUrlHasBeenSet;
+    bool m_thirdPartyConfigurationUrlHasBeenSet = false;
 
     Aws::String m_entityUrlTemplate;
-    bool m_entityUrlTemplateHasBeenSet;
+    bool m_entityUrlTemplateHasBeenSet = false;
 
     Aws::String m_executionUrlTemplate;
-    bool m_executionUrlTemplateHasBeenSet;
+    bool m_executionUrlTemplateHasBeenSet = false;
 
     Aws::String m_revisionUrlTemplate;
-    bool m_revisionUrlTemplateHasBeenSet;
+    bool m_revisionUrlTemplateHasBeenSet = false;
   };
 
 } // namespace Model

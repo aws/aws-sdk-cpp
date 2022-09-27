@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PublicAccessBlockConfiguration m_publicAccessBlock;
-    bool m_publicAccessBlockHasBeenSet;
+    bool m_publicAccessBlockHasBeenSet = false;
 
     Aws::Vector<Region> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
   };
 
 } // namespace Model

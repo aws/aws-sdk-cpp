@@ -294,13 +294,13 @@ namespace Model
   private:
 
     GeoRestrictionType m_restrictionType;
-    bool m_restrictionTypeHasBeenSet;
+    bool m_restrictionTypeHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

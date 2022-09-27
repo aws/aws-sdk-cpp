@@ -165,16 +165,16 @@ namespace Model
   private:
 
     Month m_month;
-    bool m_monthHasBeenSet;
+    bool m_monthHasBeenSet = false;
 
     int m_dayOfMonth;
-    bool m_dayOfMonthHasBeenSet;
+    bool m_dayOfMonthHasBeenSet = false;
 
     DayOfWeek m_dayOfWeek;
-    bool m_dayOfWeekHasBeenSet;
+    bool m_dayOfWeekHasBeenSet = false;
 
     int m_hour;
-    bool m_hourHasBeenSet;
+    bool m_hourHasBeenSet = false;
   };
 
 } // namespace Model

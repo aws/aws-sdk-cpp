@@ -54,14 +54,14 @@ void ListDatasetEntriesRequest::AddQueryStringParameters(URI& uri) const
 
     if(m_beforeCreationDateHasBeenSet)
     {
-      ss << m_beforeCreationDate.ToGmtString(DateFormat::ISO_8601);
+      ss << m_beforeCreationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("createdBefore", ss.str());
       ss.str("");
     }
 
     if(m_afterCreationDateHasBeenSet)
     {
-      ss << m_afterCreationDate.ToGmtString(DateFormat::ISO_8601);
+      ss << m_afterCreationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("createdAfter", ss.str());
       ss.str("");
     }

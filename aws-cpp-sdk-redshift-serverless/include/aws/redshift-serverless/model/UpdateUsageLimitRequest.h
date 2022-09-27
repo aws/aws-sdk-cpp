@@ -136,13 +136,13 @@ namespace Model
   private:
 
     long long m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     UsageLimitBreachAction m_breachAction;
-    bool m_breachActionHasBeenSet;
+    bool m_breachActionHasBeenSet = false;
 
     Aws::String m_usageLimitId;
-    bool m_usageLimitIdHasBeenSet;
+    bool m_usageLimitIdHasBeenSet = false;
   };
 
 } // namespace Model

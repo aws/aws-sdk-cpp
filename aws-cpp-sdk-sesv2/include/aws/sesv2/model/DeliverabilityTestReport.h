@@ -320,22 +320,22 @@ namespace Model
   private:
 
     Aws::String m_reportId;
-    bool m_reportIdHasBeenSet;
+    bool m_reportIdHasBeenSet = false;
 
     Aws::String m_reportName;
-    bool m_reportNameHasBeenSet;
+    bool m_reportNameHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_fromEmailAddress;
-    bool m_fromEmailAddressHasBeenSet;
+    bool m_fromEmailAddressHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     DeliverabilityTestStatus m_deliverabilityTestStatus;
-    bool m_deliverabilityTestStatusHasBeenSet;
+    bool m_deliverabilityTestStatusHasBeenSet = false;
   };
 
 } // namespace Model

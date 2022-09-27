@@ -79,10 +79,10 @@ namespace Model
   private:
 
     FunctionIsolationMode m_isolationMode;
-    bool m_isolationModeHasBeenSet;
+    bool m_isolationModeHasBeenSet = false;
 
     FunctionRunAsConfig m_runAs;
-    bool m_runAsHasBeenSet;
+    bool m_runAsHasBeenSet = false;
   };
 
 } // namespace Model

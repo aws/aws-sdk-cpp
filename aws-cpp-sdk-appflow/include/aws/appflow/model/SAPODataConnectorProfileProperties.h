@@ -306,25 +306,25 @@ namespace Model
   private:
 
     Aws::String m_applicationHostUrl;
-    bool m_applicationHostUrlHasBeenSet;
+    bool m_applicationHostUrlHasBeenSet = false;
 
     Aws::String m_applicationServicePath;
-    bool m_applicationServicePathHasBeenSet;
+    bool m_applicationServicePathHasBeenSet = false;
 
     int m_portNumber;
-    bool m_portNumberHasBeenSet;
+    bool m_portNumberHasBeenSet = false;
 
     Aws::String m_clientNumber;
-    bool m_clientNumberHasBeenSet;
+    bool m_clientNumberHasBeenSet = false;
 
     Aws::String m_logonLanguage;
-    bool m_logonLanguageHasBeenSet;
+    bool m_logonLanguageHasBeenSet = false;
 
     Aws::String m_privateLinkServiceName;
-    bool m_privateLinkServiceNameHasBeenSet;
+    bool m_privateLinkServiceNameHasBeenSet = false;
 
     OAuthProperties m_oAuthProperties;
-    bool m_oAuthPropertiesHasBeenSet;
+    bool m_oAuthPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -212,13 +212,13 @@ namespace Model
   private:
 
     Aws::String m_format;
-    bool m_formatHasBeenSet;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_timezoneOffset;
-    bool m_timezoneOffsetHasBeenSet;
+    bool m_timezoneOffsetHasBeenSet = false;
 
     Aws::String m_localeCode;
-    bool m_localeCodeHasBeenSet;
+    bool m_localeCodeHasBeenSet = false;
   };
 
 } // namespace Model

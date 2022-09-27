@@ -200,13 +200,13 @@ namespace Model
   private:
 
     Aws::String m_hardwareId;
-    bool m_hardwareIdHasBeenSet;
+    bool m_hardwareIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceServerIDs;
-    bool m_sourceServerIDsHasBeenSet;
+    bool m_sourceServerIDsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stagingAccountIDs;
-    bool m_stagingAccountIDsHasBeenSet;
+    bool m_stagingAccountIDsHasBeenSet = false;
   };
 
 } // namespace Model

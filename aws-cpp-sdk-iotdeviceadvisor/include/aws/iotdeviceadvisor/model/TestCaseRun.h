@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotdeviceadvisor/model/Status.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotdeviceadvisor/model/TestCaseScenario.h>
 #include <utility>
 
 namespace Aws
@@ -431,34 +433,78 @@ namespace Model
      */
     inline TestCaseRun& WithFailure(const char* value) { SetFailure(value); return *this;}
 
+
+    /**
+     * <p> Provides the test scenarios for the test case run. </p>
+     */
+    inline const Aws::Vector<TestCaseScenario>& GetTestScenarios() const{ return m_testScenarios; }
+
+    /**
+     * <p> Provides the test scenarios for the test case run. </p>
+     */
+    inline bool TestScenariosHasBeenSet() const { return m_testScenariosHasBeenSet; }
+
+    /**
+     * <p> Provides the test scenarios for the test case run. </p>
+     */
+    inline void SetTestScenarios(const Aws::Vector<TestCaseScenario>& value) { m_testScenariosHasBeenSet = true; m_testScenarios = value; }
+
+    /**
+     * <p> Provides the test scenarios for the test case run. </p>
+     */
+    inline void SetTestScenarios(Aws::Vector<TestCaseScenario>&& value) { m_testScenariosHasBeenSet = true; m_testScenarios = std::move(value); }
+
+    /**
+     * <p> Provides the test scenarios for the test case run. </p>
+     */
+    inline TestCaseRun& WithTestScenarios(const Aws::Vector<TestCaseScenario>& value) { SetTestScenarios(value); return *this;}
+
+    /**
+     * <p> Provides the test scenarios for the test case run. </p>
+     */
+    inline TestCaseRun& WithTestScenarios(Aws::Vector<TestCaseScenario>&& value) { SetTestScenarios(std::move(value)); return *this;}
+
+    /**
+     * <p> Provides the test scenarios for the test case run. </p>
+     */
+    inline TestCaseRun& AddTestScenarios(const TestCaseScenario& value) { m_testScenariosHasBeenSet = true; m_testScenarios.push_back(value); return *this; }
+
+    /**
+     * <p> Provides the test scenarios for the test case run. </p>
+     */
+    inline TestCaseRun& AddTestScenarios(TestCaseScenario&& value) { m_testScenariosHasBeenSet = true; m_testScenarios.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_testCaseRunId;
-    bool m_testCaseRunIdHasBeenSet;
+    bool m_testCaseRunIdHasBeenSet = false;
 
     Aws::String m_testCaseDefinitionId;
-    bool m_testCaseDefinitionIdHasBeenSet;
+    bool m_testCaseDefinitionIdHasBeenSet = false;
 
     Aws::String m_testCaseDefinitionName;
-    bool m_testCaseDefinitionNameHasBeenSet;
+    bool m_testCaseDefinitionNameHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_logUrl;
-    bool m_logUrlHasBeenSet;
+    bool m_logUrlHasBeenSet = false;
 
     Aws::String m_warnings;
-    bool m_warningsHasBeenSet;
+    bool m_warningsHasBeenSet = false;
 
     Aws::String m_failure;
-    bool m_failureHasBeenSet;
+    bool m_failureHasBeenSet = false;
+
+    Aws::Vector<TestCaseScenario> m_testScenarios;
+    bool m_testScenariosHasBeenSet = false;
   };
 
 } // namespace Model

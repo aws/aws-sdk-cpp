@@ -876,7 +876,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -897,7 +897,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -918,7 +918,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -939,7 +939,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -960,7 +960,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -981,7 +981,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -1002,7 +1002,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -1023,7 +1023,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -1044,7 +1044,7 @@ namespace Model
      * CloudWatch Logs for Amazon RDS, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
-     * Guide.</i>.</p> <p>For more information about exporting CloudWatch Logs for
+     * Guide</i>.</p> <p>For more information about exporting CloudWatch Logs for
      * Amazon Aurora, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User
@@ -1478,8 +1478,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1489,8 +1489,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1500,8 +1500,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1511,8 +1511,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1522,8 +1522,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1533,8 +1533,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1544,8 +1544,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1555,8 +1555,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Valid for:
@@ -1798,85 +1798,193 @@ namespace Model
     
     inline RestoreDBClusterToPointInTimeRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline const Aws::String& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_restoreType;
-    bool m_restoreTypeHasBeenSet;
+    bool m_restoreTypeHasBeenSet = false;
 
     Aws::String m_sourceDBClusterIdentifier;
-    bool m_sourceDBClusterIdentifierHasBeenSet;
+    bool m_sourceDBClusterIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_restoreToTime;
-    bool m_restoreToTimeHasBeenSet;
+    bool m_restoreToTimeHasBeenSet = false;
 
     bool m_useLatestRestorableTime;
-    bool m_useLatestRestorableTimeHasBeenSet;
+    bool m_useLatestRestorableTimeHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_enableIAMDatabaseAuthentication;
-    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
     long long m_backtrackWindow;
-    bool m_backtrackWindowHasBeenSet;
+    bool m_backtrackWindowHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-    bool m_enableCloudwatchLogsExportsHasBeenSet;
+    bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
     Aws::String m_dBClusterParameterGroupName;
-    bool m_dBClusterParameterGroupNameHasBeenSet;
+    bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainIAMRoleName;
-    bool m_domainIAMRoleNameHasBeenSet;
+    bool m_domainIAMRoleNameHasBeenSet = false;
 
     ScalingConfiguration m_scalingConfiguration;
-    bool m_scalingConfigurationHasBeenSet;
+    bool m_scalingConfigurationHasBeenSet = false;
 
     Aws::String m_engineMode;
-    bool m_engineModeHasBeenSet;
+    bool m_engineModeHasBeenSet = false;
 
     Aws::String m_dBClusterInstanceClass;
-    bool m_dBClusterInstanceClassHasBeenSet;
+    bool m_dBClusterInstanceClassHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-    bool m_serverlessV2ScalingConfigurationHasBeenSet;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

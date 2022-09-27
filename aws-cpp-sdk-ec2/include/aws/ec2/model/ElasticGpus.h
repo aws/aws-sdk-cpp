@@ -328,25 +328,25 @@ namespace Model
   private:
 
     Aws::String m_elasticGpuId;
-    bool m_elasticGpuIdHasBeenSet;
+    bool m_elasticGpuIdHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_elasticGpuType;
-    bool m_elasticGpuTypeHasBeenSet;
+    bool m_elasticGpuTypeHasBeenSet = false;
 
     ElasticGpuHealth m_elasticGpuHealth;
-    bool m_elasticGpuHealthHasBeenSet;
+    bool m_elasticGpuHealthHasBeenSet = false;
 
     ElasticGpuState m_elasticGpuState;
-    bool m_elasticGpuStateHasBeenSet;
+    bool m_elasticGpuStateHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

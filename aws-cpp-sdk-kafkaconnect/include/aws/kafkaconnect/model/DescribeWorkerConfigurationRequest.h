@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_workerConfigurationArn;
-    bool m_workerConfigurationArnHasBeenSet;
+    bool m_workerConfigurationArnHasBeenSet = false;
   };
 
 } // namespace Model

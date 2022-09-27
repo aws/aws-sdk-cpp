@@ -5,95 +5,15 @@
 
 #pragma once
 #include <aws/lexv2-runtime/LexRuntimeV2_EXPORTS.h>
-#include <aws/lexv2-runtime/LexRuntimeV2Errors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/lexv2-runtime/model/DeleteSessionResult.h>
-#include <aws/lexv2-runtime/model/GetSessionResult.h>
-#include <aws/lexv2-runtime/model/PutSessionResult.h>
-#include <aws/lexv2-runtime/model/RecognizeTextResult.h>
-#include <aws/lexv2-runtime/model/RecognizeUtteranceResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/lexv2-runtime/LexRuntimeV2ServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Event
-{
-  class EventEncoderStream;
-}
-
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace LexRuntimeV2
 {
-
-namespace Model
-{
-        class DeleteSessionRequest;
-        class GetSessionRequest;
-        class PutSessionRequest;
-        class RecognizeTextRequest;
-        class RecognizeUtteranceRequest;
-        class StartConversationRequest;
-        class StartConversationRequestEventStream;
-
-        typedef Aws::Utils::Outcome<DeleteSessionResult, LexRuntimeV2Error> DeleteSessionOutcome;
-        typedef Aws::Utils::Outcome<GetSessionResult, LexRuntimeV2Error> GetSessionOutcome;
-        typedef Aws::Utils::Outcome<PutSessionResult, LexRuntimeV2Error> PutSessionOutcome;
-        typedef Aws::Utils::Outcome<RecognizeTextResult, LexRuntimeV2Error> RecognizeTextOutcome;
-        typedef Aws::Utils::Outcome<RecognizeUtteranceResult, LexRuntimeV2Error> RecognizeUtteranceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, LexRuntimeV2Error> StartConversationOutcome;
-
-        typedef std::future<DeleteSessionOutcome> DeleteSessionOutcomeCallable;
-        typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
-        typedef std::future<PutSessionOutcome> PutSessionOutcomeCallable;
-        typedef std::future<RecognizeTextOutcome> RecognizeTextOutcomeCallable;
-        typedef std::future<RecognizeUtteranceOutcome> RecognizeUtteranceOutcomeCallable;
-        typedef std::future<StartConversationOutcome> StartConversationOutcomeCallable;
-} // namespace Model
-
-  class LexRuntimeV2Client;
-
-    typedef std::function<void(const LexRuntimeV2Client*, const Model::DeleteSessionRequest&, const Model::DeleteSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSessionResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeV2Client*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSessionResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeV2Client*, const Model::PutSessionRequest&, Model::PutSessionOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSessionResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeV2Client*, const Model::RecognizeTextRequest&, const Model::RecognizeTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecognizeTextResponseReceivedHandler;
-    typedef std::function<void(const LexRuntimeV2Client*, const Model::RecognizeUtteranceRequest&, Model::RecognizeUtteranceOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecognizeUtteranceResponseReceivedHandler;
-    typedef std::function<void(Model::StartConversationRequestEventStream&)> StartConversationStreamReadyHandler;
-    typedef std::function<void(const LexRuntimeV2Client*, const Model::StartConversationRequest&, const Model::StartConversationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConversationResponseReceivedHandler;
-
   /**
    * <p/>
    */
@@ -112,14 +32,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LexRuntimeV2Client(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LexRuntimeV2Client(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         LexRuntimeV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~LexRuntimeV2Client();
 
@@ -320,11 +241,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DeleteSessionAsyncHelper(const Model::DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSessionAsyncHelper(const Model::GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutSessionAsyncHelper(const Model::PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RecognizeTextAsyncHelper(const Model::RecognizeTextRequest& request, const RecognizeTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RecognizeUtteranceAsyncHelper(const Model::RecognizeUtteranceRequest& request, const RecognizeUtteranceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

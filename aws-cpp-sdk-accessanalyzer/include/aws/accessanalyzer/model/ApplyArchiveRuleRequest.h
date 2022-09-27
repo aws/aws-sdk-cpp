@@ -161,13 +161,13 @@ namespace Model
   private:
 
     Aws::String m_analyzerArn;
-    bool m_analyzerArnHasBeenSet;
+    bool m_analyzerArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet;
+    bool m_ruleNameHasBeenSet = false;
   };
 
 } // namespace Model

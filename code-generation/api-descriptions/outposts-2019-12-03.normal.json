@@ -132,6 +132,22 @@
       ],
       "documentation":"<p>Gets information about a catalog item.</p>"
     },
+    "GetConnection":{
+      "name":"GetConnection",
+      "http":{
+        "method":"GET",
+        "requestUri":"/connections/{ConnectionId}"
+      },
+      "input":{"shape":"GetConnectionRequest"},
+      "output":{"shape":"GetConnectionResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"NotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<note> <p> Amazon Web Services uses this action to install Outpost servers.</p> </note> <p> Gets information about a specified connection. </p> <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html\"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html\"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>"
+    },
     "GetOrder":{
       "name":"GetOrder",
       "http":{
@@ -302,6 +318,22 @@
         {"shape":"NotFoundException"}
       ],
       "documentation":"<p>Lists the tags for the specified resource.</p>"
+    },
+    "StartConnection":{
+      "name":"StartConnection",
+      "http":{
+        "method":"POST",
+        "requestUri":"/connections"
+      },
+      "input":{"shape":"StartConnectionRequest"},
+      "output":{"shape":"StartConnectionResponse"},
+      "errors":[
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"},
+        {"shape":"NotFoundException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<note> <p> Amazon Web Services uses this action to install Outpost servers.</p> </note> <p> Starts the connection required for Outpost server installation. </p> <p> Use CloudTrail to monitor this action or Amazon Web Services managed policy for Amazon Web Services Outposts to secure it. For more information, see <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html\"> Amazon Web Services managed policies for Amazon Web Services Outposts</a> and <a href=\"https://docs.aws.amazon.com/outposts/latest/userguide/logging-using-cloudtrail.html\"> Logging Amazon Web Services Outposts API calls with Amazon Web Services CloudTrail</a> in the <i>Amazon Web Services Outposts User Guide</i>. </p>"
     },
     "TagResource":{
       "name":"TagResource",
@@ -530,6 +562,10 @@
         "ComputeAttributes":{
           "shape":"ComputeAttributes",
           "documentation":"<p> Information about compute hardware assets. </p>"
+        },
+        "AssetLocation":{
+          "shape":"AssetLocation",
+          "documentation":"<p> The position of an asset in a rack. </p>"
         }
       },
       "documentation":"<p> Information about hardware assets. </p>"
@@ -537,6 +573,16 @@
     "AssetListDefinition":{
       "type":"list",
       "member":{"shape":"AssetInfo"}
+    },
+    "AssetLocation":{
+      "type":"structure",
+      "members":{
+        "RackElevation":{
+          "shape":"RackElevation",
+          "documentation":"<p> The position of an asset in a rack measured in rack units. </p>"
+        }
+      },
+      "documentation":"<p> Information about the position of the asset in a rack. </p>"
     },
     "AssetType":{
       "type":"string",
@@ -567,6 +613,16 @@
       "member":{"shape":"AvailabilityZone"},
       "max":5,
       "min":1
+    },
+    "CIDR":{
+      "type":"string",
+      "max":18,
+      "min":9,
+      "pattern":"^([0-9]{1,3}\\.){3}[0-9]{1,3}/[0-9]{1,2}$"
+    },
+    "CIDRList":{
+      "type":"list",
+      "member":{"shape":"CIDR"}
     },
     "CancelOrderInput":{
       "type":"structure",
@@ -685,6 +741,42 @@
       "documentation":"<p>Updating or deleting this resource can cause an inconsistent state.</p>",
       "error":{"httpStatusCode":409},
       "exception":true
+    },
+    "ConnectionDetails":{
+      "type":"structure",
+      "members":{
+        "ClientPublicKey":{
+          "shape":"WireGuardPublicKey",
+          "documentation":"<p> The public key of the client. </p>"
+        },
+        "ServerPublicKey":{
+          "shape":"WireGuardPublicKey",
+          "documentation":"<p> The public key of the server. </p>"
+        },
+        "ServerEndpoint":{
+          "shape":"ServerEndpoint",
+          "documentation":"<p> The endpoint for the server. </p>"
+        },
+        "ClientTunnelAddress":{
+          "shape":"CIDR",
+          "documentation":"<p> The client tunnel address. </p>"
+        },
+        "ServerTunnelAddress":{
+          "shape":"CIDR",
+          "documentation":"<p> The server tunnel address. </p>"
+        },
+        "AllowedIps":{
+          "shape":"CIDRList",
+          "documentation":"<p> The allowed IP addresses. </p>"
+        }
+      },
+      "documentation":"<p> Information about a connection. </p>"
+    },
+    "ConnectionId":{
+      "type":"string",
+      "max":1024,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9+/=]{1,1024}$"
     },
     "ContactName":{
       "type":"string",
@@ -842,6 +934,12 @@
       "members":{
       }
     },
+    "DeviceSerialNumber":{
+      "type":"string",
+      "max":100,
+      "min":1,
+      "pattern":"^(\\w+)$"
+    },
     "DistrictOrCounty":{
       "type":"string",
       "max":60,
@@ -911,6 +1009,31 @@
         "CatalogItem":{
           "shape":"CatalogItem",
           "documentation":"<p>Information about this catalog item.</p>"
+        }
+      }
+    },
+    "GetConnectionRequest":{
+      "type":"structure",
+      "required":["ConnectionId"],
+      "members":{
+        "ConnectionId":{
+          "shape":"ConnectionId",
+          "documentation":"<p> The ID of the connection you request. </p>",
+          "location":"uri",
+          "locationName":"ConnectionId"
+        }
+      }
+    },
+    "GetConnectionResponse":{
+      "type":"structure",
+      "members":{
+        "ConnectionId":{
+          "shape":"ConnectionId",
+          "documentation":"<p> The ID of the connection you receive. </p>"
+        },
+        "ConnectionDetails":{
+          "shape":"ConnectionDetails",
+          "documentation":"<p> Information about a connection. </p>"
         }
       }
     },
@@ -1104,9 +1227,35 @@
         "Status":{
           "shape":"LineItemStatus",
           "documentation":"<p>The status of the line item.</p>"
+        },
+        "ShipmentInformation":{
+          "shape":"ShipmentInformation",
+          "documentation":"<p> Information about a line item shipment. </p>"
+        },
+        "AssetInformationList":{
+          "shape":"LineItemAssetInformationList",
+          "documentation":"<p> Information about assets. </p>"
         }
       },
       "documentation":"<p>Information about a line item.</p>"
+    },
+    "LineItemAssetInformation":{
+      "type":"structure",
+      "members":{
+        "AssetId":{
+          "shape":"AssetId",
+          "documentation":"<p> The ID of the asset. </p>"
+        },
+        "MacAddressList":{
+          "shape":"MacAddressList",
+          "documentation":"<p> MAC addresses of the asset. </p>"
+        }
+      },
+      "documentation":"<p> Information about a line item asset. </p>"
+    },
+    "LineItemAssetInformationList":{
+      "type":"list",
+      "member":{"shape":"LineItemAssetInformation"}
     },
     "LineItemId":{
       "type":"string",
@@ -1372,6 +1521,16 @@
         }
       }
     },
+    "MacAddress":{
+      "type":"string",
+      "max":17,
+      "min":17,
+      "pattern":"^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$"
+    },
+    "MacAddressList":{
+      "type":"list",
+      "member":{"shape":"MacAddress"}
+    },
     "MaxResults1000":{
       "type":"integer",
       "documentation":"<p>The maximum page size.</p>",
@@ -1395,6 +1554,11 @@
       "max":180,
       "min":0,
       "pattern":"^\\S[\\S ]*$"
+    },
+    "NetworkInterfaceDeviceIndex":{
+      "type":"integer",
+      "max":1,
+      "min":0
     },
     "NotFoundException":{
       "type":"structure",
@@ -1646,6 +1810,12 @@
       ]
     },
     "Quantity":{"type":"string"},
+    "RackElevation":{
+      "type":"float",
+      "box":true,
+      "max":99,
+      "min":0
+    },
     "RackId":{
       "type":"string",
       "max":20,
@@ -1701,6 +1871,12 @@
         "ORDER"
       ]
     },
+    "ServerEndpoint":{
+      "type":"string",
+      "max":21,
+      "min":9,
+      "pattern":"^([0-9]{1,3}\\.){3}[0-9]{1,3}:[0-9]{1,5}$"
+    },
     "ServiceQuotaExceededException":{
       "type":"structure",
       "members":{
@@ -1709,6 +1885,29 @@
       "documentation":"<p>You have exceeded a service quota.</p>",
       "error":{"httpStatusCode":402},
       "exception":true
+    },
+    "ShipmentCarrier":{
+      "type":"string",
+      "enum":[
+        "DHL",
+        "DBS",
+        "FEDEX",
+        "UPS"
+      ]
+    },
+    "ShipmentInformation":{
+      "type":"structure",
+      "members":{
+        "ShipmentTrackingNumber":{
+          "shape":"TrackingId",
+          "documentation":"<p> The tracking number of the shipment. </p>"
+        },
+        "ShipmentCarrier":{
+          "shape":"ShipmentCarrier",
+          "documentation":"<p> The carrier of the shipment. </p>"
+        }
+      },
+      "documentation":"<p> Information about a line item shipment. </p>"
     },
     "Site":{
       "type":"structure",
@@ -1784,6 +1983,46 @@
       "max":10,
       "min":1,
       "pattern":"OR-[A-Z0-9]{7}"
+    },
+    "StartConnectionRequest":{
+      "type":"structure",
+      "required":[
+        "DeviceSerialNumber",
+        "AssetId",
+        "ClientPublicKey",
+        "NetworkInterfaceDeviceIndex"
+      ],
+      "members":{
+        "DeviceSerialNumber":{
+          "shape":"DeviceSerialNumber",
+          "documentation":"<p> The serial number of the dongle. </p>"
+        },
+        "AssetId":{
+          "shape":"AssetId",
+          "documentation":"<p> The ID of the Outpost server. </p>"
+        },
+        "ClientPublicKey":{
+          "shape":"WireGuardPublicKey",
+          "documentation":"<p> The public key of the client. </p>"
+        },
+        "NetworkInterfaceDeviceIndex":{
+          "shape":"NetworkInterfaceDeviceIndex",
+          "documentation":"<p> The device index of the network interface on the Outpost server. </p>"
+        }
+      }
+    },
+    "StartConnectionResponse":{
+      "type":"structure",
+      "members":{
+        "ConnectionId":{
+          "shape":"ConnectionId",
+          "documentation":"<p> The ID of the connection. </p>"
+        },
+        "UnderlayIpAddress":{
+          "shape":"UnderlayIpAddress",
+          "documentation":"<p> The underlay IP address. </p>"
+        }
+      }
     },
     "StateOrRegion":{
       "type":"string",
@@ -1878,6 +2117,18 @@
       "max":1005,
       "min":1,
       "pattern":"^(\\d+)##(\\S+)$"
+    },
+    "TrackingId":{
+      "type":"string",
+      "max":42,
+      "min":6,
+      "pattern":"^[a-zA-Z0-9]+$"
+    },
+    "UnderlayIpAddress":{
+      "type":"string",
+      "max":15,
+      "min":7,
+      "pattern":"^([0-9]{1,3}\\.){3}[0-9]{1,3}$"
     },
     "UntagResourceRequest":{
       "type":"structure",
@@ -2076,6 +2327,12 @@
       "documentation":"<p>A parameter is not valid.</p>",
       "error":{"httpStatusCode":400},
       "exception":true
+    },
+    "WireGuardPublicKey":{
+      "type":"string",
+      "max":44,
+      "min":44,
+      "pattern":"^[a-zA-Z0-9/+]{43}=$"
     },
     "outpostListDefinition":{
       "type":"list",

@@ -28,9 +28,11 @@ namespace Model
 {
 
   /**
-   * <p>Provides the CustomPolicyDetails, the rule owner (Amazon Web Services or
-   * customer), the rule identifier, and the events that cause the evaluation of your
-   * Amazon Web Services resources.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides the CustomPolicyDetails, the rule owner (<code>Amazon Web
+   * Services</code> for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy
+   * rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules), the rule
+   * identifier, and the events that cause the evaluation of your Amazon Web Services
+   * resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/Source">AWS API
    * Reference</a></p>
    */
@@ -48,11 +50,12 @@ namespace Model
      * Config rule.</p> <p>Config Managed Rules are predefined rules owned by Amazon
      * Web Services. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-     * Managed Rules</a> in the Config developer guide.</p> <p>Config Custom Rules are
-     * rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
-     * Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
+     * Managed Rules</a> in the <i>Config developer guide</i>.</p> <p>Config Custom
+     * Rules are rules that you can develop either with Guard
+     * (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
-     * Custom Rules </a> in the Config developer guide.</p>
+     * Custom Rules </a> in the <i>Config developer guide</i>.</p>
      */
     inline const Owner& GetOwner() const{ return m_owner; }
 
@@ -61,11 +64,12 @@ namespace Model
      * Config rule.</p> <p>Config Managed Rules are predefined rules owned by Amazon
      * Web Services. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-     * Managed Rules</a> in the Config developer guide.</p> <p>Config Custom Rules are
-     * rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
-     * Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
+     * Managed Rules</a> in the <i>Config developer guide</i>.</p> <p>Config Custom
+     * Rules are rules that you can develop either with Guard
+     * (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
-     * Custom Rules </a> in the Config developer guide.</p>
+     * Custom Rules </a> in the <i>Config developer guide</i>.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
@@ -74,11 +78,12 @@ namespace Model
      * Config rule.</p> <p>Config Managed Rules are predefined rules owned by Amazon
      * Web Services. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-     * Managed Rules</a> in the Config developer guide.</p> <p>Config Custom Rules are
-     * rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
-     * Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
+     * Managed Rules</a> in the <i>Config developer guide</i>.</p> <p>Config Custom
+     * Rules are rules that you can develop either with Guard
+     * (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
-     * Custom Rules </a> in the Config developer guide.</p>
+     * Custom Rules </a> in the <i>Config developer guide</i>.</p>
      */
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
@@ -87,11 +92,12 @@ namespace Model
      * Config rule.</p> <p>Config Managed Rules are predefined rules owned by Amazon
      * Web Services. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-     * Managed Rules</a> in the Config developer guide.</p> <p>Config Custom Rules are
-     * rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
-     * Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
+     * Managed Rules</a> in the <i>Config developer guide</i>.</p> <p>Config Custom
+     * Rules are rules that you can develop either with Guard
+     * (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
-     * Custom Rules </a> in the Config developer guide.</p>
+     * Custom Rules </a> in the <i>Config developer guide</i>.</p>
      */
     inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
@@ -100,11 +106,12 @@ namespace Model
      * Config rule.</p> <p>Config Managed Rules are predefined rules owned by Amazon
      * Web Services. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-     * Managed Rules</a> in the Config developer guide.</p> <p>Config Custom Rules are
-     * rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
-     * Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
+     * Managed Rules</a> in the <i>Config developer guide</i>.</p> <p>Config Custom
+     * Rules are rules that you can develop either with Guard
+     * (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
-     * Custom Rules </a> in the Config developer guide.</p>
+     * Custom Rules </a> in the <i>Config developer guide</i>.</p>
      */
     inline Source& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
@@ -113,11 +120,12 @@ namespace Model
      * Config rule.</p> <p>Config Managed Rules are predefined rules owned by Amazon
      * Web Services. For more information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Config
-     * Managed Rules</a> in the Config developer guide.</p> <p>Config Custom Rules are
-     * rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>) or
-     * Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a
+     * Managed Rules</a> in the <i>Config developer guide</i>.</p> <p>Config Custom
+     * Rules are rules that you can develop either with Guard
+     * (<code>CUSTOM_POLICY</code>) or Lambda (<code>CUSTOM_LAMBDA</code>). For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
-     * Custom Rules </a> in the Config developer guide.</p>
+     * Custom Rules </a> in the <i>Config developer guide</i>.</p>
      */
     inline Source& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
@@ -355,16 +363,16 @@ namespace Model
   private:
 
     Owner m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_sourceIdentifier;
-    bool m_sourceIdentifierHasBeenSet;
+    bool m_sourceIdentifierHasBeenSet = false;
 
     Aws::Vector<SourceDetail> m_sourceDetails;
-    bool m_sourceDetailsHasBeenSet;
+    bool m_sourceDetailsHasBeenSet = false;
 
     CustomPolicyDetails m_customPolicyDetails;
-    bool m_customPolicyDetailsHasBeenSet;
+    bool m_customPolicyDetailsHasBeenSet = false;
   };
 
 } // namespace Model

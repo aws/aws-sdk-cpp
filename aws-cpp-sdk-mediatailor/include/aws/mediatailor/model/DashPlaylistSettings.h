@@ -149,16 +149,16 @@ namespace Model
   private:
 
     int m_manifestWindowSeconds;
-    bool m_manifestWindowSecondsHasBeenSet;
+    bool m_manifestWindowSecondsHasBeenSet = false;
 
     int m_minBufferTimeSeconds;
-    bool m_minBufferTimeSecondsHasBeenSet;
+    bool m_minBufferTimeSecondsHasBeenSet = false;
 
     int m_minUpdatePeriodSeconds;
-    bool m_minUpdatePeriodSecondsHasBeenSet;
+    bool m_minUpdatePeriodSecondsHasBeenSet = false;
 
     int m_suggestedPresentationDelaySeconds;
-    bool m_suggestedPresentationDelaySecondsHasBeenSet;
+    bool m_suggestedPresentationDelaySecondsHasBeenSet = false;
   };
 
 } // namespace Model

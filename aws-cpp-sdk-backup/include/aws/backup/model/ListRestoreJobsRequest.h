@@ -344,28 +344,28 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_byAccountId;
-    bool m_byAccountIdHasBeenSet;
+    bool m_byAccountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreatedBefore;
-    bool m_byCreatedBeforeHasBeenSet;
+    bool m_byCreatedBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreatedAfter;
-    bool m_byCreatedAfterHasBeenSet;
+    bool m_byCreatedAfterHasBeenSet = false;
 
     RestoreJobStatus m_byStatus;
-    bool m_byStatusHasBeenSet;
+    bool m_byStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCompleteBefore;
-    bool m_byCompleteBeforeHasBeenSet;
+    bool m_byCompleteBeforeHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCompleteAfter;
-    bool m_byCompleteAfterHasBeenSet;
+    bool m_byCompleteAfterHasBeenSet = false;
   };
 
 } // namespace Model

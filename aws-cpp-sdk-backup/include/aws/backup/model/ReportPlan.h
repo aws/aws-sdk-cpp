@@ -524,31 +524,31 @@ namespace Model
   private:
 
     Aws::String m_reportPlanArn;
-    bool m_reportPlanArnHasBeenSet;
+    bool m_reportPlanArnHasBeenSet = false;
 
     Aws::String m_reportPlanName;
-    bool m_reportPlanNameHasBeenSet;
+    bool m_reportPlanNameHasBeenSet = false;
 
     Aws::String m_reportPlanDescription;
-    bool m_reportPlanDescriptionHasBeenSet;
+    bool m_reportPlanDescriptionHasBeenSet = false;
 
     ReportSetting m_reportSetting;
-    bool m_reportSettingHasBeenSet;
+    bool m_reportSettingHasBeenSet = false;
 
     ReportDeliveryChannel m_reportDeliveryChannel;
-    bool m_reportDeliveryChannelHasBeenSet;
+    bool m_reportDeliveryChannelHasBeenSet = false;
 
     Aws::String m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAttemptedExecutionTime;
-    bool m_lastAttemptedExecutionTimeHasBeenSet;
+    bool m_lastAttemptedExecutionTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastSuccessfulExecutionTime;
-    bool m_lastSuccessfulExecutionTimeHasBeenSet;
+    bool m_lastSuccessfulExecutionTimeHasBeenSet = false;
   };
 
 } // namespace Model

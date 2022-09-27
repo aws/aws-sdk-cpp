@@ -121,10 +121,10 @@ namespace Model
   private:
 
     AutoTuneType m_autoTuneType;
-    bool m_autoTuneTypeHasBeenSet;
+    bool m_autoTuneTypeHasBeenSet = false;
 
     AutoTuneDetails m_autoTuneDetails;
-    bool m_autoTuneDetailsHasBeenSet;
+    bool m_autoTuneDetailsHasBeenSet = false;
   };
 
 } // namespace Model

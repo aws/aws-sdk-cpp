@@ -78,7 +78,7 @@ TransitGatewayConnect& TransitGatewayConnect::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("options");
@@ -128,7 +128,7 @@ void TransitGatewayConnect::OutputToStream(Aws::OStream& oStream, const char* lo
 
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_optionsHasBeenSet)
@@ -171,7 +171,7 @@ void TransitGatewayConnect::OutputToStream(Aws::OStream& oStream, const char* lo
   }
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_optionsHasBeenSet)
   {

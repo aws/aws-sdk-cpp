@@ -70,7 +70,7 @@ namespace Model
   private:
 
     BorderStyle m_border;
-    bool m_borderHasBeenSet;
+    bool m_borderHasBeenSet = false;
   };
 
 } // namespace Model

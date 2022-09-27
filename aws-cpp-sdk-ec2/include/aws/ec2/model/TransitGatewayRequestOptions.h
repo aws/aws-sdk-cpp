@@ -351,28 +351,28 @@ namespace Model
   private:
 
     long long m_amazonSideAsn;
-    bool m_amazonSideAsnHasBeenSet;
+    bool m_amazonSideAsnHasBeenSet = false;
 
     AutoAcceptSharedAttachmentsValue m_autoAcceptSharedAttachments;
-    bool m_autoAcceptSharedAttachmentsHasBeenSet;
+    bool m_autoAcceptSharedAttachmentsHasBeenSet = false;
 
     DefaultRouteTableAssociationValue m_defaultRouteTableAssociation;
-    bool m_defaultRouteTableAssociationHasBeenSet;
+    bool m_defaultRouteTableAssociationHasBeenSet = false;
 
     DefaultRouteTablePropagationValue m_defaultRouteTablePropagation;
-    bool m_defaultRouteTablePropagationHasBeenSet;
+    bool m_defaultRouteTablePropagationHasBeenSet = false;
 
     VpnEcmpSupportValue m_vpnEcmpSupport;
-    bool m_vpnEcmpSupportHasBeenSet;
+    bool m_vpnEcmpSupportHasBeenSet = false;
 
     DnsSupportValue m_dnsSupport;
-    bool m_dnsSupportHasBeenSet;
+    bool m_dnsSupportHasBeenSet = false;
 
     MulticastSupportValue m_multicastSupport;
-    bool m_multicastSupportHasBeenSet;
+    bool m_multicastSupportHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_transitGatewayCidrBlocks;
-    bool m_transitGatewayCidrBlocksHasBeenSet;
+    bool m_transitGatewayCidrBlocksHasBeenSet = false;
   };
 
 } // namespace Model

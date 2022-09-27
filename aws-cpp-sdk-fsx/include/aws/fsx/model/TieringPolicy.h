@@ -166,10 +166,10 @@ namespace Model
   private:
 
     int m_coolingPeriod;
-    bool m_coolingPeriodHasBeenSet;
+    bool m_coolingPeriodHasBeenSet = false;
 
     TieringPolicyName m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

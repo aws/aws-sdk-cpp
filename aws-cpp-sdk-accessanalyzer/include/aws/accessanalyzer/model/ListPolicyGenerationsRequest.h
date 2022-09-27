@@ -159,13 +159,13 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet;
+    bool m_principalArnHasBeenSet = false;
   };
 
 } // namespace Model

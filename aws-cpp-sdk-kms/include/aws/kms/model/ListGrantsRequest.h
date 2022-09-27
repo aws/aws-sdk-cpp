@@ -325,19 +325,19 @@ namespace Model
   private:
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_grantId;
-    bool m_grantIdHasBeenSet;
+    bool m_grantIdHasBeenSet = false;
 
     Aws::String m_granteePrincipal;
-    bool m_granteePrincipalHasBeenSet;
+    bool m_granteePrincipalHasBeenSet = false;
   };
 
 } // namespace Model

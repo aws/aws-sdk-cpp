@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_staticIpName;
-    bool m_staticIpNameHasBeenSet;
+    bool m_staticIpNameHasBeenSet = false;
 
     Aws::String m_instanceName;
-    bool m_instanceNameHasBeenSet;
+    bool m_instanceNameHasBeenSet = false;
   };
 
 } // namespace Model

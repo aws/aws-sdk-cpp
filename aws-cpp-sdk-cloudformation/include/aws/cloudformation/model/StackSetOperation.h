@@ -771,43 +771,43 @@ namespace Model
   private:
 
     Aws::String m_operationId;
-    bool m_operationIdHasBeenSet;
+    bool m_operationIdHasBeenSet = false;
 
     Aws::String m_stackSetId;
-    bool m_stackSetIdHasBeenSet;
+    bool m_stackSetIdHasBeenSet = false;
 
     StackSetOperationAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     StackSetOperationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     StackSetOperationPreferences m_operationPreferences;
-    bool m_operationPreferencesHasBeenSet;
+    bool m_operationPreferencesHasBeenSet = false;
 
     bool m_retainStacks;
-    bool m_retainStacksHasBeenSet;
+    bool m_retainStacksHasBeenSet = false;
 
     Aws::String m_administrationRoleARN;
-    bool m_administrationRoleARNHasBeenSet;
+    bool m_administrationRoleARNHasBeenSet = false;
 
     Aws::String m_executionRoleName;
-    bool m_executionRoleNameHasBeenSet;
+    bool m_executionRoleNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTimestamp;
-    bool m_endTimestampHasBeenSet;
+    bool m_endTimestampHasBeenSet = false;
 
     DeploymentTargets m_deploymentTargets;
-    bool m_deploymentTargetsHasBeenSet;
+    bool m_deploymentTargetsHasBeenSet = false;
 
     StackSetDriftDetectionDetails m_stackSetDriftDetectionDetails;
-    bool m_stackSetDriftDetectionDetailsHasBeenSet;
+    bool m_stackSetDriftDetectionDetailsHasBeenSet = false;
 
     Aws::String m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

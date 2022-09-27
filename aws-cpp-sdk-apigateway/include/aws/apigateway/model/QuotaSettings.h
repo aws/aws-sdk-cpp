@@ -126,13 +126,13 @@ namespace Model
   private:
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     int m_offset;
-    bool m_offsetHasBeenSet;
+    bool m_offsetHasBeenSet = false;
 
     QuotaPeriodType m_period;
-    bool m_periodHasBeenSet;
+    bool m_periodHasBeenSet = false;
   };
 
 } // namespace Model

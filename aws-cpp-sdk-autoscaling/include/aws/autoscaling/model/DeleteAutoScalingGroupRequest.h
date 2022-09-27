@@ -79,43 +79,39 @@ namespace Model
 
     /**
      * <p>Specifies that the group is to be deleted along with all instances associated
-     * with the group, without waiting for all instances to be terminated. This
-     * parameter also deletes any outstanding lifecycle actions associated with the
-     * group.</p>
+     * with the group, without waiting for all instances to be terminated. This action
+     * also deletes any outstanding lifecycle actions associated with the group.</p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
 
     /**
      * <p>Specifies that the group is to be deleted along with all instances associated
-     * with the group, without waiting for all instances to be terminated. This
-     * parameter also deletes any outstanding lifecycle actions associated with the
-     * group.</p>
+     * with the group, without waiting for all instances to be terminated. This action
+     * also deletes any outstanding lifecycle actions associated with the group.</p>
      */
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
 
     /**
      * <p>Specifies that the group is to be deleted along with all instances associated
-     * with the group, without waiting for all instances to be terminated. This
-     * parameter also deletes any outstanding lifecycle actions associated with the
-     * group.</p>
+     * with the group, without waiting for all instances to be terminated. This action
+     * also deletes any outstanding lifecycle actions associated with the group.</p>
      */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
 
     /**
      * <p>Specifies that the group is to be deleted along with all instances associated
-     * with the group, without waiting for all instances to be terminated. This
-     * parameter also deletes any outstanding lifecycle actions associated with the
-     * group.</p>
+     * with the group, without waiting for all instances to be terminated. This action
+     * also deletes any outstanding lifecycle actions associated with the group.</p>
      */
     inline DeleteAutoScalingGroupRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
 
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

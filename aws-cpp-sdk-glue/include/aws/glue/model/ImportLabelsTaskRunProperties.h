@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_inputS3Path;
-    bool m_inputS3PathHasBeenSet;
+    bool m_inputS3PathHasBeenSet = false;
 
     bool m_replace;
-    bool m_replaceHasBeenSet;
+    bool m_replaceHasBeenSet = false;
   };
 
 } // namespace Model

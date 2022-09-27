@@ -675,11 +675,11 @@ namespace Model
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for Oracle DB instances. It
-     * isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL and Oracle DB
+     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
 
@@ -689,11 +689,11 @@ namespace Model
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for Oracle DB instances. It
-     * isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL and Oracle DB
+     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
 
@@ -703,11 +703,11 @@ namespace Model
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for Oracle DB instances. It
-     * isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL and Oracle DB
+     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
@@ -717,11 +717,11 @@ namespace Model
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for Oracle DB instances. It
-     * isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL and Oracle DB
+     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
 
@@ -731,11 +731,11 @@ namespace Model
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for Oracle DB instances. It
-     * isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL and Oracle DB
+     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
 
@@ -745,11 +745,11 @@ namespace Model
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for Oracle DB instances. It
-     * isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL and Oracle DB
+     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
 
@@ -759,11 +759,11 @@ namespace Model
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for Oracle DB instances. It
-     * isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL and Oracle DB
+     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
 
@@ -773,11 +773,11 @@ namespace Model
      * Amazon RDS uses the <code>DBParameterGroup</code> of source DB instance for a
      * same Region read replica, or the default <code>DBParameterGroup</code> for the
      * specified DB engine for a cross-Region read replica.</p> <p>Specifying a
-     * parameter group for this operation is only supported for Oracle DB instances. It
-     * isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1
-     * to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First character must be a
-     * letter</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
-     * hyphens</p> </li> </ul>
+     * parameter group for this operation is only supported for MySQL and Oracle DB
+     * instances. It isn't supported for RDS Custom.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be 1 to 255 letters, numbers, or hyphens.</p> </li> <li> <p>First
+     * character must be a letter</p> </li> <li> <p>Can't end with a hyphen or contain
+     * two consecutive hyphens</p> </li> </ul>
      */
     inline CreateDBInstanceReadReplicaRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
 
@@ -1463,39 +1463,43 @@ namespace Model
 
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web
-     * Services Region that contains the source DB instance.</p> <p>You must specify
-     * this parameter when you create an encrypted read replica from another Amazon Web
-     * Services Region by using the Amazon RDS API. Don't specify
+     * <p>When you are creating a read replica from one Amazon Web Services GovCloud
+     * (US) Region to another or from one China Amazon Web Services Region to another,
+     * the URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web
+     * Services Region that contains the source DB instance.</p> <p>This setting
+     * applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web
+     * Services Regions. It's ignored in other Amazon Web Services Regions.</p> <p>You
+     * must specify this parameter when you create an encrypted read replica from
+     * another Amazon Web Services Region by using the Amazon RDS API. Don't specify
      * <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
      * same Amazon Web Services Region.</p> <p>The presigned URL must be a valid
-     * request for the <code>CreateDBInstanceReadReplica</code> API action that can be
-     * executed in the source Amazon Web Services Region that contains the encrypted
-     * source DB instance. The presigned URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon
-     * Web Services Region that the encrypted read replica is created in. This Amazon
-     * Web Services Region is the same one where the
-     * <code>CreateDBInstanceReadReplica</code> action is called that contains this
+     * request for the <code>CreateDBInstanceReadReplica</code> API operation that can
+     * run in the source Amazon Web Services Region that contains the encrypted source
+     * DB instance. The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon Web
+     * Services Region that the encrypted read replica is created in. This Amazon Web
+     * Services Region is the same one where the
+     * <code>CreateDBInstanceReadReplica</code> operation is called that contains this
      * presigned URL.</p> <p>For example, if you create an encrypted DB instance in the
      * us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2
      * Amazon Web Services Region, then you call the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon Web
      * Services Region and provide a presigned URL that contains a call to the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-west-2 Amazon Web
      * Services Region. For this example, the <code>DestinationRegion</code> in the
      * presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-     * <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for
-     * the key to use to encrypt the read replica in the destination Amazon Web
-     * Services Region. This is the same identifier for both the
-     * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * presigned URL.</p> </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The
-     * DB instance identifier for the encrypted DB instance to be replicated. This
-     * identifier must be in the Amazon Resource Name (ARN) format for the source
-     * Amazon Web Services Region. For example, if you are creating an encrypted read
-     * replica from a DB instance in the us-west-2 Amazon Web Services Region, then
-     * your <code>SourceDBInstanceIdentifier</code> looks like the following example:
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the read replica in the destination Amazon Web Services Region. This is
+     * the same identifier for both the <code>CreateDBInstanceReadReplica</code>
+     * operation that is called in the destination Amazon Web Services Region, and the
+     * operation contained in the presigned URL.</p> </li> <li> <p>
+     * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the
+     * encrypted DB instance to be replicated. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are creating an encrypted read replica from a DB instance in the
+     * us-west-2 Amazon Web Services Region, then your
+     * <code>SourceDBInstanceIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1508,47 +1512,51 @@ namespace Model
      * <code>--source-region</code> for the CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
-     * be executed in the source Amazon Web Services Region.</p> <p>
-     * <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on
-     * Amazon RDS doesn't support cross-Region read replicas.</p>  <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
+     * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
+     * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web
-     * Services Region that contains the source DB instance.</p> <p>You must specify
-     * this parameter when you create an encrypted read replica from another Amazon Web
-     * Services Region by using the Amazon RDS API. Don't specify
+     * <p>When you are creating a read replica from one Amazon Web Services GovCloud
+     * (US) Region to another or from one China Amazon Web Services Region to another,
+     * the URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web
+     * Services Region that contains the source DB instance.</p> <p>This setting
+     * applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web
+     * Services Regions. It's ignored in other Amazon Web Services Regions.</p> <p>You
+     * must specify this parameter when you create an encrypted read replica from
+     * another Amazon Web Services Region by using the Amazon RDS API. Don't specify
      * <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
      * same Amazon Web Services Region.</p> <p>The presigned URL must be a valid
-     * request for the <code>CreateDBInstanceReadReplica</code> API action that can be
-     * executed in the source Amazon Web Services Region that contains the encrypted
-     * source DB instance. The presigned URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon
-     * Web Services Region that the encrypted read replica is created in. This Amazon
-     * Web Services Region is the same one where the
-     * <code>CreateDBInstanceReadReplica</code> action is called that contains this
+     * request for the <code>CreateDBInstanceReadReplica</code> API operation that can
+     * run in the source Amazon Web Services Region that contains the encrypted source
+     * DB instance. The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon Web
+     * Services Region that the encrypted read replica is created in. This Amazon Web
+     * Services Region is the same one where the
+     * <code>CreateDBInstanceReadReplica</code> operation is called that contains this
      * presigned URL.</p> <p>For example, if you create an encrypted DB instance in the
      * us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2
      * Amazon Web Services Region, then you call the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon Web
      * Services Region and provide a presigned URL that contains a call to the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-west-2 Amazon Web
      * Services Region. For this example, the <code>DestinationRegion</code> in the
      * presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-     * <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for
-     * the key to use to encrypt the read replica in the destination Amazon Web
-     * Services Region. This is the same identifier for both the
-     * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * presigned URL.</p> </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The
-     * DB instance identifier for the encrypted DB instance to be replicated. This
-     * identifier must be in the Amazon Resource Name (ARN) format for the source
-     * Amazon Web Services Region. For example, if you are creating an encrypted read
-     * replica from a DB instance in the us-west-2 Amazon Web Services Region, then
-     * your <code>SourceDBInstanceIdentifier</code> looks like the following example:
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the read replica in the destination Amazon Web Services Region. This is
+     * the same identifier for both the <code>CreateDBInstanceReadReplica</code>
+     * operation that is called in the destination Amazon Web Services Region, and the
+     * operation contained in the presigned URL.</p> </li> <li> <p>
+     * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the
+     * encrypted DB instance to be replicated. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are creating an encrypted read replica from a DB instance in the
+     * us-west-2 Amazon Web Services Region, then your
+     * <code>SourceDBInstanceIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1561,47 +1569,51 @@ namespace Model
      * <code>--source-region</code> for the CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
-     * be executed in the source Amazon Web Services Region.</p> <p>
-     * <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on
-     * Amazon RDS doesn't support cross-Region read replicas.</p>  <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
+     * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
+     * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web
-     * Services Region that contains the source DB instance.</p> <p>You must specify
-     * this parameter when you create an encrypted read replica from another Amazon Web
-     * Services Region by using the Amazon RDS API. Don't specify
+     * <p>When you are creating a read replica from one Amazon Web Services GovCloud
+     * (US) Region to another or from one China Amazon Web Services Region to another,
+     * the URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web
+     * Services Region that contains the source DB instance.</p> <p>This setting
+     * applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web
+     * Services Regions. It's ignored in other Amazon Web Services Regions.</p> <p>You
+     * must specify this parameter when you create an encrypted read replica from
+     * another Amazon Web Services Region by using the Amazon RDS API. Don't specify
      * <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
      * same Amazon Web Services Region.</p> <p>The presigned URL must be a valid
-     * request for the <code>CreateDBInstanceReadReplica</code> API action that can be
-     * executed in the source Amazon Web Services Region that contains the encrypted
-     * source DB instance. The presigned URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon
-     * Web Services Region that the encrypted read replica is created in. This Amazon
-     * Web Services Region is the same one where the
-     * <code>CreateDBInstanceReadReplica</code> action is called that contains this
+     * request for the <code>CreateDBInstanceReadReplica</code> API operation that can
+     * run in the source Amazon Web Services Region that contains the encrypted source
+     * DB instance. The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon Web
+     * Services Region that the encrypted read replica is created in. This Amazon Web
+     * Services Region is the same one where the
+     * <code>CreateDBInstanceReadReplica</code> operation is called that contains this
      * presigned URL.</p> <p>For example, if you create an encrypted DB instance in the
      * us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2
      * Amazon Web Services Region, then you call the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon Web
      * Services Region and provide a presigned URL that contains a call to the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-west-2 Amazon Web
      * Services Region. For this example, the <code>DestinationRegion</code> in the
      * presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-     * <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for
-     * the key to use to encrypt the read replica in the destination Amazon Web
-     * Services Region. This is the same identifier for both the
-     * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * presigned URL.</p> </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The
-     * DB instance identifier for the encrypted DB instance to be replicated. This
-     * identifier must be in the Amazon Resource Name (ARN) format for the source
-     * Amazon Web Services Region. For example, if you are creating an encrypted read
-     * replica from a DB instance in the us-west-2 Amazon Web Services Region, then
-     * your <code>SourceDBInstanceIdentifier</code> looks like the following example:
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the read replica in the destination Amazon Web Services Region. This is
+     * the same identifier for both the <code>CreateDBInstanceReadReplica</code>
+     * operation that is called in the destination Amazon Web Services Region, and the
+     * operation contained in the presigned URL.</p> </li> <li> <p>
+     * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the
+     * encrypted DB instance to be replicated. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are creating an encrypted read replica from a DB instance in the
+     * us-west-2 Amazon Web Services Region, then your
+     * <code>SourceDBInstanceIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1614,47 +1626,51 @@ namespace Model
      * <code>--source-region</code> for the CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
-     * be executed in the source Amazon Web Services Region.</p> <p>
-     * <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on
-     * Amazon RDS doesn't support cross-Region read replicas.</p>  <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
+     * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
+     * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web
-     * Services Region that contains the source DB instance.</p> <p>You must specify
-     * this parameter when you create an encrypted read replica from another Amazon Web
-     * Services Region by using the Amazon RDS API. Don't specify
+     * <p>When you are creating a read replica from one Amazon Web Services GovCloud
+     * (US) Region to another or from one China Amazon Web Services Region to another,
+     * the URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web
+     * Services Region that contains the source DB instance.</p> <p>This setting
+     * applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web
+     * Services Regions. It's ignored in other Amazon Web Services Regions.</p> <p>You
+     * must specify this parameter when you create an encrypted read replica from
+     * another Amazon Web Services Region by using the Amazon RDS API. Don't specify
      * <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
      * same Amazon Web Services Region.</p> <p>The presigned URL must be a valid
-     * request for the <code>CreateDBInstanceReadReplica</code> API action that can be
-     * executed in the source Amazon Web Services Region that contains the encrypted
-     * source DB instance. The presigned URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon
-     * Web Services Region that the encrypted read replica is created in. This Amazon
-     * Web Services Region is the same one where the
-     * <code>CreateDBInstanceReadReplica</code> action is called that contains this
+     * request for the <code>CreateDBInstanceReadReplica</code> API operation that can
+     * run in the source Amazon Web Services Region that contains the encrypted source
+     * DB instance. The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon Web
+     * Services Region that the encrypted read replica is created in. This Amazon Web
+     * Services Region is the same one where the
+     * <code>CreateDBInstanceReadReplica</code> operation is called that contains this
      * presigned URL.</p> <p>For example, if you create an encrypted DB instance in the
      * us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2
      * Amazon Web Services Region, then you call the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon Web
      * Services Region and provide a presigned URL that contains a call to the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-west-2 Amazon Web
      * Services Region. For this example, the <code>DestinationRegion</code> in the
      * presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-     * <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for
-     * the key to use to encrypt the read replica in the destination Amazon Web
-     * Services Region. This is the same identifier for both the
-     * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * presigned URL.</p> </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The
-     * DB instance identifier for the encrypted DB instance to be replicated. This
-     * identifier must be in the Amazon Resource Name (ARN) format for the source
-     * Amazon Web Services Region. For example, if you are creating an encrypted read
-     * replica from a DB instance in the us-west-2 Amazon Web Services Region, then
-     * your <code>SourceDBInstanceIdentifier</code> looks like the following example:
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the read replica in the destination Amazon Web Services Region. This is
+     * the same identifier for both the <code>CreateDBInstanceReadReplica</code>
+     * operation that is called in the destination Amazon Web Services Region, and the
+     * operation contained in the presigned URL.</p> </li> <li> <p>
+     * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the
+     * encrypted DB instance to be replicated. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are creating an encrypted read replica from a DB instance in the
+     * us-west-2 Amazon Web Services Region, then your
+     * <code>SourceDBInstanceIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1667,47 +1683,51 @@ namespace Model
      * <code>--source-region</code> for the CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
-     * be executed in the source Amazon Web Services Region.</p> <p>
-     * <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on
-     * Amazon RDS doesn't support cross-Region read replicas.</p>  <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
+     * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
+     * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web
-     * Services Region that contains the source DB instance.</p> <p>You must specify
-     * this parameter when you create an encrypted read replica from another Amazon Web
-     * Services Region by using the Amazon RDS API. Don't specify
+     * <p>When you are creating a read replica from one Amazon Web Services GovCloud
+     * (US) Region to another or from one China Amazon Web Services Region to another,
+     * the URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web
+     * Services Region that contains the source DB instance.</p> <p>This setting
+     * applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web
+     * Services Regions. It's ignored in other Amazon Web Services Regions.</p> <p>You
+     * must specify this parameter when you create an encrypted read replica from
+     * another Amazon Web Services Region by using the Amazon RDS API. Don't specify
      * <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
      * same Amazon Web Services Region.</p> <p>The presigned URL must be a valid
-     * request for the <code>CreateDBInstanceReadReplica</code> API action that can be
-     * executed in the source Amazon Web Services Region that contains the encrypted
-     * source DB instance. The presigned URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon
-     * Web Services Region that the encrypted read replica is created in. This Amazon
-     * Web Services Region is the same one where the
-     * <code>CreateDBInstanceReadReplica</code> action is called that contains this
+     * request for the <code>CreateDBInstanceReadReplica</code> API operation that can
+     * run in the source Amazon Web Services Region that contains the encrypted source
+     * DB instance. The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon Web
+     * Services Region that the encrypted read replica is created in. This Amazon Web
+     * Services Region is the same one where the
+     * <code>CreateDBInstanceReadReplica</code> operation is called that contains this
      * presigned URL.</p> <p>For example, if you create an encrypted DB instance in the
      * us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2
      * Amazon Web Services Region, then you call the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon Web
      * Services Region and provide a presigned URL that contains a call to the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-west-2 Amazon Web
      * Services Region. For this example, the <code>DestinationRegion</code> in the
      * presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-     * <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for
-     * the key to use to encrypt the read replica in the destination Amazon Web
-     * Services Region. This is the same identifier for both the
-     * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * presigned URL.</p> </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The
-     * DB instance identifier for the encrypted DB instance to be replicated. This
-     * identifier must be in the Amazon Resource Name (ARN) format for the source
-     * Amazon Web Services Region. For example, if you are creating an encrypted read
-     * replica from a DB instance in the us-west-2 Amazon Web Services Region, then
-     * your <code>SourceDBInstanceIdentifier</code> looks like the following example:
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the read replica in the destination Amazon Web Services Region. This is
+     * the same identifier for both the <code>CreateDBInstanceReadReplica</code>
+     * operation that is called in the destination Amazon Web Services Region, and the
+     * operation contained in the presigned URL.</p> </li> <li> <p>
+     * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the
+     * encrypted DB instance to be replicated. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are creating an encrypted read replica from a DB instance in the
+     * us-west-2 Amazon Web Services Region, then your
+     * <code>SourceDBInstanceIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1720,47 +1740,51 @@ namespace Model
      * <code>--source-region</code> for the CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
-     * be executed in the source Amazon Web Services Region.</p> <p>
-     * <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on
-     * Amazon RDS doesn't support cross-Region read replicas.</p>  <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
+     * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
+     * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web
-     * Services Region that contains the source DB instance.</p> <p>You must specify
-     * this parameter when you create an encrypted read replica from another Amazon Web
-     * Services Region by using the Amazon RDS API. Don't specify
+     * <p>When you are creating a read replica from one Amazon Web Services GovCloud
+     * (US) Region to another or from one China Amazon Web Services Region to another,
+     * the URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web
+     * Services Region that contains the source DB instance.</p> <p>This setting
+     * applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web
+     * Services Regions. It's ignored in other Amazon Web Services Regions.</p> <p>You
+     * must specify this parameter when you create an encrypted read replica from
+     * another Amazon Web Services Region by using the Amazon RDS API. Don't specify
      * <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
      * same Amazon Web Services Region.</p> <p>The presigned URL must be a valid
-     * request for the <code>CreateDBInstanceReadReplica</code> API action that can be
-     * executed in the source Amazon Web Services Region that contains the encrypted
-     * source DB instance. The presigned URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon
-     * Web Services Region that the encrypted read replica is created in. This Amazon
-     * Web Services Region is the same one where the
-     * <code>CreateDBInstanceReadReplica</code> action is called that contains this
+     * request for the <code>CreateDBInstanceReadReplica</code> API operation that can
+     * run in the source Amazon Web Services Region that contains the encrypted source
+     * DB instance. The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon Web
+     * Services Region that the encrypted read replica is created in. This Amazon Web
+     * Services Region is the same one where the
+     * <code>CreateDBInstanceReadReplica</code> operation is called that contains this
      * presigned URL.</p> <p>For example, if you create an encrypted DB instance in the
      * us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2
      * Amazon Web Services Region, then you call the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon Web
      * Services Region and provide a presigned URL that contains a call to the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-west-2 Amazon Web
      * Services Region. For this example, the <code>DestinationRegion</code> in the
      * presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-     * <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for
-     * the key to use to encrypt the read replica in the destination Amazon Web
-     * Services Region. This is the same identifier for both the
-     * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * presigned URL.</p> </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The
-     * DB instance identifier for the encrypted DB instance to be replicated. This
-     * identifier must be in the Amazon Resource Name (ARN) format for the source
-     * Amazon Web Services Region. For example, if you are creating an encrypted read
-     * replica from a DB instance in the us-west-2 Amazon Web Services Region, then
-     * your <code>SourceDBInstanceIdentifier</code> looks like the following example:
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the read replica in the destination Amazon Web Services Region. This is
+     * the same identifier for both the <code>CreateDBInstanceReadReplica</code>
+     * operation that is called in the destination Amazon Web Services Region, and the
+     * operation contained in the presigned URL.</p> </li> <li> <p>
+     * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the
+     * encrypted DB instance to be replicated. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are creating an encrypted read replica from a DB instance in the
+     * us-west-2 Amazon Web Services Region, then your
+     * <code>SourceDBInstanceIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1773,47 +1797,51 @@ namespace Model
      * <code>--source-region</code> for the CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
-     * be executed in the source Amazon Web Services Region.</p> <p>
-     * <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on
-     * Amazon RDS doesn't support cross-Region read replicas.</p>  <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
+     * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
+     * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web
-     * Services Region that contains the source DB instance.</p> <p>You must specify
-     * this parameter when you create an encrypted read replica from another Amazon Web
-     * Services Region by using the Amazon RDS API. Don't specify
+     * <p>When you are creating a read replica from one Amazon Web Services GovCloud
+     * (US) Region to another or from one China Amazon Web Services Region to another,
+     * the URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web
+     * Services Region that contains the source DB instance.</p> <p>This setting
+     * applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web
+     * Services Regions. It's ignored in other Amazon Web Services Regions.</p> <p>You
+     * must specify this parameter when you create an encrypted read replica from
+     * another Amazon Web Services Region by using the Amazon RDS API. Don't specify
      * <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
      * same Amazon Web Services Region.</p> <p>The presigned URL must be a valid
-     * request for the <code>CreateDBInstanceReadReplica</code> API action that can be
-     * executed in the source Amazon Web Services Region that contains the encrypted
-     * source DB instance. The presigned URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon
-     * Web Services Region that the encrypted read replica is created in. This Amazon
-     * Web Services Region is the same one where the
-     * <code>CreateDBInstanceReadReplica</code> action is called that contains this
+     * request for the <code>CreateDBInstanceReadReplica</code> API operation that can
+     * run in the source Amazon Web Services Region that contains the encrypted source
+     * DB instance. The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon Web
+     * Services Region that the encrypted read replica is created in. This Amazon Web
+     * Services Region is the same one where the
+     * <code>CreateDBInstanceReadReplica</code> operation is called that contains this
      * presigned URL.</p> <p>For example, if you create an encrypted DB instance in the
      * us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2
      * Amazon Web Services Region, then you call the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon Web
      * Services Region and provide a presigned URL that contains a call to the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-west-2 Amazon Web
      * Services Region. For this example, the <code>DestinationRegion</code> in the
      * presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-     * <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for
-     * the key to use to encrypt the read replica in the destination Amazon Web
-     * Services Region. This is the same identifier for both the
-     * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * presigned URL.</p> </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The
-     * DB instance identifier for the encrypted DB instance to be replicated. This
-     * identifier must be in the Amazon Resource Name (ARN) format for the source
-     * Amazon Web Services Region. For example, if you are creating an encrypted read
-     * replica from a DB instance in the us-west-2 Amazon Web Services Region, then
-     * your <code>SourceDBInstanceIdentifier</code> looks like the following example:
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the read replica in the destination Amazon Web Services Region. This is
+     * the same identifier for both the <code>CreateDBInstanceReadReplica</code>
+     * operation that is called in the destination Amazon Web Services Region, and the
+     * operation contained in the presigned URL.</p> </li> <li> <p>
+     * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the
+     * encrypted DB instance to be replicated. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are creating an encrypted read replica from a DB instance in the
+     * us-west-2 Amazon Web Services Region, then your
+     * <code>SourceDBInstanceIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1826,47 +1854,51 @@ namespace Model
      * <code>--source-region</code> for the CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
-     * be executed in the source Amazon Web Services Region.</p> <p>
-     * <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on
-     * Amazon RDS doesn't support cross-Region read replicas.</p>  <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
+     * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
+     * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBInstanceReadReplica</code> API action in the source Amazon Web
-     * Services Region that contains the source DB instance.</p> <p>You must specify
-     * this parameter when you create an encrypted read replica from another Amazon Web
-     * Services Region by using the Amazon RDS API. Don't specify
+     * <p>When you are creating a read replica from one Amazon Web Services GovCloud
+     * (US) Region to another or from one China Amazon Web Services Region to another,
+     * the URL that contains a Signature Version 4 signed request for the
+     * <code>CreateDBInstanceReadReplica</code> API operation in the source Amazon Web
+     * Services Region that contains the source DB instance.</p> <p>This setting
+     * applies only to Amazon Web Services GovCloud (US) Regions and China Amazon Web
+     * Services Regions. It's ignored in other Amazon Web Services Regions.</p> <p>You
+     * must specify this parameter when you create an encrypted read replica from
+     * another Amazon Web Services Region by using the Amazon RDS API. Don't specify
      * <code>PreSignedUrl</code> when you are creating an encrypted read replica in the
      * same Amazon Web Services Region.</p> <p>The presigned URL must be a valid
-     * request for the <code>CreateDBInstanceReadReplica</code> API action that can be
-     * executed in the source Amazon Web Services Region that contains the encrypted
-     * source DB instance. The presigned URL request must contain the following
-     * parameter values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon
-     * Web Services Region that the encrypted read replica is created in. This Amazon
-     * Web Services Region is the same one where the
-     * <code>CreateDBInstanceReadReplica</code> action is called that contains this
+     * request for the <code>CreateDBInstanceReadReplica</code> API operation that can
+     * run in the source Amazon Web Services Region that contains the encrypted source
+     * DB instance. The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>DestinationRegion</code> - The Amazon Web
+     * Services Region that the encrypted read replica is created in. This Amazon Web
+     * Services Region is the same one where the
+     * <code>CreateDBInstanceReadReplica</code> operation is called that contains this
      * presigned URL.</p> <p>For example, if you create an encrypted DB instance in the
      * us-west-1 Amazon Web Services Region, from a source DB instance in the us-east-2
      * Amazon Web Services Region, then you call the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-east-1 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon Web
      * Services Region and provide a presigned URL that contains a call to the
-     * <code>CreateDBInstanceReadReplica</code> action in the us-west-2 Amazon Web
+     * <code>CreateDBInstanceReadReplica</code> operation in the us-west-2 Amazon Web
      * Services Region. For this example, the <code>DestinationRegion</code> in the
      * presigned URL must be set to the us-east-1 Amazon Web Services Region.</p> </li>
-     * <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for
-     * the key to use to encrypt the read replica in the destination Amazon Web
-     * Services Region. This is the same identifier for both the
-     * <code>CreateDBInstanceReadReplica</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * presigned URL.</p> </li> <li> <p> <code>SourceDBInstanceIdentifier</code> - The
-     * DB instance identifier for the encrypted DB instance to be replicated. This
-     * identifier must be in the Amazon Resource Name (ARN) format for the source
-     * Amazon Web Services Region. For example, if you are creating an encrypted read
-     * replica from a DB instance in the us-west-2 Amazon Web Services Region, then
-     * your <code>SourceDBInstanceIdentifier</code> looks like the following example:
+     * <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the key to use to
+     * encrypt the read replica in the destination Amazon Web Services Region. This is
+     * the same identifier for both the <code>CreateDBInstanceReadReplica</code>
+     * operation that is called in the destination Amazon Web Services Region, and the
+     * operation contained in the presigned URL.</p> </li> <li> <p>
+     * <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the
+     * encrypted DB instance to be replicated. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are creating an encrypted read replica from a DB instance in the
+     * us-west-2 Amazon Web Services Region, then your
+     * <code>SourceDBInstanceIdentifier</code> looks like the following example:
      * <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1879,10 +1911,10 @@ namespace Model
      * <code>--source-region</code> for the CLI) instead of specifying
      * <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code>
      * autogenerates a presigned URL that is a valid request for the operation that can
-     * be executed in the source Amazon Web Services Region.</p> <p>
-     * <code>SourceRegion</code> isn't supported for SQL Server, because SQL Server on
-     * Amazon RDS doesn't support cross-Region read replicas.</p>  <p>This
-     * setting doesn't apply to RDS Custom.</p>
+     * run in the source Amazon Web Services Region.</p> <p> <code>SourceRegion</code>
+     * isn't supported for SQL Server, because Amazon RDS for SQL Server doesn't
+     * support cross-Region read replicas.</p>  <p>This setting doesn't apply to
+     * RDS Custom.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
@@ -2067,30 +2099,50 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>This setting doesn't apply to RDS
-     * Custom.</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>This setting doesn't apply to RDS Custom.</p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 
@@ -2850,109 +2902,109 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_sourceDBInstanceIdentifier;
-    bool m_sourceDBInstanceIdentifierHasBeenSet;
+    bool m_sourceDBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     bool m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::String m_dBParameterGroupName;
-    bool m_dBParameterGroupNameHasBeenSet;
+    bool m_dBParameterGroupNameHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     int m_monitoringInterval;
-    bool m_monitoringIntervalHasBeenSet;
+    bool m_monitoringIntervalHasBeenSet = false;
 
     Aws::String m_monitoringRoleArn;
-    bool m_monitoringRoleArnHasBeenSet;
+    bool m_monitoringRoleArnHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_preSignedUrl;
-    bool m_preSignedUrlHasBeenSet;
+    bool m_preSignedUrlHasBeenSet = false;
 
     bool m_enableIAMDatabaseAuthentication;
-    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
     bool m_enablePerformanceInsights;
-    bool m_enablePerformanceInsightsHasBeenSet;
+    bool m_enablePerformanceInsightsHasBeenSet = false;
 
     Aws::String m_performanceInsightsKMSKeyId;
-    bool m_performanceInsightsKMSKeyIdHasBeenSet;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
     int m_performanceInsightsRetentionPeriod;
-    bool m_performanceInsightsRetentionPeriodHasBeenSet;
+    bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-    bool m_enableCloudwatchLogsExportsHasBeenSet;
+    bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
     Aws::Vector<ProcessorFeature> m_processorFeatures;
-    bool m_processorFeaturesHasBeenSet;
+    bool m_processorFeaturesHasBeenSet = false;
 
     bool m_useDefaultProcessorFeatures;
-    bool m_useDefaultProcessorFeaturesHasBeenSet;
+    bool m_useDefaultProcessorFeaturesHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainIAMRoleName;
-    bool m_domainIAMRoleNameHasBeenSet;
+    bool m_domainIAMRoleNameHasBeenSet = false;
 
     ReplicaMode m_replicaMode;
-    bool m_replicaModeHasBeenSet;
+    bool m_replicaModeHasBeenSet = false;
 
     int m_maxAllocatedStorage;
-    bool m_maxAllocatedStorageHasBeenSet;
+    bool m_maxAllocatedStorageHasBeenSet = false;
 
     Aws::String m_customIamInstanceProfile;
-    bool m_customIamInstanceProfileHasBeenSet;
+    bool m_customIamInstanceProfileHasBeenSet = false;
 
     Aws::String m_networkType;
-    bool m_networkTypeHasBeenSet;
+    bool m_networkTypeHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
   };
 
 } // namespace Model

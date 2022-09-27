@@ -137,13 +137,13 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_requireEncryption;
-    bool m_requireEncryptionHasBeenSet;
+    bool m_requireEncryptionHasBeenSet = false;
   };
 
 } // namespace Model

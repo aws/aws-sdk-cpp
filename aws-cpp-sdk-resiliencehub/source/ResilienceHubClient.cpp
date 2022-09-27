@@ -71,33 +71,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "resiliencehub";
 static const char* ALLOCATION_TAG = "ResilienceHubClient";
 
-
 ResilienceHubClient::ResilienceHubClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ResilienceHubErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ResilienceHubErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-ResilienceHubClient::ResilienceHubClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+ResilienceHubClient::ResilienceHubClient(const AWSCredentials& credentials,
+                                         const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ResilienceHubErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ResilienceHubErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 ResilienceHubClient::ResilienceHubClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                         const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ResilienceHubErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ResilienceHubErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -109,7 +115,7 @@ ResilienceHubClient::~ResilienceHubClient()
 
 void ResilienceHubClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("resiliencehub");
+  AWSClient::SetServiceClientName("resiliencehub");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -150,12 +156,10 @@ AddDraftAppVersionResourceMappingsOutcomeCallable ResilienceHubClient::AddDraftA
 
 void ResilienceHubClient::AddDraftAppVersionResourceMappingsAsync(const AddDraftAppVersionResourceMappingsRequest& request, const AddDraftAppVersionResourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddDraftAppVersionResourceMappingsAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::AddDraftAppVersionResourceMappingsAsyncHelper(const AddDraftAppVersionResourceMappingsRequest& request, const AddDraftAppVersionResourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddDraftAppVersionResourceMappings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddDraftAppVersionResourceMappings(request), context);
+    } );
 }
 
 CreateAppOutcome ResilienceHubClient::CreateApp(const CreateAppRequest& request) const
@@ -175,12 +179,10 @@ CreateAppOutcomeCallable ResilienceHubClient::CreateAppCallable(const CreateAppR
 
 void ResilienceHubClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAppAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::CreateAppAsyncHelper(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateApp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateApp(request), context);
+    } );
 }
 
 CreateRecommendationTemplateOutcome ResilienceHubClient::CreateRecommendationTemplate(const CreateRecommendationTemplateRequest& request) const
@@ -200,12 +202,10 @@ CreateRecommendationTemplateOutcomeCallable ResilienceHubClient::CreateRecommend
 
 void ResilienceHubClient::CreateRecommendationTemplateAsync(const CreateRecommendationTemplateRequest& request, const CreateRecommendationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRecommendationTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::CreateRecommendationTemplateAsyncHelper(const CreateRecommendationTemplateRequest& request, const CreateRecommendationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRecommendationTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRecommendationTemplate(request), context);
+    } );
 }
 
 CreateResiliencyPolicyOutcome ResilienceHubClient::CreateResiliencyPolicy(const CreateResiliencyPolicyRequest& request) const
@@ -225,12 +225,10 @@ CreateResiliencyPolicyOutcomeCallable ResilienceHubClient::CreateResiliencyPolic
 
 void ResilienceHubClient::CreateResiliencyPolicyAsync(const CreateResiliencyPolicyRequest& request, const CreateResiliencyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateResiliencyPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::CreateResiliencyPolicyAsyncHelper(const CreateResiliencyPolicyRequest& request, const CreateResiliencyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateResiliencyPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateResiliencyPolicy(request), context);
+    } );
 }
 
 DeleteAppOutcome ResilienceHubClient::DeleteApp(const DeleteAppRequest& request) const
@@ -250,12 +248,10 @@ DeleteAppOutcomeCallable ResilienceHubClient::DeleteAppCallable(const DeleteAppR
 
 void ResilienceHubClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::DeleteAppAsyncHelper(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteApp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteApp(request), context);
+    } );
 }
 
 DeleteAppAssessmentOutcome ResilienceHubClient::DeleteAppAssessment(const DeleteAppAssessmentRequest& request) const
@@ -275,12 +271,10 @@ DeleteAppAssessmentOutcomeCallable ResilienceHubClient::DeleteAppAssessmentCalla
 
 void ResilienceHubClient::DeleteAppAssessmentAsync(const DeleteAppAssessmentRequest& request, const DeleteAppAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppAssessmentAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::DeleteAppAssessmentAsyncHelper(const DeleteAppAssessmentRequest& request, const DeleteAppAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAppAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAppAssessment(request), context);
+    } );
 }
 
 DeleteRecommendationTemplateOutcome ResilienceHubClient::DeleteRecommendationTemplate(const DeleteRecommendationTemplateRequest& request) const
@@ -300,12 +294,10 @@ DeleteRecommendationTemplateOutcomeCallable ResilienceHubClient::DeleteRecommend
 
 void ResilienceHubClient::DeleteRecommendationTemplateAsync(const DeleteRecommendationTemplateRequest& request, const DeleteRecommendationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecommendationTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::DeleteRecommendationTemplateAsyncHelper(const DeleteRecommendationTemplateRequest& request, const DeleteRecommendationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRecommendationTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRecommendationTemplate(request), context);
+    } );
 }
 
 DeleteResiliencyPolicyOutcome ResilienceHubClient::DeleteResiliencyPolicy(const DeleteResiliencyPolicyRequest& request) const
@@ -325,12 +317,10 @@ DeleteResiliencyPolicyOutcomeCallable ResilienceHubClient::DeleteResiliencyPolic
 
 void ResilienceHubClient::DeleteResiliencyPolicyAsync(const DeleteResiliencyPolicyRequest& request, const DeleteResiliencyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteResiliencyPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::DeleteResiliencyPolicyAsyncHelper(const DeleteResiliencyPolicyRequest& request, const DeleteResiliencyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteResiliencyPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteResiliencyPolicy(request), context);
+    } );
 }
 
 DescribeAppOutcome ResilienceHubClient::DescribeApp(const DescribeAppRequest& request) const
@@ -350,12 +340,10 @@ DescribeAppOutcomeCallable ResilienceHubClient::DescribeAppCallable(const Descri
 
 void ResilienceHubClient::DescribeAppAsync(const DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::DescribeAppAsyncHelper(const DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeApp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeApp(request), context);
+    } );
 }
 
 DescribeAppAssessmentOutcome ResilienceHubClient::DescribeAppAssessment(const DescribeAppAssessmentRequest& request) const
@@ -375,12 +363,10 @@ DescribeAppAssessmentOutcomeCallable ResilienceHubClient::DescribeAppAssessmentC
 
 void ResilienceHubClient::DescribeAppAssessmentAsync(const DescribeAppAssessmentRequest& request, const DescribeAppAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppAssessmentAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::DescribeAppAssessmentAsyncHelper(const DescribeAppAssessmentRequest& request, const DescribeAppAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAppAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAppAssessment(request), context);
+    } );
 }
 
 DescribeAppVersionResourcesResolutionStatusOutcome ResilienceHubClient::DescribeAppVersionResourcesResolutionStatus(const DescribeAppVersionResourcesResolutionStatusRequest& request) const
@@ -400,12 +386,10 @@ DescribeAppVersionResourcesResolutionStatusOutcomeCallable ResilienceHubClient::
 
 void ResilienceHubClient::DescribeAppVersionResourcesResolutionStatusAsync(const DescribeAppVersionResourcesResolutionStatusRequest& request, const DescribeAppVersionResourcesResolutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppVersionResourcesResolutionStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::DescribeAppVersionResourcesResolutionStatusAsyncHelper(const DescribeAppVersionResourcesResolutionStatusRequest& request, const DescribeAppVersionResourcesResolutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAppVersionResourcesResolutionStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAppVersionResourcesResolutionStatus(request), context);
+    } );
 }
 
 DescribeAppVersionTemplateOutcome ResilienceHubClient::DescribeAppVersionTemplate(const DescribeAppVersionTemplateRequest& request) const
@@ -425,12 +409,10 @@ DescribeAppVersionTemplateOutcomeCallable ResilienceHubClient::DescribeAppVersio
 
 void ResilienceHubClient::DescribeAppVersionTemplateAsync(const DescribeAppVersionTemplateRequest& request, const DescribeAppVersionTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppVersionTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::DescribeAppVersionTemplateAsyncHelper(const DescribeAppVersionTemplateRequest& request, const DescribeAppVersionTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAppVersionTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAppVersionTemplate(request), context);
+    } );
 }
 
 DescribeDraftAppVersionResourcesImportStatusOutcome ResilienceHubClient::DescribeDraftAppVersionResourcesImportStatus(const DescribeDraftAppVersionResourcesImportStatusRequest& request) const
@@ -450,12 +432,10 @@ DescribeDraftAppVersionResourcesImportStatusOutcomeCallable ResilienceHubClient:
 
 void ResilienceHubClient::DescribeDraftAppVersionResourcesImportStatusAsync(const DescribeDraftAppVersionResourcesImportStatusRequest& request, const DescribeDraftAppVersionResourcesImportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDraftAppVersionResourcesImportStatusAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::DescribeDraftAppVersionResourcesImportStatusAsyncHelper(const DescribeDraftAppVersionResourcesImportStatusRequest& request, const DescribeDraftAppVersionResourcesImportStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDraftAppVersionResourcesImportStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDraftAppVersionResourcesImportStatus(request), context);
+    } );
 }
 
 DescribeResiliencyPolicyOutcome ResilienceHubClient::DescribeResiliencyPolicy(const DescribeResiliencyPolicyRequest& request) const
@@ -475,12 +455,10 @@ DescribeResiliencyPolicyOutcomeCallable ResilienceHubClient::DescribeResiliencyP
 
 void ResilienceHubClient::DescribeResiliencyPolicyAsync(const DescribeResiliencyPolicyRequest& request, const DescribeResiliencyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeResiliencyPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::DescribeResiliencyPolicyAsyncHelper(const DescribeResiliencyPolicyRequest& request, const DescribeResiliencyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeResiliencyPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeResiliencyPolicy(request), context);
+    } );
 }
 
 ImportResourcesToDraftAppVersionOutcome ResilienceHubClient::ImportResourcesToDraftAppVersion(const ImportResourcesToDraftAppVersionRequest& request) const
@@ -500,12 +478,10 @@ ImportResourcesToDraftAppVersionOutcomeCallable ResilienceHubClient::ImportResou
 
 void ResilienceHubClient::ImportResourcesToDraftAppVersionAsync(const ImportResourcesToDraftAppVersionRequest& request, const ImportResourcesToDraftAppVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportResourcesToDraftAppVersionAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ImportResourcesToDraftAppVersionAsyncHelper(const ImportResourcesToDraftAppVersionRequest& request, const ImportResourcesToDraftAppVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportResourcesToDraftAppVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportResourcesToDraftAppVersion(request), context);
+    } );
 }
 
 ListAlarmRecommendationsOutcome ResilienceHubClient::ListAlarmRecommendations(const ListAlarmRecommendationsRequest& request) const
@@ -525,12 +501,10 @@ ListAlarmRecommendationsOutcomeCallable ResilienceHubClient::ListAlarmRecommenda
 
 void ResilienceHubClient::ListAlarmRecommendationsAsync(const ListAlarmRecommendationsRequest& request, const ListAlarmRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAlarmRecommendationsAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListAlarmRecommendationsAsyncHelper(const ListAlarmRecommendationsRequest& request, const ListAlarmRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAlarmRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAlarmRecommendations(request), context);
+    } );
 }
 
 ListAppAssessmentsOutcome ResilienceHubClient::ListAppAssessments(const ListAppAssessmentsRequest& request) const
@@ -550,12 +524,10 @@ ListAppAssessmentsOutcomeCallable ResilienceHubClient::ListAppAssessmentsCallabl
 
 void ResilienceHubClient::ListAppAssessmentsAsync(const ListAppAssessmentsRequest& request, const ListAppAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppAssessmentsAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListAppAssessmentsAsyncHelper(const ListAppAssessmentsRequest& request, const ListAppAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAppAssessments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAppAssessments(request), context);
+    } );
 }
 
 ListAppComponentCompliancesOutcome ResilienceHubClient::ListAppComponentCompliances(const ListAppComponentCompliancesRequest& request) const
@@ -575,12 +547,10 @@ ListAppComponentCompliancesOutcomeCallable ResilienceHubClient::ListAppComponent
 
 void ResilienceHubClient::ListAppComponentCompliancesAsync(const ListAppComponentCompliancesRequest& request, const ListAppComponentCompliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppComponentCompliancesAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListAppComponentCompliancesAsyncHelper(const ListAppComponentCompliancesRequest& request, const ListAppComponentCompliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAppComponentCompliances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAppComponentCompliances(request), context);
+    } );
 }
 
 ListAppComponentRecommendationsOutcome ResilienceHubClient::ListAppComponentRecommendations(const ListAppComponentRecommendationsRequest& request) const
@@ -600,12 +570,10 @@ ListAppComponentRecommendationsOutcomeCallable ResilienceHubClient::ListAppCompo
 
 void ResilienceHubClient::ListAppComponentRecommendationsAsync(const ListAppComponentRecommendationsRequest& request, const ListAppComponentRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppComponentRecommendationsAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListAppComponentRecommendationsAsyncHelper(const ListAppComponentRecommendationsRequest& request, const ListAppComponentRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAppComponentRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAppComponentRecommendations(request), context);
+    } );
 }
 
 ListAppVersionResourceMappingsOutcome ResilienceHubClient::ListAppVersionResourceMappings(const ListAppVersionResourceMappingsRequest& request) const
@@ -625,12 +593,10 @@ ListAppVersionResourceMappingsOutcomeCallable ResilienceHubClient::ListAppVersio
 
 void ResilienceHubClient::ListAppVersionResourceMappingsAsync(const ListAppVersionResourceMappingsRequest& request, const ListAppVersionResourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppVersionResourceMappingsAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListAppVersionResourceMappingsAsyncHelper(const ListAppVersionResourceMappingsRequest& request, const ListAppVersionResourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAppVersionResourceMappings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAppVersionResourceMappings(request), context);
+    } );
 }
 
 ListAppVersionResourcesOutcome ResilienceHubClient::ListAppVersionResources(const ListAppVersionResourcesRequest& request) const
@@ -650,12 +616,10 @@ ListAppVersionResourcesOutcomeCallable ResilienceHubClient::ListAppVersionResour
 
 void ResilienceHubClient::ListAppVersionResourcesAsync(const ListAppVersionResourcesRequest& request, const ListAppVersionResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppVersionResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListAppVersionResourcesAsyncHelper(const ListAppVersionResourcesRequest& request, const ListAppVersionResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAppVersionResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAppVersionResources(request), context);
+    } );
 }
 
 ListAppVersionsOutcome ResilienceHubClient::ListAppVersions(const ListAppVersionsRequest& request) const
@@ -675,12 +639,10 @@ ListAppVersionsOutcomeCallable ResilienceHubClient::ListAppVersionsCallable(cons
 
 void ResilienceHubClient::ListAppVersionsAsync(const ListAppVersionsRequest& request, const ListAppVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListAppVersionsAsyncHelper(const ListAppVersionsRequest& request, const ListAppVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAppVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAppVersions(request), context);
+    } );
 }
 
 ListAppsOutcome ResilienceHubClient::ListApps(const ListAppsRequest& request) const
@@ -700,12 +662,10 @@ ListAppsOutcomeCallable ResilienceHubClient::ListAppsCallable(const ListAppsRequ
 
 void ResilienceHubClient::ListAppsAsync(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppsAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListAppsAsyncHelper(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListApps(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListApps(request), context);
+    } );
 }
 
 ListRecommendationTemplatesOutcome ResilienceHubClient::ListRecommendationTemplates(const ListRecommendationTemplatesRequest& request) const
@@ -730,12 +690,10 @@ ListRecommendationTemplatesOutcomeCallable ResilienceHubClient::ListRecommendati
 
 void ResilienceHubClient::ListRecommendationTemplatesAsync(const ListRecommendationTemplatesRequest& request, const ListRecommendationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRecommendationTemplatesAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListRecommendationTemplatesAsyncHelper(const ListRecommendationTemplatesRequest& request, const ListRecommendationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRecommendationTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRecommendationTemplates(request), context);
+    } );
 }
 
 ListResiliencyPoliciesOutcome ResilienceHubClient::ListResiliencyPolicies(const ListResiliencyPoliciesRequest& request) const
@@ -755,12 +713,10 @@ ListResiliencyPoliciesOutcomeCallable ResilienceHubClient::ListResiliencyPolicie
 
 void ResilienceHubClient::ListResiliencyPoliciesAsync(const ListResiliencyPoliciesRequest& request, const ListResiliencyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListResiliencyPoliciesAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListResiliencyPoliciesAsyncHelper(const ListResiliencyPoliciesRequest& request, const ListResiliencyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListResiliencyPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListResiliencyPolicies(request), context);
+    } );
 }
 
 ListSopRecommendationsOutcome ResilienceHubClient::ListSopRecommendations(const ListSopRecommendationsRequest& request) const
@@ -780,12 +736,10 @@ ListSopRecommendationsOutcomeCallable ResilienceHubClient::ListSopRecommendation
 
 void ResilienceHubClient::ListSopRecommendationsAsync(const ListSopRecommendationsRequest& request, const ListSopRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSopRecommendationsAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListSopRecommendationsAsyncHelper(const ListSopRecommendationsRequest& request, const ListSopRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSopRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSopRecommendations(request), context);
+    } );
 }
 
 ListSuggestedResiliencyPoliciesOutcome ResilienceHubClient::ListSuggestedResiliencyPolicies(const ListSuggestedResiliencyPoliciesRequest& request) const
@@ -805,12 +759,10 @@ ListSuggestedResiliencyPoliciesOutcomeCallable ResilienceHubClient::ListSuggeste
 
 void ResilienceHubClient::ListSuggestedResiliencyPoliciesAsync(const ListSuggestedResiliencyPoliciesRequest& request, const ListSuggestedResiliencyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSuggestedResiliencyPoliciesAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListSuggestedResiliencyPoliciesAsyncHelper(const ListSuggestedResiliencyPoliciesRequest& request, const ListSuggestedResiliencyPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSuggestedResiliencyPolicies(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSuggestedResiliencyPolicies(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome ResilienceHubClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -836,12 +788,10 @@ ListTagsForResourceOutcomeCallable ResilienceHubClient::ListTagsForResourceCalla
 
 void ResilienceHubClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListTestRecommendationsOutcome ResilienceHubClient::ListTestRecommendations(const ListTestRecommendationsRequest& request) const
@@ -861,12 +811,10 @@ ListTestRecommendationsOutcomeCallable ResilienceHubClient::ListTestRecommendati
 
 void ResilienceHubClient::ListTestRecommendationsAsync(const ListTestRecommendationsRequest& request, const ListTestRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTestRecommendationsAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListTestRecommendationsAsyncHelper(const ListTestRecommendationsRequest& request, const ListTestRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTestRecommendations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTestRecommendations(request), context);
+    } );
 }
 
 ListUnsupportedAppVersionResourcesOutcome ResilienceHubClient::ListUnsupportedAppVersionResources(const ListUnsupportedAppVersionResourcesRequest& request) const
@@ -886,12 +834,10 @@ ListUnsupportedAppVersionResourcesOutcomeCallable ResilienceHubClient::ListUnsup
 
 void ResilienceHubClient::ListUnsupportedAppVersionResourcesAsync(const ListUnsupportedAppVersionResourcesRequest& request, const ListUnsupportedAppVersionResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUnsupportedAppVersionResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ListUnsupportedAppVersionResourcesAsyncHelper(const ListUnsupportedAppVersionResourcesRequest& request, const ListUnsupportedAppVersionResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListUnsupportedAppVersionResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListUnsupportedAppVersionResources(request), context);
+    } );
 }
 
 PublishAppVersionOutcome ResilienceHubClient::PublishAppVersion(const PublishAppVersionRequest& request) const
@@ -911,12 +857,10 @@ PublishAppVersionOutcomeCallable ResilienceHubClient::PublishAppVersionCallable(
 
 void ResilienceHubClient::PublishAppVersionAsync(const PublishAppVersionRequest& request, const PublishAppVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PublishAppVersionAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::PublishAppVersionAsyncHelper(const PublishAppVersionRequest& request, const PublishAppVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PublishAppVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PublishAppVersion(request), context);
+    } );
 }
 
 PutDraftAppVersionTemplateOutcome ResilienceHubClient::PutDraftAppVersionTemplate(const PutDraftAppVersionTemplateRequest& request) const
@@ -936,12 +880,10 @@ PutDraftAppVersionTemplateOutcomeCallable ResilienceHubClient::PutDraftAppVersio
 
 void ResilienceHubClient::PutDraftAppVersionTemplateAsync(const PutDraftAppVersionTemplateRequest& request, const PutDraftAppVersionTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutDraftAppVersionTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::PutDraftAppVersionTemplateAsyncHelper(const PutDraftAppVersionTemplateRequest& request, const PutDraftAppVersionTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutDraftAppVersionTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutDraftAppVersionTemplate(request), context);
+    } );
 }
 
 RemoveDraftAppVersionResourceMappingsOutcome ResilienceHubClient::RemoveDraftAppVersionResourceMappings(const RemoveDraftAppVersionResourceMappingsRequest& request) const
@@ -961,12 +903,10 @@ RemoveDraftAppVersionResourceMappingsOutcomeCallable ResilienceHubClient::Remove
 
 void ResilienceHubClient::RemoveDraftAppVersionResourceMappingsAsync(const RemoveDraftAppVersionResourceMappingsRequest& request, const RemoveDraftAppVersionResourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveDraftAppVersionResourceMappingsAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::RemoveDraftAppVersionResourceMappingsAsyncHelper(const RemoveDraftAppVersionResourceMappingsRequest& request, const RemoveDraftAppVersionResourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveDraftAppVersionResourceMappings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveDraftAppVersionResourceMappings(request), context);
+    } );
 }
 
 ResolveAppVersionResourcesOutcome ResilienceHubClient::ResolveAppVersionResources(const ResolveAppVersionResourcesRequest& request) const
@@ -986,12 +926,10 @@ ResolveAppVersionResourcesOutcomeCallable ResilienceHubClient::ResolveAppVersion
 
 void ResilienceHubClient::ResolveAppVersionResourcesAsync(const ResolveAppVersionResourcesRequest& request, const ResolveAppVersionResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResolveAppVersionResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::ResolveAppVersionResourcesAsyncHelper(const ResolveAppVersionResourcesRequest& request, const ResolveAppVersionResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ResolveAppVersionResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ResolveAppVersionResources(request), context);
+    } );
 }
 
 StartAppAssessmentOutcome ResilienceHubClient::StartAppAssessment(const StartAppAssessmentRequest& request) const
@@ -1011,12 +949,10 @@ StartAppAssessmentOutcomeCallable ResilienceHubClient::StartAppAssessmentCallabl
 
 void ResilienceHubClient::StartAppAssessmentAsync(const StartAppAssessmentRequest& request, const StartAppAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartAppAssessmentAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::StartAppAssessmentAsyncHelper(const StartAppAssessmentRequest& request, const StartAppAssessmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartAppAssessment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartAppAssessment(request), context);
+    } );
 }
 
 TagResourceOutcome ResilienceHubClient::TagResource(const TagResourceRequest& request) const
@@ -1042,12 +978,10 @@ TagResourceOutcomeCallable ResilienceHubClient::TagResourceCallable(const TagRes
 
 void ResilienceHubClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome ResilienceHubClient::UntagResource(const UntagResourceRequest& request) const
@@ -1078,12 +1012,10 @@ UntagResourceOutcomeCallable ResilienceHubClient::UntagResourceCallable(const Un
 
 void ResilienceHubClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateAppOutcome ResilienceHubClient::UpdateApp(const UpdateAppRequest& request) const
@@ -1103,12 +1035,10 @@ UpdateAppOutcomeCallable ResilienceHubClient::UpdateAppCallable(const UpdateAppR
 
 void ResilienceHubClient::UpdateAppAsync(const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAppAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::UpdateAppAsyncHelper(const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateApp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateApp(request), context);
+    } );
 }
 
 UpdateResiliencyPolicyOutcome ResilienceHubClient::UpdateResiliencyPolicy(const UpdateResiliencyPolicyRequest& request) const
@@ -1128,11 +1058,9 @@ UpdateResiliencyPolicyOutcomeCallable ResilienceHubClient::UpdateResiliencyPolic
 
 void ResilienceHubClient::UpdateResiliencyPolicyAsync(const UpdateResiliencyPolicyRequest& request, const UpdateResiliencyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResiliencyPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void ResilienceHubClient::UpdateResiliencyPolicyAsyncHelper(const UpdateResiliencyPolicyRequest& request, const UpdateResiliencyPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateResiliencyPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateResiliencyPolicy(request), context);
+    } );
 }
 

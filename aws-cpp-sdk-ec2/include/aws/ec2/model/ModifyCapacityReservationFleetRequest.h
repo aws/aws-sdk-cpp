@@ -268,19 +268,19 @@ namespace Model
   private:
 
     Aws::String m_capacityReservationFleetId;
-    bool m_capacityReservationFleetIdHasBeenSet;
+    bool m_capacityReservationFleetIdHasBeenSet = false;
 
     int m_totalTargetCapacity;
-    bool m_totalTargetCapacityHasBeenSet;
+    bool m_totalTargetCapacityHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_removeEndDate;
-    bool m_removeEndDateHasBeenSet;
+    bool m_removeEndDateHasBeenSet = false;
   };
 
 } // namespace Model

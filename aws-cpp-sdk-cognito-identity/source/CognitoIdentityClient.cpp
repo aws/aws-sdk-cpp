@@ -55,33 +55,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "cognito-identity";
 static const char* ALLOCATION_TAG = "CognitoIdentityClient";
 
-
 CognitoIdentityClient::CognitoIdentityClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<CognitoIdentityErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CognitoIdentityErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-CognitoIdentityClient::CognitoIdentityClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+CognitoIdentityClient::CognitoIdentityClient(const AWSCredentials& credentials,
+                                             const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<CognitoIdentityErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CognitoIdentityErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 CognitoIdentityClient::CognitoIdentityClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                             const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<CognitoIdentityErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CognitoIdentityErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -93,7 +99,7 @@ CognitoIdentityClient::~CognitoIdentityClient()
 
 void CognitoIdentityClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Cognito Identity");
+  AWSClient::SetServiceClientName("Cognito Identity");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -133,12 +139,10 @@ CreateIdentityPoolOutcomeCallable CognitoIdentityClient::CreateIdentityPoolCalla
 
 void CognitoIdentityClient::CreateIdentityPoolAsync(const CreateIdentityPoolRequest& request, const CreateIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIdentityPoolAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::CreateIdentityPoolAsyncHelper(const CreateIdentityPoolRequest& request, const CreateIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateIdentityPool(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateIdentityPool(request), context);
+    } );
 }
 
 DeleteIdentitiesOutcome CognitoIdentityClient::DeleteIdentities(const DeleteIdentitiesRequest& request) const
@@ -157,12 +161,10 @@ DeleteIdentitiesOutcomeCallable CognitoIdentityClient::DeleteIdentitiesCallable(
 
 void CognitoIdentityClient::DeleteIdentitiesAsync(const DeleteIdentitiesRequest& request, const DeleteIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIdentitiesAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::DeleteIdentitiesAsyncHelper(const DeleteIdentitiesRequest& request, const DeleteIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteIdentities(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteIdentities(request), context);
+    } );
 }
 
 DeleteIdentityPoolOutcome CognitoIdentityClient::DeleteIdentityPool(const DeleteIdentityPoolRequest& request) const
@@ -181,12 +183,10 @@ DeleteIdentityPoolOutcomeCallable CognitoIdentityClient::DeleteIdentityPoolCalla
 
 void CognitoIdentityClient::DeleteIdentityPoolAsync(const DeleteIdentityPoolRequest& request, const DeleteIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIdentityPoolAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::DeleteIdentityPoolAsyncHelper(const DeleteIdentityPoolRequest& request, const DeleteIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteIdentityPool(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteIdentityPool(request), context);
+    } );
 }
 
 DescribeIdentityOutcome CognitoIdentityClient::DescribeIdentity(const DescribeIdentityRequest& request) const
@@ -205,12 +205,10 @@ DescribeIdentityOutcomeCallable CognitoIdentityClient::DescribeIdentityCallable(
 
 void CognitoIdentityClient::DescribeIdentityAsync(const DescribeIdentityRequest& request, const DescribeIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIdentityAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::DescribeIdentityAsyncHelper(const DescribeIdentityRequest& request, const DescribeIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeIdentity(request), context);
+    } );
 }
 
 DescribeIdentityPoolOutcome CognitoIdentityClient::DescribeIdentityPool(const DescribeIdentityPoolRequest& request) const
@@ -229,12 +227,10 @@ DescribeIdentityPoolOutcomeCallable CognitoIdentityClient::DescribeIdentityPoolC
 
 void CognitoIdentityClient::DescribeIdentityPoolAsync(const DescribeIdentityPoolRequest& request, const DescribeIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIdentityPoolAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::DescribeIdentityPoolAsyncHelper(const DescribeIdentityPoolRequest& request, const DescribeIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeIdentityPool(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeIdentityPool(request), context);
+    } );
 }
 
 GetCredentialsForIdentityOutcome CognitoIdentityClient::GetCredentialsForIdentity(const GetCredentialsForIdentityRequest& request) const
@@ -253,12 +249,10 @@ GetCredentialsForIdentityOutcomeCallable CognitoIdentityClient::GetCredentialsFo
 
 void CognitoIdentityClient::GetCredentialsForIdentityAsync(const GetCredentialsForIdentityRequest& request, const GetCredentialsForIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCredentialsForIdentityAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::GetCredentialsForIdentityAsyncHelper(const GetCredentialsForIdentityRequest& request, const GetCredentialsForIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCredentialsForIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCredentialsForIdentity(request), context);
+    } );
 }
 
 GetIdOutcome CognitoIdentityClient::GetId(const GetIdRequest& request) const
@@ -277,12 +271,10 @@ GetIdOutcomeCallable CognitoIdentityClient::GetIdCallable(const GetIdRequest& re
 
 void CognitoIdentityClient::GetIdAsync(const GetIdRequest& request, const GetIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIdAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::GetIdAsyncHelper(const GetIdRequest& request, const GetIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetId(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetId(request), context);
+    } );
 }
 
 GetIdentityPoolRolesOutcome CognitoIdentityClient::GetIdentityPoolRoles(const GetIdentityPoolRolesRequest& request) const
@@ -301,12 +293,10 @@ GetIdentityPoolRolesOutcomeCallable CognitoIdentityClient::GetIdentityPoolRolesC
 
 void CognitoIdentityClient::GetIdentityPoolRolesAsync(const GetIdentityPoolRolesRequest& request, const GetIdentityPoolRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIdentityPoolRolesAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::GetIdentityPoolRolesAsyncHelper(const GetIdentityPoolRolesRequest& request, const GetIdentityPoolRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetIdentityPoolRoles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetIdentityPoolRoles(request), context);
+    } );
 }
 
 GetOpenIdTokenOutcome CognitoIdentityClient::GetOpenIdToken(const GetOpenIdTokenRequest& request) const
@@ -325,12 +315,10 @@ GetOpenIdTokenOutcomeCallable CognitoIdentityClient::GetOpenIdTokenCallable(cons
 
 void CognitoIdentityClient::GetOpenIdTokenAsync(const GetOpenIdTokenRequest& request, const GetOpenIdTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOpenIdTokenAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::GetOpenIdTokenAsyncHelper(const GetOpenIdTokenRequest& request, const GetOpenIdTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetOpenIdToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetOpenIdToken(request), context);
+    } );
 }
 
 GetOpenIdTokenForDeveloperIdentityOutcome CognitoIdentityClient::GetOpenIdTokenForDeveloperIdentity(const GetOpenIdTokenForDeveloperIdentityRequest& request) const
@@ -349,12 +337,10 @@ GetOpenIdTokenForDeveloperIdentityOutcomeCallable CognitoIdentityClient::GetOpen
 
 void CognitoIdentityClient::GetOpenIdTokenForDeveloperIdentityAsync(const GetOpenIdTokenForDeveloperIdentityRequest& request, const GetOpenIdTokenForDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetOpenIdTokenForDeveloperIdentityAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::GetOpenIdTokenForDeveloperIdentityAsyncHelper(const GetOpenIdTokenForDeveloperIdentityRequest& request, const GetOpenIdTokenForDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetOpenIdTokenForDeveloperIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetOpenIdTokenForDeveloperIdentity(request), context);
+    } );
 }
 
 GetPrincipalTagAttributeMapOutcome CognitoIdentityClient::GetPrincipalTagAttributeMap(const GetPrincipalTagAttributeMapRequest& request) const
@@ -373,12 +359,10 @@ GetPrincipalTagAttributeMapOutcomeCallable CognitoIdentityClient::GetPrincipalTa
 
 void CognitoIdentityClient::GetPrincipalTagAttributeMapAsync(const GetPrincipalTagAttributeMapRequest& request, const GetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPrincipalTagAttributeMapAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::GetPrincipalTagAttributeMapAsyncHelper(const GetPrincipalTagAttributeMapRequest& request, const GetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPrincipalTagAttributeMap(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPrincipalTagAttributeMap(request), context);
+    } );
 }
 
 ListIdentitiesOutcome CognitoIdentityClient::ListIdentities(const ListIdentitiesRequest& request) const
@@ -397,12 +381,10 @@ ListIdentitiesOutcomeCallable CognitoIdentityClient::ListIdentitiesCallable(cons
 
 void CognitoIdentityClient::ListIdentitiesAsync(const ListIdentitiesRequest& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIdentitiesAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::ListIdentitiesAsyncHelper(const ListIdentitiesRequest& request, const ListIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListIdentities(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListIdentities(request), context);
+    } );
 }
 
 ListIdentityPoolsOutcome CognitoIdentityClient::ListIdentityPools(const ListIdentityPoolsRequest& request) const
@@ -421,12 +403,10 @@ ListIdentityPoolsOutcomeCallable CognitoIdentityClient::ListIdentityPoolsCallabl
 
 void CognitoIdentityClient::ListIdentityPoolsAsync(const ListIdentityPoolsRequest& request, const ListIdentityPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIdentityPoolsAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::ListIdentityPoolsAsyncHelper(const ListIdentityPoolsRequest& request, const ListIdentityPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListIdentityPools(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListIdentityPools(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome CognitoIdentityClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -445,12 +425,10 @@ ListTagsForResourceOutcomeCallable CognitoIdentityClient::ListTagsForResourceCal
 
 void CognitoIdentityClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 LookupDeveloperIdentityOutcome CognitoIdentityClient::LookupDeveloperIdentity(const LookupDeveloperIdentityRequest& request) const
@@ -469,12 +447,10 @@ LookupDeveloperIdentityOutcomeCallable CognitoIdentityClient::LookupDeveloperIde
 
 void CognitoIdentityClient::LookupDeveloperIdentityAsync(const LookupDeveloperIdentityRequest& request, const LookupDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->LookupDeveloperIdentityAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::LookupDeveloperIdentityAsyncHelper(const LookupDeveloperIdentityRequest& request, const LookupDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, LookupDeveloperIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, LookupDeveloperIdentity(request), context);
+    } );
 }
 
 MergeDeveloperIdentitiesOutcome CognitoIdentityClient::MergeDeveloperIdentities(const MergeDeveloperIdentitiesRequest& request) const
@@ -493,12 +469,10 @@ MergeDeveloperIdentitiesOutcomeCallable CognitoIdentityClient::MergeDeveloperIde
 
 void CognitoIdentityClient::MergeDeveloperIdentitiesAsync(const MergeDeveloperIdentitiesRequest& request, const MergeDeveloperIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MergeDeveloperIdentitiesAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::MergeDeveloperIdentitiesAsyncHelper(const MergeDeveloperIdentitiesRequest& request, const MergeDeveloperIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, MergeDeveloperIdentities(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, MergeDeveloperIdentities(request), context);
+    } );
 }
 
 SetIdentityPoolRolesOutcome CognitoIdentityClient::SetIdentityPoolRoles(const SetIdentityPoolRolesRequest& request) const
@@ -517,12 +491,10 @@ SetIdentityPoolRolesOutcomeCallable CognitoIdentityClient::SetIdentityPoolRolesC
 
 void CognitoIdentityClient::SetIdentityPoolRolesAsync(const SetIdentityPoolRolesRequest& request, const SetIdentityPoolRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetIdentityPoolRolesAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::SetIdentityPoolRolesAsyncHelper(const SetIdentityPoolRolesRequest& request, const SetIdentityPoolRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetIdentityPoolRoles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetIdentityPoolRoles(request), context);
+    } );
 }
 
 SetPrincipalTagAttributeMapOutcome CognitoIdentityClient::SetPrincipalTagAttributeMap(const SetPrincipalTagAttributeMapRequest& request) const
@@ -541,12 +513,10 @@ SetPrincipalTagAttributeMapOutcomeCallable CognitoIdentityClient::SetPrincipalTa
 
 void CognitoIdentityClient::SetPrincipalTagAttributeMapAsync(const SetPrincipalTagAttributeMapRequest& request, const SetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetPrincipalTagAttributeMapAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::SetPrincipalTagAttributeMapAsyncHelper(const SetPrincipalTagAttributeMapRequest& request, const SetPrincipalTagAttributeMapResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetPrincipalTagAttributeMap(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetPrincipalTagAttributeMap(request), context);
+    } );
 }
 
 TagResourceOutcome CognitoIdentityClient::TagResource(const TagResourceRequest& request) const
@@ -565,12 +535,10 @@ TagResourceOutcomeCallable CognitoIdentityClient::TagResourceCallable(const TagR
 
 void CognitoIdentityClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UnlinkDeveloperIdentityOutcome CognitoIdentityClient::UnlinkDeveloperIdentity(const UnlinkDeveloperIdentityRequest& request) const
@@ -589,12 +557,10 @@ UnlinkDeveloperIdentityOutcomeCallable CognitoIdentityClient::UnlinkDeveloperIde
 
 void CognitoIdentityClient::UnlinkDeveloperIdentityAsync(const UnlinkDeveloperIdentityRequest& request, const UnlinkDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnlinkDeveloperIdentityAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::UnlinkDeveloperIdentityAsyncHelper(const UnlinkDeveloperIdentityRequest& request, const UnlinkDeveloperIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UnlinkDeveloperIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UnlinkDeveloperIdentity(request), context);
+    } );
 }
 
 UnlinkIdentityOutcome CognitoIdentityClient::UnlinkIdentity(const UnlinkIdentityRequest& request) const
@@ -613,12 +579,10 @@ UnlinkIdentityOutcomeCallable CognitoIdentityClient::UnlinkIdentityCallable(cons
 
 void CognitoIdentityClient::UnlinkIdentityAsync(const UnlinkIdentityRequest& request, const UnlinkIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnlinkIdentityAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::UnlinkIdentityAsyncHelper(const UnlinkIdentityRequest& request, const UnlinkIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UnlinkIdentity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UnlinkIdentity(request), context);
+    } );
 }
 
 UntagResourceOutcome CognitoIdentityClient::UntagResource(const UntagResourceRequest& request) const
@@ -637,12 +601,10 @@ UntagResourceOutcomeCallable CognitoIdentityClient::UntagResourceCallable(const 
 
 void CognitoIdentityClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateIdentityPoolOutcome CognitoIdentityClient::UpdateIdentityPool(const UpdateIdentityPoolRequest& request) const
@@ -661,11 +623,9 @@ UpdateIdentityPoolOutcomeCallable CognitoIdentityClient::UpdateIdentityPoolCalla
 
 void CognitoIdentityClient::UpdateIdentityPoolAsync(const UpdateIdentityPoolRequest& request, const UpdateIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIdentityPoolAsyncHelper( request, handler, context ); } );
-}
-
-void CognitoIdentityClient::UpdateIdentityPoolAsyncHelper(const UpdateIdentityPoolRequest& request, const UpdateIdentityPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateIdentityPool(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateIdentityPool(request), context);
+    } );
 }
 

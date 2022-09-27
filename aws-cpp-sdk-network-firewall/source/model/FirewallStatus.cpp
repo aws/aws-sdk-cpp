@@ -23,7 +23,8 @@ FirewallStatus::FirewallStatus() :
     m_statusHasBeenSet(false),
     m_configurationSyncStateSummary(ConfigurationSyncState::NOT_SET),
     m_configurationSyncStateSummaryHasBeenSet(false),
-    m_syncStatesHasBeenSet(false)
+    m_syncStatesHasBeenSet(false),
+    m_capacityUsageSummaryHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ FirewallStatus::FirewallStatus(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_configurationSyncStateSummary(ConfigurationSyncState::NOT_SET),
     m_configurationSyncStateSummaryHasBeenSet(false),
-    m_syncStatesHasBeenSet(false)
+    m_syncStatesHasBeenSet(false),
+    m_capacityUsageSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -63,6 +65,13 @@ FirewallStatus& FirewallStatus::operator =(JsonView jsonValue)
     m_syncStatesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CapacityUsageSummary"))
+  {
+    m_capacityUsageSummary = jsonValue.GetObject("CapacityUsageSummary");
+
+    m_capacityUsageSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +97,12 @@ JsonValue FirewallStatus::Jsonize() const
      syncStatesJsonMap.WithObject(syncStatesItem.first, syncStatesItem.second.Jsonize());
    }
    payload.WithObject("SyncStates", std::move(syncStatesJsonMap));
+
+  }
+
+  if(m_capacityUsageSummaryHasBeenSet)
+  {
+   payload.WithObject("CapacityUsageSummary", m_capacityUsageSummary.Jsonize());
 
   }
 

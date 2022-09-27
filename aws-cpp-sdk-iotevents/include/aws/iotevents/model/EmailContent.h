@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_additionalMessage;
-    bool m_additionalMessageHasBeenSet;
+    bool m_additionalMessageHasBeenSet = false;
   };
 
 } // namespace Model

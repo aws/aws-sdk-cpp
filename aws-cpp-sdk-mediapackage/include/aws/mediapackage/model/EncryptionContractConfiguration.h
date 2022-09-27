@@ -116,10 +116,10 @@ You must disable key rotation for this endpoint by setting
   private:
 
     PresetSpeke20Audio m_presetSpeke20Audio;
-    bool m_presetSpeke20AudioHasBeenSet;
+    bool m_presetSpeke20AudioHasBeenSet = false;
 
     PresetSpeke20Video m_presetSpeke20Video;
-    bool m_presetSpeke20VideoHasBeenSet;
+    bool m_presetSpeke20VideoHasBeenSet = false;
   };
 
 } // namespace Model

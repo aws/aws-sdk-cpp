@@ -214,42 +214,66 @@ namespace Model
 
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline const Aws::String& GetKeyState() const{ return m_keyState; }
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline bool KeyStateHasBeenSet() const { return m_keyStateHasBeenSet; }
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline void SetKeyState(const Aws::String& value) { m_keyStateHasBeenSet = true; m_keyState = value; }
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline void SetKeyState(Aws::String&& value) { m_keyStateHasBeenSet = true; m_keyState = std::move(value); }
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline void SetKeyState(const char* value) { m_keyStateHasBeenSet = true; m_keyState.assign(value); }
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline AwsKmsKeyDetails& WithKeyState(const Aws::String& value) { SetKeyState(value); return *this;}
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline AwsKmsKeyDetails& WithKeyState(Aws::String&& value) { SetKeyState(std::move(value)); return *this;}
 
     /**
-     * <p>The state of the KMS key.</p>
+     * <p>The state of the KMS key. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>Disabled</code> </p> </li> <li> <p> <code>Enabled</code> </p> </li> <li>
+     * <p> <code>PendingDeletion</code> </p> </li> <li> <p> <code>PendingImport</code>
+     * </p> </li> <li> <p> <code>Unavailable</code> </p> </li> </ul>
      */
     inline AwsKmsKeyDetails& WithKeyState(const char* value) { SetKeyState(value); return *this;}
 
@@ -336,42 +360,42 @@ namespace Model
 
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the key.</p>
+     * <p>A description of the KMS key.</p>
      */
     inline AwsKmsKeyDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -399,28 +423,28 @@ namespace Model
   private:
 
     Aws::String m_aWSAccountId;
-    bool m_aWSAccountIdHasBeenSet;
+    bool m_aWSAccountIdHasBeenSet = false;
 
     double m_creationDate;
-    bool m_creationDateHasBeenSet;
+    bool m_creationDateHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_keyManager;
-    bool m_keyManagerHasBeenSet;
+    bool m_keyManagerHasBeenSet = false;
 
     Aws::String m_keyState;
-    bool m_keyStateHasBeenSet;
+    bool m_keyStateHasBeenSet = false;
 
     Aws::String m_origin;
-    bool m_originHasBeenSet;
+    bool m_originHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_keyRotationStatus;
-    bool m_keyRotationStatusHasBeenSet;
+    bool m_keyRotationStatusHasBeenSet = false;
   };
 
 } // namespace Model

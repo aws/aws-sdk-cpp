@@ -5,119 +5,15 @@
 
 #pragma once
 #include <aws/chime-sdk-meetings/ChimeSDKMeetings_EXPORTS.h>
-#include <aws/chime-sdk-meetings/ChimeSDKMeetingsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/chime-sdk-meetings/model/BatchCreateAttendeeResult.h>
-#include <aws/chime-sdk-meetings/model/CreateAttendeeResult.h>
-#include <aws/chime-sdk-meetings/model/CreateMeetingResult.h>
-#include <aws/chime-sdk-meetings/model/CreateMeetingWithAttendeesResult.h>
-#include <aws/chime-sdk-meetings/model/GetAttendeeResult.h>
-#include <aws/chime-sdk-meetings/model/GetMeetingResult.h>
-#include <aws/chime-sdk-meetings/model/ListAttendeesResult.h>
-#include <aws/chime-sdk-meetings/model/UpdateAttendeeCapabilitiesResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/chime-sdk-meetings/ChimeSDKMeetingsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ChimeSDKMeetings
 {
-
-namespace Model
-{
-        class BatchCreateAttendeeRequest;
-        class BatchUpdateAttendeeCapabilitiesExceptRequest;
-        class CreateAttendeeRequest;
-        class CreateMeetingRequest;
-        class CreateMeetingWithAttendeesRequest;
-        class DeleteAttendeeRequest;
-        class DeleteMeetingRequest;
-        class GetAttendeeRequest;
-        class GetMeetingRequest;
-        class ListAttendeesRequest;
-        class StartMeetingTranscriptionRequest;
-        class StopMeetingTranscriptionRequest;
-        class UpdateAttendeeCapabilitiesRequest;
-
-        typedef Aws::Utils::Outcome<BatchCreateAttendeeResult, ChimeSDKMeetingsError> BatchCreateAttendeeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMeetingsError> BatchUpdateAttendeeCapabilitiesExceptOutcome;
-        typedef Aws::Utils::Outcome<CreateAttendeeResult, ChimeSDKMeetingsError> CreateAttendeeOutcome;
-        typedef Aws::Utils::Outcome<CreateMeetingResult, ChimeSDKMeetingsError> CreateMeetingOutcome;
-        typedef Aws::Utils::Outcome<CreateMeetingWithAttendeesResult, ChimeSDKMeetingsError> CreateMeetingWithAttendeesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMeetingsError> DeleteAttendeeOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMeetingsError> DeleteMeetingOutcome;
-        typedef Aws::Utils::Outcome<GetAttendeeResult, ChimeSDKMeetingsError> GetAttendeeOutcome;
-        typedef Aws::Utils::Outcome<GetMeetingResult, ChimeSDKMeetingsError> GetMeetingOutcome;
-        typedef Aws::Utils::Outcome<ListAttendeesResult, ChimeSDKMeetingsError> ListAttendeesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMeetingsError> StartMeetingTranscriptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ChimeSDKMeetingsError> StopMeetingTranscriptionOutcome;
-        typedef Aws::Utils::Outcome<UpdateAttendeeCapabilitiesResult, ChimeSDKMeetingsError> UpdateAttendeeCapabilitiesOutcome;
-
-        typedef std::future<BatchCreateAttendeeOutcome> BatchCreateAttendeeOutcomeCallable;
-        typedef std::future<BatchUpdateAttendeeCapabilitiesExceptOutcome> BatchUpdateAttendeeCapabilitiesExceptOutcomeCallable;
-        typedef std::future<CreateAttendeeOutcome> CreateAttendeeOutcomeCallable;
-        typedef std::future<CreateMeetingOutcome> CreateMeetingOutcomeCallable;
-        typedef std::future<CreateMeetingWithAttendeesOutcome> CreateMeetingWithAttendeesOutcomeCallable;
-        typedef std::future<DeleteAttendeeOutcome> DeleteAttendeeOutcomeCallable;
-        typedef std::future<DeleteMeetingOutcome> DeleteMeetingOutcomeCallable;
-        typedef std::future<GetAttendeeOutcome> GetAttendeeOutcomeCallable;
-        typedef std::future<GetMeetingOutcome> GetMeetingOutcomeCallable;
-        typedef std::future<ListAttendeesOutcome> ListAttendeesOutcomeCallable;
-        typedef std::future<StartMeetingTranscriptionOutcome> StartMeetingTranscriptionOutcomeCallable;
-        typedef std::future<StopMeetingTranscriptionOutcome> StopMeetingTranscriptionOutcomeCallable;
-        typedef std::future<UpdateAttendeeCapabilitiesOutcome> UpdateAttendeeCapabilitiesOutcomeCallable;
-} // namespace Model
-
-  class ChimeSDKMeetingsClient;
-
-    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::BatchCreateAttendeeRequest&, const Model::BatchCreateAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateAttendeeResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::BatchUpdateAttendeeCapabilitiesExceptRequest&, const Model::BatchUpdateAttendeeCapabilitiesExceptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateAttendeeCapabilitiesExceptResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::CreateAttendeeRequest&, const Model::CreateAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAttendeeResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::CreateMeetingRequest&, const Model::CreateMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::CreateMeetingWithAttendeesRequest&, const Model::CreateMeetingWithAttendeesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingWithAttendeesResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::DeleteAttendeeRequest&, const Model::DeleteAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAttendeeResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::DeleteMeetingRequest&, const Model::DeleteMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMeetingResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::GetAttendeeRequest&, const Model::GetAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttendeeResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::GetMeetingRequest&, const Model::GetMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMeetingResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::ListAttendeesRequest&, const Model::ListAttendeesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttendeesResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::StartMeetingTranscriptionRequest&, const Model::StartMeetingTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMeetingTranscriptionResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::StopMeetingTranscriptionRequest&, const Model::StopMeetingTranscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMeetingTranscriptionResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKMeetingsClient*, const Model::UpdateAttendeeCapabilitiesRequest&, const Model::UpdateAttendeeCapabilitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAttendeeCapabilitiesResponseReceivedHandler;
-
   /**
    * <p>The Amazon Chime SDK meetings APIs in this section allow software developers
    * to create Amazon Chime SDK meetings, set the AWS Regions for meetings, create
@@ -141,14 +37,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ChimeSDKMeetingsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ChimeSDKMeetingsClient(const Aws::Auth::AWSCredentials& credentials,
+                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ChimeSDKMeetingsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ChimeSDKMeetingsClient();
 
@@ -176,7 +73,26 @@ namespace Model
 
         /**
          * <p>Updates <code>AttendeeCapabilities</code> except the capabilities listed in
-         * an <code>ExcludedAttendeeIds</code> table.</p><p><h3>See Also:</h3>   <a
+         * an <code>ExcludedAttendeeIds</code> table.</p>  <p>You use the
+         * capabilities with a set of values that control what the capabilities can do,
+         * such as <code>SendReceive</code> data. For more information about those values,
+         * see .</p>  <p>When using capabilities, be aware of these corner
+         * cases:</p> <ul> <li> <p>You can't set <code>content</code> capabilities to
+         * <code>SendReceive</code> or <code>Receive</code> unless you also set
+         * <code>video</code> capabilities to <code>SendReceive</code> or
+         * <code>Receive</code>. If you don't set the <code>video</code> capability to
+         * receive, the response will contain an HTTP 400 Bad Request status code. However,
+         * you can set your <code>video</code> capability to receive and you set your
+         * <code>content</code> capability to not receive.</p> </li> <li> <p>When you
+         * change an <code>audio</code> capability from <code>None</code> or
+         * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+         * the attendee left their microphone unmuted, audio will flow from the attendee to
+         * the other meeting participants.</p> </li> <li> <p>When you change a
+         * <code>video</code> or <code>content</code> capability from <code>None</code> or
+         * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+         * the attendee turned on their video or content streams, remote attendess can
+         * receive those streams, but only after media renegotiation between the client and
+         * the Amazon Chime back-end server.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/BatchUpdateAttendeeCapabilitiesExcept">AWS
          * API Reference</a></p>
          */
@@ -370,6 +286,24 @@ namespace Model
         virtual void ListAttendeesAsync(const Model::ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of the tags available for the specified
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts transcription for the specified <code>meetingId</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/StartMeetingTranscription">AWS
@@ -406,7 +340,74 @@ namespace Model
         virtual void StopMeetingTranscriptionAsync(const Model::StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The capabilties that you want to update.</p><p><h3>See Also:</h3>   <a
+         * <p>The resource that supports tags.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the specified tags from the specified resources. When you specify a
+         * tag key, the action removes both that key and its associated value. The
+         * operation succeeds even if you attempt to remove tags from a resource that were
+         * already removed. Note the following:</p> <ul> <li> <p>To remove tags from a
+         * resource, you need the necessary permissions for the service that the resource
+         * belongs to as well as permissions for removing tags. For more information, see
+         * the documentation for the service whose resource you want to untag.</p> </li>
+         * <li> <p>You can only tag resources that are located in the specified AWS Region
+         * for the calling AWS account.</p> </li> </ul> <p> <b>Minimum permissions</b> </p>
+         * <p>In addition to the <code>tag:UntagResources</code> permission required by
+         * this operation, you must also have the remove tags permission defined by the
+         * service that created the resource. For example, to remove the tags from an
+         * Amazon EC2 instance using the <code>UntagResources</code> operation, you must
+         * have both of the following permissions:</p> <p> <code>tag:UntagResource</code>
+         * </p> <p> <code>ChimeSDKMeetings:DeleteTags</code> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>The capabilties that you want to update.</p>  <p>You use the
+         * capabilities with a set of values that control what the capabilities can do,
+         * such as <code>SendReceive</code> data. For more information about those values,
+         * see .</p>  <p>When using capabilities, be aware of these corner
+         * cases:</p> <ul> <li> <p>You can't set <code>content</code> capabilities to
+         * <code>SendReceive</code> or <code>Receive</code> unless you also set
+         * <code>video</code> capabilities to <code>SendReceive</code> or
+         * <code>Receive</code>. If you don't set the <code>video</code> capability to
+         * receive, the response will contain an HTTP 400 Bad Request status code. However,
+         * you can set your <code>video</code> capability to receive and you set your
+         * <code>content</code> capability to not receive.</p> </li> <li> <p>When you
+         * change an <code>audio</code> capability from <code>None</code> or
+         * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+         * the attendee left their microphone unmuted, audio will flow from the attendee to
+         * the other meeting participants.</p> </li> <li> <p>When you change a
+         * <code>video</code> or <code>content</code> capability from <code>None</code> or
+         * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
+         * the attendee turned on their video or content streams, remote attendess can
+         * receive those streams, but only after media renegotiation between the client and
+         * the Amazon Chime back-end server.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/UpdateAttendeeCapabilities">AWS
          * API Reference</a></p>
          */
@@ -426,19 +427,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void BatchCreateAttendeeAsyncHelper(const Model::BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchUpdateAttendeeCapabilitiesExceptAsyncHelper(const Model::BatchUpdateAttendeeCapabilitiesExceptRequest& request, const BatchUpdateAttendeeCapabilitiesExceptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAttendeeAsyncHelper(const Model::CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateMeetingAsyncHelper(const Model::CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateMeetingWithAttendeesAsyncHelper(const Model::CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAttendeeAsyncHelper(const Model::DeleteAttendeeRequest& request, const DeleteAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteMeetingAsyncHelper(const Model::DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAttendeeAsyncHelper(const Model::GetAttendeeRequest& request, const GetAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetMeetingAsyncHelper(const Model::GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAttendeesAsyncHelper(const Model::ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartMeetingTranscriptionAsyncHelper(const Model::StartMeetingTranscriptionRequest& request, const StartMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopMeetingTranscriptionAsyncHelper(const Model::StopMeetingTranscriptionRequest& request, const StopMeetingTranscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAttendeeCapabilitiesAsyncHelper(const Model::UpdateAttendeeCapabilitiesRequest& request, const UpdateAttendeeCapabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

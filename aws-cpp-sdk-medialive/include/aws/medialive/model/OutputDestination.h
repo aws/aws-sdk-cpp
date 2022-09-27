@@ -213,16 +213,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::Vector<MediaPackageOutputDestinationSettings> m_mediaPackageSettings;
-    bool m_mediaPackageSettingsHasBeenSet;
+    bool m_mediaPackageSettingsHasBeenSet = false;
 
     MultiplexProgramChannelDestinationSettings m_multiplexSettings;
-    bool m_multiplexSettingsHasBeenSet;
+    bool m_multiplexSettingsHasBeenSet = false;
 
     Aws::Vector<OutputDestinationSettings> m_settings;
-    bool m_settingsHasBeenSet;
+    bool m_settingsHasBeenSet = false;
   };
 
 } // namespace Model

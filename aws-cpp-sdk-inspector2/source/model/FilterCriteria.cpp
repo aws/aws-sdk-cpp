@@ -35,6 +35,7 @@ FilterCriteria::FilterCriteria() :
     m_findingStatusHasBeenSet(false),
     m_findingTypeHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
+    m_fixAvailableHasBeenSet(false),
     m_inspectorScoreHasBeenSet(false),
     m_lastObservedAtHasBeenSet(false),
     m_networkProtocolHasBeenSet(false),
@@ -70,6 +71,7 @@ FilterCriteria::FilterCriteria(JsonView jsonValue) :
     m_findingStatusHasBeenSet(false),
     m_findingTypeHasBeenSet(false),
     m_firstObservedAtHasBeenSet(false),
+    m_fixAvailableHasBeenSet(false),
     m_inspectorScoreHasBeenSet(false),
     m_lastObservedAtHasBeenSet(false),
     m_networkProtocolHasBeenSet(false),
@@ -249,6 +251,16 @@ FilterCriteria& FilterCriteria::operator =(JsonView jsonValue)
       m_firstObservedAt.push_back(firstObservedAtJsonList[firstObservedAtIndex].AsObject());
     }
     m_firstObservedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fixAvailable"))
+  {
+    Array<JsonView> fixAvailableJsonList = jsonValue.GetArray("fixAvailable");
+    for(unsigned fixAvailableIndex = 0; fixAvailableIndex < fixAvailableJsonList.GetLength(); ++fixAvailableIndex)
+    {
+      m_fixAvailable.push_back(fixAvailableJsonList[fixAvailableIndex].AsObject());
+    }
+    m_fixAvailableHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inspectorScore"))
@@ -581,6 +593,17 @@ JsonValue FilterCriteria::Jsonize() const
      firstObservedAtJsonList[firstObservedAtIndex].AsObject(m_firstObservedAt[firstObservedAtIndex].Jsonize());
    }
    payload.WithArray("firstObservedAt", std::move(firstObservedAtJsonList));
+
+  }
+
+  if(m_fixAvailableHasBeenSet)
+  {
+   Array<JsonValue> fixAvailableJsonList(m_fixAvailable.size());
+   for(unsigned fixAvailableIndex = 0; fixAvailableIndex < fixAvailableJsonList.GetLength(); ++fixAvailableIndex)
+   {
+     fixAvailableJsonList[fixAvailableIndex].AsObject(m_fixAvailable[fixAvailableIndex].Jsonize());
+   }
+   payload.WithArray("fixAvailable", std::move(fixAvailableJsonList));
 
   }
 

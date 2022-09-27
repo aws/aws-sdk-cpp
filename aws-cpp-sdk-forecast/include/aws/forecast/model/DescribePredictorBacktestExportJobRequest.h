@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_predictorBacktestExportJobArn;
-    bool m_predictorBacktestExportJobArnHasBeenSet;
+    bool m_predictorBacktestExportJobArnHasBeenSet = false;
   };
 
 } // namespace Model

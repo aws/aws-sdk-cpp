@@ -365,13 +365,13 @@ namespace Model
   private:
 
     Aws::String m_cluster;
-    bool m_clusterHasBeenSet;
+    bool m_clusterHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_capacityProviders;
-    bool m_capacityProvidersHasBeenSet;
+    bool m_capacityProvidersHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_defaultCapacityProviderStrategy;
-    bool m_defaultCapacityProviderStrategyHasBeenSet;
+    bool m_defaultCapacityProviderStrategyHasBeenSet = false;
   };
 
 } // namespace Model

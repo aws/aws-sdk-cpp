@@ -204,13 +204,13 @@ namespace Model
   private:
 
     ResourceAttribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RequiresRecreation m_requiresRecreation;
-    bool m_requiresRecreationHasBeenSet;
+    bool m_requiresRecreationHasBeenSet = false;
   };
 
 } // namespace Model

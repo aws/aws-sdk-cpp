@@ -380,28 +380,28 @@ namespace Model
   private:
 
     Aws::String m_appId;
-    bool m_appIdHasBeenSet;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     JobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
 
     Aws::String m_jobReason;
-    bool m_jobReasonHasBeenSet;
+    bool m_jobReasonHasBeenSet = false;
 
     Aws::String m_commitId;
-    bool m_commitIdHasBeenSet;
+    bool m_commitIdHasBeenSet = false;
 
     Aws::String m_commitMessage;
-    bool m_commitMessageHasBeenSet;
+    bool m_commitMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_commitTime;
-    bool m_commitTimeHasBeenSet;
+    bool m_commitTimeHasBeenSet = false;
   };
 
 } // namespace Model

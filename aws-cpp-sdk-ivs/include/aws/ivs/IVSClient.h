@@ -5,195 +5,15 @@
 
 #pragma once
 #include <aws/ivs/IVS_EXPORTS.h>
-#include <aws/ivs/IVSErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/ivs/model/BatchGetChannelResult.h>
-#include <aws/ivs/model/BatchGetStreamKeyResult.h>
-#include <aws/ivs/model/CreateChannelResult.h>
-#include <aws/ivs/model/CreateRecordingConfigurationResult.h>
-#include <aws/ivs/model/CreateStreamKeyResult.h>
-#include <aws/ivs/model/DeletePlaybackKeyPairResult.h>
-#include <aws/ivs/model/GetChannelResult.h>
-#include <aws/ivs/model/GetPlaybackKeyPairResult.h>
-#include <aws/ivs/model/GetRecordingConfigurationResult.h>
-#include <aws/ivs/model/GetStreamResult.h>
-#include <aws/ivs/model/GetStreamKeyResult.h>
-#include <aws/ivs/model/GetStreamSessionResult.h>
-#include <aws/ivs/model/ImportPlaybackKeyPairResult.h>
-#include <aws/ivs/model/ListChannelsResult.h>
-#include <aws/ivs/model/ListPlaybackKeyPairsResult.h>
-#include <aws/ivs/model/ListRecordingConfigurationsResult.h>
-#include <aws/ivs/model/ListStreamKeysResult.h>
-#include <aws/ivs/model/ListStreamSessionsResult.h>
-#include <aws/ivs/model/ListStreamsResult.h>
-#include <aws/ivs/model/ListTagsForResourceResult.h>
-#include <aws/ivs/model/StopStreamResult.h>
-#include <aws/ivs/model/TagResourceResult.h>
-#include <aws/ivs/model/UntagResourceResult.h>
-#include <aws/ivs/model/UpdateChannelResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/ivs/IVSServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace IVS
 {
-
-namespace Model
-{
-        class BatchGetChannelRequest;
-        class BatchGetStreamKeyRequest;
-        class CreateChannelRequest;
-        class CreateRecordingConfigurationRequest;
-        class CreateStreamKeyRequest;
-        class DeleteChannelRequest;
-        class DeletePlaybackKeyPairRequest;
-        class DeleteRecordingConfigurationRequest;
-        class DeleteStreamKeyRequest;
-        class GetChannelRequest;
-        class GetPlaybackKeyPairRequest;
-        class GetRecordingConfigurationRequest;
-        class GetStreamRequest;
-        class GetStreamKeyRequest;
-        class GetStreamSessionRequest;
-        class ImportPlaybackKeyPairRequest;
-        class ListChannelsRequest;
-        class ListPlaybackKeyPairsRequest;
-        class ListRecordingConfigurationsRequest;
-        class ListStreamKeysRequest;
-        class ListStreamSessionsRequest;
-        class ListStreamsRequest;
-        class ListTagsForResourceRequest;
-        class PutMetadataRequest;
-        class StopStreamRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateChannelRequest;
-
-        typedef Aws::Utils::Outcome<BatchGetChannelResult, IVSError> BatchGetChannelOutcome;
-        typedef Aws::Utils::Outcome<BatchGetStreamKeyResult, IVSError> BatchGetStreamKeyOutcome;
-        typedef Aws::Utils::Outcome<CreateChannelResult, IVSError> CreateChannelOutcome;
-        typedef Aws::Utils::Outcome<CreateRecordingConfigurationResult, IVSError> CreateRecordingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<CreateStreamKeyResult, IVSError> CreateStreamKeyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeleteChannelOutcome;
-        typedef Aws::Utils::Outcome<DeletePlaybackKeyPairResult, IVSError> DeletePlaybackKeyPairOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeleteRecordingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeleteStreamKeyOutcome;
-        typedef Aws::Utils::Outcome<GetChannelResult, IVSError> GetChannelOutcome;
-        typedef Aws::Utils::Outcome<GetPlaybackKeyPairResult, IVSError> GetPlaybackKeyPairOutcome;
-        typedef Aws::Utils::Outcome<GetRecordingConfigurationResult, IVSError> GetRecordingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetStreamResult, IVSError> GetStreamOutcome;
-        typedef Aws::Utils::Outcome<GetStreamKeyResult, IVSError> GetStreamKeyOutcome;
-        typedef Aws::Utils::Outcome<GetStreamSessionResult, IVSError> GetStreamSessionOutcome;
-        typedef Aws::Utils::Outcome<ImportPlaybackKeyPairResult, IVSError> ImportPlaybackKeyPairOutcome;
-        typedef Aws::Utils::Outcome<ListChannelsResult, IVSError> ListChannelsOutcome;
-        typedef Aws::Utils::Outcome<ListPlaybackKeyPairsResult, IVSError> ListPlaybackKeyPairsOutcome;
-        typedef Aws::Utils::Outcome<ListRecordingConfigurationsResult, IVSError> ListRecordingConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListStreamKeysResult, IVSError> ListStreamKeysOutcome;
-        typedef Aws::Utils::Outcome<ListStreamSessionsResult, IVSError> ListStreamSessionsOutcome;
-        typedef Aws::Utils::Outcome<ListStreamsResult, IVSError> ListStreamsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IVSError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> PutMetadataOutcome;
-        typedef Aws::Utils::Outcome<StopStreamResult, IVSError> StopStreamOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, IVSError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, IVSError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateChannelResult, IVSError> UpdateChannelOutcome;
-
-        typedef std::future<BatchGetChannelOutcome> BatchGetChannelOutcomeCallable;
-        typedef std::future<BatchGetStreamKeyOutcome> BatchGetStreamKeyOutcomeCallable;
-        typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
-        typedef std::future<CreateRecordingConfigurationOutcome> CreateRecordingConfigurationOutcomeCallable;
-        typedef std::future<CreateStreamKeyOutcome> CreateStreamKeyOutcomeCallable;
-        typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
-        typedef std::future<DeletePlaybackKeyPairOutcome> DeletePlaybackKeyPairOutcomeCallable;
-        typedef std::future<DeleteRecordingConfigurationOutcome> DeleteRecordingConfigurationOutcomeCallable;
-        typedef std::future<DeleteStreamKeyOutcome> DeleteStreamKeyOutcomeCallable;
-        typedef std::future<GetChannelOutcome> GetChannelOutcomeCallable;
-        typedef std::future<GetPlaybackKeyPairOutcome> GetPlaybackKeyPairOutcomeCallable;
-        typedef std::future<GetRecordingConfigurationOutcome> GetRecordingConfigurationOutcomeCallable;
-        typedef std::future<GetStreamOutcome> GetStreamOutcomeCallable;
-        typedef std::future<GetStreamKeyOutcome> GetStreamKeyOutcomeCallable;
-        typedef std::future<GetStreamSessionOutcome> GetStreamSessionOutcomeCallable;
-        typedef std::future<ImportPlaybackKeyPairOutcome> ImportPlaybackKeyPairOutcomeCallable;
-        typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
-        typedef std::future<ListPlaybackKeyPairsOutcome> ListPlaybackKeyPairsOutcomeCallable;
-        typedef std::future<ListRecordingConfigurationsOutcome> ListRecordingConfigurationsOutcomeCallable;
-        typedef std::future<ListStreamKeysOutcome> ListStreamKeysOutcomeCallable;
-        typedef std::future<ListStreamSessionsOutcome> ListStreamSessionsOutcomeCallable;
-        typedef std::future<ListStreamsOutcome> ListStreamsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutMetadataOutcome> PutMetadataOutcomeCallable;
-        typedef std::future<StopStreamOutcome> StopStreamOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
-} // namespace Model
-
-  class IVSClient;
-
-    typedef std::function<void(const IVSClient*, const Model::BatchGetChannelRequest&, const Model::BatchGetChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetChannelResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::BatchGetStreamKeyRequest&, const Model::BatchGetStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetStreamKeyResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::CreateRecordingConfigurationRequest&, const Model::CreateRecordingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRecordingConfigurationResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::CreateStreamKeyRequest&, const Model::CreateStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamKeyResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::DeletePlaybackKeyPairRequest&, const Model::DeletePlaybackKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePlaybackKeyPairResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::DeleteRecordingConfigurationRequest&, const Model::DeleteRecordingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecordingConfigurationResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::DeleteStreamKeyRequest&, const Model::DeleteStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamKeyResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::GetChannelRequest&, const Model::GetChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetChannelResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::GetPlaybackKeyPairRequest&, const Model::GetPlaybackKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPlaybackKeyPairResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::GetRecordingConfigurationRequest&, const Model::GetRecordingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecordingConfigurationResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::GetStreamRequest&, const Model::GetStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::GetStreamKeyRequest&, const Model::GetStreamKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamKeyResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::GetStreamSessionRequest&, const Model::GetStreamSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStreamSessionResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::ImportPlaybackKeyPairRequest&, const Model::ImportPlaybackKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportPlaybackKeyPairResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::ListPlaybackKeyPairsRequest&, const Model::ListPlaybackKeyPairsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlaybackKeyPairsResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::ListRecordingConfigurationsRequest&, const Model::ListRecordingConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecordingConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::ListStreamKeysRequest&, const Model::ListStreamKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamKeysResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::ListStreamSessionsRequest&, const Model::ListStreamSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamSessionsResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::ListStreamsRequest&, const Model::ListStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamsResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::PutMetadataRequest&, const Model::PutMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetadataResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::StopStreamRequest&, const Model::StopStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const IVSClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
-
   /**
    * <p> <b>Introduction</b> </p> <p>The Amazon Interactive Video Service (IVS) API
    * is REST compatible, using a standard HTTP API and an Amazon Web Services
@@ -233,10 +53,11 @@ namespace Model
    * to label a particular video category. See <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
    * Amazon Web Services Resources</a> for more information, including restrictions
-   * that apply to tags.</p> <p>Tags can help you identify and organize your Amazon
-   * Web Services resources. For example, you can use the same tag for different
-   * resources to indicate that they are related. You can also use tags to manage
-   * access (see <a
+   * that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no
+   * service-specific constraints beyond what is documented there.</p> <p>Tags can
+   * help you identify and organize your Amazon Web Services resources. For example,
+   * you can use the same tag for different resources to indicate that they are
+   * related. You can also use tags to manage access (see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html"> Access
    * Tags</a>). </p> <p>The Amazon IVS API has these tag-related endpoints:
    * <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>. The
@@ -246,7 +67,8 @@ namespace Model
    * differences between these concepts:</p> <ul> <li> <p> <i>Authentication</i> is
    * about verifying identity. You need to be authenticated to sign Amazon IVS API
    * requests.</p> </li> <li> <p> <i>Authorization</i> is about granting permissions.
-   * You need to be authorized to view <a
+   * Your IAM roles need to have permissions for Amazon IVS API requests. In
+   * addition, authorization is needed to view <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Amazon
    * IVS private channels</a>. (Private channels are channels that are enabled for
    * "playback authorization.")</p> </li> </ul> <p> <b>Authentication</b> </p> <p>All
@@ -265,17 +87,22 @@ namespace Model
    * permissions — See <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/security-iam.html">Identity
    * and Access Management</a> on the Security page of the <i>Amazon IVS User
-   * Guide</i>.</p> </li> </ul> <p> <b>Channel Endpoints</b> </p> <ul> <li> <p>
-   * <a>CreateChannel</a> — Creates a new channel and an associated stream key to
-   * start streaming.</p> </li> <li> <p> <a>GetChannel</a> — Gets the channel
-   * configuration for the specified channel ARN (Amazon Resource Name).</p> </li>
-   * <li> <p> <a>BatchGetChannel</a> — Performs <a>GetChannel</a> on multiple ARNs
-   * simultaneously.</p> </li> <li> <p> <a>ListChannels</a> — Gets summary
-   * information about all channels in your account, in the Amazon Web Services
-   * region where the API request is processed. This list can be filtered to match a
-   * specified name or recording-configuration ARN. Filters are mutually exclusive
-   * and cannot be used together. If you try to use both filters, you will get an
-   * error (409 Conflict Exception).</p> </li> <li> <p> <a>UpdateChannel</a> —
+   * Guide</i>.</p> </li> </ul> <p> <b>Amazon Resource Names (ARNs)</b> </p> <p>ARNs
+   * uniquely identify AWS resources. An ARN is required when you need to specify a
+   * resource unambiguously across all of AWS, such as in IAM policies and API calls.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+   * Resource Names</a> in the <i>AWS General Reference</i>.</p> <p> <b>Channel
+   * Endpoints</b> </p> <ul> <li> <p> <a>CreateChannel</a> — Creates a new channel
+   * and an associated stream key to start streaming.</p> </li> <li> <p>
+   * <a>GetChannel</a> — Gets the channel configuration for the specified channel
+   * ARN.</p> </li> <li> <p> <a>BatchGetChannel</a> — Performs <a>GetChannel</a> on
+   * multiple ARNs simultaneously.</p> </li> <li> <p> <a>ListChannels</a> — Gets
+   * summary information about all channels in your account, in the Amazon Web
+   * Services region where the API request is processed. This list can be filtered to
+   * match a specified name or recording-configuration ARN. Filters are mutually
+   * exclusive and cannot be used together. If you try to use both filters, you will
+   * get an error (409 Conflict Exception).</p> </li> <li> <p> <a>UpdateChannel</a> —
    * Updates a channel's configuration. This does not affect an ongoing stream of
    * this channel. You must stop and restart the stream for the changes to take
    * effect.</p> </li> <li> <p> <a>DeleteChannel</a> — Deletes the specified
@@ -349,14 +176,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IVSClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IVSClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         IVSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~IVSClient();
 
@@ -922,34 +750,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void BatchGetChannelAsyncHelper(const Model::BatchGetChannelRequest& request, const BatchGetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetStreamKeyAsyncHelper(const Model::BatchGetStreamKeyRequest& request, const BatchGetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateChannelAsyncHelper(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRecordingConfigurationAsyncHelper(const Model::CreateRecordingConfigurationRequest& request, const CreateRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStreamKeyAsyncHelper(const Model::CreateStreamKeyRequest& request, const CreateStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteChannelAsyncHelper(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePlaybackKeyPairAsyncHelper(const Model::DeletePlaybackKeyPairRequest& request, const DeletePlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRecordingConfigurationAsyncHelper(const Model::DeleteRecordingConfigurationRequest& request, const DeleteRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStreamKeyAsyncHelper(const Model::DeleteStreamKeyRequest& request, const DeleteStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetChannelAsyncHelper(const Model::GetChannelRequest& request, const GetChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPlaybackKeyPairAsyncHelper(const Model::GetPlaybackKeyPairRequest& request, const GetPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRecordingConfigurationAsyncHelper(const Model::GetRecordingConfigurationRequest& request, const GetRecordingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetStreamAsyncHelper(const Model::GetStreamRequest& request, const GetStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetStreamKeyAsyncHelper(const Model::GetStreamKeyRequest& request, const GetStreamKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetStreamSessionAsyncHelper(const Model::GetStreamSessionRequest& request, const GetStreamSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ImportPlaybackKeyPairAsyncHelper(const Model::ImportPlaybackKeyPairRequest& request, const ImportPlaybackKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPlaybackKeyPairsAsyncHelper(const Model::ListPlaybackKeyPairsRequest& request, const ListPlaybackKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRecordingConfigurationsAsyncHelper(const Model::ListRecordingConfigurationsRequest& request, const ListRecordingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStreamKeysAsyncHelper(const Model::ListStreamKeysRequest& request, const ListStreamKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStreamSessionsAsyncHelper(const Model::ListStreamSessionsRequest& request, const ListStreamSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStreamsAsyncHelper(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutMetadataAsyncHelper(const Model::PutMetadataRequest& request, const PutMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopStreamAsyncHelper(const Model::StopStreamRequest& request, const StopStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateChannelAsyncHelper(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

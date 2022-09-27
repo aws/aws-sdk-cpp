@@ -154,45 +154,75 @@ namespace Model
 
 
     /**
-     * <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to GitHub if you require a secure SSL connection.</p> <p>You can
+     * simply generate a self-signed X509 certificate on any computer using OpenSSL.
+     * For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline const S3Path& GetSslCertificateS3Path() const{ return m_sslCertificateS3Path; }
 
     /**
-     * <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to GitHub if you require a secure SSL connection.</p> <p>You can
+     * simply generate a self-signed X509 certificate on any computer using OpenSSL.
+     * For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline bool SslCertificateS3PathHasBeenSet() const { return m_sslCertificateS3PathHasBeenSet; }
 
     /**
-     * <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to GitHub if you require a secure SSL connection.</p> <p>You can
+     * simply generate a self-signed X509 certificate on any computer using OpenSSL.
+     * For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline void SetSslCertificateS3Path(const S3Path& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = value; }
 
     /**
-     * <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to GitHub if you require a secure SSL connection.</p> <p>You can
+     * simply generate a self-signed X509 certificate on any computer using OpenSSL.
+     * For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline void SetSslCertificateS3Path(S3Path&& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = std::move(value); }
 
     /**
-     * <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to GitHub if you require a secure SSL connection.</p> <p>You can
+     * simply generate a self-signed X509 certificate on any computer using OpenSSL.
+     * For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline OnPremiseConfiguration& WithSslCertificateS3Path(const S3Path& value) { SetSslCertificateS3Path(value); return *this;}
 
     /**
-     * <p>Information required to find a specific file in an Amazon S3 bucket.</p>
+     * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
+     * to connect to GitHub if you require a secure SSL connection.</p> <p>You can
+     * simply generate a self-signed X509 certificate on any computer using OpenSSL.
+     * For an example of using OpenSSL to create an X509 certificate, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
+     * and sign an X509 certificate</a>.</p>
      */
     inline OnPremiseConfiguration& WithSslCertificateS3Path(S3Path&& value) { SetSslCertificateS3Path(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_hostUrl;
-    bool m_hostUrlHasBeenSet;
+    bool m_hostUrlHasBeenSet = false;
 
     Aws::String m_organizationName;
-    bool m_organizationNameHasBeenSet;
+    bool m_organizationNameHasBeenSet = false;
 
     S3Path m_sslCertificateS3Path;
-    bool m_sslCertificateS3PathHasBeenSet;
+    bool m_sslCertificateS3PathHasBeenSet = false;
   };
 
 } // namespace Model

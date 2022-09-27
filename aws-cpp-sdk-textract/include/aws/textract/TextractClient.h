@@ -5,108 +5,15 @@
 
 #pragma once
 #include <aws/textract/Textract_EXPORTS.h>
-#include <aws/textract/TextractErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/textract/model/AnalyzeDocumentResult.h>
-#include <aws/textract/model/AnalyzeExpenseResult.h>
-#include <aws/textract/model/AnalyzeIDResult.h>
-#include <aws/textract/model/DetectDocumentTextResult.h>
-#include <aws/textract/model/GetDocumentAnalysisResult.h>
-#include <aws/textract/model/GetDocumentTextDetectionResult.h>
-#include <aws/textract/model/GetExpenseAnalysisResult.h>
-#include <aws/textract/model/StartDocumentAnalysisResult.h>
-#include <aws/textract/model/StartDocumentTextDetectionResult.h>
-#include <aws/textract/model/StartExpenseAnalysisResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/textract/TextractServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Textract
 {
-
-namespace Model
-{
-        class AnalyzeDocumentRequest;
-        class AnalyzeExpenseRequest;
-        class AnalyzeIDRequest;
-        class DetectDocumentTextRequest;
-        class GetDocumentAnalysisRequest;
-        class GetDocumentTextDetectionRequest;
-        class GetExpenseAnalysisRequest;
-        class StartDocumentAnalysisRequest;
-        class StartDocumentTextDetectionRequest;
-        class StartExpenseAnalysisRequest;
-
-        typedef Aws::Utils::Outcome<AnalyzeDocumentResult, TextractError> AnalyzeDocumentOutcome;
-        typedef Aws::Utils::Outcome<AnalyzeExpenseResult, TextractError> AnalyzeExpenseOutcome;
-        typedef Aws::Utils::Outcome<AnalyzeIDResult, TextractError> AnalyzeIDOutcome;
-        typedef Aws::Utils::Outcome<DetectDocumentTextResult, TextractError> DetectDocumentTextOutcome;
-        typedef Aws::Utils::Outcome<GetDocumentAnalysisResult, TextractError> GetDocumentAnalysisOutcome;
-        typedef Aws::Utils::Outcome<GetDocumentTextDetectionResult, TextractError> GetDocumentTextDetectionOutcome;
-        typedef Aws::Utils::Outcome<GetExpenseAnalysisResult, TextractError> GetExpenseAnalysisOutcome;
-        typedef Aws::Utils::Outcome<StartDocumentAnalysisResult, TextractError> StartDocumentAnalysisOutcome;
-        typedef Aws::Utils::Outcome<StartDocumentTextDetectionResult, TextractError> StartDocumentTextDetectionOutcome;
-        typedef Aws::Utils::Outcome<StartExpenseAnalysisResult, TextractError> StartExpenseAnalysisOutcome;
-
-        typedef std::future<AnalyzeDocumentOutcome> AnalyzeDocumentOutcomeCallable;
-        typedef std::future<AnalyzeExpenseOutcome> AnalyzeExpenseOutcomeCallable;
-        typedef std::future<AnalyzeIDOutcome> AnalyzeIDOutcomeCallable;
-        typedef std::future<DetectDocumentTextOutcome> DetectDocumentTextOutcomeCallable;
-        typedef std::future<GetDocumentAnalysisOutcome> GetDocumentAnalysisOutcomeCallable;
-        typedef std::future<GetDocumentTextDetectionOutcome> GetDocumentTextDetectionOutcomeCallable;
-        typedef std::future<GetExpenseAnalysisOutcome> GetExpenseAnalysisOutcomeCallable;
-        typedef std::future<StartDocumentAnalysisOutcome> StartDocumentAnalysisOutcomeCallable;
-        typedef std::future<StartDocumentTextDetectionOutcome> StartDocumentTextDetectionOutcomeCallable;
-        typedef std::future<StartExpenseAnalysisOutcome> StartExpenseAnalysisOutcomeCallable;
-} // namespace Model
-
-  class TextractClient;
-
-    typedef std::function<void(const TextractClient*, const Model::AnalyzeDocumentRequest&, const Model::AnalyzeDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AnalyzeDocumentResponseReceivedHandler;
-    typedef std::function<void(const TextractClient*, const Model::AnalyzeExpenseRequest&, const Model::AnalyzeExpenseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AnalyzeExpenseResponseReceivedHandler;
-    typedef std::function<void(const TextractClient*, const Model::AnalyzeIDRequest&, const Model::AnalyzeIDOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AnalyzeIDResponseReceivedHandler;
-    typedef std::function<void(const TextractClient*, const Model::DetectDocumentTextRequest&, const Model::DetectDocumentTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectDocumentTextResponseReceivedHandler;
-    typedef std::function<void(const TextractClient*, const Model::GetDocumentAnalysisRequest&, const Model::GetDocumentAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentAnalysisResponseReceivedHandler;
-    typedef std::function<void(const TextractClient*, const Model::GetDocumentTextDetectionRequest&, const Model::GetDocumentTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentTextDetectionResponseReceivedHandler;
-    typedef std::function<void(const TextractClient*, const Model::GetExpenseAnalysisRequest&, const Model::GetExpenseAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExpenseAnalysisResponseReceivedHandler;
-    typedef std::function<void(const TextractClient*, const Model::StartDocumentAnalysisRequest&, const Model::StartDocumentAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDocumentAnalysisResponseReceivedHandler;
-    typedef std::function<void(const TextractClient*, const Model::StartDocumentTextDetectionRequest&, const Model::StartDocumentTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDocumentTextDetectionResponseReceivedHandler;
-    typedef std::function<void(const TextractClient*, const Model::StartExpenseAnalysisRequest&, const Model::StartExpenseAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExpenseAnalysisResponseReceivedHandler;
-
   /**
    * <p>Amazon Textract detects and analyzes text in documents and converts it into
    * machine-readable text. This is the API reference documentation for Amazon
@@ -127,14 +34,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        TextractClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        TextractClient(const Aws::Auth::AWSCredentials& credentials,
+                       const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         TextractClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                       const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~TextractClient();
 
@@ -497,16 +405,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AnalyzeDocumentAsyncHelper(const Model::AnalyzeDocumentRequest& request, const AnalyzeDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AnalyzeExpenseAsyncHelper(const Model::AnalyzeExpenseRequest& request, const AnalyzeExpenseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AnalyzeIDAsyncHelper(const Model::AnalyzeIDRequest& request, const AnalyzeIDResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetectDocumentTextAsyncHelper(const Model::DetectDocumentTextRequest& request, const DetectDocumentTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDocumentAnalysisAsyncHelper(const Model::GetDocumentAnalysisRequest& request, const GetDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDocumentTextDetectionAsyncHelper(const Model::GetDocumentTextDetectionRequest& request, const GetDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetExpenseAnalysisAsyncHelper(const Model::GetExpenseAnalysisRequest& request, const GetExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartDocumentAnalysisAsyncHelper(const Model::StartDocumentAnalysisRequest& request, const StartDocumentAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartDocumentTextDetectionAsyncHelper(const Model::StartDocumentTextDetectionRequest& request, const StartDocumentTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartExpenseAnalysisAsyncHelper(const Model::StartExpenseAnalysisRequest& request, const StartExpenseAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

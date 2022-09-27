@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_ipAddress;
-    bool m_ipAddressHasBeenSet;
+    bool m_ipAddressHasBeenSet = false;
 
     Aws::String m_encodedData;
-    bool m_encodedDataHasBeenSet;
+    bool m_encodedDataHasBeenSet = false;
   };
 
 } // namespace Model

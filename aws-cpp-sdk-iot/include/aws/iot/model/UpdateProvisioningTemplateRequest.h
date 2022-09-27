@@ -34,104 +34,104 @@ namespace Model
 
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline UpdateProvisioningTemplateRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline UpdateProvisioningTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the fleet provisioning template.</p>
+     * <p>The name of the provisioning template.</p>
      */
     inline UpdateProvisioningTemplateRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
 
     /**
-     * <p>The description of the fleet provisioning template.</p>
+     * <p>The description of the provisioning template.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the fleet provisioning template.</p>
+     * <p>The description of the provisioning template.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the fleet provisioning template.</p>
+     * <p>The description of the provisioning template.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the fleet provisioning template.</p>
+     * <p>The description of the provisioning template.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the fleet provisioning template.</p>
+     * <p>The description of the provisioning template.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the fleet provisioning template.</p>
+     * <p>The description of the provisioning template.</p>
      */
     inline UpdateProvisioningTemplateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the fleet provisioning template.</p>
+     * <p>The description of the provisioning template.</p>
      */
     inline UpdateProvisioningTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the fleet provisioning template.</p>
+     * <p>The description of the provisioning template.</p>
      */
     inline UpdateProvisioningTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>True to enable the fleet provisioning template, otherwise false.</p>
+     * <p>True to enable the provisioning template, otherwise false.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>True to enable the fleet provisioning template, otherwise false.</p>
+     * <p>True to enable the provisioning template, otherwise false.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>True to enable the fleet provisioning template, otherwise false.</p>
+     * <p>True to enable the provisioning template, otherwise false.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>True to enable the fleet provisioning template, otherwise false.</p>
+     * <p>True to enable the provisioning template, otherwise false.</p>
      */
     inline UpdateProvisioningTemplateRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
@@ -260,25 +260,25 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     int m_defaultVersionId;
-    bool m_defaultVersionIdHasBeenSet;
+    bool m_defaultVersionIdHasBeenSet = false;
 
     Aws::String m_provisioningRoleArn;
-    bool m_provisioningRoleArnHasBeenSet;
+    bool m_provisioningRoleArnHasBeenSet = false;
 
     ProvisioningHook m_preProvisioningHook;
-    bool m_preProvisioningHookHasBeenSet;
+    bool m_preProvisioningHookHasBeenSet = false;
 
     bool m_removePreProvisioningHook;
-    bool m_removePreProvisioningHookHasBeenSet;
+    bool m_removePreProvisioningHookHasBeenSet = false;
   };
 
 } // namespace Model

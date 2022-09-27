@@ -24,7 +24,8 @@ SlotValueElicitationSetting::SlotValueElicitationSetting() :
     m_slotConstraintHasBeenSet(false),
     m_promptSpecificationHasBeenSet(false),
     m_sampleUtterancesHasBeenSet(false),
-    m_waitAndContinueSpecificationHasBeenSet(false)
+    m_waitAndContinueSpecificationHasBeenSet(false),
+    m_slotCaptureSettingHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ SlotValueElicitationSetting::SlotValueElicitationSetting(JsonView jsonValue) :
     m_slotConstraintHasBeenSet(false),
     m_promptSpecificationHasBeenSet(false),
     m_sampleUtterancesHasBeenSet(false),
-    m_waitAndContinueSpecificationHasBeenSet(false)
+    m_waitAndContinueSpecificationHasBeenSet(false),
+    m_slotCaptureSettingHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +81,13 @@ SlotValueElicitationSetting& SlotValueElicitationSetting::operator =(JsonView js
     m_waitAndContinueSpecificationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("slotCaptureSetting"))
+  {
+    m_slotCaptureSetting = jsonValue.GetObject("slotCaptureSetting");
+
+    m_slotCaptureSettingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -117,6 +126,12 @@ JsonValue SlotValueElicitationSetting::Jsonize() const
   if(m_waitAndContinueSpecificationHasBeenSet)
   {
    payload.WithObject("waitAndContinueSpecification", m_waitAndContinueSpecification.Jsonize());
+
+  }
+
+  if(m_slotCaptureSettingHasBeenSet)
+  {
+   payload.WithObject("slotCaptureSetting", m_slotCaptureSetting.Jsonize());
 
   }
 

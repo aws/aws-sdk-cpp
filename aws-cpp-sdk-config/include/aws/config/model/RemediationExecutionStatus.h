@@ -197,19 +197,19 @@ namespace Model
   private:
 
     ResourceKey m_resourceKey;
-    bool m_resourceKeyHasBeenSet;
+    bool m_resourceKeyHasBeenSet = false;
 
     RemediationExecutionState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<RemediationExecutionStep> m_stepDetails;
-    bool m_stepDetailsHasBeenSet;
+    bool m_stepDetailsHasBeenSet = false;
 
     Aws::Utils::DateTime m_invocationTime;
-    bool m_invocationTimeHasBeenSet;
+    bool m_invocationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -235,16 +235,16 @@ namespace Model
   private:
 
     Aws::String m_pipelineId;
-    bool m_pipelineIdHasBeenSet;
+    bool m_pipelineIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_objectIds;
-    bool m_objectIdsHasBeenSet;
+    bool m_objectIdsHasBeenSet = false;
 
     bool m_evaluateExpressions;
-    bool m_evaluateExpressionsHasBeenSet;
+    bool m_evaluateExpressionsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

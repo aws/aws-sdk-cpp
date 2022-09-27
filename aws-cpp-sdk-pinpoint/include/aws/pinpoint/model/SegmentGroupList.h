@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::Vector<SegmentGroup> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Include m_include;
-    bool m_includeHasBeenSet;
+    bool m_includeHasBeenSet = false;
   };
 
 } // namespace Model

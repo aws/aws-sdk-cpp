@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_majorVersion;
-    bool m_majorVersionHasBeenSet;
+    bool m_majorVersionHasBeenSet = false;
 
     Aws::String m_minorVersion;
-    bool m_minorVersionHasBeenSet;
+    bool m_minorVersionHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

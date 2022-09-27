@@ -187,16 +187,16 @@ namespace Model
   private:
 
     Aws::String m_s3BucketArn;
-    bool m_s3BucketArnHasBeenSet;
+    bool m_s3BucketArnHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     OrganizationConfiguration m_organizationConfiguration;
-    bool m_organizationConfigurationHasBeenSet;
+    bool m_organizationConfigurationHasBeenSet = false;
 
     bool m_enableCrossAccountsDiscovery;
-    bool m_enableCrossAccountsDiscoveryHasBeenSet;
+    bool m_enableCrossAccountsDiscoveryHasBeenSet = false;
   };
 
 } // namespace Model

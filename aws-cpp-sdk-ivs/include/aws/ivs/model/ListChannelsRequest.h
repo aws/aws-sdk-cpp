@@ -123,22 +123,22 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of channels to return. Default: 50.</p>
+     * <p>Maximum number of channels to return. Default: 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of channels to return. Default: 50.</p>
+     * <p>Maximum number of channels to return. Default: 100.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Maximum number of channels to return. Default: 50.</p>
+     * <p>Maximum number of channels to return. Default: 100.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of channels to return. Default: 50.</p>
+     * <p>Maximum number of channels to return. Default: 100.</p>
      */
     inline ListChannelsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -194,16 +194,16 @@ namespace Model
   private:
 
     Aws::String m_filterByName;
-    bool m_filterByNameHasBeenSet;
+    bool m_filterByNameHasBeenSet = false;
 
     Aws::String m_filterByRecordingConfigurationArn;
-    bool m_filterByRecordingConfigurationArnHasBeenSet;
+    bool m_filterByRecordingConfigurationArnHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

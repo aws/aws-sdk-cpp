@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::Vector<InstanceGroupConfig> m_instanceGroups;
-    bool m_instanceGroupsHasBeenSet;
+    bool m_instanceGroupsHasBeenSet = false;
 
     Aws::String m_jobFlowId;
-    bool m_jobFlowIdHasBeenSet;
+    bool m_jobFlowIdHasBeenSet = false;
   };
 
 } // namespace Model

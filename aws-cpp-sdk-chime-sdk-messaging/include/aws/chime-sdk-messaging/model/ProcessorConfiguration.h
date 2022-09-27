@@ -70,7 +70,7 @@ namespace Model
   private:
 
     LambdaConfiguration m_lambda;
-    bool m_lambdaHasBeenSet;
+    bool m_lambdaHasBeenSet = false;
   };
 
 } // namespace Model

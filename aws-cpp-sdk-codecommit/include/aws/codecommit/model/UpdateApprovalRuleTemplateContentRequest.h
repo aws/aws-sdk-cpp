@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_approvalRuleTemplateName;
-    bool m_approvalRuleTemplateNameHasBeenSet;
+    bool m_approvalRuleTemplateNameHasBeenSet = false;
 
     Aws::String m_newRuleContent;
-    bool m_newRuleContentHasBeenSet;
+    bool m_newRuleContentHasBeenSet = false;
 
     Aws::String m_existingRuleContentSha256;
-    bool m_existingRuleContentSha256HasBeenSet;
+    bool m_existingRuleContentSha256HasBeenSet = false;
   };
 
 } // namespace Model

@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagKeyList;
-    bool m_tagKeyListHasBeenSet;
+    bool m_tagKeyListHasBeenSet = false;
   };
 
 } // namespace Model

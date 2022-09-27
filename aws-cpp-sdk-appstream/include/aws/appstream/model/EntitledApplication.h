@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_applicationIdentifier;
-    bool m_applicationIdentifierHasBeenSet;
+    bool m_applicationIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

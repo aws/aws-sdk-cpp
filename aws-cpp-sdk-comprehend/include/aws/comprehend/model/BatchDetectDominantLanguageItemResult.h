@@ -112,10 +112,10 @@ namespace Model
   private:
 
     int m_index;
-    bool m_indexHasBeenSet;
+    bool m_indexHasBeenSet = false;
 
     Aws::Vector<DominantLanguage> m_languages;
-    bool m_languagesHasBeenSet;
+    bool m_languagesHasBeenSet = false;
   };
 
 } // namespace Model

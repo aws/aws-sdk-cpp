@@ -244,16 +244,16 @@ namespace Model
   private:
 
     Aws::String m_primaryKeyColumnName;
-    bool m_primaryKeyColumnNameHasBeenSet;
+    bool m_primaryKeyColumnNameHasBeenSet = false;
 
     double m_precisionRecallTradeoff;
-    bool m_precisionRecallTradeoffHasBeenSet;
+    bool m_precisionRecallTradeoffHasBeenSet = false;
 
     double m_accuracyCostTradeoff;
-    bool m_accuracyCostTradeoffHasBeenSet;
+    bool m_accuracyCostTradeoffHasBeenSet = false;
 
     bool m_enforceProvidedLabels;
-    bool m_enforceProvidedLabelsHasBeenSet;
+    bool m_enforceProvidedLabelsHasBeenSet = false;
   };
 
 } // namespace Model

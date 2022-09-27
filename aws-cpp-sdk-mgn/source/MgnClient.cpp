@@ -21,13 +21,16 @@
 #include <aws/mgn/MgnEndpoint.h>
 #include <aws/mgn/MgnErrorMarshaller.h>
 #include <aws/mgn/model/ChangeServerLifeCycleStateRequest.h>
+#include <aws/mgn/model/CreateLaunchConfigurationTemplateRequest.h>
 #include <aws/mgn/model/CreateReplicationConfigurationTemplateRequest.h>
 #include <aws/mgn/model/DeleteJobRequest.h>
+#include <aws/mgn/model/DeleteLaunchConfigurationTemplateRequest.h>
 #include <aws/mgn/model/DeleteReplicationConfigurationTemplateRequest.h>
 #include <aws/mgn/model/DeleteSourceServerRequest.h>
 #include <aws/mgn/model/DeleteVcenterClientRequest.h>
 #include <aws/mgn/model/DescribeJobLogItemsRequest.h>
 #include <aws/mgn/model/DescribeJobsRequest.h>
+#include <aws/mgn/model/DescribeLaunchConfigurationTemplatesRequest.h>
 #include <aws/mgn/model/DescribeReplicationConfigurationTemplatesRequest.h>
 #include <aws/mgn/model/DescribeSourceServersRequest.h>
 #include <aws/mgn/model/DescribeVcenterClientsRequest.h>
@@ -46,6 +49,7 @@
 #include <aws/mgn/model/TerminateTargetInstancesRequest.h>
 #include <aws/mgn/model/UntagResourceRequest.h>
 #include <aws/mgn/model/UpdateLaunchConfigurationRequest.h>
+#include <aws/mgn/model/UpdateLaunchConfigurationTemplateRequest.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationRequest.h>
 #include <aws/mgn/model/UpdateReplicationConfigurationTemplateRequest.h>
 #include <aws/mgn/model/UpdateSourceServerReplicationTypeRequest.h>
@@ -61,33 +65,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "mgn";
 static const char* ALLOCATION_TAG = "MgnClient";
 
-
 MgnClient::MgnClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<MgnErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MgnErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-MgnClient::MgnClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+MgnClient::MgnClient(const AWSCredentials& credentials,
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<MgnErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MgnErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 MgnClient::MgnClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<MgnErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MgnErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -99,7 +109,7 @@ MgnClient::~MgnClient()
 
 void MgnClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("mgn");
+  AWSClient::SetServiceClientName("mgn");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -140,12 +150,33 @@ ChangeServerLifeCycleStateOutcomeCallable MgnClient::ChangeServerLifeCycleStateC
 
 void MgnClient::ChangeServerLifeCycleStateAsync(const ChangeServerLifeCycleStateRequest& request, const ChangeServerLifeCycleStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ChangeServerLifeCycleStateAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ChangeServerLifeCycleState(request), context);
+    } );
 }
 
-void MgnClient::ChangeServerLifeCycleStateAsyncHelper(const ChangeServerLifeCycleStateRequest& request, const ChangeServerLifeCycleStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+CreateLaunchConfigurationTemplateOutcome MgnClient::CreateLaunchConfigurationTemplate(const CreateLaunchConfigurationTemplateRequest& request) const
 {
-  handler(this, request, ChangeServerLifeCycleState(request), context);
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/CreateLaunchConfigurationTemplate");
+  return CreateLaunchConfigurationTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLaunchConfigurationTemplateOutcomeCallable MgnClient::CreateLaunchConfigurationTemplateCallable(const CreateLaunchConfigurationTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLaunchConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLaunchConfigurationTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::CreateLaunchConfigurationTemplateAsync(const CreateLaunchConfigurationTemplateRequest& request, const CreateLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateLaunchConfigurationTemplate(request), context);
+    } );
 }
 
 CreateReplicationConfigurationTemplateOutcome MgnClient::CreateReplicationConfigurationTemplate(const CreateReplicationConfigurationTemplateRequest& request) const
@@ -165,12 +196,10 @@ CreateReplicationConfigurationTemplateOutcomeCallable MgnClient::CreateReplicati
 
 void MgnClient::CreateReplicationConfigurationTemplateAsync(const CreateReplicationConfigurationTemplateRequest& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReplicationConfigurationTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::CreateReplicationConfigurationTemplateAsyncHelper(const CreateReplicationConfigurationTemplateRequest& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateReplicationConfigurationTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateReplicationConfigurationTemplate(request), context);
+    } );
 }
 
 DeleteJobOutcome MgnClient::DeleteJob(const DeleteJobRequest& request) const
@@ -190,12 +219,33 @@ DeleteJobOutcomeCallable MgnClient::DeleteJobCallable(const DeleteJobRequest& re
 
 void MgnClient::DeleteJobAsync(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteJob(request), context);
+    } );
 }
 
-void MgnClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+DeleteLaunchConfigurationTemplateOutcome MgnClient::DeleteLaunchConfigurationTemplate(const DeleteLaunchConfigurationTemplateRequest& request) const
 {
-  handler(this, request, DeleteJob(request), context);
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/DeleteLaunchConfigurationTemplate");
+  return DeleteLaunchConfigurationTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteLaunchConfigurationTemplateOutcomeCallable MgnClient::DeleteLaunchConfigurationTemplateCallable(const DeleteLaunchConfigurationTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLaunchConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLaunchConfigurationTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::DeleteLaunchConfigurationTemplateAsync(const DeleteLaunchConfigurationTemplateRequest& request, const DeleteLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLaunchConfigurationTemplate(request), context);
+    } );
 }
 
 DeleteReplicationConfigurationTemplateOutcome MgnClient::DeleteReplicationConfigurationTemplate(const DeleteReplicationConfigurationTemplateRequest& request) const
@@ -215,12 +265,10 @@ DeleteReplicationConfigurationTemplateOutcomeCallable MgnClient::DeleteReplicati
 
 void MgnClient::DeleteReplicationConfigurationTemplateAsync(const DeleteReplicationConfigurationTemplateRequest& request, const DeleteReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReplicationConfigurationTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::DeleteReplicationConfigurationTemplateAsyncHelper(const DeleteReplicationConfigurationTemplateRequest& request, const DeleteReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteReplicationConfigurationTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteReplicationConfigurationTemplate(request), context);
+    } );
 }
 
 DeleteSourceServerOutcome MgnClient::DeleteSourceServer(const DeleteSourceServerRequest& request) const
@@ -240,12 +288,10 @@ DeleteSourceServerOutcomeCallable MgnClient::DeleteSourceServerCallable(const De
 
 void MgnClient::DeleteSourceServerAsync(const DeleteSourceServerRequest& request, const DeleteSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSourceServerAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::DeleteSourceServerAsyncHelper(const DeleteSourceServerRequest& request, const DeleteSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteSourceServer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSourceServer(request), context);
+    } );
 }
 
 DeleteVcenterClientOutcome MgnClient::DeleteVcenterClient(const DeleteVcenterClientRequest& request) const
@@ -265,12 +311,10 @@ DeleteVcenterClientOutcomeCallable MgnClient::DeleteVcenterClientCallable(const 
 
 void MgnClient::DeleteVcenterClientAsync(const DeleteVcenterClientRequest& request, const DeleteVcenterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVcenterClientAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::DeleteVcenterClientAsyncHelper(const DeleteVcenterClientRequest& request, const DeleteVcenterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteVcenterClient(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVcenterClient(request), context);
+    } );
 }
 
 DescribeJobLogItemsOutcome MgnClient::DescribeJobLogItems(const DescribeJobLogItemsRequest& request) const
@@ -290,12 +334,10 @@ DescribeJobLogItemsOutcomeCallable MgnClient::DescribeJobLogItemsCallable(const 
 
 void MgnClient::DescribeJobLogItemsAsync(const DescribeJobLogItemsRequest& request, const DescribeJobLogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobLogItemsAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::DescribeJobLogItemsAsyncHelper(const DescribeJobLogItemsRequest& request, const DescribeJobLogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeJobLogItems(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeJobLogItems(request), context);
+    } );
 }
 
 DescribeJobsOutcome MgnClient::DescribeJobs(const DescribeJobsRequest& request) const
@@ -315,12 +357,33 @@ DescribeJobsOutcomeCallable MgnClient::DescribeJobsCallable(const DescribeJobsRe
 
 void MgnClient::DescribeJobsAsync(const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobsAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeJobs(request), context);
+    } );
 }
 
-void MgnClient::DescribeJobsAsyncHelper(const DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+DescribeLaunchConfigurationTemplatesOutcome MgnClient::DescribeLaunchConfigurationTemplates(const DescribeLaunchConfigurationTemplatesRequest& request) const
 {
-  handler(this, request, DescribeJobs(request), context);
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/DescribeLaunchConfigurationTemplates");
+  return DescribeLaunchConfigurationTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeLaunchConfigurationTemplatesOutcomeCallable MgnClient::DescribeLaunchConfigurationTemplatesCallable(const DescribeLaunchConfigurationTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLaunchConfigurationTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLaunchConfigurationTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::DescribeLaunchConfigurationTemplatesAsync(const DescribeLaunchConfigurationTemplatesRequest& request, const DescribeLaunchConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeLaunchConfigurationTemplates(request), context);
+    } );
 }
 
 DescribeReplicationConfigurationTemplatesOutcome MgnClient::DescribeReplicationConfigurationTemplates(const DescribeReplicationConfigurationTemplatesRequest& request) const
@@ -340,12 +403,10 @@ DescribeReplicationConfigurationTemplatesOutcomeCallable MgnClient::DescribeRepl
 
 void MgnClient::DescribeReplicationConfigurationTemplatesAsync(const DescribeReplicationConfigurationTemplatesRequest& request, const DescribeReplicationConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReplicationConfigurationTemplatesAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::DescribeReplicationConfigurationTemplatesAsyncHelper(const DescribeReplicationConfigurationTemplatesRequest& request, const DescribeReplicationConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeReplicationConfigurationTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeReplicationConfigurationTemplates(request), context);
+    } );
 }
 
 DescribeSourceServersOutcome MgnClient::DescribeSourceServers(const DescribeSourceServersRequest& request) const
@@ -365,12 +426,10 @@ DescribeSourceServersOutcomeCallable MgnClient::DescribeSourceServersCallable(co
 
 void MgnClient::DescribeSourceServersAsync(const DescribeSourceServersRequest& request, const DescribeSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSourceServersAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::DescribeSourceServersAsyncHelper(const DescribeSourceServersRequest& request, const DescribeSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeSourceServers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeSourceServers(request), context);
+    } );
 }
 
 DescribeVcenterClientsOutcome MgnClient::DescribeVcenterClients(const DescribeVcenterClientsRequest& request) const
@@ -390,12 +449,10 @@ DescribeVcenterClientsOutcomeCallable MgnClient::DescribeVcenterClientsCallable(
 
 void MgnClient::DescribeVcenterClientsAsync(const DescribeVcenterClientsRequest& request, const DescribeVcenterClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVcenterClientsAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::DescribeVcenterClientsAsyncHelper(const DescribeVcenterClientsRequest& request, const DescribeVcenterClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeVcenterClients(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVcenterClients(request), context);
+    } );
 }
 
 DisconnectFromServiceOutcome MgnClient::DisconnectFromService(const DisconnectFromServiceRequest& request) const
@@ -415,12 +472,10 @@ DisconnectFromServiceOutcomeCallable MgnClient::DisconnectFromServiceCallable(co
 
 void MgnClient::DisconnectFromServiceAsync(const DisconnectFromServiceRequest& request, const DisconnectFromServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisconnectFromServiceAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::DisconnectFromServiceAsyncHelper(const DisconnectFromServiceRequest& request, const DisconnectFromServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisconnectFromService(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisconnectFromService(request), context);
+    } );
 }
 
 FinalizeCutoverOutcome MgnClient::FinalizeCutover(const FinalizeCutoverRequest& request) const
@@ -440,12 +495,10 @@ FinalizeCutoverOutcomeCallable MgnClient::FinalizeCutoverCallable(const Finalize
 
 void MgnClient::FinalizeCutoverAsync(const FinalizeCutoverRequest& request, const FinalizeCutoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->FinalizeCutoverAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::FinalizeCutoverAsyncHelper(const FinalizeCutoverRequest& request, const FinalizeCutoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, FinalizeCutover(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, FinalizeCutover(request), context);
+    } );
 }
 
 GetLaunchConfigurationOutcome MgnClient::GetLaunchConfiguration(const GetLaunchConfigurationRequest& request) const
@@ -465,12 +518,10 @@ GetLaunchConfigurationOutcomeCallable MgnClient::GetLaunchConfigurationCallable(
 
 void MgnClient::GetLaunchConfigurationAsync(const GetLaunchConfigurationRequest& request, const GetLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLaunchConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::GetLaunchConfigurationAsyncHelper(const GetLaunchConfigurationRequest& request, const GetLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetLaunchConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLaunchConfiguration(request), context);
+    } );
 }
 
 GetReplicationConfigurationOutcome MgnClient::GetReplicationConfiguration(const GetReplicationConfigurationRequest& request) const
@@ -490,12 +541,10 @@ GetReplicationConfigurationOutcomeCallable MgnClient::GetReplicationConfiguratio
 
 void MgnClient::GetReplicationConfigurationAsync(const GetReplicationConfigurationRequest& request, const GetReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReplicationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::GetReplicationConfigurationAsyncHelper(const GetReplicationConfigurationRequest& request, const GetReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetReplicationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetReplicationConfiguration(request), context);
+    } );
 }
 
 InitializeServiceOutcome MgnClient::InitializeService(const InitializeServiceRequest& request) const
@@ -515,12 +564,10 @@ InitializeServiceOutcomeCallable MgnClient::InitializeServiceCallable(const Init
 
 void MgnClient::InitializeServiceAsync(const InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->InitializeServiceAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::InitializeServiceAsyncHelper(const InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, InitializeService(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, InitializeService(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome MgnClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -546,12 +593,10 @@ ListTagsForResourceOutcomeCallable MgnClient::ListTagsForResourceCallable(const 
 
 void MgnClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 MarkAsArchivedOutcome MgnClient::MarkAsArchived(const MarkAsArchivedRequest& request) const
@@ -571,12 +616,10 @@ MarkAsArchivedOutcomeCallable MgnClient::MarkAsArchivedCallable(const MarkAsArch
 
 void MgnClient::MarkAsArchivedAsync(const MarkAsArchivedRequest& request, const MarkAsArchivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->MarkAsArchivedAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::MarkAsArchivedAsyncHelper(const MarkAsArchivedRequest& request, const MarkAsArchivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, MarkAsArchived(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, MarkAsArchived(request), context);
+    } );
 }
 
 RetryDataReplicationOutcome MgnClient::RetryDataReplication(const RetryDataReplicationRequest& request) const
@@ -596,12 +639,10 @@ RetryDataReplicationOutcomeCallable MgnClient::RetryDataReplicationCallable(cons
 
 void MgnClient::RetryDataReplicationAsync(const RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RetryDataReplicationAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::RetryDataReplicationAsyncHelper(const RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RetryDataReplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RetryDataReplication(request), context);
+    } );
 }
 
 StartCutoverOutcome MgnClient::StartCutover(const StartCutoverRequest& request) const
@@ -621,12 +662,10 @@ StartCutoverOutcomeCallable MgnClient::StartCutoverCallable(const StartCutoverRe
 
 void MgnClient::StartCutoverAsync(const StartCutoverRequest& request, const StartCutoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartCutoverAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::StartCutoverAsyncHelper(const StartCutoverRequest& request, const StartCutoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartCutover(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartCutover(request), context);
+    } );
 }
 
 StartReplicationOutcome MgnClient::StartReplication(const StartReplicationRequest& request) const
@@ -646,12 +685,10 @@ StartReplicationOutcomeCallable MgnClient::StartReplicationCallable(const StartR
 
 void MgnClient::StartReplicationAsync(const StartReplicationRequest& request, const StartReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartReplicationAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::StartReplicationAsyncHelper(const StartReplicationRequest& request, const StartReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartReplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartReplication(request), context);
+    } );
 }
 
 StartTestOutcome MgnClient::StartTest(const StartTestRequest& request) const
@@ -671,12 +708,10 @@ StartTestOutcomeCallable MgnClient::StartTestCallable(const StartTestRequest& re
 
 void MgnClient::StartTestAsync(const StartTestRequest& request, const StartTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartTestAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::StartTestAsyncHelper(const StartTestRequest& request, const StartTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartTest(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartTest(request), context);
+    } );
 }
 
 TagResourceOutcome MgnClient::TagResource(const TagResourceRequest& request) const
@@ -702,12 +737,10 @@ TagResourceOutcomeCallable MgnClient::TagResourceCallable(const TagResourceReque
 
 void MgnClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 TerminateTargetInstancesOutcome MgnClient::TerminateTargetInstances(const TerminateTargetInstancesRequest& request) const
@@ -727,12 +760,10 @@ TerminateTargetInstancesOutcomeCallable MgnClient::TerminateTargetInstancesCalla
 
 void MgnClient::TerminateTargetInstancesAsync(const TerminateTargetInstancesRequest& request, const TerminateTargetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TerminateTargetInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::TerminateTargetInstancesAsyncHelper(const TerminateTargetInstancesRequest& request, const TerminateTargetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TerminateTargetInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TerminateTargetInstances(request), context);
+    } );
 }
 
 UntagResourceOutcome MgnClient::UntagResource(const UntagResourceRequest& request) const
@@ -763,12 +794,10 @@ UntagResourceOutcomeCallable MgnClient::UntagResourceCallable(const UntagResourc
 
 void MgnClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateLaunchConfigurationOutcome MgnClient::UpdateLaunchConfiguration(const UpdateLaunchConfigurationRequest& request) const
@@ -788,12 +817,33 @@ UpdateLaunchConfigurationOutcomeCallable MgnClient::UpdateLaunchConfigurationCal
 
 void MgnClient::UpdateLaunchConfigurationAsync(const UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLaunchConfigurationAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateLaunchConfiguration(request), context);
+    } );
 }
 
-void MgnClient::UpdateLaunchConfigurationAsyncHelper(const UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+UpdateLaunchConfigurationTemplateOutcome MgnClient::UpdateLaunchConfigurationTemplate(const UpdateLaunchConfigurationTemplateRequest& request) const
 {
-  handler(this, request, UpdateLaunchConfiguration(request), context);
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/UpdateLaunchConfigurationTemplate");
+  return UpdateLaunchConfigurationTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLaunchConfigurationTemplateOutcomeCallable MgnClient::UpdateLaunchConfigurationTemplateCallable(const UpdateLaunchConfigurationTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLaunchConfigurationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLaunchConfigurationTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MgnClient::UpdateLaunchConfigurationTemplateAsync(const UpdateLaunchConfigurationTemplateRequest& request, const UpdateLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateLaunchConfigurationTemplate(request), context);
+    } );
 }
 
 UpdateReplicationConfigurationOutcome MgnClient::UpdateReplicationConfiguration(const UpdateReplicationConfigurationRequest& request) const
@@ -813,12 +863,10 @@ UpdateReplicationConfigurationOutcomeCallable MgnClient::UpdateReplicationConfig
 
 void MgnClient::UpdateReplicationConfigurationAsync(const UpdateReplicationConfigurationRequest& request, const UpdateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateReplicationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::UpdateReplicationConfigurationAsyncHelper(const UpdateReplicationConfigurationRequest& request, const UpdateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateReplicationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateReplicationConfiguration(request), context);
+    } );
 }
 
 UpdateReplicationConfigurationTemplateOutcome MgnClient::UpdateReplicationConfigurationTemplate(const UpdateReplicationConfigurationTemplateRequest& request) const
@@ -838,12 +886,10 @@ UpdateReplicationConfigurationTemplateOutcomeCallable MgnClient::UpdateReplicati
 
 void MgnClient::UpdateReplicationConfigurationTemplateAsync(const UpdateReplicationConfigurationTemplateRequest& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateReplicationConfigurationTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::UpdateReplicationConfigurationTemplateAsyncHelper(const UpdateReplicationConfigurationTemplateRequest& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateReplicationConfigurationTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateReplicationConfigurationTemplate(request), context);
+    } );
 }
 
 UpdateSourceServerReplicationTypeOutcome MgnClient::UpdateSourceServerReplicationType(const UpdateSourceServerReplicationTypeRequest& request) const
@@ -863,11 +909,9 @@ UpdateSourceServerReplicationTypeOutcomeCallable MgnClient::UpdateSourceServerRe
 
 void MgnClient::UpdateSourceServerReplicationTypeAsync(const UpdateSourceServerReplicationTypeRequest& request, const UpdateSourceServerReplicationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSourceServerReplicationTypeAsyncHelper( request, handler, context ); } );
-}
-
-void MgnClient::UpdateSourceServerReplicationTypeAsyncHelper(const UpdateSourceServerReplicationTypeRequest& request, const UpdateSourceServerReplicationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateSourceServerReplicationType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSourceServerReplicationType(request), context);
+    } );
 }
 

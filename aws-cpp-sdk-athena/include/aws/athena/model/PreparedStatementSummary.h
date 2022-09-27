@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_statementName;
-    bool m_statementNameHasBeenSet;
+    bool m_statementNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

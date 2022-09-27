@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::String m_sqlInjectionMatchSetId;
-    bool m_sqlInjectionMatchSetIdHasBeenSet;
+    bool m_sqlInjectionMatchSetIdHasBeenSet = false;
   };
 
 } // namespace Model

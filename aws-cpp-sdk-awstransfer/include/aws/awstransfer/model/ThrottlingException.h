@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The request was denied due to request throttling.</p> <p> HTTP Status Code:
-   * 400</p><p><h3>See Also:</h3>   <a
+   * <p>The request was denied due to request throttling.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ThrottlingException">AWS
    * API Reference</a></p>
    */
@@ -65,7 +65,7 @@ namespace Model
   private:
 
     Aws::String m_retryAfterSeconds;
-    bool m_retryAfterSecondsHasBeenSet;
+    bool m_retryAfterSecondsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,7 +23,8 @@ LoRaWANGateway::LoRaWANGateway() :
     m_rfRegionHasBeenSet(false),
     m_joinEuiFiltersHasBeenSet(false),
     m_netIdFiltersHasBeenSet(false),
-    m_subBandsHasBeenSet(false)
+    m_subBandsHasBeenSet(false),
+    m_beaconingHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ LoRaWANGateway::LoRaWANGateway(JsonView jsonValue) :
     m_rfRegionHasBeenSet(false),
     m_joinEuiFiltersHasBeenSet(false),
     m_netIdFiltersHasBeenSet(false),
-    m_subBandsHasBeenSet(false)
+    m_subBandsHasBeenSet(false),
+    m_beaconingHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -90,6 +92,13 @@ LoRaWANGateway& LoRaWANGateway::operator =(JsonView jsonValue)
     m_subBandsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Beaconing"))
+  {
+    m_beaconing = jsonValue.GetObject("Beaconing");
+
+    m_beaconingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -144,6 +153,12 @@ JsonValue LoRaWANGateway::Jsonize() const
      subBandsJsonList[subBandsIndex].AsInteger(m_subBands[subBandsIndex]);
    }
    payload.WithArray("SubBands", std::move(subBandsJsonList));
+
+  }
+
+  if(m_beaconingHasBeenSet)
+  {
+   payload.WithObject("Beaconing", m_beaconing.Jsonize());
 
   }
 

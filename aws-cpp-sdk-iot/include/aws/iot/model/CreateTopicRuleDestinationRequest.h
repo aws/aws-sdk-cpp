@@ -65,7 +65,7 @@ namespace Model
   private:
 
     TopicRuleDestinationConfiguration m_destinationConfiguration;
-    bool m_destinationConfigurationHasBeenSet;
+    bool m_destinationConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -335,25 +335,25 @@ namespace Model
   private:
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::Vector<AttributeType> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Utils::DateTime m_userCreateDate;
-    bool m_userCreateDateHasBeenSet;
+    bool m_userCreateDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_userLastModifiedDate;
-    bool m_userLastModifiedDateHasBeenSet;
+    bool m_userLastModifiedDateHasBeenSet = false;
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     UserStatusType m_userStatus;
-    bool m_userStatusHasBeenSet;
+    bool m_userStatusHasBeenSet = false;
 
     Aws::Vector<MFAOptionType> m_mFAOptions;
-    bool m_mFAOptionsHasBeenSet;
+    bool m_mFAOptionsHasBeenSet = false;
   };
 
 } // namespace Model

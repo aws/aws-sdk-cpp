@@ -166,13 +166,13 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::Utils::DateTime m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
   };
 
 } // namespace Model

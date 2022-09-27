@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_ionText;
-    bool m_ionTextHasBeenSet;
+    bool m_ionTextHasBeenSet = false;
   };
 
 } // namespace Model

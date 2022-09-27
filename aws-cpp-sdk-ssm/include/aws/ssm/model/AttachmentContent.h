@@ -216,19 +216,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::String m_hash;
-    bool m_hashHasBeenSet;
+    bool m_hashHasBeenSet = false;
 
     AttachmentHashType m_hashType;
-    bool m_hashTypeHasBeenSet;
+    bool m_hashTypeHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

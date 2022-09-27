@@ -123,13 +123,13 @@ namespace Model
   private:
 
     int m_cpuCount;
-    bool m_cpuCountHasBeenSet;
+    bool m_cpuCountHasBeenSet = false;
 
     Aws::Vector<Disk> m_disks;
-    bool m_disksHasBeenSet;
+    bool m_disksHasBeenSet = false;
 
     double m_ramSizeInGb;
-    bool m_ramSizeInGbHasBeenSet;
+    bool m_ramSizeInGbHasBeenSet = false;
   };
 
 } // namespace Model

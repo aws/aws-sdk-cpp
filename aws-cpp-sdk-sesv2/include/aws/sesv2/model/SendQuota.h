@@ -122,13 +122,13 @@ namespace Model
   private:
 
     double m_max24HourSend;
-    bool m_max24HourSendHasBeenSet;
+    bool m_max24HourSendHasBeenSet = false;
 
     double m_maxSendRate;
-    bool m_maxSendRateHasBeenSet;
+    bool m_maxSendRateHasBeenSet = false;
 
     double m_sentLast24Hours;
-    bool m_sentLast24HoursHasBeenSet;
+    bool m_sentLast24HoursHasBeenSet = false;
   };
 
 } // namespace Model

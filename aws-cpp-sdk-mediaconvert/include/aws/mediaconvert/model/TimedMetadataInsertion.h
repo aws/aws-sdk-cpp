@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::Vector<Id3Insertion> m_id3Insertions;
-    bool m_id3InsertionsHasBeenSet;
+    bool m_id3InsertionsHasBeenSet = false;
   };
 
 } // namespace Model

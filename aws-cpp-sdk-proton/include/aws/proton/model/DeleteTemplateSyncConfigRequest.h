@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
 
     TemplateType m_templateType;
-    bool m_templateTypeHasBeenSet;
+    bool m_templateTypeHasBeenSet = false;
   };
 
 } // namespace Model

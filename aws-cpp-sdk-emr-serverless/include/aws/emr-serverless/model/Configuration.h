@@ -201,13 +201,13 @@ namespace Model
   private:
 
     Aws::String m_classification;
-    bool m_classificationHasBeenSet;
+    bool m_classificationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_properties;
-    bool m_propertiesHasBeenSet;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::Vector<Configuration> m_configurations;
-    bool m_configurationsHasBeenSet;
+    bool m_configurationsHasBeenSet = false;
   };
 
 } // namespace Model

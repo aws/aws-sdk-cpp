@@ -401,56 +401,56 @@ namespace Model
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline const Aws::String& GetTableState() const{ return m_tableState; }
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline bool TableStateHasBeenSet() const { return m_tableStateHasBeenSet; }
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline void SetTableState(const Aws::String& value) { m_tableStateHasBeenSet = true; m_tableState = value; }
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline void SetTableState(Aws::String&& value) { m_tableStateHasBeenSet = true; m_tableState = std::move(value); }
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline void SetTableState(const char* value) { m_tableStateHasBeenSet = true; m_tableState.assign(value); }
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline TableStatistics& WithTableState(const Aws::String& value) { SetTableState(value); return *this;}
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline TableStatistics& WithTableState(Aws::String&& value) { SetTableState(std::move(value)); return *this;}
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
      * | Before load | Full load | Table completed | Table cancelled | Table error |
-     * Table all | Table updates | Table is being reloaded</p>
+     * Table is being reloaded</p>
      */
     inline TableStatistics& WithTableState(const char* value) { SetTableState(value); return *this;}
 
@@ -722,61 +722,61 @@ namespace Model
   private:
 
     Aws::String m_schemaName;
-    bool m_schemaNameHasBeenSet;
+    bool m_schemaNameHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     long long m_inserts;
-    bool m_insertsHasBeenSet;
+    bool m_insertsHasBeenSet = false;
 
     long long m_deletes;
-    bool m_deletesHasBeenSet;
+    bool m_deletesHasBeenSet = false;
 
     long long m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
 
     long long m_ddls;
-    bool m_ddlsHasBeenSet;
+    bool m_ddlsHasBeenSet = false;
 
     long long m_fullLoadRows;
-    bool m_fullLoadRowsHasBeenSet;
+    bool m_fullLoadRowsHasBeenSet = false;
 
     long long m_fullLoadCondtnlChkFailedRows;
-    bool m_fullLoadCondtnlChkFailedRowsHasBeenSet;
+    bool m_fullLoadCondtnlChkFailedRowsHasBeenSet = false;
 
     long long m_fullLoadErrorRows;
-    bool m_fullLoadErrorRowsHasBeenSet;
+    bool m_fullLoadErrorRowsHasBeenSet = false;
 
     Aws::Utils::DateTime m_fullLoadStartTime;
-    bool m_fullLoadStartTimeHasBeenSet;
+    bool m_fullLoadStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_fullLoadEndTime;
-    bool m_fullLoadEndTimeHasBeenSet;
+    bool m_fullLoadEndTimeHasBeenSet = false;
 
     bool m_fullLoadReloaded;
-    bool m_fullLoadReloadedHasBeenSet;
+    bool m_fullLoadReloadedHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
 
     Aws::String m_tableState;
-    bool m_tableStateHasBeenSet;
+    bool m_tableStateHasBeenSet = false;
 
     long long m_validationPendingRecords;
-    bool m_validationPendingRecordsHasBeenSet;
+    bool m_validationPendingRecordsHasBeenSet = false;
 
     long long m_validationFailedRecords;
-    bool m_validationFailedRecordsHasBeenSet;
+    bool m_validationFailedRecordsHasBeenSet = false;
 
     long long m_validationSuspendedRecords;
-    bool m_validationSuspendedRecordsHasBeenSet;
+    bool m_validationSuspendedRecordsHasBeenSet = false;
 
     Aws::String m_validationState;
-    bool m_validationStateHasBeenSet;
+    bool m_validationStateHasBeenSet = false;
 
     Aws::String m_validationStateDetails;
-    bool m_validationStateDetailsHasBeenSet;
+    bool m_validationStateDetailsHasBeenSet = false;
   };
 
 } // namespace Model

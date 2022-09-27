@@ -26,7 +26,11 @@ Workforce::Workforce() :
     m_subDomainHasBeenSet(false),
     m_cognitoConfigHasBeenSet(false),
     m_oidcConfigHasBeenSet(false),
-    m_createDateHasBeenSet(false)
+    m_createDateHasBeenSet(false),
+    m_workforceVpcConfigHasBeenSet(false),
+    m_status(WorkforceStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_failureReasonHasBeenSet(false)
 {
 }
 
@@ -38,7 +42,11 @@ Workforce::Workforce(JsonView jsonValue) :
     m_subDomainHasBeenSet(false),
     m_cognitoConfigHasBeenSet(false),
     m_oidcConfigHasBeenSet(false),
-    m_createDateHasBeenSet(false)
+    m_createDateHasBeenSet(false),
+    m_workforceVpcConfigHasBeenSet(false),
+    m_status(WorkforceStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_failureReasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +109,27 @@ Workforce& Workforce::operator =(JsonView jsonValue)
     m_createDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkforceVpcConfig"))
+  {
+    m_workforceVpcConfig = jsonValue.GetObject("WorkforceVpcConfig");
+
+    m_workforceVpcConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = WorkforceStatusMapper::GetWorkforceStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FailureReason"))
+  {
+    m_failureReason = jsonValue.GetString("FailureReason");
+
+    m_failureReasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -152,6 +181,23 @@ JsonValue Workforce::Jsonize() const
   if(m_createDateHasBeenSet)
   {
    payload.WithDouble("CreateDate", m_createDate.SecondsWithMSPrecision());
+  }
+
+  if(m_workforceVpcConfigHasBeenSet)
+  {
+   payload.WithObject("WorkforceVpcConfig", m_workforceVpcConfig.Jsonize());
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", WorkforceStatusMapper::GetNameForWorkforceStatus(m_status));
+  }
+
+  if(m_failureReasonHasBeenSet)
+  {
+   payload.WithString("FailureReason", m_failureReason);
+
   }
 
   return payload;

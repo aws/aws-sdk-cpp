@@ -5,123 +5,15 @@
 
 #pragma once
 #include <aws/synthetics/Synthetics_EXPORTS.h>
-#include <aws/synthetics/SyntheticsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/synthetics/model/CreateCanaryResult.h>
-#include <aws/synthetics/model/DeleteCanaryResult.h>
-#include <aws/synthetics/model/DescribeCanariesResult.h>
-#include <aws/synthetics/model/DescribeCanariesLastRunResult.h>
-#include <aws/synthetics/model/DescribeRuntimeVersionsResult.h>
-#include <aws/synthetics/model/GetCanaryResult.h>
-#include <aws/synthetics/model/GetCanaryRunsResult.h>
-#include <aws/synthetics/model/ListTagsForResourceResult.h>
-#include <aws/synthetics/model/StartCanaryResult.h>
-#include <aws/synthetics/model/StopCanaryResult.h>
-#include <aws/synthetics/model/TagResourceResult.h>
-#include <aws/synthetics/model/UntagResourceResult.h>
-#include <aws/synthetics/model/UpdateCanaryResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/synthetics/SyntheticsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Synthetics
 {
-
-namespace Model
-{
-        class CreateCanaryRequest;
-        class DeleteCanaryRequest;
-        class DescribeCanariesRequest;
-        class DescribeCanariesLastRunRequest;
-        class DescribeRuntimeVersionsRequest;
-        class GetCanaryRequest;
-        class GetCanaryRunsRequest;
-        class ListTagsForResourceRequest;
-        class StartCanaryRequest;
-        class StopCanaryRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateCanaryRequest;
-
-        typedef Aws::Utils::Outcome<CreateCanaryResult, SyntheticsError> CreateCanaryOutcome;
-        typedef Aws::Utils::Outcome<DeleteCanaryResult, SyntheticsError> DeleteCanaryOutcome;
-        typedef Aws::Utils::Outcome<DescribeCanariesResult, SyntheticsError> DescribeCanariesOutcome;
-        typedef Aws::Utils::Outcome<DescribeCanariesLastRunResult, SyntheticsError> DescribeCanariesLastRunOutcome;
-        typedef Aws::Utils::Outcome<DescribeRuntimeVersionsResult, SyntheticsError> DescribeRuntimeVersionsOutcome;
-        typedef Aws::Utils::Outcome<GetCanaryResult, SyntheticsError> GetCanaryOutcome;
-        typedef Aws::Utils::Outcome<GetCanaryRunsResult, SyntheticsError> GetCanaryRunsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SyntheticsError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartCanaryResult, SyntheticsError> StartCanaryOutcome;
-        typedef Aws::Utils::Outcome<StopCanaryResult, SyntheticsError> StopCanaryOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, SyntheticsError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, SyntheticsError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateCanaryResult, SyntheticsError> UpdateCanaryOutcome;
-
-        typedef std::future<CreateCanaryOutcome> CreateCanaryOutcomeCallable;
-        typedef std::future<DeleteCanaryOutcome> DeleteCanaryOutcomeCallable;
-        typedef std::future<DescribeCanariesOutcome> DescribeCanariesOutcomeCallable;
-        typedef std::future<DescribeCanariesLastRunOutcome> DescribeCanariesLastRunOutcomeCallable;
-        typedef std::future<DescribeRuntimeVersionsOutcome> DescribeRuntimeVersionsOutcomeCallable;
-        typedef std::future<GetCanaryOutcome> GetCanaryOutcomeCallable;
-        typedef std::future<GetCanaryRunsOutcome> GetCanaryRunsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<StartCanaryOutcome> StartCanaryOutcomeCallable;
-        typedef std::future<StopCanaryOutcome> StopCanaryOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateCanaryOutcome> UpdateCanaryOutcomeCallable;
-} // namespace Model
-
-  class SyntheticsClient;
-
-    typedef std::function<void(const SyntheticsClient*, const Model::CreateCanaryRequest&, const Model::CreateCanaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCanaryResponseReceivedHandler;
-    typedef std::function<void(const SyntheticsClient*, const Model::DeleteCanaryRequest&, const Model::DeleteCanaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCanaryResponseReceivedHandler;
-    typedef std::function<void(const SyntheticsClient*, const Model::DescribeCanariesRequest&, const Model::DescribeCanariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCanariesResponseReceivedHandler;
-    typedef std::function<void(const SyntheticsClient*, const Model::DescribeCanariesLastRunRequest&, const Model::DescribeCanariesLastRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCanariesLastRunResponseReceivedHandler;
-    typedef std::function<void(const SyntheticsClient*, const Model::DescribeRuntimeVersionsRequest&, const Model::DescribeRuntimeVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuntimeVersionsResponseReceivedHandler;
-    typedef std::function<void(const SyntheticsClient*, const Model::GetCanaryRequest&, const Model::GetCanaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCanaryResponseReceivedHandler;
-    typedef std::function<void(const SyntheticsClient*, const Model::GetCanaryRunsRequest&, const Model::GetCanaryRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCanaryRunsResponseReceivedHandler;
-    typedef std::function<void(const SyntheticsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const SyntheticsClient*, const Model::StartCanaryRequest&, const Model::StartCanaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCanaryResponseReceivedHandler;
-    typedef std::function<void(const SyntheticsClient*, const Model::StopCanaryRequest&, const Model::StopCanaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCanaryResponseReceivedHandler;
-    typedef std::function<void(const SyntheticsClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const SyntheticsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const SyntheticsClient*, const Model::UpdateCanaryRequest&, const Model::UpdateCanaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCanaryResponseReceivedHandler;
-
   /**
    * <fullname>Amazon CloudWatch Synthetics</fullname> <p>You can use Amazon
    * CloudWatch Synthetics to continually monitor your services. You can create and
@@ -154,17 +46,38 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SyntheticsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SyntheticsClient(const Aws::Auth::AWSCredentials& credentials,
+                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SyntheticsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                         const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~SyntheticsClient();
 
+
+        /**
+         * <p>Associates a canary with a group. Using groups can help you with managing and
+         * automating your canaries, and you can also view aggregated run results and
+         * statistics for all canaries in a group. </p> <p>You must run this operation in
+         * the Region where the canary exists.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/AssociateResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateResourceOutcome AssociateResource(const Model::AssociateResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateResourceOutcomeCallable AssociateResourceCallable(const Model::AssociateResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for AssociateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateResourceAsync(const Model::AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a canary. Canaries are scripts that monitor your endpoints and APIs
@@ -176,7 +89,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a>
          * instead.</p> <p>To create canaries, you must have the
          * <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a new
-         * IAM role for the canary, you also need the the <code>iam:CreateRole</code>,
+         * IAM role for the canary, you also need the <code>iam:CreateRole</code>,
          * <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
@@ -202,10 +115,42 @@ namespace Model
         virtual void CreateCanaryAsync(const Model::CreateCanaryRequest& request, const CreateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a group which you can use to associate canaries with each other,
+         * including cross-Region canaries. Using groups can help you with managing and
+         * automating your canaries, and you can also view aggregated run results and
+         * statistics for all canaries in a group. </p> <p>Groups are global resources.
+         * When you create a group, it is replicated across Amazon Web Services Regions,
+         * and you can view it and add canaries to it from any Region. Although the group
+         * ARN format reflects the Region name where it was created, a group is not
+         * constrained to any Region. This means that you can put canaries from multiple
+         * Regions into the same group, and then use that group to view and manage all of
+         * those canaries in a single view.</p> <p>Groups are supported in all Regions
+         * except the Regions that are disabled by default. For more information about
+         * these Regions, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Enabling
+         * a Region</a>.</p> <p>Each group can contain as many as 10 canaries. You can have
+         * as many as 20 groups in your account. Any single canary can be a member of up to
+         * 10 groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CreateGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Permanently deletes the specified canary.</p> <p>If you specify
          * <code>DeleteLambda</code> to <code>true</code>, CloudWatch Synthetics also
          * deletes the Lambda functions and layers that are used by the canary.</p>
-         * <p>Other esources used and created by the canary are not automatically deleted.
+         * <p>Other resources used and created by the canary are not automatically deleted.
          * After you delete a canary that you do not intend to use again, you should also
          * delete the following:</p> <ul> <li> <p>The CloudWatch alarms created for this
          * canary. These alarms have a name of
@@ -234,6 +179,27 @@ namespace Model
          * An Async wrapper for DeleteCanary that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCanaryAsync(const Model::DeleteCanaryRequest& request, const DeleteCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a group. The group doesn't need to be empty to be deleted. If there
+         * are canaries in the group, they are not deleted when you delete the group. </p>
+         * <p>Groups are a global resource that appear in all Regions, but the request to
+         * delete a group must be made from its home Region. You can find the home Region
+         * of a group within its ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DeleteGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation returns a list of the canaries in your account, along with
@@ -312,6 +278,24 @@ namespace Model
         virtual void DescribeRuntimeVersionsAsync(const Model::DescribeRuntimeVersionsRequest& request, const DescribeRuntimeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes a canary from a group. You must run this operation in the Region
+         * where the canary exists.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/DisassociateResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateResourceOutcome DisassociateResource(const Model::DisassociateResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateResourceOutcomeCallable DisassociateResourceCallable(const Model::DisassociateResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for DisassociateResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateResourceAsync(const Model::DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves complete information about one canary. You must specify the name of
          * the canary that you want. To get a list of canaries and their names, use <a
          * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p><p><h3>See
@@ -350,7 +334,82 @@ namespace Model
         virtual void GetCanaryRunsAsync(const Model::GetCanaryRunsRequest& request, const GetCanaryRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Displays the tags associated with a canary.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about one group. Groups are a global resource, so you can
+         * use this operation from any Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/GetGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for GetGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of the groups that the specified canary is associated with.
+         * The canary that you specify must be in the current Region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListAssociatedGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssociatedGroupsOutcome ListAssociatedGroups(const Model::ListAssociatedGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAssociatedGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAssociatedGroupsOutcomeCallable ListAssociatedGroupsCallable(const Model::ListAssociatedGroupsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListAssociatedGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAssociatedGroupsAsync(const Model::ListAssociatedGroupsRequest& request, const ListAssociatedGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>This operation returns a list of the ARNs of the canaries that are associated
+         * with the specified group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListGroupResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListGroupResourcesOutcome ListGroupResources(const Model::ListGroupResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListGroupResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListGroupResourcesOutcomeCallable ListGroupResourcesCallable(const Model::ListGroupResourcesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListGroupResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListGroupResourcesAsync(const Model::ListGroupResourcesRequest& request, const ListGroupResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of all groups in the account, displaying their names, unique
+         * IDs, and ARNs. The groups from all Regions are returned.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListGroupsOutcome ListGroups(const Model::ListGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListGroupsOutcomeCallable ListGroupsCallable(const Model::ListGroupsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Displays the tags associated with a canary or group.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -389,12 +448,11 @@ namespace Model
 
         /**
          * <p>Stops the canary to prevent all future runs. If the canary is currently
-         * running, Synthetics stops waiting for the current run of the specified canary to
-         * complete. The run that is in progress completes on its own, publishes metrics,
-         * and uploads artifacts, but it is not recorded in Synthetics as a completed
-         * run.</p> <p>You can use <code>StartCanary</code> to start it running again with
-         * the canary’s current schedule at any point in the future. </p><p><h3>See
-         * Also:</h3>   <a
+         * running,the run that is in progress completes on its own, publishes metrics, and
+         * uploads artifacts, but it is not recorded in Synthetics as a completed run.</p>
+         * <p>You can use <code>StartCanary</code> to start it running again with the
+         * canary’s current schedule at any point in the future. </p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/StopCanary">AWS
          * API Reference</a></p>
          */
@@ -411,17 +469,18 @@ namespace Model
         virtual void StopCanaryAsync(const Model::StopCanaryRequest& request, const StopCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Assigns one or more tags (key-value pairs) to the specified canary. </p>
-         * <p>Tags can help you organize and categorize your resources. You can also use
-         * them to scope user permissions, by granting a user permission to access or
+         * <p>Assigns one or more tags (key-value pairs) to the specified canary or group.
+         * </p> <p>Tags can help you organize and categorize your resources. You can also
+         * use them to scope user permissions, by granting a user permission to access or
          * change only resources with certain tag values.</p> <p>Tags don't have any
          * semantic meaning to Amazon Web Services and are interpreted strictly as strings
          * of characters.</p> <p>You can use the <code>TagResource</code> action with a
-         * canary that already has tags. If you specify a new tag key for the alarm, this
-         * tag is appended to the list of tags associated with the alarm. If you specify a
-         * tag key that is already associated with the alarm, the new tag value that you
-         * specify replaces the previous value for that tag.</p> <p>You can associate as
-         * many as 50 tags with a canary.</p><p><h3>See Also:</h3>   <a
+         * resource that already has tags. If you specify a new tag key for the resource,
+         * this tag is appended to the list of tags associated with the resource. If you
+         * specify a tag key that is already associated with the resource, the new tag
+         * value that you specify replaces the previous value for that tag.</p> <p>You can
+         * associate as many as 50 tags with a canary or group.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/TagResource">AWS
          * API Reference</a></p>
          */
@@ -438,8 +497,8 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags from the specified canary.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Removes one or more tags from the specified resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -456,9 +515,9 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use this operation to change the settings of a canary that has already been
-         * created.</p> <p>You can't use this operation to update the tags of an existing
-         * canary. To change the tags of an existing canary, use <a
+         * <p>Updates the configuration of a canary that has already been created.</p>
+         * <p>You can't use this operation to update the tags of an existing canary. To
+         * change the tags of an existing canary, use <a
          * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html">TagResource</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/UpdateCanary">AWS
@@ -480,19 +539,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateCanaryAsyncHelper(const Model::CreateCanaryRequest& request, const CreateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCanaryAsyncHelper(const Model::DeleteCanaryRequest& request, const DeleteCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCanariesAsyncHelper(const Model::DescribeCanariesRequest& request, const DescribeCanariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCanariesLastRunAsyncHelper(const Model::DescribeCanariesLastRunRequest& request, const DescribeCanariesLastRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRuntimeVersionsAsyncHelper(const Model::DescribeRuntimeVersionsRequest& request, const DescribeRuntimeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCanaryAsyncHelper(const Model::GetCanaryRequest& request, const GetCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCanaryRunsAsyncHelper(const Model::GetCanaryRunsRequest& request, const GetCanaryRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartCanaryAsyncHelper(const Model::StartCanaryRequest& request, const StartCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopCanaryAsyncHelper(const Model::StopCanaryRequest& request, const StopCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateCanaryAsyncHelper(const Model::UpdateCanaryRequest& request, const UpdateCanaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

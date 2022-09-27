@@ -200,16 +200,16 @@ namespace Model
   private:
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     int m_importedFileChunkSize;
-    bool m_importedFileChunkSizeHasBeenSet;
+    bool m_importedFileChunkSizeHasBeenSet = false;
 
     S3DataRepositoryConfiguration m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
   };
 
 } // namespace Model

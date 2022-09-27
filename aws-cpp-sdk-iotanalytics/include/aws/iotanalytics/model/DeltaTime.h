@@ -146,10 +146,10 @@ namespace Model
   private:
 
     int m_offsetSeconds;
-    bool m_offsetSecondsHasBeenSet;
+    bool m_offsetSecondsHasBeenSet = false;
 
     Aws::String m_timeExpression;
-    bool m_timeExpressionHasBeenSet;
+    bool m_timeExpressionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_fileSystemId;
-    bool m_fileSystemIdHasBeenSet;
+    bool m_fileSystemIdHasBeenSet = false;
 
     FileSystemAccessMode m_fileSystemAccessMode;
-    bool m_fileSystemAccessModeHasBeenSet;
+    bool m_fileSystemAccessModeHasBeenSet = false;
 
     FileSystemType m_fileSystemType;
-    bool m_fileSystemTypeHasBeenSet;
+    bool m_fileSystemTypeHasBeenSet = false;
 
     Aws::String m_directoryPath;
-    bool m_directoryPathHasBeenSet;
+    bool m_directoryPathHasBeenSet = false;
   };
 
 } // namespace Model

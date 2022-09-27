@@ -5,362 +5,25 @@
 
 #pragma once
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
-#include <aws/autoscaling/AutoScalingErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/autoscaling/model/AttachLoadBalancerTargetGroupsResult.h>
-#include <aws/autoscaling/model/AttachLoadBalancersResult.h>
-#include <aws/autoscaling/model/BatchDeleteScheduledActionResult.h>
-#include <aws/autoscaling/model/BatchPutScheduledUpdateGroupActionResult.h>
-#include <aws/autoscaling/model/CancelInstanceRefreshResult.h>
-#include <aws/autoscaling/model/CompleteLifecycleActionResult.h>
-#include <aws/autoscaling/model/DeleteLifecycleHookResult.h>
-#include <aws/autoscaling/model/DeleteWarmPoolResult.h>
-#include <aws/autoscaling/model/DescribeAccountLimitsResult.h>
-#include <aws/autoscaling/model/DescribeAdjustmentTypesResult.h>
-#include <aws/autoscaling/model/DescribeAutoScalingGroupsResult.h>
-#include <aws/autoscaling/model/DescribeAutoScalingInstancesResult.h>
-#include <aws/autoscaling/model/DescribeAutoScalingNotificationTypesResult.h>
-#include <aws/autoscaling/model/DescribeInstanceRefreshesResult.h>
-#include <aws/autoscaling/model/DescribeLaunchConfigurationsResult.h>
-#include <aws/autoscaling/model/DescribeLifecycleHookTypesResult.h>
-#include <aws/autoscaling/model/DescribeLifecycleHooksResult.h>
-#include <aws/autoscaling/model/DescribeLoadBalancerTargetGroupsResult.h>
-#include <aws/autoscaling/model/DescribeLoadBalancersResult.h>
-#include <aws/autoscaling/model/DescribeMetricCollectionTypesResult.h>
-#include <aws/autoscaling/model/DescribeNotificationConfigurationsResult.h>
-#include <aws/autoscaling/model/DescribePoliciesResult.h>
-#include <aws/autoscaling/model/DescribeScalingActivitiesResult.h>
-#include <aws/autoscaling/model/DescribeScalingProcessTypesResult.h>
-#include <aws/autoscaling/model/DescribeScheduledActionsResult.h>
-#include <aws/autoscaling/model/DescribeTagsResult.h>
-#include <aws/autoscaling/model/DescribeTerminationPolicyTypesResult.h>
-#include <aws/autoscaling/model/DescribeWarmPoolResult.h>
-#include <aws/autoscaling/model/DetachInstancesResult.h>
-#include <aws/autoscaling/model/DetachLoadBalancerTargetGroupsResult.h>
-#include <aws/autoscaling/model/DetachLoadBalancersResult.h>
-#include <aws/autoscaling/model/EnterStandbyResult.h>
-#include <aws/autoscaling/model/ExitStandbyResult.h>
-#include <aws/autoscaling/model/GetPredictiveScalingForecastResult.h>
-#include <aws/autoscaling/model/PutLifecycleHookResult.h>
-#include <aws/autoscaling/model/PutScalingPolicyResult.h>
-#include <aws/autoscaling/model/PutWarmPoolResult.h>
-#include <aws/autoscaling/model/RecordLifecycleActionHeartbeatResult.h>
-#include <aws/autoscaling/model/SetInstanceProtectionResult.h>
-#include <aws/autoscaling/model/StartInstanceRefreshResult.h>
-#include <aws/autoscaling/model/TerminateInstanceInAutoScalingGroupResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/autoscaling/AutoScalingServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-
-namespace Xml
-{
-  class XmlDocument;
-} // namespace Xml
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace AutoScaling
 {
-
-namespace Model
-{
-        class AttachInstancesRequest;
-        class AttachLoadBalancerTargetGroupsRequest;
-        class AttachLoadBalancersRequest;
-        class BatchDeleteScheduledActionRequest;
-        class BatchPutScheduledUpdateGroupActionRequest;
-        class CancelInstanceRefreshRequest;
-        class CompleteLifecycleActionRequest;
-        class CreateAutoScalingGroupRequest;
-        class CreateLaunchConfigurationRequest;
-        class CreateOrUpdateTagsRequest;
-        class DeleteAutoScalingGroupRequest;
-        class DeleteLaunchConfigurationRequest;
-        class DeleteLifecycleHookRequest;
-        class DeleteNotificationConfigurationRequest;
-        class DeletePolicyRequest;
-        class DeleteScheduledActionRequest;
-        class DeleteTagsRequest;
-        class DeleteWarmPoolRequest;
-        class DescribeAccountLimitsRequest;
-        class DescribeAdjustmentTypesRequest;
-        class DescribeAutoScalingGroupsRequest;
-        class DescribeAutoScalingInstancesRequest;
-        class DescribeAutoScalingNotificationTypesRequest;
-        class DescribeInstanceRefreshesRequest;
-        class DescribeLaunchConfigurationsRequest;
-        class DescribeLifecycleHookTypesRequest;
-        class DescribeLifecycleHooksRequest;
-        class DescribeLoadBalancerTargetGroupsRequest;
-        class DescribeLoadBalancersRequest;
-        class DescribeMetricCollectionTypesRequest;
-        class DescribeNotificationConfigurationsRequest;
-        class DescribePoliciesRequest;
-        class DescribeScalingActivitiesRequest;
-        class DescribeScalingProcessTypesRequest;
-        class DescribeScheduledActionsRequest;
-        class DescribeTagsRequest;
-        class DescribeTerminationPolicyTypesRequest;
-        class DescribeWarmPoolRequest;
-        class DetachInstancesRequest;
-        class DetachLoadBalancerTargetGroupsRequest;
-        class DetachLoadBalancersRequest;
-        class DisableMetricsCollectionRequest;
-        class EnableMetricsCollectionRequest;
-        class EnterStandbyRequest;
-        class ExecutePolicyRequest;
-        class ExitStandbyRequest;
-        class GetPredictiveScalingForecastRequest;
-        class PutLifecycleHookRequest;
-        class PutNotificationConfigurationRequest;
-        class PutScalingPolicyRequest;
-        class PutScheduledUpdateGroupActionRequest;
-        class PutWarmPoolRequest;
-        class RecordLifecycleActionHeartbeatRequest;
-        class ResumeProcessesRequest;
-        class SetDesiredCapacityRequest;
-        class SetInstanceHealthRequest;
-        class SetInstanceProtectionRequest;
-        class StartInstanceRefreshRequest;
-        class SuspendProcessesRequest;
-        class TerminateInstanceInAutoScalingGroupRequest;
-        class UpdateAutoScalingGroupRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> AttachInstancesOutcome;
-        typedef Aws::Utils::Outcome<AttachLoadBalancerTargetGroupsResult, AutoScalingError> AttachLoadBalancerTargetGroupsOutcome;
-        typedef Aws::Utils::Outcome<AttachLoadBalancersResult, AutoScalingError> AttachLoadBalancersOutcome;
-        typedef Aws::Utils::Outcome<BatchDeleteScheduledActionResult, AutoScalingError> BatchDeleteScheduledActionOutcome;
-        typedef Aws::Utils::Outcome<BatchPutScheduledUpdateGroupActionResult, AutoScalingError> BatchPutScheduledUpdateGroupActionOutcome;
-        typedef Aws::Utils::Outcome<CancelInstanceRefreshResult, AutoScalingError> CancelInstanceRefreshOutcome;
-        typedef Aws::Utils::Outcome<CompleteLifecycleActionResult, AutoScalingError> CompleteLifecycleActionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> CreateAutoScalingGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> CreateLaunchConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> CreateOrUpdateTagsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> DeleteAutoScalingGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> DeleteLaunchConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteLifecycleHookResult, AutoScalingError> DeleteLifecycleHookOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> DeleteNotificationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> DeletePolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> DeleteScheduledActionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> DeleteTagsOutcome;
-        typedef Aws::Utils::Outcome<DeleteWarmPoolResult, AutoScalingError> DeleteWarmPoolOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, AutoScalingError> DescribeAccountLimitsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAdjustmentTypesResult, AutoScalingError> DescribeAdjustmentTypesOutcome;
-        typedef Aws::Utils::Outcome<DescribeAutoScalingGroupsResult, AutoScalingError> DescribeAutoScalingGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAutoScalingInstancesResult, AutoScalingError> DescribeAutoScalingInstancesOutcome;
-        typedef Aws::Utils::Outcome<DescribeAutoScalingNotificationTypesResult, AutoScalingError> DescribeAutoScalingNotificationTypesOutcome;
-        typedef Aws::Utils::Outcome<DescribeInstanceRefreshesResult, AutoScalingError> DescribeInstanceRefreshesOutcome;
-        typedef Aws::Utils::Outcome<DescribeLaunchConfigurationsResult, AutoScalingError> DescribeLaunchConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeLifecycleHookTypesResult, AutoScalingError> DescribeLifecycleHookTypesOutcome;
-        typedef Aws::Utils::Outcome<DescribeLifecycleHooksResult, AutoScalingError> DescribeLifecycleHooksOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBalancerTargetGroupsResult, AutoScalingError> DescribeLoadBalancerTargetGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBalancersResult, AutoScalingError> DescribeLoadBalancersOutcome;
-        typedef Aws::Utils::Outcome<DescribeMetricCollectionTypesResult, AutoScalingError> DescribeMetricCollectionTypesOutcome;
-        typedef Aws::Utils::Outcome<DescribeNotificationConfigurationsResult, AutoScalingError> DescribeNotificationConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<DescribePoliciesResult, AutoScalingError> DescribePoliciesOutcome;
-        typedef Aws::Utils::Outcome<DescribeScalingActivitiesResult, AutoScalingError> DescribeScalingActivitiesOutcome;
-        typedef Aws::Utils::Outcome<DescribeScalingProcessTypesResult, AutoScalingError> DescribeScalingProcessTypesOutcome;
-        typedef Aws::Utils::Outcome<DescribeScheduledActionsResult, AutoScalingError> DescribeScheduledActionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTagsResult, AutoScalingError> DescribeTagsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTerminationPolicyTypesResult, AutoScalingError> DescribeTerminationPolicyTypesOutcome;
-        typedef Aws::Utils::Outcome<DescribeWarmPoolResult, AutoScalingError> DescribeWarmPoolOutcome;
-        typedef Aws::Utils::Outcome<DetachInstancesResult, AutoScalingError> DetachInstancesOutcome;
-        typedef Aws::Utils::Outcome<DetachLoadBalancerTargetGroupsResult, AutoScalingError> DetachLoadBalancerTargetGroupsOutcome;
-        typedef Aws::Utils::Outcome<DetachLoadBalancersResult, AutoScalingError> DetachLoadBalancersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> DisableMetricsCollectionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> EnableMetricsCollectionOutcome;
-        typedef Aws::Utils::Outcome<EnterStandbyResult, AutoScalingError> EnterStandbyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> ExecutePolicyOutcome;
-        typedef Aws::Utils::Outcome<ExitStandbyResult, AutoScalingError> ExitStandbyOutcome;
-        typedef Aws::Utils::Outcome<GetPredictiveScalingForecastResult, AutoScalingError> GetPredictiveScalingForecastOutcome;
-        typedef Aws::Utils::Outcome<PutLifecycleHookResult, AutoScalingError> PutLifecycleHookOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> PutNotificationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<PutScalingPolicyResult, AutoScalingError> PutScalingPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> PutScheduledUpdateGroupActionOutcome;
-        typedef Aws::Utils::Outcome<PutWarmPoolResult, AutoScalingError> PutWarmPoolOutcome;
-        typedef Aws::Utils::Outcome<RecordLifecycleActionHeartbeatResult, AutoScalingError> RecordLifecycleActionHeartbeatOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> ResumeProcessesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> SetDesiredCapacityOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> SetInstanceHealthOutcome;
-        typedef Aws::Utils::Outcome<SetInstanceProtectionResult, AutoScalingError> SetInstanceProtectionOutcome;
-        typedef Aws::Utils::Outcome<StartInstanceRefreshResult, AutoScalingError> StartInstanceRefreshOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> SuspendProcessesOutcome;
-        typedef Aws::Utils::Outcome<TerminateInstanceInAutoScalingGroupResult, AutoScalingError> TerminateInstanceInAutoScalingGroupOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> UpdateAutoScalingGroupOutcome;
-
-        typedef std::future<AttachInstancesOutcome> AttachInstancesOutcomeCallable;
-        typedef std::future<AttachLoadBalancerTargetGroupsOutcome> AttachLoadBalancerTargetGroupsOutcomeCallable;
-        typedef std::future<AttachLoadBalancersOutcome> AttachLoadBalancersOutcomeCallable;
-        typedef std::future<BatchDeleteScheduledActionOutcome> BatchDeleteScheduledActionOutcomeCallable;
-        typedef std::future<BatchPutScheduledUpdateGroupActionOutcome> BatchPutScheduledUpdateGroupActionOutcomeCallable;
-        typedef std::future<CancelInstanceRefreshOutcome> CancelInstanceRefreshOutcomeCallable;
-        typedef std::future<CompleteLifecycleActionOutcome> CompleteLifecycleActionOutcomeCallable;
-        typedef std::future<CreateAutoScalingGroupOutcome> CreateAutoScalingGroupOutcomeCallable;
-        typedef std::future<CreateLaunchConfigurationOutcome> CreateLaunchConfigurationOutcomeCallable;
-        typedef std::future<CreateOrUpdateTagsOutcome> CreateOrUpdateTagsOutcomeCallable;
-        typedef std::future<DeleteAutoScalingGroupOutcome> DeleteAutoScalingGroupOutcomeCallable;
-        typedef std::future<DeleteLaunchConfigurationOutcome> DeleteLaunchConfigurationOutcomeCallable;
-        typedef std::future<DeleteLifecycleHookOutcome> DeleteLifecycleHookOutcomeCallable;
-        typedef std::future<DeleteNotificationConfigurationOutcome> DeleteNotificationConfigurationOutcomeCallable;
-        typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
-        typedef std::future<DeleteScheduledActionOutcome> DeleteScheduledActionOutcomeCallable;
-        typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
-        typedef std::future<DeleteWarmPoolOutcome> DeleteWarmPoolOutcomeCallable;
-        typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
-        typedef std::future<DescribeAdjustmentTypesOutcome> DescribeAdjustmentTypesOutcomeCallable;
-        typedef std::future<DescribeAutoScalingGroupsOutcome> DescribeAutoScalingGroupsOutcomeCallable;
-        typedef std::future<DescribeAutoScalingInstancesOutcome> DescribeAutoScalingInstancesOutcomeCallable;
-        typedef std::future<DescribeAutoScalingNotificationTypesOutcome> DescribeAutoScalingNotificationTypesOutcomeCallable;
-        typedef std::future<DescribeInstanceRefreshesOutcome> DescribeInstanceRefreshesOutcomeCallable;
-        typedef std::future<DescribeLaunchConfigurationsOutcome> DescribeLaunchConfigurationsOutcomeCallable;
-        typedef std::future<DescribeLifecycleHookTypesOutcome> DescribeLifecycleHookTypesOutcomeCallable;
-        typedef std::future<DescribeLifecycleHooksOutcome> DescribeLifecycleHooksOutcomeCallable;
-        typedef std::future<DescribeLoadBalancerTargetGroupsOutcome> DescribeLoadBalancerTargetGroupsOutcomeCallable;
-        typedef std::future<DescribeLoadBalancersOutcome> DescribeLoadBalancersOutcomeCallable;
-        typedef std::future<DescribeMetricCollectionTypesOutcome> DescribeMetricCollectionTypesOutcomeCallable;
-        typedef std::future<DescribeNotificationConfigurationsOutcome> DescribeNotificationConfigurationsOutcomeCallable;
-        typedef std::future<DescribePoliciesOutcome> DescribePoliciesOutcomeCallable;
-        typedef std::future<DescribeScalingActivitiesOutcome> DescribeScalingActivitiesOutcomeCallable;
-        typedef std::future<DescribeScalingProcessTypesOutcome> DescribeScalingProcessTypesOutcomeCallable;
-        typedef std::future<DescribeScheduledActionsOutcome> DescribeScheduledActionsOutcomeCallable;
-        typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
-        typedef std::future<DescribeTerminationPolicyTypesOutcome> DescribeTerminationPolicyTypesOutcomeCallable;
-        typedef std::future<DescribeWarmPoolOutcome> DescribeWarmPoolOutcomeCallable;
-        typedef std::future<DetachInstancesOutcome> DetachInstancesOutcomeCallable;
-        typedef std::future<DetachLoadBalancerTargetGroupsOutcome> DetachLoadBalancerTargetGroupsOutcomeCallable;
-        typedef std::future<DetachLoadBalancersOutcome> DetachLoadBalancersOutcomeCallable;
-        typedef std::future<DisableMetricsCollectionOutcome> DisableMetricsCollectionOutcomeCallable;
-        typedef std::future<EnableMetricsCollectionOutcome> EnableMetricsCollectionOutcomeCallable;
-        typedef std::future<EnterStandbyOutcome> EnterStandbyOutcomeCallable;
-        typedef std::future<ExecutePolicyOutcome> ExecutePolicyOutcomeCallable;
-        typedef std::future<ExitStandbyOutcome> ExitStandbyOutcomeCallable;
-        typedef std::future<GetPredictiveScalingForecastOutcome> GetPredictiveScalingForecastOutcomeCallable;
-        typedef std::future<PutLifecycleHookOutcome> PutLifecycleHookOutcomeCallable;
-        typedef std::future<PutNotificationConfigurationOutcome> PutNotificationConfigurationOutcomeCallable;
-        typedef std::future<PutScalingPolicyOutcome> PutScalingPolicyOutcomeCallable;
-        typedef std::future<PutScheduledUpdateGroupActionOutcome> PutScheduledUpdateGroupActionOutcomeCallable;
-        typedef std::future<PutWarmPoolOutcome> PutWarmPoolOutcomeCallable;
-        typedef std::future<RecordLifecycleActionHeartbeatOutcome> RecordLifecycleActionHeartbeatOutcomeCallable;
-        typedef std::future<ResumeProcessesOutcome> ResumeProcessesOutcomeCallable;
-        typedef std::future<SetDesiredCapacityOutcome> SetDesiredCapacityOutcomeCallable;
-        typedef std::future<SetInstanceHealthOutcome> SetInstanceHealthOutcomeCallable;
-        typedef std::future<SetInstanceProtectionOutcome> SetInstanceProtectionOutcomeCallable;
-        typedef std::future<StartInstanceRefreshOutcome> StartInstanceRefreshOutcomeCallable;
-        typedef std::future<SuspendProcessesOutcome> SuspendProcessesOutcomeCallable;
-        typedef std::future<TerminateInstanceInAutoScalingGroupOutcome> TerminateInstanceInAutoScalingGroupOutcomeCallable;
-        typedef std::future<UpdateAutoScalingGroupOutcome> UpdateAutoScalingGroupOutcomeCallable;
-} // namespace Model
-
-  class AutoScalingClient;
-
-    typedef std::function<void(const AutoScalingClient*, const Model::AttachInstancesRequest&, const Model::AttachInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachInstancesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::AttachLoadBalancerTargetGroupsRequest&, const Model::AttachLoadBalancerTargetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachLoadBalancerTargetGroupsResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::AttachLoadBalancersRequest&, const Model::AttachLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachLoadBalancersResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::BatchDeleteScheduledActionRequest&, const Model::BatchDeleteScheduledActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteScheduledActionResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::BatchPutScheduledUpdateGroupActionRequest&, const Model::BatchPutScheduledUpdateGroupActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutScheduledUpdateGroupActionResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::CancelInstanceRefreshRequest&, const Model::CancelInstanceRefreshOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelInstanceRefreshResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::CompleteLifecycleActionRequest&, const Model::CompleteLifecycleActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteLifecycleActionResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::CreateAutoScalingGroupRequest&, const Model::CreateAutoScalingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAutoScalingGroupResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::CreateLaunchConfigurationRequest&, const Model::CreateLaunchConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLaunchConfigurationResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::CreateOrUpdateTagsRequest&, const Model::CreateOrUpdateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOrUpdateTagsResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DeleteAutoScalingGroupRequest&, const Model::DeleteAutoScalingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAutoScalingGroupResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DeleteLaunchConfigurationRequest&, const Model::DeleteLaunchConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchConfigurationResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DeleteLifecycleHookRequest&, const Model::DeleteLifecycleHookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLifecycleHookResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DeleteNotificationConfigurationRequest&, const Model::DeleteNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotificationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePolicyResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DeleteScheduledActionRequest&, const Model::DeleteScheduledActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScheduledActionResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DeleteWarmPoolRequest&, const Model::DeleteWarmPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWarmPoolResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountLimitsResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeAdjustmentTypesRequest&, const Model::DescribeAdjustmentTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAdjustmentTypesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeAutoScalingGroupsRequest&, const Model::DescribeAutoScalingGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoScalingGroupsResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeAutoScalingInstancesRequest&, const Model::DescribeAutoScalingInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoScalingInstancesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeAutoScalingNotificationTypesRequest&, const Model::DescribeAutoScalingNotificationTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoScalingNotificationTypesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeInstanceRefreshesRequest&, const Model::DescribeInstanceRefreshesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceRefreshesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeLaunchConfigurationsRequest&, const Model::DescribeLaunchConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLaunchConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeLifecycleHookTypesRequest&, const Model::DescribeLifecycleHookTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLifecycleHookTypesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeLifecycleHooksRequest&, const Model::DescribeLifecycleHooksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLifecycleHooksResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeLoadBalancerTargetGroupsRequest&, const Model::DescribeLoadBalancerTargetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancerTargetGroupsResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeLoadBalancersRequest&, const Model::DescribeLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancersResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeMetricCollectionTypesRequest&, const Model::DescribeMetricCollectionTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMetricCollectionTypesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeNotificationConfigurationsRequest&, const Model::DescribeNotificationConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotificationConfigurationsResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribePoliciesRequest&, const Model::DescribePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePoliciesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeScalingActivitiesRequest&, const Model::DescribeScalingActivitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingActivitiesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeScalingProcessTypesRequest&, const Model::DescribeScalingProcessTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScalingProcessTypesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeScheduledActionsRequest&, const Model::DescribeScheduledActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduledActionsResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeTerminationPolicyTypesRequest&, const Model::DescribeTerminationPolicyTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTerminationPolicyTypesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DescribeWarmPoolRequest&, const Model::DescribeWarmPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWarmPoolResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DetachInstancesRequest&, const Model::DetachInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachInstancesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DetachLoadBalancerTargetGroupsRequest&, const Model::DetachLoadBalancerTargetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachLoadBalancerTargetGroupsResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DetachLoadBalancersRequest&, const Model::DetachLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachLoadBalancersResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::DisableMetricsCollectionRequest&, const Model::DisableMetricsCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableMetricsCollectionResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::EnableMetricsCollectionRequest&, const Model::EnableMetricsCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableMetricsCollectionResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::EnterStandbyRequest&, const Model::EnterStandbyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnterStandbyResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::ExecutePolicyRequest&, const Model::ExecutePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecutePolicyResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::ExitStandbyRequest&, const Model::ExitStandbyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExitStandbyResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::GetPredictiveScalingForecastRequest&, const Model::GetPredictiveScalingForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPredictiveScalingForecastResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::PutLifecycleHookRequest&, const Model::PutLifecycleHookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecycleHookResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::PutNotificationConfigurationRequest&, const Model::PutNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutNotificationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::PutScalingPolicyRequest&, const Model::PutScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScalingPolicyResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::PutScheduledUpdateGroupActionRequest&, const Model::PutScheduledUpdateGroupActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScheduledUpdateGroupActionResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::PutWarmPoolRequest&, const Model::PutWarmPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutWarmPoolResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::RecordLifecycleActionHeartbeatRequest&, const Model::RecordLifecycleActionHeartbeatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecordLifecycleActionHeartbeatResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::ResumeProcessesRequest&, const Model::ResumeProcessesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeProcessesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::SetDesiredCapacityRequest&, const Model::SetDesiredCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetDesiredCapacityResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::SetInstanceHealthRequest&, const Model::SetInstanceHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetInstanceHealthResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::SetInstanceProtectionRequest&, const Model::SetInstanceProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetInstanceProtectionResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::StartInstanceRefreshRequest&, const Model::StartInstanceRefreshOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstanceRefreshResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::SuspendProcessesRequest&, const Model::SuspendProcessesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SuspendProcessesResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::TerminateInstanceInAutoScalingGroupRequest&, const Model::TerminateInstanceInAutoScalingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateInstanceInAutoScalingGroupResponseReceivedHandler;
-    typedef std::function<void(const AutoScalingClient*, const Model::UpdateAutoScalingGroupRequest&, const Model::UpdateAutoScalingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAutoScalingGroupResponseReceivedHandler;
-
   /**
    * <fullname>Amazon EC2 Auto Scaling</fullname> <p>Amazon EC2 Auto Scaling is
-   * designed to automatically launch or terminate EC2 instances based on
+   * designed to automatically launch and terminate EC2 instances based on
    * user-defined scaling policies, scheduled actions, and health checks.</p> <p>For
-   * more information about Amazon EC2 Auto Scaling, see the <a
-   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">Amazon
-   * EC2 Auto Scaling User Guide</a>. For information about granting IAM users
-   * required permissions for calls to Amazon EC2 Auto Scaling, see <a
-   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/ec2-auto-scaling-api-permissions.html">Granting
-   * IAM users required permissions for Amazon EC2 Auto Scaling resources</a> in the
-   * <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
+   * more information, see the <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/">Amazon EC2 Auto
+   * Scaling User Guide</a> and the <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/Welcome.html">Amazon
+   * EC2 Auto Scaling API Reference</a>.</p>
    */
   class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient
   {
@@ -377,14 +40,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AutoScalingClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AutoScalingClient(const Aws::Auth::AWSCredentials& credentials,
+                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AutoScalingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~AutoScalingClient();
 
@@ -426,19 +90,20 @@ namespace Model
         /**
          * <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
          * <p>This operation is used with the following load balancer types: </p> <ul> <li>
-         * <p> Application Load Balancer - Operates at the application layer (layer 7) and
-         * supports HTTP and HTTPS. </p> </li> <li> <p> Network Load Balancer - Operates at
+         * <p>Application Load Balancer - Operates at the application layer (layer 7) and
+         * supports HTTP and HTTPS. </p> </li> <li> <p>Network Load Balancer - Operates at
          * the transport layer (layer 4) and supports TCP, TLS, and UDP. </p> </li> <li>
-         * <p> Gateway Load Balancer - Operates at the network layer (layer 3).</p> </li>
+         * <p>Gateway Load Balancer - Operates at the network layer (layer 3).</p> </li>
          * </ul> <p>To describe the target groups for an Auto Scaling group, call the
          * <a>DescribeLoadBalancerTargetGroups</a> API. To detach the target group from the
          * Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a> API.</p>
          * <p>This operation is additive and does not detach existing target groups or
          * Classic Load Balancers from the Auto Scaling group.</p> <p>For more information,
          * see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-         * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
-         * User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+         * Elastic Load Balancing to distribute traffic across the instances in your Auto
+         * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">AWS
          * API Reference</a></p>
          */
@@ -461,13 +126,14 @@ namespace Model
          * the specified Auto Scaling group. Amazon EC2 Auto Scaling registers the running
          * instances with these Classic Load Balancers.</p> <p>To describe the load
          * balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a> API.
-         * To detach the load balancer from the Auto Scaling group, call the
+         * To detach a load balancer from the Auto Scaling group, call the
          * <a>DetachLoadBalancers</a> API.</p> <p>This operation is additive and does not
          * detach existing Classic Load Balancers or target groups from the Auto Scaling
          * group.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-         * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
-         * User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+         * Elastic Load Balancing to distribute traffic across the instances in your Auto
+         * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">AWS
          * API Reference</a></p>
          */
@@ -585,8 +251,8 @@ namespace Model
          * </p> <p>If you exceed your maximum limit of Auto Scaling groups, the call fails.
          * To query this limit, call the <a>DescribeAccountLimits</a> API. For information
          * about updating this limit, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-         * EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-quotas.html">Quotas
+         * for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>For introductory exercises for creating an Auto Scaling group,
          * see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html">Getting
@@ -596,7 +262,7 @@ namespace Model
          * Scaling User Guide</i>. For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto
          * Scaling groups</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-         * <p>Every Auto Scaling group has three size parameters
+         * <p>Every Auto Scaling group has three size properties
          * (<code>DesiredCapacity</code>, <code>MaxSize</code>, and <code>MinSize</code>).
          * Usually, you set these sizes based on a specific number of instances. However,
          * if you configure a mixed instances policy that defines weights for the instance
@@ -622,8 +288,8 @@ namespace Model
          * launch configurations, the call fails. To query this limit, call the
          * <a>DescribeAccountLimits</a> API. For information about updating this limit, see
          * <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-         * EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-quotas.html">Quotas
+         * for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
          * configurations</a> in the <i>Amazon EC2 Auto Scaling User
@@ -648,7 +314,7 @@ namespace Model
          * specify a tag with a key that already exists, the operation overwrites the
          * previous tag definition, and you do not get an error message.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag
          * Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags">AWS
@@ -834,8 +500,8 @@ namespace Model
          * has initial quotas on the maximum number of Auto Scaling groups and launch
          * configurations that you can create in a given Region. For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-         * EC2 Auto Scaling service quotas</a> in the <i>Amazon EC2 Auto Scaling User
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-quotas.html">Quotas
+         * for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">AWS
          * API Reference</a></p>
@@ -1028,12 +694,12 @@ namespace Model
         virtual void DescribeLifecycleHooksAsync(const Model::DescribeLifecycleHooksRequest& request, const DescribeLifecycleHooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about the load balancer target groups for the specified Auto
-         * Scaling group.</p> <p>To determine the availability of registered instances, use
-         * the <code>State</code> element in the response. When you attach a target group
-         * to an Auto Scaling group, the initial <code>State</code> value is
-         * <code>Adding</code>. The state transitions to <code>Added</code> after all Auto
-         * Scaling instances are registered with the target group. If Elastic Load
+         * <p>Gets information about the Elastic Load Balancing target groups for the
+         * specified Auto Scaling group.</p> <p>To determine the attachment status of the
+         * target group, use the <code>State</code> element in the response. When you
+         * attach a target group to an Auto Scaling group, the initial <code>State</code>
+         * value is <code>Adding</code>. The state transitions to <code>Added</code> after
+         * all Auto Scaling instances are registered with the target group. If Elastic Load
          * Balancing health checks are enabled for the Auto Scaling group, the state
          * transitions to <code>InService</code> after at least one Auto Scaling instance
          * passes the health check. When the target group is in the <code>InService</code>
@@ -1048,9 +714,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting
          * Amazon EC2 Auto Scaling: Health checks</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>. For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-         * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
-         * User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+         * Elastic Load Balancing to distribute traffic across the instances in your Auto
+         * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancerTargetGroups">AWS
          * API Reference</a></p>
          */
@@ -1069,10 +736,10 @@ namespace Model
         /**
          * <p>Gets information about the load balancers for the specified Auto Scaling
          * group.</p> <p>This operation describes only Classic Load Balancers. If you have
-         * Application Load Balancers, Network Load Balancers, or Gateway Load Balancers,
+         * Application Load Balancers, Network Load Balancers, or Gateway Load Balancer,
          * use the <a>DescribeLoadBalancerTargetGroups</a> API instead.</p> <p>To determine
-         * the availability of registered instances, use the <code>State</code> element in
-         * the response. When you attach a load balancer to an Auto Scaling group, the
+         * the attachment status of the load balancer, use the <code>State</code> element
+         * in the response. When you attach a load balancer to an Auto Scaling group, the
          * initial <code>State</code> value is <code>Adding</code>. The state transitions
          * to <code>Added</code> after all Auto Scaling instances are registered with the
          * load balancer. If Elastic Load Balancing health checks are enabled for the Auto
@@ -1090,9 +757,10 @@ namespace Model
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ts-as-healthchecks.html">Troubleshooting
          * Amazon EC2 Auto Scaling: Health checks</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>. For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic
-         * Load Balancing and Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
-         * User Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use
+         * Elastic Load Balancing to distribute traffic across the instances in your Auto
+         * Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeLoadBalancers">AWS
          * API Reference</a></p>
          */
@@ -1109,10 +777,8 @@ namespace Model
         virtual void DescribeLoadBalancersAsync(const Model::DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.</p>
-         * <p>The <code>GroupStandbyInstances</code> metric is not returned by default. You
-         * must explicitly request this metric when calling the
-         * <a>EnableMetricsCollection</a> API.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the available CloudWatch metrics for Amazon EC2 Auto
+         * Scaling.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeMetricCollectionTypes">AWS
          * API Reference</a></p>
          */
@@ -1240,7 +906,7 @@ namespace Model
          * also specify multiple filters. The result includes information for a particular
          * tag only if it matches all the filters. If there's no match, no special message
          * is returned.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-tagging.html">Tag
          * Auto Scaling groups and instances</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTags">AWS
@@ -1261,9 +927,9 @@ namespace Model
         /**
          * <p>Describes the termination policies supported by Amazon EC2 Auto Scaling.</p>
          * <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-         * which Auto Scaling instances terminate during scale in</a> in the <i>Amazon EC2
-         * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-termination-policies.html">Work
+         * with Amazon EC2 Auto Scaling termination policies</a> in the <i>Amazon EC2 Auto
+         * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">AWS
          * API Reference</a></p>
          */
@@ -1328,8 +994,12 @@ namespace Model
         virtual void DetachInstancesAsync(const Model::DetachInstancesRequest& request, const DetachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Detaches one or more target groups from the specified Auto Scaling
-         * group.</p><p><h3>See Also:</h3>   <a
+         * <p>Detaches one or more target groups from the specified Auto Scaling group.</p>
+         * <p>When you detach a target group, it enters the <code>Removing</code> state
+         * while deregistering the instances in the group. When all instances are
+         * deregistered, then you can no longer describe the target group using the
+         * <a>DescribeLoadBalancerTargetGroups</a> API call. The instances remain
+         * running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancerTargetGroups">AWS
          * API Reference</a></p>
          */
@@ -1348,7 +1018,7 @@ namespace Model
         /**
          * <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling
          * group.</p> <p>This operation detaches only Classic Load Balancers. If you have
-         * Application Load Balancers, Network Load Balancers, or Gateway Load Balancers,
+         * Application Load Balancers, Network Load Balancers, or Gateway Load Balancer,
          * use the <a>DetachLoadBalancerTargetGroups</a> API instead.</p> <p>When you
          * detach a load balancer, it enters the <code>Removing</code> state while
          * deregistering the instances in the group. When all instances are deregistered,
@@ -1371,8 +1041,8 @@ namespace Model
         virtual void DetachLoadBalancersAsync(const Model::DetachLoadBalancersRequest& request, const DetachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables group metrics for the specified Auto Scaling group.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Disables group metrics collection for the specified Auto Scaling
+         * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DisableMetricsCollection">AWS
          * API Reference</a></p>
          */
@@ -1389,9 +1059,11 @@ namespace Model
         virtual void DisableMetricsCollectionAsync(const Model::DisableMetricsCollectionRequest& request, const DisableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables group metrics for the specified Auto Scaling group. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring
+         * <p>Enables group metrics collection for the specified Auto Scaling group.</p>
+         * <p>You can use these metrics to track changes in an Auto Scaling group and to
+         * set alarms on threshold values. You can view group metrics using the Amazon EC2
+         * Auto Scaling console or the CloudWatch console. For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html">Monitor
          * CloudWatch metrics for your Auto Scaling groups and instances</a> in the
          * <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection">AWS
@@ -1610,8 +1282,9 @@ namespace Model
          * scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You can
          * view the scheduled actions for an Auto Scaling group using the
          * <a>DescribeScheduledActions</a> API call. If you are no longer using a scheduled
-         * action, you can delete it by calling the <a>DeleteScheduledAction</a>
-         * API.</p><p><h3>See Also:</h3>   <a
+         * action, you can delete it by calling the <a>DeleteScheduledAction</a> API.</p>
+         * <p>If you try to schedule your action in the past, Amazon EC2 Auto Scaling
+         * returns an error message.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">AWS
          * API Reference</a></p>
          */
@@ -1878,7 +1551,7 @@ namespace Model
          * to ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b>
          * </p> <p>Updates the configuration for the specified Auto Scaling group.</p>
          * <p>To update an Auto Scaling group, specify the name of the group and the
-         * parameter that you want to change. Any parameters that you don't specify are not
+         * property that you want to change. Any properties that you don't specify are not
          * changed by this update request. The new settings take effect on any scaling
          * activities after this call returns. </p> <p>If you associate a new launch
          * configuration or template with an Auto Scaling group, all new instances will get
@@ -1905,7 +1578,7 @@ namespace Model
          * value for <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is
          * smaller than the current size of the group, this sets the group's
          * <code>DesiredCapacity</code> to the new <code>MaxSize</code> value.</p> </li>
-         * </ul> <p>To see which parameters have been set, call the
+         * </ul> <p>To see which properties have been set, call the
          * <a>DescribeAutoScalingGroups</a> API. To view the scaling policies for an Auto
          * Scaling group, call the <a>DescribePolicies</a> API. If the group has scaling
          * policies, you can update them by calling the <a>PutScalingPolicy</a>
@@ -1929,67 +1602,6 @@ namespace Model
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AttachInstancesAsyncHelper(const Model::AttachInstancesRequest& request, const AttachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AttachLoadBalancerTargetGroupsAsyncHelper(const Model::AttachLoadBalancerTargetGroupsRequest& request, const AttachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AttachLoadBalancersAsyncHelper(const Model::AttachLoadBalancersRequest& request, const AttachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchDeleteScheduledActionAsyncHelper(const Model::BatchDeleteScheduledActionRequest& request, const BatchDeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchPutScheduledUpdateGroupActionAsyncHelper(const Model::BatchPutScheduledUpdateGroupActionRequest& request, const BatchPutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelInstanceRefreshAsyncHelper(const Model::CancelInstanceRefreshRequest& request, const CancelInstanceRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CompleteLifecycleActionAsyncHelper(const Model::CompleteLifecycleActionRequest& request, const CompleteLifecycleActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAutoScalingGroupAsyncHelper(const Model::CreateAutoScalingGroupRequest& request, const CreateAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateLaunchConfigurationAsyncHelper(const Model::CreateLaunchConfigurationRequest& request, const CreateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateOrUpdateTagsAsyncHelper(const Model::CreateOrUpdateTagsRequest& request, const CreateOrUpdateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAutoScalingGroupAsyncHelper(const Model::DeleteAutoScalingGroupRequest& request, const DeleteAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLaunchConfigurationAsyncHelper(const Model::DeleteLaunchConfigurationRequest& request, const DeleteLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLifecycleHookAsyncHelper(const Model::DeleteLifecycleHookRequest& request, const DeleteLifecycleHookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteNotificationConfigurationAsyncHelper(const Model::DeleteNotificationConfigurationRequest& request, const DeleteNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePolicyAsyncHelper(const Model::DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteScheduledActionAsyncHelper(const Model::DeleteScheduledActionRequest& request, const DeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteWarmPoolAsyncHelper(const Model::DeleteWarmPoolRequest& request, const DeleteWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAccountLimitsAsyncHelper(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAdjustmentTypesAsyncHelper(const Model::DescribeAdjustmentTypesRequest& request, const DescribeAdjustmentTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAutoScalingGroupsAsyncHelper(const Model::DescribeAutoScalingGroupsRequest& request, const DescribeAutoScalingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAutoScalingInstancesAsyncHelper(const Model::DescribeAutoScalingInstancesRequest& request, const DescribeAutoScalingInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAutoScalingNotificationTypesAsyncHelper(const Model::DescribeAutoScalingNotificationTypesRequest& request, const DescribeAutoScalingNotificationTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInstanceRefreshesAsyncHelper(const Model::DescribeInstanceRefreshesRequest& request, const DescribeInstanceRefreshesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLaunchConfigurationsAsyncHelper(const Model::DescribeLaunchConfigurationsRequest& request, const DescribeLaunchConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLifecycleHookTypesAsyncHelper(const Model::DescribeLifecycleHookTypesRequest& request, const DescribeLifecycleHookTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLifecycleHooksAsyncHelper(const Model::DescribeLifecycleHooksRequest& request, const DescribeLifecycleHooksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLoadBalancerTargetGroupsAsyncHelper(const Model::DescribeLoadBalancerTargetGroupsRequest& request, const DescribeLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLoadBalancersAsyncHelper(const Model::DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeMetricCollectionTypesAsyncHelper(const Model::DescribeMetricCollectionTypesRequest& request, const DescribeMetricCollectionTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeNotificationConfigurationsAsyncHelper(const Model::DescribeNotificationConfigurationsRequest& request, const DescribeNotificationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribePoliciesAsyncHelper(const Model::DescribePoliciesRequest& request, const DescribePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeScalingActivitiesAsyncHelper(const Model::DescribeScalingActivitiesRequest& request, const DescribeScalingActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeScalingProcessTypesAsyncHelper(const Model::DescribeScalingProcessTypesRequest& request, const DescribeScalingProcessTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeScheduledActionsAsyncHelper(const Model::DescribeScheduledActionsRequest& request, const DescribeScheduledActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTerminationPolicyTypesAsyncHelper(const Model::DescribeTerminationPolicyTypesRequest& request, const DescribeTerminationPolicyTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeWarmPoolAsyncHelper(const Model::DescribeWarmPoolRequest& request, const DescribeWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetachInstancesAsyncHelper(const Model::DetachInstancesRequest& request, const DetachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetachLoadBalancerTargetGroupsAsyncHelper(const Model::DetachLoadBalancerTargetGroupsRequest& request, const DetachLoadBalancerTargetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetachLoadBalancersAsyncHelper(const Model::DetachLoadBalancersRequest& request, const DetachLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisableMetricsCollectionAsyncHelper(const Model::DisableMetricsCollectionRequest& request, const DisableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EnableMetricsCollectionAsyncHelper(const Model::EnableMetricsCollectionRequest& request, const EnableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EnterStandbyAsyncHelper(const Model::EnterStandbyRequest& request, const EnterStandbyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ExecutePolicyAsyncHelper(const Model::ExecutePolicyRequest& request, const ExecutePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ExitStandbyAsyncHelper(const Model::ExitStandbyRequest& request, const ExitStandbyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPredictiveScalingForecastAsyncHelper(const Model::GetPredictiveScalingForecastRequest& request, const GetPredictiveScalingForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutLifecycleHookAsyncHelper(const Model::PutLifecycleHookRequest& request, const PutLifecycleHookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutNotificationConfigurationAsyncHelper(const Model::PutNotificationConfigurationRequest& request, const PutNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutScalingPolicyAsyncHelper(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutScheduledUpdateGroupActionAsyncHelper(const Model::PutScheduledUpdateGroupActionRequest& request, const PutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutWarmPoolAsyncHelper(const Model::PutWarmPoolRequest& request, const PutWarmPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RecordLifecycleActionHeartbeatAsyncHelper(const Model::RecordLifecycleActionHeartbeatRequest& request, const RecordLifecycleActionHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ResumeProcessesAsyncHelper(const Model::ResumeProcessesRequest& request, const ResumeProcessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetDesiredCapacityAsyncHelper(const Model::SetDesiredCapacityRequest& request, const SetDesiredCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetInstanceHealthAsyncHelper(const Model::SetInstanceHealthRequest& request, const SetInstanceHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SetInstanceProtectionAsyncHelper(const Model::SetInstanceProtectionRequest& request, const SetInstanceProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartInstanceRefreshAsyncHelper(const Model::StartInstanceRefreshRequest& request, const StartInstanceRefreshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SuspendProcessesAsyncHelper(const Model::SuspendProcessesRequest& request, const SuspendProcessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TerminateInstanceInAutoScalingGroupAsyncHelper(const Model::TerminateInstanceInAutoScalingGroupRequest& request, const TerminateInstanceInAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAutoScalingGroupAsyncHelper(const Model::UpdateAutoScalingGroupRequest& request, const UpdateAutoScalingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
         Aws::String m_uri;
         Aws::String m_configScheme;

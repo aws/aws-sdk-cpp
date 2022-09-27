@@ -196,13 +196,13 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     LicenseConversionContext m_sourceLicenseContext;
-    bool m_sourceLicenseContextHasBeenSet;
+    bool m_sourceLicenseContextHasBeenSet = false;
 
     LicenseConversionContext m_destinationLicenseContext;
-    bool m_destinationLicenseContextHasBeenSet;
+    bool m_destinationLicenseContextHasBeenSet = false;
   };
 
 } // namespace Model

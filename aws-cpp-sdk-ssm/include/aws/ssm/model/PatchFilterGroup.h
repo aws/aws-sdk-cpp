@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<PatchFilter> m_patchFilters;
-    bool m_patchFiltersHasBeenSet;
+    bool m_patchFiltersHasBeenSet = false;
   };
 
 } // namespace Model

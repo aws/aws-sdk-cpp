@@ -103,10 +103,10 @@ namespace Model
   private:
 
     Aws::Map<DisruptionType, double> m_disruptionScore;
-    bool m_disruptionScoreHasBeenSet;
+    bool m_disruptionScoreHasBeenSet = false;
 
     double m_score;
-    bool m_scoreHasBeenSet;
+    bool m_scoreHasBeenSet = false;
   };
 
 } // namespace Model

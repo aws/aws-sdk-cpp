@@ -3,80 +3,18 @@
 #set($metadata = $serviceModel.metadata)
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
+#set($className = "${metadata.classNamePrefix}Client")
 #pragma once
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
-\#include <aws/$metadata.projectName/${metadata.classNamePrefix}Errors.h>
-\#include <aws/core/client/AWSError.h>
 \#include <aws/core/client/ClientConfiguration.h>
 \#include <aws/core/client/AWSClient.h>
-\#include <aws/core/utils/memory/stl/AWSString.h>
 \#include <aws/core/utils/json/JsonSerializer.h>
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelIncludes.vm")
-\#include <aws/core/client/AsyncCallerContext.h>
-\#include <aws/core/http/HttpTypes.h>
-#if($metadata.hasEndpointDiscoveryTrait)
-\#include <aws/core/utils/ConcurrentCache.h>
-#end
-\#include <future>
-\#include <functional>
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
 
-namespace Aws
-{
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-#foreach($operation in $serviceModel.operations)
-#if($operation.request && $operation.request.shape.hasEventStreamMembers())
-namespace Event
-{
-  class EventEncoderStream;
-}
-
-#break
-#end
-#end
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
-#if ($rootNamespace != "Aws")
-} // namespace Aws
 namespace ${rootNamespace}
 {
-#end
 namespace ${serviceNamespace}
 {
-
-namespace Model
-{
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelDeclarations.vm")
-} // namespace Model
-
-#set($className = "${metadata.classNamePrefix}Client")
-  class ${className};
-
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderEventTypeDeclarations.vm")
-
 #if($serviceModel.documentation)
   /**
    * ${serviceModel.documentation}
@@ -101,21 +39,23 @@ namespace Model
 #if($metadata.hasEndpointDiscoveryTrait)
       void Load${metadata.classNamePrefix}SpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration);
 #end
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
 
 #if($metadata.hasEndpointTrait)
       Aws::String m_baseUri;
       Aws::String m_scheme;
-      bool m_enableHostPrefixInjection;
+      bool m_enableHostPrefixInjection = false;
 #else
       Aws::String m_uri;
 #end
 #if($customEndpointUsed)
-      bool m_useCustomEndpoint;
+      bool m_useCustomEndpoint = false;
+#end
+#if($serviceModel.endpointRules)
+      std::shared_ptr<${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
 #end
 #if($metadata.hasEndpointDiscoveryTrait)
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
-      bool m_enableEndpointDiscovery;
+      bool m_enableEndpointDiscovery = false;
 #end
       Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;

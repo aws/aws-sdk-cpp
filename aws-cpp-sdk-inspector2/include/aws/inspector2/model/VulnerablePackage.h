@@ -297,6 +297,55 @@ namespace Model
 
 
     /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline const Aws::String& GetRemediation() const{ return m_remediation; }
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline bool RemediationHasBeenSet() const { return m_remediationHasBeenSet; }
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline void SetRemediation(const Aws::String& value) { m_remediationHasBeenSet = true; m_remediation = value; }
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline void SetRemediation(Aws::String&& value) { m_remediationHasBeenSet = true; m_remediation = std::move(value); }
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline void SetRemediation(const char* value) { m_remediationHasBeenSet = true; m_remediation.assign(value); }
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline VulnerablePackage& WithRemediation(const Aws::String& value) { SetRemediation(value); return *this;}
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline VulnerablePackage& WithRemediation(Aws::String&& value) { SetRemediation(std::move(value)); return *this;}
+
+    /**
+     * <p>The code to run in your environment to update packages with a fix
+     * available.</p>
+     */
+    inline VulnerablePackage& WithRemediation(const char* value) { SetRemediation(value); return *this;}
+
+
+    /**
      * <p>The source layer hash of the vulnerable package.</p>
      */
     inline const Aws::String& GetSourceLayerHash() const{ return m_sourceLayerHash; }
@@ -380,31 +429,34 @@ namespace Model
   private:
 
     Aws::String m_arch;
-    bool m_archHasBeenSet;
+    bool m_archHasBeenSet = false;
 
     int m_epoch;
-    bool m_epochHasBeenSet;
+    bool m_epochHasBeenSet = false;
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     Aws::String m_fixedInVersion;
-    bool m_fixedInVersionHasBeenSet;
+    bool m_fixedInVersionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     PackageManager m_packageManager;
-    bool m_packageManagerHasBeenSet;
+    bool m_packageManagerHasBeenSet = false;
 
     Aws::String m_release;
-    bool m_releaseHasBeenSet;
+    bool m_releaseHasBeenSet = false;
+
+    Aws::String m_remediation;
+    bool m_remediationHasBeenSet = false;
 
     Aws::String m_sourceLayerHash;
-    bool m_sourceLayerHashHasBeenSet;
+    bool m_sourceLayerHashHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_text;
-    bool m_textHasBeenSet;
+    bool m_textHasBeenSet = false;
 
     Aws::String m_eventId;
-    bool m_eventIdHasBeenSet;
+    bool m_eventIdHasBeenSet = false;
 
     long long m_clientTimestampMillis;
-    bool m_clientTimestampMillisHasBeenSet;
+    bool m_clientTimestampMillisHasBeenSet = false;
   };
 
 } // namespace Model

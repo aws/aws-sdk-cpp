@@ -495,40 +495,40 @@ namespace Model
   private:
 
     Aws::String m_activityId;
-    bool m_activityIdHasBeenSet;
+    bool m_activityIdHasBeenSet = false;
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     ScalingActivityStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     int m_progress;
-    bool m_progressHasBeenSet;
+    bool m_progressHasBeenSet = false;
 
     Aws::String m_details;
-    bool m_detailsHasBeenSet;
+    bool m_detailsHasBeenSet = false;
 
     Aws::String m_autoScalingGroupState;
-    bool m_autoScalingGroupStateHasBeenSet;
+    bool m_autoScalingGroupStateHasBeenSet = false;
 
     Aws::String m_autoScalingGroupARN;
-    bool m_autoScalingGroupARNHasBeenSet;
+    bool m_autoScalingGroupARNHasBeenSet = false;
   };
 
 } // namespace Model

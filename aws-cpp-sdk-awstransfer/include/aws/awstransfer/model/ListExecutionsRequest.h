@@ -35,22 +35,22 @@ namespace Model
 
 
     /**
-     * <p>Specifies the aximum number of executions to return.</p>
+     * <p>Specifies the maximum number of executions to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Specifies the aximum number of executions to return.</p>
+     * <p>Specifies the maximum number of executions to return.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Specifies the aximum number of executions to return.</p>
+     * <p>Specifies the maximum number of executions to return.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Specifies the aximum number of executions to return.</p>
+     * <p>Specifies the maximum number of executions to return.</p>
      */
     inline ListExecutionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -60,11 +60,11 @@ namespace Model
      * the output. You can then pass the <code>NextToken</code> parameter in a
      * subsequent command to continue listing additional executions.</p> <p> This is
      * useful for pagination, for instance. If you have 100 executions for a workflow,
-     * you might only want to list first 10. If so, callthe API by specifing the
+     * you might only want to list first 10. If so, call the API by specifying the
      * <code>max-results</code>: </p> <p> <code>aws transfer list-executions
      * --max-results 10</code> </p> <p> This returns details for the first 10
      * executions, as well as the pointer (<code>NextToken</code>) to the eleventh
-     * execution. You can now call the API again, suppling the <code>NextToken</code>
+     * execution. You can now call the API again, supplying the <code>NextToken</code>
      * value you received: </p> <p> <code>aws transfer list-executions --max-results 10
      * --next-token $somePointerReturnedFromPreviousListResult</code> </p> <p> This
      * call returns the next 10 executions, the 11th through the 20th. You can then
@@ -78,11 +78,11 @@ namespace Model
      * the output. You can then pass the <code>NextToken</code> parameter in a
      * subsequent command to continue listing additional executions.</p> <p> This is
      * useful for pagination, for instance. If you have 100 executions for a workflow,
-     * you might only want to list first 10. If so, callthe API by specifing the
+     * you might only want to list first 10. If so, call the API by specifying the
      * <code>max-results</code>: </p> <p> <code>aws transfer list-executions
      * --max-results 10</code> </p> <p> This returns details for the first 10
      * executions, as well as the pointer (<code>NextToken</code>) to the eleventh
-     * execution. You can now call the API again, suppling the <code>NextToken</code>
+     * execution. You can now call the API again, supplying the <code>NextToken</code>
      * value you received: </p> <p> <code>aws transfer list-executions --max-results 10
      * --next-token $somePointerReturnedFromPreviousListResult</code> </p> <p> This
      * call returns the next 10 executions, the 11th through the 20th. You can then
@@ -96,11 +96,11 @@ namespace Model
      * the output. You can then pass the <code>NextToken</code> parameter in a
      * subsequent command to continue listing additional executions.</p> <p> This is
      * useful for pagination, for instance. If you have 100 executions for a workflow,
-     * you might only want to list first 10. If so, callthe API by specifing the
+     * you might only want to list first 10. If so, call the API by specifying the
      * <code>max-results</code>: </p> <p> <code>aws transfer list-executions
      * --max-results 10</code> </p> <p> This returns details for the first 10
      * executions, as well as the pointer (<code>NextToken</code>) to the eleventh
-     * execution. You can now call the API again, suppling the <code>NextToken</code>
+     * execution. You can now call the API again, supplying the <code>NextToken</code>
      * value you received: </p> <p> <code>aws transfer list-executions --max-results 10
      * --next-token $somePointerReturnedFromPreviousListResult</code> </p> <p> This
      * call returns the next 10 executions, the 11th through the 20th. You can then
@@ -114,11 +114,11 @@ namespace Model
      * the output. You can then pass the <code>NextToken</code> parameter in a
      * subsequent command to continue listing additional executions.</p> <p> This is
      * useful for pagination, for instance. If you have 100 executions for a workflow,
-     * you might only want to list first 10. If so, callthe API by specifing the
+     * you might only want to list first 10. If so, call the API by specifying the
      * <code>max-results</code>: </p> <p> <code>aws transfer list-executions
      * --max-results 10</code> </p> <p> This returns details for the first 10
      * executions, as well as the pointer (<code>NextToken</code>) to the eleventh
-     * execution. You can now call the API again, suppling the <code>NextToken</code>
+     * execution. You can now call the API again, supplying the <code>NextToken</code>
      * value you received: </p> <p> <code>aws transfer list-executions --max-results 10
      * --next-token $somePointerReturnedFromPreviousListResult</code> </p> <p> This
      * call returns the next 10 executions, the 11th through the 20th. You can then
@@ -132,11 +132,11 @@ namespace Model
      * the output. You can then pass the <code>NextToken</code> parameter in a
      * subsequent command to continue listing additional executions.</p> <p> This is
      * useful for pagination, for instance. If you have 100 executions for a workflow,
-     * you might only want to list first 10. If so, callthe API by specifing the
+     * you might only want to list first 10. If so, call the API by specifying the
      * <code>max-results</code>: </p> <p> <code>aws transfer list-executions
      * --max-results 10</code> </p> <p> This returns details for the first 10
      * executions, as well as the pointer (<code>NextToken</code>) to the eleventh
-     * execution. You can now call the API again, suppling the <code>NextToken</code>
+     * execution. You can now call the API again, supplying the <code>NextToken</code>
      * value you received: </p> <p> <code>aws transfer list-executions --max-results 10
      * --next-token $somePointerReturnedFromPreviousListResult</code> </p> <p> This
      * call returns the next 10 executions, the 11th through the 20th. You can then
@@ -150,11 +150,11 @@ namespace Model
      * the output. You can then pass the <code>NextToken</code> parameter in a
      * subsequent command to continue listing additional executions.</p> <p> This is
      * useful for pagination, for instance. If you have 100 executions for a workflow,
-     * you might only want to list first 10. If so, callthe API by specifing the
+     * you might only want to list first 10. If so, call the API by specifying the
      * <code>max-results</code>: </p> <p> <code>aws transfer list-executions
      * --max-results 10</code> </p> <p> This returns details for the first 10
      * executions, as well as the pointer (<code>NextToken</code>) to the eleventh
-     * execution. You can now call the API again, suppling the <code>NextToken</code>
+     * execution. You can now call the API again, supplying the <code>NextToken</code>
      * value you received: </p> <p> <code>aws transfer list-executions --max-results 10
      * --next-token $somePointerReturnedFromPreviousListResult</code> </p> <p> This
      * call returns the next 10 executions, the 11th through the 20th. You can then
@@ -168,11 +168,11 @@ namespace Model
      * the output. You can then pass the <code>NextToken</code> parameter in a
      * subsequent command to continue listing additional executions.</p> <p> This is
      * useful for pagination, for instance. If you have 100 executions for a workflow,
-     * you might only want to list first 10. If so, callthe API by specifing the
+     * you might only want to list first 10. If so, call the API by specifying the
      * <code>max-results</code>: </p> <p> <code>aws transfer list-executions
      * --max-results 10</code> </p> <p> This returns details for the first 10
      * executions, as well as the pointer (<code>NextToken</code>) to the eleventh
-     * execution. You can now call the API again, suppling the <code>NextToken</code>
+     * execution. You can now call the API again, supplying the <code>NextToken</code>
      * value you received: </p> <p> <code>aws transfer list-executions --max-results 10
      * --next-token $somePointerReturnedFromPreviousListResult</code> </p> <p> This
      * call returns the next 10 executions, the 11th through the 20th. You can then
@@ -186,11 +186,11 @@ namespace Model
      * the output. You can then pass the <code>NextToken</code> parameter in a
      * subsequent command to continue listing additional executions.</p> <p> This is
      * useful for pagination, for instance. If you have 100 executions for a workflow,
-     * you might only want to list first 10. If so, callthe API by specifing the
+     * you might only want to list first 10. If so, call the API by specifying the
      * <code>max-results</code>: </p> <p> <code>aws transfer list-executions
      * --max-results 10</code> </p> <p> This returns details for the first 10
      * executions, as well as the pointer (<code>NextToken</code>) to the eleventh
-     * execution. You can now call the API again, suppling the <code>NextToken</code>
+     * execution. You can now call the API again, supplying the <code>NextToken</code>
      * value you received: </p> <p> <code>aws transfer list-executions --max-results 10
      * --next-token $somePointerReturnedFromPreviousListResult</code> </p> <p> This
      * call returns the next 10 executions, the 11th through the 20th. You can then
@@ -243,13 +243,13 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
   };
 
 } // namespace Model

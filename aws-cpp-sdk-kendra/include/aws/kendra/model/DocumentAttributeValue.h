@@ -199,16 +199,16 @@ namespace Model
   private:
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stringListValue;
-    bool m_stringListValueHasBeenSet;
+    bool m_stringListValueHasBeenSet = false;
 
     long long m_longValue;
-    bool m_longValueHasBeenSet;
+    bool m_longValueHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateValue;
-    bool m_dateValueHasBeenSet;
+    bool m_dateValueHasBeenSet = false;
   };
 
 } // namespace Model

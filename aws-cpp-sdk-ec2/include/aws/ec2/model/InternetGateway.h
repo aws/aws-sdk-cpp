@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::Vector<InternetGatewayAttachment> m_attachments;
-    bool m_attachmentsHasBeenSet;
+    bool m_attachmentsHasBeenSet = false;
 
     Aws::String m_internetGatewayId;
-    bool m_internetGatewayIdHasBeenSet;
+    bool m_internetGatewayIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

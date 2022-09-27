@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::Vector<EndpointDetails> m_endpointDetails;
-    bool m_endpointDetailsHasBeenSet;
+    bool m_endpointDetailsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

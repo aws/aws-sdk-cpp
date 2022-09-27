@@ -332,25 +332,25 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_architecture;
-    bool m_architectureHasBeenSet;
+    bool m_architectureHasBeenSet = false;
 
     Aws::String m_imageSha;
-    bool m_imageShaHasBeenSet;
+    bool m_imageShaHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_imageTags;
-    bool m_imageTagsHasBeenSet;
+    bool m_imageTagsHasBeenSet = false;
 
     Aws::String m_repository;
-    bool m_repositoryHasBeenSet;
+    bool m_repositoryHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     SeverityCounts m_severityCounts;
-    bool m_severityCountsHasBeenSet;
+    bool m_severityCountsHasBeenSet = false;
   };
 
 } // namespace Model

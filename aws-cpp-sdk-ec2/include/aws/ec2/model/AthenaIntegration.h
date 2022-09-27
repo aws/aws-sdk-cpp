@@ -178,16 +178,16 @@ namespace Model
   private:
 
     Aws::String m_integrationResultS3DestinationArn;
-    bool m_integrationResultS3DestinationArnHasBeenSet;
+    bool m_integrationResultS3DestinationArnHasBeenSet = false;
 
     PartitionLoadFrequency m_partitionLoadFrequency;
-    bool m_partitionLoadFrequencyHasBeenSet;
+    bool m_partitionLoadFrequencyHasBeenSet = false;
 
     Aws::Utils::DateTime m_partitionStartDate;
-    bool m_partitionStartDateHasBeenSet;
+    bool m_partitionStartDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_partitionEndDate;
-    bool m_partitionEndDateHasBeenSet;
+    bool m_partitionEndDateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -195,10 +195,10 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerTargetGroupARN;
-    bool m_loadBalancerTargetGroupARNHasBeenSet;
+    bool m_loadBalancerTargetGroupARNHasBeenSet = false;
 
     Aws::String m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

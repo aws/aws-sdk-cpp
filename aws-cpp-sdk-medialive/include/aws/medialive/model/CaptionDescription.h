@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/AccessibilityType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/CaptionDestinationSettings.h>
 #include <utility>
@@ -36,6 +37,43 @@ namespace Model
     CaptionDescription(Aws::Utils::Json::JsonView jsonValue);
     CaptionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Indicates whether the caption track implements accessibility features such as
+     * written descriptions of spoken dialog, music, and sounds.
+     */
+    inline const AccessibilityType& GetAccessibility() const{ return m_accessibility; }
+
+    /**
+     * Indicates whether the caption track implements accessibility features such as
+     * written descriptions of spoken dialog, music, and sounds.
+     */
+    inline bool AccessibilityHasBeenSet() const { return m_accessibilityHasBeenSet; }
+
+    /**
+     * Indicates whether the caption track implements accessibility features such as
+     * written descriptions of spoken dialog, music, and sounds.
+     */
+    inline void SetAccessibility(const AccessibilityType& value) { m_accessibilityHasBeenSet = true; m_accessibility = value; }
+
+    /**
+     * Indicates whether the caption track implements accessibility features such as
+     * written descriptions of spoken dialog, music, and sounds.
+     */
+    inline void SetAccessibility(AccessibilityType&& value) { m_accessibilityHasBeenSet = true; m_accessibility = std::move(value); }
+
+    /**
+     * Indicates whether the caption track implements accessibility features such as
+     * written descriptions of spoken dialog, music, and sounds.
+     */
+    inline CaptionDescription& WithAccessibility(const AccessibilityType& value) { SetAccessibility(value); return *this;}
+
+    /**
+     * Indicates whether the caption track implements accessibility features such as
+     * written descriptions of spoken dialog, music, and sounds.
+     */
+    inline CaptionDescription& WithAccessibility(AccessibilityType&& value) { SetAccessibility(std::move(value)); return *this;}
 
 
     /**
@@ -264,20 +302,23 @@ namespace Model
 
   private:
 
+    AccessibilityType m_accessibility;
+    bool m_accessibilityHasBeenSet = false;
+
     Aws::String m_captionSelectorName;
-    bool m_captionSelectorNameHasBeenSet;
+    bool m_captionSelectorNameHasBeenSet = false;
 
     CaptionDestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
 
     Aws::String m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::String m_languageDescription;
-    bool m_languageDescriptionHasBeenSet;
+    bool m_languageDescriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -223,16 +223,16 @@ namespace Model
   private:
 
     Aws::Vector<TopicConfiguration> m_topicConfigurations;
-    bool m_topicConfigurationsHasBeenSet;
+    bool m_topicConfigurationsHasBeenSet = false;
 
     Aws::Vector<QueueConfiguration> m_queueConfigurations;
-    bool m_queueConfigurationsHasBeenSet;
+    bool m_queueConfigurationsHasBeenSet = false;
 
     Aws::Vector<LambdaFunctionConfiguration> m_lambdaFunctionConfigurations;
-    bool m_lambdaFunctionConfigurationsHasBeenSet;
+    bool m_lambdaFunctionConfigurationsHasBeenSet = false;
 
     EventBridgeConfiguration m_eventBridgeConfiguration;
-    bool m_eventBridgeConfigurationHasBeenSet;
+    bool m_eventBridgeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

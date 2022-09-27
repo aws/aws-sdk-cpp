@@ -44,7 +44,11 @@ namespace Model
      * enabled, API Gateway still performs basic certificate validation, which includes
      * checking the certificate's expiration date, hostname, and presence of a root
      * certificate authority. Supported only for <code>HTTP</code> and
-     * <code>HTTP_PROXY</code> integrations.</p>
+     * <code>HTTP_PROXY</code> integrations.</p>  <p>Enabling
+     * <code>insecureSkipVerification</code> isn't recommended, especially for
+     * integrations with public HTTPS endpoints. If you enable
+     * <code>insecureSkipVerification</code>, you increase the risk of
+     * man-in-the-middle attacks.</p> 
      */
     inline bool GetInsecureSkipVerification() const{ return m_insecureSkipVerification; }
 
@@ -56,7 +60,11 @@ namespace Model
      * enabled, API Gateway still performs basic certificate validation, which includes
      * checking the certificate's expiration date, hostname, and presence of a root
      * certificate authority. Supported only for <code>HTTP</code> and
-     * <code>HTTP_PROXY</code> integrations.</p>
+     * <code>HTTP_PROXY</code> integrations.</p>  <p>Enabling
+     * <code>insecureSkipVerification</code> isn't recommended, especially for
+     * integrations with public HTTPS endpoints. If you enable
+     * <code>insecureSkipVerification</code>, you increase the risk of
+     * man-in-the-middle attacks.</p> 
      */
     inline bool InsecureSkipVerificationHasBeenSet() const { return m_insecureSkipVerificationHasBeenSet; }
 
@@ -68,7 +76,11 @@ namespace Model
      * enabled, API Gateway still performs basic certificate validation, which includes
      * checking the certificate's expiration date, hostname, and presence of a root
      * certificate authority. Supported only for <code>HTTP</code> and
-     * <code>HTTP_PROXY</code> integrations.</p>
+     * <code>HTTP_PROXY</code> integrations.</p>  <p>Enabling
+     * <code>insecureSkipVerification</code> isn't recommended, especially for
+     * integrations with public HTTPS endpoints. If you enable
+     * <code>insecureSkipVerification</code>, you increase the risk of
+     * man-in-the-middle attacks.</p> 
      */
     inline void SetInsecureSkipVerification(bool value) { m_insecureSkipVerificationHasBeenSet = true; m_insecureSkipVerification = value; }
 
@@ -80,14 +92,18 @@ namespace Model
      * enabled, API Gateway still performs basic certificate validation, which includes
      * checking the certificate's expiration date, hostname, and presence of a root
      * certificate authority. Supported only for <code>HTTP</code> and
-     * <code>HTTP_PROXY</code> integrations.</p>
+     * <code>HTTP_PROXY</code> integrations.</p>  <p>Enabling
+     * <code>insecureSkipVerification</code> isn't recommended, especially for
+     * integrations with public HTTPS endpoints. If you enable
+     * <code>insecureSkipVerification</code>, you increase the risk of
+     * man-in-the-middle attacks.</p> 
      */
     inline TlsConfig& WithInsecureSkipVerification(bool value) { SetInsecureSkipVerification(value); return *this;}
 
   private:
 
     bool m_insecureSkipVerification;
-    bool m_insecureSkipVerificationHasBeenSet;
+    bool m_insecureSkipVerificationHasBeenSet = false;
   };
 
 } // namespace Model

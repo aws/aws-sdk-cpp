@@ -28,7 +28,8 @@ ThingIndexingConfiguration::ThingIndexingConfiguration() :
     m_namedShadowIndexingMode(NamedShadowIndexingMode::NOT_SET),
     m_namedShadowIndexingModeHasBeenSet(false),
     m_managedFieldsHasBeenSet(false),
-    m_customFieldsHasBeenSet(false)
+    m_customFieldsHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ThingIndexingConfiguration::ThingIndexingConfiguration(JsonView jsonValue) :
     m_namedShadowIndexingMode(NamedShadowIndexingMode::NOT_SET),
     m_namedShadowIndexingModeHasBeenSet(false),
     m_managedFieldsHasBeenSet(false),
-    m_customFieldsHasBeenSet(false)
+    m_customFieldsHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +99,13 @@ ThingIndexingConfiguration& ThingIndexingConfiguration::operator =(JsonView json
     m_customFieldsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("filter"))
+  {
+    m_filter = jsonValue.GetObject("filter");
+
+    m_filterHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -143,6 +152,12 @@ JsonValue ThingIndexingConfiguration::Jsonize() const
      customFieldsJsonList[customFieldsIndex].AsObject(m_customFields[customFieldsIndex].Jsonize());
    }
    payload.WithArray("customFields", std::move(customFieldsJsonList));
+
+  }
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("filter", m_filter.Jsonize());
 
   }
 

@@ -26,7 +26,9 @@ EBSOptions::EBSOptions() :
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
     m_iops(0),
-    m_iopsHasBeenSet(false)
+    m_iopsHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ EBSOptions::EBSOptions(JsonView jsonValue) :
     m_volumeSize(0),
     m_volumeSizeHasBeenSet(false),
     m_iops(0),
-    m_iopsHasBeenSet(false)
+    m_iopsHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,6 +77,13 @@ EBSOptions& EBSOptions::operator =(JsonView jsonValue)
     m_iopsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Throughput"))
+  {
+    m_throughput = jsonValue.GetInteger("Throughput");
+
+    m_throughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -100,6 +111,12 @@ JsonValue EBSOptions::Jsonize() const
   if(m_iopsHasBeenSet)
   {
    payload.WithInteger("Iops", m_iops);
+
+  }
+
+  if(m_throughputHasBeenSet)
+  {
+   payload.WithInteger("Throughput", m_throughput);
 
   }
 

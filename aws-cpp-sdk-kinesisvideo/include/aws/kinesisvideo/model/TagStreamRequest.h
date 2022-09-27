@@ -204,13 +204,13 @@ namespace Model
   private:
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

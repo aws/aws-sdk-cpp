@@ -158,13 +158,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_sharedAccountId;
-    bool m_sharedAccountIdHasBeenSet;
+    bool m_sharedAccountIdHasBeenSet = false;
 
     ImagePermissions m_imagePermissions;
-    bool m_imagePermissionsHasBeenSet;
+    bool m_imagePermissionsHasBeenSet = false;
   };
 
 } // namespace Model

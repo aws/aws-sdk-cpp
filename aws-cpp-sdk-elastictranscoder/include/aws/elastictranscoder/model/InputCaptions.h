@@ -243,10 +243,10 @@ namespace Model
   private:
 
     Aws::String m_mergePolicy;
-    bool m_mergePolicyHasBeenSet;
+    bool m_mergePolicyHasBeenSet = false;
 
     Aws::Vector<CaptionSource> m_captionSources;
-    bool m_captionSourcesHasBeenSet;
+    bool m_captionSourcesHasBeenSet = false;
   };
 
 } // namespace Model

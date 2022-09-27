@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_exportId;
-    bool m_exportIdHasBeenSet;
+    bool m_exportIdHasBeenSet = false;
   };
 
 } // namespace Model

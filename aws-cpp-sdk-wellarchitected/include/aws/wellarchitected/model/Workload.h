@@ -676,73 +676,73 @@ namespace Model
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_workloadArn;
-    bool m_workloadArnHasBeenSet;
+    bool m_workloadArnHasBeenSet = false;
 
     Aws::String m_workloadName;
-    bool m_workloadNameHasBeenSet;
+    bool m_workloadNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     WorkloadEnvironment m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_awsRegions;
-    bool m_awsRegionsHasBeenSet;
+    bool m_awsRegionsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_nonAwsRegions;
-    bool m_nonAwsRegionsHasBeenSet;
+    bool m_nonAwsRegionsHasBeenSet = false;
 
     Aws::String m_architecturalDesign;
-    bool m_architecturalDesignHasBeenSet;
+    bool m_architecturalDesignHasBeenSet = false;
 
     Aws::String m_reviewOwner;
-    bool m_reviewOwnerHasBeenSet;
+    bool m_reviewOwnerHasBeenSet = false;
 
     Aws::Utils::DateTime m_reviewRestrictionDate;
-    bool m_reviewRestrictionDateHasBeenSet;
+    bool m_reviewRestrictionDateHasBeenSet = false;
 
     bool m_isReviewOwnerUpdateAcknowledged;
-    bool m_isReviewOwnerUpdateAcknowledgedHasBeenSet;
+    bool m_isReviewOwnerUpdateAcknowledgedHasBeenSet = false;
 
     Aws::String m_industryType;
-    bool m_industryTypeHasBeenSet;
+    bool m_industryTypeHasBeenSet = false;
 
     Aws::String m_industry;
-    bool m_industryHasBeenSet;
+    bool m_industryHasBeenSet = false;
 
     Aws::String m_notes;
-    bool m_notesHasBeenSet;
+    bool m_notesHasBeenSet = false;
 
     WorkloadImprovementStatus m_improvementStatus;
-    bool m_improvementStatusHasBeenSet;
+    bool m_improvementStatusHasBeenSet = false;
 
     Aws::Map<Risk, int> m_riskCounts;
-    bool m_riskCountsHasBeenSet;
+    bool m_riskCountsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_pillarPriorities;
-    bool m_pillarPrioritiesHasBeenSet;
+    bool m_pillarPrioritiesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lenses;
-    bool m_lensesHasBeenSet;
+    bool m_lensesHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_shareInvitationId;
-    bool m_shareInvitationIdHasBeenSet;
+    bool m_shareInvitationIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The names of the Auto Scaling groups. By default, you can only specify up to
      * 50 names. You can optionally increase this limit using the
-     * <code>MaxRecords</code> parameter.</p> <p>If you omit this parameter, all Auto
+     * <code>MaxRecords</code> property.</p> <p>If you omit this property, all Auto
      * Scaling groups are described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAutoScalingGroupNames() const{ return m_autoScalingGroupNames; }
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>The names of the Auto Scaling groups. By default, you can only specify up to
      * 50 names. You can optionally increase this limit using the
-     * <code>MaxRecords</code> parameter.</p> <p>If you omit this parameter, all Auto
+     * <code>MaxRecords</code> property.</p> <p>If you omit this property, all Auto
      * Scaling groups are described.</p>
      */
     inline bool AutoScalingGroupNamesHasBeenSet() const { return m_autoScalingGroupNamesHasBeenSet; }
@@ -57,7 +57,7 @@ namespace Model
     /**
      * <p>The names of the Auto Scaling groups. By default, you can only specify up to
      * 50 names. You can optionally increase this limit using the
-     * <code>MaxRecords</code> parameter.</p> <p>If you omit this parameter, all Auto
+     * <code>MaxRecords</code> property.</p> <p>If you omit this property, all Auto
      * Scaling groups are described.</p>
      */
     inline void SetAutoScalingGroupNames(const Aws::Vector<Aws::String>& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames = value; }
@@ -65,7 +65,7 @@ namespace Model
     /**
      * <p>The names of the Auto Scaling groups. By default, you can only specify up to
      * 50 names. You can optionally increase this limit using the
-     * <code>MaxRecords</code> parameter.</p> <p>If you omit this parameter, all Auto
+     * <code>MaxRecords</code> property.</p> <p>If you omit this property, all Auto
      * Scaling groups are described.</p>
      */
     inline void SetAutoScalingGroupNames(Aws::Vector<Aws::String>&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames = std::move(value); }
@@ -73,7 +73,7 @@ namespace Model
     /**
      * <p>The names of the Auto Scaling groups. By default, you can only specify up to
      * 50 names. You can optionally increase this limit using the
-     * <code>MaxRecords</code> parameter.</p> <p>If you omit this parameter, all Auto
+     * <code>MaxRecords</code> property.</p> <p>If you omit this property, all Auto
      * Scaling groups are described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& WithAutoScalingGroupNames(const Aws::Vector<Aws::String>& value) { SetAutoScalingGroupNames(value); return *this;}
@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p>The names of the Auto Scaling groups. By default, you can only specify up to
      * 50 names. You can optionally increase this limit using the
-     * <code>MaxRecords</code> parameter.</p> <p>If you omit this parameter, all Auto
+     * <code>MaxRecords</code> property.</p> <p>If you omit this property, all Auto
      * Scaling groups are described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& WithAutoScalingGroupNames(Aws::Vector<Aws::String>&& value) { SetAutoScalingGroupNames(std::move(value)); return *this;}
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>The names of the Auto Scaling groups. By default, you can only specify up to
      * 50 names. You can optionally increase this limit using the
-     * <code>MaxRecords</code> parameter.</p> <p>If you omit this parameter, all Auto
+     * <code>MaxRecords</code> property.</p> <p>If you omit this property, all Auto
      * Scaling groups are described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& AddAutoScalingGroupNames(const Aws::String& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>The names of the Auto Scaling groups. By default, you can only specify up to
      * 50 names. You can optionally increase this limit using the
-     * <code>MaxRecords</code> parameter.</p> <p>If you omit this parameter, all Auto
+     * <code>MaxRecords</code> property.</p> <p>If you omit this property, all Auto
      * Scaling groups are described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& AddAutoScalingGroupNames(Aws::String&& value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(std::move(value)); return *this; }
@@ -105,7 +105,7 @@ namespace Model
     /**
      * <p>The names of the Auto Scaling groups. By default, you can only specify up to
      * 50 names. You can optionally increase this limit using the
-     * <code>MaxRecords</code> parameter.</p> <p>If you omit this parameter, all Auto
+     * <code>MaxRecords</code> property.</p> <p>If you omit this property, all Auto
      * Scaling groups are described.</p>
      */
     inline DescribeAutoScalingGroupsRequest& AddAutoScalingGroupNames(const char* value) { m_autoScalingGroupNamesHasBeenSet = true; m_autoScalingGroupNames.push_back(value); return *this; }
@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_autoScalingGroupNames;
-    bool m_autoScalingGroupNamesHasBeenSet;
+    bool m_autoScalingGroupNamesHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
   };
 
 } // namespace Model

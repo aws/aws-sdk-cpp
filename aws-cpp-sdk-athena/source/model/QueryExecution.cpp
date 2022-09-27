@@ -28,7 +28,8 @@ QueryExecution::QueryExecution() :
     m_statusHasBeenSet(false),
     m_statisticsHasBeenSet(false),
     m_workGroupHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_executionParametersHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ QueryExecution::QueryExecution(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_statisticsHasBeenSet(false),
     m_workGroupHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_executionParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +114,16 @@ QueryExecution& QueryExecution::operator =(JsonView jsonValue)
     m_engineVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExecutionParameters"))
+  {
+    Array<JsonView> executionParametersJsonList = jsonValue.GetArray("ExecutionParameters");
+    for(unsigned executionParametersIndex = 0; executionParametersIndex < executionParametersJsonList.GetLength(); ++executionParametersIndex)
+    {
+      m_executionParameters.push_back(executionParametersJsonList[executionParametersIndex].AsString());
+    }
+    m_executionParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -169,6 +181,17 @@ JsonValue QueryExecution::Jsonize() const
   if(m_engineVersionHasBeenSet)
   {
    payload.WithObject("EngineVersion", m_engineVersion.Jsonize());
+
+  }
+
+  if(m_executionParametersHasBeenSet)
+  {
+   Array<JsonValue> executionParametersJsonList(m_executionParameters.size());
+   for(unsigned executionParametersIndex = 0; executionParametersIndex < executionParametersJsonList.GetLength(); ++executionParametersIndex)
+   {
+     executionParametersJsonList[executionParametersIndex].AsString(m_executionParameters[executionParametersIndex]);
+   }
+   payload.WithArray("ExecutionParameters", std::move(executionParametersJsonList));
 
   }
 

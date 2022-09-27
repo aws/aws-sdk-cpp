@@ -342,28 +342,28 @@ namespace Model
   private:
 
     AwsEc2NetworkInterfaceAttachment m_attachment;
-    bool m_attachmentHasBeenSet;
+    bool m_attachmentHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     Aws::Vector<AwsEc2NetworkInterfaceSecurityGroup> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     bool m_sourceDestCheck;
-    bool m_sourceDestCheckHasBeenSet;
+    bool m_sourceDestCheckHasBeenSet = false;
 
     Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail> m_ipV6Addresses;
-    bool m_ipV6AddressesHasBeenSet;
+    bool m_ipV6AddressesHasBeenSet = false;
 
     Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail> m_privateIpAddresses;
-    bool m_privateIpAddressesHasBeenSet;
+    bool m_privateIpAddressesHasBeenSet = false;
 
     Aws::String m_publicDnsName;
-    bool m_publicDnsNameHasBeenSet;
+    bool m_publicDnsNameHasBeenSet = false;
 
     Aws::String m_publicIp;
-    bool m_publicIpHasBeenSet;
+    bool m_publicIpHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,218 +5,15 @@
 
 #pragma once
 #include <aws/evidently/CloudWatchEvidently_EXPORTS.h>
-#include <aws/evidently/CloudWatchEvidentlyErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/evidently/model/BatchEvaluateFeatureResult.h>
-#include <aws/evidently/model/CreateExperimentResult.h>
-#include <aws/evidently/model/CreateFeatureResult.h>
-#include <aws/evidently/model/CreateLaunchResult.h>
-#include <aws/evidently/model/CreateProjectResult.h>
-#include <aws/evidently/model/DeleteExperimentResult.h>
-#include <aws/evidently/model/DeleteFeatureResult.h>
-#include <aws/evidently/model/DeleteLaunchResult.h>
-#include <aws/evidently/model/DeleteProjectResult.h>
-#include <aws/evidently/model/EvaluateFeatureResult.h>
-#include <aws/evidently/model/GetExperimentResult.h>
-#include <aws/evidently/model/GetExperimentResultsResult.h>
-#include <aws/evidently/model/GetFeatureResult.h>
-#include <aws/evidently/model/GetLaunchResult.h>
-#include <aws/evidently/model/GetProjectResult.h>
-#include <aws/evidently/model/ListExperimentsResult.h>
-#include <aws/evidently/model/ListFeaturesResult.h>
-#include <aws/evidently/model/ListLaunchesResult.h>
-#include <aws/evidently/model/ListProjectsResult.h>
-#include <aws/evidently/model/ListTagsForResourceResult.h>
-#include <aws/evidently/model/PutProjectEventsResult.h>
-#include <aws/evidently/model/StartExperimentResult.h>
-#include <aws/evidently/model/StartLaunchResult.h>
-#include <aws/evidently/model/StopExperimentResult.h>
-#include <aws/evidently/model/StopLaunchResult.h>
-#include <aws/evidently/model/TagResourceResult.h>
-#include <aws/evidently/model/UntagResourceResult.h>
-#include <aws/evidently/model/UpdateExperimentResult.h>
-#include <aws/evidently/model/UpdateFeatureResult.h>
-#include <aws/evidently/model/UpdateLaunchResult.h>
-#include <aws/evidently/model/UpdateProjectResult.h>
-#include <aws/evidently/model/UpdateProjectDataDeliveryResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/evidently/CloudWatchEvidentlyServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CloudWatchEvidently
 {
-
-namespace Model
-{
-        class BatchEvaluateFeatureRequest;
-        class CreateExperimentRequest;
-        class CreateFeatureRequest;
-        class CreateLaunchRequest;
-        class CreateProjectRequest;
-        class DeleteExperimentRequest;
-        class DeleteFeatureRequest;
-        class DeleteLaunchRequest;
-        class DeleteProjectRequest;
-        class EvaluateFeatureRequest;
-        class GetExperimentRequest;
-        class GetExperimentResultsRequest;
-        class GetFeatureRequest;
-        class GetLaunchRequest;
-        class GetProjectRequest;
-        class ListExperimentsRequest;
-        class ListFeaturesRequest;
-        class ListLaunchesRequest;
-        class ListProjectsRequest;
-        class ListTagsForResourceRequest;
-        class PutProjectEventsRequest;
-        class StartExperimentRequest;
-        class StartLaunchRequest;
-        class StopExperimentRequest;
-        class StopLaunchRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateExperimentRequest;
-        class UpdateFeatureRequest;
-        class UpdateLaunchRequest;
-        class UpdateProjectRequest;
-        class UpdateProjectDataDeliveryRequest;
-
-        typedef Aws::Utils::Outcome<BatchEvaluateFeatureResult, CloudWatchEvidentlyError> BatchEvaluateFeatureOutcome;
-        typedef Aws::Utils::Outcome<CreateExperimentResult, CloudWatchEvidentlyError> CreateExperimentOutcome;
-        typedef Aws::Utils::Outcome<CreateFeatureResult, CloudWatchEvidentlyError> CreateFeatureOutcome;
-        typedef Aws::Utils::Outcome<CreateLaunchResult, CloudWatchEvidentlyError> CreateLaunchOutcome;
-        typedef Aws::Utils::Outcome<CreateProjectResult, CloudWatchEvidentlyError> CreateProjectOutcome;
-        typedef Aws::Utils::Outcome<DeleteExperimentResult, CloudWatchEvidentlyError> DeleteExperimentOutcome;
-        typedef Aws::Utils::Outcome<DeleteFeatureResult, CloudWatchEvidentlyError> DeleteFeatureOutcome;
-        typedef Aws::Utils::Outcome<DeleteLaunchResult, CloudWatchEvidentlyError> DeleteLaunchOutcome;
-        typedef Aws::Utils::Outcome<DeleteProjectResult, CloudWatchEvidentlyError> DeleteProjectOutcome;
-        typedef Aws::Utils::Outcome<EvaluateFeatureResult, CloudWatchEvidentlyError> EvaluateFeatureOutcome;
-        typedef Aws::Utils::Outcome<GetExperimentResult, CloudWatchEvidentlyError> GetExperimentOutcome;
-        typedef Aws::Utils::Outcome<GetExperimentResultsResult, CloudWatchEvidentlyError> GetExperimentResultsOutcome;
-        typedef Aws::Utils::Outcome<GetFeatureResult, CloudWatchEvidentlyError> GetFeatureOutcome;
-        typedef Aws::Utils::Outcome<GetLaunchResult, CloudWatchEvidentlyError> GetLaunchOutcome;
-        typedef Aws::Utils::Outcome<GetProjectResult, CloudWatchEvidentlyError> GetProjectOutcome;
-        typedef Aws::Utils::Outcome<ListExperimentsResult, CloudWatchEvidentlyError> ListExperimentsOutcome;
-        typedef Aws::Utils::Outcome<ListFeaturesResult, CloudWatchEvidentlyError> ListFeaturesOutcome;
-        typedef Aws::Utils::Outcome<ListLaunchesResult, CloudWatchEvidentlyError> ListLaunchesOutcome;
-        typedef Aws::Utils::Outcome<ListProjectsResult, CloudWatchEvidentlyError> ListProjectsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchEvidentlyError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutProjectEventsResult, CloudWatchEvidentlyError> PutProjectEventsOutcome;
-        typedef Aws::Utils::Outcome<StartExperimentResult, CloudWatchEvidentlyError> StartExperimentOutcome;
-        typedef Aws::Utils::Outcome<StartLaunchResult, CloudWatchEvidentlyError> StartLaunchOutcome;
-        typedef Aws::Utils::Outcome<StopExperimentResult, CloudWatchEvidentlyError> StopExperimentOutcome;
-        typedef Aws::Utils::Outcome<StopLaunchResult, CloudWatchEvidentlyError> StopLaunchOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, CloudWatchEvidentlyError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, CloudWatchEvidentlyError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateExperimentResult, CloudWatchEvidentlyError> UpdateExperimentOutcome;
-        typedef Aws::Utils::Outcome<UpdateFeatureResult, CloudWatchEvidentlyError> UpdateFeatureOutcome;
-        typedef Aws::Utils::Outcome<UpdateLaunchResult, CloudWatchEvidentlyError> UpdateLaunchOutcome;
-        typedef Aws::Utils::Outcome<UpdateProjectResult, CloudWatchEvidentlyError> UpdateProjectOutcome;
-        typedef Aws::Utils::Outcome<UpdateProjectDataDeliveryResult, CloudWatchEvidentlyError> UpdateProjectDataDeliveryOutcome;
-
-        typedef std::future<BatchEvaluateFeatureOutcome> BatchEvaluateFeatureOutcomeCallable;
-        typedef std::future<CreateExperimentOutcome> CreateExperimentOutcomeCallable;
-        typedef std::future<CreateFeatureOutcome> CreateFeatureOutcomeCallable;
-        typedef std::future<CreateLaunchOutcome> CreateLaunchOutcomeCallable;
-        typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
-        typedef std::future<DeleteExperimentOutcome> DeleteExperimentOutcomeCallable;
-        typedef std::future<DeleteFeatureOutcome> DeleteFeatureOutcomeCallable;
-        typedef std::future<DeleteLaunchOutcome> DeleteLaunchOutcomeCallable;
-        typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
-        typedef std::future<EvaluateFeatureOutcome> EvaluateFeatureOutcomeCallable;
-        typedef std::future<GetExperimentOutcome> GetExperimentOutcomeCallable;
-        typedef std::future<GetExperimentResultsOutcome> GetExperimentResultsOutcomeCallable;
-        typedef std::future<GetFeatureOutcome> GetFeatureOutcomeCallable;
-        typedef std::future<GetLaunchOutcome> GetLaunchOutcomeCallable;
-        typedef std::future<GetProjectOutcome> GetProjectOutcomeCallable;
-        typedef std::future<ListExperimentsOutcome> ListExperimentsOutcomeCallable;
-        typedef std::future<ListFeaturesOutcome> ListFeaturesOutcomeCallable;
-        typedef std::future<ListLaunchesOutcome> ListLaunchesOutcomeCallable;
-        typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutProjectEventsOutcome> PutProjectEventsOutcomeCallable;
-        typedef std::future<StartExperimentOutcome> StartExperimentOutcomeCallable;
-        typedef std::future<StartLaunchOutcome> StartLaunchOutcomeCallable;
-        typedef std::future<StopExperimentOutcome> StopExperimentOutcomeCallable;
-        typedef std::future<StopLaunchOutcome> StopLaunchOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateExperimentOutcome> UpdateExperimentOutcomeCallable;
-        typedef std::future<UpdateFeatureOutcome> UpdateFeatureOutcomeCallable;
-        typedef std::future<UpdateLaunchOutcome> UpdateLaunchOutcomeCallable;
-        typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
-        typedef std::future<UpdateProjectDataDeliveryOutcome> UpdateProjectDataDeliveryOutcomeCallable;
-} // namespace Model
-
-  class CloudWatchEvidentlyClient;
-
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::BatchEvaluateFeatureRequest&, const Model::BatchEvaluateFeatureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchEvaluateFeatureResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::CreateExperimentRequest&, const Model::CreateExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExperimentResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::CreateFeatureRequest&, const Model::CreateFeatureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFeatureResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::CreateLaunchRequest&, const Model::CreateLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLaunchResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::DeleteExperimentRequest&, const Model::DeleteExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExperimentResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::DeleteFeatureRequest&, const Model::DeleteFeatureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFeatureResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::DeleteLaunchRequest&, const Model::DeleteLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::EvaluateFeatureRequest&, const Model::EvaluateFeatureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EvaluateFeatureResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::GetExperimentRequest&, const Model::GetExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExperimentResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::GetExperimentResultsRequest&, const Model::GetExperimentResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExperimentResultsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::GetFeatureRequest&, const Model::GetFeatureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFeatureResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::GetLaunchRequest&, const Model::GetLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLaunchResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::GetProjectRequest&, const Model::GetProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProjectResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::ListExperimentsRequest&, const Model::ListExperimentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExperimentsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::ListFeaturesRequest&, const Model::ListFeaturesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFeaturesResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::ListLaunchesRequest&, const Model::ListLaunchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLaunchesResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::PutProjectEventsRequest&, const Model::PutProjectEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutProjectEventsResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::StartExperimentRequest&, const Model::StartExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExperimentResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::StartLaunchRequest&, const Model::StartLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLaunchResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::StopExperimentRequest&, const Model::StopExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopExperimentResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::StopLaunchRequest&, const Model::StopLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopLaunchResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::UpdateExperimentRequest&, const Model::UpdateExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExperimentResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::UpdateFeatureRequest&, const Model::UpdateFeatureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFeatureResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::UpdateLaunchRequest&, const Model::UpdateLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLaunchResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
-    typedef std::function<void(const CloudWatchEvidentlyClient*, const Model::UpdateProjectDataDeliveryRequest&, const Model::UpdateProjectDataDeliveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectDataDeliveryResponseReceivedHandler;
-
   /**
    * <p>You can use Amazon CloudWatch Evidently to safely validate new features by
    * serving them to a specified percentage of your users while you roll out the
@@ -244,14 +41,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudWatchEvidentlyClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudWatchEvidentlyClient(const Aws::Auth::AWSCredentials& credentials,
+                                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CloudWatchEvidentlyClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CloudWatchEvidentlyClient();
 
@@ -295,7 +93,10 @@ namespace Model
          * you make feature design decisions based on evidence and data. An experiment can
          * test as many as five variations at once. Evidently collects experiment data and
          * analyzes it by statistical methods, and provides clear recommendations about
-         * which variations perform better.</p> <p>Don't use this operation to update an
+         * which variations perform better.</p> <p>You can optionally specify a
+         * <code>segment</code> to have the experiment consider only certain audience types
+         * in the experiment, such as using only user sessions from a certain location or
+         * who use a certain internet browser.</p> <p>Don't use this operation to update an
          * existing experiment. Instead, use <a
          * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>.
          * </p><p><h3>See Also:</h3>   <a
@@ -386,6 +187,39 @@ namespace Model
         virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Use this operation to define a <i>segment</i> of your audience. A segment is
+         * a portion of your audience that share one or more characteristics. Examples
+         * could be Chrome browser users, users in Europe, or Firefox browser users in
+         * Europe who also fit other criteria that your application collects, such as
+         * age.</p> <p>Using a segment in an experiment limits that experiment to evaluate
+         * only the users who match the segment criteria. Using one or more segments in a
+         * launch allows you to define different traffic splits for the different audience
+         * segments.</p> <pre><code> &lt;p&gt;For more information about segment pattern
+         * syntax, see &lt;a
+         * href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html#CloudWatch-Evidently-segments-syntax.html&quot;&gt;
+         * Segment rule pattern syntax&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;The pattern that you
+         * define for a segment is matched against the value of
+         * &lt;code&gt;evaluationContext&lt;/code&gt;, which is passed into Evidently in
+         * the &lt;a
+         * href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html&quot;&gt;EvaluateFeature&lt;/a&gt;
+         * operation, when Evidently assigns a feature variation to a user.&lt;/p&gt;
+         * </code></pre><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/CreateSegment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSegmentOutcome CreateSegment(const Model::CreateSegmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateSegment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateSegmentOutcomeCallable CreateSegmentCallable(const Model::CreateSegmentRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateSegment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateSegmentAsync(const Model::CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an Evidently experiment. The feature used for the experiment is not
          * deleted.</p> <p>To stop an experiment without deleting it, use <a
          * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopExperiment.html">StopExperiment</a>.
@@ -463,23 +297,54 @@ namespace Model
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a segment. You can't delete a segment that is being used in a launch
+         * or experiment, even if that launch or experiment is not currently
+         * running.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/DeleteSegment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSegmentOutcome DeleteSegment(const Model::DeleteSegmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteSegment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSegmentOutcomeCallable DeleteSegmentCallable(const Model::DeleteSegmentRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteSegment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSegmentAsync(const Model::DeleteSegmentRequest& request, const DeleteSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This operation assigns a feature variation to one given user session. You
          * pass in an <code>entityID</code> that represents the user. Evidently then checks
          * the evaluation rules and assigns the variation.</p> <p>The first rules that are
          * evaluated are the override rules. If the user's <code>entityID</code> matches an
          * override rule, the user is served the variation specified by that rule.</p>
-         * <p>Next, if there is a launch of the feature, the user might be assigned to a
-         * variation in the launch. The chance of this depends on the percentage of users
-         * that are allocated to that launch. If the user is enrolled in the launch, the
-         * variation they are served depends on the allocation of the various feature
-         * variations used for the launch.</p> <p>If the user is not assigned to a launch,
-         * and there is an ongoing experiment for this feature, the user might be assigned
-         * to a variation in the experiment. The chance of this depends on the percentage
-         * of users that are allocated to that experiment. If the user is enrolled in the
+         * <pre><code> &lt;p&gt;If there is a current launch with this feature that uses
+         * segment overrides, and if the user session's
+         * &lt;code&gt;evaluationContext&lt;/code&gt; matches a segment rule defined in a
+         * segment override, the configuration in the segment overrides is used. For more
+         * information about segments, see &lt;a
+         * href=&quot;https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html&quot;&gt;CreateSegment&lt;/a&gt;
+         * and &lt;a
+         * href=&quot;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html&quot;&gt;Use
+         * segments to focus your audience&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;If there is a
+         * launch with no segment overrides, the user might be assigned to a variation in
+         * the launch. The chance of this depends on the percentage of users that are
+         * allocated to that launch. If the user is enrolled in the launch, the variation
+         * they are served depends on the allocation of the various feature variations used
+         * for the launch.&lt;/p&gt; &lt;p&gt;If the user is not assigned to a launch, and
+         * there is an ongoing experiment for this feature, the user might be assigned to a
+         * variation in the experiment. The chance of this depends on the percentage of
+         * users that are allocated to that experiment.&lt;/p&gt; &lt;p&gt;If the
+         * experiment uses a segment, then only user sessions with
+         * &lt;code&gt;evaluationContext&lt;/code&gt; values that match the segment rule
+         * are used in the experiment.&lt;/p&gt; &lt;p&gt;If the user is enrolled in the
          * experiment, the variation they are served depends on the allocation of the
-         * various feature variations used for the experiment. </p> <p>If the user is not
-         * assigned to a launch or experiment, they are served the default
-         * variation.</p><p><h3>See Also:</h3>   <a
+         * various feature variations used for the experiment. &lt;/p&gt; &lt;p&gt;If the
+         * user is not assigned to a launch or experiment, they are served the default
+         * variation.&lt;/p&gt; </code></pre><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/EvaluateFeature">AWS
          * API Reference</a></p>
          */
@@ -518,10 +383,13 @@ namespace Model
         /**
          * <p>Retrieves the results of a running or completed experiment. No results are
          * available until there have been 100 events for each variation and at least 10
-         * minutes have passed since the start of the experiment.</p> <p>Experiment results
-         * are available up to 63 days after the start of the experiment. They are not
-         * available after that because of CloudWatch data retention
-         * policies.</p><p><h3>See Also:</h3>   <a
+         * minutes have passed since the start of the experiment. To increase the
+         * statistical power, Evidently performs an additional offline p-value analysis at
+         * the end of the experiment. Offline p-value analysis can detect statistical
+         * significance in some cases where the anytime p-values used during the experiment
+         * do not find statistical significance.</p> <p>Experiment results are available up
+         * to 63 days after the start of the experiment. They are not available after that
+         * because of CloudWatch data retention policies.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetExperimentResults">AWS
          * API Reference</a></p>
          */
@@ -598,6 +466,24 @@ namespace Model
         virtual void GetProjectAsync(const Model::GetProjectRequest& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about the specified segment. Specify the segment you want
+         * to view by specifying its ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/GetSegment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSegmentOutcome GetSegment(const Model::GetSegmentRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSegment that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSegmentOutcomeCallable GetSegmentCallable(const Model::GetSegmentRequest& request) const;
+
+        /**
+         * An Async wrapper for GetSegment that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSegmentAsync(const Model::GetSegmentRequest& request, const GetSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns configuration details about all the experiments in the specified
          * project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListExperiments">AWS
@@ -668,6 +554,42 @@ namespace Model
          * An Async wrapper for ListProjects that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Use this operation to find which experiments or launches are using a
+         * specified segment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegmentReferences">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSegmentReferencesOutcome ListSegmentReferences(const Model::ListSegmentReferencesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSegmentReferences that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSegmentReferencesOutcomeCallable ListSegmentReferencesCallable(const Model::ListSegmentReferencesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListSegmentReferences that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSegmentReferencesAsync(const Model::ListSegmentReferencesRequest& request, const ListSegmentReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of audience segments that you have created in your account in
+         * this Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/ListSegments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSegmentsOutcome ListSegments(const Model::ListSegmentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSegments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSegmentsOutcomeCallable ListSegmentsCallable(const Model::ListSegmentsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListSegments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSegmentsAsync(const Model::ListSegmentsRequest& request, const ListSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Displays the tags associated with an Evidently resource.</p><p><h3>See
@@ -814,6 +736,26 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Use this operation to test a rules pattern that you plan to use to create an
+         * audience segment. For more information about segments, see <a
+         * href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html">CreateSegment</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/TestSegmentPattern">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TestSegmentPatternOutcome TestSegmentPattern(const Model::TestSegmentPatternRequest& request) const;
+
+        /**
+         * A Callable wrapper for TestSegmentPattern that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TestSegmentPatternOutcomeCallable TestSegmentPatternCallable(const Model::TestSegmentPatternRequest& request) const;
+
+        /**
+         * An Async wrapper for TestSegmentPattern that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TestSegmentPatternAsync(const Model::TestSegmentPatternRequest& request, const TestSegmentPatternResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes one or more tags from the specified resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/evidently-2021-02-01/UntagResource">AWS
@@ -943,42 +885,10 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void BatchEvaluateFeatureAsyncHelper(const Model::BatchEvaluateFeatureRequest& request, const BatchEvaluateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateExperimentAsyncHelper(const Model::CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateFeatureAsyncHelper(const Model::CreateFeatureRequest& request, const CreateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateLaunchAsyncHelper(const Model::CreateLaunchRequest& request, const CreateLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteExperimentAsyncHelper(const Model::DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteFeatureAsyncHelper(const Model::DeleteFeatureRequest& request, const DeleteFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteLaunchAsyncHelper(const Model::DeleteLaunchRequest& request, const DeleteLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EvaluateFeatureAsyncHelper(const Model::EvaluateFeatureRequest& request, const EvaluateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetExperimentAsyncHelper(const Model::GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetExperimentResultsAsyncHelper(const Model::GetExperimentResultsRequest& request, const GetExperimentResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFeatureAsyncHelper(const Model::GetFeatureRequest& request, const GetFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetLaunchAsyncHelper(const Model::GetLaunchRequest& request, const GetLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetProjectAsyncHelper(const Model::GetProjectRequest& request, const GetProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListExperimentsAsyncHelper(const Model::ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListFeaturesAsyncHelper(const Model::ListFeaturesRequest& request, const ListFeaturesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListLaunchesAsyncHelper(const Model::ListLaunchesRequest& request, const ListLaunchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProjectsAsyncHelper(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutProjectEventsAsyncHelper(const Model::PutProjectEventsRequest& request, const PutProjectEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartExperimentAsyncHelper(const Model::StartExperimentRequest& request, const StartExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartLaunchAsyncHelper(const Model::StartLaunchRequest& request, const StartLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopExperimentAsyncHelper(const Model::StopExperimentRequest& request, const StopExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopLaunchAsyncHelper(const Model::StopLaunchRequest& request, const StopLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateExperimentAsyncHelper(const Model::UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateFeatureAsyncHelper(const Model::UpdateFeatureRequest& request, const UpdateFeatureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateLaunchAsyncHelper(const Model::UpdateLaunchRequest& request, const UpdateLaunchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateProjectDataDeliveryAsyncHelper(const Model::UpdateProjectDataDeliveryRequest& request, const UpdateProjectDataDeliveryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_baseUri;
       Aws::String m_scheme;
-      bool m_enableHostPrefixInjection;
+      bool m_enableHostPrefixInjection = false;
       Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };

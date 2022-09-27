@@ -72,7 +72,7 @@ LaunchTemplateSpotMarketOptions& LaunchTemplateSpotMarketOptions::operator =(con
     XmlNode validUntilNode = resultNode.FirstChild("validUntil");
     if(!validUntilNode.IsNull())
     {
-      m_validUntil = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validUntilNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_validUntil = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(validUntilNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_validUntilHasBeenSet = true;
     }
     XmlNode instanceInterruptionBehaviorNode = resultNode.FirstChild("instanceInterruptionBehavior");
@@ -105,7 +105,7 @@ void LaunchTemplateSpotMarketOptions::OutputToStream(Aws::OStream& oStream, cons
 
   if(m_validUntilHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_instanceInterruptionBehaviorHasBeenSet)
@@ -131,7 +131,7 @@ void LaunchTemplateSpotMarketOptions::OutputToStream(Aws::OStream& oStream, cons
   }
   if(m_validUntilHasBeenSet)
   {
-      oStream << location << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ValidUntil=" << StringUtils::URLEncode(m_validUntil.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_instanceInterruptionBehaviorHasBeenSet)
   {

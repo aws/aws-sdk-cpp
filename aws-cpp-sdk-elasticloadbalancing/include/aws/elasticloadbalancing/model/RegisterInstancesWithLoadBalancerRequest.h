@@ -126,10 +126,10 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     Aws::Vector<Instance> m_instances;
-    bool m_instancesHasBeenSet;
+    bool m_instancesHasBeenSet = false;
   };
 
 } // namespace Model

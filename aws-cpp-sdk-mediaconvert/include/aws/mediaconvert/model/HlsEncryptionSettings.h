@@ -336,25 +336,25 @@ namespace Model
   private:
 
     Aws::String m_constantInitializationVector;
-    bool m_constantInitializationVectorHasBeenSet;
+    bool m_constantInitializationVectorHasBeenSet = false;
 
     HlsEncryptionType m_encryptionMethod;
-    bool m_encryptionMethodHasBeenSet;
+    bool m_encryptionMethodHasBeenSet = false;
 
     HlsInitializationVectorInManifest m_initializationVectorInManifest;
-    bool m_initializationVectorInManifestHasBeenSet;
+    bool m_initializationVectorInManifestHasBeenSet = false;
 
     HlsOfflineEncrypted m_offlineEncrypted;
-    bool m_offlineEncryptedHasBeenSet;
+    bool m_offlineEncryptedHasBeenSet = false;
 
     SpekeKeyProvider m_spekeKeyProvider;
-    bool m_spekeKeyProviderHasBeenSet;
+    bool m_spekeKeyProviderHasBeenSet = false;
 
     StaticKeyProvider m_staticKeyProvider;
-    bool m_staticKeyProviderHasBeenSet;
+    bool m_staticKeyProviderHasBeenSet = false;
 
     HlsKeyProviderType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

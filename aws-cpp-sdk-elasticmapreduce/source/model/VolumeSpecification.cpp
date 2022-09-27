@@ -23,7 +23,9 @@ VolumeSpecification::VolumeSpecification() :
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_sizeInGB(0),
-    m_sizeInGBHasBeenSet(false)
+    m_sizeInGBHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ VolumeSpecification::VolumeSpecification(JsonView jsonValue) :
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_sizeInGB(0),
-    m_sizeInGBHasBeenSet(false)
+    m_sizeInGBHasBeenSet(false),
+    m_throughput(0),
+    m_throughputHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +64,13 @@ VolumeSpecification& VolumeSpecification::operator =(JsonView jsonValue)
     m_sizeInGBHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Throughput"))
+  {
+    m_throughput = jsonValue.GetInteger("Throughput");
+
+    m_throughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -82,6 +93,12 @@ JsonValue VolumeSpecification::Jsonize() const
   if(m_sizeInGBHasBeenSet)
   {
    payload.WithInteger("SizeInGB", m_sizeInGB);
+
+  }
+
+  if(m_throughputHasBeenSet)
+  {
+   payload.WithInteger("Throughput", m_throughput);
 
   }
 

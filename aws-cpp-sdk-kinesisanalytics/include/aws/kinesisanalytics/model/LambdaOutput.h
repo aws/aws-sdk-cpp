@@ -180,10 +180,10 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
   };
 
 } // namespace Model

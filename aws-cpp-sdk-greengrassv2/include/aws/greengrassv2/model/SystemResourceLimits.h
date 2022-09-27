@@ -114,10 +114,10 @@ namespace Model
   private:
 
     long long m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     double m_cpus;
-    bool m_cpusHasBeenSet;
+    bool m_cpusHasBeenSet = false;
   };
 
 } // namespace Model

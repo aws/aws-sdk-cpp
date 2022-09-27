@@ -5,68 +5,15 @@
 
 #pragma once
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalytics_EXPORTS.h>
-#include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/marketplacecommerceanalytics/model/GenerateDataSetResult.h>
-#include <aws/marketplacecommerceanalytics/model/StartSupportDataExportResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace MarketplaceCommerceAnalytics
 {
-
-namespace Model
-{
-        class GenerateDataSetRequest;
-        class StartSupportDataExportRequest;
-
-        typedef Aws::Utils::Outcome<GenerateDataSetResult, MarketplaceCommerceAnalyticsError> GenerateDataSetOutcome;
-        typedef Aws::Utils::Outcome<StartSupportDataExportResult, MarketplaceCommerceAnalyticsError> StartSupportDataExportOutcome;
-
-        typedef std::future<GenerateDataSetOutcome> GenerateDataSetOutcomeCallable;
-        typedef std::future<StartSupportDataExportOutcome> StartSupportDataExportOutcomeCallable;
-} // namespace Model
-
-  class MarketplaceCommerceAnalyticsClient;
-
-    typedef std::function<void(const MarketplaceCommerceAnalyticsClient*, const Model::GenerateDataSetRequest&, const Model::GenerateDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateDataSetResponseReceivedHandler;
-    typedef std::function<void(const MarketplaceCommerceAnalyticsClient*, const Model::StartSupportDataExportRequest&, const Model::StartSupportDataExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSupportDataExportResponseReceivedHandler;
-
   /**
    * Provides AWS Marketplace business intelligence data on-demand.
    */
@@ -85,14 +32,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MarketplaceCommerceAnalyticsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MarketplaceCommerceAnalyticsClient(const Aws::Auth::AWSCredentials& credentials,
+                                           const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         MarketplaceCommerceAnalyticsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                           const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~MarketplaceCommerceAnalyticsClient();
 
@@ -155,8 +103,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void GenerateDataSetAsyncHelper(const Model::GenerateDataSetRequest& request, const GenerateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartSupportDataExportAsyncHelper(const Model::StartSupportDataExportRequest& request, const StartSupportDataExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

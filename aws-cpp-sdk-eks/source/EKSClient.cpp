@@ -66,33 +66,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "eks";
 static const char* ALLOCATION_TAG = "EKSClient";
 
-
 EKSClient::EKSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<EKSErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<EKSErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-EKSClient::EKSClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+EKSClient::EKSClient(const AWSCredentials& credentials,
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<EKSErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<EKSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 EKSClient::EKSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<EKSErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<EKSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -104,7 +110,7 @@ EKSClient::~EKSClient()
 
 void EKSClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("EKS");
+  AWSClient::SetServiceClientName("EKS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -152,12 +158,10 @@ AssociateEncryptionConfigOutcomeCallable EKSClient::AssociateEncryptionConfigCal
 
 void EKSClient::AssociateEncryptionConfigAsync(const AssociateEncryptionConfigRequest& request, const AssociateEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateEncryptionConfigAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::AssociateEncryptionConfigAsyncHelper(const AssociateEncryptionConfigRequest& request, const AssociateEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateEncryptionConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateEncryptionConfig(request), context);
+    } );
 }
 
 AssociateIdentityProviderConfigOutcome EKSClient::AssociateIdentityProviderConfig(const AssociateIdentityProviderConfigRequest& request) const
@@ -184,12 +188,10 @@ AssociateIdentityProviderConfigOutcomeCallable EKSClient::AssociateIdentityProvi
 
 void EKSClient::AssociateIdentityProviderConfigAsync(const AssociateIdentityProviderConfigRequest& request, const AssociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateIdentityProviderConfigAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::AssociateIdentityProviderConfigAsyncHelper(const AssociateIdentityProviderConfigRequest& request, const AssociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateIdentityProviderConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateIdentityProviderConfig(request), context);
+    } );
 }
 
 CreateAddonOutcome EKSClient::CreateAddon(const CreateAddonRequest& request) const
@@ -216,12 +218,10 @@ CreateAddonOutcomeCallable EKSClient::CreateAddonCallable(const CreateAddonReque
 
 void EKSClient::CreateAddonAsync(const CreateAddonRequest& request, const CreateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAddonAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::CreateAddonAsyncHelper(const CreateAddonRequest& request, const CreateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAddon(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAddon(request), context);
+    } );
 }
 
 CreateClusterOutcome EKSClient::CreateCluster(const CreateClusterRequest& request) const
@@ -241,12 +241,10 @@ CreateClusterOutcomeCallable EKSClient::CreateClusterCallable(const CreateCluste
 
 void EKSClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateClusterAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCluster(request), context);
+    } );
 }
 
 CreateFargateProfileOutcome EKSClient::CreateFargateProfile(const CreateFargateProfileRequest& request) const
@@ -273,12 +271,10 @@ CreateFargateProfileOutcomeCallable EKSClient::CreateFargateProfileCallable(cons
 
 void EKSClient::CreateFargateProfileAsync(const CreateFargateProfileRequest& request, const CreateFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFargateProfileAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::CreateFargateProfileAsyncHelper(const CreateFargateProfileRequest& request, const CreateFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateFargateProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateFargateProfile(request), context);
+    } );
 }
 
 CreateNodegroupOutcome EKSClient::CreateNodegroup(const CreateNodegroupRequest& request) const
@@ -305,12 +301,10 @@ CreateNodegroupOutcomeCallable EKSClient::CreateNodegroupCallable(const CreateNo
 
 void EKSClient::CreateNodegroupAsync(const CreateNodegroupRequest& request, const CreateNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNodegroupAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::CreateNodegroupAsyncHelper(const CreateNodegroupRequest& request, const CreateNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateNodegroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateNodegroup(request), context);
+    } );
 }
 
 DeleteAddonOutcome EKSClient::DeleteAddon(const DeleteAddonRequest& request) const
@@ -343,12 +337,10 @@ DeleteAddonOutcomeCallable EKSClient::DeleteAddonCallable(const DeleteAddonReque
 
 void EKSClient::DeleteAddonAsync(const DeleteAddonRequest& request, const DeleteAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAddonAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::DeleteAddonAsyncHelper(const DeleteAddonRequest& request, const DeleteAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAddon(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAddon(request), context);
+    } );
 }
 
 DeleteClusterOutcome EKSClient::DeleteCluster(const DeleteClusterRequest& request) const
@@ -374,12 +366,10 @@ DeleteClusterOutcomeCallable EKSClient::DeleteClusterCallable(const DeleteCluste
 
 void EKSClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteClusterAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::DeleteClusterAsyncHelper(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCluster(request), context);
+    } );
 }
 
 DeleteFargateProfileOutcome EKSClient::DeleteFargateProfile(const DeleteFargateProfileRequest& request) const
@@ -412,12 +402,10 @@ DeleteFargateProfileOutcomeCallable EKSClient::DeleteFargateProfileCallable(cons
 
 void EKSClient::DeleteFargateProfileAsync(const DeleteFargateProfileRequest& request, const DeleteFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFargateProfileAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::DeleteFargateProfileAsyncHelper(const DeleteFargateProfileRequest& request, const DeleteFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFargateProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFargateProfile(request), context);
+    } );
 }
 
 DeleteNodegroupOutcome EKSClient::DeleteNodegroup(const DeleteNodegroupRequest& request) const
@@ -450,12 +438,10 @@ DeleteNodegroupOutcomeCallable EKSClient::DeleteNodegroupCallable(const DeleteNo
 
 void EKSClient::DeleteNodegroupAsync(const DeleteNodegroupRequest& request, const DeleteNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNodegroupAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::DeleteNodegroupAsyncHelper(const DeleteNodegroupRequest& request, const DeleteNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteNodegroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteNodegroup(request), context);
+    } );
 }
 
 DeregisterClusterOutcome EKSClient::DeregisterCluster(const DeregisterClusterRequest& request) const
@@ -481,12 +467,10 @@ DeregisterClusterOutcomeCallable EKSClient::DeregisterClusterCallable(const Dere
 
 void EKSClient::DeregisterClusterAsync(const DeregisterClusterRequest& request, const DeregisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterClusterAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::DeregisterClusterAsyncHelper(const DeregisterClusterRequest& request, const DeregisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterCluster(request), context);
+    } );
 }
 
 DescribeAddonOutcome EKSClient::DescribeAddon(const DescribeAddonRequest& request) const
@@ -519,12 +503,10 @@ DescribeAddonOutcomeCallable EKSClient::DescribeAddonCallable(const DescribeAddo
 
 void EKSClient::DescribeAddonAsync(const DescribeAddonRequest& request, const DescribeAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAddonAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::DescribeAddonAsyncHelper(const DescribeAddonRequest& request, const DescribeAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAddon(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAddon(request), context);
+    } );
 }
 
 DescribeAddonVersionsOutcome EKSClient::DescribeAddonVersions(const DescribeAddonVersionsRequest& request) const
@@ -544,12 +526,10 @@ DescribeAddonVersionsOutcomeCallable EKSClient::DescribeAddonVersionsCallable(co
 
 void EKSClient::DescribeAddonVersionsAsync(const DescribeAddonVersionsRequest& request, const DescribeAddonVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAddonVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::DescribeAddonVersionsAsyncHelper(const DescribeAddonVersionsRequest& request, const DescribeAddonVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAddonVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAddonVersions(request), context);
+    } );
 }
 
 DescribeClusterOutcome EKSClient::DescribeCluster(const DescribeClusterRequest& request) const
@@ -575,12 +555,10 @@ DescribeClusterOutcomeCallable EKSClient::DescribeClusterCallable(const Describe
 
 void EKSClient::DescribeClusterAsync(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeClusterAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeCluster(request), context);
+    } );
 }
 
 DescribeFargateProfileOutcome EKSClient::DescribeFargateProfile(const DescribeFargateProfileRequest& request) const
@@ -613,12 +591,10 @@ DescribeFargateProfileOutcomeCallable EKSClient::DescribeFargateProfileCallable(
 
 void EKSClient::DescribeFargateProfileAsync(const DescribeFargateProfileRequest& request, const DescribeFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFargateProfileAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::DescribeFargateProfileAsyncHelper(const DescribeFargateProfileRequest& request, const DescribeFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeFargateProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeFargateProfile(request), context);
+    } );
 }
 
 DescribeIdentityProviderConfigOutcome EKSClient::DescribeIdentityProviderConfig(const DescribeIdentityProviderConfigRequest& request) const
@@ -645,12 +621,10 @@ DescribeIdentityProviderConfigOutcomeCallable EKSClient::DescribeIdentityProvide
 
 void EKSClient::DescribeIdentityProviderConfigAsync(const DescribeIdentityProviderConfigRequest& request, const DescribeIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeIdentityProviderConfigAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::DescribeIdentityProviderConfigAsyncHelper(const DescribeIdentityProviderConfigRequest& request, const DescribeIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeIdentityProviderConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeIdentityProviderConfig(request), context);
+    } );
 }
 
 DescribeNodegroupOutcome EKSClient::DescribeNodegroup(const DescribeNodegroupRequest& request) const
@@ -683,12 +657,10 @@ DescribeNodegroupOutcomeCallable EKSClient::DescribeNodegroupCallable(const Desc
 
 void EKSClient::DescribeNodegroupAsync(const DescribeNodegroupRequest& request, const DescribeNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeNodegroupAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::DescribeNodegroupAsyncHelper(const DescribeNodegroupRequest& request, const DescribeNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeNodegroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeNodegroup(request), context);
+    } );
 }
 
 DescribeUpdateOutcome EKSClient::DescribeUpdate(const DescribeUpdateRequest& request) const
@@ -721,12 +693,10 @@ DescribeUpdateOutcomeCallable EKSClient::DescribeUpdateCallable(const DescribeUp
 
 void EKSClient::DescribeUpdateAsync(const DescribeUpdateRequest& request, const DescribeUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUpdateAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::DescribeUpdateAsyncHelper(const DescribeUpdateRequest& request, const DescribeUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeUpdate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeUpdate(request), context);
+    } );
 }
 
 DisassociateIdentityProviderConfigOutcome EKSClient::DisassociateIdentityProviderConfig(const DisassociateIdentityProviderConfigRequest& request) const
@@ -753,12 +723,10 @@ DisassociateIdentityProviderConfigOutcomeCallable EKSClient::DisassociateIdentit
 
 void EKSClient::DisassociateIdentityProviderConfigAsync(const DisassociateIdentityProviderConfigRequest& request, const DisassociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateIdentityProviderConfigAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::DisassociateIdentityProviderConfigAsyncHelper(const DisassociateIdentityProviderConfigRequest& request, const DisassociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateIdentityProviderConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateIdentityProviderConfig(request), context);
+    } );
 }
 
 ListAddonsOutcome EKSClient::ListAddons(const ListAddonsRequest& request) const
@@ -785,12 +753,10 @@ ListAddonsOutcomeCallable EKSClient::ListAddonsCallable(const ListAddonsRequest&
 
 void EKSClient::ListAddonsAsync(const ListAddonsRequest& request, const ListAddonsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAddonsAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::ListAddonsAsyncHelper(const ListAddonsRequest& request, const ListAddonsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAddons(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAddons(request), context);
+    } );
 }
 
 ListClustersOutcome EKSClient::ListClusters(const ListClustersRequest& request) const
@@ -810,12 +776,10 @@ ListClustersOutcomeCallable EKSClient::ListClustersCallable(const ListClustersRe
 
 void EKSClient::ListClustersAsync(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListClustersAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::ListClustersAsyncHelper(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListClusters(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListClusters(request), context);
+    } );
 }
 
 ListFargateProfilesOutcome EKSClient::ListFargateProfiles(const ListFargateProfilesRequest& request) const
@@ -842,12 +806,10 @@ ListFargateProfilesOutcomeCallable EKSClient::ListFargateProfilesCallable(const 
 
 void EKSClient::ListFargateProfilesAsync(const ListFargateProfilesRequest& request, const ListFargateProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFargateProfilesAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::ListFargateProfilesAsyncHelper(const ListFargateProfilesRequest& request, const ListFargateProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFargateProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFargateProfiles(request), context);
+    } );
 }
 
 ListIdentityProviderConfigsOutcome EKSClient::ListIdentityProviderConfigs(const ListIdentityProviderConfigsRequest& request) const
@@ -874,12 +836,10 @@ ListIdentityProviderConfigsOutcomeCallable EKSClient::ListIdentityProviderConfig
 
 void EKSClient::ListIdentityProviderConfigsAsync(const ListIdentityProviderConfigsRequest& request, const ListIdentityProviderConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIdentityProviderConfigsAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::ListIdentityProviderConfigsAsyncHelper(const ListIdentityProviderConfigsRequest& request, const ListIdentityProviderConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListIdentityProviderConfigs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListIdentityProviderConfigs(request), context);
+    } );
 }
 
 ListNodegroupsOutcome EKSClient::ListNodegroups(const ListNodegroupsRequest& request) const
@@ -906,12 +866,10 @@ ListNodegroupsOutcomeCallable EKSClient::ListNodegroupsCallable(const ListNodegr
 
 void EKSClient::ListNodegroupsAsync(const ListNodegroupsRequest& request, const ListNodegroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNodegroupsAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::ListNodegroupsAsyncHelper(const ListNodegroupsRequest& request, const ListNodegroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListNodegroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListNodegroups(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome EKSClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -937,12 +895,10 @@ ListTagsForResourceOutcomeCallable EKSClient::ListTagsForResourceCallable(const 
 
 void EKSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListUpdatesOutcome EKSClient::ListUpdates(const ListUpdatesRequest& request) const
@@ -969,12 +925,10 @@ ListUpdatesOutcomeCallable EKSClient::ListUpdatesCallable(const ListUpdatesReque
 
 void EKSClient::ListUpdatesAsync(const ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUpdatesAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::ListUpdatesAsyncHelper(const ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListUpdates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListUpdates(request), context);
+    } );
 }
 
 RegisterClusterOutcome EKSClient::RegisterCluster(const RegisterClusterRequest& request) const
@@ -994,12 +948,10 @@ RegisterClusterOutcomeCallable EKSClient::RegisterClusterCallable(const Register
 
 void EKSClient::RegisterClusterAsync(const RegisterClusterRequest& request, const RegisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterClusterAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::RegisterClusterAsyncHelper(const RegisterClusterRequest& request, const RegisterClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterCluster(request), context);
+    } );
 }
 
 TagResourceOutcome EKSClient::TagResource(const TagResourceRequest& request) const
@@ -1025,12 +977,10 @@ TagResourceOutcomeCallable EKSClient::TagResourceCallable(const TagResourceReque
 
 void EKSClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome EKSClient::UntagResource(const UntagResourceRequest& request) const
@@ -1061,12 +1011,10 @@ UntagResourceOutcomeCallable EKSClient::UntagResourceCallable(const UntagResourc
 
 void EKSClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateAddonOutcome EKSClient::UpdateAddon(const UpdateAddonRequest& request) const
@@ -1100,12 +1048,10 @@ UpdateAddonOutcomeCallable EKSClient::UpdateAddonCallable(const UpdateAddonReque
 
 void EKSClient::UpdateAddonAsync(const UpdateAddonRequest& request, const UpdateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAddonAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::UpdateAddonAsyncHelper(const UpdateAddonRequest& request, const UpdateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateAddon(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAddon(request), context);
+    } );
 }
 
 UpdateClusterConfigOutcome EKSClient::UpdateClusterConfig(const UpdateClusterConfigRequest& request) const
@@ -1132,12 +1078,10 @@ UpdateClusterConfigOutcomeCallable EKSClient::UpdateClusterConfigCallable(const 
 
 void EKSClient::UpdateClusterConfigAsync(const UpdateClusterConfigRequest& request, const UpdateClusterConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateClusterConfigAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::UpdateClusterConfigAsyncHelper(const UpdateClusterConfigRequest& request, const UpdateClusterConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateClusterConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateClusterConfig(request), context);
+    } );
 }
 
 UpdateClusterVersionOutcome EKSClient::UpdateClusterVersion(const UpdateClusterVersionRequest& request) const
@@ -1164,12 +1108,10 @@ UpdateClusterVersionOutcomeCallable EKSClient::UpdateClusterVersionCallable(cons
 
 void EKSClient::UpdateClusterVersionAsync(const UpdateClusterVersionRequest& request, const UpdateClusterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateClusterVersionAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::UpdateClusterVersionAsyncHelper(const UpdateClusterVersionRequest& request, const UpdateClusterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateClusterVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateClusterVersion(request), context);
+    } );
 }
 
 UpdateNodegroupConfigOutcome EKSClient::UpdateNodegroupConfig(const UpdateNodegroupConfigRequest& request) const
@@ -1203,12 +1145,10 @@ UpdateNodegroupConfigOutcomeCallable EKSClient::UpdateNodegroupConfigCallable(co
 
 void EKSClient::UpdateNodegroupConfigAsync(const UpdateNodegroupConfigRequest& request, const UpdateNodegroupConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNodegroupConfigAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::UpdateNodegroupConfigAsyncHelper(const UpdateNodegroupConfigRequest& request, const UpdateNodegroupConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateNodegroupConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateNodegroupConfig(request), context);
+    } );
 }
 
 UpdateNodegroupVersionOutcome EKSClient::UpdateNodegroupVersion(const UpdateNodegroupVersionRequest& request) const
@@ -1242,11 +1182,9 @@ UpdateNodegroupVersionOutcomeCallable EKSClient::UpdateNodegroupVersionCallable(
 
 void EKSClient::UpdateNodegroupVersionAsync(const UpdateNodegroupVersionRequest& request, const UpdateNodegroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNodegroupVersionAsyncHelper( request, handler, context ); } );
-}
-
-void EKSClient::UpdateNodegroupVersionAsyncHelper(const UpdateNodegroupVersionRequest& request, const UpdateNodegroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateNodegroupVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateNodegroupVersion(request), context);
+    } );
 }
 

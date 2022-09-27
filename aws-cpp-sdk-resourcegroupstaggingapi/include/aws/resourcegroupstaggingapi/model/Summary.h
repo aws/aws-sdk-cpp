@@ -280,22 +280,22 @@ namespace Model
   private:
 
     Aws::String m_lastUpdated;
-    bool m_lastUpdatedHasBeenSet;
+    bool m_lastUpdatedHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     TargetIdType m_targetIdType;
-    bool m_targetIdTypeHasBeenSet;
+    bool m_targetIdTypeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     long long m_nonCompliantResources;
-    bool m_nonCompliantResourcesHasBeenSet;
+    bool m_nonCompliantResourcesHasBeenSet = false;
   };
 
 } // namespace Model

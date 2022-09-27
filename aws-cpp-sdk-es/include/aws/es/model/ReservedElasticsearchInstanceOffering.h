@@ -318,28 +318,28 @@ namespace Model
   private:
 
     Aws::String m_reservedElasticsearchInstanceOfferingId;
-    bool m_reservedElasticsearchInstanceOfferingIdHasBeenSet;
+    bool m_reservedElasticsearchInstanceOfferingIdHasBeenSet = false;
 
     ESPartitionInstanceType m_elasticsearchInstanceType;
-    bool m_elasticsearchInstanceTypeHasBeenSet;
+    bool m_elasticsearchInstanceTypeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     double m_fixedPrice;
-    bool m_fixedPriceHasBeenSet;
+    bool m_fixedPriceHasBeenSet = false;
 
     double m_usagePrice;
-    bool m_usagePriceHasBeenSet;
+    bool m_usagePriceHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     ReservedElasticsearchInstancePaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     Aws::Vector<RecurringCharge> m_recurringCharges;
-    bool m_recurringChargesHasBeenSet;
+    bool m_recurringChargesHasBeenSet = false;
   };
 
 } // namespace Model

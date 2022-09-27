@@ -203,22 +203,22 @@ namespace Model
   private:
 
     Aws::String m_questionId;
-    bool m_questionIdHasBeenSet;
+    bool m_questionIdHasBeenSet = false;
 
     Aws::String m_pillarId;
-    bool m_pillarIdHasBeenSet;
+    bool m_pillarIdHasBeenSet = false;
 
     Aws::String m_questionTitle;
-    bool m_questionTitleHasBeenSet;
+    bool m_questionTitleHasBeenSet = false;
 
     Risk m_risk;
-    bool m_riskHasBeenSet;
+    bool m_riskHasBeenSet = false;
 
     Aws::String m_improvementPlanUrl;
-    bool m_improvementPlanUrlHasBeenSet;
+    bool m_improvementPlanUrlHasBeenSet = false;
 
     Aws::Vector<ChoiceImprovementPlan> m_improvementPlans;
-    bool m_improvementPlansHasBeenSet;
+    bool m_improvementPlansHasBeenSet = false;
   };
 
 } // namespace Model

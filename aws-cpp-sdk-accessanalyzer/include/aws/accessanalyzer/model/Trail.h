@@ -174,13 +174,13 @@ namespace Model
   private:
 
     bool m_allRegions;
-    bool m_allRegionsHasBeenSet;
+    bool m_allRegionsHasBeenSet = false;
 
     Aws::String m_cloudTrailArn;
-    bool m_cloudTrailArnHasBeenSet;
+    bool m_cloudTrailArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regions;
-    bool m_regionsHasBeenSet;
+    bool m_regionsHasBeenSet = false;
   };
 
 } // namespace Model

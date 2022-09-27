@@ -992,112 +992,112 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_timestamp;
-    bool m_timestampHasBeenSet;
+    bool m_timestampHasBeenSet = false;
 
     HistoryEventType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     long long m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     long long m_previousEventId;
-    bool m_previousEventIdHasBeenSet;
+    bool m_previousEventIdHasBeenSet = false;
 
     ActivityFailedEventDetails m_activityFailedEventDetails;
-    bool m_activityFailedEventDetailsHasBeenSet;
+    bool m_activityFailedEventDetailsHasBeenSet = false;
 
     ActivityScheduleFailedEventDetails m_activityScheduleFailedEventDetails;
-    bool m_activityScheduleFailedEventDetailsHasBeenSet;
+    bool m_activityScheduleFailedEventDetailsHasBeenSet = false;
 
     ActivityScheduledEventDetails m_activityScheduledEventDetails;
-    bool m_activityScheduledEventDetailsHasBeenSet;
+    bool m_activityScheduledEventDetailsHasBeenSet = false;
 
     ActivityStartedEventDetails m_activityStartedEventDetails;
-    bool m_activityStartedEventDetailsHasBeenSet;
+    bool m_activityStartedEventDetailsHasBeenSet = false;
 
     ActivitySucceededEventDetails m_activitySucceededEventDetails;
-    bool m_activitySucceededEventDetailsHasBeenSet;
+    bool m_activitySucceededEventDetailsHasBeenSet = false;
 
     ActivityTimedOutEventDetails m_activityTimedOutEventDetails;
-    bool m_activityTimedOutEventDetailsHasBeenSet;
+    bool m_activityTimedOutEventDetailsHasBeenSet = false;
 
     TaskFailedEventDetails m_taskFailedEventDetails;
-    bool m_taskFailedEventDetailsHasBeenSet;
+    bool m_taskFailedEventDetailsHasBeenSet = false;
 
     TaskScheduledEventDetails m_taskScheduledEventDetails;
-    bool m_taskScheduledEventDetailsHasBeenSet;
+    bool m_taskScheduledEventDetailsHasBeenSet = false;
 
     TaskStartFailedEventDetails m_taskStartFailedEventDetails;
-    bool m_taskStartFailedEventDetailsHasBeenSet;
+    bool m_taskStartFailedEventDetailsHasBeenSet = false;
 
     TaskStartedEventDetails m_taskStartedEventDetails;
-    bool m_taskStartedEventDetailsHasBeenSet;
+    bool m_taskStartedEventDetailsHasBeenSet = false;
 
     TaskSubmitFailedEventDetails m_taskSubmitFailedEventDetails;
-    bool m_taskSubmitFailedEventDetailsHasBeenSet;
+    bool m_taskSubmitFailedEventDetailsHasBeenSet = false;
 
     TaskSubmittedEventDetails m_taskSubmittedEventDetails;
-    bool m_taskSubmittedEventDetailsHasBeenSet;
+    bool m_taskSubmittedEventDetailsHasBeenSet = false;
 
     TaskSucceededEventDetails m_taskSucceededEventDetails;
-    bool m_taskSucceededEventDetailsHasBeenSet;
+    bool m_taskSucceededEventDetailsHasBeenSet = false;
 
     TaskTimedOutEventDetails m_taskTimedOutEventDetails;
-    bool m_taskTimedOutEventDetailsHasBeenSet;
+    bool m_taskTimedOutEventDetailsHasBeenSet = false;
 
     ExecutionFailedEventDetails m_executionFailedEventDetails;
-    bool m_executionFailedEventDetailsHasBeenSet;
+    bool m_executionFailedEventDetailsHasBeenSet = false;
 
     ExecutionStartedEventDetails m_executionStartedEventDetails;
-    bool m_executionStartedEventDetailsHasBeenSet;
+    bool m_executionStartedEventDetailsHasBeenSet = false;
 
     ExecutionSucceededEventDetails m_executionSucceededEventDetails;
-    bool m_executionSucceededEventDetailsHasBeenSet;
+    bool m_executionSucceededEventDetailsHasBeenSet = false;
 
     ExecutionAbortedEventDetails m_executionAbortedEventDetails;
-    bool m_executionAbortedEventDetailsHasBeenSet;
+    bool m_executionAbortedEventDetailsHasBeenSet = false;
 
     ExecutionTimedOutEventDetails m_executionTimedOutEventDetails;
-    bool m_executionTimedOutEventDetailsHasBeenSet;
+    bool m_executionTimedOutEventDetailsHasBeenSet = false;
 
     MapStateStartedEventDetails m_mapStateStartedEventDetails;
-    bool m_mapStateStartedEventDetailsHasBeenSet;
+    bool m_mapStateStartedEventDetailsHasBeenSet = false;
 
     MapIterationEventDetails m_mapIterationStartedEventDetails;
-    bool m_mapIterationStartedEventDetailsHasBeenSet;
+    bool m_mapIterationStartedEventDetailsHasBeenSet = false;
 
     MapIterationEventDetails m_mapIterationSucceededEventDetails;
-    bool m_mapIterationSucceededEventDetailsHasBeenSet;
+    bool m_mapIterationSucceededEventDetailsHasBeenSet = false;
 
     MapIterationEventDetails m_mapIterationFailedEventDetails;
-    bool m_mapIterationFailedEventDetailsHasBeenSet;
+    bool m_mapIterationFailedEventDetailsHasBeenSet = false;
 
     MapIterationEventDetails m_mapIterationAbortedEventDetails;
-    bool m_mapIterationAbortedEventDetailsHasBeenSet;
+    bool m_mapIterationAbortedEventDetailsHasBeenSet = false;
 
     LambdaFunctionFailedEventDetails m_lambdaFunctionFailedEventDetails;
-    bool m_lambdaFunctionFailedEventDetailsHasBeenSet;
+    bool m_lambdaFunctionFailedEventDetailsHasBeenSet = false;
 
     LambdaFunctionScheduleFailedEventDetails m_lambdaFunctionScheduleFailedEventDetails;
-    bool m_lambdaFunctionScheduleFailedEventDetailsHasBeenSet;
+    bool m_lambdaFunctionScheduleFailedEventDetailsHasBeenSet = false;
 
     LambdaFunctionScheduledEventDetails m_lambdaFunctionScheduledEventDetails;
-    bool m_lambdaFunctionScheduledEventDetailsHasBeenSet;
+    bool m_lambdaFunctionScheduledEventDetailsHasBeenSet = false;
 
     LambdaFunctionStartFailedEventDetails m_lambdaFunctionStartFailedEventDetails;
-    bool m_lambdaFunctionStartFailedEventDetailsHasBeenSet;
+    bool m_lambdaFunctionStartFailedEventDetailsHasBeenSet = false;
 
     LambdaFunctionSucceededEventDetails m_lambdaFunctionSucceededEventDetails;
-    bool m_lambdaFunctionSucceededEventDetailsHasBeenSet;
+    bool m_lambdaFunctionSucceededEventDetailsHasBeenSet = false;
 
     LambdaFunctionTimedOutEventDetails m_lambdaFunctionTimedOutEventDetails;
-    bool m_lambdaFunctionTimedOutEventDetailsHasBeenSet;
+    bool m_lambdaFunctionTimedOutEventDetailsHasBeenSet = false;
 
     StateEnteredEventDetails m_stateEnteredEventDetails;
-    bool m_stateEnteredEventDetailsHasBeenSet;
+    bool m_stateEnteredEventDetailsHasBeenSet = false;
 
     StateExitedEventDetails m_stateExitedEventDetails;
-    bool m_stateExitedEventDetailsHasBeenSet;
+    bool m_stateExitedEventDetailsHasBeenSet = false;
   };
 
 } // namespace Model

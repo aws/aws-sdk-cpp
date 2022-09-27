@@ -410,16 +410,16 @@ namespace Model
 
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_cacheControl;
-    bool m_cacheControlHasBeenSet;
+    bool m_cacheControlHasBeenSet = false;
 
     StorageClass m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
 
     UploadAvailability m_uploadAvailability;
-    bool m_uploadAvailabilityHasBeenSet;
+    bool m_uploadAvailabilityHasBeenSet = false;
   };
 
 } // namespace Model

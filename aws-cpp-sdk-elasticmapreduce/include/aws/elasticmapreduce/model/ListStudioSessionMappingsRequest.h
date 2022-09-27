@@ -162,13 +162,13 @@ namespace Model
   private:
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
 
     IdentityType m_identityType;
-    bool m_identityTypeHasBeenSet;
+    bool m_identityTypeHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

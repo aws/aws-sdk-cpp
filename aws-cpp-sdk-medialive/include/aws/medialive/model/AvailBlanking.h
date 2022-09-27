@@ -114,10 +114,10 @@ namespace Model
   private:
 
     InputLocation m_availBlankingImage;
-    bool m_availBlankingImageHasBeenSet;
+    bool m_availBlankingImageHasBeenSet = false;
 
     AvailBlankingState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

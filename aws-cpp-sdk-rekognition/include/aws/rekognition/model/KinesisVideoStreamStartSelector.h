@@ -113,10 +113,10 @@ namespace Model
   private:
 
     long long m_producerTimestamp;
-    bool m_producerTimestampHasBeenSet;
+    bool m_producerTimestampHasBeenSet = false;
 
     Aws::String m_fragmentNumber;
-    bool m_fragmentNumberHasBeenSet;
+    bool m_fragmentNumberHasBeenSet = false;
   };
 
 } // namespace Model

@@ -403,34 +403,34 @@ namespace Model
   private:
 
     Aws::String m_monitoringScheduleName;
-    bool m_monitoringScheduleNameHasBeenSet;
+    bool m_monitoringScheduleNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_scheduledTime;
-    bool m_scheduledTimeHasBeenSet;
+    bool m_scheduledTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     ExecutionStatus m_monitoringExecutionStatus;
-    bool m_monitoringExecutionStatusHasBeenSet;
+    bool m_monitoringExecutionStatusHasBeenSet = false;
 
     Aws::String m_processingJobArn;
-    bool m_processingJobArnHasBeenSet;
+    bool m_processingJobArnHasBeenSet = false;
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_monitoringJobDefinitionName;
-    bool m_monitoringJobDefinitionNameHasBeenSet;
+    bool m_monitoringJobDefinitionNameHasBeenSet = false;
 
     MonitoringType m_monitoringType;
-    bool m_monitoringTypeHasBeenSet;
+    bool m_monitoringTypeHasBeenSet = false;
   };
 
 } // namespace Model

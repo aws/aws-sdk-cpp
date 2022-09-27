@@ -150,10 +150,10 @@ namespace Model
   private:
 
     Aws::String m_approvalRuleTemplateName;
-    bool m_approvalRuleTemplateNameHasBeenSet;
+    bool m_approvalRuleTemplateNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_repositoryNames;
-    bool m_repositoryNamesHasBeenSet;
+    bool m_repositoryNamesHasBeenSet = false;
   };
 
 } // namespace Model

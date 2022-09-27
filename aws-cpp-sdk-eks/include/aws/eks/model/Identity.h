@@ -76,7 +76,7 @@ namespace Model
   private:
 
     OIDC m_oidc;
-    bool m_oidcHasBeenSet;
+    bool m_oidcHasBeenSet = false;
   };
 
 } // namespace Model

@@ -183,10 +183,10 @@ namespace Model
   private:
 
     Aws::String m_identity;
-    bool m_identityHasBeenSet;
+    bool m_identityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_policyNames;
-    bool m_policyNamesHasBeenSet;
+    bool m_policyNamesHasBeenSet = false;
   };
 
 } // namespace Model

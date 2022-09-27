@@ -229,16 +229,16 @@ namespace Model
   private:
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     CannedAccessControlList m_cannedAcl;
-    bool m_cannedAclHasBeenSet;
+    bool m_cannedAclHasBeenSet = false;
   };
 
 } // namespace Model

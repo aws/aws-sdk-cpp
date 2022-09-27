@@ -334,28 +334,28 @@ namespace Model
   private:
 
     Aws::String m_importId;
-    bool m_importIdHasBeenSet;
+    bool m_importIdHasBeenSet = false;
 
     Aws::String m_importedResourceId;
-    bool m_importedResourceIdHasBeenSet;
+    bool m_importedResourceIdHasBeenSet = false;
 
     Aws::String m_importedResourceName;
-    bool m_importedResourceNameHasBeenSet;
+    bool m_importedResourceNameHasBeenSet = false;
 
     ImportStatus m_importStatus;
-    bool m_importStatusHasBeenSet;
+    bool m_importStatusHasBeenSet = false;
 
     MergeStrategy m_mergeStrategy;
-    bool m_mergeStrategyHasBeenSet;
+    bool m_mergeStrategyHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationDateTime;
-    bool m_creationDateTimeHasBeenSet;
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
-    bool m_lastUpdatedDateTimeHasBeenSet;
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     ImportResourceType m_importedResourceType;
-    bool m_importedResourceTypeHasBeenSet;
+    bool m_importedResourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

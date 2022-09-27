@@ -403,28 +403,28 @@ namespace Model
   private:
 
     Aws::Vector<Action> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     ChatChannel m_chatChannel;
-    bool m_chatChannelHasBeenSet;
+    bool m_chatChannelHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_engagements;
-    bool m_engagementsHasBeenSet;
+    bool m_engagementsHasBeenSet = false;
 
     IncidentTemplate m_incidentTemplate;
-    bool m_incidentTemplateHasBeenSet;
+    bool m_incidentTemplateHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

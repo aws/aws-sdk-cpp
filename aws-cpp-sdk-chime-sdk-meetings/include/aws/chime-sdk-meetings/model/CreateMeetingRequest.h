@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime-sdk-meetings/model/NotificationsConfiguration.h>
 #include <aws/chime-sdk-meetings/model/MeetingFeaturesConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime-sdk-meetings/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -401,28 +403,362 @@ namespace Model
      */
     inline CreateMeetingRequest& WithPrimaryMeetingId(const char* value) { SetPrimaryMeetingId(value); return *this;}
 
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTenantIds() const{ return m_tenantIds; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline bool TenantIdsHasBeenSet() const { return m_tenantIdsHasBeenSet; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline void SetTenantIds(const Aws::Vector<Aws::String>& value) { m_tenantIdsHasBeenSet = true; m_tenantIds = value; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline void SetTenantIds(Aws::Vector<Aws::String>&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds = std::move(value); }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingRequest& WithTenantIds(const Aws::Vector<Aws::String>& value) { SetTenantIds(value); return *this;}
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingRequest& WithTenantIds(Aws::Vector<Aws::String>&& value) { SetTenantIds(std::move(value)); return *this;}
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingRequest& AddTenantIds(const Aws::String& value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(value); return *this; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingRequest& AddTenantIds(Aws::String&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A consistent and opaque identifier, created and maintained by the builder to
+     * represent a segment of their users.</p>
+     */
+    inline CreateMeetingRequest& AddTenantIds(const char* value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the
+     * following:</p> <ul> <li> <p>Not all resources have tags. For a list of services
+     * with resources that support tagging using this operation, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>. If the resource doesn't yet
+     * support this operation, the resource's service might support tagging using its
+     * own API operations. For more information, refer to the documentation for that
+     * service.</p> </li> <li> <p>Each resource can have up to 50 tags. For other
+     * limits, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
+     * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+     * <li> <p>You can only tag resources that are located in the specified AWS Region
+     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
+     * necessary permissions for the service that the resource belongs to as well as
+     * permissions for adding tags. For more information, see the documentation for
+     * each service.</p> </li> </ul>  <p>Do not store personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * tags. We use tags to provide you with billing and administration services. Tags
+     * are not intended to be used for private or sensitive data.</p>  <p>
+     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
+     * </code>permission required by this operation, you must also have the tagging
+     * permission defined by the service that created the resource. For example, to tag
+     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
+     * operation, you must have both of the following permissions:</p> <p>
+     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
+     * </p>  <p>Some services might have specific requirements for tagging some
+     * resources. For example, to tag an Amazon S3 bucket, you must also have the
+     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
+     * don't work, check the documentation for that service's tagging APIs for more
+     * information.</p> 
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the
+     * following:</p> <ul> <li> <p>Not all resources have tags. For a list of services
+     * with resources that support tagging using this operation, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>. If the resource doesn't yet
+     * support this operation, the resource's service might support tagging using its
+     * own API operations. For more information, refer to the documentation for that
+     * service.</p> </li> <li> <p>Each resource can have up to 50 tags. For other
+     * limits, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
+     * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+     * <li> <p>You can only tag resources that are located in the specified AWS Region
+     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
+     * necessary permissions for the service that the resource belongs to as well as
+     * permissions for adding tags. For more information, see the documentation for
+     * each service.</p> </li> </ul>  <p>Do not store personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * tags. We use tags to provide you with billing and administration services. Tags
+     * are not intended to be used for private or sensitive data.</p>  <p>
+     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
+     * </code>permission required by this operation, you must also have the tagging
+     * permission defined by the service that created the resource. For example, to tag
+     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
+     * operation, you must have both of the following permissions:</p> <p>
+     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
+     * </p>  <p>Some services might have specific requirements for tagging some
+     * resources. For example, to tag an Amazon S3 bucket, you must also have the
+     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
+     * don't work, check the documentation for that service's tagging APIs for more
+     * information.</p> 
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the
+     * following:</p> <ul> <li> <p>Not all resources have tags. For a list of services
+     * with resources that support tagging using this operation, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>. If the resource doesn't yet
+     * support this operation, the resource's service might support tagging using its
+     * own API operations. For more information, refer to the documentation for that
+     * service.</p> </li> <li> <p>Each resource can have up to 50 tags. For other
+     * limits, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
+     * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+     * <li> <p>You can only tag resources that are located in the specified AWS Region
+     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
+     * necessary permissions for the service that the resource belongs to as well as
+     * permissions for adding tags. For more information, see the documentation for
+     * each service.</p> </li> </ul>  <p>Do not store personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * tags. We use tags to provide you with billing and administration services. Tags
+     * are not intended to be used for private or sensitive data.</p>  <p>
+     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
+     * </code>permission required by this operation, you must also have the tagging
+     * permission defined by the service that created the resource. For example, to tag
+     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
+     * operation, you must have both of the following permissions:</p> <p>
+     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
+     * </p>  <p>Some services might have specific requirements for tagging some
+     * resources. For example, to tag an Amazon S3 bucket, you must also have the
+     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
+     * don't work, check the documentation for that service's tagging APIs for more
+     * information.</p> 
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the
+     * following:</p> <ul> <li> <p>Not all resources have tags. For a list of services
+     * with resources that support tagging using this operation, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>. If the resource doesn't yet
+     * support this operation, the resource's service might support tagging using its
+     * own API operations. For more information, refer to the documentation for that
+     * service.</p> </li> <li> <p>Each resource can have up to 50 tags. For other
+     * limits, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
+     * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+     * <li> <p>You can only tag resources that are located in the specified AWS Region
+     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
+     * necessary permissions for the service that the resource belongs to as well as
+     * permissions for adding tags. For more information, see the documentation for
+     * each service.</p> </li> </ul>  <p>Do not store personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * tags. We use tags to provide you with billing and administration services. Tags
+     * are not intended to be used for private or sensitive data.</p>  <p>
+     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
+     * </code>permission required by this operation, you must also have the tagging
+     * permission defined by the service that created the resource. For example, to tag
+     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
+     * operation, you must have both of the following permissions:</p> <p>
+     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
+     * </p>  <p>Some services might have specific requirements for tagging some
+     * resources. For example, to tag an Amazon S3 bucket, you must also have the
+     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
+     * don't work, check the documentation for that service's tagging APIs for more
+     * information.</p> 
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the
+     * following:</p> <ul> <li> <p>Not all resources have tags. For a list of services
+     * with resources that support tagging using this operation, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>. If the resource doesn't yet
+     * support this operation, the resource's service might support tagging using its
+     * own API operations. For more information, refer to the documentation for that
+     * service.</p> </li> <li> <p>Each resource can have up to 50 tags. For other
+     * limits, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
+     * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+     * <li> <p>You can only tag resources that are located in the specified AWS Region
+     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
+     * necessary permissions for the service that the resource belongs to as well as
+     * permissions for adding tags. For more information, see the documentation for
+     * each service.</p> </li> </ul>  <p>Do not store personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * tags. We use tags to provide you with billing and administration services. Tags
+     * are not intended to be used for private or sensitive data.</p>  <p>
+     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
+     * </code>permission required by this operation, you must also have the tagging
+     * permission defined by the service that created the resource. For example, to tag
+     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
+     * operation, you must have both of the following permissions:</p> <p>
+     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
+     * </p>  <p>Some services might have specific requirements for tagging some
+     * resources. For example, to tag an Amazon S3 bucket, you must also have the
+     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
+     * don't work, check the documentation for that service's tagging APIs for more
+     * information.</p> 
+     */
+    inline CreateMeetingRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the
+     * following:</p> <ul> <li> <p>Not all resources have tags. For a list of services
+     * with resources that support tagging using this operation, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>. If the resource doesn't yet
+     * support this operation, the resource's service might support tagging using its
+     * own API operations. For more information, refer to the documentation for that
+     * service.</p> </li> <li> <p>Each resource can have up to 50 tags. For other
+     * limits, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
+     * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+     * <li> <p>You can only tag resources that are located in the specified AWS Region
+     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
+     * necessary permissions for the service that the resource belongs to as well as
+     * permissions for adding tags. For more information, see the documentation for
+     * each service.</p> </li> </ul>  <p>Do not store personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * tags. We use tags to provide you with billing and administration services. Tags
+     * are not intended to be used for private or sensitive data.</p>  <p>
+     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
+     * </code>permission required by this operation, you must also have the tagging
+     * permission defined by the service that created the resource. For example, to tag
+     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
+     * operation, you must have both of the following permissions:</p> <p>
+     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
+     * </p>  <p>Some services might have specific requirements for tagging some
+     * resources. For example, to tag an Amazon S3 bucket, you must also have the
+     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
+     * don't work, check the documentation for that service's tagging APIs for more
+     * information.</p> 
+     */
+    inline CreateMeetingRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the
+     * following:</p> <ul> <li> <p>Not all resources have tags. For a list of services
+     * with resources that support tagging using this operation, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>. If the resource doesn't yet
+     * support this operation, the resource's service might support tagging using its
+     * own API operations. For more information, refer to the documentation for that
+     * service.</p> </li> <li> <p>Each resource can have up to 50 tags. For other
+     * limits, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
+     * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+     * <li> <p>You can only tag resources that are located in the specified AWS Region
+     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
+     * necessary permissions for the service that the resource belongs to as well as
+     * permissions for adding tags. For more information, see the documentation for
+     * each service.</p> </li> </ul>  <p>Do not store personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * tags. We use tags to provide you with billing and administration services. Tags
+     * are not intended to be used for private or sensitive data.</p>  <p>
+     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
+     * </code>permission required by this operation, you must also have the tagging
+     * permission defined by the service that created the resource. For example, to tag
+     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
+     * operation, you must have both of the following permissions:</p> <p>
+     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
+     * </p>  <p>Some services might have specific requirements for tagging some
+     * resources. For example, to tag an Amazon S3 bucket, you must also have the
+     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
+     * don't work, check the documentation for that service's tagging APIs for more
+     * information.</p> 
+     */
+    inline CreateMeetingRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Applies one or more tags to an Amazon Chime SDK meeting. Note the
+     * following:</p> <ul> <li> <p>Not all resources have tags. For a list of services
+     * with resources that support tagging using this operation, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/supported-services.html">Services
+     * that support the Resource Groups Tagging API</a>. If the resource doesn't yet
+     * support this operation, the resource's service might support tagging using its
+     * own API operations. For more information, refer to the documentation for that
+     * service.</p> </li> <li> <p>Each resource can have up to 50 tags. For other
+     * limits, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag
+     * Naming and Usage Conventions</a> in the <i>AWS General Reference</i>.</p> </li>
+     * <li> <p>You can only tag resources that are located in the specified AWS Region
+     * for the AWS account.</p> </li> <li> <p>To add tags to a resource, you need the
+     * necessary permissions for the service that the resource belongs to as well as
+     * permissions for adding tags. For more information, see the documentation for
+     * each service.</p> </li> </ul>  <p>Do not store personally
+     * identifiable information (PII) or other confidential or sensitive information in
+     * tags. We use tags to provide you with billing and administration services. Tags
+     * are not intended to be used for private or sensitive data.</p>  <p>
+     * <b>Minimum permissions</b> </p> <p> In addition to the <code>tag:TagResources
+     * </code>permission required by this operation, you must also have the tagging
+     * permission defined by the service that created the resource. For example, to tag
+     * a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
+     * operation, you must have both of the following permissions:</p> <p>
+     * <code>tag:TagResources</code> </p> <p> <code>ChimeSDKMeetings:CreateTags</code>
+     * </p>  <p>Some services might have specific requirements for tagging some
+     * resources. For example, to tag an Amazon S3 bucket, you must also have the
+     * <code>s3:GetBucketTagging</code> permission. If the expected minimum permissions
+     * don't work, check the documentation for that service's tagging APIs for more
+     * information.</p> 
+     */
+    inline CreateMeetingRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_mediaRegion;
-    bool m_mediaRegionHasBeenSet;
+    bool m_mediaRegionHasBeenSet = false;
 
     Aws::String m_meetingHostId;
-    bool m_meetingHostIdHasBeenSet;
+    bool m_meetingHostIdHasBeenSet = false;
 
     Aws::String m_externalMeetingId;
-    bool m_externalMeetingIdHasBeenSet;
+    bool m_externalMeetingIdHasBeenSet = false;
 
     NotificationsConfiguration m_notificationsConfiguration;
-    bool m_notificationsConfigurationHasBeenSet;
+    bool m_notificationsConfigurationHasBeenSet = false;
 
     MeetingFeaturesConfiguration m_meetingFeatures;
-    bool m_meetingFeaturesHasBeenSet;
+    bool m_meetingFeaturesHasBeenSet = false;
 
     Aws::String m_primaryMeetingId;
-    bool m_primaryMeetingIdHasBeenSet;
+    bool m_primaryMeetingIdHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_tenantIds;
+    bool m_tenantIdsHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

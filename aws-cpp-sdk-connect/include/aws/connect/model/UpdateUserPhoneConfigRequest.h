@@ -156,13 +156,13 @@ namespace Model
   private:
 
     UserPhoneConfig m_phoneConfig;
-    bool m_phoneConfigHasBeenSet;
+    bool m_phoneConfigHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
   };
 
 } // namespace Model

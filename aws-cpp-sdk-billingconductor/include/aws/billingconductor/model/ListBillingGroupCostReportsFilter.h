@@ -96,7 +96,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_billingGroupArns;
-    bool m_billingGroupArnsHasBeenSet;
+    bool m_billingGroupArnsHasBeenSet = false;
   };
 
 } // namespace Model

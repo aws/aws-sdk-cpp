@@ -194,13 +194,13 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

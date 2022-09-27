@@ -1388,33 +1388,33 @@ namespace Model
 
     /**
      * <p>The default number of days to retain a manual snapshot.</p> <p>If the value
-     * is -1, the snapshot is retained indefinitely.</p> <p>This setting doesn't change
-     * the retention period of existing snapshots.</p> <p>Valid values: Either -1 or an
-     * integer between 1 and 3,653</p>
+     * is <code>-1</code>, the snapshot is retained indefinitely.</p> <p>This setting
+     * doesn't change the retention period of existing snapshots.</p> <p>Valid values:
+     * Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
     inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
 
     /**
      * <p>The default number of days to retain a manual snapshot.</p> <p>If the value
-     * is -1, the snapshot is retained indefinitely.</p> <p>This setting doesn't change
-     * the retention period of existing snapshots.</p> <p>Valid values: Either -1 or an
-     * integer between 1 and 3,653</p>
+     * is <code>-1</code>, the snapshot is retained indefinitely.</p> <p>This setting
+     * doesn't change the retention period of existing snapshots.</p> <p>Valid values:
+     * Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
     inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
 
     /**
      * <p>The default number of days to retain a manual snapshot.</p> <p>If the value
-     * is -1, the snapshot is retained indefinitely.</p> <p>This setting doesn't change
-     * the retention period of existing snapshots.</p> <p>Valid values: Either -1 or an
-     * integer between 1 and 3,653</p>
+     * is <code>-1</code>, the snapshot is retained indefinitely.</p> <p>This setting
+     * doesn't change the retention period of existing snapshots.</p> <p>Valid values:
+     * Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
 
     /**
      * <p>The default number of days to retain a manual snapshot.</p> <p>If the value
-     * is -1, the snapshot is retained indefinitely.</p> <p>This setting doesn't change
-     * the retention period of existing snapshots.</p> <p>Valid values: Either -1 or an
-     * integer between 1 and 3,653</p>
+     * is <code>-1</code>, the snapshot is retained indefinitely.</p> <p>This setting
+     * doesn't change the retention period of existing snapshots.</p> <p>Valid values:
+     * Either <code>-1</code> or an integer between 1 and 3,653</p>
      */
     inline AwsRedshiftClusterDetails& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
 
@@ -2071,136 +2071,136 @@ namespace Model
   private:
 
     bool m_allowVersionUpgrade;
-    bool m_allowVersionUpgradeHasBeenSet;
+    bool m_allowVersionUpgradeHasBeenSet = false;
 
     int m_automatedSnapshotRetentionPeriod;
-    bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+    bool m_automatedSnapshotRetentionPeriodHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_clusterAvailabilityStatus;
-    bool m_clusterAvailabilityStatusHasBeenSet;
+    bool m_clusterAvailabilityStatusHasBeenSet = false;
 
     Aws::String m_clusterCreateTime;
-    bool m_clusterCreateTimeHasBeenSet;
+    bool m_clusterCreateTimeHasBeenSet = false;
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::Vector<AwsRedshiftClusterClusterNode> m_clusterNodes;
-    bool m_clusterNodesHasBeenSet;
+    bool m_clusterNodesHasBeenSet = false;
 
     Aws::Vector<AwsRedshiftClusterClusterParameterGroup> m_clusterParameterGroups;
-    bool m_clusterParameterGroupsHasBeenSet;
+    bool m_clusterParameterGroupsHasBeenSet = false;
 
     Aws::String m_clusterPublicKey;
-    bool m_clusterPublicKeyHasBeenSet;
+    bool m_clusterPublicKeyHasBeenSet = false;
 
     Aws::String m_clusterRevisionNumber;
-    bool m_clusterRevisionNumberHasBeenSet;
+    bool m_clusterRevisionNumberHasBeenSet = false;
 
     Aws::Vector<AwsRedshiftClusterClusterSecurityGroup> m_clusterSecurityGroups;
-    bool m_clusterSecurityGroupsHasBeenSet;
+    bool m_clusterSecurityGroupsHasBeenSet = false;
 
     AwsRedshiftClusterClusterSnapshotCopyStatus m_clusterSnapshotCopyStatus;
-    bool m_clusterSnapshotCopyStatusHasBeenSet;
+    bool m_clusterSnapshotCopyStatusHasBeenSet = false;
 
     Aws::String m_clusterStatus;
-    bool m_clusterStatusHasBeenSet;
+    bool m_clusterStatusHasBeenSet = false;
 
     Aws::String m_clusterSubnetGroupName;
-    bool m_clusterSubnetGroupNameHasBeenSet;
+    bool m_clusterSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_clusterVersion;
-    bool m_clusterVersionHasBeenSet;
+    bool m_clusterVersionHasBeenSet = false;
 
     Aws::String m_dBName;
-    bool m_dBNameHasBeenSet;
+    bool m_dBNameHasBeenSet = false;
 
     Aws::Vector<AwsRedshiftClusterDeferredMaintenanceWindow> m_deferredMaintenanceWindows;
-    bool m_deferredMaintenanceWindowsHasBeenSet;
+    bool m_deferredMaintenanceWindowsHasBeenSet = false;
 
     AwsRedshiftClusterElasticIpStatus m_elasticIpStatus;
-    bool m_elasticIpStatusHasBeenSet;
+    bool m_elasticIpStatusHasBeenSet = false;
 
     Aws::String m_elasticResizeNumberOfNodeOptions;
-    bool m_elasticResizeNumberOfNodeOptionsHasBeenSet;
+    bool m_elasticResizeNumberOfNodeOptionsHasBeenSet = false;
 
     bool m_encrypted;
-    bool m_encryptedHasBeenSet;
+    bool m_encryptedHasBeenSet = false;
 
     AwsRedshiftClusterEndpoint m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     bool m_enhancedVpcRouting;
-    bool m_enhancedVpcRoutingHasBeenSet;
+    bool m_enhancedVpcRoutingHasBeenSet = false;
 
     Aws::String m_expectedNextSnapshotScheduleTime;
-    bool m_expectedNextSnapshotScheduleTimeHasBeenSet;
+    bool m_expectedNextSnapshotScheduleTimeHasBeenSet = false;
 
     Aws::String m_expectedNextSnapshotScheduleTimeStatus;
-    bool m_expectedNextSnapshotScheduleTimeStatusHasBeenSet;
+    bool m_expectedNextSnapshotScheduleTimeStatusHasBeenSet = false;
 
     AwsRedshiftClusterHsmStatus m_hsmStatus;
-    bool m_hsmStatusHasBeenSet;
+    bool m_hsmStatusHasBeenSet = false;
 
     Aws::Vector<AwsRedshiftClusterIamRole> m_iamRoles;
-    bool m_iamRolesHasBeenSet;
+    bool m_iamRolesHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_maintenanceTrackName;
-    bool m_maintenanceTrackNameHasBeenSet;
+    bool m_maintenanceTrackNameHasBeenSet = false;
 
     int m_manualSnapshotRetentionPeriod;
-    bool m_manualSnapshotRetentionPeriodHasBeenSet;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_nextMaintenanceWindowStartTime;
-    bool m_nextMaintenanceWindowStartTimeHasBeenSet;
+    bool m_nextMaintenanceWindowStartTimeHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     int m_numberOfNodes;
-    bool m_numberOfNodesHasBeenSet;
+    bool m_numberOfNodesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_pendingActions;
-    bool m_pendingActionsHasBeenSet;
+    bool m_pendingActionsHasBeenSet = false;
 
     AwsRedshiftClusterPendingModifiedValues m_pendingModifiedValues;
-    bool m_pendingModifiedValuesHasBeenSet;
+    bool m_pendingModifiedValuesHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     AwsRedshiftClusterResizeInfo m_resizeInfo;
-    bool m_resizeInfoHasBeenSet;
+    bool m_resizeInfoHasBeenSet = false;
 
     AwsRedshiftClusterRestoreStatus m_restoreStatus;
-    bool m_restoreStatusHasBeenSet;
+    bool m_restoreStatusHasBeenSet = false;
 
     Aws::String m_snapshotScheduleIdentifier;
-    bool m_snapshotScheduleIdentifierHasBeenSet;
+    bool m_snapshotScheduleIdentifierHasBeenSet = false;
 
     Aws::String m_snapshotScheduleState;
-    bool m_snapshotScheduleStateHasBeenSet;
+    bool m_snapshotScheduleStateHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::Vector<AwsRedshiftClusterVpcSecurityGroup> m_vpcSecurityGroups;
-    bool m_vpcSecurityGroupsHasBeenSet;
+    bool m_vpcSecurityGroupsHasBeenSet = false;
 
     AwsRedshiftClusterLoggingStatus m_loggingStatus;
-    bool m_loggingStatusHasBeenSet;
+    bool m_loggingStatusHasBeenSet = false;
   };
 
 } // namespace Model

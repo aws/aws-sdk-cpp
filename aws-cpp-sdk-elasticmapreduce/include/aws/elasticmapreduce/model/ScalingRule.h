@@ -203,16 +203,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ScalingAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     ScalingTrigger m_trigger;
-    bool m_triggerHasBeenSet;
+    bool m_triggerHasBeenSet = false;
   };
 
 } // namespace Model

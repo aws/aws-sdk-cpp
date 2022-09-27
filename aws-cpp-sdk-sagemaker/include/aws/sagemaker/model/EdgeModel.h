@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_modelName;
-    bool m_modelNameHasBeenSet;
+    bool m_modelNameHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestSampleTime;
-    bool m_latestSampleTimeHasBeenSet;
+    bool m_latestSampleTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestInference;
-    bool m_latestInferenceHasBeenSet;
+    bool m_latestInferenceHasBeenSet = false;
   };
 
 } // namespace Model

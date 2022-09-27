@@ -161,16 +161,16 @@ namespace Model
   private:
 
     BoundingBox m_boundingBox;
-    bool m_boundingBoxHasBeenSet;
+    bool m_boundingBoxHasBeenSet = false;
 
     double m_confidence;
-    bool m_confidenceHasBeenSet;
+    bool m_confidenceHasBeenSet = false;
 
     ProtectiveEquipmentType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     CoversBodyPart m_coversBodyPart;
-    bool m_coversBodyPartHasBeenSet;
+    bool m_coversBodyPartHasBeenSet = false;
   };
 
 } // namespace Model

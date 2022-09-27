@@ -232,32 +232,32 @@ namespace Model
 
 
     /**
-     * <p>A boolean that indicates whether or not public sharing is enabled on an
-     * Amazon QuickSight account. For more information about enabling public sharing,
+     * <p>A Boolean value that indicates whether public sharing is turned on for an
+     * Amazon QuickSight account. For more information about turning on public sharing,
      * see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
      */
     inline bool GetPublicSharingEnabled() const{ return m_publicSharingEnabled; }
 
     /**
-     * <p>A boolean that indicates whether or not public sharing is enabled on an
-     * Amazon QuickSight account. For more information about enabling public sharing,
+     * <p>A Boolean value that indicates whether public sharing is turned on for an
+     * Amazon QuickSight account. For more information about turning on public sharing,
      * see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
      */
     inline bool PublicSharingEnabledHasBeenSet() const { return m_publicSharingEnabledHasBeenSet; }
 
     /**
-     * <p>A boolean that indicates whether or not public sharing is enabled on an
-     * Amazon QuickSight account. For more information about enabling public sharing,
+     * <p>A Boolean value that indicates whether public sharing is turned on for an
+     * Amazon QuickSight account. For more information about turning on public sharing,
      * see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
      */
     inline void SetPublicSharingEnabled(bool value) { m_publicSharingEnabledHasBeenSet = true; m_publicSharingEnabled = value; }
 
     /**
-     * <p>A boolean that indicates whether or not public sharing is enabled on an
-     * Amazon QuickSight account. For more information about enabling public sharing,
+     * <p>A Boolean value that indicates whether public sharing is turned on for an
+     * Amazon QuickSight account. For more information about turning on public sharing,
      * see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html">UpdatePublicSharingSettings</a>.</p>
      */
@@ -266,19 +266,19 @@ namespace Model
   private:
 
     Aws::String m_accountName;
-    bool m_accountNameHasBeenSet;
+    bool m_accountNameHasBeenSet = false;
 
     Edition m_edition;
-    bool m_editionHasBeenSet;
+    bool m_editionHasBeenSet = false;
 
     Aws::String m_defaultNamespace;
-    bool m_defaultNamespaceHasBeenSet;
+    bool m_defaultNamespaceHasBeenSet = false;
 
     Aws::String m_notificationEmail;
-    bool m_notificationEmailHasBeenSet;
+    bool m_notificationEmailHasBeenSet = false;
 
     bool m_publicSharingEnabled;
-    bool m_publicSharingEnabledHasBeenSet;
+    bool m_publicSharingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

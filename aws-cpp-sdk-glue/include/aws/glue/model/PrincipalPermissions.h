@@ -113,10 +113,10 @@ namespace Model
   private:
 
     DataLakePrincipal m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::Vector<Permission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
   };
 
 } // namespace Model

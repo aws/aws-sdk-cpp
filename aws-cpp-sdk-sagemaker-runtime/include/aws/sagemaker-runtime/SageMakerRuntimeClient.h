@@ -5,68 +5,15 @@
 
 #pragma once
 #include <aws/sagemaker-runtime/SageMakerRuntime_EXPORTS.h>
-#include <aws/sagemaker-runtime/SageMakerRuntimeErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/sagemaker-runtime/model/InvokeEndpointResult.h>
-#include <aws/sagemaker-runtime/model/InvokeEndpointAsyncResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/sagemaker-runtime/SageMakerRuntimeServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SageMakerRuntime
 {
-
-namespace Model
-{
-        class InvokeEndpointRequest;
-        class InvokeEndpointAsyncRequest;
-
-        typedef Aws::Utils::Outcome<InvokeEndpointResult, SageMakerRuntimeError> InvokeEndpointOutcome;
-        typedef Aws::Utils::Outcome<InvokeEndpointAsyncResult, SageMakerRuntimeError> InvokeEndpointAsyncOutcome;
-
-        typedef std::future<InvokeEndpointOutcome> InvokeEndpointOutcomeCallable;
-        typedef std::future<InvokeEndpointAsyncOutcome> InvokeEndpointAsyncOutcomeCallable;
-} // namespace Model
-
-  class SageMakerRuntimeClient;
-
-    typedef std::function<void(const SageMakerRuntimeClient*, const Model::InvokeEndpointRequest&, Model::InvokeEndpointOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeEndpointResponseReceivedHandler;
-    typedef std::function<void(const SageMakerRuntimeClient*, const Model::InvokeEndpointAsyncRequest&, const Model::InvokeEndpointAsyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeEndpointAsyncResponseReceivedHandler;
-
   /**
    * <p> The Amazon SageMaker runtime API. </p>
    */
@@ -85,14 +32,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SageMakerRuntimeClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SageMakerRuntimeClient(const Aws::Auth::AWSCredentials& credentials,
+                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SageMakerRuntimeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~SageMakerRuntimeClient();
 
@@ -169,8 +117,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void InvokeEndpointAsyncHelper(const Model::InvokeEndpointRequest& request, const InvokeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void InvokeEndpointAsyncAsyncHelper(const Model::InvokeEndpointAsyncRequest& request, const InvokeEndpointAsyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

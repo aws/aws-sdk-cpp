@@ -360,16 +360,16 @@ namespace Model
   private:
 
     Aws::String m_s3OutputLocation;
-    bool m_s3OutputLocationHasBeenSet;
+    bool m_s3OutputLocationHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     EdgePresetDeploymentType m_presetDeploymentType;
-    bool m_presetDeploymentTypeHasBeenSet;
+    bool m_presetDeploymentTypeHasBeenSet = false;
 
     Aws::String m_presetDeploymentConfig;
-    bool m_presetDeploymentConfigHasBeenSet;
+    bool m_presetDeploymentConfigHasBeenSet = false;
   };
 
 } // namespace Model

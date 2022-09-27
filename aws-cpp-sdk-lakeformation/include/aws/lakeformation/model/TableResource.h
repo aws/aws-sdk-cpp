@@ -232,16 +232,16 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     TableWildcard m_tableWildcard;
-    bool m_tableWildcardHasBeenSet;
+    bool m_tableWildcardHasBeenSet = false;
   };
 
 } // namespace Model

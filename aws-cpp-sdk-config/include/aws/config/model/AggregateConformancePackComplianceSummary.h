@@ -121,10 +121,10 @@ namespace Model
   private:
 
     AggregateConformancePackComplianceCount m_complianceSummary;
-    bool m_complianceSummaryHasBeenSet;
+    bool m_complianceSummaryHasBeenSet = false;
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
   };
 
 } // namespace Model

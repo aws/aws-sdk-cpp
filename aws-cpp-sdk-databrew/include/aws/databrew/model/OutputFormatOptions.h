@@ -77,7 +77,7 @@ namespace Model
   private:
 
     CsvOutputOptions m_csv;
-    bool m_csvHasBeenSet;
+    bool m_csvHasBeenSet = false;
   };
 
 } // namespace Model

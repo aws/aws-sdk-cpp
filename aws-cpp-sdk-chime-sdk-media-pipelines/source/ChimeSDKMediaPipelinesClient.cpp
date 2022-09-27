@@ -21,9 +21,14 @@
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesEndpoint.h>
 #include <aws/chime-sdk-media-pipelines/ChimeSDKMediaPipelinesErrorMarshaller.h>
 #include <aws/chime-sdk-media-pipelines/model/CreateMediaCapturePipelineRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/CreateMediaConcatenationPipelineRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/CreateMediaLiveConnectorPipelineRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/DeleteMediaCapturePipelineRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/DeleteMediaPipelineRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/GetMediaCapturePipelineRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/GetMediaPipelineRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/ListMediaCapturePipelinesRequest.h>
+#include <aws/chime-sdk-media-pipelines/model/ListMediaPipelinesRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/ListTagsForResourceRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/TagResourceRequest.h>
 #include <aws/chime-sdk-media-pipelines/model/UntagResourceRequest.h>
@@ -39,33 +44,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "chime";
 static const char* ALLOCATION_TAG = "ChimeSDKMediaPipelinesClient";
 
-
 ChimeSDKMediaPipelinesClient::ChimeSDKMediaPipelinesClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ChimeSDKMediaPipelinesErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ChimeSDKMediaPipelinesErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-ChimeSDKMediaPipelinesClient::ChimeSDKMediaPipelinesClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+ChimeSDKMediaPipelinesClient::ChimeSDKMediaPipelinesClient(const AWSCredentials& credentials,
+                                                           const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ChimeSDKMediaPipelinesErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ChimeSDKMediaPipelinesErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 ChimeSDKMediaPipelinesClient::ChimeSDKMediaPipelinesClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                                           const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ChimeSDKMediaPipelinesErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ChimeSDKMediaPipelinesErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -77,7 +88,7 @@ ChimeSDKMediaPipelinesClient::~ChimeSDKMediaPipelinesClient()
 
 void ChimeSDKMediaPipelinesClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Chime SDK Media Pipelines");
+  AWSClient::SetServiceClientName("Chime SDK Media Pipelines");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -118,12 +129,56 @@ CreateMediaCapturePipelineOutcomeCallable ChimeSDKMediaPipelinesClient::CreateMe
 
 void ChimeSDKMediaPipelinesClient::CreateMediaCapturePipelineAsync(const CreateMediaCapturePipelineRequest& request, const CreateMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMediaCapturePipelineAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMediaCapturePipeline(request), context);
+    } );
 }
 
-void ChimeSDKMediaPipelinesClient::CreateMediaCapturePipelineAsyncHelper(const CreateMediaCapturePipelineRequest& request, const CreateMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+CreateMediaConcatenationPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaConcatenationPipeline(const CreateMediaConcatenationPipelineRequest& request) const
 {
-  handler(this, request, CreateMediaCapturePipeline(request), context);
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/sdk-media-concatenation-pipelines");
+  return CreateMediaConcatenationPipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateMediaConcatenationPipelineOutcomeCallable ChimeSDKMediaPipelinesClient::CreateMediaConcatenationPipelineCallable(const CreateMediaConcatenationPipelineRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateMediaConcatenationPipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMediaConcatenationPipeline(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMediaPipelinesClient::CreateMediaConcatenationPipelineAsync(const CreateMediaConcatenationPipelineRequest& request, const CreateMediaConcatenationPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMediaConcatenationPipeline(request), context);
+    } );
+}
+
+CreateMediaLiveConnectorPipelineOutcome ChimeSDKMediaPipelinesClient::CreateMediaLiveConnectorPipeline(const CreateMediaLiveConnectorPipelineRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/sdk-media-live-connector-pipelines");
+  return CreateMediaLiveConnectorPipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateMediaLiveConnectorPipelineOutcomeCallable ChimeSDKMediaPipelinesClient::CreateMediaLiveConnectorPipelineCallable(const CreateMediaLiveConnectorPipelineRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateMediaLiveConnectorPipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMediaLiveConnectorPipeline(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMediaPipelinesClient::CreateMediaLiveConnectorPipelineAsync(const CreateMediaLiveConnectorPipelineRequest& request, const CreateMediaLiveConnectorPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMediaLiveConnectorPipeline(request), context);
+    } );
 }
 
 DeleteMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaCapturePipeline(const DeleteMediaCapturePipelineRequest& request) const
@@ -149,12 +204,39 @@ DeleteMediaCapturePipelineOutcomeCallable ChimeSDKMediaPipelinesClient::DeleteMe
 
 void ChimeSDKMediaPipelinesClient::DeleteMediaCapturePipelineAsync(const DeleteMediaCapturePipelineRequest& request, const DeleteMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMediaCapturePipelineAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMediaCapturePipeline(request), context);
+    } );
 }
 
-void ChimeSDKMediaPipelinesClient::DeleteMediaCapturePipelineAsyncHelper(const DeleteMediaCapturePipelineRequest& request, const DeleteMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+DeleteMediaPipelineOutcome ChimeSDKMediaPipelinesClient::DeleteMediaPipeline(const DeleteMediaPipelineRequest& request) const
 {
-  handler(this, request, DeleteMediaCapturePipeline(request), context);
+  if (!request.MediaPipelineIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMediaPipeline", "Required field: MediaPipelineId, is not set");
+    return DeleteMediaPipelineOutcome(Aws::Client::AWSError<ChimeSDKMediaPipelinesErrors>(ChimeSDKMediaPipelinesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaPipelineId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/sdk-media-pipelines/");
+  uri.AddPathSegment(request.GetMediaPipelineId());
+  return DeleteMediaPipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteMediaPipelineOutcomeCallable ChimeSDKMediaPipelinesClient::DeleteMediaPipelineCallable(const DeleteMediaPipelineRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMediaPipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMediaPipeline(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMediaPipelinesClient::DeleteMediaPipelineAsync(const DeleteMediaPipelineRequest& request, const DeleteMediaPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMediaPipeline(request), context);
+    } );
 }
 
 GetMediaCapturePipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaCapturePipeline(const GetMediaCapturePipelineRequest& request) const
@@ -180,12 +262,39 @@ GetMediaCapturePipelineOutcomeCallable ChimeSDKMediaPipelinesClient::GetMediaCap
 
 void ChimeSDKMediaPipelinesClient::GetMediaCapturePipelineAsync(const GetMediaCapturePipelineRequest& request, const GetMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMediaCapturePipelineAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMediaCapturePipeline(request), context);
+    } );
 }
 
-void ChimeSDKMediaPipelinesClient::GetMediaCapturePipelineAsyncHelper(const GetMediaCapturePipelineRequest& request, const GetMediaCapturePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+GetMediaPipelineOutcome ChimeSDKMediaPipelinesClient::GetMediaPipeline(const GetMediaPipelineRequest& request) const
 {
-  handler(this, request, GetMediaCapturePipeline(request), context);
+  if (!request.MediaPipelineIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMediaPipeline", "Required field: MediaPipelineId, is not set");
+    return GetMediaPipelineOutcome(Aws::Client::AWSError<ChimeSDKMediaPipelinesErrors>(ChimeSDKMediaPipelinesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaPipelineId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/sdk-media-pipelines/");
+  uri.AddPathSegment(request.GetMediaPipelineId());
+  return GetMediaPipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMediaPipelineOutcomeCallable ChimeSDKMediaPipelinesClient::GetMediaPipelineCallable(const GetMediaPipelineRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMediaPipelineOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMediaPipeline(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMediaPipelinesClient::GetMediaPipelineAsync(const GetMediaPipelineRequest& request, const GetMediaPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMediaPipeline(request), context);
+    } );
 }
 
 ListMediaCapturePipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaCapturePipelines(const ListMediaCapturePipelinesRequest& request) const
@@ -205,12 +314,33 @@ ListMediaCapturePipelinesOutcomeCallable ChimeSDKMediaPipelinesClient::ListMedia
 
 void ChimeSDKMediaPipelinesClient::ListMediaCapturePipelinesAsync(const ListMediaCapturePipelinesRequest& request, const ListMediaCapturePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMediaCapturePipelinesAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMediaCapturePipelines(request), context);
+    } );
 }
 
-void ChimeSDKMediaPipelinesClient::ListMediaCapturePipelinesAsyncHelper(const ListMediaCapturePipelinesRequest& request, const ListMediaCapturePipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+ListMediaPipelinesOutcome ChimeSDKMediaPipelinesClient::ListMediaPipelines(const ListMediaPipelinesRequest& request) const
 {
-  handler(this, request, ListMediaCapturePipelines(request), context);
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/sdk-media-pipelines");
+  return ListMediaPipelinesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListMediaPipelinesOutcomeCallable ChimeSDKMediaPipelinesClient::ListMediaPipelinesCallable(const ListMediaPipelinesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMediaPipelinesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMediaPipelines(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeSDKMediaPipelinesClient::ListMediaPipelinesAsync(const ListMediaPipelinesRequest& request, const ListMediaPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMediaPipelines(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome ChimeSDKMediaPipelinesClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -235,12 +365,10 @@ ListTagsForResourceOutcomeCallable ChimeSDKMediaPipelinesClient::ListTagsForReso
 
 void ChimeSDKMediaPipelinesClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 TagResourceOutcome ChimeSDKMediaPipelinesClient::TagResource(const TagResourceRequest& request) const
@@ -263,12 +391,10 @@ TagResourceOutcomeCallable ChimeSDKMediaPipelinesClient::TagResourceCallable(con
 
 void ChimeSDKMediaPipelinesClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome ChimeSDKMediaPipelinesClient::UntagResource(const UntagResourceRequest& request) const
@@ -291,11 +417,9 @@ UntagResourceOutcomeCallable ChimeSDKMediaPipelinesClient::UntagResourceCallable
 
 void ChimeSDKMediaPipelinesClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void ChimeSDKMediaPipelinesClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 

@@ -37,33 +37,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "lex";
 static const char* ALLOCATION_TAG = "LexRuntimeServiceClient";
 
-
 LexRuntimeServiceClient::LexRuntimeServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-LexRuntimeServiceClient::LexRuntimeServiceClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+LexRuntimeServiceClient::LexRuntimeServiceClient(const AWSCredentials& credentials,
+                                                 const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 LexRuntimeServiceClient::LexRuntimeServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                                 const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -75,7 +81,7 @@ LexRuntimeServiceClient::~LexRuntimeServiceClient()
 
 void LexRuntimeServiceClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Lex Runtime Service");
+  AWSClient::SetServiceClientName("Lex Runtime Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -137,12 +143,10 @@ DeleteSessionOutcomeCallable LexRuntimeServiceClient::DeleteSessionCallable(cons
 
 void LexRuntimeServiceClient::DeleteSessionAsync(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSessionAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeServiceClient::DeleteSessionAsyncHelper(const DeleteSessionRequest& request, const DeleteSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSession(request), context);
+    } );
 }
 
 GetSessionOutcome LexRuntimeServiceClient::GetSession(const GetSessionRequest& request) const
@@ -183,12 +187,10 @@ GetSessionOutcomeCallable LexRuntimeServiceClient::GetSessionCallable(const GetS
 
 void LexRuntimeServiceClient::GetSessionAsync(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSessionAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeServiceClient::GetSessionAsyncHelper(const GetSessionRequest& request, const GetSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSession(request), context);
+    } );
 }
 
 PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest& request) const
@@ -229,12 +231,10 @@ PostContentOutcomeCallable LexRuntimeServiceClient::PostContentCallable(const Po
 
 void LexRuntimeServiceClient::PostContentAsync(const PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PostContentAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeServiceClient::PostContentAsyncHelper(const PostContentRequest& request, const PostContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PostContent(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PostContent(request), context);
+    } );
 }
 
 PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request) const
@@ -275,12 +275,10 @@ PostTextOutcomeCallable LexRuntimeServiceClient::PostTextCallable(const PostText
 
 void LexRuntimeServiceClient::PostTextAsync(const PostTextRequest& request, const PostTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PostTextAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeServiceClient::PostTextAsyncHelper(const PostTextRequest& request, const PostTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PostText(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PostText(request), context);
+    } );
 }
 
 PutSessionOutcome LexRuntimeServiceClient::PutSession(const PutSessionRequest& request) const
@@ -321,11 +319,9 @@ PutSessionOutcomeCallable LexRuntimeServiceClient::PutSessionCallable(const PutS
 
 void LexRuntimeServiceClient::PutSessionAsync(const PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutSessionAsyncHelper( request, handler, context ); } );
-}
-
-void LexRuntimeServiceClient::PutSessionAsyncHelper(const PutSessionRequest& request, const PutSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutSession(request), context);
+    } );
 }
 

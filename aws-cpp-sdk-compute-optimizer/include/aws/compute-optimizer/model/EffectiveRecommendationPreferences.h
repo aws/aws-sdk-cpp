@@ -288,13 +288,13 @@ namespace Model
   private:
 
     Aws::Vector<CpuVendorArchitecture> m_cpuVendorArchitectures;
-    bool m_cpuVendorArchitecturesHasBeenSet;
+    bool m_cpuVendorArchitecturesHasBeenSet = false;
 
     EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics;
-    bool m_enhancedInfrastructureMetricsHasBeenSet;
+    bool m_enhancedInfrastructureMetricsHasBeenSet = false;
 
     InferredWorkloadTypesPreference m_inferredWorkloadTypes;
-    bool m_inferredWorkloadTypesHasBeenSet;
+    bool m_inferredWorkloadTypesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -215,16 +215,16 @@ namespace Model
   private:
 
     int m_maxAbrBitrate;
-    bool m_maxAbrBitrateHasBeenSet;
+    bool m_maxAbrBitrateHasBeenSet = false;
 
     int m_maxRenditions;
-    bool m_maxRenditionsHasBeenSet;
+    bool m_maxRenditionsHasBeenSet = false;
 
     int m_minAbrBitrate;
-    bool m_minAbrBitrateHasBeenSet;
+    bool m_minAbrBitrateHasBeenSet = false;
 
     Aws::Vector<AutomatedAbrRule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
   };
 
 } // namespace Model

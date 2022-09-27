@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_xml;
-    bool m_xmlHasBeenSet;
+    bool m_xmlHasBeenSet = false;
   };
 
 } // namespace Model

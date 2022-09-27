@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_phoneNumberId;
-    bool m_phoneNumberIdHasBeenSet;
+    bool m_phoneNumberIdHasBeenSet = false;
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

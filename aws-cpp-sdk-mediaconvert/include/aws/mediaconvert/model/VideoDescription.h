@@ -788,49 +788,49 @@ namespace Model
   private:
 
     AfdSignaling m_afdSignaling;
-    bool m_afdSignalingHasBeenSet;
+    bool m_afdSignalingHasBeenSet = false;
 
     AntiAlias m_antiAlias;
-    bool m_antiAliasHasBeenSet;
+    bool m_antiAliasHasBeenSet = false;
 
     VideoCodecSettings m_codecSettings;
-    bool m_codecSettingsHasBeenSet;
+    bool m_codecSettingsHasBeenSet = false;
 
     ColorMetadata m_colorMetadata;
-    bool m_colorMetadataHasBeenSet;
+    bool m_colorMetadataHasBeenSet = false;
 
     Rectangle m_crop;
-    bool m_cropHasBeenSet;
+    bool m_cropHasBeenSet = false;
 
     DropFrameTimecode m_dropFrameTimecode;
-    bool m_dropFrameTimecodeHasBeenSet;
+    bool m_dropFrameTimecodeHasBeenSet = false;
 
     int m_fixedAfd;
-    bool m_fixedAfdHasBeenSet;
+    bool m_fixedAfdHasBeenSet = false;
 
     int m_height;
-    bool m_heightHasBeenSet;
+    bool m_heightHasBeenSet = false;
 
     Rectangle m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     RespondToAfd m_respondToAfd;
-    bool m_respondToAfdHasBeenSet;
+    bool m_respondToAfdHasBeenSet = false;
 
     ScalingBehavior m_scalingBehavior;
-    bool m_scalingBehaviorHasBeenSet;
+    bool m_scalingBehaviorHasBeenSet = false;
 
     int m_sharpness;
-    bool m_sharpnessHasBeenSet;
+    bool m_sharpnessHasBeenSet = false;
 
     VideoTimecodeInsertion m_timecodeInsertion;
-    bool m_timecodeInsertionHasBeenSet;
+    bool m_timecodeInsertionHasBeenSet = false;
 
     VideoPreprocessor m_videoPreprocessors;
-    bool m_videoPreprocessorsHasBeenSet;
+    bool m_videoPreprocessorsHasBeenSet = false;
 
     int m_width;
-    bool m_widthHasBeenSet;
+    bool m_widthHasBeenSet = false;
   };
 
 } // namespace Model

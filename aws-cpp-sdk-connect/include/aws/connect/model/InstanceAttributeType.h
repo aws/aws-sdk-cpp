@@ -23,7 +23,8 @@ namespace Model
     AUTO_RESOLVE_BEST_VOICES,
     USE_CUSTOM_TTS_VOICES,
     EARLY_MEDIA,
-    MULTI_PARTY_CONFERENCE
+    MULTI_PARTY_CONFERENCE,
+    HIGH_VOLUME_OUTBOUND
   };
 
 namespace InstanceAttributeTypeMapper

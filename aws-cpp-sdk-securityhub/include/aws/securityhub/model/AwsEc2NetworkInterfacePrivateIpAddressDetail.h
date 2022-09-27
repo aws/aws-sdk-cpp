@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
   };
 
 } // namespace Model

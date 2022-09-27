@@ -78,7 +78,7 @@ namespace Model
   private:
 
     GreengrassConfiguration m_greengrass;
-    bool m_greengrassHasBeenSet;
+    bool m_greengrassHasBeenSet = false;
   };
 
 } // namespace Model

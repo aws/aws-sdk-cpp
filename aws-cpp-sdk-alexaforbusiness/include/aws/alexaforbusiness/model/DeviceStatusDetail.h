@@ -102,10 +102,10 @@ namespace Model
   private:
 
     Feature m_feature;
-    bool m_featureHasBeenSet;
+    bool m_featureHasBeenSet = false;
 
     DeviceStatusDetailCode m_code;
-    bool m_codeHasBeenSet;
+    bool m_codeHasBeenSet = false;
   };
 
 } // namespace Model

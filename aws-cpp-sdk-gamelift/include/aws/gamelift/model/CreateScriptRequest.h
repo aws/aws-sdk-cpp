@@ -401,19 +401,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     S3Location m_storageLocation;
-    bool m_storageLocationHasBeenSet;
+    bool m_storageLocationHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_zipFile;
-    bool m_zipFileHasBeenSet;
+    bool m_zipFileHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

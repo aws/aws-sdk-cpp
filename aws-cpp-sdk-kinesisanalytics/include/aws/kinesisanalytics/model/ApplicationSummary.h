@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::String m_applicationARN;
-    bool m_applicationARNHasBeenSet;
+    bool m_applicationARNHasBeenSet = false;
 
     ApplicationStatus m_applicationStatus;
-    bool m_applicationStatusHasBeenSet;
+    bool m_applicationStatusHasBeenSet = false;
   };
 
 } // namespace Model

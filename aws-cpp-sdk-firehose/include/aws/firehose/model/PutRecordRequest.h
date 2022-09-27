@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     Record m_record;
-    bool m_recordHasBeenSet;
+    bool m_recordHasBeenSet = false;
   };
 
 } // namespace Model

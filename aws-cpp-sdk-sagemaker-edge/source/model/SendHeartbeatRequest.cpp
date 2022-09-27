@@ -17,7 +17,8 @@ SendHeartbeatRequest::SendHeartbeatRequest() :
     m_modelsHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_deviceFleetNameHasBeenSet(false)
+    m_deviceFleetNameHasBeenSet(false),
+    m_deploymentResultHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,12 @@ Aws::String SendHeartbeatRequest::SerializePayload() const
   if(m_deviceFleetNameHasBeenSet)
   {
    payload.WithString("DeviceFleetName", m_deviceFleetName);
+
+  }
+
+  if(m_deploymentResultHasBeenSet)
+  {
+   payload.WithObject("DeploymentResult", m_deploymentResult.Jsonize());
 
   }
 

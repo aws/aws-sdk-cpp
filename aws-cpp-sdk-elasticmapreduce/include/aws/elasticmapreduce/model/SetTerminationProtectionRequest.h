@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_jobFlowIds;
-    bool m_jobFlowIdsHasBeenSet;
+    bool m_jobFlowIdsHasBeenSet = false;
 
     bool m_terminationProtected;
-    bool m_terminationProtectedHasBeenSet;
+    bool m_terminationProtectedHasBeenSet = false;
   };
 
 } // namespace Model

@@ -365,25 +365,25 @@ namespace Model
   private:
 
     Aws::String m_detectorId;
-    bool m_detectorIdHasBeenSet;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_externalModelEndpoints;
-    bool m_externalModelEndpointsHasBeenSet;
+    bool m_externalModelEndpointsHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     Aws::Vector<ModelVersion> m_modelVersions;
-    bool m_modelVersionsHasBeenSet;
+    bool m_modelVersionsHasBeenSet = false;
 
     RuleExecutionMode m_ruleExecutionMode;
-    bool m_ruleExecutionModeHasBeenSet;
+    bool m_ruleExecutionModeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

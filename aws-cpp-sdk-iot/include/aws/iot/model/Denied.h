@@ -114,10 +114,10 @@ namespace Model
   private:
 
     ImplicitDeny m_implicitDeny;
-    bool m_implicitDenyHasBeenSet;
+    bool m_implicitDenyHasBeenSet = false;
 
     ExplicitDeny m_explicitDeny;
-    bool m_explicitDenyHasBeenSet;
+    bool m_explicitDenyHasBeenSet = false;
   };
 
 } // namespace Model

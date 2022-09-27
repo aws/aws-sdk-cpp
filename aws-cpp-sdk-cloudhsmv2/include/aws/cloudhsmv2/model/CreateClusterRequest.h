@@ -299,19 +299,19 @@ namespace Model
   private:
 
     BackupRetentionPolicy m_backupRetentionPolicy;
-    bool m_backupRetentionPolicyHasBeenSet;
+    bool m_backupRetentionPolicyHasBeenSet = false;
 
     Aws::String m_hsmType;
-    bool m_hsmTypeHasBeenSet;
+    bool m_hsmTypeHasBeenSet = false;
 
     Aws::String m_sourceBackupId;
-    bool m_sourceBackupIdHasBeenSet;
+    bool m_sourceBackupIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
   };
 
 } // namespace Model

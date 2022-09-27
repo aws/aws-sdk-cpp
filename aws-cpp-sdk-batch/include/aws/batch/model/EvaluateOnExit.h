@@ -320,16 +320,16 @@ namespace Model
   private:
 
     Aws::String m_onStatusReason;
-    bool m_onStatusReasonHasBeenSet;
+    bool m_onStatusReasonHasBeenSet = false;
 
     Aws::String m_onReason;
-    bool m_onReasonHasBeenSet;
+    bool m_onReasonHasBeenSet = false;
 
     Aws::String m_onExitCode;
-    bool m_onExitCodeHasBeenSet;
+    bool m_onExitCodeHasBeenSet = false;
 
     RetryAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
   };
 
 } // namespace Model

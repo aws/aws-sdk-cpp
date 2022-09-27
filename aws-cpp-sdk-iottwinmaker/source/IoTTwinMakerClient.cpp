@@ -58,33 +58,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "iottwinmaker";
 static const char* ALLOCATION_TAG = "IoTTwinMakerClient";
 
-
 IoTTwinMakerClient::IoTTwinMakerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<IoTTwinMakerErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTTwinMakerErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-IoTTwinMakerClient::IoTTwinMakerClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+IoTTwinMakerClient::IoTTwinMakerClient(const AWSCredentials& credentials,
+                                       const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<IoTTwinMakerErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTTwinMakerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 IoTTwinMakerClient::IoTTwinMakerClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                       const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<IoTTwinMakerErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTTwinMakerErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -96,7 +102,7 @@ IoTTwinMakerClient::~IoTTwinMakerClient()
 
 void IoTTwinMakerClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IoTTwinMaker");
+  AWSClient::SetServiceClientName("IoTTwinMaker");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;
   if (config.endpointOverride.empty())
@@ -162,12 +168,10 @@ BatchPutPropertyValuesOutcomeCallable IoTTwinMakerClient::BatchPutPropertyValues
 
 void IoTTwinMakerClient::BatchPutPropertyValuesAsync(const BatchPutPropertyValuesRequest& request, const BatchPutPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchPutPropertyValuesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::BatchPutPropertyValuesAsyncHelper(const BatchPutPropertyValuesRequest& request, const BatchPutPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, BatchPutPropertyValues(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchPutPropertyValues(request), context);
+    } );
 }
 
 CreateComponentTypeOutcome IoTTwinMakerClient::CreateComponentType(const CreateComponentTypeRequest& request) const
@@ -209,12 +213,10 @@ CreateComponentTypeOutcomeCallable IoTTwinMakerClient::CreateComponentTypeCallab
 
 void IoTTwinMakerClient::CreateComponentTypeAsync(const CreateComponentTypeRequest& request, const CreateComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateComponentTypeAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::CreateComponentTypeAsyncHelper(const CreateComponentTypeRequest& request, const CreateComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateComponentType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateComponentType(request), context);
+    } );
 }
 
 CreateEntityOutcome IoTTwinMakerClient::CreateEntity(const CreateEntityRequest& request) const
@@ -250,12 +252,10 @@ CreateEntityOutcomeCallable IoTTwinMakerClient::CreateEntityCallable(const Creat
 
 void IoTTwinMakerClient::CreateEntityAsync(const CreateEntityRequest& request, const CreateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEntityAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::CreateEntityAsyncHelper(const CreateEntityRequest& request, const CreateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateEntity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateEntity(request), context);
+    } );
 }
 
 CreateSceneOutcome IoTTwinMakerClient::CreateScene(const CreateSceneRequest& request) const
@@ -291,12 +291,10 @@ CreateSceneOutcomeCallable IoTTwinMakerClient::CreateSceneCallable(const CreateS
 
 void IoTTwinMakerClient::CreateSceneAsync(const CreateSceneRequest& request, const CreateSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSceneAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::CreateSceneAsyncHelper(const CreateSceneRequest& request, const CreateSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateScene(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateScene(request), context);
+    } );
 }
 
 CreateWorkspaceOutcome IoTTwinMakerClient::CreateWorkspace(const CreateWorkspaceRequest& request) const
@@ -331,12 +329,10 @@ CreateWorkspaceOutcomeCallable IoTTwinMakerClient::CreateWorkspaceCallable(const
 
 void IoTTwinMakerClient::CreateWorkspaceAsync(const CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWorkspaceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::CreateWorkspaceAsyncHelper(const CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateWorkspace(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateWorkspace(request), context);
+    } );
 }
 
 DeleteComponentTypeOutcome IoTTwinMakerClient::DeleteComponentType(const DeleteComponentTypeRequest& request) const
@@ -378,12 +374,10 @@ DeleteComponentTypeOutcomeCallable IoTTwinMakerClient::DeleteComponentTypeCallab
 
 void IoTTwinMakerClient::DeleteComponentTypeAsync(const DeleteComponentTypeRequest& request, const DeleteComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteComponentTypeAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::DeleteComponentTypeAsyncHelper(const DeleteComponentTypeRequest& request, const DeleteComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteComponentType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteComponentType(request), context);
+    } );
 }
 
 DeleteEntityOutcome IoTTwinMakerClient::DeleteEntity(const DeleteEntityRequest& request) const
@@ -425,12 +419,10 @@ DeleteEntityOutcomeCallable IoTTwinMakerClient::DeleteEntityCallable(const Delet
 
 void IoTTwinMakerClient::DeleteEntityAsync(const DeleteEntityRequest& request, const DeleteEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEntityAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::DeleteEntityAsyncHelper(const DeleteEntityRequest& request, const DeleteEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteEntity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteEntity(request), context);
+    } );
 }
 
 DeleteSceneOutcome IoTTwinMakerClient::DeleteScene(const DeleteSceneRequest& request) const
@@ -472,12 +464,10 @@ DeleteSceneOutcomeCallable IoTTwinMakerClient::DeleteSceneCallable(const DeleteS
 
 void IoTTwinMakerClient::DeleteSceneAsync(const DeleteSceneRequest& request, const DeleteSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSceneAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::DeleteSceneAsyncHelper(const DeleteSceneRequest& request, const DeleteSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteScene(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteScene(request), context);
+    } );
 }
 
 DeleteWorkspaceOutcome IoTTwinMakerClient::DeleteWorkspace(const DeleteWorkspaceRequest& request) const
@@ -512,12 +502,10 @@ DeleteWorkspaceOutcomeCallable IoTTwinMakerClient::DeleteWorkspaceCallable(const
 
 void IoTTwinMakerClient::DeleteWorkspaceAsync(const DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWorkspaceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::DeleteWorkspaceAsyncHelper(const DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteWorkspace(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteWorkspace(request), context);
+    } );
 }
 
 GetComponentTypeOutcome IoTTwinMakerClient::GetComponentType(const GetComponentTypeRequest& request) const
@@ -559,12 +547,10 @@ GetComponentTypeOutcomeCallable IoTTwinMakerClient::GetComponentTypeCallable(con
 
 void IoTTwinMakerClient::GetComponentTypeAsync(const GetComponentTypeRequest& request, const GetComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetComponentTypeAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::GetComponentTypeAsyncHelper(const GetComponentTypeRequest& request, const GetComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetComponentType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetComponentType(request), context);
+    } );
 }
 
 GetEntityOutcome IoTTwinMakerClient::GetEntity(const GetEntityRequest& request) const
@@ -606,12 +592,10 @@ GetEntityOutcomeCallable IoTTwinMakerClient::GetEntityCallable(const GetEntityRe
 
 void IoTTwinMakerClient::GetEntityAsync(const GetEntityRequest& request, const GetEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEntityAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::GetEntityAsyncHelper(const GetEntityRequest& request, const GetEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetEntity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEntity(request), context);
+    } );
 }
 
 GetPropertyValueOutcome IoTTwinMakerClient::GetPropertyValue(const GetPropertyValueRequest& request) const
@@ -647,12 +631,10 @@ GetPropertyValueOutcomeCallable IoTTwinMakerClient::GetPropertyValueCallable(con
 
 void IoTTwinMakerClient::GetPropertyValueAsync(const GetPropertyValueRequest& request, const GetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPropertyValueAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::GetPropertyValueAsyncHelper(const GetPropertyValueRequest& request, const GetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPropertyValue(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPropertyValue(request), context);
+    } );
 }
 
 GetPropertyValueHistoryOutcome IoTTwinMakerClient::GetPropertyValueHistory(const GetPropertyValueHistoryRequest& request) const
@@ -688,12 +670,10 @@ GetPropertyValueHistoryOutcomeCallable IoTTwinMakerClient::GetPropertyValueHisto
 
 void IoTTwinMakerClient::GetPropertyValueHistoryAsync(const GetPropertyValueHistoryRequest& request, const GetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPropertyValueHistoryAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::GetPropertyValueHistoryAsyncHelper(const GetPropertyValueHistoryRequest& request, const GetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPropertyValueHistory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPropertyValueHistory(request), context);
+    } );
 }
 
 GetSceneOutcome IoTTwinMakerClient::GetScene(const GetSceneRequest& request) const
@@ -735,12 +715,10 @@ GetSceneOutcomeCallable IoTTwinMakerClient::GetSceneCallable(const GetSceneReque
 
 void IoTTwinMakerClient::GetSceneAsync(const GetSceneRequest& request, const GetSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSceneAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::GetSceneAsyncHelper(const GetSceneRequest& request, const GetSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetScene(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetScene(request), context);
+    } );
 }
 
 GetWorkspaceOutcome IoTTwinMakerClient::GetWorkspace(const GetWorkspaceRequest& request) const
@@ -775,12 +753,10 @@ GetWorkspaceOutcomeCallable IoTTwinMakerClient::GetWorkspaceCallable(const GetWo
 
 void IoTTwinMakerClient::GetWorkspaceAsync(const GetWorkspaceRequest& request, const GetWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkspaceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::GetWorkspaceAsyncHelper(const GetWorkspaceRequest& request, const GetWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetWorkspace(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetWorkspace(request), context);
+    } );
 }
 
 ListComponentTypesOutcome IoTTwinMakerClient::ListComponentTypes(const ListComponentTypesRequest& request) const
@@ -816,12 +792,10 @@ ListComponentTypesOutcomeCallable IoTTwinMakerClient::ListComponentTypesCallable
 
 void IoTTwinMakerClient::ListComponentTypesAsync(const ListComponentTypesRequest& request, const ListComponentTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListComponentTypesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::ListComponentTypesAsyncHelper(const ListComponentTypesRequest& request, const ListComponentTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListComponentTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListComponentTypes(request), context);
+    } );
 }
 
 ListEntitiesOutcome IoTTwinMakerClient::ListEntities(const ListEntitiesRequest& request) const
@@ -857,12 +831,10 @@ ListEntitiesOutcomeCallable IoTTwinMakerClient::ListEntitiesCallable(const ListE
 
 void IoTTwinMakerClient::ListEntitiesAsync(const ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEntitiesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::ListEntitiesAsyncHelper(const ListEntitiesRequest& request, const ListEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEntities(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEntities(request), context);
+    } );
 }
 
 ListScenesOutcome IoTTwinMakerClient::ListScenes(const ListScenesRequest& request) const
@@ -898,12 +870,10 @@ ListScenesOutcomeCallable IoTTwinMakerClient::ListScenesCallable(const ListScene
 
 void IoTTwinMakerClient::ListScenesAsync(const ListScenesRequest& request, const ListScenesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListScenesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::ListScenesAsyncHelper(const ListScenesRequest& request, const ListScenesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListScenes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListScenes(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome IoTTwinMakerClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -932,12 +902,10 @@ ListTagsForResourceOutcomeCallable IoTTwinMakerClient::ListTagsForResourceCallab
 
 void IoTTwinMakerClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListWorkspacesOutcome IoTTwinMakerClient::ListWorkspaces(const ListWorkspacesRequest& request) const
@@ -966,12 +934,10 @@ ListWorkspacesOutcomeCallable IoTTwinMakerClient::ListWorkspacesCallable(const L
 
 void IoTTwinMakerClient::ListWorkspacesAsync(const ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkspacesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::ListWorkspacesAsyncHelper(const ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListWorkspaces(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListWorkspaces(request), context);
+    } );
 }
 
 TagResourceOutcome IoTTwinMakerClient::TagResource(const TagResourceRequest& request) const
@@ -1000,12 +966,10 @@ TagResourceOutcomeCallable IoTTwinMakerClient::TagResourceCallable(const TagReso
 
 void IoTTwinMakerClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome IoTTwinMakerClient::UntagResource(const UntagResourceRequest& request) const
@@ -1044,12 +1008,10 @@ UntagResourceOutcomeCallable IoTTwinMakerClient::UntagResourceCallable(const Unt
 
 void IoTTwinMakerClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateComponentTypeOutcome IoTTwinMakerClient::UpdateComponentType(const UpdateComponentTypeRequest& request) const
@@ -1091,12 +1053,10 @@ UpdateComponentTypeOutcomeCallable IoTTwinMakerClient::UpdateComponentTypeCallab
 
 void IoTTwinMakerClient::UpdateComponentTypeAsync(const UpdateComponentTypeRequest& request, const UpdateComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateComponentTypeAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::UpdateComponentTypeAsyncHelper(const UpdateComponentTypeRequest& request, const UpdateComponentTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateComponentType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateComponentType(request), context);
+    } );
 }
 
 UpdateEntityOutcome IoTTwinMakerClient::UpdateEntity(const UpdateEntityRequest& request) const
@@ -1138,12 +1098,10 @@ UpdateEntityOutcomeCallable IoTTwinMakerClient::UpdateEntityCallable(const Updat
 
 void IoTTwinMakerClient::UpdateEntityAsync(const UpdateEntityRequest& request, const UpdateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEntityAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::UpdateEntityAsyncHelper(const UpdateEntityRequest& request, const UpdateEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateEntity(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateEntity(request), context);
+    } );
 }
 
 UpdateSceneOutcome IoTTwinMakerClient::UpdateScene(const UpdateSceneRequest& request) const
@@ -1185,12 +1143,10 @@ UpdateSceneOutcomeCallable IoTTwinMakerClient::UpdateSceneCallable(const UpdateS
 
 void IoTTwinMakerClient::UpdateSceneAsync(const UpdateSceneRequest& request, const UpdateSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSceneAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::UpdateSceneAsyncHelper(const UpdateSceneRequest& request, const UpdateSceneResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateScene(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateScene(request), context);
+    } );
 }
 
 UpdateWorkspaceOutcome IoTTwinMakerClient::UpdateWorkspace(const UpdateWorkspaceRequest& request) const
@@ -1225,11 +1181,9 @@ UpdateWorkspaceOutcomeCallable IoTTwinMakerClient::UpdateWorkspaceCallable(const
 
 void IoTTwinMakerClient::UpdateWorkspaceAsync(const UpdateWorkspaceRequest& request, const UpdateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkspaceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTTwinMakerClient::UpdateWorkspaceAsyncHelper(const UpdateWorkspaceRequest& request, const UpdateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateWorkspace(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateWorkspace(request), context);
+    } );
 }
 

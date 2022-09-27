@@ -275,19 +275,19 @@ namespace Model
   private:
 
     Aws::Utils::CryptoBuffer m_zipFile;
-    bool m_zipFileHasBeenSet;
+    bool m_zipFileHasBeenSet = false;
 
     Aws::String m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     Aws::String m_s3Key;
-    bool m_s3KeyHasBeenSet;
+    bool m_s3KeyHasBeenSet = false;
 
     Aws::String m_s3ObjectVersion;
-    bool m_s3ObjectVersionHasBeenSet;
+    bool m_s3ObjectVersionHasBeenSet = false;
 
     Aws::String m_imageUri;
-    bool m_imageUriHasBeenSet;
+    bool m_imageUriHasBeenSet = false;
   };
 
 } // namespace Model

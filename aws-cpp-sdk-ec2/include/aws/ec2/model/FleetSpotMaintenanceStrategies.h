@@ -79,7 +79,7 @@ namespace Model
   private:
 
     FleetSpotCapacityRebalance m_capacityRebalance;
-    bool m_capacityRebalanceHasBeenSet;
+    bool m_capacityRebalanceHasBeenSet = false;
   };
 
 } // namespace Model

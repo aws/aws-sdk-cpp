@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_botName;
-    bool m_botNameHasBeenSet;
+    bool m_botNameHasBeenSet = false;
 
     Aws::String m_lexRegion;
-    bool m_lexRegionHasBeenSet;
+    bool m_lexRegionHasBeenSet = false;
   };
 
 } // namespace Model

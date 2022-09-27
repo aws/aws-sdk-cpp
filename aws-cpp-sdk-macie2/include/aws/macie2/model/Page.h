@@ -123,13 +123,13 @@ namespace Model
   private:
 
     Range m_lineRange;
-    bool m_lineRangeHasBeenSet;
+    bool m_lineRangeHasBeenSet = false;
 
     Range m_offsetRange;
-    bool m_offsetRangeHasBeenSet;
+    bool m_offsetRangeHasBeenSet = false;
 
     long long m_pageNumber;
-    bool m_pageNumberHasBeenSet;
+    bool m_pageNumberHasBeenSet = false;
   };
 
 } // namespace Model

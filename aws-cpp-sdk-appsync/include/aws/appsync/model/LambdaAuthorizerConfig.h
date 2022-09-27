@@ -237,13 +237,13 @@ namespace Model
   private:
 
     int m_authorizerResultTtlInSeconds;
-    bool m_authorizerResultTtlInSecondsHasBeenSet;
+    bool m_authorizerResultTtlInSecondsHasBeenSet = false;
 
     Aws::String m_authorizerUri;
-    bool m_authorizerUriHasBeenSet;
+    bool m_authorizerUriHasBeenSet = false;
 
     Aws::String m_identityValidationExpression;
-    bool m_identityValidationExpressionHasBeenSet;
+    bool m_identityValidationExpressionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_processingResult;
-    bool m_processingResultHasBeenSet;
+    bool m_processingResultHasBeenSet = false;
   };
 
 } // namespace Model

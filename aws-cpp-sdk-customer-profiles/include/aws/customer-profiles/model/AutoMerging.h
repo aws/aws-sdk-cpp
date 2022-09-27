@@ -151,16 +151,48 @@ namespace Model
      */
     inline AutoMerging& WithConflictResolution(ConflictResolution&& value) { SetConflictResolution(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A number between 0 and 1 that represents the minimum confidence score
+     * required for profiles within a matching group to be merged during the auto-merge
+     * process. A higher score means higher similarity required to merge profiles. </p>
+     */
+    inline double GetMinAllowedConfidenceScoreForMerging() const{ return m_minAllowedConfidenceScoreForMerging; }
+
+    /**
+     * <p>A number between 0 and 1 that represents the minimum confidence score
+     * required for profiles within a matching group to be merged during the auto-merge
+     * process. A higher score means higher similarity required to merge profiles. </p>
+     */
+    inline bool MinAllowedConfidenceScoreForMergingHasBeenSet() const { return m_minAllowedConfidenceScoreForMergingHasBeenSet; }
+
+    /**
+     * <p>A number between 0 and 1 that represents the minimum confidence score
+     * required for profiles within a matching group to be merged during the auto-merge
+     * process. A higher score means higher similarity required to merge profiles. </p>
+     */
+    inline void SetMinAllowedConfidenceScoreForMerging(double value) { m_minAllowedConfidenceScoreForMergingHasBeenSet = true; m_minAllowedConfidenceScoreForMerging = value; }
+
+    /**
+     * <p>A number between 0 and 1 that represents the minimum confidence score
+     * required for profiles within a matching group to be merged during the auto-merge
+     * process. A higher score means higher similarity required to merge profiles. </p>
+     */
+    inline AutoMerging& WithMinAllowedConfidenceScoreForMerging(double value) { SetMinAllowedConfidenceScoreForMerging(value); return *this;}
+
   private:
 
     bool m_enabled;
-    bool m_enabledHasBeenSet;
+    bool m_enabledHasBeenSet = false;
 
     Consolidation m_consolidation;
-    bool m_consolidationHasBeenSet;
+    bool m_consolidationHasBeenSet = false;
 
     ConflictResolution m_conflictResolution;
-    bool m_conflictResolutionHasBeenSet;
+    bool m_conflictResolutionHasBeenSet = false;
+
+    double m_minAllowedConfidenceScoreForMerging;
+    bool m_minAllowedConfidenceScoreForMergingHasBeenSet = false;
   };
 
 } // namespace Model

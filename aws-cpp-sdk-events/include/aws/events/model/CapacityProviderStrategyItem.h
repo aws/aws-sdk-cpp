@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_capacityProvider;
-    bool m_capacityProviderHasBeenSet;
+    bool m_capacityProviderHasBeenSet = false;
 
     int m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
 
     int m_base;
-    bool m_baseHasBeenSet;
+    bool m_baseHasBeenSet = false;
   };
 
 } // namespace Model

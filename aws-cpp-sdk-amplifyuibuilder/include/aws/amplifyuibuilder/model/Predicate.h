@@ -247,19 +247,19 @@ namespace Model
   private:
 
     Aws::Vector<Predicate> m_and;
-    bool m_andHasBeenSet;
+    bool m_andHasBeenSet = false;
 
     Aws::String m_field;
-    bool m_fieldHasBeenSet;
+    bool m_fieldHasBeenSet = false;
 
     Aws::String m_operand;
-    bool m_operandHasBeenSet;
+    bool m_operandHasBeenSet = false;
 
     Aws::String m_operator;
-    bool m_operatorHasBeenSet;
+    bool m_operatorHasBeenSet = false;
 
     Aws::Vector<Predicate> m_or;
-    bool m_orHasBeenSet;
+    bool m_orHasBeenSet = false;
   };
 
 } // namespace Model

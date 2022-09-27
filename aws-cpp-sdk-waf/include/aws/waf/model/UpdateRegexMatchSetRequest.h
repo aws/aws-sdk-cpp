@@ -193,13 +193,13 @@ namespace Model
   private:
 
     Aws::String m_regexMatchSetId;
-    bool m_regexMatchSetIdHasBeenSet;
+    bool m_regexMatchSetIdHasBeenSet = false;
 
     Aws::Vector<RegexMatchSetUpdate> m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
   };
 
 } // namespace Model

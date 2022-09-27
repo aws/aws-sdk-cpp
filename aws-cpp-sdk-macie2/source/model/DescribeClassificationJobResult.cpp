@@ -40,6 +40,15 @@ DescribeClassificationJobResult::DescribeClassificationJobResult(const Aws::Amaz
 DescribeClassificationJobResult& DescribeClassificationJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("allowListIds"))
+  {
+    Array<JsonView> allowListIdsJsonList = jsonValue.GetArray("allowListIds");
+    for(unsigned allowListIdsIndex = 0; allowListIdsIndex < allowListIdsJsonList.GetLength(); ++allowListIdsIndex)
+    {
+      m_allowListIds.push_back(allowListIdsJsonList[allowListIdsIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");

@@ -100,13 +100,13 @@ namespace Model
   private:
 
     long long m_bytesScanned;
-    bool m_bytesScannedHasBeenSet;
+    bool m_bytesScannedHasBeenSet = false;
 
     long long m_bytesProcessed;
-    bool m_bytesProcessedHasBeenSet;
+    bool m_bytesProcessedHasBeenSet = false;
 
     long long m_bytesReturned;
-    bool m_bytesReturnedHasBeenSet;
+    bool m_bytesReturnedHasBeenSet = false;
   };
 
 } // namespace Model

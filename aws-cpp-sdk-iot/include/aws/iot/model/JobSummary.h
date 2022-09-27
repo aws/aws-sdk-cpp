@@ -366,46 +366,62 @@ namespace Model
     inline JobSummary& WithCompletedAt(Aws::Utils::DateTime&& value) { SetCompletedAt(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Indicates whether a job is concurrent. Will be true when a job is rolling out
+     * new job executions or canceling previously created executions, otherwise
+     * false.</p>
+     */
     inline bool GetIsConcurrent() const{ return m_isConcurrent; }
 
-    
+    /**
+     * <p>Indicates whether a job is concurrent. Will be true when a job is rolling out
+     * new job executions or canceling previously created executions, otherwise
+     * false.</p>
+     */
     inline bool IsConcurrentHasBeenSet() const { return m_isConcurrentHasBeenSet; }
 
-    
+    /**
+     * <p>Indicates whether a job is concurrent. Will be true when a job is rolling out
+     * new job executions or canceling previously created executions, otherwise
+     * false.</p>
+     */
     inline void SetIsConcurrent(bool value) { m_isConcurrentHasBeenSet = true; m_isConcurrent = value; }
 
-    
+    /**
+     * <p>Indicates whether a job is concurrent. Will be true when a job is rolling out
+     * new job executions or canceling previously created executions, otherwise
+     * false.</p>
+     */
     inline JobSummary& WithIsConcurrent(bool value) { SetIsConcurrent(value); return *this;}
 
   private:
 
     Aws::String m_jobArn;
-    bool m_jobArnHasBeenSet;
+    bool m_jobArnHasBeenSet = false;
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_thingGroupId;
-    bool m_thingGroupIdHasBeenSet;
+    bool m_thingGroupIdHasBeenSet = false;
 
     TargetSelection m_targetSelection;
-    bool m_targetSelectionHasBeenSet;
+    bool m_targetSelectionHasBeenSet = false;
 
     JobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_completedAt;
-    bool m_completedAtHasBeenSet;
+    bool m_completedAtHasBeenSet = false;
 
     bool m_isConcurrent;
-    bool m_isConcurrentHasBeenSet;
+    bool m_isConcurrentHasBeenSet = false;
   };
 
 } // namespace Model

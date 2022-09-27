@@ -85,7 +85,7 @@ namespace Model
   private:
 
     EBSStorageInfo m_ebsStorageInfo;
-    bool m_ebsStorageInfoHasBeenSet;
+    bool m_ebsStorageInfoHasBeenSet = false;
   };
 
 } // namespace Model

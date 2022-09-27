@@ -324,25 +324,25 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::String m_targetId;
-    bool m_targetIdHasBeenSet;
+    bool m_targetIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Vector<LifecycleEvent> m_lifecycleEvents;
-    bool m_lifecycleEventsHasBeenSet;
+    bool m_lifecycleEventsHasBeenSet = false;
 
     TargetStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     double m_targetVersionWeight;
-    bool m_targetVersionWeightHasBeenSet;
+    bool m_targetVersionWeightHasBeenSet = false;
   };
 
 } // namespace Model

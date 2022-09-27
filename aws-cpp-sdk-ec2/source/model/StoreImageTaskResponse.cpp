@@ -60,7 +60,7 @@ StoreImageTaskResponse& StoreImageTaskResponse::operator =(const XmlNode& xmlNod
     XmlNode taskStartTimeNode = resultNode.FirstChild("taskStartTime");
     if(!taskStartTimeNode.IsNull())
     {
-      m_taskStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStartTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_taskStartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(taskStartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_taskStartTimeHasBeenSet = true;
     }
     XmlNode bucketNode = resultNode.FirstChild("bucket");
@@ -107,7 +107,7 @@ void StoreImageTaskResponse::OutputToStream(Aws::OStream& oStream, const char* l
 
   if(m_taskStartTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".TaskStartTime=" << StringUtils::URLEncode(m_taskStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".TaskStartTime=" << StringUtils::URLEncode(m_taskStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_bucketHasBeenSet)
@@ -145,7 +145,7 @@ void StoreImageTaskResponse::OutputToStream(Aws::OStream& oStream, const char* l
   }
   if(m_taskStartTimeHasBeenSet)
   {
-      oStream << location << ".TaskStartTime=" << StringUtils::URLEncode(m_taskStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".TaskStartTime=" << StringUtils::URLEncode(m_taskStartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_bucketHasBeenSet)
   {

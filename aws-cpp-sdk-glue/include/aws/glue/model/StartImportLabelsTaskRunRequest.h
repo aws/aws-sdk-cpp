@@ -147,13 +147,13 @@ namespace Model
   private:
 
     Aws::String m_transformId;
-    bool m_transformIdHasBeenSet;
+    bool m_transformIdHasBeenSet = false;
 
     Aws::String m_inputS3Path;
-    bool m_inputS3PathHasBeenSet;
+    bool m_inputS3PathHasBeenSet = false;
 
     bool m_replaceAllLabels;
-    bool m_replaceAllLabelsHasBeenSet;
+    bool m_replaceAllLabelsHasBeenSet = false;
   };
 
 } // namespace Model

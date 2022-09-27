@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
   };
 
 } // namespace Model

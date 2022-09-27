@@ -7,6 +7,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/AwsCloudFrontDistributionOriginS3OriginConfig.h>
+#include <aws/securityhub/model/AwsCloudFrontDistributionOriginCustomOriginConfig.h>
 #include <utility>
 
 namespace Aws
@@ -25,9 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that describes the S3 bucket, HTTP server (for example, a web
-   * server), AWS Elemental MediaStore, or other server from which CloudFront gets
-   * your files.</p><p><h3>See Also:</h3>   <a
+   * <p>A complex type that describes the Amazon S3 bucket, HTTP server (for example,
+   * a web server), AWS Elemental MediaStore, or other server from which CloudFront
+   * gets your files.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginItem">AWS
    * API Reference</a></p>
    */
@@ -215,19 +216,71 @@ namespace Model
      */
     inline AwsCloudFrontDistributionOriginItem& WithS3OriginConfig(AwsCloudFrontDistributionOriginS3OriginConfig&& value) { SetS3OriginConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An origin that is not an Amazon S3 bucket, with one exception. If the Amazon
+     * S3 bucket is configured with static website hosting, use this attribute. If the
+     * Amazon S3 bucket is not configured with static website hosting, use the
+     * <code>S3OriginConfig</code> type instead. </p>
+     */
+    inline const AwsCloudFrontDistributionOriginCustomOriginConfig& GetCustomOriginConfig() const{ return m_customOriginConfig; }
+
+    /**
+     * <p>An origin that is not an Amazon S3 bucket, with one exception. If the Amazon
+     * S3 bucket is configured with static website hosting, use this attribute. If the
+     * Amazon S3 bucket is not configured with static website hosting, use the
+     * <code>S3OriginConfig</code> type instead. </p>
+     */
+    inline bool CustomOriginConfigHasBeenSet() const { return m_customOriginConfigHasBeenSet; }
+
+    /**
+     * <p>An origin that is not an Amazon S3 bucket, with one exception. If the Amazon
+     * S3 bucket is configured with static website hosting, use this attribute. If the
+     * Amazon S3 bucket is not configured with static website hosting, use the
+     * <code>S3OriginConfig</code> type instead. </p>
+     */
+    inline void SetCustomOriginConfig(const AwsCloudFrontDistributionOriginCustomOriginConfig& value) { m_customOriginConfigHasBeenSet = true; m_customOriginConfig = value; }
+
+    /**
+     * <p>An origin that is not an Amazon S3 bucket, with one exception. If the Amazon
+     * S3 bucket is configured with static website hosting, use this attribute. If the
+     * Amazon S3 bucket is not configured with static website hosting, use the
+     * <code>S3OriginConfig</code> type instead. </p>
+     */
+    inline void SetCustomOriginConfig(AwsCloudFrontDistributionOriginCustomOriginConfig&& value) { m_customOriginConfigHasBeenSet = true; m_customOriginConfig = std::move(value); }
+
+    /**
+     * <p>An origin that is not an Amazon S3 bucket, with one exception. If the Amazon
+     * S3 bucket is configured with static website hosting, use this attribute. If the
+     * Amazon S3 bucket is not configured with static website hosting, use the
+     * <code>S3OriginConfig</code> type instead. </p>
+     */
+    inline AwsCloudFrontDistributionOriginItem& WithCustomOriginConfig(const AwsCloudFrontDistributionOriginCustomOriginConfig& value) { SetCustomOriginConfig(value); return *this;}
+
+    /**
+     * <p>An origin that is not an Amazon S3 bucket, with one exception. If the Amazon
+     * S3 bucket is configured with static website hosting, use this attribute. If the
+     * Amazon S3 bucket is not configured with static website hosting, use the
+     * <code>S3OriginConfig</code> type instead. </p>
+     */
+    inline AwsCloudFrontDistributionOriginItem& WithCustomOriginConfig(AwsCloudFrontDistributionOriginCustomOriginConfig&& value) { SetCustomOriginConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_originPath;
-    bool m_originPathHasBeenSet;
+    bool m_originPathHasBeenSet = false;
 
     AwsCloudFrontDistributionOriginS3OriginConfig m_s3OriginConfig;
-    bool m_s3OriginConfigHasBeenSet;
+    bool m_s3OriginConfigHasBeenSet = false;
+
+    AwsCloudFrontDistributionOriginCustomOriginConfig m_customOriginConfig;
+    bool m_customOriginConfigHasBeenSet = false;
   };
 
 } // namespace Model

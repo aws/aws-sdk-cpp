@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_certificateId;
-    bool m_certificateIdHasBeenSet;
+    bool m_certificateIdHasBeenSet = false;
 
     bool m_setAsActive;
-    bool m_setAsActiveHasBeenSet;
+    bool m_setAsActiveHasBeenSet = false;
   };
 
 } // namespace Model

@@ -121,13 +121,13 @@ namespace Model
   private:
 
     bool m_isServiceLimited;
-    bool m_isServiceLimitedHasBeenSet;
+    bool m_isServiceLimitedHasBeenSet = false;
 
     Unit m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
 
     long long m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

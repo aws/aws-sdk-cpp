@@ -154,13 +154,13 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userEmailList;
-    bool m_userEmailListHasBeenSet;
+    bool m_userEmailListHasBeenSet = false;
 
     UserType m_userType;
-    bool m_userTypeHasBeenSet;
+    bool m_userTypeHasBeenSet = false;
   };
 
 } // namespace Model

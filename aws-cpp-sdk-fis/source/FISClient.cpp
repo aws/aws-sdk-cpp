@@ -48,33 +48,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "fis";
 static const char* ALLOCATION_TAG = "FISClient";
 
-
 FISClient::FISClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<FISErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<FISErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-FISClient::FISClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+FISClient::FISClient(const AWSCredentials& credentials,
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<FISErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<FISErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 FISClient::FISClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<FISErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<FISErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -86,7 +92,7 @@ FISClient::~FISClient()
 
 void FISClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("fis");
+  AWSClient::SetServiceClientName("fis");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -127,12 +133,10 @@ CreateExperimentTemplateOutcomeCallable FISClient::CreateExperimentTemplateCalla
 
 void FISClient::CreateExperimentTemplateAsync(const CreateExperimentTemplateRequest& request, const CreateExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateExperimentTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::CreateExperimentTemplateAsyncHelper(const CreateExperimentTemplateRequest& request, const CreateExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateExperimentTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateExperimentTemplate(request), context);
+    } );
 }
 
 DeleteExperimentTemplateOutcome FISClient::DeleteExperimentTemplate(const DeleteExperimentTemplateRequest& request) const
@@ -158,12 +162,10 @@ DeleteExperimentTemplateOutcomeCallable FISClient::DeleteExperimentTemplateCalla
 
 void FISClient::DeleteExperimentTemplateAsync(const DeleteExperimentTemplateRequest& request, const DeleteExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteExperimentTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::DeleteExperimentTemplateAsyncHelper(const DeleteExperimentTemplateRequest& request, const DeleteExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteExperimentTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteExperimentTemplate(request), context);
+    } );
 }
 
 GetActionOutcome FISClient::GetAction(const GetActionRequest& request) const
@@ -189,12 +191,10 @@ GetActionOutcomeCallable FISClient::GetActionCallable(const GetActionRequest& re
 
 void FISClient::GetActionAsync(const GetActionRequest& request, const GetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetActionAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::GetActionAsyncHelper(const GetActionRequest& request, const GetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAction(request), context);
+    } );
 }
 
 GetExperimentOutcome FISClient::GetExperiment(const GetExperimentRequest& request) const
@@ -220,12 +220,10 @@ GetExperimentOutcomeCallable FISClient::GetExperimentCallable(const GetExperimen
 
 void FISClient::GetExperimentAsync(const GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExperimentAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::GetExperimentAsyncHelper(const GetExperimentRequest& request, const GetExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetExperiment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetExperiment(request), context);
+    } );
 }
 
 GetExperimentTemplateOutcome FISClient::GetExperimentTemplate(const GetExperimentTemplateRequest& request) const
@@ -251,12 +249,10 @@ GetExperimentTemplateOutcomeCallable FISClient::GetExperimentTemplateCallable(co
 
 void FISClient::GetExperimentTemplateAsync(const GetExperimentTemplateRequest& request, const GetExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetExperimentTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::GetExperimentTemplateAsyncHelper(const GetExperimentTemplateRequest& request, const GetExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetExperimentTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetExperimentTemplate(request), context);
+    } );
 }
 
 GetTargetResourceTypeOutcome FISClient::GetTargetResourceType(const GetTargetResourceTypeRequest& request) const
@@ -282,12 +278,10 @@ GetTargetResourceTypeOutcomeCallable FISClient::GetTargetResourceTypeCallable(co
 
 void FISClient::GetTargetResourceTypeAsync(const GetTargetResourceTypeRequest& request, const GetTargetResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTargetResourceTypeAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::GetTargetResourceTypeAsyncHelper(const GetTargetResourceTypeRequest& request, const GetTargetResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTargetResourceType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTargetResourceType(request), context);
+    } );
 }
 
 ListActionsOutcome FISClient::ListActions(const ListActionsRequest& request) const
@@ -307,12 +301,10 @@ ListActionsOutcomeCallable FISClient::ListActionsCallable(const ListActionsReque
 
 void FISClient::ListActionsAsync(const ListActionsRequest& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListActionsAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::ListActionsAsyncHelper(const ListActionsRequest& request, const ListActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListActions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListActions(request), context);
+    } );
 }
 
 ListExperimentTemplatesOutcome FISClient::ListExperimentTemplates(const ListExperimentTemplatesRequest& request) const
@@ -332,12 +324,10 @@ ListExperimentTemplatesOutcomeCallable FISClient::ListExperimentTemplatesCallabl
 
 void FISClient::ListExperimentTemplatesAsync(const ListExperimentTemplatesRequest& request, const ListExperimentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExperimentTemplatesAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::ListExperimentTemplatesAsyncHelper(const ListExperimentTemplatesRequest& request, const ListExperimentTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListExperimentTemplates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListExperimentTemplates(request), context);
+    } );
 }
 
 ListExperimentsOutcome FISClient::ListExperiments(const ListExperimentsRequest& request) const
@@ -357,12 +347,10 @@ ListExperimentsOutcomeCallable FISClient::ListExperimentsCallable(const ListExpe
 
 void FISClient::ListExperimentsAsync(const ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListExperimentsAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::ListExperimentsAsyncHelper(const ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListExperiments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListExperiments(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome FISClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -388,12 +376,10 @@ ListTagsForResourceOutcomeCallable FISClient::ListTagsForResourceCallable(const 
 
 void FISClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListTargetResourceTypesOutcome FISClient::ListTargetResourceTypes(const ListTargetResourceTypesRequest& request) const
@@ -413,12 +399,10 @@ ListTargetResourceTypesOutcomeCallable FISClient::ListTargetResourceTypesCallabl
 
 void FISClient::ListTargetResourceTypesAsync(const ListTargetResourceTypesRequest& request, const ListTargetResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTargetResourceTypesAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::ListTargetResourceTypesAsyncHelper(const ListTargetResourceTypesRequest& request, const ListTargetResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTargetResourceTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTargetResourceTypes(request), context);
+    } );
 }
 
 StartExperimentOutcome FISClient::StartExperiment(const StartExperimentRequest& request) const
@@ -438,12 +422,10 @@ StartExperimentOutcomeCallable FISClient::StartExperimentCallable(const StartExp
 
 void FISClient::StartExperimentAsync(const StartExperimentRequest& request, const StartExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartExperimentAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::StartExperimentAsyncHelper(const StartExperimentRequest& request, const StartExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartExperiment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartExperiment(request), context);
+    } );
 }
 
 StopExperimentOutcome FISClient::StopExperiment(const StopExperimentRequest& request) const
@@ -469,12 +451,10 @@ StopExperimentOutcomeCallable FISClient::StopExperimentCallable(const StopExperi
 
 void FISClient::StopExperimentAsync(const StopExperimentRequest& request, const StopExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopExperimentAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::StopExperimentAsyncHelper(const StopExperimentRequest& request, const StopExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopExperiment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopExperiment(request), context);
+    } );
 }
 
 TagResourceOutcome FISClient::TagResource(const TagResourceRequest& request) const
@@ -500,12 +480,10 @@ TagResourceOutcomeCallable FISClient::TagResourceCallable(const TagResourceReque
 
 void FISClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome FISClient::UntagResource(const UntagResourceRequest& request) const
@@ -531,12 +509,10 @@ UntagResourceOutcomeCallable FISClient::UntagResourceCallable(const UntagResourc
 
 void FISClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateExperimentTemplateOutcome FISClient::UpdateExperimentTemplate(const UpdateExperimentTemplateRequest& request) const
@@ -562,11 +538,9 @@ UpdateExperimentTemplateOutcomeCallable FISClient::UpdateExperimentTemplateCalla
 
 void FISClient::UpdateExperimentTemplateAsync(const UpdateExperimentTemplateRequest& request, const UpdateExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateExperimentTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void FISClient::UpdateExperimentTemplateAsyncHelper(const UpdateExperimentTemplateRequest& request, const UpdateExperimentTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateExperimentTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateExperimentTemplate(request), context);
+    } );
 }
 

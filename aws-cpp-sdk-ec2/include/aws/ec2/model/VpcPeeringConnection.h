@@ -264,22 +264,22 @@ namespace Model
   private:
 
     VpcPeeringConnectionVpcInfo m_accepterVpcInfo;
-    bool m_accepterVpcInfoHasBeenSet;
+    bool m_accepterVpcInfoHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationTime;
-    bool m_expirationTimeHasBeenSet;
+    bool m_expirationTimeHasBeenSet = false;
 
     VpcPeeringConnectionVpcInfo m_requesterVpcInfo;
-    bool m_requesterVpcInfoHasBeenSet;
+    bool m_requesterVpcInfoHasBeenSet = false;
 
     VpcPeeringConnectionStateReason m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vpcPeeringConnectionId;
-    bool m_vpcPeeringConnectionIdHasBeenSet;
+    bool m_vpcPeeringConnectionIdHasBeenSet = false;
   };
 
 } // namespace Model

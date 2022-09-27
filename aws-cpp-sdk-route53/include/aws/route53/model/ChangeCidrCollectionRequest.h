@@ -183,13 +183,13 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     long long m_collectionVersion;
-    bool m_collectionVersionHasBeenSet;
+    bool m_collectionVersionHasBeenSet = false;
 
     Aws::Vector<CidrCollectionChange> m_changes;
-    bool m_changesHasBeenSet;
+    bool m_changesHasBeenSet = false;
   };
 
 } // namespace Model

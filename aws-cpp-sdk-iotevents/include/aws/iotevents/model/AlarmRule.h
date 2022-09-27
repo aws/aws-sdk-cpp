@@ -76,7 +76,7 @@ namespace Model
   private:
 
     SimpleRule m_simpleRule;
-    bool m_simpleRuleHasBeenSet;
+    bool m_simpleRuleHasBeenSet = false;
   };
 
 } // namespace Model

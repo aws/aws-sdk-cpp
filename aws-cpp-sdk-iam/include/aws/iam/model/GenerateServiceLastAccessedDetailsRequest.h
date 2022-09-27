@@ -157,10 +157,10 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     AccessAdvisorUsageGranularityType m_granularity;
-    bool m_granularityHasBeenSet;
+    bool m_granularityHasBeenSet = false;
   };
 
 } // namespace Model

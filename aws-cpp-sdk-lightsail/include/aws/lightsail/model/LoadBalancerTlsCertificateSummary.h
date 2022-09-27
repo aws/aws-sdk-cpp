@@ -106,10 +106,10 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     bool m_isAttached;
-    bool m_isAttachedHasBeenSet;
+    bool m_isAttachedHasBeenSet = false;
   };
 
 } // namespace Model

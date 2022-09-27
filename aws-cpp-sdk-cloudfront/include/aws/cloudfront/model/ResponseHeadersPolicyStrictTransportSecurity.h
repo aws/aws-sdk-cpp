@@ -158,16 +158,16 @@ namespace Model
   private:
 
     bool m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
 
     bool m_includeSubdomains;
-    bool m_includeSubdomainsHasBeenSet;
+    bool m_includeSubdomainsHasBeenSet = false;
 
     bool m_preload;
-    bool m_preloadHasBeenSet;
+    bool m_preloadHasBeenSet = false;
 
     int m_accessControlMaxAgeSec;
-    bool m_accessControlMaxAgeSecHasBeenSet;
+    bool m_accessControlMaxAgeSecHasBeenSet = false;
   };
 
 } // namespace Model

@@ -317,25 +317,25 @@ namespace Model
   private:
 
     Aws::String m_modelId;
-    bool m_modelIdHasBeenSet;
+    bool m_modelIdHasBeenSet = false;
 
     ModelTypeEnum m_modelType;
-    bool m_modelTypeHasBeenSet;
+    bool m_modelTypeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_eventTypeName;
-    bool m_eventTypeNameHasBeenSet;
+    bool m_eventTypeNameHasBeenSet = false;
 
     Aws::String m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
   };
 
 } // namespace Model

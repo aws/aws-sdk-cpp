@@ -301,22 +301,22 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_flowName;
-    bool m_flowNameHasBeenSet;
+    bool m_flowNameHasBeenSet = false;
 
     Aws::String m_kmsArn;
-    bool m_kmsArnHasBeenSet;
+    bool m_kmsArnHasBeenSet = false;
 
     SourceFlowConfig m_sourceFlowConfig;
-    bool m_sourceFlowConfigHasBeenSet;
+    bool m_sourceFlowConfigHasBeenSet = false;
 
     Aws::Vector<Task> m_tasks;
-    bool m_tasksHasBeenSet;
+    bool m_tasksHasBeenSet = false;
 
     TriggerConfig m_triggerConfig;
-    bool m_triggerConfigHasBeenSet;
+    bool m_triggerConfigHasBeenSet = false;
   };
 
 } // namespace Model

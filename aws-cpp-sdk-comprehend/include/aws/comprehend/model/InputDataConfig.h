@@ -232,13 +232,13 @@ namespace Model
   private:
 
     Aws::String m_s3Uri;
-    bool m_s3UriHasBeenSet;
+    bool m_s3UriHasBeenSet = false;
 
     InputFormat m_inputFormat;
-    bool m_inputFormatHasBeenSet;
+    bool m_inputFormatHasBeenSet = false;
 
     DocumentReaderConfig m_documentReaderConfig;
-    bool m_documentReaderConfigHasBeenSet;
+    bool m_documentReaderConfigHasBeenSet = false;
   };
 
 } // namespace Model

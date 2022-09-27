@@ -185,16 +185,16 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_imageIds;
-    bool m_imageIdsHasBeenSet;
+    bool m_imageIdsHasBeenSet = false;
 
     ImageType m_imageType;
-    bool m_imageTypeHasBeenSet;
+    bool m_imageTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

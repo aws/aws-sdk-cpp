@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_eventBusArn;
-    bool m_eventBusArnHasBeenSet;
+    bool m_eventBusArnHasBeenSet = false;
   };
 
 } // namespace Model

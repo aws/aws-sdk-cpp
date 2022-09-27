@@ -131,10 +131,10 @@ namespace Model
   private:
 
     Aws::String m_remoteAccessSessionArn;
-    bool m_remoteAccessSessionArnHasBeenSet;
+    bool m_remoteAccessSessionArnHasBeenSet = false;
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
   };
 
 } // namespace Model

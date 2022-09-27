@@ -233,13 +233,13 @@ namespace Model
   private:
 
     Aws::String m_stackName;
-    bool m_stackNameHasBeenSet;
+    bool m_stackNameHasBeenSet = false;
 
     Aws::String m_changeSetName;
-    bool m_changeSetNameHasBeenSet;
+    bool m_changeSetNameHasBeenSet = false;
 
     TemplateStage m_templateStage;
-    bool m_templateStageHasBeenSet;
+    bool m_templateStageHasBeenSet = false;
   };
 
 } // namespace Model

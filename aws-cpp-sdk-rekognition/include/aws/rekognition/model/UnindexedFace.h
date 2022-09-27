@@ -185,10 +185,10 @@ namespace Model
   private:
 
     Aws::Vector<Reason> m_reasons;
-    bool m_reasonsHasBeenSet;
+    bool m_reasonsHasBeenSet = false;
 
     FaceDetail m_faceDetail;
-    bool m_faceDetailHasBeenSet;
+    bool m_faceDetailHasBeenSet = false;
   };
 
 } // namespace Model

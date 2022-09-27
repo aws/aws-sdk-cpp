@@ -619,6 +619,42 @@ namespace Model
      */
     inline DescribeStatementResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The serverless workgroup name.</p>
+     */
+    inline const Aws::String& GetWorkgroupName() const{ return m_workgroupName; }
+
+    /**
+     * <p>The serverless workgroup name.</p>
+     */
+    inline void SetWorkgroupName(const Aws::String& value) { m_workgroupName = value; }
+
+    /**
+     * <p>The serverless workgroup name.</p>
+     */
+    inline void SetWorkgroupName(Aws::String&& value) { m_workgroupName = std::move(value); }
+
+    /**
+     * <p>The serverless workgroup name.</p>
+     */
+    inline void SetWorkgroupName(const char* value) { m_workgroupName.assign(value); }
+
+    /**
+     * <p>The serverless workgroup name.</p>
+     */
+    inline DescribeStatementResult& WithWorkgroupName(const Aws::String& value) { SetWorkgroupName(value); return *this;}
+
+    /**
+     * <p>The serverless workgroup name.</p>
+     */
+    inline DescribeStatementResult& WithWorkgroupName(Aws::String&& value) { SetWorkgroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The serverless workgroup name.</p>
+     */
+    inline DescribeStatementResult& WithWorkgroupName(const char* value) { SetWorkgroupName(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -656,6 +692,8 @@ namespace Model
     Aws::Vector<SubStatementData> m_subStatements;
 
     Aws::Utils::DateTime m_updatedAt;
+
+    Aws::String m_workgroupName;
   };
 
 } // namespace Model

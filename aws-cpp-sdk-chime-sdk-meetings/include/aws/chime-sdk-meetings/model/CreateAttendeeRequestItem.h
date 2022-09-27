@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_externalUserId;
-    bool m_externalUserIdHasBeenSet;
+    bool m_externalUserIdHasBeenSet = false;
 
     AttendeeCapabilities m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
   };
 
 } // namespace Model

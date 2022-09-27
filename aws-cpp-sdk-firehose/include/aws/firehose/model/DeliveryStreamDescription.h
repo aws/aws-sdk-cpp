@@ -563,40 +563,40 @@ namespace Model
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     Aws::String m_deliveryStreamARN;
-    bool m_deliveryStreamARNHasBeenSet;
+    bool m_deliveryStreamARNHasBeenSet = false;
 
     DeliveryStreamStatus m_deliveryStreamStatus;
-    bool m_deliveryStreamStatusHasBeenSet;
+    bool m_deliveryStreamStatusHasBeenSet = false;
 
     FailureDescription m_failureDescription;
-    bool m_failureDescriptionHasBeenSet;
+    bool m_failureDescriptionHasBeenSet = false;
 
     DeliveryStreamEncryptionConfiguration m_deliveryStreamEncryptionConfiguration;
-    bool m_deliveryStreamEncryptionConfigurationHasBeenSet;
+    bool m_deliveryStreamEncryptionConfigurationHasBeenSet = false;
 
     DeliveryStreamType m_deliveryStreamType;
-    bool m_deliveryStreamTypeHasBeenSet;
+    bool m_deliveryStreamTypeHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTimestamp;
-    bool m_createTimestampHasBeenSet;
+    bool m_createTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTimestamp;
-    bool m_lastUpdateTimestampHasBeenSet;
+    bool m_lastUpdateTimestampHasBeenSet = false;
 
     SourceDescription m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Vector<DestinationDescription> m_destinations;
-    bool m_destinationsHasBeenSet;
+    bool m_destinationsHasBeenSet = false;
 
     bool m_hasMoreDestinations;
-    bool m_hasMoreDestinationsHasBeenSet;
+    bool m_hasMoreDestinationsHasBeenSet = false;
   };
 
 } // namespace Model

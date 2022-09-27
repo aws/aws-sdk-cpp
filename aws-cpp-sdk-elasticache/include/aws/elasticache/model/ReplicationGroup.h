@@ -1193,85 +1193,117 @@ namespace Model
      */
     inline ReplicationGroup& WithDataTiering(DataTieringStatus&& value) { SetDataTiering(std::move(value)); return *this;}
 
+
+    /**
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
+     */
+    inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+
+    /**
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
+     */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
+     */
+    inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
+
+    /**
+     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * yes if you want to opt-in to the next auto minor version upgrade campaign. This
+     * parameter is disabled for previous versions.  </p>
+     */
+    inline ReplicationGroup& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
+
   private:
 
     Aws::String m_replicationGroupId;
-    bool m_replicationGroupIdHasBeenSet;
+    bool m_replicationGroupIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     GlobalReplicationGroupInfo m_globalReplicationGroupInfo;
-    bool m_globalReplicationGroupInfoHasBeenSet;
+    bool m_globalReplicationGroupInfoHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ReplicationGroupPendingModifiedValues m_pendingModifiedValues;
-    bool m_pendingModifiedValuesHasBeenSet;
+    bool m_pendingModifiedValuesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_memberClusters;
-    bool m_memberClustersHasBeenSet;
+    bool m_memberClustersHasBeenSet = false;
 
     Aws::Vector<NodeGroup> m_nodeGroups;
-    bool m_nodeGroupsHasBeenSet;
+    bool m_nodeGroupsHasBeenSet = false;
 
     Aws::String m_snapshottingClusterId;
-    bool m_snapshottingClusterIdHasBeenSet;
+    bool m_snapshottingClusterIdHasBeenSet = false;
 
     AutomaticFailoverStatus m_automaticFailover;
-    bool m_automaticFailoverHasBeenSet;
+    bool m_automaticFailoverHasBeenSet = false;
 
     MultiAZStatus m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     Endpoint m_configurationEndpoint;
-    bool m_configurationEndpointHasBeenSet;
+    bool m_configurationEndpointHasBeenSet = false;
 
     int m_snapshotRetentionLimit;
-    bool m_snapshotRetentionLimitHasBeenSet;
+    bool m_snapshotRetentionLimitHasBeenSet = false;
 
     Aws::String m_snapshotWindow;
-    bool m_snapshotWindowHasBeenSet;
+    bool m_snapshotWindowHasBeenSet = false;
 
     bool m_clusterEnabled;
-    bool m_clusterEnabledHasBeenSet;
+    bool m_clusterEnabledHasBeenSet = false;
 
     Aws::String m_cacheNodeType;
-    bool m_cacheNodeTypeHasBeenSet;
+    bool m_cacheNodeTypeHasBeenSet = false;
 
     bool m_authTokenEnabled;
-    bool m_authTokenEnabledHasBeenSet;
+    bool m_authTokenEnabledHasBeenSet = false;
 
     Aws::Utils::DateTime m_authTokenLastModifiedDate;
-    bool m_authTokenLastModifiedDateHasBeenSet;
+    bool m_authTokenLastModifiedDateHasBeenSet = false;
 
     bool m_transitEncryptionEnabled;
-    bool m_transitEncryptionEnabledHasBeenSet;
+    bool m_transitEncryptionEnabledHasBeenSet = false;
 
     bool m_atRestEncryptionEnabled;
-    bool m_atRestEncryptionEnabledHasBeenSet;
+    bool m_atRestEncryptionEnabledHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_memberClustersOutpostArns;
-    bool m_memberClustersOutpostArnsHasBeenSet;
+    bool m_memberClustersOutpostArnsHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userGroupIds;
-    bool m_userGroupIdsHasBeenSet;
+    bool m_userGroupIdsHasBeenSet = false;
 
     Aws::Vector<LogDeliveryConfiguration> m_logDeliveryConfigurations;
-    bool m_logDeliveryConfigurationsHasBeenSet;
+    bool m_logDeliveryConfigurationsHasBeenSet = false;
 
     Aws::Utils::DateTime m_replicationGroupCreateTime;
-    bool m_replicationGroupCreateTimeHasBeenSet;
+    bool m_replicationGroupCreateTimeHasBeenSet = false;
 
     DataTieringStatus m_dataTiering;
-    bool m_dataTieringHasBeenSet;
+    bool m_dataTieringHasBeenSet = false;
+
+    bool m_autoMinorVersionUpgrade;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
   };
 
 } // namespace Model

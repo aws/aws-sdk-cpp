@@ -34,33 +34,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "ec2-instance-connect";
 static const char* ALLOCATION_TAG = "EC2InstanceConnectClient";
 
-
 EC2InstanceConnectClient::EC2InstanceConnectClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-EC2InstanceConnectClient::EC2InstanceConnectClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+EC2InstanceConnectClient::EC2InstanceConnectClient(const AWSCredentials& credentials,
+                                                   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 EC2InstanceConnectClient::EC2InstanceConnectClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                                   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -72,7 +78,7 @@ EC2InstanceConnectClient::~EC2InstanceConnectClient()
 
 void EC2InstanceConnectClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("EC2 Instance Connect");
+  AWSClient::SetServiceClientName("EC2 Instance Connect");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -112,12 +118,10 @@ SendSSHPublicKeyOutcomeCallable EC2InstanceConnectClient::SendSSHPublicKeyCallab
 
 void EC2InstanceConnectClient::SendSSHPublicKeyAsync(const SendSSHPublicKeyRequest& request, const SendSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendSSHPublicKeyAsyncHelper( request, handler, context ); } );
-}
-
-void EC2InstanceConnectClient::SendSSHPublicKeyAsyncHelper(const SendSSHPublicKeyRequest& request, const SendSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendSSHPublicKey(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendSSHPublicKey(request), context);
+    } );
 }
 
 SendSerialConsoleSSHPublicKeyOutcome EC2InstanceConnectClient::SendSerialConsoleSSHPublicKey(const SendSerialConsoleSSHPublicKeyRequest& request) const
@@ -136,11 +140,9 @@ SendSerialConsoleSSHPublicKeyOutcomeCallable EC2InstanceConnectClient::SendSeria
 
 void EC2InstanceConnectClient::SendSerialConsoleSSHPublicKeyAsync(const SendSerialConsoleSSHPublicKeyRequest& request, const SendSerialConsoleSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendSerialConsoleSSHPublicKeyAsyncHelper( request, handler, context ); } );
-}
-
-void EC2InstanceConnectClient::SendSerialConsoleSSHPublicKeyAsyncHelper(const SendSerialConsoleSSHPublicKeyRequest& request, const SendSerialConsoleSSHPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendSerialConsoleSSHPublicKey(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendSerialConsoleSSHPublicKey(request), context);
+    } );
 }
 

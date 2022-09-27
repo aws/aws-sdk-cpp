@@ -156,13 +156,13 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     AuthenticationMode m_authenticationMode;
-    bool m_authenticationModeHasBeenSet;
+    bool m_authenticationModeHasBeenSet = false;
 
     Aws::String m_accessString;
-    bool m_accessStringHasBeenSet;
+    bool m_accessStringHasBeenSet = false;
   };
 
 } // namespace Model

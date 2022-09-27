@@ -329,28 +329,28 @@ namespace Model
   private:
 
     Aws::String m_complianceType;
-    bool m_complianceTypeHasBeenSet;
+    bool m_complianceTypeHasBeenSet = false;
 
     Aws::String m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     ComplianceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ComplianceSeverity m_overallSeverity;
-    bool m_overallSeverityHasBeenSet;
+    bool m_overallSeverityHasBeenSet = false;
 
     ComplianceExecutionSummary m_executionSummary;
-    bool m_executionSummaryHasBeenSet;
+    bool m_executionSummaryHasBeenSet = false;
 
     CompliantSummary m_compliantSummary;
-    bool m_compliantSummaryHasBeenSet;
+    bool m_compliantSummaryHasBeenSet = false;
 
     NonCompliantSummary m_nonCompliantSummary;
-    bool m_nonCompliantSummaryHasBeenSet;
+    bool m_nonCompliantSummaryHasBeenSet = false;
   };
 
 } // namespace Model

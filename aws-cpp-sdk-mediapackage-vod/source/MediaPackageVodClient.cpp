@@ -49,33 +49,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "mediapackage-vod";
 static const char* ALLOCATION_TAG = "MediaPackageVodClient";
 
-
 MediaPackageVodClient::MediaPackageVodClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<MediaPackageVodErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MediaPackageVodErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-MediaPackageVodClient::MediaPackageVodClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+MediaPackageVodClient::MediaPackageVodClient(const AWSCredentials& credentials,
+                                             const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<MediaPackageVodErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MediaPackageVodErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 MediaPackageVodClient::MediaPackageVodClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                             const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<MediaPackageVodErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MediaPackageVodErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -87,7 +93,7 @@ MediaPackageVodClient::~MediaPackageVodClient()
 
 void MediaPackageVodClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("MediaPackage Vod");
+  AWSClient::SetServiceClientName("MediaPackage Vod");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -135,12 +141,10 @@ ConfigureLogsOutcomeCallable MediaPackageVodClient::ConfigureLogsCallable(const 
 
 void MediaPackageVodClient::ConfigureLogsAsync(const ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfigureLogsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::ConfigureLogsAsyncHelper(const ConfigureLogsRequest& request, const ConfigureLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ConfigureLogs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ConfigureLogs(request), context);
+    } );
 }
 
 CreateAssetOutcome MediaPackageVodClient::CreateAsset(const CreateAssetRequest& request) const
@@ -160,12 +164,10 @@ CreateAssetOutcomeCallable MediaPackageVodClient::CreateAssetCallable(const Crea
 
 void MediaPackageVodClient::CreateAssetAsync(const CreateAssetRequest& request, const CreateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAssetAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::CreateAssetAsyncHelper(const CreateAssetRequest& request, const CreateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAsset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAsset(request), context);
+    } );
 }
 
 CreatePackagingConfigurationOutcome MediaPackageVodClient::CreatePackagingConfiguration(const CreatePackagingConfigurationRequest& request) const
@@ -185,12 +187,10 @@ CreatePackagingConfigurationOutcomeCallable MediaPackageVodClient::CreatePackagi
 
 void MediaPackageVodClient::CreatePackagingConfigurationAsync(const CreatePackagingConfigurationRequest& request, const CreatePackagingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePackagingConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::CreatePackagingConfigurationAsyncHelper(const CreatePackagingConfigurationRequest& request, const CreatePackagingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePackagingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreatePackagingConfiguration(request), context);
+    } );
 }
 
 CreatePackagingGroupOutcome MediaPackageVodClient::CreatePackagingGroup(const CreatePackagingGroupRequest& request) const
@@ -210,12 +210,10 @@ CreatePackagingGroupOutcomeCallable MediaPackageVodClient::CreatePackagingGroupC
 
 void MediaPackageVodClient::CreatePackagingGroupAsync(const CreatePackagingGroupRequest& request, const CreatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePackagingGroupAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::CreatePackagingGroupAsyncHelper(const CreatePackagingGroupRequest& request, const CreatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePackagingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreatePackagingGroup(request), context);
+    } );
 }
 
 DeleteAssetOutcome MediaPackageVodClient::DeleteAsset(const DeleteAssetRequest& request) const
@@ -241,12 +239,10 @@ DeleteAssetOutcomeCallable MediaPackageVodClient::DeleteAssetCallable(const Dele
 
 void MediaPackageVodClient::DeleteAssetAsync(const DeleteAssetRequest& request, const DeleteAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssetAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::DeleteAssetAsyncHelper(const DeleteAssetRequest& request, const DeleteAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAsset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAsset(request), context);
+    } );
 }
 
 DeletePackagingConfigurationOutcome MediaPackageVodClient::DeletePackagingConfiguration(const DeletePackagingConfigurationRequest& request) const
@@ -272,12 +268,10 @@ DeletePackagingConfigurationOutcomeCallable MediaPackageVodClient::DeletePackagi
 
 void MediaPackageVodClient::DeletePackagingConfigurationAsync(const DeletePackagingConfigurationRequest& request, const DeletePackagingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePackagingConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::DeletePackagingConfigurationAsyncHelper(const DeletePackagingConfigurationRequest& request, const DeletePackagingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePackagingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePackagingConfiguration(request), context);
+    } );
 }
 
 DeletePackagingGroupOutcome MediaPackageVodClient::DeletePackagingGroup(const DeletePackagingGroupRequest& request) const
@@ -303,12 +297,10 @@ DeletePackagingGroupOutcomeCallable MediaPackageVodClient::DeletePackagingGroupC
 
 void MediaPackageVodClient::DeletePackagingGroupAsync(const DeletePackagingGroupRequest& request, const DeletePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePackagingGroupAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::DeletePackagingGroupAsyncHelper(const DeletePackagingGroupRequest& request, const DeletePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePackagingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePackagingGroup(request), context);
+    } );
 }
 
 DescribeAssetOutcome MediaPackageVodClient::DescribeAsset(const DescribeAssetRequest& request) const
@@ -334,12 +326,10 @@ DescribeAssetOutcomeCallable MediaPackageVodClient::DescribeAssetCallable(const 
 
 void MediaPackageVodClient::DescribeAssetAsync(const DescribeAssetRequest& request, const DescribeAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAssetAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::DescribeAssetAsyncHelper(const DescribeAssetRequest& request, const DescribeAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAsset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAsset(request), context);
+    } );
 }
 
 DescribePackagingConfigurationOutcome MediaPackageVodClient::DescribePackagingConfiguration(const DescribePackagingConfigurationRequest& request) const
@@ -365,12 +355,10 @@ DescribePackagingConfigurationOutcomeCallable MediaPackageVodClient::DescribePac
 
 void MediaPackageVodClient::DescribePackagingConfigurationAsync(const DescribePackagingConfigurationRequest& request, const DescribePackagingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePackagingConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::DescribePackagingConfigurationAsyncHelper(const DescribePackagingConfigurationRequest& request, const DescribePackagingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribePackagingConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribePackagingConfiguration(request), context);
+    } );
 }
 
 DescribePackagingGroupOutcome MediaPackageVodClient::DescribePackagingGroup(const DescribePackagingGroupRequest& request) const
@@ -396,12 +384,10 @@ DescribePackagingGroupOutcomeCallable MediaPackageVodClient::DescribePackagingGr
 
 void MediaPackageVodClient::DescribePackagingGroupAsync(const DescribePackagingGroupRequest& request, const DescribePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePackagingGroupAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::DescribePackagingGroupAsyncHelper(const DescribePackagingGroupRequest& request, const DescribePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribePackagingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribePackagingGroup(request), context);
+    } );
 }
 
 ListAssetsOutcome MediaPackageVodClient::ListAssets(const ListAssetsRequest& request) const
@@ -421,12 +407,10 @@ ListAssetsOutcomeCallable MediaPackageVodClient::ListAssetsCallable(const ListAs
 
 void MediaPackageVodClient::ListAssetsAsync(const ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAssetsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::ListAssetsAsyncHelper(const ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAssets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAssets(request), context);
+    } );
 }
 
 ListPackagingConfigurationsOutcome MediaPackageVodClient::ListPackagingConfigurations(const ListPackagingConfigurationsRequest& request) const
@@ -446,12 +430,10 @@ ListPackagingConfigurationsOutcomeCallable MediaPackageVodClient::ListPackagingC
 
 void MediaPackageVodClient::ListPackagingConfigurationsAsync(const ListPackagingConfigurationsRequest& request, const ListPackagingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPackagingConfigurationsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::ListPackagingConfigurationsAsyncHelper(const ListPackagingConfigurationsRequest& request, const ListPackagingConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPackagingConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPackagingConfigurations(request), context);
+    } );
 }
 
 ListPackagingGroupsOutcome MediaPackageVodClient::ListPackagingGroups(const ListPackagingGroupsRequest& request) const
@@ -471,12 +453,10 @@ ListPackagingGroupsOutcomeCallable MediaPackageVodClient::ListPackagingGroupsCal
 
 void MediaPackageVodClient::ListPackagingGroupsAsync(const ListPackagingGroupsRequest& request, const ListPackagingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPackagingGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::ListPackagingGroupsAsyncHelper(const ListPackagingGroupsRequest& request, const ListPackagingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPackagingGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPackagingGroups(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome MediaPackageVodClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -502,12 +482,10 @@ ListTagsForResourceOutcomeCallable MediaPackageVodClient::ListTagsForResourceCal
 
 void MediaPackageVodClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 TagResourceOutcome MediaPackageVodClient::TagResource(const TagResourceRequest& request) const
@@ -533,12 +511,10 @@ TagResourceOutcomeCallable MediaPackageVodClient::TagResourceCallable(const TagR
 
 void MediaPackageVodClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome MediaPackageVodClient::UntagResource(const UntagResourceRequest& request) const
@@ -569,12 +545,10 @@ UntagResourceOutcomeCallable MediaPackageVodClient::UntagResourceCallable(const 
 
 void MediaPackageVodClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdatePackagingGroupOutcome MediaPackageVodClient::UpdatePackagingGroup(const UpdatePackagingGroupRequest& request) const
@@ -600,11 +574,9 @@ UpdatePackagingGroupOutcomeCallable MediaPackageVodClient::UpdatePackagingGroupC
 
 void MediaPackageVodClient::UpdatePackagingGroupAsync(const UpdatePackagingGroupRequest& request, const UpdatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePackagingGroupAsyncHelper( request, handler, context ); } );
-}
-
-void MediaPackageVodClient::UpdatePackagingGroupAsyncHelper(const UpdatePackagingGroupRequest& request, const UpdatePackagingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePackagingGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePackagingGroup(request), context);
+    } );
 }
 

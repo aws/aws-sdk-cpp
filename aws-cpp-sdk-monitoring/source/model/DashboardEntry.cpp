@@ -60,7 +60,7 @@ DashboardEntry& DashboardEntry::operator =(const XmlNode& xmlNode)
     XmlNode lastModifiedNode = resultNode.FirstChild("LastModified");
     if(!lastModifiedNode.IsNull())
     {
-      m_lastModified = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastModified = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
@@ -88,7 +88,7 @@ void DashboardEntry::OutputToStream(Aws::OStream& oStream, const char* location,
 
   if(m_lastModifiedHasBeenSet)
   {
-      oStream << location << index << locationValue << ".LastModified=" << StringUtils::URLEncode(m_lastModified.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".LastModified=" << StringUtils::URLEncode(m_lastModified.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_sizeHasBeenSet)
@@ -110,7 +110,7 @@ void DashboardEntry::OutputToStream(Aws::OStream& oStream, const char* location)
   }
   if(m_lastModifiedHasBeenSet)
   {
-      oStream << location << ".LastModified=" << StringUtils::URLEncode(m_lastModified.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".LastModified=" << StringUtils::URLEncode(m_lastModified.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_sizeHasBeenSet)
   {

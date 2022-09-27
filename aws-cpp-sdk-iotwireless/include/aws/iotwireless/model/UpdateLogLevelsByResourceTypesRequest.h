@@ -106,13 +106,13 @@ namespace Model
   private:
 
     LogLevel m_defaultLogLevel;
-    bool m_defaultLogLevelHasBeenSet;
+    bool m_defaultLogLevelHasBeenSet = false;
 
     Aws::Vector<WirelessDeviceLogOption> m_wirelessDeviceLogOptions;
-    bool m_wirelessDeviceLogOptionsHasBeenSet;
+    bool m_wirelessDeviceLogOptionsHasBeenSet = false;
 
     Aws::Vector<WirelessGatewayLogOption> m_wirelessGatewayLogOptions;
-    bool m_wirelessGatewayLogOptionsHasBeenSet;
+    bool m_wirelessGatewayLogOptionsHasBeenSet = false;
   };
 
 } // namespace Model

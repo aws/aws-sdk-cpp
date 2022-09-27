@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_executionArn;
-    bool m_executionArnHasBeenSet;
+    bool m_executionArnHasBeenSet = false;
   };
 
 } // namespace Model

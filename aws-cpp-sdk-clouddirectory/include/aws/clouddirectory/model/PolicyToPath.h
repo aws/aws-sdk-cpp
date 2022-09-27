@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::Vector<PolicyAttachment> m_policies;
-    bool m_policiesHasBeenSet;
+    bool m_policiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -79,10 +79,10 @@ namespace Model
   private:
 
     int m_heightInPx;
-    bool m_heightInPxHasBeenSet;
+    bool m_heightInPxHasBeenSet = false;
 
     int m_widthInPx;
-    bool m_widthInPxHasBeenSet;
+    bool m_widthInPxHasBeenSet = false;
   };
 
 } // namespace Model

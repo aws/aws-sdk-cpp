@@ -1652,73 +1652,89 @@ namespace Model
 
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see <a
+     * <p>The tags to apply to the resources that are created during instance
+     * launch.</p> <p>You can specify tags for the following resources only:</p> <ul>
+     * <li> <p>Instances</p> </li> <li> <p>Volumes</p> </li> <li> <p>Elastic
+     * graphics</p> </li> <li> <p>Spot Instance requests</p> </li> <li> <p>Network
+     * interfaces</p> </li> </ul> <p>To tag a resource after it has been created, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
     inline RunInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
@@ -1830,7 +1846,7 @@ namespace Model
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
+     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a/T4g
      * instances)</p> <p>For T3 instances with <code>host</code> tenancy, only
      * <code>standard</code> is supported.</p>
      */
@@ -1844,7 +1860,7 @@ namespace Model
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
+     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a/T4g
      * instances)</p> <p>For T3 instances with <code>host</code> tenancy, only
      * <code>standard</code> is supported.</p>
      */
@@ -1858,7 +1874,7 @@ namespace Model
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
+     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a/T4g
      * instances)</p> <p>For T3 instances with <code>host</code> tenancy, only
      * <code>standard</code> is supported.</p>
      */
@@ -1872,7 +1888,7 @@ namespace Model
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
+     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a/T4g
      * instances)</p> <p>For T3 instances with <code>host</code> tenancy, only
      * <code>standard</code> is supported.</p>
      */
@@ -1886,7 +1902,7 @@ namespace Model
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
+     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a/T4g
      * instances)</p> <p>For T3 instances with <code>host</code> tenancy, only
      * <code>standard</code> is supported.</p>
      */
@@ -1900,7 +1916,7 @@ namespace Model
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
-     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
+     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a/T4g
      * instances)</p> <p>For T3 instances with <code>host</code> tenancy, only
      * <code>standard</code> is supported.</p>
      */
@@ -2271,7 +2287,7 @@ namespace Model
      * <p>Indicates whether an instance is enabled for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>. </p>
+     * protection</a>. </p>
      */
     inline bool GetDisableApiStop() const{ return m_disableApiStop; }
 
@@ -2279,7 +2295,7 @@ namespace Model
      * <p>Indicates whether an instance is enabled for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>. </p>
+     * protection</a>. </p>
      */
     inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
 
@@ -2287,7 +2303,7 @@ namespace Model
      * <p>Indicates whether an instance is enabled for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>. </p>
+     * protection</a>. </p>
      */
     inline void SetDisableApiStop(bool value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
 
@@ -2295,131 +2311,131 @@ namespace Model
      * <p>Indicates whether an instance is enabled for stop protection. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
-     * Protection</a>. </p>
+     * protection</a>. </p>
      */
     inline RunInstancesRequest& WithDisableApiStop(bool value) { SetDisableApiStop(value); return *this;}
 
   private:
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_ipv6AddressCount;
-    bool m_ipv6AddressCountHasBeenSet;
+    bool m_ipv6AddressCountHasBeenSet = false;
 
     Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
-    bool m_ipv6AddressesHasBeenSet;
+    bool m_ipv6AddressesHasBeenSet = false;
 
     Aws::String m_kernelId;
-    bool m_kernelIdHasBeenSet;
+    bool m_kernelIdHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     int m_maxCount;
-    bool m_maxCountHasBeenSet;
+    bool m_maxCountHasBeenSet = false;
 
     int m_minCount;
-    bool m_minCountHasBeenSet;
+    bool m_minCountHasBeenSet = false;
 
     RunInstancesMonitoringEnabled m_monitoring;
-    bool m_monitoringHasBeenSet;
+    bool m_monitoringHasBeenSet = false;
 
     Placement m_placement;
-    bool m_placementHasBeenSet;
+    bool m_placementHasBeenSet = false;
 
     Aws::String m_ramdiskId;
-    bool m_ramdiskIdHasBeenSet;
+    bool m_ramdiskIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
 
     Aws::String m_additionalInfo;
-    bool m_additionalInfoHasBeenSet;
+    bool m_additionalInfoHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     bool m_disableApiTermination;
-    bool m_disableApiTerminationHasBeenSet;
+    bool m_disableApiTerminationHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     IamInstanceProfileSpecification m_iamInstanceProfile;
-    bool m_iamInstanceProfileHasBeenSet;
+    bool m_iamInstanceProfileHasBeenSet = false;
 
     ShutdownBehavior m_instanceInitiatedShutdownBehavior;
-    bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
+    bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
     Aws::Vector<InstanceNetworkInterfaceSpecification> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
 
     Aws::Vector<ElasticGpuSpecification> m_elasticGpuSpecification;
-    bool m_elasticGpuSpecificationHasBeenSet;
+    bool m_elasticGpuSpecificationHasBeenSet = false;
 
     Aws::Vector<ElasticInferenceAccelerator> m_elasticInferenceAccelerators;
-    bool m_elasticInferenceAcceleratorsHasBeenSet;
+    bool m_elasticInferenceAcceleratorsHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     InstanceMarketOptionsRequest m_instanceMarketOptions;
-    bool m_instanceMarketOptionsHasBeenSet;
+    bool m_instanceMarketOptionsHasBeenSet = false;
 
     CreditSpecificationRequest m_creditSpecification;
-    bool m_creditSpecificationHasBeenSet;
+    bool m_creditSpecificationHasBeenSet = false;
 
     CpuOptionsRequest m_cpuOptions;
-    bool m_cpuOptionsHasBeenSet;
+    bool m_cpuOptionsHasBeenSet = false;
 
     CapacityReservationSpecification m_capacityReservationSpecification;
-    bool m_capacityReservationSpecificationHasBeenSet;
+    bool m_capacityReservationSpecificationHasBeenSet = false;
 
     HibernationOptionsRequest m_hibernationOptions;
-    bool m_hibernationOptionsHasBeenSet;
+    bool m_hibernationOptionsHasBeenSet = false;
 
     Aws::Vector<LicenseConfigurationRequest> m_licenseSpecifications;
-    bool m_licenseSpecificationsHasBeenSet;
+    bool m_licenseSpecificationsHasBeenSet = false;
 
     InstanceMetadataOptionsRequest m_metadataOptions;
-    bool m_metadataOptionsHasBeenSet;
+    bool m_metadataOptionsHasBeenSet = false;
 
     EnclaveOptionsRequest m_enclaveOptions;
-    bool m_enclaveOptionsHasBeenSet;
+    bool m_enclaveOptionsHasBeenSet = false;
 
     PrivateDnsNameOptionsRequest m_privateDnsNameOptions;
-    bool m_privateDnsNameOptionsHasBeenSet;
+    bool m_privateDnsNameOptionsHasBeenSet = false;
 
     InstanceMaintenanceOptionsRequest m_maintenanceOptions;
-    bool m_maintenanceOptionsHasBeenSet;
+    bool m_maintenanceOptionsHasBeenSet = false;
 
     bool m_disableApiStop;
-    bool m_disableApiStopHasBeenSet;
+    bool m_disableApiStopHasBeenSet = false;
   };
 
 } // namespace Model

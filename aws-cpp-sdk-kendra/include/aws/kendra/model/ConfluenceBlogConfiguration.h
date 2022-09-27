@@ -140,7 +140,7 @@ namespace Model
   private:
 
     Aws::Vector<ConfluenceBlogToIndexFieldMapping> m_blogFieldMappings;
-    bool m_blogFieldMappingsHasBeenSet;
+    bool m_blogFieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

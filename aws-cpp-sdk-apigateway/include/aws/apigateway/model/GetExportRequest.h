@@ -421,19 +421,19 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_stageName;
-    bool m_stageNameHasBeenSet;
+    bool m_stageNameHasBeenSet = false;
 
     Aws::String m_exportType;
-    bool m_exportTypeHasBeenSet;
+    bool m_exportTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
 
     Aws::String m_accepts;
-    bool m_acceptsHasBeenSet;
+    bool m_acceptsHasBeenSet = false;
   };
 
 } // namespace Model

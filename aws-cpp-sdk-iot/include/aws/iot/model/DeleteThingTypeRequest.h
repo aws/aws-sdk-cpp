@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_thingTypeName;
-    bool m_thingTypeNameHasBeenSet;
+    bool m_thingTypeNameHasBeenSet = false;
   };
 
 } // namespace Model

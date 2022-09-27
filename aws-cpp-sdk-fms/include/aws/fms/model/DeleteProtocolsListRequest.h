@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_listId;
-    bool m_listIdHasBeenSet;
+    bool m_listIdHasBeenSet = false;
   };
 
 } // namespace Model

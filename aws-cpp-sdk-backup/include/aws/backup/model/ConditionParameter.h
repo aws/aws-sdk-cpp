@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_conditionKey;
-    bool m_conditionKeyHasBeenSet;
+    bool m_conditionKeyHasBeenSet = false;
 
     Aws::String m_conditionValue;
-    bool m_conditionValueHasBeenSet;
+    bool m_conditionValueHasBeenSet = false;
   };
 
 } // namespace Model

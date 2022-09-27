@@ -85,7 +85,7 @@ namespace Model
   private:
 
     double m_targetValue;
-    bool m_targetValueHasBeenSet;
+    bool m_targetValueHasBeenSet = false;
   };
 
 } // namespace Model

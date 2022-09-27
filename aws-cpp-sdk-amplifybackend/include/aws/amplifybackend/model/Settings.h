@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::Vector<MfaTypesElement> m_mfaTypes;
-    bool m_mfaTypesHasBeenSet;
+    bool m_mfaTypesHasBeenSet = false;
 
     Aws::String m_smsMessage;
-    bool m_smsMessageHasBeenSet;
+    bool m_smsMessageHasBeenSet = false;
   };
 
 } // namespace Model

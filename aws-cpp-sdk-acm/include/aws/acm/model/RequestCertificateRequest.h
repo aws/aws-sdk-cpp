@@ -741,28 +741,28 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     ValidationMethod m_validationMethod;
-    bool m_validationMethodHasBeenSet;
+    bool m_validationMethodHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subjectAlternativeNames;
-    bool m_subjectAlternativeNamesHasBeenSet;
+    bool m_subjectAlternativeNamesHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
 
     Aws::Vector<DomainValidationOption> m_domainValidationOptions;
-    bool m_domainValidationOptionsHasBeenSet;
+    bool m_domainValidationOptionsHasBeenSet = false;
 
     CertificateOptions m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

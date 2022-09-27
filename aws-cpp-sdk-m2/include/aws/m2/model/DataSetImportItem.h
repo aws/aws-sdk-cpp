@@ -103,10 +103,10 @@ namespace Model
   private:
 
     DataSet m_dataSet;
-    bool m_dataSetHasBeenSet;
+    bool m_dataSetHasBeenSet = false;
 
     ExternalLocation m_externalLocation;
-    bool m_externalLocationHasBeenSet;
+    bool m_externalLocationHasBeenSet = false;
   };
 
 } // namespace Model

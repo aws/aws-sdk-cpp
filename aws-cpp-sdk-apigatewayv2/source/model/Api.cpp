@@ -229,7 +229,7 @@ JsonValue Api::Jsonize() const
 
   if(m_createdDateHasBeenSet)
   {
-   payload.WithString("createdDate", m_createdDate.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdDate", m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_descriptionHasBeenSet)

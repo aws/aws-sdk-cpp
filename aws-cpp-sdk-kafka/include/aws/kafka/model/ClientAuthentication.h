@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Sasl m_sasl;
-    bool m_saslHasBeenSet;
+    bool m_saslHasBeenSet = false;
 
     Tls m_tls;
-    bool m_tlsHasBeenSet;
+    bool m_tlsHasBeenSet = false;
 
     Unauthenticated m_unauthenticated;
-    bool m_unauthenticatedHasBeenSet;
+    bool m_unauthenticatedHasBeenSet = false;
   };
 
 } // namespace Model

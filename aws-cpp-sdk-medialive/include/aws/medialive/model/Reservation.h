@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/medialive/model/OfferingDurationUnits.h>
 #include <aws/medialive/model/OfferingType.h>
+#include <aws/medialive/model/RenewalSettings.h>
 #include <aws/medialive/model/ReservationResourceSpecification.h>
 #include <aws/medialive/model/ReservationState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -471,6 +472,37 @@ namespace Model
 
 
     /**
+     * Renewal settings for the reservation
+     */
+    inline const RenewalSettings& GetRenewalSettings() const{ return m_renewalSettings; }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline bool RenewalSettingsHasBeenSet() const { return m_renewalSettingsHasBeenSet; }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline void SetRenewalSettings(const RenewalSettings& value) { m_renewalSettingsHasBeenSet = true; m_renewalSettings = value; }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline void SetRenewalSettings(RenewalSettings&& value) { m_renewalSettingsHasBeenSet = true; m_renewalSettings = std::move(value); }
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline Reservation& WithRenewalSettings(const RenewalSettings& value) { SetRenewalSettings(value); return *this;}
+
+    /**
+     * Renewal settings for the reservation
+     */
+    inline Reservation& WithRenewalSettings(RenewalSettings&& value) { SetRenewalSettings(std::move(value)); return *this;}
+
+
+    /**
      * Unique reservation ID, e.g. '1234567'
      */
     inline const Aws::String& GetReservationId() const{ return m_reservationId; }
@@ -711,58 +743,61 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     int m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     OfferingDurationUnits m_durationUnits;
-    bool m_durationUnitsHasBeenSet;
+    bool m_durationUnitsHasBeenSet = false;
 
     Aws::String m_end;
-    bool m_endHasBeenSet;
+    bool m_endHasBeenSet = false;
 
     double m_fixedPrice;
-    bool m_fixedPriceHasBeenSet;
+    bool m_fixedPriceHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_offeringDescription;
-    bool m_offeringDescriptionHasBeenSet;
+    bool m_offeringDescriptionHasBeenSet = false;
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
 
     OfferingType m_offeringType;
-    bool m_offeringTypeHasBeenSet;
+    bool m_offeringTypeHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
+
+    RenewalSettings m_renewalSettings;
+    bool m_renewalSettingsHasBeenSet = false;
 
     Aws::String m_reservationId;
-    bool m_reservationIdHasBeenSet;
+    bool m_reservationIdHasBeenSet = false;
 
     ReservationResourceSpecification m_resourceSpecification;
-    bool m_resourceSpecificationHasBeenSet;
+    bool m_resourceSpecificationHasBeenSet = false;
 
     Aws::String m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     ReservationState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     double m_usagePrice;
-    bool m_usagePriceHasBeenSet;
+    bool m_usagePriceHasBeenSet = false;
   };
 
 } // namespace Model

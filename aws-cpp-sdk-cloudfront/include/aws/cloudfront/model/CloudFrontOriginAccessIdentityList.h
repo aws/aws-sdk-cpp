@@ -318,22 +318,22 @@ namespace Model
   private:
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_nextMarker;
-    bool m_nextMarkerHasBeenSet;
+    bool m_nextMarkerHasBeenSet = false;
 
     int m_maxItems;
-    bool m_maxItemsHasBeenSet;
+    bool m_maxItemsHasBeenSet = false;
 
     bool m_isTruncated;
-    bool m_isTruncatedHasBeenSet;
+    bool m_isTruncatedHasBeenSet = false;
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<CloudFrontOriginAccessIdentitySummary> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

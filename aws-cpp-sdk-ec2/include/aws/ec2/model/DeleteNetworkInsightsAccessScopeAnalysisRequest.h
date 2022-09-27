@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_networkInsightsAccessScopeAnalysisId;
-    bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet;
+    bool m_networkInsightsAccessScopeAnalysisIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

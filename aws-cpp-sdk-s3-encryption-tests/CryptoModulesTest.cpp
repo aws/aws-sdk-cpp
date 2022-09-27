@@ -6,7 +6,8 @@
 #define AWS_DISABLE_DEPRECATION
 #ifndef NO_SYMMETRIC_ENCRYPTION
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/Aws.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/utils/Outcome.h>
@@ -296,7 +297,7 @@ namespace
         putRequest.SetKey(KEY_TEST_NAME);
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -330,7 +331,7 @@ namespace
 
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest iGetRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(iGetRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
@@ -361,7 +362,7 @@ namespace
         putRequest.SetKey(KEY_TEST_NAME);
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -395,7 +396,7 @@ namespace
 
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest iGetRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(iGetRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
@@ -427,7 +428,7 @@ namespace
         putRequest.SetKey(KEY_TEST_NAME);
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -461,7 +462,7 @@ namespace
 
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest iGetRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(iGetRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
@@ -492,7 +493,7 @@ namespace
         putRequest.SetKey(KEY_TEST_NAME);
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -526,7 +527,7 @@ namespace
 
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest iGetRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(iGetRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
@@ -557,7 +558,7 @@ namespace
         putRequest.SetKey(KEY_TEST_NAME);
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -591,7 +592,7 @@ namespace
 
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest iGetRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(iGetRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
@@ -623,7 +624,7 @@ namespace
         putRequest.SetKey(KEY_TEST_NAME);
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -657,7 +658,7 @@ namespace
 
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest iGetRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(iGetRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
@@ -688,7 +689,7 @@ namespace
         putRequest.SetKey(KEY_TEST_NAME);
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -723,7 +724,7 @@ namespace
 
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest iGetRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(iGetRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
@@ -757,7 +758,7 @@ namespace
         putRequest.SetKey(KEY_TEST_NAME);
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -792,7 +793,7 @@ namespace
 
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest iGetRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(iGetRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
@@ -827,7 +828,7 @@ namespace
         putRequest.SetKey(KEY_TEST_NAME);
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -861,7 +862,7 @@ namespace
 
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest iGetRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(iGetRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
@@ -895,7 +896,7 @@ namespace
         putRequest.SetKey(KEY_TEST_NAME);
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -929,7 +930,7 @@ namespace
 
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest iGetRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(iGetRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
@@ -963,7 +964,7 @@ namespace
         putRequest.SetKey(KEY_TEST_NAME);
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -1026,7 +1027,7 @@ namespace
         putRequest.SetKey(KEY_TEST_NAME);
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -1088,7 +1089,7 @@ namespace
 
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -1123,7 +1124,7 @@ namespace
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest iGetRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(iGetRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
 
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
@@ -1155,7 +1156,7 @@ namespace
         putRequest.SetKey(KEY_TEST_NAME);
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -1189,7 +1190,7 @@ namespace
 
         auto getObjectFunction = [&s3Client](Aws::S3::Model::GetObjectRequest iGetRequest) -> Aws::S3::Model::GetObjectOutcome { return s3Client.GetObject(iGetRequest); };
         auto getOutcome = decryptionModule->GetObjectSecurely(getRequest, headOutcome.GetResult(), contentCryptoMaterial, getObjectFunction);
-        ASSERT_TRUE(getOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(getOutcome);
         Aws::OStream& ostream = getOutcome.GetResult().GetBody();
         Aws::OStringStream ss;
         ss << ostream.rdbuf();
@@ -1222,7 +1223,7 @@ namespace
 
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);
@@ -1281,7 +1282,7 @@ namespace
 
         auto putObjectFunction = [&s3Client](Aws::S3::Model::PutObjectRequest iPutRequest) -> Aws::S3::Model::PutObjectOutcome { return s3Client.PutObject(iPutRequest); };
         auto putOutcome = module->PutObjectSecurely(putRequest, putObjectFunction);
-        ASSERT_TRUE(putOutcome.IsSuccess());
+        AWS_ASSERT_SUCCESS(putOutcome);
 
         auto metadata = s3Client.GetMetadata();
         MetadataFilled(metadata);

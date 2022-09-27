@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_s3OutputUrl;
-    bool m_s3OutputUrlHasBeenSet;
+    bool m_s3OutputUrlHasBeenSet = false;
 
     Aws::String m_cloudWatchOutputUrl;
-    bool m_cloudWatchOutputUrlHasBeenSet;
+    bool m_cloudWatchOutputUrlHasBeenSet = false;
   };
 
 } // namespace Model

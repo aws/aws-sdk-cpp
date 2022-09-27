@@ -115,10 +115,10 @@ namespace Model
   private:
 
     AsyncInferenceClientConfig m_clientConfig;
-    bool m_clientConfigHasBeenSet;
+    bool m_clientConfigHasBeenSet = false;
 
     AsyncInferenceOutputConfig m_outputConfig;
-    bool m_outputConfigHasBeenSet;
+    bool m_outputConfigHasBeenSet = false;
   };
 
 } // namespace Model

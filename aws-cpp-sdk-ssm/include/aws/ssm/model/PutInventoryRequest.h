@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::Vector<InventoryItem> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

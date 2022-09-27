@@ -131,13 +131,13 @@ namespace Model
   private:
 
     Aws::String m_frameAddress;
-    bool m_frameAddressHasBeenSet;
+    bool m_frameAddressHasBeenSet = false;
 
     int m_targetFramesIndex;
-    bool m_targetFramesIndexHasBeenSet;
+    bool m_targetFramesIndexHasBeenSet = false;
 
     double m_thresholdBreachValue;
-    bool m_thresholdBreachValueHasBeenSet;
+    bool m_thresholdBreachValueHasBeenSet = false;
   };
 
 } // namespace Model

@@ -232,16 +232,16 @@ namespace Model
   private:
 
     RenewalStatus m_renewalStatus;
-    bool m_renewalStatusHasBeenSet;
+    bool m_renewalStatusHasBeenSet = false;
 
     Aws::Vector<DomainValidation> m_domainValidationOptions;
-    bool m_domainValidationOptionsHasBeenSet;
+    bool m_domainValidationOptionsHasBeenSet = false;
 
     FailureReason m_renewalStatusReason;
-    bool m_renewalStatusReasonHasBeenSet;
+    bool m_renewalStatusReasonHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

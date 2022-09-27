@@ -175,13 +175,13 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_edgeLocations;
-    bool m_edgeLocationsHasBeenSet;
+    bool m_edgeLocationsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sharedSegments;
-    bool m_sharedSegmentsHasBeenSet;
+    bool m_sharedSegmentsHasBeenSet = false;
   };
 
 } // namespace Model

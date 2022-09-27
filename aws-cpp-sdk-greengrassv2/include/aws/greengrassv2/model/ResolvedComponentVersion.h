@@ -354,22 +354,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentVersion;
-    bool m_componentVersionHasBeenSet;
+    bool m_componentVersionHasBeenSet = false;
 
     Aws::Utils::ByteBuffer m_recipe;
-    bool m_recipeHasBeenSet;
+    bool m_recipeHasBeenSet = false;
 
     VendorGuidance m_vendorGuidance;
-    bool m_vendorGuidanceHasBeenSet;
+    bool m_vendorGuidanceHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

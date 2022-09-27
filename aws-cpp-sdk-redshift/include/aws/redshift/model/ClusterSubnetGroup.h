@@ -298,22 +298,22 @@ namespace Model
   private:
 
     Aws::String m_clusterSubnetGroupName;
-    bool m_clusterSubnetGroupNameHasBeenSet;
+    bool m_clusterSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_subnetGroupStatus;
-    bool m_subnetGroupStatusHasBeenSet;
+    bool m_subnetGroupStatusHasBeenSet = false;
 
     Aws::Vector<Subnet> m_subnets;
-    bool m_subnetsHasBeenSet;
+    bool m_subnetsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

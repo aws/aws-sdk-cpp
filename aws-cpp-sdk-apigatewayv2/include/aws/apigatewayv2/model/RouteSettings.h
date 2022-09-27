@@ -174,19 +174,19 @@ namespace Model
   private:
 
     bool m_dataTraceEnabled;
-    bool m_dataTraceEnabledHasBeenSet;
+    bool m_dataTraceEnabledHasBeenSet = false;
 
     bool m_detailedMetricsEnabled;
-    bool m_detailedMetricsEnabledHasBeenSet;
+    bool m_detailedMetricsEnabledHasBeenSet = false;
 
     LoggingLevel m_loggingLevel;
-    bool m_loggingLevelHasBeenSet;
+    bool m_loggingLevelHasBeenSet = false;
 
     int m_throttlingBurstLimit;
-    bool m_throttlingBurstLimitHasBeenSet;
+    bool m_throttlingBurstLimitHasBeenSet = false;
 
     double m_throttlingRateLimit;
-    bool m_throttlingRateLimitHasBeenSet;
+    bool m_throttlingRateLimitHasBeenSet = false;
   };
 
 } // namespace Model

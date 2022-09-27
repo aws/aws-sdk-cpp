@@ -197,19 +197,19 @@ namespace Model
   private:
 
     Document m_document;
-    bool m_documentHasBeenSet;
+    bool m_documentHasBeenSet = false;
 
     Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet;
+    bool m_recommendationIdHasBeenSet = false;
 
     RelevanceLevel m_relevanceLevel;
-    bool m_relevanceLevelHasBeenSet;
+    bool m_relevanceLevelHasBeenSet = false;
 
     double m_relevanceScore;
-    bool m_relevanceScoreHasBeenSet;
+    bool m_relevanceScoreHasBeenSet = false;
 
     RecommendationType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

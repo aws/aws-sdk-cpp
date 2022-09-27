@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_imageRecipeArn;
-    bool m_imageRecipeArnHasBeenSet;
+    bool m_imageRecipeArnHasBeenSet = false;
 
     Aws::String m_policy;
-    bool m_policyHasBeenSet;
+    bool m_policyHasBeenSet = false;
   };
 
 } // namespace Model

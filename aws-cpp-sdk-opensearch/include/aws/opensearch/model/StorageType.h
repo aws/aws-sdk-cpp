@@ -134,13 +134,13 @@ namespace Model
   private:
 
     Aws::String m_storageTypeName;
-    bool m_storageTypeNameHasBeenSet;
+    bool m_storageTypeNameHasBeenSet = false;
 
     Aws::String m_storageSubTypeName;
-    bool m_storageSubTypeNameHasBeenSet;
+    bool m_storageSubTypeNameHasBeenSet = false;
 
     Aws::Vector<StorageTypeLimit> m_storageTypeLimits;
-    bool m_storageTypeLimitsHasBeenSet;
+    bool m_storageTypeLimitsHasBeenSet = false;
   };
 
 } // namespace Model

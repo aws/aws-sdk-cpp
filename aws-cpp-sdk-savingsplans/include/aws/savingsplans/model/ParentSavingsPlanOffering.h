@@ -238,22 +238,22 @@ namespace Model
   private:
 
     Aws::String m_offeringId;
-    bool m_offeringIdHasBeenSet;
+    bool m_offeringIdHasBeenSet = false;
 
     SavingsPlanPaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     SavingsPlanType m_planType;
-    bool m_planTypeHasBeenSet;
+    bool m_planTypeHasBeenSet = false;
 
     long long m_durationSeconds;
-    bool m_durationSecondsHasBeenSet;
+    bool m_durationSecondsHasBeenSet = false;
 
     CurrencyCode m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
 
     Aws::String m_planDescription;
-    bool m_planDescriptionHasBeenSet;
+    bool m_planDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

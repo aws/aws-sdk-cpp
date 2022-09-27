@@ -130,10 +130,10 @@ namespace Model
   private:
 
     EncryptionAtRest m_encryptionAtRest;
-    bool m_encryptionAtRestHasBeenSet;
+    bool m_encryptionAtRestHasBeenSet = false;
 
     EncryptionInTransit m_encryptionInTransit;
-    bool m_encryptionInTransitHasBeenSet;
+    bool m_encryptionInTransitHasBeenSet = false;
   };
 
 } // namespace Model

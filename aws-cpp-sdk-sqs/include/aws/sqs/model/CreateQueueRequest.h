@@ -1925,13 +1925,13 @@ namespace Model
   private:
 
     Aws::String m_queueName;
-    bool m_queueNameHasBeenSet;
+    bool m_queueNameHasBeenSet = false;
 
     Aws::Map<QueueAttributeName, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

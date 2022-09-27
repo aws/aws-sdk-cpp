@@ -512,6 +512,31 @@ namespace Model
 
 
     /**
+     * <p>A value that indicates whether to copy all tags from the DB instance to
+     * snapshots of the DB instance. By default, tags are not copied.</p>
+     */
+    inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+
+    /**
+     * <p>A value that indicates whether to copy all tags from the DB instance to
+     * snapshots of the DB instance. By default, tags are not copied.</p>
+     */
+    inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether to copy all tags from the DB instance to
+     * snapshots of the DB instance. By default, tags are not copied.</p>
+     */
+    inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
+
+    /**
+     * <p>A value that indicates whether to copy all tags from the DB instance to
+     * snapshots of the DB instance. By default, tags are not copied.</p>
+     */
+    inline ModifyDBInstanceRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
+
+
+    /**
      * <p>A value that specifies the order in which an Amazon DocumentDB replica is
      * promoted to the primary instance after a failure of the existing primary
      * instance.</p> <p>Default: 1</p> <p>Valid values: 0-15</p>
@@ -664,34 +689,37 @@ namespace Model
   private:
 
     Aws::String m_dBInstanceIdentifier;
-    bool m_dBInstanceIdentifierHasBeenSet;
+    bool m_dBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
-    bool m_dBInstanceClassHasBeenSet;
+    bool m_dBInstanceClassHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_newDBInstanceIdentifier;
-    bool m_newDBInstanceIdentifierHasBeenSet;
+    bool m_newDBInstanceIdentifierHasBeenSet = false;
 
     Aws::String m_cACertificateIdentifier;
-    bool m_cACertificateIdentifierHasBeenSet;
+    bool m_cACertificateIdentifierHasBeenSet = false;
+
+    bool m_copyTagsToSnapshot;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     int m_promotionTier;
-    bool m_promotionTierHasBeenSet;
+    bool m_promotionTierHasBeenSet = false;
 
     bool m_enablePerformanceInsights;
-    bool m_enablePerformanceInsightsHasBeenSet;
+    bool m_enablePerformanceInsightsHasBeenSet = false;
 
     Aws::String m_performanceInsightsKMSKeyId;
-    bool m_performanceInsightsKMSKeyIdHasBeenSet;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

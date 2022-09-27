@@ -89,7 +89,7 @@ namespace Model
   private:
 
     ApprovalThresholdPolicy m_approvalThresholdPolicy;
-    bool m_approvalThresholdPolicyHasBeenSet;
+    bool m_approvalThresholdPolicyHasBeenSet = false;
   };
 
 } // namespace Model

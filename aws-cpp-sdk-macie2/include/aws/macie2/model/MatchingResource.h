@@ -72,7 +72,7 @@ namespace Model
   private:
 
     MatchingBucket m_matchingBucket;
-    bool m_matchingBucketHasBeenSet;
+    bool m_matchingBucketHasBeenSet = false;
   };
 
 } // namespace Model

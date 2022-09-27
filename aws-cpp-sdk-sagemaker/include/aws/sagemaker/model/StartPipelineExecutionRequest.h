@@ -298,22 +298,22 @@ namespace Model
   private:
 
     Aws::String m_pipelineName;
-    bool m_pipelineNameHasBeenSet;
+    bool m_pipelineNameHasBeenSet = false;
 
     Aws::String m_pipelineExecutionDisplayName;
-    bool m_pipelineExecutionDisplayNameHasBeenSet;
+    bool m_pipelineExecutionDisplayNameHasBeenSet = false;
 
     Aws::Vector<Parameter> m_pipelineParameters;
-    bool m_pipelineParametersHasBeenSet;
+    bool m_pipelineParametersHasBeenSet = false;
 
     Aws::String m_pipelineExecutionDescription;
-    bool m_pipelineExecutionDescriptionHasBeenSet;
+    bool m_pipelineExecutionDescriptionHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     ParallelismConfiguration m_parallelismConfiguration;
-    bool m_parallelismConfigurationHasBeenSet;
+    bool m_parallelismConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -98,10 +98,10 @@ namespace Model
   private:
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
 
     bool m_enforced;
-    bool m_enforcedHasBeenSet;
+    bool m_enforcedHasBeenSet = false;
   };
 
 } // namespace Model

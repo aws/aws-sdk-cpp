@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_keys;
-    bool m_keysHasBeenSet;
+    bool m_keysHasBeenSet = false;
 
     double m_approximateAggregateValue;
-    bool m_approximateAggregateValueHasBeenSet;
+    bool m_approximateAggregateValueHasBeenSet = false;
 
     Aws::Vector<InsightRuleContributorDatapoint> m_datapoints;
-    bool m_datapointsHasBeenSet;
+    bool m_datapointsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,7 +23,8 @@ namespace Model
     PatchBaseline,
     OpsItem,
     OpsMetadata,
-    Automation
+    Automation,
+    Association
   };
 
 namespace ResourceTypeForTaggingMapper

@@ -105,32 +105,38 @@ namespace Model
 
 
     /**
-     * <p>Instructs WAF to count the web request and allow it.</p>
+     * <p>Instructs WAF to count the web request and then continue evaluating the
+     * request using the remaining rules in the web ACL.</p>
      */
     inline const CountAction& GetCount() const{ return m_count; }
 
     /**
-     * <p>Instructs WAF to count the web request and allow it.</p>
+     * <p>Instructs WAF to count the web request and then continue evaluating the
+     * request using the remaining rules in the web ACL.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
-     * <p>Instructs WAF to count the web request and allow it.</p>
+     * <p>Instructs WAF to count the web request and then continue evaluating the
+     * request using the remaining rules in the web ACL.</p>
      */
     inline void SetCount(const CountAction& value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>Instructs WAF to count the web request and allow it.</p>
+     * <p>Instructs WAF to count the web request and then continue evaluating the
+     * request using the remaining rules in the web ACL.</p>
      */
     inline void SetCount(CountAction&& value) { m_countHasBeenSet = true; m_count = std::move(value); }
 
     /**
-     * <p>Instructs WAF to count the web request and allow it.</p>
+     * <p>Instructs WAF to count the web request and then continue evaluating the
+     * request using the remaining rules in the web ACL.</p>
      */
     inline RuleAction& WithCount(const CountAction& value) { SetCount(value); return *this;}
 
     /**
-     * <p>Instructs WAF to count the web request and allow it.</p>
+     * <p>Instructs WAF to count the web request and then continue evaluating the
+     * request using the remaining rules in the web ACL.</p>
      */
     inline RuleAction& WithCount(CountAction&& value) { SetCount(std::move(value)); return *this;}
 
@@ -174,16 +180,16 @@ namespace Model
   private:
 
     BlockAction m_block;
-    bool m_blockHasBeenSet;
+    bool m_blockHasBeenSet = false;
 
     AllowAction m_allow;
-    bool m_allowHasBeenSet;
+    bool m_allowHasBeenSet = false;
 
     CountAction m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     CaptchaAction m_captcha;
-    bool m_captchaHasBeenSet;
+    bool m_captchaHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,23 +24,31 @@
 #include <aws/appconfig/model/CreateConfigurationProfileRequest.h>
 #include <aws/appconfig/model/CreateDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/CreateEnvironmentRequest.h>
+#include <aws/appconfig/model/CreateExtensionRequest.h>
+#include <aws/appconfig/model/CreateExtensionAssociationRequest.h>
 #include <aws/appconfig/model/CreateHostedConfigurationVersionRequest.h>
 #include <aws/appconfig/model/DeleteApplicationRequest.h>
 #include <aws/appconfig/model/DeleteConfigurationProfileRequest.h>
 #include <aws/appconfig/model/DeleteDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/DeleteEnvironmentRequest.h>
+#include <aws/appconfig/model/DeleteExtensionRequest.h>
+#include <aws/appconfig/model/DeleteExtensionAssociationRequest.h>
 #include <aws/appconfig/model/DeleteHostedConfigurationVersionRequest.h>
 #include <aws/appconfig/model/GetApplicationRequest.h>
 #include <aws/appconfig/model/GetConfigurationProfileRequest.h>
 #include <aws/appconfig/model/GetDeploymentRequest.h>
 #include <aws/appconfig/model/GetDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/GetEnvironmentRequest.h>
+#include <aws/appconfig/model/GetExtensionRequest.h>
+#include <aws/appconfig/model/GetExtensionAssociationRequest.h>
 #include <aws/appconfig/model/GetHostedConfigurationVersionRequest.h>
 #include <aws/appconfig/model/ListApplicationsRequest.h>
 #include <aws/appconfig/model/ListConfigurationProfilesRequest.h>
 #include <aws/appconfig/model/ListDeploymentStrategiesRequest.h>
 #include <aws/appconfig/model/ListDeploymentsRequest.h>
 #include <aws/appconfig/model/ListEnvironmentsRequest.h>
+#include <aws/appconfig/model/ListExtensionAssociationsRequest.h>
+#include <aws/appconfig/model/ListExtensionsRequest.h>
 #include <aws/appconfig/model/ListHostedConfigurationVersionsRequest.h>
 #include <aws/appconfig/model/ListTagsForResourceRequest.h>
 #include <aws/appconfig/model/StartDeploymentRequest.h>
@@ -51,6 +59,8 @@
 #include <aws/appconfig/model/UpdateConfigurationProfileRequest.h>
 #include <aws/appconfig/model/UpdateDeploymentStrategyRequest.h>
 #include <aws/appconfig/model/UpdateEnvironmentRequest.h>
+#include <aws/appconfig/model/UpdateExtensionRequest.h>
+#include <aws/appconfig/model/UpdateExtensionAssociationRequest.h>
 #include <aws/appconfig/model/ValidateConfigurationRequest.h>
 
 using namespace Aws;
@@ -64,33 +74,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "appconfig";
 static const char* ALLOCATION_TAG = "AppConfigClient";
 
-
 AppConfigClient::AppConfigClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-AppConfigClient::AppConfigClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+AppConfigClient::AppConfigClient(const AWSCredentials& credentials,
+                                 const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 AppConfigClient::AppConfigClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                 const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AppConfigErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -102,7 +118,7 @@ AppConfigClient::~AppConfigClient()
 
 void AppConfigClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("AppConfig");
+  AWSClient::SetServiceClientName("AppConfig");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -143,12 +159,10 @@ CreateApplicationOutcomeCallable AppConfigClient::CreateApplicationCallable(cons
 
 void AppConfigClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::CreateApplicationAsyncHelper(const CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateApplication(request), context);
+    } );
 }
 
 CreateConfigurationProfileOutcome AppConfigClient::CreateConfigurationProfile(const CreateConfigurationProfileRequest& request) const
@@ -175,12 +189,10 @@ CreateConfigurationProfileOutcomeCallable AppConfigClient::CreateConfigurationPr
 
 void AppConfigClient::CreateConfigurationProfileAsync(const CreateConfigurationProfileRequest& request, const CreateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateConfigurationProfileAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::CreateConfigurationProfileAsyncHelper(const CreateConfigurationProfileRequest& request, const CreateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateConfigurationProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateConfigurationProfile(request), context);
+    } );
 }
 
 CreateDeploymentStrategyOutcome AppConfigClient::CreateDeploymentStrategy(const CreateDeploymentStrategyRequest& request) const
@@ -200,12 +212,10 @@ CreateDeploymentStrategyOutcomeCallable AppConfigClient::CreateDeploymentStrateg
 
 void AppConfigClient::CreateDeploymentStrategyAsync(const CreateDeploymentStrategyRequest& request, const CreateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeploymentStrategyAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::CreateDeploymentStrategyAsyncHelper(const CreateDeploymentStrategyRequest& request, const CreateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDeploymentStrategy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDeploymentStrategy(request), context);
+    } );
 }
 
 CreateEnvironmentOutcome AppConfigClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
@@ -232,12 +242,56 @@ CreateEnvironmentOutcomeCallable AppConfigClient::CreateEnvironmentCallable(cons
 
 void AppConfigClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEnvironmentAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateEnvironment(request), context);
+    } );
 }
 
-void AppConfigClient::CreateEnvironmentAsyncHelper(const CreateEnvironmentRequest& request, const CreateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+CreateExtensionOutcome AppConfigClient::CreateExtension(const CreateExtensionRequest& request) const
 {
-  handler(this, request, CreateEnvironment(request), context);
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensions");
+  return CreateExtensionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateExtensionOutcomeCallable AppConfigClient::CreateExtensionCallable(const CreateExtensionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExtension(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::CreateExtensionAsync(const CreateExtensionRequest& request, const CreateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateExtension(request), context);
+    } );
+}
+
+CreateExtensionAssociationOutcome AppConfigClient::CreateExtensionAssociation(const CreateExtensionAssociationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensionassociations");
+  return CreateExtensionAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateExtensionAssociationOutcomeCallable AppConfigClient::CreateExtensionAssociationCallable(const CreateExtensionAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExtensionAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::CreateExtensionAssociationAsync(const CreateExtensionAssociationRequest& request, const CreateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateExtensionAssociation(request), context);
+    } );
 }
 
 CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurationVersion(const CreateHostedConfigurationVersionRequest& request) const
@@ -271,12 +325,10 @@ CreateHostedConfigurationVersionOutcomeCallable AppConfigClient::CreateHostedCon
 
 void AppConfigClient::CreateHostedConfigurationVersionAsync(const CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHostedConfigurationVersionAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::CreateHostedConfigurationVersionAsyncHelper(const CreateHostedConfigurationVersionRequest& request, const CreateHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateHostedConfigurationVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateHostedConfigurationVersion(request), context);
+    } );
 }
 
 DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicationRequest& request) const
@@ -302,12 +354,10 @@ DeleteApplicationOutcomeCallable AppConfigClient::DeleteApplicationCallable(cons
 
 void AppConfigClient::DeleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::DeleteApplicationAsyncHelper(const DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteApplication(request), context);
+    } );
 }
 
 DeleteConfigurationProfileOutcome AppConfigClient::DeleteConfigurationProfile(const DeleteConfigurationProfileRequest& request) const
@@ -340,12 +390,10 @@ DeleteConfigurationProfileOutcomeCallable AppConfigClient::DeleteConfigurationPr
 
 void AppConfigClient::DeleteConfigurationProfileAsync(const DeleteConfigurationProfileRequest& request, const DeleteConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteConfigurationProfileAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::DeleteConfigurationProfileAsyncHelper(const DeleteConfigurationProfileRequest& request, const DeleteConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteConfigurationProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteConfigurationProfile(request), context);
+    } );
 }
 
 DeleteDeploymentStrategyOutcome AppConfigClient::DeleteDeploymentStrategy(const DeleteDeploymentStrategyRequest& request) const
@@ -371,12 +419,10 @@ DeleteDeploymentStrategyOutcomeCallable AppConfigClient::DeleteDeploymentStrateg
 
 void AppConfigClient::DeleteDeploymentStrategyAsync(const DeleteDeploymentStrategyRequest& request, const DeleteDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeploymentStrategyAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::DeleteDeploymentStrategyAsyncHelper(const DeleteDeploymentStrategyRequest& request, const DeleteDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDeploymentStrategy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDeploymentStrategy(request), context);
+    } );
 }
 
 DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironmentRequest& request) const
@@ -409,12 +455,68 @@ DeleteEnvironmentOutcomeCallable AppConfigClient::DeleteEnvironmentCallable(cons
 
 void AppConfigClient::DeleteEnvironmentAsync(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEnvironmentAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteEnvironment(request), context);
+    } );
 }
 
-void AppConfigClient::DeleteEnvironmentAsyncHelper(const DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+DeleteExtensionOutcome AppConfigClient::DeleteExtension(const DeleteExtensionRequest& request) const
 {
-  handler(this, request, DeleteEnvironment(request), context);
+  if (!request.ExtensionIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteExtension", "Required field: ExtensionIdentifier, is not set");
+    return DeleteExtensionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtensionIdentifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensions/");
+  uri.AddPathSegment(request.GetExtensionIdentifier());
+  return DeleteExtensionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteExtensionOutcomeCallable AppConfigClient::DeleteExtensionCallable(const DeleteExtensionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExtension(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::DeleteExtensionAsync(const DeleteExtensionRequest& request, const DeleteExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteExtension(request), context);
+    } );
+}
+
+DeleteExtensionAssociationOutcome AppConfigClient::DeleteExtensionAssociation(const DeleteExtensionAssociationRequest& request) const
+{
+  if (!request.ExtensionAssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteExtensionAssociation", "Required field: ExtensionAssociationId, is not set");
+    return DeleteExtensionAssociationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtensionAssociationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensionassociations/");
+  uri.AddPathSegment(request.GetExtensionAssociationId());
+  return DeleteExtensionAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteExtensionAssociationOutcomeCallable AppConfigClient::DeleteExtensionAssociationCallable(const DeleteExtensionAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExtensionAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::DeleteExtensionAssociationAsync(const DeleteExtensionAssociationRequest& request, const DeleteExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteExtensionAssociation(request), context);
+    } );
 }
 
 DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurationVersion(const DeleteHostedConfigurationVersionRequest& request) const
@@ -454,12 +556,10 @@ DeleteHostedConfigurationVersionOutcomeCallable AppConfigClient::DeleteHostedCon
 
 void AppConfigClient::DeleteHostedConfigurationVersionAsync(const DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteHostedConfigurationVersionAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::DeleteHostedConfigurationVersionAsyncHelper(const DeleteHostedConfigurationVersionRequest& request, const DeleteHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteHostedConfigurationVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteHostedConfigurationVersion(request), context);
+    } );
 }
 
 GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationRequest& request) const
@@ -485,12 +585,10 @@ GetApplicationOutcomeCallable AppConfigClient::GetApplicationCallable(const GetA
 
 void AppConfigClient::GetApplicationAsync(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::GetApplicationAsyncHelper(const GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetApplication(request), context);
+    } );
 }
 
 GetConfigurationProfileOutcome AppConfigClient::GetConfigurationProfile(const GetConfigurationProfileRequest& request) const
@@ -523,12 +621,10 @@ GetConfigurationProfileOutcomeCallable AppConfigClient::GetConfigurationProfileC
 
 void AppConfigClient::GetConfigurationProfileAsync(const GetConfigurationProfileRequest& request, const GetConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConfigurationProfileAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::GetConfigurationProfileAsyncHelper(const GetConfigurationProfileRequest& request, const GetConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetConfigurationProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetConfigurationProfile(request), context);
+    } );
 }
 
 GetDeploymentOutcome AppConfigClient::GetDeployment(const GetDeploymentRequest& request) const
@@ -568,12 +664,10 @@ GetDeploymentOutcomeCallable AppConfigClient::GetDeploymentCallable(const GetDep
 
 void AppConfigClient::GetDeploymentAsync(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::GetDeploymentAsyncHelper(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeployment(request), context);
+    } );
 }
 
 GetDeploymentStrategyOutcome AppConfigClient::GetDeploymentStrategy(const GetDeploymentStrategyRequest& request) const
@@ -599,12 +693,10 @@ GetDeploymentStrategyOutcomeCallable AppConfigClient::GetDeploymentStrategyCalla
 
 void AppConfigClient::GetDeploymentStrategyAsync(const GetDeploymentStrategyRequest& request, const GetDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentStrategyAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::GetDeploymentStrategyAsyncHelper(const GetDeploymentStrategyRequest& request, const GetDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeploymentStrategy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeploymentStrategy(request), context);
+    } );
 }
 
 GetEnvironmentOutcome AppConfigClient::GetEnvironment(const GetEnvironmentRequest& request) const
@@ -637,12 +729,68 @@ GetEnvironmentOutcomeCallable AppConfigClient::GetEnvironmentCallable(const GetE
 
 void AppConfigClient::GetEnvironmentAsync(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEnvironmentAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEnvironment(request), context);
+    } );
 }
 
-void AppConfigClient::GetEnvironmentAsyncHelper(const GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+GetExtensionOutcome AppConfigClient::GetExtension(const GetExtensionRequest& request) const
 {
-  handler(this, request, GetEnvironment(request), context);
+  if (!request.ExtensionIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExtension", "Required field: ExtensionIdentifier, is not set");
+    return GetExtensionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtensionIdentifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensions/");
+  uri.AddPathSegment(request.GetExtensionIdentifier());
+  return GetExtensionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetExtensionOutcomeCallable AppConfigClient::GetExtensionCallable(const GetExtensionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExtension(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::GetExtensionAsync(const GetExtensionRequest& request, const GetExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetExtension(request), context);
+    } );
+}
+
+GetExtensionAssociationOutcome AppConfigClient::GetExtensionAssociation(const GetExtensionAssociationRequest& request) const
+{
+  if (!request.ExtensionAssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExtensionAssociation", "Required field: ExtensionAssociationId, is not set");
+    return GetExtensionAssociationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtensionAssociationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensionassociations/");
+  uri.AddPathSegment(request.GetExtensionAssociationId());
+  return GetExtensionAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetExtensionAssociationOutcomeCallable AppConfigClient::GetExtensionAssociationCallable(const GetExtensionAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExtensionAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::GetExtensionAssociationAsync(const GetExtensionAssociationRequest& request, const GetExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetExtensionAssociation(request), context);
+    } );
 }
 
 GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVersion(const GetHostedConfigurationVersionRequest& request) const
@@ -682,12 +830,10 @@ GetHostedConfigurationVersionOutcomeCallable AppConfigClient::GetHostedConfigura
 
 void AppConfigClient::GetHostedConfigurationVersionAsync(const GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHostedConfigurationVersionAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::GetHostedConfigurationVersionAsyncHelper(const GetHostedConfigurationVersionRequest& request, const GetHostedConfigurationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetHostedConfigurationVersion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetHostedConfigurationVersion(request), context);
+    } );
 }
 
 ListApplicationsOutcome AppConfigClient::ListApplications(const ListApplicationsRequest& request) const
@@ -707,12 +853,10 @@ ListApplicationsOutcomeCallable AppConfigClient::ListApplicationsCallable(const 
 
 void AppConfigClient::ListApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationsAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::ListApplicationsAsyncHelper(const ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListApplications(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListApplications(request), context);
+    } );
 }
 
 ListConfigurationProfilesOutcome AppConfigClient::ListConfigurationProfiles(const ListConfigurationProfilesRequest& request) const
@@ -739,12 +883,10 @@ ListConfigurationProfilesOutcomeCallable AppConfigClient::ListConfigurationProfi
 
 void AppConfigClient::ListConfigurationProfilesAsync(const ListConfigurationProfilesRequest& request, const ListConfigurationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListConfigurationProfilesAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::ListConfigurationProfilesAsyncHelper(const ListConfigurationProfilesRequest& request, const ListConfigurationProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListConfigurationProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListConfigurationProfiles(request), context);
+    } );
 }
 
 ListDeploymentStrategiesOutcome AppConfigClient::ListDeploymentStrategies(const ListDeploymentStrategiesRequest& request) const
@@ -764,12 +906,10 @@ ListDeploymentStrategiesOutcomeCallable AppConfigClient::ListDeploymentStrategie
 
 void AppConfigClient::ListDeploymentStrategiesAsync(const ListDeploymentStrategiesRequest& request, const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentStrategiesAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::ListDeploymentStrategiesAsyncHelper(const ListDeploymentStrategiesRequest& request, const ListDeploymentStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDeploymentStrategies(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDeploymentStrategies(request), context);
+    } );
 }
 
 ListDeploymentsOutcome AppConfigClient::ListDeployments(const ListDeploymentsRequest& request) const
@@ -803,12 +943,10 @@ ListDeploymentsOutcomeCallable AppConfigClient::ListDeploymentsCallable(const Li
 
 void AppConfigClient::ListDeploymentsAsync(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentsAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::ListDeploymentsAsyncHelper(const ListDeploymentsRequest& request, const ListDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDeployments(request), context);
+    } );
 }
 
 ListEnvironmentsOutcome AppConfigClient::ListEnvironments(const ListEnvironmentsRequest& request) const
@@ -835,12 +973,56 @@ ListEnvironmentsOutcomeCallable AppConfigClient::ListEnvironmentsCallable(const 
 
 void AppConfigClient::ListEnvironmentsAsync(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEnvironmentsAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEnvironments(request), context);
+    } );
 }
 
-void AppConfigClient::ListEnvironmentsAsyncHelper(const ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+ListExtensionAssociationsOutcome AppConfigClient::ListExtensionAssociations(const ListExtensionAssociationsRequest& request) const
 {
-  handler(this, request, ListEnvironments(request), context);
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensionassociations");
+  return ListExtensionAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExtensionAssociationsOutcomeCallable AppConfigClient::ListExtensionAssociationsCallable(const ListExtensionAssociationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExtensionAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExtensionAssociations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::ListExtensionAssociationsAsync(const ListExtensionAssociationsRequest& request, const ListExtensionAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListExtensionAssociations(request), context);
+    } );
+}
+
+ListExtensionsOutcome AppConfigClient::ListExtensions(const ListExtensionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensions");
+  return ListExtensionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExtensionsOutcomeCallable AppConfigClient::ListExtensionsCallable(const ListExtensionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExtensionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExtensions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::ListExtensionsAsync(const ListExtensionsRequest& request, const ListExtensionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListExtensions(request), context);
+    } );
 }
 
 ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationVersions(const ListHostedConfigurationVersionsRequest& request) const
@@ -874,12 +1056,10 @@ ListHostedConfigurationVersionsOutcomeCallable AppConfigClient::ListHostedConfig
 
 void AppConfigClient::ListHostedConfigurationVersionsAsync(const ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHostedConfigurationVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::ListHostedConfigurationVersionsAsyncHelper(const ListHostedConfigurationVersionsRequest& request, const ListHostedConfigurationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListHostedConfigurationVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHostedConfigurationVersions(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -905,12 +1085,10 @@ ListTagsForResourceOutcomeCallable AppConfigClient::ListTagsForResourceCallable(
 
 void AppConfigClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 StartDeploymentOutcome AppConfigClient::StartDeployment(const StartDeploymentRequest& request) const
@@ -944,12 +1122,10 @@ StartDeploymentOutcomeCallable AppConfigClient::StartDeploymentCallable(const St
 
 void AppConfigClient::StartDeploymentAsync(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::StartDeploymentAsyncHelper(const StartDeploymentRequest& request, const StartDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartDeployment(request), context);
+    } );
 }
 
 StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentRequest& request) const
@@ -989,12 +1165,10 @@ StopDeploymentOutcomeCallable AppConfigClient::StopDeploymentCallable(const Stop
 
 void AppConfigClient::StopDeploymentAsync(const StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::StopDeploymentAsyncHelper(const StopDeploymentRequest& request, const StopDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopDeployment(request), context);
+    } );
 }
 
 TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& request) const
@@ -1020,12 +1194,10 @@ TagResourceOutcomeCallable AppConfigClient::TagResourceCallable(const TagResourc
 
 void AppConfigClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome AppConfigClient::UntagResource(const UntagResourceRequest& request) const
@@ -1056,12 +1228,10 @@ UntagResourceOutcomeCallable AppConfigClient::UntagResourceCallable(const UntagR
 
 void AppConfigClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateApplicationOutcome AppConfigClient::UpdateApplication(const UpdateApplicationRequest& request) const
@@ -1087,12 +1257,10 @@ UpdateApplicationOutcomeCallable AppConfigClient::UpdateApplicationCallable(cons
 
 void AppConfigClient::UpdateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateApplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateApplication(request), context);
+    } );
 }
 
 UpdateConfigurationProfileOutcome AppConfigClient::UpdateConfigurationProfile(const UpdateConfigurationProfileRequest& request) const
@@ -1125,12 +1293,10 @@ UpdateConfigurationProfileOutcomeCallable AppConfigClient::UpdateConfigurationPr
 
 void AppConfigClient::UpdateConfigurationProfileAsync(const UpdateConfigurationProfileRequest& request, const UpdateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateConfigurationProfileAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::UpdateConfigurationProfileAsyncHelper(const UpdateConfigurationProfileRequest& request, const UpdateConfigurationProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateConfigurationProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateConfigurationProfile(request), context);
+    } );
 }
 
 UpdateDeploymentStrategyOutcome AppConfigClient::UpdateDeploymentStrategy(const UpdateDeploymentStrategyRequest& request) const
@@ -1156,12 +1322,10 @@ UpdateDeploymentStrategyOutcomeCallable AppConfigClient::UpdateDeploymentStrateg
 
 void AppConfigClient::UpdateDeploymentStrategyAsync(const UpdateDeploymentStrategyRequest& request, const UpdateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDeploymentStrategyAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::UpdateDeploymentStrategyAsyncHelper(const UpdateDeploymentStrategyRequest& request, const UpdateDeploymentStrategyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDeploymentStrategy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDeploymentStrategy(request), context);
+    } );
 }
 
 UpdateEnvironmentOutcome AppConfigClient::UpdateEnvironment(const UpdateEnvironmentRequest& request) const
@@ -1194,12 +1358,68 @@ UpdateEnvironmentOutcomeCallable AppConfigClient::UpdateEnvironmentCallable(cons
 
 void AppConfigClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEnvironmentAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateEnvironment(request), context);
+    } );
 }
 
-void AppConfigClient::UpdateEnvironmentAsyncHelper(const UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+UpdateExtensionOutcome AppConfigClient::UpdateExtension(const UpdateExtensionRequest& request) const
 {
-  handler(this, request, UpdateEnvironment(request), context);
+  if (!request.ExtensionIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateExtension", "Required field: ExtensionIdentifier, is not set");
+    return UpdateExtensionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtensionIdentifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensions/");
+  uri.AddPathSegment(request.GetExtensionIdentifier());
+  return UpdateExtensionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateExtensionOutcomeCallable AppConfigClient::UpdateExtensionCallable(const UpdateExtensionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateExtensionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExtension(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::UpdateExtensionAsync(const UpdateExtensionRequest& request, const UpdateExtensionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateExtension(request), context);
+    } );
+}
+
+UpdateExtensionAssociationOutcome AppConfigClient::UpdateExtensionAssociation(const UpdateExtensionAssociationRequest& request) const
+{
+  if (!request.ExtensionAssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateExtensionAssociation", "Required field: ExtensionAssociationId, is not set");
+    return UpdateExtensionAssociationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExtensionAssociationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/extensionassociations/");
+  uri.AddPathSegment(request.GetExtensionAssociationId());
+  return UpdateExtensionAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateExtensionAssociationOutcomeCallable AppConfigClient::UpdateExtensionAssociationCallable(const UpdateExtensionAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateExtensionAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExtensionAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppConfigClient::UpdateExtensionAssociationAsync(const UpdateExtensionAssociationRequest& request, const UpdateExtensionAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateExtensionAssociation(request), context);
+    } );
 }
 
 ValidateConfigurationOutcome AppConfigClient::ValidateConfiguration(const ValidateConfigurationRequest& request) const
@@ -1238,11 +1458,9 @@ ValidateConfigurationOutcomeCallable AppConfigClient::ValidateConfigurationCalla
 
 void AppConfigClient::ValidateConfigurationAsync(const ValidateConfigurationRequest& request, const ValidateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ValidateConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void AppConfigClient::ValidateConfigurationAsyncHelper(const ValidateConfigurationRequest& request, const ValidateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ValidateConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ValidateConfiguration(request), context);
+    } );
 }
 

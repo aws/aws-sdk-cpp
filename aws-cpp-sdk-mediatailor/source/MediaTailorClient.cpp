@@ -74,33 +74,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "mediatailor";
 static const char* ALLOCATION_TAG = "MediaTailorClient";
 
-
 MediaTailorClient::MediaTailorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<MediaTailorErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MediaTailorErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-MediaTailorClient::MediaTailorClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+MediaTailorClient::MediaTailorClient(const AWSCredentials& credentials,
+                                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<MediaTailorErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MediaTailorErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 MediaTailorClient::MediaTailorClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<MediaTailorErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MediaTailorErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -112,7 +118,7 @@ MediaTailorClient::~MediaTailorClient()
 
 void MediaTailorClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("MediaTailor");
+  AWSClient::SetServiceClientName("MediaTailor");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -153,12 +159,10 @@ ConfigureLogsForPlaybackConfigurationOutcomeCallable MediaTailorClient::Configur
 
 void MediaTailorClient::ConfigureLogsForPlaybackConfigurationAsync(const ConfigureLogsForPlaybackConfigurationRequest& request, const ConfigureLogsForPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ConfigureLogsForPlaybackConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::ConfigureLogsForPlaybackConfigurationAsyncHelper(const ConfigureLogsForPlaybackConfigurationRequest& request, const ConfigureLogsForPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ConfigureLogsForPlaybackConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ConfigureLogsForPlaybackConfiguration(request), context);
+    } );
 }
 
 CreateChannelOutcome MediaTailorClient::CreateChannel(const CreateChannelRequest& request) const
@@ -184,12 +188,10 @@ CreateChannelOutcomeCallable MediaTailorClient::CreateChannelCallable(const Crea
 
 void MediaTailorClient::CreateChannelAsync(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateChannelAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::CreateChannelAsyncHelper(const CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateChannel(request), context);
+    } );
 }
 
 CreateLiveSourceOutcome MediaTailorClient::CreateLiveSource(const CreateLiveSourceRequest& request) const
@@ -222,12 +224,10 @@ CreateLiveSourceOutcomeCallable MediaTailorClient::CreateLiveSourceCallable(cons
 
 void MediaTailorClient::CreateLiveSourceAsync(const CreateLiveSourceRequest& request, const CreateLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLiveSourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::CreateLiveSourceAsyncHelper(const CreateLiveSourceRequest& request, const CreateLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateLiveSource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateLiveSource(request), context);
+    } );
 }
 
 CreatePrefetchScheduleOutcome MediaTailorClient::CreatePrefetchSchedule(const CreatePrefetchScheduleRequest& request) const
@@ -259,12 +259,10 @@ CreatePrefetchScheduleOutcomeCallable MediaTailorClient::CreatePrefetchScheduleC
 
 void MediaTailorClient::CreatePrefetchScheduleAsync(const CreatePrefetchScheduleRequest& request, const CreatePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePrefetchScheduleAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::CreatePrefetchScheduleAsyncHelper(const CreatePrefetchScheduleRequest& request, const CreatePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePrefetchSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreatePrefetchSchedule(request), context);
+    } );
 }
 
 CreateProgramOutcome MediaTailorClient::CreateProgram(const CreateProgramRequest& request) const
@@ -297,12 +295,10 @@ CreateProgramOutcomeCallable MediaTailorClient::CreateProgramCallable(const Crea
 
 void MediaTailorClient::CreateProgramAsync(const CreateProgramRequest& request, const CreateProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateProgramAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::CreateProgramAsyncHelper(const CreateProgramRequest& request, const CreateProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateProgram(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateProgram(request), context);
+    } );
 }
 
 CreateSourceLocationOutcome MediaTailorClient::CreateSourceLocation(const CreateSourceLocationRequest& request) const
@@ -328,12 +324,10 @@ CreateSourceLocationOutcomeCallable MediaTailorClient::CreateSourceLocationCalla
 
 void MediaTailorClient::CreateSourceLocationAsync(const CreateSourceLocationRequest& request, const CreateSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSourceLocationAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::CreateSourceLocationAsyncHelper(const CreateSourceLocationRequest& request, const CreateSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateSourceLocation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateSourceLocation(request), context);
+    } );
 }
 
 CreateVodSourceOutcome MediaTailorClient::CreateVodSource(const CreateVodSourceRequest& request) const
@@ -366,12 +360,10 @@ CreateVodSourceOutcomeCallable MediaTailorClient::CreateVodSourceCallable(const 
 
 void MediaTailorClient::CreateVodSourceAsync(const CreateVodSourceRequest& request, const CreateVodSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVodSourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::CreateVodSourceAsyncHelper(const CreateVodSourceRequest& request, const CreateVodSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateVodSource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVodSource(request), context);
+    } );
 }
 
 DeleteChannelOutcome MediaTailorClient::DeleteChannel(const DeleteChannelRequest& request) const
@@ -397,12 +389,10 @@ DeleteChannelOutcomeCallable MediaTailorClient::DeleteChannelCallable(const Dele
 
 void MediaTailorClient::DeleteChannelAsync(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::DeleteChannelAsyncHelper(const DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteChannel(request), context);
+    } );
 }
 
 DeleteChannelPolicyOutcome MediaTailorClient::DeleteChannelPolicy(const DeleteChannelPolicyRequest& request) const
@@ -429,12 +419,10 @@ DeleteChannelPolicyOutcomeCallable MediaTailorClient::DeleteChannelPolicyCallabl
 
 void MediaTailorClient::DeleteChannelPolicyAsync(const DeleteChannelPolicyRequest& request, const DeleteChannelPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteChannelPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::DeleteChannelPolicyAsyncHelper(const DeleteChannelPolicyRequest& request, const DeleteChannelPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteChannelPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteChannelPolicy(request), context);
+    } );
 }
 
 DeleteLiveSourceOutcome MediaTailorClient::DeleteLiveSource(const DeleteLiveSourceRequest& request) const
@@ -467,12 +455,10 @@ DeleteLiveSourceOutcomeCallable MediaTailorClient::DeleteLiveSourceCallable(cons
 
 void MediaTailorClient::DeleteLiveSourceAsync(const DeleteLiveSourceRequest& request, const DeleteLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLiveSourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::DeleteLiveSourceAsyncHelper(const DeleteLiveSourceRequest& request, const DeleteLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteLiveSource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLiveSource(request), context);
+    } );
 }
 
 DeletePlaybackConfigurationOutcome MediaTailorClient::DeletePlaybackConfiguration(const DeletePlaybackConfigurationRequest& request) const
@@ -498,12 +484,10 @@ DeletePlaybackConfigurationOutcomeCallable MediaTailorClient::DeletePlaybackConf
 
 void MediaTailorClient::DeletePlaybackConfigurationAsync(const DeletePlaybackConfigurationRequest& request, const DeletePlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePlaybackConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::DeletePlaybackConfigurationAsyncHelper(const DeletePlaybackConfigurationRequest& request, const DeletePlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePlaybackConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePlaybackConfiguration(request), context);
+    } );
 }
 
 DeletePrefetchScheduleOutcome MediaTailorClient::DeletePrefetchSchedule(const DeletePrefetchScheduleRequest& request) const
@@ -535,12 +519,10 @@ DeletePrefetchScheduleOutcomeCallable MediaTailorClient::DeletePrefetchScheduleC
 
 void MediaTailorClient::DeletePrefetchScheduleAsync(const DeletePrefetchScheduleRequest& request, const DeletePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePrefetchScheduleAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::DeletePrefetchScheduleAsyncHelper(const DeletePrefetchScheduleRequest& request, const DeletePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePrefetchSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePrefetchSchedule(request), context);
+    } );
 }
 
 DeleteProgramOutcome MediaTailorClient::DeleteProgram(const DeleteProgramRequest& request) const
@@ -573,12 +555,10 @@ DeleteProgramOutcomeCallable MediaTailorClient::DeleteProgramCallable(const Dele
 
 void MediaTailorClient::DeleteProgramAsync(const DeleteProgramRequest& request, const DeleteProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteProgramAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::DeleteProgramAsyncHelper(const DeleteProgramRequest& request, const DeleteProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteProgram(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteProgram(request), context);
+    } );
 }
 
 DeleteSourceLocationOutcome MediaTailorClient::DeleteSourceLocation(const DeleteSourceLocationRequest& request) const
@@ -604,12 +584,10 @@ DeleteSourceLocationOutcomeCallable MediaTailorClient::DeleteSourceLocationCalla
 
 void MediaTailorClient::DeleteSourceLocationAsync(const DeleteSourceLocationRequest& request, const DeleteSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSourceLocationAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::DeleteSourceLocationAsyncHelper(const DeleteSourceLocationRequest& request, const DeleteSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteSourceLocation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSourceLocation(request), context);
+    } );
 }
 
 DeleteVodSourceOutcome MediaTailorClient::DeleteVodSource(const DeleteVodSourceRequest& request) const
@@ -642,12 +620,10 @@ DeleteVodSourceOutcomeCallable MediaTailorClient::DeleteVodSourceCallable(const 
 
 void MediaTailorClient::DeleteVodSourceAsync(const DeleteVodSourceRequest& request, const DeleteVodSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVodSourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::DeleteVodSourceAsyncHelper(const DeleteVodSourceRequest& request, const DeleteVodSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteVodSource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVodSource(request), context);
+    } );
 }
 
 DescribeChannelOutcome MediaTailorClient::DescribeChannel(const DescribeChannelRequest& request) const
@@ -673,12 +649,10 @@ DescribeChannelOutcomeCallable MediaTailorClient::DescribeChannelCallable(const 
 
 void MediaTailorClient::DescribeChannelAsync(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeChannelAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::DescribeChannelAsyncHelper(const DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeChannel(request), context);
+    } );
 }
 
 DescribeLiveSourceOutcome MediaTailorClient::DescribeLiveSource(const DescribeLiveSourceRequest& request) const
@@ -711,12 +685,10 @@ DescribeLiveSourceOutcomeCallable MediaTailorClient::DescribeLiveSourceCallable(
 
 void MediaTailorClient::DescribeLiveSourceAsync(const DescribeLiveSourceRequest& request, const DescribeLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLiveSourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::DescribeLiveSourceAsyncHelper(const DescribeLiveSourceRequest& request, const DescribeLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeLiveSource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeLiveSource(request), context);
+    } );
 }
 
 DescribeProgramOutcome MediaTailorClient::DescribeProgram(const DescribeProgramRequest& request) const
@@ -749,12 +721,10 @@ DescribeProgramOutcomeCallable MediaTailorClient::DescribeProgramCallable(const 
 
 void MediaTailorClient::DescribeProgramAsync(const DescribeProgramRequest& request, const DescribeProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeProgramAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::DescribeProgramAsyncHelper(const DescribeProgramRequest& request, const DescribeProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeProgram(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeProgram(request), context);
+    } );
 }
 
 DescribeSourceLocationOutcome MediaTailorClient::DescribeSourceLocation(const DescribeSourceLocationRequest& request) const
@@ -780,12 +750,10 @@ DescribeSourceLocationOutcomeCallable MediaTailorClient::DescribeSourceLocationC
 
 void MediaTailorClient::DescribeSourceLocationAsync(const DescribeSourceLocationRequest& request, const DescribeSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeSourceLocationAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::DescribeSourceLocationAsyncHelper(const DescribeSourceLocationRequest& request, const DescribeSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeSourceLocation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeSourceLocation(request), context);
+    } );
 }
 
 DescribeVodSourceOutcome MediaTailorClient::DescribeVodSource(const DescribeVodSourceRequest& request) const
@@ -818,12 +786,10 @@ DescribeVodSourceOutcomeCallable MediaTailorClient::DescribeVodSourceCallable(co
 
 void MediaTailorClient::DescribeVodSourceAsync(const DescribeVodSourceRequest& request, const DescribeVodSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVodSourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::DescribeVodSourceAsyncHelper(const DescribeVodSourceRequest& request, const DescribeVodSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeVodSource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVodSource(request), context);
+    } );
 }
 
 GetChannelPolicyOutcome MediaTailorClient::GetChannelPolicy(const GetChannelPolicyRequest& request) const
@@ -850,12 +816,10 @@ GetChannelPolicyOutcomeCallable MediaTailorClient::GetChannelPolicyCallable(cons
 
 void MediaTailorClient::GetChannelPolicyAsync(const GetChannelPolicyRequest& request, const GetChannelPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChannelPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::GetChannelPolicyAsyncHelper(const GetChannelPolicyRequest& request, const GetChannelPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetChannelPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetChannelPolicy(request), context);
+    } );
 }
 
 GetChannelScheduleOutcome MediaTailorClient::GetChannelSchedule(const GetChannelScheduleRequest& request) const
@@ -882,12 +846,10 @@ GetChannelScheduleOutcomeCallable MediaTailorClient::GetChannelScheduleCallable(
 
 void MediaTailorClient::GetChannelScheduleAsync(const GetChannelScheduleRequest& request, const GetChannelScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetChannelScheduleAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::GetChannelScheduleAsyncHelper(const GetChannelScheduleRequest& request, const GetChannelScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetChannelSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetChannelSchedule(request), context);
+    } );
 }
 
 GetPlaybackConfigurationOutcome MediaTailorClient::GetPlaybackConfiguration(const GetPlaybackConfigurationRequest& request) const
@@ -913,12 +875,10 @@ GetPlaybackConfigurationOutcomeCallable MediaTailorClient::GetPlaybackConfigurat
 
 void MediaTailorClient::GetPlaybackConfigurationAsync(const GetPlaybackConfigurationRequest& request, const GetPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPlaybackConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::GetPlaybackConfigurationAsyncHelper(const GetPlaybackConfigurationRequest& request, const GetPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPlaybackConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPlaybackConfiguration(request), context);
+    } );
 }
 
 GetPrefetchScheduleOutcome MediaTailorClient::GetPrefetchSchedule(const GetPrefetchScheduleRequest& request) const
@@ -950,12 +910,10 @@ GetPrefetchScheduleOutcomeCallable MediaTailorClient::GetPrefetchScheduleCallabl
 
 void MediaTailorClient::GetPrefetchScheduleAsync(const GetPrefetchScheduleRequest& request, const GetPrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPrefetchScheduleAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::GetPrefetchScheduleAsyncHelper(const GetPrefetchScheduleRequest& request, const GetPrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPrefetchSchedule(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPrefetchSchedule(request), context);
+    } );
 }
 
 ListAlertsOutcome MediaTailorClient::ListAlerts(const ListAlertsRequest& request) const
@@ -980,12 +938,10 @@ ListAlertsOutcomeCallable MediaTailorClient::ListAlertsCallable(const ListAlerts
 
 void MediaTailorClient::ListAlertsAsync(const ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAlertsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::ListAlertsAsyncHelper(const ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAlerts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAlerts(request), context);
+    } );
 }
 
 ListChannelsOutcome MediaTailorClient::ListChannels(const ListChannelsRequest& request) const
@@ -1005,12 +961,10 @@ ListChannelsOutcomeCallable MediaTailorClient::ListChannelsCallable(const ListCh
 
 void MediaTailorClient::ListChannelsAsync(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListChannelsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::ListChannelsAsyncHelper(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListChannels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListChannels(request), context);
+    } );
 }
 
 ListLiveSourcesOutcome MediaTailorClient::ListLiveSources(const ListLiveSourcesRequest& request) const
@@ -1037,12 +991,10 @@ ListLiveSourcesOutcomeCallable MediaTailorClient::ListLiveSourcesCallable(const 
 
 void MediaTailorClient::ListLiveSourcesAsync(const ListLiveSourcesRequest& request, const ListLiveSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLiveSourcesAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::ListLiveSourcesAsyncHelper(const ListLiveSourcesRequest& request, const ListLiveSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListLiveSources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLiveSources(request), context);
+    } );
 }
 
 ListPlaybackConfigurationsOutcome MediaTailorClient::ListPlaybackConfigurations(const ListPlaybackConfigurationsRequest& request) const
@@ -1062,12 +1014,10 @@ ListPlaybackConfigurationsOutcomeCallable MediaTailorClient::ListPlaybackConfigu
 
 void MediaTailorClient::ListPlaybackConfigurationsAsync(const ListPlaybackConfigurationsRequest& request, const ListPlaybackConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPlaybackConfigurationsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::ListPlaybackConfigurationsAsyncHelper(const ListPlaybackConfigurationsRequest& request, const ListPlaybackConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPlaybackConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPlaybackConfigurations(request), context);
+    } );
 }
 
 ListPrefetchSchedulesOutcome MediaTailorClient::ListPrefetchSchedules(const ListPrefetchSchedulesRequest& request) const
@@ -1093,12 +1043,10 @@ ListPrefetchSchedulesOutcomeCallable MediaTailorClient::ListPrefetchSchedulesCal
 
 void MediaTailorClient::ListPrefetchSchedulesAsync(const ListPrefetchSchedulesRequest& request, const ListPrefetchSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPrefetchSchedulesAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::ListPrefetchSchedulesAsyncHelper(const ListPrefetchSchedulesRequest& request, const ListPrefetchSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPrefetchSchedules(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPrefetchSchedules(request), context);
+    } );
 }
 
 ListSourceLocationsOutcome MediaTailorClient::ListSourceLocations(const ListSourceLocationsRequest& request) const
@@ -1118,12 +1066,10 @@ ListSourceLocationsOutcomeCallable MediaTailorClient::ListSourceLocationsCallabl
 
 void MediaTailorClient::ListSourceLocationsAsync(const ListSourceLocationsRequest& request, const ListSourceLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSourceLocationsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::ListSourceLocationsAsyncHelper(const ListSourceLocationsRequest& request, const ListSourceLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSourceLocations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSourceLocations(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome MediaTailorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1149,12 +1095,10 @@ ListTagsForResourceOutcomeCallable MediaTailorClient::ListTagsForResourceCallabl
 
 void MediaTailorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListVodSourcesOutcome MediaTailorClient::ListVodSources(const ListVodSourcesRequest& request) const
@@ -1181,12 +1125,10 @@ ListVodSourcesOutcomeCallable MediaTailorClient::ListVodSourcesCallable(const Li
 
 void MediaTailorClient::ListVodSourcesAsync(const ListVodSourcesRequest& request, const ListVodSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVodSourcesAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::ListVodSourcesAsyncHelper(const ListVodSourcesRequest& request, const ListVodSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListVodSources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListVodSources(request), context);
+    } );
 }
 
 PutChannelPolicyOutcome MediaTailorClient::PutChannelPolicy(const PutChannelPolicyRequest& request) const
@@ -1213,12 +1155,10 @@ PutChannelPolicyOutcomeCallable MediaTailorClient::PutChannelPolicyCallable(cons
 
 void MediaTailorClient::PutChannelPolicyAsync(const PutChannelPolicyRequest& request, const PutChannelPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutChannelPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::PutChannelPolicyAsyncHelper(const PutChannelPolicyRequest& request, const PutChannelPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutChannelPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutChannelPolicy(request), context);
+    } );
 }
 
 PutPlaybackConfigurationOutcome MediaTailorClient::PutPlaybackConfiguration(const PutPlaybackConfigurationRequest& request) const
@@ -1238,12 +1178,10 @@ PutPlaybackConfigurationOutcomeCallable MediaTailorClient::PutPlaybackConfigurat
 
 void MediaTailorClient::PutPlaybackConfigurationAsync(const PutPlaybackConfigurationRequest& request, const PutPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPlaybackConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::PutPlaybackConfigurationAsyncHelper(const PutPlaybackConfigurationRequest& request, const PutPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutPlaybackConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutPlaybackConfiguration(request), context);
+    } );
 }
 
 StartChannelOutcome MediaTailorClient::StartChannel(const StartChannelRequest& request) const
@@ -1270,12 +1208,10 @@ StartChannelOutcomeCallable MediaTailorClient::StartChannelCallable(const StartC
 
 void MediaTailorClient::StartChannelAsync(const StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartChannelAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::StartChannelAsyncHelper(const StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartChannel(request), context);
+    } );
 }
 
 StopChannelOutcome MediaTailorClient::StopChannel(const StopChannelRequest& request) const
@@ -1302,12 +1238,10 @@ StopChannelOutcomeCallable MediaTailorClient::StopChannelCallable(const StopChan
 
 void MediaTailorClient::StopChannelAsync(const StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopChannelAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::StopChannelAsyncHelper(const StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopChannel(request), context);
+    } );
 }
 
 TagResourceOutcome MediaTailorClient::TagResource(const TagResourceRequest& request) const
@@ -1333,12 +1267,10 @@ TagResourceOutcomeCallable MediaTailorClient::TagResourceCallable(const TagResou
 
 void MediaTailorClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome MediaTailorClient::UntagResource(const UntagResourceRequest& request) const
@@ -1369,12 +1301,10 @@ UntagResourceOutcomeCallable MediaTailorClient::UntagResourceCallable(const Unta
 
 void MediaTailorClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateChannelOutcome MediaTailorClient::UpdateChannel(const UpdateChannelRequest& request) const
@@ -1400,12 +1330,10 @@ UpdateChannelOutcomeCallable MediaTailorClient::UpdateChannelCallable(const Upda
 
 void MediaTailorClient::UpdateChannelAsync(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateChannelAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::UpdateChannelAsyncHelper(const UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateChannel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateChannel(request), context);
+    } );
 }
 
 UpdateLiveSourceOutcome MediaTailorClient::UpdateLiveSource(const UpdateLiveSourceRequest& request) const
@@ -1438,12 +1366,10 @@ UpdateLiveSourceOutcomeCallable MediaTailorClient::UpdateLiveSourceCallable(cons
 
 void MediaTailorClient::UpdateLiveSourceAsync(const UpdateLiveSourceRequest& request, const UpdateLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLiveSourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::UpdateLiveSourceAsyncHelper(const UpdateLiveSourceRequest& request, const UpdateLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateLiveSource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateLiveSource(request), context);
+    } );
 }
 
 UpdateSourceLocationOutcome MediaTailorClient::UpdateSourceLocation(const UpdateSourceLocationRequest& request) const
@@ -1469,12 +1395,10 @@ UpdateSourceLocationOutcomeCallable MediaTailorClient::UpdateSourceLocationCalla
 
 void MediaTailorClient::UpdateSourceLocationAsync(const UpdateSourceLocationRequest& request, const UpdateSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSourceLocationAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::UpdateSourceLocationAsyncHelper(const UpdateSourceLocationRequest& request, const UpdateSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateSourceLocation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSourceLocation(request), context);
+    } );
 }
 
 UpdateVodSourceOutcome MediaTailorClient::UpdateVodSource(const UpdateVodSourceRequest& request) const
@@ -1507,11 +1431,9 @@ UpdateVodSourceOutcomeCallable MediaTailorClient::UpdateVodSourceCallable(const 
 
 void MediaTailorClient::UpdateVodSourceAsync(const UpdateVodSourceRequest& request, const UpdateVodSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVodSourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaTailorClient::UpdateVodSourceAsyncHelper(const UpdateVodSourceRequest& request, const UpdateVodSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateVodSource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateVodSource(request), context);
+    } );
 }
 

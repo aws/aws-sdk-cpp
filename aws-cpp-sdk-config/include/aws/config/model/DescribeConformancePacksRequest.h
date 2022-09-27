@@ -171,13 +171,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_conformancePackNames;
-    bool m_conformancePackNamesHasBeenSet;
+    bool m_conformancePackNamesHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -378,22 +378,22 @@ namespace Model
   private:
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_vaultName;
-    bool m_vaultNameHasBeenSet;
+    bool m_vaultNameHasBeenSet = false;
 
     Aws::String m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_statuscode;
-    bool m_statuscodeHasBeenSet;
+    bool m_statuscodeHasBeenSet = false;
 
     Aws::String m_completed;
-    bool m_completedHasBeenSet;
+    bool m_completedHasBeenSet = false;
   };
 
 } // namespace Model

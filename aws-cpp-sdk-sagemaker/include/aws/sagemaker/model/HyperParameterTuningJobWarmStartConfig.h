@@ -291,10 +291,10 @@ namespace Model
   private:
 
     Aws::Vector<ParentHyperParameterTuningJob> m_parentHyperParameterTuningJobs;
-    bool m_parentHyperParameterTuningJobsHasBeenSet;
+    bool m_parentHyperParameterTuningJobsHasBeenSet = false;
 
     HyperParameterTuningJobWarmStartType m_warmStartType;
-    bool m_warmStartTypeHasBeenSet;
+    bool m_warmStartTypeHasBeenSet = false;
   };
 
 } // namespace Model

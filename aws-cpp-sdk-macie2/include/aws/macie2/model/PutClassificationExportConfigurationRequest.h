@@ -71,7 +71,7 @@ namespace Model
   private:
 
     ClassificationExportConfiguration m_configuration;
-    bool m_configurationHasBeenSet;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

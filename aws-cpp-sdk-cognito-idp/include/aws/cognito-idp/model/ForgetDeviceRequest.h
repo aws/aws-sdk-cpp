@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::String m_deviceKey;
-    bool m_deviceKeyHasBeenSet;
+    bool m_deviceKeyHasBeenSet = false;
   };
 
 } // namespace Model

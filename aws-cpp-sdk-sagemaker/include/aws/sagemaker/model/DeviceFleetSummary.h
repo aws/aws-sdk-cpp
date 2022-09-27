@@ -184,16 +184,16 @@ namespace Model
   private:
 
     Aws::String m_deviceFleetArn;
-    bool m_deviceFleetArnHasBeenSet;
+    bool m_deviceFleetArnHasBeenSet = false;
 
     Aws::String m_deviceFleetName;
-    bool m_deviceFleetNameHasBeenSet;
+    bool m_deviceFleetNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

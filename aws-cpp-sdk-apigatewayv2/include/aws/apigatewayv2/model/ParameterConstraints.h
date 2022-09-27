@@ -59,7 +59,7 @@ namespace Model
   private:
 
     bool m_required;
-    bool m_requiredHasBeenSet;
+    bool m_requiredHasBeenSet = false;
   };
 
 } // namespace Model

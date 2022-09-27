@@ -563,28 +563,28 @@ namespace Model
   private:
 
     Aws::String m_outputLocation;
-    bool m_outputLocationHasBeenSet;
+    bool m_outputLocationHasBeenSet = false;
 
     bool m_removeOutputLocation;
-    bool m_removeOutputLocationHasBeenSet;
+    bool m_removeOutputLocationHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
 
     bool m_removeEncryptionConfiguration;
-    bool m_removeEncryptionConfigurationHasBeenSet;
+    bool m_removeEncryptionConfigurationHasBeenSet = false;
 
     Aws::String m_expectedBucketOwner;
-    bool m_expectedBucketOwnerHasBeenSet;
+    bool m_expectedBucketOwnerHasBeenSet = false;
 
     bool m_removeExpectedBucketOwner;
-    bool m_removeExpectedBucketOwnerHasBeenSet;
+    bool m_removeExpectedBucketOwnerHasBeenSet = false;
 
     AclConfiguration m_aclConfiguration;
-    bool m_aclConfigurationHasBeenSet;
+    bool m_aclConfigurationHasBeenSet = false;
 
     bool m_removeAclConfiguration;
-    bool m_removeAclConfigurationHasBeenSet;
+    bool m_removeAclConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

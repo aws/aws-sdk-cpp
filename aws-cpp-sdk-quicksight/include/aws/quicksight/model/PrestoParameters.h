@@ -142,13 +142,13 @@ namespace Model
   private:
 
     Aws::String m_host;
-    bool m_hostHasBeenSet;
+    bool m_hostHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_catalog;
-    bool m_catalogHasBeenSet;
+    bool m_catalogHasBeenSet = false;
   };
 
 } // namespace Model

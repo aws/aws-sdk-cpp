@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_worlds;
-    bool m_worldsHasBeenSet;
+    bool m_worldsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -86,13 +86,13 @@ namespace Model
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family. If you know the group name, you can view the SID values by
-     * running the following command using Windows PowerShell.</p> <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
-     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
-     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-     * <p>The regex used to validate this parameter is a string of characters
+     * S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If
+     * you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regular expression used to validate this parameter is a string of characters
      * consisting of uppercase and lowercase alphanumeric characters with no spaces.
      * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
@@ -101,13 +101,13 @@ namespace Model
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family. If you know the group name, you can view the SID values by
-     * running the following command using Windows PowerShell.</p> <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
-     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
-     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-     * <p>The regex used to validate this parameter is a string of characters
+     * S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If
+     * you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regular expression used to validate this parameter is a string of characters
      * consisting of uppercase and lowercase alphanumeric characters with no spaces.
      * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
@@ -116,13 +116,13 @@ namespace Model
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family. If you know the group name, you can view the SID values by
-     * running the following command using Windows PowerShell.</p> <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
-     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
-     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-     * <p>The regex used to validate this parameter is a string of characters
+     * S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If
+     * you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regular expression used to validate this parameter is a string of characters
      * consisting of uppercase and lowercase alphanumeric characters with no spaces.
      * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
@@ -131,13 +131,13 @@ namespace Model
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family. If you know the group name, you can view the SID values by
-     * running the following command using Windows PowerShell.</p> <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
-     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
-     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-     * <p>The regex used to validate this parameter is a string of characters
+     * S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If
+     * you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regular expression used to validate this parameter is a string of characters
      * consisting of uppercase and lowercase alphanumeric characters with no spaces.
      * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
@@ -146,13 +146,13 @@ namespace Model
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family. If you know the group name, you can view the SID values by
-     * running the following command using Windows PowerShell.</p> <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
-     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
-     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-     * <p>The regex used to validate this parameter is a string of characters
+     * S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If
+     * you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regular expression used to validate this parameter is a string of characters
      * consisting of uppercase and lowercase alphanumeric characters with no spaces.
      * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
@@ -161,13 +161,13 @@ namespace Model
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family. If you know the group name, you can view the SID values by
-     * running the following command using Windows PowerShell.</p> <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
-     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
-     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-     * <p>The regex used to validate this parameter is a string of characters
+     * S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If
+     * you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regular expression used to validate this parameter is a string of characters
      * consisting of uppercase and lowercase alphanumeric characters with no spaces.
      * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
@@ -176,13 +176,13 @@ namespace Model
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family. If you know the group name, you can view the SID values by
-     * running the following command using Windows PowerShell.</p> <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
-     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
-     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-     * <p>The regex used to validate this parameter is a string of characters
+     * S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If
+     * you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regular expression used to validate this parameter is a string of characters
      * consisting of uppercase and lowercase alphanumeric characters with no spaces.
      * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
@@ -191,13 +191,13 @@ namespace Model
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
-     * Transfer Family. If you know the group name, you can view the SID values by
-     * running the following command using Windows PowerShell.</p> <p>
-     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
-     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
-     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
-     * <p>The regex used to validate this parameter is a string of characters
+     * S3 or Amazon EFS resources over the enabled protocols using Transfer Family. If
+     * you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regular expression used to validate this parameter is a string of characters
      * consisting of uppercase and lowercase alphanumeric characters with no spaces.
      * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
@@ -206,10 +206,10 @@ namespace Model
   private:
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

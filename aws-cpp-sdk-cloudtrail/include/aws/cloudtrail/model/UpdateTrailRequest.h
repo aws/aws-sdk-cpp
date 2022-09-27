@@ -746,37 +746,37 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_s3BucketName;
-    bool m_s3BucketNameHasBeenSet;
+    bool m_s3BucketNameHasBeenSet = false;
 
     Aws::String m_s3KeyPrefix;
-    bool m_s3KeyPrefixHasBeenSet;
+    bool m_s3KeyPrefixHasBeenSet = false;
 
     Aws::String m_snsTopicName;
-    bool m_snsTopicNameHasBeenSet;
+    bool m_snsTopicNameHasBeenSet = false;
 
     bool m_includeGlobalServiceEvents;
-    bool m_includeGlobalServiceEventsHasBeenSet;
+    bool m_includeGlobalServiceEventsHasBeenSet = false;
 
     bool m_isMultiRegionTrail;
-    bool m_isMultiRegionTrailHasBeenSet;
+    bool m_isMultiRegionTrailHasBeenSet = false;
 
     bool m_enableLogFileValidation;
-    bool m_enableLogFileValidationHasBeenSet;
+    bool m_enableLogFileValidationHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsLogGroupArn;
-    bool m_cloudWatchLogsLogGroupArnHasBeenSet;
+    bool m_cloudWatchLogsLogGroupArnHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsRoleArn;
-    bool m_cloudWatchLogsRoleArnHasBeenSet;
+    bool m_cloudWatchLogsRoleArnHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_isOrganizationTrail;
-    bool m_isOrganizationTrailHasBeenSet;
+    bool m_isOrganizationTrailHasBeenSet = false;
   };
 
 } // namespace Model

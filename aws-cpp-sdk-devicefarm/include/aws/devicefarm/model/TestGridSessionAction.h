@@ -220,19 +220,19 @@ namespace Model
   private:
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Utils::DateTime m_started;
-    bool m_startedHasBeenSet;
+    bool m_startedHasBeenSet = false;
 
     long long m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_requestMethod;
-    bool m_requestMethodHasBeenSet;
+    bool m_requestMethodHasBeenSet = false;
   };
 
 } // namespace Model

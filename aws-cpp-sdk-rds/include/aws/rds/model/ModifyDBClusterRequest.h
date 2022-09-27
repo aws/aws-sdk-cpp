@@ -1687,8 +1687,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">
      * DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
@@ -1698,8 +1698,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">
      * DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
@@ -1709,8 +1709,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">
      * DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
@@ -1720,8 +1720,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">
      * DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
@@ -1731,8 +1731,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">
      * DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
@@ -1742,8 +1742,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">
      * DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
@@ -1753,8 +1753,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">
      * DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
@@ -1764,8 +1764,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">
      * DB Instance Class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Valid for:
@@ -2223,26 +2223,50 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline ModifyDBClusterRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 
@@ -2265,112 +2289,220 @@ namespace Model
     
     inline ModifyDBClusterRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline const Aws::String& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline ModifyDBClusterRequest& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline ModifyDBClusterRequest& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline ModifyDBClusterRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_newDBClusterIdentifier;
-    bool m_newDBClusterIdentifierHasBeenSet;
+    bool m_newDBClusterIdentifierHasBeenSet = false;
 
     bool m_applyImmediately;
-    bool m_applyImmediatelyHasBeenSet;
+    bool m_applyImmediatelyHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_dBClusterParameterGroupName;
-    bool m_dBClusterParameterGroupNameHasBeenSet;
+    bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     bool m_enableIAMDatabaseAuthentication;
-    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
     long long m_backtrackWindow;
-    bool m_backtrackWindowHasBeenSet;
+    bool m_backtrackWindowHasBeenSet = false;
 
     CloudwatchLogsExportConfiguration m_cloudwatchLogsExportConfiguration;
-    bool m_cloudwatchLogsExportConfigurationHasBeenSet;
+    bool m_cloudwatchLogsExportConfigurationHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     bool m_allowMajorVersionUpgrade;
-    bool m_allowMajorVersionUpgradeHasBeenSet;
+    bool m_allowMajorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_dBInstanceParameterGroupName;
-    bool m_dBInstanceParameterGroupNameHasBeenSet;
+    bool m_dBInstanceParameterGroupNameHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainIAMRoleName;
-    bool m_domainIAMRoleNameHasBeenSet;
+    bool m_domainIAMRoleNameHasBeenSet = false;
 
     ScalingConfiguration m_scalingConfiguration;
-    bool m_scalingConfigurationHasBeenSet;
+    bool m_scalingConfigurationHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     bool m_enableHttpEndpoint;
-    bool m_enableHttpEndpointHasBeenSet;
+    bool m_enableHttpEndpointHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     bool m_enableGlobalWriteForwarding;
-    bool m_enableGlobalWriteForwardingHasBeenSet;
+    bool m_enableGlobalWriteForwardingHasBeenSet = false;
 
     Aws::String m_dBClusterInstanceClass;
-    bool m_dBClusterInstanceClassHasBeenSet;
+    bool m_dBClusterInstanceClassHasBeenSet = false;
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     int m_monitoringInterval;
-    bool m_monitoringIntervalHasBeenSet;
+    bool m_monitoringIntervalHasBeenSet = false;
 
     Aws::String m_monitoringRoleArn;
-    bool m_monitoringRoleArnHasBeenSet;
+    bool m_monitoringRoleArnHasBeenSet = false;
 
     bool m_enablePerformanceInsights;
-    bool m_enablePerformanceInsightsHasBeenSet;
+    bool m_enablePerformanceInsightsHasBeenSet = false;
 
     Aws::String m_performanceInsightsKMSKeyId;
-    bool m_performanceInsightsKMSKeyIdHasBeenSet;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
     int m_performanceInsightsRetentionPeriod;
-    bool m_performanceInsightsRetentionPeriodHasBeenSet;
+    bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
     ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-    bool m_serverlessV2ScalingConfigurationHasBeenSet;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

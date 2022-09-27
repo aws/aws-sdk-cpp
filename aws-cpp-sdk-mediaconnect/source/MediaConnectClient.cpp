@@ -62,33 +62,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "mediaconnect";
 static const char* ALLOCATION_TAG = "MediaConnectClient";
 
-
 MediaConnectClient::MediaConnectClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<MediaConnectErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MediaConnectErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-MediaConnectClient::MediaConnectClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+MediaConnectClient::MediaConnectClient(const AWSCredentials& credentials,
+                                       const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<MediaConnectErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MediaConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 MediaConnectClient::MediaConnectClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                       const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<MediaConnectErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MediaConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -100,7 +106,7 @@ MediaConnectClient::~MediaConnectClient()
 
 void MediaConnectClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("MediaConnect");
+  AWSClient::SetServiceClientName("MediaConnect");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -148,12 +154,10 @@ AddFlowMediaStreamsOutcomeCallable MediaConnectClient::AddFlowMediaStreamsCallab
 
 void MediaConnectClient::AddFlowMediaStreamsAsync(const AddFlowMediaStreamsRequest& request, const AddFlowMediaStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddFlowMediaStreamsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::AddFlowMediaStreamsAsyncHelper(const AddFlowMediaStreamsRequest& request, const AddFlowMediaStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddFlowMediaStreams(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddFlowMediaStreams(request), context);
+    } );
 }
 
 AddFlowOutputsOutcome MediaConnectClient::AddFlowOutputs(const AddFlowOutputsRequest& request) const
@@ -180,12 +184,10 @@ AddFlowOutputsOutcomeCallable MediaConnectClient::AddFlowOutputsCallable(const A
 
 void MediaConnectClient::AddFlowOutputsAsync(const AddFlowOutputsRequest& request, const AddFlowOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddFlowOutputsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::AddFlowOutputsAsyncHelper(const AddFlowOutputsRequest& request, const AddFlowOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddFlowOutputs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddFlowOutputs(request), context);
+    } );
 }
 
 AddFlowSourcesOutcome MediaConnectClient::AddFlowSources(const AddFlowSourcesRequest& request) const
@@ -212,12 +214,10 @@ AddFlowSourcesOutcomeCallable MediaConnectClient::AddFlowSourcesCallable(const A
 
 void MediaConnectClient::AddFlowSourcesAsync(const AddFlowSourcesRequest& request, const AddFlowSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddFlowSourcesAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::AddFlowSourcesAsyncHelper(const AddFlowSourcesRequest& request, const AddFlowSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddFlowSources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddFlowSources(request), context);
+    } );
 }
 
 AddFlowVpcInterfacesOutcome MediaConnectClient::AddFlowVpcInterfaces(const AddFlowVpcInterfacesRequest& request) const
@@ -244,12 +244,10 @@ AddFlowVpcInterfacesOutcomeCallable MediaConnectClient::AddFlowVpcInterfacesCall
 
 void MediaConnectClient::AddFlowVpcInterfacesAsync(const AddFlowVpcInterfacesRequest& request, const AddFlowVpcInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddFlowVpcInterfacesAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::AddFlowVpcInterfacesAsyncHelper(const AddFlowVpcInterfacesRequest& request, const AddFlowVpcInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddFlowVpcInterfaces(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddFlowVpcInterfaces(request), context);
+    } );
 }
 
 CreateFlowOutcome MediaConnectClient::CreateFlow(const CreateFlowRequest& request) const
@@ -269,12 +267,10 @@ CreateFlowOutcomeCallable MediaConnectClient::CreateFlowCallable(const CreateFlo
 
 void MediaConnectClient::CreateFlowAsync(const CreateFlowRequest& request, const CreateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFlowAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::CreateFlowAsyncHelper(const CreateFlowRequest& request, const CreateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateFlow(request), context);
+    } );
 }
 
 DeleteFlowOutcome MediaConnectClient::DeleteFlow(const DeleteFlowRequest& request) const
@@ -300,12 +296,10 @@ DeleteFlowOutcomeCallable MediaConnectClient::DeleteFlowCallable(const DeleteFlo
 
 void MediaConnectClient::DeleteFlowAsync(const DeleteFlowRequest& request, const DeleteFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFlowAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::DeleteFlowAsyncHelper(const DeleteFlowRequest& request, const DeleteFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFlow(request), context);
+    } );
 }
 
 DescribeFlowOutcome MediaConnectClient::DescribeFlow(const DescribeFlowRequest& request) const
@@ -331,12 +325,10 @@ DescribeFlowOutcomeCallable MediaConnectClient::DescribeFlowCallable(const Descr
 
 void MediaConnectClient::DescribeFlowAsync(const DescribeFlowRequest& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeFlowAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::DescribeFlowAsyncHelper(const DescribeFlowRequest& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeFlow(request), context);
+    } );
 }
 
 DescribeOfferingOutcome MediaConnectClient::DescribeOffering(const DescribeOfferingRequest& request) const
@@ -362,12 +354,10 @@ DescribeOfferingOutcomeCallable MediaConnectClient::DescribeOfferingCallable(con
 
 void MediaConnectClient::DescribeOfferingAsync(const DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeOfferingAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::DescribeOfferingAsyncHelper(const DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeOffering(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeOffering(request), context);
+    } );
 }
 
 DescribeReservationOutcome MediaConnectClient::DescribeReservation(const DescribeReservationRequest& request) const
@@ -393,12 +383,10 @@ DescribeReservationOutcomeCallable MediaConnectClient::DescribeReservationCallab
 
 void MediaConnectClient::DescribeReservationAsync(const DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeReservationAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::DescribeReservationAsyncHelper(const DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeReservation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeReservation(request), context);
+    } );
 }
 
 GrantFlowEntitlementsOutcome MediaConnectClient::GrantFlowEntitlements(const GrantFlowEntitlementsRequest& request) const
@@ -425,12 +413,10 @@ GrantFlowEntitlementsOutcomeCallable MediaConnectClient::GrantFlowEntitlementsCa
 
 void MediaConnectClient::GrantFlowEntitlementsAsync(const GrantFlowEntitlementsRequest& request, const GrantFlowEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GrantFlowEntitlementsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::GrantFlowEntitlementsAsyncHelper(const GrantFlowEntitlementsRequest& request, const GrantFlowEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GrantFlowEntitlements(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GrantFlowEntitlements(request), context);
+    } );
 }
 
 ListEntitlementsOutcome MediaConnectClient::ListEntitlements(const ListEntitlementsRequest& request) const
@@ -450,12 +436,10 @@ ListEntitlementsOutcomeCallable MediaConnectClient::ListEntitlementsCallable(con
 
 void MediaConnectClient::ListEntitlementsAsync(const ListEntitlementsRequest& request, const ListEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEntitlementsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::ListEntitlementsAsyncHelper(const ListEntitlementsRequest& request, const ListEntitlementsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEntitlements(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEntitlements(request), context);
+    } );
 }
 
 ListFlowsOutcome MediaConnectClient::ListFlows(const ListFlowsRequest& request) const
@@ -475,12 +459,10 @@ ListFlowsOutcomeCallable MediaConnectClient::ListFlowsCallable(const ListFlowsRe
 
 void MediaConnectClient::ListFlowsAsync(const ListFlowsRequest& request, const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFlowsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::ListFlowsAsyncHelper(const ListFlowsRequest& request, const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFlows(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFlows(request), context);
+    } );
 }
 
 ListOfferingsOutcome MediaConnectClient::ListOfferings(const ListOfferingsRequest& request) const
@@ -500,12 +482,10 @@ ListOfferingsOutcomeCallable MediaConnectClient::ListOfferingsCallable(const Lis
 
 void MediaConnectClient::ListOfferingsAsync(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOfferingsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::ListOfferingsAsyncHelper(const ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListOfferings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListOfferings(request), context);
+    } );
 }
 
 ListReservationsOutcome MediaConnectClient::ListReservations(const ListReservationsRequest& request) const
@@ -525,12 +505,10 @@ ListReservationsOutcomeCallable MediaConnectClient::ListReservationsCallable(con
 
 void MediaConnectClient::ListReservationsAsync(const ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListReservationsAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::ListReservationsAsyncHelper(const ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListReservations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListReservations(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome MediaConnectClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -556,12 +534,10 @@ ListTagsForResourceOutcomeCallable MediaConnectClient::ListTagsForResourceCallab
 
 void MediaConnectClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 PurchaseOfferingOutcome MediaConnectClient::PurchaseOffering(const PurchaseOfferingRequest& request) const
@@ -587,12 +563,10 @@ PurchaseOfferingOutcomeCallable MediaConnectClient::PurchaseOfferingCallable(con
 
 void MediaConnectClient::PurchaseOfferingAsync(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PurchaseOfferingAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::PurchaseOfferingAsyncHelper(const PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PurchaseOffering(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PurchaseOffering(request), context);
+    } );
 }
 
 RemoveFlowMediaStreamOutcome MediaConnectClient::RemoveFlowMediaStream(const RemoveFlowMediaStreamRequest& request) const
@@ -625,12 +599,10 @@ RemoveFlowMediaStreamOutcomeCallable MediaConnectClient::RemoveFlowMediaStreamCa
 
 void MediaConnectClient::RemoveFlowMediaStreamAsync(const RemoveFlowMediaStreamRequest& request, const RemoveFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveFlowMediaStreamAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::RemoveFlowMediaStreamAsyncHelper(const RemoveFlowMediaStreamRequest& request, const RemoveFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveFlowMediaStream(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveFlowMediaStream(request), context);
+    } );
 }
 
 RemoveFlowOutputOutcome MediaConnectClient::RemoveFlowOutput(const RemoveFlowOutputRequest& request) const
@@ -663,12 +635,10 @@ RemoveFlowOutputOutcomeCallable MediaConnectClient::RemoveFlowOutputCallable(con
 
 void MediaConnectClient::RemoveFlowOutputAsync(const RemoveFlowOutputRequest& request, const RemoveFlowOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveFlowOutputAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::RemoveFlowOutputAsyncHelper(const RemoveFlowOutputRequest& request, const RemoveFlowOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveFlowOutput(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveFlowOutput(request), context);
+    } );
 }
 
 RemoveFlowSourceOutcome MediaConnectClient::RemoveFlowSource(const RemoveFlowSourceRequest& request) const
@@ -701,12 +671,10 @@ RemoveFlowSourceOutcomeCallable MediaConnectClient::RemoveFlowSourceCallable(con
 
 void MediaConnectClient::RemoveFlowSourceAsync(const RemoveFlowSourceRequest& request, const RemoveFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveFlowSourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::RemoveFlowSourceAsyncHelper(const RemoveFlowSourceRequest& request, const RemoveFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveFlowSource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveFlowSource(request), context);
+    } );
 }
 
 RemoveFlowVpcInterfaceOutcome MediaConnectClient::RemoveFlowVpcInterface(const RemoveFlowVpcInterfaceRequest& request) const
@@ -739,12 +707,10 @@ RemoveFlowVpcInterfaceOutcomeCallable MediaConnectClient::RemoveFlowVpcInterface
 
 void MediaConnectClient::RemoveFlowVpcInterfaceAsync(const RemoveFlowVpcInterfaceRequest& request, const RemoveFlowVpcInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveFlowVpcInterfaceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::RemoveFlowVpcInterfaceAsyncHelper(const RemoveFlowVpcInterfaceRequest& request, const RemoveFlowVpcInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveFlowVpcInterface(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveFlowVpcInterface(request), context);
+    } );
 }
 
 RevokeFlowEntitlementOutcome MediaConnectClient::RevokeFlowEntitlement(const RevokeFlowEntitlementRequest& request) const
@@ -777,12 +743,10 @@ RevokeFlowEntitlementOutcomeCallable MediaConnectClient::RevokeFlowEntitlementCa
 
 void MediaConnectClient::RevokeFlowEntitlementAsync(const RevokeFlowEntitlementRequest& request, const RevokeFlowEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RevokeFlowEntitlementAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::RevokeFlowEntitlementAsyncHelper(const RevokeFlowEntitlementRequest& request, const RevokeFlowEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RevokeFlowEntitlement(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RevokeFlowEntitlement(request), context);
+    } );
 }
 
 StartFlowOutcome MediaConnectClient::StartFlow(const StartFlowRequest& request) const
@@ -808,12 +772,10 @@ StartFlowOutcomeCallable MediaConnectClient::StartFlowCallable(const StartFlowRe
 
 void MediaConnectClient::StartFlowAsync(const StartFlowRequest& request, const StartFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartFlowAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::StartFlowAsyncHelper(const StartFlowRequest& request, const StartFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartFlow(request), context);
+    } );
 }
 
 StopFlowOutcome MediaConnectClient::StopFlow(const StopFlowRequest& request) const
@@ -839,12 +801,10 @@ StopFlowOutcomeCallable MediaConnectClient::StopFlowCallable(const StopFlowReque
 
 void MediaConnectClient::StopFlowAsync(const StopFlowRequest& request, const StopFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopFlowAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::StopFlowAsyncHelper(const StopFlowRequest& request, const StopFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopFlow(request), context);
+    } );
 }
 
 TagResourceOutcome MediaConnectClient::TagResource(const TagResourceRequest& request) const
@@ -870,12 +830,10 @@ TagResourceOutcomeCallable MediaConnectClient::TagResourceCallable(const TagReso
 
 void MediaConnectClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome MediaConnectClient::UntagResource(const UntagResourceRequest& request) const
@@ -906,12 +864,10 @@ UntagResourceOutcomeCallable MediaConnectClient::UntagResourceCallable(const Unt
 
 void MediaConnectClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateFlowOutcome MediaConnectClient::UpdateFlow(const UpdateFlowRequest& request) const
@@ -937,12 +893,10 @@ UpdateFlowOutcomeCallable MediaConnectClient::UpdateFlowCallable(const UpdateFlo
 
 void MediaConnectClient::UpdateFlowAsync(const UpdateFlowRequest& request, const UpdateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFlowAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::UpdateFlowAsyncHelper(const UpdateFlowRequest& request, const UpdateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFlow(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFlow(request), context);
+    } );
 }
 
 UpdateFlowEntitlementOutcome MediaConnectClient::UpdateFlowEntitlement(const UpdateFlowEntitlementRequest& request) const
@@ -975,12 +929,10 @@ UpdateFlowEntitlementOutcomeCallable MediaConnectClient::UpdateFlowEntitlementCa
 
 void MediaConnectClient::UpdateFlowEntitlementAsync(const UpdateFlowEntitlementRequest& request, const UpdateFlowEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFlowEntitlementAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::UpdateFlowEntitlementAsyncHelper(const UpdateFlowEntitlementRequest& request, const UpdateFlowEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFlowEntitlement(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFlowEntitlement(request), context);
+    } );
 }
 
 UpdateFlowMediaStreamOutcome MediaConnectClient::UpdateFlowMediaStream(const UpdateFlowMediaStreamRequest& request) const
@@ -1013,12 +965,10 @@ UpdateFlowMediaStreamOutcomeCallable MediaConnectClient::UpdateFlowMediaStreamCa
 
 void MediaConnectClient::UpdateFlowMediaStreamAsync(const UpdateFlowMediaStreamRequest& request, const UpdateFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFlowMediaStreamAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::UpdateFlowMediaStreamAsyncHelper(const UpdateFlowMediaStreamRequest& request, const UpdateFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFlowMediaStream(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFlowMediaStream(request), context);
+    } );
 }
 
 UpdateFlowOutputOutcome MediaConnectClient::UpdateFlowOutput(const UpdateFlowOutputRequest& request) const
@@ -1051,12 +1001,10 @@ UpdateFlowOutputOutcomeCallable MediaConnectClient::UpdateFlowOutputCallable(con
 
 void MediaConnectClient::UpdateFlowOutputAsync(const UpdateFlowOutputRequest& request, const UpdateFlowOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFlowOutputAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::UpdateFlowOutputAsyncHelper(const UpdateFlowOutputRequest& request, const UpdateFlowOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFlowOutput(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFlowOutput(request), context);
+    } );
 }
 
 UpdateFlowSourceOutcome MediaConnectClient::UpdateFlowSource(const UpdateFlowSourceRequest& request) const
@@ -1089,11 +1037,9 @@ UpdateFlowSourceOutcomeCallable MediaConnectClient::UpdateFlowSourceCallable(con
 
 void MediaConnectClient::UpdateFlowSourceAsync(const UpdateFlowSourceRequest& request, const UpdateFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFlowSourceAsyncHelper( request, handler, context ); } );
-}
-
-void MediaConnectClient::UpdateFlowSourceAsyncHelper(const UpdateFlowSourceRequest& request, const UpdateFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFlowSource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFlowSource(request), context);
+    } );
 }
 

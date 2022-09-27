@@ -133,13 +133,13 @@ namespace Model
   private:
 
     double m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     Aws::String m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
 
     CostFrequency m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
   };
 
 } // namespace Model

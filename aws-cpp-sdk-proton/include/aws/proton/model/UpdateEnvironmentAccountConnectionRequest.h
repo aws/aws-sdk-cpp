@@ -231,13 +231,13 @@ namespace Model
   private:
 
     Aws::String m_componentRoleArn;
-    bool m_componentRoleArnHasBeenSet;
+    bool m_componentRoleArnHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

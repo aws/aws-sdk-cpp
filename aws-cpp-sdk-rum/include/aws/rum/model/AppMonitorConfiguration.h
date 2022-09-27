@@ -545,31 +545,31 @@ namespace Model
   private:
 
     bool m_allowCookies;
-    bool m_allowCookiesHasBeenSet;
+    bool m_allowCookiesHasBeenSet = false;
 
     bool m_enableXRay;
-    bool m_enableXRayHasBeenSet;
+    bool m_enableXRayHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedPages;
-    bool m_excludedPagesHasBeenSet;
+    bool m_excludedPagesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_favoritePages;
-    bool m_favoritePagesHasBeenSet;
+    bool m_favoritePagesHasBeenSet = false;
 
     Aws::String m_guestRoleArn;
-    bool m_guestRoleArnHasBeenSet;
+    bool m_guestRoleArnHasBeenSet = false;
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_includedPages;
-    bool m_includedPagesHasBeenSet;
+    bool m_includedPagesHasBeenSet = false;
 
     double m_sessionSampleRate;
-    bool m_sessionSampleRateHasBeenSet;
+    bool m_sessionSampleRateHasBeenSet = false;
 
     Aws::Vector<Telemetry> m_telemetries;
-    bool m_telemetriesHasBeenSet;
+    bool m_telemetriesHasBeenSet = false;
   };
 
 } // namespace Model

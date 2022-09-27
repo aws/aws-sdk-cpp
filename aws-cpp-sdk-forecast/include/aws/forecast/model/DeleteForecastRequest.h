@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_forecastArn;
-    bool m_forecastArnHasBeenSet;
+    bool m_forecastArnHasBeenSet = false;
   };
 
 } // namespace Model

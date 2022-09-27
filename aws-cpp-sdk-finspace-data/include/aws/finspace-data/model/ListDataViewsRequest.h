@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::String m_datasetId;
-    bool m_datasetIdHasBeenSet;
+    bool m_datasetIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

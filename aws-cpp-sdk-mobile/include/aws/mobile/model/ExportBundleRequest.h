@@ -159,13 +159,13 @@ namespace Model
   private:
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_projectId;
-    bool m_projectIdHasBeenSet;
+    bool m_projectIdHasBeenSet = false;
 
     Platform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
   };
 
 } // namespace Model

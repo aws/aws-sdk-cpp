@@ -104,46 +104,46 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value indicating whether tags for the volume should be copied to
-     * snapshots. This value defaults to <code>false</code>. If it's set to
-     * <code>true</code>, all tags for the volume are copied to snapshots where the
+     * <p>A Boolean value indicating whether tags for the file system should be copied
+     * to volumes. This value defaults to <code>false</code>. If it's set to
+     * <code>true</code>, all tags for the file system are copied to volumes where the
      * user doesn't specify tags. If this value is <code>true</code>, and you specify
-     * one or more tags, only the specified tags are copied to snapshots. If you
-     * specify one or more tags when creating the snapshot, no tags are copied from the
-     * volume, regardless of this value. </p>
+     * one or more tags, only the specified tags are copied to volumes. If you specify
+     * one or more tags when creating the volume, no tags are copied from the file
+     * system, regardless of this value.</p>
      */
     inline bool GetCopyTagsToVolumes() const{ return m_copyTagsToVolumes; }
 
     /**
-     * <p>A Boolean value indicating whether tags for the volume should be copied to
-     * snapshots. This value defaults to <code>false</code>. If it's set to
-     * <code>true</code>, all tags for the volume are copied to snapshots where the
+     * <p>A Boolean value indicating whether tags for the file system should be copied
+     * to volumes. This value defaults to <code>false</code>. If it's set to
+     * <code>true</code>, all tags for the file system are copied to volumes where the
      * user doesn't specify tags. If this value is <code>true</code>, and you specify
-     * one or more tags, only the specified tags are copied to snapshots. If you
-     * specify one or more tags when creating the snapshot, no tags are copied from the
-     * volume, regardless of this value. </p>
+     * one or more tags, only the specified tags are copied to volumes. If you specify
+     * one or more tags when creating the volume, no tags are copied from the file
+     * system, regardless of this value.</p>
      */
     inline bool CopyTagsToVolumesHasBeenSet() const { return m_copyTagsToVolumesHasBeenSet; }
 
     /**
-     * <p>A Boolean value indicating whether tags for the volume should be copied to
-     * snapshots. This value defaults to <code>false</code>. If it's set to
-     * <code>true</code>, all tags for the volume are copied to snapshots where the
+     * <p>A Boolean value indicating whether tags for the file system should be copied
+     * to volumes. This value defaults to <code>false</code>. If it's set to
+     * <code>true</code>, all tags for the file system are copied to volumes where the
      * user doesn't specify tags. If this value is <code>true</code>, and you specify
-     * one or more tags, only the specified tags are copied to snapshots. If you
-     * specify one or more tags when creating the snapshot, no tags are copied from the
-     * volume, regardless of this value. </p>
+     * one or more tags, only the specified tags are copied to volumes. If you specify
+     * one or more tags when creating the volume, no tags are copied from the file
+     * system, regardless of this value.</p>
      */
     inline void SetCopyTagsToVolumes(bool value) { m_copyTagsToVolumesHasBeenSet = true; m_copyTagsToVolumes = value; }
 
     /**
-     * <p>A Boolean value indicating whether tags for the volume should be copied to
-     * snapshots. This value defaults to <code>false</code>. If it's set to
-     * <code>true</code>, all tags for the volume are copied to snapshots where the
+     * <p>A Boolean value indicating whether tags for the file system should be copied
+     * to volumes. This value defaults to <code>false</code>. If it's set to
+     * <code>true</code>, all tags for the file system are copied to volumes where the
      * user doesn't specify tags. If this value is <code>true</code>, and you specify
-     * one or more tags, only the specified tags are copied to snapshots. If you
-     * specify one or more tags when creating the snapshot, no tags are copied from the
-     * volume, regardless of this value. </p>
+     * one or more tags, only the specified tags are copied to volumes. If you specify
+     * one or more tags when creating the volume, no tags are copied from the file
+     * system, regardless of this value.</p>
      */
     inline CreateFileSystemOpenZFSConfiguration& WithCopyTagsToVolumes(bool value) { SetCopyTagsToVolumes(value); return *this;}
 
@@ -332,31 +332,31 @@ namespace Model
   private:
 
     int m_automaticBackupRetentionDays;
-    bool m_automaticBackupRetentionDaysHasBeenSet;
+    bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
     bool m_copyTagsToBackups;
-    bool m_copyTagsToBackupsHasBeenSet;
+    bool m_copyTagsToBackupsHasBeenSet = false;
 
     bool m_copyTagsToVolumes;
-    bool m_copyTagsToVolumesHasBeenSet;
+    bool m_copyTagsToVolumesHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
-    bool m_dailyAutomaticBackupStartTimeHasBeenSet;
+    bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
     OpenZFSDeploymentType m_deploymentType;
-    bool m_deploymentTypeHasBeenSet;
+    bool m_deploymentTypeHasBeenSet = false;
 
     int m_throughputCapacity;
-    bool m_throughputCapacityHasBeenSet;
+    bool m_throughputCapacityHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceStartTime;
-    bool m_weeklyMaintenanceStartTimeHasBeenSet;
+    bool m_weeklyMaintenanceStartTimeHasBeenSet = false;
 
     DiskIopsConfiguration m_diskIopsConfiguration;
-    bool m_diskIopsConfigurationHasBeenSet;
+    bool m_diskIopsConfigurationHasBeenSet = false;
 
     OpenZFSCreateRootVolumeConfiguration m_rootVolumeConfiguration;
-    bool m_rootVolumeConfigurationHasBeenSet;
+    bool m_rootVolumeConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

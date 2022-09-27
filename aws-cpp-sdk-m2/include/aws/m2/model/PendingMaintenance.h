@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     MaintenanceSchedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
   };
 
 } // namespace Model

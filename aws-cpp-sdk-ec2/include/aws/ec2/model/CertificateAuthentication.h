@@ -83,7 +83,7 @@ namespace Model
   private:
 
     Aws::String m_clientRootCertificateChain;
-    bool m_clientRootCertificateChainHasBeenSet;
+    bool m_clientRootCertificateChainHasBeenSet = false;
   };
 
 } // namespace Model

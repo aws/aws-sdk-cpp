@@ -300,22 +300,22 @@ namespace Model
   private:
 
     Aws::String m_datastoreName;
-    bool m_datastoreNameHasBeenSet;
+    bool m_datastoreNameHasBeenSet = false;
 
     DatastoreStorage m_datastoreStorage;
-    bool m_datastoreStorageHasBeenSet;
+    bool m_datastoreStorageHasBeenSet = false;
 
     RetentionPeriod m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     FileFormatConfiguration m_fileFormatConfiguration;
-    bool m_fileFormatConfigurationHasBeenSet;
+    bool m_fileFormatConfigurationHasBeenSet = false;
 
     DatastorePartitions m_datastorePartitions;
-    bool m_datastorePartitionsHasBeenSet;
+    bool m_datastorePartitionsHasBeenSet = false;
   };
 
 } // namespace Model

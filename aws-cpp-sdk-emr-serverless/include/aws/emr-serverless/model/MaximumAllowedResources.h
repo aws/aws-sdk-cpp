@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     Aws::String m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::String m_disk;
-    bool m_diskHasBeenSet;
+    bool m_diskHasBeenSet = false;
   };
 
 } // namespace Model

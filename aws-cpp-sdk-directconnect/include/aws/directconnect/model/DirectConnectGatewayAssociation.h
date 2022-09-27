@@ -526,34 +526,34 @@ namespace Model
   private:
 
     Aws::String m_directConnectGatewayId;
-    bool m_directConnectGatewayIdHasBeenSet;
+    bool m_directConnectGatewayIdHasBeenSet = false;
 
     Aws::String m_directConnectGatewayOwnerAccount;
-    bool m_directConnectGatewayOwnerAccountHasBeenSet;
+    bool m_directConnectGatewayOwnerAccountHasBeenSet = false;
 
     DirectConnectGatewayAssociationState m_associationState;
-    bool m_associationStateHasBeenSet;
+    bool m_associationStateHasBeenSet = false;
 
     Aws::String m_stateChangeError;
-    bool m_stateChangeErrorHasBeenSet;
+    bool m_stateChangeErrorHasBeenSet = false;
 
     AssociatedGateway m_associatedGateway;
-    bool m_associatedGatewayHasBeenSet;
+    bool m_associatedGatewayHasBeenSet = false;
 
     Aws::String m_associationId;
-    bool m_associationIdHasBeenSet;
+    bool m_associationIdHasBeenSet = false;
 
     Aws::Vector<RouteFilterPrefix> m_allowedPrefixesToDirectConnectGateway;
-    bool m_allowedPrefixesToDirectConnectGatewayHasBeenSet;
+    bool m_allowedPrefixesToDirectConnectGatewayHasBeenSet = false;
 
     Aws::String m_virtualGatewayId;
-    bool m_virtualGatewayIdHasBeenSet;
+    bool m_virtualGatewayIdHasBeenSet = false;
 
     Aws::String m_virtualGatewayRegion;
-    bool m_virtualGatewayRegionHasBeenSet;
+    bool m_virtualGatewayRegionHasBeenSet = false;
 
     Aws::String m_virtualGatewayOwnerAccount;
-    bool m_virtualGatewayOwnerAccountHasBeenSet;
+    bool m_virtualGatewayOwnerAccountHasBeenSet = false;
   };
 
 } // namespace Model

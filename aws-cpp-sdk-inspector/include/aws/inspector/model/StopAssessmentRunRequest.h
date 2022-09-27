@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_assessmentRunArn;
-    bool m_assessmentRunArnHasBeenSet;
+    bool m_assessmentRunArnHasBeenSet = false;
 
     StopAction m_stopAction;
-    bool m_stopActionHasBeenSet;
+    bool m_stopActionHasBeenSet = false;
   };
 
 } // namespace Model

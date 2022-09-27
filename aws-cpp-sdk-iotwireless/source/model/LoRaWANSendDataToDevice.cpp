@@ -20,13 +20,15 @@ namespace Model
 
 LoRaWANSendDataToDevice::LoRaWANSendDataToDevice() : 
     m_fPort(0),
-    m_fPortHasBeenSet(false)
+    m_fPortHasBeenSet(false),
+    m_participatingGatewaysHasBeenSet(false)
 {
 }
 
 LoRaWANSendDataToDevice::LoRaWANSendDataToDevice(JsonView jsonValue) : 
     m_fPort(0),
-    m_fPortHasBeenSet(false)
+    m_fPortHasBeenSet(false),
+    m_participatingGatewaysHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +42,13 @@ LoRaWANSendDataToDevice& LoRaWANSendDataToDevice::operator =(JsonView jsonValue)
     m_fPortHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ParticipatingGateways"))
+  {
+    m_participatingGateways = jsonValue.GetObject("ParticipatingGateways");
+
+    m_participatingGatewaysHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +59,12 @@ JsonValue LoRaWANSendDataToDevice::Jsonize() const
   if(m_fPortHasBeenSet)
   {
    payload.WithInteger("FPort", m_fPort);
+
+  }
+
+  if(m_participatingGatewaysHasBeenSet)
+  {
+   payload.WithObject("ParticipatingGateways", m_participatingGateways.Jsonize());
 
   }
 

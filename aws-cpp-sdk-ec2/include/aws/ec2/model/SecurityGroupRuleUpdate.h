@@ -114,10 +114,10 @@ namespace Model
   private:
 
     Aws::String m_securityGroupRuleId;
-    bool m_securityGroupRuleIdHasBeenSet;
+    bool m_securityGroupRuleIdHasBeenSet = false;
 
     SecurityGroupRuleRequest m_securityGroupRule;
-    bool m_securityGroupRuleHasBeenSet;
+    bool m_securityGroupRuleHasBeenSet = false;
   };
 
 } // namespace Model

@@ -171,16 +171,16 @@ namespace Model
   private:
 
     Aws::String m_modelId;
-    bool m_modelIdHasBeenSet;
+    bool m_modelIdHasBeenSet = false;
 
     ModelTypeEnum m_modelType;
-    bool m_modelTypeHasBeenSet;
+    bool m_modelTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -730,31 +730,31 @@ namespace Model
   private:
 
     Aws::String m_input;
-    bool m_inputHasBeenSet;
+    bool m_inputHasBeenSet = false;
 
     Aws::String m_executionStartToCloseTimeout;
-    bool m_executionStartToCloseTimeoutHasBeenSet;
+    bool m_executionStartToCloseTimeoutHasBeenSet = false;
 
     TaskList m_taskList;
-    bool m_taskListHasBeenSet;
+    bool m_taskListHasBeenSet = false;
 
     Aws::String m_taskPriority;
-    bool m_taskPriorityHasBeenSet;
+    bool m_taskPriorityHasBeenSet = false;
 
     Aws::String m_taskStartToCloseTimeout;
-    bool m_taskStartToCloseTimeoutHasBeenSet;
+    bool m_taskStartToCloseTimeoutHasBeenSet = false;
 
     ChildPolicy m_childPolicy;
-    bool m_childPolicyHasBeenSet;
+    bool m_childPolicyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
 
     Aws::String m_workflowTypeVersion;
-    bool m_workflowTypeVersionHasBeenSet;
+    bool m_workflowTypeVersionHasBeenSet = false;
 
     Aws::String m_lambdaRole;
-    bool m_lambdaRoleHasBeenSet;
+    bool m_lambdaRoleHasBeenSet = false;
   };
 
 } // namespace Model

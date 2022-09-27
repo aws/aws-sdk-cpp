@@ -322,22 +322,22 @@ namespace Model
   private:
 
     Aws::String m_analyzerArn;
-    bool m_analyzerArnHasBeenSet;
+    bool m_analyzerArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Configuration> m_configurations;
-    bool m_configurationsHasBeenSet;
+    bool m_configurationsHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     AccessPreviewStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     AccessPreviewStatusReason m_statusReason;
-    bool m_statusReasonHasBeenSet;
+    bool m_statusReasonHasBeenSet = false;
   };
 
 } // namespace Model

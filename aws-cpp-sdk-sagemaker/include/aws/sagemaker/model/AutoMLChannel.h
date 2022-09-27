@@ -289,19 +289,19 @@ namespace Model
   private:
 
     AutoMLDataSource m_dataSource;
-    bool m_dataSourceHasBeenSet;
+    bool m_dataSourceHasBeenSet = false;
 
     CompressionType m_compressionType;
-    bool m_compressionTypeHasBeenSet;
+    bool m_compressionTypeHasBeenSet = false;
 
     Aws::String m_targetAttributeName;
-    bool m_targetAttributeNameHasBeenSet;
+    bool m_targetAttributeNameHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     AutoMLChannelType m_channelType;
-    bool m_channelTypeHasBeenSet;
+    bool m_channelTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_limitType;
-    bool m_limitTypeHasBeenSet;
+    bool m_limitTypeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

@@ -146,13 +146,13 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_repositories;
-    bool m_repositoriesHasBeenSet;
+    bool m_repositoriesHasBeenSet = false;
 
     RepositorySortBy m_sortBy;
-    bool m_sortByHasBeenSet;
+    bool m_sortByHasBeenSet = false;
 
     SortOrder m_sortOrder;
-    bool m_sortOrderHasBeenSet;
+    bool m_sortOrderHasBeenSet = false;
   };
 
 } // namespace Model

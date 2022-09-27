@@ -481,28 +481,28 @@ namespace Model
   private:
 
     Aws::String m_entityArn;
-    bool m_entityArnHasBeenSet;
+    bool m_entityArnHasBeenSet = false;
 
     Aws::String m_eventArn;
-    bool m_eventArnHasBeenSet;
+    bool m_eventArnHasBeenSet = false;
 
     Aws::String m_entityValue;
-    bool m_entityValueHasBeenSet;
+    bool m_entityValueHasBeenSet = false;
 
     Aws::String m_entityUrl;
-    bool m_entityUrlHasBeenSet;
+    bool m_entityUrlHasBeenSet = false;
 
     Aws::String m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     EntityStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

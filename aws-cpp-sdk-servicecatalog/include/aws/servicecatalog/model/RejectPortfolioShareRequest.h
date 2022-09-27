@@ -208,13 +208,13 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_portfolioId;
-    bool m_portfolioIdHasBeenSet;
+    bool m_portfolioIdHasBeenSet = false;
 
     PortfolioShareType m_portfolioShareType;
-    bool m_portfolioShareTypeHasBeenSet;
+    bool m_portfolioShareTypeHasBeenSet = false;
   };
 
 } // namespace Model

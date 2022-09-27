@@ -206,55 +206,55 @@ namespace Model
 
 
     /**
-     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
-     * using an Config managed rule that is triggered at a periodic frequency.</p>
-     *  <p>By default, rules with a periodic trigger are evaluated every 24
-     * hours. To change the frequency, specify a valid value for the
+     * <p>The maximum frequency with which Config runs evaluations for a rule. This is
+     * for an Config managed rule that is triggered at a periodic frequency.</p> 
+     * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
+     * change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
 
     /**
-     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
-     * using an Config managed rule that is triggered at a periodic frequency.</p>
-     *  <p>By default, rules with a periodic trigger are evaluated every 24
-     * hours. To change the frequency, specify a valid value for the
+     * <p>The maximum frequency with which Config runs evaluations for a rule. This is
+     * for an Config managed rule that is triggered at a periodic frequency.</p> 
+     * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
+     * change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline bool MaximumExecutionFrequencyHasBeenSet() const { return m_maximumExecutionFrequencyHasBeenSet; }
 
     /**
-     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
-     * using an Config managed rule that is triggered at a periodic frequency.</p>
-     *  <p>By default, rules with a periodic trigger are evaluated every 24
-     * hours. To change the frequency, specify a valid value for the
+     * <p>The maximum frequency with which Config runs evaluations for a rule. This is
+     * for an Config managed rule that is triggered at a periodic frequency.</p> 
+     * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
+     * change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline void SetMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
 
     /**
-     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
-     * using an Config managed rule that is triggered at a periodic frequency.</p>
-     *  <p>By default, rules with a periodic trigger are evaluated every 24
-     * hours. To change the frequency, specify a valid value for the
+     * <p>The maximum frequency with which Config runs evaluations for a rule. This is
+     * for an Config managed rule that is triggered at a periodic frequency.</p> 
+     * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
+     * change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = std::move(value); }
 
     /**
-     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
-     * using an Config managed rule that is triggered at a periodic frequency.</p>
-     *  <p>By default, rules with a periodic trigger are evaluated every 24
-     * hours. To change the frequency, specify a valid value for the
+     * <p>The maximum frequency with which Config runs evaluations for a rule. This is
+     * for an Config managed rule that is triggered at a periodic frequency.</p> 
+     * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
+     * change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline OrganizationManagedRuleMetadata& WithMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { SetMaximumExecutionFrequency(value); return *this;}
 
     /**
-     * <p>The maximum frequency with which Config runs evaluations for a rule. You are
-     * using an Config managed rule that is triggered at a periodic frequency.</p>
-     *  <p>By default, rules with a periodic trigger are evaluated every 24
-     * hours. To change the frequency, specify a valid value for the
+     * <p>The maximum frequency with which Config runs evaluations for a rule. This is
+     * for an Config managed rule that is triggered at a periodic frequency.</p> 
+     * <p>By default, rules with a periodic trigger are evaluated every 24 hours. To
+     * change the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
     inline OrganizationManagedRuleMetadata& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(std::move(value)); return *this;}
@@ -447,28 +447,28 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_ruleIdentifier;
-    bool m_ruleIdentifierHasBeenSet;
+    bool m_ruleIdentifierHasBeenSet = false;
 
     Aws::String m_inputParameters;
-    bool m_inputParametersHasBeenSet;
+    bool m_inputParametersHasBeenSet = false;
 
     MaximumExecutionFrequency m_maximumExecutionFrequency;
-    bool m_maximumExecutionFrequencyHasBeenSet;
+    bool m_maximumExecutionFrequencyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypesScope;
-    bool m_resourceTypesScopeHasBeenSet;
+    bool m_resourceTypesScopeHasBeenSet = false;
 
     Aws::String m_resourceIdScope;
-    bool m_resourceIdScopeHasBeenSet;
+    bool m_resourceIdScopeHasBeenSet = false;
 
     Aws::String m_tagKeyScope;
-    bool m_tagKeyScopeHasBeenSet;
+    bool m_tagKeyScopeHasBeenSet = false;
 
     Aws::String m_tagValueScope;
-    bool m_tagValueScopeHasBeenSet;
+    bool m_tagValueScopeHasBeenSet = false;
   };
 
 } // namespace Model

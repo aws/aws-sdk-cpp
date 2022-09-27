@@ -271,19 +271,19 @@ namespace Model
   private:
 
     Aws::String m_destinationArn;
-    bool m_destinationArnHasBeenSet;
+    bool m_destinationArnHasBeenSet = false;
 
     Aws::String m_topic;
-    bool m_topicHasBeenSet;
+    bool m_topicHasBeenSet = false;
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_partition;
-    bool m_partitionHasBeenSet;
+    bool m_partitionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_clientProperties;
-    bool m_clientPropertiesHasBeenSet;
+    bool m_clientPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

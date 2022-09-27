@@ -5,248 +5,15 @@
 
 #pragma once
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
-#include <aws/customer-profiles/CustomerProfilesErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/customer-profiles/model/AddProfileKeyResult.h>
-#include <aws/customer-profiles/model/CreateDomainResult.h>
-#include <aws/customer-profiles/model/CreateIntegrationWorkflowResult.h>
-#include <aws/customer-profiles/model/CreateProfileResult.h>
-#include <aws/customer-profiles/model/DeleteDomainResult.h>
-#include <aws/customer-profiles/model/DeleteIntegrationResult.h>
-#include <aws/customer-profiles/model/DeleteProfileResult.h>
-#include <aws/customer-profiles/model/DeleteProfileKeyResult.h>
-#include <aws/customer-profiles/model/DeleteProfileObjectResult.h>
-#include <aws/customer-profiles/model/DeleteProfileObjectTypeResult.h>
-#include <aws/customer-profiles/model/DeleteWorkflowResult.h>
-#include <aws/customer-profiles/model/GetAutoMergingPreviewResult.h>
-#include <aws/customer-profiles/model/GetDomainResult.h>
-#include <aws/customer-profiles/model/GetIdentityResolutionJobResult.h>
-#include <aws/customer-profiles/model/GetIntegrationResult.h>
-#include <aws/customer-profiles/model/GetMatchesResult.h>
-#include <aws/customer-profiles/model/GetProfileObjectTypeResult.h>
-#include <aws/customer-profiles/model/GetProfileObjectTypeTemplateResult.h>
-#include <aws/customer-profiles/model/GetWorkflowResult.h>
-#include <aws/customer-profiles/model/GetWorkflowStepsResult.h>
-#include <aws/customer-profiles/model/ListAccountIntegrationsResult.h>
-#include <aws/customer-profiles/model/ListDomainsResult.h>
-#include <aws/customer-profiles/model/ListIdentityResolutionJobsResult.h>
-#include <aws/customer-profiles/model/ListIntegrationsResult.h>
-#include <aws/customer-profiles/model/ListProfileObjectTypeTemplatesResult.h>
-#include <aws/customer-profiles/model/ListProfileObjectTypesResult.h>
-#include <aws/customer-profiles/model/ListProfileObjectsResult.h>
-#include <aws/customer-profiles/model/ListTagsForResourceResult.h>
-#include <aws/customer-profiles/model/ListWorkflowsResult.h>
-#include <aws/customer-profiles/model/MergeProfilesResult.h>
-#include <aws/customer-profiles/model/PutIntegrationResult.h>
-#include <aws/customer-profiles/model/PutProfileObjectResult.h>
-#include <aws/customer-profiles/model/PutProfileObjectTypeResult.h>
-#include <aws/customer-profiles/model/SearchProfilesResult.h>
-#include <aws/customer-profiles/model/TagResourceResult.h>
-#include <aws/customer-profiles/model/UntagResourceResult.h>
-#include <aws/customer-profiles/model/UpdateDomainResult.h>
-#include <aws/customer-profiles/model/UpdateProfileResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/customer-profiles/CustomerProfilesServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CustomerProfiles
 {
-
-namespace Model
-{
-        class AddProfileKeyRequest;
-        class CreateDomainRequest;
-        class CreateIntegrationWorkflowRequest;
-        class CreateProfileRequest;
-        class DeleteDomainRequest;
-        class DeleteIntegrationRequest;
-        class DeleteProfileRequest;
-        class DeleteProfileKeyRequest;
-        class DeleteProfileObjectRequest;
-        class DeleteProfileObjectTypeRequest;
-        class DeleteWorkflowRequest;
-        class GetAutoMergingPreviewRequest;
-        class GetDomainRequest;
-        class GetIdentityResolutionJobRequest;
-        class GetIntegrationRequest;
-        class GetMatchesRequest;
-        class GetProfileObjectTypeRequest;
-        class GetProfileObjectTypeTemplateRequest;
-        class GetWorkflowRequest;
-        class GetWorkflowStepsRequest;
-        class ListAccountIntegrationsRequest;
-        class ListDomainsRequest;
-        class ListIdentityResolutionJobsRequest;
-        class ListIntegrationsRequest;
-        class ListProfileObjectTypeTemplatesRequest;
-        class ListProfileObjectTypesRequest;
-        class ListProfileObjectsRequest;
-        class ListTagsForResourceRequest;
-        class ListWorkflowsRequest;
-        class MergeProfilesRequest;
-        class PutIntegrationRequest;
-        class PutProfileObjectRequest;
-        class PutProfileObjectTypeRequest;
-        class SearchProfilesRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateDomainRequest;
-        class UpdateProfileRequest;
-
-        typedef Aws::Utils::Outcome<AddProfileKeyResult, CustomerProfilesError> AddProfileKeyOutcome;
-        typedef Aws::Utils::Outcome<CreateDomainResult, CustomerProfilesError> CreateDomainOutcome;
-        typedef Aws::Utils::Outcome<CreateIntegrationWorkflowResult, CustomerProfilesError> CreateIntegrationWorkflowOutcome;
-        typedef Aws::Utils::Outcome<CreateProfileResult, CustomerProfilesError> CreateProfileOutcome;
-        typedef Aws::Utils::Outcome<DeleteDomainResult, CustomerProfilesError> DeleteDomainOutcome;
-        typedef Aws::Utils::Outcome<DeleteIntegrationResult, CustomerProfilesError> DeleteIntegrationOutcome;
-        typedef Aws::Utils::Outcome<DeleteProfileResult, CustomerProfilesError> DeleteProfileOutcome;
-        typedef Aws::Utils::Outcome<DeleteProfileKeyResult, CustomerProfilesError> DeleteProfileKeyOutcome;
-        typedef Aws::Utils::Outcome<DeleteProfileObjectResult, CustomerProfilesError> DeleteProfileObjectOutcome;
-        typedef Aws::Utils::Outcome<DeleteProfileObjectTypeResult, CustomerProfilesError> DeleteProfileObjectTypeOutcome;
-        typedef Aws::Utils::Outcome<DeleteWorkflowResult, CustomerProfilesError> DeleteWorkflowOutcome;
-        typedef Aws::Utils::Outcome<GetAutoMergingPreviewResult, CustomerProfilesError> GetAutoMergingPreviewOutcome;
-        typedef Aws::Utils::Outcome<GetDomainResult, CustomerProfilesError> GetDomainOutcome;
-        typedef Aws::Utils::Outcome<GetIdentityResolutionJobResult, CustomerProfilesError> GetIdentityResolutionJobOutcome;
-        typedef Aws::Utils::Outcome<GetIntegrationResult, CustomerProfilesError> GetIntegrationOutcome;
-        typedef Aws::Utils::Outcome<GetMatchesResult, CustomerProfilesError> GetMatchesOutcome;
-        typedef Aws::Utils::Outcome<GetProfileObjectTypeResult, CustomerProfilesError> GetProfileObjectTypeOutcome;
-        typedef Aws::Utils::Outcome<GetProfileObjectTypeTemplateResult, CustomerProfilesError> GetProfileObjectTypeTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetWorkflowResult, CustomerProfilesError> GetWorkflowOutcome;
-        typedef Aws::Utils::Outcome<GetWorkflowStepsResult, CustomerProfilesError> GetWorkflowStepsOutcome;
-        typedef Aws::Utils::Outcome<ListAccountIntegrationsResult, CustomerProfilesError> ListAccountIntegrationsOutcome;
-        typedef Aws::Utils::Outcome<ListDomainsResult, CustomerProfilesError> ListDomainsOutcome;
-        typedef Aws::Utils::Outcome<ListIdentityResolutionJobsResult, CustomerProfilesError> ListIdentityResolutionJobsOutcome;
-        typedef Aws::Utils::Outcome<ListIntegrationsResult, CustomerProfilesError> ListIntegrationsOutcome;
-        typedef Aws::Utils::Outcome<ListProfileObjectTypeTemplatesResult, CustomerProfilesError> ListProfileObjectTypeTemplatesOutcome;
-        typedef Aws::Utils::Outcome<ListProfileObjectTypesResult, CustomerProfilesError> ListProfileObjectTypesOutcome;
-        typedef Aws::Utils::Outcome<ListProfileObjectsResult, CustomerProfilesError> ListProfileObjectsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CustomerProfilesError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListWorkflowsResult, CustomerProfilesError> ListWorkflowsOutcome;
-        typedef Aws::Utils::Outcome<MergeProfilesResult, CustomerProfilesError> MergeProfilesOutcome;
-        typedef Aws::Utils::Outcome<PutIntegrationResult, CustomerProfilesError> PutIntegrationOutcome;
-        typedef Aws::Utils::Outcome<PutProfileObjectResult, CustomerProfilesError> PutProfileObjectOutcome;
-        typedef Aws::Utils::Outcome<PutProfileObjectTypeResult, CustomerProfilesError> PutProfileObjectTypeOutcome;
-        typedef Aws::Utils::Outcome<SearchProfilesResult, CustomerProfilesError> SearchProfilesOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, CustomerProfilesError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, CustomerProfilesError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDomainResult, CustomerProfilesError> UpdateDomainOutcome;
-        typedef Aws::Utils::Outcome<UpdateProfileResult, CustomerProfilesError> UpdateProfileOutcome;
-
-        typedef std::future<AddProfileKeyOutcome> AddProfileKeyOutcomeCallable;
-        typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
-        typedef std::future<CreateIntegrationWorkflowOutcome> CreateIntegrationWorkflowOutcomeCallable;
-        typedef std::future<CreateProfileOutcome> CreateProfileOutcomeCallable;
-        typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
-        typedef std::future<DeleteIntegrationOutcome> DeleteIntegrationOutcomeCallable;
-        typedef std::future<DeleteProfileOutcome> DeleteProfileOutcomeCallable;
-        typedef std::future<DeleteProfileKeyOutcome> DeleteProfileKeyOutcomeCallable;
-        typedef std::future<DeleteProfileObjectOutcome> DeleteProfileObjectOutcomeCallable;
-        typedef std::future<DeleteProfileObjectTypeOutcome> DeleteProfileObjectTypeOutcomeCallable;
-        typedef std::future<DeleteWorkflowOutcome> DeleteWorkflowOutcomeCallable;
-        typedef std::future<GetAutoMergingPreviewOutcome> GetAutoMergingPreviewOutcomeCallable;
-        typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
-        typedef std::future<GetIdentityResolutionJobOutcome> GetIdentityResolutionJobOutcomeCallable;
-        typedef std::future<GetIntegrationOutcome> GetIntegrationOutcomeCallable;
-        typedef std::future<GetMatchesOutcome> GetMatchesOutcomeCallable;
-        typedef std::future<GetProfileObjectTypeOutcome> GetProfileObjectTypeOutcomeCallable;
-        typedef std::future<GetProfileObjectTypeTemplateOutcome> GetProfileObjectTypeTemplateOutcomeCallable;
-        typedef std::future<GetWorkflowOutcome> GetWorkflowOutcomeCallable;
-        typedef std::future<GetWorkflowStepsOutcome> GetWorkflowStepsOutcomeCallable;
-        typedef std::future<ListAccountIntegrationsOutcome> ListAccountIntegrationsOutcomeCallable;
-        typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
-        typedef std::future<ListIdentityResolutionJobsOutcome> ListIdentityResolutionJobsOutcomeCallable;
-        typedef std::future<ListIntegrationsOutcome> ListIntegrationsOutcomeCallable;
-        typedef std::future<ListProfileObjectTypeTemplatesOutcome> ListProfileObjectTypeTemplatesOutcomeCallable;
-        typedef std::future<ListProfileObjectTypesOutcome> ListProfileObjectTypesOutcomeCallable;
-        typedef std::future<ListProfileObjectsOutcome> ListProfileObjectsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
-        typedef std::future<MergeProfilesOutcome> MergeProfilesOutcomeCallable;
-        typedef std::future<PutIntegrationOutcome> PutIntegrationOutcomeCallable;
-        typedef std::future<PutProfileObjectOutcome> PutProfileObjectOutcomeCallable;
-        typedef std::future<PutProfileObjectTypeOutcome> PutProfileObjectTypeOutcomeCallable;
-        typedef std::future<SearchProfilesOutcome> SearchProfilesOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateDomainOutcome> UpdateDomainOutcomeCallable;
-        typedef std::future<UpdateProfileOutcome> UpdateProfileOutcomeCallable;
-} // namespace Model
-
-  class CustomerProfilesClient;
-
-    typedef std::function<void(const CustomerProfilesClient*, const Model::AddProfileKeyRequest&, const Model::AddProfileKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddProfileKeyResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::CreateIntegrationWorkflowRequest&, const Model::CreateIntegrationWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIntegrationWorkflowResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::CreateProfileRequest&, const Model::CreateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProfileResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteIntegrationRequest&, const Model::DeleteIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntegrationResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteProfileRequest&, const Model::DeleteProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteProfileKeyRequest&, const Model::DeleteProfileKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileKeyResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteProfileObjectRequest&, const Model::DeleteProfileObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileObjectResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteProfileObjectTypeRequest&, const Model::DeleteProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileObjectTypeResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteWorkflowRequest&, const Model::DeleteWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkflowResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::GetAutoMergingPreviewRequest&, const Model::GetAutoMergingPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutoMergingPreviewResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::GetDomainRequest&, const Model::GetDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::GetIdentityResolutionJobRequest&, const Model::GetIdentityResolutionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityResolutionJobResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::GetIntegrationRequest&, const Model::GetIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntegrationResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::GetMatchesRequest&, const Model::GetMatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMatchesResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::GetProfileObjectTypeRequest&, const Model::GetProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileObjectTypeResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::GetProfileObjectTypeTemplateRequest&, const Model::GetProfileObjectTypeTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileObjectTypeTemplateResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::GetWorkflowRequest&, const Model::GetWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::GetWorkflowStepsRequest&, const Model::GetWorkflowStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowStepsResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::ListAccountIntegrationsRequest&, const Model::ListAccountIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountIntegrationsResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::ListIdentityResolutionJobsRequest&, const Model::ListIdentityResolutionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityResolutionJobsResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::ListIntegrationsRequest&, const Model::ListIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIntegrationsResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectTypeTemplatesRequest&, const Model::ListProfileObjectTypeTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileObjectTypeTemplatesResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectTypesRequest&, const Model::ListProfileObjectTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileObjectTypesResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectsRequest&, const Model::ListProfileObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileObjectsResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::ListWorkflowsRequest&, const Model::ListWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowsResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::MergeProfilesRequest&, const Model::MergeProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeProfilesResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::PutIntegrationRequest&, const Model::PutIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutIntegrationResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::PutProfileObjectRequest&, const Model::PutProfileObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutProfileObjectResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::PutProfileObjectTypeRequest&, const Model::PutProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutProfileObjectTypeResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::SearchProfilesRequest&, const Model::SearchProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchProfilesResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::UpdateDomainRequest&, const Model::UpdateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainResponseReceivedHandler;
-    typedef std::function<void(const CustomerProfilesClient*, const Model::UpdateProfileRequest&, const Model::UpdateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProfileResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Connect Customer Profiles</fullname> <p>Welcome to the Amazon
    * Connect Customer Profiles API Reference. This guide provides information about
@@ -276,23 +43,24 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CustomerProfilesClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CustomerProfilesClient(const Aws::Auth::AWSCredentials& credentials,
+                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CustomerProfilesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CustomerProfilesClient();
 
 
         /**
-         * <p>Associates a new key value with a specific profile, such as a Contact Trace
-         * Record (CTR) ContactId.</p> <p>A profile object can have a single unique key and
-         * any number of additional keys that can be used to identify the profile that it
-         * belongs to.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates a new key value with a specific profile, such as a Contact Record
+         * ContactId.</p> <p>A profile object can have a single unique key and any number
+         * of additional keys that can be used to identify the profile that it belongs
+         * to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AddProfileKey">AWS
          * API Reference</a></p>
          */
@@ -905,7 +673,11 @@ namespace Model
         /**
          * <p>Adds an integration between the service and a third-party service, which
          * includes Amazon AppFlow and Amazon Connect.</p> <p>An integration can belong to
-         * only one domain.</p><p><h3>See Also:</h3>   <a
+         * only one domain.</p> <p>To add or remove tags on an existing Integration, see <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">
+         * TagResource </a>/<a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">
+         * UntagResource</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutIntegration">AWS
          * API Reference</a></p>
          */
@@ -923,13 +695,13 @@ namespace Model
 
         /**
          * <p>Adds additional objects to customer profiles of a given ObjectType.</p>
-         * <p>When adding a specific profile object, like a Contact Trace Record (CTR), an
-         * inferred profile can get created if it is not mapped to an existing profile. The
+         * <p>When adding a specific profile object, like a Contact Record, an inferred
+         * profile can get created if it is not mapped to an existing profile. The
          * resulting profile will only have a phone number populated in the standard
-         * ProfileObject. Any additional CTRs with the same phone number will be mapped to
-         * the same inferred profile.</p> <p>When a ProfileObject is created and if a
-         * ProfileObjectType already exists for the ProfileObject, it will provide data to
-         * a standard profile depending on the ProfileObjectType definition.</p>
+         * ProfileObject. Any additional Contact Records with the same phone number will be
+         * mapped to the same inferred profile.</p> <p>When a ProfileObject is created and
+         * if a ProfileObjectType already exists for the ProfileObject, it will provide
+         * data to a standard profile depending on the ProfileObjectType definition.</p>
          * <p>PutProfileObject needs an ObjectType, which can be created using
          * PutProfileObjectType.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObject">AWS
@@ -948,7 +720,12 @@ namespace Model
         virtual void PutProfileObjectAsync(const Model::PutProfileObjectRequest& request, const PutProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Defines a ProfileObjectType.</p><p><h3>See Also:</h3>   <a
+         * <p>Defines a ProfileObjectType.</p> <p>To add or remove tags on an existing
+         * ObjectType, see <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">
+         * TagResource</a>/<a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObjectType">AWS
          * API Reference</a></p>
          */
@@ -1040,8 +817,11 @@ namespace Model
          * resolution</a>: set <code>Matching</code> to true. </p> <p>To prevent
          * cross-service impersonation when you call this API, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service
-         * confused deputy prevention</a> for sample policies that you should apply.
-         * </p><p><h3>See Also:</h3>   <a
+         * confused deputy prevention</a> for sample policies that you should apply. </p>
+         * <p>To add or remove tags on an existing Domain, see <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">TagResource</a>/<a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomain">AWS
          * API Reference</a></p>
          */
@@ -1082,44 +862,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddProfileKeyAsyncHelper(const Model::AddProfileKeyRequest& request, const AddProfileKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDomainAsyncHelper(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateIntegrationWorkflowAsyncHelper(const Model::CreateIntegrationWorkflowRequest& request, const CreateIntegrationWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateProfileAsyncHelper(const Model::CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteIntegrationAsyncHelper(const Model::DeleteIntegrationRequest& request, const DeleteIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProfileAsyncHelper(const Model::DeleteProfileRequest& request, const DeleteProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProfileKeyAsyncHelper(const Model::DeleteProfileKeyRequest& request, const DeleteProfileKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProfileObjectAsyncHelper(const Model::DeleteProfileObjectRequest& request, const DeleteProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProfileObjectTypeAsyncHelper(const Model::DeleteProfileObjectTypeRequest& request, const DeleteProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteWorkflowAsyncHelper(const Model::DeleteWorkflowRequest& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAutoMergingPreviewAsyncHelper(const Model::GetAutoMergingPreviewRequest& request, const GetAutoMergingPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetDomainAsyncHelper(const Model::GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetIdentityResolutionJobAsyncHelper(const Model::GetIdentityResolutionJobRequest& request, const GetIdentityResolutionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetIntegrationAsyncHelper(const Model::GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetMatchesAsyncHelper(const Model::GetMatchesRequest& request, const GetMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetProfileObjectTypeAsyncHelper(const Model::GetProfileObjectTypeRequest& request, const GetProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetProfileObjectTypeTemplateAsyncHelper(const Model::GetProfileObjectTypeTemplateRequest& request, const GetProfileObjectTypeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetWorkflowAsyncHelper(const Model::GetWorkflowRequest& request, const GetWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetWorkflowStepsAsyncHelper(const Model::GetWorkflowStepsRequest& request, const GetWorkflowStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAccountIntegrationsAsyncHelper(const Model::ListAccountIntegrationsRequest& request, const ListAccountIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListIdentityResolutionJobsAsyncHelper(const Model::ListIdentityResolutionJobsRequest& request, const ListIdentityResolutionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListIntegrationsAsyncHelper(const Model::ListIntegrationsRequest& request, const ListIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProfileObjectTypeTemplatesAsyncHelper(const Model::ListProfileObjectTypeTemplatesRequest& request, const ListProfileObjectTypeTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProfileObjectTypesAsyncHelper(const Model::ListProfileObjectTypesRequest& request, const ListProfileObjectTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProfileObjectsAsyncHelper(const Model::ListProfileObjectsRequest& request, const ListProfileObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListWorkflowsAsyncHelper(const Model::ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void MergeProfilesAsyncHelper(const Model::MergeProfilesRequest& request, const MergeProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutIntegrationAsyncHelper(const Model::PutIntegrationRequest& request, const PutIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutProfileObjectAsyncHelper(const Model::PutProfileObjectRequest& request, const PutProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutProfileObjectTypeAsyncHelper(const Model::PutProfileObjectTypeRequest& request, const PutProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SearchProfilesAsyncHelper(const Model::SearchProfilesRequest& request, const SearchProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDomainAsyncHelper(const Model::UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateProfileAsyncHelper(const Model::UpdateProfileRequest& request, const UpdateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

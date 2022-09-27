@@ -180,10 +180,10 @@ namespace Model
   private:
 
     Aws::Vector<Operation> m_operations;
-    bool m_operationsHasBeenSet;
+    bool m_operationsHasBeenSet = false;
 
     Aws::Vector<OperationStatus> m_operationStatuses;
-    bool m_operationStatusesHasBeenSet;
+    bool m_operationStatusesHasBeenSet = false;
   };
 
 } // namespace Model

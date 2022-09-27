@@ -117,10 +117,10 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_earliestTime;
-    bool m_earliestTimeHasBeenSet;
+    bool m_earliestTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestTime;
-    bool m_latestTimeHasBeenSet;
+    bool m_latestTimeHasBeenSet = false;
   };
 
 } // namespace Model

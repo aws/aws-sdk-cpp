@@ -239,19 +239,19 @@ namespace Model
   private:
 
     ObjectTypeEnum m_objectType;
-    bool m_objectTypeHasBeenSet;
+    bool m_objectTypeHasBeenSet = false;
 
     Aws::String m_objectName;
-    bool m_objectNameHasBeenSet;
+    bool m_objectNameHasBeenSet = false;
 
     ActionEnum m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
   };
 
 } // namespace Model

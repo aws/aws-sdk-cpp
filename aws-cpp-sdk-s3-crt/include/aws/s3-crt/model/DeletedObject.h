@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_versionId;
-    bool m_versionIdHasBeenSet;
+    bool m_versionIdHasBeenSet = false;
 
     bool m_deleteMarker;
-    bool m_deleteMarkerHasBeenSet;
+    bool m_deleteMarkerHasBeenSet = false;
 
     Aws::String m_deleteMarkerVersionId;
-    bool m_deleteMarkerVersionIdHasBeenSet;
+    bool m_deleteMarkerVersionIdHasBeenSet = false;
   };
 
 } // namespace Model

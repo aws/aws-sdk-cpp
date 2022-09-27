@@ -16,7 +16,8 @@ namespace Model
   enum class IpAddressType
   {
     NOT_SET,
-    IPV4
+    IPV4,
+    DUAL_STACK
   };
 
 namespace IpAddressTypeMapper

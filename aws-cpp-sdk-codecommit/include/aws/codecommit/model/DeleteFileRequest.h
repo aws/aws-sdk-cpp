@@ -428,28 +428,28 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_branchName;
-    bool m_branchNameHasBeenSet;
+    bool m_branchNameHasBeenSet = false;
 
     Aws::String m_filePath;
-    bool m_filePathHasBeenSet;
+    bool m_filePathHasBeenSet = false;
 
     Aws::String m_parentCommitId;
-    bool m_parentCommitIdHasBeenSet;
+    bool m_parentCommitIdHasBeenSet = false;
 
     bool m_keepEmptyFolders;
-    bool m_keepEmptyFoldersHasBeenSet;
+    bool m_keepEmptyFoldersHasBeenSet = false;
 
     Aws::String m_commitMessage;
-    bool m_commitMessageHasBeenSet;
+    bool m_commitMessageHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_email;
-    bool m_emailHasBeenSet;
+    bool m_emailHasBeenSet = false;
   };
 
 } // namespace Model

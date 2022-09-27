@@ -89,7 +89,7 @@ namespace Model
   private:
 
     Aws::String m_outputUrl;
-    bool m_outputUrlHasBeenSet;
+    bool m_outputUrlHasBeenSet = false;
   };
 
 } // namespace Model

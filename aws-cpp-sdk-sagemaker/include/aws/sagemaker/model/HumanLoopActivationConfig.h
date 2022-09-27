@@ -78,7 +78,7 @@ namespace Model
   private:
 
     HumanLoopActivationConditionsConfig m_humanLoopActivationConditionsConfig;
-    bool m_humanLoopActivationConditionsConfigHasBeenSet;
+    bool m_humanLoopActivationConditionsConfigHasBeenSet = false;
   };
 
 } // namespace Model

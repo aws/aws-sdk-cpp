@@ -146,10 +146,10 @@ namespace Model
   private:
 
     Aws::String m_cidrIp;
-    bool m_cidrIpHasBeenSet;
+    bool m_cidrIpHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

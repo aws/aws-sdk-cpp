@@ -178,13 +178,13 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     Aws::String m_requestValidatorId;
-    bool m_requestValidatorIdHasBeenSet;
+    bool m_requestValidatorIdHasBeenSet = false;
 
     Aws::Vector<PatchOperation> m_patchOperations;
-    bool m_patchOperationsHasBeenSet;
+    bool m_patchOperationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_shardIterator;
-    bool m_shardIteratorHasBeenSet;
+    bool m_shardIteratorHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

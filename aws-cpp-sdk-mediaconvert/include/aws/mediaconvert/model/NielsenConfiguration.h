@@ -119,10 +119,10 @@ namespace Model
   private:
 
     int m_breakoutCode;
-    bool m_breakoutCodeHasBeenSet;
+    bool m_breakoutCodeHasBeenSet = false;
 
     Aws::String m_distributorId;
-    bool m_distributorIdHasBeenSet;
+    bool m_distributorIdHasBeenSet = false;
   };
 
 } // namespace Model

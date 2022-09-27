@@ -867,46 +867,46 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
-    bool m_fleetIdHasBeenSet;
+    bool m_fleetIdHasBeenSet = false;
 
     Aws::String m_fleetArn;
-    bool m_fleetArnHasBeenSet;
+    bool m_fleetArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ScalingStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     int m_scalingAdjustment;
-    bool m_scalingAdjustmentHasBeenSet;
+    bool m_scalingAdjustmentHasBeenSet = false;
 
     ScalingAdjustmentType m_scalingAdjustmentType;
-    bool m_scalingAdjustmentTypeHasBeenSet;
+    bool m_scalingAdjustmentTypeHasBeenSet = false;
 
     ComparisonOperatorType m_comparisonOperator;
-    bool m_comparisonOperatorHasBeenSet;
+    bool m_comparisonOperatorHasBeenSet = false;
 
     double m_threshold;
-    bool m_thresholdHasBeenSet;
+    bool m_thresholdHasBeenSet = false;
 
     int m_evaluationPeriods;
-    bool m_evaluationPeriodsHasBeenSet;
+    bool m_evaluationPeriodsHasBeenSet = false;
 
     MetricName m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     PolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     TargetConfiguration m_targetConfiguration;
-    bool m_targetConfigurationHasBeenSet;
+    bool m_targetConfigurationHasBeenSet = false;
 
     LocationUpdateStatus m_updateStatus;
-    bool m_updateStatusHasBeenSet;
+    bool m_updateStatusHasBeenSet = false;
 
     Aws::String m_location;
-    bool m_locationHasBeenSet;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

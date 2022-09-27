@@ -142,10 +142,10 @@ namespace Model
   private:
 
     RuleDefinition m_ruleDefinition;
-    bool m_ruleDefinitionHasBeenSet;
+    bool m_ruleDefinitionHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
   };
 
 } // namespace Model

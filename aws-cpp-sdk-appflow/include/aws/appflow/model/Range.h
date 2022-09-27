@@ -79,10 +79,10 @@ namespace Model
   private:
 
     double m_maximum;
-    bool m_maximumHasBeenSet;
+    bool m_maximumHasBeenSet = false;
 
     double m_minimum;
-    bool m_minimumHasBeenSet;
+    bool m_minimumHasBeenSet = false;
   };
 
 } // namespace Model

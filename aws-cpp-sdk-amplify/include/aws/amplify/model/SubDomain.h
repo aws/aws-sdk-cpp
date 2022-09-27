@@ -133,13 +133,13 @@ namespace Model
   private:
 
     SubDomainSetting m_subDomainSetting;
-    bool m_subDomainSettingHasBeenSet;
+    bool m_subDomainSettingHasBeenSet = false;
 
     bool m_verified;
-    bool m_verifiedHasBeenSet;
+    bool m_verifiedHasBeenSet = false;
 
     Aws::String m_dnsRecord;
-    bool m_dnsRecordHasBeenSet;
+    bool m_dnsRecordHasBeenSet = false;
   };
 
 } // namespace Model

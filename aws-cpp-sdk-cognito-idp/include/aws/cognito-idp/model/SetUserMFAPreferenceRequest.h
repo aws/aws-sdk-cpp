@@ -68,32 +68,32 @@ namespace Model
 
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline const SoftwareTokenMfaSettingsType& GetSoftwareTokenMfaSettings() const{ return m_softwareTokenMfaSettings; }
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline bool SoftwareTokenMfaSettingsHasBeenSet() const { return m_softwareTokenMfaSettingsHasBeenSet; }
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline void SetSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = value; }
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline void SetSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = std::move(value); }
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline SetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { SetSoftwareTokenMfaSettings(value); return *this;}
 
     /**
-     * <p>The time-based one-time password software token MFA settings.</p>
+     * <p>The time-based one-time password (TOTP) software token MFA settings.</p>
      */
     inline SetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { SetSoftwareTokenMfaSettings(std::move(value)); return *this;}
 
@@ -149,13 +149,13 @@ namespace Model
   private:
 
     SMSMfaSettingsType m_sMSMfaSettings;
-    bool m_sMSMfaSettingsHasBeenSet;
+    bool m_sMSMfaSettingsHasBeenSet = false;
 
     SoftwareTokenMfaSettingsType m_softwareTokenMfaSettings;
-    bool m_softwareTokenMfaSettingsHasBeenSet;
+    bool m_softwareTokenMfaSettingsHasBeenSet = false;
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -408,31 +408,31 @@ namespace Model
   private:
 
     LaunchProfileInitializationActiveDirectory m_activeDirectory;
-    bool m_activeDirectoryHasBeenSet;
+    bool m_activeDirectoryHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ec2SecurityGroupIds;
-    bool m_ec2SecurityGroupIdsHasBeenSet;
+    bool m_ec2SecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_launchProfileId;
-    bool m_launchProfileIdHasBeenSet;
+    bool m_launchProfileIdHasBeenSet = false;
 
     Aws::String m_launchProfileProtocolVersion;
-    bool m_launchProfileProtocolVersionHasBeenSet;
+    bool m_launchProfileProtocolVersionHasBeenSet = false;
 
     Aws::String m_launchPurpose;
-    bool m_launchPurposeHasBeenSet;
+    bool m_launchPurposeHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     LaunchProfilePlatform m_platform;
-    bool m_platformHasBeenSet;
+    bool m_platformHasBeenSet = false;
 
     Aws::Vector<LaunchProfileInitializationScript> m_systemInitializationScripts;
-    bool m_systemInitializationScriptsHasBeenSet;
+    bool m_systemInitializationScriptsHasBeenSet = false;
 
     Aws::Vector<LaunchProfileInitializationScript> m_userInitializationScripts;
-    bool m_userInitializationScriptsHasBeenSet;
+    bool m_userInitializationScriptsHasBeenSet = false;
   };
 
 } // namespace Model

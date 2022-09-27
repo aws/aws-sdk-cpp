@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_medicalTranscriptionJobName;
-    bool m_medicalTranscriptionJobNameHasBeenSet;
+    bool m_medicalTranscriptionJobNameHasBeenSet = false;
   };
 
 } // namespace Model

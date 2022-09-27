@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_payloadVersion;
-    bool m_payloadVersionHasBeenSet;
+    bool m_payloadVersionHasBeenSet = false;
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_service;
-    bool m_serviceHasBeenSet;
+    bool m_serviceHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
 
     Aws::String m_linkedAccount;
-    bool m_linkedAccountHasBeenSet;
+    bool m_linkedAccountHasBeenSet = false;
 
     Aws::String m_usageType;
-    bool m_usageTypeHasBeenSet;
+    bool m_usageTypeHasBeenSet = false;
   };
 
 } // namespace Model

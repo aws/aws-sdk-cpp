@@ -5,173 +5,15 @@
 
 #pragma once
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
-#include <aws/managedblockchain/ManagedBlockchainErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/managedblockchain/model/CreateMemberResult.h>
-#include <aws/managedblockchain/model/CreateNetworkResult.h>
-#include <aws/managedblockchain/model/CreateNodeResult.h>
-#include <aws/managedblockchain/model/CreateProposalResult.h>
-#include <aws/managedblockchain/model/DeleteMemberResult.h>
-#include <aws/managedblockchain/model/DeleteNodeResult.h>
-#include <aws/managedblockchain/model/GetMemberResult.h>
-#include <aws/managedblockchain/model/GetNetworkResult.h>
-#include <aws/managedblockchain/model/GetNodeResult.h>
-#include <aws/managedblockchain/model/GetProposalResult.h>
-#include <aws/managedblockchain/model/ListInvitationsResult.h>
-#include <aws/managedblockchain/model/ListMembersResult.h>
-#include <aws/managedblockchain/model/ListNetworksResult.h>
-#include <aws/managedblockchain/model/ListNodesResult.h>
-#include <aws/managedblockchain/model/ListProposalVotesResult.h>
-#include <aws/managedblockchain/model/ListProposalsResult.h>
-#include <aws/managedblockchain/model/ListTagsForResourceResult.h>
-#include <aws/managedblockchain/model/RejectInvitationResult.h>
-#include <aws/managedblockchain/model/TagResourceResult.h>
-#include <aws/managedblockchain/model/UntagResourceResult.h>
-#include <aws/managedblockchain/model/UpdateMemberResult.h>
-#include <aws/managedblockchain/model/UpdateNodeResult.h>
-#include <aws/managedblockchain/model/VoteOnProposalResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/managedblockchain/ManagedBlockchainServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ManagedBlockchain
 {
-
-namespace Model
-{
-        class CreateMemberRequest;
-        class CreateNetworkRequest;
-        class CreateNodeRequest;
-        class CreateProposalRequest;
-        class DeleteMemberRequest;
-        class DeleteNodeRequest;
-        class GetMemberRequest;
-        class GetNetworkRequest;
-        class GetNodeRequest;
-        class GetProposalRequest;
-        class ListInvitationsRequest;
-        class ListMembersRequest;
-        class ListNetworksRequest;
-        class ListNodesRequest;
-        class ListProposalVotesRequest;
-        class ListProposalsRequest;
-        class ListTagsForResourceRequest;
-        class RejectInvitationRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateMemberRequest;
-        class UpdateNodeRequest;
-        class VoteOnProposalRequest;
-
-        typedef Aws::Utils::Outcome<CreateMemberResult, ManagedBlockchainError> CreateMemberOutcome;
-        typedef Aws::Utils::Outcome<CreateNetworkResult, ManagedBlockchainError> CreateNetworkOutcome;
-        typedef Aws::Utils::Outcome<CreateNodeResult, ManagedBlockchainError> CreateNodeOutcome;
-        typedef Aws::Utils::Outcome<CreateProposalResult, ManagedBlockchainError> CreateProposalOutcome;
-        typedef Aws::Utils::Outcome<DeleteMemberResult, ManagedBlockchainError> DeleteMemberOutcome;
-        typedef Aws::Utils::Outcome<DeleteNodeResult, ManagedBlockchainError> DeleteNodeOutcome;
-        typedef Aws::Utils::Outcome<GetMemberResult, ManagedBlockchainError> GetMemberOutcome;
-        typedef Aws::Utils::Outcome<GetNetworkResult, ManagedBlockchainError> GetNetworkOutcome;
-        typedef Aws::Utils::Outcome<GetNodeResult, ManagedBlockchainError> GetNodeOutcome;
-        typedef Aws::Utils::Outcome<GetProposalResult, ManagedBlockchainError> GetProposalOutcome;
-        typedef Aws::Utils::Outcome<ListInvitationsResult, ManagedBlockchainError> ListInvitationsOutcome;
-        typedef Aws::Utils::Outcome<ListMembersResult, ManagedBlockchainError> ListMembersOutcome;
-        typedef Aws::Utils::Outcome<ListNetworksResult, ManagedBlockchainError> ListNetworksOutcome;
-        typedef Aws::Utils::Outcome<ListNodesResult, ManagedBlockchainError> ListNodesOutcome;
-        typedef Aws::Utils::Outcome<ListProposalVotesResult, ManagedBlockchainError> ListProposalVotesOutcome;
-        typedef Aws::Utils::Outcome<ListProposalsResult, ManagedBlockchainError> ListProposalsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ManagedBlockchainError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<RejectInvitationResult, ManagedBlockchainError> RejectInvitationOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, ManagedBlockchainError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, ManagedBlockchainError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateMemberResult, ManagedBlockchainError> UpdateMemberOutcome;
-        typedef Aws::Utils::Outcome<UpdateNodeResult, ManagedBlockchainError> UpdateNodeOutcome;
-        typedef Aws::Utils::Outcome<VoteOnProposalResult, ManagedBlockchainError> VoteOnProposalOutcome;
-
-        typedef std::future<CreateMemberOutcome> CreateMemberOutcomeCallable;
-        typedef std::future<CreateNetworkOutcome> CreateNetworkOutcomeCallable;
-        typedef std::future<CreateNodeOutcome> CreateNodeOutcomeCallable;
-        typedef std::future<CreateProposalOutcome> CreateProposalOutcomeCallable;
-        typedef std::future<DeleteMemberOutcome> DeleteMemberOutcomeCallable;
-        typedef std::future<DeleteNodeOutcome> DeleteNodeOutcomeCallable;
-        typedef std::future<GetMemberOutcome> GetMemberOutcomeCallable;
-        typedef std::future<GetNetworkOutcome> GetNetworkOutcomeCallable;
-        typedef std::future<GetNodeOutcome> GetNodeOutcomeCallable;
-        typedef std::future<GetProposalOutcome> GetProposalOutcomeCallable;
-        typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
-        typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
-        typedef std::future<ListNetworksOutcome> ListNetworksOutcomeCallable;
-        typedef std::future<ListNodesOutcome> ListNodesOutcomeCallable;
-        typedef std::future<ListProposalVotesOutcome> ListProposalVotesOutcomeCallable;
-        typedef std::future<ListProposalsOutcome> ListProposalsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<RejectInvitationOutcome> RejectInvitationOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateMemberOutcome> UpdateMemberOutcomeCallable;
-        typedef std::future<UpdateNodeOutcome> UpdateNodeOutcomeCallable;
-        typedef std::future<VoteOnProposalOutcome> VoteOnProposalOutcomeCallable;
-} // namespace Model
-
-  class ManagedBlockchainClient;
-
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::CreateMemberRequest&, const Model::CreateMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMemberResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::CreateNetworkRequest&, const Model::CreateNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::CreateNodeRequest&, const Model::CreateNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNodeResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::CreateProposalRequest&, const Model::CreateProposalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProposalResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::DeleteMemberRequest&, const Model::DeleteMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMemberResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::DeleteNodeRequest&, const Model::DeleteNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNodeResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::GetMemberRequest&, const Model::GetMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMemberResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::GetNetworkRequest&, const Model::GetNetworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNetworkResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::GetNodeRequest&, const Model::GetNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNodeResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::GetProposalRequest&, const Model::GetProposalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProposalResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::ListNetworksRequest&, const Model::ListNetworksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNetworksResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::ListNodesRequest&, const Model::ListNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNodesResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::ListProposalVotesRequest&, const Model::ListProposalVotesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProposalVotesResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::ListProposalsRequest&, const Model::ListProposalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProposalsResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::RejectInvitationRequest&, const Model::RejectInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInvitationResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::UpdateMemberRequest&, const Model::UpdateMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMemberResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::UpdateNodeRequest&, const Model::UpdateNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNodeResponseReceivedHandler;
-    typedef std::function<void(const ManagedBlockchainClient*, const Model::VoteOnProposalRequest&, const Model::VoteOnProposalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VoteOnProposalResponseReceivedHandler;
-
   /**
    * <p/> <p>Amazon Managed Blockchain is a fully managed service for creating and
    * managing blockchain networks using open-source frameworks. Blockchain allows you
@@ -201,14 +43,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ManagedBlockchainClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ManagedBlockchainClient(const Aws::Auth::AWSCredentials& credentials,
+                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ManagedBlockchainClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ManagedBlockchainClient();
 
@@ -670,29 +513,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateMemberAsyncHelper(const Model::CreateMemberRequest& request, const CreateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateNetworkAsyncHelper(const Model::CreateNetworkRequest& request, const CreateNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateNodeAsyncHelper(const Model::CreateNodeRequest& request, const CreateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateProposalAsyncHelper(const Model::CreateProposalRequest& request, const CreateProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteMemberAsyncHelper(const Model::DeleteMemberRequest& request, const DeleteMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteNodeAsyncHelper(const Model::DeleteNodeRequest& request, const DeleteNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetMemberAsyncHelper(const Model::GetMemberRequest& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetNetworkAsyncHelper(const Model::GetNetworkRequest& request, const GetNetworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetNodeAsyncHelper(const Model::GetNodeRequest& request, const GetNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetProposalAsyncHelper(const Model::GetProposalRequest& request, const GetProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInvitationsAsyncHelper(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListMembersAsyncHelper(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListNetworksAsyncHelper(const Model::ListNetworksRequest& request, const ListNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListNodesAsyncHelper(const Model::ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProposalVotesAsyncHelper(const Model::ListProposalVotesRequest& request, const ListProposalVotesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProposalsAsyncHelper(const Model::ListProposalsRequest& request, const ListProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RejectInvitationAsyncHelper(const Model::RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateMemberAsyncHelper(const Model::UpdateMemberRequest& request, const UpdateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateNodeAsyncHelper(const Model::UpdateNodeRequest& request, const UpdateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void VoteOnProposalAsyncHelper(const Model::VoteOnProposalRequest& request, const VoteOnProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

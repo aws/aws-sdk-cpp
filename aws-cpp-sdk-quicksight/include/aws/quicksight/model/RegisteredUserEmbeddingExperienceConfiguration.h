@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/RegisteredUserDashboardEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserQuickSightConsoleEmbeddingConfiguration.h>
 #include <aws/quicksight/model/RegisteredUserQSearchBarEmbeddingConfiguration.h>
+#include <aws/quicksight/model/RegisteredUserDashboardVisualEmbeddingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -265,7 +266,7 @@ namespace Model
      * <p>The configuration details for embedding the Q search bar.</p> <p>For more
      * information about embedding the Q search bar, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a>.</p>
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
     inline const RegisteredUserQSearchBarEmbeddingConfiguration& GetQSearchBar() const{ return m_qSearchBar; }
 
@@ -273,7 +274,7 @@ namespace Model
      * <p>The configuration details for embedding the Q search bar.</p> <p>For more
      * information about embedding the Q search bar, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a>.</p>
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
     inline bool QSearchBarHasBeenSet() const { return m_qSearchBarHasBeenSet; }
 
@@ -281,7 +282,7 @@ namespace Model
      * <p>The configuration details for embedding the Q search bar.</p> <p>For more
      * information about embedding the Q search bar, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a>.</p>
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
     inline void SetQSearchBar(const RegisteredUserQSearchBarEmbeddingConfiguration& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = value; }
 
@@ -289,7 +290,7 @@ namespace Model
      * <p>The configuration details for embedding the Q search bar.</p> <p>For more
      * information about embedding the Q search bar, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a>.</p>
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
     inline void SetQSearchBar(RegisteredUserQSearchBarEmbeddingConfiguration&& value) { m_qSearchBarHasBeenSet = true; m_qSearchBar = std::move(value); }
 
@@ -297,7 +298,7 @@ namespace Model
      * <p>The configuration details for embedding the Q search bar.</p> <p>For more
      * information about embedding the Q search bar, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a>.</p>
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
     inline RegisteredUserEmbeddingExperienceConfiguration& WithQSearchBar(const RegisteredUserQSearchBarEmbeddingConfiguration& value) { SetQSearchBar(value); return *this;}
 
@@ -305,20 +306,60 @@ namespace Model
      * <p>The configuration details for embedding the Q search bar.</p> <p>For more
      * information about embedding the Q search bar, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding
-     * Overview</a>.</p>
+     * Overview</a> in the <i>Amazon QuickSight User Guide</i>.</p>
      */
     inline RegisteredUserEmbeddingExperienceConfiguration& WithQSearchBar(RegisteredUserQSearchBarEmbeddingConfiguration&& value) { SetQSearchBar(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline const RegisteredUserDashboardVisualEmbeddingConfiguration& GetDashboardVisual() const{ return m_dashboardVisual; }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline bool DashboardVisualHasBeenSet() const { return m_dashboardVisualHasBeenSet; }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline void SetDashboardVisual(const RegisteredUserDashboardVisualEmbeddingConfiguration& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = value; }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline void SetDashboardVisual(RegisteredUserDashboardVisualEmbeddingConfiguration&& value) { m_dashboardVisualHasBeenSet = true; m_dashboardVisual = std::move(value); }
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline RegisteredUserEmbeddingExperienceConfiguration& WithDashboardVisual(const RegisteredUserDashboardVisualEmbeddingConfiguration& value) { SetDashboardVisual(value); return *this;}
+
+    /**
+     * <p>The type of embedding experience. In this case, Amazon QuickSight
+     * visuals.</p>
+     */
+    inline RegisteredUserEmbeddingExperienceConfiguration& WithDashboardVisual(RegisteredUserDashboardVisualEmbeddingConfiguration&& value) { SetDashboardVisual(std::move(value)); return *this;}
 
   private:
 
     RegisteredUserDashboardEmbeddingConfiguration m_dashboard;
-    bool m_dashboardHasBeenSet;
+    bool m_dashboardHasBeenSet = false;
 
     RegisteredUserQuickSightConsoleEmbeddingConfiguration m_quickSightConsole;
-    bool m_quickSightConsoleHasBeenSet;
+    bool m_quickSightConsoleHasBeenSet = false;
 
     RegisteredUserQSearchBarEmbeddingConfiguration m_qSearchBar;
-    bool m_qSearchBarHasBeenSet;
+    bool m_qSearchBarHasBeenSet = false;
+
+    RegisteredUserDashboardVisualEmbeddingConfiguration m_dashboardVisual;
+    bool m_dashboardVisualHasBeenSet = false;
   };
 
 } // namespace Model

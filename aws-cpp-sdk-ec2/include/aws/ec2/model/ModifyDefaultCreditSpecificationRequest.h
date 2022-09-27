@@ -152,13 +152,13 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     UnlimitedSupportedInstanceFamily m_instanceFamily;
-    bool m_instanceFamilyHasBeenSet;
+    bool m_instanceFamilyHasBeenSet = false;
 
     Aws::String m_cpuCredits;
-    bool m_cpuCreditsHasBeenSet;
+    bool m_cpuCreditsHasBeenSet = false;
   };
 
 } // namespace Model

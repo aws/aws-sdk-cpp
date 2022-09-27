@@ -21,14 +21,16 @@ namespace Model
 ArtifactsConfiguration::ArtifactsConfiguration() : 
     m_audioHasBeenSet(false),
     m_videoHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_compositedVideoHasBeenSet(false)
 {
 }
 
 ArtifactsConfiguration::ArtifactsConfiguration(JsonView jsonValue) : 
     m_audioHasBeenSet(false),
     m_videoHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_compositedVideoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ ArtifactsConfiguration& ArtifactsConfiguration::operator =(JsonView jsonValue)
     m_contentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CompositedVideo"))
+  {
+    m_compositedVideo = jsonValue.GetObject("CompositedVideo");
+
+    m_compositedVideoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue ArtifactsConfiguration::Jsonize() const
   if(m_contentHasBeenSet)
   {
    payload.WithObject("Content", m_content.Jsonize());
+
+  }
+
+  if(m_compositedVideoHasBeenSet)
+  {
+   payload.WithObject("CompositedVideo", m_compositedVideo.Jsonize());
 
   }
 

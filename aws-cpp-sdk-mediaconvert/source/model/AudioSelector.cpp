@@ -19,6 +19,8 @@ namespace Model
 {
 
 AudioSelector::AudioSelector() : 
+    m_audioDurationCorrection(AudioDurationCorrection::NOT_SET),
+    m_audioDurationCorrectionHasBeenSet(false),
     m_customLanguageCodeHasBeenSet(false),
     m_defaultSelection(AudioDefaultSelection::NOT_SET),
     m_defaultSelectionHasBeenSet(false),
@@ -39,6 +41,8 @@ AudioSelector::AudioSelector() :
 }
 
 AudioSelector::AudioSelector(JsonView jsonValue) : 
+    m_audioDurationCorrection(AudioDurationCorrection::NOT_SET),
+    m_audioDurationCorrectionHasBeenSet(false),
     m_customLanguageCodeHasBeenSet(false),
     m_defaultSelection(AudioDefaultSelection::NOT_SET),
     m_defaultSelectionHasBeenSet(false),
@@ -61,6 +65,13 @@ AudioSelector::AudioSelector(JsonView jsonValue) :
 
 AudioSelector& AudioSelector::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("audioDurationCorrection"))
+  {
+    m_audioDurationCorrection = AudioDurationCorrectionMapper::GetAudioDurationCorrectionForName(jsonValue.GetString("audioDurationCorrection"));
+
+    m_audioDurationCorrectionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("customLanguageCode"))
   {
     m_customLanguageCode = jsonValue.GetString("customLanguageCode");
@@ -150,6 +161,11 @@ AudioSelector& AudioSelector::operator =(JsonView jsonValue)
 JsonValue AudioSelector::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_audioDurationCorrectionHasBeenSet)
+  {
+   payload.WithString("audioDurationCorrection", AudioDurationCorrectionMapper::GetNameForAudioDurationCorrection(m_audioDurationCorrection));
+  }
 
   if(m_customLanguageCodeHasBeenSet)
   {

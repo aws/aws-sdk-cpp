@@ -23,6 +23,7 @@ Project::Project() :
     m_activeExperimentCountHasBeenSet(false),
     m_activeLaunchCount(0),
     m_activeLaunchCountHasBeenSet(false),
+    m_appConfigResourceHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_dataDeliveryHasBeenSet(false),
@@ -46,6 +47,7 @@ Project::Project(JsonView jsonValue) :
     m_activeExperimentCountHasBeenSet(false),
     m_activeLaunchCount(0),
     m_activeLaunchCountHasBeenSet(false),
+    m_appConfigResourceHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_dataDeliveryHasBeenSet(false),
@@ -79,6 +81,13 @@ Project& Project::operator =(JsonView jsonValue)
     m_activeLaunchCount = jsonValue.GetInt64("activeLaunchCount");
 
     m_activeLaunchCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("appConfigResource"))
+  {
+    m_appConfigResource = jsonValue.GetObject("appConfigResource");
+
+    m_appConfigResourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("arn"))
@@ -177,6 +186,12 @@ JsonValue Project::Jsonize() const
   if(m_activeLaunchCountHasBeenSet)
   {
    payload.WithInt64("activeLaunchCount", m_activeLaunchCount);
+
+  }
+
+  if(m_appConfigResourceHasBeenSet)
+  {
+   payload.WithObject("appConfigResource", m_appConfigResource.Jsonize());
 
   }
 

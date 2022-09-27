@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::Vector<ClassicLoadBalancer> m_classicLoadBalancers;
-    bool m_classicLoadBalancersHasBeenSet;
+    bool m_classicLoadBalancersHasBeenSet = false;
   };
 
 } // namespace Model

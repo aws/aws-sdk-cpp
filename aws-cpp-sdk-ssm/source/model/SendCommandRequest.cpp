@@ -31,7 +31,8 @@ SendCommandRequest::SendCommandRequest() :
     m_maxErrorsHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
     m_notificationConfigHasBeenSet(false),
-    m_cloudWatchOutputConfigHasBeenSet(false)
+    m_cloudWatchOutputConfigHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,12 @@ Aws::String SendCommandRequest::SerializePayload() const
   if(m_cloudWatchOutputConfigHasBeenSet)
   {
    payload.WithObject("CloudWatchOutputConfig", m_cloudWatchOutputConfig.Jsonize());
+
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("AlarmConfiguration", m_alarmConfiguration.Jsonize());
 
   }
 

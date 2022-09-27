@@ -146,10 +146,10 @@ namespace Model
   private:
 
     ScanFrequency m_scanFrequency;
-    bool m_scanFrequencyHasBeenSet;
+    bool m_scanFrequencyHasBeenSet = false;
 
     Aws::Vector<ScanningRepositoryFilter> m_repositoryFilters;
-    bool m_repositoryFiltersHasBeenSet;
+    bool m_repositoryFiltersHasBeenSet = false;
   };
 
 } // namespace Model

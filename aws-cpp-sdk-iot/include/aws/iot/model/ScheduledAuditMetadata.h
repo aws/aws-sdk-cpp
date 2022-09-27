@@ -256,19 +256,19 @@ namespace Model
   private:
 
     Aws::String m_scheduledAuditName;
-    bool m_scheduledAuditNameHasBeenSet;
+    bool m_scheduledAuditNameHasBeenSet = false;
 
     Aws::String m_scheduledAuditArn;
-    bool m_scheduledAuditArnHasBeenSet;
+    bool m_scheduledAuditArnHasBeenSet = false;
 
     AuditFrequency m_frequency;
-    bool m_frequencyHasBeenSet;
+    bool m_frequencyHasBeenSet = false;
 
     Aws::String m_dayOfMonth;
-    bool m_dayOfMonthHasBeenSet;
+    bool m_dayOfMonthHasBeenSet = false;
 
     DayOfWeek m_dayOfWeek;
-    bool m_dayOfWeekHasBeenSet;
+    bool m_dayOfWeekHasBeenSet = false;
   };
 
 } // namespace Model

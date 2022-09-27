@@ -407,28 +407,28 @@ namespace Model
   private:
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::String m_optionGroupDescription;
-    bool m_optionGroupDescriptionHasBeenSet;
+    bool m_optionGroupDescriptionHasBeenSet = false;
 
     Aws::String m_engineName;
-    bool m_engineNameHasBeenSet;
+    bool m_engineNameHasBeenSet = false;
 
     Aws::String m_majorEngineVersion;
-    bool m_majorEngineVersionHasBeenSet;
+    bool m_majorEngineVersionHasBeenSet = false;
 
     Aws::Vector<Option> m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     bool m_allowsVpcAndNonVpcInstanceMemberships;
-    bool m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet;
+    bool m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_optionGroupArn;
-    bool m_optionGroupArnHasBeenSet;
+    bool m_optionGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

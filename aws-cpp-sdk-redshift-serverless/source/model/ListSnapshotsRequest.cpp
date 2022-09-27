@@ -74,7 +74,7 @@ Aws::String ListSnapshotsRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection ListSnapshotsRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.ListSnapshots"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.ListSnapshots"));
   return headers;
 
 }

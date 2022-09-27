@@ -164,16 +164,16 @@ namespace Model
   private:
 
     int m_dailyCap;
-    bool m_dailyCapHasBeenSet;
+    bool m_dailyCapHasBeenSet = false;
 
     int m_endpointReentryCap;
-    bool m_endpointReentryCapHasBeenSet;
+    bool m_endpointReentryCapHasBeenSet = false;
 
     int m_messagesPerSecond;
-    bool m_messagesPerSecondHasBeenSet;
+    bool m_messagesPerSecondHasBeenSet = false;
 
     Aws::String m_endpointReentryInterval;
-    bool m_endpointReentryIntervalHasBeenSet;
+    bool m_endpointReentryIntervalHasBeenSet = false;
   };
 
 } // namespace Model

@@ -227,19 +227,19 @@ namespace Model
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     double m_baseScore;
-    bool m_baseScoreHasBeenSet;
+    bool m_baseScoreHasBeenSet = false;
 
     Aws::String m_baseVector;
-    bool m_baseVectorHasBeenSet;
+    bool m_baseVectorHasBeenSet = false;
 
     Aws::String m_source;
-    bool m_sourceHasBeenSet;
+    bool m_sourceHasBeenSet = false;
 
     Aws::Vector<Adjustment> m_adjustments;
-    bool m_adjustmentsHasBeenSet;
+    bool m_adjustmentsHasBeenSet = false;
   };
 
 } // namespace Model

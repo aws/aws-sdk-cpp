@@ -107,7 +107,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
-     * by the <code>Length Constraint</code>. </p>
+     * by the <code>Length Constraint</code>. </p>  <p>You must not include
+     * any security-sensitive information, such as account access IDs, secrets, and
+     * tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the
+     * training job request and returns an exception error for detected credentials, if
+     * such user input is found.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const{ return m_hyperParameters; }
 
@@ -118,7 +122,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
-     * by the <code>Length Constraint</code>. </p>
+     * by the <code>Length Constraint</code>. </p>  <p>You must not include
+     * any security-sensitive information, such as account access IDs, secrets, and
+     * tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the
+     * training job request and returns an exception error for detected credentials, if
+     * such user input is found.</p> 
      */
     inline bool HyperParametersHasBeenSet() const { return m_hyperParametersHasBeenSet; }
 
@@ -129,7 +137,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
-     * by the <code>Length Constraint</code>. </p>
+     * by the <code>Length Constraint</code>. </p>  <p>You must not include
+     * any security-sensitive information, such as account access IDs, secrets, and
+     * tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the
+     * training job request and returns an exception error for detected credentials, if
+     * such user input is found.</p> 
      */
     inline void SetHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters = value; }
 
@@ -140,7 +152,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
-     * by the <code>Length Constraint</code>. </p>
+     * by the <code>Length Constraint</code>. </p>  <p>You must not include
+     * any security-sensitive information, such as account access IDs, secrets, and
+     * tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the
+     * training job request and returns an exception error for detected credentials, if
+     * such user input is found.</p> 
      */
     inline void SetHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters = std::move(value); }
 
@@ -151,7 +167,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
-     * by the <code>Length Constraint</code>. </p>
+     * by the <code>Length Constraint</code>. </p>  <p>You must not include
+     * any security-sensitive information, such as account access IDs, secrets, and
+     * tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the
+     * training job request and returns an exception error for detected credentials, if
+     * such user input is found.</p> 
      */
     inline CreateTrainingJobRequest& WithHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetHyperParameters(value); return *this;}
 
@@ -162,7 +182,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
-     * by the <code>Length Constraint</code>. </p>
+     * by the <code>Length Constraint</code>. </p>  <p>You must not include
+     * any security-sensitive information, such as account access IDs, secrets, and
+     * tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the
+     * training job request and returns an exception error for detected credentials, if
+     * such user input is found.</p> 
      */
     inline CreateTrainingJobRequest& WithHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetHyperParameters(std::move(value)); return *this;}
 
@@ -173,7 +197,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
-     * by the <code>Length Constraint</code>. </p>
+     * by the <code>Length Constraint</code>. </p>  <p>You must not include
+     * any security-sensitive information, such as account access IDs, secrets, and
+     * tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the
+     * training job request and returns an exception error for detected credentials, if
+     * such user input is found.</p> 
      */
     inline CreateTrainingJobRequest& AddHyperParameters(const Aws::String& key, const Aws::String& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, value); return *this; }
 
@@ -184,7 +212,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
-     * by the <code>Length Constraint</code>. </p>
+     * by the <code>Length Constraint</code>. </p>  <p>You must not include
+     * any security-sensitive information, such as account access IDs, secrets, and
+     * tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the
+     * training job request and returns an exception error for detected credentials, if
+     * such user input is found.</p> 
      */
     inline CreateTrainingJobRequest& AddHyperParameters(Aws::String&& key, const Aws::String& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), value); return *this; }
 
@@ -195,7 +227,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
-     * by the <code>Length Constraint</code>. </p>
+     * by the <code>Length Constraint</code>. </p>  <p>You must not include
+     * any security-sensitive information, such as account access IDs, secrets, and
+     * tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the
+     * training job request and returns an exception error for detected credentials, if
+     * such user input is found.</p> 
      */
     inline CreateTrainingJobRequest& AddHyperParameters(const Aws::String& key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, std::move(value)); return *this; }
 
@@ -206,7 +242,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
-     * by the <code>Length Constraint</code>. </p>
+     * by the <code>Length Constraint</code>. </p>  <p>You must not include
+     * any security-sensitive information, such as account access IDs, secrets, and
+     * tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the
+     * training job request and returns an exception error for detected credentials, if
+     * such user input is found.</p> 
      */
     inline CreateTrainingJobRequest& AddHyperParameters(Aws::String&& key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -217,7 +257,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
-     * by the <code>Length Constraint</code>. </p>
+     * by the <code>Length Constraint</code>. </p>  <p>You must not include
+     * any security-sensitive information, such as account access IDs, secrets, and
+     * tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the
+     * training job request and returns an exception error for detected credentials, if
+     * such user input is found.</p> 
      */
     inline CreateTrainingJobRequest& AddHyperParameters(const char* key, Aws::String&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, std::move(value)); return *this; }
 
@@ -228,7 +272,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
-     * by the <code>Length Constraint</code>. </p>
+     * by the <code>Length Constraint</code>. </p>  <p>You must not include
+     * any security-sensitive information, such as account access IDs, secrets, and
+     * tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the
+     * training job request and returns an exception error for detected credentials, if
+     * such user input is found.</p> 
      */
     inline CreateTrainingJobRequest& AddHyperParameters(Aws::String&& key, const char* value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::move(key), value); return *this; }
 
@@ -239,7 +287,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
-     * by the <code>Length Constraint</code>. </p>
+     * by the <code>Length Constraint</code>. </p>  <p>You must not include
+     * any security-sensitive information, such as account access IDs, secrets, and
+     * tokens, in the dictionary for configuring hyperparameters. SageMaker rejects the
+     * training job request and returns an exception error for detected credentials, if
+     * such user input is found.</p> 
      */
     inline CreateTrainingJobRequest& AddHyperParameters(const char* key, const char* value) { m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(key, value); return *this; }
 
@@ -1303,70 +1355,70 @@ namespace Model
   private:
 
     Aws::String m_trainingJobName;
-    bool m_trainingJobNameHasBeenSet;
+    bool m_trainingJobNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_hyperParameters;
-    bool m_hyperParametersHasBeenSet;
+    bool m_hyperParametersHasBeenSet = false;
 
     AlgorithmSpecification m_algorithmSpecification;
-    bool m_algorithmSpecificationHasBeenSet;
+    bool m_algorithmSpecificationHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<Channel> m_inputDataConfig;
-    bool m_inputDataConfigHasBeenSet;
+    bool m_inputDataConfigHasBeenSet = false;
 
     OutputDataConfig m_outputDataConfig;
-    bool m_outputDataConfigHasBeenSet;
+    bool m_outputDataConfigHasBeenSet = false;
 
     ResourceConfig m_resourceConfig;
-    bool m_resourceConfigHasBeenSet;
+    bool m_resourceConfigHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
-    bool m_vpcConfigHasBeenSet;
+    bool m_vpcConfigHasBeenSet = false;
 
     StoppingCondition m_stoppingCondition;
-    bool m_stoppingConditionHasBeenSet;
+    bool m_stoppingConditionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_enableNetworkIsolation;
-    bool m_enableNetworkIsolationHasBeenSet;
+    bool m_enableNetworkIsolationHasBeenSet = false;
 
     bool m_enableInterContainerTrafficEncryption;
-    bool m_enableInterContainerTrafficEncryptionHasBeenSet;
+    bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
 
     bool m_enableManagedSpotTraining;
-    bool m_enableManagedSpotTrainingHasBeenSet;
+    bool m_enableManagedSpotTrainingHasBeenSet = false;
 
     CheckpointConfig m_checkpointConfig;
-    bool m_checkpointConfigHasBeenSet;
+    bool m_checkpointConfigHasBeenSet = false;
 
     DebugHookConfig m_debugHookConfig;
-    bool m_debugHookConfigHasBeenSet;
+    bool m_debugHookConfigHasBeenSet = false;
 
     Aws::Vector<DebugRuleConfiguration> m_debugRuleConfigurations;
-    bool m_debugRuleConfigurationsHasBeenSet;
+    bool m_debugRuleConfigurationsHasBeenSet = false;
 
     TensorBoardOutputConfig m_tensorBoardOutputConfig;
-    bool m_tensorBoardOutputConfigHasBeenSet;
+    bool m_tensorBoardOutputConfigHasBeenSet = false;
 
     ExperimentConfig m_experimentConfig;
-    bool m_experimentConfigHasBeenSet;
+    bool m_experimentConfigHasBeenSet = false;
 
     ProfilerConfig m_profilerConfig;
-    bool m_profilerConfigHasBeenSet;
+    bool m_profilerConfigHasBeenSet = false;
 
     Aws::Vector<ProfilerRuleConfiguration> m_profilerRuleConfigurations;
-    bool m_profilerRuleConfigurationsHasBeenSet;
+    bool m_profilerRuleConfigurationsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
-    bool m_environmentHasBeenSet;
+    bool m_environmentHasBeenSet = false;
 
     RetryStrategy m_retryStrategy;
-    bool m_retryStrategyHasBeenSet;
+    bool m_retryStrategyHasBeenSet = false;
   };
 
 } // namespace Model

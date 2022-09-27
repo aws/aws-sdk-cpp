@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the properties of a custom index field.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Specifies the properties, such as relevance tuning and searchability, of an
+   * index field.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DocumentMetadataConfiguration">AWS
    * API Reference</a></p>
    */
@@ -114,38 +114,38 @@ namespace Model
 
 
     /**
-     * <p>Provides manual tuning parameters to determine how the field affects the
-     * search results.</p>
+     * <p>Provides tuning parameters to determine how the field affects the search
+     * results.</p>
      */
     inline const Relevance& GetRelevance() const{ return m_relevance; }
 
     /**
-     * <p>Provides manual tuning parameters to determine how the field affects the
-     * search results.</p>
+     * <p>Provides tuning parameters to determine how the field affects the search
+     * results.</p>
      */
     inline bool RelevanceHasBeenSet() const { return m_relevanceHasBeenSet; }
 
     /**
-     * <p>Provides manual tuning parameters to determine how the field affects the
-     * search results.</p>
+     * <p>Provides tuning parameters to determine how the field affects the search
+     * results.</p>
      */
     inline void SetRelevance(const Relevance& value) { m_relevanceHasBeenSet = true; m_relevance = value; }
 
     /**
-     * <p>Provides manual tuning parameters to determine how the field affects the
-     * search results.</p>
+     * <p>Provides tuning parameters to determine how the field affects the search
+     * results.</p>
      */
     inline void SetRelevance(Relevance&& value) { m_relevanceHasBeenSet = true; m_relevance = std::move(value); }
 
     /**
-     * <p>Provides manual tuning parameters to determine how the field affects the
-     * search results.</p>
+     * <p>Provides tuning parameters to determine how the field affects the search
+     * results.</p>
      */
     inline DocumentMetadataConfiguration& WithRelevance(const Relevance& value) { SetRelevance(value); return *this;}
 
     /**
-     * <p>Provides manual tuning parameters to determine how the field affects the
-     * search results.</p>
+     * <p>Provides tuning parameters to determine how the field affects the search
+     * results.</p>
      */
     inline DocumentMetadataConfiguration& WithRelevance(Relevance&& value) { SetRelevance(std::move(value)); return *this;}
 
@@ -183,16 +183,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     DocumentAttributeValueType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Relevance m_relevance;
-    bool m_relevanceHasBeenSet;
+    bool m_relevanceHasBeenSet = false;
 
     Search m_search;
-    bool m_searchHasBeenSet;
+    bool m_searchHasBeenSet = false;
   };
 
 } // namespace Model

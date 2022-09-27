@@ -12,6 +12,7 @@
 #include <aws/frauddetector/model/ExternalEventsDetail.h>
 #include <aws/frauddetector/model/IngestedEventsDetail.h>
 #include <aws/frauddetector/model/TrainingResult.h>
+#include <aws/frauddetector/model/TrainingResultV2.h>
 #include <utility>
 
 namespace Aws
@@ -498,43 +499,83 @@ namespace Model
      */
     inline ModelVersionDetail& WithArn(const char* value) { SetArn(value); return *this;}
 
+
+    /**
+     * <p> The training result details. The details include the relative importance of
+     * the variables. </p>
+     */
+    inline const TrainingResultV2& GetTrainingResultV2() const{ return m_trainingResultV2; }
+
+    /**
+     * <p> The training result details. The details include the relative importance of
+     * the variables. </p>
+     */
+    inline bool TrainingResultV2HasBeenSet() const { return m_trainingResultV2HasBeenSet; }
+
+    /**
+     * <p> The training result details. The details include the relative importance of
+     * the variables. </p>
+     */
+    inline void SetTrainingResultV2(const TrainingResultV2& value) { m_trainingResultV2HasBeenSet = true; m_trainingResultV2 = value; }
+
+    /**
+     * <p> The training result details. The details include the relative importance of
+     * the variables. </p>
+     */
+    inline void SetTrainingResultV2(TrainingResultV2&& value) { m_trainingResultV2HasBeenSet = true; m_trainingResultV2 = std::move(value); }
+
+    /**
+     * <p> The training result details. The details include the relative importance of
+     * the variables. </p>
+     */
+    inline ModelVersionDetail& WithTrainingResultV2(const TrainingResultV2& value) { SetTrainingResultV2(value); return *this;}
+
+    /**
+     * <p> The training result details. The details include the relative importance of
+     * the variables. </p>
+     */
+    inline ModelVersionDetail& WithTrainingResultV2(TrainingResultV2&& value) { SetTrainingResultV2(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelId;
-    bool m_modelIdHasBeenSet;
+    bool m_modelIdHasBeenSet = false;
 
     ModelTypeEnum m_modelType;
-    bool m_modelTypeHasBeenSet;
+    bool m_modelTypeHasBeenSet = false;
 
     Aws::String m_modelVersionNumber;
-    bool m_modelVersionNumberHasBeenSet;
+    bool m_modelVersionNumberHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     TrainingDataSourceEnum m_trainingDataSource;
-    bool m_trainingDataSourceHasBeenSet;
+    bool m_trainingDataSourceHasBeenSet = false;
 
     TrainingDataSchema m_trainingDataSchema;
-    bool m_trainingDataSchemaHasBeenSet;
+    bool m_trainingDataSchemaHasBeenSet = false;
 
     ExternalEventsDetail m_externalEventsDetail;
-    bool m_externalEventsDetailHasBeenSet;
+    bool m_externalEventsDetailHasBeenSet = false;
 
     IngestedEventsDetail m_ingestedEventsDetail;
-    bool m_ingestedEventsDetailHasBeenSet;
+    bool m_ingestedEventsDetailHasBeenSet = false;
 
     TrainingResult m_trainingResult;
-    bool m_trainingResultHasBeenSet;
+    bool m_trainingResultHasBeenSet = false;
 
     Aws::String m_lastUpdatedTime;
-    bool m_lastUpdatedTimeHasBeenSet;
+    bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
+
+    TrainingResultV2 m_trainingResultV2;
+    bool m_trainingResultV2HasBeenSet = false;
   };
 
 } // namespace Model

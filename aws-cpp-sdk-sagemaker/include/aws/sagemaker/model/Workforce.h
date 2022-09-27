@@ -10,6 +10,8 @@
 #include <aws/sagemaker/model/SourceIpConfig.h>
 #include <aws/sagemaker/model/CognitoConfig.h>
 #include <aws/sagemaker/model/OidcConfigForResponse.h>
+#include <aws/sagemaker/model/WorkforceVpcConfigResponse.h>
+#include <aws/sagemaker/model/WorkforceStatus.h>
 #include <utility>
 
 namespace Aws
@@ -378,31 +380,143 @@ namespace Model
      */
     inline Workforce& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration of a VPC workforce.</p>
+     */
+    inline const WorkforceVpcConfigResponse& GetWorkforceVpcConfig() const{ return m_workforceVpcConfig; }
+
+    /**
+     * <p>The configuration of a VPC workforce.</p>
+     */
+    inline bool WorkforceVpcConfigHasBeenSet() const { return m_workforceVpcConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration of a VPC workforce.</p>
+     */
+    inline void SetWorkforceVpcConfig(const WorkforceVpcConfigResponse& value) { m_workforceVpcConfigHasBeenSet = true; m_workforceVpcConfig = value; }
+
+    /**
+     * <p>The configuration of a VPC workforce.</p>
+     */
+    inline void SetWorkforceVpcConfig(WorkforceVpcConfigResponse&& value) { m_workforceVpcConfigHasBeenSet = true; m_workforceVpcConfig = std::move(value); }
+
+    /**
+     * <p>The configuration of a VPC workforce.</p>
+     */
+    inline Workforce& WithWorkforceVpcConfig(const WorkforceVpcConfigResponse& value) { SetWorkforceVpcConfig(value); return *this;}
+
+    /**
+     * <p>The configuration of a VPC workforce.</p>
+     */
+    inline Workforce& WithWorkforceVpcConfig(WorkforceVpcConfigResponse&& value) { SetWorkforceVpcConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The status of your workforce.</p>
+     */
+    inline const WorkforceStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of your workforce.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of your workforce.</p>
+     */
+    inline void SetStatus(const WorkforceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of your workforce.</p>
+     */
+    inline void SetStatus(WorkforceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of your workforce.</p>
+     */
+    inline Workforce& WithStatus(const WorkforceStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of your workforce.</p>
+     */
+    inline Workforce& WithStatus(WorkforceStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The reason your workforce failed.</p>
+     */
+    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>The reason your workforce failed.</p>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+
+    /**
+     * <p>The reason your workforce failed.</p>
+     */
+    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
+
+    /**
+     * <p>The reason your workforce failed.</p>
+     */
+    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
+
+    /**
+     * <p>The reason your workforce failed.</p>
+     */
+    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
+
+    /**
+     * <p>The reason your workforce failed.</p>
+     */
+    inline Workforce& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
+
+    /**
+     * <p>The reason your workforce failed.</p>
+     */
+    inline Workforce& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason your workforce failed.</p>
+     */
+    inline Workforce& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+
   private:
 
     Aws::String m_workforceName;
-    bool m_workforceNameHasBeenSet;
+    bool m_workforceNameHasBeenSet = false;
 
     Aws::String m_workforceArn;
-    bool m_workforceArnHasBeenSet;
+    bool m_workforceArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedDate;
-    bool m_lastUpdatedDateHasBeenSet;
+    bool m_lastUpdatedDateHasBeenSet = false;
 
     SourceIpConfig m_sourceIpConfig;
-    bool m_sourceIpConfigHasBeenSet;
+    bool m_sourceIpConfigHasBeenSet = false;
 
     Aws::String m_subDomain;
-    bool m_subDomainHasBeenSet;
+    bool m_subDomainHasBeenSet = false;
 
     CognitoConfig m_cognitoConfig;
-    bool m_cognitoConfigHasBeenSet;
+    bool m_cognitoConfigHasBeenSet = false;
 
     OidcConfigForResponse m_oidcConfig;
-    bool m_oidcConfigHasBeenSet;
+    bool m_oidcConfigHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
+
+    WorkforceVpcConfigResponse m_workforceVpcConfig;
+    bool m_workforceVpcConfigHasBeenSet = false;
+
+    WorkforceStatus m_status;
+    bool m_statusHasBeenSet = false;
+
+    Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

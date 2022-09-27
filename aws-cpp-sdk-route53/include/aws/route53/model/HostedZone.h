@@ -340,22 +340,22 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_callerReference;
-    bool m_callerReferenceHasBeenSet;
+    bool m_callerReferenceHasBeenSet = false;
 
     HostedZoneConfig m_config;
-    bool m_configHasBeenSet;
+    bool m_configHasBeenSet = false;
 
     long long m_resourceRecordSetCount;
-    bool m_resourceRecordSetCountHasBeenSet;
+    bool m_resourceRecordSetCountHasBeenSet = false;
 
     LinkedService m_linkedService;
-    bool m_linkedServiceHasBeenSet;
+    bool m_linkedServiceHasBeenSet = false;
   };
 
 } // namespace Model

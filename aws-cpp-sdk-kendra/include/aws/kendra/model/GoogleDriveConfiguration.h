@@ -562,25 +562,25 @@ namespace Model
   private:
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
-    bool m_fieldMappingsHasBeenSet;
+    bool m_fieldMappingsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeMimeTypes;
-    bool m_excludeMimeTypesHasBeenSet;
+    bool m_excludeMimeTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeUserAccounts;
-    bool m_excludeUserAccountsHasBeenSet;
+    bool m_excludeUserAccountsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludeSharedDrives;
-    bool m_excludeSharedDrivesHasBeenSet;
+    bool m_excludeSharedDrivesHasBeenSet = false;
   };
 
 } // namespace Model

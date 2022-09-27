@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_labelName;
-    bool m_labelNameHasBeenSet;
+    bool m_labelNameHasBeenSet = false;
 
     DatasetLabelStats m_labelStats;
-    bool m_labelStatsHasBeenSet;
+    bool m_labelStatsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -116,6 +116,15 @@ DescribeMetricSetResult& DescribeMetricSetResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("DimensionFilterList"))
+  {
+    Array<JsonView> dimensionFilterListJsonList = jsonValue.GetArray("DimensionFilterList");
+    for(unsigned dimensionFilterListIndex = 0; dimensionFilterListIndex < dimensionFilterListJsonList.GetLength(); ++dimensionFilterListIndex)
+    {
+      m_dimensionFilterList.push_back(dimensionFilterListJsonList[dimensionFilterListIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

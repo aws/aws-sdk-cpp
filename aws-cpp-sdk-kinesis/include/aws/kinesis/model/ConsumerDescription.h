@@ -282,19 +282,19 @@ namespace Model
   private:
 
     Aws::String m_consumerName;
-    bool m_consumerNameHasBeenSet;
+    bool m_consumerNameHasBeenSet = false;
 
     Aws::String m_consumerARN;
-    bool m_consumerARNHasBeenSet;
+    bool m_consumerARNHasBeenSet = false;
 
     ConsumerStatus m_consumerStatus;
-    bool m_consumerStatusHasBeenSet;
+    bool m_consumerStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_consumerCreationTimestamp;
-    bool m_consumerCreationTimestampHasBeenSet;
+    bool m_consumerCreationTimestampHasBeenSet = false;
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
   };
 
 } // namespace Model

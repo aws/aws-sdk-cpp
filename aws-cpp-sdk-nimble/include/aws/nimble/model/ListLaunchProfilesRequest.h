@@ -103,50 +103,42 @@ namespace Model
 
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline ListLaunchProfilesRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline ListLaunchProfilesRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
 
     /**
-     * <p>The principal ID. This currently supports a Amazon Web Services SSO UserId.
-     * </p>
+     * <p>The principal ID. This currently supports a IAM Identity Center UserId. </p>
      */
     inline ListLaunchProfilesRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
 
@@ -235,19 +227,19 @@ namespace Model
   private:
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
 
     Aws::Vector<LaunchProfileState> m_states;
-    bool m_statesHasBeenSet;
+    bool m_statesHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

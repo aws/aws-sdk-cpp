@@ -72,13 +72,13 @@ StackSetOperationSummary& StackSetOperationSummary::operator =(const XmlNode& xm
     XmlNode creationTimestampNode = resultNode.FirstChild("CreationTimestamp");
     if(!creationTimestampNode.IsNull())
     {
-      m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimestampHasBeenSet = true;
     }
     XmlNode endTimestampNode = resultNode.FirstChild("EndTimestamp");
     if(!endTimestampNode.IsNull())
     {
-      m_endTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_endTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_endTimestampHasBeenSet = true;
     }
     XmlNode statusReasonNode = resultNode.FirstChild("StatusReason");
@@ -111,12 +111,12 @@ void StackSetOperationSummary::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_creationTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_endTimestampHasBeenSet)
   {
-      oStream << location << index << locationValue << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_statusReasonHasBeenSet)
@@ -142,11 +142,11 @@ void StackSetOperationSummary::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_creationTimestampHasBeenSet)
   {
-      oStream << location << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreationTimestamp=" << StringUtils::URLEncode(m_creationTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_endTimestampHasBeenSet)
   {
-      oStream << location << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_statusReasonHasBeenSet)
   {

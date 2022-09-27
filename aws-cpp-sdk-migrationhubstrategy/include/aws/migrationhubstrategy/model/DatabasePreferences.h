@@ -109,10 +109,10 @@ namespace Model
   private:
 
     DatabaseManagementPreference m_databaseManagementPreference;
-    bool m_databaseManagementPreferenceHasBeenSet;
+    bool m_databaseManagementPreferenceHasBeenSet = false;
 
     DatabaseMigrationPreference m_databaseMigrationPreference;
-    bool m_databaseMigrationPreferenceHasBeenSet;
+    bool m_databaseMigrationPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

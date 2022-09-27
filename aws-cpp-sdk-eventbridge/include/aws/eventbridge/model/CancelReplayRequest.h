@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_replayName;
-    bool m_replayNameHasBeenSet;
+    bool m_replayNameHasBeenSet = false;
   };
 
 } // namespace Model

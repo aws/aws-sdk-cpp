@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_missionProfileId;
-    bool m_missionProfileIdHasBeenSet;
+    bool m_missionProfileIdHasBeenSet = false;
   };
 
 } // namespace Model

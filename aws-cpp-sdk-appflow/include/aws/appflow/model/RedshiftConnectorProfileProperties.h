@@ -212,16 +212,16 @@ namespace Model
   private:
 
     Aws::String m_databaseUrl;
-    bool m_databaseUrlHasBeenSet;
+    bool m_databaseUrlHasBeenSet = false;
 
     Aws::String m_bucketName;
-    bool m_bucketNameHasBeenSet;
+    bool m_bucketNameHasBeenSet = false;
 
     Aws::String m_bucketPrefix;
-    bool m_bucketPrefixHasBeenSet;
+    bool m_bucketPrefixHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

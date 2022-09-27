@@ -404,25 +404,25 @@ namespace Model
   private:
 
     Aws::String m_callAnalyticsJobName;
-    bool m_callAnalyticsJobNameHasBeenSet;
+    bool m_callAnalyticsJobNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     CallAnalyticsJobStatus m_callAnalyticsJobStatus;
-    bool m_callAnalyticsJobStatusHasBeenSet;
+    bool m_callAnalyticsJobStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
-    bool m_failureReasonHasBeenSet;
+    bool m_failureReasonHasBeenSet = false;
   };
 
 } // namespace Model

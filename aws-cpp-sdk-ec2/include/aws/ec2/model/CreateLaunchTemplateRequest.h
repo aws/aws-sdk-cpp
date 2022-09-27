@@ -251,64 +251,104 @@ namespace Model
 
 
     /**
-     * <p>The tags to apply to the launch template during creation.</p>
+     * <p>The tags to apply to the launch template on creation. To tag the launch
+     * template, the resource type must be <code>launch-template</code>.</p> 
+     * <p>To specify the tags for the resources that are created when an instance is
+     * launched, you must use the <code>TagSpecifications</code> parameter in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
+     * template data</a> structure.</p> 
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags to apply to the launch template during creation.</p>
+     * <p>The tags to apply to the launch template on creation. To tag the launch
+     * template, the resource type must be <code>launch-template</code>.</p> 
+     * <p>To specify the tags for the resources that are created when an instance is
+     * launched, you must use the <code>TagSpecifications</code> parameter in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
+     * template data</a> structure.</p> 
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags to apply to the launch template during creation.</p>
+     * <p>The tags to apply to the launch template on creation. To tag the launch
+     * template, the resource type must be <code>launch-template</code>.</p> 
+     * <p>To specify the tags for the resources that are created when an instance is
+     * launched, you must use the <code>TagSpecifications</code> parameter in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
+     * template data</a> structure.</p> 
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags to apply to the launch template during creation.</p>
+     * <p>The tags to apply to the launch template on creation. To tag the launch
+     * template, the resource type must be <code>launch-template</code>.</p> 
+     * <p>To specify the tags for the resources that are created when an instance is
+     * launched, you must use the <code>TagSpecifications</code> parameter in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
+     * template data</a> structure.</p> 
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags to apply to the launch template during creation.</p>
+     * <p>The tags to apply to the launch template on creation. To tag the launch
+     * template, the resource type must be <code>launch-template</code>.</p> 
+     * <p>To specify the tags for the resources that are created when an instance is
+     * launched, you must use the <code>TagSpecifications</code> parameter in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
+     * template data</a> structure.</p> 
      */
     inline CreateLaunchTemplateRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags to apply to the launch template during creation.</p>
+     * <p>The tags to apply to the launch template on creation. To tag the launch
+     * template, the resource type must be <code>launch-template</code>.</p> 
+     * <p>To specify the tags for the resources that are created when an instance is
+     * launched, you must use the <code>TagSpecifications</code> parameter in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
+     * template data</a> structure.</p> 
      */
     inline CreateLaunchTemplateRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to apply to the launch template during creation.</p>
+     * <p>The tags to apply to the launch template on creation. To tag the launch
+     * template, the resource type must be <code>launch-template</code>.</p> 
+     * <p>To specify the tags for the resources that are created when an instance is
+     * launched, you must use the <code>TagSpecifications</code> parameter in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
+     * template data</a> structure.</p> 
      */
     inline CreateLaunchTemplateRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags to apply to the launch template during creation.</p>
+     * <p>The tags to apply to the launch template on creation. To tag the launch
+     * template, the resource type must be <code>launch-template</code>.</p> 
+     * <p>To specify the tags for the resources that are created when an instance is
+     * launched, you must use the <code>TagSpecifications</code> parameter in the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestLaunchTemplateData.html">launch
+     * template data</a> structure.</p> 
      */
     inline CreateLaunchTemplateRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_launchTemplateName;
-    bool m_launchTemplateNameHasBeenSet;
+    bool m_launchTemplateNameHasBeenSet = false;
 
     Aws::String m_versionDescription;
-    bool m_versionDescriptionHasBeenSet;
+    bool m_versionDescriptionHasBeenSet = false;
 
     RequestLaunchTemplateData m_launchTemplateData;
-    bool m_launchTemplateDataHasBeenSet;
+    bool m_launchTemplateDataHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

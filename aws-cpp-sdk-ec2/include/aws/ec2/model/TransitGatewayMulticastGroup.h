@@ -433,37 +433,37 @@ namespace Model
   private:
 
     Aws::String m_groupIpAddress;
-    bool m_groupIpAddressHasBeenSet;
+    bool m_groupIpAddressHasBeenSet = false;
 
     Aws::String m_transitGatewayAttachmentId;
-    bool m_transitGatewayAttachmentIdHasBeenSet;
+    bool m_transitGatewayAttachmentIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     TransitGatewayAttachmentResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceOwnerId;
-    bool m_resourceOwnerIdHasBeenSet;
+    bool m_resourceOwnerIdHasBeenSet = false;
 
     Aws::String m_networkInterfaceId;
-    bool m_networkInterfaceIdHasBeenSet;
+    bool m_networkInterfaceIdHasBeenSet = false;
 
     bool m_groupMember;
-    bool m_groupMemberHasBeenSet;
+    bool m_groupMemberHasBeenSet = false;
 
     bool m_groupSource;
-    bool m_groupSourceHasBeenSet;
+    bool m_groupSourceHasBeenSet = false;
 
     MembershipType m_memberType;
-    bool m_memberTypeHasBeenSet;
+    bool m_memberTypeHasBeenSet = false;
 
     MembershipType m_sourceType;
-    bool m_sourceTypeHasBeenSet;
+    bool m_sourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

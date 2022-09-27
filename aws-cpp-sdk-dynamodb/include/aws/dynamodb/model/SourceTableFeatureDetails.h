@@ -258,19 +258,19 @@ namespace Model
   private:
 
     Aws::Vector<LocalSecondaryIndexInfo> m_localSecondaryIndexes;
-    bool m_localSecondaryIndexesHasBeenSet;
+    bool m_localSecondaryIndexesHasBeenSet = false;
 
     Aws::Vector<GlobalSecondaryIndexInfo> m_globalSecondaryIndexes;
-    bool m_globalSecondaryIndexesHasBeenSet;
+    bool m_globalSecondaryIndexesHasBeenSet = false;
 
     StreamSpecification m_streamDescription;
-    bool m_streamDescriptionHasBeenSet;
+    bool m_streamDescriptionHasBeenSet = false;
 
     TimeToLiveDescription m_timeToLiveDescription;
-    bool m_timeToLiveDescriptionHasBeenSet;
+    bool m_timeToLiveDescriptionHasBeenSet = false;
 
     SSEDescription m_sSEDescription;
-    bool m_sSEDescriptionHasBeenSet;
+    bool m_sSEDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

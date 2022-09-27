@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/platform/OSVersionInfo.h>
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 
 using namespace Aws::Utils;
 

@@ -373,25 +373,25 @@ namespace Model
   private:
 
     Aws::String m_replicationTaskIdentifier;
-    bool m_replicationTaskIdentifierHasBeenSet;
+    bool m_replicationTaskIdentifierHasBeenSet = false;
 
     Aws::String m_replicationTaskArn;
-    bool m_replicationTaskArnHasBeenSet;
+    bool m_replicationTaskArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_replicationTaskLastAssessmentDate;
-    bool m_replicationTaskLastAssessmentDateHasBeenSet;
+    bool m_replicationTaskLastAssessmentDateHasBeenSet = false;
 
     Aws::String m_assessmentStatus;
-    bool m_assessmentStatusHasBeenSet;
+    bool m_assessmentStatusHasBeenSet = false;
 
     Aws::String m_assessmentResultsFile;
-    bool m_assessmentResultsFileHasBeenSet;
+    bool m_assessmentResultsFileHasBeenSet = false;
 
     Aws::String m_assessmentResults;
-    bool m_assessmentResultsHasBeenSet;
+    bool m_assessmentResultsHasBeenSet = false;
 
     Aws::String m_s3ObjectUrl;
-    bool m_s3ObjectUrlHasBeenSet;
+    bool m_s3ObjectUrlHasBeenSet = false;
   };
 
 } // namespace Model

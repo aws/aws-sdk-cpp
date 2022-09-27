@@ -153,13 +153,13 @@ namespace Model
   private:
 
     JobEventType m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Utils::DateTime m_timeOfEvent;
-    bool m_timeOfEventHasBeenSet;
+    bool m_timeOfEventHasBeenSet = false;
   };
 
 } // namespace Model

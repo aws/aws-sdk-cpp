@@ -164,16 +164,16 @@ namespace Model
   private:
 
     Aws::String m_domainId;
-    bool m_domainIdHasBeenSet;
+    bool m_domainIdHasBeenSet = false;
 
     Aws::String m_userProfileName;
-    bool m_userProfileNameHasBeenSet;
+    bool m_userProfileNameHasBeenSet = false;
 
     int m_sessionExpirationDurationInSeconds;
-    bool m_sessionExpirationDurationInSecondsHasBeenSet;
+    bool m_sessionExpirationDurationInSecondsHasBeenSet = false;
 
     int m_expiresInSeconds;
-    bool m_expiresInSecondsHasBeenSet;
+    bool m_expiresInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

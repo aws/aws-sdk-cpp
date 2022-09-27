@@ -284,16 +284,16 @@ namespace Model
   private:
 
     Aws::String m_localPath;
-    bool m_localPathHasBeenSet;
+    bool m_localPathHasBeenSet = false;
 
     Aws::String m_s3OutputPath;
-    bool m_s3OutputPathHasBeenSet;
+    bool m_s3OutputPathHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_hookParameters;
-    bool m_hookParametersHasBeenSet;
+    bool m_hookParametersHasBeenSet = false;
 
     Aws::Vector<CollectionConfiguration> m_collectionConfigurations;
-    bool m_collectionConfigurationsHasBeenSet;
+    bool m_collectionConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

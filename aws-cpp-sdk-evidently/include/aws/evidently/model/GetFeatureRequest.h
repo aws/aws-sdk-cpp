@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_feature;
-    bool m_featureHasBeenSet;
+    bool m_featureHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
   };
 
 } // namespace Model

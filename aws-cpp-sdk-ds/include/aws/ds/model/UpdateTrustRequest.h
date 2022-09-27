@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_trustId;
-    bool m_trustIdHasBeenSet;
+    bool m_trustIdHasBeenSet = false;
 
     SelectiveAuth m_selectiveAuth;
-    bool m_selectiveAuthHasBeenSet;
+    bool m_selectiveAuthHasBeenSet = false;
   };
 
 } // namespace Model

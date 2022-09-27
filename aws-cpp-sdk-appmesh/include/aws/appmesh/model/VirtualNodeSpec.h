@@ -248,19 +248,19 @@ namespace Model
   private:
 
     BackendDefaults m_backendDefaults;
-    bool m_backendDefaultsHasBeenSet;
+    bool m_backendDefaultsHasBeenSet = false;
 
     Aws::Vector<Backend> m_backends;
-    bool m_backendsHasBeenSet;
+    bool m_backendsHasBeenSet = false;
 
     Aws::Vector<Listener> m_listeners;
-    bool m_listenersHasBeenSet;
+    bool m_listenersHasBeenSet = false;
 
     Logging m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     ServiceDiscovery m_serviceDiscovery;
-    bool m_serviceDiscoveryHasBeenSet;
+    bool m_serviceDiscoveryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -264,25 +264,25 @@ namespace Model
   private:
 
     ProjectOperation m_projectOperation;
-    bool m_projectOperationHasBeenSet;
+    bool m_projectOperationHasBeenSet = false;
 
     FilterOperation m_filterOperation;
-    bool m_filterOperationHasBeenSet;
+    bool m_filterOperationHasBeenSet = false;
 
     CreateColumnsOperation m_createColumnsOperation;
-    bool m_createColumnsOperationHasBeenSet;
+    bool m_createColumnsOperationHasBeenSet = false;
 
     RenameColumnOperation m_renameColumnOperation;
-    bool m_renameColumnOperationHasBeenSet;
+    bool m_renameColumnOperationHasBeenSet = false;
 
     CastColumnTypeOperation m_castColumnTypeOperation;
-    bool m_castColumnTypeOperationHasBeenSet;
+    bool m_castColumnTypeOperationHasBeenSet = false;
 
     TagColumnOperation m_tagColumnOperation;
-    bool m_tagColumnOperationHasBeenSet;
+    bool m_tagColumnOperationHasBeenSet = false;
 
     UntagColumnOperation m_untagColumnOperation;
-    bool m_untagColumnOperationHasBeenSet;
+    bool m_untagColumnOperationHasBeenSet = false;
   };
 
 } // namespace Model

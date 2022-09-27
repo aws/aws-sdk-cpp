@@ -257,22 +257,22 @@ namespace Model
   private:
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_deviceId;
-    bool m_deviceIdHasBeenSet;
+    bool m_deviceIdHasBeenSet = false;
 
     MobileDeviceAccessRuleEffect m_effect;
-    bool m_effectHasBeenSet;
+    bool m_effectHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateCreated;
-    bool m_dateCreatedHasBeenSet;
+    bool m_dateCreatedHasBeenSet = false;
 
     Aws::Utils::DateTime m_dateModified;
-    bool m_dateModifiedHasBeenSet;
+    bool m_dateModifiedHasBeenSet = false;
   };
 
 } // namespace Model

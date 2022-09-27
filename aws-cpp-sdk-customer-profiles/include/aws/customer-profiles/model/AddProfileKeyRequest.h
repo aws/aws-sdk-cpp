@@ -75,42 +75,82 @@ namespace Model
 
 
     /**
-     * <p>A searchable identifier of a customer profile.</p>
+     * <p>A searchable identifier of a customer profile. The predefined keys you can
+     * use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName,
+     * _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline const Aws::String& GetKeyName() const{ return m_keyName; }
 
     /**
-     * <p>A searchable identifier of a customer profile.</p>
+     * <p>A searchable identifier of a customer profile. The predefined keys you can
+     * use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName,
+     * _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
 
     /**
-     * <p>A searchable identifier of a customer profile.</p>
+     * <p>A searchable identifier of a customer profile. The predefined keys you can
+     * use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName,
+     * _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
 
     /**
-     * <p>A searchable identifier of a customer profile.</p>
+     * <p>A searchable identifier of a customer profile. The predefined keys you can
+     * use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName,
+     * _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
 
     /**
-     * <p>A searchable identifier of a customer profile.</p>
+     * <p>A searchable identifier of a customer profile. The predefined keys you can
+     * use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName,
+     * _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
 
     /**
-     * <p>A searchable identifier of a customer profile.</p>
+     * <p>A searchable identifier of a customer profile. The predefined keys you can
+     * use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName,
+     * _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline AddProfileKeyRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
 
     /**
-     * <p>A searchable identifier of a customer profile.</p>
+     * <p>A searchable identifier of a customer profile. The predefined keys you can
+     * use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName,
+     * _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline AddProfileKeyRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
 
     /**
-     * <p>A searchable identifier of a customer profile.</p>
+     * <p>A searchable identifier of a customer profile. The predefined keys you can
+     * use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName,
+     * _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId,
+     * _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
+     * _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
+     * _shopifyCustomerId, _shopifyOrderId.</p>
      */
     inline AddProfileKeyRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
@@ -204,16 +244,16 @@ namespace Model
   private:
 
     Aws::String m_profileId;
-    bool m_profileIdHasBeenSet;
+    bool m_profileIdHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
   };
 
 } // namespace Model

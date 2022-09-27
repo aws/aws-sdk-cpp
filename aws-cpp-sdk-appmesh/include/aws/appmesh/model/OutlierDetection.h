@@ -148,16 +148,16 @@ namespace Model
   private:
 
     Duration m_baseEjectionDuration;
-    bool m_baseEjectionDurationHasBeenSet;
+    bool m_baseEjectionDurationHasBeenSet = false;
 
     Duration m_interval;
-    bool m_intervalHasBeenSet;
+    bool m_intervalHasBeenSet = false;
 
     int m_maxEjectionPercent;
-    bool m_maxEjectionPercentHasBeenSet;
+    bool m_maxEjectionPercentHasBeenSet = false;
 
     long long m_maxServerErrors;
-    bool m_maxServerErrorsHasBeenSet;
+    bool m_maxServerErrorsHasBeenSet = false;
   };
 
 } // namespace Model

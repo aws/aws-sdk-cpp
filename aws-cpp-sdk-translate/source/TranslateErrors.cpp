@@ -8,6 +8,7 @@
 #include <aws/translate/TranslateErrors.h>
 #include <aws/translate/model/UnsupportedLanguagePairException.h>
 #include <aws/translate/model/DetectedLanguageLowConfidenceException.h>
+#include <aws/translate/model/UnsupportedDisplayLanguageCodeException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -30,6 +31,12 @@ template<> AWS_TRANSLATE_API DetectedLanguageLowConfidenceException TranslateErr
   return DetectedLanguageLowConfidenceException(this->GetJsonPayload().View());
 }
 
+template<> AWS_TRANSLATE_API UnsupportedDisplayLanguageCodeException TranslateError::GetModeledError()
+{
+  assert(this->GetErrorType() == TranslateErrors::UNSUPPORTED_DISPLAY_LANGUAGE_CODE);
+  return UnsupportedDisplayLanguageCodeException(this->GetJsonPayload().View());
+}
+
 namespace TranslateErrorMapper
 {
 
@@ -38,6 +45,7 @@ static const int UNSUPPORTED_LANGUAGE_PAIR_HASH = HashingUtils::HashString("Unsu
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int DETECTED_LANGUAGE_LOW_CONFIDENCE_HASH = HashingUtils::HashString("DetectedLanguageLowConfidenceException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int UNSUPPORTED_DISPLAY_LANGUAGE_CODE_HASH = HashingUtils::HashString("UnsupportedDisplayLanguageCodeException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int INVALID_FILTER_HASH = HashingUtils::HashString("InvalidFilterException");
@@ -68,6 +76,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::LIMIT_EXCEEDED), true);
+  }
+  else if (hashCode == UNSUPPORTED_DISPLAY_LANGUAGE_CODE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::UNSUPPORTED_DISPLAY_LANGUAGE_CODE), false);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {

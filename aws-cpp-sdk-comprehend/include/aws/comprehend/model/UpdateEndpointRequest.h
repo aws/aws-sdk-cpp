@@ -196,16 +196,16 @@ namespace Model
   private:
 
     Aws::String m_endpointArn;
-    bool m_endpointArnHasBeenSet;
+    bool m_endpointArnHasBeenSet = false;
 
     Aws::String m_desiredModelArn;
-    bool m_desiredModelArnHasBeenSet;
+    bool m_desiredModelArnHasBeenSet = false;
 
     int m_desiredInferenceUnits;
-    bool m_desiredInferenceUnitsHasBeenSet;
+    bool m_desiredInferenceUnitsHasBeenSet = false;
 
     Aws::String m_desiredDataAccessRoleArn;
-    bool m_desiredDataAccessRoleArnHasBeenSet;
+    bool m_desiredDataAccessRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

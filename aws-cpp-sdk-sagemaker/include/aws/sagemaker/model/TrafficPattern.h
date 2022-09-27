@@ -113,10 +113,10 @@ namespace Model
   private:
 
     TrafficType m_trafficType;
-    bool m_trafficTypeHasBeenSet;
+    bool m_trafficTypeHasBeenSet = false;
 
     Aws::Vector<Phase> m_phases;
-    bool m_phasesHasBeenSet;
+    bool m_phasesHasBeenSet = false;
   };
 
 } // namespace Model

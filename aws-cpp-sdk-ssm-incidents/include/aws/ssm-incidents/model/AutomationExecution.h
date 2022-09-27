@@ -81,7 +81,7 @@ namespace Model
   private:
 
     Aws::String m_ssmExecutionArn;
-    bool m_ssmExecutionArnHasBeenSet;
+    bool m_ssmExecutionArnHasBeenSet = false;
   };
 
 } // namespace Model

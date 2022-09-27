@@ -88,10 +88,10 @@ namespace Model
   private:
 
     bool m_disableUseAsDirectQuerySource;
-    bool m_disableUseAsDirectQuerySourceHasBeenSet;
+    bool m_disableUseAsDirectQuerySourceHasBeenSet = false;
 
     bool m_disableUseAsImportedSource;
-    bool m_disableUseAsImportedSourceHasBeenSet;
+    bool m_disableUseAsImportedSourceHasBeenSet = false;
   };
 
 } // namespace Model

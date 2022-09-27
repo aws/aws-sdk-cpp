@@ -67,7 +67,7 @@ namespace Model
   private:
 
     long long m_expiresInSec;
-    bool m_expiresInSecHasBeenSet;
+    bool m_expiresInSecHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,11 +19,13 @@ namespace Model
 {
 
 GeofenceGeometry::GeofenceGeometry() : 
+    m_circleHasBeenSet(false),
     m_polygonHasBeenSet(false)
 {
 }
 
 GeofenceGeometry::GeofenceGeometry(JsonView jsonValue) : 
+    m_circleHasBeenSet(false),
     m_polygonHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ GeofenceGeometry::GeofenceGeometry(JsonView jsonValue) :
 
 GeofenceGeometry& GeofenceGeometry::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("Circle"))
+  {
+    m_circle = jsonValue.GetObject("Circle");
+
+    m_circleHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Polygon"))
   {
     Array<JsonView> polygonJsonList = jsonValue.GetArray("Polygon");
@@ -61,6 +70,12 @@ GeofenceGeometry& GeofenceGeometry::operator =(JsonView jsonValue)
 JsonValue GeofenceGeometry::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_circleHasBeenSet)
+  {
+   payload.WithObject("Circle", m_circle.Jsonize());
+
+  }
 
   if(m_polygonHasBeenSet)
   {

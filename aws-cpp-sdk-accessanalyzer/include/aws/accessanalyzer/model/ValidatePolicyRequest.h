@@ -335,22 +335,22 @@ namespace Model
   private:
 
     Locale m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_policyDocument;
-    bool m_policyDocumentHasBeenSet;
+    bool m_policyDocumentHasBeenSet = false;
 
     PolicyType m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
 
     ValidatePolicyResourceType m_validatePolicyResourceType;
-    bool m_validatePolicyResourceTypeHasBeenSet;
+    bool m_validatePolicyResourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

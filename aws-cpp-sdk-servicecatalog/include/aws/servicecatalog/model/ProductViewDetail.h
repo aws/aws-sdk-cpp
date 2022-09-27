@@ -194,16 +194,16 @@ namespace Model
   private:
 
     ProductViewSummary m_productViewSummary;
-    bool m_productViewSummaryHasBeenSet;
+    bool m_productViewSummaryHasBeenSet = false;
 
     Status m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_productARN;
-    bool m_productARNHasBeenSet;
+    bool m_productARNHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTime;
-    bool m_createdTimeHasBeenSet;
+    bool m_createdTimeHasBeenSet = false;
   };
 
 } // namespace Model

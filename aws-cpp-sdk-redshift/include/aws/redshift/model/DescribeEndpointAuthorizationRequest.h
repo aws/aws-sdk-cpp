@@ -267,19 +267,19 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::String m_account;
-    bool m_accountHasBeenSet;
+    bool m_accountHasBeenSet = false;
 
     bool m_grantee;
-    bool m_granteeHasBeenSet;
+    bool m_granteeHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
   };
 
 } // namespace Model

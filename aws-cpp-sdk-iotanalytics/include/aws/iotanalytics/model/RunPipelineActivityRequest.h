@@ -132,10 +132,10 @@ namespace Model
   private:
 
     PipelineActivity m_pipelineActivity;
-    bool m_pipelineActivityHasBeenSet;
+    bool m_pipelineActivityHasBeenSet = false;
 
     Aws::Vector<Aws::Utils::ByteBuffer> m_payloads;
-    bool m_payloadsHasBeenSet;
+    bool m_payloadsHasBeenSet = false;
   };
 
 } // namespace Model

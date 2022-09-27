@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_hyperlinkName;
-    bool m_hyperlinkNameHasBeenSet;
+    bool m_hyperlinkNameHasBeenSet = false;
 
     Aws::String m_link;
-    bool m_linkHasBeenSet;
+    bool m_linkHasBeenSet = false;
   };
 
 } // namespace Model

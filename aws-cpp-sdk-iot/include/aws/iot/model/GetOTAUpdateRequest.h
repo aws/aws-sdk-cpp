@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_otaUpdateId;
-    bool m_otaUpdateIdHasBeenSet;
+    bool m_otaUpdateIdHasBeenSet = false;
   };
 
 } // namespace Model

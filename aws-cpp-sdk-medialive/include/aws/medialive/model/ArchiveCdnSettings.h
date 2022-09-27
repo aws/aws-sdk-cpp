@@ -58,7 +58,7 @@ namespace Model
   private:
 
     ArchiveS3Settings m_archiveS3Settings;
-    bool m_archiveS3SettingsHasBeenSet;
+    bool m_archiveS3SettingsHasBeenSet = false;
   };
 
 } // namespace Model

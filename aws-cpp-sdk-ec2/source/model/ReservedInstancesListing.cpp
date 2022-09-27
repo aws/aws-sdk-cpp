@@ -66,7 +66,7 @@ ReservedInstancesListing& ReservedInstancesListing::operator =(const XmlNode& xm
     XmlNode createDateNode = resultNode.FirstChild("createDate");
     if(!createDateNode.IsNull())
     {
-      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createDateHasBeenSet = true;
     }
     XmlNode instanceCountsNode = resultNode.FirstChild("instanceCounts");
@@ -132,7 +132,7 @@ ReservedInstancesListing& ReservedInstancesListing::operator =(const XmlNode& xm
     XmlNode updateDateNode = resultNode.FirstChild("updateDate");
     if(!updateDateNode.IsNull())
     {
-      m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_updateDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_updateDateHasBeenSet = true;
     }
   }
@@ -149,7 +149,7 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_createDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_instanceCountsHasBeenSet)
@@ -207,7 +207,7 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -220,7 +220,7 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_createDateHasBeenSet)
   {
-      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreateDate=" << StringUtils::URLEncode(m_createDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_instanceCountsHasBeenSet)
   {
@@ -270,7 +270,7 @@ void ReservedInstancesListing::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_updateDateHasBeenSet)
   {
-      oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".UpdateDate=" << StringUtils::URLEncode(m_updateDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

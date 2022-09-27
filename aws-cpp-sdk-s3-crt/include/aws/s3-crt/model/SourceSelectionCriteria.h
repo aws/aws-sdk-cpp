@@ -167,10 +167,10 @@ namespace Model
   private:
 
     SseKmsEncryptedObjects m_sseKmsEncryptedObjects;
-    bool m_sseKmsEncryptedObjectsHasBeenSet;
+    bool m_sseKmsEncryptedObjectsHasBeenSet = false;
 
     ReplicaModifications m_replicaModifications;
-    bool m_replicaModificationsHasBeenSet;
+    bool m_replicaModificationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -91,7 +91,7 @@ namespace Model
   private:
 
     Aws::String m_applicationArn;
-    bool m_applicationArnHasBeenSet;
+    bool m_applicationArnHasBeenSet = false;
   };
 
 } // namespace Model

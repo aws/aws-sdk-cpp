@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_topicName;
-    bool m_topicNameHasBeenSet;
+    bool m_topicNameHasBeenSet = false;
 
     bool m_useDefaultIfPreferenceUnavailable;
-    bool m_useDefaultIfPreferenceUnavailableHasBeenSet;
+    bool m_useDefaultIfPreferenceUnavailableHasBeenSet = false;
   };
 
 } // namespace Model

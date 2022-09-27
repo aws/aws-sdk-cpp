@@ -595,37 +595,37 @@ namespace Model
   private:
 
     Aws::String m_estimatedROI;
-    bool m_estimatedROIHasBeenSet;
+    bool m_estimatedROIHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     Aws::String m_estimatedTotalCost;
-    bool m_estimatedTotalCostHasBeenSet;
+    bool m_estimatedTotalCostHasBeenSet = false;
 
     Aws::String m_currentOnDemandSpend;
-    bool m_currentOnDemandSpendHasBeenSet;
+    bool m_currentOnDemandSpendHasBeenSet = false;
 
     Aws::String m_estimatedSavingsAmount;
-    bool m_estimatedSavingsAmountHasBeenSet;
+    bool m_estimatedSavingsAmountHasBeenSet = false;
 
     Aws::String m_totalRecommendationCount;
-    bool m_totalRecommendationCountHasBeenSet;
+    bool m_totalRecommendationCountHasBeenSet = false;
 
     Aws::String m_dailyCommitmentToPurchase;
-    bool m_dailyCommitmentToPurchaseHasBeenSet;
+    bool m_dailyCommitmentToPurchaseHasBeenSet = false;
 
     Aws::String m_hourlyCommitmentToPurchase;
-    bool m_hourlyCommitmentToPurchaseHasBeenSet;
+    bool m_hourlyCommitmentToPurchaseHasBeenSet = false;
 
     Aws::String m_estimatedSavingsPercentage;
-    bool m_estimatedSavingsPercentageHasBeenSet;
+    bool m_estimatedSavingsPercentageHasBeenSet = false;
 
     Aws::String m_estimatedMonthlySavingsAmount;
-    bool m_estimatedMonthlySavingsAmountHasBeenSet;
+    bool m_estimatedMonthlySavingsAmountHasBeenSet = false;
 
     Aws::String m_estimatedOnDemandCostWithCurrentCommitment;
-    bool m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet;
+    bool m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = false;
   };
 
 } // namespace Model

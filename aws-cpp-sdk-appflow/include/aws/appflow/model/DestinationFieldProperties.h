@@ -215,22 +215,22 @@ namespace Model
   private:
 
     bool m_isCreatable;
-    bool m_isCreatableHasBeenSet;
+    bool m_isCreatableHasBeenSet = false;
 
     bool m_isNullable;
-    bool m_isNullableHasBeenSet;
+    bool m_isNullableHasBeenSet = false;
 
     bool m_isUpsertable;
-    bool m_isUpsertableHasBeenSet;
+    bool m_isUpsertableHasBeenSet = false;
 
     bool m_isUpdatable;
-    bool m_isUpdatableHasBeenSet;
+    bool m_isUpdatableHasBeenSet = false;
 
     bool m_isDefaultedOnCreate;
-    bool m_isDefaultedOnCreateHasBeenSet;
+    bool m_isDefaultedOnCreateHasBeenSet = false;
 
     Aws::Vector<WriteOperationType> m_supportedWriteOperations;
-    bool m_supportedWriteOperationsHasBeenSet;
+    bool m_supportedWriteOperationsHasBeenSet = false;
   };
 
 } // namespace Model

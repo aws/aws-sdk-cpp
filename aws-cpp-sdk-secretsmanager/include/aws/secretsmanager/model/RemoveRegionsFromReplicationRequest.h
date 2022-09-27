@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_secretId;
-    bool m_secretIdHasBeenSet;
+    bool m_secretIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeReplicaRegions;
-    bool m_removeReplicaRegionsHasBeenSet;
+    bool m_removeReplicaRegionsHasBeenSet = false;
   };
 
 } // namespace Model

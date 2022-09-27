@@ -162,16 +162,16 @@ namespace Model
   private:
 
     Aws::String m_identityPoolId;
-    bool m_identityPoolIdHasBeenSet;
+    bool m_identityPoolIdHasBeenSet = false;
 
     long long m_syncSessionsCount;
-    bool m_syncSessionsCountHasBeenSet;
+    bool m_syncSessionsCountHasBeenSet = false;
 
     long long m_dataStorage;
-    bool m_dataStorageHasBeenSet;
+    bool m_dataStorageHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
-    bool m_lastModifiedDateHasBeenSet;
+    bool m_lastModifiedDateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -265,19 +265,19 @@ namespace Model
   private:
 
     Aws::String m_connectionString;
-    bool m_connectionStringHasBeenSet;
+    bool m_connectionStringHasBeenSet = false;
 
     Aws::String m_aliasId;
-    bool m_aliasIdHasBeenSet;
+    bool m_aliasIdHasBeenSet = false;
 
     ConnectionAliasState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_ownerAccountId;
-    bool m_ownerAccountIdHasBeenSet;
+    bool m_ownerAccountIdHasBeenSet = false;
 
     Aws::Vector<ConnectionAliasAssociation> m_associations;
-    bool m_associationsHasBeenSet;
+    bool m_associationsHasBeenSet = false;
   };
 
 } // namespace Model

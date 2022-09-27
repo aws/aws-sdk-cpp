@@ -172,13 +172,13 @@ namespace Model
   private:
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
 
     Aws::String m_metricRegex;
-    bool m_metricRegexHasBeenSet;
+    bool m_metricRegexHasBeenSet = false;
   };
 
 } // namespace Model

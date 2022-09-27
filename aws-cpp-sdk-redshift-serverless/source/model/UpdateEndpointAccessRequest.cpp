@@ -45,7 +45,7 @@ Aws::String UpdateEndpointAccessRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection UpdateEndpointAccessRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.UpdateEndpointAccess"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.UpdateEndpointAccess"));
   return headers;
 
 }

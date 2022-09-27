@@ -87,7 +87,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_projectedColumns;
-    bool m_projectedColumnsHasBeenSet;
+    bool m_projectedColumnsHasBeenSet = false;
   };
 
 } // namespace Model

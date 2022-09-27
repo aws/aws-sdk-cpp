@@ -460,22 +460,22 @@ namespace Model
   private:
 
     Aws::String m_evalResourceName;
-    bool m_evalResourceNameHasBeenSet;
+    bool m_evalResourceNameHasBeenSet = false;
 
     PolicyEvaluationDecisionType m_evalResourceDecision;
-    bool m_evalResourceDecisionHasBeenSet;
+    bool m_evalResourceDecisionHasBeenSet = false;
 
     Aws::Vector<Statement> m_matchedStatements;
-    bool m_matchedStatementsHasBeenSet;
+    bool m_matchedStatementsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_missingContextValues;
-    bool m_missingContextValuesHasBeenSet;
+    bool m_missingContextValuesHasBeenSet = false;
 
     Aws::Map<Aws::String, PolicyEvaluationDecisionType> m_evalDecisionDetails;
-    bool m_evalDecisionDetailsHasBeenSet;
+    bool m_evalDecisionDetailsHasBeenSet = false;
 
     PermissionsBoundaryDecisionDetail m_permissionsBoundaryDecisionDetail;
-    bool m_permissionsBoundaryDecisionDetailHasBeenSet;
+    bool m_permissionsBoundaryDecisionDetailHasBeenSet = false;
   };
 
 } // namespace Model

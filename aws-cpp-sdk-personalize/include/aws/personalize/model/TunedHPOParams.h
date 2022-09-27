@@ -108,7 +108,7 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_algorithmHyperParameters;
-    bool m_algorithmHyperParametersHasBeenSet;
+    bool m_algorithmHyperParametersHasBeenSet = false;
   };
 
 } // namespace Model

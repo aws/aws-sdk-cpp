@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_pipelineExecutionArn;
-    bool m_pipelineExecutionArnHasBeenSet;
+    bool m_pipelineExecutionArnHasBeenSet = false;
   };
 
 } // namespace Model

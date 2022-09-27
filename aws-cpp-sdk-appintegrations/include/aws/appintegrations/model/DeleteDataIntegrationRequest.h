@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_dataIntegrationIdentifier;
-    bool m_dataIntegrationIdentifierHasBeenSet;
+    bool m_dataIntegrationIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime-sdk-meetings/model/MediaPlacement.h>
 #include <aws/chime-sdk-meetings/model/MeetingFeaturesConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -385,28 +386,121 @@ namespace Model
      */
     inline Meeting& WithPrimaryMeetingId(const char* value) { SetPrimaryMeetingId(value); return *this;}
 
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTenantIds() const{ return m_tenantIds; }
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline bool TenantIdsHasBeenSet() const { return m_tenantIdsHasBeenSet; }
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline void SetTenantIds(const Aws::Vector<Aws::String>& value) { m_tenantIdsHasBeenSet = true; m_tenantIds = value; }
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline void SetTenantIds(Aws::Vector<Aws::String>&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds = std::move(value); }
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline Meeting& WithTenantIds(const Aws::Vector<Aws::String>& value) { SetTenantIds(value); return *this;}
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline Meeting& WithTenantIds(Aws::Vector<Aws::String>&& value) { SetTenantIds(std::move(value)); return *this;}
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline Meeting& AddTenantIds(const Aws::String& value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(value); return *this; }
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline Meeting& AddTenantIds(Aws::String&& value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Array of strings.</p>
+     */
+    inline Meeting& AddTenantIds(const char* value) { m_tenantIdsHasBeenSet = true; m_tenantIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline const Aws::String& GetMeetingArn() const{ return m_meetingArn; }
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline bool MeetingArnHasBeenSet() const { return m_meetingArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline void SetMeetingArn(const Aws::String& value) { m_meetingArnHasBeenSet = true; m_meetingArn = value; }
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline void SetMeetingArn(Aws::String&& value) { m_meetingArnHasBeenSet = true; m_meetingArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline void SetMeetingArn(const char* value) { m_meetingArnHasBeenSet = true; m_meetingArn.assign(value); }
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline Meeting& WithMeetingArn(const Aws::String& value) { SetMeetingArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline Meeting& WithMeetingArn(Aws::String&& value) { SetMeetingArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the meeting.</p>
+     */
+    inline Meeting& WithMeetingArn(const char* value) { SetMeetingArn(value); return *this;}
+
   private:
 
     Aws::String m_meetingId;
-    bool m_meetingIdHasBeenSet;
+    bool m_meetingIdHasBeenSet = false;
 
     Aws::String m_meetingHostId;
-    bool m_meetingHostIdHasBeenSet;
+    bool m_meetingHostIdHasBeenSet = false;
 
     Aws::String m_externalMeetingId;
-    bool m_externalMeetingIdHasBeenSet;
+    bool m_externalMeetingIdHasBeenSet = false;
 
     Aws::String m_mediaRegion;
-    bool m_mediaRegionHasBeenSet;
+    bool m_mediaRegionHasBeenSet = false;
 
     MediaPlacement m_mediaPlacement;
-    bool m_mediaPlacementHasBeenSet;
+    bool m_mediaPlacementHasBeenSet = false;
 
     MeetingFeaturesConfiguration m_meetingFeatures;
-    bool m_meetingFeaturesHasBeenSet;
+    bool m_meetingFeaturesHasBeenSet = false;
 
     Aws::String m_primaryMeetingId;
-    bool m_primaryMeetingIdHasBeenSet;
+    bool m_primaryMeetingIdHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_tenantIds;
+    bool m_tenantIdsHasBeenSet = false;
+
+    Aws::String m_meetingArn;
+    bool m_meetingArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -54,134 +54,182 @@ namespace Model
 
 
     /**
-     * <p>Indicates how to allocate the target Spot Instance capacity across the Spot
-     * Instance pools specified by the Spot Fleet request.</p> <p>If the allocation
-     * strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the
-     * Spot Instance pools with the lowest price. This is the default allocation
-     * strategy.</p> <p>If the allocation strategy is <code>diversified</code>, Spot
-     * Fleet launches instances from all the Spot Instance pools that you specify.</p>
-     * <p>If the allocation strategy is <code>capacityOptimized</code> (recommended),
-     * Spot Fleet launches instances from Spot Instance pools with optimal capacity for
-     * the number of instances that are launching. To give certain instance types a
-     * higher chance of launching first, use <code>capacityOptimizedPrioritized</code>.
-     * Set a priority for each instance type by using the <code>Priority</code>
-     * parameter for <code>LaunchTemplateOverrides</code>. You can assign the same
-     * priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the
-     * priorities on a best-effort basis, but optimizes for capacity first.
+     * <p>The strategy that determines how to allocate the target Spot Instance
+     * capacity across the Spot Instance pools specified by the Spot Fleet launch
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p> <p> <code>lowestPrice</code> - Spot Fleet launches instances
+     * from the lowest-price Spot Instance pool that has available capacity. If the
+     * cheapest pool doesn't have available capacity, the Spot Instances come from the
+     * next cheapest pool that has available capacity. If a pool runs out of capacity
+     * before fulfilling your desired capacity, Spot Fleet will continue to fulfill
+     * your request by drawing from the next cheapest pool. To ensure that your desired
+     * capacity is met, you might receive Spot Instances from several pools.</p> <p>
+     * <code>diversified</code> - Spot Fleet launches instances from all of the Spot
+     * Instance pools that you specify.</p> <p> <code>capacityOptimized</code>
+     * (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use
+     * <code>capacityOptimizedPrioritized</code>. Set a priority for each instance type
+     * by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
+     * a best-effort basis, but optimizes for capacity first.
      * <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet
      * uses a launch template. Note that if the <code>OnDemandAllocationStrategy</code>
      * is set to <code>prioritized</code>, the same priority is applied when fulfilling
-     * On-Demand capacity.</p>
+     * On-Demand capacity.</p> <p>Default: <code>lowestPrice</code> </p>
      */
     inline const AllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
 
     /**
-     * <p>Indicates how to allocate the target Spot Instance capacity across the Spot
-     * Instance pools specified by the Spot Fleet request.</p> <p>If the allocation
-     * strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the
-     * Spot Instance pools with the lowest price. This is the default allocation
-     * strategy.</p> <p>If the allocation strategy is <code>diversified</code>, Spot
-     * Fleet launches instances from all the Spot Instance pools that you specify.</p>
-     * <p>If the allocation strategy is <code>capacityOptimized</code> (recommended),
-     * Spot Fleet launches instances from Spot Instance pools with optimal capacity for
-     * the number of instances that are launching. To give certain instance types a
-     * higher chance of launching first, use <code>capacityOptimizedPrioritized</code>.
-     * Set a priority for each instance type by using the <code>Priority</code>
-     * parameter for <code>LaunchTemplateOverrides</code>. You can assign the same
-     * priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the
-     * priorities on a best-effort basis, but optimizes for capacity first.
+     * <p>The strategy that determines how to allocate the target Spot Instance
+     * capacity across the Spot Instance pools specified by the Spot Fleet launch
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p> <p> <code>lowestPrice</code> - Spot Fleet launches instances
+     * from the lowest-price Spot Instance pool that has available capacity. If the
+     * cheapest pool doesn't have available capacity, the Spot Instances come from the
+     * next cheapest pool that has available capacity. If a pool runs out of capacity
+     * before fulfilling your desired capacity, Spot Fleet will continue to fulfill
+     * your request by drawing from the next cheapest pool. To ensure that your desired
+     * capacity is met, you might receive Spot Instances from several pools.</p> <p>
+     * <code>diversified</code> - Spot Fleet launches instances from all of the Spot
+     * Instance pools that you specify.</p> <p> <code>capacityOptimized</code>
+     * (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use
+     * <code>capacityOptimizedPrioritized</code>. Set a priority for each instance type
+     * by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
+     * a best-effort basis, but optimizes for capacity first.
      * <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet
      * uses a launch template. Note that if the <code>OnDemandAllocationStrategy</code>
      * is set to <code>prioritized</code>, the same priority is applied when fulfilling
-     * On-Demand capacity.</p>
+     * On-Demand capacity.</p> <p>Default: <code>lowestPrice</code> </p>
      */
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
 
     /**
-     * <p>Indicates how to allocate the target Spot Instance capacity across the Spot
-     * Instance pools specified by the Spot Fleet request.</p> <p>If the allocation
-     * strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the
-     * Spot Instance pools with the lowest price. This is the default allocation
-     * strategy.</p> <p>If the allocation strategy is <code>diversified</code>, Spot
-     * Fleet launches instances from all the Spot Instance pools that you specify.</p>
-     * <p>If the allocation strategy is <code>capacityOptimized</code> (recommended),
-     * Spot Fleet launches instances from Spot Instance pools with optimal capacity for
-     * the number of instances that are launching. To give certain instance types a
-     * higher chance of launching first, use <code>capacityOptimizedPrioritized</code>.
-     * Set a priority for each instance type by using the <code>Priority</code>
-     * parameter for <code>LaunchTemplateOverrides</code>. You can assign the same
-     * priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the
-     * priorities on a best-effort basis, but optimizes for capacity first.
+     * <p>The strategy that determines how to allocate the target Spot Instance
+     * capacity across the Spot Instance pools specified by the Spot Fleet launch
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p> <p> <code>lowestPrice</code> - Spot Fleet launches instances
+     * from the lowest-price Spot Instance pool that has available capacity. If the
+     * cheapest pool doesn't have available capacity, the Spot Instances come from the
+     * next cheapest pool that has available capacity. If a pool runs out of capacity
+     * before fulfilling your desired capacity, Spot Fleet will continue to fulfill
+     * your request by drawing from the next cheapest pool. To ensure that your desired
+     * capacity is met, you might receive Spot Instances from several pools.</p> <p>
+     * <code>diversified</code> - Spot Fleet launches instances from all of the Spot
+     * Instance pools that you specify.</p> <p> <code>capacityOptimized</code>
+     * (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use
+     * <code>capacityOptimizedPrioritized</code>. Set a priority for each instance type
+     * by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
+     * a best-effort basis, but optimizes for capacity first.
      * <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet
      * uses a launch template. Note that if the <code>OnDemandAllocationStrategy</code>
      * is set to <code>prioritized</code>, the same priority is applied when fulfilling
-     * On-Demand capacity.</p>
+     * On-Demand capacity.</p> <p>Default: <code>lowestPrice</code> </p>
      */
     inline void SetAllocationStrategy(const AllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
     /**
-     * <p>Indicates how to allocate the target Spot Instance capacity across the Spot
-     * Instance pools specified by the Spot Fleet request.</p> <p>If the allocation
-     * strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the
-     * Spot Instance pools with the lowest price. This is the default allocation
-     * strategy.</p> <p>If the allocation strategy is <code>diversified</code>, Spot
-     * Fleet launches instances from all the Spot Instance pools that you specify.</p>
-     * <p>If the allocation strategy is <code>capacityOptimized</code> (recommended),
-     * Spot Fleet launches instances from Spot Instance pools with optimal capacity for
-     * the number of instances that are launching. To give certain instance types a
-     * higher chance of launching first, use <code>capacityOptimizedPrioritized</code>.
-     * Set a priority for each instance type by using the <code>Priority</code>
-     * parameter for <code>LaunchTemplateOverrides</code>. You can assign the same
-     * priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the
-     * priorities on a best-effort basis, but optimizes for capacity first.
+     * <p>The strategy that determines how to allocate the target Spot Instance
+     * capacity across the Spot Instance pools specified by the Spot Fleet launch
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p> <p> <code>lowestPrice</code> - Spot Fleet launches instances
+     * from the lowest-price Spot Instance pool that has available capacity. If the
+     * cheapest pool doesn't have available capacity, the Spot Instances come from the
+     * next cheapest pool that has available capacity. If a pool runs out of capacity
+     * before fulfilling your desired capacity, Spot Fleet will continue to fulfill
+     * your request by drawing from the next cheapest pool. To ensure that your desired
+     * capacity is met, you might receive Spot Instances from several pools.</p> <p>
+     * <code>diversified</code> - Spot Fleet launches instances from all of the Spot
+     * Instance pools that you specify.</p> <p> <code>capacityOptimized</code>
+     * (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use
+     * <code>capacityOptimizedPrioritized</code>. Set a priority for each instance type
+     * by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
+     * a best-effort basis, but optimizes for capacity first.
      * <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet
      * uses a launch template. Note that if the <code>OnDemandAllocationStrategy</code>
      * is set to <code>prioritized</code>, the same priority is applied when fulfilling
-     * On-Demand capacity.</p>
+     * On-Demand capacity.</p> <p>Default: <code>lowestPrice</code> </p>
      */
     inline void SetAllocationStrategy(AllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
 
     /**
-     * <p>Indicates how to allocate the target Spot Instance capacity across the Spot
-     * Instance pools specified by the Spot Fleet request.</p> <p>If the allocation
-     * strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the
-     * Spot Instance pools with the lowest price. This is the default allocation
-     * strategy.</p> <p>If the allocation strategy is <code>diversified</code>, Spot
-     * Fleet launches instances from all the Spot Instance pools that you specify.</p>
-     * <p>If the allocation strategy is <code>capacityOptimized</code> (recommended),
-     * Spot Fleet launches instances from Spot Instance pools with optimal capacity for
-     * the number of instances that are launching. To give certain instance types a
-     * higher chance of launching first, use <code>capacityOptimizedPrioritized</code>.
-     * Set a priority for each instance type by using the <code>Priority</code>
-     * parameter for <code>LaunchTemplateOverrides</code>. You can assign the same
-     * priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the
-     * priorities on a best-effort basis, but optimizes for capacity first.
+     * <p>The strategy that determines how to allocate the target Spot Instance
+     * capacity across the Spot Instance pools specified by the Spot Fleet launch
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p> <p> <code>lowestPrice</code> - Spot Fleet launches instances
+     * from the lowest-price Spot Instance pool that has available capacity. If the
+     * cheapest pool doesn't have available capacity, the Spot Instances come from the
+     * next cheapest pool that has available capacity. If a pool runs out of capacity
+     * before fulfilling your desired capacity, Spot Fleet will continue to fulfill
+     * your request by drawing from the next cheapest pool. To ensure that your desired
+     * capacity is met, you might receive Spot Instances from several pools.</p> <p>
+     * <code>diversified</code> - Spot Fleet launches instances from all of the Spot
+     * Instance pools that you specify.</p> <p> <code>capacityOptimized</code>
+     * (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use
+     * <code>capacityOptimizedPrioritized</code>. Set a priority for each instance type
+     * by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
+     * a best-effort basis, but optimizes for capacity first.
      * <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet
      * uses a launch template. Note that if the <code>OnDemandAllocationStrategy</code>
      * is set to <code>prioritized</code>, the same priority is applied when fulfilling
-     * On-Demand capacity.</p>
+     * On-Demand capacity.</p> <p>Default: <code>lowestPrice</code> </p>
      */
     inline SpotFleetRequestConfigData& WithAllocationStrategy(const AllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
 
     /**
-     * <p>Indicates how to allocate the target Spot Instance capacity across the Spot
-     * Instance pools specified by the Spot Fleet request.</p> <p>If the allocation
-     * strategy is <code>lowestPrice</code>, Spot Fleet launches instances from the
-     * Spot Instance pools with the lowest price. This is the default allocation
-     * strategy.</p> <p>If the allocation strategy is <code>diversified</code>, Spot
-     * Fleet launches instances from all the Spot Instance pools that you specify.</p>
-     * <p>If the allocation strategy is <code>capacityOptimized</code> (recommended),
-     * Spot Fleet launches instances from Spot Instance pools with optimal capacity for
-     * the number of instances that are launching. To give certain instance types a
-     * higher chance of launching first, use <code>capacityOptimizedPrioritized</code>.
-     * Set a priority for each instance type by using the <code>Priority</code>
-     * parameter for <code>LaunchTemplateOverrides</code>. You can assign the same
-     * priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the
-     * priorities on a best-effort basis, but optimizes for capacity first.
+     * <p>The strategy that determines how to allocate the target Spot Instance
+     * capacity across the Spot Instance pools specified by the Spot Fleet launch
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p> <p> <code>lowestPrice</code> - Spot Fleet launches instances
+     * from the lowest-price Spot Instance pool that has available capacity. If the
+     * cheapest pool doesn't have available capacity, the Spot Instances come from the
+     * next cheapest pool that has available capacity. If a pool runs out of capacity
+     * before fulfilling your desired capacity, Spot Fleet will continue to fulfill
+     * your request by drawing from the next cheapest pool. To ensure that your desired
+     * capacity is met, you might receive Spot Instances from several pools.</p> <p>
+     * <code>diversified</code> - Spot Fleet launches instances from all of the Spot
+     * Instance pools that you specify.</p> <p> <code>capacityOptimized</code>
+     * (recommended) - Spot Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use
+     * <code>capacityOptimizedPrioritized</code>. Set a priority for each instance type
+     * by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
+     * a best-effort basis, but optimizes for capacity first.
      * <code>capacityOptimizedPrioritized</code> is supported only if your Spot Fleet
      * uses a launch template. Note that if the <code>OnDemandAllocationStrategy</code>
      * is set to <code>prioritized</code>, the same priority is applied when fulfilling
-     * On-Demand capacity.</p>
+     * On-Demand capacity.</p> <p>Default: <code>lowestPrice</code> </p>
      */
     inline SpotFleetRequestConfigData& WithAllocationStrategy(AllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
 
@@ -695,49 +743,81 @@ namespace Model
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. The default is the On-Demand price.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. The default is the On-Demand price.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. The default is the On-Demand price.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. The default is the On-Demand price.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. The default is the On-Demand price.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. The default is the On-Demand price.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline SpotFleetRequestConfigData& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. The default is the On-Demand price.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline SpotFleetRequestConfigData& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. The default is the On-Demand price.</p>
+     * Instance. We do not recommend using this parameter because it can lead to
+     * increased interruptions. If you do not specify this parameter, you will pay the
+     * current Spot price.</p>  <p>If you specify a maximum price, your
+     * instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline SpotFleetRequestConfigData& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
@@ -1487,11 +1567,10 @@ namespace Model
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * the <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
+     * </code> (valid only if you use <code>LaunchSpecifications</code>). For
+     * information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1504,11 +1583,10 @@ namespace Model
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * the <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
+     * </code> (valid only if you use <code>LaunchSpecifications</code>). For
+     * information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1521,11 +1599,10 @@ namespace Model
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * the <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
+     * </code> (valid only if you use <code>LaunchSpecifications</code>). For
+     * information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1538,11 +1615,10 @@ namespace Model
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * the <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
+     * </code> (valid only if you use <code>LaunchSpecifications</code>). For
+     * information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1555,11 +1631,10 @@ namespace Model
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * the <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
+     * </code> (valid only if you use <code>LaunchSpecifications</code>). For
+     * information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1572,11 +1647,10 @@ namespace Model
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * the <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
+     * </code> (valid only if you use <code>LaunchSpecifications</code>). For
+     * information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1589,11 +1663,10 @@ namespace Model
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * the <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
+     * </code> (valid only if you use <code>LaunchSpecifications</code>). For
+     * information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1606,11 +1679,10 @@ namespace Model
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * the <code> <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">SpotFleetTagSpecification</a>
+     * </code> (valid only if you use <code>LaunchSpecifications</code>). For
+     * information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1619,82 +1691,82 @@ namespace Model
   private:
 
     AllocationStrategy m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
 
     OnDemandAllocationStrategy m_onDemandAllocationStrategy;
-    bool m_onDemandAllocationStrategyHasBeenSet;
+    bool m_onDemandAllocationStrategyHasBeenSet = false;
 
     SpotMaintenanceStrategies m_spotMaintenanceStrategies;
-    bool m_spotMaintenanceStrategiesHasBeenSet;
+    bool m_spotMaintenanceStrategiesHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     ExcessCapacityTerminationPolicy m_excessCapacityTerminationPolicy;
-    bool m_excessCapacityTerminationPolicyHasBeenSet;
+    bool m_excessCapacityTerminationPolicyHasBeenSet = false;
 
     double m_fulfilledCapacity;
-    bool m_fulfilledCapacityHasBeenSet;
+    bool m_fulfilledCapacityHasBeenSet = false;
 
     double m_onDemandFulfilledCapacity;
-    bool m_onDemandFulfilledCapacityHasBeenSet;
+    bool m_onDemandFulfilledCapacityHasBeenSet = false;
 
     Aws::String m_iamFleetRole;
-    bool m_iamFleetRoleHasBeenSet;
+    bool m_iamFleetRoleHasBeenSet = false;
 
     Aws::Vector<SpotFleetLaunchSpecification> m_launchSpecifications;
-    bool m_launchSpecificationsHasBeenSet;
+    bool m_launchSpecificationsHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateConfig> m_launchTemplateConfigs;
-    bool m_launchTemplateConfigsHasBeenSet;
+    bool m_launchTemplateConfigsHasBeenSet = false;
 
     Aws::String m_spotPrice;
-    bool m_spotPriceHasBeenSet;
+    bool m_spotPriceHasBeenSet = false;
 
     int m_targetCapacity;
-    bool m_targetCapacityHasBeenSet;
+    bool m_targetCapacityHasBeenSet = false;
 
     int m_onDemandTargetCapacity;
-    bool m_onDemandTargetCapacityHasBeenSet;
+    bool m_onDemandTargetCapacityHasBeenSet = false;
 
     Aws::String m_onDemandMaxTotalPrice;
-    bool m_onDemandMaxTotalPriceHasBeenSet;
+    bool m_onDemandMaxTotalPriceHasBeenSet = false;
 
     Aws::String m_spotMaxTotalPrice;
-    bool m_spotMaxTotalPriceHasBeenSet;
+    bool m_spotMaxTotalPriceHasBeenSet = false;
 
     bool m_terminateInstancesWithExpiration;
-    bool m_terminateInstancesWithExpirationHasBeenSet;
+    bool m_terminateInstancesWithExpirationHasBeenSet = false;
 
     FleetType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::Utils::DateTime m_validFrom;
-    bool m_validFromHasBeenSet;
+    bool m_validFromHasBeenSet = false;
 
     Aws::Utils::DateTime m_validUntil;
-    bool m_validUntilHasBeenSet;
+    bool m_validUntilHasBeenSet = false;
 
     bool m_replaceUnhealthyInstances;
-    bool m_replaceUnhealthyInstancesHasBeenSet;
+    bool m_replaceUnhealthyInstancesHasBeenSet = false;
 
     InstanceInterruptionBehavior m_instanceInterruptionBehavior;
-    bool m_instanceInterruptionBehaviorHasBeenSet;
+    bool m_instanceInterruptionBehaviorHasBeenSet = false;
 
     LoadBalancersConfig m_loadBalancersConfig;
-    bool m_loadBalancersConfigHasBeenSet;
+    bool m_loadBalancersConfigHasBeenSet = false;
 
     int m_instancePoolsToUseCount;
-    bool m_instancePoolsToUseCountHasBeenSet;
+    bool m_instancePoolsToUseCountHasBeenSet = false;
 
     Aws::String m_context;
-    bool m_contextHasBeenSet;
+    bool m_contextHasBeenSet = false;
 
     TargetCapacityUnitType m_targetCapacityUnitType;
-    bool m_targetCapacityUnitTypeHasBeenSet;
+    bool m_targetCapacityUnitTypeHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -189,19 +189,19 @@ namespace Model
   private:
 
     Aws::String m_bundleId;
-    bool m_bundleIdHasBeenSet;
+    bool m_bundleIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     double m_price;
-    bool m_priceHasBeenSet;
+    bool m_priceHasBeenSet = false;
 
     int m_transferPerMonthInGb;
-    bool m_transferPerMonthInGbHasBeenSet;
+    bool m_transferPerMonthInGbHasBeenSet = false;
 
     bool m_isActive;
-    bool m_isActiveHasBeenSet;
+    bool m_isActiveHasBeenSet = false;
   };
 
 } // namespace Model

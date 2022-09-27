@@ -278,19 +278,51 @@ namespace Model
      */
     inline StartModelRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of inference units to use for auto-scaling the model. If
+     * you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the
+     * model.</p>
+     */
+    inline int GetMaxInferenceUnits() const{ return m_maxInferenceUnits; }
+
+    /**
+     * <p>The maximum number of inference units to use for auto-scaling the model. If
+     * you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the
+     * model.</p>
+     */
+    inline bool MaxInferenceUnitsHasBeenSet() const { return m_maxInferenceUnitsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of inference units to use for auto-scaling the model. If
+     * you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the
+     * model.</p>
+     */
+    inline void SetMaxInferenceUnits(int value) { m_maxInferenceUnitsHasBeenSet = true; m_maxInferenceUnits = value; }
+
+    /**
+     * <p>The maximum number of inference units to use for auto-scaling the model. If
+     * you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the
+     * model.</p>
+     */
+    inline StartModelRequest& WithMaxInferenceUnits(int value) { SetMaxInferenceUnits(value); return *this;}
+
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_modelVersion;
-    bool m_modelVersionHasBeenSet;
+    bool m_modelVersionHasBeenSet = false;
 
     int m_minInferenceUnits;
-    bool m_minInferenceUnitsHasBeenSet;
+    bool m_minInferenceUnitsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
+
+    int m_maxInferenceUnits;
+    bool m_maxInferenceUnitsHasBeenSet = false;
   };
 
 } // namespace Model

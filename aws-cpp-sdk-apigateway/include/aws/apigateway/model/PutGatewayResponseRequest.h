@@ -311,19 +311,19 @@ namespace Model
   private:
 
     Aws::String m_restApiId;
-    bool m_restApiIdHasBeenSet;
+    bool m_restApiIdHasBeenSet = false;
 
     GatewayResponseType m_responseType;
-    bool m_responseTypeHasBeenSet;
+    bool m_responseTypeHasBeenSet = false;
 
     Aws::String m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseParameters;
-    bool m_responseParametersHasBeenSet;
+    bool m_responseParametersHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_responseTemplates;
-    bool m_responseTemplatesHasBeenSet;
+    bool m_responseTemplatesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -177,13 +177,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_instancesToTerminate;
-    bool m_instancesToTerminateHasBeenSet;
+    bool m_instancesToTerminateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instancesToProtect;
-    bool m_instancesToProtectHasBeenSet;
+    bool m_instancesToProtectHasBeenSet = false;
 
     int m_instanceTerminationTimeout;
-    bool m_instanceTerminationTimeoutHasBeenSet;
+    bool m_instanceTerminationTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

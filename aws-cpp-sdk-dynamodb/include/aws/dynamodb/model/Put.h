@@ -430,22 +430,22 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, AttributeValue> m_item;
-    bool m_itemHasBeenSet;
+    bool m_itemHasBeenSet = false;
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_conditionExpression;
-    bool m_conditionExpressionHasBeenSet;
+    bool m_conditionExpressionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_expressionAttributeNames;
-    bool m_expressionAttributeNamesHasBeenSet;
+    bool m_expressionAttributeNamesHasBeenSet = false;
 
     Aws::Map<Aws::String, AttributeValue> m_expressionAttributeValues;
-    bool m_expressionAttributeValuesHasBeenSet;
+    bool m_expressionAttributeValuesHasBeenSet = false;
 
     ReturnValuesOnConditionCheckFailure m_returnValuesOnConditionCheckFailure;
-    bool m_returnValuesOnConditionCheckFailureHasBeenSet;
+    bool m_returnValuesOnConditionCheckFailureHasBeenSet = false;
   };
 
 } // namespace Model

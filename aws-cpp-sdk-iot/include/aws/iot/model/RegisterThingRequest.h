@@ -184,10 +184,10 @@ namespace Model
   private:
 
     Aws::String m_templateBody;
-    bool m_templateBodyHasBeenSet;
+    bool m_templateBodyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

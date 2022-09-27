@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an enabled metric.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an enabled Auto Scaling group metric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnabledMetric">AWS
    * API Reference</a></p>
    */
@@ -59,7 +59,10 @@ namespace Model
      * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
-     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetMetric() const{ return m_metric; }
 
@@ -83,7 +86,10 @@ namespace Model
      * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
-     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
 
@@ -107,7 +113,10 @@ namespace Model
      * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
-     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
 
@@ -131,7 +140,10 @@ namespace Model
      * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
-     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
 
@@ -155,7 +167,10 @@ namespace Model
      * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
-     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
 
@@ -179,7 +194,10 @@ namespace Model
      * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
-     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline EnabledMetric& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
 
@@ -203,7 +221,10 @@ namespace Model
      * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
-     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline EnabledMetric& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
 
@@ -227,7 +248,10 @@ namespace Model
      * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
      * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
-     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-cloudwatch-monitoring.html#as-group-metrics">Auto
+     * Scaling group metrics</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline EnabledMetric& WithMetric(const char* value) { SetMetric(value); return *this;}
 
@@ -283,10 +307,10 @@ namespace Model
   private:
 
     Aws::String m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
 
     Aws::String m_granularity;
-    bool m_granularityHasBeenSet;
+    bool m_granularityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -229,19 +229,19 @@ namespace Model
   private:
 
     Aws::String m_assessmentId;
-    bool m_assessmentIdHasBeenSet;
+    bool m_assessmentIdHasBeenSet = false;
 
     Aws::String m_controlSetId;
-    bool m_controlSetIdHasBeenSet;
+    bool m_controlSetIdHasBeenSet = false;
 
     Aws::String m_evidenceFolderId;
-    bool m_evidenceFolderIdHasBeenSet;
+    bool m_evidenceFolderIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

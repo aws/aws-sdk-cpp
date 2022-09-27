@@ -123,6 +123,43 @@ namespace Model
 
 
     /**
+     * <p>The Staging Disk EBS volume type to be used during replication when
+     * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+     */
+    inline const ReplicationConfigurationReplicatedDiskStagingDiskType& GetOptimizedStagingDiskType() const{ return m_optimizedStagingDiskType; }
+
+    /**
+     * <p>The Staging Disk EBS volume type to be used during replication when
+     * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+     */
+    inline bool OptimizedStagingDiskTypeHasBeenSet() const { return m_optimizedStagingDiskTypeHasBeenSet; }
+
+    /**
+     * <p>The Staging Disk EBS volume type to be used during replication when
+     * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+     */
+    inline void SetOptimizedStagingDiskType(const ReplicationConfigurationReplicatedDiskStagingDiskType& value) { m_optimizedStagingDiskTypeHasBeenSet = true; m_optimizedStagingDiskType = value; }
+
+    /**
+     * <p>The Staging Disk EBS volume type to be used during replication when
+     * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+     */
+    inline void SetOptimizedStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType&& value) { m_optimizedStagingDiskTypeHasBeenSet = true; m_optimizedStagingDiskType = std::move(value); }
+
+    /**
+     * <p>The Staging Disk EBS volume type to be used during replication when
+     * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+     */
+    inline ReplicationConfigurationReplicatedDisk& WithOptimizedStagingDiskType(const ReplicationConfigurationReplicatedDiskStagingDiskType& value) { SetOptimizedStagingDiskType(value); return *this;}
+
+    /**
+     * <p>The Staging Disk EBS volume type to be used during replication when
+     * <code>stagingDiskType</code> is set to Auto. This is a read-only field.</p>
+     */
+    inline ReplicationConfigurationReplicatedDisk& WithOptimizedStagingDiskType(ReplicationConfigurationReplicatedDiskStagingDiskType&& value) { SetOptimizedStagingDiskType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Staging Disk EBS volume type to be used during replication.</p>
      */
     inline const ReplicationConfigurationReplicatedDiskStagingDiskType& GetStagingDiskType() const{ return m_stagingDiskType; }
@@ -180,19 +217,22 @@ namespace Model
   private:
 
     Aws::String m_deviceName;
-    bool m_deviceNameHasBeenSet;
+    bool m_deviceNameHasBeenSet = false;
 
     long long m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     bool m_isBootDisk;
-    bool m_isBootDiskHasBeenSet;
+    bool m_isBootDiskHasBeenSet = false;
+
+    ReplicationConfigurationReplicatedDiskStagingDiskType m_optimizedStagingDiskType;
+    bool m_optimizedStagingDiskTypeHasBeenSet = false;
 
     ReplicationConfigurationReplicatedDiskStagingDiskType m_stagingDiskType;
-    bool m_stagingDiskTypeHasBeenSet;
+    bool m_stagingDiskTypeHasBeenSet = false;
 
     long long m_throughput;
-    bool m_throughputHasBeenSet;
+    bool m_throughputHasBeenSet = false;
   };
 
 } // namespace Model

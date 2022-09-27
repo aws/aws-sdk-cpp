@@ -459,34 +459,34 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     MarketType m_market;
-    bool m_marketHasBeenSet;
+    bool m_marketHasBeenSet = false;
 
     InstanceRoleType m_instanceRole;
-    bool m_instanceRoleHasBeenSet;
+    bool m_instanceRoleHasBeenSet = false;
 
     Aws::String m_bidPrice;
-    bool m_bidPriceHasBeenSet;
+    bool m_bidPriceHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     Aws::Vector<Configuration> m_configurations;
-    bool m_configurationsHasBeenSet;
+    bool m_configurationsHasBeenSet = false;
 
     EbsConfiguration m_ebsConfiguration;
-    bool m_ebsConfigurationHasBeenSet;
+    bool m_ebsConfigurationHasBeenSet = false;
 
     AutoScalingPolicy m_autoScalingPolicy;
-    bool m_autoScalingPolicyHasBeenSet;
+    bool m_autoScalingPolicyHasBeenSet = false;
 
     Aws::String m_customAmiId;
-    bool m_customAmiIdHasBeenSet;
+    bool m_customAmiIdHasBeenSet = false;
   };
 
 } // namespace Model

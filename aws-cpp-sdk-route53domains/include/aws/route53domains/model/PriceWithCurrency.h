@@ -101,10 +101,10 @@ namespace Model
   private:
 
     double m_price;
-    bool m_priceHasBeenSet;
+    bool m_priceHasBeenSet = false;
 
     Aws::String m_currency;
-    bool m_currencyHasBeenSet;
+    bool m_currencyHasBeenSet = false;
   };
 
 } // namespace Model

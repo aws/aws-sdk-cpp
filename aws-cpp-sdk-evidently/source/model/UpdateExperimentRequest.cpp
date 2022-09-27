@@ -19,8 +19,11 @@ UpdateExperimentRequest::UpdateExperimentRequest() :
     m_onlineAbConfigHasBeenSet(false),
     m_projectHasBeenSet(false),
     m_randomizationSaltHasBeenSet(false),
+    m_removeSegment(false),
+    m_removeSegmentHasBeenSet(false),
     m_samplingRate(0),
     m_samplingRateHasBeenSet(false),
+    m_segmentHasBeenSet(false),
     m_treatmentsHasBeenSet(false)
 {
 }
@@ -58,9 +61,21 @@ Aws::String UpdateExperimentRequest::SerializePayload() const
 
   }
 
+  if(m_removeSegmentHasBeenSet)
+  {
+   payload.WithBool("removeSegment", m_removeSegment);
+
+  }
+
   if(m_samplingRateHasBeenSet)
   {
    payload.WithInt64("samplingRate", m_samplingRate);
+
+  }
+
+  if(m_segmentHasBeenSet)
+  {
+   payload.WithString("segment", m_segment);
 
   }
 

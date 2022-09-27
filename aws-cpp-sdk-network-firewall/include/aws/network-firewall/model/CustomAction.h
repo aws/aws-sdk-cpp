@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_actionName;
-    bool m_actionNameHasBeenSet;
+    bool m_actionNameHasBeenSet = false;
 
     ActionDefinition m_actionDefinition;
-    bool m_actionDefinitionHasBeenSet;
+    bool m_actionDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

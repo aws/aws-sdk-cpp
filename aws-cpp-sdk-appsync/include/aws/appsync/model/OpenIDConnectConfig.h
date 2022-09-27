@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_issuer;
-    bool m_issuerHasBeenSet;
+    bool m_issuerHasBeenSet = false;
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     long long m_iatTTL;
-    bool m_iatTTLHasBeenSet;
+    bool m_iatTTLHasBeenSet = false;
 
     long long m_authTTL;
-    bool m_authTTLHasBeenSet;
+    bool m_authTTLHasBeenSet = false;
   };
 
 } // namespace Model

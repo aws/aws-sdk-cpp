@@ -326,67 +326,80 @@ namespace Model
 
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
+     * <p>The tags used to organize, track, or control access for this resource. For
+     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline ClaimedPhoneNumberSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -424,31 +437,31 @@ namespace Model
   private:
 
     Aws::String m_phoneNumberId;
-    bool m_phoneNumberIdHasBeenSet;
+    bool m_phoneNumberIdHasBeenSet = false;
 
     Aws::String m_phoneNumberArn;
-    bool m_phoneNumberArnHasBeenSet;
+    bool m_phoneNumberArnHasBeenSet = false;
 
     Aws::String m_phoneNumber;
-    bool m_phoneNumberHasBeenSet;
+    bool m_phoneNumberHasBeenSet = false;
 
     PhoneNumberCountryCode m_phoneNumberCountryCode;
-    bool m_phoneNumberCountryCodeHasBeenSet;
+    bool m_phoneNumberCountryCodeHasBeenSet = false;
 
     PhoneNumberType m_phoneNumberType;
-    bool m_phoneNumberTypeHasBeenSet;
+    bool m_phoneNumberTypeHasBeenSet = false;
 
     Aws::String m_phoneNumberDescription;
-    bool m_phoneNumberDescriptionHasBeenSet;
+    bool m_phoneNumberDescriptionHasBeenSet = false;
 
     Aws::String m_targetArn;
-    bool m_targetArnHasBeenSet;
+    bool m_targetArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     PhoneNumberStatus m_phoneNumberStatus;
-    bool m_phoneNumberStatusHasBeenSet;
+    bool m_phoneNumberStatusHasBeenSet = false;
   };
 
 } // namespace Model

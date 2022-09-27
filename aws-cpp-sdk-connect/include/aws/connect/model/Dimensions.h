@@ -103,10 +103,10 @@ namespace Model
   private:
 
     QueueReference m_queue;
-    bool m_queueHasBeenSet;
+    bool m_queueHasBeenSet = false;
 
     Channel m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
   };
 
 } // namespace Model

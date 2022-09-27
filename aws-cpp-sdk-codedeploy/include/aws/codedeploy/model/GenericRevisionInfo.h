@@ -221,19 +221,19 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_deploymentGroups;
-    bool m_deploymentGroupsHasBeenSet;
+    bool m_deploymentGroupsHasBeenSet = false;
 
     Aws::Utils::DateTime m_firstUsedTime;
-    bool m_firstUsedTimeHasBeenSet;
+    bool m_firstUsedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUsedTime;
-    bool m_lastUsedTimeHasBeenSet;
+    bool m_lastUsedTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_registerTime;
-    bool m_registerTimeHasBeenSet;
+    bool m_registerTimeHasBeenSet = false;
   };
 
 } // namespace Model

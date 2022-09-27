@@ -219,16 +219,16 @@ namespace Model
   private:
 
     Aws::String m_awsCognitoIdentityPoolId;
-    bool m_awsCognitoIdentityPoolIdHasBeenSet;
+    bool m_awsCognitoIdentityPoolIdHasBeenSet = false;
 
     Aws::String m_awsCognitoRegion;
-    bool m_awsCognitoRegionHasBeenSet;
+    bool m_awsCognitoRegionHasBeenSet = false;
 
     Aws::String m_awsUserPoolsId;
-    bool m_awsUserPoolsIdHasBeenSet;
+    bool m_awsUserPoolsIdHasBeenSet = false;
 
     Aws::String m_awsUserPoolsWebClientId;
-    bool m_awsUserPoolsWebClientIdHasBeenSet;
+    bool m_awsUserPoolsWebClientIdHasBeenSet = false;
   };
 
 } // namespace Model

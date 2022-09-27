@@ -388,34 +388,34 @@ namespace Model
   private:
 
     Aws::String m_grantor;
-    bool m_grantorHasBeenSet;
+    bool m_grantorHasBeenSet = false;
 
     Aws::String m_grantee;
-    bool m_granteeHasBeenSet;
+    bool m_granteeHasBeenSet = false;
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_authorizeTime;
-    bool m_authorizeTimeHasBeenSet;
+    bool m_authorizeTimeHasBeenSet = false;
 
     Aws::String m_clusterStatus;
-    bool m_clusterStatusHasBeenSet;
+    bool m_clusterStatusHasBeenSet = false;
 
     AuthorizationStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     bool m_allowedAllVPCs;
-    bool m_allowedAllVPCsHasBeenSet;
+    bool m_allowedAllVPCsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_allowedVPCs;
-    bool m_allowedVPCsHasBeenSet;
+    bool m_allowedVPCsHasBeenSet = false;
 
     int m_endpointCount;
-    bool m_endpointCountHasBeenSet;
+    bool m_endpointCountHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
-    bool m_responseMetadataHasBeenSet;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

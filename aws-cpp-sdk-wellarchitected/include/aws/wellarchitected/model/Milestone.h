@@ -117,16 +117,16 @@ namespace Model
   private:
 
     int m_milestoneNumber;
-    bool m_milestoneNumberHasBeenSet;
+    bool m_milestoneNumberHasBeenSet = false;
 
     Aws::String m_milestoneName;
-    bool m_milestoneNameHasBeenSet;
+    bool m_milestoneNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_recordedAt;
-    bool m_recordedAtHasBeenSet;
+    bool m_recordedAtHasBeenSet = false;
 
     Workload m_workload;
-    bool m_workloadHasBeenSet;
+    bool m_workloadHasBeenSet = false;
   };
 
 } // namespace Model

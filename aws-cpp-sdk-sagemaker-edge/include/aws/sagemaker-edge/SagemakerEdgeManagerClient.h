@@ -5,68 +5,15 @@
 
 #pragma once
 #include <aws/sagemaker-edge/SagemakerEdgeManager_EXPORTS.h>
-#include <aws/sagemaker-edge/SagemakerEdgeManagerErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/sagemaker-edge/model/GetDeviceRegistrationResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/sagemaker-edge/SagemakerEdgeManagerServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SagemakerEdgeManager
 {
-
-namespace Model
-{
-        class GetDeviceRegistrationRequest;
-        class SendHeartbeatRequest;
-
-        typedef Aws::Utils::Outcome<GetDeviceRegistrationResult, SagemakerEdgeManagerError> GetDeviceRegistrationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SagemakerEdgeManagerError> SendHeartbeatOutcome;
-
-        typedef std::future<GetDeviceRegistrationOutcome> GetDeviceRegistrationOutcomeCallable;
-        typedef std::future<SendHeartbeatOutcome> SendHeartbeatOutcomeCallable;
-} // namespace Model
-
-  class SagemakerEdgeManagerClient;
-
-    typedef std::function<void(const SagemakerEdgeManagerClient*, const Model::GetDeviceRegistrationRequest&, const Model::GetDeviceRegistrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceRegistrationResponseReceivedHandler;
-    typedef std::function<void(const SagemakerEdgeManagerClient*, const Model::SendHeartbeatRequest&, const Model::SendHeartbeatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendHeartbeatResponseReceivedHandler;
-
   /**
    * <p>SageMaker Edge Manager dataplane service for communicating with active
    * agents.</p>
@@ -86,17 +33,36 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SagemakerEdgeManagerClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SagemakerEdgeManagerClient(const Aws::Auth::AWSCredentials& credentials,
+                                   const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SagemakerEdgeManagerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                   const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~SagemakerEdgeManagerClient();
 
+
+        /**
+         * <p>Use to get the active deployments from a device.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-edge-2020-09-23/GetDeployments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDeploymentsOutcome GetDeployments(const Model::GetDeploymentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDeployments that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDeploymentsOutcomeCallable GetDeploymentsCallable(const Model::GetDeploymentsRequest& request) const;
+
+        /**
+         * An Async wrapper for GetDeployments that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDeploymentsAsync(const Model::GetDeploymentsRequest& request, const GetDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Use to check if a device is registered with SageMaker Edge
@@ -138,8 +104,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void GetDeviceRegistrationAsyncHelper(const Model::GetDeviceRegistrationRequest& request, const GetDeviceRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SendHeartbeatAsyncHelper(const Model::SendHeartbeatRequest& request, const SendHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

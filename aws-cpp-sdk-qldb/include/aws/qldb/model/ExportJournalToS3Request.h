@@ -389,22 +389,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Utils::DateTime m_inclusiveStartTime;
-    bool m_inclusiveStartTimeHasBeenSet;
+    bool m_inclusiveStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_exclusiveEndTime;
-    bool m_exclusiveEndTimeHasBeenSet;
+    bool m_exclusiveEndTimeHasBeenSet = false;
 
     S3ExportConfiguration m_s3ExportConfiguration;
-    bool m_s3ExportConfigurationHasBeenSet;
+    bool m_s3ExportConfigurationHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
 
     OutputFormat m_outputFormat;
-    bool m_outputFormatHasBeenSet;
+    bool m_outputFormatHasBeenSet = false;
   };
 
 } // namespace Model

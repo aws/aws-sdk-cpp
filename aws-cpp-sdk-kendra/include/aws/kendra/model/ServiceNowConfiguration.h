@@ -93,49 +93,81 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
-     * the user name and password required to connect to the ServiceNow instance.</p>
+     * the user name and password required to connect to the ServiceNow instance. You
+     * can also provide OAuth authentication credentials of user name, password, client
+     * ID, and client secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
+     * for a ServiceNow data source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
-     * the user name and password required to connect to the ServiceNow instance.</p>
+     * the user name and password required to connect to the ServiceNow instance. You
+     * can also provide OAuth authentication credentials of user name, password, client
+     * ID, and client secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
+     * for a ServiceNow data source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
-     * the user name and password required to connect to the ServiceNow instance.</p>
+     * the user name and password required to connect to the ServiceNow instance. You
+     * can also provide OAuth authentication credentials of user name, password, client
+     * ID, and client secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
+     * for a ServiceNow data source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
-     * the user name and password required to connect to the ServiceNow instance.</p>
+     * the user name and password required to connect to the ServiceNow instance. You
+     * can also provide OAuth authentication credentials of user name, password, client
+     * ID, and client secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
+     * for a ServiceNow data source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
-     * the user name and password required to connect to the ServiceNow instance.</p>
+     * the user name and password required to connect to the ServiceNow instance. You
+     * can also provide OAuth authentication credentials of user name, password, client
+     * ID, and client secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
+     * for a ServiceNow data source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
-     * the user name and password required to connect to the ServiceNow instance.</p>
+     * the user name and password required to connect to the ServiceNow instance. You
+     * can also provide OAuth authentication credentials of user name, password, client
+     * ID, and client secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
+     * for a ServiceNow data source</a>.</p>
      */
     inline ServiceNowConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
-     * the user name and password required to connect to the ServiceNow instance.</p>
+     * the user name and password required to connect to the ServiceNow instance. You
+     * can also provide OAuth authentication credentials of user name, password, client
+     * ID, and client secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
+     * for a ServiceNow data source</a>.</p>
      */
     inline ServiceNowConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Secrets Manager secret that contains
-     * the user name and password required to connect to the ServiceNow instance.</p>
+     * the user name and password required to connect to the ServiceNow instance. You
+     * can also provide OAuth authentication credentials of user name, password, client
+     * ID, and client secret. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication">Authentication
+     * for a ServiceNow data source</a>.</p>
      */
     inline ServiceNowConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
@@ -261,12 +293,11 @@ namespace Model
      * <p>The type of authentication used to connect to the ServiceNow instance. If you
      * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
      * name and password provided in the Secrets Manager secret in the
-     * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
-     * is authenticated using the OAuth token and secret provided in the Secrets
-     * Manager secret, and the user name and password are used to determine which
-     * information Amazon Kendra has access to.</p> <p>When you use <code>OAUTH2</code>
-     * authentication, you must generate a token and a client secret using the
-     * ServiceNow console. For more information, see <a
+     * <code>SecretArn</code> field. If you choose <code>OAUTH2</code>, Amazon Kendra
+     * is authenticated using the credentials of client ID, client secret, user name
+     * and password.</p> <p>When you use <code>OAUTH2</code> authentication, you must
+     * generate a token and a client secret using the ServiceNow console. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
      * a ServiceNow data source</a>.</p>
      */
@@ -276,12 +307,11 @@ namespace Model
      * <p>The type of authentication used to connect to the ServiceNow instance. If you
      * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
      * name and password provided in the Secrets Manager secret in the
-     * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
-     * is authenticated using the OAuth token and secret provided in the Secrets
-     * Manager secret, and the user name and password are used to determine which
-     * information Amazon Kendra has access to.</p> <p>When you use <code>OAUTH2</code>
-     * authentication, you must generate a token and a client secret using the
-     * ServiceNow console. For more information, see <a
+     * <code>SecretArn</code> field. If you choose <code>OAUTH2</code>, Amazon Kendra
+     * is authenticated using the credentials of client ID, client secret, user name
+     * and password.</p> <p>When you use <code>OAUTH2</code> authentication, you must
+     * generate a token and a client secret using the ServiceNow console. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
      * a ServiceNow data source</a>.</p>
      */
@@ -291,12 +321,11 @@ namespace Model
      * <p>The type of authentication used to connect to the ServiceNow instance. If you
      * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
      * name and password provided in the Secrets Manager secret in the
-     * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
-     * is authenticated using the OAuth token and secret provided in the Secrets
-     * Manager secret, and the user name and password are used to determine which
-     * information Amazon Kendra has access to.</p> <p>When you use <code>OAUTH2</code>
-     * authentication, you must generate a token and a client secret using the
-     * ServiceNow console. For more information, see <a
+     * <code>SecretArn</code> field. If you choose <code>OAUTH2</code>, Amazon Kendra
+     * is authenticated using the credentials of client ID, client secret, user name
+     * and password.</p> <p>When you use <code>OAUTH2</code> authentication, you must
+     * generate a token and a client secret using the ServiceNow console. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
      * a ServiceNow data source</a>.</p>
      */
@@ -306,12 +335,11 @@ namespace Model
      * <p>The type of authentication used to connect to the ServiceNow instance. If you
      * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
      * name and password provided in the Secrets Manager secret in the
-     * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
-     * is authenticated using the OAuth token and secret provided in the Secrets
-     * Manager secret, and the user name and password are used to determine which
-     * information Amazon Kendra has access to.</p> <p>When you use <code>OAUTH2</code>
-     * authentication, you must generate a token and a client secret using the
-     * ServiceNow console. For more information, see <a
+     * <code>SecretArn</code> field. If you choose <code>OAUTH2</code>, Amazon Kendra
+     * is authenticated using the credentials of client ID, client secret, user name
+     * and password.</p> <p>When you use <code>OAUTH2</code> authentication, you must
+     * generate a token and a client secret using the ServiceNow console. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
      * a ServiceNow data source</a>.</p>
      */
@@ -321,12 +349,11 @@ namespace Model
      * <p>The type of authentication used to connect to the ServiceNow instance. If you
      * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
      * name and password provided in the Secrets Manager secret in the
-     * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
-     * is authenticated using the OAuth token and secret provided in the Secrets
-     * Manager secret, and the user name and password are used to determine which
-     * information Amazon Kendra has access to.</p> <p>When you use <code>OAUTH2</code>
-     * authentication, you must generate a token and a client secret using the
-     * ServiceNow console. For more information, see <a
+     * <code>SecretArn</code> field. If you choose <code>OAUTH2</code>, Amazon Kendra
+     * is authenticated using the credentials of client ID, client secret, user name
+     * and password.</p> <p>When you use <code>OAUTH2</code> authentication, you must
+     * generate a token and a client secret using the ServiceNow console. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
      * a ServiceNow data source</a>.</p>
      */
@@ -336,12 +363,11 @@ namespace Model
      * <p>The type of authentication used to connect to the ServiceNow instance. If you
      * choose <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user
      * name and password provided in the Secrets Manager secret in the
-     * <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra
-     * is authenticated using the OAuth token and secret provided in the Secrets
-     * Manager secret, and the user name and password are used to determine which
-     * information Amazon Kendra has access to.</p> <p>When you use <code>OAUTH2</code>
-     * authentication, you must generate a token and a client secret using the
-     * ServiceNow console. For more information, see <a
+     * <code>SecretArn</code> field. If you choose <code>OAUTH2</code>, Amazon Kendra
+     * is authenticated using the credentials of client ID, client secret, user name
+     * and password.</p> <p>When you use <code>OAUTH2</code> authentication, you must
+     * generate a token and a client secret using the ServiceNow console. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
      * a ServiceNow data source</a>.</p>
      */
@@ -350,22 +376,22 @@ namespace Model
   private:
 
     Aws::String m_hostUrl;
-    bool m_hostUrlHasBeenSet;
+    bool m_hostUrlHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     ServiceNowBuildVersionType m_serviceNowBuildVersion;
-    bool m_serviceNowBuildVersionHasBeenSet;
+    bool m_serviceNowBuildVersionHasBeenSet = false;
 
     ServiceNowKnowledgeArticleConfiguration m_knowledgeArticleConfiguration;
-    bool m_knowledgeArticleConfigurationHasBeenSet;
+    bool m_knowledgeArticleConfigurationHasBeenSet = false;
 
     ServiceNowServiceCatalogConfiguration m_serviceCatalogConfiguration;
-    bool m_serviceCatalogConfigurationHasBeenSet;
+    bool m_serviceCatalogConfigurationHasBeenSet = false;
 
     ServiceNowAuthenticationType m_authenticationType;
-    bool m_authenticationTypeHasBeenSet;
+    bool m_authenticationTypeHasBeenSet = false;
   };
 
 } // namespace Model

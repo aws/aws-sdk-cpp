@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_accessToken;
-    bool m_accessTokenHasBeenSet;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::String m_session;
-    bool m_sessionHasBeenSet;
+    bool m_sessionHasBeenSet = false;
   };
 
 } // namespace Model

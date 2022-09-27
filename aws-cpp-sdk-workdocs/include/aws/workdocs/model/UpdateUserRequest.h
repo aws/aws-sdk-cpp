@@ -383,31 +383,31 @@ namespace Model
   private:
 
     Aws::String m_authenticationToken;
-    bool m_authenticationTokenHasBeenSet;
+    bool m_authenticationTokenHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_givenName;
-    bool m_givenNameHasBeenSet;
+    bool m_givenNameHasBeenSet = false;
 
     Aws::String m_surname;
-    bool m_surnameHasBeenSet;
+    bool m_surnameHasBeenSet = false;
 
     UserType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     StorageRuleType m_storageRule;
-    bool m_storageRuleHasBeenSet;
+    bool m_storageRuleHasBeenSet = false;
 
     Aws::String m_timeZoneId;
-    bool m_timeZoneIdHasBeenSet;
+    bool m_timeZoneIdHasBeenSet = false;
 
     LocaleType m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
 
     BooleanEnumType m_grantPoweruserPrivileges;
-    bool m_grantPoweruserPrivilegesHasBeenSet;
+    bool m_grantPoweruserPrivilegesHasBeenSet = false;
   };
 
 } // namespace Model

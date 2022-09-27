@@ -323,25 +323,25 @@ namespace Model
   private:
 
     Aws::String m_taskName;
-    bool m_taskNameHasBeenSet;
+    bool m_taskNameHasBeenSet = false;
 
     Aws::String m_logGroupName;
-    bool m_logGroupNameHasBeenSet;
+    bool m_logGroupNameHasBeenSet = false;
 
     Aws::String m_logStreamNamePrefix;
-    bool m_logStreamNamePrefixHasBeenSet;
+    bool m_logStreamNamePrefixHasBeenSet = false;
 
     long long m_from;
-    bool m_fromHasBeenSet;
+    bool m_fromHasBeenSet = false;
 
     long long m_to;
-    bool m_toHasBeenSet;
+    bool m_toHasBeenSet = false;
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_destinationPrefix;
-    bool m_destinationPrefixHasBeenSet;
+    bool m_destinationPrefixHasBeenSet = false;
   };
 
 } // namespace Model

@@ -263,7 +263,7 @@ namespace Model
      * randomization ID to determine which variation the user session is served. This
      * randomization ID is a combination of the entity ID and
      * <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>,
-     * Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+     * Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
      */
     inline const Aws::String& GetRandomizationSalt() const{ return m_randomizationSalt; }
 
@@ -272,7 +272,7 @@ namespace Model
      * randomization ID to determine which variation the user session is served. This
      * randomization ID is a combination of the entity ID and
      * <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>,
-     * Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+     * Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
      */
     inline bool RandomizationSaltHasBeenSet() const { return m_randomizationSaltHasBeenSet; }
 
@@ -281,7 +281,7 @@ namespace Model
      * randomization ID to determine which variation the user session is served. This
      * randomization ID is a combination of the entity ID and
      * <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>,
-     * Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+     * Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
      */
     inline void SetRandomizationSalt(const Aws::String& value) { m_randomizationSaltHasBeenSet = true; m_randomizationSalt = value; }
 
@@ -290,7 +290,7 @@ namespace Model
      * randomization ID to determine which variation the user session is served. This
      * randomization ID is a combination of the entity ID and
      * <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>,
-     * Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+     * Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
      */
     inline void SetRandomizationSalt(Aws::String&& value) { m_randomizationSaltHasBeenSet = true; m_randomizationSalt = std::move(value); }
 
@@ -299,7 +299,7 @@ namespace Model
      * randomization ID to determine which variation the user session is served. This
      * randomization ID is a combination of the entity ID and
      * <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>,
-     * Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+     * Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
      */
     inline void SetRandomizationSalt(const char* value) { m_randomizationSaltHasBeenSet = true; m_randomizationSalt.assign(value); }
 
@@ -308,7 +308,7 @@ namespace Model
      * randomization ID to determine which variation the user session is served. This
      * randomization ID is a combination of the entity ID and
      * <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>,
-     * Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+     * Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
      */
     inline CreateLaunchRequest& WithRandomizationSalt(const Aws::String& value) { SetRandomizationSalt(value); return *this;}
 
@@ -317,7 +317,7 @@ namespace Model
      * randomization ID to determine which variation the user session is served. This
      * randomization ID is a combination of the entity ID and
      * <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>,
-     * Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+     * Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
      */
     inline CreateLaunchRequest& WithRandomizationSalt(Aws::String&& value) { SetRandomizationSalt(std::move(value)); return *this;}
 
@@ -326,7 +326,7 @@ namespace Model
      * randomization ID to determine which variation the user session is served. This
      * randomization ID is a combination of the entity ID and
      * <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>,
-     * Evidently uses the launch name as the <code>randomizationsSalt</code>.</p>
+     * Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
      */
     inline CreateLaunchRequest& WithRandomizationSalt(const char* value) { SetRandomizationSalt(value); return *this;}
 
@@ -540,28 +540,28 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<LaunchGroupConfig> m_groups;
-    bool m_groupsHasBeenSet;
+    bool m_groupsHasBeenSet = false;
 
     Aws::Vector<MetricMonitorConfig> m_metricMonitors;
-    bool m_metricMonitorsHasBeenSet;
+    bool m_metricMonitorsHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::String m_randomizationSalt;
-    bool m_randomizationSaltHasBeenSet;
+    bool m_randomizationSaltHasBeenSet = false;
 
     ScheduledSplitsLaunchConfig m_scheduledSplitsConfig;
-    bool m_scheduledSplitsConfigHasBeenSet;
+    bool m_scheduledSplitsConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

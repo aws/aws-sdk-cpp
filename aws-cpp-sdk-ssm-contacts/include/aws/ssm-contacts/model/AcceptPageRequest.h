@@ -312,22 +312,22 @@ namespace Model
   private:
 
     Aws::String m_pageId;
-    bool m_pageIdHasBeenSet;
+    bool m_pageIdHasBeenSet = false;
 
     Aws::String m_contactChannelId;
-    bool m_contactChannelIdHasBeenSet;
+    bool m_contactChannelIdHasBeenSet = false;
 
     AcceptType m_acceptType;
-    bool m_acceptTypeHasBeenSet;
+    bool m_acceptTypeHasBeenSet = false;
 
     Aws::String m_note;
-    bool m_noteHasBeenSet;
+    bool m_noteHasBeenSet = false;
 
     Aws::String m_acceptCode;
-    bool m_acceptCodeHasBeenSet;
+    bool m_acceptCodeHasBeenSet = false;
 
     AcceptCodeValidation m_acceptCodeValidation;
-    bool m_acceptCodeValidationHasBeenSet;
+    bool m_acceptCodeValidationHasBeenSet = false;
   };
 
 } // namespace Model

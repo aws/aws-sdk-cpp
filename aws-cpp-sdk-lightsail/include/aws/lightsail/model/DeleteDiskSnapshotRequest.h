@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_diskSnapshotName;
-    bool m_diskSnapshotNameHasBeenSet;
+    bool m_diskSnapshotNameHasBeenSet = false;
   };
 
 } // namespace Model

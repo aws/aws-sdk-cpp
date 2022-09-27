@@ -281,13 +281,13 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, AttributeDimension> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     SetDimension m_eventType;
-    bool m_eventTypeHasBeenSet;
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, MetricDimension> m_metrics;
-    bool m_metricsHasBeenSet;
+    bool m_metricsHasBeenSet = false;
   };
 
 } // namespace Model

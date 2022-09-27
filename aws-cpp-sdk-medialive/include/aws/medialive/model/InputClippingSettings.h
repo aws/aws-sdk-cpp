@@ -135,13 +135,13 @@ namespace Model
   private:
 
     InputTimecodeSource m_inputTimecodeSource;
-    bool m_inputTimecodeSourceHasBeenSet;
+    bool m_inputTimecodeSourceHasBeenSet = false;
 
     StartTimecode m_startTimecode;
-    bool m_startTimecodeHasBeenSet;
+    bool m_startTimecodeHasBeenSet = false;
 
     StopTimecode m_stopTimecode;
-    bool m_stopTimecodeHasBeenSet;
+    bool m_stopTimecodeHasBeenSet = false;
   };
 
 } // namespace Model

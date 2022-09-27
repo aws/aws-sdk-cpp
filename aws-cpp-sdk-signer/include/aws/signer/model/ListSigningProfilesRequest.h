@@ -251,19 +251,19 @@ namespace Model
   private:
 
     bool m_includeCanceled;
-    bool m_includeCanceledHasBeenSet;
+    bool m_includeCanceledHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_platformId;
-    bool m_platformIdHasBeenSet;
+    bool m_platformIdHasBeenSet = false;
 
     Aws::Vector<SigningProfileStatus> m_statuses;
-    bool m_statusesHasBeenSet;
+    bool m_statusesHasBeenSet = false;
   };
 
 } // namespace Model

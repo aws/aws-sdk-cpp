@@ -168,7 +168,7 @@ namespace Model
   private:
 
     SnsChannelConfig m_sns;
-    bool m_snsHasBeenSet;
+    bool m_snsHasBeenSet = false;
   };
 
 } // namespace Model

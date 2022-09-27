@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_timestampFormat;
-    bool m_timestampFormatHasBeenSet;
+    bool m_timestampFormatHasBeenSet = false;
 
     Aws::String m_componentTimestampDelimiter;
-    bool m_componentTimestampDelimiterHasBeenSet;
+    bool m_componentTimestampDelimiterHasBeenSet = false;
   };
 
 } // namespace Model

@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_imagePipelineArn;
-    bool m_imagePipelineArnHasBeenSet;
+    bool m_imagePipelineArnHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

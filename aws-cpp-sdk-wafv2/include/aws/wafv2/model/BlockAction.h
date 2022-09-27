@@ -103,7 +103,7 @@ namespace Model
   private:
 
     CustomResponse m_customResponse;
-    bool m_customResponseHasBeenSet;
+    bool m_customResponseHasBeenSet = false;
   };
 
 } // namespace Model

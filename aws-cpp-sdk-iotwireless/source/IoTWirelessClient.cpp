@@ -65,6 +65,8 @@
 #include <aws/iotwireless/model/GetMulticastGroupSessionRequest.h>
 #include <aws/iotwireless/model/GetNetworkAnalyzerConfigurationRequest.h>
 #include <aws/iotwireless/model/GetPartnerAccountRequest.h>
+#include <aws/iotwireless/model/GetPositionRequest.h>
+#include <aws/iotwireless/model/GetPositionConfigurationRequest.h>
 #include <aws/iotwireless/model/GetResourceEventConfigurationRequest.h>
 #include <aws/iotwireless/model/GetResourceLogLevelRequest.h>
 #include <aws/iotwireless/model/GetServiceEndpointRequest.h>
@@ -85,12 +87,14 @@
 #include <aws/iotwireless/model/ListMulticastGroupsByFuotaTaskRequest.h>
 #include <aws/iotwireless/model/ListNetworkAnalyzerConfigurationsRequest.h>
 #include <aws/iotwireless/model/ListPartnerAccountsRequest.h>
+#include <aws/iotwireless/model/ListPositionConfigurationsRequest.h>
 #include <aws/iotwireless/model/ListQueuedMessagesRequest.h>
 #include <aws/iotwireless/model/ListServiceProfilesRequest.h>
 #include <aws/iotwireless/model/ListTagsForResourceRequest.h>
 #include <aws/iotwireless/model/ListWirelessDevicesRequest.h>
 #include <aws/iotwireless/model/ListWirelessGatewayTaskDefinitionsRequest.h>
 #include <aws/iotwireless/model/ListWirelessGatewaysRequest.h>
+#include <aws/iotwireless/model/PutPositionConfigurationRequest.h>
 #include <aws/iotwireless/model/PutResourceLogLevelRequest.h>
 #include <aws/iotwireless/model/ResetAllResourceLogLevelsRequest.h>
 #include <aws/iotwireless/model/ResetResourceLogLevelRequest.h>
@@ -110,6 +114,7 @@
 #include <aws/iotwireless/model/UpdateMulticastGroupRequest.h>
 #include <aws/iotwireless/model/UpdateNetworkAnalyzerConfigurationRequest.h>
 #include <aws/iotwireless/model/UpdatePartnerAccountRequest.h>
+#include <aws/iotwireless/model/UpdatePositionRequest.h>
 #include <aws/iotwireless/model/UpdateResourceEventConfigurationRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessGatewayRequest.h>
@@ -125,33 +130,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "iotwireless";
 static const char* ALLOCATION_TAG = "IoTWirelessClient";
 
-
 IoTWirelessClient::IoTWirelessClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-IoTWirelessClient::IoTWirelessClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+IoTWirelessClient::IoTWirelessClient(const AWSCredentials& credentials,
+                                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 IoTWirelessClient::IoTWirelessClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -163,7 +174,7 @@ IoTWirelessClient::~IoTWirelessClient()
 
 void IoTWirelessClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IoT Wireless");
+  AWSClient::SetServiceClientName("IoT Wireless");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -204,12 +215,10 @@ AssociateAwsAccountWithPartnerAccountOutcomeCallable IoTWirelessClient::Associat
 
 void IoTWirelessClient::AssociateAwsAccountWithPartnerAccountAsync(const AssociateAwsAccountWithPartnerAccountRequest& request, const AssociateAwsAccountWithPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateAwsAccountWithPartnerAccountAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::AssociateAwsAccountWithPartnerAccountAsyncHelper(const AssociateAwsAccountWithPartnerAccountRequest& request, const AssociateAwsAccountWithPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateAwsAccountWithPartnerAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateAwsAccountWithPartnerAccount(request), context);
+    } );
 }
 
 AssociateMulticastGroupWithFuotaTaskOutcome IoTWirelessClient::AssociateMulticastGroupWithFuotaTask(const AssociateMulticastGroupWithFuotaTaskRequest& request) const
@@ -236,12 +245,10 @@ AssociateMulticastGroupWithFuotaTaskOutcomeCallable IoTWirelessClient::Associate
 
 void IoTWirelessClient::AssociateMulticastGroupWithFuotaTaskAsync(const AssociateMulticastGroupWithFuotaTaskRequest& request, const AssociateMulticastGroupWithFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateMulticastGroupWithFuotaTaskAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::AssociateMulticastGroupWithFuotaTaskAsyncHelper(const AssociateMulticastGroupWithFuotaTaskRequest& request, const AssociateMulticastGroupWithFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateMulticastGroupWithFuotaTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateMulticastGroupWithFuotaTask(request), context);
+    } );
 }
 
 AssociateWirelessDeviceWithFuotaTaskOutcome IoTWirelessClient::AssociateWirelessDeviceWithFuotaTask(const AssociateWirelessDeviceWithFuotaTaskRequest& request) const
@@ -268,12 +275,10 @@ AssociateWirelessDeviceWithFuotaTaskOutcomeCallable IoTWirelessClient::Associate
 
 void IoTWirelessClient::AssociateWirelessDeviceWithFuotaTaskAsync(const AssociateWirelessDeviceWithFuotaTaskRequest& request, const AssociateWirelessDeviceWithFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateWirelessDeviceWithFuotaTaskAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::AssociateWirelessDeviceWithFuotaTaskAsyncHelper(const AssociateWirelessDeviceWithFuotaTaskRequest& request, const AssociateWirelessDeviceWithFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateWirelessDeviceWithFuotaTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateWirelessDeviceWithFuotaTask(request), context);
+    } );
 }
 
 AssociateWirelessDeviceWithMulticastGroupOutcome IoTWirelessClient::AssociateWirelessDeviceWithMulticastGroup(const AssociateWirelessDeviceWithMulticastGroupRequest& request) const
@@ -300,12 +305,10 @@ AssociateWirelessDeviceWithMulticastGroupOutcomeCallable IoTWirelessClient::Asso
 
 void IoTWirelessClient::AssociateWirelessDeviceWithMulticastGroupAsync(const AssociateWirelessDeviceWithMulticastGroupRequest& request, const AssociateWirelessDeviceWithMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateWirelessDeviceWithMulticastGroupAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::AssociateWirelessDeviceWithMulticastGroupAsyncHelper(const AssociateWirelessDeviceWithMulticastGroupRequest& request, const AssociateWirelessDeviceWithMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateWirelessDeviceWithMulticastGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateWirelessDeviceWithMulticastGroup(request), context);
+    } );
 }
 
 AssociateWirelessDeviceWithThingOutcome IoTWirelessClient::AssociateWirelessDeviceWithThing(const AssociateWirelessDeviceWithThingRequest& request) const
@@ -332,12 +335,10 @@ AssociateWirelessDeviceWithThingOutcomeCallable IoTWirelessClient::AssociateWire
 
 void IoTWirelessClient::AssociateWirelessDeviceWithThingAsync(const AssociateWirelessDeviceWithThingRequest& request, const AssociateWirelessDeviceWithThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateWirelessDeviceWithThingAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::AssociateWirelessDeviceWithThingAsyncHelper(const AssociateWirelessDeviceWithThingRequest& request, const AssociateWirelessDeviceWithThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateWirelessDeviceWithThing(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateWirelessDeviceWithThing(request), context);
+    } );
 }
 
 AssociateWirelessGatewayWithCertificateOutcome IoTWirelessClient::AssociateWirelessGatewayWithCertificate(const AssociateWirelessGatewayWithCertificateRequest& request) const
@@ -364,12 +365,10 @@ AssociateWirelessGatewayWithCertificateOutcomeCallable IoTWirelessClient::Associ
 
 void IoTWirelessClient::AssociateWirelessGatewayWithCertificateAsync(const AssociateWirelessGatewayWithCertificateRequest& request, const AssociateWirelessGatewayWithCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateWirelessGatewayWithCertificateAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::AssociateWirelessGatewayWithCertificateAsyncHelper(const AssociateWirelessGatewayWithCertificateRequest& request, const AssociateWirelessGatewayWithCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateWirelessGatewayWithCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateWirelessGatewayWithCertificate(request), context);
+    } );
 }
 
 AssociateWirelessGatewayWithThingOutcome IoTWirelessClient::AssociateWirelessGatewayWithThing(const AssociateWirelessGatewayWithThingRequest& request) const
@@ -396,12 +395,10 @@ AssociateWirelessGatewayWithThingOutcomeCallable IoTWirelessClient::AssociateWir
 
 void IoTWirelessClient::AssociateWirelessGatewayWithThingAsync(const AssociateWirelessGatewayWithThingRequest& request, const AssociateWirelessGatewayWithThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateWirelessGatewayWithThingAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::AssociateWirelessGatewayWithThingAsyncHelper(const AssociateWirelessGatewayWithThingRequest& request, const AssociateWirelessGatewayWithThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateWirelessGatewayWithThing(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateWirelessGatewayWithThing(request), context);
+    } );
 }
 
 CancelMulticastGroupSessionOutcome IoTWirelessClient::CancelMulticastGroupSession(const CancelMulticastGroupSessionRequest& request) const
@@ -428,12 +425,10 @@ CancelMulticastGroupSessionOutcomeCallable IoTWirelessClient::CancelMulticastGro
 
 void IoTWirelessClient::CancelMulticastGroupSessionAsync(const CancelMulticastGroupSessionRequest& request, const CancelMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelMulticastGroupSessionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::CancelMulticastGroupSessionAsyncHelper(const CancelMulticastGroupSessionRequest& request, const CancelMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelMulticastGroupSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelMulticastGroupSession(request), context);
+    } );
 }
 
 CreateDestinationOutcome IoTWirelessClient::CreateDestination(const CreateDestinationRequest& request) const
@@ -453,12 +448,10 @@ CreateDestinationOutcomeCallable IoTWirelessClient::CreateDestinationCallable(co
 
 void IoTWirelessClient::CreateDestinationAsync(const CreateDestinationRequest& request, const CreateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDestinationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::CreateDestinationAsyncHelper(const CreateDestinationRequest& request, const CreateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDestination(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDestination(request), context);
+    } );
 }
 
 CreateDeviceProfileOutcome IoTWirelessClient::CreateDeviceProfile(const CreateDeviceProfileRequest& request) const
@@ -478,12 +471,10 @@ CreateDeviceProfileOutcomeCallable IoTWirelessClient::CreateDeviceProfileCallabl
 
 void IoTWirelessClient::CreateDeviceProfileAsync(const CreateDeviceProfileRequest& request, const CreateDeviceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeviceProfileAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::CreateDeviceProfileAsyncHelper(const CreateDeviceProfileRequest& request, const CreateDeviceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDeviceProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDeviceProfile(request), context);
+    } );
 }
 
 CreateFuotaTaskOutcome IoTWirelessClient::CreateFuotaTask(const CreateFuotaTaskRequest& request) const
@@ -503,12 +494,10 @@ CreateFuotaTaskOutcomeCallable IoTWirelessClient::CreateFuotaTaskCallable(const 
 
 void IoTWirelessClient::CreateFuotaTaskAsync(const CreateFuotaTaskRequest& request, const CreateFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateFuotaTaskAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::CreateFuotaTaskAsyncHelper(const CreateFuotaTaskRequest& request, const CreateFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateFuotaTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateFuotaTask(request), context);
+    } );
 }
 
 CreateMulticastGroupOutcome IoTWirelessClient::CreateMulticastGroup(const CreateMulticastGroupRequest& request) const
@@ -528,12 +517,10 @@ CreateMulticastGroupOutcomeCallable IoTWirelessClient::CreateMulticastGroupCalla
 
 void IoTWirelessClient::CreateMulticastGroupAsync(const CreateMulticastGroupRequest& request, const CreateMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMulticastGroupAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::CreateMulticastGroupAsyncHelper(const CreateMulticastGroupRequest& request, const CreateMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateMulticastGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMulticastGroup(request), context);
+    } );
 }
 
 CreateNetworkAnalyzerConfigurationOutcome IoTWirelessClient::CreateNetworkAnalyzerConfiguration(const CreateNetworkAnalyzerConfigurationRequest& request) const
@@ -553,12 +540,10 @@ CreateNetworkAnalyzerConfigurationOutcomeCallable IoTWirelessClient::CreateNetwo
 
 void IoTWirelessClient::CreateNetworkAnalyzerConfigurationAsync(const CreateNetworkAnalyzerConfigurationRequest& request, const CreateNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkAnalyzerConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::CreateNetworkAnalyzerConfigurationAsyncHelper(const CreateNetworkAnalyzerConfigurationRequest& request, const CreateNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateNetworkAnalyzerConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateNetworkAnalyzerConfiguration(request), context);
+    } );
 }
 
 CreateServiceProfileOutcome IoTWirelessClient::CreateServiceProfile(const CreateServiceProfileRequest& request) const
@@ -578,12 +563,10 @@ CreateServiceProfileOutcomeCallable IoTWirelessClient::CreateServiceProfileCalla
 
 void IoTWirelessClient::CreateServiceProfileAsync(const CreateServiceProfileRequest& request, const CreateServiceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateServiceProfileAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::CreateServiceProfileAsyncHelper(const CreateServiceProfileRequest& request, const CreateServiceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateServiceProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateServiceProfile(request), context);
+    } );
 }
 
 CreateWirelessDeviceOutcome IoTWirelessClient::CreateWirelessDevice(const CreateWirelessDeviceRequest& request) const
@@ -603,12 +586,10 @@ CreateWirelessDeviceOutcomeCallable IoTWirelessClient::CreateWirelessDeviceCalla
 
 void IoTWirelessClient::CreateWirelessDeviceAsync(const CreateWirelessDeviceRequest& request, const CreateWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWirelessDeviceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::CreateWirelessDeviceAsyncHelper(const CreateWirelessDeviceRequest& request, const CreateWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateWirelessDevice(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateWirelessDevice(request), context);
+    } );
 }
 
 CreateWirelessGatewayOutcome IoTWirelessClient::CreateWirelessGateway(const CreateWirelessGatewayRequest& request) const
@@ -628,12 +609,10 @@ CreateWirelessGatewayOutcomeCallable IoTWirelessClient::CreateWirelessGatewayCal
 
 void IoTWirelessClient::CreateWirelessGatewayAsync(const CreateWirelessGatewayRequest& request, const CreateWirelessGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWirelessGatewayAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::CreateWirelessGatewayAsyncHelper(const CreateWirelessGatewayRequest& request, const CreateWirelessGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateWirelessGateway(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateWirelessGateway(request), context);
+    } );
 }
 
 CreateWirelessGatewayTaskOutcome IoTWirelessClient::CreateWirelessGatewayTask(const CreateWirelessGatewayTaskRequest& request) const
@@ -660,12 +639,10 @@ CreateWirelessGatewayTaskOutcomeCallable IoTWirelessClient::CreateWirelessGatewa
 
 void IoTWirelessClient::CreateWirelessGatewayTaskAsync(const CreateWirelessGatewayTaskRequest& request, const CreateWirelessGatewayTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWirelessGatewayTaskAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::CreateWirelessGatewayTaskAsyncHelper(const CreateWirelessGatewayTaskRequest& request, const CreateWirelessGatewayTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateWirelessGatewayTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateWirelessGatewayTask(request), context);
+    } );
 }
 
 CreateWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::CreateWirelessGatewayTaskDefinition(const CreateWirelessGatewayTaskDefinitionRequest& request) const
@@ -685,12 +662,10 @@ CreateWirelessGatewayTaskDefinitionOutcomeCallable IoTWirelessClient::CreateWire
 
 void IoTWirelessClient::CreateWirelessGatewayTaskDefinitionAsync(const CreateWirelessGatewayTaskDefinitionRequest& request, const CreateWirelessGatewayTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateWirelessGatewayTaskDefinitionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::CreateWirelessGatewayTaskDefinitionAsyncHelper(const CreateWirelessGatewayTaskDefinitionRequest& request, const CreateWirelessGatewayTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateWirelessGatewayTaskDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateWirelessGatewayTaskDefinition(request), context);
+    } );
 }
 
 DeleteDestinationOutcome IoTWirelessClient::DeleteDestination(const DeleteDestinationRequest& request) const
@@ -716,12 +691,10 @@ DeleteDestinationOutcomeCallable IoTWirelessClient::DeleteDestinationCallable(co
 
 void IoTWirelessClient::DeleteDestinationAsync(const DeleteDestinationRequest& request, const DeleteDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDestinationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DeleteDestinationAsyncHelper(const DeleteDestinationRequest& request, const DeleteDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDestination(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDestination(request), context);
+    } );
 }
 
 DeleteDeviceProfileOutcome IoTWirelessClient::DeleteDeviceProfile(const DeleteDeviceProfileRequest& request) const
@@ -747,12 +720,10 @@ DeleteDeviceProfileOutcomeCallable IoTWirelessClient::DeleteDeviceProfileCallabl
 
 void IoTWirelessClient::DeleteDeviceProfileAsync(const DeleteDeviceProfileRequest& request, const DeleteDeviceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDeviceProfileAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DeleteDeviceProfileAsyncHelper(const DeleteDeviceProfileRequest& request, const DeleteDeviceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDeviceProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDeviceProfile(request), context);
+    } );
 }
 
 DeleteFuotaTaskOutcome IoTWirelessClient::DeleteFuotaTask(const DeleteFuotaTaskRequest& request) const
@@ -778,12 +749,10 @@ DeleteFuotaTaskOutcomeCallable IoTWirelessClient::DeleteFuotaTaskCallable(const 
 
 void IoTWirelessClient::DeleteFuotaTaskAsync(const DeleteFuotaTaskRequest& request, const DeleteFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteFuotaTaskAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DeleteFuotaTaskAsyncHelper(const DeleteFuotaTaskRequest& request, const DeleteFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteFuotaTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFuotaTask(request), context);
+    } );
 }
 
 DeleteMulticastGroupOutcome IoTWirelessClient::DeleteMulticastGroup(const DeleteMulticastGroupRequest& request) const
@@ -809,12 +778,10 @@ DeleteMulticastGroupOutcomeCallable IoTWirelessClient::DeleteMulticastGroupCalla
 
 void IoTWirelessClient::DeleteMulticastGroupAsync(const DeleteMulticastGroupRequest& request, const DeleteMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMulticastGroupAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DeleteMulticastGroupAsyncHelper(const DeleteMulticastGroupRequest& request, const DeleteMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteMulticastGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMulticastGroup(request), context);
+    } );
 }
 
 DeleteNetworkAnalyzerConfigurationOutcome IoTWirelessClient::DeleteNetworkAnalyzerConfiguration(const DeleteNetworkAnalyzerConfigurationRequest& request) const
@@ -840,12 +807,10 @@ DeleteNetworkAnalyzerConfigurationOutcomeCallable IoTWirelessClient::DeleteNetwo
 
 void IoTWirelessClient::DeleteNetworkAnalyzerConfigurationAsync(const DeleteNetworkAnalyzerConfigurationRequest& request, const DeleteNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkAnalyzerConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DeleteNetworkAnalyzerConfigurationAsyncHelper(const DeleteNetworkAnalyzerConfigurationRequest& request, const DeleteNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteNetworkAnalyzerConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteNetworkAnalyzerConfiguration(request), context);
+    } );
 }
 
 DeleteQueuedMessagesOutcome IoTWirelessClient::DeleteQueuedMessages(const DeleteQueuedMessagesRequest& request) const
@@ -877,12 +842,10 @@ DeleteQueuedMessagesOutcomeCallable IoTWirelessClient::DeleteQueuedMessagesCalla
 
 void IoTWirelessClient::DeleteQueuedMessagesAsync(const DeleteQueuedMessagesRequest& request, const DeleteQueuedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteQueuedMessagesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DeleteQueuedMessagesAsyncHelper(const DeleteQueuedMessagesRequest& request, const DeleteQueuedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteQueuedMessages(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteQueuedMessages(request), context);
+    } );
 }
 
 DeleteServiceProfileOutcome IoTWirelessClient::DeleteServiceProfile(const DeleteServiceProfileRequest& request) const
@@ -908,12 +871,10 @@ DeleteServiceProfileOutcomeCallable IoTWirelessClient::DeleteServiceProfileCalla
 
 void IoTWirelessClient::DeleteServiceProfileAsync(const DeleteServiceProfileRequest& request, const DeleteServiceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteServiceProfileAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DeleteServiceProfileAsyncHelper(const DeleteServiceProfileRequest& request, const DeleteServiceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteServiceProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteServiceProfile(request), context);
+    } );
 }
 
 DeleteWirelessDeviceOutcome IoTWirelessClient::DeleteWirelessDevice(const DeleteWirelessDeviceRequest& request) const
@@ -939,12 +900,10 @@ DeleteWirelessDeviceOutcomeCallable IoTWirelessClient::DeleteWirelessDeviceCalla
 
 void IoTWirelessClient::DeleteWirelessDeviceAsync(const DeleteWirelessDeviceRequest& request, const DeleteWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWirelessDeviceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DeleteWirelessDeviceAsyncHelper(const DeleteWirelessDeviceRequest& request, const DeleteWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteWirelessDevice(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteWirelessDevice(request), context);
+    } );
 }
 
 DeleteWirelessGatewayOutcome IoTWirelessClient::DeleteWirelessGateway(const DeleteWirelessGatewayRequest& request) const
@@ -970,12 +929,10 @@ DeleteWirelessGatewayOutcomeCallable IoTWirelessClient::DeleteWirelessGatewayCal
 
 void IoTWirelessClient::DeleteWirelessGatewayAsync(const DeleteWirelessGatewayRequest& request, const DeleteWirelessGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWirelessGatewayAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DeleteWirelessGatewayAsyncHelper(const DeleteWirelessGatewayRequest& request, const DeleteWirelessGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteWirelessGateway(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteWirelessGateway(request), context);
+    } );
 }
 
 DeleteWirelessGatewayTaskOutcome IoTWirelessClient::DeleteWirelessGatewayTask(const DeleteWirelessGatewayTaskRequest& request) const
@@ -1002,12 +959,10 @@ DeleteWirelessGatewayTaskOutcomeCallable IoTWirelessClient::DeleteWirelessGatewa
 
 void IoTWirelessClient::DeleteWirelessGatewayTaskAsync(const DeleteWirelessGatewayTaskRequest& request, const DeleteWirelessGatewayTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWirelessGatewayTaskAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DeleteWirelessGatewayTaskAsyncHelper(const DeleteWirelessGatewayTaskRequest& request, const DeleteWirelessGatewayTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteWirelessGatewayTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteWirelessGatewayTask(request), context);
+    } );
 }
 
 DeleteWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::DeleteWirelessGatewayTaskDefinition(const DeleteWirelessGatewayTaskDefinitionRequest& request) const
@@ -1033,12 +988,10 @@ DeleteWirelessGatewayTaskDefinitionOutcomeCallable IoTWirelessClient::DeleteWire
 
 void IoTWirelessClient::DeleteWirelessGatewayTaskDefinitionAsync(const DeleteWirelessGatewayTaskDefinitionRequest& request, const DeleteWirelessGatewayTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteWirelessGatewayTaskDefinitionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DeleteWirelessGatewayTaskDefinitionAsyncHelper(const DeleteWirelessGatewayTaskDefinitionRequest& request, const DeleteWirelessGatewayTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteWirelessGatewayTaskDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteWirelessGatewayTaskDefinition(request), context);
+    } );
 }
 
 DisassociateAwsAccountFromPartnerAccountOutcome IoTWirelessClient::DisassociateAwsAccountFromPartnerAccount(const DisassociateAwsAccountFromPartnerAccountRequest& request) const
@@ -1069,12 +1022,10 @@ DisassociateAwsAccountFromPartnerAccountOutcomeCallable IoTWirelessClient::Disas
 
 void IoTWirelessClient::DisassociateAwsAccountFromPartnerAccountAsync(const DisassociateAwsAccountFromPartnerAccountRequest& request, const DisassociateAwsAccountFromPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateAwsAccountFromPartnerAccountAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DisassociateAwsAccountFromPartnerAccountAsyncHelper(const DisassociateAwsAccountFromPartnerAccountRequest& request, const DisassociateAwsAccountFromPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateAwsAccountFromPartnerAccount(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateAwsAccountFromPartnerAccount(request), context);
+    } );
 }
 
 DisassociateMulticastGroupFromFuotaTaskOutcome IoTWirelessClient::DisassociateMulticastGroupFromFuotaTask(const DisassociateMulticastGroupFromFuotaTaskRequest& request) const
@@ -1107,12 +1058,10 @@ DisassociateMulticastGroupFromFuotaTaskOutcomeCallable IoTWirelessClient::Disass
 
 void IoTWirelessClient::DisassociateMulticastGroupFromFuotaTaskAsync(const DisassociateMulticastGroupFromFuotaTaskRequest& request, const DisassociateMulticastGroupFromFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateMulticastGroupFromFuotaTaskAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DisassociateMulticastGroupFromFuotaTaskAsyncHelper(const DisassociateMulticastGroupFromFuotaTaskRequest& request, const DisassociateMulticastGroupFromFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateMulticastGroupFromFuotaTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateMulticastGroupFromFuotaTask(request), context);
+    } );
 }
 
 DisassociateWirelessDeviceFromFuotaTaskOutcome IoTWirelessClient::DisassociateWirelessDeviceFromFuotaTask(const DisassociateWirelessDeviceFromFuotaTaskRequest& request) const
@@ -1145,12 +1094,10 @@ DisassociateWirelessDeviceFromFuotaTaskOutcomeCallable IoTWirelessClient::Disass
 
 void IoTWirelessClient::DisassociateWirelessDeviceFromFuotaTaskAsync(const DisassociateWirelessDeviceFromFuotaTaskRequest& request, const DisassociateWirelessDeviceFromFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateWirelessDeviceFromFuotaTaskAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DisassociateWirelessDeviceFromFuotaTaskAsyncHelper(const DisassociateWirelessDeviceFromFuotaTaskRequest& request, const DisassociateWirelessDeviceFromFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateWirelessDeviceFromFuotaTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateWirelessDeviceFromFuotaTask(request), context);
+    } );
 }
 
 DisassociateWirelessDeviceFromMulticastGroupOutcome IoTWirelessClient::DisassociateWirelessDeviceFromMulticastGroup(const DisassociateWirelessDeviceFromMulticastGroupRequest& request) const
@@ -1183,12 +1130,10 @@ DisassociateWirelessDeviceFromMulticastGroupOutcomeCallable IoTWirelessClient::D
 
 void IoTWirelessClient::DisassociateWirelessDeviceFromMulticastGroupAsync(const DisassociateWirelessDeviceFromMulticastGroupRequest& request, const DisassociateWirelessDeviceFromMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateWirelessDeviceFromMulticastGroupAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DisassociateWirelessDeviceFromMulticastGroupAsyncHelper(const DisassociateWirelessDeviceFromMulticastGroupRequest& request, const DisassociateWirelessDeviceFromMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateWirelessDeviceFromMulticastGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateWirelessDeviceFromMulticastGroup(request), context);
+    } );
 }
 
 DisassociateWirelessDeviceFromThingOutcome IoTWirelessClient::DisassociateWirelessDeviceFromThing(const DisassociateWirelessDeviceFromThingRequest& request) const
@@ -1215,12 +1160,10 @@ DisassociateWirelessDeviceFromThingOutcomeCallable IoTWirelessClient::Disassocia
 
 void IoTWirelessClient::DisassociateWirelessDeviceFromThingAsync(const DisassociateWirelessDeviceFromThingRequest& request, const DisassociateWirelessDeviceFromThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateWirelessDeviceFromThingAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DisassociateWirelessDeviceFromThingAsyncHelper(const DisassociateWirelessDeviceFromThingRequest& request, const DisassociateWirelessDeviceFromThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateWirelessDeviceFromThing(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateWirelessDeviceFromThing(request), context);
+    } );
 }
 
 DisassociateWirelessGatewayFromCertificateOutcome IoTWirelessClient::DisassociateWirelessGatewayFromCertificate(const DisassociateWirelessGatewayFromCertificateRequest& request) const
@@ -1247,12 +1190,10 @@ DisassociateWirelessGatewayFromCertificateOutcomeCallable IoTWirelessClient::Dis
 
 void IoTWirelessClient::DisassociateWirelessGatewayFromCertificateAsync(const DisassociateWirelessGatewayFromCertificateRequest& request, const DisassociateWirelessGatewayFromCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateWirelessGatewayFromCertificateAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DisassociateWirelessGatewayFromCertificateAsyncHelper(const DisassociateWirelessGatewayFromCertificateRequest& request, const DisassociateWirelessGatewayFromCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateWirelessGatewayFromCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateWirelessGatewayFromCertificate(request), context);
+    } );
 }
 
 DisassociateWirelessGatewayFromThingOutcome IoTWirelessClient::DisassociateWirelessGatewayFromThing(const DisassociateWirelessGatewayFromThingRequest& request) const
@@ -1279,12 +1220,10 @@ DisassociateWirelessGatewayFromThingOutcomeCallable IoTWirelessClient::Disassoci
 
 void IoTWirelessClient::DisassociateWirelessGatewayFromThingAsync(const DisassociateWirelessGatewayFromThingRequest& request, const DisassociateWirelessGatewayFromThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateWirelessGatewayFromThingAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::DisassociateWirelessGatewayFromThingAsyncHelper(const DisassociateWirelessGatewayFromThingRequest& request, const DisassociateWirelessGatewayFromThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateWirelessGatewayFromThing(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateWirelessGatewayFromThing(request), context);
+    } );
 }
 
 GetDestinationOutcome IoTWirelessClient::GetDestination(const GetDestinationRequest& request) const
@@ -1310,12 +1249,10 @@ GetDestinationOutcomeCallable IoTWirelessClient::GetDestinationCallable(const Ge
 
 void IoTWirelessClient::GetDestinationAsync(const GetDestinationRequest& request, const GetDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDestinationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetDestinationAsyncHelper(const GetDestinationRequest& request, const GetDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDestination(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDestination(request), context);
+    } );
 }
 
 GetDeviceProfileOutcome IoTWirelessClient::GetDeviceProfile(const GetDeviceProfileRequest& request) const
@@ -1341,12 +1278,10 @@ GetDeviceProfileOutcomeCallable IoTWirelessClient::GetDeviceProfileCallable(cons
 
 void IoTWirelessClient::GetDeviceProfileAsync(const GetDeviceProfileRequest& request, const GetDeviceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeviceProfileAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetDeviceProfileAsyncHelper(const GetDeviceProfileRequest& request, const GetDeviceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDeviceProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDeviceProfile(request), context);
+    } );
 }
 
 GetEventConfigurationByResourceTypesOutcome IoTWirelessClient::GetEventConfigurationByResourceTypes(const GetEventConfigurationByResourceTypesRequest& request) const
@@ -1366,12 +1301,10 @@ GetEventConfigurationByResourceTypesOutcomeCallable IoTWirelessClient::GetEventC
 
 void IoTWirelessClient::GetEventConfigurationByResourceTypesAsync(const GetEventConfigurationByResourceTypesRequest& request, const GetEventConfigurationByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEventConfigurationByResourceTypesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetEventConfigurationByResourceTypesAsyncHelper(const GetEventConfigurationByResourceTypesRequest& request, const GetEventConfigurationByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetEventConfigurationByResourceTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEventConfigurationByResourceTypes(request), context);
+    } );
 }
 
 GetFuotaTaskOutcome IoTWirelessClient::GetFuotaTask(const GetFuotaTaskRequest& request) const
@@ -1397,12 +1330,10 @@ GetFuotaTaskOutcomeCallable IoTWirelessClient::GetFuotaTaskCallable(const GetFuo
 
 void IoTWirelessClient::GetFuotaTaskAsync(const GetFuotaTaskRequest& request, const GetFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetFuotaTaskAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetFuotaTaskAsyncHelper(const GetFuotaTaskRequest& request, const GetFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetFuotaTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetFuotaTask(request), context);
+    } );
 }
 
 GetLogLevelsByResourceTypesOutcome IoTWirelessClient::GetLogLevelsByResourceTypes(const GetLogLevelsByResourceTypesRequest& request) const
@@ -1422,12 +1353,10 @@ GetLogLevelsByResourceTypesOutcomeCallable IoTWirelessClient::GetLogLevelsByReso
 
 void IoTWirelessClient::GetLogLevelsByResourceTypesAsync(const GetLogLevelsByResourceTypesRequest& request, const GetLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetLogLevelsByResourceTypesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetLogLevelsByResourceTypesAsyncHelper(const GetLogLevelsByResourceTypesRequest& request, const GetLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetLogLevelsByResourceTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetLogLevelsByResourceTypes(request), context);
+    } );
 }
 
 GetMulticastGroupOutcome IoTWirelessClient::GetMulticastGroup(const GetMulticastGroupRequest& request) const
@@ -1453,12 +1382,10 @@ GetMulticastGroupOutcomeCallable IoTWirelessClient::GetMulticastGroupCallable(co
 
 void IoTWirelessClient::GetMulticastGroupAsync(const GetMulticastGroupRequest& request, const GetMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMulticastGroupAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetMulticastGroupAsyncHelper(const GetMulticastGroupRequest& request, const GetMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMulticastGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMulticastGroup(request), context);
+    } );
 }
 
 GetMulticastGroupSessionOutcome IoTWirelessClient::GetMulticastGroupSession(const GetMulticastGroupSessionRequest& request) const
@@ -1485,12 +1412,10 @@ GetMulticastGroupSessionOutcomeCallable IoTWirelessClient::GetMulticastGroupSess
 
 void IoTWirelessClient::GetMulticastGroupSessionAsync(const GetMulticastGroupSessionRequest& request, const GetMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMulticastGroupSessionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetMulticastGroupSessionAsyncHelper(const GetMulticastGroupSessionRequest& request, const GetMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMulticastGroupSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMulticastGroupSession(request), context);
+    } );
 }
 
 GetNetworkAnalyzerConfigurationOutcome IoTWirelessClient::GetNetworkAnalyzerConfiguration(const GetNetworkAnalyzerConfigurationRequest& request) const
@@ -1516,12 +1441,10 @@ GetNetworkAnalyzerConfigurationOutcomeCallable IoTWirelessClient::GetNetworkAnal
 
 void IoTWirelessClient::GetNetworkAnalyzerConfigurationAsync(const GetNetworkAnalyzerConfigurationRequest& request, const GetNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkAnalyzerConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetNetworkAnalyzerConfigurationAsyncHelper(const GetNetworkAnalyzerConfigurationRequest& request, const GetNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetNetworkAnalyzerConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetNetworkAnalyzerConfiguration(request), context);
+    } );
 }
 
 GetPartnerAccountOutcome IoTWirelessClient::GetPartnerAccount(const GetPartnerAccountRequest& request) const
@@ -1552,12 +1475,78 @@ GetPartnerAccountOutcomeCallable IoTWirelessClient::GetPartnerAccountCallable(co
 
 void IoTWirelessClient::GetPartnerAccountAsync(const GetPartnerAccountRequest& request, const GetPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPartnerAccountAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPartnerAccount(request), context);
+    } );
 }
 
-void IoTWirelessClient::GetPartnerAccountAsyncHelper(const GetPartnerAccountRequest& request, const GetPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+GetPositionOutcome IoTWirelessClient::GetPosition(const GetPositionRequest& request) const
 {
-  handler(this, request, GetPartnerAccount(request), context);
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPosition", "Required field: ResourceIdentifier, is not set");
+    return GetPositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPosition", "Required field: ResourceType, is not set");
+    return GetPositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/positions/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return GetPositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPositionOutcomeCallable IoTWirelessClient::GetPositionCallable(const GetPositionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPositionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPosition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetPositionAsync(const GetPositionRequest& request, const GetPositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPosition(request), context);
+    } );
+}
+
+GetPositionConfigurationOutcome IoTWirelessClient::GetPositionConfiguration(const GetPositionConfigurationRequest& request) const
+{
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPositionConfiguration", "Required field: ResourceIdentifier, is not set");
+    return GetPositionConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPositionConfiguration", "Required field: ResourceType, is not set");
+    return GetPositionConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/position-configurations/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return GetPositionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPositionConfigurationOutcomeCallable IoTWirelessClient::GetPositionConfigurationCallable(const GetPositionConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPositionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPositionConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetPositionConfigurationAsync(const GetPositionConfigurationRequest& request, const GetPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPositionConfiguration(request), context);
+    } );
 }
 
 GetResourceEventConfigurationOutcome IoTWirelessClient::GetResourceEventConfiguration(const GetResourceEventConfigurationRequest& request) const
@@ -1588,12 +1577,10 @@ GetResourceEventConfigurationOutcomeCallable IoTWirelessClient::GetResourceEvent
 
 void IoTWirelessClient::GetResourceEventConfigurationAsync(const GetResourceEventConfigurationRequest& request, const GetResourceEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceEventConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetResourceEventConfigurationAsyncHelper(const GetResourceEventConfigurationRequest& request, const GetResourceEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResourceEventConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResourceEventConfiguration(request), context);
+    } );
 }
 
 GetResourceLogLevelOutcome IoTWirelessClient::GetResourceLogLevel(const GetResourceLogLevelRequest& request) const
@@ -1624,12 +1611,10 @@ GetResourceLogLevelOutcomeCallable IoTWirelessClient::GetResourceLogLevelCallabl
 
 void IoTWirelessClient::GetResourceLogLevelAsync(const GetResourceLogLevelRequest& request, const GetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetResourceLogLevelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetResourceLogLevelAsyncHelper(const GetResourceLogLevelRequest& request, const GetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetResourceLogLevel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetResourceLogLevel(request), context);
+    } );
 }
 
 GetServiceEndpointOutcome IoTWirelessClient::GetServiceEndpoint(const GetServiceEndpointRequest& request) const
@@ -1649,12 +1634,10 @@ GetServiceEndpointOutcomeCallable IoTWirelessClient::GetServiceEndpointCallable(
 
 void IoTWirelessClient::GetServiceEndpointAsync(const GetServiceEndpointRequest& request, const GetServiceEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceEndpointAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetServiceEndpointAsyncHelper(const GetServiceEndpointRequest& request, const GetServiceEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetServiceEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetServiceEndpoint(request), context);
+    } );
 }
 
 GetServiceProfileOutcome IoTWirelessClient::GetServiceProfile(const GetServiceProfileRequest& request) const
@@ -1680,12 +1663,10 @@ GetServiceProfileOutcomeCallable IoTWirelessClient::GetServiceProfileCallable(co
 
 void IoTWirelessClient::GetServiceProfileAsync(const GetServiceProfileRequest& request, const GetServiceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServiceProfileAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetServiceProfileAsyncHelper(const GetServiceProfileRequest& request, const GetServiceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetServiceProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetServiceProfile(request), context);
+    } );
 }
 
 GetWirelessDeviceOutcome IoTWirelessClient::GetWirelessDevice(const GetWirelessDeviceRequest& request) const
@@ -1716,12 +1697,10 @@ GetWirelessDeviceOutcomeCallable IoTWirelessClient::GetWirelessDeviceCallable(co
 
 void IoTWirelessClient::GetWirelessDeviceAsync(const GetWirelessDeviceRequest& request, const GetWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWirelessDeviceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetWirelessDeviceAsyncHelper(const GetWirelessDeviceRequest& request, const GetWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetWirelessDevice(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetWirelessDevice(request), context);
+    } );
 }
 
 GetWirelessDeviceStatisticsOutcome IoTWirelessClient::GetWirelessDeviceStatistics(const GetWirelessDeviceStatisticsRequest& request) const
@@ -1748,12 +1727,10 @@ GetWirelessDeviceStatisticsOutcomeCallable IoTWirelessClient::GetWirelessDeviceS
 
 void IoTWirelessClient::GetWirelessDeviceStatisticsAsync(const GetWirelessDeviceStatisticsRequest& request, const GetWirelessDeviceStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWirelessDeviceStatisticsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetWirelessDeviceStatisticsAsyncHelper(const GetWirelessDeviceStatisticsRequest& request, const GetWirelessDeviceStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetWirelessDeviceStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetWirelessDeviceStatistics(request), context);
+    } );
 }
 
 GetWirelessGatewayOutcome IoTWirelessClient::GetWirelessGateway(const GetWirelessGatewayRequest& request) const
@@ -1784,12 +1761,10 @@ GetWirelessGatewayOutcomeCallable IoTWirelessClient::GetWirelessGatewayCallable(
 
 void IoTWirelessClient::GetWirelessGatewayAsync(const GetWirelessGatewayRequest& request, const GetWirelessGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWirelessGatewayAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetWirelessGatewayAsyncHelper(const GetWirelessGatewayRequest& request, const GetWirelessGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetWirelessGateway(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetWirelessGateway(request), context);
+    } );
 }
 
 GetWirelessGatewayCertificateOutcome IoTWirelessClient::GetWirelessGatewayCertificate(const GetWirelessGatewayCertificateRequest& request) const
@@ -1816,12 +1791,10 @@ GetWirelessGatewayCertificateOutcomeCallable IoTWirelessClient::GetWirelessGatew
 
 void IoTWirelessClient::GetWirelessGatewayCertificateAsync(const GetWirelessGatewayCertificateRequest& request, const GetWirelessGatewayCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWirelessGatewayCertificateAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetWirelessGatewayCertificateAsyncHelper(const GetWirelessGatewayCertificateRequest& request, const GetWirelessGatewayCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetWirelessGatewayCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetWirelessGatewayCertificate(request), context);
+    } );
 }
 
 GetWirelessGatewayFirmwareInformationOutcome IoTWirelessClient::GetWirelessGatewayFirmwareInformation(const GetWirelessGatewayFirmwareInformationRequest& request) const
@@ -1848,12 +1821,10 @@ GetWirelessGatewayFirmwareInformationOutcomeCallable IoTWirelessClient::GetWirel
 
 void IoTWirelessClient::GetWirelessGatewayFirmwareInformationAsync(const GetWirelessGatewayFirmwareInformationRequest& request, const GetWirelessGatewayFirmwareInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWirelessGatewayFirmwareInformationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetWirelessGatewayFirmwareInformationAsyncHelper(const GetWirelessGatewayFirmwareInformationRequest& request, const GetWirelessGatewayFirmwareInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetWirelessGatewayFirmwareInformation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetWirelessGatewayFirmwareInformation(request), context);
+    } );
 }
 
 GetWirelessGatewayStatisticsOutcome IoTWirelessClient::GetWirelessGatewayStatistics(const GetWirelessGatewayStatisticsRequest& request) const
@@ -1880,12 +1851,10 @@ GetWirelessGatewayStatisticsOutcomeCallable IoTWirelessClient::GetWirelessGatewa
 
 void IoTWirelessClient::GetWirelessGatewayStatisticsAsync(const GetWirelessGatewayStatisticsRequest& request, const GetWirelessGatewayStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWirelessGatewayStatisticsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetWirelessGatewayStatisticsAsyncHelper(const GetWirelessGatewayStatisticsRequest& request, const GetWirelessGatewayStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetWirelessGatewayStatistics(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetWirelessGatewayStatistics(request), context);
+    } );
 }
 
 GetWirelessGatewayTaskOutcome IoTWirelessClient::GetWirelessGatewayTask(const GetWirelessGatewayTaskRequest& request) const
@@ -1912,12 +1881,10 @@ GetWirelessGatewayTaskOutcomeCallable IoTWirelessClient::GetWirelessGatewayTaskC
 
 void IoTWirelessClient::GetWirelessGatewayTaskAsync(const GetWirelessGatewayTaskRequest& request, const GetWirelessGatewayTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWirelessGatewayTaskAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetWirelessGatewayTaskAsyncHelper(const GetWirelessGatewayTaskRequest& request, const GetWirelessGatewayTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetWirelessGatewayTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetWirelessGatewayTask(request), context);
+    } );
 }
 
 GetWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::GetWirelessGatewayTaskDefinition(const GetWirelessGatewayTaskDefinitionRequest& request) const
@@ -1943,12 +1910,10 @@ GetWirelessGatewayTaskDefinitionOutcomeCallable IoTWirelessClient::GetWirelessGa
 
 void IoTWirelessClient::GetWirelessGatewayTaskDefinitionAsync(const GetWirelessGatewayTaskDefinitionRequest& request, const GetWirelessGatewayTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWirelessGatewayTaskDefinitionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::GetWirelessGatewayTaskDefinitionAsyncHelper(const GetWirelessGatewayTaskDefinitionRequest& request, const GetWirelessGatewayTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetWirelessGatewayTaskDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetWirelessGatewayTaskDefinition(request), context);
+    } );
 }
 
 ListDestinationsOutcome IoTWirelessClient::ListDestinations(const ListDestinationsRequest& request) const
@@ -1968,12 +1933,10 @@ ListDestinationsOutcomeCallable IoTWirelessClient::ListDestinationsCallable(cons
 
 void IoTWirelessClient::ListDestinationsAsync(const ListDestinationsRequest& request, const ListDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDestinationsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ListDestinationsAsyncHelper(const ListDestinationsRequest& request, const ListDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDestinations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDestinations(request), context);
+    } );
 }
 
 ListDeviceProfilesOutcome IoTWirelessClient::ListDeviceProfiles(const ListDeviceProfilesRequest& request) const
@@ -1993,12 +1956,10 @@ ListDeviceProfilesOutcomeCallable IoTWirelessClient::ListDeviceProfilesCallable(
 
 void IoTWirelessClient::ListDeviceProfilesAsync(const ListDeviceProfilesRequest& request, const ListDeviceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeviceProfilesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ListDeviceProfilesAsyncHelper(const ListDeviceProfilesRequest& request, const ListDeviceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDeviceProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDeviceProfiles(request), context);
+    } );
 }
 
 ListEventConfigurationsOutcome IoTWirelessClient::ListEventConfigurations(const ListEventConfigurationsRequest& request) const
@@ -2023,12 +1984,10 @@ ListEventConfigurationsOutcomeCallable IoTWirelessClient::ListEventConfiguration
 
 void IoTWirelessClient::ListEventConfigurationsAsync(const ListEventConfigurationsRequest& request, const ListEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEventConfigurationsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ListEventConfigurationsAsyncHelper(const ListEventConfigurationsRequest& request, const ListEventConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEventConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEventConfigurations(request), context);
+    } );
 }
 
 ListFuotaTasksOutcome IoTWirelessClient::ListFuotaTasks(const ListFuotaTasksRequest& request) const
@@ -2048,12 +2007,10 @@ ListFuotaTasksOutcomeCallable IoTWirelessClient::ListFuotaTasksCallable(const Li
 
 void IoTWirelessClient::ListFuotaTasksAsync(const ListFuotaTasksRequest& request, const ListFuotaTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListFuotaTasksAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ListFuotaTasksAsyncHelper(const ListFuotaTasksRequest& request, const ListFuotaTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListFuotaTasks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListFuotaTasks(request), context);
+    } );
 }
 
 ListMulticastGroupsOutcome IoTWirelessClient::ListMulticastGroups(const ListMulticastGroupsRequest& request) const
@@ -2073,12 +2030,10 @@ ListMulticastGroupsOutcomeCallable IoTWirelessClient::ListMulticastGroupsCallabl
 
 void IoTWirelessClient::ListMulticastGroupsAsync(const ListMulticastGroupsRequest& request, const ListMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMulticastGroupsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ListMulticastGroupsAsyncHelper(const ListMulticastGroupsRequest& request, const ListMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMulticastGroups(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMulticastGroups(request), context);
+    } );
 }
 
 ListMulticastGroupsByFuotaTaskOutcome IoTWirelessClient::ListMulticastGroupsByFuotaTask(const ListMulticastGroupsByFuotaTaskRequest& request) const
@@ -2105,12 +2060,10 @@ ListMulticastGroupsByFuotaTaskOutcomeCallable IoTWirelessClient::ListMulticastGr
 
 void IoTWirelessClient::ListMulticastGroupsByFuotaTaskAsync(const ListMulticastGroupsByFuotaTaskRequest& request, const ListMulticastGroupsByFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMulticastGroupsByFuotaTaskAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ListMulticastGroupsByFuotaTaskAsyncHelper(const ListMulticastGroupsByFuotaTaskRequest& request, const ListMulticastGroupsByFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMulticastGroupsByFuotaTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMulticastGroupsByFuotaTask(request), context);
+    } );
 }
 
 ListNetworkAnalyzerConfigurationsOutcome IoTWirelessClient::ListNetworkAnalyzerConfigurations(const ListNetworkAnalyzerConfigurationsRequest& request) const
@@ -2130,12 +2083,10 @@ ListNetworkAnalyzerConfigurationsOutcomeCallable IoTWirelessClient::ListNetworkA
 
 void IoTWirelessClient::ListNetworkAnalyzerConfigurationsAsync(const ListNetworkAnalyzerConfigurationsRequest& request, const ListNetworkAnalyzerConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNetworkAnalyzerConfigurationsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ListNetworkAnalyzerConfigurationsAsyncHelper(const ListNetworkAnalyzerConfigurationsRequest& request, const ListNetworkAnalyzerConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListNetworkAnalyzerConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListNetworkAnalyzerConfigurations(request), context);
+    } );
 }
 
 ListPartnerAccountsOutcome IoTWirelessClient::ListPartnerAccounts(const ListPartnerAccountsRequest& request) const
@@ -2155,12 +2106,33 @@ ListPartnerAccountsOutcomeCallable IoTWirelessClient::ListPartnerAccountsCallabl
 
 void IoTWirelessClient::ListPartnerAccountsAsync(const ListPartnerAccountsRequest& request, const ListPartnerAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPartnerAccountsAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPartnerAccounts(request), context);
+    } );
 }
 
-void IoTWirelessClient::ListPartnerAccountsAsyncHelper(const ListPartnerAccountsRequest& request, const ListPartnerAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+ListPositionConfigurationsOutcome IoTWirelessClient::ListPositionConfigurations(const ListPositionConfigurationsRequest& request) const
 {
-  handler(this, request, ListPartnerAccounts(request), context);
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/position-configurations");
+  return ListPositionConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListPositionConfigurationsOutcomeCallable IoTWirelessClient::ListPositionConfigurationsCallable(const ListPositionConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPositionConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPositionConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::ListPositionConfigurationsAsync(const ListPositionConfigurationsRequest& request, const ListPositionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPositionConfigurations(request), context);
+    } );
 }
 
 ListQueuedMessagesOutcome IoTWirelessClient::ListQueuedMessages(const ListQueuedMessagesRequest& request) const
@@ -2187,12 +2159,10 @@ ListQueuedMessagesOutcomeCallable IoTWirelessClient::ListQueuedMessagesCallable(
 
 void IoTWirelessClient::ListQueuedMessagesAsync(const ListQueuedMessagesRequest& request, const ListQueuedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListQueuedMessagesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ListQueuedMessagesAsyncHelper(const ListQueuedMessagesRequest& request, const ListQueuedMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListQueuedMessages(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListQueuedMessages(request), context);
+    } );
 }
 
 ListServiceProfilesOutcome IoTWirelessClient::ListServiceProfiles(const ListServiceProfilesRequest& request) const
@@ -2212,12 +2182,10 @@ ListServiceProfilesOutcomeCallable IoTWirelessClient::ListServiceProfilesCallabl
 
 void IoTWirelessClient::ListServiceProfilesAsync(const ListServiceProfilesRequest& request, const ListServiceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListServiceProfilesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ListServiceProfilesAsyncHelper(const ListServiceProfilesRequest& request, const ListServiceProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListServiceProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListServiceProfiles(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome IoTWirelessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -2242,12 +2210,10 @@ ListTagsForResourceOutcomeCallable IoTWirelessClient::ListTagsForResourceCallabl
 
 void IoTWirelessClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListWirelessDevicesOutcome IoTWirelessClient::ListWirelessDevices(const ListWirelessDevicesRequest& request) const
@@ -2267,12 +2233,10 @@ ListWirelessDevicesOutcomeCallable IoTWirelessClient::ListWirelessDevicesCallabl
 
 void IoTWirelessClient::ListWirelessDevicesAsync(const ListWirelessDevicesRequest& request, const ListWirelessDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWirelessDevicesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ListWirelessDevicesAsyncHelper(const ListWirelessDevicesRequest& request, const ListWirelessDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListWirelessDevices(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListWirelessDevices(request), context);
+    } );
 }
 
 ListWirelessGatewayTaskDefinitionsOutcome IoTWirelessClient::ListWirelessGatewayTaskDefinitions(const ListWirelessGatewayTaskDefinitionsRequest& request) const
@@ -2292,12 +2256,10 @@ ListWirelessGatewayTaskDefinitionsOutcomeCallable IoTWirelessClient::ListWireles
 
 void IoTWirelessClient::ListWirelessGatewayTaskDefinitionsAsync(const ListWirelessGatewayTaskDefinitionsRequest& request, const ListWirelessGatewayTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWirelessGatewayTaskDefinitionsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ListWirelessGatewayTaskDefinitionsAsyncHelper(const ListWirelessGatewayTaskDefinitionsRequest& request, const ListWirelessGatewayTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListWirelessGatewayTaskDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListWirelessGatewayTaskDefinitions(request), context);
+    } );
 }
 
 ListWirelessGatewaysOutcome IoTWirelessClient::ListWirelessGateways(const ListWirelessGatewaysRequest& request) const
@@ -2317,12 +2279,44 @@ ListWirelessGatewaysOutcomeCallable IoTWirelessClient::ListWirelessGatewaysCalla
 
 void IoTWirelessClient::ListWirelessGatewaysAsync(const ListWirelessGatewaysRequest& request, const ListWirelessGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWirelessGatewaysAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListWirelessGateways(request), context);
+    } );
 }
 
-void IoTWirelessClient::ListWirelessGatewaysAsyncHelper(const ListWirelessGatewaysRequest& request, const ListWirelessGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+PutPositionConfigurationOutcome IoTWirelessClient::PutPositionConfiguration(const PutPositionConfigurationRequest& request) const
 {
-  handler(this, request, ListWirelessGateways(request), context);
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutPositionConfiguration", "Required field: ResourceIdentifier, is not set");
+    return PutPositionConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutPositionConfiguration", "Required field: ResourceType, is not set");
+    return PutPositionConfigurationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/position-configurations/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return PutPositionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutPositionConfigurationOutcomeCallable IoTWirelessClient::PutPositionConfigurationCallable(const PutPositionConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutPositionConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPositionConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::PutPositionConfigurationAsync(const PutPositionConfigurationRequest& request, const PutPositionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutPositionConfiguration(request), context);
+    } );
 }
 
 PutResourceLogLevelOutcome IoTWirelessClient::PutResourceLogLevel(const PutResourceLogLevelRequest& request) const
@@ -2353,12 +2347,10 @@ PutResourceLogLevelOutcomeCallable IoTWirelessClient::PutResourceLogLevelCallabl
 
 void IoTWirelessClient::PutResourceLogLevelAsync(const PutResourceLogLevelRequest& request, const PutResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutResourceLogLevelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::PutResourceLogLevelAsyncHelper(const PutResourceLogLevelRequest& request, const PutResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutResourceLogLevel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutResourceLogLevel(request), context);
+    } );
 }
 
 ResetAllResourceLogLevelsOutcome IoTWirelessClient::ResetAllResourceLogLevels(const ResetAllResourceLogLevelsRequest& request) const
@@ -2378,12 +2370,10 @@ ResetAllResourceLogLevelsOutcomeCallable IoTWirelessClient::ResetAllResourceLogL
 
 void IoTWirelessClient::ResetAllResourceLogLevelsAsync(const ResetAllResourceLogLevelsRequest& request, const ResetAllResourceLogLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetAllResourceLogLevelsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ResetAllResourceLogLevelsAsyncHelper(const ResetAllResourceLogLevelsRequest& request, const ResetAllResourceLogLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ResetAllResourceLogLevels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ResetAllResourceLogLevels(request), context);
+    } );
 }
 
 ResetResourceLogLevelOutcome IoTWirelessClient::ResetResourceLogLevel(const ResetResourceLogLevelRequest& request) const
@@ -2414,12 +2404,10 @@ ResetResourceLogLevelOutcomeCallable IoTWirelessClient::ResetResourceLogLevelCal
 
 void IoTWirelessClient::ResetResourceLogLevelAsync(const ResetResourceLogLevelRequest& request, const ResetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ResetResourceLogLevelAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::ResetResourceLogLevelAsyncHelper(const ResetResourceLogLevelRequest& request, const ResetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ResetResourceLogLevel(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ResetResourceLogLevel(request), context);
+    } );
 }
 
 SendDataToMulticastGroupOutcome IoTWirelessClient::SendDataToMulticastGroup(const SendDataToMulticastGroupRequest& request) const
@@ -2446,12 +2434,10 @@ SendDataToMulticastGroupOutcomeCallable IoTWirelessClient::SendDataToMulticastGr
 
 void IoTWirelessClient::SendDataToMulticastGroupAsync(const SendDataToMulticastGroupRequest& request, const SendDataToMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendDataToMulticastGroupAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::SendDataToMulticastGroupAsyncHelper(const SendDataToMulticastGroupRequest& request, const SendDataToMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendDataToMulticastGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendDataToMulticastGroup(request), context);
+    } );
 }
 
 SendDataToWirelessDeviceOutcome IoTWirelessClient::SendDataToWirelessDevice(const SendDataToWirelessDeviceRequest& request) const
@@ -2478,12 +2464,10 @@ SendDataToWirelessDeviceOutcomeCallable IoTWirelessClient::SendDataToWirelessDev
 
 void IoTWirelessClient::SendDataToWirelessDeviceAsync(const SendDataToWirelessDeviceRequest& request, const SendDataToWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendDataToWirelessDeviceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::SendDataToWirelessDeviceAsyncHelper(const SendDataToWirelessDeviceRequest& request, const SendDataToWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendDataToWirelessDevice(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendDataToWirelessDevice(request), context);
+    } );
 }
 
 StartBulkAssociateWirelessDeviceWithMulticastGroupOutcome IoTWirelessClient::StartBulkAssociateWirelessDeviceWithMulticastGroup(const StartBulkAssociateWirelessDeviceWithMulticastGroupRequest& request) const
@@ -2510,12 +2494,10 @@ StartBulkAssociateWirelessDeviceWithMulticastGroupOutcomeCallable IoTWirelessCli
 
 void IoTWirelessClient::StartBulkAssociateWirelessDeviceWithMulticastGroupAsync(const StartBulkAssociateWirelessDeviceWithMulticastGroupRequest& request, const StartBulkAssociateWirelessDeviceWithMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartBulkAssociateWirelessDeviceWithMulticastGroupAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::StartBulkAssociateWirelessDeviceWithMulticastGroupAsyncHelper(const StartBulkAssociateWirelessDeviceWithMulticastGroupRequest& request, const StartBulkAssociateWirelessDeviceWithMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartBulkAssociateWirelessDeviceWithMulticastGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartBulkAssociateWirelessDeviceWithMulticastGroup(request), context);
+    } );
 }
 
 StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcome IoTWirelessClient::StartBulkDisassociateWirelessDeviceFromMulticastGroup(const StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest& request) const
@@ -2542,12 +2524,10 @@ StartBulkDisassociateWirelessDeviceFromMulticastGroupOutcomeCallable IoTWireless
 
 void IoTWirelessClient::StartBulkDisassociateWirelessDeviceFromMulticastGroupAsync(const StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest& request, const StartBulkDisassociateWirelessDeviceFromMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartBulkDisassociateWirelessDeviceFromMulticastGroupAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::StartBulkDisassociateWirelessDeviceFromMulticastGroupAsyncHelper(const StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest& request, const StartBulkDisassociateWirelessDeviceFromMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartBulkDisassociateWirelessDeviceFromMulticastGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartBulkDisassociateWirelessDeviceFromMulticastGroup(request), context);
+    } );
 }
 
 StartFuotaTaskOutcome IoTWirelessClient::StartFuotaTask(const StartFuotaTaskRequest& request) const
@@ -2573,12 +2553,10 @@ StartFuotaTaskOutcomeCallable IoTWirelessClient::StartFuotaTaskCallable(const St
 
 void IoTWirelessClient::StartFuotaTaskAsync(const StartFuotaTaskRequest& request, const StartFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartFuotaTaskAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::StartFuotaTaskAsyncHelper(const StartFuotaTaskRequest& request, const StartFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartFuotaTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartFuotaTask(request), context);
+    } );
 }
 
 StartMulticastGroupSessionOutcome IoTWirelessClient::StartMulticastGroupSession(const StartMulticastGroupSessionRequest& request) const
@@ -2605,12 +2583,10 @@ StartMulticastGroupSessionOutcomeCallable IoTWirelessClient::StartMulticastGroup
 
 void IoTWirelessClient::StartMulticastGroupSessionAsync(const StartMulticastGroupSessionRequest& request, const StartMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartMulticastGroupSessionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::StartMulticastGroupSessionAsyncHelper(const StartMulticastGroupSessionRequest& request, const StartMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartMulticastGroupSession(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartMulticastGroupSession(request), context);
+    } );
 }
 
 TagResourceOutcome IoTWirelessClient::TagResource(const TagResourceRequest& request) const
@@ -2635,12 +2611,10 @@ TagResourceOutcomeCallable IoTWirelessClient::TagResourceCallable(const TagResou
 
 void IoTWirelessClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 TestWirelessDeviceOutcome IoTWirelessClient::TestWirelessDevice(const TestWirelessDeviceRequest& request) const
@@ -2667,12 +2641,10 @@ TestWirelessDeviceOutcomeCallable IoTWirelessClient::TestWirelessDeviceCallable(
 
 void IoTWirelessClient::TestWirelessDeviceAsync(const TestWirelessDeviceRequest& request, const TestWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TestWirelessDeviceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::TestWirelessDeviceAsyncHelper(const TestWirelessDeviceRequest& request, const TestWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TestWirelessDevice(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TestWirelessDevice(request), context);
+    } );
 }
 
 UntagResourceOutcome IoTWirelessClient::UntagResource(const UntagResourceRequest& request) const
@@ -2702,12 +2674,10 @@ UntagResourceOutcomeCallable IoTWirelessClient::UntagResourceCallable(const Unta
 
 void IoTWirelessClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateDestinationOutcome IoTWirelessClient::UpdateDestination(const UpdateDestinationRequest& request) const
@@ -2733,12 +2703,10 @@ UpdateDestinationOutcomeCallable IoTWirelessClient::UpdateDestinationCallable(co
 
 void IoTWirelessClient::UpdateDestinationAsync(const UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDestinationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::UpdateDestinationAsyncHelper(const UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDestination(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDestination(request), context);
+    } );
 }
 
 UpdateEventConfigurationByResourceTypesOutcome IoTWirelessClient::UpdateEventConfigurationByResourceTypes(const UpdateEventConfigurationByResourceTypesRequest& request) const
@@ -2758,12 +2726,10 @@ UpdateEventConfigurationByResourceTypesOutcomeCallable IoTWirelessClient::Update
 
 void IoTWirelessClient::UpdateEventConfigurationByResourceTypesAsync(const UpdateEventConfigurationByResourceTypesRequest& request, const UpdateEventConfigurationByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventConfigurationByResourceTypesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::UpdateEventConfigurationByResourceTypesAsyncHelper(const UpdateEventConfigurationByResourceTypesRequest& request, const UpdateEventConfigurationByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateEventConfigurationByResourceTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateEventConfigurationByResourceTypes(request), context);
+    } );
 }
 
 UpdateFuotaTaskOutcome IoTWirelessClient::UpdateFuotaTask(const UpdateFuotaTaskRequest& request) const
@@ -2789,12 +2755,10 @@ UpdateFuotaTaskOutcomeCallable IoTWirelessClient::UpdateFuotaTaskCallable(const 
 
 void IoTWirelessClient::UpdateFuotaTaskAsync(const UpdateFuotaTaskRequest& request, const UpdateFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateFuotaTaskAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::UpdateFuotaTaskAsyncHelper(const UpdateFuotaTaskRequest& request, const UpdateFuotaTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateFuotaTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFuotaTask(request), context);
+    } );
 }
 
 UpdateLogLevelsByResourceTypesOutcome IoTWirelessClient::UpdateLogLevelsByResourceTypes(const UpdateLogLevelsByResourceTypesRequest& request) const
@@ -2814,12 +2778,10 @@ UpdateLogLevelsByResourceTypesOutcomeCallable IoTWirelessClient::UpdateLogLevels
 
 void IoTWirelessClient::UpdateLogLevelsByResourceTypesAsync(const UpdateLogLevelsByResourceTypesRequest& request, const UpdateLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLogLevelsByResourceTypesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::UpdateLogLevelsByResourceTypesAsyncHelper(const UpdateLogLevelsByResourceTypesRequest& request, const UpdateLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateLogLevelsByResourceTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateLogLevelsByResourceTypes(request), context);
+    } );
 }
 
 UpdateMulticastGroupOutcome IoTWirelessClient::UpdateMulticastGroup(const UpdateMulticastGroupRequest& request) const
@@ -2845,12 +2807,10 @@ UpdateMulticastGroupOutcomeCallable IoTWirelessClient::UpdateMulticastGroupCalla
 
 void IoTWirelessClient::UpdateMulticastGroupAsync(const UpdateMulticastGroupRequest& request, const UpdateMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMulticastGroupAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::UpdateMulticastGroupAsyncHelper(const UpdateMulticastGroupRequest& request, const UpdateMulticastGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateMulticastGroup(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateMulticastGroup(request), context);
+    } );
 }
 
 UpdateNetworkAnalyzerConfigurationOutcome IoTWirelessClient::UpdateNetworkAnalyzerConfiguration(const UpdateNetworkAnalyzerConfigurationRequest& request) const
@@ -2876,12 +2836,10 @@ UpdateNetworkAnalyzerConfigurationOutcomeCallable IoTWirelessClient::UpdateNetwo
 
 void IoTWirelessClient::UpdateNetworkAnalyzerConfigurationAsync(const UpdateNetworkAnalyzerConfigurationRequest& request, const UpdateNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNetworkAnalyzerConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::UpdateNetworkAnalyzerConfigurationAsyncHelper(const UpdateNetworkAnalyzerConfigurationRequest& request, const UpdateNetworkAnalyzerConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateNetworkAnalyzerConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateNetworkAnalyzerConfiguration(request), context);
+    } );
 }
 
 UpdatePartnerAccountOutcome IoTWirelessClient::UpdatePartnerAccount(const UpdatePartnerAccountRequest& request) const
@@ -2912,12 +2870,44 @@ UpdatePartnerAccountOutcomeCallable IoTWirelessClient::UpdatePartnerAccountCalla
 
 void IoTWirelessClient::UpdatePartnerAccountAsync(const UpdatePartnerAccountRequest& request, const UpdatePartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePartnerAccountAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePartnerAccount(request), context);
+    } );
 }
 
-void IoTWirelessClient::UpdatePartnerAccountAsyncHelper(const UpdatePartnerAccountRequest& request, const UpdatePartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+UpdatePositionOutcome IoTWirelessClient::UpdatePosition(const UpdatePositionRequest& request) const
 {
-  handler(this, request, UpdatePartnerAccount(request), context);
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePosition", "Required field: ResourceIdentifier, is not set");
+    return UpdatePositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePosition", "Required field: ResourceType, is not set");
+    return UpdatePositionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/positions/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return UpdatePositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePositionOutcomeCallable IoTWirelessClient::UpdatePositionCallable(const UpdatePositionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePositionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePosition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::UpdatePositionAsync(const UpdatePositionRequest& request, const UpdatePositionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePosition(request), context);
+    } );
 }
 
 UpdateResourceEventConfigurationOutcome IoTWirelessClient::UpdateResourceEventConfiguration(const UpdateResourceEventConfigurationRequest& request) const
@@ -2948,12 +2938,10 @@ UpdateResourceEventConfigurationOutcomeCallable IoTWirelessClient::UpdateResourc
 
 void IoTWirelessClient::UpdateResourceEventConfigurationAsync(const UpdateResourceEventConfigurationRequest& request, const UpdateResourceEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourceEventConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::UpdateResourceEventConfigurationAsyncHelper(const UpdateResourceEventConfigurationRequest& request, const UpdateResourceEventConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateResourceEventConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateResourceEventConfiguration(request), context);
+    } );
 }
 
 UpdateWirelessDeviceOutcome IoTWirelessClient::UpdateWirelessDevice(const UpdateWirelessDeviceRequest& request) const
@@ -2979,12 +2967,10 @@ UpdateWirelessDeviceOutcomeCallable IoTWirelessClient::UpdateWirelessDeviceCalla
 
 void IoTWirelessClient::UpdateWirelessDeviceAsync(const UpdateWirelessDeviceRequest& request, const UpdateWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWirelessDeviceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::UpdateWirelessDeviceAsyncHelper(const UpdateWirelessDeviceRequest& request, const UpdateWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateWirelessDevice(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateWirelessDevice(request), context);
+    } );
 }
 
 UpdateWirelessGatewayOutcome IoTWirelessClient::UpdateWirelessGateway(const UpdateWirelessGatewayRequest& request) const
@@ -3010,11 +2996,9 @@ UpdateWirelessGatewayOutcomeCallable IoTWirelessClient::UpdateWirelessGatewayCal
 
 void IoTWirelessClient::UpdateWirelessGatewayAsync(const UpdateWirelessGatewayRequest& request, const UpdateWirelessGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateWirelessGatewayAsyncHelper( request, handler, context ); } );
-}
-
-void IoTWirelessClient::UpdateWirelessGatewayAsyncHelper(const UpdateWirelessGatewayRequest& request, const UpdateWirelessGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateWirelessGateway(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateWirelessGateway(request), context);
+    } );
 }
 

@@ -81,7 +81,25 @@ namespace Model
     ml_inf1_xlarge,
     ml_inf1_2xlarge,
     ml_inf1_6xlarge,
-    ml_inf1_24xlarge
+    ml_inf1_24xlarge,
+    ml_c6i_large,
+    ml_c6i_xlarge,
+    ml_c6i_2xlarge,
+    ml_c6i_4xlarge,
+    ml_c6i_8xlarge,
+    ml_c6i_12xlarge,
+    ml_c6i_16xlarge,
+    ml_c6i_24xlarge,
+    ml_c6i_32xlarge,
+    ml_g5_xlarge,
+    ml_g5_2xlarge,
+    ml_g5_4xlarge,
+    ml_g5_8xlarge,
+    ml_g5_12xlarge,
+    ml_g5_16xlarge,
+    ml_g5_24xlarge,
+    ml_g5_48xlarge,
+    ml_p4d_24xlarge
   };
 
 namespace ProductionVariantInstanceTypeMapper

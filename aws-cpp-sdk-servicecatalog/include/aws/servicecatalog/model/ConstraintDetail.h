@@ -333,22 +333,22 @@ namespace Model
   private:
 
     Aws::String m_constraintId;
-    bool m_constraintIdHasBeenSet;
+    bool m_constraintIdHasBeenSet = false;
 
     Aws::String m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_productId;
-    bool m_productIdHasBeenSet;
+    bool m_productIdHasBeenSet = false;
 
     Aws::String m_portfolioId;
-    bool m_portfolioIdHasBeenSet;
+    bool m_portfolioIdHasBeenSet = false;
   };
 
 } // namespace Model

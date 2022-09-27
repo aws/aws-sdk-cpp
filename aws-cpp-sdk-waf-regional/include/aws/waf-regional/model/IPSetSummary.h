@@ -153,10 +153,10 @@ namespace Model
   private:
 
     Aws::String m_iPSetId;
-    bool m_iPSetIdHasBeenSet;
+    bool m_iPSetIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

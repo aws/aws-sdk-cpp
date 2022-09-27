@@ -288,25 +288,25 @@ namespace Model
   private:
 
     Aws::String m_executionId;
-    bool m_executionIdHasBeenSet;
+    bool m_executionIdHasBeenSet = false;
 
     ExecutionStatus m_executionStatus;
-    bool m_executionStatusHasBeenSet;
+    bool m_executionStatusHasBeenSet = false;
 
     ExecutionResult m_executionResult;
-    bool m_executionResultHasBeenSet;
+    bool m_executionResultHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_dataPullStartTime;
-    bool m_dataPullStartTimeHasBeenSet;
+    bool m_dataPullStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_dataPullEndTime;
-    bool m_dataPullEndTimeHasBeenSet;
+    bool m_dataPullEndTimeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,6 +21,8 @@ namespace Model
 GrpcRouteMatch::GrpcRouteMatch() : 
     m_metadataHasBeenSet(false),
     m_methodNameHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
     m_serviceNameHasBeenSet(false)
 {
 }
@@ -28,6 +30,8 @@ GrpcRouteMatch::GrpcRouteMatch() :
 GrpcRouteMatch::GrpcRouteMatch(JsonView jsonValue) : 
     m_metadataHasBeenSet(false),
     m_methodNameHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
     m_serviceNameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -50,6 +54,13 @@ GrpcRouteMatch& GrpcRouteMatch::operator =(JsonView jsonValue)
     m_methodName = jsonValue.GetString("methodName");
 
     m_methodNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("port"))
+  {
+    m_port = jsonValue.GetInteger("port");
+
+    m_portHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("serviceName"))
@@ -80,6 +91,12 @@ JsonValue GrpcRouteMatch::Jsonize() const
   if(m_methodNameHasBeenSet)
   {
    payload.WithString("methodName", m_methodName);
+
+  }
+
+  if(m_portHasBeenSet)
+  {
+   payload.WithInteger("port", m_port);
 
   }
 

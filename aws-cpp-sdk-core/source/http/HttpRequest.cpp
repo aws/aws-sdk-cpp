@@ -40,11 +40,19 @@ namespace Aws
         const char CHUNKED_VALUE[] = "chunked";
         const char AWS_CHUNKED_VALUE[] = "aws-chunked";
         const char X_AMZN_TRACE_ID_HEADER[] = "X-Amzn-Trace-Id";
+        const char ALLOCATION_TAG[] = "HttpRequestConversion";
 
         std::shared_ptr<Aws::Crt::Http::HttpRequest> HttpRequest::ToCrtHttpRequest()
         {
-            auto request = Aws::MakeShared<Aws::Crt::Http::HttpRequest>("HttpRequestConversion");
-            request->SetBody(GetContentBody());
+            auto request = Aws::MakeShared<Aws::Crt::Http::HttpRequest>(ALLOCATION_TAG);
+            request->SetBody([&]() -> std::shared_ptr<IOStream> {
+                const std::shared_ptr<Aws::IOStream>& body = GetContentBody();
+                if (body) {
+                  return body;
+                }
+                // Return an empty string stream for no body
+                return Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG, "");
+              }());
             auto headers = GetHeaders();
             for (const auto& it: headers)
             {

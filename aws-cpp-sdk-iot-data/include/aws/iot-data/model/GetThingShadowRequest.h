@@ -125,10 +125,10 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::String m_shadowName;
-    bool m_shadowNameHasBeenSet;
+    bool m_shadowNameHasBeenSet = false;
   };
 
 } // namespace Model

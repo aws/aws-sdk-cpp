@@ -351,22 +351,22 @@ namespace Model
   private:
 
     Aws::String m_body;
-    bool m_bodyHasBeenSet;
+    bool m_bodyHasBeenSet = false;
 
     MessageType m_messageType;
-    bool m_messageTypeHasBeenSet;
+    bool m_messageTypeHasBeenSet = false;
 
     Aws::String m_originationNumber;
-    bool m_originationNumberHasBeenSet;
+    bool m_originationNumberHasBeenSet = false;
 
     Aws::String m_senderId;
-    bool m_senderIdHasBeenSet;
+    bool m_senderIdHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_templateId;
-    bool m_templateIdHasBeenSet;
+    bool m_templateIdHasBeenSet = false;
   };
 
 } // namespace Model

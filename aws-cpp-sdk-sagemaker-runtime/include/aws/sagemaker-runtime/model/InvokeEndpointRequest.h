@@ -538,26 +538,26 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
 
     Aws::String m_accept;
-    bool m_acceptHasBeenSet;
+    bool m_acceptHasBeenSet = false;
 
     Aws::String m_customAttributes;
-    bool m_customAttributesHasBeenSet;
+    bool m_customAttributesHasBeenSet = false;
 
     Aws::String m_targetModel;
-    bool m_targetModelHasBeenSet;
+    bool m_targetModelHasBeenSet = false;
 
     Aws::String m_targetVariant;
-    bool m_targetVariantHasBeenSet;
+    bool m_targetVariantHasBeenSet = false;
 
     Aws::String m_targetContainerHostname;
-    bool m_targetContainerHostnameHasBeenSet;
+    bool m_targetContainerHostnameHasBeenSet = false;
 
     Aws::String m_inferenceId;
-    bool m_inferenceIdHasBeenSet;
+    bool m_inferenceIdHasBeenSet = false;
   };
 
 } // namespace Model

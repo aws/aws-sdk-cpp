@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_finalBackupId;
-    bool m_finalBackupIdHasBeenSet;
+    bool m_finalBackupIdHasBeenSet = false;
 
     Aws::Vector<Tag> m_finalBackupTags;
-    bool m_finalBackupTagsHasBeenSet;
+    bool m_finalBackupTagsHasBeenSet = false;
   };
 
 } // namespace Model

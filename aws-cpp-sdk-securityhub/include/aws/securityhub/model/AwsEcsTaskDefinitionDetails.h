@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>details about a task definition. A task definition describes the container
+   * <p>Details about a task definition. A task definition describes the container
    * and volume definitions of an Amazon Elastic Container Service
    * task.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsEcsTaskDefinitionDetails">AWS
@@ -95,42 +95,74 @@ namespace Model
 
 
     /**
-     * <p>The number of CPU units used by the task.</p>
+     * <p>The number of CPU units used by the task.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>256 (.25 vCPU)</code> </p> </li> <li> <p> <code>512 (.5
+     * vCPU)</code> </p> </li> <li> <p> <code>1024 (1 vCPU)</code> </p> </li> <li> <p>
+     * <code>2048 (2 vCPU)</code> </p> </li> <li> <p> <code>4096 (4 vCPU)</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetCpu() const{ return m_cpu; }
 
     /**
-     * <p>The number of CPU units used by the task.</p>
+     * <p>The number of CPU units used by the task.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>256 (.25 vCPU)</code> </p> </li> <li> <p> <code>512 (.5
+     * vCPU)</code> </p> </li> <li> <p> <code>1024 (1 vCPU)</code> </p> </li> <li> <p>
+     * <code>2048 (2 vCPU)</code> </p> </li> <li> <p> <code>4096 (4 vCPU)</code> </p>
+     * </li> </ul>
      */
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
 
     /**
-     * <p>The number of CPU units used by the task.</p>
+     * <p>The number of CPU units used by the task.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>256 (.25 vCPU)</code> </p> </li> <li> <p> <code>512 (.5
+     * vCPU)</code> </p> </li> <li> <p> <code>1024 (1 vCPU)</code> </p> </li> <li> <p>
+     * <code>2048 (2 vCPU)</code> </p> </li> <li> <p> <code>4096 (4 vCPU)</code> </p>
+     * </li> </ul>
      */
     inline void SetCpu(const Aws::String& value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
     /**
-     * <p>The number of CPU units used by the task.</p>
+     * <p>The number of CPU units used by the task.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>256 (.25 vCPU)</code> </p> </li> <li> <p> <code>512 (.5
+     * vCPU)</code> </p> </li> <li> <p> <code>1024 (1 vCPU)</code> </p> </li> <li> <p>
+     * <code>2048 (2 vCPU)</code> </p> </li> <li> <p> <code>4096 (4 vCPU)</code> </p>
+     * </li> </ul>
      */
     inline void SetCpu(Aws::String&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
 
     /**
-     * <p>The number of CPU units used by the task.</p>
+     * <p>The number of CPU units used by the task.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>256 (.25 vCPU)</code> </p> </li> <li> <p> <code>512 (.5
+     * vCPU)</code> </p> </li> <li> <p> <code>1024 (1 vCPU)</code> </p> </li> <li> <p>
+     * <code>2048 (2 vCPU)</code> </p> </li> <li> <p> <code>4096 (4 vCPU)</code> </p>
+     * </li> </ul>
      */
     inline void SetCpu(const char* value) { m_cpuHasBeenSet = true; m_cpu.assign(value); }
 
     /**
-     * <p>The number of CPU units used by the task.</p>
+     * <p>The number of CPU units used by the task.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>256 (.25 vCPU)</code> </p> </li> <li> <p> <code>512 (.5
+     * vCPU)</code> </p> </li> <li> <p> <code>1024 (1 vCPU)</code> </p> </li> <li> <p>
+     * <code>2048 (2 vCPU)</code> </p> </li> <li> <p> <code>4096 (4 vCPU)</code> </p>
+     * </li> </ul>
      */
     inline AwsEcsTaskDefinitionDetails& WithCpu(const Aws::String& value) { SetCpu(value); return *this;}
 
     /**
-     * <p>The number of CPU units used by the task.</p>
+     * <p>The number of CPU units used by the task.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>256 (.25 vCPU)</code> </p> </li> <li> <p> <code>512 (.5
+     * vCPU)</code> </p> </li> <li> <p> <code>1024 (1 vCPU)</code> </p> </li> <li> <p>
+     * <code>2048 (2 vCPU)</code> </p> </li> <li> <p> <code>4096 (4 vCPU)</code> </p>
+     * </li> </ul>
      */
     inline AwsEcsTaskDefinitionDetails& WithCpu(Aws::String&& value) { SetCpu(std::move(value)); return *this;}
 
     /**
-     * <p>The number of CPU units used by the task.</p>
+     * <p>The number of CPU units used by the task.Valid values are as follows:</p>
+     * <ul> <li> <p> <code>256 (.25 vCPU)</code> </p> </li> <li> <p> <code>512 (.5
+     * vCPU)</code> </p> </li> <li> <p> <code>1024 (1 vCPU)</code> </p> </li> <li> <p>
+     * <code>2048 (2 vCPU)</code> </p> </li> <li> <p> <code>4096 (4 vCPU)</code> </p>
+     * </li> </ul>
      */
     inline AwsEcsTaskDefinitionDetails& WithCpu(const char* value) { SetCpu(value); return *this;}
 
@@ -267,165 +299,277 @@ namespace Model
 
 
     /**
-     * <p>The IPC resource namespace to use for the containers in the task.</p>
+     * <p>The inter-process communication (IPC) resource namespace to use for the
+     * containers in the task. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>host</code> </p> </li> <li> <p> <code>none</code> </p> </li> <li> <p>
+     * <code>task</code> </p> </li> </ul>
      */
     inline const Aws::String& GetIpcMode() const{ return m_ipcMode; }
 
     /**
-     * <p>The IPC resource namespace to use for the containers in the task.</p>
+     * <p>The inter-process communication (IPC) resource namespace to use for the
+     * containers in the task. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>host</code> </p> </li> <li> <p> <code>none</code> </p> </li> <li> <p>
+     * <code>task</code> </p> </li> </ul>
      */
     inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }
 
     /**
-     * <p>The IPC resource namespace to use for the containers in the task.</p>
+     * <p>The inter-process communication (IPC) resource namespace to use for the
+     * containers in the task. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>host</code> </p> </li> <li> <p> <code>none</code> </p> </li> <li> <p>
+     * <code>task</code> </p> </li> </ul>
      */
     inline void SetIpcMode(const Aws::String& value) { m_ipcModeHasBeenSet = true; m_ipcMode = value; }
 
     /**
-     * <p>The IPC resource namespace to use for the containers in the task.</p>
+     * <p>The inter-process communication (IPC) resource namespace to use for the
+     * containers in the task. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>host</code> </p> </li> <li> <p> <code>none</code> </p> </li> <li> <p>
+     * <code>task</code> </p> </li> </ul>
      */
     inline void SetIpcMode(Aws::String&& value) { m_ipcModeHasBeenSet = true; m_ipcMode = std::move(value); }
 
     /**
-     * <p>The IPC resource namespace to use for the containers in the task.</p>
+     * <p>The inter-process communication (IPC) resource namespace to use for the
+     * containers in the task. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>host</code> </p> </li> <li> <p> <code>none</code> </p> </li> <li> <p>
+     * <code>task</code> </p> </li> </ul>
      */
     inline void SetIpcMode(const char* value) { m_ipcModeHasBeenSet = true; m_ipcMode.assign(value); }
 
     /**
-     * <p>The IPC resource namespace to use for the containers in the task.</p>
+     * <p>The inter-process communication (IPC) resource namespace to use for the
+     * containers in the task. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>host</code> </p> </li> <li> <p> <code>none</code> </p> </li> <li> <p>
+     * <code>task</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionDetails& WithIpcMode(const Aws::String& value) { SetIpcMode(value); return *this;}
 
     /**
-     * <p>The IPC resource namespace to use for the containers in the task.</p>
+     * <p>The inter-process communication (IPC) resource namespace to use for the
+     * containers in the task. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>host</code> </p> </li> <li> <p> <code>none</code> </p> </li> <li> <p>
+     * <code>task</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionDetails& WithIpcMode(Aws::String&& value) { SetIpcMode(std::move(value)); return *this;}
 
     /**
-     * <p>The IPC resource namespace to use for the containers in the task.</p>
+     * <p>The inter-process communication (IPC) resource namespace to use for the
+     * containers in the task. Valid values are as follows:</p> <ul> <li> <p>
+     * <code>host</code> </p> </li> <li> <p> <code>none</code> </p> </li> <li> <p>
+     * <code>task</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionDetails& WithIpcMode(const char* value) { SetIpcMode(value); return *this;}
 
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p>
+     * <p>The amount (in MiB) of memory used by the task. </p> <p>For tasks that are
+     * hosted on Amazon EC2, you can provide a task-level memory value or a
+     * container-level memory value. For tasks that are hosted on Fargate, you must use
+     * one of the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified
+     * values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i>
+     * </i>, which determines your range of supported values for the <code>Cpu</code>
+     * and <code>Memory</code> parameters.</p>
      */
     inline const Aws::String& GetMemory() const{ return m_memory; }
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p>
+     * <p>The amount (in MiB) of memory used by the task. </p> <p>For tasks that are
+     * hosted on Amazon EC2, you can provide a task-level memory value or a
+     * container-level memory value. For tasks that are hosted on Fargate, you must use
+     * one of the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified
+     * values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i>
+     * </i>, which determines your range of supported values for the <code>Cpu</code>
+     * and <code>Memory</code> parameters.</p>
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p>
+     * <p>The amount (in MiB) of memory used by the task. </p> <p>For tasks that are
+     * hosted on Amazon EC2, you can provide a task-level memory value or a
+     * container-level memory value. For tasks that are hosted on Fargate, you must use
+     * one of the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified
+     * values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i>
+     * </i>, which determines your range of supported values for the <code>Cpu</code>
+     * and <code>Memory</code> parameters.</p>
      */
     inline void SetMemory(const Aws::String& value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p>
+     * <p>The amount (in MiB) of memory used by the task. </p> <p>For tasks that are
+     * hosted on Amazon EC2, you can provide a task-level memory value or a
+     * container-level memory value. For tasks that are hosted on Fargate, you must use
+     * one of the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified
+     * values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i>
+     * </i>, which determines your range of supported values for the <code>Cpu</code>
+     * and <code>Memory</code> parameters.</p>
      */
     inline void SetMemory(Aws::String&& value) { m_memoryHasBeenSet = true; m_memory = std::move(value); }
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p>
+     * <p>The amount (in MiB) of memory used by the task. </p> <p>For tasks that are
+     * hosted on Amazon EC2, you can provide a task-level memory value or a
+     * container-level memory value. For tasks that are hosted on Fargate, you must use
+     * one of the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified
+     * values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i>
+     * </i>, which determines your range of supported values for the <code>Cpu</code>
+     * and <code>Memory</code> parameters.</p>
      */
     inline void SetMemory(const char* value) { m_memoryHasBeenSet = true; m_memory.assign(value); }
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p>
+     * <p>The amount (in MiB) of memory used by the task. </p> <p>For tasks that are
+     * hosted on Amazon EC2, you can provide a task-level memory value or a
+     * container-level memory value. For tasks that are hosted on Fargate, you must use
+     * one of the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified
+     * values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i>
+     * </i>, which determines your range of supported values for the <code>Cpu</code>
+     * and <code>Memory</code> parameters.</p>
      */
     inline AwsEcsTaskDefinitionDetails& WithMemory(const Aws::String& value) { SetMemory(value); return *this;}
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p>
+     * <p>The amount (in MiB) of memory used by the task. </p> <p>For tasks that are
+     * hosted on Amazon EC2, you can provide a task-level memory value or a
+     * container-level memory value. For tasks that are hosted on Fargate, you must use
+     * one of the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified
+     * values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i>
+     * </i>, which determines your range of supported values for the <code>Cpu</code>
+     * and <code>Memory</code> parameters.</p>
      */
     inline AwsEcsTaskDefinitionDetails& WithMemory(Aws::String&& value) { SetMemory(std::move(value)); return *this;}
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p>
+     * <p>The amount (in MiB) of memory used by the task. </p> <p>For tasks that are
+     * hosted on Amazon EC2, you can provide a task-level memory value or a
+     * container-level memory value. For tasks that are hosted on Fargate, you must use
+     * one of the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified
+     * values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i>
+     * </i>, which determines your range of supported values for the <code>Cpu</code>
+     * and <code>Memory</code> parameters.</p>
      */
     inline AwsEcsTaskDefinitionDetails& WithMemory(const char* value) { SetMemory(value); return *this;}
 
 
     /**
-     * <p>The Docker networking mode to use for the containers in the task.</p>
+     * <p>The Docker networking mode to use for the containers in the task. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>awsvpc</code> </p> </li> <li> <p>
+     * <code>bridge</code> </p> </li> <li> <p> <code>host</code> </p> </li> <li> <p>
+     * <code>none</code> </p> </li> </ul>
      */
     inline const Aws::String& GetNetworkMode() const{ return m_networkMode; }
 
     /**
-     * <p>The Docker networking mode to use for the containers in the task.</p>
+     * <p>The Docker networking mode to use for the containers in the task. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>awsvpc</code> </p> </li> <li> <p>
+     * <code>bridge</code> </p> </li> <li> <p> <code>host</code> </p> </li> <li> <p>
+     * <code>none</code> </p> </li> </ul>
      */
     inline bool NetworkModeHasBeenSet() const { return m_networkModeHasBeenSet; }
 
     /**
-     * <p>The Docker networking mode to use for the containers in the task.</p>
+     * <p>The Docker networking mode to use for the containers in the task. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>awsvpc</code> </p> </li> <li> <p>
+     * <code>bridge</code> </p> </li> <li> <p> <code>host</code> </p> </li> <li> <p>
+     * <code>none</code> </p> </li> </ul>
      */
     inline void SetNetworkMode(const Aws::String& value) { m_networkModeHasBeenSet = true; m_networkMode = value; }
 
     /**
-     * <p>The Docker networking mode to use for the containers in the task.</p>
+     * <p>The Docker networking mode to use for the containers in the task. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>awsvpc</code> </p> </li> <li> <p>
+     * <code>bridge</code> </p> </li> <li> <p> <code>host</code> </p> </li> <li> <p>
+     * <code>none</code> </p> </li> </ul>
      */
     inline void SetNetworkMode(Aws::String&& value) { m_networkModeHasBeenSet = true; m_networkMode = std::move(value); }
 
     /**
-     * <p>The Docker networking mode to use for the containers in the task.</p>
+     * <p>The Docker networking mode to use for the containers in the task. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>awsvpc</code> </p> </li> <li> <p>
+     * <code>bridge</code> </p> </li> <li> <p> <code>host</code> </p> </li> <li> <p>
+     * <code>none</code> </p> </li> </ul>
      */
     inline void SetNetworkMode(const char* value) { m_networkModeHasBeenSet = true; m_networkMode.assign(value); }
 
     /**
-     * <p>The Docker networking mode to use for the containers in the task.</p>
+     * <p>The Docker networking mode to use for the containers in the task. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>awsvpc</code> </p> </li> <li> <p>
+     * <code>bridge</code> </p> </li> <li> <p> <code>host</code> </p> </li> <li> <p>
+     * <code>none</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionDetails& WithNetworkMode(const Aws::String& value) { SetNetworkMode(value); return *this;}
 
     /**
-     * <p>The Docker networking mode to use for the containers in the task.</p>
+     * <p>The Docker networking mode to use for the containers in the task. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>awsvpc</code> </p> </li> <li> <p>
+     * <code>bridge</code> </p> </li> <li> <p> <code>host</code> </p> </li> <li> <p>
+     * <code>none</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionDetails& WithNetworkMode(Aws::String&& value) { SetNetworkMode(std::move(value)); return *this;}
 
     /**
-     * <p>The Docker networking mode to use for the containers in the task.</p>
+     * <p>The Docker networking mode to use for the containers in the task. Valid
+     * values are as follows:</p> <ul> <li> <p> <code>awsvpc</code> </p> </li> <li> <p>
+     * <code>bridge</code> </p> </li> <li> <p> <code>host</code> </p> </li> <li> <p>
+     * <code>none</code> </p> </li> </ul>
      */
     inline AwsEcsTaskDefinitionDetails& WithNetworkMode(const char* value) { SetNetworkMode(value); return *this;}
 
 
     /**
-     * <p>The process namespace to use for the containers in the task.</p>
+     * <p>The process namespace to use for the containers in the task. Valid values are
+     * <code>host</code> or <code>task</code>.</p>
      */
     inline const Aws::String& GetPidMode() const{ return m_pidMode; }
 
     /**
-     * <p>The process namespace to use for the containers in the task.</p>
+     * <p>The process namespace to use for the containers in the task. Valid values are
+     * <code>host</code> or <code>task</code>.</p>
      */
     inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
 
     /**
-     * <p>The process namespace to use for the containers in the task.</p>
+     * <p>The process namespace to use for the containers in the task. Valid values are
+     * <code>host</code> or <code>task</code>.</p>
      */
     inline void SetPidMode(const Aws::String& value) { m_pidModeHasBeenSet = true; m_pidMode = value; }
 
     /**
-     * <p>The process namespace to use for the containers in the task.</p>
+     * <p>The process namespace to use for the containers in the task. Valid values are
+     * <code>host</code> or <code>task</code>.</p>
      */
     inline void SetPidMode(Aws::String&& value) { m_pidModeHasBeenSet = true; m_pidMode = std::move(value); }
 
     /**
-     * <p>The process namespace to use for the containers in the task.</p>
+     * <p>The process namespace to use for the containers in the task. Valid values are
+     * <code>host</code> or <code>task</code>.</p>
      */
     inline void SetPidMode(const char* value) { m_pidModeHasBeenSet = true; m_pidMode.assign(value); }
 
     /**
-     * <p>The process namespace to use for the containers in the task.</p>
+     * <p>The process namespace to use for the containers in the task. Valid values are
+     * <code>host</code> or <code>task</code>.</p>
      */
     inline AwsEcsTaskDefinitionDetails& WithPidMode(const Aws::String& value) { SetPidMode(value); return *this;}
 
     /**
-     * <p>The process namespace to use for the containers in the task.</p>
+     * <p>The process namespace to use for the containers in the task. Valid values are
+     * <code>host</code> or <code>task</code>.</p>
      */
     inline AwsEcsTaskDefinitionDetails& WithPidMode(Aws::String&& value) { SetPidMode(std::move(value)); return *this;}
 
     /**
-     * <p>The process namespace to use for the containers in the task.</p>
+     * <p>The process namespace to use for the containers in the task. Valid values are
+     * <code>host</code> or <code>task</code>.</p>
      */
     inline AwsEcsTaskDefinitionDetails& WithPidMode(const char* value) { SetPidMode(value); return *this;}
 
@@ -640,46 +784,46 @@ namespace Model
   private:
 
     Aws::Vector<AwsEcsTaskDefinitionContainerDefinitionsDetails> m_containerDefinitions;
-    bool m_containerDefinitionsHasBeenSet;
+    bool m_containerDefinitionsHasBeenSet = false;
 
     Aws::String m_cpu;
-    bool m_cpuHasBeenSet;
+    bool m_cpuHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
-    bool m_executionRoleArnHasBeenSet;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::String m_family;
-    bool m_familyHasBeenSet;
+    bool m_familyHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionInferenceAcceleratorsDetails> m_inferenceAccelerators;
-    bool m_inferenceAcceleratorsHasBeenSet;
+    bool m_inferenceAcceleratorsHasBeenSet = false;
 
     Aws::String m_ipcMode;
-    bool m_ipcModeHasBeenSet;
+    bool m_ipcModeHasBeenSet = false;
 
     Aws::String m_memory;
-    bool m_memoryHasBeenSet;
+    bool m_memoryHasBeenSet = false;
 
     Aws::String m_networkMode;
-    bool m_networkModeHasBeenSet;
+    bool m_networkModeHasBeenSet = false;
 
     Aws::String m_pidMode;
-    bool m_pidModeHasBeenSet;
+    bool m_pidModeHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionPlacementConstraintsDetails> m_placementConstraints;
-    bool m_placementConstraintsHasBeenSet;
+    bool m_placementConstraintsHasBeenSet = false;
 
     AwsEcsTaskDefinitionProxyConfigurationDetails m_proxyConfiguration;
-    bool m_proxyConfigurationHasBeenSet;
+    bool m_proxyConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_requiresCompatibilities;
-    bool m_requiresCompatibilitiesHasBeenSet;
+    bool m_requiresCompatibilitiesHasBeenSet = false;
 
     Aws::String m_taskRoleArn;
-    bool m_taskRoleArnHasBeenSet;
+    bool m_taskRoleArnHasBeenSet = false;
 
     Aws::Vector<AwsEcsTaskDefinitionVolumesDetails> m_volumes;
-    bool m_volumesHasBeenSet;
+    bool m_volumesHasBeenSet = false;
   };
 
 } // namespace Model

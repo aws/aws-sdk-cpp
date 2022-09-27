@@ -147,10 +147,10 @@ namespace Model
   private:
 
     Aws::String m_uploadUrl;
-    bool m_uploadUrlHasBeenSet;
+    bool m_uploadUrlHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_signedHeaders;
-    bool m_signedHeadersHasBeenSet;
+    bool m_signedHeadersHasBeenSet = false;
   };
 
 } // namespace Model

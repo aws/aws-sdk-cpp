@@ -858,64 +858,64 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
-    bool m_createdByHasBeenSet;
+    bool m_createdByHasBeenSet = false;
 
     Aws::String m_ec2InstanceType;
-    bool m_ec2InstanceTypeHasBeenSet;
+    bool m_ec2InstanceTypeHasBeenSet = false;
 
     Aws::String m_launchProfileId;
-    bool m_launchProfileIdHasBeenSet;
+    bool m_launchProfileIdHasBeenSet = false;
 
     Aws::String m_ownedBy;
-    bool m_ownedByHasBeenSet;
+    bool m_ownedByHasBeenSet = false;
 
     Aws::String m_sessionId;
-    bool m_sessionIdHasBeenSet;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_startedAt;
-    bool m_startedAtHasBeenSet;
+    bool m_startedAtHasBeenSet = false;
 
     Aws::String m_startedBy;
-    bool m_startedByHasBeenSet;
+    bool m_startedByHasBeenSet = false;
 
     StreamingSessionState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     StreamingSessionStatusCode m_statusCode;
-    bool m_statusCodeHasBeenSet;
+    bool m_statusCodeHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_stopAt;
-    bool m_stopAtHasBeenSet;
+    bool m_stopAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_stoppedAt;
-    bool m_stoppedAtHasBeenSet;
+    bool m_stoppedAtHasBeenSet = false;
 
     Aws::String m_stoppedBy;
-    bool m_stoppedByHasBeenSet;
+    bool m_stoppedByHasBeenSet = false;
 
     Aws::String m_streamingImageId;
-    bool m_streamingImageIdHasBeenSet;
+    bool m_streamingImageIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Utils::DateTime m_terminateAt;
-    bool m_terminateAtHasBeenSet;
+    bool m_terminateAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_updatedBy;
-    bool m_updatedByHasBeenSet;
+    bool m_updatedByHasBeenSet = false;
   };
 
 } // namespace Model

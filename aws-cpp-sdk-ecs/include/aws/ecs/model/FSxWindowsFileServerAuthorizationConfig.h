@@ -27,8 +27,8 @@ namespace Model
    * <p>The authorization configuration details for Amazon FSx for Windows File
    * Server file system. See <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_FSxWindowsFileServerVolumeConfiguration.html">FSxWindowsFileServerVolumeConfiguration</a>
-   * in the <i>Amazon Elastic Container Service API Reference</i>.</p> <p>For more
-   * information and the input format, see <a
+   * in the <i>Amazon ECS API Reference</i>.</p> <p>For more information and the
+   * input format, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html">Amazon
    * FSx for Windows File Server Volumes</a> in the <i>Amazon Elastic Container
    * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -47,7 +47,7 @@ namespace Model
     /**
      * <p>The authorization credential option to use. The authorization credential
      * options can be provided using either the Amazon Resource Name (ARN) of an
-     * Secrets Manager secret or SSM Parameter Store parameter. The ARNs refer to the
+     * Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the
      * stored credentials.</p>
      */
     inline const Aws::String& GetCredentialsParameter() const{ return m_credentialsParameter; }
@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p>The authorization credential option to use. The authorization credential
      * options can be provided using either the Amazon Resource Name (ARN) of an
-     * Secrets Manager secret or SSM Parameter Store parameter. The ARNs refer to the
+     * Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the
      * stored credentials.</p>
      */
     inline bool CredentialsParameterHasBeenSet() const { return m_credentialsParameterHasBeenSet; }
@@ -63,7 +63,7 @@ namespace Model
     /**
      * <p>The authorization credential option to use. The authorization credential
      * options can be provided using either the Amazon Resource Name (ARN) of an
-     * Secrets Manager secret or SSM Parameter Store parameter. The ARNs refer to the
+     * Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the
      * stored credentials.</p>
      */
     inline void SetCredentialsParameter(const Aws::String& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = value; }
@@ -71,7 +71,7 @@ namespace Model
     /**
      * <p>The authorization credential option to use. The authorization credential
      * options can be provided using either the Amazon Resource Name (ARN) of an
-     * Secrets Manager secret or SSM Parameter Store parameter. The ARNs refer to the
+     * Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the
      * stored credentials.</p>
      */
     inline void SetCredentialsParameter(Aws::String&& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = std::move(value); }
@@ -79,7 +79,7 @@ namespace Model
     /**
      * <p>The authorization credential option to use. The authorization credential
      * options can be provided using either the Amazon Resource Name (ARN) of an
-     * Secrets Manager secret or SSM Parameter Store parameter. The ARNs refer to the
+     * Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the
      * stored credentials.</p>
      */
     inline void SetCredentialsParameter(const char* value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter.assign(value); }
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>The authorization credential option to use. The authorization credential
      * options can be provided using either the Amazon Resource Name (ARN) of an
-     * Secrets Manager secret or SSM Parameter Store parameter. The ARNs refer to the
+     * Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the
      * stored credentials.</p>
      */
     inline FSxWindowsFileServerAuthorizationConfig& WithCredentialsParameter(const Aws::String& value) { SetCredentialsParameter(value); return *this;}
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>The authorization credential option to use. The authorization credential
      * options can be provided using either the Amazon Resource Name (ARN) of an
-     * Secrets Manager secret or SSM Parameter Store parameter. The ARNs refer to the
+     * Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the
      * stored credentials.</p>
      */
     inline FSxWindowsFileServerAuthorizationConfig& WithCredentialsParameter(Aws::String&& value) { SetCredentialsParameter(std::move(value)); return *this;}
@@ -103,7 +103,7 @@ namespace Model
     /**
      * <p>The authorization credential option to use. The authorization credential
      * options can be provided using either the Amazon Resource Name (ARN) of an
-     * Secrets Manager secret or SSM Parameter Store parameter. The ARNs refer to the
+     * Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to the
      * stored credentials.</p>
      */
     inline FSxWindowsFileServerAuthorizationConfig& WithCredentialsParameter(const char* value) { SetCredentialsParameter(value); return *this;}
@@ -176,10 +176,10 @@ namespace Model
   private:
 
     Aws::String m_credentialsParameter;
-    bool m_credentialsParameterHasBeenSet;
+    bool m_credentialsParameterHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
   };
 
 } // namespace Model

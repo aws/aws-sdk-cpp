@@ -109,10 +109,10 @@ namespace Model
   private:
 
     BotLocaleSortAttribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     SortOrder m_order;
-    bool m_orderHasBeenSet;
+    bool m_orderHasBeenSet = false;
   };
 
 } // namespace Model

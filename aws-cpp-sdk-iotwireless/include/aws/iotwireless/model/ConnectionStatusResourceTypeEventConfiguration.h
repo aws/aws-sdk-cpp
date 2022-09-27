@@ -77,7 +77,7 @@ namespace Model
   private:
 
     LoRaWANConnectionStatusResourceTypeEventConfiguration m_loRaWAN;
-    bool m_loRaWANHasBeenSet;
+    bool m_loRaWANHasBeenSet = false;
   };
 
 } // namespace Model

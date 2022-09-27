@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_deliveryStreamName;
-    bool m_deliveryStreamNameHasBeenSet;
+    bool m_deliveryStreamNameHasBeenSet = false;
 
     DeliveryStreamEncryptionConfigurationInput m_deliveryStreamEncryptionConfigurationInput;
-    bool m_deliveryStreamEncryptionConfigurationInputHasBeenSet;
+    bool m_deliveryStreamEncryptionConfigurationInputHasBeenSet = false;
   };
 
 } // namespace Model

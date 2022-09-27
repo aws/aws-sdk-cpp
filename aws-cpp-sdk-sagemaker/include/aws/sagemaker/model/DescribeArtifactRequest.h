@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_artifactArn;
-    bool m_artifactArnHasBeenSet;
+    bool m_artifactArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -281,13 +281,13 @@ namespace Model
   private:
 
     Aws::String m_exportAttributeName;
-    bool m_exportAttributeNameHasBeenSet;
+    bool m_exportAttributeNameHasBeenSet = false;
 
     Aws::String m_serverName;
-    bool m_serverNameHasBeenSet;
+    bool m_serverNameHasBeenSet = false;
 
     Aws::Vector<EngineAttribute> m_inputAttributes;
-    bool m_inputAttributesHasBeenSet;
+    bool m_inputAttributesHasBeenSet = false;
   };
 
 } // namespace Model

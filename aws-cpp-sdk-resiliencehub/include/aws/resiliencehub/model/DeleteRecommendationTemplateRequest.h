@@ -133,10 +133,10 @@ namespace Model
   private:
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_recommendationTemplateArn;
-    bool m_recommendationTemplateArnHasBeenSet;
+    bool m_recommendationTemplateArnHasBeenSet = false;
   };
 
 } // namespace Model

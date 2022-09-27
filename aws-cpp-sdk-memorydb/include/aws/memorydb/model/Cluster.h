@@ -1027,79 +1027,79 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     ClusterPendingUpdates m_pendingUpdates;
-    bool m_pendingUpdatesHasBeenSet;
+    bool m_pendingUpdatesHasBeenSet = false;
 
     int m_numberOfShards;
-    bool m_numberOfShardsHasBeenSet;
+    bool m_numberOfShardsHasBeenSet = false;
 
     Aws::Vector<Shard> m_shards;
-    bool m_shardsHasBeenSet;
+    bool m_shardsHasBeenSet = false;
 
     AZStatus m_availabilityMode;
-    bool m_availabilityModeHasBeenSet;
+    bool m_availabilityModeHasBeenSet = false;
 
     Endpoint m_clusterEndpoint;
-    bool m_clusterEndpointHasBeenSet;
+    bool m_clusterEndpointHasBeenSet = false;
 
     Aws::String m_nodeType;
-    bool m_nodeTypeHasBeenSet;
+    bool m_nodeTypeHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::String m_enginePatchVersion;
-    bool m_enginePatchVersionHasBeenSet;
+    bool m_enginePatchVersionHasBeenSet = false;
 
     Aws::String m_parameterGroupName;
-    bool m_parameterGroupNameHasBeenSet;
+    bool m_parameterGroupNameHasBeenSet = false;
 
     Aws::String m_parameterGroupStatus;
-    bool m_parameterGroupStatusHasBeenSet;
+    bool m_parameterGroupStatusHasBeenSet = false;
 
     Aws::Vector<SecurityGroupMembership> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     Aws::String m_subnetGroupName;
-    bool m_subnetGroupNameHasBeenSet;
+    bool m_subnetGroupNameHasBeenSet = false;
 
     bool m_tLSEnabled;
-    bool m_tLSEnabledHasBeenSet;
+    bool m_tLSEnabledHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_snsTopicArn;
-    bool m_snsTopicArnHasBeenSet;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::String m_snsTopicStatus;
-    bool m_snsTopicStatusHasBeenSet;
+    bool m_snsTopicStatusHasBeenSet = false;
 
     int m_snapshotRetentionLimit;
-    bool m_snapshotRetentionLimitHasBeenSet;
+    bool m_snapshotRetentionLimitHasBeenSet = false;
 
     Aws::String m_maintenanceWindow;
-    bool m_maintenanceWindowHasBeenSet;
+    bool m_maintenanceWindowHasBeenSet = false;
 
     Aws::String m_snapshotWindow;
-    bool m_snapshotWindowHasBeenSet;
+    bool m_snapshotWindowHasBeenSet = false;
 
     Aws::String m_aCLName;
-    bool m_aCLNameHasBeenSet;
+    bool m_aCLNameHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
   };
 
 } // namespace Model

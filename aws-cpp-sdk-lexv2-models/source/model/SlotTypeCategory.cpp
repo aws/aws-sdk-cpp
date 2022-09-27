@@ -23,6 +23,7 @@ namespace Aws
         static const int Custom_HASH = HashingUtils::HashString("Custom");
         static const int Extended_HASH = HashingUtils::HashString("Extended");
         static const int ExternalGrammar_HASH = HashingUtils::HashString("ExternalGrammar");
+        static const int Composite_HASH = HashingUtils::HashString("Composite");
 
 
         SlotTypeCategory GetSlotTypeCategoryForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == ExternalGrammar_HASH)
           {
             return SlotTypeCategory::ExternalGrammar;
+          }
+          else if (hashCode == Composite_HASH)
+          {
+            return SlotTypeCategory::Composite;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "Extended";
           case SlotTypeCategory::ExternalGrammar:
             return "ExternalGrammar";
+          case SlotTypeCategory::Composite:
+            return "Composite";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

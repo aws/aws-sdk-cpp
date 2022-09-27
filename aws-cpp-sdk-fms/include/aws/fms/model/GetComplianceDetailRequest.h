@@ -142,10 +142,10 @@ namespace Model
   private:
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_memberAccount;
-    bool m_memberAccountHasBeenSet;
+    bool m_memberAccountHasBeenSet = false;
   };
 
 } // namespace Model

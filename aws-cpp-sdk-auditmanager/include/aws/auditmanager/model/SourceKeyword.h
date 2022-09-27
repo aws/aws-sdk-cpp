@@ -26,7 +26,18 @@ namespace Model
 
   /**
    * <p> The keyword to search for in CloudTrail logs, Config rules, Security Hub
-   * checks, and Amazon Web Services API names. </p><p><h3>See Also:</h3>   <a
+   * checks, and Amazon Web Services API names. </p> <p> To learn more about the
+   * supported keywords that you can use when mapping a control data source, see the
+   * following pages in the <i>Audit Manager User Guide</i>:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Config
+   * rules supported by Audit Manager</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Security
+   * Hub controls supported by Audit Manager</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">API
+   * calls supported by Audit Manager</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-cloudtrail.html">CloudTrail
+   * event names supported by Audit Manager</a> </p> </li> </ul><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/SourceKeyword">AWS
    * API Reference</a></p>
    */
@@ -377,10 +388,10 @@ namespace Model
   private:
 
     KeywordInputType m_keywordInputType;
-    bool m_keywordInputTypeHasBeenSet;
+    bool m_keywordInputTypeHasBeenSet = false;
 
     Aws::String m_keywordValue;
-    bool m_keywordValueHasBeenSet;
+    bool m_keywordValueHasBeenSet = false;
   };
 
 } // namespace Model

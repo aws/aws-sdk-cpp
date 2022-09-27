@@ -454,28 +454,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     FederationMode m_federationMode;
-    bool m_federationModeHasBeenSet;
+    bool m_federationModeHasBeenSet = false;
 
     FederationParameters m_federationParameters;
-    bool m_federationParametersHasBeenSet;
+    bool m_federationParametersHasBeenSet = false;
 
     SuperuserParameters m_superuserParameters;
-    bool m_superuserParametersHasBeenSet;
+    bool m_superuserParametersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dataBundles;
-    bool m_dataBundlesHasBeenSet;
+    bool m_dataBundlesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -7,6 +7,7 @@
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/wellarchitected/WellArchitectedRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wellarchitected/model/ShareStatus.h>
 #include <utility>
 
 namespace Aws
@@ -160,19 +161,41 @@ namespace Model
      */
     inline ListWorkloadSharesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    
+    inline const ShareStatus& GetStatus() const{ return m_status; }
+
+    
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    
+    inline void SetStatus(const ShareStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    
+    inline void SetStatus(ShareStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    
+    inline ListWorkloadSharesRequest& WithStatus(const ShareStatus& value) { SetStatus(value); return *this;}
+
+    
+    inline ListWorkloadSharesRequest& WithStatus(ShareStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workloadId;
-    bool m_workloadIdHasBeenSet;
+    bool m_workloadIdHasBeenSet = false;
 
     Aws::String m_sharedWithPrefix;
-    bool m_sharedWithPrefixHasBeenSet;
+    bool m_sharedWithPrefixHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
+
+    ShareStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

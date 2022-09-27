@@ -530,40 +530,40 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_ec2InstanceId;
-    bool m_ec2InstanceIdHasBeenSet;
+    bool m_ec2InstanceIdHasBeenSet = false;
 
     Aws::String m_publicDnsName;
-    bool m_publicDnsNameHasBeenSet;
+    bool m_publicDnsNameHasBeenSet = false;
 
     Aws::String m_publicIpAddress;
-    bool m_publicIpAddressHasBeenSet;
+    bool m_publicIpAddressHasBeenSet = false;
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
-    bool m_privateIpAddressHasBeenSet;
+    bool m_privateIpAddressHasBeenSet = false;
 
     InstanceStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_instanceGroupId;
-    bool m_instanceGroupIdHasBeenSet;
+    bool m_instanceGroupIdHasBeenSet = false;
 
     Aws::String m_instanceFleetId;
-    bool m_instanceFleetIdHasBeenSet;
+    bool m_instanceFleetIdHasBeenSet = false;
 
     MarketType m_market;
-    bool m_marketHasBeenSet;
+    bool m_marketHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::Vector<EbsVolume> m_ebsVolumes;
-    bool m_ebsVolumesHasBeenSet;
+    bool m_ebsVolumesHasBeenSet = false;
   };
 
 } // namespace Model

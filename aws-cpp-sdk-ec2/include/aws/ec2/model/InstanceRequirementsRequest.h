@@ -44,11 +44,11 @@ namespace Model
   /**
    * <p>The attributes for the instance types. When you specify instance attributes,
    * Amazon EC2 will identify instance types with these attributes.</p> <p>When you
-   * specify multiple parameters, you get instance types that satisfy all of the
-   * specified parameters. If you specify multiple values for a parameter, you get
+   * specify multiple attributes, you get instance types that satisfy all of the
+   * specified attributes. If you specify multiple values for an attribute, you get
    * instance types that satisfy any of the specified values.</p>  <p>You must
-   * specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other parameters
-   * are optional. Any unspecified optional parameter is set to its default.</p>
+   * specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
+   * are optional. Any unspecified optional attribute is set to its default.</p>
    *  <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html">Attribute-based
    * instance type selection for EC2 Fleet</a>, <a
@@ -268,8 +268,8 @@ namespace Model
 
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
@@ -281,8 +281,8 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetExcludedInstanceTypes() const{ return m_excludedInstanceTypes; }
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
@@ -294,8 +294,8 @@ namespace Model
     inline bool ExcludedInstanceTypesHasBeenSet() const { return m_excludedInstanceTypesHasBeenSet; }
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
@@ -307,8 +307,8 @@ namespace Model
     inline void SetExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = value; }
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
@@ -320,8 +320,8 @@ namespace Model
     inline void SetExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = std::move(value); }
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
@@ -333,8 +333,8 @@ namespace Model
     inline InstanceRequirementsRequest& WithExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { SetExcludedInstanceTypes(value); return *this;}
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
@@ -346,8 +346,8 @@ namespace Model
     inline InstanceRequirementsRequest& WithExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { SetExcludedInstanceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
@@ -359,8 +359,8 @@ namespace Model
     inline InstanceRequirementsRequest& AddExcludedInstanceTypes(const Aws::String& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
@@ -372,8 +372,8 @@ namespace Model
     inline InstanceRequirementsRequest& AddExcludedInstanceTypes(Aws::String&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The instance types to exclude. You can use strings with one or more wild
-     * cards, represented by an asterisk (<code>*</code>), to exclude an instance
+     * <p>The instance types to exclude.</p> <p>You can use strings with one or more
+     * wild cards, represented by an asterisk (<code>*</code>), to exclude an instance
      * family, type, size, or generation. The following are examples:
      * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
      * <code>r*</code>, <code>*3*</code>.</p> <p>For example, if you specify
@@ -492,12 +492,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the cheapest M, C, or
-     * R instance type with your specified attributes. When Amazon EC2 selects instance
-     * types with your attributes, it excludes instance types priced above your
-     * threshold.</p> <p>The parameter accepts an integer, which Amazon EC2 interprets
-     * as a percentage.</p> <p>To turn off price protection, specify a high value, such
-     * as <code>999999</code>.</p> <p>This parameter is not supported for <a
+     * pay for an Spot Instance, expressed as a percentage above the least expensive
+     * current generation M, C, or R instance type with your specified attributes. When
+     * Amazon EC2 selects instance types with your attributes, it excludes instance
+     * types priced above your threshold.</p> <p>The parameter accepts an integer,
+     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
+     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
+     * parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -510,12 +511,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the cheapest M, C, or
-     * R instance type with your specified attributes. When Amazon EC2 selects instance
-     * types with your attributes, it excludes instance types priced above your
-     * threshold.</p> <p>The parameter accepts an integer, which Amazon EC2 interprets
-     * as a percentage.</p> <p>To turn off price protection, specify a high value, such
-     * as <code>999999</code>.</p> <p>This parameter is not supported for <a
+     * pay for an Spot Instance, expressed as a percentage above the least expensive
+     * current generation M, C, or R instance type with your specified attributes. When
+     * Amazon EC2 selects instance types with your attributes, it excludes instance
+     * types priced above your threshold.</p> <p>The parameter accepts an integer,
+     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
+     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
+     * parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -528,12 +530,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the cheapest M, C, or
-     * R instance type with your specified attributes. When Amazon EC2 selects instance
-     * types with your attributes, it excludes instance types priced above your
-     * threshold.</p> <p>The parameter accepts an integer, which Amazon EC2 interprets
-     * as a percentage.</p> <p>To turn off price protection, specify a high value, such
-     * as <code>999999</code>.</p> <p>This parameter is not supported for <a
+     * pay for an Spot Instance, expressed as a percentage above the least expensive
+     * current generation M, C, or R instance type with your specified attributes. When
+     * Amazon EC2 selects instance types with your attributes, it excludes instance
+     * types priced above your threshold.</p> <p>The parameter accepts an integer,
+     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
+     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
+     * parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -546,12 +549,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the cheapest M, C, or
-     * R instance type with your specified attributes. When Amazon EC2 selects instance
-     * types with your attributes, it excludes instance types priced above your
-     * threshold.</p> <p>The parameter accepts an integer, which Amazon EC2 interprets
-     * as a percentage.</p> <p>To turn off price protection, specify a high value, such
-     * as <code>999999</code>.</p> <p>This parameter is not supported for <a
+     * pay for an Spot Instance, expressed as a percentage above the least expensive
+     * current generation M, C, or R instance type with your specified attributes. When
+     * Amazon EC2 selects instance types with your attributes, it excludes instance
+     * types priced above your threshold.</p> <p>The parameter accepts an integer,
+     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
+     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
+     * parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -565,13 +569,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 selects instance types with your attributes, it excludes instance types
-     * priced above your threshold.</p> <p>The parameter accepts an integer, which
-     * Amazon EC2 interprets as a percentage.</p> <p>To turn off price protection,
-     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
-     * supported for <a
+     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 selects instance types with your attributes, it
+     * excludes instance types priced above your threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
+     * off price protection, specify a high value, such as <code>999999</code>.</p>
+     * <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -584,13 +588,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 selects instance types with your attributes, it excludes instance types
-     * priced above your threshold.</p> <p>The parameter accepts an integer, which
-     * Amazon EC2 interprets as a percentage.</p> <p>To turn off price protection,
-     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
-     * supported for <a
+     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 selects instance types with your attributes, it
+     * excludes instance types priced above your threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
+     * off price protection, specify a high value, such as <code>999999</code>.</p>
+     * <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -603,13 +607,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 selects instance types with your attributes, it excludes instance types
-     * priced above your threshold.</p> <p>The parameter accepts an integer, which
-     * Amazon EC2 interprets as a percentage.</p> <p>To turn off price protection,
-     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
-     * supported for <a
+     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 selects instance types with your attributes, it
+     * excludes instance types priced above your threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
+     * off price protection, specify a high value, such as <code>999999</code>.</p>
+     * <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -622,13 +626,13 @@ namespace Model
 
     /**
      * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the
-     * cheapest M, C, or R instance type with your specified attributes. When Amazon
-     * EC2 selects instance types with your attributes, it excludes instance types
-     * priced above your threshold.</p> <p>The parameter accepts an integer, which
-     * Amazon EC2 interprets as a percentage.</p> <p>To turn off price protection,
-     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
-     * supported for <a
+     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
+     * expensive current generation M, C, or R instance type with your specified
+     * attributes. When Amazon EC2 selects instance types with your attributes, it
+     * excludes instance types priced above your threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
+     * off price protection, specify a high value, such as <code>999999</code>.</p>
+     * <p>This parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -926,72 +930,72 @@ namespace Model
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline const Aws::Vector<LocalStorageType>& GetLocalStorageTypes() const{ return m_localStorageTypes; }
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline bool LocalStorageTypesHasBeenSet() const { return m_localStorageTypesHasBeenSet; }
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline void SetLocalStorageTypes(const Aws::Vector<LocalStorageType>& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes = value; }
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline void SetLocalStorageTypes(Aws::Vector<LocalStorageType>&& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes = std::move(value); }
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline InstanceRequirementsRequest& WithLocalStorageTypes(const Aws::Vector<LocalStorageType>& value) { SetLocalStorageTypes(value); return *this;}
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline InstanceRequirementsRequest& WithLocalStorageTypes(Aws::Vector<LocalStorageType>&& value) { SetLocalStorageTypes(std::move(value)); return *this;}
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline InstanceRequirementsRequest& AddLocalStorageTypes(const LocalStorageType& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes.push_back(value); return *this; }
 
     /**
      * <p>The type of local storage that is required.</p> <ul> <li> <p>For instance
      * types with hard disk drive (HDD) storage, specify <code>hdd</code>.</p> </li>
-     * <li> <p>For instance types with solid state drive (SDD) storage, specify
-     * <code>sdd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
-     * <code>sdd</code> </p>
+     * <li> <p>For instance types with solid state drive (SSD) storage, specify
+     * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
+     * <code>ssd</code> </p>
      */
     inline InstanceRequirementsRequest& AddLocalStorageTypes(LocalStorageType&& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes.push_back(std::move(value)); return *this; }
 
@@ -1317,7 +1321,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline const Aws::Vector<AcceleratorName>& GetAcceleratorNames() const{ return m_acceleratorNames; }
 
@@ -1331,7 +1338,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline bool AcceleratorNamesHasBeenSet() const { return m_acceleratorNamesHasBeenSet; }
 
@@ -1345,7 +1355,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline void SetAcceleratorNames(const Aws::Vector<AcceleratorName>& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames = value; }
 
@@ -1359,7 +1372,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline void SetAcceleratorNames(Aws::Vector<AcceleratorName>&& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames = std::move(value); }
 
@@ -1373,7 +1389,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline InstanceRequirementsRequest& WithAcceleratorNames(const Aws::Vector<AcceleratorName>& value) { SetAcceleratorNames(value); return *this;}
 
@@ -1387,7 +1406,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline InstanceRequirementsRequest& WithAcceleratorNames(Aws::Vector<AcceleratorName>&& value) { SetAcceleratorNames(std::move(value)); return *this;}
 
@@ -1401,7 +1423,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline InstanceRequirementsRequest& AddAcceleratorNames(const AcceleratorName& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames.push_back(value); return *this; }
 
@@ -1415,7 +1440,10 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> </ul> <p>Default: Any accelerator</p>
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
+     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
+     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
+     * Any accelerator</p>
      */
     inline InstanceRequirementsRequest& AddAcceleratorNames(AcceleratorName&& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames.push_back(std::move(value)); return *this; }
 
@@ -1459,67 +1487,67 @@ namespace Model
   private:
 
     VCpuCountRangeRequest m_vCpuCount;
-    bool m_vCpuCountHasBeenSet;
+    bool m_vCpuCountHasBeenSet = false;
 
     MemoryMiBRequest m_memoryMiB;
-    bool m_memoryMiBHasBeenSet;
+    bool m_memoryMiBHasBeenSet = false;
 
     Aws::Vector<CpuManufacturer> m_cpuManufacturers;
-    bool m_cpuManufacturersHasBeenSet;
+    bool m_cpuManufacturersHasBeenSet = false;
 
     MemoryGiBPerVCpuRequest m_memoryGiBPerVCpu;
-    bool m_memoryGiBPerVCpuHasBeenSet;
+    bool m_memoryGiBPerVCpuHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_excludedInstanceTypes;
-    bool m_excludedInstanceTypesHasBeenSet;
+    bool m_excludedInstanceTypesHasBeenSet = false;
 
     Aws::Vector<InstanceGeneration> m_instanceGenerations;
-    bool m_instanceGenerationsHasBeenSet;
+    bool m_instanceGenerationsHasBeenSet = false;
 
     int m_spotMaxPricePercentageOverLowestPrice;
-    bool m_spotMaxPricePercentageOverLowestPriceHasBeenSet;
+    bool m_spotMaxPricePercentageOverLowestPriceHasBeenSet = false;
 
     int m_onDemandMaxPricePercentageOverLowestPrice;
-    bool m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet;
+    bool m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = false;
 
     BareMetal m_bareMetal;
-    bool m_bareMetalHasBeenSet;
+    bool m_bareMetalHasBeenSet = false;
 
     BurstablePerformance m_burstablePerformance;
-    bool m_burstablePerformanceHasBeenSet;
+    bool m_burstablePerformanceHasBeenSet = false;
 
     bool m_requireHibernateSupport;
-    bool m_requireHibernateSupportHasBeenSet;
+    bool m_requireHibernateSupportHasBeenSet = false;
 
     NetworkInterfaceCountRequest m_networkInterfaceCount;
-    bool m_networkInterfaceCountHasBeenSet;
+    bool m_networkInterfaceCountHasBeenSet = false;
 
     LocalStorage m_localStorage;
-    bool m_localStorageHasBeenSet;
+    bool m_localStorageHasBeenSet = false;
 
     Aws::Vector<LocalStorageType> m_localStorageTypes;
-    bool m_localStorageTypesHasBeenSet;
+    bool m_localStorageTypesHasBeenSet = false;
 
     TotalLocalStorageGBRequest m_totalLocalStorageGB;
-    bool m_totalLocalStorageGBHasBeenSet;
+    bool m_totalLocalStorageGBHasBeenSet = false;
 
     BaselineEbsBandwidthMbpsRequest m_baselineEbsBandwidthMbps;
-    bool m_baselineEbsBandwidthMbpsHasBeenSet;
+    bool m_baselineEbsBandwidthMbpsHasBeenSet = false;
 
     Aws::Vector<AcceleratorType> m_acceleratorTypes;
-    bool m_acceleratorTypesHasBeenSet;
+    bool m_acceleratorTypesHasBeenSet = false;
 
     AcceleratorCountRequest m_acceleratorCount;
-    bool m_acceleratorCountHasBeenSet;
+    bool m_acceleratorCountHasBeenSet = false;
 
     Aws::Vector<AcceleratorManufacturer> m_acceleratorManufacturers;
-    bool m_acceleratorManufacturersHasBeenSet;
+    bool m_acceleratorManufacturersHasBeenSet = false;
 
     Aws::Vector<AcceleratorName> m_acceleratorNames;
-    bool m_acceleratorNamesHasBeenSet;
+    bool m_acceleratorNamesHasBeenSet = false;
 
     AcceleratorTotalMemoryMiBRequest m_acceleratorTotalMemoryMiB;
-    bool m_acceleratorTotalMemoryMiBHasBeenSet;
+    bool m_acceleratorTotalMemoryMiBHasBeenSet = false;
   };
 
 } // namespace Model

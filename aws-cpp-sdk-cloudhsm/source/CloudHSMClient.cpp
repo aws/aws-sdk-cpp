@@ -52,33 +52,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "cloudhsm";
 static const char* ALLOCATION_TAG = "CloudHSMClient";
 
-
 CloudHSMClient::CloudHSMClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<CloudHSMErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CloudHSMErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-CloudHSMClient::CloudHSMClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+CloudHSMClient::CloudHSMClient(const AWSCredentials& credentials,
+                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<CloudHSMErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CloudHSMErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 CloudHSMClient::CloudHSMClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<CloudHSMErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CloudHSMErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -90,7 +96,7 @@ CloudHSMClient::~CloudHSMClient()
 
 void CloudHSMClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("CloudHSM");
+  AWSClient::SetServiceClientName("CloudHSM");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -130,12 +136,10 @@ AddTagsToResourceOutcomeCallable CloudHSMClient::AddTagsToResourceCallable(const
 
 void CloudHSMClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AddTagsToResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AddTagsToResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddTagsToResource(request), context);
+    } );
 }
 
 CreateHapgOutcome CloudHSMClient::CreateHapg(const CreateHapgRequest& request) const
@@ -154,12 +158,10 @@ CreateHapgOutcomeCallable CloudHSMClient::CreateHapgCallable(const CreateHapgReq
 
 void CloudHSMClient::CreateHapgAsync(const CreateHapgRequest& request, const CreateHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHapgAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::CreateHapgAsyncHelper(const CreateHapgRequest& request, const CreateHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateHapg(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateHapg(request), context);
+    } );
 }
 
 CreateHsmOutcome CloudHSMClient::CreateHsm(const CreateHsmRequest& request) const
@@ -178,12 +180,10 @@ CreateHsmOutcomeCallable CloudHSMClient::CreateHsmCallable(const CreateHsmReques
 
 void CloudHSMClient::CreateHsmAsync(const CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateHsmAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::CreateHsmAsyncHelper(const CreateHsmRequest& request, const CreateHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateHsm(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateHsm(request), context);
+    } );
 }
 
 CreateLunaClientOutcome CloudHSMClient::CreateLunaClient(const CreateLunaClientRequest& request) const
@@ -202,12 +202,10 @@ CreateLunaClientOutcomeCallable CloudHSMClient::CreateLunaClientCallable(const C
 
 void CloudHSMClient::CreateLunaClientAsync(const CreateLunaClientRequest& request, const CreateLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLunaClientAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::CreateLunaClientAsyncHelper(const CreateLunaClientRequest& request, const CreateLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateLunaClient(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateLunaClient(request), context);
+    } );
 }
 
 DeleteHapgOutcome CloudHSMClient::DeleteHapg(const DeleteHapgRequest& request) const
@@ -226,12 +224,10 @@ DeleteHapgOutcomeCallable CloudHSMClient::DeleteHapgCallable(const DeleteHapgReq
 
 void CloudHSMClient::DeleteHapgAsync(const DeleteHapgRequest& request, const DeleteHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteHapgAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::DeleteHapgAsyncHelper(const DeleteHapgRequest& request, const DeleteHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteHapg(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteHapg(request), context);
+    } );
 }
 
 DeleteHsmOutcome CloudHSMClient::DeleteHsm(const DeleteHsmRequest& request) const
@@ -250,12 +246,10 @@ DeleteHsmOutcomeCallable CloudHSMClient::DeleteHsmCallable(const DeleteHsmReques
 
 void CloudHSMClient::DeleteHsmAsync(const DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteHsmAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::DeleteHsmAsyncHelper(const DeleteHsmRequest& request, const DeleteHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteHsm(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteHsm(request), context);
+    } );
 }
 
 DeleteLunaClientOutcome CloudHSMClient::DeleteLunaClient(const DeleteLunaClientRequest& request) const
@@ -274,12 +268,10 @@ DeleteLunaClientOutcomeCallable CloudHSMClient::DeleteLunaClientCallable(const D
 
 void CloudHSMClient::DeleteLunaClientAsync(const DeleteLunaClientRequest& request, const DeleteLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLunaClientAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::DeleteLunaClientAsyncHelper(const DeleteLunaClientRequest& request, const DeleteLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteLunaClient(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLunaClient(request), context);
+    } );
 }
 
 DescribeHapgOutcome CloudHSMClient::DescribeHapg(const DescribeHapgRequest& request) const
@@ -298,12 +290,10 @@ DescribeHapgOutcomeCallable CloudHSMClient::DescribeHapgCallable(const DescribeH
 
 void CloudHSMClient::DescribeHapgAsync(const DescribeHapgRequest& request, const DescribeHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHapgAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::DescribeHapgAsyncHelper(const DescribeHapgRequest& request, const DescribeHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeHapg(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeHapg(request), context);
+    } );
 }
 
 DescribeHsmOutcome CloudHSMClient::DescribeHsm(const DescribeHsmRequest& request) const
@@ -322,12 +312,10 @@ DescribeHsmOutcomeCallable CloudHSMClient::DescribeHsmCallable(const DescribeHsm
 
 void CloudHSMClient::DescribeHsmAsync(const DescribeHsmRequest& request, const DescribeHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeHsmAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::DescribeHsmAsyncHelper(const DescribeHsmRequest& request, const DescribeHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeHsm(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeHsm(request), context);
+    } );
 }
 
 DescribeLunaClientOutcome CloudHSMClient::DescribeLunaClient(const DescribeLunaClientRequest& request) const
@@ -346,12 +334,10 @@ DescribeLunaClientOutcomeCallable CloudHSMClient::DescribeLunaClientCallable(con
 
 void CloudHSMClient::DescribeLunaClientAsync(const DescribeLunaClientRequest& request, const DescribeLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLunaClientAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::DescribeLunaClientAsyncHelper(const DescribeLunaClientRequest& request, const DescribeLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeLunaClient(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeLunaClient(request), context);
+    } );
 }
 
 GetConfigOutcome CloudHSMClient::GetConfig(const GetConfigRequest& request) const
@@ -370,12 +356,10 @@ GetConfigOutcomeCallable CloudHSMClient::GetConfigCallable(const GetConfigReques
 
 void CloudHSMClient::GetConfigAsync(const GetConfigRequest& request, const GetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConfigAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::GetConfigAsyncHelper(const GetConfigRequest& request, const GetConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetConfig(request), context);
+    } );
 }
 
 ListAvailableZonesOutcome CloudHSMClient::ListAvailableZones(const ListAvailableZonesRequest& request) const
@@ -394,12 +378,10 @@ ListAvailableZonesOutcomeCallable CloudHSMClient::ListAvailableZonesCallable(con
 
 void CloudHSMClient::ListAvailableZonesAsync(const ListAvailableZonesRequest& request, const ListAvailableZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAvailableZonesAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::ListAvailableZonesAsyncHelper(const ListAvailableZonesRequest& request, const ListAvailableZonesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAvailableZones(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAvailableZones(request), context);
+    } );
 }
 
 ListHapgsOutcome CloudHSMClient::ListHapgs(const ListHapgsRequest& request) const
@@ -418,12 +400,10 @@ ListHapgsOutcomeCallable CloudHSMClient::ListHapgsCallable(const ListHapgsReques
 
 void CloudHSMClient::ListHapgsAsync(const ListHapgsRequest& request, const ListHapgsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHapgsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::ListHapgsAsyncHelper(const ListHapgsRequest& request, const ListHapgsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListHapgs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHapgs(request), context);
+    } );
 }
 
 ListHsmsOutcome CloudHSMClient::ListHsms(const ListHsmsRequest& request) const
@@ -442,12 +422,10 @@ ListHsmsOutcomeCallable CloudHSMClient::ListHsmsCallable(const ListHsmsRequest& 
 
 void CloudHSMClient::ListHsmsAsync(const ListHsmsRequest& request, const ListHsmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListHsmsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::ListHsmsAsyncHelper(const ListHsmsRequest& request, const ListHsmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListHsms(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListHsms(request), context);
+    } );
 }
 
 ListLunaClientsOutcome CloudHSMClient::ListLunaClients(const ListLunaClientsRequest& request) const
@@ -466,12 +444,10 @@ ListLunaClientsOutcomeCallable CloudHSMClient::ListLunaClientsCallable(const Lis
 
 void CloudHSMClient::ListLunaClientsAsync(const ListLunaClientsRequest& request, const ListLunaClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListLunaClientsAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::ListLunaClientsAsyncHelper(const ListLunaClientsRequest& request, const ListLunaClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListLunaClients(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListLunaClients(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome CloudHSMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -490,12 +466,10 @@ ListTagsForResourceOutcomeCallable CloudHSMClient::ListTagsForResourceCallable(c
 
 void CloudHSMClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ModifyHapgOutcome CloudHSMClient::ModifyHapg(const ModifyHapgRequest& request) const
@@ -514,12 +488,10 @@ ModifyHapgOutcomeCallable CloudHSMClient::ModifyHapgCallable(const ModifyHapgReq
 
 void CloudHSMClient::ModifyHapgAsync(const ModifyHapgRequest& request, const ModifyHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyHapgAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::ModifyHapgAsyncHelper(const ModifyHapgRequest& request, const ModifyHapgResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyHapg(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyHapg(request), context);
+    } );
 }
 
 ModifyHsmOutcome CloudHSMClient::ModifyHsm(const ModifyHsmRequest& request) const
@@ -538,12 +510,10 @@ ModifyHsmOutcomeCallable CloudHSMClient::ModifyHsmCallable(const ModifyHsmReques
 
 void CloudHSMClient::ModifyHsmAsync(const ModifyHsmRequest& request, const ModifyHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyHsmAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::ModifyHsmAsyncHelper(const ModifyHsmRequest& request, const ModifyHsmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyHsm(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyHsm(request), context);
+    } );
 }
 
 ModifyLunaClientOutcome CloudHSMClient::ModifyLunaClient(const ModifyLunaClientRequest& request) const
@@ -562,12 +532,10 @@ ModifyLunaClientOutcomeCallable CloudHSMClient::ModifyLunaClientCallable(const M
 
 void CloudHSMClient::ModifyLunaClientAsync(const ModifyLunaClientRequest& request, const ModifyLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ModifyLunaClientAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::ModifyLunaClientAsyncHelper(const ModifyLunaClientRequest& request, const ModifyLunaClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ModifyLunaClient(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ModifyLunaClient(request), context);
+    } );
 }
 
 RemoveTagsFromResourceOutcome CloudHSMClient::RemoveTagsFromResource(const RemoveTagsFromResourceRequest& request) const
@@ -586,11 +554,9 @@ RemoveTagsFromResourceOutcomeCallable CloudHSMClient::RemoveTagsFromResourceCall
 
 void CloudHSMClient::RemoveTagsFromResourceAsync(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveTagsFromResourceAsyncHelper( request, handler, context ); } );
-}
-
-void CloudHSMClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveTagsFromResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveTagsFromResource(request), context);
+    } );
 }
 

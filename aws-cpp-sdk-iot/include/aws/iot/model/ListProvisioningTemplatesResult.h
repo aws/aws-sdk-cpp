@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>A list of fleet provisioning templates</p>
+     * <p>A list of provisioning templates</p>
      */
     inline const Aws::Vector<ProvisioningTemplateSummary>& GetTemplates() const{ return m_templates; }
 
     /**
-     * <p>A list of fleet provisioning templates</p>
+     * <p>A list of provisioning templates</p>
      */
     inline void SetTemplates(const Aws::Vector<ProvisioningTemplateSummary>& value) { m_templates = value; }
 
     /**
-     * <p>A list of fleet provisioning templates</p>
+     * <p>A list of provisioning templates</p>
      */
     inline void SetTemplates(Aws::Vector<ProvisioningTemplateSummary>&& value) { m_templates = std::move(value); }
 
     /**
-     * <p>A list of fleet provisioning templates</p>
+     * <p>A list of provisioning templates</p>
      */
     inline ListProvisioningTemplatesResult& WithTemplates(const Aws::Vector<ProvisioningTemplateSummary>& value) { SetTemplates(value); return *this;}
 
     /**
-     * <p>A list of fleet provisioning templates</p>
+     * <p>A list of provisioning templates</p>
      */
     inline ListProvisioningTemplatesResult& WithTemplates(Aws::Vector<ProvisioningTemplateSummary>&& value) { SetTemplates(std::move(value)); return *this;}
 
     /**
-     * <p>A list of fleet provisioning templates</p>
+     * <p>A list of provisioning templates</p>
      */
     inline ListProvisioningTemplatesResult& AddTemplates(const ProvisioningTemplateSummary& value) { m_templates.push_back(value); return *this; }
 
     /**
-     * <p>A list of fleet provisioning templates</p>
+     * <p>A list of provisioning templates</p>
      */
     inline ListProvisioningTemplatesResult& AddTemplates(ProvisioningTemplateSummary&& value) { m_templates.push_back(std::move(value)); return *this; }
 

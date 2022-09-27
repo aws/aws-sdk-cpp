@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_applicationName;
-    bool m_applicationNameHasBeenSet;
+    bool m_applicationNameHasBeenSet = false;
 
     Aws::Vector<RevisionLocation> m_revisions;
-    bool m_revisionsHasBeenSet;
+    bool m_revisionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -324,25 +324,25 @@ namespace Model
   private:
 
     Aws::String m_fieldType;
-    bool m_fieldTypeHasBeenSet;
+    bool m_fieldTypeHasBeenSet = false;
 
     Aws::Vector<Operator> m_filterOperators;
-    bool m_filterOperatorsHasBeenSet;
+    bool m_filterOperatorsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_supportedValues;
-    bool m_supportedValuesHasBeenSet;
+    bool m_supportedValuesHasBeenSet = false;
 
     Aws::String m_valueRegexPattern;
-    bool m_valueRegexPatternHasBeenSet;
+    bool m_valueRegexPatternHasBeenSet = false;
 
     Aws::String m_supportedDateFormat;
-    bool m_supportedDateFormatHasBeenSet;
+    bool m_supportedDateFormatHasBeenSet = false;
 
     Range m_fieldValueRange;
-    bool m_fieldValueRangeHasBeenSet;
+    bool m_fieldValueRangeHasBeenSet = false;
 
     Range m_fieldLengthRange;
-    bool m_fieldLengthRangeHasBeenSet;
+    bool m_fieldLengthRangeHasBeenSet = false;
   };
 
 } // namespace Model

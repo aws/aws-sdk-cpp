@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::String m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Aws::String m_statementId;
-    bool m_statementIdHasBeenSet;
+    bool m_statementIdHasBeenSet = false;
 
     Aws::String m_profileVersion;
-    bool m_profileVersionHasBeenSet;
+    bool m_profileVersionHasBeenSet = false;
   };
 
 } // namespace Model

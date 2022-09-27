@@ -648,43 +648,43 @@ namespace Model
   private:
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
 
     Aws::String m_bucketARN;
-    bool m_bucketARNHasBeenSet;
+    bool m_bucketARNHasBeenSet = false;
 
     Aws::String m_prefix;
-    bool m_prefixHasBeenSet;
+    bool m_prefixHasBeenSet = false;
 
     Aws::String m_errorOutputPrefix;
-    bool m_errorOutputPrefixHasBeenSet;
+    bool m_errorOutputPrefixHasBeenSet = false;
 
     BufferingHints m_bufferingHints;
-    bool m_bufferingHintsHasBeenSet;
+    bool m_bufferingHintsHasBeenSet = false;
 
     CompressionFormat m_compressionFormat;
-    bool m_compressionFormatHasBeenSet;
+    bool m_compressionFormatHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
-    bool m_cloudWatchLoggingOptionsHasBeenSet;
+    bool m_cloudWatchLoggingOptionsHasBeenSet = false;
 
     ProcessingConfiguration m_processingConfiguration;
-    bool m_processingConfigurationHasBeenSet;
+    bool m_processingConfigurationHasBeenSet = false;
 
     S3BackupMode m_s3BackupMode;
-    bool m_s3BackupModeHasBeenSet;
+    bool m_s3BackupModeHasBeenSet = false;
 
     S3DestinationConfiguration m_s3BackupConfiguration;
-    bool m_s3BackupConfigurationHasBeenSet;
+    bool m_s3BackupConfigurationHasBeenSet = false;
 
     DataFormatConversionConfiguration m_dataFormatConversionConfiguration;
-    bool m_dataFormatConversionConfigurationHasBeenSet;
+    bool m_dataFormatConversionConfigurationHasBeenSet = false;
 
     DynamicPartitioningConfiguration m_dynamicPartitioningConfiguration;
-    bool m_dynamicPartitioningConfigurationHasBeenSet;
+    bool m_dynamicPartitioningConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

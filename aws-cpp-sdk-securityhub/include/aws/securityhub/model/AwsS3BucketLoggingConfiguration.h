@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_destinationBucketName;
-    bool m_destinationBucketNameHasBeenSet;
+    bool m_destinationBucketNameHasBeenSet = false;
 
     Aws::String m_logFilePrefix;
-    bool m_logFilePrefixHasBeenSet;
+    bool m_logFilePrefixHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,63 +5,15 @@
 
 #pragma once
 #include <aws/kinesis-video-media/KinesisVideoMedia_EXPORTS.h>
-#include <aws/kinesis-video-media/KinesisVideoMediaErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/kinesis-video-media/model/GetMediaResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/kinesis-video-media/KinesisVideoMediaServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace KinesisVideoMedia
 {
-
-namespace Model
-{
-        class GetMediaRequest;
-
-        typedef Aws::Utils::Outcome<GetMediaResult, KinesisVideoMediaError> GetMediaOutcome;
-
-        typedef std::future<GetMediaOutcome> GetMediaOutcomeCallable;
-} // namespace Model
-
-  class KinesisVideoMediaClient;
-
-    typedef std::function<void(const KinesisVideoMediaClient*, const Model::GetMediaRequest&, Model::GetMediaOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaResponseReceivedHandler;
-
   /**
    * <p/>
    */
@@ -80,14 +32,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KinesisVideoMediaClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KinesisVideoMediaClient(const Aws::Auth::AWSCredentials& credentials,
+                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         KinesisVideoMediaClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~KinesisVideoMediaClient();
 
@@ -144,7 +97,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void GetMediaAsyncHelper(const Model::GetMediaRequest& request, const GetMediaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

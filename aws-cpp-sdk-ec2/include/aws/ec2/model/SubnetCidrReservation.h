@@ -321,25 +321,25 @@ namespace Model
   private:
 
     Aws::String m_subnetCidrReservationId;
-    bool m_subnetCidrReservationIdHasBeenSet;
+    bool m_subnetCidrReservationIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_cidr;
-    bool m_cidrHasBeenSet;
+    bool m_cidrHasBeenSet = false;
 
     SubnetCidrReservationType m_reservationType;
-    bool m_reservationTypeHasBeenSet;
+    bool m_reservationTypeHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

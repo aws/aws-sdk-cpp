@@ -463,28 +463,28 @@ namespace Model
   private:
 
     Aws::String m_reportJobId;
-    bool m_reportJobIdHasBeenSet;
+    bool m_reportJobIdHasBeenSet = false;
 
     Aws::String m_reportPlanArn;
-    bool m_reportPlanArnHasBeenSet;
+    bool m_reportPlanArnHasBeenSet = false;
 
     Aws::String m_reportTemplate;
-    bool m_reportTemplateHasBeenSet;
+    bool m_reportTemplateHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet;
+    bool m_completionTimeHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     ReportDestination m_reportDestination;
-    bool m_reportDestinationHasBeenSet;
+    bool m_reportDestinationHasBeenSet = false;
   };
 
 } // namespace Model

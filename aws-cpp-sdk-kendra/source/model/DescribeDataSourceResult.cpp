@@ -62,6 +62,12 @@ DescribeDataSourceResult& DescribeDataSourceResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("VpcConfiguration"))
+  {
+    m_vpcConfiguration = jsonValue.GetObject("VpcConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");

@@ -189,25 +189,25 @@ namespace Model
   private:
 
     int m_activeMeCollectors;
-    bool m_activeMeCollectorsHasBeenSet;
+    bool m_activeMeCollectorsHasBeenSet = false;
 
     int m_healthyMeCollectors;
-    bool m_healthyMeCollectorsHasBeenSet;
+    bool m_healthyMeCollectorsHasBeenSet = false;
 
     int m_denyListedMeCollectors;
-    bool m_denyListedMeCollectorsHasBeenSet;
+    bool m_denyListedMeCollectorsHasBeenSet = false;
 
     int m_shutdownMeCollectors;
-    bool m_shutdownMeCollectorsHasBeenSet;
+    bool m_shutdownMeCollectorsHasBeenSet = false;
 
     int m_unhealthyMeCollectors;
-    bool m_unhealthyMeCollectorsHasBeenSet;
+    bool m_unhealthyMeCollectorsHasBeenSet = false;
 
     int m_totalMeCollectors;
-    bool m_totalMeCollectorsHasBeenSet;
+    bool m_totalMeCollectorsHasBeenSet = false;
 
     int m_unknownMeCollectors;
-    bool m_unknownMeCollectorsHasBeenSet;
+    bool m_unknownMeCollectorsHasBeenSet = false;
   };
 
 } // namespace Model

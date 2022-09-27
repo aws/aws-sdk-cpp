@@ -143,13 +143,13 @@ namespace Model
   private:
 
     int m_schemaVersion;
-    bool m_schemaVersionHasBeenSet;
+    bool m_schemaVersionHasBeenSet = false;
 
     Aws::String m_assessmentRunArn;
-    bool m_assessmentRunArnHasBeenSet;
+    bool m_assessmentRunArnHasBeenSet = false;
 
     Aws::String m_rulesPackageArn;
-    bool m_rulesPackageArnHasBeenSet;
+    bool m_rulesPackageArnHasBeenSet = false;
   };
 
 } // namespace Model

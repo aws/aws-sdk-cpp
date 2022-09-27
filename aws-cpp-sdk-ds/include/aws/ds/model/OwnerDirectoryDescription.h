@@ -279,22 +279,22 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsIpAddrs;
-    bool m_dnsIpAddrsHasBeenSet;
+    bool m_dnsIpAddrsHasBeenSet = false;
 
     DirectoryVpcSettingsDescription m_vpcSettings;
-    bool m_vpcSettingsHasBeenSet;
+    bool m_vpcSettingsHasBeenSet = false;
 
     RadiusSettings m_radiusSettings;
-    bool m_radiusSettingsHasBeenSet;
+    bool m_radiusSettingsHasBeenSet = false;
 
     RadiusStatus m_radiusStatus;
-    bool m_radiusStatusHasBeenSet;
+    bool m_radiusStatusHasBeenSet = false;
   };
 
 } // namespace Model

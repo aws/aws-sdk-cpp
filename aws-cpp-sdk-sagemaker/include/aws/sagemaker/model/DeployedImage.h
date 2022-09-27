@@ -176,13 +176,13 @@ namespace Model
   private:
 
     Aws::String m_specifiedImage;
-    bool m_specifiedImageHasBeenSet;
+    bool m_specifiedImageHasBeenSet = false;
 
     Aws::String m_resolvedImage;
-    bool m_resolvedImageHasBeenSet;
+    bool m_resolvedImageHasBeenSet = false;
 
     Aws::Utils::DateTime m_resolutionTime;
-    bool m_resolutionTimeHasBeenSet;
+    bool m_resolutionTimeHasBeenSet = false;
   };
 
 } // namespace Model

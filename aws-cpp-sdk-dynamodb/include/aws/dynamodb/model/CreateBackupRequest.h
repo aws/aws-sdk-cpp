@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_tableName;
-    bool m_tableNameHasBeenSet;
+    bool m_tableNameHasBeenSet = false;
 
     Aws::String m_backupName;
-    bool m_backupNameHasBeenSet;
+    bool m_backupNameHasBeenSet = false;
   };
 
 } // namespace Model

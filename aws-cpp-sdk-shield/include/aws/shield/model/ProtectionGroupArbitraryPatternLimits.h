@@ -63,7 +63,7 @@ namespace Model
   private:
 
     long long m_maxMembers;
-    bool m_maxMembersHasBeenSet;
+    bool m_maxMembersHasBeenSet = false;
   };
 
 } // namespace Model

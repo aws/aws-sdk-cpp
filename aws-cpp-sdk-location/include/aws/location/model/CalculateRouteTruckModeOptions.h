@@ -179,16 +179,16 @@ namespace Model
   private:
 
     bool m_avoidFerries;
-    bool m_avoidFerriesHasBeenSet;
+    bool m_avoidFerriesHasBeenSet = false;
 
     bool m_avoidTolls;
-    bool m_avoidTollsHasBeenSet;
+    bool m_avoidTollsHasBeenSet = false;
 
     TruckDimensions m_dimensions;
-    bool m_dimensionsHasBeenSet;
+    bool m_dimensionsHasBeenSet = false;
 
     TruckWeight m_weight;
-    bool m_weightHasBeenSet;
+    bool m_weightHasBeenSet = false;
   };
 
 } // namespace Model

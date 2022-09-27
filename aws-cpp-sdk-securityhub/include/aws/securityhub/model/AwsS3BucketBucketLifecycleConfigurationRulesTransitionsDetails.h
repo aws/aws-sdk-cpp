@@ -149,55 +149,87 @@ namespace Model
 
 
     /**
-     * <p>The storage class to transition the object to.</p>
+     * <p>The storage class to transition the object to. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>DEEP_ARCHIVE</code> </p> </li> <li> <p>
+     * <code>GLACIER</code> </p> </li> <li> <p> <code>INTELLIGENT_TIERING</code> </p>
+     * </li> <li> <p> <code>ONEZONE_IA</code> </p> </li> <li> <p>
+     * <code>STANDARD_IA</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p>The storage class to transition the object to.</p>
+     * <p>The storage class to transition the object to. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>DEEP_ARCHIVE</code> </p> </li> <li> <p>
+     * <code>GLACIER</code> </p> </li> <li> <p> <code>INTELLIGENT_TIERING</code> </p>
+     * </li> <li> <p> <code>ONEZONE_IA</code> </p> </li> <li> <p>
+     * <code>STANDARD_IA</code> </p> </li> </ul>
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
-     * <p>The storage class to transition the object to.</p>
+     * <p>The storage class to transition the object to. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>DEEP_ARCHIVE</code> </p> </li> <li> <p>
+     * <code>GLACIER</code> </p> </li> <li> <p> <code>INTELLIGENT_TIERING</code> </p>
+     * </li> <li> <p> <code>ONEZONE_IA</code> </p> </li> <li> <p>
+     * <code>STANDARD_IA</code> </p> </li> </ul>
      */
     inline void SetStorageClass(const Aws::String& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * <p>The storage class to transition the object to.</p>
+     * <p>The storage class to transition the object to. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>DEEP_ARCHIVE</code> </p> </li> <li> <p>
+     * <code>GLACIER</code> </p> </li> <li> <p> <code>INTELLIGENT_TIERING</code> </p>
+     * </li> <li> <p> <code>ONEZONE_IA</code> </p> </li> <li> <p>
+     * <code>STANDARD_IA</code> </p> </li> </ul>
      */
     inline void SetStorageClass(Aws::String&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * <p>The storage class to transition the object to.</p>
+     * <p>The storage class to transition the object to. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>DEEP_ARCHIVE</code> </p> </li> <li> <p>
+     * <code>GLACIER</code> </p> </li> <li> <p> <code>INTELLIGENT_TIERING</code> </p>
+     * </li> <li> <p> <code>ONEZONE_IA</code> </p> </li> <li> <p>
+     * <code>STANDARD_IA</code> </p> </li> </ul>
      */
     inline void SetStorageClass(const char* value) { m_storageClassHasBeenSet = true; m_storageClass.assign(value); }
 
     /**
-     * <p>The storage class to transition the object to.</p>
+     * <p>The storage class to transition the object to. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>DEEP_ARCHIVE</code> </p> </li> <li> <p>
+     * <code>GLACIER</code> </p> </li> <li> <p> <code>INTELLIGENT_TIERING</code> </p>
+     * </li> <li> <p> <code>ONEZONE_IA</code> </p> </li> <li> <p>
+     * <code>STANDARD_IA</code> </p> </li> </ul>
      */
     inline AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& WithStorageClass(const Aws::String& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p>The storage class to transition the object to.</p>
+     * <p>The storage class to transition the object to. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>DEEP_ARCHIVE</code> </p> </li> <li> <p>
+     * <code>GLACIER</code> </p> </li> <li> <p> <code>INTELLIGENT_TIERING</code> </p>
+     * </li> <li> <p> <code>ONEZONE_IA</code> </p> </li> <li> <p>
+     * <code>STANDARD_IA</code> </p> </li> </ul>
      */
     inline AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& WithStorageClass(Aws::String&& value) { SetStorageClass(std::move(value)); return *this;}
 
     /**
-     * <p>The storage class to transition the object to.</p>
+     * <p>The storage class to transition the object to. Valid values are as
+     * follows:</p> <ul> <li> <p> <code>DEEP_ARCHIVE</code> </p> </li> <li> <p>
+     * <code>GLACIER</code> </p> </li> <li> <p> <code>INTELLIGENT_TIERING</code> </p>
+     * </li> <li> <p> <code>ONEZONE_IA</code> </p> </li> <li> <p>
+     * <code>STANDARD_IA</code> </p> </li> </ul>
      */
     inline AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& WithStorageClass(const char* value) { SetStorageClass(value); return *this;}
 
   private:
 
     Aws::String m_date;
-    bool m_dateHasBeenSet;
+    bool m_dateHasBeenSet = false;
 
     int m_days;
-    bool m_daysHasBeenSet;
+    bool m_daysHasBeenSet = false;
 
     Aws::String m_storageClass;
-    bool m_storageClassHasBeenSet;
+    bool m_storageClassHasBeenSet = false;
   };
 
 } // namespace Model

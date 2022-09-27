@@ -210,7 +210,7 @@ namespace Model
      * not used. For information about lifecycle states, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
      * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
-     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * values: <code>Pending</code> | <code>Pending:Wait</code> |
      * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
@@ -228,7 +228,7 @@ namespace Model
      * not used. For information about lifecycle states, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
      * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
-     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * values: <code>Pending</code> | <code>Pending:Wait</code> |
      * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
@@ -246,7 +246,7 @@ namespace Model
      * not used. For information about lifecycle states, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
      * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
-     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * values: <code>Pending</code> | <code>Pending:Wait</code> |
      * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
@@ -264,7 +264,7 @@ namespace Model
      * not used. For information about lifecycle states, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
      * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
-     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * values: <code>Pending</code> | <code>Pending:Wait</code> |
      * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
@@ -282,7 +282,7 @@ namespace Model
      * not used. For information about lifecycle states, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
      * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
-     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * values: <code>Pending</code> | <code>Pending:Wait</code> |
      * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
@@ -300,7 +300,7 @@ namespace Model
      * not used. For information about lifecycle states, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
      * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
-     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * values: <code>Pending</code> | <code>Pending:Wait</code> |
      * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
@@ -318,7 +318,7 @@ namespace Model
      * not used. For information about lifecycle states, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
      * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
-     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * values: <code>Pending</code> | <code>Pending:Wait</code> |
      * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
@@ -336,7 +336,7 @@ namespace Model
      * not used. For information about lifecycle states, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
      * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p> <p>Valid
-     * Values: <code>Pending</code> | <code>Pending:Wait</code> |
+     * values: <code>Pending</code> | <code>Pending:Wait</code> |
      * <code>Pending:Proceed</code> | <code>Quarantined</code> | <code>InService</code>
      * | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> |
@@ -571,34 +571,34 @@ namespace Model
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_availabilityZone;
-    bool m_availabilityZoneHasBeenSet;
+    bool m_availabilityZoneHasBeenSet = false;
 
     Aws::String m_lifecycleState;
-    bool m_lifecycleStateHasBeenSet;
+    bool m_lifecycleStateHasBeenSet = false;
 
     Aws::String m_healthStatus;
-    bool m_healthStatusHasBeenSet;
+    bool m_healthStatusHasBeenSet = false;
 
     Aws::String m_launchConfigurationName;
-    bool m_launchConfigurationNameHasBeenSet;
+    bool m_launchConfigurationNameHasBeenSet = false;
 
     LaunchTemplateSpecification m_launchTemplate;
-    bool m_launchTemplateHasBeenSet;
+    bool m_launchTemplateHasBeenSet = false;
 
     bool m_protectedFromScaleIn;
-    bool m_protectedFromScaleInHasBeenSet;
+    bool m_protectedFromScaleInHasBeenSet = false;
 
     Aws::String m_weightedCapacity;
-    bool m_weightedCapacityHasBeenSet;
+    bool m_weightedCapacityHasBeenSet = false;
   };
 
 } // namespace Model

@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_recoveryInstanceIDs;
-    bool m_recoveryInstanceIDsHasBeenSet;
+    bool m_recoveryInstanceIDsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sourceServerIDs;
-    bool m_sourceServerIDsHasBeenSet;
+    bool m_sourceServerIDsHasBeenSet = false;
   };
 
 } // namespace Model

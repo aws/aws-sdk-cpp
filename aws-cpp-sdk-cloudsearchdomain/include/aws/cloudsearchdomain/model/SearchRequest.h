@@ -2475,46 +2475,46 @@ namespace Model
   private:
 
     Aws::String m_cursor;
-    bool m_cursorHasBeenSet;
+    bool m_cursorHasBeenSet = false;
 
     Aws::String m_expr;
-    bool m_exprHasBeenSet;
+    bool m_exprHasBeenSet = false;
 
     Aws::String m_facet;
-    bool m_facetHasBeenSet;
+    bool m_facetHasBeenSet = false;
 
     Aws::String m_filterQuery;
-    bool m_filterQueryHasBeenSet;
+    bool m_filterQueryHasBeenSet = false;
 
     Aws::String m_highlight;
-    bool m_highlightHasBeenSet;
+    bool m_highlightHasBeenSet = false;
 
     bool m_partial;
-    bool m_partialHasBeenSet;
+    bool m_partialHasBeenSet = false;
 
     Aws::String m_query;
-    bool m_queryHasBeenSet;
+    bool m_queryHasBeenSet = false;
 
     Aws::String m_queryOptions;
-    bool m_queryOptionsHasBeenSet;
+    bool m_queryOptionsHasBeenSet = false;
 
     QueryParser m_queryParser;
-    bool m_queryParserHasBeenSet;
+    bool m_queryParserHasBeenSet = false;
 
     Aws::String m_return;
-    bool m_returnHasBeenSet;
+    bool m_returnHasBeenSet = false;
 
     long long m_size;
-    bool m_sizeHasBeenSet;
+    bool m_sizeHasBeenSet = false;
 
     Aws::String m_sort;
-    bool m_sortHasBeenSet;
+    bool m_sortHasBeenSet = false;
 
     long long m_start;
-    bool m_startHasBeenSet;
+    bool m_startHasBeenSet = false;
 
     Aws::String m_stats;
-    bool m_statsHasBeenSet;
+    bool m_statsHasBeenSet = false;
   };
 
 } // namespace Model

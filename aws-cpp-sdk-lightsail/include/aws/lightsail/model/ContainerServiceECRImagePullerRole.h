@@ -112,10 +112,10 @@ namespace Model
   private:
 
     bool m_isActive;
-    bool m_isActiveHasBeenSet;
+    bool m_isActiveHasBeenSet = false;
 
     Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet;
+    bool m_principalArnHasBeenSet = false;
   };
 
 } // namespace Model

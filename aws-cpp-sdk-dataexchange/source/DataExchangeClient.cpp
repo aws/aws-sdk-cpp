@@ -61,33 +61,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "dataexchange";
 static const char* ALLOCATION_TAG = "DataExchangeClient";
 
-
 DataExchangeClient::DataExchangeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-DataExchangeClient::DataExchangeClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+DataExchangeClient::DataExchangeClient(const AWSCredentials& credentials,
+                                       const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 DataExchangeClient::DataExchangeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                       const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -99,7 +105,7 @@ DataExchangeClient::~DataExchangeClient()
 
 void DataExchangeClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("DataExchange");
+  AWSClient::SetServiceClientName("DataExchange");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;
   if (config.endpointOverride.empty())
@@ -155,12 +161,10 @@ CancelJobOutcomeCallable DataExchangeClient::CancelJobCallable(const CancelJobRe
 
 void DataExchangeClient::CancelJobAsync(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CancelJobAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::CancelJobAsyncHelper(const CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CancelJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelJob(request), context);
+    } );
 }
 
 CreateDataSetOutcome DataExchangeClient::CreateDataSet(const CreateDataSetRequest& request) const
@@ -180,12 +184,10 @@ CreateDataSetOutcomeCallable DataExchangeClient::CreateDataSetCallable(const Cre
 
 void DataExchangeClient::CreateDataSetAsync(const CreateDataSetRequest& request, const CreateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDataSetAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::CreateDataSetAsyncHelper(const CreateDataSetRequest& request, const CreateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDataSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDataSet(request), context);
+    } );
 }
 
 CreateEventActionOutcome DataExchangeClient::CreateEventAction(const CreateEventActionRequest& request) const
@@ -205,12 +207,10 @@ CreateEventActionOutcomeCallable DataExchangeClient::CreateEventActionCallable(c
 
 void DataExchangeClient::CreateEventActionAsync(const CreateEventActionRequest& request, const CreateEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateEventActionAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::CreateEventActionAsyncHelper(const CreateEventActionRequest& request, const CreateEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateEventAction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateEventAction(request), context);
+    } );
 }
 
 CreateJobOutcome DataExchangeClient::CreateJob(const CreateJobRequest& request) const
@@ -230,12 +230,10 @@ CreateJobOutcomeCallable DataExchangeClient::CreateJobCallable(const CreateJobRe
 
 void DataExchangeClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateJobAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateJob(request), context);
+    } );
 }
 
 CreateRevisionOutcome DataExchangeClient::CreateRevision(const CreateRevisionRequest& request) const
@@ -262,12 +260,10 @@ CreateRevisionOutcomeCallable DataExchangeClient::CreateRevisionCallable(const C
 
 void DataExchangeClient::CreateRevisionAsync(const CreateRevisionRequest& request, const CreateRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRevisionAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::CreateRevisionAsyncHelper(const CreateRevisionRequest& request, const CreateRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRevision(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRevision(request), context);
+    } );
 }
 
 DeleteAssetOutcome DataExchangeClient::DeleteAsset(const DeleteAssetRequest& request) const
@@ -307,12 +303,10 @@ DeleteAssetOutcomeCallable DataExchangeClient::DeleteAssetCallable(const DeleteA
 
 void DataExchangeClient::DeleteAssetAsync(const DeleteAssetRequest& request, const DeleteAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAssetAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::DeleteAssetAsyncHelper(const DeleteAssetRequest& request, const DeleteAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAsset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAsset(request), context);
+    } );
 }
 
 DeleteDataSetOutcome DataExchangeClient::DeleteDataSet(const DeleteDataSetRequest& request) const
@@ -338,12 +332,10 @@ DeleteDataSetOutcomeCallable DataExchangeClient::DeleteDataSetCallable(const Del
 
 void DataExchangeClient::DeleteDataSetAsync(const DeleteDataSetRequest& request, const DeleteDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteDataSetAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::DeleteDataSetAsyncHelper(const DeleteDataSetRequest& request, const DeleteDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteDataSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteDataSet(request), context);
+    } );
 }
 
 DeleteEventActionOutcome DataExchangeClient::DeleteEventAction(const DeleteEventActionRequest& request) const
@@ -369,12 +361,10 @@ DeleteEventActionOutcomeCallable DataExchangeClient::DeleteEventActionCallable(c
 
 void DataExchangeClient::DeleteEventActionAsync(const DeleteEventActionRequest& request, const DeleteEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteEventActionAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::DeleteEventActionAsyncHelper(const DeleteEventActionRequest& request, const DeleteEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteEventAction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteEventAction(request), context);
+    } );
 }
 
 DeleteRevisionOutcome DataExchangeClient::DeleteRevision(const DeleteRevisionRequest& request) const
@@ -407,12 +397,10 @@ DeleteRevisionOutcomeCallable DataExchangeClient::DeleteRevisionCallable(const D
 
 void DataExchangeClient::DeleteRevisionAsync(const DeleteRevisionRequest& request, const DeleteRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRevisionAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::DeleteRevisionAsyncHelper(const DeleteRevisionRequest& request, const DeleteRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRevision(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRevision(request), context);
+    } );
 }
 
 GetAssetOutcome DataExchangeClient::GetAsset(const GetAssetRequest& request) const
@@ -452,12 +440,10 @@ GetAssetOutcomeCallable DataExchangeClient::GetAssetCallable(const GetAssetReque
 
 void DataExchangeClient::GetAssetAsync(const GetAssetRequest& request, const GetAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAssetAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::GetAssetAsyncHelper(const GetAssetRequest& request, const GetAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAsset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAsset(request), context);
+    } );
 }
 
 GetDataSetOutcome DataExchangeClient::GetDataSet(const GetDataSetRequest& request) const
@@ -483,12 +469,10 @@ GetDataSetOutcomeCallable DataExchangeClient::GetDataSetCallable(const GetDataSe
 
 void DataExchangeClient::GetDataSetAsync(const GetDataSetRequest& request, const GetDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDataSetAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::GetDataSetAsyncHelper(const GetDataSetRequest& request, const GetDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetDataSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDataSet(request), context);
+    } );
 }
 
 GetEventActionOutcome DataExchangeClient::GetEventAction(const GetEventActionRequest& request) const
@@ -514,12 +498,10 @@ GetEventActionOutcomeCallable DataExchangeClient::GetEventActionCallable(const G
 
 void DataExchangeClient::GetEventActionAsync(const GetEventActionRequest& request, const GetEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEventActionAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::GetEventActionAsyncHelper(const GetEventActionRequest& request, const GetEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetEventAction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEventAction(request), context);
+    } );
 }
 
 GetJobOutcome DataExchangeClient::GetJob(const GetJobRequest& request) const
@@ -545,12 +527,10 @@ GetJobOutcomeCallable DataExchangeClient::GetJobCallable(const GetJobRequest& re
 
 void DataExchangeClient::GetJobAsync(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::GetJobAsyncHelper(const GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetJob(request), context);
+    } );
 }
 
 GetRevisionOutcome DataExchangeClient::GetRevision(const GetRevisionRequest& request) const
@@ -583,12 +563,10 @@ GetRevisionOutcomeCallable DataExchangeClient::GetRevisionCallable(const GetRevi
 
 void DataExchangeClient::GetRevisionAsync(const GetRevisionRequest& request, const GetRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRevisionAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::GetRevisionAsyncHelper(const GetRevisionRequest& request, const GetRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRevision(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRevision(request), context);
+    } );
 }
 
 ListDataSetRevisionsOutcome DataExchangeClient::ListDataSetRevisions(const ListDataSetRevisionsRequest& request) const
@@ -615,12 +593,10 @@ ListDataSetRevisionsOutcomeCallable DataExchangeClient::ListDataSetRevisionsCall
 
 void DataExchangeClient::ListDataSetRevisionsAsync(const ListDataSetRevisionsRequest& request, const ListDataSetRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataSetRevisionsAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::ListDataSetRevisionsAsyncHelper(const ListDataSetRevisionsRequest& request, const ListDataSetRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDataSetRevisions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDataSetRevisions(request), context);
+    } );
 }
 
 ListDataSetsOutcome DataExchangeClient::ListDataSets(const ListDataSetsRequest& request) const
@@ -640,12 +616,10 @@ ListDataSetsOutcomeCallable DataExchangeClient::ListDataSetsCallable(const ListD
 
 void DataExchangeClient::ListDataSetsAsync(const ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDataSetsAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::ListDataSetsAsyncHelper(const ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDataSets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDataSets(request), context);
+    } );
 }
 
 ListEventActionsOutcome DataExchangeClient::ListEventActions(const ListEventActionsRequest& request) const
@@ -665,12 +639,10 @@ ListEventActionsOutcomeCallable DataExchangeClient::ListEventActionsCallable(con
 
 void DataExchangeClient::ListEventActionsAsync(const ListEventActionsRequest& request, const ListEventActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListEventActionsAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::ListEventActionsAsyncHelper(const ListEventActionsRequest& request, const ListEventActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListEventActions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListEventActions(request), context);
+    } );
 }
 
 ListJobsOutcome DataExchangeClient::ListJobs(const ListJobsRequest& request) const
@@ -690,12 +662,10 @@ ListJobsOutcomeCallable DataExchangeClient::ListJobsCallable(const ListJobsReque
 
 void DataExchangeClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListJobs(request), context);
+    } );
 }
 
 ListRevisionAssetsOutcome DataExchangeClient::ListRevisionAssets(const ListRevisionAssetsRequest& request) const
@@ -729,12 +699,10 @@ ListRevisionAssetsOutcomeCallable DataExchangeClient::ListRevisionAssetsCallable
 
 void DataExchangeClient::ListRevisionAssetsAsync(const ListRevisionAssetsRequest& request, const ListRevisionAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRevisionAssetsAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::ListRevisionAssetsAsyncHelper(const ListRevisionAssetsRequest& request, const ListRevisionAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRevisionAssets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRevisionAssets(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome DataExchangeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -760,12 +728,10 @@ ListTagsForResourceOutcomeCallable DataExchangeClient::ListTagsForResourceCallab
 
 void DataExchangeClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 RevokeRevisionOutcome DataExchangeClient::RevokeRevision(const RevokeRevisionRequest& request) const
@@ -799,12 +765,10 @@ RevokeRevisionOutcomeCallable DataExchangeClient::RevokeRevisionCallable(const R
 
 void DataExchangeClient::RevokeRevisionAsync(const RevokeRevisionRequest& request, const RevokeRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RevokeRevisionAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::RevokeRevisionAsyncHelper(const RevokeRevisionRequest& request, const RevokeRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RevokeRevision(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RevokeRevision(request), context);
+    } );
 }
 
 SendApiAssetOutcome DataExchangeClient::SendApiAsset(const SendApiAssetRequest& request) const
@@ -848,12 +812,10 @@ SendApiAssetOutcomeCallable DataExchangeClient::SendApiAssetCallable(const SendA
 
 void DataExchangeClient::SendApiAssetAsync(const SendApiAssetRequest& request, const SendApiAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SendApiAssetAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::SendApiAssetAsyncHelper(const SendApiAssetRequest& request, const SendApiAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SendApiAsset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SendApiAsset(request), context);
+    } );
 }
 
 StartJobOutcome DataExchangeClient::StartJob(const StartJobRequest& request) const
@@ -879,12 +841,10 @@ StartJobOutcomeCallable DataExchangeClient::StartJobCallable(const StartJobReque
 
 void DataExchangeClient::StartJobAsync(const StartJobRequest& request, const StartJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartJobAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::StartJobAsyncHelper(const StartJobRequest& request, const StartJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartJob(request), context);
+    } );
 }
 
 TagResourceOutcome DataExchangeClient::TagResource(const TagResourceRequest& request) const
@@ -910,12 +870,10 @@ TagResourceOutcomeCallable DataExchangeClient::TagResourceCallable(const TagReso
 
 void DataExchangeClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome DataExchangeClient::UntagResource(const UntagResourceRequest& request) const
@@ -946,12 +904,10 @@ UntagResourceOutcomeCallable DataExchangeClient::UntagResourceCallable(const Unt
 
 void DataExchangeClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateAssetOutcome DataExchangeClient::UpdateAsset(const UpdateAssetRequest& request) const
@@ -991,12 +947,10 @@ UpdateAssetOutcomeCallable DataExchangeClient::UpdateAssetCallable(const UpdateA
 
 void DataExchangeClient::UpdateAssetAsync(const UpdateAssetRequest& request, const UpdateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAssetAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::UpdateAssetAsyncHelper(const UpdateAssetRequest& request, const UpdateAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateAsset(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateAsset(request), context);
+    } );
 }
 
 UpdateDataSetOutcome DataExchangeClient::UpdateDataSet(const UpdateDataSetRequest& request) const
@@ -1022,12 +976,10 @@ UpdateDataSetOutcomeCallable DataExchangeClient::UpdateDataSetCallable(const Upd
 
 void DataExchangeClient::UpdateDataSetAsync(const UpdateDataSetRequest& request, const UpdateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateDataSetAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::UpdateDataSetAsyncHelper(const UpdateDataSetRequest& request, const UpdateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateDataSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDataSet(request), context);
+    } );
 }
 
 UpdateEventActionOutcome DataExchangeClient::UpdateEventAction(const UpdateEventActionRequest& request) const
@@ -1053,12 +1005,10 @@ UpdateEventActionOutcomeCallable DataExchangeClient::UpdateEventActionCallable(c
 
 void DataExchangeClient::UpdateEventActionAsync(const UpdateEventActionRequest& request, const UpdateEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateEventActionAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::UpdateEventActionAsyncHelper(const UpdateEventActionRequest& request, const UpdateEventActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateEventAction(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateEventAction(request), context);
+    } );
 }
 
 UpdateRevisionOutcome DataExchangeClient::UpdateRevision(const UpdateRevisionRequest& request) const
@@ -1091,11 +1041,9 @@ UpdateRevisionOutcomeCallable DataExchangeClient::UpdateRevisionCallable(const U
 
 void DataExchangeClient::UpdateRevisionAsync(const UpdateRevisionRequest& request, const UpdateRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRevisionAsyncHelper( request, handler, context ); } );
-}
-
-void DataExchangeClient::UpdateRevisionAsyncHelper(const UpdateRevisionRequest& request, const UpdateRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRevision(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRevision(request), context);
+    } );
 }
 

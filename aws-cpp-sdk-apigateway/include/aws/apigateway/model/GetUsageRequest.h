@@ -274,22 +274,22 @@ namespace Model
   private:
 
     Aws::String m_usagePlanId;
-    bool m_usagePlanIdHasBeenSet;
+    bool m_usagePlanIdHasBeenSet = false;
 
     Aws::String m_keyId;
-    bool m_keyIdHasBeenSet;
+    bool m_keyIdHasBeenSet = false;
 
     Aws::String m_startDate;
-    bool m_startDateHasBeenSet;
+    bool m_startDateHasBeenSet = false;
 
     Aws::String m_endDate;
-    bool m_endDateHasBeenSet;
+    bool m_endDateHasBeenSet = false;
 
     Aws::String m_position;
-    bool m_positionHasBeenSet;
+    bool m_positionHasBeenSet = false;
 
     int m_limit;
-    bool m_limitHasBeenSet;
+    bool m_limitHasBeenSet = false;
   };
 
 } // namespace Model

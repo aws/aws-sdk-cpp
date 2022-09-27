@@ -109,10 +109,10 @@ namespace Model
   private:
 
     Aws::String m_hITId;
-    bool m_hITIdHasBeenSet;
+    bool m_hITIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_expireAt;
-    bool m_expireAtHasBeenSet;
+    bool m_expireAtHasBeenSet = false;
   };
 
 } // namespace Model

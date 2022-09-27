@@ -5,168 +5,15 @@
 
 #pragma once
 #include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
-#include <aws/lookoutvision/LookoutforVisionErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/lookoutvision/model/CreateDatasetResult.h>
-#include <aws/lookoutvision/model/CreateModelResult.h>
-#include <aws/lookoutvision/model/CreateProjectResult.h>
-#include <aws/lookoutvision/model/DeleteDatasetResult.h>
-#include <aws/lookoutvision/model/DeleteModelResult.h>
-#include <aws/lookoutvision/model/DeleteProjectResult.h>
-#include <aws/lookoutvision/model/DescribeDatasetResult.h>
-#include <aws/lookoutvision/model/DescribeModelResult.h>
-#include <aws/lookoutvision/model/DescribeModelPackagingJobResult.h>
-#include <aws/lookoutvision/model/DescribeProjectResult.h>
-#include <aws/lookoutvision/model/DetectAnomaliesResult.h>
-#include <aws/lookoutvision/model/ListDatasetEntriesResult.h>
-#include <aws/lookoutvision/model/ListModelPackagingJobsResult.h>
-#include <aws/lookoutvision/model/ListModelsResult.h>
-#include <aws/lookoutvision/model/ListProjectsResult.h>
-#include <aws/lookoutvision/model/ListTagsForResourceResult.h>
-#include <aws/lookoutvision/model/StartModelResult.h>
-#include <aws/lookoutvision/model/StartModelPackagingJobResult.h>
-#include <aws/lookoutvision/model/StopModelResult.h>
-#include <aws/lookoutvision/model/TagResourceResult.h>
-#include <aws/lookoutvision/model/UntagResourceResult.h>
-#include <aws/lookoutvision/model/UpdateDatasetEntriesResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/lookoutvision/LookoutforVisionServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace LookoutforVision
 {
-
-namespace Model
-{
-        class CreateDatasetRequest;
-        class CreateModelRequest;
-        class CreateProjectRequest;
-        class DeleteDatasetRequest;
-        class DeleteModelRequest;
-        class DeleteProjectRequest;
-        class DescribeDatasetRequest;
-        class DescribeModelRequest;
-        class DescribeModelPackagingJobRequest;
-        class DescribeProjectRequest;
-        class DetectAnomaliesRequest;
-        class ListDatasetEntriesRequest;
-        class ListModelPackagingJobsRequest;
-        class ListModelsRequest;
-        class ListProjectsRequest;
-        class ListTagsForResourceRequest;
-        class StartModelRequest;
-        class StartModelPackagingJobRequest;
-        class StopModelRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateDatasetEntriesRequest;
-
-        typedef Aws::Utils::Outcome<CreateDatasetResult, LookoutforVisionError> CreateDatasetOutcome;
-        typedef Aws::Utils::Outcome<CreateModelResult, LookoutforVisionError> CreateModelOutcome;
-        typedef Aws::Utils::Outcome<CreateProjectResult, LookoutforVisionError> CreateProjectOutcome;
-        typedef Aws::Utils::Outcome<DeleteDatasetResult, LookoutforVisionError> DeleteDatasetOutcome;
-        typedef Aws::Utils::Outcome<DeleteModelResult, LookoutforVisionError> DeleteModelOutcome;
-        typedef Aws::Utils::Outcome<DeleteProjectResult, LookoutforVisionError> DeleteProjectOutcome;
-        typedef Aws::Utils::Outcome<DescribeDatasetResult, LookoutforVisionError> DescribeDatasetOutcome;
-        typedef Aws::Utils::Outcome<DescribeModelResult, LookoutforVisionError> DescribeModelOutcome;
-        typedef Aws::Utils::Outcome<DescribeModelPackagingJobResult, LookoutforVisionError> DescribeModelPackagingJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeProjectResult, LookoutforVisionError> DescribeProjectOutcome;
-        typedef Aws::Utils::Outcome<DetectAnomaliesResult, LookoutforVisionError> DetectAnomaliesOutcome;
-        typedef Aws::Utils::Outcome<ListDatasetEntriesResult, LookoutforVisionError> ListDatasetEntriesOutcome;
-        typedef Aws::Utils::Outcome<ListModelPackagingJobsResult, LookoutforVisionError> ListModelPackagingJobsOutcome;
-        typedef Aws::Utils::Outcome<ListModelsResult, LookoutforVisionError> ListModelsOutcome;
-        typedef Aws::Utils::Outcome<ListProjectsResult, LookoutforVisionError> ListProjectsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, LookoutforVisionError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartModelResult, LookoutforVisionError> StartModelOutcome;
-        typedef Aws::Utils::Outcome<StartModelPackagingJobResult, LookoutforVisionError> StartModelPackagingJobOutcome;
-        typedef Aws::Utils::Outcome<StopModelResult, LookoutforVisionError> StopModelOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, LookoutforVisionError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, LookoutforVisionError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDatasetEntriesResult, LookoutforVisionError> UpdateDatasetEntriesOutcome;
-
-        typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
-        typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
-        typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
-        typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
-        typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
-        typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
-        typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
-        typedef std::future<DescribeModelOutcome> DescribeModelOutcomeCallable;
-        typedef std::future<DescribeModelPackagingJobOutcome> DescribeModelPackagingJobOutcomeCallable;
-        typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
-        typedef std::future<DetectAnomaliesOutcome> DetectAnomaliesOutcomeCallable;
-        typedef std::future<ListDatasetEntriesOutcome> ListDatasetEntriesOutcomeCallable;
-        typedef std::future<ListModelPackagingJobsOutcome> ListModelPackagingJobsOutcomeCallable;
-        typedef std::future<ListModelsOutcome> ListModelsOutcomeCallable;
-        typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<StartModelOutcome> StartModelOutcomeCallable;
-        typedef std::future<StartModelPackagingJobOutcome> StartModelPackagingJobOutcomeCallable;
-        typedef std::future<StopModelOutcome> StopModelOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateDatasetEntriesOutcome> UpdateDatasetEntriesOutcomeCallable;
-} // namespace Model
-
-  class LookoutforVisionClient;
-
-    typedef std::function<void(const LookoutforVisionClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::DescribeModelRequest&, const Model::DescribeModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::DescribeModelPackagingJobRequest&, const Model::DescribeModelPackagingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelPackagingJobResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::DescribeProjectRequest&, const Model::DescribeProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::DetectAnomaliesRequest&, const Model::DetectAnomaliesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectAnomaliesResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::ListDatasetEntriesRequest&, const Model::ListDatasetEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetEntriesResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::ListModelPackagingJobsRequest&, const Model::ListModelPackagingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelPackagingJobsResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::ListModelsRequest&, const Model::ListModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelsResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::StartModelRequest&, const Model::StartModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartModelResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::StartModelPackagingJobRequest&, const Model::StartModelPackagingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartModelPackagingJobResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::StopModelRequest&, const Model::StopModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopModelResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const LookoutforVisionClient*, const Model::UpdateDatasetEntriesRequest&, const Model::UpdateDatasetEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatasetEntriesResponseReceivedHandler;
-
   /**
    * <p>This is the Amazon Lookout for Vision API Reference. It provides descriptions
    * of actions, data types, common parameters, and common errors.</p> <p>Amazon
@@ -192,14 +39,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LookoutforVisionClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LookoutforVisionClient(const Aws::Auth::AWSCredentials& credentials,
+                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         LookoutforVisionClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                               const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~LookoutforVisionClient();
 
@@ -437,14 +285,18 @@ namespace Model
         /**
          * <p>Detects anomalies in an image that you supply. </p> <p>The response from
          * <code>DetectAnomalies</code> includes a boolean prediction that the image
-         * contains one or more anomalies and a confidence value for the prediction.</p>
-         *  <p>Before calling <code>DetectAnomalies</code>, you must first start your
-         * model with the <a>StartModel</a> operation. You are charged for the amount of
-         * time, in minutes, that a model runs and for the number of anomaly detection
-         * units that your model uses. If you are not using a model, use the
-         * <a>StopModel</a> operation to stop your model. </p>  <p>This operation
-         * requires permissions to perform the <code>lookoutvision:DetectAnomalies</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * contains one or more anomalies and a confidence value for the prediction. If the
+         * model is an image segmentation model, the response also includes segmentation
+         * information for each type of anomaly found in the image.</p>  <p>Before
+         * calling <code>DetectAnomalies</code>, you must first start your model with the
+         * <a>StartModel</a> operation. You are charged for the amount of time, in minutes,
+         * that a model runs and for the number of anomaly detection units that your model
+         * uses. If you are not using a model, use the <a>StopModel</a> operation to stop
+         * your model. </p>  <p>For more information, see <i>Detecting anomalies in
+         * an image</i> in the Amazon Lookout for Vision developer guide.</p> <p>This
+         * operation requires permissions to perform the
+         * <code>lookoutvision:DetectAnomalies</code> operation.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutvision-2020-11-20/DetectAnomalies">AWS
          * API Reference</a></p>
          */
@@ -526,7 +378,8 @@ namespace Model
         virtual void ListModelsAsync(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Amazon Lookout for Vision projects in your AWS account.</p> <p>The
+         * <p>Lists the Amazon Lookout for Vision projects in your AWS account that are in
+         * the AWS Region in which you call <code>ListProjects</code>.</p> <p>The
          * <code>ListProjects</code> operation is eventually consistent. Recent calls to
          * <code>CreateProject</code> and <code>DeleteProject</code> might take a while to
          * appear in the response from <code>ListProjects</code>.</p> <p>This operation
@@ -723,28 +576,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateDatasetAsyncHelper(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateModelAsyncHelper(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDatasetAsyncHelper(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteModelAsyncHelper(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDatasetAsyncHelper(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeModelAsyncHelper(const Model::DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeModelPackagingJobAsyncHelper(const Model::DescribeModelPackagingJobRequest& request, const DescribeModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeProjectAsyncHelper(const Model::DescribeProjectRequest& request, const DescribeProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetectAnomaliesAsyncHelper(const Model::DetectAnomaliesRequest& request, const DetectAnomaliesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDatasetEntriesAsyncHelper(const Model::ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListModelPackagingJobsAsyncHelper(const Model::ListModelPackagingJobsRequest& request, const ListModelPackagingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListModelsAsyncHelper(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProjectsAsyncHelper(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartModelAsyncHelper(const Model::StartModelRequest& request, const StartModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartModelPackagingJobAsyncHelper(const Model::StartModelPackagingJobRequest& request, const StartModelPackagingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopModelAsyncHelper(const Model::StopModelRequest& request, const StopModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDatasetEntriesAsyncHelper(const Model::UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

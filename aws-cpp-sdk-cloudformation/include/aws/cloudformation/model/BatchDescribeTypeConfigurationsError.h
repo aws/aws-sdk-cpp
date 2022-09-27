@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_errorCode;
-    bool m_errorCodeHasBeenSet;
+    bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     TypeConfigurationIdentifier m_typeConfigurationIdentifier;
-    bool m_typeConfigurationIdentifierHasBeenSet;
+    bool m_typeConfigurationIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

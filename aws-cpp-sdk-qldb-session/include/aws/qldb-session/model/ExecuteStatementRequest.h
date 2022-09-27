@@ -164,13 +164,13 @@ namespace Model
   private:
 
     Aws::String m_transactionId;
-    bool m_transactionIdHasBeenSet;
+    bool m_transactionIdHasBeenSet = false;
 
     Aws::String m_statement;
-    bool m_statementHasBeenSet;
+    bool m_statementHasBeenSet = false;
 
     Aws::Vector<ValueHolder> m_parameters;
-    bool m_parametersHasBeenSet;
+    bool m_parametersHasBeenSet = false;
   };
 
 } // namespace Model

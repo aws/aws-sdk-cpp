@@ -352,73 +352,73 @@ namespace Model
 
 
     /**
-     * <p>The tags associated with a core network.</p>
+     * <p>The list of key-value tags associated with a core network.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags associated with a core network.</p>
+     * <p>The list of key-value tags associated with a core network.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags associated with a core network.</p>
+     * <p>The list of key-value tags associated with a core network.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags associated with a core network.</p>
+     * <p>The list of key-value tags associated with a core network.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags associated with a core network.</p>
+     * <p>The list of key-value tags associated with a core network.</p>
      */
     inline CoreNetwork& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags associated with a core network.</p>
+     * <p>The list of key-value tags associated with a core network.</p>
      */
     inline CoreNetwork& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags associated with a core network.</p>
+     * <p>The list of key-value tags associated with a core network.</p>
      */
     inline CoreNetwork& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags associated with a core network.</p>
+     * <p>The list of key-value tags associated with a core network.</p>
      */
     inline CoreNetwork& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
     Aws::String m_globalNetworkId;
-    bool m_globalNetworkIdHasBeenSet;
+    bool m_globalNetworkIdHasBeenSet = false;
 
     Aws::String m_coreNetworkId;
-    bool m_coreNetworkIdHasBeenSet;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     Aws::String m_coreNetworkArn;
-    bool m_coreNetworkArnHasBeenSet;
+    bool m_coreNetworkArnHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     CoreNetworkState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Vector<CoreNetworkSegment> m_segments;
-    bool m_segmentsHasBeenSet;
+    bool m_segmentsHasBeenSet = false;
 
     Aws::Vector<CoreNetworkEdge> m_edges;
-    bool m_edgesHasBeenSet;
+    bool m_edgesHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

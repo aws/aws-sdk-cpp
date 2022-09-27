@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_serverId;
-    bool m_serverIdHasBeenSet;
+    bool m_serverIdHasBeenSet = false;
 
     StrategyOption m_strategyOption;
-    bool m_strategyOptionHasBeenSet;
+    bool m_strategyOptionHasBeenSet = false;
   };
 
 } // namespace Model

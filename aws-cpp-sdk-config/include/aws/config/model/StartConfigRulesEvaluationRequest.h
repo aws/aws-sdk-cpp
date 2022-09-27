@@ -86,7 +86,7 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_configRuleNames;
-    bool m_configRuleNamesHasBeenSet;
+    bool m_configRuleNamesHasBeenSet = false;
   };
 
 } // namespace Model

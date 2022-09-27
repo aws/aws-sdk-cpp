@@ -60,13 +60,13 @@ AthenaIntegration& AthenaIntegration::operator =(const XmlNode& xmlNode)
     XmlNode partitionStartDateNode = resultNode.FirstChild("PartitionStartDate");
     if(!partitionStartDateNode.IsNull())
     {
-      m_partitionStartDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionStartDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_partitionStartDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionStartDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_partitionStartDateHasBeenSet = true;
     }
     XmlNode partitionEndDateNode = resultNode.FirstChild("PartitionEndDate");
     if(!partitionEndDateNode.IsNull())
     {
-      m_partitionEndDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionEndDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_partitionEndDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionEndDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_partitionEndDateHasBeenSet = true;
     }
   }
@@ -88,12 +88,12 @@ void AthenaIntegration::OutputToStream(Aws::OStream& oStream, const char* locati
 
   if(m_partitionStartDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PartitionStartDate=" << StringUtils::URLEncode(m_partitionStartDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".PartitionStartDate=" << StringUtils::URLEncode(m_partitionStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_partitionEndDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".PartitionEndDate=" << StringUtils::URLEncode(m_partitionEndDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".PartitionEndDate=" << StringUtils::URLEncode(m_partitionEndDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
 }
@@ -110,11 +110,11 @@ void AthenaIntegration::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if(m_partitionStartDateHasBeenSet)
   {
-      oStream << location << ".PartitionStartDate=" << StringUtils::URLEncode(m_partitionStartDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".PartitionStartDate=" << StringUtils::URLEncode(m_partitionStartDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_partitionEndDateHasBeenSet)
   {
-      oStream << location << ".PartitionEndDate=" << StringUtils::URLEncode(m_partitionEndDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".PartitionEndDate=" << StringUtils::URLEncode(m_partitionEndDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_appVersion;
-    bool m_appVersionHasBeenSet;
+    bool m_appVersionHasBeenSet = false;
   };
 
 } // namespace Model

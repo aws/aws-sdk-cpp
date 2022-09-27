@@ -53,6 +53,7 @@
 #include <aws/s3control/model/GetBucketLifecycleConfigurationRequest.h>
 #include <aws/s3control/model/GetBucketPolicyRequest.h>
 #include <aws/s3control/model/GetBucketTaggingRequest.h>
+#include <aws/s3control/model/GetBucketVersioningRequest.h>
 #include <aws/s3control/model/GetJobTaggingRequest.h>
 #include <aws/s3control/model/GetMultiRegionAccessPointRequest.h>
 #include <aws/s3control/model/GetMultiRegionAccessPointPolicyRequest.h>
@@ -72,6 +73,7 @@
 #include <aws/s3control/model/PutBucketLifecycleConfigurationRequest.h>
 #include <aws/s3control/model/PutBucketPolicyRequest.h>
 #include <aws/s3control/model/PutBucketTaggingRequest.h>
+#include <aws/s3control/model/PutBucketVersioningRequest.h>
 #include <aws/s3control/model/PutJobTaggingRequest.h>
 #include <aws/s3control/model/PutMultiRegionAccessPointPolicyRequest.h>
 #include <aws/s3control/model/PutPublicAccessBlockRequest.h>
@@ -92,33 +94,45 @@ using namespace Aws::Utils::Xml;
 static const char* SERVICE_NAME = "s3";
 static const char* ALLOCATION_TAG = "S3ControlClient";
 
-
 S3ControlClient::S3ControlClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, false),
-    Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region),
+                                             Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent,
+                                             /*doubleEncodeValue*/ false),
+            Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-S3ControlClient::S3ControlClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+S3ControlClient::S3ControlClient(const AWSCredentials& credentials,
+                                 const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, false),
-    Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region),
+                                             Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent,
+                                             /*doubleEncodeValue*/ false),
+            Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 S3ControlClient::S3ControlClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                 const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, false),
-    Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region),
+                                             Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent,
+                                             /*doubleEncodeValue*/ false),
+            Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -130,7 +144,7 @@ S3ControlClient::~S3ControlClient()
 
 void S3ControlClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("S3 Control");
+  AWSClient::SetServiceClientName("S3 Control");
   LoadS3ControlSpecificConfig(config.profileName);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;
@@ -220,12 +234,10 @@ CreateAccessPointOutcomeCallable S3ControlClient::CreateAccessPointCallable(cons
 
 void S3ControlClient::CreateAccessPointAsync(const CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAccessPointAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::CreateAccessPointAsyncHelper(const CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAccessPoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAccessPoint(request), context);
+    } );
 }
 
 CreateAccessPointForObjectLambdaOutcome S3ControlClient::CreateAccessPointForObjectLambda(const CreateAccessPointForObjectLambdaRequest& request) const
@@ -279,12 +291,10 @@ CreateAccessPointForObjectLambdaOutcomeCallable S3ControlClient::CreateAccessPoi
 
 void S3ControlClient::CreateAccessPointForObjectLambdaAsync(const CreateAccessPointForObjectLambdaRequest& request, const CreateAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAccessPointForObjectLambdaAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::CreateAccessPointForObjectLambdaAsyncHelper(const CreateAccessPointForObjectLambdaRequest& request, const CreateAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateAccessPointForObjectLambda(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAccessPointForObjectLambda(request), context);
+    } );
 }
 
 CreateBucketOutcome S3ControlClient::CreateBucket(const CreateBucketRequest& request) const
@@ -315,12 +325,10 @@ CreateBucketOutcomeCallable S3ControlClient::CreateBucketCallable(const CreateBu
 
 void S3ControlClient::CreateBucketAsync(const CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBucketAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::CreateBucketAsyncHelper(const CreateBucketRequest& request, const CreateBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBucket(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBucket(request), context);
+    } );
 }
 
 CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) const
@@ -364,12 +372,10 @@ CreateJobOutcomeCallable S3ControlClient::CreateJobCallable(const CreateJobReque
 
 void S3ControlClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateJobAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateJob(request), context);
+    } );
 }
 
 CreateMultiRegionAccessPointOutcome S3ControlClient::CreateMultiRegionAccessPoint(const CreateMultiRegionAccessPointRequest& request) const
@@ -413,12 +419,10 @@ CreateMultiRegionAccessPointOutcomeCallable S3ControlClient::CreateMultiRegionAc
 
 void S3ControlClient::CreateMultiRegionAccessPointAsync(const CreateMultiRegionAccessPointRequest& request, const CreateMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMultiRegionAccessPointAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::CreateMultiRegionAccessPointAsyncHelper(const CreateMultiRegionAccessPointRequest& request, const CreateMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateMultiRegionAccessPoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMultiRegionAccessPoint(request), context);
+    } );
 }
 
 DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPointRequest& request) const
@@ -472,12 +476,10 @@ DeleteAccessPointOutcomeCallable S3ControlClient::DeleteAccessPointCallable(cons
 
 void S3ControlClient::DeleteAccessPointAsync(const DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessPointAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DeleteAccessPointAsyncHelper(const DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAccessPoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAccessPoint(request), context);
+    } );
 }
 
 DeleteAccessPointForObjectLambdaOutcome S3ControlClient::DeleteAccessPointForObjectLambda(const DeleteAccessPointForObjectLambdaRequest& request) const
@@ -531,12 +533,10 @@ DeleteAccessPointForObjectLambdaOutcomeCallable S3ControlClient::DeleteAccessPoi
 
 void S3ControlClient::DeleteAccessPointForObjectLambdaAsync(const DeleteAccessPointForObjectLambdaRequest& request, const DeleteAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessPointForObjectLambdaAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DeleteAccessPointForObjectLambdaAsyncHelper(const DeleteAccessPointForObjectLambdaRequest& request, const DeleteAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAccessPointForObjectLambda(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAccessPointForObjectLambda(request), context);
+    } );
 }
 
 DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const DeleteAccessPointPolicyRequest& request) const
@@ -591,12 +591,10 @@ DeleteAccessPointPolicyOutcomeCallable S3ControlClient::DeleteAccessPointPolicyC
 
 void S3ControlClient::DeleteAccessPointPolicyAsync(const DeleteAccessPointPolicyRequest& request, const DeleteAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessPointPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DeleteAccessPointPolicyAsyncHelper(const DeleteAccessPointPolicyRequest& request, const DeleteAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAccessPointPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAccessPointPolicy(request), context);
+    } );
 }
 
 DeleteAccessPointPolicyForObjectLambdaOutcome S3ControlClient::DeleteAccessPointPolicyForObjectLambda(const DeleteAccessPointPolicyForObjectLambdaRequest& request) const
@@ -651,12 +649,10 @@ DeleteAccessPointPolicyForObjectLambdaOutcomeCallable S3ControlClient::DeleteAcc
 
 void S3ControlClient::DeleteAccessPointPolicyForObjectLambdaAsync(const DeleteAccessPointPolicyForObjectLambdaRequest& request, const DeleteAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessPointPolicyForObjectLambdaAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DeleteAccessPointPolicyForObjectLambdaAsyncHelper(const DeleteAccessPointPolicyForObjectLambdaRequest& request, const DeleteAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAccessPointPolicyForObjectLambda(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAccessPointPolicyForObjectLambda(request), context);
+    } );
 }
 
 DeleteBucketOutcome S3ControlClient::DeleteBucket(const DeleteBucketRequest& request) const
@@ -710,12 +706,10 @@ DeleteBucketOutcomeCallable S3ControlClient::DeleteBucketCallable(const DeleteBu
 
 void S3ControlClient::DeleteBucketAsync(const DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DeleteBucketAsyncHelper(const DeleteBucketRequest& request, const DeleteBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBucket(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBucket(request), context);
+    } );
 }
 
 DeleteBucketLifecycleConfigurationOutcome S3ControlClient::DeleteBucketLifecycleConfiguration(const DeleteBucketLifecycleConfigurationRequest& request) const
@@ -770,12 +764,10 @@ DeleteBucketLifecycleConfigurationOutcomeCallable S3ControlClient::DeleteBucketL
 
 void S3ControlClient::DeleteBucketLifecycleConfigurationAsync(const DeleteBucketLifecycleConfigurationRequest& request, const DeleteBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketLifecycleConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DeleteBucketLifecycleConfigurationAsyncHelper(const DeleteBucketLifecycleConfigurationRequest& request, const DeleteBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBucketLifecycleConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBucketLifecycleConfiguration(request), context);
+    } );
 }
 
 DeleteBucketPolicyOutcome S3ControlClient::DeleteBucketPolicy(const DeleteBucketPolicyRequest& request) const
@@ -830,12 +822,10 @@ DeleteBucketPolicyOutcomeCallable S3ControlClient::DeleteBucketPolicyCallable(co
 
 void S3ControlClient::DeleteBucketPolicyAsync(const DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DeleteBucketPolicyAsyncHelper(const DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBucketPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBucketPolicy(request), context);
+    } );
 }
 
 DeleteBucketTaggingOutcome S3ControlClient::DeleteBucketTagging(const DeleteBucketTaggingRequest& request) const
@@ -890,12 +880,10 @@ DeleteBucketTaggingOutcomeCallable S3ControlClient::DeleteBucketTaggingCallable(
 
 void S3ControlClient::DeleteBucketTaggingAsync(const DeleteBucketTaggingRequest& request, const DeleteBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBucketTaggingAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DeleteBucketTaggingAsyncHelper(const DeleteBucketTaggingRequest& request, const DeleteBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBucketTagging(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBucketTagging(request), context);
+    } );
 }
 
 DeleteJobTaggingOutcome S3ControlClient::DeleteJobTagging(const DeleteJobTaggingRequest& request) const
@@ -946,12 +934,10 @@ DeleteJobTaggingOutcomeCallable S3ControlClient::DeleteJobTaggingCallable(const 
 
 void S3ControlClient::DeleteJobTaggingAsync(const DeleteJobTaggingRequest& request, const DeleteJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobTaggingAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DeleteJobTaggingAsyncHelper(const DeleteJobTaggingRequest& request, const DeleteJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteJobTagging(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteJobTagging(request), context);
+    } );
 }
 
 DeleteMultiRegionAccessPointOutcome S3ControlClient::DeleteMultiRegionAccessPoint(const DeleteMultiRegionAccessPointRequest& request) const
@@ -995,12 +981,10 @@ DeleteMultiRegionAccessPointOutcomeCallable S3ControlClient::DeleteMultiRegionAc
 
 void S3ControlClient::DeleteMultiRegionAccessPointAsync(const DeleteMultiRegionAccessPointRequest& request, const DeleteMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMultiRegionAccessPointAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DeleteMultiRegionAccessPointAsyncHelper(const DeleteMultiRegionAccessPointRequest& request, const DeleteMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteMultiRegionAccessPoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMultiRegionAccessPoint(request), context);
+    } );
 }
 
 DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const
@@ -1044,12 +1028,10 @@ DeletePublicAccessBlockOutcomeCallable S3ControlClient::DeletePublicAccessBlockC
 
 void S3ControlClient::DeletePublicAccessBlockAsync(const DeletePublicAccessBlockRequest& request, const DeletePublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePublicAccessBlockAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DeletePublicAccessBlockAsyncHelper(const DeletePublicAccessBlockRequest& request, const DeletePublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePublicAccessBlock(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePublicAccessBlock(request), context);
+    } );
 }
 
 DeleteStorageLensConfigurationOutcome S3ControlClient::DeleteStorageLensConfiguration(const DeleteStorageLensConfigurationRequest& request) const
@@ -1099,12 +1081,10 @@ DeleteStorageLensConfigurationOutcomeCallable S3ControlClient::DeleteStorageLens
 
 void S3ControlClient::DeleteStorageLensConfigurationAsync(const DeleteStorageLensConfigurationRequest& request, const DeleteStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStorageLensConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DeleteStorageLensConfigurationAsyncHelper(const DeleteStorageLensConfigurationRequest& request, const DeleteStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStorageLensConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStorageLensConfiguration(request), context);
+    } );
 }
 
 DeleteStorageLensConfigurationTaggingOutcome S3ControlClient::DeleteStorageLensConfigurationTagging(const DeleteStorageLensConfigurationTaggingRequest& request) const
@@ -1155,12 +1135,10 @@ DeleteStorageLensConfigurationTaggingOutcomeCallable S3ControlClient::DeleteStor
 
 void S3ControlClient::DeleteStorageLensConfigurationTaggingAsync(const DeleteStorageLensConfigurationTaggingRequest& request, const DeleteStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStorageLensConfigurationTaggingAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DeleteStorageLensConfigurationTaggingAsyncHelper(const DeleteStorageLensConfigurationTaggingRequest& request, const DeleteStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStorageLensConfigurationTagging(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStorageLensConfigurationTagging(request), context);
+    } );
 }
 
 DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& request) const
@@ -1210,12 +1188,10 @@ DescribeJobOutcomeCallable S3ControlClient::DescribeJobCallable(const DescribeJo
 
 void S3ControlClient::DescribeJobAsync(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeJob(request), context);
+    } );
 }
 
 DescribeMultiRegionAccessPointOperationOutcome S3ControlClient::DescribeMultiRegionAccessPointOperation(const DescribeMultiRegionAccessPointOperationRequest& request) const
@@ -1265,12 +1241,10 @@ DescribeMultiRegionAccessPointOperationOutcomeCallable S3ControlClient::Describe
 
 void S3ControlClient::DescribeMultiRegionAccessPointOperationAsync(const DescribeMultiRegionAccessPointOperationRequest& request, const DescribeMultiRegionAccessPointOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMultiRegionAccessPointOperationAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::DescribeMultiRegionAccessPointOperationAsyncHelper(const DescribeMultiRegionAccessPointOperationRequest& request, const DescribeMultiRegionAccessPointOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeMultiRegionAccessPointOperation(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeMultiRegionAccessPointOperation(request), context);
+    } );
 }
 
 GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointRequest& request) const
@@ -1324,12 +1298,10 @@ GetAccessPointOutcomeCallable S3ControlClient::GetAccessPointCallable(const GetA
 
 void S3ControlClient::GetAccessPointAsync(const GetAccessPointRequest& request, const GetAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPointAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetAccessPointAsyncHelper(const GetAccessPointRequest& request, const GetAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAccessPoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAccessPoint(request), context);
+    } );
 }
 
 GetAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::GetAccessPointConfigurationForObjectLambda(const GetAccessPointConfigurationForObjectLambdaRequest& request) const
@@ -1384,12 +1356,10 @@ GetAccessPointConfigurationForObjectLambdaOutcomeCallable S3ControlClient::GetAc
 
 void S3ControlClient::GetAccessPointConfigurationForObjectLambdaAsync(const GetAccessPointConfigurationForObjectLambdaRequest& request, const GetAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPointConfigurationForObjectLambdaAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetAccessPointConfigurationForObjectLambdaAsyncHelper(const GetAccessPointConfigurationForObjectLambdaRequest& request, const GetAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAccessPointConfigurationForObjectLambda(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAccessPointConfigurationForObjectLambda(request), context);
+    } );
 }
 
 GetAccessPointForObjectLambdaOutcome S3ControlClient::GetAccessPointForObjectLambda(const GetAccessPointForObjectLambdaRequest& request) const
@@ -1443,12 +1413,10 @@ GetAccessPointForObjectLambdaOutcomeCallable S3ControlClient::GetAccessPointForO
 
 void S3ControlClient::GetAccessPointForObjectLambdaAsync(const GetAccessPointForObjectLambdaRequest& request, const GetAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPointForObjectLambdaAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetAccessPointForObjectLambdaAsyncHelper(const GetAccessPointForObjectLambdaRequest& request, const GetAccessPointForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAccessPointForObjectLambda(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAccessPointForObjectLambda(request), context);
+    } );
 }
 
 GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAccessPointPolicyRequest& request) const
@@ -1503,12 +1471,10 @@ GetAccessPointPolicyOutcomeCallable S3ControlClient::GetAccessPointPolicyCallabl
 
 void S3ControlClient::GetAccessPointPolicyAsync(const GetAccessPointPolicyRequest& request, const GetAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPointPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetAccessPointPolicyAsyncHelper(const GetAccessPointPolicyRequest& request, const GetAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAccessPointPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAccessPointPolicy(request), context);
+    } );
 }
 
 GetAccessPointPolicyForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicyForObjectLambda(const GetAccessPointPolicyForObjectLambdaRequest& request) const
@@ -1563,12 +1529,10 @@ GetAccessPointPolicyForObjectLambdaOutcomeCallable S3ControlClient::GetAccessPoi
 
 void S3ControlClient::GetAccessPointPolicyForObjectLambdaAsync(const GetAccessPointPolicyForObjectLambdaRequest& request, const GetAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPointPolicyForObjectLambdaAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetAccessPointPolicyForObjectLambdaAsyncHelper(const GetAccessPointPolicyForObjectLambdaRequest& request, const GetAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAccessPointPolicyForObjectLambda(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAccessPointPolicyForObjectLambda(request), context);
+    } );
 }
 
 GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(const GetAccessPointPolicyStatusRequest& request) const
@@ -1623,12 +1587,10 @@ GetAccessPointPolicyStatusOutcomeCallable S3ControlClient::GetAccessPointPolicyS
 
 void S3ControlClient::GetAccessPointPolicyStatusAsync(const GetAccessPointPolicyStatusRequest& request, const GetAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPointPolicyStatusAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetAccessPointPolicyStatusAsyncHelper(const GetAccessPointPolicyStatusRequest& request, const GetAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAccessPointPolicyStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAccessPointPolicyStatus(request), context);
+    } );
 }
 
 GetAccessPointPolicyStatusForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicyStatusForObjectLambda(const GetAccessPointPolicyStatusForObjectLambdaRequest& request) const
@@ -1683,12 +1645,10 @@ GetAccessPointPolicyStatusForObjectLambdaOutcomeCallable S3ControlClient::GetAcc
 
 void S3ControlClient::GetAccessPointPolicyStatusForObjectLambdaAsync(const GetAccessPointPolicyStatusForObjectLambdaRequest& request, const GetAccessPointPolicyStatusForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAccessPointPolicyStatusForObjectLambdaAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetAccessPointPolicyStatusForObjectLambdaAsyncHelper(const GetAccessPointPolicyStatusForObjectLambdaRequest& request, const GetAccessPointPolicyStatusForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAccessPointPolicyStatusForObjectLambda(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAccessPointPolicyStatusForObjectLambda(request), context);
+    } );
 }
 
 GetBucketOutcome S3ControlClient::GetBucket(const GetBucketRequest& request) const
@@ -1742,12 +1702,10 @@ GetBucketOutcomeCallable S3ControlClient::GetBucketCallable(const GetBucketReque
 
 void S3ControlClient::GetBucketAsync(const GetBucketRequest& request, const GetBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBucketAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetBucketAsyncHelper(const GetBucketRequest& request, const GetBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBucket(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBucket(request), context);
+    } );
 }
 
 GetBucketLifecycleConfigurationOutcome S3ControlClient::GetBucketLifecycleConfiguration(const GetBucketLifecycleConfigurationRequest& request) const
@@ -1802,12 +1760,10 @@ GetBucketLifecycleConfigurationOutcomeCallable S3ControlClient::GetBucketLifecyc
 
 void S3ControlClient::GetBucketLifecycleConfigurationAsync(const GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBucketLifecycleConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetBucketLifecycleConfigurationAsyncHelper(const GetBucketLifecycleConfigurationRequest& request, const GetBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBucketLifecycleConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBucketLifecycleConfiguration(request), context);
+    } );
 }
 
 GetBucketPolicyOutcome S3ControlClient::GetBucketPolicy(const GetBucketPolicyRequest& request) const
@@ -1862,12 +1818,10 @@ GetBucketPolicyOutcomeCallable S3ControlClient::GetBucketPolicyCallable(const Ge
 
 void S3ControlClient::GetBucketPolicyAsync(const GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBucketPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetBucketPolicyAsyncHelper(const GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBucketPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBucketPolicy(request), context);
+    } );
 }
 
 GetBucketTaggingOutcome S3ControlClient::GetBucketTagging(const GetBucketTaggingRequest& request) const
@@ -1922,12 +1876,68 @@ GetBucketTaggingOutcomeCallable S3ControlClient::GetBucketTaggingCallable(const 
 
 void S3ControlClient::GetBucketTaggingAsync(const GetBucketTaggingRequest& request, const GetBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBucketTaggingAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBucketTagging(request), context);
+    } );
 }
 
-void S3ControlClient::GetBucketTaggingAsyncHelper(const GetBucketTaggingRequest& request, const GetBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+GetBucketVersioningOutcome S3ControlClient::GetBucketVersioning(const GetBucketVersioningRequest& request) const
 {
-  handler(this, request, GetBucketTagging(request), context);
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBucketVersioning", "Required field: Bucket, is not set");
+    return GetBucketVersioningOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  S3ControlARN arn(request.GetBucket());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketVersioningOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetBucket()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("GetBucketVersioning", "HostPrefix required field: AccountId, is empty");
+      return GetBucketVersioningOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetBucketVersioning", "Invalid DNS host: " << uri.GetAuthority());
+      return GetBucketVersioningOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/versioning");
+  return GetBucketVersioningOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+GetBucketVersioningOutcomeCallable S3ControlClient::GetBucketVersioningCallable(const GetBucketVersioningRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketVersioningOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketVersioning(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetBucketVersioningAsync(const GetBucketVersioningRequest& request, const GetBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBucketVersioning(request), context);
+    } );
 }
 
 GetJobTaggingOutcome S3ControlClient::GetJobTagging(const GetJobTaggingRequest& request) const
@@ -1978,12 +1988,10 @@ GetJobTaggingOutcomeCallable S3ControlClient::GetJobTaggingCallable(const GetJob
 
 void S3ControlClient::GetJobTaggingAsync(const GetJobTaggingRequest& request, const GetJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetJobTaggingAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetJobTaggingAsyncHelper(const GetJobTaggingRequest& request, const GetJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetJobTagging(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetJobTagging(request), context);
+    } );
 }
 
 GetMultiRegionAccessPointOutcome S3ControlClient::GetMultiRegionAccessPoint(const GetMultiRegionAccessPointRequest& request) const
@@ -2037,12 +2045,10 @@ GetMultiRegionAccessPointOutcomeCallable S3ControlClient::GetMultiRegionAccessPo
 
 void S3ControlClient::GetMultiRegionAccessPointAsync(const GetMultiRegionAccessPointRequest& request, const GetMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMultiRegionAccessPointAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetMultiRegionAccessPointAsyncHelper(const GetMultiRegionAccessPointRequest& request, const GetMultiRegionAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMultiRegionAccessPoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMultiRegionAccessPoint(request), context);
+    } );
 }
 
 GetMultiRegionAccessPointPolicyOutcome S3ControlClient::GetMultiRegionAccessPointPolicy(const GetMultiRegionAccessPointPolicyRequest& request) const
@@ -2097,12 +2103,10 @@ GetMultiRegionAccessPointPolicyOutcomeCallable S3ControlClient::GetMultiRegionAc
 
 void S3ControlClient::GetMultiRegionAccessPointPolicyAsync(const GetMultiRegionAccessPointPolicyRequest& request, const GetMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMultiRegionAccessPointPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetMultiRegionAccessPointPolicyAsyncHelper(const GetMultiRegionAccessPointPolicyRequest& request, const GetMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMultiRegionAccessPointPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMultiRegionAccessPointPolicy(request), context);
+    } );
 }
 
 GetMultiRegionAccessPointPolicyStatusOutcome S3ControlClient::GetMultiRegionAccessPointPolicyStatus(const GetMultiRegionAccessPointPolicyStatusRequest& request) const
@@ -2157,12 +2161,10 @@ GetMultiRegionAccessPointPolicyStatusOutcomeCallable S3ControlClient::GetMultiRe
 
 void S3ControlClient::GetMultiRegionAccessPointPolicyStatusAsync(const GetMultiRegionAccessPointPolicyStatusRequest& request, const GetMultiRegionAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetMultiRegionAccessPointPolicyStatusAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetMultiRegionAccessPointPolicyStatusAsyncHelper(const GetMultiRegionAccessPointPolicyStatusRequest& request, const GetMultiRegionAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMultiRegionAccessPointPolicyStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMultiRegionAccessPointPolicyStatus(request), context);
+    } );
 }
 
 GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const
@@ -2206,12 +2208,10 @@ GetPublicAccessBlockOutcomeCallable S3ControlClient::GetPublicAccessBlockCallabl
 
 void S3ControlClient::GetPublicAccessBlockAsync(const GetPublicAccessBlockRequest& request, const GetPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPublicAccessBlockAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetPublicAccessBlockAsyncHelper(const GetPublicAccessBlockRequest& request, const GetPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPublicAccessBlock(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPublicAccessBlock(request), context);
+    } );
 }
 
 GetStorageLensConfigurationOutcome S3ControlClient::GetStorageLensConfiguration(const GetStorageLensConfigurationRequest& request) const
@@ -2261,12 +2261,10 @@ GetStorageLensConfigurationOutcomeCallable S3ControlClient::GetStorageLensConfig
 
 void S3ControlClient::GetStorageLensConfigurationAsync(const GetStorageLensConfigurationRequest& request, const GetStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStorageLensConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetStorageLensConfigurationAsyncHelper(const GetStorageLensConfigurationRequest& request, const GetStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStorageLensConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStorageLensConfiguration(request), context);
+    } );
 }
 
 GetStorageLensConfigurationTaggingOutcome S3ControlClient::GetStorageLensConfigurationTagging(const GetStorageLensConfigurationTaggingRequest& request) const
@@ -2317,12 +2315,10 @@ GetStorageLensConfigurationTaggingOutcomeCallable S3ControlClient::GetStorageLen
 
 void S3ControlClient::GetStorageLensConfigurationTaggingAsync(const GetStorageLensConfigurationTaggingRequest& request, const GetStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetStorageLensConfigurationTaggingAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::GetStorageLensConfigurationTaggingAsyncHelper(const GetStorageLensConfigurationTaggingRequest& request, const GetStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetStorageLensConfigurationTagging(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetStorageLensConfigurationTagging(request), context);
+    } );
 }
 
 ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPointsRequest& request) const
@@ -2372,12 +2368,10 @@ ListAccessPointsOutcomeCallable S3ControlClient::ListAccessPointsCallable(const 
 
 void S3ControlClient::ListAccessPointsAsync(const ListAccessPointsRequest& request, const ListAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccessPointsAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::ListAccessPointsAsyncHelper(const ListAccessPointsRequest& request, const ListAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAccessPoints(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAccessPoints(request), context);
+    } );
 }
 
 ListAccessPointsForObjectLambdaOutcome S3ControlClient::ListAccessPointsForObjectLambda(const ListAccessPointsForObjectLambdaRequest& request) const
@@ -2421,12 +2415,10 @@ ListAccessPointsForObjectLambdaOutcomeCallable S3ControlClient::ListAccessPoints
 
 void S3ControlClient::ListAccessPointsForObjectLambdaAsync(const ListAccessPointsForObjectLambdaRequest& request, const ListAccessPointsForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccessPointsForObjectLambdaAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::ListAccessPointsForObjectLambdaAsyncHelper(const ListAccessPointsForObjectLambdaRequest& request, const ListAccessPointsForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAccessPointsForObjectLambda(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAccessPointsForObjectLambda(request), context);
+    } );
 }
 
 ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const
@@ -2470,12 +2462,10 @@ ListJobsOutcomeCallable S3ControlClient::ListJobsCallable(const ListJobsRequest&
 
 void S3ControlClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListJobsAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListJobs(request), context);
+    } );
 }
 
 ListMultiRegionAccessPointsOutcome S3ControlClient::ListMultiRegionAccessPoints(const ListMultiRegionAccessPointsRequest& request) const
@@ -2519,12 +2509,10 @@ ListMultiRegionAccessPointsOutcomeCallable S3ControlClient::ListMultiRegionAcces
 
 void S3ControlClient::ListMultiRegionAccessPointsAsync(const ListMultiRegionAccessPointsRequest& request, const ListMultiRegionAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMultiRegionAccessPointsAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::ListMultiRegionAccessPointsAsyncHelper(const ListMultiRegionAccessPointsRequest& request, const ListMultiRegionAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMultiRegionAccessPoints(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMultiRegionAccessPoints(request), context);
+    } );
 }
 
 ListRegionalBucketsOutcome S3ControlClient::ListRegionalBuckets(const ListRegionalBucketsRequest& request) const
@@ -2568,12 +2556,10 @@ ListRegionalBucketsOutcomeCallable S3ControlClient::ListRegionalBucketsCallable(
 
 void S3ControlClient::ListRegionalBucketsAsync(const ListRegionalBucketsRequest& request, const ListRegionalBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRegionalBucketsAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::ListRegionalBucketsAsyncHelper(const ListRegionalBucketsRequest& request, const ListRegionalBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRegionalBuckets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRegionalBuckets(request), context);
+    } );
 }
 
 ListStorageLensConfigurationsOutcome S3ControlClient::ListStorageLensConfigurations(const ListStorageLensConfigurationsRequest& request) const
@@ -2617,12 +2603,10 @@ ListStorageLensConfigurationsOutcomeCallable S3ControlClient::ListStorageLensCon
 
 void S3ControlClient::ListStorageLensConfigurationsAsync(const ListStorageLensConfigurationsRequest& request, const ListStorageLensConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListStorageLensConfigurationsAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::ListStorageLensConfigurationsAsyncHelper(const ListStorageLensConfigurationsRequest& request, const ListStorageLensConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListStorageLensConfigurations(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListStorageLensConfigurations(request), context);
+    } );
 }
 
 PutAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::PutAccessPointConfigurationForObjectLambda(const PutAccessPointConfigurationForObjectLambdaRequest& request) const
@@ -2677,12 +2661,10 @@ PutAccessPointConfigurationForObjectLambdaOutcomeCallable S3ControlClient::PutAc
 
 void S3ControlClient::PutAccessPointConfigurationForObjectLambdaAsync(const PutAccessPointConfigurationForObjectLambdaRequest& request, const PutAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccessPointConfigurationForObjectLambdaAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::PutAccessPointConfigurationForObjectLambdaAsyncHelper(const PutAccessPointConfigurationForObjectLambdaRequest& request, const PutAccessPointConfigurationForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAccessPointConfigurationForObjectLambda(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAccessPointConfigurationForObjectLambda(request), context);
+    } );
 }
 
 PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAccessPointPolicyRequest& request) const
@@ -2737,12 +2719,10 @@ PutAccessPointPolicyOutcomeCallable S3ControlClient::PutAccessPointPolicyCallabl
 
 void S3ControlClient::PutAccessPointPolicyAsync(const PutAccessPointPolicyRequest& request, const PutAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccessPointPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::PutAccessPointPolicyAsyncHelper(const PutAccessPointPolicyRequest& request, const PutAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAccessPointPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAccessPointPolicy(request), context);
+    } );
 }
 
 PutAccessPointPolicyForObjectLambdaOutcome S3ControlClient::PutAccessPointPolicyForObjectLambda(const PutAccessPointPolicyForObjectLambdaRequest& request) const
@@ -2797,12 +2777,10 @@ PutAccessPointPolicyForObjectLambdaOutcomeCallable S3ControlClient::PutAccessPoi
 
 void S3ControlClient::PutAccessPointPolicyForObjectLambdaAsync(const PutAccessPointPolicyForObjectLambdaRequest& request, const PutAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAccessPointPolicyForObjectLambdaAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::PutAccessPointPolicyForObjectLambdaAsyncHelper(const PutAccessPointPolicyForObjectLambdaRequest& request, const PutAccessPointPolicyForObjectLambdaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAccessPointPolicyForObjectLambda(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAccessPointPolicyForObjectLambda(request), context);
+    } );
 }
 
 PutBucketLifecycleConfigurationOutcome S3ControlClient::PutBucketLifecycleConfiguration(const PutBucketLifecycleConfigurationRequest& request) const
@@ -2857,12 +2835,10 @@ PutBucketLifecycleConfigurationOutcomeCallable S3ControlClient::PutBucketLifecyc
 
 void S3ControlClient::PutBucketLifecycleConfigurationAsync(const PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutBucketLifecycleConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::PutBucketLifecycleConfigurationAsyncHelper(const PutBucketLifecycleConfigurationRequest& request, const PutBucketLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutBucketLifecycleConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutBucketLifecycleConfiguration(request), context);
+    } );
 }
 
 PutBucketPolicyOutcome S3ControlClient::PutBucketPolicy(const PutBucketPolicyRequest& request) const
@@ -2917,12 +2893,10 @@ PutBucketPolicyOutcomeCallable S3ControlClient::PutBucketPolicyCallable(const Pu
 
 void S3ControlClient::PutBucketPolicyAsync(const PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutBucketPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::PutBucketPolicyAsyncHelper(const PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutBucketPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutBucketPolicy(request), context);
+    } );
 }
 
 PutBucketTaggingOutcome S3ControlClient::PutBucketTagging(const PutBucketTaggingRequest& request) const
@@ -2977,12 +2951,68 @@ PutBucketTaggingOutcomeCallable S3ControlClient::PutBucketTaggingCallable(const 
 
 void S3ControlClient::PutBucketTaggingAsync(const PutBucketTaggingRequest& request, const PutBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutBucketTaggingAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutBucketTagging(request), context);
+    } );
 }
 
-void S3ControlClient::PutBucketTaggingAsyncHelper(const PutBucketTaggingRequest& request, const PutBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+PutBucketVersioningOutcome S3ControlClient::PutBucketVersioning(const PutBucketVersioningRequest& request) const
 {
-  handler(this, request, PutBucketTagging(request), context);
+  if (!request.BucketHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutBucketVersioning", "Required field: Bucket, is not set");
+    return PutBucketVersioningOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
+  }
+  S3ControlARN arn(request.GetBucket());
+  if (!arn && request.GetAccountId().empty())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false));
+  }
+  if (arn && !request.GetAccountId().empty() && request.GetAccountId() != arn.GetAccountId())
+  {
+      return ComputeEndpointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::VALIDATION, "VALIDATION",
+          "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+  }
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket(), false, "/v20180820/bucket/");
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketVersioningOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+  if (m_enableHostPrefixInjection && !S3ControlARN(request.GetBucket()))
+  {
+    if (request.GetAccountId().empty())
+    {
+      AWS_LOGSTREAM_ERROR("PutBucketVersioning", "HostPrefix required field: AccountId, is empty");
+      return PutBucketVersioningOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+    uri.SetAuthority("" + request.GetAccountId() + "." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("PutBucketVersioning", "Invalid DNS host: " << uri.GetAuthority());
+      return PutBucketVersioningOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/versioning");
+  return PutBucketVersioningOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+}
+
+PutBucketVersioningOutcomeCallable S3ControlClient::PutBucketVersioningCallable(const PutBucketVersioningRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutBucketVersioningOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutBucketVersioning(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::PutBucketVersioningAsync(const PutBucketVersioningRequest& request, const PutBucketVersioningResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutBucketVersioning(request), context);
+    } );
 }
 
 PutJobTaggingOutcome S3ControlClient::PutJobTagging(const PutJobTaggingRequest& request) const
@@ -3033,12 +3063,10 @@ PutJobTaggingOutcomeCallable S3ControlClient::PutJobTaggingCallable(const PutJob
 
 void S3ControlClient::PutJobTaggingAsync(const PutJobTaggingRequest& request, const PutJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutJobTaggingAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::PutJobTaggingAsyncHelper(const PutJobTaggingRequest& request, const PutJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutJobTagging(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutJobTagging(request), context);
+    } );
 }
 
 PutMultiRegionAccessPointPolicyOutcome S3ControlClient::PutMultiRegionAccessPointPolicy(const PutMultiRegionAccessPointPolicyRequest& request) const
@@ -3082,12 +3110,10 @@ PutMultiRegionAccessPointPolicyOutcomeCallable S3ControlClient::PutMultiRegionAc
 
 void S3ControlClient::PutMultiRegionAccessPointPolicyAsync(const PutMultiRegionAccessPointPolicyRequest& request, const PutMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutMultiRegionAccessPointPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::PutMultiRegionAccessPointPolicyAsyncHelper(const PutMultiRegionAccessPointPolicyRequest& request, const PutMultiRegionAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutMultiRegionAccessPointPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutMultiRegionAccessPointPolicy(request), context);
+    } );
 }
 
 PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const
@@ -3131,12 +3157,10 @@ PutPublicAccessBlockOutcomeCallable S3ControlClient::PutPublicAccessBlockCallabl
 
 void S3ControlClient::PutPublicAccessBlockAsync(const PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPublicAccessBlockAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::PutPublicAccessBlockAsyncHelper(const PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutPublicAccessBlock(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutPublicAccessBlock(request), context);
+    } );
 }
 
 PutStorageLensConfigurationOutcome S3ControlClient::PutStorageLensConfiguration(const PutStorageLensConfigurationRequest& request) const
@@ -3186,12 +3210,10 @@ PutStorageLensConfigurationOutcomeCallable S3ControlClient::PutStorageLensConfig
 
 void S3ControlClient::PutStorageLensConfigurationAsync(const PutStorageLensConfigurationRequest& request, const PutStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutStorageLensConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::PutStorageLensConfigurationAsyncHelper(const PutStorageLensConfigurationRequest& request, const PutStorageLensConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutStorageLensConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutStorageLensConfiguration(request), context);
+    } );
 }
 
 PutStorageLensConfigurationTaggingOutcome S3ControlClient::PutStorageLensConfigurationTagging(const PutStorageLensConfigurationTaggingRequest& request) const
@@ -3242,12 +3264,10 @@ PutStorageLensConfigurationTaggingOutcomeCallable S3ControlClient::PutStorageLen
 
 void S3ControlClient::PutStorageLensConfigurationTaggingAsync(const PutStorageLensConfigurationTaggingRequest& request, const PutStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutStorageLensConfigurationTaggingAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::PutStorageLensConfigurationTaggingAsyncHelper(const PutStorageLensConfigurationTaggingRequest& request, const PutStorageLensConfigurationTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutStorageLensConfigurationTagging(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutStorageLensConfigurationTagging(request), context);
+    } );
 }
 
 UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPriorityRequest& request) const
@@ -3303,12 +3323,10 @@ UpdateJobPriorityOutcomeCallable S3ControlClient::UpdateJobPriorityCallable(cons
 
 void S3ControlClient::UpdateJobPriorityAsync(const UpdateJobPriorityRequest& request, const UpdateJobPriorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobPriorityAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::UpdateJobPriorityAsyncHelper(const UpdateJobPriorityRequest& request, const UpdateJobPriorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateJobPriority(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateJobPriority(request), context);
+    } );
 }
 
 UpdateJobStatusOutcome S3ControlClient::UpdateJobStatus(const UpdateJobStatusRequest& request) const
@@ -3364,12 +3382,10 @@ UpdateJobStatusOutcomeCallable S3ControlClient::UpdateJobStatusCallable(const Up
 
 void S3ControlClient::UpdateJobStatusAsync(const UpdateJobStatusRequest& request, const UpdateJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobStatusAsyncHelper( request, handler, context ); } );
-}
-
-void S3ControlClient::UpdateJobStatusAsyncHelper(const UpdateJobStatusRequest& request, const UpdateJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateJobStatus(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateJobStatus(request), context);
+    } );
 }
 
 

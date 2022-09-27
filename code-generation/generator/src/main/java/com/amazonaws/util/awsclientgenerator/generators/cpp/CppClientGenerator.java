@@ -62,12 +62,19 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.addAll(generateModelHeaderFiles(serviceModel));
         fileList.addAll(generateModelSourceFiles(serviceModel));
         fileList.add(generateClientHeaderFile(serviceModel));
+        fileList.add(generateServiceClientModelInclude(serviceModel));
         fileList.add(generateClientSourceFile(serviceModel));
         fileList.add(generateARNHeaderFile(serviceModel));
         fileList.add(generateARNSourceFile(serviceModel));
         fileList.add(generateClientConfigurationFile(serviceModel));
         fileList.add(generateRegionHeaderFile(serviceModel));
         fileList.add(generateRegionSourceFile(serviceModel));
+        if (serviceModel.getEndpointRules() != null) {
+            fileList.add(generateEndpointRulesHeaderFile(serviceModel));
+            fileList.add(generateEndpointRulesSourceFile(serviceModel));
+            fileList.add(generateEndpointProviderHeaderFile(serviceModel));
+            fileList.add(generateEndpointProviderSourceFile(serviceModel));
+        }
         fileList.add(generateErrorsHeaderFile(serviceModel));
         fileList.add(generateErrorMarshallerHeaderFile(serviceModel));
         fileList.add(generateErrorSourceFile(serviceModel));
@@ -203,6 +210,18 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     //these probably don't need to be abstract, since xml and json implementations are not considered here.
     protected abstract SdkFileEntry generateClientHeaderFile(final ServiceModel serviceModel) throws Exception;
+
+    protected SdkFileEntry generateServiceClientModelInclude(ServiceModel serviceModel) throws Exception {
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ServiceClientModelHeaderInclude.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("CppViewHelper", CppViewHelper.class);
+
+        String fileName = String.format("include/aws/%s/%sServiceClientModel.h", serviceModel.getMetadata().getProjectName(),
+                serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
 
     protected abstract SdkFileEntry generateClientSourceFile(final ServiceModel serviceModel) throws Exception;
 
@@ -373,6 +392,51 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return makeFile(template, context, fileName, true);
     }
 
+    protected SdkFileEntry generateEndpointRulesHeaderFile(ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointRulesHeader.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
+
+        String fileName = String.format("include/aws/%s/%sEndpointRules.h", serviceModel.getMetadata().getProjectName(),
+                serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    protected SdkFileEntry generateEndpointRulesSourceFile(ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointRulesSource.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+
+        String fileName = String.format("source/%sEndpointRules.cpp", serviceModel.getMetadata().getClassNamePrefix());
+        return makeFile(template, context, fileName, true);
+    }
+
+    protected SdkFileEntry generateEndpointProviderHeaderFile(ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointProviderHeader.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
+
+        String fileName = String.format("include/aws/%s/%sEndpointProvider.h", serviceModel.getMetadata().getProjectName(),
+                serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    protected SdkFileEntry generateEndpointProviderSourceFile(ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/endpoint/EndpointProviderSource.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        String fileName = String.format("source/%sEndpointProvider.cpp", serviceModel.getMetadata().getClassNamePrefix());
+        return makeFile(template, context, fileName, true);
+    }
+
     protected Map<String, String> computeEndpointMappingForService(ServiceModel serviceModel) {
         Map<String, String> endpoints = new HashMap<>();
 
@@ -402,6 +466,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         } else if (serviceModel.getServiceName().equals("kms")) {
             endpoints.put("us-iso-east-1", "kms-fips.us-iso-east-1.c2s.ic.gov");
             endpoints.put("us-isob-east-1", "kms-fips.us-isob-east-1.sc2s.sgov.gov");
+            endpoints.put("us-iso-west-1", "kms-fips.us-iso-west-1.c2s.ic.gov");
 
         } else if (serviceModel.getServiceName().equals("organizations")) {
             endpoints.put("us-gov-west-1", "organizations.us-gov-west-1.amazonaws.com");

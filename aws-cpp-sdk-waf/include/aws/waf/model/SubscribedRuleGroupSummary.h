@@ -218,13 +218,13 @@ namespace Model
   private:
 
     Aws::String m_ruleGroupId;
-    bool m_ruleGroupIdHasBeenSet;
+    bool m_ruleGroupIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_metricName;
-    bool m_metricNameHasBeenSet;
+    bool m_metricNameHasBeenSet = false;
   };
 
 } // namespace Model

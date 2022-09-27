@@ -144,13 +144,13 @@ namespace Model
   private:
 
     Aws::String m_queueUrl;
-    bool m_queueUrlHasBeenSet;
+    bool m_queueUrlHasBeenSet = false;
 
     bool m_useBase64;
-    bool m_useBase64HasBeenSet;
+    bool m_useBase64HasBeenSet = false;
 
     Payload m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
   };
 
 } // namespace Model

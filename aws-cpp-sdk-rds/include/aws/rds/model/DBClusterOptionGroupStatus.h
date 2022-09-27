@@ -124,10 +124,10 @@ namespace Model
   private:
 
     Aws::String m_dBClusterOptionGroupName;
-    bool m_dBClusterOptionGroupNameHasBeenSet;
+    bool m_dBClusterOptionGroupNameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

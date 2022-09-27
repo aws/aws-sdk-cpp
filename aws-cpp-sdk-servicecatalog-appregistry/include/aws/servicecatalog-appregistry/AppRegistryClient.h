@@ -5,163 +5,15 @@
 
 #pragma once
 #include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
-#include <aws/servicecatalog-appregistry/AppRegistryErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/servicecatalog-appregistry/model/AssociateAttributeGroupResult.h>
-#include <aws/servicecatalog-appregistry/model/AssociateResourceResult.h>
-#include <aws/servicecatalog-appregistry/model/CreateApplicationResult.h>
-#include <aws/servicecatalog-appregistry/model/CreateAttributeGroupResult.h>
-#include <aws/servicecatalog-appregistry/model/DeleteApplicationResult.h>
-#include <aws/servicecatalog-appregistry/model/DeleteAttributeGroupResult.h>
-#include <aws/servicecatalog-appregistry/model/DisassociateAttributeGroupResult.h>
-#include <aws/servicecatalog-appregistry/model/DisassociateResourceResult.h>
-#include <aws/servicecatalog-appregistry/model/GetApplicationResult.h>
-#include <aws/servicecatalog-appregistry/model/GetAssociatedResourceResult.h>
-#include <aws/servicecatalog-appregistry/model/GetAttributeGroupResult.h>
-#include <aws/servicecatalog-appregistry/model/ListApplicationsResult.h>
-#include <aws/servicecatalog-appregistry/model/ListAssociatedAttributeGroupsResult.h>
-#include <aws/servicecatalog-appregistry/model/ListAssociatedResourcesResult.h>
-#include <aws/servicecatalog-appregistry/model/ListAttributeGroupsResult.h>
-#include <aws/servicecatalog-appregistry/model/ListTagsForResourceResult.h>
-#include <aws/servicecatalog-appregistry/model/SyncResourceResult.h>
-#include <aws/servicecatalog-appregistry/model/TagResourceResult.h>
-#include <aws/servicecatalog-appregistry/model/UntagResourceResult.h>
-#include <aws/servicecatalog-appregistry/model/UpdateApplicationResult.h>
-#include <aws/servicecatalog-appregistry/model/UpdateAttributeGroupResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/servicecatalog-appregistry/AppRegistryServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace AppRegistry
 {
-
-namespace Model
-{
-        class AssociateAttributeGroupRequest;
-        class AssociateResourceRequest;
-        class CreateApplicationRequest;
-        class CreateAttributeGroupRequest;
-        class DeleteApplicationRequest;
-        class DeleteAttributeGroupRequest;
-        class DisassociateAttributeGroupRequest;
-        class DisassociateResourceRequest;
-        class GetApplicationRequest;
-        class GetAssociatedResourceRequest;
-        class GetAttributeGroupRequest;
-        class ListApplicationsRequest;
-        class ListAssociatedAttributeGroupsRequest;
-        class ListAssociatedResourcesRequest;
-        class ListAttributeGroupsRequest;
-        class ListTagsForResourceRequest;
-        class SyncResourceRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateApplicationRequest;
-        class UpdateAttributeGroupRequest;
-
-        typedef Aws::Utils::Outcome<AssociateAttributeGroupResult, AppRegistryError> AssociateAttributeGroupOutcome;
-        typedef Aws::Utils::Outcome<AssociateResourceResult, AppRegistryError> AssociateResourceOutcome;
-        typedef Aws::Utils::Outcome<CreateApplicationResult, AppRegistryError> CreateApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreateAttributeGroupResult, AppRegistryError> CreateAttributeGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteApplicationResult, AppRegistryError> DeleteApplicationOutcome;
-        typedef Aws::Utils::Outcome<DeleteAttributeGroupResult, AppRegistryError> DeleteAttributeGroupOutcome;
-        typedef Aws::Utils::Outcome<DisassociateAttributeGroupResult, AppRegistryError> DisassociateAttributeGroupOutcome;
-        typedef Aws::Utils::Outcome<DisassociateResourceResult, AppRegistryError> DisassociateResourceOutcome;
-        typedef Aws::Utils::Outcome<GetApplicationResult, AppRegistryError> GetApplicationOutcome;
-        typedef Aws::Utils::Outcome<GetAssociatedResourceResult, AppRegistryError> GetAssociatedResourceOutcome;
-        typedef Aws::Utils::Outcome<GetAttributeGroupResult, AppRegistryError> GetAttributeGroupOutcome;
-        typedef Aws::Utils::Outcome<ListApplicationsResult, AppRegistryError> ListApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListAssociatedAttributeGroupsResult, AppRegistryError> ListAssociatedAttributeGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListAssociatedResourcesResult, AppRegistryError> ListAssociatedResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListAttributeGroupsResult, AppRegistryError> ListAttributeGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, AppRegistryError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<SyncResourceResult, AppRegistryError> SyncResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, AppRegistryError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, AppRegistryError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationResult, AppRegistryError> UpdateApplicationOutcome;
-        typedef Aws::Utils::Outcome<UpdateAttributeGroupResult, AppRegistryError> UpdateAttributeGroupOutcome;
-
-        typedef std::future<AssociateAttributeGroupOutcome> AssociateAttributeGroupOutcomeCallable;
-        typedef std::future<AssociateResourceOutcome> AssociateResourceOutcomeCallable;
-        typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
-        typedef std::future<CreateAttributeGroupOutcome> CreateAttributeGroupOutcomeCallable;
-        typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
-        typedef std::future<DeleteAttributeGroupOutcome> DeleteAttributeGroupOutcomeCallable;
-        typedef std::future<DisassociateAttributeGroupOutcome> DisassociateAttributeGroupOutcomeCallable;
-        typedef std::future<DisassociateResourceOutcome> DisassociateResourceOutcomeCallable;
-        typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
-        typedef std::future<GetAssociatedResourceOutcome> GetAssociatedResourceOutcomeCallable;
-        typedef std::future<GetAttributeGroupOutcome> GetAttributeGroupOutcomeCallable;
-        typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
-        typedef std::future<ListAssociatedAttributeGroupsOutcome> ListAssociatedAttributeGroupsOutcomeCallable;
-        typedef std::future<ListAssociatedResourcesOutcome> ListAssociatedResourcesOutcomeCallable;
-        typedef std::future<ListAttributeGroupsOutcome> ListAttributeGroupsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<SyncResourceOutcome> SyncResourceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
-        typedef std::future<UpdateAttributeGroupOutcome> UpdateAttributeGroupOutcomeCallable;
-} // namespace Model
-
-  class AppRegistryClient;
-
-    typedef std::function<void(const AppRegistryClient*, const Model::AssociateAttributeGroupRequest&, const Model::AssociateAttributeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateAttributeGroupResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::AssociateResourceRequest&, const Model::AssociateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateResourceResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::CreateAttributeGroupRequest&, const Model::CreateAttributeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAttributeGroupResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::DeleteAttributeGroupRequest&, const Model::DeleteAttributeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAttributeGroupResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::DisassociateAttributeGroupRequest&, const Model::DisassociateAttributeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateAttributeGroupResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::DisassociateResourceRequest&, const Model::DisassociateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateResourceResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::GetAssociatedResourceRequest&, const Model::GetAssociatedResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssociatedResourceResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::GetAttributeGroupRequest&, const Model::GetAttributeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttributeGroupResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::ListAssociatedAttributeGroupsRequest&, const Model::ListAssociatedAttributeGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedAttributeGroupsResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::ListAssociatedResourcesRequest&, const Model::ListAssociatedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedResourcesResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::ListAttributeGroupsRequest&, const Model::ListAttributeGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttributeGroupsResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::SyncResourceRequest&, const Model::SyncResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SyncResourceResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
-    typedef std::function<void(const AppRegistryClient*, const Model::UpdateAttributeGroupRequest&, const Model::UpdateAttributeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAttributeGroupResponseReceivedHandler;
-
   /**
    * <p> Amazon Web Services Service Catalog AppRegistry enables organizations to
    * understand the application context of their Amazon Web Services resources.
@@ -183,14 +35,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AppRegistryClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AppRegistryClient(const Aws::Auth::AWSCredentials& credentials,
+                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AppRegistryClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~AppRegistryClient();
 
@@ -479,6 +332,24 @@ namespace Model
         virtual void ListAttributeGroupsAsync(const Model::ListAttributeGroupsRequest& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the details of all attribute groups associated with a specific
+         * application. The results display in pages.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListAttributeGroupsForApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAttributeGroupsForApplicationOutcome ListAttributeGroupsForApplication(const Model::ListAttributeGroupsForApplicationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAttributeGroupsForApplication that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAttributeGroupsForApplicationOutcomeCallable ListAttributeGroupsForApplicationCallable(const Model::ListAttributeGroupsForApplicationRequest& request) const;
+
+        /**
+         * An Async wrapper for ListAttributeGroupsForApplication that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAttributeGroupsForApplicationAsync(const Model::ListAttributeGroupsForApplicationRequest& request, const ListAttributeGroupsForApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists all of the tags on the resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -595,27 +466,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateAttributeGroupAsyncHelper(const Model::AssociateAttributeGroupRequest& request, const AssociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateResourceAsyncHelper(const Model::AssociateResourceRequest& request, const AssociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateAttributeGroupAsyncHelper(const Model::CreateAttributeGroupRequest& request, const CreateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAttributeGroupAsyncHelper(const Model::DeleteAttributeGroupRequest& request, const DeleteAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateAttributeGroupAsyncHelper(const Model::DisassociateAttributeGroupRequest& request, const DisassociateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateResourceAsyncHelper(const Model::DisassociateResourceRequest& request, const DisassociateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAssociatedResourceAsyncHelper(const Model::GetAssociatedResourceRequest& request, const GetAssociatedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAttributeGroupAsyncHelper(const Model::GetAttributeGroupRequest& request, const GetAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAssociatedAttributeGroupsAsyncHelper(const Model::ListAssociatedAttributeGroupsRequest& request, const ListAssociatedAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAssociatedResourcesAsyncHelper(const Model::ListAssociatedResourcesRequest& request, const ListAssociatedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAttributeGroupsAsyncHelper(const Model::ListAttributeGroupsRequest& request, const ListAttributeGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SyncResourceAsyncHelper(const Model::SyncResourceRequest& request, const SyncResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateAttributeGroupAsyncHelper(const Model::UpdateAttributeGroupRequest& request, const UpdateAttributeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

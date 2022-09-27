@@ -54,13 +54,13 @@ JobManifestGeneratorFilter& JobManifestGeneratorFilter::operator =(const XmlNode
     XmlNode createdAfterNode = resultNode.FirstChild("CreatedAfter");
     if(!createdAfterNode.IsNull())
     {
-      m_createdAfter = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAfterNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdAfter = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAfterNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdAfterHasBeenSet = true;
     }
     XmlNode createdBeforeNode = resultNode.FirstChild("CreatedBefore");
     if(!createdBeforeNode.IsNull())
     {
-      m_createdBefore = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdBeforeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdBefore = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdBeforeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdBeforeHasBeenSet = true;
     }
     XmlNode objectReplicationStatusesNode = resultNode.FirstChild("ObjectReplicationStatuses");
@@ -94,13 +94,13 @@ void JobManifestGeneratorFilter::AddToNode(XmlNode& parentNode) const
   if(m_createdAfterHasBeenSet)
   {
    XmlNode createdAfterNode = parentNode.CreateChildElement("CreatedAfter");
-   createdAfterNode.SetText(m_createdAfter.ToGmtString(DateFormat::ISO_8601));
+   createdAfterNode.SetText(m_createdAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_createdBeforeHasBeenSet)
   {
    XmlNode createdBeforeNode = parentNode.CreateChildElement("CreatedBefore");
-   createdBeforeNode.SetText(m_createdBefore.ToGmtString(DateFormat::ISO_8601));
+   createdBeforeNode.SetText(m_createdBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_objectReplicationStatusesHasBeenSet)

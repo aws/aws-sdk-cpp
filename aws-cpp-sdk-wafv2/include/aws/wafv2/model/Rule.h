@@ -578,28 +578,28 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     int m_priority;
-    bool m_priorityHasBeenSet;
+    bool m_priorityHasBeenSet = false;
 
     Statement m_statement;
-    bool m_statementHasBeenSet;
+    bool m_statementHasBeenSet = false;
 
     RuleAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     OverrideAction m_overrideAction;
-    bool m_overrideActionHasBeenSet;
+    bool m_overrideActionHasBeenSet = false;
 
     Aws::Vector<Label> m_ruleLabels;
-    bool m_ruleLabelsHasBeenSet;
+    bool m_ruleLabelsHasBeenSet = false;
 
     VisibilityConfig m_visibilityConfig;
-    bool m_visibilityConfigHasBeenSet;
+    bool m_visibilityConfigHasBeenSet = false;
 
     CaptchaConfig m_captchaConfig;
-    bool m_captchaConfigHasBeenSet;
+    bool m_captchaConfigHasBeenSet = false;
   };
 
 } // namespace Model

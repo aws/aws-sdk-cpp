@@ -36,33 +36,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "iot-jobs-data";
 static const char* ALLOCATION_TAG = "IoTJobsDataPlaneClient";
 
-
 IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<IoTJobsDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTJobsDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const AWSCredentials& credentials,
+                                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<IoTJobsDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTJobsDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<IoTJobsDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTJobsDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -74,7 +80,7 @@ IoTJobsDataPlaneClient::~IoTJobsDataPlaneClient()
 
 void IoTJobsDataPlaneClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IoT Jobs Data Plane");
+  AWSClient::SetServiceClientName("IoT Jobs Data Plane");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -128,12 +134,10 @@ DescribeJobExecutionOutcomeCallable IoTJobsDataPlaneClient::DescribeJobExecution
 
 void IoTJobsDataPlaneClient::DescribeJobExecutionAsync(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTJobsDataPlaneClient::DescribeJobExecutionAsyncHelper(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeJobExecution(request), context);
+    } );
 }
 
 GetPendingJobExecutionsOutcome IoTJobsDataPlaneClient::GetPendingJobExecutions(const GetPendingJobExecutionsRequest& request) const
@@ -160,12 +164,10 @@ GetPendingJobExecutionsOutcomeCallable IoTJobsDataPlaneClient::GetPendingJobExec
 
 void IoTJobsDataPlaneClient::GetPendingJobExecutionsAsync(const GetPendingJobExecutionsRequest& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPendingJobExecutionsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTJobsDataPlaneClient::GetPendingJobExecutionsAsyncHelper(const GetPendingJobExecutionsRequest& request, const GetPendingJobExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPendingJobExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPendingJobExecutions(request), context);
+    } );
 }
 
 StartNextPendingJobExecutionOutcome IoTJobsDataPlaneClient::StartNextPendingJobExecution(const StartNextPendingJobExecutionRequest& request) const
@@ -192,12 +194,10 @@ StartNextPendingJobExecutionOutcomeCallable IoTJobsDataPlaneClient::StartNextPen
 
 void IoTJobsDataPlaneClient::StartNextPendingJobExecutionAsync(const StartNextPendingJobExecutionRequest& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartNextPendingJobExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTJobsDataPlaneClient::StartNextPendingJobExecutionAsyncHelper(const StartNextPendingJobExecutionRequest& request, const StartNextPendingJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartNextPendingJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartNextPendingJobExecution(request), context);
+    } );
 }
 
 UpdateJobExecutionOutcome IoTJobsDataPlaneClient::UpdateJobExecution(const UpdateJobExecutionRequest& request) const
@@ -230,11 +230,9 @@ UpdateJobExecutionOutcomeCallable IoTJobsDataPlaneClient::UpdateJobExecutionCall
 
 void IoTJobsDataPlaneClient::UpdateJobExecutionAsync(const UpdateJobExecutionRequest& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTJobsDataPlaneClient::UpdateJobExecutionAsyncHelper(const UpdateJobExecutionRequest& request, const UpdateJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateJobExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateJobExecution(request), context);
+    } );
 }
 

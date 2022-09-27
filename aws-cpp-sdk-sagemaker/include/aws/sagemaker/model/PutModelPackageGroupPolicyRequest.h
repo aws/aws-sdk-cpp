@@ -118,10 +118,10 @@ namespace Model
   private:
 
     Aws::String m_modelPackageGroupName;
-    bool m_modelPackageGroupNameHasBeenSet;
+    bool m_modelPackageGroupNameHasBeenSet = false;
 
     Aws::String m_resourcePolicy;
-    bool m_resourcePolicyHasBeenSet;
+    bool m_resourcePolicyHasBeenSet = false;
   };
 
 } // namespace Model

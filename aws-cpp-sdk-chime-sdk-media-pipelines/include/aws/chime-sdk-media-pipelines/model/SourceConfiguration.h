@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Source configuration for a specified media capture pipeline.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Source configuration for a specified media pipeline.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/SourceConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,45 +39,45 @@ namespace Model
 
 
     /**
-     * <p>The selected video streams to capture for a specified media capture pipeline.
-     * The number of video streams can't exceed 25.</p>
+     * <p>The selected video streams for a specified media pipeline. The number of
+     * video streams can't exceed 25.</p>
      */
     inline const SelectedVideoStreams& GetSelectedVideoStreams() const{ return m_selectedVideoStreams; }
 
     /**
-     * <p>The selected video streams to capture for a specified media capture pipeline.
-     * The number of video streams can't exceed 25.</p>
+     * <p>The selected video streams for a specified media pipeline. The number of
+     * video streams can't exceed 25.</p>
      */
     inline bool SelectedVideoStreamsHasBeenSet() const { return m_selectedVideoStreamsHasBeenSet; }
 
     /**
-     * <p>The selected video streams to capture for a specified media capture pipeline.
-     * The number of video streams can't exceed 25.</p>
+     * <p>The selected video streams for a specified media pipeline. The number of
+     * video streams can't exceed 25.</p>
      */
     inline void SetSelectedVideoStreams(const SelectedVideoStreams& value) { m_selectedVideoStreamsHasBeenSet = true; m_selectedVideoStreams = value; }
 
     /**
-     * <p>The selected video streams to capture for a specified media capture pipeline.
-     * The number of video streams can't exceed 25.</p>
+     * <p>The selected video streams for a specified media pipeline. The number of
+     * video streams can't exceed 25.</p>
      */
     inline void SetSelectedVideoStreams(SelectedVideoStreams&& value) { m_selectedVideoStreamsHasBeenSet = true; m_selectedVideoStreams = std::move(value); }
 
     /**
-     * <p>The selected video streams to capture for a specified media capture pipeline.
-     * The number of video streams can't exceed 25.</p>
+     * <p>The selected video streams for a specified media pipeline. The number of
+     * video streams can't exceed 25.</p>
      */
     inline SourceConfiguration& WithSelectedVideoStreams(const SelectedVideoStreams& value) { SetSelectedVideoStreams(value); return *this;}
 
     /**
-     * <p>The selected video streams to capture for a specified media capture pipeline.
-     * The number of video streams can't exceed 25.</p>
+     * <p>The selected video streams for a specified media pipeline. The number of
+     * video streams can't exceed 25.</p>
      */
     inline SourceConfiguration& WithSelectedVideoStreams(SelectedVideoStreams&& value) { SetSelectedVideoStreams(std::move(value)); return *this;}
 
   private:
 
     SelectedVideoStreams m_selectedVideoStreams;
-    bool m_selectedVideoStreamsHasBeenSet;
+    bool m_selectedVideoStreamsHasBeenSet = false;
   };
 
 } // namespace Model

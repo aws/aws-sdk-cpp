@@ -166,16 +166,16 @@ namespace Model
   private:
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
 
     Aws::Vector<AgentAlreadyRunningAssessment> m_agents;
-    bool m_agentsHasBeenSet;
+    bool m_agentsHasBeenSet = false;
 
     bool m_agentsTruncated;
-    bool m_agentsTruncatedHasBeenSet;
+    bool m_agentsTruncatedHasBeenSet = false;
 
     bool m_canRetry;
-    bool m_canRetryHasBeenSet;
+    bool m_canRetryHasBeenSet = false;
   };
 
 } // namespace Model

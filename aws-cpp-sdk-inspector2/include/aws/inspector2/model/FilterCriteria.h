@@ -725,6 +725,71 @@ namespace Model
 
 
     /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetFixAvailable() const{ return m_fixAvailable; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline bool FixAvailableHasBeenSet() const { return m_fixAvailableHasBeenSet; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline void SetFixAvailable(const Aws::Vector<StringFilter>& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = value; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline void SetFixAvailable(Aws::Vector<StringFilter>&& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable = std::move(value); }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline FilterCriteria& WithFixAvailable(const Aws::Vector<StringFilter>& value) { SetFixAvailable(value); return *this;}
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline FilterCriteria& WithFixAvailable(Aws::Vector<StringFilter>&& value) { SetFixAvailable(std::move(value)); return *this;}
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline FilterCriteria& AddFixAvailable(const StringFilter& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable.push_back(value); return *this; }
+
+    /**
+     * <p>Details on whether a fix is available through a version update. This value
+     * can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A
+     * <code>PARTIAL</code> fix means that some, but not all, of the packages
+     * identified in the finding have fixes available through updated versions.</p>
+     */
+    inline FilterCriteria& AddFixAvailable(StringFilter&& value) { m_fixAvailableHasBeenSet = true; m_fixAvailable.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The Amazon Inspector score to filter on.</p>
      */
     inline const Aws::Vector<NumberFilter>& GetInspectorScore() const{ return m_inspectorScore; }
@@ -1357,97 +1422,100 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_awsAccountId;
-    bool m_awsAccountIdHasBeenSet;
+    bool m_awsAccountIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_componentId;
-    bool m_componentIdHasBeenSet;
+    bool m_componentIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_componentType;
-    bool m_componentTypeHasBeenSet;
+    bool m_componentTypeHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ec2InstanceImageId;
-    bool m_ec2InstanceImageIdHasBeenSet;
+    bool m_ec2InstanceImageIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ec2InstanceSubnetId;
-    bool m_ec2InstanceSubnetIdHasBeenSet;
+    bool m_ec2InstanceSubnetIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ec2InstanceVpcId;
-    bool m_ec2InstanceVpcIdHasBeenSet;
+    bool m_ec2InstanceVpcIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ecrImageArchitecture;
-    bool m_ecrImageArchitectureHasBeenSet;
+    bool m_ecrImageArchitectureHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ecrImageHash;
-    bool m_ecrImageHashHasBeenSet;
+    bool m_ecrImageHashHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_ecrImagePushedAt;
-    bool m_ecrImagePushedAtHasBeenSet;
+    bool m_ecrImagePushedAtHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ecrImageRegistry;
-    bool m_ecrImageRegistryHasBeenSet;
+    bool m_ecrImageRegistryHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ecrImageRepositoryName;
-    bool m_ecrImageRepositoryNameHasBeenSet;
+    bool m_ecrImageRepositoryNameHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_ecrImageTags;
-    bool m_ecrImageTagsHasBeenSet;
+    bool m_ecrImageTagsHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_findingArn;
-    bool m_findingArnHasBeenSet;
+    bool m_findingArnHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_findingStatus;
-    bool m_findingStatusHasBeenSet;
+    bool m_findingStatusHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_findingType;
-    bool m_findingTypeHasBeenSet;
+    bool m_findingTypeHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_firstObservedAt;
-    bool m_firstObservedAtHasBeenSet;
+    bool m_firstObservedAtHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_fixAvailable;
+    bool m_fixAvailableHasBeenSet = false;
 
     Aws::Vector<NumberFilter> m_inspectorScore;
-    bool m_inspectorScoreHasBeenSet;
+    bool m_inspectorScoreHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_lastObservedAt;
-    bool m_lastObservedAtHasBeenSet;
+    bool m_lastObservedAtHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_networkProtocol;
-    bool m_networkProtocolHasBeenSet;
+    bool m_networkProtocolHasBeenSet = false;
 
     Aws::Vector<PortRangeFilter> m_portRange;
-    bool m_portRangeHasBeenSet;
+    bool m_portRangeHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_relatedVulnerabilities;
-    bool m_relatedVulnerabilitiesHasBeenSet;
+    bool m_relatedVulnerabilitiesHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::Vector<MapFilter> m_resourceTags;
-    bool m_resourceTagsHasBeenSet;
+    bool m_resourceTagsHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_severity;
-    bool m_severityHasBeenSet;
+    bool m_severityHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
 
     Aws::Vector<DateFilter> m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_vendorSeverity;
-    bool m_vendorSeverityHasBeenSet;
+    bool m_vendorSeverityHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_vulnerabilityId;
-    bool m_vulnerabilityIdHasBeenSet;
+    bool m_vulnerabilityIdHasBeenSet = false;
 
     Aws::Vector<StringFilter> m_vulnerabilitySource;
-    bool m_vulnerabilitySourceHasBeenSet;
+    bool m_vulnerabilitySourceHasBeenSet = false;
 
     Aws::Vector<PackageFilter> m_vulnerablePackages;
-    bool m_vulnerablePackagesHasBeenSet;
+    bool m_vulnerablePackagesHasBeenSet = false;
   };
 
 } // namespace Model

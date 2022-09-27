@@ -112,10 +112,10 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamScopeId;
-    bool m_ipamScopeIdHasBeenSet;
+    bool m_ipamScopeIdHasBeenSet = false;
   };
 
 } // namespace Model

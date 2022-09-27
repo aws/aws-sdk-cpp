@@ -28,7 +28,8 @@ Document::Document() :
     m_accessControlListHasBeenSet(false),
     m_hierarchicalAccessControlListHasBeenSet(false),
     m_contentType(ContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false)
+    m_contentTypeHasBeenSet(false),
+    m_accessControlConfigurationIdHasBeenSet(false)
 {
 }
 
@@ -41,7 +42,8 @@ Document::Document(JsonView jsonValue) :
     m_accessControlListHasBeenSet(false),
     m_hierarchicalAccessControlListHasBeenSet(false),
     m_contentType(ContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false)
+    m_contentTypeHasBeenSet(false),
+    m_accessControlConfigurationIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +114,13 @@ Document& Document::operator =(JsonView jsonValue)
     m_contentTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AccessControlConfigurationId"))
+  {
+    m_accessControlConfigurationId = jsonValue.GetString("AccessControlConfigurationId");
+
+    m_accessControlConfigurationIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -178,6 +187,12 @@ JsonValue Document::Jsonize() const
   if(m_contentTypeHasBeenSet)
   {
    payload.WithString("ContentType", ContentTypeMapper::GetNameForContentType(m_contentType));
+  }
+
+  if(m_accessControlConfigurationIdHasBeenSet)
+  {
+   payload.WithString("AccessControlConfigurationId", m_accessControlConfigurationId);
+
   }
 
   return payload;

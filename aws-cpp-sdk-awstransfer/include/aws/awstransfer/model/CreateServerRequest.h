@@ -45,21 +45,21 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * (ACM) certificate. Required when <code>Protocols</code> is set to
-     * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
+     * <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate.
+     * Required when <code>Protocols</code> is set to <code>FTPS</code>.</p> <p>To
+     * request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> Amazon Web Services Certificate Manager User
-     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i>Certificate Manager User Guide</i>.</p> <p>To
+     * import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>To request a private certificate to use FTPS through
-     * private IP addresses, see <a
+     * certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>To request a private certificate to use FTPS through private IP addresses,
+     * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>Certificates with the following cryptographic algorithms
-     * and key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li>
-     * <li> <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>Certificates with the following cryptographic algorithms and key sizes are
+     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
+     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -69,21 +69,21 @@ namespace Model
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * (ACM) certificate. Required when <code>Protocols</code> is set to
-     * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
+     * <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate.
+     * Required when <code>Protocols</code> is set to <code>FTPS</code>.</p> <p>To
+     * request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> Amazon Web Services Certificate Manager User
-     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i>Certificate Manager User Guide</i>.</p> <p>To
+     * import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>To request a private certificate to use FTPS through
-     * private IP addresses, see <a
+     * certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>To request a private certificate to use FTPS through private IP addresses,
+     * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>Certificates with the following cryptographic algorithms
-     * and key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li>
-     * <li> <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>Certificates with the following cryptographic algorithms and key sizes are
+     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
+     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -93,21 +93,21 @@ namespace Model
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * (ACM) certificate. Required when <code>Protocols</code> is set to
-     * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
+     * <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate.
+     * Required when <code>Protocols</code> is set to <code>FTPS</code>.</p> <p>To
+     * request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> Amazon Web Services Certificate Manager User
-     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i>Certificate Manager User Guide</i>.</p> <p>To
+     * import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>To request a private certificate to use FTPS through
-     * private IP addresses, see <a
+     * certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>To request a private certificate to use FTPS through private IP addresses,
+     * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>Certificates with the following cryptographic algorithms
-     * and key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li>
-     * <li> <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>Certificates with the following cryptographic algorithms and key sizes are
+     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
+     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -117,21 +117,21 @@ namespace Model
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * (ACM) certificate. Required when <code>Protocols</code> is set to
-     * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
+     * <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate.
+     * Required when <code>Protocols</code> is set to <code>FTPS</code>.</p> <p>To
+     * request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> Amazon Web Services Certificate Manager User
-     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i>Certificate Manager User Guide</i>.</p> <p>To
+     * import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>To request a private certificate to use FTPS through
-     * private IP addresses, see <a
+     * certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>To request a private certificate to use FTPS through private IP addresses,
+     * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>Certificates with the following cryptographic algorithms
-     * and key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li>
-     * <li> <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>Certificates with the following cryptographic algorithms and key sizes are
+     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
+     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -141,21 +141,21 @@ namespace Model
     inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * (ACM) certificate. Required when <code>Protocols</code> is set to
-     * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
+     * <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate.
+     * Required when <code>Protocols</code> is set to <code>FTPS</code>.</p> <p>To
+     * request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> Amazon Web Services Certificate Manager User
-     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i>Certificate Manager User Guide</i>.</p> <p>To
+     * import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>To request a private certificate to use FTPS through
-     * private IP addresses, see <a
+     * certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>To request a private certificate to use FTPS through private IP addresses,
+     * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>Certificates with the following cryptographic algorithms
-     * and key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li>
-     * <li> <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>Certificates with the following cryptographic algorithms and key sizes are
+     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
+     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -165,21 +165,21 @@ namespace Model
     inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * (ACM) certificate. Required when <code>Protocols</code> is set to
-     * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
+     * <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate.
+     * Required when <code>Protocols</code> is set to <code>FTPS</code>.</p> <p>To
+     * request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> Amazon Web Services Certificate Manager User
-     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i>Certificate Manager User Guide</i>.</p> <p>To
+     * import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>To request a private certificate to use FTPS through
-     * private IP addresses, see <a
+     * certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>To request a private certificate to use FTPS through private IP addresses,
+     * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>Certificates with the following cryptographic algorithms
-     * and key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li>
-     * <li> <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>Certificates with the following cryptographic algorithms and key sizes are
+     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
+     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -189,21 +189,21 @@ namespace Model
     inline CreateServerRequest& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * (ACM) certificate. Required when <code>Protocols</code> is set to
-     * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
+     * <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate.
+     * Required when <code>Protocols</code> is set to <code>FTPS</code>.</p> <p>To
+     * request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> Amazon Web Services Certificate Manager User
-     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i>Certificate Manager User Guide</i>.</p> <p>To
+     * import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>To request a private certificate to use FTPS through
-     * private IP addresses, see <a
+     * certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>To request a private certificate to use FTPS through private IP addresses,
+     * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>Certificates with the following cryptographic algorithms
-     * and key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li>
-     * <li> <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>Certificates with the following cryptographic algorithms and key sizes are
+     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
+     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -213,21 +213,21 @@ namespace Model
     inline CreateServerRequest& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * (ACM) certificate. Required when <code>Protocols</code> is set to
-     * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
+     * <p>The Amazon Resource Name (ARN) of the Certificate Manager (ACM) certificate.
+     * Required when <code>Protocols</code> is set to <code>FTPS</code>.</p> <p>To
+     * request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> Amazon Web Services Certificate Manager User
-     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i>Certificate Manager User Guide</i>.</p> <p>To
+     * import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>To request a private certificate to use FTPS through
-     * private IP addresses, see <a
+     * certificates into ACM</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>To request a private certificate to use FTPS through private IP addresses,
+     * see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> Amazon Web Services Certificate Manager
-     * User Guide</i>.</p> <p>Certificates with the following cryptographic algorithms
-     * and key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li>
-     * <li> <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i>Certificate Manager User Guide</i>.</p>
+     * <p>Certificates with the following cryptographic algorithms and key sizes are
+     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
+     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -288,55 +288,61 @@ namespace Model
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IP
-     * addresses and make it accessible to clients over the internet. Your VPC's
-     * default security groups are automatically assigned to your endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make your
+     * endpoint accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make your endpoint accessible to clients over the internet.
+     * Your VPC's default security groups are automatically assigned to your
+     * endpoint.</p>
      */
     inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IP
-     * addresses and make it accessible to clients over the internet. Your VPC's
-     * default security groups are automatically assigned to your endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make your
+     * endpoint accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make your endpoint accessible to clients over the internet.
+     * Your VPC's default security groups are automatically assigned to your
+     * endpoint.</p>
      */
     inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IP
-     * addresses and make it accessible to clients over the internet. Your VPC's
-     * default security groups are automatically assigned to your endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make your
+     * endpoint accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make your endpoint accessible to clients over the internet.
+     * Your VPC's default security groups are automatically assigned to your
+     * endpoint.</p>
      */
     inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IP
-     * addresses and make it accessible to clients over the internet. Your VPC's
-     * default security groups are automatically assigned to your endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make your
+     * endpoint accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make your endpoint accessible to clients over the internet.
+     * Your VPC's default security groups are automatically assigned to your
+     * endpoint.</p>
      */
     inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IP
-     * addresses and make it accessible to clients over the internet. Your VPC's
-     * default security groups are automatically assigned to your endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make your
+     * endpoint accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make your endpoint accessible to clients over the internet.
+     * Your VPC's default security groups are automatically assigned to your
+     * endpoint.</p>
      */
     inline CreateServerRequest& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IP
-     * addresses and make it accessible to clients over the internet. Your VPC's
-     * default security groups are automatically assigned to your endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make your
+     * endpoint accessible only to resources within your VPC, or you can attach Elastic
+     * IP addresses and make your endpoint accessible to clients over the internet.
+     * Your VPC's default security groups are automatically assigned to your
+     * endpoint.</p>
      */
     inline CreateServerRequest& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
 
@@ -481,98 +487,178 @@ namespace Model
 
 
     /**
-     * <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code> command.</p>  <p>If you aren't planning to
-     * migrate existing users from an existing SFTP-enabled server to a new server,
-     * don't update the host key. Accidentally changing a server's host key can be
-     * disruptive.</p>  <p>For more information, see <a
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
+     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
+     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
+     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
+     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
+     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
+     *  <p>If you aren't planning to migrate existing users from an existing
+     * SFTP-enabled server to a new server, don't update the host key. Accidentally
+     * changing a server's host key can be disruptive.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetHostKey() const{ return m_hostKey; }
 
     /**
-     * <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code> command.</p>  <p>If you aren't planning to
-     * migrate existing users from an existing SFTP-enabled server to a new server,
-     * don't update the host key. Accidentally changing a server's host key can be
-     * disruptive.</p>  <p>For more information, see <a
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
+     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
+     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
+     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
+     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
+     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
+     *  <p>If you aren't planning to migrate existing users from an existing
+     * SFTP-enabled server to a new server, don't update the host key. Accidentally
+     * changing a server's host key can be disruptive.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline bool HostKeyHasBeenSet() const { return m_hostKeyHasBeenSet; }
 
     /**
-     * <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code> command.</p>  <p>If you aren't planning to
-     * migrate existing users from an existing SFTP-enabled server to a new server,
-     * don't update the host key. Accidentally changing a server's host key can be
-     * disruptive.</p>  <p>For more information, see <a
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
+     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
+     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
+     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
+     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
+     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
+     *  <p>If you aren't planning to migrate existing users from an existing
+     * SFTP-enabled server to a new server, don't update the host key. Accidentally
+     * changing a server's host key can be disruptive.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline void SetHostKey(const Aws::String& value) { m_hostKeyHasBeenSet = true; m_hostKey = value; }
 
     /**
-     * <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code> command.</p>  <p>If you aren't planning to
-     * migrate existing users from an existing SFTP-enabled server to a new server,
-     * don't update the host key. Accidentally changing a server's host key can be
-     * disruptive.</p>  <p>For more information, see <a
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
+     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
+     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
+     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
+     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
+     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
+     *  <p>If you aren't planning to migrate existing users from an existing
+     * SFTP-enabled server to a new server, don't update the host key. Accidentally
+     * changing a server's host key can be disruptive.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline void SetHostKey(Aws::String&& value) { m_hostKeyHasBeenSet = true; m_hostKey = std::move(value); }
 
     /**
-     * <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code> command.</p>  <p>If you aren't planning to
-     * migrate existing users from an existing SFTP-enabled server to a new server,
-     * don't update the host key. Accidentally changing a server's host key can be
-     * disruptive.</p>  <p>For more information, see <a
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
+     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
+     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
+     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
+     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
+     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
+     *  <p>If you aren't planning to migrate existing users from an existing
+     * SFTP-enabled server to a new server, don't update the host key. Accidentally
+     * changing a server's host key can be disruptive.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline void SetHostKey(const char* value) { m_hostKeyHasBeenSet = true; m_hostKey.assign(value); }
 
     /**
-     * <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code> command.</p>  <p>If you aren't planning to
-     * migrate existing users from an existing SFTP-enabled server to a new server,
-     * don't update the host key. Accidentally changing a server's host key can be
-     * disruptive.</p>  <p>For more information, see <a
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
+     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
+     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
+     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
+     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
+     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
+     *  <p>If you aren't planning to migrate existing users from an existing
+     * SFTP-enabled server to a new server, don't update the host key. Accidentally
+     * changing a server's host key can be disruptive.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline CreateServerRequest& WithHostKey(const Aws::String& value) { SetHostKey(value); return *this;}
 
     /**
-     * <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code> command.</p>  <p>If you aren't planning to
-     * migrate existing users from an existing SFTP-enabled server to a new server,
-     * don't update the host key. Accidentally changing a server's host key can be
-     * disruptive.</p>  <p>For more information, see <a
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
+     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
+     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
+     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
+     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
+     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
+     *  <p>If you aren't planning to migrate existing users from an existing
+     * SFTP-enabled server to a new server, don't update the host key. Accidentally
+     * changing a server's host key can be disruptive.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline CreateServerRequest& WithHostKey(Aws::String&& value) { SetHostKey(std::move(value)); return *this;}
 
     /**
-     * <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
-     * my-new-server-key</code> command.</p>  <p>If you aren't planning to
-     * migrate existing users from an existing SFTP-enabled server to a new server,
-     * don't update the host key. Accidentally changing a server's host key can be
-     * disruptive.</p>  <p>For more information, see <a
+     * <p>The RSA, ECDSA, or ED25519 private key to use for your server.</p> <p>Use the
+     * following command to generate an RSA 2048 bit key with no passphrase:</p> <p>
+     * <code>ssh-keygen -t rsa -b 2048 -N "" -m PEM -f my-new-server-key</code>.</p>
+     * <p>Use a minimum value of 2048 for the <code>-b</code> option. You can create a
+     * stronger key by using 3072 or 4096.</p> <p>Use the following command to generate
+     * an ECDSA 256 bit key with no passphrase:</p> <p> <code>ssh-keygen -t ecdsa -b
+     * 256 -N "" -m PEM -f my-new-server-key</code>.</p> <p>Valid values for the
+     * <code>-b</code> option for ECDSA are 256, 384, and 521.</p> <p>Use the following
+     * command to generate an ED25519 key with no passphrase:</p> <p> <code>ssh-keygen
+     * -t ed25519 -N "" -f my-new-server-key</code>.</p> <p>For all of these commands,
+     * you can replace <i>my-new-server-key</i> with a string of your choice.</p>
+     *  <p>If you aren't planning to migrate existing users from an existing
+     * SFTP-enabled server to a new server, don't update the host key. Accidentally
+     * changing a server's host key can be disruptive.</p>  <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services
-     * Transfer Family User Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Transfer Family User
+     * Guide</i>.</p>
      */
     inline CreateServerRequest& WithHostKey(const char* value) { SetHostKey(value); return *this;}
 
@@ -639,242 +725,242 @@ namespace Model
 
 
     /**
-     * <p>Specifies the mode of authentication for a server. The default value is
+     * <p>The mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * credentials within the Transfer Family service.</p> <p>Use
      * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
-     * your on-premises environment or in Amazon Web Services using AD Connectors. This
-     * option also requires you to provide a Directory ID using the
+     * in Directory Service for Microsoft Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in Amazon Web Services using AD
+     * Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon
+     * API Gateway endpoint URL to call for authentication by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-     * provider. If you choose this value, you must specify the ARN for the lambda
-     * function in the <code>Function</code> parameter for the
+     * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
+     * identity provider. If you choose this value, you must specify the ARN for the
+     * Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
 
     /**
-     * <p>Specifies the mode of authentication for a server. The default value is
+     * <p>The mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * credentials within the Transfer Family service.</p> <p>Use
      * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
-     * your on-premises environment or in Amazon Web Services using AD Connectors. This
-     * option also requires you to provide a Directory ID using the
+     * in Directory Service for Microsoft Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in Amazon Web Services using AD
+     * Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon
+     * API Gateway endpoint URL to call for authentication by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-     * provider. If you choose this value, you must specify the ARN for the lambda
-     * function in the <code>Function</code> parameter for the
+     * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
+     * identity provider. If you choose this value, you must specify the ARN for the
+     * Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the mode of authentication for a server. The default value is
+     * <p>The mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * credentials within the Transfer Family service.</p> <p>Use
      * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
-     * your on-premises environment or in Amazon Web Services using AD Connectors. This
-     * option also requires you to provide a Directory ID using the
+     * in Directory Service for Microsoft Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in Amazon Web Services using AD
+     * Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon
+     * API Gateway endpoint URL to call for authentication by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-     * provider. If you choose this value, you must specify the ARN for the lambda
-     * function in the <code>Function</code> parameter for the
+     * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
+     * identity provider. If you choose this value, you must specify the ARN for the
+     * Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
 
     /**
-     * <p>Specifies the mode of authentication for a server. The default value is
+     * <p>The mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * credentials within the Transfer Family service.</p> <p>Use
      * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
-     * your on-premises environment or in Amazon Web Services using AD Connectors. This
-     * option also requires you to provide a Directory ID using the
+     * in Directory Service for Microsoft Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in Amazon Web Services using AD
+     * Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon
+     * API Gateway endpoint URL to call for authentication by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-     * provider. If you choose this value, you must specify the ARN for the lambda
-     * function in the <code>Function</code> parameter for the
+     * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
+     * identity provider. If you choose this value, you must specify the ARN for the
+     * Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(IdentityProviderType&& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = std::move(value); }
 
     /**
-     * <p>Specifies the mode of authentication for a server. The default value is
+     * <p>The mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * credentials within the Transfer Family service.</p> <p>Use
      * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
-     * your on-premises environment or in Amazon Web Services using AD Connectors. This
-     * option also requires you to provide a Directory ID using the
+     * in Directory Service for Microsoft Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in Amazon Web Services using AD
+     * Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon
+     * API Gateway endpoint URL to call for authentication by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-     * provider. If you choose this value, you must specify the ARN for the lambda
-     * function in the <code>Function</code> parameter for the
+     * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
+     * identity provider. If you choose this value, you must specify the ARN for the
+     * Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline CreateServerRequest& WithIdentityProviderType(const IdentityProviderType& value) { SetIdentityProviderType(value); return *this;}
 
     /**
-     * <p>Specifies the mode of authentication for a server. The default value is
+     * <p>The mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * credentials within the Transfer Family service.</p> <p>Use
      * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
-     * your on-premises environment or in Amazon Web Services using AD Connectors. This
-     * option also requires you to provide a Directory ID using the
+     * in Directory Service for Microsoft Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in Amazon Web Services using AD
+     * Connector. This option also requires you to provide a Directory ID by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon
+     * API Gateway endpoint URL to call for authentication by using the
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
-     * <code>AWS_LAMBDA</code> value to directly use a Lambda function as your identity
-     * provider. If you choose this value, you must specify the ARN for the lambda
-     * function in the <code>Function</code> parameter for the
+     * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
+     * identity provider. If you choose this value, you must specify the ARN for the
+     * Lambda function in the <code>Function</code> parameter or the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline CreateServerRequest& WithIdentityProviderType(IdentityProviderType&& value) { SetIdentityProviderType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline CreateServerRequest& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline CreateServerRequest& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
-     * and Access Management (IAM) role that allows a server to turn on Amazon
-     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
-     * can be viewed in your CloudWatch logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role that allows a server to turn on Amazon CloudWatch logging for Amazon S3 or
+     * Amazon EFSevents. When set, you can view user activity in your CloudWatch
+     * logs.</p>
      */
     inline CreateServerRequest& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
 
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline const Aws::String& GetPostAuthenticationLoginBanner() const{ return m_postAuthenticationLoginBanner; }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline bool PostAuthenticationLoginBannerHasBeenSet() const { return m_postAuthenticationLoginBannerHasBeenSet; }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline void SetPostAuthenticationLoginBanner(const Aws::String& value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner = value; }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline void SetPostAuthenticationLoginBanner(Aws::String&& value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner = std::move(value); }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline void SetPostAuthenticationLoginBanner(const char* value) { m_postAuthenticationLoginBannerHasBeenSet = true; m_postAuthenticationLoginBanner.assign(value); }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline CreateServerRequest& WithPostAuthenticationLoginBanner(const Aws::String& value) { SetPostAuthenticationLoginBanner(value); return *this;}
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
     inline CreateServerRequest& WithPostAuthenticationLoginBanner(Aws::String&& value) { SetPostAuthenticationLoginBanner(std::move(value)); return *this;}
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed after the user authenticates.</p>  <p>The SFTP protocol does not
      * support post-authentication display banners.</p> 
      */
@@ -882,9 +968,9 @@ namespace Model
 
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -893,9 +979,9 @@ namespace Model
     inline const Aws::String& GetPreAuthenticationLoginBanner() const{ return m_preAuthenticationLoginBanner; }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -904,9 +990,9 @@ namespace Model
     inline bool PreAuthenticationLoginBannerHasBeenSet() const { return m_preAuthenticationLoginBannerHasBeenSet; }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -915,9 +1001,9 @@ namespace Model
     inline void SetPreAuthenticationLoginBanner(const Aws::String& value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner = value; }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -926,9 +1012,9 @@ namespace Model
     inline void SetPreAuthenticationLoginBanner(Aws::String&& value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner = std::move(value); }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -937,9 +1023,9 @@ namespace Model
     inline void SetPreAuthenticationLoginBanner(const char* value) { m_preAuthenticationLoginBannerHasBeenSet = true; m_preAuthenticationLoginBanner.assign(value); }
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -948,9 +1034,9 @@ namespace Model
     inline CreateServerRequest& WithPreAuthenticationLoginBanner(const Aws::String& value) { SetPreAuthenticationLoginBanner(value); return *this;}
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -959,9 +1045,9 @@ namespace Model
     inline CreateServerRequest& WithPreAuthenticationLoginBanner(Aws::String&& value) { SetPreAuthenticationLoginBanner(std::move(value)); return *this;}
 
     /**
-     * <p>Specify a string to display when users connect to a server. This string is
+     * <p>Specifies a string to display when users connect to a server. This string is
      * displayed before the user authenticates. For example, the following banner
-     * displays details about using the system.</p> <p> <code>This system is for the
+     * displays details about using the system:</p> <p> <code>This system is for the
      * use of authorized users only. Individuals using this computer system without
      * authority, or in excess of their authority, are subject to having all of their
      * activities on this system monitored and recorded by system personnel.</code>
@@ -977,19 +1063,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
-     * choose a certificate stored in Amazon Web Services Certificate Manager (ACM)
-     * which is used to identify your server when clients connect to it over FTPS.</p>
-     * <p>If <code>Protocol</code> includes either <code>FTP</code> or
-     * <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code>
-     * and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
 
@@ -1000,19 +1089,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
-     * choose a certificate stored in Amazon Web Services Certificate Manager (ACM)
-     * which is used to identify your server when clients connect to it over FTPS.</p>
-     * <p>If <code>Protocol</code> includes either <code>FTP</code> or
-     * <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code>
-     * and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
 
@@ -1023,19 +1115,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
-     * choose a certificate stored in Amazon Web Services Certificate Manager (ACM)
-     * which is used to identify your server when clients connect to it over FTPS.</p>
-     * <p>If <code>Protocol</code> includes either <code>FTP</code> or
-     * <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code>
-     * and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
 
@@ -1046,19 +1141,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
-     * choose a certificate stored in Amazon Web Services Certificate Manager (ACM)
-     * which is used to identify your server when clients connect to it over FTPS.</p>
-     * <p>If <code>Protocol</code> includes either <code>FTP</code> or
-     * <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code>
-     * and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
 
@@ -1069,19 +1167,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
-     * choose a certificate stored in Amazon Web Services Certificate Manager (ACM)
-     * which is used to identify your server when clients connect to it over FTPS.</p>
-     * <p>If <code>Protocol</code> includes either <code>FTP</code> or
-     * <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code>
-     * and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline CreateServerRequest& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
 
@@ -1092,19 +1193,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
-     * choose a certificate stored in Amazon Web Services Certificate Manager (ACM)
-     * which is used to identify your server when clients connect to it over FTPS.</p>
-     * <p>If <code>Protocol</code> includes either <code>FTP</code> or
-     * <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code>
-     * and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline CreateServerRequest& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
 
@@ -1115,19 +1219,22 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
-     * choose a certificate stored in Amazon Web Services Certificate Manager (ACM)
-     * which is used to identify your server when clients connect to it over FTPS.</p>
-     * <p>If <code>Protocol</code> includes either <code>FTP</code> or
-     * <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code>
-     * and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline CreateServerRequest& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
 
@@ -1138,128 +1245,149 @@ namespace Model
      * Transfer Protocol): File transfer over SSH</p> </li> <li> <p> <code>FTPS</code>
      * (File Transfer Protocol Secure): File transfer with TLS encryption</p> </li>
      * <li> <p> <code>FTP</code> (File Transfer Protocol): Unencrypted file
-     * transfer</p> </li> </ul>  <p>If you select <code>FTPS</code>, you must
-     * choose a certificate stored in Amazon Web Services Certificate Manager (ACM)
-     * which is used to identify your server when clients connect to it over FTPS.</p>
-     * <p>If <code>Protocol</code> includes either <code>FTP</code> or
-     * <code>FTPS</code>, then the <code>EndpointType</code> must be <code>VPC</code>
-     * and the <code>IdentityProviderType</code> must be
-     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
-     * <code>IdentityProviderType</code> can be set to
-     * <code>SERVICE_MANAGED</code>.</p> 
+     * transfer</p> </li> <li> <p> <code>AS2</code> (Applicability Statement 2): used
+     * for transporting structured business-to-business data</p> </li> </ul> 
+     * <ul> <li> <p>If you select <code>FTPS</code>, you must choose a certificate
+     * stored in Certificate Manager (ACM) which is used to identify your server when
+     * clients connect to it over FTPS.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes either <code>FTP</code> or <code>FTPS</code>, then the
+     * <code>EndpointType</code> must be <code>VPC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> </li> <li> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> </li> <li> <p>If <code>Protocol</code> is set only to
+     * <code>SFTP</code>, the <code>EndpointType</code> can be set to
+     * <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+     * <code>SERVICE_MANAGED</code>.</p> </li> <li> <p>If <code>Protocol</code>
+     * includes <code>AS2</code>, then the <code>EndpointType</code> must be
+     * <code>VPC</code>, and domain must be Amazon S3.</p> </li> </ul> 
      */
     inline CreateServerRequest& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
-     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
-     * <code>SetStatOption</code> to ignore the error that is generated when the client
-     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
-     * SETSTAT command, and upload files without needing to make any changes to your
-     * SFTP client. Note that with <code>SetStatOption</code> set to
-     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
-     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
-     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
-     * or not your Transfer server resumes recent, negotiated sessions through a unique
-     * session ID.</p> </li> </ul>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline const ProtocolDetails& GetProtocolDetails() const{ return m_protocolDetails; }
 
     /**
      * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
-     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
-     * <code>SetStatOption</code> to ignore the error that is generated when the client
-     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
-     * SETSTAT command, and upload files without needing to make any changes to your
-     * SFTP client. Note that with <code>SetStatOption</code> set to
-     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
-     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
-     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
-     * or not your Transfer server resumes recent, negotiated sessions through a unique
-     * session ID.</p> </li> </ul>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline bool ProtocolDetailsHasBeenSet() const { return m_protocolDetailsHasBeenSet; }
 
     /**
      * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
-     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
-     * <code>SetStatOption</code> to ignore the error that is generated when the client
-     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
-     * SETSTAT command, and upload files without needing to make any changes to your
-     * SFTP client. Note that with <code>SetStatOption</code> set to
-     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
-     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
-     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
-     * or not your Transfer server resumes recent, negotiated sessions through a unique
-     * session ID.</p> </li> </ul>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline void SetProtocolDetails(const ProtocolDetails& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = value; }
 
     /**
      * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
-     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
-     * <code>SetStatOption</code> to ignore the error that is generated when the client
-     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
-     * SETSTAT command, and upload files without needing to make any changes to your
-     * SFTP client. Note that with <code>SetStatOption</code> set to
-     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
-     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
-     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
-     * or not your Transfer server resumes recent, negotiated sessions through a unique
-     * session ID.</p> </li> </ul>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline void SetProtocolDetails(ProtocolDetails&& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = std::move(value); }
 
     /**
      * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
-     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
-     * <code>SetStatOption</code> to ignore the error that is generated when the client
-     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
-     * SETSTAT command, and upload files without needing to make any changes to your
-     * SFTP client. Note that with <code>SetStatOption</code> set to
-     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
-     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
-     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
-     * or not your Transfer server resumes recent, negotiated sessions through a unique
-     * session ID.</p> </li> </ul>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline CreateServerRequest& WithProtocolDetails(const ProtocolDetails& value) { SetProtocolDetails(value); return *this;}
 
     /**
      * <p>The protocol settings that are configured for your server.</p> <ul> <li> <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and
-     * FTPS protocols). Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. </p> </li> <li> <p>Use the
-     * <code>SetStatOption</code> to ignore the error that is generated when the client
-     * attempts to use SETSTAT on a file you are uploading to an S3 bucket. Set the
-     * value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
-     * SETSTAT command, and upload files without needing to make any changes to your
-     * SFTP client. Note that with <code>SetStatOption</code> set to
-     * <code>ENABLE_NO_OP</code>, Transfer generates a log entry to CloudWatch Logs, so
-     * you can determine when the client is making a SETSTAT call.</p> </li> <li>
-     * <p>Use the <code>TlsSessionResumptionMode</code> parameter to determine whether
-     * or not your Transfer server resumes recent, negotiated sessions through a unique
-     * session ID.</p> </li> </ul>
+     * To indicate passive mode (for FTP and FTPS protocols), use the
+     * <code>PassiveIp</code> parameter. Enter a single dotted-quad IPv4 address, such
+     * as the external IP address of a firewall, router, or load balancer. </p> </li>
+     * <li> <p>To ignore the error that is generated when the client attempts to use
+     * the <code>SETSTAT</code> command on a file that you are uploading to an Amazon
+     * S3 bucket, use the <code>SetStatOption</code> parameter. To have the Transfer
+     * Family server ignore the <code>SETSTAT</code> command and upload files without
+     * needing to make any changes to your SFTP client, set the value to
+     * <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
+     * to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon
+     * CloudWatch Logs, so that you can determine when the client is making a
+     * <code>SETSTAT</code> call.</p> </li> <li> <p>To determine whether your Transfer
+     * Family server resumes recent, negotiated sessions through a unique session ID,
+     * use the <code>TlsSessionResumptionMode</code> parameter.</p> </li> <li> <p>
+     * <code>As2Transports</code> indicates the transport method for the AS2 messages.
+     * Currently, only HTTP is supported.</p> </li> </ul>
      */
     inline CreateServerRequest& WithProtocolDetails(ProtocolDetails&& value) { SetProtocolDetails(std::move(value)); return *this;}
 
@@ -1348,86 +1476,86 @@ namespace Model
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * used for executing the workflow.</p>
+     * that's used for executing the workflow.</p>
      */
     inline const WorkflowDetails& GetWorkflowDetails() const{ return m_workflowDetails; }
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * used for executing the workflow.</p>
+     * that's used for executing the workflow.</p>
      */
     inline bool WorkflowDetailsHasBeenSet() const { return m_workflowDetailsHasBeenSet; }
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * used for executing the workflow.</p>
+     * that's used for executing the workflow.</p>
      */
     inline void SetWorkflowDetails(const WorkflowDetails& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = value; }
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * used for executing the workflow.</p>
+     * that's used for executing the workflow.</p>
      */
     inline void SetWorkflowDetails(WorkflowDetails&& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = std::move(value); }
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * used for executing the workflow.</p>
+     * that's used for executing the workflow.</p>
      */
     inline CreateServerRequest& WithWorkflowDetails(const WorkflowDetails& value) { SetWorkflowDetails(value); return *this;}
 
     /**
      * <p>Specifies the workflow ID for the workflow to assign and the execution role
-     * used for executing the workflow.</p>
+     * that's used for executing the workflow.</p>
      */
     inline CreateServerRequest& WithWorkflowDetails(WorkflowDetails&& value) { SetWorkflowDetails(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_certificate;
-    bool m_certificateHasBeenSet;
+    bool m_certificateHasBeenSet = false;
 
     Domain m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     EndpointDetails m_endpointDetails;
-    bool m_endpointDetailsHasBeenSet;
+    bool m_endpointDetailsHasBeenSet = false;
 
     EndpointType m_endpointType;
-    bool m_endpointTypeHasBeenSet;
+    bool m_endpointTypeHasBeenSet = false;
 
     Aws::String m_hostKey;
-    bool m_hostKeyHasBeenSet;
+    bool m_hostKeyHasBeenSet = false;
 
     IdentityProviderDetails m_identityProviderDetails;
-    bool m_identityProviderDetailsHasBeenSet;
+    bool m_identityProviderDetailsHasBeenSet = false;
 
     IdentityProviderType m_identityProviderType;
-    bool m_identityProviderTypeHasBeenSet;
+    bool m_identityProviderTypeHasBeenSet = false;
 
     Aws::String m_loggingRole;
-    bool m_loggingRoleHasBeenSet;
+    bool m_loggingRoleHasBeenSet = false;
 
     Aws::String m_postAuthenticationLoginBanner;
-    bool m_postAuthenticationLoginBannerHasBeenSet;
+    bool m_postAuthenticationLoginBannerHasBeenSet = false;
 
     Aws::String m_preAuthenticationLoginBanner;
-    bool m_preAuthenticationLoginBannerHasBeenSet;
+    bool m_preAuthenticationLoginBannerHasBeenSet = false;
 
     Aws::Vector<Protocol> m_protocols;
-    bool m_protocolsHasBeenSet;
+    bool m_protocolsHasBeenSet = false;
 
     ProtocolDetails m_protocolDetails;
-    bool m_protocolDetailsHasBeenSet;
+    bool m_protocolDetailsHasBeenSet = false;
 
     Aws::String m_securityPolicyName;
-    bool m_securityPolicyNameHasBeenSet;
+    bool m_securityPolicyNameHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     WorkflowDetails m_workflowDetails;
-    bool m_workflowDetailsHasBeenSet;
+    bool m_workflowDetailsHasBeenSet = false;
   };
 
 } // namespace Model

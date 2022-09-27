@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_clusterVersion;
-    bool m_clusterVersionHasBeenSet;
+    bool m_clusterVersionHasBeenSet = false;
 
     Aws::String m_clusterParameterGroupFamily;
-    bool m_clusterParameterGroupFamilyHasBeenSet;
+    bool m_clusterParameterGroupFamilyHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

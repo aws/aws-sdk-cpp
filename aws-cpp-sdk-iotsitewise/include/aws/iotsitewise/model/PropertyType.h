@@ -228,16 +228,16 @@ namespace Model
   private:
 
     Attribute m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     Measurement m_measurement;
-    bool m_measurementHasBeenSet;
+    bool m_measurementHasBeenSet = false;
 
     Transform m_transform;
-    bool m_transformHasBeenSet;
+    bool m_transformHasBeenSet = false;
 
     Metric m_metric;
-    bool m_metricHasBeenSet;
+    bool m_metricHasBeenSet = false;
   };
 
 } // namespace Model

@@ -85,7 +85,7 @@ Aws::String UpdateNamespaceRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection UpdateNamespaceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.UpdateNamespace"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.UpdateNamespace"));
   return headers;
 
 }

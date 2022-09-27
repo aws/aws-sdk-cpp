@@ -258,16 +258,16 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_payload;
-    bool m_payloadHasBeenSet;
+    bool m_payloadHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     MergeStrategy m_mergeStrategy;
-    bool m_mergeStrategyHasBeenSet;
+    bool m_mergeStrategyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

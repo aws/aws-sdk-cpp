@@ -401,22 +401,22 @@ namespace Model
   private:
 
     SourceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_username;
-    bool m_usernameHasBeenSet;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_password;
-    bool m_passwordHasBeenSet;
+    bool m_passwordHasBeenSet = false;
 
     Aws::String m_sshKey;
-    bool m_sshKeyHasBeenSet;
+    bool m_sshKeyHasBeenSet = false;
 
     Aws::String m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
   };
 
 } // namespace Model

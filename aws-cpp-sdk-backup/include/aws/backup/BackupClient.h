@@ -5,371 +5,15 @@
 
 #pragma once
 #include <aws/backup/Backup_EXPORTS.h>
-#include <aws/backup/BackupErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/backup/model/CreateBackupPlanResult.h>
-#include <aws/backup/model/CreateBackupSelectionResult.h>
-#include <aws/backup/model/CreateBackupVaultResult.h>
-#include <aws/backup/model/CreateFrameworkResult.h>
-#include <aws/backup/model/CreateReportPlanResult.h>
-#include <aws/backup/model/DeleteBackupPlanResult.h>
-#include <aws/backup/model/DescribeBackupJobResult.h>
-#include <aws/backup/model/DescribeBackupVaultResult.h>
-#include <aws/backup/model/DescribeCopyJobResult.h>
-#include <aws/backup/model/DescribeFrameworkResult.h>
-#include <aws/backup/model/DescribeGlobalSettingsResult.h>
-#include <aws/backup/model/DescribeProtectedResourceResult.h>
-#include <aws/backup/model/DescribeRecoveryPointResult.h>
-#include <aws/backup/model/DescribeRegionSettingsResult.h>
-#include <aws/backup/model/DescribeReportJobResult.h>
-#include <aws/backup/model/DescribeReportPlanResult.h>
-#include <aws/backup/model/DescribeRestoreJobResult.h>
-#include <aws/backup/model/ExportBackupPlanTemplateResult.h>
-#include <aws/backup/model/GetBackupPlanResult.h>
-#include <aws/backup/model/GetBackupPlanFromJSONResult.h>
-#include <aws/backup/model/GetBackupPlanFromTemplateResult.h>
-#include <aws/backup/model/GetBackupSelectionResult.h>
-#include <aws/backup/model/GetBackupVaultAccessPolicyResult.h>
-#include <aws/backup/model/GetBackupVaultNotificationsResult.h>
-#include <aws/backup/model/GetRecoveryPointRestoreMetadataResult.h>
-#include <aws/backup/model/GetSupportedResourceTypesResult.h>
-#include <aws/backup/model/ListBackupJobsResult.h>
-#include <aws/backup/model/ListBackupPlanTemplatesResult.h>
-#include <aws/backup/model/ListBackupPlanVersionsResult.h>
-#include <aws/backup/model/ListBackupPlansResult.h>
-#include <aws/backup/model/ListBackupSelectionsResult.h>
-#include <aws/backup/model/ListBackupVaultsResult.h>
-#include <aws/backup/model/ListCopyJobsResult.h>
-#include <aws/backup/model/ListFrameworksResult.h>
-#include <aws/backup/model/ListProtectedResourcesResult.h>
-#include <aws/backup/model/ListRecoveryPointsByBackupVaultResult.h>
-#include <aws/backup/model/ListRecoveryPointsByResourceResult.h>
-#include <aws/backup/model/ListReportJobsResult.h>
-#include <aws/backup/model/ListReportPlansResult.h>
-#include <aws/backup/model/ListRestoreJobsResult.h>
-#include <aws/backup/model/ListTagsResult.h>
-#include <aws/backup/model/StartBackupJobResult.h>
-#include <aws/backup/model/StartCopyJobResult.h>
-#include <aws/backup/model/StartReportJobResult.h>
-#include <aws/backup/model/StartRestoreJobResult.h>
-#include <aws/backup/model/UpdateBackupPlanResult.h>
-#include <aws/backup/model/UpdateFrameworkResult.h>
-#include <aws/backup/model/UpdateRecoveryPointLifecycleResult.h>
-#include <aws/backup/model/UpdateReportPlanResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/backup/BackupServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Backup
 {
-
-namespace Model
-{
-        class CreateBackupPlanRequest;
-        class CreateBackupSelectionRequest;
-        class CreateBackupVaultRequest;
-        class CreateFrameworkRequest;
-        class CreateReportPlanRequest;
-        class DeleteBackupPlanRequest;
-        class DeleteBackupSelectionRequest;
-        class DeleteBackupVaultRequest;
-        class DeleteBackupVaultAccessPolicyRequest;
-        class DeleteBackupVaultLockConfigurationRequest;
-        class DeleteBackupVaultNotificationsRequest;
-        class DeleteFrameworkRequest;
-        class DeleteRecoveryPointRequest;
-        class DeleteReportPlanRequest;
-        class DescribeBackupJobRequest;
-        class DescribeBackupVaultRequest;
-        class DescribeCopyJobRequest;
-        class DescribeFrameworkRequest;
-        class DescribeGlobalSettingsRequest;
-        class DescribeProtectedResourceRequest;
-        class DescribeRecoveryPointRequest;
-        class DescribeRegionSettingsRequest;
-        class DescribeReportJobRequest;
-        class DescribeReportPlanRequest;
-        class DescribeRestoreJobRequest;
-        class DisassociateRecoveryPointRequest;
-        class ExportBackupPlanTemplateRequest;
-        class GetBackupPlanRequest;
-        class GetBackupPlanFromJSONRequest;
-        class GetBackupPlanFromTemplateRequest;
-        class GetBackupSelectionRequest;
-        class GetBackupVaultAccessPolicyRequest;
-        class GetBackupVaultNotificationsRequest;
-        class GetRecoveryPointRestoreMetadataRequest;
-        class ListBackupJobsRequest;
-        class ListBackupPlanTemplatesRequest;
-        class ListBackupPlanVersionsRequest;
-        class ListBackupPlansRequest;
-        class ListBackupSelectionsRequest;
-        class ListBackupVaultsRequest;
-        class ListCopyJobsRequest;
-        class ListFrameworksRequest;
-        class ListProtectedResourcesRequest;
-        class ListRecoveryPointsByBackupVaultRequest;
-        class ListRecoveryPointsByResourceRequest;
-        class ListReportJobsRequest;
-        class ListReportPlansRequest;
-        class ListRestoreJobsRequest;
-        class ListTagsRequest;
-        class PutBackupVaultAccessPolicyRequest;
-        class PutBackupVaultLockConfigurationRequest;
-        class PutBackupVaultNotificationsRequest;
-        class StartBackupJobRequest;
-        class StartCopyJobRequest;
-        class StartReportJobRequest;
-        class StartRestoreJobRequest;
-        class StopBackupJobRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateBackupPlanRequest;
-        class UpdateFrameworkRequest;
-        class UpdateGlobalSettingsRequest;
-        class UpdateRecoveryPointLifecycleRequest;
-        class UpdateRegionSettingsRequest;
-        class UpdateReportPlanRequest;
-
-        typedef Aws::Utils::Outcome<CreateBackupPlanResult, BackupError> CreateBackupPlanOutcome;
-        typedef Aws::Utils::Outcome<CreateBackupSelectionResult, BackupError> CreateBackupSelectionOutcome;
-        typedef Aws::Utils::Outcome<CreateBackupVaultResult, BackupError> CreateBackupVaultOutcome;
-        typedef Aws::Utils::Outcome<CreateFrameworkResult, BackupError> CreateFrameworkOutcome;
-        typedef Aws::Utils::Outcome<CreateReportPlanResult, BackupError> CreateReportPlanOutcome;
-        typedef Aws::Utils::Outcome<DeleteBackupPlanResult, BackupError> DeleteBackupPlanOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupSelectionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupVaultOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupVaultAccessPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupVaultLockConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteBackupVaultNotificationsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteFrameworkOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteRecoveryPointOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DeleteReportPlanOutcome;
-        typedef Aws::Utils::Outcome<DescribeBackupJobResult, BackupError> DescribeBackupJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeBackupVaultResult, BackupError> DescribeBackupVaultOutcome;
-        typedef Aws::Utils::Outcome<DescribeCopyJobResult, BackupError> DescribeCopyJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeFrameworkResult, BackupError> DescribeFrameworkOutcome;
-        typedef Aws::Utils::Outcome<DescribeGlobalSettingsResult, BackupError> DescribeGlobalSettingsOutcome;
-        typedef Aws::Utils::Outcome<DescribeProtectedResourceResult, BackupError> DescribeProtectedResourceOutcome;
-        typedef Aws::Utils::Outcome<DescribeRecoveryPointResult, BackupError> DescribeRecoveryPointOutcome;
-        typedef Aws::Utils::Outcome<DescribeRegionSettingsResult, BackupError> DescribeRegionSettingsOutcome;
-        typedef Aws::Utils::Outcome<DescribeReportJobResult, BackupError> DescribeReportJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeReportPlanResult, BackupError> DescribeReportPlanOutcome;
-        typedef Aws::Utils::Outcome<DescribeRestoreJobResult, BackupError> DescribeRestoreJobOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> DisassociateRecoveryPointOutcome;
-        typedef Aws::Utils::Outcome<ExportBackupPlanTemplateResult, BackupError> ExportBackupPlanTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetBackupPlanResult, BackupError> GetBackupPlanOutcome;
-        typedef Aws::Utils::Outcome<GetBackupPlanFromJSONResult, BackupError> GetBackupPlanFromJSONOutcome;
-        typedef Aws::Utils::Outcome<GetBackupPlanFromTemplateResult, BackupError> GetBackupPlanFromTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetBackupSelectionResult, BackupError> GetBackupSelectionOutcome;
-        typedef Aws::Utils::Outcome<GetBackupVaultAccessPolicyResult, BackupError> GetBackupVaultAccessPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetBackupVaultNotificationsResult, BackupError> GetBackupVaultNotificationsOutcome;
-        typedef Aws::Utils::Outcome<GetRecoveryPointRestoreMetadataResult, BackupError> GetRecoveryPointRestoreMetadataOutcome;
-        typedef Aws::Utils::Outcome<GetSupportedResourceTypesResult, BackupError> GetSupportedResourceTypesOutcome;
-        typedef Aws::Utils::Outcome<ListBackupJobsResult, BackupError> ListBackupJobsOutcome;
-        typedef Aws::Utils::Outcome<ListBackupPlanTemplatesResult, BackupError> ListBackupPlanTemplatesOutcome;
-        typedef Aws::Utils::Outcome<ListBackupPlanVersionsResult, BackupError> ListBackupPlanVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListBackupPlansResult, BackupError> ListBackupPlansOutcome;
-        typedef Aws::Utils::Outcome<ListBackupSelectionsResult, BackupError> ListBackupSelectionsOutcome;
-        typedef Aws::Utils::Outcome<ListBackupVaultsResult, BackupError> ListBackupVaultsOutcome;
-        typedef Aws::Utils::Outcome<ListCopyJobsResult, BackupError> ListCopyJobsOutcome;
-        typedef Aws::Utils::Outcome<ListFrameworksResult, BackupError> ListFrameworksOutcome;
-        typedef Aws::Utils::Outcome<ListProtectedResourcesResult, BackupError> ListProtectedResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListRecoveryPointsByBackupVaultResult, BackupError> ListRecoveryPointsByBackupVaultOutcome;
-        typedef Aws::Utils::Outcome<ListRecoveryPointsByResourceResult, BackupError> ListRecoveryPointsByResourceOutcome;
-        typedef Aws::Utils::Outcome<ListReportJobsResult, BackupError> ListReportJobsOutcome;
-        typedef Aws::Utils::Outcome<ListReportPlansResult, BackupError> ListReportPlansOutcome;
-        typedef Aws::Utils::Outcome<ListRestoreJobsResult, BackupError> ListRestoreJobsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsResult, BackupError> ListTagsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> PutBackupVaultAccessPolicyOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> PutBackupVaultLockConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> PutBackupVaultNotificationsOutcome;
-        typedef Aws::Utils::Outcome<StartBackupJobResult, BackupError> StartBackupJobOutcome;
-        typedef Aws::Utils::Outcome<StartCopyJobResult, BackupError> StartCopyJobOutcome;
-        typedef Aws::Utils::Outcome<StartReportJobResult, BackupError> StartReportJobOutcome;
-        typedef Aws::Utils::Outcome<StartRestoreJobResult, BackupError> StartRestoreJobOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> StopBackupJobOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateBackupPlanResult, BackupError> UpdateBackupPlanOutcome;
-        typedef Aws::Utils::Outcome<UpdateFrameworkResult, BackupError> UpdateFrameworkOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> UpdateGlobalSettingsOutcome;
-        typedef Aws::Utils::Outcome<UpdateRecoveryPointLifecycleResult, BackupError> UpdateRecoveryPointLifecycleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, BackupError> UpdateRegionSettingsOutcome;
-        typedef Aws::Utils::Outcome<UpdateReportPlanResult, BackupError> UpdateReportPlanOutcome;
-
-        typedef std::future<CreateBackupPlanOutcome> CreateBackupPlanOutcomeCallable;
-        typedef std::future<CreateBackupSelectionOutcome> CreateBackupSelectionOutcomeCallable;
-        typedef std::future<CreateBackupVaultOutcome> CreateBackupVaultOutcomeCallable;
-        typedef std::future<CreateFrameworkOutcome> CreateFrameworkOutcomeCallable;
-        typedef std::future<CreateReportPlanOutcome> CreateReportPlanOutcomeCallable;
-        typedef std::future<DeleteBackupPlanOutcome> DeleteBackupPlanOutcomeCallable;
-        typedef std::future<DeleteBackupSelectionOutcome> DeleteBackupSelectionOutcomeCallable;
-        typedef std::future<DeleteBackupVaultOutcome> DeleteBackupVaultOutcomeCallable;
-        typedef std::future<DeleteBackupVaultAccessPolicyOutcome> DeleteBackupVaultAccessPolicyOutcomeCallable;
-        typedef std::future<DeleteBackupVaultLockConfigurationOutcome> DeleteBackupVaultLockConfigurationOutcomeCallable;
-        typedef std::future<DeleteBackupVaultNotificationsOutcome> DeleteBackupVaultNotificationsOutcomeCallable;
-        typedef std::future<DeleteFrameworkOutcome> DeleteFrameworkOutcomeCallable;
-        typedef std::future<DeleteRecoveryPointOutcome> DeleteRecoveryPointOutcomeCallable;
-        typedef std::future<DeleteReportPlanOutcome> DeleteReportPlanOutcomeCallable;
-        typedef std::future<DescribeBackupJobOutcome> DescribeBackupJobOutcomeCallable;
-        typedef std::future<DescribeBackupVaultOutcome> DescribeBackupVaultOutcomeCallable;
-        typedef std::future<DescribeCopyJobOutcome> DescribeCopyJobOutcomeCallable;
-        typedef std::future<DescribeFrameworkOutcome> DescribeFrameworkOutcomeCallable;
-        typedef std::future<DescribeGlobalSettingsOutcome> DescribeGlobalSettingsOutcomeCallable;
-        typedef std::future<DescribeProtectedResourceOutcome> DescribeProtectedResourceOutcomeCallable;
-        typedef std::future<DescribeRecoveryPointOutcome> DescribeRecoveryPointOutcomeCallable;
-        typedef std::future<DescribeRegionSettingsOutcome> DescribeRegionSettingsOutcomeCallable;
-        typedef std::future<DescribeReportJobOutcome> DescribeReportJobOutcomeCallable;
-        typedef std::future<DescribeReportPlanOutcome> DescribeReportPlanOutcomeCallable;
-        typedef std::future<DescribeRestoreJobOutcome> DescribeRestoreJobOutcomeCallable;
-        typedef std::future<DisassociateRecoveryPointOutcome> DisassociateRecoveryPointOutcomeCallable;
-        typedef std::future<ExportBackupPlanTemplateOutcome> ExportBackupPlanTemplateOutcomeCallable;
-        typedef std::future<GetBackupPlanOutcome> GetBackupPlanOutcomeCallable;
-        typedef std::future<GetBackupPlanFromJSONOutcome> GetBackupPlanFromJSONOutcomeCallable;
-        typedef std::future<GetBackupPlanFromTemplateOutcome> GetBackupPlanFromTemplateOutcomeCallable;
-        typedef std::future<GetBackupSelectionOutcome> GetBackupSelectionOutcomeCallable;
-        typedef std::future<GetBackupVaultAccessPolicyOutcome> GetBackupVaultAccessPolicyOutcomeCallable;
-        typedef std::future<GetBackupVaultNotificationsOutcome> GetBackupVaultNotificationsOutcomeCallable;
-        typedef std::future<GetRecoveryPointRestoreMetadataOutcome> GetRecoveryPointRestoreMetadataOutcomeCallable;
-        typedef std::future<GetSupportedResourceTypesOutcome> GetSupportedResourceTypesOutcomeCallable;
-        typedef std::future<ListBackupJobsOutcome> ListBackupJobsOutcomeCallable;
-        typedef std::future<ListBackupPlanTemplatesOutcome> ListBackupPlanTemplatesOutcomeCallable;
-        typedef std::future<ListBackupPlanVersionsOutcome> ListBackupPlanVersionsOutcomeCallable;
-        typedef std::future<ListBackupPlansOutcome> ListBackupPlansOutcomeCallable;
-        typedef std::future<ListBackupSelectionsOutcome> ListBackupSelectionsOutcomeCallable;
-        typedef std::future<ListBackupVaultsOutcome> ListBackupVaultsOutcomeCallable;
-        typedef std::future<ListCopyJobsOutcome> ListCopyJobsOutcomeCallable;
-        typedef std::future<ListFrameworksOutcome> ListFrameworksOutcomeCallable;
-        typedef std::future<ListProtectedResourcesOutcome> ListProtectedResourcesOutcomeCallable;
-        typedef std::future<ListRecoveryPointsByBackupVaultOutcome> ListRecoveryPointsByBackupVaultOutcomeCallable;
-        typedef std::future<ListRecoveryPointsByResourceOutcome> ListRecoveryPointsByResourceOutcomeCallable;
-        typedef std::future<ListReportJobsOutcome> ListReportJobsOutcomeCallable;
-        typedef std::future<ListReportPlansOutcome> ListReportPlansOutcomeCallable;
-        typedef std::future<ListRestoreJobsOutcome> ListRestoreJobsOutcomeCallable;
-        typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
-        typedef std::future<PutBackupVaultAccessPolicyOutcome> PutBackupVaultAccessPolicyOutcomeCallable;
-        typedef std::future<PutBackupVaultLockConfigurationOutcome> PutBackupVaultLockConfigurationOutcomeCallable;
-        typedef std::future<PutBackupVaultNotificationsOutcome> PutBackupVaultNotificationsOutcomeCallable;
-        typedef std::future<StartBackupJobOutcome> StartBackupJobOutcomeCallable;
-        typedef std::future<StartCopyJobOutcome> StartCopyJobOutcomeCallable;
-        typedef std::future<StartReportJobOutcome> StartReportJobOutcomeCallable;
-        typedef std::future<StartRestoreJobOutcome> StartRestoreJobOutcomeCallable;
-        typedef std::future<StopBackupJobOutcome> StopBackupJobOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateBackupPlanOutcome> UpdateBackupPlanOutcomeCallable;
-        typedef std::future<UpdateFrameworkOutcome> UpdateFrameworkOutcomeCallable;
-        typedef std::future<UpdateGlobalSettingsOutcome> UpdateGlobalSettingsOutcomeCallable;
-        typedef std::future<UpdateRecoveryPointLifecycleOutcome> UpdateRecoveryPointLifecycleOutcomeCallable;
-        typedef std::future<UpdateRegionSettingsOutcome> UpdateRegionSettingsOutcomeCallable;
-        typedef std::future<UpdateReportPlanOutcome> UpdateReportPlanOutcomeCallable;
-} // namespace Model
-
-  class BackupClient;
-
-    typedef std::function<void(const BackupClient*, const Model::CreateBackupPlanRequest&, const Model::CreateBackupPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupPlanResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::CreateBackupSelectionRequest&, const Model::CreateBackupSelectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupSelectionResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::CreateBackupVaultRequest&, const Model::CreateBackupVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupVaultResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::CreateFrameworkRequest&, const Model::CreateFrameworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFrameworkResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::CreateReportPlanRequest&, const Model::CreateReportPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReportPlanResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DeleteBackupPlanRequest&, const Model::DeleteBackupPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupPlanResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DeleteBackupSelectionRequest&, const Model::DeleteBackupSelectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupSelectionResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DeleteBackupVaultRequest&, const Model::DeleteBackupVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupVaultResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DeleteBackupVaultAccessPolicyRequest&, const Model::DeleteBackupVaultAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupVaultAccessPolicyResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DeleteBackupVaultLockConfigurationRequest&, const Model::DeleteBackupVaultLockConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupVaultLockConfigurationResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DeleteBackupVaultNotificationsRequest&, const Model::DeleteBackupVaultNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupVaultNotificationsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DeleteFrameworkRequest&, const Model::DeleteFrameworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFrameworkResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DeleteRecoveryPointRequest&, const Model::DeleteRecoveryPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecoveryPointResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DeleteReportPlanRequest&, const Model::DeleteReportPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReportPlanResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DescribeBackupJobRequest&, const Model::DescribeBackupJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupJobResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DescribeBackupVaultRequest&, const Model::DescribeBackupVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupVaultResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DescribeCopyJobRequest&, const Model::DescribeCopyJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCopyJobResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DescribeFrameworkRequest&, const Model::DescribeFrameworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFrameworkResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DescribeGlobalSettingsRequest&, const Model::DescribeGlobalSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalSettingsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DescribeProtectedResourceRequest&, const Model::DescribeProtectedResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProtectedResourceResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DescribeRecoveryPointRequest&, const Model::DescribeRecoveryPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecoveryPointResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DescribeRegionSettingsRequest&, const Model::DescribeRegionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRegionSettingsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DescribeReportJobRequest&, const Model::DescribeReportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReportJobResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DescribeReportPlanRequest&, const Model::DescribeReportPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReportPlanResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DescribeRestoreJobRequest&, const Model::DescribeRestoreJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRestoreJobResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::DisassociateRecoveryPointRequest&, const Model::DisassociateRecoveryPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRecoveryPointResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ExportBackupPlanTemplateRequest&, const Model::ExportBackupPlanTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportBackupPlanTemplateResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::GetBackupPlanRequest&, const Model::GetBackupPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackupPlanResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::GetBackupPlanFromJSONRequest&, const Model::GetBackupPlanFromJSONOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackupPlanFromJSONResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::GetBackupPlanFromTemplateRequest&, const Model::GetBackupPlanFromTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackupPlanFromTemplateResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::GetBackupSelectionRequest&, const Model::GetBackupSelectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackupSelectionResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::GetBackupVaultAccessPolicyRequest&, const Model::GetBackupVaultAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackupVaultAccessPolicyResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::GetBackupVaultNotificationsRequest&, const Model::GetBackupVaultNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackupVaultNotificationsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::GetRecoveryPointRestoreMetadataRequest&, const Model::GetRecoveryPointRestoreMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecoveryPointRestoreMetadataResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::GetSupportedResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSupportedResourceTypesResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListBackupJobsRequest&, const Model::ListBackupJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupJobsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListBackupPlanTemplatesRequest&, const Model::ListBackupPlanTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupPlanTemplatesResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListBackupPlanVersionsRequest&, const Model::ListBackupPlanVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupPlanVersionsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListBackupPlansRequest&, const Model::ListBackupPlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupPlansResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListBackupSelectionsRequest&, const Model::ListBackupSelectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupSelectionsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListBackupVaultsRequest&, const Model::ListBackupVaultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupVaultsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListCopyJobsRequest&, const Model::ListCopyJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCopyJobsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListFrameworksRequest&, const Model::ListFrameworksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFrameworksResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListProtectedResourcesRequest&, const Model::ListProtectedResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectedResourcesResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListRecoveryPointsByBackupVaultRequest&, const Model::ListRecoveryPointsByBackupVaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecoveryPointsByBackupVaultResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListRecoveryPointsByResourceRequest&, const Model::ListRecoveryPointsByResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecoveryPointsByResourceResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListReportJobsRequest&, const Model::ListReportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportJobsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListReportPlansRequest&, const Model::ListReportPlansOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportPlansResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListRestoreJobsRequest&, const Model::ListRestoreJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRestoreJobsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::PutBackupVaultAccessPolicyRequest&, const Model::PutBackupVaultAccessPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBackupVaultAccessPolicyResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::PutBackupVaultLockConfigurationRequest&, const Model::PutBackupVaultLockConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBackupVaultLockConfigurationResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::PutBackupVaultNotificationsRequest&, const Model::PutBackupVaultNotificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBackupVaultNotificationsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::StartBackupJobRequest&, const Model::StartBackupJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBackupJobResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::StartCopyJobRequest&, const Model::StartCopyJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCopyJobResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::StartReportJobRequest&, const Model::StartReportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReportJobResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::StartRestoreJobRequest&, const Model::StartRestoreJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRestoreJobResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::StopBackupJobRequest&, const Model::StopBackupJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBackupJobResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::UpdateBackupPlanRequest&, const Model::UpdateBackupPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBackupPlanResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::UpdateFrameworkRequest&, const Model::UpdateFrameworkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFrameworkResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::UpdateGlobalSettingsRequest&, const Model::UpdateGlobalSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalSettingsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::UpdateRecoveryPointLifecycleRequest&, const Model::UpdateRecoveryPointLifecycleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRecoveryPointLifecycleResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::UpdateRegionSettingsRequest&, const Model::UpdateRegionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRegionSettingsResponseReceivedHandler;
-    typedef std::function<void(const BackupClient*, const Model::UpdateReportPlanRequest&, const Model::UpdateReportPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReportPlanResponseReceivedHandler;
-
   /**
    * <fullname>Backup</fullname> <p>Backup is a unified backup service designed to
    * protect Amazon Web Services services and their associated data. Backup
@@ -391,14 +35,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        BackupClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        BackupClient(const Aws::Auth::AWSCredentials& credentials,
+                     const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         BackupClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                     const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~BackupClient();
 
@@ -1598,9 +1243,9 @@ namespace Model
          * stored in cold storage for a minimum of 90 days. Therefore, the “retention”
          * setting must be 90 days greater than the “transition to cold after days”
          * setting. The “transition to cold after days” setting cannot be changed after a
-         * backup has been transitioned to cold.</p> <p>Only resource types that support
-         * full Backup management can transition their backups to cold storage. Those
-         * resource types are listed in the "Full Backup management" section of the <a
+         * backup has been transitioned to cold.</p> <p>Resource types that are able to be
+         * transitioned to cold storage are listed in the "Lifecycle to cold storage"
+         * section of the <a
          * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
          * Feature availability by resource</a> table. Backup ignores this expression for
          * other resource types.</p> <p>This operation does not support continuous
@@ -1664,72 +1309,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateBackupPlanAsyncHelper(const Model::CreateBackupPlanRequest& request, const CreateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateBackupSelectionAsyncHelper(const Model::CreateBackupSelectionRequest& request, const CreateBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateBackupVaultAsyncHelper(const Model::CreateBackupVaultRequest& request, const CreateBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateFrameworkAsyncHelper(const Model::CreateFrameworkRequest& request, const CreateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateReportPlanAsyncHelper(const Model::CreateReportPlanRequest& request, const CreateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBackupPlanAsyncHelper(const Model::DeleteBackupPlanRequest& request, const DeleteBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBackupSelectionAsyncHelper(const Model::DeleteBackupSelectionRequest& request, const DeleteBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBackupVaultAsyncHelper(const Model::DeleteBackupVaultRequest& request, const DeleteBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBackupVaultAccessPolicyAsyncHelper(const Model::DeleteBackupVaultAccessPolicyRequest& request, const DeleteBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBackupVaultLockConfigurationAsyncHelper(const Model::DeleteBackupVaultLockConfigurationRequest& request, const DeleteBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBackupVaultNotificationsAsyncHelper(const Model::DeleteBackupVaultNotificationsRequest& request, const DeleteBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteFrameworkAsyncHelper(const Model::DeleteFrameworkRequest& request, const DeleteFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRecoveryPointAsyncHelper(const Model::DeleteRecoveryPointRequest& request, const DeleteRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteReportPlanAsyncHelper(const Model::DeleteReportPlanRequest& request, const DeleteReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBackupJobAsyncHelper(const Model::DescribeBackupJobRequest& request, const DescribeBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBackupVaultAsyncHelper(const Model::DescribeBackupVaultRequest& request, const DescribeBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCopyJobAsyncHelper(const Model::DescribeCopyJobRequest& request, const DescribeCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeFrameworkAsyncHelper(const Model::DescribeFrameworkRequest& request, const DescribeFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeGlobalSettingsAsyncHelper(const Model::DescribeGlobalSettingsRequest& request, const DescribeGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeProtectedResourceAsyncHelper(const Model::DescribeProtectedResourceRequest& request, const DescribeProtectedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRecoveryPointAsyncHelper(const Model::DescribeRecoveryPointRequest& request, const DescribeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRegionSettingsAsyncHelper(const Model::DescribeRegionSettingsRequest& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeReportJobAsyncHelper(const Model::DescribeReportJobRequest& request, const DescribeReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeReportPlanAsyncHelper(const Model::DescribeReportPlanRequest& request, const DescribeReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRestoreJobAsyncHelper(const Model::DescribeRestoreJobRequest& request, const DescribeRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateRecoveryPointAsyncHelper(const Model::DisassociateRecoveryPointRequest& request, const DisassociateRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ExportBackupPlanTemplateAsyncHelper(const Model::ExportBackupPlanTemplateRequest& request, const ExportBackupPlanTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetBackupPlanAsyncHelper(const Model::GetBackupPlanRequest& request, const GetBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetBackupPlanFromJSONAsyncHelper(const Model::GetBackupPlanFromJSONRequest& request, const GetBackupPlanFromJSONResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetBackupPlanFromTemplateAsyncHelper(const Model::GetBackupPlanFromTemplateRequest& request, const GetBackupPlanFromTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetBackupSelectionAsyncHelper(const Model::GetBackupSelectionRequest& request, const GetBackupSelectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetBackupVaultAccessPolicyAsyncHelper(const Model::GetBackupVaultAccessPolicyRequest& request, const GetBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetBackupVaultNotificationsAsyncHelper(const Model::GetBackupVaultNotificationsRequest& request, const GetBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRecoveryPointRestoreMetadataAsyncHelper(const Model::GetRecoveryPointRestoreMetadataRequest& request, const GetRecoveryPointRestoreMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSupportedResourceTypesAsyncHelper(const GetSupportedResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBackupJobsAsyncHelper(const Model::ListBackupJobsRequest& request, const ListBackupJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBackupPlanTemplatesAsyncHelper(const Model::ListBackupPlanTemplatesRequest& request, const ListBackupPlanTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBackupPlanVersionsAsyncHelper(const Model::ListBackupPlanVersionsRequest& request, const ListBackupPlanVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBackupPlansAsyncHelper(const Model::ListBackupPlansRequest& request, const ListBackupPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBackupSelectionsAsyncHelper(const Model::ListBackupSelectionsRequest& request, const ListBackupSelectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListBackupVaultsAsyncHelper(const Model::ListBackupVaultsRequest& request, const ListBackupVaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCopyJobsAsyncHelper(const Model::ListCopyJobsRequest& request, const ListCopyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListFrameworksAsyncHelper(const Model::ListFrameworksRequest& request, const ListFrameworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProtectedResourcesAsyncHelper(const Model::ListProtectedResourcesRequest& request, const ListProtectedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRecoveryPointsByBackupVaultAsyncHelper(const Model::ListRecoveryPointsByBackupVaultRequest& request, const ListRecoveryPointsByBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRecoveryPointsByResourceAsyncHelper(const Model::ListRecoveryPointsByResourceRequest& request, const ListRecoveryPointsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListReportJobsAsyncHelper(const Model::ListReportJobsRequest& request, const ListReportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListReportPlansAsyncHelper(const Model::ListReportPlansRequest& request, const ListReportPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRestoreJobsAsyncHelper(const Model::ListRestoreJobsRequest& request, const ListRestoreJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutBackupVaultAccessPolicyAsyncHelper(const Model::PutBackupVaultAccessPolicyRequest& request, const PutBackupVaultAccessPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutBackupVaultLockConfigurationAsyncHelper(const Model::PutBackupVaultLockConfigurationRequest& request, const PutBackupVaultLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutBackupVaultNotificationsAsyncHelper(const Model::PutBackupVaultNotificationsRequest& request, const PutBackupVaultNotificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartBackupJobAsyncHelper(const Model::StartBackupJobRequest& request, const StartBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartCopyJobAsyncHelper(const Model::StartCopyJobRequest& request, const StartCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartReportJobAsyncHelper(const Model::StartReportJobRequest& request, const StartReportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartRestoreJobAsyncHelper(const Model::StartRestoreJobRequest& request, const StartRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopBackupJobAsyncHelper(const Model::StopBackupJobRequest& request, const StopBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateBackupPlanAsyncHelper(const Model::UpdateBackupPlanRequest& request, const UpdateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateFrameworkAsyncHelper(const Model::UpdateFrameworkRequest& request, const UpdateFrameworkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateGlobalSettingsAsyncHelper(const Model::UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRecoveryPointLifecycleAsyncHelper(const Model::UpdateRecoveryPointLifecycleRequest& request, const UpdateRecoveryPointLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateRegionSettingsAsyncHelper(const Model::UpdateRegionSettingsRequest& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateReportPlanAsyncHelper(const Model::UpdateReportPlanRequest& request, const UpdateReportPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

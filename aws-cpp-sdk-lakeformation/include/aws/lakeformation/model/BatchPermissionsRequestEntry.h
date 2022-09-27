@@ -229,19 +229,19 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     DataLakePrincipal m_principal;
-    bool m_principalHasBeenSet;
+    bool m_principalHasBeenSet = false;
 
     Resource m_resource;
-    bool m_resourceHasBeenSet;
+    bool m_resourceHasBeenSet = false;
 
     Aws::Vector<Permission> m_permissions;
-    bool m_permissionsHasBeenSet;
+    bool m_permissionsHasBeenSet = false;
 
     Aws::Vector<Permission> m_permissionsWithGrantOption;
-    bool m_permissionsWithGrantOptionHasBeenSet;
+    bool m_permissionsWithGrantOptionHasBeenSet = false;
   };
 
 } // namespace Model

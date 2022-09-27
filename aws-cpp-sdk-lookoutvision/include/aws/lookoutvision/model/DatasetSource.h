@@ -71,7 +71,7 @@ namespace Model
   private:
 
     DatasetGroundTruthManifest m_groundTruthManifest;
-    bool m_groundTruthManifestHasBeenSet;
+    bool m_groundTruthManifestHasBeenSet = false;
   };
 
 } // namespace Model

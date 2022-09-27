@@ -202,10 +202,10 @@ namespace Model
   private:
 
     Aws::Vector<StandardIdentifier> m_standardIdentifiers;
-    bool m_standardIdentifiersHasBeenSet;
+    bool m_standardIdentifiersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_fieldNames;
-    bool m_fieldNamesHasBeenSet;
+    bool m_fieldNamesHasBeenSet = false;
   };
 
 } // namespace Model

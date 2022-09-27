@@ -139,13 +139,13 @@ namespace Model
   private:
 
     Aws::String m_namespaceName;
-    bool m_namespaceNameHasBeenSet;
+    bool m_namespaceNameHasBeenSet = false;
 
     int m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
 
     Aws::String m_snapshotName;
-    bool m_snapshotNameHasBeenSet;
+    bool m_snapshotNameHasBeenSet = false;
   };
 
 } // namespace Model

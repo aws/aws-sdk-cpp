@@ -35,7 +35,13 @@ namespace Model
    * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
    * <code>ManagedRuleGroupStatement</code>, for example for use inside a
    * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
-   * as a top-level statement within a rule.</p><p><h3>See Also:</h3>   <a
+   * as a top-level statement within a rule.</p>  <p>You are charged additional
+   * fees when you use the WAF Bot Control managed rule group
+   * <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account
+   * takeover prevention (ATP) managed rule group
+   * <code>AWSManagedRulesATPRuleSet</code>. For more information, see <a
+   * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ManagedRuleGroupStatement">AWS
    * API Reference</a></p>
    */
@@ -462,22 +468,22 @@ namespace Model
   private:
 
     Aws::String m_vendorName;
-    bool m_vendorNameHasBeenSet;
+    bool m_vendorNameHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::Vector<ExcludedRule> m_excludedRules;
-    bool m_excludedRulesHasBeenSet;
+    bool m_excludedRulesHasBeenSet = false;
 
     std::shared_ptr<Statement> m_scopeDownStatement;
-    bool m_scopeDownStatementHasBeenSet;
+    bool m_scopeDownStatementHasBeenSet = false;
 
     Aws::Vector<ManagedRuleGroupConfig> m_managedRuleGroupConfigs;
-    bool m_managedRuleGroupConfigsHasBeenSet;
+    bool m_managedRuleGroupConfigsHasBeenSet = false;
   };
 
 } // namespace Model

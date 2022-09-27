@@ -24,6 +24,8 @@ HttpGatewayRouteMatch::HttpGatewayRouteMatch() :
     m_method(HttpMethod::NOT_SET),
     m_methodHasBeenSet(false),
     m_pathHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
     m_prefixHasBeenSet(false),
     m_queryParametersHasBeenSet(false)
 {
@@ -35,6 +37,8 @@ HttpGatewayRouteMatch::HttpGatewayRouteMatch(JsonView jsonValue) :
     m_method(HttpMethod::NOT_SET),
     m_methodHasBeenSet(false),
     m_pathHasBeenSet(false),
+    m_port(0),
+    m_portHasBeenSet(false),
     m_prefixHasBeenSet(false),
     m_queryParametersHasBeenSet(false)
 {
@@ -72,6 +76,13 @@ HttpGatewayRouteMatch& HttpGatewayRouteMatch::operator =(JsonView jsonValue)
     m_path = jsonValue.GetObject("path");
 
     m_pathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("port"))
+  {
+    m_port = jsonValue.GetInteger("port");
+
+    m_portHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("prefix"))
@@ -123,6 +134,12 @@ JsonValue HttpGatewayRouteMatch::Jsonize() const
   if(m_pathHasBeenSet)
   {
    payload.WithObject("path", m_path.Jsonize());
+
+  }
+
+  if(m_portHasBeenSet)
+  {
+   payload.WithInteger("port", m_port);
 
   }
 

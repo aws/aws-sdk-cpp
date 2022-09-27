@@ -23,6 +23,7 @@ namespace Aws
         static const int standard_HASH = HashingUtils::HashString("standard");
         static const int gp2_HASH = HashingUtils::HashString("gp2");
         static const int io1_HASH = HashingUtils::HashString("io1");
+        static const int gp3_HASH = HashingUtils::HashString("gp3");
 
 
         VolumeType GetVolumeTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == io1_HASH)
           {
             return VolumeType::io1;
+          }
+          else if (hashCode == gp3_HASH)
+          {
+            return VolumeType::gp3;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "gp2";
           case VolumeType::io1:
             return "io1";
+          case VolumeType::gp3:
+            return "gp3";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

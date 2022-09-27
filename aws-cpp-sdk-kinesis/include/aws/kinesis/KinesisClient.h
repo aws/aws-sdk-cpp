@@ -5,191 +5,15 @@
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
-#include <aws/kinesis/KinesisErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/kinesis/model/DescribeLimitsResult.h>
-#include <aws/kinesis/model/DescribeStreamResult.h>
-#include <aws/kinesis/model/DescribeStreamConsumerResult.h>
-#include <aws/kinesis/model/DescribeStreamSummaryResult.h>
-#include <aws/kinesis/model/DisableEnhancedMonitoringResult.h>
-#include <aws/kinesis/model/EnableEnhancedMonitoringResult.h>
-#include <aws/kinesis/model/GetRecordsResult.h>
-#include <aws/kinesis/model/GetShardIteratorResult.h>
-#include <aws/kinesis/model/ListShardsResult.h>
-#include <aws/kinesis/model/ListStreamConsumersResult.h>
-#include <aws/kinesis/model/ListStreamsResult.h>
-#include <aws/kinesis/model/ListTagsForStreamResult.h>
-#include <aws/kinesis/model/PutRecordResult.h>
-#include <aws/kinesis/model/PutRecordsResult.h>
-#include <aws/kinesis/model/RegisterStreamConsumerResult.h>
-#include <aws/kinesis/model/UpdateShardCountResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/kinesis/KinesisServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Kinesis
 {
-
-namespace Model
-{
-        class AddTagsToStreamRequest;
-        class CreateStreamRequest;
-        class DecreaseStreamRetentionPeriodRequest;
-        class DeleteStreamRequest;
-        class DeregisterStreamConsumerRequest;
-        class DescribeLimitsRequest;
-        class DescribeStreamRequest;
-        class DescribeStreamConsumerRequest;
-        class DescribeStreamSummaryRequest;
-        class DisableEnhancedMonitoringRequest;
-        class EnableEnhancedMonitoringRequest;
-        class GetRecordsRequest;
-        class GetShardIteratorRequest;
-        class IncreaseStreamRetentionPeriodRequest;
-        class ListShardsRequest;
-        class ListStreamConsumersRequest;
-        class ListStreamsRequest;
-        class ListTagsForStreamRequest;
-        class MergeShardsRequest;
-        class PutRecordRequest;
-        class PutRecordsRequest;
-        class RegisterStreamConsumerRequest;
-        class RemoveTagsFromStreamRequest;
-        class SplitShardRequest;
-        class StartStreamEncryptionRequest;
-        class StopStreamEncryptionRequest;
-        class SubscribeToShardRequest;
-        class UpdateShardCountRequest;
-        class UpdateStreamModeRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> AddTagsToStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> CreateStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> DecreaseStreamRetentionPeriodOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> DeleteStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> DeregisterStreamConsumerOutcome;
-        typedef Aws::Utils::Outcome<DescribeLimitsResult, KinesisError> DescribeLimitsOutcome;
-        typedef Aws::Utils::Outcome<DescribeStreamResult, KinesisError> DescribeStreamOutcome;
-        typedef Aws::Utils::Outcome<DescribeStreamConsumerResult, KinesisError> DescribeStreamConsumerOutcome;
-        typedef Aws::Utils::Outcome<DescribeStreamSummaryResult, KinesisError> DescribeStreamSummaryOutcome;
-        typedef Aws::Utils::Outcome<DisableEnhancedMonitoringResult, KinesisError> DisableEnhancedMonitoringOutcome;
-        typedef Aws::Utils::Outcome<EnableEnhancedMonitoringResult, KinesisError> EnableEnhancedMonitoringOutcome;
-        typedef Aws::Utils::Outcome<GetRecordsResult, KinesisError> GetRecordsOutcome;
-        typedef Aws::Utils::Outcome<GetShardIteratorResult, KinesisError> GetShardIteratorOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> IncreaseStreamRetentionPeriodOutcome;
-        typedef Aws::Utils::Outcome<ListShardsResult, KinesisError> ListShardsOutcome;
-        typedef Aws::Utils::Outcome<ListStreamConsumersResult, KinesisError> ListStreamConsumersOutcome;
-        typedef Aws::Utils::Outcome<ListStreamsResult, KinesisError> ListStreamsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForStreamResult, KinesisError> ListTagsForStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> MergeShardsOutcome;
-        typedef Aws::Utils::Outcome<PutRecordResult, KinesisError> PutRecordOutcome;
-        typedef Aws::Utils::Outcome<PutRecordsResult, KinesisError> PutRecordsOutcome;
-        typedef Aws::Utils::Outcome<RegisterStreamConsumerResult, KinesisError> RegisterStreamConsumerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> RemoveTagsFromStreamOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> SplitShardOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> StartStreamEncryptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> StopStreamEncryptionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> SubscribeToShardOutcome;
-        typedef Aws::Utils::Outcome<UpdateShardCountResult, KinesisError> UpdateShardCountOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, KinesisError> UpdateStreamModeOutcome;
-
-        typedef std::future<AddTagsToStreamOutcome> AddTagsToStreamOutcomeCallable;
-        typedef std::future<CreateStreamOutcome> CreateStreamOutcomeCallable;
-        typedef std::future<DecreaseStreamRetentionPeriodOutcome> DecreaseStreamRetentionPeriodOutcomeCallable;
-        typedef std::future<DeleteStreamOutcome> DeleteStreamOutcomeCallable;
-        typedef std::future<DeregisterStreamConsumerOutcome> DeregisterStreamConsumerOutcomeCallable;
-        typedef std::future<DescribeLimitsOutcome> DescribeLimitsOutcomeCallable;
-        typedef std::future<DescribeStreamOutcome> DescribeStreamOutcomeCallable;
-        typedef std::future<DescribeStreamConsumerOutcome> DescribeStreamConsumerOutcomeCallable;
-        typedef std::future<DescribeStreamSummaryOutcome> DescribeStreamSummaryOutcomeCallable;
-        typedef std::future<DisableEnhancedMonitoringOutcome> DisableEnhancedMonitoringOutcomeCallable;
-        typedef std::future<EnableEnhancedMonitoringOutcome> EnableEnhancedMonitoringOutcomeCallable;
-        typedef std::future<GetRecordsOutcome> GetRecordsOutcomeCallable;
-        typedef std::future<GetShardIteratorOutcome> GetShardIteratorOutcomeCallable;
-        typedef std::future<IncreaseStreamRetentionPeriodOutcome> IncreaseStreamRetentionPeriodOutcomeCallable;
-        typedef std::future<ListShardsOutcome> ListShardsOutcomeCallable;
-        typedef std::future<ListStreamConsumersOutcome> ListStreamConsumersOutcomeCallable;
-        typedef std::future<ListStreamsOutcome> ListStreamsOutcomeCallable;
-        typedef std::future<ListTagsForStreamOutcome> ListTagsForStreamOutcomeCallable;
-        typedef std::future<MergeShardsOutcome> MergeShardsOutcomeCallable;
-        typedef std::future<PutRecordOutcome> PutRecordOutcomeCallable;
-        typedef std::future<PutRecordsOutcome> PutRecordsOutcomeCallable;
-        typedef std::future<RegisterStreamConsumerOutcome> RegisterStreamConsumerOutcomeCallable;
-        typedef std::future<RemoveTagsFromStreamOutcome> RemoveTagsFromStreamOutcomeCallable;
-        typedef std::future<SplitShardOutcome> SplitShardOutcomeCallable;
-        typedef std::future<StartStreamEncryptionOutcome> StartStreamEncryptionOutcomeCallable;
-        typedef std::future<StopStreamEncryptionOutcome> StopStreamEncryptionOutcomeCallable;
-        typedef std::future<SubscribeToShardOutcome> SubscribeToShardOutcomeCallable;
-        typedef std::future<UpdateShardCountOutcome> UpdateShardCountOutcomeCallable;
-        typedef std::future<UpdateStreamModeOutcome> UpdateStreamModeOutcomeCallable;
-} // namespace Model
-
-  class KinesisClient;
-
-    typedef std::function<void(const KinesisClient*, const Model::AddTagsToStreamRequest&, const Model::AddTagsToStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::CreateStreamRequest&, const Model::CreateStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DecreaseStreamRetentionPeriodRequest&, const Model::DecreaseStreamRetentionPeriodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DecreaseStreamRetentionPeriodResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DeleteStreamRequest&, const Model::DeleteStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DeregisterStreamConsumerRequest&, const Model::DeregisterStreamConsumerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterStreamConsumerResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DescribeLimitsRequest&, const Model::DescribeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLimitsResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DescribeStreamRequest&, const Model::DescribeStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DescribeStreamConsumerRequest&, const Model::DescribeStreamConsumerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamConsumerResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DescribeStreamSummaryRequest&, const Model::DescribeStreamSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamSummaryResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::DisableEnhancedMonitoringRequest&, const Model::DisableEnhancedMonitoringOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableEnhancedMonitoringResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::EnableEnhancedMonitoringRequest&, const Model::EnableEnhancedMonitoringOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableEnhancedMonitoringResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::GetRecordsRequest&, const Model::GetRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecordsResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::GetShardIteratorRequest&, const Model::GetShardIteratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetShardIteratorResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::IncreaseStreamRetentionPeriodRequest&, const Model::IncreaseStreamRetentionPeriodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IncreaseStreamRetentionPeriodResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::ListShardsRequest&, const Model::ListShardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListShardsResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::ListStreamConsumersRequest&, const Model::ListStreamConsumersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamConsumersResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::ListStreamsRequest&, const Model::ListStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamsResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::ListTagsForStreamRequest&, const Model::ListTagsForStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::MergeShardsRequest&, const Model::MergeShardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeShardsResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::PutRecordRequest&, const Model::PutRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::PutRecordsRequest&, const Model::PutRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordsResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::RegisterStreamConsumerRequest&, const Model::RegisterStreamConsumerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterStreamConsumerResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::RemoveTagsFromStreamRequest&, const Model::RemoveTagsFromStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromStreamResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::SplitShardRequest&, const Model::SplitShardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SplitShardResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::StartStreamEncryptionRequest&, const Model::StartStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStreamEncryptionResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::StopStreamEncryptionRequest&, const Model::StopStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamEncryptionResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::SubscribeToShardRequest&, const Model::SubscribeToShardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SubscribeToShardResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::UpdateShardCountRequest&, const Model::UpdateShardCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateShardCountResponseReceivedHandler;
-    typedef std::function<void(const KinesisClient*, const Model::UpdateStreamModeRequest&, const Model::UpdateStreamModeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStreamModeResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Kinesis Data Streams Service API Reference</fullname> <p>Amazon
    * Kinesis Data Streams is a managed service that scales elastically for real-time
@@ -210,14 +34,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        KinesisClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        KinesisClient(const Aws::Auth::AWSCredentials& credentials,
+                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         KinesisClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~KinesisClient();
 
@@ -1211,35 +1036,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AddTagsToStreamAsyncHelper(const Model::AddTagsToStreamRequest& request, const AddTagsToStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStreamAsyncHelper(const Model::CreateStreamRequest& request, const CreateStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DecreaseStreamRetentionPeriodAsyncHelper(const Model::DecreaseStreamRetentionPeriodRequest& request, const DecreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStreamAsyncHelper(const Model::DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeregisterStreamConsumerAsyncHelper(const Model::DeregisterStreamConsumerRequest& request, const DeregisterStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeLimitsAsyncHelper(const Model::DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStreamAsyncHelper(const Model::DescribeStreamRequest& request, const DescribeStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStreamConsumerAsyncHelper(const Model::DescribeStreamConsumerRequest& request, const DescribeStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStreamSummaryAsyncHelper(const Model::DescribeStreamSummaryRequest& request, const DescribeStreamSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisableEnhancedMonitoringAsyncHelper(const Model::DisableEnhancedMonitoringRequest& request, const DisableEnhancedMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EnableEnhancedMonitoringAsyncHelper(const Model::EnableEnhancedMonitoringRequest& request, const EnableEnhancedMonitoringResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRecordsAsyncHelper(const Model::GetRecordsRequest& request, const GetRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetShardIteratorAsyncHelper(const Model::GetShardIteratorRequest& request, const GetShardIteratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void IncreaseStreamRetentionPeriodAsyncHelper(const Model::IncreaseStreamRetentionPeriodRequest& request, const IncreaseStreamRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListShardsAsyncHelper(const Model::ListShardsRequest& request, const ListShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStreamConsumersAsyncHelper(const Model::ListStreamConsumersRequest& request, const ListStreamConsumersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStreamsAsyncHelper(const Model::ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForStreamAsyncHelper(const Model::ListTagsForStreamRequest& request, const ListTagsForStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void MergeShardsAsyncHelper(const Model::MergeShardsRequest& request, const MergeShardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRecordAsyncHelper(const Model::PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRecordsAsyncHelper(const Model::PutRecordsRequest& request, const PutRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RegisterStreamConsumerAsyncHelper(const Model::RegisterStreamConsumerRequest& request, const RegisterStreamConsumerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveTagsFromStreamAsyncHelper(const Model::RemoveTagsFromStreamRequest& request, const RemoveTagsFromStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SplitShardAsyncHelper(const Model::SplitShardRequest& request, const SplitShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartStreamEncryptionAsyncHelper(const Model::StartStreamEncryptionRequest& request, const StartStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopStreamEncryptionAsyncHelper(const Model::StopStreamEncryptionRequest& request, const StopStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SubscribeToShardAsyncHelper(Model::SubscribeToShardRequest& request, const SubscribeToShardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateShardCountAsyncHelper(const Model::UpdateShardCountRequest& request, const UpdateShardCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateStreamModeAsyncHelper(const Model::UpdateStreamModeRequest& request, const UpdateStreamModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

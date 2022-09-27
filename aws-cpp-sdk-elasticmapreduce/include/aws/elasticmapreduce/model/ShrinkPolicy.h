@@ -103,10 +103,10 @@ namespace Model
   private:
 
     int m_decommissionTimeout;
-    bool m_decommissionTimeoutHasBeenSet;
+    bool m_decommissionTimeoutHasBeenSet = false;
 
     InstanceResizePolicy m_instanceResizePolicy;
-    bool m_instanceResizePolicyHasBeenSet;
+    bool m_instanceResizePolicyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -45,15 +45,24 @@ namespace Model
 
     /**
      * <p>The strategy that determines how to allocate the target Spot Instance
-     * capacity across the Spot Instance pools specified by the EC2 Fleet.</p> <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance
-     * pools with the lowest price.</p> <p> <code>diversified</code> - EC2 Fleet
-     * launches instances from all of the Spot Instance pools that you specify.</p> <p>
-     * <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances
-     * from Spot Instance pools with optimal capacity for the number of instances that
-     * are launching. To give certain instance types a higher chance of launching
-     * first, use <code>capacity-optimized-prioritized</code>. Set a priority for each
-     * instance type by using the <code>Priority</code> parameter for
+     * capacity across the Spot Instance pools specified by the EC2 Fleet launch
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price
+     * Spot Instance pool that has available capacity. If the cheapest pool doesn't
+     * have available capacity, the Spot Instances come from the next cheapest pool
+     * that has available capacity. If a pool runs out of capacity before fulfilling
+     * your desired capacity, EC2 Fleet will continue to fulfill your request by
+     * drawing from the next cheapest pool. To ensure that your desired capacity is
+     * met, you might receive Spot Instances from several pools.</p> <p>
+     * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot
+     * Instance pools that you specify.</p> <p> <code>capacity-optimized</code>
+     * (recommended) - EC2 Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use
+     * <code>capacity-optimized-prioritized</code>. Set a priority for each instance
+     * type by using the <code>Priority</code> parameter for
      * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
      * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
      * a best-effort basis, but optimizes for capacity first.
@@ -66,15 +75,24 @@ namespace Model
 
     /**
      * <p>The strategy that determines how to allocate the target Spot Instance
-     * capacity across the Spot Instance pools specified by the EC2 Fleet.</p> <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance
-     * pools with the lowest price.</p> <p> <code>diversified</code> - EC2 Fleet
-     * launches instances from all of the Spot Instance pools that you specify.</p> <p>
-     * <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances
-     * from Spot Instance pools with optimal capacity for the number of instances that
-     * are launching. To give certain instance types a higher chance of launching
-     * first, use <code>capacity-optimized-prioritized</code>. Set a priority for each
-     * instance type by using the <code>Priority</code> parameter for
+     * capacity across the Spot Instance pools specified by the EC2 Fleet launch
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price
+     * Spot Instance pool that has available capacity. If the cheapest pool doesn't
+     * have available capacity, the Spot Instances come from the next cheapest pool
+     * that has available capacity. If a pool runs out of capacity before fulfilling
+     * your desired capacity, EC2 Fleet will continue to fulfill your request by
+     * drawing from the next cheapest pool. To ensure that your desired capacity is
+     * met, you might receive Spot Instances from several pools.</p> <p>
+     * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot
+     * Instance pools that you specify.</p> <p> <code>capacity-optimized</code>
+     * (recommended) - EC2 Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use
+     * <code>capacity-optimized-prioritized</code>. Set a priority for each instance
+     * type by using the <code>Priority</code> parameter for
      * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
      * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
      * a best-effort basis, but optimizes for capacity first.
@@ -87,15 +105,24 @@ namespace Model
 
     /**
      * <p>The strategy that determines how to allocate the target Spot Instance
-     * capacity across the Spot Instance pools specified by the EC2 Fleet.</p> <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance
-     * pools with the lowest price.</p> <p> <code>diversified</code> - EC2 Fleet
-     * launches instances from all of the Spot Instance pools that you specify.</p> <p>
-     * <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances
-     * from Spot Instance pools with optimal capacity for the number of instances that
-     * are launching. To give certain instance types a higher chance of launching
-     * first, use <code>capacity-optimized-prioritized</code>. Set a priority for each
-     * instance type by using the <code>Priority</code> parameter for
+     * capacity across the Spot Instance pools specified by the EC2 Fleet launch
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price
+     * Spot Instance pool that has available capacity. If the cheapest pool doesn't
+     * have available capacity, the Spot Instances come from the next cheapest pool
+     * that has available capacity. If a pool runs out of capacity before fulfilling
+     * your desired capacity, EC2 Fleet will continue to fulfill your request by
+     * drawing from the next cheapest pool. To ensure that your desired capacity is
+     * met, you might receive Spot Instances from several pools.</p> <p>
+     * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot
+     * Instance pools that you specify.</p> <p> <code>capacity-optimized</code>
+     * (recommended) - EC2 Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use
+     * <code>capacity-optimized-prioritized</code>. Set a priority for each instance
+     * type by using the <code>Priority</code> parameter for
      * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
      * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
      * a best-effort basis, but optimizes for capacity first.
@@ -108,15 +135,24 @@ namespace Model
 
     /**
      * <p>The strategy that determines how to allocate the target Spot Instance
-     * capacity across the Spot Instance pools specified by the EC2 Fleet.</p> <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance
-     * pools with the lowest price.</p> <p> <code>diversified</code> - EC2 Fleet
-     * launches instances from all of the Spot Instance pools that you specify.</p> <p>
-     * <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances
-     * from Spot Instance pools with optimal capacity for the number of instances that
-     * are launching. To give certain instance types a higher chance of launching
-     * first, use <code>capacity-optimized-prioritized</code>. Set a priority for each
-     * instance type by using the <code>Priority</code> parameter for
+     * capacity across the Spot Instance pools specified by the EC2 Fleet launch
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price
+     * Spot Instance pool that has available capacity. If the cheapest pool doesn't
+     * have available capacity, the Spot Instances come from the next cheapest pool
+     * that has available capacity. If a pool runs out of capacity before fulfilling
+     * your desired capacity, EC2 Fleet will continue to fulfill your request by
+     * drawing from the next cheapest pool. To ensure that your desired capacity is
+     * met, you might receive Spot Instances from several pools.</p> <p>
+     * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot
+     * Instance pools that you specify.</p> <p> <code>capacity-optimized</code>
+     * (recommended) - EC2 Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use
+     * <code>capacity-optimized-prioritized</code>. Set a priority for each instance
+     * type by using the <code>Priority</code> parameter for
      * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
      * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
      * a best-effort basis, but optimizes for capacity first.
@@ -129,15 +165,24 @@ namespace Model
 
     /**
      * <p>The strategy that determines how to allocate the target Spot Instance
-     * capacity across the Spot Instance pools specified by the EC2 Fleet.</p> <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance
-     * pools with the lowest price.</p> <p> <code>diversified</code> - EC2 Fleet
-     * launches instances from all of the Spot Instance pools that you specify.</p> <p>
-     * <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances
-     * from Spot Instance pools with optimal capacity for the number of instances that
-     * are launching. To give certain instance types a higher chance of launching
-     * first, use <code>capacity-optimized-prioritized</code>. Set a priority for each
-     * instance type by using the <code>Priority</code> parameter for
+     * capacity across the Spot Instance pools specified by the EC2 Fleet launch
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price
+     * Spot Instance pool that has available capacity. If the cheapest pool doesn't
+     * have available capacity, the Spot Instances come from the next cheapest pool
+     * that has available capacity. If a pool runs out of capacity before fulfilling
+     * your desired capacity, EC2 Fleet will continue to fulfill your request by
+     * drawing from the next cheapest pool. To ensure that your desired capacity is
+     * met, you might receive Spot Instances from several pools.</p> <p>
+     * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot
+     * Instance pools that you specify.</p> <p> <code>capacity-optimized</code>
+     * (recommended) - EC2 Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use
+     * <code>capacity-optimized-prioritized</code>. Set a priority for each instance
+     * type by using the <code>Priority</code> parameter for
      * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
      * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
      * a best-effort basis, but optimizes for capacity first.
@@ -150,15 +195,24 @@ namespace Model
 
     /**
      * <p>The strategy that determines how to allocate the target Spot Instance
-     * capacity across the Spot Instance pools specified by the EC2 Fleet.</p> <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the Spot Instance
-     * pools with the lowest price.</p> <p> <code>diversified</code> - EC2 Fleet
-     * launches instances from all of the Spot Instance pools that you specify.</p> <p>
-     * <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances
-     * from Spot Instance pools with optimal capacity for the number of instances that
-     * are launching. To give certain instance types a higher chance of launching
-     * first, use <code>capacity-optimized-prioritized</code>. Set a priority for each
-     * instance type by using the <code>Priority</code> parameter for
+     * capacity across the Spot Instance pools specified by the EC2 Fleet launch
+     * configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+     * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>
+     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price
+     * Spot Instance pool that has available capacity. If the cheapest pool doesn't
+     * have available capacity, the Spot Instances come from the next cheapest pool
+     * that has available capacity. If a pool runs out of capacity before fulfilling
+     * your desired capacity, EC2 Fleet will continue to fulfill your request by
+     * drawing from the next cheapest pool. To ensure that your desired capacity is
+     * met, you might receive Spot Instances from several pools.</p> <p>
+     * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot
+     * Instance pools that you specify.</p> <p> <code>capacity-optimized</code>
+     * (recommended) - EC2 Fleet launches instances from Spot Instance pools with
+     * optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use
+     * <code>capacity-optimized-prioritized</code>. Set a priority for each instance
+     * type by using the <code>Priority</code> parameter for
      * <code>LaunchTemplateOverrides</code>. You can assign the same priority to
      * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on
      * a best-effort basis, but optimizes for capacity first.
@@ -405,78 +459,110 @@ namespace Model
 
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline const Aws::String& GetMaxTotalPrice() const{ return m_maxTotalPrice; }
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline bool MaxTotalPriceHasBeenSet() const { return m_maxTotalPriceHasBeenSet; }
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetMaxTotalPrice(const Aws::String& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = value; }
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetMaxTotalPrice(Aws::String&& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = std::move(value); }
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline void SetMaxTotalPrice(const char* value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice.assign(value); }
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline SpotOptionsRequest& WithMaxTotalPrice(const Aws::String& value) { SetMaxTotalPrice(value); return *this;}
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline SpotOptionsRequest& WithMaxTotalPrice(Aws::String&& value) { SetMaxTotalPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum amount per hour for Spot Instances that you're willing to
-     * pay.</p>
+     * <p>The maximum amount per hour for Spot Instances that you're willing to pay. We
+     * do not recommend using this parameter because it can lead to increased
+     * interruptions. If you do not specify this parameter, you will pay the current
+     * Spot price.</p>  <p>If you specify a maximum price, your Spot
+     * Instances will be interrupted more frequently than if you do not specify this
+     * parameter.</p> 
      */
     inline SpotOptionsRequest& WithMaxTotalPrice(const char* value) { SetMaxTotalPrice(value); return *this;}
 
   private:
 
     SpotAllocationStrategy m_allocationStrategy;
-    bool m_allocationStrategyHasBeenSet;
+    bool m_allocationStrategyHasBeenSet = false;
 
     FleetSpotMaintenanceStrategiesRequest m_maintenanceStrategies;
-    bool m_maintenanceStrategiesHasBeenSet;
+    bool m_maintenanceStrategiesHasBeenSet = false;
 
     SpotInstanceInterruptionBehavior m_instanceInterruptionBehavior;
-    bool m_instanceInterruptionBehaviorHasBeenSet;
+    bool m_instanceInterruptionBehaviorHasBeenSet = false;
 
     int m_instancePoolsToUseCount;
-    bool m_instancePoolsToUseCountHasBeenSet;
+    bool m_instancePoolsToUseCountHasBeenSet = false;
 
     bool m_singleInstanceType;
-    bool m_singleInstanceTypeHasBeenSet;
+    bool m_singleInstanceTypeHasBeenSet = false;
 
     bool m_singleAvailabilityZone;
-    bool m_singleAvailabilityZoneHasBeenSet;
+    bool m_singleAvailabilityZoneHasBeenSet = false;
 
     int m_minTargetCapacity;
-    bool m_minTargetCapacityHasBeenSet;
+    bool m_minTargetCapacityHasBeenSet = false;
 
     Aws::String m_maxTotalPrice;
-    bool m_maxTotalPriceHasBeenSet;
+    bool m_maxTotalPriceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -114,13 +114,13 @@ namespace Model
   private:
 
     double m_total;
-    bool m_totalHasBeenSet;
+    bool m_totalHasBeenSet = false;
 
     double m_metered;
-    bool m_meteredHasBeenSet;
+    bool m_meteredHasBeenSet = false;
 
     double m_unmetered;
-    bool m_unmeteredHasBeenSet;
+    bool m_unmeteredHasBeenSet = false;
   };
 
 } // namespace Model

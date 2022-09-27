@@ -340,25 +340,25 @@ namespace Model
   private:
 
     Aws::String m_bounceTopic;
-    bool m_bounceTopicHasBeenSet;
+    bool m_bounceTopicHasBeenSet = false;
 
     Aws::String m_complaintTopic;
-    bool m_complaintTopicHasBeenSet;
+    bool m_complaintTopicHasBeenSet = false;
 
     Aws::String m_deliveryTopic;
-    bool m_deliveryTopicHasBeenSet;
+    bool m_deliveryTopicHasBeenSet = false;
 
     bool m_forwardingEnabled;
-    bool m_forwardingEnabledHasBeenSet;
+    bool m_forwardingEnabledHasBeenSet = false;
 
     bool m_headersInBounceNotificationsEnabled;
-    bool m_headersInBounceNotificationsEnabledHasBeenSet;
+    bool m_headersInBounceNotificationsEnabledHasBeenSet = false;
 
     bool m_headersInComplaintNotificationsEnabled;
-    bool m_headersInComplaintNotificationsEnabledHasBeenSet;
+    bool m_headersInComplaintNotificationsEnabledHasBeenSet = false;
 
     bool m_headersInDeliveryNotificationsEnabled;
-    bool m_headersInDeliveryNotificationsEnabledHasBeenSet;
+    bool m_headersInDeliveryNotificationsEnabledHasBeenSet = false;
   };
 
 } // namespace Model

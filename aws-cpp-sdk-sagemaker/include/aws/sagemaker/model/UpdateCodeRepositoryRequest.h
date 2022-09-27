@@ -139,10 +139,10 @@ namespace Model
   private:
 
     Aws::String m_codeRepositoryName;
-    bool m_codeRepositoryNameHasBeenSet;
+    bool m_codeRepositoryNameHasBeenSet = false;
 
     GitConfigForUpdate m_gitConfig;
-    bool m_gitConfigHasBeenSet;
+    bool m_gitConfigHasBeenSet = false;
   };
 
 } // namespace Model

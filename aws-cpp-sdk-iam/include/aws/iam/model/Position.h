@@ -83,10 +83,10 @@ namespace Model
   private:
 
     int m_line;
-    bool m_lineHasBeenSet;
+    bool m_lineHasBeenSet = false;
 
     int m_column;
-    bool m_columnHasBeenSet;
+    bool m_columnHasBeenSet = false;
   };
 
 } // namespace Model

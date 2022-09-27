@@ -63,33 +63,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "amplifybackend";
 static const char* ALLOCATION_TAG = "AmplifyBackendClient";
 
-
 AmplifyBackendClient::AmplifyBackendClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-AmplifyBackendClient::AmplifyBackendClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+AmplifyBackendClient::AmplifyBackendClient(const AWSCredentials& credentials,
+                                           const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 AmplifyBackendClient::AmplifyBackendClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                           const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyBackendErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -101,7 +107,7 @@ AmplifyBackendClient::~AmplifyBackendClient()
 
 void AmplifyBackendClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("AmplifyBackend");
+  AWSClient::SetServiceClientName("AmplifyBackend");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -156,12 +162,10 @@ CloneBackendOutcomeCallable AmplifyBackendClient::CloneBackendCallable(const Clo
 
 void AmplifyBackendClient::CloneBackendAsync(const CloneBackendRequest& request, const CloneBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CloneBackendAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CloneBackendAsyncHelper(const CloneBackendRequest& request, const CloneBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CloneBackend(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CloneBackend(request), context);
+    } );
 }
 
 CreateBackendOutcome AmplifyBackendClient::CreateBackend(const CreateBackendRequest& request) const
@@ -181,12 +185,10 @@ CreateBackendOutcomeCallable AmplifyBackendClient::CreateBackendCallable(const C
 
 void AmplifyBackendClient::CreateBackendAsync(const CreateBackendRequest& request, const CreateBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CreateBackendAsyncHelper(const CreateBackendRequest& request, const CreateBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBackend(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBackend(request), context);
+    } );
 }
 
 CreateBackendAPIOutcome AmplifyBackendClient::CreateBackendAPI(const CreateBackendAPIRequest& request) const
@@ -213,12 +215,10 @@ CreateBackendAPIOutcomeCallable AmplifyBackendClient::CreateBackendAPICallable(c
 
 void AmplifyBackendClient::CreateBackendAPIAsync(const CreateBackendAPIRequest& request, const CreateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendAPIAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CreateBackendAPIAsyncHelper(const CreateBackendAPIRequest& request, const CreateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBackendAPI(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBackendAPI(request), context);
+    } );
 }
 
 CreateBackendAuthOutcome AmplifyBackendClient::CreateBackendAuth(const CreateBackendAuthRequest& request) const
@@ -245,12 +245,10 @@ CreateBackendAuthOutcomeCallable AmplifyBackendClient::CreateBackendAuthCallable
 
 void AmplifyBackendClient::CreateBackendAuthAsync(const CreateBackendAuthRequest& request, const CreateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendAuthAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CreateBackendAuthAsyncHelper(const CreateBackendAuthRequest& request, const CreateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBackendAuth(request), context);
+    } );
 }
 
 CreateBackendConfigOutcome AmplifyBackendClient::CreateBackendConfig(const CreateBackendConfigRequest& request) const
@@ -277,12 +275,10 @@ CreateBackendConfigOutcomeCallable AmplifyBackendClient::CreateBackendConfigCall
 
 void AmplifyBackendClient::CreateBackendConfigAsync(const CreateBackendConfigRequest& request, const CreateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendConfigAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CreateBackendConfigAsyncHelper(const CreateBackendConfigRequest& request, const CreateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBackendConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBackendConfig(request), context);
+    } );
 }
 
 CreateBackendStorageOutcome AmplifyBackendClient::CreateBackendStorage(const CreateBackendStorageRequest& request) const
@@ -309,12 +305,10 @@ CreateBackendStorageOutcomeCallable AmplifyBackendClient::CreateBackendStorageCa
 
 void AmplifyBackendClient::CreateBackendStorageAsync(const CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendStorageAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CreateBackendStorageAsyncHelper(const CreateBackendStorageRequest& request, const CreateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBackendStorage(request), context);
+    } );
 }
 
 CreateTokenOutcome AmplifyBackendClient::CreateToken(const CreateTokenRequest& request) const
@@ -341,12 +335,10 @@ CreateTokenOutcomeCallable AmplifyBackendClient::CreateTokenCallable(const Creat
 
 void AmplifyBackendClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTokenAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::CreateTokenAsyncHelper(const CreateTokenRequest& request, const CreateTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateToken(request), context);
+    } );
 }
 
 DeleteBackendOutcome AmplifyBackendClient::DeleteBackend(const DeleteBackendRequest& request) const
@@ -380,12 +372,10 @@ DeleteBackendOutcomeCallable AmplifyBackendClient::DeleteBackendCallable(const D
 
 void AmplifyBackendClient::DeleteBackendAsync(const DeleteBackendRequest& request, const DeleteBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::DeleteBackendAsyncHelper(const DeleteBackendRequest& request, const DeleteBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBackend(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBackend(request), context);
+    } );
 }
 
 DeleteBackendAPIOutcome AmplifyBackendClient::DeleteBackendAPI(const DeleteBackendAPIRequest& request) const
@@ -419,12 +409,10 @@ DeleteBackendAPIOutcomeCallable AmplifyBackendClient::DeleteBackendAPICallable(c
 
 void AmplifyBackendClient::DeleteBackendAPIAsync(const DeleteBackendAPIRequest& request, const DeleteBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendAPIAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::DeleteBackendAPIAsyncHelper(const DeleteBackendAPIRequest& request, const DeleteBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBackendAPI(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBackendAPI(request), context);
+    } );
 }
 
 DeleteBackendAuthOutcome AmplifyBackendClient::DeleteBackendAuth(const DeleteBackendAuthRequest& request) const
@@ -458,12 +446,10 @@ DeleteBackendAuthOutcomeCallable AmplifyBackendClient::DeleteBackendAuthCallable
 
 void AmplifyBackendClient::DeleteBackendAuthAsync(const DeleteBackendAuthRequest& request, const DeleteBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendAuthAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::DeleteBackendAuthAsyncHelper(const DeleteBackendAuthRequest& request, const DeleteBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBackendAuth(request), context);
+    } );
 }
 
 DeleteBackendStorageOutcome AmplifyBackendClient::DeleteBackendStorage(const DeleteBackendStorageRequest& request) const
@@ -497,12 +483,10 @@ DeleteBackendStorageOutcomeCallable AmplifyBackendClient::DeleteBackendStorageCa
 
 void AmplifyBackendClient::DeleteBackendStorageAsync(const DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendStorageAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::DeleteBackendStorageAsyncHelper(const DeleteBackendStorageRequest& request, const DeleteBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBackendStorage(request), context);
+    } );
 }
 
 DeleteTokenOutcome AmplifyBackendClient::DeleteToken(const DeleteTokenRequest& request) const
@@ -536,12 +520,10 @@ DeleteTokenOutcomeCallable AmplifyBackendClient::DeleteTokenCallable(const Delet
 
 void AmplifyBackendClient::DeleteTokenAsync(const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTokenAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::DeleteTokenAsyncHelper(const DeleteTokenRequest& request, const DeleteTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteToken(request), context);
+    } );
 }
 
 GenerateBackendAPIModelsOutcome AmplifyBackendClient::GenerateBackendAPIModels(const GenerateBackendAPIModelsRequest& request) const
@@ -575,12 +557,10 @@ GenerateBackendAPIModelsOutcomeCallable AmplifyBackendClient::GenerateBackendAPI
 
 void AmplifyBackendClient::GenerateBackendAPIModelsAsync(const GenerateBackendAPIModelsRequest& request, const GenerateBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateBackendAPIModelsAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GenerateBackendAPIModelsAsyncHelper(const GenerateBackendAPIModelsRequest& request, const GenerateBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GenerateBackendAPIModels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GenerateBackendAPIModels(request), context);
+    } );
 }
 
 GetBackendOutcome AmplifyBackendClient::GetBackend(const GetBackendRequest& request) const
@@ -607,12 +587,10 @@ GetBackendOutcomeCallable AmplifyBackendClient::GetBackendCallable(const GetBack
 
 void AmplifyBackendClient::GetBackendAsync(const GetBackendRequest& request, const GetBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetBackendAsyncHelper(const GetBackendRequest& request, const GetBackendResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBackend(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBackend(request), context);
+    } );
 }
 
 GetBackendAPIOutcome AmplifyBackendClient::GetBackendAPI(const GetBackendAPIRequest& request) const
@@ -646,12 +624,10 @@ GetBackendAPIOutcomeCallable AmplifyBackendClient::GetBackendAPICallable(const G
 
 void AmplifyBackendClient::GetBackendAPIAsync(const GetBackendAPIRequest& request, const GetBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendAPIAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetBackendAPIAsyncHelper(const GetBackendAPIRequest& request, const GetBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBackendAPI(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBackendAPI(request), context);
+    } );
 }
 
 GetBackendAPIModelsOutcome AmplifyBackendClient::GetBackendAPIModels(const GetBackendAPIModelsRequest& request) const
@@ -685,12 +661,10 @@ GetBackendAPIModelsOutcomeCallable AmplifyBackendClient::GetBackendAPIModelsCall
 
 void AmplifyBackendClient::GetBackendAPIModelsAsync(const GetBackendAPIModelsRequest& request, const GetBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendAPIModelsAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetBackendAPIModelsAsyncHelper(const GetBackendAPIModelsRequest& request, const GetBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBackendAPIModels(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBackendAPIModels(request), context);
+    } );
 }
 
 GetBackendAuthOutcome AmplifyBackendClient::GetBackendAuth(const GetBackendAuthRequest& request) const
@@ -724,12 +698,10 @@ GetBackendAuthOutcomeCallable AmplifyBackendClient::GetBackendAuthCallable(const
 
 void AmplifyBackendClient::GetBackendAuthAsync(const GetBackendAuthRequest& request, const GetBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendAuthAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetBackendAuthAsyncHelper(const GetBackendAuthRequest& request, const GetBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBackendAuth(request), context);
+    } );
 }
 
 GetBackendJobOutcome AmplifyBackendClient::GetBackendJob(const GetBackendJobRequest& request) const
@@ -768,12 +740,10 @@ GetBackendJobOutcomeCallable AmplifyBackendClient::GetBackendJobCallable(const G
 
 void AmplifyBackendClient::GetBackendJobAsync(const GetBackendJobRequest& request, const GetBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendJobAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetBackendJobAsyncHelper(const GetBackendJobRequest& request, const GetBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBackendJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBackendJob(request), context);
+    } );
 }
 
 GetBackendStorageOutcome AmplifyBackendClient::GetBackendStorage(const GetBackendStorageRequest& request) const
@@ -807,12 +777,10 @@ GetBackendStorageOutcomeCallable AmplifyBackendClient::GetBackendStorageCallable
 
 void AmplifyBackendClient::GetBackendStorageAsync(const GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBackendStorageAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetBackendStorageAsyncHelper(const GetBackendStorageRequest& request, const GetBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBackendStorage(request), context);
+    } );
 }
 
 GetTokenOutcome AmplifyBackendClient::GetToken(const GetTokenRequest& request) const
@@ -845,12 +813,10 @@ GetTokenOutcomeCallable AmplifyBackendClient::GetTokenCallable(const GetTokenReq
 
 void AmplifyBackendClient::GetTokenAsync(const GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTokenAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::GetTokenAsyncHelper(const GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetToken(request), context);
+    } );
 }
 
 ImportBackendAuthOutcome AmplifyBackendClient::ImportBackendAuth(const ImportBackendAuthRequest& request) const
@@ -884,12 +850,10 @@ ImportBackendAuthOutcomeCallable AmplifyBackendClient::ImportBackendAuthCallable
 
 void AmplifyBackendClient::ImportBackendAuthAsync(const ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportBackendAuthAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::ImportBackendAuthAsyncHelper(const ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportBackendAuth(request), context);
+    } );
 }
 
 ImportBackendStorageOutcome AmplifyBackendClient::ImportBackendStorage(const ImportBackendStorageRequest& request) const
@@ -923,12 +887,10 @@ ImportBackendStorageOutcomeCallable AmplifyBackendClient::ImportBackendStorageCa
 
 void AmplifyBackendClient::ImportBackendStorageAsync(const ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportBackendStorageAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::ImportBackendStorageAsyncHelper(const ImportBackendStorageRequest& request, const ImportBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportBackendStorage(request), context);
+    } );
 }
 
 ListBackendJobsOutcome AmplifyBackendClient::ListBackendJobs(const ListBackendJobsRequest& request) const
@@ -961,12 +923,10 @@ ListBackendJobsOutcomeCallable AmplifyBackendClient::ListBackendJobsCallable(con
 
 void AmplifyBackendClient::ListBackendJobsAsync(const ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBackendJobsAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::ListBackendJobsAsyncHelper(const ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListBackendJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListBackendJobs(request), context);
+    } );
 }
 
 ListS3BucketsOutcome AmplifyBackendClient::ListS3Buckets(const ListS3BucketsRequest& request) const
@@ -986,12 +946,10 @@ ListS3BucketsOutcomeCallable AmplifyBackendClient::ListS3BucketsCallable(const L
 
 void AmplifyBackendClient::ListS3BucketsAsync(const ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListS3BucketsAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::ListS3BucketsAsyncHelper(const ListS3BucketsRequest& request, const ListS3BucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListS3Buckets(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListS3Buckets(request), context);
+    } );
 }
 
 RemoveAllBackendsOutcome AmplifyBackendClient::RemoveAllBackends(const RemoveAllBackendsRequest& request) const
@@ -1018,12 +976,10 @@ RemoveAllBackendsOutcomeCallable AmplifyBackendClient::RemoveAllBackendsCallable
 
 void AmplifyBackendClient::RemoveAllBackendsAsync(const RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveAllBackendsAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::RemoveAllBackendsAsyncHelper(const RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveAllBackends(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveAllBackends(request), context);
+    } );
 }
 
 RemoveBackendConfigOutcome AmplifyBackendClient::RemoveBackendConfig(const RemoveBackendConfigRequest& request) const
@@ -1050,12 +1006,10 @@ RemoveBackendConfigOutcomeCallable AmplifyBackendClient::RemoveBackendConfigCall
 
 void AmplifyBackendClient::RemoveBackendConfigAsync(const RemoveBackendConfigRequest& request, const RemoveBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RemoveBackendConfigAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::RemoveBackendConfigAsyncHelper(const RemoveBackendConfigRequest& request, const RemoveBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RemoveBackendConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveBackendConfig(request), context);
+    } );
 }
 
 UpdateBackendAPIOutcome AmplifyBackendClient::UpdateBackendAPI(const UpdateBackendAPIRequest& request) const
@@ -1088,12 +1042,10 @@ UpdateBackendAPIOutcomeCallable AmplifyBackendClient::UpdateBackendAPICallable(c
 
 void AmplifyBackendClient::UpdateBackendAPIAsync(const UpdateBackendAPIRequest& request, const UpdateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendAPIAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::UpdateBackendAPIAsyncHelper(const UpdateBackendAPIRequest& request, const UpdateBackendAPIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateBackendAPI(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateBackendAPI(request), context);
+    } );
 }
 
 UpdateBackendAuthOutcome AmplifyBackendClient::UpdateBackendAuth(const UpdateBackendAuthRequest& request) const
@@ -1126,12 +1078,10 @@ UpdateBackendAuthOutcomeCallable AmplifyBackendClient::UpdateBackendAuthCallable
 
 void AmplifyBackendClient::UpdateBackendAuthAsync(const UpdateBackendAuthRequest& request, const UpdateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendAuthAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::UpdateBackendAuthAsyncHelper(const UpdateBackendAuthRequest& request, const UpdateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateBackendAuth(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateBackendAuth(request), context);
+    } );
 }
 
 UpdateBackendConfigOutcome AmplifyBackendClient::UpdateBackendConfig(const UpdateBackendConfigRequest& request) const
@@ -1158,12 +1108,10 @@ UpdateBackendConfigOutcomeCallable AmplifyBackendClient::UpdateBackendConfigCall
 
 void AmplifyBackendClient::UpdateBackendConfigAsync(const UpdateBackendConfigRequest& request, const UpdateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendConfigAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::UpdateBackendConfigAsyncHelper(const UpdateBackendConfigRequest& request, const UpdateBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateBackendConfig(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateBackendConfig(request), context);
+    } );
 }
 
 UpdateBackendJobOutcome AmplifyBackendClient::UpdateBackendJob(const UpdateBackendJobRequest& request) const
@@ -1202,12 +1150,10 @@ UpdateBackendJobOutcomeCallable AmplifyBackendClient::UpdateBackendJobCallable(c
 
 void AmplifyBackendClient::UpdateBackendJobAsync(const UpdateBackendJobRequest& request, const UpdateBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendJobAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::UpdateBackendJobAsyncHelper(const UpdateBackendJobRequest& request, const UpdateBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateBackendJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateBackendJob(request), context);
+    } );
 }
 
 UpdateBackendStorageOutcome AmplifyBackendClient::UpdateBackendStorage(const UpdateBackendStorageRequest& request) const
@@ -1240,11 +1186,9 @@ UpdateBackendStorageOutcomeCallable AmplifyBackendClient::UpdateBackendStorageCa
 
 void AmplifyBackendClient::UpdateBackendStorageAsync(const UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBackendStorageAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyBackendClient::UpdateBackendStorageAsyncHelper(const UpdateBackendStorageRequest& request, const UpdateBackendStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateBackendStorage(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateBackendStorage(request), context);
+    } );
 }
 

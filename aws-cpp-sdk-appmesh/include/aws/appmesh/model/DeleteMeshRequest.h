@@ -78,7 +78,7 @@ namespace Model
   private:
 
     Aws::String m_meshName;
-    bool m_meshNameHasBeenSet;
+    bool m_meshNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -533,40 +533,40 @@ namespace Model
   private:
 
     Aws::String m_componentName;
-    bool m_componentNameHasBeenSet;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_componentTypeId;
-    bool m_componentTypeIdHasBeenSet;
+    bool m_componentTypeIdHasBeenSet = false;
 
     Aws::String m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     InterpolationParameters m_interpolation;
-    bool m_interpolationHasBeenSet;
+    bool m_interpolationHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     OrderByTime m_orderByTime;
-    bool m_orderByTimeHasBeenSet;
+    bool m_orderByTimeHasBeenSet = false;
 
     Aws::Vector<PropertyFilter> m_propertyFilters;
-    bool m_propertyFiltersHasBeenSet;
+    bool m_propertyFiltersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_selectedProperties;
-    bool m_selectedPropertiesHasBeenSet;
+    bool m_selectedPropertiesHasBeenSet = false;
 
     Aws::String m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

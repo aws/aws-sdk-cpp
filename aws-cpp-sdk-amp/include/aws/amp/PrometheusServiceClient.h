@@ -5,140 +5,15 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
-#include <aws/amp/PrometheusServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/amp/model/CreateAlertManagerDefinitionResult.h>
-#include <aws/amp/model/CreateRuleGroupsNamespaceResult.h>
-#include <aws/amp/model/CreateWorkspaceResult.h>
-#include <aws/amp/model/DescribeAlertManagerDefinitionResult.h>
-#include <aws/amp/model/DescribeRuleGroupsNamespaceResult.h>
-#include <aws/amp/model/DescribeWorkspaceResult.h>
-#include <aws/amp/model/ListRuleGroupsNamespacesResult.h>
-#include <aws/amp/model/ListTagsForResourceResult.h>
-#include <aws/amp/model/ListWorkspacesResult.h>
-#include <aws/amp/model/PutAlertManagerDefinitionResult.h>
-#include <aws/amp/model/PutRuleGroupsNamespaceResult.h>
-#include <aws/amp/model/TagResourceResult.h>
-#include <aws/amp/model/UntagResourceResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/amp/PrometheusServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace PrometheusService
 {
-
-namespace Model
-{
-        class CreateAlertManagerDefinitionRequest;
-        class CreateRuleGroupsNamespaceRequest;
-        class CreateWorkspaceRequest;
-        class DeleteAlertManagerDefinitionRequest;
-        class DeleteRuleGroupsNamespaceRequest;
-        class DeleteWorkspaceRequest;
-        class DescribeAlertManagerDefinitionRequest;
-        class DescribeRuleGroupsNamespaceRequest;
-        class DescribeWorkspaceRequest;
-        class ListRuleGroupsNamespacesRequest;
-        class ListTagsForResourceRequest;
-        class ListWorkspacesRequest;
-        class PutAlertManagerDefinitionRequest;
-        class PutRuleGroupsNamespaceRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateWorkspaceAliasRequest;
-
-        typedef Aws::Utils::Outcome<CreateAlertManagerDefinitionResult, PrometheusServiceError> CreateAlertManagerDefinitionOutcome;
-        typedef Aws::Utils::Outcome<CreateRuleGroupsNamespaceResult, PrometheusServiceError> CreateRuleGroupsNamespaceOutcome;
-        typedef Aws::Utils::Outcome<CreateWorkspaceResult, PrometheusServiceError> CreateWorkspaceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, PrometheusServiceError> DeleteAlertManagerDefinitionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, PrometheusServiceError> DeleteRuleGroupsNamespaceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, PrometheusServiceError> DeleteWorkspaceOutcome;
-        typedef Aws::Utils::Outcome<DescribeAlertManagerDefinitionResult, PrometheusServiceError> DescribeAlertManagerDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DescribeRuleGroupsNamespaceResult, PrometheusServiceError> DescribeRuleGroupsNamespaceOutcome;
-        typedef Aws::Utils::Outcome<DescribeWorkspaceResult, PrometheusServiceError> DescribeWorkspaceOutcome;
-        typedef Aws::Utils::Outcome<ListRuleGroupsNamespacesResult, PrometheusServiceError> ListRuleGroupsNamespacesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, PrometheusServiceError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListWorkspacesResult, PrometheusServiceError> ListWorkspacesOutcome;
-        typedef Aws::Utils::Outcome<PutAlertManagerDefinitionResult, PrometheusServiceError> PutAlertManagerDefinitionOutcome;
-        typedef Aws::Utils::Outcome<PutRuleGroupsNamespaceResult, PrometheusServiceError> PutRuleGroupsNamespaceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, PrometheusServiceError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, PrometheusServiceError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, PrometheusServiceError> UpdateWorkspaceAliasOutcome;
-
-        typedef std::future<CreateAlertManagerDefinitionOutcome> CreateAlertManagerDefinitionOutcomeCallable;
-        typedef std::future<CreateRuleGroupsNamespaceOutcome> CreateRuleGroupsNamespaceOutcomeCallable;
-        typedef std::future<CreateWorkspaceOutcome> CreateWorkspaceOutcomeCallable;
-        typedef std::future<DeleteAlertManagerDefinitionOutcome> DeleteAlertManagerDefinitionOutcomeCallable;
-        typedef std::future<DeleteRuleGroupsNamespaceOutcome> DeleteRuleGroupsNamespaceOutcomeCallable;
-        typedef std::future<DeleteWorkspaceOutcome> DeleteWorkspaceOutcomeCallable;
-        typedef std::future<DescribeAlertManagerDefinitionOutcome> DescribeAlertManagerDefinitionOutcomeCallable;
-        typedef std::future<DescribeRuleGroupsNamespaceOutcome> DescribeRuleGroupsNamespaceOutcomeCallable;
-        typedef std::future<DescribeWorkspaceOutcome> DescribeWorkspaceOutcomeCallable;
-        typedef std::future<ListRuleGroupsNamespacesOutcome> ListRuleGroupsNamespacesOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListWorkspacesOutcome> ListWorkspacesOutcomeCallable;
-        typedef std::future<PutAlertManagerDefinitionOutcome> PutAlertManagerDefinitionOutcomeCallable;
-        typedef std::future<PutRuleGroupsNamespaceOutcome> PutRuleGroupsNamespaceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateWorkspaceAliasOutcome> UpdateWorkspaceAliasOutcomeCallable;
-} // namespace Model
-
-  class PrometheusServiceClient;
-
-    typedef std::function<void(const PrometheusServiceClient*, const Model::CreateAlertManagerDefinitionRequest&, const Model::CreateAlertManagerDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAlertManagerDefinitionResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::CreateRuleGroupsNamespaceRequest&, const Model::CreateRuleGroupsNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRuleGroupsNamespaceResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::CreateWorkspaceRequest&, const Model::CreateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkspaceResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::DeleteAlertManagerDefinitionRequest&, const Model::DeleteAlertManagerDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAlertManagerDefinitionResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::DeleteRuleGroupsNamespaceRequest&, const Model::DeleteRuleGroupsNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleGroupsNamespaceResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::DeleteWorkspaceRequest&, const Model::DeleteWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::DescribeAlertManagerDefinitionRequest&, const Model::DescribeAlertManagerDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlertManagerDefinitionResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::DescribeRuleGroupsNamespaceRequest&, const Model::DescribeRuleGroupsNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRuleGroupsNamespaceResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::DescribeWorkspaceRequest&, const Model::DescribeWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::ListRuleGroupsNamespacesRequest&, const Model::ListRuleGroupsNamespacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRuleGroupsNamespacesResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::ListWorkspacesRequest&, const Model::ListWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkspacesResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::PutAlertManagerDefinitionRequest&, const Model::PutAlertManagerDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAlertManagerDefinitionResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::PutRuleGroupsNamespaceRequest&, const Model::PutRuleGroupsNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRuleGroupsNamespaceResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const PrometheusServiceClient*, const Model::UpdateWorkspaceAliasRequest&, const Model::UpdateWorkspaceAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkspaceAliasResponseReceivedHandler;
-
   /**
    * <p>Amazon Managed Service for Prometheus</p>
    */
@@ -157,14 +32,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        PrometheusServiceClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        PrometheusServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         PrometheusServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~PrometheusServiceClient();
 
@@ -185,6 +61,23 @@ namespace Model
          * An Async wrapper for CreateAlertManagerDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAlertManagerDefinitionAsync(const Model::CreateAlertManagerDefinitionRequest& request, const CreateAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Create logging configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLoggingConfigurationOutcome CreateLoggingConfiguration(const Model::CreateLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLoggingConfigurationOutcomeCallable CreateLoggingConfigurationCallable(const Model::CreateLoggingConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLoggingConfigurationAsync(const Model::CreateLoggingConfigurationRequest& request, const CreateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Create a rule group namespace.</p><p><h3>See Also:</h3>   <a
@@ -238,6 +131,23 @@ namespace Model
         virtual void DeleteAlertManagerDefinitionAsync(const Model::DeleteAlertManagerDefinitionRequest& request, const DeleteAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Delete logging configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLoggingConfigurationOutcome DeleteLoggingConfiguration(const Model::DeleteLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLoggingConfigurationOutcomeCallable DeleteLoggingConfigurationCallable(const Model::DeleteLoggingConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLoggingConfigurationAsync(const Model::DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Delete a rule groups namespace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteRuleGroupsNamespace">AWS
          * API Reference</a></p>
@@ -287,6 +197,23 @@ namespace Model
          * An Async wrapper for DescribeAlertManagerDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAlertManagerDefinitionAsync(const Model::DescribeAlertManagerDefinitionRequest& request, const DescribeAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes logging configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLoggingConfigurationOutcome DescribeLoggingConfiguration(const Model::DescribeLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLoggingConfigurationOutcomeCallable DescribeLoggingConfigurationCallable(const Model::DescribeLoggingConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLoggingConfigurationAsync(const Model::DescribeLoggingConfigurationRequest& request, const DescribeLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describe a rule groups namespace.</p><p><h3>See Also:</h3>   <a
@@ -444,6 +371,23 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Update logging configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateLoggingConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLoggingConfigurationOutcome UpdateLoggingConfiguration(const Model::UpdateLoggingConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLoggingConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateLoggingConfigurationOutcomeCallable UpdateLoggingConfigurationCallable(const Model::UpdateLoggingConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateLoggingConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateLoggingConfigurationAsync(const Model::UpdateLoggingConfigurationRequest& request, const UpdateLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an AMP workspace alias.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceAlias">AWS
          * API Reference</a></p>
@@ -464,23 +408,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateAlertManagerDefinitionAsyncHelper(const Model::CreateAlertManagerDefinitionRequest& request, const CreateAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateRuleGroupsNamespaceAsyncHelper(const Model::CreateRuleGroupsNamespaceRequest& request, const CreateRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateWorkspaceAsyncHelper(const Model::CreateWorkspaceRequest& request, const CreateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteAlertManagerDefinitionAsyncHelper(const Model::DeleteAlertManagerDefinitionRequest& request, const DeleteAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteRuleGroupsNamespaceAsyncHelper(const Model::DeleteRuleGroupsNamespaceRequest& request, const DeleteRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteWorkspaceAsyncHelper(const Model::DeleteWorkspaceRequest& request, const DeleteWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAlertManagerDefinitionAsyncHelper(const Model::DescribeAlertManagerDefinitionRequest& request, const DescribeAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeRuleGroupsNamespaceAsyncHelper(const Model::DescribeRuleGroupsNamespaceRequest& request, const DescribeRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeWorkspaceAsyncHelper(const Model::DescribeWorkspaceRequest& request, const DescribeWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListRuleGroupsNamespacesAsyncHelper(const Model::ListRuleGroupsNamespacesRequest& request, const ListRuleGroupsNamespacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListWorkspacesAsyncHelper(const Model::ListWorkspacesRequest& request, const ListWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutAlertManagerDefinitionAsyncHelper(const Model::PutAlertManagerDefinitionRequest& request, const PutAlertManagerDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutRuleGroupsNamespaceAsyncHelper(const Model::PutRuleGroupsNamespaceRequest& request, const PutRuleGroupsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateWorkspaceAliasAsyncHelper(const Model::UpdateWorkspaceAliasRequest& request, const UpdateWorkspaceAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

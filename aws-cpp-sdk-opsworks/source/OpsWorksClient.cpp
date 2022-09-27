@@ -104,33 +104,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "opsworks";
 static const char* ALLOCATION_TAG = "OpsWorksClient";
 
-
 OpsWorksClient::OpsWorksClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<OpsWorksErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<OpsWorksErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-OpsWorksClient::OpsWorksClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+OpsWorksClient::OpsWorksClient(const AWSCredentials& credentials,
+                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<OpsWorksErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<OpsWorksErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 OpsWorksClient::OpsWorksClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<OpsWorksErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<OpsWorksErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -142,7 +148,7 @@ OpsWorksClient::~OpsWorksClient()
 
 void OpsWorksClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("OpsWorks");
+  AWSClient::SetServiceClientName("OpsWorks");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -182,12 +188,10 @@ AssignInstanceOutcomeCallable OpsWorksClient::AssignInstanceCallable(const Assig
 
 void OpsWorksClient::AssignInstanceAsync(const AssignInstanceRequest& request, const AssignInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssignInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::AssignInstanceAsyncHelper(const AssignInstanceRequest& request, const AssignInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssignInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssignInstance(request), context);
+    } );
 }
 
 AssignVolumeOutcome OpsWorksClient::AssignVolume(const AssignVolumeRequest& request) const
@@ -206,12 +210,10 @@ AssignVolumeOutcomeCallable OpsWorksClient::AssignVolumeCallable(const AssignVol
 
 void OpsWorksClient::AssignVolumeAsync(const AssignVolumeRequest& request, const AssignVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssignVolumeAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::AssignVolumeAsyncHelper(const AssignVolumeRequest& request, const AssignVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssignVolume(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssignVolume(request), context);
+    } );
 }
 
 AssociateElasticIpOutcome OpsWorksClient::AssociateElasticIp(const AssociateElasticIpRequest& request) const
@@ -230,12 +232,10 @@ AssociateElasticIpOutcomeCallable OpsWorksClient::AssociateElasticIpCallable(con
 
 void OpsWorksClient::AssociateElasticIpAsync(const AssociateElasticIpRequest& request, const AssociateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateElasticIpAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::AssociateElasticIpAsyncHelper(const AssociateElasticIpRequest& request, const AssociateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateElasticIp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateElasticIp(request), context);
+    } );
 }
 
 AttachElasticLoadBalancerOutcome OpsWorksClient::AttachElasticLoadBalancer(const AttachElasticLoadBalancerRequest& request) const
@@ -254,12 +254,10 @@ AttachElasticLoadBalancerOutcomeCallable OpsWorksClient::AttachElasticLoadBalanc
 
 void OpsWorksClient::AttachElasticLoadBalancerAsync(const AttachElasticLoadBalancerRequest& request, const AttachElasticLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AttachElasticLoadBalancerAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::AttachElasticLoadBalancerAsyncHelper(const AttachElasticLoadBalancerRequest& request, const AttachElasticLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AttachElasticLoadBalancer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AttachElasticLoadBalancer(request), context);
+    } );
 }
 
 CloneStackOutcome OpsWorksClient::CloneStack(const CloneStackRequest& request) const
@@ -278,12 +276,10 @@ CloneStackOutcomeCallable OpsWorksClient::CloneStackCallable(const CloneStackReq
 
 void OpsWorksClient::CloneStackAsync(const CloneStackRequest& request, const CloneStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CloneStackAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::CloneStackAsyncHelper(const CloneStackRequest& request, const CloneStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CloneStack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CloneStack(request), context);
+    } );
 }
 
 CreateAppOutcome OpsWorksClient::CreateApp(const CreateAppRequest& request) const
@@ -302,12 +298,10 @@ CreateAppOutcomeCallable OpsWorksClient::CreateAppCallable(const CreateAppReques
 
 void OpsWorksClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAppAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::CreateAppAsyncHelper(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateApp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateApp(request), context);
+    } );
 }
 
 CreateDeploymentOutcome OpsWorksClient::CreateDeployment(const CreateDeploymentRequest& request) const
@@ -326,12 +320,10 @@ CreateDeploymentOutcomeCallable OpsWorksClient::CreateDeploymentCallable(const C
 
 void OpsWorksClient::CreateDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateDeploymentAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::CreateDeploymentAsyncHelper(const CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateDeployment(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateDeployment(request), context);
+    } );
 }
 
 CreateInstanceOutcome OpsWorksClient::CreateInstance(const CreateInstanceRequest& request) const
@@ -350,12 +342,10 @@ CreateInstanceOutcomeCallable OpsWorksClient::CreateInstanceCallable(const Creat
 
 void OpsWorksClient::CreateInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::CreateInstanceAsyncHelper(const CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateInstance(request), context);
+    } );
 }
 
 CreateLayerOutcome OpsWorksClient::CreateLayer(const CreateLayerRequest& request) const
@@ -374,12 +364,10 @@ CreateLayerOutcomeCallable OpsWorksClient::CreateLayerCallable(const CreateLayer
 
 void OpsWorksClient::CreateLayerAsync(const CreateLayerRequest& request, const CreateLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateLayerAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::CreateLayerAsyncHelper(const CreateLayerRequest& request, const CreateLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateLayer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateLayer(request), context);
+    } );
 }
 
 CreateStackOutcome OpsWorksClient::CreateStack(const CreateStackRequest& request) const
@@ -398,12 +386,10 @@ CreateStackOutcomeCallable OpsWorksClient::CreateStackCallable(const CreateStack
 
 void OpsWorksClient::CreateStackAsync(const CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateStackAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::CreateStackAsyncHelper(const CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateStack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateStack(request), context);
+    } );
 }
 
 CreateUserProfileOutcome OpsWorksClient::CreateUserProfile(const CreateUserProfileRequest& request) const
@@ -422,12 +408,10 @@ CreateUserProfileOutcomeCallable OpsWorksClient::CreateUserProfileCallable(const
 
 void OpsWorksClient::CreateUserProfileAsync(const CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserProfileAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::CreateUserProfileAsyncHelper(const CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateUserProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateUserProfile(request), context);
+    } );
 }
 
 DeleteAppOutcome OpsWorksClient::DeleteApp(const DeleteAppRequest& request) const
@@ -446,12 +430,10 @@ DeleteAppOutcomeCallable OpsWorksClient::DeleteAppCallable(const DeleteAppReques
 
 void OpsWorksClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DeleteAppAsyncHelper(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteApp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteApp(request), context);
+    } );
 }
 
 DeleteInstanceOutcome OpsWorksClient::DeleteInstance(const DeleteInstanceRequest& request) const
@@ -470,12 +452,10 @@ DeleteInstanceOutcomeCallable OpsWorksClient::DeleteInstanceCallable(const Delet
 
 void OpsWorksClient::DeleteInstanceAsync(const DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DeleteInstanceAsyncHelper(const DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteInstance(request), context);
+    } );
 }
 
 DeleteLayerOutcome OpsWorksClient::DeleteLayer(const DeleteLayerRequest& request) const
@@ -494,12 +474,10 @@ DeleteLayerOutcomeCallable OpsWorksClient::DeleteLayerCallable(const DeleteLayer
 
 void OpsWorksClient::DeleteLayerAsync(const DeleteLayerRequest& request, const DeleteLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteLayerAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DeleteLayerAsyncHelper(const DeleteLayerRequest& request, const DeleteLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteLayer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteLayer(request), context);
+    } );
 }
 
 DeleteStackOutcome OpsWorksClient::DeleteStack(const DeleteStackRequest& request) const
@@ -518,12 +496,10 @@ DeleteStackOutcomeCallable OpsWorksClient::DeleteStackCallable(const DeleteStack
 
 void OpsWorksClient::DeleteStackAsync(const DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteStackAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DeleteStackAsyncHelper(const DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteStack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteStack(request), context);
+    } );
 }
 
 DeleteUserProfileOutcome OpsWorksClient::DeleteUserProfile(const DeleteUserProfileRequest& request) const
@@ -542,12 +518,10 @@ DeleteUserProfileOutcomeCallable OpsWorksClient::DeleteUserProfileCallable(const
 
 void OpsWorksClient::DeleteUserProfileAsync(const DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserProfileAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DeleteUserProfileAsyncHelper(const DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteUserProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteUserProfile(request), context);
+    } );
 }
 
 DeregisterEcsClusterOutcome OpsWorksClient::DeregisterEcsCluster(const DeregisterEcsClusterRequest& request) const
@@ -566,12 +540,10 @@ DeregisterEcsClusterOutcomeCallable OpsWorksClient::DeregisterEcsClusterCallable
 
 void OpsWorksClient::DeregisterEcsClusterAsync(const DeregisterEcsClusterRequest& request, const DeregisterEcsClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterEcsClusterAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DeregisterEcsClusterAsyncHelper(const DeregisterEcsClusterRequest& request, const DeregisterEcsClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterEcsCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterEcsCluster(request), context);
+    } );
 }
 
 DeregisterElasticIpOutcome OpsWorksClient::DeregisterElasticIp(const DeregisterElasticIpRequest& request) const
@@ -590,12 +562,10 @@ DeregisterElasticIpOutcomeCallable OpsWorksClient::DeregisterElasticIpCallable(c
 
 void OpsWorksClient::DeregisterElasticIpAsync(const DeregisterElasticIpRequest& request, const DeregisterElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterElasticIpAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DeregisterElasticIpAsyncHelper(const DeregisterElasticIpRequest& request, const DeregisterElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterElasticIp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterElasticIp(request), context);
+    } );
 }
 
 DeregisterInstanceOutcome OpsWorksClient::DeregisterInstance(const DeregisterInstanceRequest& request) const
@@ -614,12 +584,10 @@ DeregisterInstanceOutcomeCallable OpsWorksClient::DeregisterInstanceCallable(con
 
 void OpsWorksClient::DeregisterInstanceAsync(const DeregisterInstanceRequest& request, const DeregisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DeregisterInstanceAsyncHelper(const DeregisterInstanceRequest& request, const DeregisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterInstance(request), context);
+    } );
 }
 
 DeregisterRdsDbInstanceOutcome OpsWorksClient::DeregisterRdsDbInstance(const DeregisterRdsDbInstanceRequest& request) const
@@ -638,12 +606,10 @@ DeregisterRdsDbInstanceOutcomeCallable OpsWorksClient::DeregisterRdsDbInstanceCa
 
 void OpsWorksClient::DeregisterRdsDbInstanceAsync(const DeregisterRdsDbInstanceRequest& request, const DeregisterRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterRdsDbInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DeregisterRdsDbInstanceAsyncHelper(const DeregisterRdsDbInstanceRequest& request, const DeregisterRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterRdsDbInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterRdsDbInstance(request), context);
+    } );
 }
 
 DeregisterVolumeOutcome OpsWorksClient::DeregisterVolume(const DeregisterVolumeRequest& request) const
@@ -662,12 +628,10 @@ DeregisterVolumeOutcomeCallable OpsWorksClient::DeregisterVolumeCallable(const D
 
 void OpsWorksClient::DeregisterVolumeAsync(const DeregisterVolumeRequest& request, const DeregisterVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeregisterVolumeAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DeregisterVolumeAsyncHelper(const DeregisterVolumeRequest& request, const DeregisterVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeregisterVolume(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeregisterVolume(request), context);
+    } );
 }
 
 DescribeAgentVersionsOutcome OpsWorksClient::DescribeAgentVersions(const DescribeAgentVersionsRequest& request) const
@@ -686,12 +650,10 @@ DescribeAgentVersionsOutcomeCallable OpsWorksClient::DescribeAgentVersionsCallab
 
 void OpsWorksClient::DescribeAgentVersionsAsync(const DescribeAgentVersionsRequest& request, const DescribeAgentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAgentVersionsAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeAgentVersionsAsyncHelper(const DescribeAgentVersionsRequest& request, const DescribeAgentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeAgentVersions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAgentVersions(request), context);
+    } );
 }
 
 DescribeAppsOutcome OpsWorksClient::DescribeApps(const DescribeAppsRequest& request) const
@@ -710,12 +672,10 @@ DescribeAppsOutcomeCallable OpsWorksClient::DescribeAppsCallable(const DescribeA
 
 void OpsWorksClient::DescribeAppsAsync(const DescribeAppsRequest& request, const DescribeAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeAppsAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeAppsAsyncHelper(const DescribeAppsRequest& request, const DescribeAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeApps(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeApps(request), context);
+    } );
 }
 
 DescribeCommandsOutcome OpsWorksClient::DescribeCommands(const DescribeCommandsRequest& request) const
@@ -734,12 +694,10 @@ DescribeCommandsOutcomeCallable OpsWorksClient::DescribeCommandsCallable(const D
 
 void OpsWorksClient::DescribeCommandsAsync(const DescribeCommandsRequest& request, const DescribeCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCommandsAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeCommandsAsyncHelper(const DescribeCommandsRequest& request, const DescribeCommandsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeCommands(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeCommands(request), context);
+    } );
 }
 
 DescribeDeploymentsOutcome OpsWorksClient::DescribeDeployments(const DescribeDeploymentsRequest& request) const
@@ -758,12 +716,10 @@ DescribeDeploymentsOutcomeCallable OpsWorksClient::DescribeDeploymentsCallable(c
 
 void OpsWorksClient::DescribeDeploymentsAsync(const DescribeDeploymentsRequest& request, const DescribeDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDeploymentsAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeDeploymentsAsyncHelper(const DescribeDeploymentsRequest& request, const DescribeDeploymentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDeployments(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDeployments(request), context);
+    } );
 }
 
 DescribeEcsClustersOutcome OpsWorksClient::DescribeEcsClusters(const DescribeEcsClustersRequest& request) const
@@ -782,12 +738,10 @@ DescribeEcsClustersOutcomeCallable OpsWorksClient::DescribeEcsClustersCallable(c
 
 void OpsWorksClient::DescribeEcsClustersAsync(const DescribeEcsClustersRequest& request, const DescribeEcsClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeEcsClustersAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeEcsClustersAsyncHelper(const DescribeEcsClustersRequest& request, const DescribeEcsClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeEcsClusters(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeEcsClusters(request), context);
+    } );
 }
 
 DescribeElasticIpsOutcome OpsWorksClient::DescribeElasticIps(const DescribeElasticIpsRequest& request) const
@@ -806,12 +760,10 @@ DescribeElasticIpsOutcomeCallable OpsWorksClient::DescribeElasticIpsCallable(con
 
 void OpsWorksClient::DescribeElasticIpsAsync(const DescribeElasticIpsRequest& request, const DescribeElasticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeElasticIpsAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeElasticIpsAsyncHelper(const DescribeElasticIpsRequest& request, const DescribeElasticIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeElasticIps(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeElasticIps(request), context);
+    } );
 }
 
 DescribeElasticLoadBalancersOutcome OpsWorksClient::DescribeElasticLoadBalancers(const DescribeElasticLoadBalancersRequest& request) const
@@ -830,12 +782,10 @@ DescribeElasticLoadBalancersOutcomeCallable OpsWorksClient::DescribeElasticLoadB
 
 void OpsWorksClient::DescribeElasticLoadBalancersAsync(const DescribeElasticLoadBalancersRequest& request, const DescribeElasticLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeElasticLoadBalancersAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeElasticLoadBalancersAsyncHelper(const DescribeElasticLoadBalancersRequest& request, const DescribeElasticLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeElasticLoadBalancers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeElasticLoadBalancers(request), context);
+    } );
 }
 
 DescribeInstancesOutcome OpsWorksClient::DescribeInstances(const DescribeInstancesRequest& request) const
@@ -854,12 +804,10 @@ DescribeInstancesOutcomeCallable OpsWorksClient::DescribeInstancesCallable(const
 
 void OpsWorksClient::DescribeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeInstancesAsyncHelper(const DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeInstances(request), context);
+    } );
 }
 
 DescribeLayersOutcome OpsWorksClient::DescribeLayers(const DescribeLayersRequest& request) const
@@ -878,12 +826,10 @@ DescribeLayersOutcomeCallable OpsWorksClient::DescribeLayersCallable(const Descr
 
 void OpsWorksClient::DescribeLayersAsync(const DescribeLayersRequest& request, const DescribeLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLayersAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeLayersAsyncHelper(const DescribeLayersRequest& request, const DescribeLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeLayers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeLayers(request), context);
+    } );
 }
 
 DescribeLoadBasedAutoScalingOutcome OpsWorksClient::DescribeLoadBasedAutoScaling(const DescribeLoadBasedAutoScalingRequest& request) const
@@ -902,12 +848,10 @@ DescribeLoadBasedAutoScalingOutcomeCallable OpsWorksClient::DescribeLoadBasedAut
 
 void OpsWorksClient::DescribeLoadBasedAutoScalingAsync(const DescribeLoadBasedAutoScalingRequest& request, const DescribeLoadBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeLoadBasedAutoScalingAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeLoadBasedAutoScalingAsyncHelper(const DescribeLoadBasedAutoScalingRequest& request, const DescribeLoadBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeLoadBasedAutoScaling(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeLoadBasedAutoScaling(request), context);
+    } );
 }
 
 DescribeMyUserProfileOutcome OpsWorksClient::DescribeMyUserProfile() const
@@ -927,12 +871,10 @@ DescribeMyUserProfileOutcomeCallable OpsWorksClient::DescribeMyUserProfileCallab
 
 void OpsWorksClient::DescribeMyUserProfileAsync(const DescribeMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, handler, context](){ this->DescribeMyUserProfileAsyncHelper( handler, context ); } );
-}
-
-void OpsWorksClient::DescribeMyUserProfileAsyncHelper(const DescribeMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, DescribeMyUserProfile(), context);
+  m_executor->Submit( [this, handler, context]()
+    {
+      handler(this, DescribeMyUserProfile(), context);
+    } );
 }
 
 DescribeOperatingSystemsOutcome OpsWorksClient::DescribeOperatingSystems() const
@@ -952,12 +894,10 @@ DescribeOperatingSystemsOutcomeCallable OpsWorksClient::DescribeOperatingSystems
 
 void OpsWorksClient::DescribeOperatingSystemsAsync(const DescribeOperatingSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, handler, context](){ this->DescribeOperatingSystemsAsyncHelper( handler, context ); } );
-}
-
-void OpsWorksClient::DescribeOperatingSystemsAsyncHelper(const DescribeOperatingSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, DescribeOperatingSystems(), context);
+  m_executor->Submit( [this, handler, context]()
+    {
+      handler(this, DescribeOperatingSystems(), context);
+    } );
 }
 
 DescribePermissionsOutcome OpsWorksClient::DescribePermissions(const DescribePermissionsRequest& request) const
@@ -976,12 +916,10 @@ DescribePermissionsOutcomeCallable OpsWorksClient::DescribePermissionsCallable(c
 
 void OpsWorksClient::DescribePermissionsAsync(const DescribePermissionsRequest& request, const DescribePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribePermissionsAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribePermissionsAsyncHelper(const DescribePermissionsRequest& request, const DescribePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribePermissions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribePermissions(request), context);
+    } );
 }
 
 DescribeRaidArraysOutcome OpsWorksClient::DescribeRaidArrays(const DescribeRaidArraysRequest& request) const
@@ -1000,12 +938,10 @@ DescribeRaidArraysOutcomeCallable OpsWorksClient::DescribeRaidArraysCallable(con
 
 void OpsWorksClient::DescribeRaidArraysAsync(const DescribeRaidArraysRequest& request, const DescribeRaidArraysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRaidArraysAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeRaidArraysAsyncHelper(const DescribeRaidArraysRequest& request, const DescribeRaidArraysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRaidArrays(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRaidArrays(request), context);
+    } );
 }
 
 DescribeRdsDbInstancesOutcome OpsWorksClient::DescribeRdsDbInstances(const DescribeRdsDbInstancesRequest& request) const
@@ -1024,12 +960,10 @@ DescribeRdsDbInstancesOutcomeCallable OpsWorksClient::DescribeRdsDbInstancesCall
 
 void OpsWorksClient::DescribeRdsDbInstancesAsync(const DescribeRdsDbInstancesRequest& request, const DescribeRdsDbInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRdsDbInstancesAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeRdsDbInstancesAsyncHelper(const DescribeRdsDbInstancesRequest& request, const DescribeRdsDbInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRdsDbInstances(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRdsDbInstances(request), context);
+    } );
 }
 
 DescribeServiceErrorsOutcome OpsWorksClient::DescribeServiceErrors(const DescribeServiceErrorsRequest& request) const
@@ -1048,12 +982,10 @@ DescribeServiceErrorsOutcomeCallable OpsWorksClient::DescribeServiceErrorsCallab
 
 void OpsWorksClient::DescribeServiceErrorsAsync(const DescribeServiceErrorsRequest& request, const DescribeServiceErrorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeServiceErrorsAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeServiceErrorsAsyncHelper(const DescribeServiceErrorsRequest& request, const DescribeServiceErrorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeServiceErrors(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeServiceErrors(request), context);
+    } );
 }
 
 DescribeStackProvisioningParametersOutcome OpsWorksClient::DescribeStackProvisioningParameters(const DescribeStackProvisioningParametersRequest& request) const
@@ -1072,12 +1004,10 @@ DescribeStackProvisioningParametersOutcomeCallable OpsWorksClient::DescribeStack
 
 void OpsWorksClient::DescribeStackProvisioningParametersAsync(const DescribeStackProvisioningParametersRequest& request, const DescribeStackProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStackProvisioningParametersAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeStackProvisioningParametersAsyncHelper(const DescribeStackProvisioningParametersRequest& request, const DescribeStackProvisioningParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStackProvisioningParameters(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStackProvisioningParameters(request), context);
+    } );
 }
 
 DescribeStackSummaryOutcome OpsWorksClient::DescribeStackSummary(const DescribeStackSummaryRequest& request) const
@@ -1096,12 +1026,10 @@ DescribeStackSummaryOutcomeCallable OpsWorksClient::DescribeStackSummaryCallable
 
 void OpsWorksClient::DescribeStackSummaryAsync(const DescribeStackSummaryRequest& request, const DescribeStackSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStackSummaryAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeStackSummaryAsyncHelper(const DescribeStackSummaryRequest& request, const DescribeStackSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStackSummary(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStackSummary(request), context);
+    } );
 }
 
 DescribeStacksOutcome OpsWorksClient::DescribeStacks(const DescribeStacksRequest& request) const
@@ -1120,12 +1048,10 @@ DescribeStacksOutcomeCallable OpsWorksClient::DescribeStacksCallable(const Descr
 
 void OpsWorksClient::DescribeStacksAsync(const DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeStacksAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeStacksAsyncHelper(const DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeStacks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeStacks(request), context);
+    } );
 }
 
 DescribeTimeBasedAutoScalingOutcome OpsWorksClient::DescribeTimeBasedAutoScaling(const DescribeTimeBasedAutoScalingRequest& request) const
@@ -1144,12 +1070,10 @@ DescribeTimeBasedAutoScalingOutcomeCallable OpsWorksClient::DescribeTimeBasedAut
 
 void OpsWorksClient::DescribeTimeBasedAutoScalingAsync(const DescribeTimeBasedAutoScalingRequest& request, const DescribeTimeBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeTimeBasedAutoScalingAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeTimeBasedAutoScalingAsyncHelper(const DescribeTimeBasedAutoScalingRequest& request, const DescribeTimeBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeTimeBasedAutoScaling(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTimeBasedAutoScaling(request), context);
+    } );
 }
 
 DescribeUserProfilesOutcome OpsWorksClient::DescribeUserProfiles(const DescribeUserProfilesRequest& request) const
@@ -1168,12 +1092,10 @@ DescribeUserProfilesOutcomeCallable OpsWorksClient::DescribeUserProfilesCallable
 
 void OpsWorksClient::DescribeUserProfilesAsync(const DescribeUserProfilesRequest& request, const DescribeUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeUserProfilesAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeUserProfilesAsyncHelper(const DescribeUserProfilesRequest& request, const DescribeUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeUserProfiles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeUserProfiles(request), context);
+    } );
 }
 
 DescribeVolumesOutcome OpsWorksClient::DescribeVolumes(const DescribeVolumesRequest& request) const
@@ -1192,12 +1114,10 @@ DescribeVolumesOutcomeCallable OpsWorksClient::DescribeVolumesCallable(const Des
 
 void OpsWorksClient::DescribeVolumesAsync(const DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVolumesAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DescribeVolumesAsyncHelper(const DescribeVolumesRequest& request, const DescribeVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeVolumes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVolumes(request), context);
+    } );
 }
 
 DetachElasticLoadBalancerOutcome OpsWorksClient::DetachElasticLoadBalancer(const DetachElasticLoadBalancerRequest& request) const
@@ -1216,12 +1136,10 @@ DetachElasticLoadBalancerOutcomeCallable OpsWorksClient::DetachElasticLoadBalanc
 
 void OpsWorksClient::DetachElasticLoadBalancerAsync(const DetachElasticLoadBalancerRequest& request, const DetachElasticLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DetachElasticLoadBalancerAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DetachElasticLoadBalancerAsyncHelper(const DetachElasticLoadBalancerRequest& request, const DetachElasticLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DetachElasticLoadBalancer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DetachElasticLoadBalancer(request), context);
+    } );
 }
 
 DisassociateElasticIpOutcome OpsWorksClient::DisassociateElasticIp(const DisassociateElasticIpRequest& request) const
@@ -1240,12 +1158,10 @@ DisassociateElasticIpOutcomeCallable OpsWorksClient::DisassociateElasticIpCallab
 
 void OpsWorksClient::DisassociateElasticIpAsync(const DisassociateElasticIpRequest& request, const DisassociateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateElasticIpAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::DisassociateElasticIpAsyncHelper(const DisassociateElasticIpRequest& request, const DisassociateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateElasticIp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateElasticIp(request), context);
+    } );
 }
 
 GetHostnameSuggestionOutcome OpsWorksClient::GetHostnameSuggestion(const GetHostnameSuggestionRequest& request) const
@@ -1264,12 +1180,10 @@ GetHostnameSuggestionOutcomeCallable OpsWorksClient::GetHostnameSuggestionCallab
 
 void OpsWorksClient::GetHostnameSuggestionAsync(const GetHostnameSuggestionRequest& request, const GetHostnameSuggestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetHostnameSuggestionAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::GetHostnameSuggestionAsyncHelper(const GetHostnameSuggestionRequest& request, const GetHostnameSuggestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetHostnameSuggestion(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetHostnameSuggestion(request), context);
+    } );
 }
 
 GrantAccessOutcome OpsWorksClient::GrantAccess(const GrantAccessRequest& request) const
@@ -1288,12 +1202,10 @@ GrantAccessOutcomeCallable OpsWorksClient::GrantAccessCallable(const GrantAccess
 
 void OpsWorksClient::GrantAccessAsync(const GrantAccessRequest& request, const GrantAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GrantAccessAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::GrantAccessAsyncHelper(const GrantAccessRequest& request, const GrantAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GrantAccess(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GrantAccess(request), context);
+    } );
 }
 
 ListTagsOutcome OpsWorksClient::ListTags(const ListTagsRequest& request) const
@@ -1312,12 +1224,10 @@ ListTagsOutcomeCallable OpsWorksClient::ListTagsCallable(const ListTagsRequest& 
 
 void OpsWorksClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTags(request), context);
+    } );
 }
 
 RebootInstanceOutcome OpsWorksClient::RebootInstance(const RebootInstanceRequest& request) const
@@ -1336,12 +1246,10 @@ RebootInstanceOutcomeCallable OpsWorksClient::RebootInstanceCallable(const Reboo
 
 void OpsWorksClient::RebootInstanceAsync(const RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RebootInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::RebootInstanceAsyncHelper(const RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RebootInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RebootInstance(request), context);
+    } );
 }
 
 RegisterEcsClusterOutcome OpsWorksClient::RegisterEcsCluster(const RegisterEcsClusterRequest& request) const
@@ -1360,12 +1268,10 @@ RegisterEcsClusterOutcomeCallable OpsWorksClient::RegisterEcsClusterCallable(con
 
 void OpsWorksClient::RegisterEcsClusterAsync(const RegisterEcsClusterRequest& request, const RegisterEcsClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterEcsClusterAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::RegisterEcsClusterAsyncHelper(const RegisterEcsClusterRequest& request, const RegisterEcsClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterEcsCluster(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterEcsCluster(request), context);
+    } );
 }
 
 RegisterElasticIpOutcome OpsWorksClient::RegisterElasticIp(const RegisterElasticIpRequest& request) const
@@ -1384,12 +1290,10 @@ RegisterElasticIpOutcomeCallable OpsWorksClient::RegisterElasticIpCallable(const
 
 void OpsWorksClient::RegisterElasticIpAsync(const RegisterElasticIpRequest& request, const RegisterElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterElasticIpAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::RegisterElasticIpAsyncHelper(const RegisterElasticIpRequest& request, const RegisterElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterElasticIp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterElasticIp(request), context);
+    } );
 }
 
 RegisterInstanceOutcome OpsWorksClient::RegisterInstance(const RegisterInstanceRequest& request) const
@@ -1408,12 +1312,10 @@ RegisterInstanceOutcomeCallable OpsWorksClient::RegisterInstanceCallable(const R
 
 void OpsWorksClient::RegisterInstanceAsync(const RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::RegisterInstanceAsyncHelper(const RegisterInstanceRequest& request, const RegisterInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterInstance(request), context);
+    } );
 }
 
 RegisterRdsDbInstanceOutcome OpsWorksClient::RegisterRdsDbInstance(const RegisterRdsDbInstanceRequest& request) const
@@ -1432,12 +1334,10 @@ RegisterRdsDbInstanceOutcomeCallable OpsWorksClient::RegisterRdsDbInstanceCallab
 
 void OpsWorksClient::RegisterRdsDbInstanceAsync(const RegisterRdsDbInstanceRequest& request, const RegisterRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterRdsDbInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::RegisterRdsDbInstanceAsyncHelper(const RegisterRdsDbInstanceRequest& request, const RegisterRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterRdsDbInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterRdsDbInstance(request), context);
+    } );
 }
 
 RegisterVolumeOutcome OpsWorksClient::RegisterVolume(const RegisterVolumeRequest& request) const
@@ -1456,12 +1356,10 @@ RegisterVolumeOutcomeCallable OpsWorksClient::RegisterVolumeCallable(const Regis
 
 void OpsWorksClient::RegisterVolumeAsync(const RegisterVolumeRequest& request, const RegisterVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterVolumeAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::RegisterVolumeAsyncHelper(const RegisterVolumeRequest& request, const RegisterVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterVolume(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterVolume(request), context);
+    } );
 }
 
 SetLoadBasedAutoScalingOutcome OpsWorksClient::SetLoadBasedAutoScaling(const SetLoadBasedAutoScalingRequest& request) const
@@ -1480,12 +1378,10 @@ SetLoadBasedAutoScalingOutcomeCallable OpsWorksClient::SetLoadBasedAutoScalingCa
 
 void OpsWorksClient::SetLoadBasedAutoScalingAsync(const SetLoadBasedAutoScalingRequest& request, const SetLoadBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetLoadBasedAutoScalingAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::SetLoadBasedAutoScalingAsyncHelper(const SetLoadBasedAutoScalingRequest& request, const SetLoadBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetLoadBasedAutoScaling(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetLoadBasedAutoScaling(request), context);
+    } );
 }
 
 SetPermissionOutcome OpsWorksClient::SetPermission(const SetPermissionRequest& request) const
@@ -1504,12 +1400,10 @@ SetPermissionOutcomeCallable OpsWorksClient::SetPermissionCallable(const SetPerm
 
 void OpsWorksClient::SetPermissionAsync(const SetPermissionRequest& request, const SetPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetPermissionAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::SetPermissionAsyncHelper(const SetPermissionRequest& request, const SetPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetPermission(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetPermission(request), context);
+    } );
 }
 
 SetTimeBasedAutoScalingOutcome OpsWorksClient::SetTimeBasedAutoScaling(const SetTimeBasedAutoScalingRequest& request) const
@@ -1528,12 +1422,10 @@ SetTimeBasedAutoScalingOutcomeCallable OpsWorksClient::SetTimeBasedAutoScalingCa
 
 void OpsWorksClient::SetTimeBasedAutoScalingAsync(const SetTimeBasedAutoScalingRequest& request, const SetTimeBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SetTimeBasedAutoScalingAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::SetTimeBasedAutoScalingAsyncHelper(const SetTimeBasedAutoScalingRequest& request, const SetTimeBasedAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SetTimeBasedAutoScaling(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SetTimeBasedAutoScaling(request), context);
+    } );
 }
 
 StartInstanceOutcome OpsWorksClient::StartInstance(const StartInstanceRequest& request) const
@@ -1552,12 +1444,10 @@ StartInstanceOutcomeCallable OpsWorksClient::StartInstanceCallable(const StartIn
 
 void OpsWorksClient::StartInstanceAsync(const StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::StartInstanceAsyncHelper(const StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartInstance(request), context);
+    } );
 }
 
 StartStackOutcome OpsWorksClient::StartStack(const StartStackRequest& request) const
@@ -1576,12 +1466,10 @@ StartStackOutcomeCallable OpsWorksClient::StartStackCallable(const StartStackReq
 
 void OpsWorksClient::StartStackAsync(const StartStackRequest& request, const StartStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartStackAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::StartStackAsyncHelper(const StartStackRequest& request, const StartStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartStack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartStack(request), context);
+    } );
 }
 
 StopInstanceOutcome OpsWorksClient::StopInstance(const StopInstanceRequest& request) const
@@ -1600,12 +1488,10 @@ StopInstanceOutcomeCallable OpsWorksClient::StopInstanceCallable(const StopInsta
 
 void OpsWorksClient::StopInstanceAsync(const StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::StopInstanceAsyncHelper(const StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopInstance(request), context);
+    } );
 }
 
 StopStackOutcome OpsWorksClient::StopStack(const StopStackRequest& request) const
@@ -1624,12 +1510,10 @@ StopStackOutcomeCallable OpsWorksClient::StopStackCallable(const StopStackReques
 
 void OpsWorksClient::StopStackAsync(const StopStackRequest& request, const StopStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopStackAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::StopStackAsyncHelper(const StopStackRequest& request, const StopStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopStack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopStack(request), context);
+    } );
 }
 
 TagResourceOutcome OpsWorksClient::TagResource(const TagResourceRequest& request) const
@@ -1648,12 +1532,10 @@ TagResourceOutcomeCallable OpsWorksClient::TagResourceCallable(const TagResource
 
 void OpsWorksClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UnassignInstanceOutcome OpsWorksClient::UnassignInstance(const UnassignInstanceRequest& request) const
@@ -1672,12 +1554,10 @@ UnassignInstanceOutcomeCallable OpsWorksClient::UnassignInstanceCallable(const U
 
 void OpsWorksClient::UnassignInstanceAsync(const UnassignInstanceRequest& request, const UnassignInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnassignInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::UnassignInstanceAsyncHelper(const UnassignInstanceRequest& request, const UnassignInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UnassignInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UnassignInstance(request), context);
+    } );
 }
 
 UnassignVolumeOutcome OpsWorksClient::UnassignVolume(const UnassignVolumeRequest& request) const
@@ -1696,12 +1576,10 @@ UnassignVolumeOutcomeCallable OpsWorksClient::UnassignVolumeCallable(const Unass
 
 void OpsWorksClient::UnassignVolumeAsync(const UnassignVolumeRequest& request, const UnassignVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UnassignVolumeAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::UnassignVolumeAsyncHelper(const UnassignVolumeRequest& request, const UnassignVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UnassignVolume(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UnassignVolume(request), context);
+    } );
 }
 
 UntagResourceOutcome OpsWorksClient::UntagResource(const UntagResourceRequest& request) const
@@ -1720,12 +1598,10 @@ UntagResourceOutcomeCallable OpsWorksClient::UntagResourceCallable(const UntagRe
 
 void OpsWorksClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateAppOutcome OpsWorksClient::UpdateApp(const UpdateAppRequest& request) const
@@ -1744,12 +1620,10 @@ UpdateAppOutcomeCallable OpsWorksClient::UpdateAppCallable(const UpdateAppReques
 
 void OpsWorksClient::UpdateAppAsync(const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAppAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::UpdateAppAsyncHelper(const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateApp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateApp(request), context);
+    } );
 }
 
 UpdateElasticIpOutcome OpsWorksClient::UpdateElasticIp(const UpdateElasticIpRequest& request) const
@@ -1768,12 +1642,10 @@ UpdateElasticIpOutcomeCallable OpsWorksClient::UpdateElasticIpCallable(const Upd
 
 void OpsWorksClient::UpdateElasticIpAsync(const UpdateElasticIpRequest& request, const UpdateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateElasticIpAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::UpdateElasticIpAsyncHelper(const UpdateElasticIpRequest& request, const UpdateElasticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateElasticIp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateElasticIp(request), context);
+    } );
 }
 
 UpdateInstanceOutcome OpsWorksClient::UpdateInstance(const UpdateInstanceRequest& request) const
@@ -1792,12 +1664,10 @@ UpdateInstanceOutcomeCallable OpsWorksClient::UpdateInstanceCallable(const Updat
 
 void OpsWorksClient::UpdateInstanceAsync(const UpdateInstanceRequest& request, const UpdateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::UpdateInstanceAsyncHelper(const UpdateInstanceRequest& request, const UpdateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateInstance(request), context);
+    } );
 }
 
 UpdateLayerOutcome OpsWorksClient::UpdateLayer(const UpdateLayerRequest& request) const
@@ -1816,12 +1686,10 @@ UpdateLayerOutcomeCallable OpsWorksClient::UpdateLayerCallable(const UpdateLayer
 
 void OpsWorksClient::UpdateLayerAsync(const UpdateLayerRequest& request, const UpdateLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateLayerAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::UpdateLayerAsyncHelper(const UpdateLayerRequest& request, const UpdateLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateLayer(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateLayer(request), context);
+    } );
 }
 
 UpdateMyUserProfileOutcome OpsWorksClient::UpdateMyUserProfile(const UpdateMyUserProfileRequest& request) const
@@ -1840,12 +1708,10 @@ UpdateMyUserProfileOutcomeCallable OpsWorksClient::UpdateMyUserProfileCallable(c
 
 void OpsWorksClient::UpdateMyUserProfileAsync(const UpdateMyUserProfileRequest& request, const UpdateMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMyUserProfileAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::UpdateMyUserProfileAsyncHelper(const UpdateMyUserProfileRequest& request, const UpdateMyUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateMyUserProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateMyUserProfile(request), context);
+    } );
 }
 
 UpdateRdsDbInstanceOutcome OpsWorksClient::UpdateRdsDbInstance(const UpdateRdsDbInstanceRequest& request) const
@@ -1864,12 +1730,10 @@ UpdateRdsDbInstanceOutcomeCallable OpsWorksClient::UpdateRdsDbInstanceCallable(c
 
 void OpsWorksClient::UpdateRdsDbInstanceAsync(const UpdateRdsDbInstanceRequest& request, const UpdateRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRdsDbInstanceAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::UpdateRdsDbInstanceAsyncHelper(const UpdateRdsDbInstanceRequest& request, const UpdateRdsDbInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRdsDbInstance(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRdsDbInstance(request), context);
+    } );
 }
 
 UpdateStackOutcome OpsWorksClient::UpdateStack(const UpdateStackRequest& request) const
@@ -1888,12 +1752,10 @@ UpdateStackOutcomeCallable OpsWorksClient::UpdateStackCallable(const UpdateStack
 
 void OpsWorksClient::UpdateStackAsync(const UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateStackAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::UpdateStackAsyncHelper(const UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateStack(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateStack(request), context);
+    } );
 }
 
 UpdateUserProfileOutcome OpsWorksClient::UpdateUserProfile(const UpdateUserProfileRequest& request) const
@@ -1912,12 +1774,10 @@ UpdateUserProfileOutcomeCallable OpsWorksClient::UpdateUserProfileCallable(const
 
 void OpsWorksClient::UpdateUserProfileAsync(const UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserProfileAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::UpdateUserProfileAsyncHelper(const UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateUserProfile(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateUserProfile(request), context);
+    } );
 }
 
 UpdateVolumeOutcome OpsWorksClient::UpdateVolume(const UpdateVolumeRequest& request) const
@@ -1936,11 +1796,9 @@ UpdateVolumeOutcomeCallable OpsWorksClient::UpdateVolumeCallable(const UpdateVol
 
 void OpsWorksClient::UpdateVolumeAsync(const UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVolumeAsyncHelper( request, handler, context ); } );
-}
-
-void OpsWorksClient::UpdateVolumeAsyncHelper(const UpdateVolumeRequest& request, const UpdateVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateVolume(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateVolume(request), context);
+    } );
 }
 

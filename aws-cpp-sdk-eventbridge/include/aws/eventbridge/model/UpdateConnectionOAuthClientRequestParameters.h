@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_clientID;
-    bool m_clientIDHasBeenSet;
+    bool m_clientIDHasBeenSet = false;
 
     Aws::String m_clientSecret;
-    bool m_clientSecretHasBeenSet;
+    bool m_clientSecretHasBeenSet = false;
   };
 
 } // namespace Model

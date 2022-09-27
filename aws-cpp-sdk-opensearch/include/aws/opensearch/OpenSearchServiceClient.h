@@ -5,257 +5,15 @@
 
 #pragma once
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
-#include <aws/opensearch/OpenSearchServiceErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/opensearch/model/AcceptInboundConnectionResult.h>
-#include <aws/opensearch/model/AssociatePackageResult.h>
-#include <aws/opensearch/model/CancelServiceSoftwareUpdateResult.h>
-#include <aws/opensearch/model/CreateDomainResult.h>
-#include <aws/opensearch/model/CreateOutboundConnectionResult.h>
-#include <aws/opensearch/model/CreatePackageResult.h>
-#include <aws/opensearch/model/DeleteDomainResult.h>
-#include <aws/opensearch/model/DeleteInboundConnectionResult.h>
-#include <aws/opensearch/model/DeleteOutboundConnectionResult.h>
-#include <aws/opensearch/model/DeletePackageResult.h>
-#include <aws/opensearch/model/DescribeDomainResult.h>
-#include <aws/opensearch/model/DescribeDomainAutoTunesResult.h>
-#include <aws/opensearch/model/DescribeDomainChangeProgressResult.h>
-#include <aws/opensearch/model/DescribeDomainConfigResult.h>
-#include <aws/opensearch/model/DescribeDomainsResult.h>
-#include <aws/opensearch/model/DescribeInboundConnectionsResult.h>
-#include <aws/opensearch/model/DescribeInstanceTypeLimitsResult.h>
-#include <aws/opensearch/model/DescribeOutboundConnectionsResult.h>
-#include <aws/opensearch/model/DescribePackagesResult.h>
-#include <aws/opensearch/model/DescribeReservedInstanceOfferingsResult.h>
-#include <aws/opensearch/model/DescribeReservedInstancesResult.h>
-#include <aws/opensearch/model/DissociatePackageResult.h>
-#include <aws/opensearch/model/GetCompatibleVersionsResult.h>
-#include <aws/opensearch/model/GetPackageVersionHistoryResult.h>
-#include <aws/opensearch/model/GetUpgradeHistoryResult.h>
-#include <aws/opensearch/model/GetUpgradeStatusResult.h>
-#include <aws/opensearch/model/ListDomainNamesResult.h>
-#include <aws/opensearch/model/ListDomainsForPackageResult.h>
-#include <aws/opensearch/model/ListInstanceTypeDetailsResult.h>
-#include <aws/opensearch/model/ListPackagesForDomainResult.h>
-#include <aws/opensearch/model/ListTagsResult.h>
-#include <aws/opensearch/model/ListVersionsResult.h>
-#include <aws/opensearch/model/PurchaseReservedInstanceOfferingResult.h>
-#include <aws/opensearch/model/RejectInboundConnectionResult.h>
-#include <aws/opensearch/model/StartServiceSoftwareUpdateResult.h>
-#include <aws/opensearch/model/UpdateDomainConfigResult.h>
-#include <aws/opensearch/model/UpdatePackageResult.h>
-#include <aws/opensearch/model/UpgradeDomainResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/opensearch/OpenSearchServiceServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace OpenSearchService
 {
-
-namespace Model
-{
-        class AcceptInboundConnectionRequest;
-        class AddTagsRequest;
-        class AssociatePackageRequest;
-        class CancelServiceSoftwareUpdateRequest;
-        class CreateDomainRequest;
-        class CreateOutboundConnectionRequest;
-        class CreatePackageRequest;
-        class DeleteDomainRequest;
-        class DeleteInboundConnectionRequest;
-        class DeleteOutboundConnectionRequest;
-        class DeletePackageRequest;
-        class DescribeDomainRequest;
-        class DescribeDomainAutoTunesRequest;
-        class DescribeDomainChangeProgressRequest;
-        class DescribeDomainConfigRequest;
-        class DescribeDomainsRequest;
-        class DescribeInboundConnectionsRequest;
-        class DescribeInstanceTypeLimitsRequest;
-        class DescribeOutboundConnectionsRequest;
-        class DescribePackagesRequest;
-        class DescribeReservedInstanceOfferingsRequest;
-        class DescribeReservedInstancesRequest;
-        class DissociatePackageRequest;
-        class GetCompatibleVersionsRequest;
-        class GetPackageVersionHistoryRequest;
-        class GetUpgradeHistoryRequest;
-        class GetUpgradeStatusRequest;
-        class ListDomainNamesRequest;
-        class ListDomainsForPackageRequest;
-        class ListInstanceTypeDetailsRequest;
-        class ListPackagesForDomainRequest;
-        class ListTagsRequest;
-        class ListVersionsRequest;
-        class PurchaseReservedInstanceOfferingRequest;
-        class RejectInboundConnectionRequest;
-        class RemoveTagsRequest;
-        class StartServiceSoftwareUpdateRequest;
-        class UpdateDomainConfigRequest;
-        class UpdatePackageRequest;
-        class UpgradeDomainRequest;
-
-        typedef Aws::Utils::Outcome<AcceptInboundConnectionResult, OpenSearchServiceError> AcceptInboundConnectionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpenSearchServiceError> AddTagsOutcome;
-        typedef Aws::Utils::Outcome<AssociatePackageResult, OpenSearchServiceError> AssociatePackageOutcome;
-        typedef Aws::Utils::Outcome<CancelServiceSoftwareUpdateResult, OpenSearchServiceError> CancelServiceSoftwareUpdateOutcome;
-        typedef Aws::Utils::Outcome<CreateDomainResult, OpenSearchServiceError> CreateDomainOutcome;
-        typedef Aws::Utils::Outcome<CreateOutboundConnectionResult, OpenSearchServiceError> CreateOutboundConnectionOutcome;
-        typedef Aws::Utils::Outcome<CreatePackageResult, OpenSearchServiceError> CreatePackageOutcome;
-        typedef Aws::Utils::Outcome<DeleteDomainResult, OpenSearchServiceError> DeleteDomainOutcome;
-        typedef Aws::Utils::Outcome<DeleteInboundConnectionResult, OpenSearchServiceError> DeleteInboundConnectionOutcome;
-        typedef Aws::Utils::Outcome<DeleteOutboundConnectionResult, OpenSearchServiceError> DeleteOutboundConnectionOutcome;
-        typedef Aws::Utils::Outcome<DeletePackageResult, OpenSearchServiceError> DeletePackageOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainResult, OpenSearchServiceError> DescribeDomainOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainAutoTunesResult, OpenSearchServiceError> DescribeDomainAutoTunesOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainChangeProgressResult, OpenSearchServiceError> DescribeDomainChangeProgressOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainConfigResult, OpenSearchServiceError> DescribeDomainConfigOutcome;
-        typedef Aws::Utils::Outcome<DescribeDomainsResult, OpenSearchServiceError> DescribeDomainsOutcome;
-        typedef Aws::Utils::Outcome<DescribeInboundConnectionsResult, OpenSearchServiceError> DescribeInboundConnectionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeInstanceTypeLimitsResult, OpenSearchServiceError> DescribeInstanceTypeLimitsOutcome;
-        typedef Aws::Utils::Outcome<DescribeOutboundConnectionsResult, OpenSearchServiceError> DescribeOutboundConnectionsOutcome;
-        typedef Aws::Utils::Outcome<DescribePackagesResult, OpenSearchServiceError> DescribePackagesOutcome;
-        typedef Aws::Utils::Outcome<DescribeReservedInstanceOfferingsResult, OpenSearchServiceError> DescribeReservedInstanceOfferingsOutcome;
-        typedef Aws::Utils::Outcome<DescribeReservedInstancesResult, OpenSearchServiceError> DescribeReservedInstancesOutcome;
-        typedef Aws::Utils::Outcome<DissociatePackageResult, OpenSearchServiceError> DissociatePackageOutcome;
-        typedef Aws::Utils::Outcome<GetCompatibleVersionsResult, OpenSearchServiceError> GetCompatibleVersionsOutcome;
-        typedef Aws::Utils::Outcome<GetPackageVersionHistoryResult, OpenSearchServiceError> GetPackageVersionHistoryOutcome;
-        typedef Aws::Utils::Outcome<GetUpgradeHistoryResult, OpenSearchServiceError> GetUpgradeHistoryOutcome;
-        typedef Aws::Utils::Outcome<GetUpgradeStatusResult, OpenSearchServiceError> GetUpgradeStatusOutcome;
-        typedef Aws::Utils::Outcome<ListDomainNamesResult, OpenSearchServiceError> ListDomainNamesOutcome;
-        typedef Aws::Utils::Outcome<ListDomainsForPackageResult, OpenSearchServiceError> ListDomainsForPackageOutcome;
-        typedef Aws::Utils::Outcome<ListInstanceTypeDetailsResult, OpenSearchServiceError> ListInstanceTypeDetailsOutcome;
-        typedef Aws::Utils::Outcome<ListPackagesForDomainResult, OpenSearchServiceError> ListPackagesForDomainOutcome;
-        typedef Aws::Utils::Outcome<ListTagsResult, OpenSearchServiceError> ListTagsOutcome;
-        typedef Aws::Utils::Outcome<ListVersionsResult, OpenSearchServiceError> ListVersionsOutcome;
-        typedef Aws::Utils::Outcome<PurchaseReservedInstanceOfferingResult, OpenSearchServiceError> PurchaseReservedInstanceOfferingOutcome;
-        typedef Aws::Utils::Outcome<RejectInboundConnectionResult, OpenSearchServiceError> RejectInboundConnectionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, OpenSearchServiceError> RemoveTagsOutcome;
-        typedef Aws::Utils::Outcome<StartServiceSoftwareUpdateResult, OpenSearchServiceError> StartServiceSoftwareUpdateOutcome;
-        typedef Aws::Utils::Outcome<UpdateDomainConfigResult, OpenSearchServiceError> UpdateDomainConfigOutcome;
-        typedef Aws::Utils::Outcome<UpdatePackageResult, OpenSearchServiceError> UpdatePackageOutcome;
-        typedef Aws::Utils::Outcome<UpgradeDomainResult, OpenSearchServiceError> UpgradeDomainOutcome;
-
-        typedef std::future<AcceptInboundConnectionOutcome> AcceptInboundConnectionOutcomeCallable;
-        typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
-        typedef std::future<AssociatePackageOutcome> AssociatePackageOutcomeCallable;
-        typedef std::future<CancelServiceSoftwareUpdateOutcome> CancelServiceSoftwareUpdateOutcomeCallable;
-        typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
-        typedef std::future<CreateOutboundConnectionOutcome> CreateOutboundConnectionOutcomeCallable;
-        typedef std::future<CreatePackageOutcome> CreatePackageOutcomeCallable;
-        typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
-        typedef std::future<DeleteInboundConnectionOutcome> DeleteInboundConnectionOutcomeCallable;
-        typedef std::future<DeleteOutboundConnectionOutcome> DeleteOutboundConnectionOutcomeCallable;
-        typedef std::future<DeletePackageOutcome> DeletePackageOutcomeCallable;
-        typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
-        typedef std::future<DescribeDomainAutoTunesOutcome> DescribeDomainAutoTunesOutcomeCallable;
-        typedef std::future<DescribeDomainChangeProgressOutcome> DescribeDomainChangeProgressOutcomeCallable;
-        typedef std::future<DescribeDomainConfigOutcome> DescribeDomainConfigOutcomeCallable;
-        typedef std::future<DescribeDomainsOutcome> DescribeDomainsOutcomeCallable;
-        typedef std::future<DescribeInboundConnectionsOutcome> DescribeInboundConnectionsOutcomeCallable;
-        typedef std::future<DescribeInstanceTypeLimitsOutcome> DescribeInstanceTypeLimitsOutcomeCallable;
-        typedef std::future<DescribeOutboundConnectionsOutcome> DescribeOutboundConnectionsOutcomeCallable;
-        typedef std::future<DescribePackagesOutcome> DescribePackagesOutcomeCallable;
-        typedef std::future<DescribeReservedInstanceOfferingsOutcome> DescribeReservedInstanceOfferingsOutcomeCallable;
-        typedef std::future<DescribeReservedInstancesOutcome> DescribeReservedInstancesOutcomeCallable;
-        typedef std::future<DissociatePackageOutcome> DissociatePackageOutcomeCallable;
-        typedef std::future<GetCompatibleVersionsOutcome> GetCompatibleVersionsOutcomeCallable;
-        typedef std::future<GetPackageVersionHistoryOutcome> GetPackageVersionHistoryOutcomeCallable;
-        typedef std::future<GetUpgradeHistoryOutcome> GetUpgradeHistoryOutcomeCallable;
-        typedef std::future<GetUpgradeStatusOutcome> GetUpgradeStatusOutcomeCallable;
-        typedef std::future<ListDomainNamesOutcome> ListDomainNamesOutcomeCallable;
-        typedef std::future<ListDomainsForPackageOutcome> ListDomainsForPackageOutcomeCallable;
-        typedef std::future<ListInstanceTypeDetailsOutcome> ListInstanceTypeDetailsOutcomeCallable;
-        typedef std::future<ListPackagesForDomainOutcome> ListPackagesForDomainOutcomeCallable;
-        typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
-        typedef std::future<ListVersionsOutcome> ListVersionsOutcomeCallable;
-        typedef std::future<PurchaseReservedInstanceOfferingOutcome> PurchaseReservedInstanceOfferingOutcomeCallable;
-        typedef std::future<RejectInboundConnectionOutcome> RejectInboundConnectionOutcomeCallable;
-        typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
-        typedef std::future<StartServiceSoftwareUpdateOutcome> StartServiceSoftwareUpdateOutcomeCallable;
-        typedef std::future<UpdateDomainConfigOutcome> UpdateDomainConfigOutcomeCallable;
-        typedef std::future<UpdatePackageOutcome> UpdatePackageOutcomeCallable;
-        typedef std::future<UpgradeDomainOutcome> UpgradeDomainOutcomeCallable;
-} // namespace Model
-
-  class OpenSearchServiceClient;
-
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::AcceptInboundConnectionRequest&, const Model::AcceptInboundConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptInboundConnectionResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::AssociatePackageRequest&, const Model::AssociatePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePackageResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::CancelServiceSoftwareUpdateRequest&, const Model::CancelServiceSoftwareUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelServiceSoftwareUpdateResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::CreateOutboundConnectionRequest&, const Model::CreateOutboundConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOutboundConnectionResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::CreatePackageRequest&, const Model::CreatePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePackageResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DeleteInboundConnectionRequest&, const Model::DeleteInboundConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInboundConnectionResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DeleteOutboundConnectionRequest&, const Model::DeleteOutboundConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOutboundConnectionResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DeletePackageRequest&, const Model::DeletePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePackageResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainRequest&, const Model::DescribeDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainAutoTunesRequest&, const Model::DescribeDomainAutoTunesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainAutoTunesResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainChangeProgressRequest&, const Model::DescribeDomainChangeProgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainChangeProgressResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainConfigRequest&, const Model::DescribeDomainConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainConfigResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainsRequest&, const Model::DescribeDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeInboundConnectionsRequest&, const Model::DescribeInboundConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInboundConnectionsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeInstanceTypeLimitsRequest&, const Model::DescribeInstanceTypeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypeLimitsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeOutboundConnectionsRequest&, const Model::DescribeOutboundConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOutboundConnectionsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribePackagesRequest&, const Model::DescribePackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePackagesResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeReservedInstanceOfferingsRequest&, const Model::DescribeReservedInstanceOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedInstanceOfferingsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeReservedInstancesRequest&, const Model::DescribeReservedInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedInstancesResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::DissociatePackageRequest&, const Model::DissociatePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DissociatePackageResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::GetCompatibleVersionsRequest&, const Model::GetCompatibleVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCompatibleVersionsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::GetPackageVersionHistoryRequest&, const Model::GetPackageVersionHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPackageVersionHistoryResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::GetUpgradeHistoryRequest&, const Model::GetUpgradeHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUpgradeHistoryResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::GetUpgradeStatusRequest&, const Model::GetUpgradeStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUpgradeStatusResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::ListDomainNamesRequest&, const Model::ListDomainNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainNamesResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::ListDomainsForPackageRequest&, const Model::ListDomainsForPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsForPackageResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::ListInstanceTypeDetailsRequest&, const Model::ListInstanceTypeDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstanceTypeDetailsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::ListPackagesForDomainRequest&, const Model::ListPackagesForDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPackagesForDomainResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::ListVersionsRequest&, const Model::ListVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVersionsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::PurchaseReservedInstanceOfferingRequest&, const Model::PurchaseReservedInstanceOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedInstanceOfferingResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::RejectInboundConnectionRequest&, const Model::RejectInboundConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInboundConnectionResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::StartServiceSoftwareUpdateRequest&, const Model::StartServiceSoftwareUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartServiceSoftwareUpdateResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::UpdateDomainConfigRequest&, const Model::UpdateDomainConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainConfigResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::UpdatePackageRequest&, const Model::UpdatePackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePackageResponseReceivedHandler;
-    typedef std::function<void(const OpenSearchServiceClient*, const Model::UpgradeDomainRequest&, const Model::UpgradeDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpgradeDomainResponseReceivedHandler;
-
   /**
    * <fullname>Amazon OpenSearch Configuration Service</fullname> <p>Use the Amazon
    * OpenSearch configuration API to create, configure, and manage Amazon OpenSearch
@@ -286,14 +44,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        OpenSearchServiceClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        OpenSearchServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         OpenSearchServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~OpenSearchServiceClient();
 
@@ -1036,46 +795,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AcceptInboundConnectionAsyncHelper(const Model::AcceptInboundConnectionRequest& request, const AcceptInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociatePackageAsyncHelper(const Model::AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CancelServiceSoftwareUpdateAsyncHelper(const Model::CancelServiceSoftwareUpdateRequest& request, const CancelServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDomainAsyncHelper(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateOutboundConnectionAsyncHelper(const Model::CreateOutboundConnectionRequest& request, const CreateOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreatePackageAsyncHelper(const Model::CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteInboundConnectionAsyncHelper(const Model::DeleteInboundConnectionRequest& request, const DeleteInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteOutboundConnectionAsyncHelper(const Model::DeleteOutboundConnectionRequest& request, const DeleteOutboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeletePackageAsyncHelper(const Model::DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDomainAsyncHelper(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDomainAutoTunesAsyncHelper(const Model::DescribeDomainAutoTunesRequest& request, const DescribeDomainAutoTunesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDomainChangeProgressAsyncHelper(const Model::DescribeDomainChangeProgressRequest& request, const DescribeDomainChangeProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDomainConfigAsyncHelper(const Model::DescribeDomainConfigRequest& request, const DescribeDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDomainsAsyncHelper(const Model::DescribeDomainsRequest& request, const DescribeDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInboundConnectionsAsyncHelper(const Model::DescribeInboundConnectionsRequest& request, const DescribeInboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeInstanceTypeLimitsAsyncHelper(const Model::DescribeInstanceTypeLimitsRequest& request, const DescribeInstanceTypeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeOutboundConnectionsAsyncHelper(const Model::DescribeOutboundConnectionsRequest& request, const DescribeOutboundConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribePackagesAsyncHelper(const Model::DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeReservedInstanceOfferingsAsyncHelper(const Model::DescribeReservedInstanceOfferingsRequest& request, const DescribeReservedInstanceOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeReservedInstancesAsyncHelper(const Model::DescribeReservedInstancesRequest& request, const DescribeReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DissociatePackageAsyncHelper(const Model::DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCompatibleVersionsAsyncHelper(const Model::GetCompatibleVersionsRequest& request, const GetCompatibleVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPackageVersionHistoryAsyncHelper(const Model::GetPackageVersionHistoryRequest& request, const GetPackageVersionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetUpgradeHistoryAsyncHelper(const Model::GetUpgradeHistoryRequest& request, const GetUpgradeHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetUpgradeStatusAsyncHelper(const Model::GetUpgradeStatusRequest& request, const GetUpgradeStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDomainNamesAsyncHelper(const Model::ListDomainNamesRequest& request, const ListDomainNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDomainsForPackageAsyncHelper(const Model::ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInstanceTypeDetailsAsyncHelper(const Model::ListInstanceTypeDetailsRequest& request, const ListInstanceTypeDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListPackagesForDomainAsyncHelper(const Model::ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListVersionsAsyncHelper(const Model::ListVersionsRequest& request, const ListVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PurchaseReservedInstanceOfferingAsyncHelper(const Model::PurchaseReservedInstanceOfferingRequest& request, const PurchaseReservedInstanceOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RejectInboundConnectionAsyncHelper(const Model::RejectInboundConnectionRequest& request, const RejectInboundConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartServiceSoftwareUpdateAsyncHelper(const Model::StartServiceSoftwareUpdateRequest& request, const StartServiceSoftwareUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDomainConfigAsyncHelper(const Model::UpdateDomainConfigRequest& request, const UpdateDomainConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdatePackageAsyncHelper(const Model::UpdatePackageRequest& request, const UpdatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpgradeDomainAsyncHelper(const Model::UpgradeDomainRequest& request, const UpgradeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

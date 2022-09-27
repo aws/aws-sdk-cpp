@@ -93,7 +93,7 @@ namespace Model
   private:
 
     Aws::String m_byteMatchSetId;
-    bool m_byteMatchSetIdHasBeenSet;
+    bool m_byteMatchSetIdHasBeenSet = false;
   };
 
 } // namespace Model

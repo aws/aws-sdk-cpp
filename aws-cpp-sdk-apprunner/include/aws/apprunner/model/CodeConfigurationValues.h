@@ -304,19 +304,19 @@ namespace Model
   private:
 
     Runtime m_runtime;
-    bool m_runtimeHasBeenSet;
+    bool m_runtimeHasBeenSet = false;
 
     Aws::String m_buildCommand;
-    bool m_buildCommandHasBeenSet;
+    bool m_buildCommandHasBeenSet = false;
 
     Aws::String m_startCommand;
-    bool m_startCommandHasBeenSet;
+    bool m_startCommandHasBeenSet = false;
 
     Aws::String m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_runtimeEnvironmentVariables;
-    bool m_runtimeEnvironmentVariablesHasBeenSet;
+    bool m_runtimeEnvironmentVariablesHasBeenSet = false;
   };
 
 } // namespace Model

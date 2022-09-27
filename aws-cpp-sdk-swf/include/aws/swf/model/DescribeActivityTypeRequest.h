@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     ActivityType m_activityType;
-    bool m_activityTypeHasBeenSet;
+    bool m_activityTypeHasBeenSet = false;
   };
 
 } // namespace Model

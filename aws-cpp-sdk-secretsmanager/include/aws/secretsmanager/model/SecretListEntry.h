@@ -454,38 +454,38 @@ namespace Model
 
 
     /**
-     * <p>The last date that this secret was accessed. This value is truncated to
-     * midnight of the date and therefore shows only the date, not the time.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccessedDate() const{ return m_lastAccessedDate; }
 
     /**
-     * <p>The last date that this secret was accessed. This value is truncated to
-     * midnight of the date and therefore shows only the date, not the time.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline bool LastAccessedDateHasBeenSet() const { return m_lastAccessedDateHasBeenSet; }
 
     /**
-     * <p>The last date that this secret was accessed. This value is truncated to
-     * midnight of the date and therefore shows only the date, not the time.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline void SetLastAccessedDate(const Aws::Utils::DateTime& value) { m_lastAccessedDateHasBeenSet = true; m_lastAccessedDate = value; }
 
     /**
-     * <p>The last date that this secret was accessed. This value is truncated to
-     * midnight of the date and therefore shows only the date, not the time.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline void SetLastAccessedDate(Aws::Utils::DateTime&& value) { m_lastAccessedDateHasBeenSet = true; m_lastAccessedDate = std::move(value); }
 
     /**
-     * <p>The last date that this secret was accessed. This value is truncated to
-     * midnight of the date and therefore shows only the date, not the time.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline SecretListEntry& WithLastAccessedDate(const Aws::Utils::DateTime& value) { SetLastAccessedDate(value); return *this;}
 
     /**
-     * <p>The last date that this secret was accessed. This value is truncated to
-     * midnight of the date and therefore shows only the date, not the time.</p>
+     * <p>The date that the secret was last accessed in the Region. This field is
+     * omitted if the secret has never been retrieved in the Region.</p>
      */
     inline SecretListEntry& WithLastAccessedDate(Aws::Utils::DateTime&& value) { SetLastAccessedDate(std::move(value)); return *this;}
 
@@ -868,52 +868,52 @@ namespace Model
   private:
 
     Aws::String m_aRN;
-    bool m_aRNHasBeenSet;
+    bool m_aRNHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     bool m_rotationEnabled;
-    bool m_rotationEnabledHasBeenSet;
+    bool m_rotationEnabledHasBeenSet = false;
 
     Aws::String m_rotationLambdaARN;
-    bool m_rotationLambdaARNHasBeenSet;
+    bool m_rotationLambdaARNHasBeenSet = false;
 
     RotationRulesType m_rotationRules;
-    bool m_rotationRulesHasBeenSet;
+    bool m_rotationRulesHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastRotatedDate;
-    bool m_lastRotatedDateHasBeenSet;
+    bool m_lastRotatedDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastChangedDate;
-    bool m_lastChangedDateHasBeenSet;
+    bool m_lastChangedDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastAccessedDate;
-    bool m_lastAccessedDateHasBeenSet;
+    bool m_lastAccessedDateHasBeenSet = false;
 
     Aws::Utils::DateTime m_deletedDate;
-    bool m_deletedDateHasBeenSet;
+    bool m_deletedDateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_secretVersionsToStages;
-    bool m_secretVersionsToStagesHasBeenSet;
+    bool m_secretVersionsToStagesHasBeenSet = false;
 
     Aws::String m_owningService;
-    bool m_owningServiceHasBeenSet;
+    bool m_owningServiceHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::String m_primaryRegion;
-    bool m_primaryRegionHasBeenSet;
+    bool m_primaryRegionHasBeenSet = false;
   };
 
 } // namespace Model

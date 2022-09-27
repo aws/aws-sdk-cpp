@@ -609,25 +609,25 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceArns;
-    bool m_resourceArnsHasBeenSet;
+    bool m_resourceArnsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_principals;
-    bool m_principalsHasBeenSet;
+    bool m_principalsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_allowExternalPrincipals;
-    bool m_allowExternalPrincipalsHasBeenSet;
+    bool m_allowExternalPrincipalsHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_permissionArns;
-    bool m_permissionArnsHasBeenSet;
+    bool m_permissionArnsHasBeenSet = false;
   };
 
 } // namespace Model

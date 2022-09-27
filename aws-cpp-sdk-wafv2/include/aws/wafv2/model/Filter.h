@@ -158,13 +158,13 @@ namespace Model
   private:
 
     FilterBehavior m_behavior;
-    bool m_behaviorHasBeenSet;
+    bool m_behaviorHasBeenSet = false;
 
     FilterRequirement m_requirement;
-    bool m_requirementHasBeenSet;
+    bool m_requirementHasBeenSet = false;
 
     Aws::Vector<Condition> m_conditions;
-    bool m_conditionsHasBeenSet;
+    bool m_conditionsHasBeenSet = false;
   };
 
 } // namespace Model

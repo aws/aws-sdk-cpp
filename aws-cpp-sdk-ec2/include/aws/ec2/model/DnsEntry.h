@@ -123,10 +123,10 @@ namespace Model
   private:
 
     Aws::String m_dnsName;
-    bool m_dnsNameHasBeenSet;
+    bool m_dnsNameHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -179,13 +179,13 @@ namespace Model
   private:
 
     Aws::String m_packagingConfigurationId;
-    bool m_packagingConfigurationIdHasBeenSet;
+    bool m_packagingConfigurationIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_url;
-    bool m_urlHasBeenSet;
+    bool m_urlHasBeenSet = false;
   };
 
 } // namespace Model

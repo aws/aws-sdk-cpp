@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     Custom,
     Extended,
-    ExternalGrammar
+    ExternalGrammar,
+    Composite
   };
 
 namespace SlotTypeCategoryMapper

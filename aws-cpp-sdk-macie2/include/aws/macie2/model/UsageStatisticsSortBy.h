@@ -115,10 +115,10 @@ namespace Model
   private:
 
     UsageStatisticsSortKey m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     OrderBy m_orderBy;
-    bool m_orderByHasBeenSet;
+    bool m_orderByHasBeenSet = false;
   };
 
 } // namespace Model

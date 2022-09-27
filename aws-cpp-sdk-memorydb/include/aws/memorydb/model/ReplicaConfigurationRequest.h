@@ -59,7 +59,7 @@ namespace Model
   private:
 
     int m_replicaCount;
-    bool m_replicaCountHasBeenSet;
+    bool m_replicaCountHasBeenSet = false;
   };
 
 } // namespace Model

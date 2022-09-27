@@ -296,25 +296,25 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     TimeRangeType m_timeRangeType;
-    bool m_timeRangeTypeHasBeenSet;
+    bool m_timeRangeTypeHasBeenSet = false;
 
     bool m_sampling;
-    bool m_samplingHasBeenSet;
+    bool m_samplingHasBeenSet = false;
 
     SamplingStrategy m_samplingStrategy;
-    bool m_samplingStrategyHasBeenSet;
+    bool m_samplingStrategyHasBeenSet = false;
 
     Aws::String m_filterExpression;
-    bool m_filterExpressionHasBeenSet;
+    bool m_filterExpressionHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

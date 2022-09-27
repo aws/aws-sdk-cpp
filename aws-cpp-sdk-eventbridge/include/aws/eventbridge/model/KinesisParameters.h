@@ -116,7 +116,7 @@ namespace Model
   private:
 
     Aws::String m_partitionKeyPath;
-    bool m_partitionKeyPathHasBeenSet;
+    bool m_partitionKeyPathHasBeenSet = false;
   };
 
 } // namespace Model

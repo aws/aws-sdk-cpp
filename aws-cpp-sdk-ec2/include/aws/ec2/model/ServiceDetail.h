@@ -47,42 +47,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service.</p>
+     * <p>The name of the service.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service.</p>
+     * <p>The name of the service.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service.</p>
+     * <p>The name of the service.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service.</p>
+     * <p>The name of the service.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service.</p>
+     * <p>The name of the service.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service.</p>
+     * <p>The name of the service.</p>
      */
     inline ServiceDetail& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service.</p>
+     * <p>The name of the service.</p>
      */
     inline ServiceDetail& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service.</p>
+     * <p>The name of the service.</p>
      */
     inline ServiceDetail& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -344,42 +344,42 @@ namespace Model
 
 
     /**
-     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     * <p>The private DNS names assigned to the VPC endpoint service.</p>
      */
     inline const Aws::Vector<PrivateDnsDetails>& GetPrivateDnsNames() const{ return m_privateDnsNames; }
 
     /**
-     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     * <p>The private DNS names assigned to the VPC endpoint service.</p>
      */
     inline bool PrivateDnsNamesHasBeenSet() const { return m_privateDnsNamesHasBeenSet; }
 
     /**
-     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     * <p>The private DNS names assigned to the VPC endpoint service.</p>
      */
     inline void SetPrivateDnsNames(const Aws::Vector<PrivateDnsDetails>& value) { m_privateDnsNamesHasBeenSet = true; m_privateDnsNames = value; }
 
     /**
-     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     * <p>The private DNS names assigned to the VPC endpoint service.</p>
      */
     inline void SetPrivateDnsNames(Aws::Vector<PrivateDnsDetails>&& value) { m_privateDnsNamesHasBeenSet = true; m_privateDnsNames = std::move(value); }
 
     /**
-     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     * <p>The private DNS names assigned to the VPC endpoint service.</p>
      */
     inline ServiceDetail& WithPrivateDnsNames(const Aws::Vector<PrivateDnsDetails>& value) { SetPrivateDnsNames(value); return *this;}
 
     /**
-     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     * <p>The private DNS names assigned to the VPC endpoint service.</p>
      */
     inline ServiceDetail& WithPrivateDnsNames(Aws::Vector<PrivateDnsDetails>&& value) { SetPrivateDnsNames(std::move(value)); return *this;}
 
     /**
-     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     * <p>The private DNS names assigned to the VPC endpoint service.</p>
      */
     inline ServiceDetail& AddPrivateDnsNames(const PrivateDnsDetails& value) { m_privateDnsNamesHasBeenSet = true; m_privateDnsNames.push_back(value); return *this; }
 
     /**
-     * <p>The private DNS names assigned to the VPC endpoint service. </p>
+     * <p>The private DNS names assigned to the VPC endpoint service.</p>
      */
     inline ServiceDetail& AddPrivateDnsNames(PrivateDnsDetails&& value) { m_privateDnsNamesHasBeenSet = true; m_privateDnsNames.push_back(std::move(value)); return *this; }
 
@@ -613,49 +613,49 @@ namespace Model
   private:
 
     Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    bool m_serviceNameHasBeenSet = false;
 
     Aws::String m_serviceId;
-    bool m_serviceIdHasBeenSet;
+    bool m_serviceIdHasBeenSet = false;
 
     Aws::Vector<ServiceTypeDetail> m_serviceType;
-    bool m_serviceTypeHasBeenSet;
+    bool m_serviceTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_baseEndpointDnsNames;
-    bool m_baseEndpointDnsNamesHasBeenSet;
+    bool m_baseEndpointDnsNamesHasBeenSet = false;
 
     Aws::String m_privateDnsName;
-    bool m_privateDnsNameHasBeenSet;
+    bool m_privateDnsNameHasBeenSet = false;
 
     Aws::Vector<PrivateDnsDetails> m_privateDnsNames;
-    bool m_privateDnsNamesHasBeenSet;
+    bool m_privateDnsNamesHasBeenSet = false;
 
     bool m_vpcEndpointPolicySupported;
-    bool m_vpcEndpointPolicySupportedHasBeenSet;
+    bool m_vpcEndpointPolicySupportedHasBeenSet = false;
 
     bool m_acceptanceRequired;
-    bool m_acceptanceRequiredHasBeenSet;
+    bool m_acceptanceRequiredHasBeenSet = false;
 
     bool m_managesVpcEndpoints;
-    bool m_managesVpcEndpointsHasBeenSet;
+    bool m_managesVpcEndpointsHasBeenSet = false;
 
     PayerResponsibility m_payerResponsibility;
-    bool m_payerResponsibilityHasBeenSet;
+    bool m_payerResponsibilityHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     DnsNameState m_privateDnsNameVerificationState;
-    bool m_privateDnsNameVerificationStateHasBeenSet;
+    bool m_privateDnsNameVerificationStateHasBeenSet = false;
 
     Aws::Vector<ServiceConnectivityType> m_supportedIpAddressTypes;
-    bool m_supportedIpAddressTypesHasBeenSet;
+    bool m_supportedIpAddressTypesHasBeenSet = false;
   };
 
 } // namespace Model

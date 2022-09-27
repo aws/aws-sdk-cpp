@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_apiId;
-    bool m_apiIdHasBeenSet;
+    bool m_apiIdHasBeenSet = false;
 
     Aws::String m_requestParameterKey;
-    bool m_requestParameterKeyHasBeenSet;
+    bool m_requestParameterKeyHasBeenSet = false;
 
     Aws::String m_routeId;
-    bool m_routeIdHasBeenSet;
+    bool m_routeIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -110,10 +110,10 @@ namespace Model
   private:
 
     Aws::String m_listId;
-    bool m_listIdHasBeenSet;
+    bool m_listIdHasBeenSet = false;
 
     bool m_defaultList;
-    bool m_defaultListHasBeenSet;
+    bool m_defaultListHasBeenSet = false;
   };
 
 } // namespace Model

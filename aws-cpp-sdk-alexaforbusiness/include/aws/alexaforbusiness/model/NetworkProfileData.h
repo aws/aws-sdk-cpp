@@ -328,25 +328,25 @@ namespace Model
   private:
 
     Aws::String m_networkProfileArn;
-    bool m_networkProfileArnHasBeenSet;
+    bool m_networkProfileArnHasBeenSet = false;
 
     Aws::String m_networkProfileName;
-    bool m_networkProfileNameHasBeenSet;
+    bool m_networkProfileNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_ssid;
-    bool m_ssidHasBeenSet;
+    bool m_ssidHasBeenSet = false;
 
     NetworkSecurityType m_securityType;
-    bool m_securityTypeHasBeenSet;
+    bool m_securityTypeHasBeenSet = false;
 
     NetworkEapMethod m_eapMethod;
-    bool m_eapMethodHasBeenSet;
+    bool m_eapMethodHasBeenSet = false;
 
     Aws::String m_certificateAuthorityArn;
-    bool m_certificateAuthorityArnHasBeenSet;
+    bool m_certificateAuthorityArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     AutoScalingTargetTrackingScalingPolicyConfigurationDescription m_targetTrackingScalingPolicyConfiguration;
-    bool m_targetTrackingScalingPolicyConfigurationHasBeenSet;
+    bool m_targetTrackingScalingPolicyConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

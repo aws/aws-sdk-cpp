@@ -60,7 +60,7 @@ ChangeInfo& ChangeInfo::operator =(const XmlNode& xmlNode)
     XmlNode submittedAtNode = resultNode.FirstChild("SubmittedAt");
     if(!submittedAtNode.IsNull())
     {
-      m_submittedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(submittedAtNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_submittedAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(submittedAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_submittedAtHasBeenSet = true;
     }
     XmlNode commentNode = resultNode.FirstChild("Comment");
@@ -92,7 +92,7 @@ void ChangeInfo::AddToNode(XmlNode& parentNode) const
   if(m_submittedAtHasBeenSet)
   {
    XmlNode submittedAtNode = parentNode.CreateChildElement("SubmittedAt");
-   submittedAtNode.SetText(m_submittedAt.ToGmtString(DateFormat::ISO_8601));
+   submittedAtNode.SetText(m_submittedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_commentHasBeenSet)

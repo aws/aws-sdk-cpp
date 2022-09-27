@@ -27,6 +27,7 @@ namespace Aws
         static const int ECC_NIST_P384_HASH = HashingUtils::HashString("ECC_NIST_P384");
         static const int ECC_NIST_P521_HASH = HashingUtils::HashString("ECC_NIST_P521");
         static const int ECC_SECG_P256K1_HASH = HashingUtils::HashString("ECC_SECG_P256K1");
+        static const int SM2_HASH = HashingUtils::HashString("SM2");
 
 
         DataKeyPairSpec GetDataKeyPairSpecForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return DataKeyPairSpec::ECC_SECG_P256K1;
           }
+          else if (hashCode == SM2_HASH)
+          {
+            return DataKeyPairSpec::SM2;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "ECC_NIST_P521";
           case DataKeyPairSpec::ECC_SECG_P256K1:
             return "ECC_SECG_P256K1";
+          case DataKeyPairSpec::SM2:
+            return "SM2";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

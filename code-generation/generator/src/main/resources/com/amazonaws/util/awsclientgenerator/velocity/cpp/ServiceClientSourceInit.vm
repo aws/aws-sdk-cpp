@@ -1,6 +1,12 @@
+#set($additionalCtorSignatureArgs = {})
+#set($ctorMemberInitList = [])
+#set($signerCtorArgs = [])
+#set($additionalCtorArgs = {})
 #if($signPayloadsOptional)
 #set($signPayloads = ", Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads")
 #set($signPayloadsParam = ", signPayloads")
+#set($addArgDummy = $additionalCtorArgs.put("signPayloads", "Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/"))
+#set($addArgDummy = $signerCtorArgs.add("signPayloads"))
 #else
 #set($signPayloads = "")
 #set($signPayloadsParam = "")
@@ -8,12 +14,16 @@
 #if($metadata.signatureVersion.equals("s3") || $metadata.signatureVersion.equals("s3v4"))
 #if(!$signPayloadsOptional)
 #set($signPayloadsParam = ", Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent")
+#set($addArgDummy = $signerCtorArgs.add("Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent"))
 #end
 #set($doubleEncodeValue = ", false")
+#set($addArgDummy = $signerCtorArgs.add("/*doubleEncodeValue*/ false"))
 #else
 #set($doubleEncodeValue = "")
 #end
 #if($virtualAddressingSupported)
+#set($addArgDummy = $additionalCtorArgs.put("useVirtualAddressing", "bool useVirtualAddressing /*= true*/"))
+#set($addArgDummy = $ctorMemberInitList.add("m_useVirtualAddressing(useVirtualAddressing)"))
 #set($virtualAddressing = ", bool useVirtualAddressing")
 #set($virtualAddressingInit = ", m_useVirtualAddressing(useVirtualAddressing)")
 #else
@@ -22,105 +32,190 @@
 #end
 #if(!$USEast1RegionalEndpointArgString)
 #set($USEast1RegionalEndpointArgString = "")
+#else
+#set($addArgDummy = $additionalCtorArgs.put("USEast1RegionalEndpoint", $USEast1RegionalEndpointArgString.replace(", ", "")))
 #end
 #if(!$USEast1RegionalEndpointInitString)
 #set($USEast1RegionalEndpointInitString = "")
+#else
+#set($addArgDummy = $ctorMemberInitList.add($USEast1RegionalEndpointInitString.replace(", ", "")))
 #end
 #if(!$ForRegionExtraArgsString)
-#set($ForRegionExtraArgsString = "")
+#set($ForRegionExtraArgsString = "")##single place in m_baseUri assignment-init
 #end
 #if($metadata.hasEndpointDiscoveryTrait)
 #set($AdditionalServiceSpecificConfigLoadString = "Load${metadata.classNamePrefix}SpecificConfig(config);")
 #end
-#if($serviceNamespace == "S3Crt")
-#set($clientConfigurationNamespace = $serviceNamespace)
-#set($credentialsParam = ", &credentials")
-#set($getAWSCredentials = "Aws::Auth::AWSCredentials credentials = credentialsProvider->GetAWSCredentials();
-  ")
-#set($credentialsArg = ", const Aws::Auth::AWSCredentials* credentials")
-#else
 #set($clientConfigurationNamespace = "Client")
-#set($credentialsParam = "")
-#set($getAWSCredentials = "")
-#set($credentialsArg = "")
+#set($defaultCredentialsProviderChainParam = "Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG)")
+#set($simpleCredentialsProviderParam = "Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials)")
+#set($hasEventStreamInputOperation = $serviceModel.hasEventStreamOperationRequestShapes())
+#set($signerToMake = "AWSAuthV4Signer")
+#if($serviceModel.hasOnlyBearerAuth())
+    #set($signerToMake = "Aws::Auth::BearerTokenAuthSignerProvider")
+#elseif($hasEventStreamInputOperation || $multiRegionAccessPointSupported)
+    #set($signerToMake = "Aws::Auth::DefaultAuthSignerProvider")
 #end
-#set($hasEventStreamInputOperation = false)
-#foreach($operation in $serviceModel.operations)
-#if($operation.request.shape.hasEventStreamMembers())
-    #set($hasEventStreamInputOperation = true)
+#set($clsWSpace = $className.replaceAll(".", " "))
+#set($signerWSpace = $signerToMake.replaceAll(".", " "))
+#if($serviceModel.hasOnlyBearerAuth())
+##BEARER TOKEN AUTH PROVIDER C-TOR
+#set($bearerAddCtorArgs = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $bearerAddCtorArgs.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
 #end
+    ${className}::${className}(const ${signerToMake}& bearerTokenProvider,
+#if($serviceModel.endpointRules)
+    ${clsWSpace}  ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
 #end
+    ${clsWSpace}  ${clsWSpace} const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration#if($bearerAddCtorArgs.isEmpty())) :#else,#end
+#foreach($ctorArgument in $bearerAddCtorArgs)
+    ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 
-#if($hasEventStreamInputOperation || $multiRegionAccessPointSupported)
-${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
+#end
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
-    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+            Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG, bearerTokenProvider),
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())
+#else,#end
+#foreach($ctorMemberInit in $ctorMemberInitList)
+  ${ctorMemberInit}#if( $foreach.hasNext ),
+
+#else#end
+#end
 {
   init(clientConfiguration);
 }
+## END OF BEARER TOKEN AUTH PROVIDER C-TOR
 
-${className}::${className}(const AWSCredentials& credentials, const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
-  BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
-    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
-{
-  init(clientConfiguration${credentialsParam});
-}
+#else##!#if($serviceModel.hasOnlyBearerAuth())
+##DEFAULT CREDENTIALS PROVIDER C-TOR
+#set($defCredsChainCtor = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $defCredsChainCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
+#end
+${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration#if($defCredsChainCtor.isEmpty())) :#else,#end
 
-${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
+#foreach($ctorArgument in $defCredsChainCtor)
+${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
+
+#end
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
-    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
-{
-  ${getAWSCredentials}init(clientConfiguration${credentialsParam});
-}
-#else
-${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
-  BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
-    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+            Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
+                            ${signerWSpace}  ${defaultCredentialsProviderChainParam},
+                            ${signerWSpace}  SERVICE_NAME,
+                            ${signerWSpace}  Aws::Region::ComputeSignerRegion(clientConfiguration.region)#if($signerCtorArgs.isEmpty())#else,
+#end
+#foreach($signerCtorArg in $signerCtorArgs)
+                            ${signerWSpace}  ${signerCtorArg}#if( $foreach.hasNext ),
+#else#end
+#end),
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
+#end
+#foreach($ctorMemberInit in $ctorMemberInitList)
+  ${ctorMemberInit}#if( $foreach.hasNext ),
+#else#end
+#end
+
 {
   init(clientConfiguration);
 }
+##END OF DEFAULT CREDENTIALS PROVIDER C-TOR
 
-${className}::${className}(const AWSCredentials& credentials, const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
-  BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
-    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
-{
-  init(clientConfiguration${credentialsParam});
-}
-
-${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
-  BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
-    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
-{
-  ${getAWSCredentials}init(clientConfiguration${credentialsParam});
-}
+##SIMPLE CREDENTIALS PROVIDER C-TOR
+#set($simpleCredsCtor = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $simpleCredsCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
 #end
+${className}::${className}(const AWSCredentials& credentials,
+#if($serviceModel.endpointRules)
+${clsWSpace}  ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
+#end
+${clsWSpace}  ${clsWSpace} const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration#if($simpleCredsCtor.isEmpty())) :#else,#end
+
+#foreach($ctorArgument in $simpleCredsCtor)
+${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
+
+#end
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
+                            ${signerWSpace}  ${simpleCredentialsProviderParam},
+                            ${signerWSpace}  SERVICE_NAME,
+                            ${signerWSpace}  Aws::Region::ComputeSignerRegion(clientConfiguration.region)#if($signerCtorArgs.isEmpty())#else,
+#end
+#foreach($signerCtorArg in $signerCtorArgs)
+                            ${signerWSpace}  ${signerCtorArg}#if( $foreach.hasNext ),
+#else#end
+#end),
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
+#end
+#foreach($ctorMemberInit in $ctorMemberInitList)
+    ${ctorMemberInit}#if( $foreach.hasNext ),
+#else#end
+#end
+
+{
+  init(clientConfiguration);
+}
+##END OF SIMPLE CREDENTIALS PROVIDER C-TOR
+
+##SPECIFIED CREDENTIALS PROVIDER C-TOR
+#set($specCredsCtor = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $specCredsCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
+#end
+${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+#if($serviceModel.endpointRules)
+${clsWSpace}  ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
+#end
+${clsWSpace}  ${clsWSpace} const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration#if($specCredsCtor.isEmpty())) :#else,#end
+
+#foreach($ctorArgument in $specCredsCtor)
+${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
+
+#end
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG,
+                            ${signerWSpace}  credentialsProvider,
+                            ${signerWSpace}  SERVICE_NAME,
+                            ${signerWSpace}  Aws::Region::ComputeSignerRegion(clientConfiguration.region)#if($signerCtorArgs.isEmpty())#else,
+#end
+#foreach($signerCtorArg in $signerCtorArgs)
+                            ${signerWSpace}  ${signerCtorArg}#if( $foreach.hasNext ),
+#else#end
+#end),
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
+#end
+#foreach($ctorMemberInit in $ctorMemberInitList)
+    ${ctorMemberInit}#if( $foreach.hasNext ),
+#else#end
+#end
+
+{
+  init(clientConfiguration);
+}
+##END OF SPECIFIED CREDENTIALS PROVIDER C-TOR
+#end##if($serviceModel.hasOnlyBearerAuth())
 
 #if($metadata.standalone || $metadata.apigateway)
+#set($standaloneCredsCtor = {})
+#foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
+#if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $standaloneCredsCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
+#end
 ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
-  const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}) :
-  BASECLASS(clientConfiguration, signerProvider,
-    Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)${virtualAddressingInit}
+${clsWSpace}  ${clsWSpace} const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration#if($standaloneCredsCtor.isEmpty())) :#else,#end
+
+#foreach($ctorArgument in $specCredsCtor)
+${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
+
+#end
+  BASECLASS(clientConfiguration,
+            signerProvider,
+            Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)${virtualAddressingInit}
 {
   init(clientConfiguration);
 }
@@ -128,125 +223,71 @@ ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvide
 #end
 ${className}::~${className}()
 {
-#if($serviceNamespace == "S3Crt")
-  aws_s3_client_release(m_s3CrtClient);
-  m_clientShutdownSem->WaitOne(); // Wait aws_s3_client shutdown
-#end
 }
 
-void ${className}::init(const ${clientConfigurationNamespace}::ClientConfiguration& config${credentialsArg})
+void ${className}::init(const ${clientConfigurationNamespace}::ClientConfiguration& config)
 {
-  SetServiceClientName("${metadata.serviceId}");
+  AWSClient::SetServiceClientName("${metadata.serviceId}");
 #if($AdditionalServiceSpecificConfigLoadString)
   ${AdditionalServiceSpecificConfigLoadString}
-#end
+#end##if($AdditionalServiceSpecificConfigLoadString)
   m_configScheme = SchemeMapper::ToString(config.scheme);
 #if($metadata.hasPreSignedUrl)
   m_useDualStack = config.useDualStack;
-#end
+#end##if($metadata.hasPreSignedUrl)
 #if($virtualAddressingSupported || $arnEndpointSupported || $vpcEndpointSupported || $metadata.hasEndpointTrait)
   m_scheme = m_configScheme;
 #if($arnEndpointSupported)
   m_useDualStack = config.useDualStack;
-#end
+#end##if($arnEndpointSupported)
   if (config.endpointOverride.empty())
   {
 #if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_useCustomEndpoint = false;
-#end
+#end##if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_baseUri = ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack${ForRegionExtraArgsString});
+#if($serviceModel.endpointRules)
+      m_crtEndpointRuleEngineCtx = []()
+      {
+          std::cout << "Here we would call CRT's rule engine Init with " << ${metadata.classNamePrefix}EndpointRules::GetRulesAsString().substr(0, 20) << "...\n";
+          return nullptr;
+      }();
+#end##if($serviceModel.endpointRules)
   }
   else
   {
 #if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_useCustomEndpoint = true;
-#end
+#end##if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       OverrideEndpoint(config.endpointOverride);
   }
-#else
+#else##of if($virtualAddressingSupported || $arnEndpointSupported || $vpcEndpointSupported || $metadata.hasEndpointTrait)
   if (config.endpointOverride.empty())
   {
       m_uri = m_configScheme + "://" + ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack);
 #if($customEndpointUsed)
       m_useCustomEndpoint = false;
-#end
+#end##if($customEndpointUsed)
+#if($serviceModel.endpointRules)
+      m_crtEndpointRuleEngineCtx = []()
+      {
+          std::cout << "Here we would call CRT's rule engine Init with " << ${metadata.classNamePrefix}EndpointRules::GetRulesAsString().substr(0, 20) << "...\n";
+          return nullptr;
+      }();
+#end##if($serviceModel.endpointRules)
   }
+##if (config.endpointOverride.empty())
   else
   {
       OverrideEndpoint(config.endpointOverride);
 #if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_useCustomEndpoint = true;
-#end
+#end##if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
   }
-#end
+#end##if($virtualAddressingSupported || $arnEndpointSupported || $vpcEndpointSupported || $metadata.hasEndpointTrait)
 #if($metadata.hasEndpointTrait)
   m_enableHostPrefixInjection = config.enableHostPrefixInjection;
-#end
-#if($serviceNamespace == "S3Crt")
-
-  // initialize aws_s3_client;
-  aws_s3_client_config s3CrtConfig;
-  AWS_ZERO_STRUCT(s3CrtConfig);
-  s3CrtConfig.region = Aws::Crt::ByteCursorFromCString(config.region.c_str());
-  Aws::Crt::Io::ClientBootstrap* clientBootstrap = config.clientBootstrap ? config.clientBootstrap.get() : Aws::GetDefaultClientBootstrap();
-  s3CrtConfig.client_bootstrap = clientBootstrap->GetUnderlyingHandle();
-
-  std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> provider(nullptr);
-  if (credentials)
-  {
-    Aws::Crt::Auth::CredentialsProviderStaticConfig staticCreds;
-    staticCreds.AccessKeyId = Aws::Crt::ByteCursorFromCString(credentials->GetAWSAccessKeyId().c_str());
-    staticCreds.SecretAccessKey = Aws::Crt::ByteCursorFromCString(credentials->GetAWSSecretKey().c_str());
-    staticCreds.SessionToken = Aws::Crt::ByteCursorFromCString(credentials->GetSessionToken().c_str());
-    provider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderStatic(staticCreds);
-  }
-  else
-  {
-    Aws::Crt::Auth::CredentialsProviderChainDefaultConfig credsConfig;
-    credsConfig.Bootstrap = clientBootstrap;
-    provider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderChainDefault(credsConfig);
-  }
-
-  aws_s3_init_default_signing_config(&m_s3CrtSigningConfig, Aws::Crt::ByteCursorFromCString(config.region.c_str()), provider->GetUnderlyingHandle());
-  m_s3CrtSigningConfig.flags.use_double_uri_encode = false;
-  s3CrtConfig.signing_config = &m_s3CrtSigningConfig;
-
-  static const size_t DEFAULT_PART_SIZE = 5 * 1024 * 1024; // 5MB
-  s3CrtConfig.part_size = config.partSize < DEFAULT_PART_SIZE ? DEFAULT_PART_SIZE : config.partSize;
-
-  Aws::Crt::Io::TlsConnectionOptions* tlsConnectionOptions = config.tlsConnectionOptions ? config.tlsConnectionOptions.get() : Aws::GetDefaultTlsConnectionOptions();
-  aws_tls_connection_options tlsOptions;
-  AWS_ZERO_STRUCT(tlsOptions);
-  if (tlsConnectionOptions)
-  {
-    aws_tls_connection_options_copy(&tlsOptions, tlsConnectionOptions->GetUnderlyingHandle());
-    tlsOptions.server_name = aws_string_new_from_c_str(Aws::get_aws_allocator(), m_baseUri.c_str());
-    s3CrtConfig.tls_connection_options = &tlsOptions;
-  }
-  else
-  {
-    s3CrtConfig.tls_connection_options = nullptr;
-  }
-
-  s3CrtConfig.tls_mode = config.scheme == Aws::Http::Scheme::HTTPS ? AWS_MR_TLS_ENABLED : AWS_MR_TLS_DISABLED;
-  s3CrtConfig.throughput_target_gbps = config.throughputTargetGbps;
-  m_clientShutdownSem = Aws::MakeShared<Threading::Semaphore>(ALLOCATION_TAG, 0, 1);
-  m_wrappedData.data = config.shutdownCallbackUserData;
-  m_wrappedData.fn = config.clientShutdownCallback;
-  m_wrappedData.clientShutdownSem = m_clientShutdownSem;
-  s3CrtConfig.shutdown_callback = CrtClientShutdownCallback;
-  s3CrtConfig.shutdown_callback_user_data = static_cast<void*>(&m_wrappedData);
-
-  m_s3CrtClient = aws_s3_client_new(Aws::get_aws_allocator(), &s3CrtConfig);
-  if (tlsConnectionOptions)
-  {
-    aws_tls_connection_options_clean_up(&tlsOptions);
-  }
-  if (!m_s3CrtClient)
-  {
-    AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to allocate aws_s3_client instance, abort.");
-  }
-#end
+#end##if($metadata.hasEndpointTrait)
 }
 #if($metadata.hasEndpointDiscoveryTrait)
 

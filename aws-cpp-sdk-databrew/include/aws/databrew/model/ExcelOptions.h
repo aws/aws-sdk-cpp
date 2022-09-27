@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_sheetNames;
-    bool m_sheetNamesHasBeenSet;
+    bool m_sheetNamesHasBeenSet = false;
 
     Aws::Vector<int> m_sheetIndexes;
-    bool m_sheetIndexesHasBeenSet;
+    bool m_sheetIndexesHasBeenSet = false;
 
     bool m_headerRow;
-    bool m_headerRowHasBeenSet;
+    bool m_headerRowHasBeenSet = false;
   };
 
 } // namespace Model

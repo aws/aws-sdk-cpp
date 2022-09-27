@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_gameName;
-    bool m_gameNameHasBeenSet;
+    bool m_gameNameHasBeenSet = false;
   };
 
 } // namespace Model

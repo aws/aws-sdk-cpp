@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_trafficMirrorFilterRuleId;
-    bool m_trafficMirrorFilterRuleIdHasBeenSet;
+    bool m_trafficMirrorFilterRuleIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

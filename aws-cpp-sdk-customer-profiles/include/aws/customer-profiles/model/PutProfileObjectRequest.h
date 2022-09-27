@@ -157,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_objectTypeName;
-    bool m_objectTypeNameHasBeenSet;
+    bool m_objectTypeNameHasBeenSet = false;
 
     Aws::String m_object;
-    bool m_objectHasBeenSet;
+    bool m_objectHasBeenSet = false;
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
   };
 
 } // namespace Model

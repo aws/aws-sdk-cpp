@@ -67,33 +67,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "sms";
 static const char* ALLOCATION_TAG = "SMSClient";
 
-
 SMSClient::SMSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<SMSErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<SMSErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-SMSClient::SMSClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+SMSClient::SMSClient(const AWSCredentials& credentials,
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<SMSErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<SMSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 SMSClient::SMSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<SMSErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<SMSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -105,7 +111,7 @@ SMSClient::~SMSClient()
 
 void SMSClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("SMS");
+  AWSClient::SetServiceClientName("SMS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -145,12 +151,10 @@ CreateAppOutcomeCallable SMSClient::CreateAppCallable(const CreateAppRequest& re
 
 void SMSClient::CreateAppAsync(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateAppAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::CreateAppAsyncHelper(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateApp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateApp(request), context);
+    } );
 }
 
 CreateReplicationJobOutcome SMSClient::CreateReplicationJob(const CreateReplicationJobRequest& request) const
@@ -169,12 +173,10 @@ CreateReplicationJobOutcomeCallable SMSClient::CreateReplicationJobCallable(cons
 
 void SMSClient::CreateReplicationJobAsync(const CreateReplicationJobRequest& request, const CreateReplicationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateReplicationJobAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::CreateReplicationJobAsyncHelper(const CreateReplicationJobRequest& request, const CreateReplicationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateReplicationJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateReplicationJob(request), context);
+    } );
 }
 
 DeleteAppOutcome SMSClient::DeleteApp(const DeleteAppRequest& request) const
@@ -193,12 +195,10 @@ DeleteAppOutcomeCallable SMSClient::DeleteAppCallable(const DeleteAppRequest& re
 
 void SMSClient::DeleteAppAsync(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::DeleteAppAsyncHelper(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteApp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteApp(request), context);
+    } );
 }
 
 DeleteAppLaunchConfigurationOutcome SMSClient::DeleteAppLaunchConfiguration(const DeleteAppLaunchConfigurationRequest& request) const
@@ -217,12 +217,10 @@ DeleteAppLaunchConfigurationOutcomeCallable SMSClient::DeleteAppLaunchConfigurat
 
 void SMSClient::DeleteAppLaunchConfigurationAsync(const DeleteAppLaunchConfigurationRequest& request, const DeleteAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppLaunchConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::DeleteAppLaunchConfigurationAsyncHelper(const DeleteAppLaunchConfigurationRequest& request, const DeleteAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAppLaunchConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAppLaunchConfiguration(request), context);
+    } );
 }
 
 DeleteAppReplicationConfigurationOutcome SMSClient::DeleteAppReplicationConfiguration(const DeleteAppReplicationConfigurationRequest& request) const
@@ -241,12 +239,10 @@ DeleteAppReplicationConfigurationOutcomeCallable SMSClient::DeleteAppReplication
 
 void SMSClient::DeleteAppReplicationConfigurationAsync(const DeleteAppReplicationConfigurationRequest& request, const DeleteAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppReplicationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::DeleteAppReplicationConfigurationAsyncHelper(const DeleteAppReplicationConfigurationRequest& request, const DeleteAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAppReplicationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAppReplicationConfiguration(request), context);
+    } );
 }
 
 DeleteAppValidationConfigurationOutcome SMSClient::DeleteAppValidationConfiguration(const DeleteAppValidationConfigurationRequest& request) const
@@ -265,12 +261,10 @@ DeleteAppValidationConfigurationOutcomeCallable SMSClient::DeleteAppValidationCo
 
 void SMSClient::DeleteAppValidationConfigurationAsync(const DeleteAppValidationConfigurationRequest& request, const DeleteAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteAppValidationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::DeleteAppValidationConfigurationAsyncHelper(const DeleteAppValidationConfigurationRequest& request, const DeleteAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteAppValidationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAppValidationConfiguration(request), context);
+    } );
 }
 
 DeleteReplicationJobOutcome SMSClient::DeleteReplicationJob(const DeleteReplicationJobRequest& request) const
@@ -289,12 +283,10 @@ DeleteReplicationJobOutcomeCallable SMSClient::DeleteReplicationJobCallable(cons
 
 void SMSClient::DeleteReplicationJobAsync(const DeleteReplicationJobRequest& request, const DeleteReplicationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteReplicationJobAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::DeleteReplicationJobAsyncHelper(const DeleteReplicationJobRequest& request, const DeleteReplicationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteReplicationJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteReplicationJob(request), context);
+    } );
 }
 
 DeleteServerCatalogOutcome SMSClient::DeleteServerCatalog(const DeleteServerCatalogRequest& request) const
@@ -313,12 +305,10 @@ DeleteServerCatalogOutcomeCallable SMSClient::DeleteServerCatalogCallable(const 
 
 void SMSClient::DeleteServerCatalogAsync(const DeleteServerCatalogRequest& request, const DeleteServerCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteServerCatalogAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::DeleteServerCatalogAsyncHelper(const DeleteServerCatalogRequest& request, const DeleteServerCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteServerCatalog(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteServerCatalog(request), context);
+    } );
 }
 
 DisassociateConnectorOutcome SMSClient::DisassociateConnector(const DisassociateConnectorRequest& request) const
@@ -337,12 +327,10 @@ DisassociateConnectorOutcomeCallable SMSClient::DisassociateConnectorCallable(co
 
 void SMSClient::DisassociateConnectorAsync(const DisassociateConnectorRequest& request, const DisassociateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateConnectorAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::DisassociateConnectorAsyncHelper(const DisassociateConnectorRequest& request, const DisassociateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateConnector(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateConnector(request), context);
+    } );
 }
 
 GenerateChangeSetOutcome SMSClient::GenerateChangeSet(const GenerateChangeSetRequest& request) const
@@ -361,12 +349,10 @@ GenerateChangeSetOutcomeCallable SMSClient::GenerateChangeSetCallable(const Gene
 
 void SMSClient::GenerateChangeSetAsync(const GenerateChangeSetRequest& request, const GenerateChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateChangeSetAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::GenerateChangeSetAsyncHelper(const GenerateChangeSetRequest& request, const GenerateChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GenerateChangeSet(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GenerateChangeSet(request), context);
+    } );
 }
 
 GenerateTemplateOutcome SMSClient::GenerateTemplate(const GenerateTemplateRequest& request) const
@@ -385,12 +371,10 @@ GenerateTemplateOutcomeCallable SMSClient::GenerateTemplateCallable(const Genera
 
 void SMSClient::GenerateTemplateAsync(const GenerateTemplateRequest& request, const GenerateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GenerateTemplateAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::GenerateTemplateAsyncHelper(const GenerateTemplateRequest& request, const GenerateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GenerateTemplate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GenerateTemplate(request), context);
+    } );
 }
 
 GetAppOutcome SMSClient::GetApp(const GetAppRequest& request) const
@@ -409,12 +393,10 @@ GetAppOutcomeCallable SMSClient::GetAppCallable(const GetAppRequest& request) co
 
 void SMSClient::GetAppAsync(const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAppAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::GetAppAsyncHelper(const GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetApp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetApp(request), context);
+    } );
 }
 
 GetAppLaunchConfigurationOutcome SMSClient::GetAppLaunchConfiguration(const GetAppLaunchConfigurationRequest& request) const
@@ -433,12 +415,10 @@ GetAppLaunchConfigurationOutcomeCallable SMSClient::GetAppLaunchConfigurationCal
 
 void SMSClient::GetAppLaunchConfigurationAsync(const GetAppLaunchConfigurationRequest& request, const GetAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAppLaunchConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::GetAppLaunchConfigurationAsyncHelper(const GetAppLaunchConfigurationRequest& request, const GetAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAppLaunchConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAppLaunchConfiguration(request), context);
+    } );
 }
 
 GetAppReplicationConfigurationOutcome SMSClient::GetAppReplicationConfiguration(const GetAppReplicationConfigurationRequest& request) const
@@ -457,12 +437,10 @@ GetAppReplicationConfigurationOutcomeCallable SMSClient::GetAppReplicationConfig
 
 void SMSClient::GetAppReplicationConfigurationAsync(const GetAppReplicationConfigurationRequest& request, const GetAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAppReplicationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::GetAppReplicationConfigurationAsyncHelper(const GetAppReplicationConfigurationRequest& request, const GetAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAppReplicationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAppReplicationConfiguration(request), context);
+    } );
 }
 
 GetAppValidationConfigurationOutcome SMSClient::GetAppValidationConfiguration(const GetAppValidationConfigurationRequest& request) const
@@ -481,12 +459,10 @@ GetAppValidationConfigurationOutcomeCallable SMSClient::GetAppValidationConfigur
 
 void SMSClient::GetAppValidationConfigurationAsync(const GetAppValidationConfigurationRequest& request, const GetAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAppValidationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::GetAppValidationConfigurationAsyncHelper(const GetAppValidationConfigurationRequest& request, const GetAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAppValidationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAppValidationConfiguration(request), context);
+    } );
 }
 
 GetAppValidationOutputOutcome SMSClient::GetAppValidationOutput(const GetAppValidationOutputRequest& request) const
@@ -505,12 +481,10 @@ GetAppValidationOutputOutcomeCallable SMSClient::GetAppValidationOutputCallable(
 
 void SMSClient::GetAppValidationOutputAsync(const GetAppValidationOutputRequest& request, const GetAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetAppValidationOutputAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::GetAppValidationOutputAsyncHelper(const GetAppValidationOutputRequest& request, const GetAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetAppValidationOutput(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAppValidationOutput(request), context);
+    } );
 }
 
 GetConnectorsOutcome SMSClient::GetConnectors(const GetConnectorsRequest& request) const
@@ -529,12 +503,10 @@ GetConnectorsOutcomeCallable SMSClient::GetConnectorsCallable(const GetConnector
 
 void SMSClient::GetConnectorsAsync(const GetConnectorsRequest& request, const GetConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetConnectorsAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::GetConnectorsAsyncHelper(const GetConnectorsRequest& request, const GetConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetConnectors(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetConnectors(request), context);
+    } );
 }
 
 GetReplicationJobsOutcome SMSClient::GetReplicationJobs(const GetReplicationJobsRequest& request) const
@@ -553,12 +525,10 @@ GetReplicationJobsOutcomeCallable SMSClient::GetReplicationJobsCallable(const Ge
 
 void SMSClient::GetReplicationJobsAsync(const GetReplicationJobsRequest& request, const GetReplicationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReplicationJobsAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::GetReplicationJobsAsyncHelper(const GetReplicationJobsRequest& request, const GetReplicationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetReplicationJobs(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetReplicationJobs(request), context);
+    } );
 }
 
 GetReplicationRunsOutcome SMSClient::GetReplicationRuns(const GetReplicationRunsRequest& request) const
@@ -577,12 +547,10 @@ GetReplicationRunsOutcomeCallable SMSClient::GetReplicationRunsCallable(const Ge
 
 void SMSClient::GetReplicationRunsAsync(const GetReplicationRunsRequest& request, const GetReplicationRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetReplicationRunsAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::GetReplicationRunsAsyncHelper(const GetReplicationRunsRequest& request, const GetReplicationRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetReplicationRuns(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetReplicationRuns(request), context);
+    } );
 }
 
 GetServersOutcome SMSClient::GetServers(const GetServersRequest& request) const
@@ -601,12 +569,10 @@ GetServersOutcomeCallable SMSClient::GetServersCallable(const GetServersRequest&
 
 void SMSClient::GetServersAsync(const GetServersRequest& request, const GetServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetServersAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::GetServersAsyncHelper(const GetServersRequest& request, const GetServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetServers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetServers(request), context);
+    } );
 }
 
 ImportAppCatalogOutcome SMSClient::ImportAppCatalog(const ImportAppCatalogRequest& request) const
@@ -625,12 +591,10 @@ ImportAppCatalogOutcomeCallable SMSClient::ImportAppCatalogCallable(const Import
 
 void SMSClient::ImportAppCatalogAsync(const ImportAppCatalogRequest& request, const ImportAppCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportAppCatalogAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::ImportAppCatalogAsyncHelper(const ImportAppCatalogRequest& request, const ImportAppCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportAppCatalog(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportAppCatalog(request), context);
+    } );
 }
 
 ImportServerCatalogOutcome SMSClient::ImportServerCatalog(const ImportServerCatalogRequest& request) const
@@ -649,12 +613,10 @@ ImportServerCatalogOutcomeCallable SMSClient::ImportServerCatalogCallable(const 
 
 void SMSClient::ImportServerCatalogAsync(const ImportServerCatalogRequest& request, const ImportServerCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportServerCatalogAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::ImportServerCatalogAsyncHelper(const ImportServerCatalogRequest& request, const ImportServerCatalogResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportServerCatalog(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportServerCatalog(request), context);
+    } );
 }
 
 LaunchAppOutcome SMSClient::LaunchApp(const LaunchAppRequest& request) const
@@ -673,12 +635,10 @@ LaunchAppOutcomeCallable SMSClient::LaunchAppCallable(const LaunchAppRequest& re
 
 void SMSClient::LaunchAppAsync(const LaunchAppRequest& request, const LaunchAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->LaunchAppAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::LaunchAppAsyncHelper(const LaunchAppRequest& request, const LaunchAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, LaunchApp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, LaunchApp(request), context);
+    } );
 }
 
 ListAppsOutcome SMSClient::ListApps(const ListAppsRequest& request) const
@@ -697,12 +657,10 @@ ListAppsOutcomeCallable SMSClient::ListAppsCallable(const ListAppsRequest& reque
 
 void SMSClient::ListAppsAsync(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAppsAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::ListAppsAsyncHelper(const ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListApps(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListApps(request), context);
+    } );
 }
 
 NotifyAppValidationOutputOutcome SMSClient::NotifyAppValidationOutput(const NotifyAppValidationOutputRequest& request) const
@@ -721,12 +679,10 @@ NotifyAppValidationOutputOutcomeCallable SMSClient::NotifyAppValidationOutputCal
 
 void SMSClient::NotifyAppValidationOutputAsync(const NotifyAppValidationOutputRequest& request, const NotifyAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->NotifyAppValidationOutputAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::NotifyAppValidationOutputAsyncHelper(const NotifyAppValidationOutputRequest& request, const NotifyAppValidationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, NotifyAppValidationOutput(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, NotifyAppValidationOutput(request), context);
+    } );
 }
 
 PutAppLaunchConfigurationOutcome SMSClient::PutAppLaunchConfiguration(const PutAppLaunchConfigurationRequest& request) const
@@ -745,12 +701,10 @@ PutAppLaunchConfigurationOutcomeCallable SMSClient::PutAppLaunchConfigurationCal
 
 void SMSClient::PutAppLaunchConfigurationAsync(const PutAppLaunchConfigurationRequest& request, const PutAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAppLaunchConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::PutAppLaunchConfigurationAsyncHelper(const PutAppLaunchConfigurationRequest& request, const PutAppLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAppLaunchConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAppLaunchConfiguration(request), context);
+    } );
 }
 
 PutAppReplicationConfigurationOutcome SMSClient::PutAppReplicationConfiguration(const PutAppReplicationConfigurationRequest& request) const
@@ -769,12 +723,10 @@ PutAppReplicationConfigurationOutcomeCallable SMSClient::PutAppReplicationConfig
 
 void SMSClient::PutAppReplicationConfigurationAsync(const PutAppReplicationConfigurationRequest& request, const PutAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAppReplicationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::PutAppReplicationConfigurationAsyncHelper(const PutAppReplicationConfigurationRequest& request, const PutAppReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAppReplicationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAppReplicationConfiguration(request), context);
+    } );
 }
 
 PutAppValidationConfigurationOutcome SMSClient::PutAppValidationConfiguration(const PutAppValidationConfigurationRequest& request) const
@@ -793,12 +745,10 @@ PutAppValidationConfigurationOutcomeCallable SMSClient::PutAppValidationConfigur
 
 void SMSClient::PutAppValidationConfigurationAsync(const PutAppValidationConfigurationRequest& request, const PutAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutAppValidationConfigurationAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::PutAppValidationConfigurationAsyncHelper(const PutAppValidationConfigurationRequest& request, const PutAppValidationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutAppValidationConfiguration(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAppValidationConfiguration(request), context);
+    } );
 }
 
 StartAppReplicationOutcome SMSClient::StartAppReplication(const StartAppReplicationRequest& request) const
@@ -817,12 +767,10 @@ StartAppReplicationOutcomeCallable SMSClient::StartAppReplicationCallable(const 
 
 void SMSClient::StartAppReplicationAsync(const StartAppReplicationRequest& request, const StartAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartAppReplicationAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::StartAppReplicationAsyncHelper(const StartAppReplicationRequest& request, const StartAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartAppReplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartAppReplication(request), context);
+    } );
 }
 
 StartOnDemandAppReplicationOutcome SMSClient::StartOnDemandAppReplication(const StartOnDemandAppReplicationRequest& request) const
@@ -841,12 +789,10 @@ StartOnDemandAppReplicationOutcomeCallable SMSClient::StartOnDemandAppReplicatio
 
 void SMSClient::StartOnDemandAppReplicationAsync(const StartOnDemandAppReplicationRequest& request, const StartOnDemandAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartOnDemandAppReplicationAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::StartOnDemandAppReplicationAsyncHelper(const StartOnDemandAppReplicationRequest& request, const StartOnDemandAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartOnDemandAppReplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartOnDemandAppReplication(request), context);
+    } );
 }
 
 StartOnDemandReplicationRunOutcome SMSClient::StartOnDemandReplicationRun(const StartOnDemandReplicationRunRequest& request) const
@@ -865,12 +811,10 @@ StartOnDemandReplicationRunOutcomeCallable SMSClient::StartOnDemandReplicationRu
 
 void SMSClient::StartOnDemandReplicationRunAsync(const StartOnDemandReplicationRunRequest& request, const StartOnDemandReplicationRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartOnDemandReplicationRunAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::StartOnDemandReplicationRunAsyncHelper(const StartOnDemandReplicationRunRequest& request, const StartOnDemandReplicationRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartOnDemandReplicationRun(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartOnDemandReplicationRun(request), context);
+    } );
 }
 
 StopAppReplicationOutcome SMSClient::StopAppReplication(const StopAppReplicationRequest& request) const
@@ -889,12 +833,10 @@ StopAppReplicationOutcomeCallable SMSClient::StopAppReplicationCallable(const St
 
 void SMSClient::StopAppReplicationAsync(const StopAppReplicationRequest& request, const StopAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopAppReplicationAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::StopAppReplicationAsyncHelper(const StopAppReplicationRequest& request, const StopAppReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopAppReplication(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopAppReplication(request), context);
+    } );
 }
 
 TerminateAppOutcome SMSClient::TerminateApp(const TerminateAppRequest& request) const
@@ -913,12 +855,10 @@ TerminateAppOutcomeCallable SMSClient::TerminateAppCallable(const TerminateAppRe
 
 void SMSClient::TerminateAppAsync(const TerminateAppRequest& request, const TerminateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TerminateAppAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::TerminateAppAsyncHelper(const TerminateAppRequest& request, const TerminateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TerminateApp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TerminateApp(request), context);
+    } );
 }
 
 UpdateAppOutcome SMSClient::UpdateApp(const UpdateAppRequest& request) const
@@ -937,12 +877,10 @@ UpdateAppOutcomeCallable SMSClient::UpdateAppCallable(const UpdateAppRequest& re
 
 void SMSClient::UpdateAppAsync(const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateAppAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::UpdateAppAsyncHelper(const UpdateAppRequest& request, const UpdateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateApp(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateApp(request), context);
+    } );
 }
 
 UpdateReplicationJobOutcome SMSClient::UpdateReplicationJob(const UpdateReplicationJobRequest& request) const
@@ -961,11 +899,9 @@ UpdateReplicationJobOutcomeCallable SMSClient::UpdateReplicationJobCallable(cons
 
 void SMSClient::UpdateReplicationJobAsync(const UpdateReplicationJobRequest& request, const UpdateReplicationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateReplicationJobAsyncHelper( request, handler, context ); } );
-}
-
-void SMSClient::UpdateReplicationJobAsyncHelper(const UpdateReplicationJobRequest& request, const UpdateReplicationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateReplicationJob(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateReplicationJob(request), context);
+    } );
 }
 

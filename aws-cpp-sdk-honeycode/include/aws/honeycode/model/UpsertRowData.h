@@ -280,13 +280,13 @@ namespace Model
   private:
 
     Aws::String m_batchItemId;
-    bool m_batchItemIdHasBeenSet;
+    bool m_batchItemIdHasBeenSet = false;
 
     Filter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::Map<Aws::String, CellInput> m_cellsToUpdate;
-    bool m_cellsToUpdateHasBeenSet;
+    bool m_cellsToUpdateHasBeenSet = false;
   };
 
 } // namespace Model

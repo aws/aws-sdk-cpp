@@ -613,40 +613,40 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_namespaceId;
-    bool m_namespaceIdHasBeenSet;
+    bool m_namespaceIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     int m_instanceCount;
-    bool m_instanceCountHasBeenSet;
+    bool m_instanceCountHasBeenSet = false;
 
     DnsConfig m_dnsConfig;
-    bool m_dnsConfigHasBeenSet;
+    bool m_dnsConfigHasBeenSet = false;
 
     ServiceType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     HealthCheckConfig m_healthCheckConfig;
-    bool m_healthCheckConfigHasBeenSet;
+    bool m_healthCheckConfigHasBeenSet = false;
 
     HealthCheckCustomConfig m_healthCheckCustomConfig;
-    bool m_healthCheckCustomConfigHasBeenSet;
+    bool m_healthCheckCustomConfigHasBeenSet = false;
 
     Aws::Utils::DateTime m_createDate;
-    bool m_createDateHasBeenSet;
+    bool m_createDateHasBeenSet = false;
 
     Aws::String m_creatorRequestId;
-    bool m_creatorRequestIdHasBeenSet;
+    bool m_creatorRequestIdHasBeenSet = false;
   };
 
 } // namespace Model

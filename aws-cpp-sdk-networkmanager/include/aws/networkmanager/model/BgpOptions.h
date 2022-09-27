@@ -58,7 +58,7 @@ namespace Model
   private:
 
     long long m_peerAsn;
-    bool m_peerAsnHasBeenSet;
+    bool m_peerAsnHasBeenSet = false;
   };
 
 } // namespace Model

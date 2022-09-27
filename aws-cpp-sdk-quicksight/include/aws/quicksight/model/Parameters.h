@@ -208,16 +208,16 @@ namespace Model
   private:
 
     Aws::Vector<StringParameter> m_stringParameters;
-    bool m_stringParametersHasBeenSet;
+    bool m_stringParametersHasBeenSet = false;
 
     Aws::Vector<IntegerParameter> m_integerParameters;
-    bool m_integerParametersHasBeenSet;
+    bool m_integerParametersHasBeenSet = false;
 
     Aws::Vector<DecimalParameter> m_decimalParameters;
-    bool m_decimalParametersHasBeenSet;
+    bool m_decimalParametersHasBeenSet = false;
 
     Aws::Vector<DateTimeParameter> m_dateTimeParameters;
-    bool m_dateTimeParametersHasBeenSet;
+    bool m_dateTimeParametersHasBeenSet = false;
   };
 
 } // namespace Model

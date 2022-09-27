@@ -21,18 +21,26 @@
 #include <aws/amplifyuibuilder/AmplifyUIBuilderEndpoint.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderErrorMarshaller.h>
 #include <aws/amplifyuibuilder/model/CreateComponentRequest.h>
+#include <aws/amplifyuibuilder/model/CreateFormRequest.h>
 #include <aws/amplifyuibuilder/model/CreateThemeRequest.h>
 #include <aws/amplifyuibuilder/model/DeleteComponentRequest.h>
+#include <aws/amplifyuibuilder/model/DeleteFormRequest.h>
 #include <aws/amplifyuibuilder/model/DeleteThemeRequest.h>
 #include <aws/amplifyuibuilder/model/ExchangeCodeForTokenRequest.h>
 #include <aws/amplifyuibuilder/model/ExportComponentsRequest.h>
+#include <aws/amplifyuibuilder/model/ExportFormsRequest.h>
 #include <aws/amplifyuibuilder/model/ExportThemesRequest.h>
 #include <aws/amplifyuibuilder/model/GetComponentRequest.h>
+#include <aws/amplifyuibuilder/model/GetFormRequest.h>
+#include <aws/amplifyuibuilder/model/GetMetadataRequest.h>
 #include <aws/amplifyuibuilder/model/GetThemeRequest.h>
 #include <aws/amplifyuibuilder/model/ListComponentsRequest.h>
+#include <aws/amplifyuibuilder/model/ListFormsRequest.h>
 #include <aws/amplifyuibuilder/model/ListThemesRequest.h>
+#include <aws/amplifyuibuilder/model/PutMetadataFlagRequest.h>
 #include <aws/amplifyuibuilder/model/RefreshTokenRequest.h>
 #include <aws/amplifyuibuilder/model/UpdateComponentRequest.h>
+#include <aws/amplifyuibuilder/model/UpdateFormRequest.h>
 #include <aws/amplifyuibuilder/model/UpdateThemeRequest.h>
 
 using namespace Aws;
@@ -46,33 +54,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "amplifyuibuilder";
 static const char* ALLOCATION_TAG = "AmplifyUIBuilderClient";
 
-
 AmplifyUIBuilderClient::AmplifyUIBuilderClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-AmplifyUIBuilderClient::AmplifyUIBuilderClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+AmplifyUIBuilderClient::AmplifyUIBuilderClient(const AWSCredentials& credentials,
+                                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 AmplifyUIBuilderClient::AmplifyUIBuilderClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -84,7 +98,7 @@ AmplifyUIBuilderClient::~AmplifyUIBuilderClient()
 
 void AmplifyUIBuilderClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("AmplifyUIBuilder");
+  AWSClient::SetServiceClientName("AmplifyUIBuilder");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -139,12 +153,47 @@ CreateComponentOutcomeCallable AmplifyUIBuilderClient::CreateComponentCallable(c
 
 void AmplifyUIBuilderClient::CreateComponentAsync(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateComponentAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateComponent(request), context);
+    } );
 }
 
-void AmplifyUIBuilderClient::CreateComponentAsyncHelper(const CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+CreateFormOutcome AmplifyUIBuilderClient::CreateForm(const CreateFormRequest& request) const
 {
-  handler(this, request, CreateComponent(request), context);
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateForm", "Required field: AppId, is not set");
+    return CreateFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateForm", "Required field: EnvironmentName, is not set");
+    return CreateFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/forms");
+  return CreateFormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFormOutcomeCallable AmplifyUIBuilderClient::CreateFormCallable(const CreateFormRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFormOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateForm(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::CreateFormAsync(const CreateFormRequest& request, const CreateFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateForm(request), context);
+    } );
 }
 
 CreateThemeOutcome AmplifyUIBuilderClient::CreateTheme(const CreateThemeRequest& request) const
@@ -178,12 +227,10 @@ CreateThemeOutcomeCallable AmplifyUIBuilderClient::CreateThemeCallable(const Cre
 
 void AmplifyUIBuilderClient::CreateThemeAsync(const CreateThemeRequest& request, const CreateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateThemeAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::CreateThemeAsyncHelper(const CreateThemeRequest& request, const CreateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateTheme(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTheme(request), context);
+    } );
 }
 
 DeleteComponentOutcome AmplifyUIBuilderClient::DeleteComponent(const DeleteComponentRequest& request) const
@@ -223,12 +270,53 @@ DeleteComponentOutcomeCallable AmplifyUIBuilderClient::DeleteComponentCallable(c
 
 void AmplifyUIBuilderClient::DeleteComponentAsync(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteComponentAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteComponent(request), context);
+    } );
 }
 
-void AmplifyUIBuilderClient::DeleteComponentAsyncHelper(const DeleteComponentRequest& request, const DeleteComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+DeleteFormOutcome AmplifyUIBuilderClient::DeleteForm(const DeleteFormRequest& request) const
 {
-  handler(this, request, DeleteComponent(request), context);
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteForm", "Required field: AppId, is not set");
+    return DeleteFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteForm", "Required field: EnvironmentName, is not set");
+    return DeleteFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteForm", "Required field: Id, is not set");
+    return DeleteFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/forms/");
+  uri.AddPathSegment(request.GetId());
+  return DeleteFormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFormOutcomeCallable AmplifyUIBuilderClient::DeleteFormCallable(const DeleteFormRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFormOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteForm(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::DeleteFormAsync(const DeleteFormRequest& request, const DeleteFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteForm(request), context);
+    } );
 }
 
 DeleteThemeOutcome AmplifyUIBuilderClient::DeleteTheme(const DeleteThemeRequest& request) const
@@ -268,12 +356,10 @@ DeleteThemeOutcomeCallable AmplifyUIBuilderClient::DeleteThemeCallable(const Del
 
 void AmplifyUIBuilderClient::DeleteThemeAsync(const DeleteThemeRequest& request, const DeleteThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteThemeAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::DeleteThemeAsyncHelper(const DeleteThemeRequest& request, const DeleteThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTheme(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTheme(request), context);
+    } );
 }
 
 ExchangeCodeForTokenOutcome AmplifyUIBuilderClient::ExchangeCodeForToken(const ExchangeCodeForTokenRequest& request) const
@@ -299,12 +385,10 @@ ExchangeCodeForTokenOutcomeCallable AmplifyUIBuilderClient::ExchangeCodeForToken
 
 void AmplifyUIBuilderClient::ExchangeCodeForTokenAsync(const ExchangeCodeForTokenRequest& request, const ExchangeCodeForTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExchangeCodeForTokenAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::ExchangeCodeForTokenAsyncHelper(const ExchangeCodeForTokenRequest& request, const ExchangeCodeForTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ExchangeCodeForToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExchangeCodeForToken(request), context);
+    } );
 }
 
 ExportComponentsOutcome AmplifyUIBuilderClient::ExportComponents(const ExportComponentsRequest& request) const
@@ -338,12 +422,47 @@ ExportComponentsOutcomeCallable AmplifyUIBuilderClient::ExportComponentsCallable
 
 void AmplifyUIBuilderClient::ExportComponentsAsync(const ExportComponentsRequest& request, const ExportComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportComponentsAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExportComponents(request), context);
+    } );
 }
 
-void AmplifyUIBuilderClient::ExportComponentsAsyncHelper(const ExportComponentsRequest& request, const ExportComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+ExportFormsOutcome AmplifyUIBuilderClient::ExportForms(const ExportFormsRequest& request) const
 {
-  handler(this, request, ExportComponents(request), context);
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportForms", "Required field: AppId, is not set");
+    return ExportFormsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportForms", "Required field: EnvironmentName, is not set");
+    return ExportFormsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/export/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/forms");
+  return ExportFormsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExportFormsOutcomeCallable AmplifyUIBuilderClient::ExportFormsCallable(const ExportFormsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportFormsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportForms(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::ExportFormsAsync(const ExportFormsRequest& request, const ExportFormsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExportForms(request), context);
+    } );
 }
 
 ExportThemesOutcome AmplifyUIBuilderClient::ExportThemes(const ExportThemesRequest& request) const
@@ -377,12 +496,10 @@ ExportThemesOutcomeCallable AmplifyUIBuilderClient::ExportThemesCallable(const E
 
 void AmplifyUIBuilderClient::ExportThemesAsync(const ExportThemesRequest& request, const ExportThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ExportThemesAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::ExportThemesAsyncHelper(const ExportThemesRequest& request, const ExportThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ExportThemes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ExportThemes(request), context);
+    } );
 }
 
 GetComponentOutcome AmplifyUIBuilderClient::GetComponent(const GetComponentRequest& request) const
@@ -422,12 +539,90 @@ GetComponentOutcomeCallable AmplifyUIBuilderClient::GetComponentCallable(const G
 
 void AmplifyUIBuilderClient::GetComponentAsync(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetComponentAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetComponent(request), context);
+    } );
 }
 
-void AmplifyUIBuilderClient::GetComponentAsyncHelper(const GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+GetFormOutcome AmplifyUIBuilderClient::GetForm(const GetFormRequest& request) const
 {
-  handler(this, request, GetComponent(request), context);
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetForm", "Required field: AppId, is not set");
+    return GetFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetForm", "Required field: EnvironmentName, is not set");
+    return GetFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetForm", "Required field: Id, is not set");
+    return GetFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/forms/");
+  uri.AddPathSegment(request.GetId());
+  return GetFormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetFormOutcomeCallable AmplifyUIBuilderClient::GetFormCallable(const GetFormRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFormOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetForm(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::GetFormAsync(const GetFormRequest& request, const GetFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetForm(request), context);
+    } );
+}
+
+GetMetadataOutcome AmplifyUIBuilderClient::GetMetadata(const GetMetadataRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMetadata", "Required field: AppId, is not set");
+    return GetMetadataOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMetadata", "Required field: EnvironmentName, is not set");
+    return GetMetadataOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/metadata");
+  return GetMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMetadataOutcomeCallable AmplifyUIBuilderClient::GetMetadataCallable(const GetMetadataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMetadataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMetadata(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::GetMetadataAsync(const GetMetadataRequest& request, const GetMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetMetadata(request), context);
+    } );
 }
 
 GetThemeOutcome AmplifyUIBuilderClient::GetTheme(const GetThemeRequest& request) const
@@ -467,12 +662,10 @@ GetThemeOutcomeCallable AmplifyUIBuilderClient::GetThemeCallable(const GetThemeR
 
 void AmplifyUIBuilderClient::GetThemeAsync(const GetThemeRequest& request, const GetThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetThemeAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::GetThemeAsyncHelper(const GetThemeRequest& request, const GetThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTheme(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTheme(request), context);
+    } );
 }
 
 ListComponentsOutcome AmplifyUIBuilderClient::ListComponents(const ListComponentsRequest& request) const
@@ -506,12 +699,47 @@ ListComponentsOutcomeCallable AmplifyUIBuilderClient::ListComponentsCallable(con
 
 void AmplifyUIBuilderClient::ListComponentsAsync(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListComponentsAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListComponents(request), context);
+    } );
 }
 
-void AmplifyUIBuilderClient::ListComponentsAsyncHelper(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+ListFormsOutcome AmplifyUIBuilderClient::ListForms(const ListFormsRequest& request) const
 {
-  handler(this, request, ListComponents(request), context);
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListForms", "Required field: AppId, is not set");
+    return ListFormsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListForms", "Required field: EnvironmentName, is not set");
+    return ListFormsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/forms");
+  return ListFormsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFormsOutcomeCallable AmplifyUIBuilderClient::ListFormsCallable(const ListFormsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFormsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListForms(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::ListFormsAsync(const ListFormsRequest& request, const ListFormsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListForms(request), context);
+    } );
 }
 
 ListThemesOutcome AmplifyUIBuilderClient::ListThemes(const ListThemesRequest& request) const
@@ -545,12 +773,53 @@ ListThemesOutcomeCallable AmplifyUIBuilderClient::ListThemesCallable(const ListT
 
 void AmplifyUIBuilderClient::ListThemesAsync(const ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListThemesAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListThemes(request), context);
+    } );
 }
 
-void AmplifyUIBuilderClient::ListThemesAsyncHelper(const ListThemesRequest& request, const ListThemesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+PutMetadataFlagOutcome AmplifyUIBuilderClient::PutMetadataFlag(const PutMetadataFlagRequest& request) const
 {
-  handler(this, request, ListThemes(request), context);
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutMetadataFlag", "Required field: AppId, is not set");
+    return PutMetadataFlagOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutMetadataFlag", "Required field: EnvironmentName, is not set");
+    return PutMetadataFlagOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  if (!request.FeatureNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutMetadataFlag", "Required field: FeatureName, is not set");
+    return PutMetadataFlagOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FeatureName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/metadata/features/");
+  uri.AddPathSegment(request.GetFeatureName());
+  return PutMetadataFlagOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutMetadataFlagOutcomeCallable AmplifyUIBuilderClient::PutMetadataFlagCallable(const PutMetadataFlagRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutMetadataFlagOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutMetadataFlag(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::PutMetadataFlagAsync(const PutMetadataFlagRequest& request, const PutMetadataFlagResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutMetadataFlag(request), context);
+    } );
 }
 
 RefreshTokenOutcome AmplifyUIBuilderClient::RefreshToken(const RefreshTokenRequest& request) const
@@ -577,12 +846,10 @@ RefreshTokenOutcomeCallable AmplifyUIBuilderClient::RefreshTokenCallable(const R
 
 void AmplifyUIBuilderClient::RefreshTokenAsync(const RefreshTokenRequest& request, const RefreshTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RefreshTokenAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::RefreshTokenAsyncHelper(const RefreshTokenRequest& request, const RefreshTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RefreshToken(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RefreshToken(request), context);
+    } );
 }
 
 UpdateComponentOutcome AmplifyUIBuilderClient::UpdateComponent(const UpdateComponentRequest& request) const
@@ -622,12 +889,53 @@ UpdateComponentOutcomeCallable AmplifyUIBuilderClient::UpdateComponentCallable(c
 
 void AmplifyUIBuilderClient::UpdateComponentAsync(const UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateComponentAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateComponent(request), context);
+    } );
 }
 
-void AmplifyUIBuilderClient::UpdateComponentAsyncHelper(const UpdateComponentRequest& request, const UpdateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+UpdateFormOutcome AmplifyUIBuilderClient::UpdateForm(const UpdateFormRequest& request) const
 {
-  handler(this, request, UpdateComponent(request), context);
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateForm", "Required field: AppId, is not set");
+    return UpdateFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateForm", "Required field: EnvironmentName, is not set");
+    return UpdateFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateForm", "Required field: Id, is not set");
+    return UpdateFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/app/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentName());
+  uri.AddPathSegments("/forms/");
+  uri.AddPathSegment(request.GetId());
+  return UpdateFormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFormOutcomeCallable AmplifyUIBuilderClient::UpdateFormCallable(const UpdateFormRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFormOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateForm(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyUIBuilderClient::UpdateFormAsync(const UpdateFormRequest& request, const UpdateFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateForm(request), context);
+    } );
 }
 
 UpdateThemeOutcome AmplifyUIBuilderClient::UpdateTheme(const UpdateThemeRequest& request) const
@@ -667,11 +975,9 @@ UpdateThemeOutcomeCallable AmplifyUIBuilderClient::UpdateThemeCallable(const Upd
 
 void AmplifyUIBuilderClient::UpdateThemeAsync(const UpdateThemeRequest& request, const UpdateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateThemeAsyncHelper( request, handler, context ); } );
-}
-
-void AmplifyUIBuilderClient::UpdateThemeAsyncHelper(const UpdateThemeRequest& request, const UpdateThemeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTheme(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTheme(request), context);
+    } );
 }
 

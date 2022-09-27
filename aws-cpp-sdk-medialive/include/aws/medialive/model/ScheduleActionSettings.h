@@ -422,40 +422,40 @@ namespace Model
   private:
 
     HlsId3SegmentTaggingScheduleActionSettings m_hlsId3SegmentTaggingSettings;
-    bool m_hlsId3SegmentTaggingSettingsHasBeenSet;
+    bool m_hlsId3SegmentTaggingSettingsHasBeenSet = false;
 
     HlsTimedMetadataScheduleActionSettings m_hlsTimedMetadataSettings;
-    bool m_hlsTimedMetadataSettingsHasBeenSet;
+    bool m_hlsTimedMetadataSettingsHasBeenSet = false;
 
     InputPrepareScheduleActionSettings m_inputPrepareSettings;
-    bool m_inputPrepareSettingsHasBeenSet;
+    bool m_inputPrepareSettingsHasBeenSet = false;
 
     InputSwitchScheduleActionSettings m_inputSwitchSettings;
-    bool m_inputSwitchSettingsHasBeenSet;
+    bool m_inputSwitchSettingsHasBeenSet = false;
 
     MotionGraphicsActivateScheduleActionSettings m_motionGraphicsImageActivateSettings;
-    bool m_motionGraphicsImageActivateSettingsHasBeenSet;
+    bool m_motionGraphicsImageActivateSettingsHasBeenSet = false;
 
     MotionGraphicsDeactivateScheduleActionSettings m_motionGraphicsImageDeactivateSettings;
-    bool m_motionGraphicsImageDeactivateSettingsHasBeenSet;
+    bool m_motionGraphicsImageDeactivateSettingsHasBeenSet = false;
 
     PauseStateScheduleActionSettings m_pauseStateSettings;
-    bool m_pauseStateSettingsHasBeenSet;
+    bool m_pauseStateSettingsHasBeenSet = false;
 
     Scte35ReturnToNetworkScheduleActionSettings m_scte35ReturnToNetworkSettings;
-    bool m_scte35ReturnToNetworkSettingsHasBeenSet;
+    bool m_scte35ReturnToNetworkSettingsHasBeenSet = false;
 
     Scte35SpliceInsertScheduleActionSettings m_scte35SpliceInsertSettings;
-    bool m_scte35SpliceInsertSettingsHasBeenSet;
+    bool m_scte35SpliceInsertSettingsHasBeenSet = false;
 
     Scte35TimeSignalScheduleActionSettings m_scte35TimeSignalSettings;
-    bool m_scte35TimeSignalSettingsHasBeenSet;
+    bool m_scte35TimeSignalSettingsHasBeenSet = false;
 
     StaticImageActivateScheduleActionSettings m_staticImageActivateSettings;
-    bool m_staticImageActivateSettingsHasBeenSet;
+    bool m_staticImageActivateSettingsHasBeenSet = false;
 
     StaticImageDeactivateScheduleActionSettings m_staticImageDeactivateSettings;
-    bool m_staticImageDeactivateSettingsHasBeenSet;
+    bool m_staticImageDeactivateSettingsHasBeenSet = false;
   };
 
 } // namespace Model

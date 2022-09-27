@@ -405,28 +405,28 @@ namespace Model
   private:
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
 
     Aws::String m_sender;
-    bool m_senderHasBeenSet;
+    bool m_senderHasBeenSet = false;
 
     Aws::String m_subject;
-    bool m_subjectHasBeenSet;
+    bool m_subjectHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_publicSubject;
-    bool m_publicSubjectHasBeenSet;
+    bool m_publicSubjectHasBeenSet = false;
 
     Aws::String m_publicContent;
-    bool m_publicContentHasBeenSet;
+    bool m_publicContentHasBeenSet = false;
 
     Aws::String m_incidentId;
-    bool m_incidentIdHasBeenSet;
+    bool m_incidentIdHasBeenSet = false;
 
     Aws::String m_idempotencyToken;
-    bool m_idempotencyTokenHasBeenSet;
+    bool m_idempotencyTokenHasBeenSet = false;
   };
 
 } // namespace Model

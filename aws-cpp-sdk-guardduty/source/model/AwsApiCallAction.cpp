@@ -26,7 +26,8 @@ AwsApiCallAction::AwsApiCallAction() :
     m_userAgentHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
-    m_remoteAccountDetailsHasBeenSet(false)
+    m_remoteAccountDetailsHasBeenSet(false),
+    m_affectedResourcesHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ AwsApiCallAction::AwsApiCallAction(JsonView jsonValue) :
     m_userAgentHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false),
     m_serviceNameHasBeenSet(false),
-    m_remoteAccountDetailsHasBeenSet(false)
+    m_remoteAccountDetailsHasBeenSet(false),
+    m_affectedResourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,16 @@ AwsApiCallAction& AwsApiCallAction::operator =(JsonView jsonValue)
     m_remoteAccountDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("affectedResources"))
+  {
+    Aws::Map<Aws::String, JsonView> affectedResourcesJsonMap = jsonValue.GetObject("affectedResources").GetAllObjects();
+    for(auto& affectedResourcesItem : affectedResourcesJsonMap)
+    {
+      m_affectedResources[affectedResourcesItem.first] = affectedResourcesItem.second.AsString();
+    }
+    m_affectedResourcesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +165,17 @@ JsonValue AwsApiCallAction::Jsonize() const
   if(m_remoteAccountDetailsHasBeenSet)
   {
    payload.WithObject("remoteAccountDetails", m_remoteAccountDetails.Jsonize());
+
+  }
+
+  if(m_affectedResourcesHasBeenSet)
+  {
+   JsonValue affectedResourcesJsonMap;
+   for(auto& affectedResourcesItem : m_affectedResources)
+   {
+     affectedResourcesJsonMap.WithString(affectedResourcesItem.first, affectedResourcesItem.second);
+   }
+   payload.WithObject("affectedResources", std::move(affectedResourcesJsonMap));
 
   }
 

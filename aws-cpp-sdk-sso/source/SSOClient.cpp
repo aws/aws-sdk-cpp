@@ -36,33 +36,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "awsssoportal";
 static const char* ALLOCATION_TAG = "SSOClient";
 
-
 SSOClient::SSOClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-SSOClient::SSOClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+SSOClient::SSOClient(const AWSCredentials& credentials,
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 SSOClient::SSOClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -74,7 +80,7 @@ SSOClient::~SSOClient()
 
 void SSOClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("SSO");
+  AWSClient::SetServiceClientName("SSO");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -130,12 +136,10 @@ GetRoleCredentialsOutcomeCallable SSOClient::GetRoleCredentialsCallable(const Ge
 
 void SSOClient::GetRoleCredentialsAsync(const GetRoleCredentialsRequest& request, const GetRoleCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetRoleCredentialsAsyncHelper( request, handler, context ); } );
-}
-
-void SSOClient::GetRoleCredentialsAsyncHelper(const GetRoleCredentialsRequest& request, const GetRoleCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetRoleCredentials(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetRoleCredentials(request), context);
+    } );
 }
 
 ListAccountRolesOutcome SSOClient::ListAccountRoles(const ListAccountRolesRequest& request) const
@@ -165,12 +169,10 @@ ListAccountRolesOutcomeCallable SSOClient::ListAccountRolesCallable(const ListAc
 
 void SSOClient::ListAccountRolesAsync(const ListAccountRolesRequest& request, const ListAccountRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccountRolesAsyncHelper( request, handler, context ); } );
-}
-
-void SSOClient::ListAccountRolesAsyncHelper(const ListAccountRolesRequest& request, const ListAccountRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAccountRoles(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAccountRoles(request), context);
+    } );
 }
 
 ListAccountsOutcome SSOClient::ListAccounts(const ListAccountsRequest& request) const
@@ -195,12 +197,10 @@ ListAccountsOutcomeCallable SSOClient::ListAccountsCallable(const ListAccountsRe
 
 void SSOClient::ListAccountsAsync(const ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListAccountsAsyncHelper( request, handler, context ); } );
-}
-
-void SSOClient::ListAccountsAsyncHelper(const ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListAccounts(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAccounts(request), context);
+    } );
 }
 
 LogoutOutcome SSOClient::Logout(const LogoutRequest& request) const
@@ -225,11 +225,9 @@ LogoutOutcomeCallable SSOClient::LogoutCallable(const LogoutRequest& request) co
 
 void SSOClient::LogoutAsync(const LogoutRequest& request, const LogoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->LogoutAsyncHelper( request, handler, context ); } );
-}
-
-void SSOClient::LogoutAsyncHelper(const LogoutRequest& request, const LogoutResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, Logout(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, Logout(request), context);
+    } );
 }
 

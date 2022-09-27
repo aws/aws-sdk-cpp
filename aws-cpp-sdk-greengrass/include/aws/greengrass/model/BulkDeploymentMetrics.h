@@ -129,13 +129,13 @@ namespace Model
   private:
 
     int m_invalidInputRecords;
-    bool m_invalidInputRecordsHasBeenSet;
+    bool m_invalidInputRecordsHasBeenSet = false;
 
     int m_recordsProcessed;
-    bool m_recordsProcessedHasBeenSet;
+    bool m_recordsProcessedHasBeenSet = false;
 
     int m_retryAttempts;
-    bool m_retryAttemptsHasBeenSet;
+    bool m_retryAttemptsHasBeenSet = false;
   };
 
 } // namespace Model

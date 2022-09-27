@@ -192,10 +192,10 @@ namespace Model
   private:
 
     Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_serialNumber;
-    bool m_serialNumberHasBeenSet;
+    bool m_serialNumberHasBeenSet = false;
   };
 
 } // namespace Model

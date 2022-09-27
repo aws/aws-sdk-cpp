@@ -205,19 +205,19 @@ namespace Model
   private:
 
     Server m_server;
-    bool m_serverHasBeenSet;
+    bool m_serverHasBeenSet = false;
 
     Aws::String m_validationId;
-    bool m_validationIdHasBeenSet;
+    bool m_validationIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     ServerValidationStrategy m_serverValidationStrategy;
-    bool m_serverValidationStrategyHasBeenSet;
+    bool m_serverValidationStrategyHasBeenSet = false;
 
     UserDataValidationParameters m_userDataValidationParameters;
-    bool m_userDataValidationParametersHasBeenSet;
+    bool m_userDataValidationParametersHasBeenSet = false;
   };
 
 } // namespace Model

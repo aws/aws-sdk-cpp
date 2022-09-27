@@ -457,22 +457,22 @@ namespace Model
   private:
 
     Aws::String m_hyperParameterTuningJobName;
-    bool m_hyperParameterTuningJobNameHasBeenSet;
+    bool m_hyperParameterTuningJobNameHasBeenSet = false;
 
     HyperParameterTuningJobConfig m_hyperParameterTuningJobConfig;
-    bool m_hyperParameterTuningJobConfigHasBeenSet;
+    bool m_hyperParameterTuningJobConfigHasBeenSet = false;
 
     HyperParameterTrainingJobDefinition m_trainingJobDefinition;
-    bool m_trainingJobDefinitionHasBeenSet;
+    bool m_trainingJobDefinitionHasBeenSet = false;
 
     Aws::Vector<HyperParameterTrainingJobDefinition> m_trainingJobDefinitions;
-    bool m_trainingJobDefinitionsHasBeenSet;
+    bool m_trainingJobDefinitionsHasBeenSet = false;
 
     HyperParameterTuningJobWarmStartConfig m_warmStartConfig;
-    bool m_warmStartConfigHasBeenSet;
+    bool m_warmStartConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

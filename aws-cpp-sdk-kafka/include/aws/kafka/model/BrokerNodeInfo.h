@@ -372,22 +372,22 @@ namespace Model
   private:
 
     Aws::String m_attachedENIId;
-    bool m_attachedENIIdHasBeenSet;
+    bool m_attachedENIIdHasBeenSet = false;
 
     double m_brokerId;
-    bool m_brokerIdHasBeenSet;
+    bool m_brokerIdHasBeenSet = false;
 
     Aws::String m_clientSubnet;
-    bool m_clientSubnetHasBeenSet;
+    bool m_clientSubnetHasBeenSet = false;
 
     Aws::String m_clientVpcIpAddress;
-    bool m_clientVpcIpAddressHasBeenSet;
+    bool m_clientVpcIpAddressHasBeenSet = false;
 
     BrokerSoftwareInfo m_currentBrokerSoftwareInfo;
-    bool m_currentBrokerSoftwareInfoHasBeenSet;
+    bool m_currentBrokerSoftwareInfoHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_endpoints;
-    bool m_endpointsHasBeenSet;
+    bool m_endpointsHasBeenSet = false;
   };
 
 } // namespace Model

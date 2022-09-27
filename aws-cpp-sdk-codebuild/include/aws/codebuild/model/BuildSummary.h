@@ -263,19 +263,19 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestedOn;
-    bool m_requestedOnHasBeenSet;
+    bool m_requestedOnHasBeenSet = false;
 
     StatusType m_buildStatus;
-    bool m_buildStatusHasBeenSet;
+    bool m_buildStatusHasBeenSet = false;
 
     ResolvedArtifact m_primaryArtifact;
-    bool m_primaryArtifactHasBeenSet;
+    bool m_primaryArtifactHasBeenSet = false;
 
     Aws::Vector<ResolvedArtifact> m_secondaryArtifacts;
-    bool m_secondaryArtifactsHasBeenSet;
+    bool m_secondaryArtifactsHasBeenSet = false;
   };
 
 } // namespace Model

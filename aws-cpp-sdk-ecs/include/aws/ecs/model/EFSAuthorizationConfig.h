@@ -46,7 +46,7 @@ namespace Model
      * the EFS access point. If an access point is used, transit encryption must be
      * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
-     * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
+     * with Amazon EFS access points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetAccessPointId() const{ return m_accessPointId; }
@@ -58,7 +58,7 @@ namespace Model
      * the EFS access point. If an access point is used, transit encryption must be
      * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
-     * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
+     * with Amazon EFS access points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
      */
     inline bool AccessPointIdHasBeenSet() const { return m_accessPointIdHasBeenSet; }
@@ -70,7 +70,7 @@ namespace Model
      * the EFS access point. If an access point is used, transit encryption must be
      * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
-     * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
+     * with Amazon EFS access points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
      */
     inline void SetAccessPointId(const Aws::String& value) { m_accessPointIdHasBeenSet = true; m_accessPointId = value; }
@@ -82,7 +82,7 @@ namespace Model
      * the EFS access point. If an access point is used, transit encryption must be
      * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
-     * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
+     * with Amazon EFS access points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
      */
     inline void SetAccessPointId(Aws::String&& value) { m_accessPointIdHasBeenSet = true; m_accessPointId = std::move(value); }
@@ -94,7 +94,7 @@ namespace Model
      * the EFS access point. If an access point is used, transit encryption must be
      * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
-     * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
+     * with Amazon EFS access points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
      */
     inline void SetAccessPointId(const char* value) { m_accessPointIdHasBeenSet = true; m_accessPointId.assign(value); }
@@ -106,7 +106,7 @@ namespace Model
      * the EFS access point. If an access point is used, transit encryption must be
      * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
-     * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
+     * with Amazon EFS access points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
      */
     inline EFSAuthorizationConfig& WithAccessPointId(const Aws::String& value) { SetAccessPointId(value); return *this;}
@@ -118,7 +118,7 @@ namespace Model
      * the EFS access point. If an access point is used, transit encryption must be
      * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
-     * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
+     * with Amazon EFS access points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
      */
     inline EFSAuthorizationConfig& WithAccessPointId(Aws::String&& value) { SetAccessPointId(std::move(value)); return *this;}
@@ -130,7 +130,7 @@ namespace Model
      * the EFS access point. If an access point is used, transit encryption must be
      * enabled in the <code>EFSVolumeConfiguration</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
-     * with Amazon EFS Access Points</a> in the <i>Amazon Elastic File System User
+     * with Amazon EFS access points</a> in the <i>Amazon Elastic File System User
      * Guide</i>.</p>
      */
     inline EFSAuthorizationConfig& WithAccessPointId(const char* value) { SetAccessPointId(value); return *this;}
@@ -143,7 +143,7 @@ namespace Model
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service
+     * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline const EFSAuthorizationConfigIAM& GetIam() const{ return m_iam; }
@@ -155,7 +155,7 @@ namespace Model
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service
+     * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
@@ -167,7 +167,7 @@ namespace Model
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service
+     * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetIam(const EFSAuthorizationConfigIAM& value) { m_iamHasBeenSet = true; m_iam = value; }
@@ -179,7 +179,7 @@ namespace Model
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service
+     * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetIam(EFSAuthorizationConfigIAM&& value) { m_iamHasBeenSet = true; m_iam = std::move(value); }
@@ -191,7 +191,7 @@ namespace Model
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service
+     * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline EFSAuthorizationConfig& WithIam(const EFSAuthorizationConfigIAM& value) { SetIam(value); return *this;}
@@ -203,7 +203,7 @@ namespace Model
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
-     * Amazon EFS Access Points</a> in the <i>Amazon Elastic Container Service
+     * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline EFSAuthorizationConfig& WithIam(EFSAuthorizationConfigIAM&& value) { SetIam(std::move(value)); return *this;}
@@ -211,10 +211,10 @@ namespace Model
   private:
 
     Aws::String m_accessPointId;
-    bool m_accessPointIdHasBeenSet;
+    bool m_accessPointIdHasBeenSet = false;
 
     EFSAuthorizationConfigIAM m_iam;
-    bool m_iamHasBeenSet;
+    bool m_iamHasBeenSet = false;
   };
 
 } // namespace Model

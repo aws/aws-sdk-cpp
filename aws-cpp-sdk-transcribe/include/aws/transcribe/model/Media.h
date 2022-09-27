@@ -226,10 +226,10 @@ namespace Model
   private:
 
     Aws::String m_mediaFileUri;
-    bool m_mediaFileUriHasBeenSet;
+    bool m_mediaFileUriHasBeenSet = false;
 
     Aws::String m_redactedMediaFileUri;
-    bool m_redactedMediaFileUriHasBeenSet;
+    bool m_redactedMediaFileUriHasBeenSet = false;
   };
 
 } // namespace Model

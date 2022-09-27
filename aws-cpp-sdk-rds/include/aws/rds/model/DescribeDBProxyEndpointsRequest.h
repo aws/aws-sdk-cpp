@@ -285,19 +285,19 @@ namespace Model
   private:
 
     Aws::String m_dBProxyName;
-    bool m_dBProxyNameHasBeenSet;
+    bool m_dBProxyNameHasBeenSet = false;
 
     Aws::String m_dBProxyEndpointName;
-    bool m_dBProxyEndpointNameHasBeenSet;
+    bool m_dBProxyEndpointNameHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_maxRecords;
-    bool m_maxRecordsHasBeenSet;
+    bool m_maxRecordsHasBeenSet = false;
   };
 
 } // namespace Model

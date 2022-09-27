@@ -35,33 +35,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "personalize";
 static const char* ALLOCATION_TAG = "PersonalizeEventsClient";
 
-
 PersonalizeEventsClient::PersonalizeEventsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<PersonalizeEventsErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<PersonalizeEventsErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-PersonalizeEventsClient::PersonalizeEventsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+PersonalizeEventsClient::PersonalizeEventsClient(const AWSCredentials& credentials,
+                                                 const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<PersonalizeEventsErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<PersonalizeEventsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 PersonalizeEventsClient::PersonalizeEventsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                                 const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<PersonalizeEventsErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<PersonalizeEventsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -73,7 +79,7 @@ PersonalizeEventsClient::~PersonalizeEventsClient()
 
 void PersonalizeEventsClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Personalize Events");
+  AWSClient::SetServiceClientName("Personalize Events");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -114,12 +120,10 @@ PutEventsOutcomeCallable PersonalizeEventsClient::PutEventsCallable(const PutEve
 
 void PersonalizeEventsClient::PutEventsAsync(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutEventsAsyncHelper( request, handler, context ); } );
-}
-
-void PersonalizeEventsClient::PutEventsAsyncHelper(const PutEventsRequest& request, const PutEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutEvents(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutEvents(request), context);
+    } );
 }
 
 PutItemsOutcome PersonalizeEventsClient::PutItems(const PutItemsRequest& request) const
@@ -139,12 +143,10 @@ PutItemsOutcomeCallable PersonalizeEventsClient::PutItemsCallable(const PutItems
 
 void PersonalizeEventsClient::PutItemsAsync(const PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutItemsAsyncHelper( request, handler, context ); } );
-}
-
-void PersonalizeEventsClient::PutItemsAsyncHelper(const PutItemsRequest& request, const PutItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutItems(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutItems(request), context);
+    } );
 }
 
 PutUsersOutcome PersonalizeEventsClient::PutUsers(const PutUsersRequest& request) const
@@ -164,11 +166,9 @@ PutUsersOutcomeCallable PersonalizeEventsClient::PutUsersCallable(const PutUsers
 
 void PersonalizeEventsClient::PutUsersAsync(const PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutUsersAsyncHelper( request, handler, context ); } );
-}
-
-void PersonalizeEventsClient::PutUsersAsyncHelper(const PutUsersRequest& request, const PutUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutUsers(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutUsers(request), context);
+    } );
 }
 

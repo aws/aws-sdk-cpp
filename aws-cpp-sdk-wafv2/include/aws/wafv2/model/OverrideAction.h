@@ -141,10 +141,10 @@ namespace Model
   private:
 
     CountAction m_count;
-    bool m_countHasBeenSet;
+    bool m_countHasBeenSet = false;
 
     NoneAction m_none;
-    bool m_noneHasBeenSet;
+    bool m_noneHasBeenSet = false;
   };
 
 } // namespace Model

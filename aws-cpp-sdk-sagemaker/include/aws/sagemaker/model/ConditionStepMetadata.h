@@ -70,7 +70,7 @@ namespace Model
   private:
 
     ConditionOutcome m_outcome;
-    bool m_outcomeHasBeenSet;
+    bool m_outcomeHasBeenSet = false;
   };
 
 } // namespace Model

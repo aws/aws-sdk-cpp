@@ -216,16 +216,16 @@ namespace Model
   private:
 
     Aws::String m_aliasId;
-    bool m_aliasIdHasBeenSet;
+    bool m_aliasIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     RoutingStrategy m_routingStrategy;
-    bool m_routingStrategyHasBeenSet;
+    bool m_routingStrategyHasBeenSet = false;
   };
 
 } // namespace Model

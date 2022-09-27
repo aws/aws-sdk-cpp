@@ -314,25 +314,25 @@ namespace Model
   private:
 
     InventoryDestination m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     bool m_isEnabled;
-    bool m_isEnabledHasBeenSet;
+    bool m_isEnabledHasBeenSet = false;
 
     InventoryFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     InventoryIncludedObjectVersions m_includedObjectVersions;
-    bool m_includedObjectVersionsHasBeenSet;
+    bool m_includedObjectVersionsHasBeenSet = false;
 
     Aws::Vector<InventoryOptionalField> m_optionalFields;
-    bool m_optionalFieldsHasBeenSet;
+    bool m_optionalFieldsHasBeenSet = false;
 
     InventorySchedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
   };
 
 } // namespace Model

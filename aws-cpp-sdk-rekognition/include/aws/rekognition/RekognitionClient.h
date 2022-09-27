@@ -5,353 +5,15 @@
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
-#include <aws/rekognition/RekognitionErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/rekognition/model/CompareFacesResult.h>
-#include <aws/rekognition/model/CreateCollectionResult.h>
-#include <aws/rekognition/model/CreateDatasetResult.h>
-#include <aws/rekognition/model/CreateProjectResult.h>
-#include <aws/rekognition/model/CreateProjectVersionResult.h>
-#include <aws/rekognition/model/CreateStreamProcessorResult.h>
-#include <aws/rekognition/model/DeleteCollectionResult.h>
-#include <aws/rekognition/model/DeleteDatasetResult.h>
-#include <aws/rekognition/model/DeleteFacesResult.h>
-#include <aws/rekognition/model/DeleteProjectResult.h>
-#include <aws/rekognition/model/DeleteProjectVersionResult.h>
-#include <aws/rekognition/model/DeleteStreamProcessorResult.h>
-#include <aws/rekognition/model/DescribeCollectionResult.h>
-#include <aws/rekognition/model/DescribeDatasetResult.h>
-#include <aws/rekognition/model/DescribeProjectVersionsResult.h>
-#include <aws/rekognition/model/DescribeProjectsResult.h>
-#include <aws/rekognition/model/DescribeStreamProcessorResult.h>
-#include <aws/rekognition/model/DetectCustomLabelsResult.h>
-#include <aws/rekognition/model/DetectFacesResult.h>
-#include <aws/rekognition/model/DetectLabelsResult.h>
-#include <aws/rekognition/model/DetectModerationLabelsResult.h>
-#include <aws/rekognition/model/DetectProtectiveEquipmentResult.h>
-#include <aws/rekognition/model/DetectTextResult.h>
-#include <aws/rekognition/model/DistributeDatasetEntriesResult.h>
-#include <aws/rekognition/model/GetCelebrityInfoResult.h>
-#include <aws/rekognition/model/GetCelebrityRecognitionResult.h>
-#include <aws/rekognition/model/GetContentModerationResult.h>
-#include <aws/rekognition/model/GetFaceDetectionResult.h>
-#include <aws/rekognition/model/GetFaceSearchResult.h>
-#include <aws/rekognition/model/GetLabelDetectionResult.h>
-#include <aws/rekognition/model/GetPersonTrackingResult.h>
-#include <aws/rekognition/model/GetSegmentDetectionResult.h>
-#include <aws/rekognition/model/GetTextDetectionResult.h>
-#include <aws/rekognition/model/IndexFacesResult.h>
-#include <aws/rekognition/model/ListCollectionsResult.h>
-#include <aws/rekognition/model/ListDatasetEntriesResult.h>
-#include <aws/rekognition/model/ListDatasetLabelsResult.h>
-#include <aws/rekognition/model/ListFacesResult.h>
-#include <aws/rekognition/model/ListStreamProcessorsResult.h>
-#include <aws/rekognition/model/ListTagsForResourceResult.h>
-#include <aws/rekognition/model/RecognizeCelebritiesResult.h>
-#include <aws/rekognition/model/SearchFacesResult.h>
-#include <aws/rekognition/model/SearchFacesByImageResult.h>
-#include <aws/rekognition/model/StartCelebrityRecognitionResult.h>
-#include <aws/rekognition/model/StartContentModerationResult.h>
-#include <aws/rekognition/model/StartFaceDetectionResult.h>
-#include <aws/rekognition/model/StartFaceSearchResult.h>
-#include <aws/rekognition/model/StartLabelDetectionResult.h>
-#include <aws/rekognition/model/StartPersonTrackingResult.h>
-#include <aws/rekognition/model/StartProjectVersionResult.h>
-#include <aws/rekognition/model/StartSegmentDetectionResult.h>
-#include <aws/rekognition/model/StartStreamProcessorResult.h>
-#include <aws/rekognition/model/StartTextDetectionResult.h>
-#include <aws/rekognition/model/StopProjectVersionResult.h>
-#include <aws/rekognition/model/StopStreamProcessorResult.h>
-#include <aws/rekognition/model/TagResourceResult.h>
-#include <aws/rekognition/model/UntagResourceResult.h>
-#include <aws/rekognition/model/UpdateDatasetEntriesResult.h>
-#include <aws/rekognition/model/UpdateStreamProcessorResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/rekognition/RekognitionServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Rekognition
 {
-
-namespace Model
-{
-        class CompareFacesRequest;
-        class CreateCollectionRequest;
-        class CreateDatasetRequest;
-        class CreateProjectRequest;
-        class CreateProjectVersionRequest;
-        class CreateStreamProcessorRequest;
-        class DeleteCollectionRequest;
-        class DeleteDatasetRequest;
-        class DeleteFacesRequest;
-        class DeleteProjectRequest;
-        class DeleteProjectVersionRequest;
-        class DeleteStreamProcessorRequest;
-        class DescribeCollectionRequest;
-        class DescribeDatasetRequest;
-        class DescribeProjectVersionsRequest;
-        class DescribeProjectsRequest;
-        class DescribeStreamProcessorRequest;
-        class DetectCustomLabelsRequest;
-        class DetectFacesRequest;
-        class DetectLabelsRequest;
-        class DetectModerationLabelsRequest;
-        class DetectProtectiveEquipmentRequest;
-        class DetectTextRequest;
-        class DistributeDatasetEntriesRequest;
-        class GetCelebrityInfoRequest;
-        class GetCelebrityRecognitionRequest;
-        class GetContentModerationRequest;
-        class GetFaceDetectionRequest;
-        class GetFaceSearchRequest;
-        class GetLabelDetectionRequest;
-        class GetPersonTrackingRequest;
-        class GetSegmentDetectionRequest;
-        class GetTextDetectionRequest;
-        class IndexFacesRequest;
-        class ListCollectionsRequest;
-        class ListDatasetEntriesRequest;
-        class ListDatasetLabelsRequest;
-        class ListFacesRequest;
-        class ListStreamProcessorsRequest;
-        class ListTagsForResourceRequest;
-        class RecognizeCelebritiesRequest;
-        class SearchFacesRequest;
-        class SearchFacesByImageRequest;
-        class StartCelebrityRecognitionRequest;
-        class StartContentModerationRequest;
-        class StartFaceDetectionRequest;
-        class StartFaceSearchRequest;
-        class StartLabelDetectionRequest;
-        class StartPersonTrackingRequest;
-        class StartProjectVersionRequest;
-        class StartSegmentDetectionRequest;
-        class StartStreamProcessorRequest;
-        class StartTextDetectionRequest;
-        class StopProjectVersionRequest;
-        class StopStreamProcessorRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateDatasetEntriesRequest;
-        class UpdateStreamProcessorRequest;
-
-        typedef Aws::Utils::Outcome<CompareFacesResult, RekognitionError> CompareFacesOutcome;
-        typedef Aws::Utils::Outcome<CreateCollectionResult, RekognitionError> CreateCollectionOutcome;
-        typedef Aws::Utils::Outcome<CreateDatasetResult, RekognitionError> CreateDatasetOutcome;
-        typedef Aws::Utils::Outcome<CreateProjectResult, RekognitionError> CreateProjectOutcome;
-        typedef Aws::Utils::Outcome<CreateProjectVersionResult, RekognitionError> CreateProjectVersionOutcome;
-        typedef Aws::Utils::Outcome<CreateStreamProcessorResult, RekognitionError> CreateStreamProcessorOutcome;
-        typedef Aws::Utils::Outcome<DeleteCollectionResult, RekognitionError> DeleteCollectionOutcome;
-        typedef Aws::Utils::Outcome<DeleteDatasetResult, RekognitionError> DeleteDatasetOutcome;
-        typedef Aws::Utils::Outcome<DeleteFacesResult, RekognitionError> DeleteFacesOutcome;
-        typedef Aws::Utils::Outcome<DeleteProjectResult, RekognitionError> DeleteProjectOutcome;
-        typedef Aws::Utils::Outcome<DeleteProjectVersionResult, RekognitionError> DeleteProjectVersionOutcome;
-        typedef Aws::Utils::Outcome<DeleteStreamProcessorResult, RekognitionError> DeleteStreamProcessorOutcome;
-        typedef Aws::Utils::Outcome<DescribeCollectionResult, RekognitionError> DescribeCollectionOutcome;
-        typedef Aws::Utils::Outcome<DescribeDatasetResult, RekognitionError> DescribeDatasetOutcome;
-        typedef Aws::Utils::Outcome<DescribeProjectVersionsResult, RekognitionError> DescribeProjectVersionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeProjectsResult, RekognitionError> DescribeProjectsOutcome;
-        typedef Aws::Utils::Outcome<DescribeStreamProcessorResult, RekognitionError> DescribeStreamProcessorOutcome;
-        typedef Aws::Utils::Outcome<DetectCustomLabelsResult, RekognitionError> DetectCustomLabelsOutcome;
-        typedef Aws::Utils::Outcome<DetectFacesResult, RekognitionError> DetectFacesOutcome;
-        typedef Aws::Utils::Outcome<DetectLabelsResult, RekognitionError> DetectLabelsOutcome;
-        typedef Aws::Utils::Outcome<DetectModerationLabelsResult, RekognitionError> DetectModerationLabelsOutcome;
-        typedef Aws::Utils::Outcome<DetectProtectiveEquipmentResult, RekognitionError> DetectProtectiveEquipmentOutcome;
-        typedef Aws::Utils::Outcome<DetectTextResult, RekognitionError> DetectTextOutcome;
-        typedef Aws::Utils::Outcome<DistributeDatasetEntriesResult, RekognitionError> DistributeDatasetEntriesOutcome;
-        typedef Aws::Utils::Outcome<GetCelebrityInfoResult, RekognitionError> GetCelebrityInfoOutcome;
-        typedef Aws::Utils::Outcome<GetCelebrityRecognitionResult, RekognitionError> GetCelebrityRecognitionOutcome;
-        typedef Aws::Utils::Outcome<GetContentModerationResult, RekognitionError> GetContentModerationOutcome;
-        typedef Aws::Utils::Outcome<GetFaceDetectionResult, RekognitionError> GetFaceDetectionOutcome;
-        typedef Aws::Utils::Outcome<GetFaceSearchResult, RekognitionError> GetFaceSearchOutcome;
-        typedef Aws::Utils::Outcome<GetLabelDetectionResult, RekognitionError> GetLabelDetectionOutcome;
-        typedef Aws::Utils::Outcome<GetPersonTrackingResult, RekognitionError> GetPersonTrackingOutcome;
-        typedef Aws::Utils::Outcome<GetSegmentDetectionResult, RekognitionError> GetSegmentDetectionOutcome;
-        typedef Aws::Utils::Outcome<GetTextDetectionResult, RekognitionError> GetTextDetectionOutcome;
-        typedef Aws::Utils::Outcome<IndexFacesResult, RekognitionError> IndexFacesOutcome;
-        typedef Aws::Utils::Outcome<ListCollectionsResult, RekognitionError> ListCollectionsOutcome;
-        typedef Aws::Utils::Outcome<ListDatasetEntriesResult, RekognitionError> ListDatasetEntriesOutcome;
-        typedef Aws::Utils::Outcome<ListDatasetLabelsResult, RekognitionError> ListDatasetLabelsOutcome;
-        typedef Aws::Utils::Outcome<ListFacesResult, RekognitionError> ListFacesOutcome;
-        typedef Aws::Utils::Outcome<ListStreamProcessorsResult, RekognitionError> ListStreamProcessorsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, RekognitionError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<RecognizeCelebritiesResult, RekognitionError> RecognizeCelebritiesOutcome;
-        typedef Aws::Utils::Outcome<SearchFacesResult, RekognitionError> SearchFacesOutcome;
-        typedef Aws::Utils::Outcome<SearchFacesByImageResult, RekognitionError> SearchFacesByImageOutcome;
-        typedef Aws::Utils::Outcome<StartCelebrityRecognitionResult, RekognitionError> StartCelebrityRecognitionOutcome;
-        typedef Aws::Utils::Outcome<StartContentModerationResult, RekognitionError> StartContentModerationOutcome;
-        typedef Aws::Utils::Outcome<StartFaceDetectionResult, RekognitionError> StartFaceDetectionOutcome;
-        typedef Aws::Utils::Outcome<StartFaceSearchResult, RekognitionError> StartFaceSearchOutcome;
-        typedef Aws::Utils::Outcome<StartLabelDetectionResult, RekognitionError> StartLabelDetectionOutcome;
-        typedef Aws::Utils::Outcome<StartPersonTrackingResult, RekognitionError> StartPersonTrackingOutcome;
-        typedef Aws::Utils::Outcome<StartProjectVersionResult, RekognitionError> StartProjectVersionOutcome;
-        typedef Aws::Utils::Outcome<StartSegmentDetectionResult, RekognitionError> StartSegmentDetectionOutcome;
-        typedef Aws::Utils::Outcome<StartStreamProcessorResult, RekognitionError> StartStreamProcessorOutcome;
-        typedef Aws::Utils::Outcome<StartTextDetectionResult, RekognitionError> StartTextDetectionOutcome;
-        typedef Aws::Utils::Outcome<StopProjectVersionResult, RekognitionError> StopProjectVersionOutcome;
-        typedef Aws::Utils::Outcome<StopStreamProcessorResult, RekognitionError> StopStreamProcessorOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, RekognitionError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, RekognitionError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDatasetEntriesResult, RekognitionError> UpdateDatasetEntriesOutcome;
-        typedef Aws::Utils::Outcome<UpdateStreamProcessorResult, RekognitionError> UpdateStreamProcessorOutcome;
-
-        typedef std::future<CompareFacesOutcome> CompareFacesOutcomeCallable;
-        typedef std::future<CreateCollectionOutcome> CreateCollectionOutcomeCallable;
-        typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
-        typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
-        typedef std::future<CreateProjectVersionOutcome> CreateProjectVersionOutcomeCallable;
-        typedef std::future<CreateStreamProcessorOutcome> CreateStreamProcessorOutcomeCallable;
-        typedef std::future<DeleteCollectionOutcome> DeleteCollectionOutcomeCallable;
-        typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
-        typedef std::future<DeleteFacesOutcome> DeleteFacesOutcomeCallable;
-        typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
-        typedef std::future<DeleteProjectVersionOutcome> DeleteProjectVersionOutcomeCallable;
-        typedef std::future<DeleteStreamProcessorOutcome> DeleteStreamProcessorOutcomeCallable;
-        typedef std::future<DescribeCollectionOutcome> DescribeCollectionOutcomeCallable;
-        typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
-        typedef std::future<DescribeProjectVersionsOutcome> DescribeProjectVersionsOutcomeCallable;
-        typedef std::future<DescribeProjectsOutcome> DescribeProjectsOutcomeCallable;
-        typedef std::future<DescribeStreamProcessorOutcome> DescribeStreamProcessorOutcomeCallable;
-        typedef std::future<DetectCustomLabelsOutcome> DetectCustomLabelsOutcomeCallable;
-        typedef std::future<DetectFacesOutcome> DetectFacesOutcomeCallable;
-        typedef std::future<DetectLabelsOutcome> DetectLabelsOutcomeCallable;
-        typedef std::future<DetectModerationLabelsOutcome> DetectModerationLabelsOutcomeCallable;
-        typedef std::future<DetectProtectiveEquipmentOutcome> DetectProtectiveEquipmentOutcomeCallable;
-        typedef std::future<DetectTextOutcome> DetectTextOutcomeCallable;
-        typedef std::future<DistributeDatasetEntriesOutcome> DistributeDatasetEntriesOutcomeCallable;
-        typedef std::future<GetCelebrityInfoOutcome> GetCelebrityInfoOutcomeCallable;
-        typedef std::future<GetCelebrityRecognitionOutcome> GetCelebrityRecognitionOutcomeCallable;
-        typedef std::future<GetContentModerationOutcome> GetContentModerationOutcomeCallable;
-        typedef std::future<GetFaceDetectionOutcome> GetFaceDetectionOutcomeCallable;
-        typedef std::future<GetFaceSearchOutcome> GetFaceSearchOutcomeCallable;
-        typedef std::future<GetLabelDetectionOutcome> GetLabelDetectionOutcomeCallable;
-        typedef std::future<GetPersonTrackingOutcome> GetPersonTrackingOutcomeCallable;
-        typedef std::future<GetSegmentDetectionOutcome> GetSegmentDetectionOutcomeCallable;
-        typedef std::future<GetTextDetectionOutcome> GetTextDetectionOutcomeCallable;
-        typedef std::future<IndexFacesOutcome> IndexFacesOutcomeCallable;
-        typedef std::future<ListCollectionsOutcome> ListCollectionsOutcomeCallable;
-        typedef std::future<ListDatasetEntriesOutcome> ListDatasetEntriesOutcomeCallable;
-        typedef std::future<ListDatasetLabelsOutcome> ListDatasetLabelsOutcomeCallable;
-        typedef std::future<ListFacesOutcome> ListFacesOutcomeCallable;
-        typedef std::future<ListStreamProcessorsOutcome> ListStreamProcessorsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<RecognizeCelebritiesOutcome> RecognizeCelebritiesOutcomeCallable;
-        typedef std::future<SearchFacesOutcome> SearchFacesOutcomeCallable;
-        typedef std::future<SearchFacesByImageOutcome> SearchFacesByImageOutcomeCallable;
-        typedef std::future<StartCelebrityRecognitionOutcome> StartCelebrityRecognitionOutcomeCallable;
-        typedef std::future<StartContentModerationOutcome> StartContentModerationOutcomeCallable;
-        typedef std::future<StartFaceDetectionOutcome> StartFaceDetectionOutcomeCallable;
-        typedef std::future<StartFaceSearchOutcome> StartFaceSearchOutcomeCallable;
-        typedef std::future<StartLabelDetectionOutcome> StartLabelDetectionOutcomeCallable;
-        typedef std::future<StartPersonTrackingOutcome> StartPersonTrackingOutcomeCallable;
-        typedef std::future<StartProjectVersionOutcome> StartProjectVersionOutcomeCallable;
-        typedef std::future<StartSegmentDetectionOutcome> StartSegmentDetectionOutcomeCallable;
-        typedef std::future<StartStreamProcessorOutcome> StartStreamProcessorOutcomeCallable;
-        typedef std::future<StartTextDetectionOutcome> StartTextDetectionOutcomeCallable;
-        typedef std::future<StopProjectVersionOutcome> StopProjectVersionOutcomeCallable;
-        typedef std::future<StopStreamProcessorOutcome> StopStreamProcessorOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateDatasetEntriesOutcome> UpdateDatasetEntriesOutcomeCallable;
-        typedef std::future<UpdateStreamProcessorOutcome> UpdateStreamProcessorOutcomeCallable;
-} // namespace Model
-
-  class RekognitionClient;
-
-    typedef std::function<void(const RekognitionClient*, const Model::CompareFacesRequest&, const Model::CompareFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompareFacesResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::CreateCollectionRequest&, const Model::CreateCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCollectionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::CreateProjectVersionRequest&, const Model::CreateProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectVersionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::CreateStreamProcessorRequest&, const Model::CreateStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamProcessorResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DeleteCollectionRequest&, const Model::DeleteCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCollectionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DeleteDatasetRequest&, const Model::DeleteDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatasetResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DeleteFacesRequest&, const Model::DeleteFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFacesResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DeleteProjectVersionRequest&, const Model::DeleteProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectVersionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DeleteStreamProcessorRequest&, const Model::DeleteStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamProcessorResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DescribeCollectionRequest&, const Model::DescribeCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCollectionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DescribeProjectVersionsRequest&, const Model::DescribeProjectVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectVersionsResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DescribeProjectsRequest&, const Model::DescribeProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectsResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DescribeStreamProcessorRequest&, const Model::DescribeStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamProcessorResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DetectCustomLabelsRequest&, const Model::DetectCustomLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectCustomLabelsResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DetectFacesRequest&, const Model::DetectFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectFacesResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DetectLabelsRequest&, const Model::DetectLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectLabelsResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DetectModerationLabelsRequest&, const Model::DetectModerationLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectModerationLabelsResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DetectProtectiveEquipmentRequest&, const Model::DetectProtectiveEquipmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectProtectiveEquipmentResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DetectTextRequest&, const Model::DetectTextOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectTextResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::DistributeDatasetEntriesRequest&, const Model::DistributeDatasetEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DistributeDatasetEntriesResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::GetCelebrityInfoRequest&, const Model::GetCelebrityInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCelebrityInfoResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::GetCelebrityRecognitionRequest&, const Model::GetCelebrityRecognitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCelebrityRecognitionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::GetContentModerationRequest&, const Model::GetContentModerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContentModerationResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::GetFaceDetectionRequest&, const Model::GetFaceDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFaceDetectionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::GetFaceSearchRequest&, const Model::GetFaceSearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFaceSearchResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::GetLabelDetectionRequest&, const Model::GetLabelDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLabelDetectionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::GetPersonTrackingRequest&, const Model::GetPersonTrackingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPersonTrackingResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::GetSegmentDetectionRequest&, const Model::GetSegmentDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSegmentDetectionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::GetTextDetectionRequest&, const Model::GetTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTextDetectionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::IndexFacesRequest&, const Model::IndexFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IndexFacesResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::ListCollectionsRequest&, const Model::ListCollectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCollectionsResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::ListDatasetEntriesRequest&, const Model::ListDatasetEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetEntriesResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::ListDatasetLabelsRequest&, const Model::ListDatasetLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetLabelsResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::ListFacesRequest&, const Model::ListFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFacesResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::ListStreamProcessorsRequest&, const Model::ListStreamProcessorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStreamProcessorsResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::RecognizeCelebritiesRequest&, const Model::RecognizeCelebritiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecognizeCelebritiesResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::SearchFacesRequest&, const Model::SearchFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFacesResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::SearchFacesByImageRequest&, const Model::SearchFacesByImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFacesByImageResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::StartCelebrityRecognitionRequest&, const Model::StartCelebrityRecognitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCelebrityRecognitionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::StartContentModerationRequest&, const Model::StartContentModerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContentModerationResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::StartFaceDetectionRequest&, const Model::StartFaceDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFaceDetectionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::StartFaceSearchRequest&, const Model::StartFaceSearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFaceSearchResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::StartLabelDetectionRequest&, const Model::StartLabelDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLabelDetectionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::StartPersonTrackingRequest&, const Model::StartPersonTrackingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPersonTrackingResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::StartProjectVersionRequest&, const Model::StartProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartProjectVersionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::StartSegmentDetectionRequest&, const Model::StartSegmentDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSegmentDetectionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::StartStreamProcessorRequest&, const Model::StartStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStreamProcessorResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::StartTextDetectionRequest&, const Model::StartTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTextDetectionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::StopProjectVersionRequest&, const Model::StopProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopProjectVersionResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::StopStreamProcessorRequest&, const Model::StopStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamProcessorResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::UpdateDatasetEntriesRequest&, const Model::UpdateDatasetEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatasetEntriesResponseReceivedHandler;
-    typedef std::function<void(const RekognitionClient*, const Model::UpdateStreamProcessorRequest&, const Model::UpdateStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStreamProcessorResponseReceivedHandler;
-
   /**
    * <p>This is the API Reference for <a
    * href="https://docs.aws.amazon.com/rekognition/latest/dg/images.html">Amazon
@@ -399,6 +61,8 @@ namespace Model
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchFacesByImage.html">SearchFacesByImage</a>
    * </p> </li> </ul> <p> <b>Amazon Rekognition Custom Labels</b> </p> <ul> <li> <p>
    * <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CopyProjectVersion.html">CopyProjectVersion</a>
+   * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateDataset.html">CreateDataset</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateProject.html">CreateProject</a>
@@ -408,6 +72,8 @@ namespace Model
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteDataset.html">DeleteDataset</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProject.html">DeleteProject</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProjectPolicy.html">DeleteProjectPolicy</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_DeleteProjectVersion.html">DeleteProjectVersion</a>
    * </p> </li> <li> <p> <a
@@ -424,6 +90,10 @@ namespace Model
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListDatasetEntries.html">ListDatasetEntries</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListDatasetLabels.html">ListDatasetLabels</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListProjectPolicies.html">ListProjectPolicies</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_PutProjectPolicy.html">PutProjectPolicy</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartProjectVersion.html">StartProjectVersion</a>
    * </p> </li> <li> <p> <a
@@ -476,6 +146,8 @@ namespace Model
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StartStreamProcessor.html">StartStreamProcessor</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_StopStreamProcessor.html">StopStreamProcessor</a>
+   * </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_UpdateStreamProcessor.html">UpdateStreamProcessor</a>
    * </p> </li> </ul>
    */
   class AWS_REKOGNITION_API RekognitionClient : public Aws::Client::AWSJsonClient
@@ -493,14 +165,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        RekognitionClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        RekognitionClient(const Aws::Auth::AWSCredentials& credentials,
+                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         RekognitionClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~RekognitionClient();
 
@@ -564,6 +237,40 @@ namespace Model
          * An Async wrapper for CompareFaces that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CompareFacesAsync(const Model::CompareFacesRequest& request, const CompareFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Copies a version of an Amazon Rekognition Custom Labels model from a source
+         * project to a destination project. The source and destination projects can be in
+         * different AWS accounts but must be in the same AWS Region. You can't copy a
+         * model to another AWS service. </p> <p>To copy a model version to a different AWS
+         * account, you need to create a resource-based policy known as a <i>project
+         * policy</i>. You attach the project policy to the source project by calling
+         * <a>PutProjectPolicy</a>. The project policy gives permission to copy the model
+         * version from a trusting AWS account to a trusted account.</p> <p>For more
+         * information creating and attaching a project policy, see Attaching a project
+         * policy (SDK) in the <i>Amazon Rekognition Custom Labels Developer Guide</i>.
+         * </p> <p>If you are copying a model version to a project in the same AWS account,
+         * you don't need to create a project policy.</p>  <p>To copy a model, the
+         * destination project, source project, and source model version must already
+         * exist.</p>  <p>Copying a model version takes a while to complete. To get
+         * the current status, call <a>DescribeProjectVersions</a> and check the value of
+         * <code>Status</code> in the <a>ProjectVersionDescription</a> object. The copy
+         * operation has finished when the value of <code>Status</code> is
+         * <code>COPYING_COMPLETED</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CopyProjectVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CopyProjectVersionOutcome CopyProjectVersion(const Model::CopyProjectVersionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CopyProjectVersion that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CopyProjectVersionOutcomeCallable CopyProjectVersionCallable(const Model::CopyProjectVersionRequest& request) const;
+
+        /**
+         * An Async wrapper for CopyProjectVersion that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CopyProjectVersionAsync(const Model::CopyProjectVersionRequest& request, const CopyProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a collection in an AWS Region. You can add faces to the collection
@@ -809,9 +516,10 @@ namespace Model
          * <a>DeleteProjectVersion</a>.</p> <p> <code>DeleteProject</code> is an
          * asynchronous operation. To check if the project is deleted, call
          * <a>DescribeProjects</a>. The project is deleted when the project no longer
-         * appears in the response.</p> <p>This operation requires permissions to perform
-         * the <code>rekognition:DeleteProject</code> action. </p><p><h3>See Also:</h3>  
-         * <a
+         * appears in the response. Be aware that deleting a given project will also delete
+         * any <code>ProjectPolicies</code> associated with that project.</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:DeleteProject</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">AWS
          * API Reference</a></p>
          */
@@ -826,6 +534,25 @@ namespace Model
          * An Async wrapper for DeleteProject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an existing project policy.</p> <p>To get a list of project policies
+         * attached to a project, call <a>ListProjectPolicies</a>. To attach a project
+         * policy to a project, call <a>PutProjectPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteProjectPolicyOutcome DeleteProjectPolicy(const Model::DeleteProjectPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteProjectPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteProjectPolicyOutcomeCallable DeleteProjectPolicyCallable(const Model::DeleteProjectPolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteProjectPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteProjectPolicyAsync(const Model::DeleteProjectPolicyRequest& request, const DeleteProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon Rekognition Custom Labels model. </p> <p>You can't delete a
@@ -1814,6 +1541,26 @@ namespace Model
         virtual void ListFacesAsync(const Model::ListFacesRequest& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets a list of the project policies attached to a project.</p> <p>To attach a
+         * project policy to a project, call <a>PutProjectPolicy</a>. To remove a project
+         * policy from a project, call <a>DeleteProjectPolicy</a>.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListProjectPolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListProjectPoliciesOutcome ListProjectPolicies(const Model::ListProjectPoliciesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListProjectPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListProjectPoliciesOutcomeCallable ListProjectPoliciesCallable(const Model::ListProjectPoliciesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListProjectPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListProjectPoliciesAsync(const Model::ListProjectPoliciesRequest& request, const ListProjectPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of stream processors that you have created with
          * <a>CreateStreamProcessor</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListStreamProcessors">AWS
@@ -1850,6 +1597,36 @@ namespace Model
          * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Attaches a project policy to a Amazon Rekognition Custom Labels project in a
+         * trusting AWS account. A project policy specifies that a trusted AWS account can
+         * copy a model version from a trusting AWS account to a project in the trusted AWS
+         * account. To copy a model version you use the <a>CopyProjectVersion</a>
+         * operation.</p> <p>For more information about the format of a project policy
+         * document, see Attaching a project policy (SDK) in the <i>Amazon Rekognition
+         * Custom Labels Developer Guide</i>. </p> <p>The response from
+         * <code>PutProjectPolicy</code> is a revision ID for the project policy. You can
+         * attach multiple project policies to a project. You can also update an existing
+         * project policy by specifying the policy revision ID of the existing policy.</p>
+         * <p>To remove a project policy from a project, call <a>DeleteProjectPolicy</a>.
+         * To get a list of project policies attached to a project, call
+         * <a>ListProjectPolicies</a>. </p> <p>You copy a model version by calling
+         * <a>CopyProjectVersion</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PutProjectPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutProjectPolicyOutcome PutProjectPolicy(const Model::PutProjectPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutProjectPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutProjectPolicyOutcomeCallable PutProjectPolicyCallable(const Model::PutProjectPolicyRequest& request) const;
+
+        /**
+         * An Async wrapper for PutProjectPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutProjectPolicyAsync(const Model::PutProjectPolicyRequest& request, const PutProjectPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an array of celebrities recognized in the input image. For more
@@ -2163,8 +1940,10 @@ namespace Model
          * <a>DescribeProjectVersions</a>.</p> <p>Once the model is running, you can detect
          * custom labels in new images by calling <a>DetectCustomLabels</a>.</p> 
          * <p>You are charged for the amount of time that the model is running. To stop a
-         * running model, call <a>StopProjectVersion</a>.</p>  <p>This operation
-         * requires permissions to perform the <code>rekognition:StartProjectVersion</code>
+         * running model, call <a>StopProjectVersion</a>.</p>  <p>For more
+         * information, see <i>Running a trained Amazon Rekognition Custom Labels model</i>
+         * in the Amazon Rekognition Custom Labels Guide.</p> <p>This operation requires
+         * permissions to perform the <code>rekognition:StartProjectVersion</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">AWS
          * API Reference</a></p>
@@ -2407,65 +2186,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CompareFacesAsyncHelper(const Model::CompareFacesRequest& request, const CompareFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateCollectionAsyncHelper(const Model::CreateCollectionRequest& request, const CreateCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateDatasetAsyncHelper(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateProjectVersionAsyncHelper(const Model::CreateProjectVersionRequest& request, const CreateProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateStreamProcessorAsyncHelper(const Model::CreateStreamProcessorRequest& request, const CreateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCollectionAsyncHelper(const Model::DeleteCollectionRequest& request, const DeleteCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteDatasetAsyncHelper(const Model::DeleteDatasetRequest& request, const DeleteDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteFacesAsyncHelper(const Model::DeleteFacesRequest& request, const DeleteFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProjectVersionAsyncHelper(const Model::DeleteProjectVersionRequest& request, const DeleteProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteStreamProcessorAsyncHelper(const Model::DeleteStreamProcessorRequest& request, const DeleteStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeCollectionAsyncHelper(const Model::DescribeCollectionRequest& request, const DescribeCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDatasetAsyncHelper(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeProjectVersionsAsyncHelper(const Model::DescribeProjectVersionsRequest& request, const DescribeProjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeProjectsAsyncHelper(const Model::DescribeProjectsRequest& request, const DescribeProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeStreamProcessorAsyncHelper(const Model::DescribeStreamProcessorRequest& request, const DescribeStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetectCustomLabelsAsyncHelper(const Model::DetectCustomLabelsRequest& request, const DetectCustomLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetectFacesAsyncHelper(const Model::DetectFacesRequest& request, const DetectFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetectLabelsAsyncHelper(const Model::DetectLabelsRequest& request, const DetectLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetectModerationLabelsAsyncHelper(const Model::DetectModerationLabelsRequest& request, const DetectModerationLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetectProtectiveEquipmentAsyncHelper(const Model::DetectProtectiveEquipmentRequest& request, const DetectProtectiveEquipmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DetectTextAsyncHelper(const Model::DetectTextRequest& request, const DetectTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DistributeDatasetEntriesAsyncHelper(const Model::DistributeDatasetEntriesRequest& request, const DistributeDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCelebrityInfoAsyncHelper(const Model::GetCelebrityInfoRequest& request, const GetCelebrityInfoResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCelebrityRecognitionAsyncHelper(const Model::GetCelebrityRecognitionRequest& request, const GetCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetContentModerationAsyncHelper(const Model::GetContentModerationRequest& request, const GetContentModerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFaceDetectionAsyncHelper(const Model::GetFaceDetectionRequest& request, const GetFaceDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFaceSearchAsyncHelper(const Model::GetFaceSearchRequest& request, const GetFaceSearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetLabelDetectionAsyncHelper(const Model::GetLabelDetectionRequest& request, const GetLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetPersonTrackingAsyncHelper(const Model::GetPersonTrackingRequest& request, const GetPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSegmentDetectionAsyncHelper(const Model::GetSegmentDetectionRequest& request, const GetSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetTextDetectionAsyncHelper(const Model::GetTextDetectionRequest& request, const GetTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void IndexFacesAsyncHelper(const Model::IndexFacesRequest& request, const IndexFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCollectionsAsyncHelper(const Model::ListCollectionsRequest& request, const ListCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDatasetEntriesAsyncHelper(const Model::ListDatasetEntriesRequest& request, const ListDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListDatasetLabelsAsyncHelper(const Model::ListDatasetLabelsRequest& request, const ListDatasetLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListFacesAsyncHelper(const Model::ListFacesRequest& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListStreamProcessorsAsyncHelper(const Model::ListStreamProcessorsRequest& request, const ListStreamProcessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RecognizeCelebritiesAsyncHelper(const Model::RecognizeCelebritiesRequest& request, const RecognizeCelebritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SearchFacesAsyncHelper(const Model::SearchFacesRequest& request, const SearchFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SearchFacesByImageAsyncHelper(const Model::SearchFacesByImageRequest& request, const SearchFacesByImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartCelebrityRecognitionAsyncHelper(const Model::StartCelebrityRecognitionRequest& request, const StartCelebrityRecognitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartContentModerationAsyncHelper(const Model::StartContentModerationRequest& request, const StartContentModerationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartFaceDetectionAsyncHelper(const Model::StartFaceDetectionRequest& request, const StartFaceDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartFaceSearchAsyncHelper(const Model::StartFaceSearchRequest& request, const StartFaceSearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartLabelDetectionAsyncHelper(const Model::StartLabelDetectionRequest& request, const StartLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartPersonTrackingAsyncHelper(const Model::StartPersonTrackingRequest& request, const StartPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartProjectVersionAsyncHelper(const Model::StartProjectVersionRequest& request, const StartProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartSegmentDetectionAsyncHelper(const Model::StartSegmentDetectionRequest& request, const StartSegmentDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartStreamProcessorAsyncHelper(const Model::StartStreamProcessorRequest& request, const StartStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartTextDetectionAsyncHelper(const Model::StartTextDetectionRequest& request, const StartTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopProjectVersionAsyncHelper(const Model::StopProjectVersionRequest& request, const StopProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopStreamProcessorAsyncHelper(const Model::StopStreamProcessorRequest& request, const StopStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateDatasetEntriesAsyncHelper(const Model::UpdateDatasetEntriesRequest& request, const UpdateDatasetEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateStreamProcessorAsyncHelper(const Model::UpdateStreamProcessorRequest& request, const UpdateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

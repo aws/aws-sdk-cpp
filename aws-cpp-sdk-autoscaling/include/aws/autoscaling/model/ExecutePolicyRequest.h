@@ -235,19 +235,19 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     bool m_honorCooldown;
-    bool m_honorCooldownHasBeenSet;
+    bool m_honorCooldownHasBeenSet = false;
 
     double m_metricValue;
-    bool m_metricValueHasBeenSet;
+    bool m_metricValueHasBeenSet = false;
 
     double m_breachThreshold;
-    bool m_breachThresholdHasBeenSet;
+    bool m_breachThresholdHasBeenSet = false;
   };
 
 } // namespace Model

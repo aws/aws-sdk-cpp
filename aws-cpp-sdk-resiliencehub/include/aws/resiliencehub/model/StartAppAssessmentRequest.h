@@ -335,19 +335,19 @@ namespace Model
   private:
 
     Aws::String m_appArn;
-    bool m_appArnHasBeenSet;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_appVersion;
-    bool m_appVersionHasBeenSet;
+    bool m_appVersionHasBeenSet = false;
 
     Aws::String m_assessmentName;
-    bool m_assessmentNameHasBeenSet;
+    bool m_assessmentNameHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

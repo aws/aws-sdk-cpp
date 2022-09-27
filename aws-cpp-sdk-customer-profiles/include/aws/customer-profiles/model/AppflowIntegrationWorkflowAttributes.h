@@ -168,13 +168,13 @@ namespace Model
   private:
 
     SourceConnectorType m_sourceConnectorType;
-    bool m_sourceConnectorTypeHasBeenSet;
+    bool m_sourceConnectorTypeHasBeenSet = false;
 
     Aws::String m_connectorProfileName;
-    bool m_connectorProfileNameHasBeenSet;
+    bool m_connectorProfileNameHasBeenSet = false;
 
     Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet;
+    bool m_roleArnHasBeenSet = false;
   };
 
 } // namespace Model

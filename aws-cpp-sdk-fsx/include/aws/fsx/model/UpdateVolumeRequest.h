@@ -240,19 +240,19 @@ namespace Model
   private:
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_volumeId;
-    bool m_volumeIdHasBeenSet;
+    bool m_volumeIdHasBeenSet = false;
 
     UpdateOntapVolumeConfiguration m_ontapConfiguration;
-    bool m_ontapConfigurationHasBeenSet;
+    bool m_ontapConfigurationHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     UpdateOpenZFSVolumeConfiguration m_openZFSConfiguration;
-    bool m_openZFSConfigurationHasBeenSet;
+    bool m_openZFSConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

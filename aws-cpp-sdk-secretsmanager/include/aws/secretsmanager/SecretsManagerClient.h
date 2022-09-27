@@ -5,167 +5,15 @@
 
 #pragma once
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
-#include <aws/secretsmanager/SecretsManagerErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/secretsmanager/model/CancelRotateSecretResult.h>
-#include <aws/secretsmanager/model/CreateSecretResult.h>
-#include <aws/secretsmanager/model/DeleteResourcePolicyResult.h>
-#include <aws/secretsmanager/model/DeleteSecretResult.h>
-#include <aws/secretsmanager/model/DescribeSecretResult.h>
-#include <aws/secretsmanager/model/GetRandomPasswordResult.h>
-#include <aws/secretsmanager/model/GetResourcePolicyResult.h>
-#include <aws/secretsmanager/model/GetSecretValueResult.h>
-#include <aws/secretsmanager/model/ListSecretVersionIdsResult.h>
-#include <aws/secretsmanager/model/ListSecretsResult.h>
-#include <aws/secretsmanager/model/PutResourcePolicyResult.h>
-#include <aws/secretsmanager/model/PutSecretValueResult.h>
-#include <aws/secretsmanager/model/RemoveRegionsFromReplicationResult.h>
-#include <aws/secretsmanager/model/ReplicateSecretToRegionsResult.h>
-#include <aws/secretsmanager/model/RestoreSecretResult.h>
-#include <aws/secretsmanager/model/RotateSecretResult.h>
-#include <aws/secretsmanager/model/StopReplicationToReplicaResult.h>
-#include <aws/secretsmanager/model/UpdateSecretResult.h>
-#include <aws/secretsmanager/model/UpdateSecretVersionStageResult.h>
-#include <aws/secretsmanager/model/ValidateResourcePolicyResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/secretsmanager/SecretsManagerServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace SecretsManager
 {
-
-namespace Model
-{
-        class CancelRotateSecretRequest;
-        class CreateSecretRequest;
-        class DeleteResourcePolicyRequest;
-        class DeleteSecretRequest;
-        class DescribeSecretRequest;
-        class GetRandomPasswordRequest;
-        class GetResourcePolicyRequest;
-        class GetSecretValueRequest;
-        class ListSecretVersionIdsRequest;
-        class ListSecretsRequest;
-        class PutResourcePolicyRequest;
-        class PutSecretValueRequest;
-        class RemoveRegionsFromReplicationRequest;
-        class ReplicateSecretToRegionsRequest;
-        class RestoreSecretRequest;
-        class RotateSecretRequest;
-        class StopReplicationToReplicaRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateSecretRequest;
-        class UpdateSecretVersionStageRequest;
-        class ValidateResourcePolicyRequest;
-
-        typedef Aws::Utils::Outcome<CancelRotateSecretResult, SecretsManagerError> CancelRotateSecretOutcome;
-        typedef Aws::Utils::Outcome<CreateSecretResult, SecretsManagerError> CreateSecretOutcome;
-        typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, SecretsManagerError> DeleteResourcePolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteSecretResult, SecretsManagerError> DeleteSecretOutcome;
-        typedef Aws::Utils::Outcome<DescribeSecretResult, SecretsManagerError> DescribeSecretOutcome;
-        typedef Aws::Utils::Outcome<GetRandomPasswordResult, SecretsManagerError> GetRandomPasswordOutcome;
-        typedef Aws::Utils::Outcome<GetResourcePolicyResult, SecretsManagerError> GetResourcePolicyOutcome;
-        typedef Aws::Utils::Outcome<GetSecretValueResult, SecretsManagerError> GetSecretValueOutcome;
-        typedef Aws::Utils::Outcome<ListSecretVersionIdsResult, SecretsManagerError> ListSecretVersionIdsOutcome;
-        typedef Aws::Utils::Outcome<ListSecretsResult, SecretsManagerError> ListSecretsOutcome;
-        typedef Aws::Utils::Outcome<PutResourcePolicyResult, SecretsManagerError> PutResourcePolicyOutcome;
-        typedef Aws::Utils::Outcome<PutSecretValueResult, SecretsManagerError> PutSecretValueOutcome;
-        typedef Aws::Utils::Outcome<RemoveRegionsFromReplicationResult, SecretsManagerError> RemoveRegionsFromReplicationOutcome;
-        typedef Aws::Utils::Outcome<ReplicateSecretToRegionsResult, SecretsManagerError> ReplicateSecretToRegionsOutcome;
-        typedef Aws::Utils::Outcome<RestoreSecretResult, SecretsManagerError> RestoreSecretOutcome;
-        typedef Aws::Utils::Outcome<RotateSecretResult, SecretsManagerError> RotateSecretOutcome;
-        typedef Aws::Utils::Outcome<StopReplicationToReplicaResult, SecretsManagerError> StopReplicationToReplicaOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SecretsManagerError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, SecretsManagerError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateSecretResult, SecretsManagerError> UpdateSecretOutcome;
-        typedef Aws::Utils::Outcome<UpdateSecretVersionStageResult, SecretsManagerError> UpdateSecretVersionStageOutcome;
-        typedef Aws::Utils::Outcome<ValidateResourcePolicyResult, SecretsManagerError> ValidateResourcePolicyOutcome;
-
-        typedef std::future<CancelRotateSecretOutcome> CancelRotateSecretOutcomeCallable;
-        typedef std::future<CreateSecretOutcome> CreateSecretOutcomeCallable;
-        typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
-        typedef std::future<DeleteSecretOutcome> DeleteSecretOutcomeCallable;
-        typedef std::future<DescribeSecretOutcome> DescribeSecretOutcomeCallable;
-        typedef std::future<GetRandomPasswordOutcome> GetRandomPasswordOutcomeCallable;
-        typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
-        typedef std::future<GetSecretValueOutcome> GetSecretValueOutcomeCallable;
-        typedef std::future<ListSecretVersionIdsOutcome> ListSecretVersionIdsOutcomeCallable;
-        typedef std::future<ListSecretsOutcome> ListSecretsOutcomeCallable;
-        typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
-        typedef std::future<PutSecretValueOutcome> PutSecretValueOutcomeCallable;
-        typedef std::future<RemoveRegionsFromReplicationOutcome> RemoveRegionsFromReplicationOutcomeCallable;
-        typedef std::future<ReplicateSecretToRegionsOutcome> ReplicateSecretToRegionsOutcomeCallable;
-        typedef std::future<RestoreSecretOutcome> RestoreSecretOutcomeCallable;
-        typedef std::future<RotateSecretOutcome> RotateSecretOutcomeCallable;
-        typedef std::future<StopReplicationToReplicaOutcome> StopReplicationToReplicaOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateSecretOutcome> UpdateSecretOutcomeCallable;
-        typedef std::future<UpdateSecretVersionStageOutcome> UpdateSecretVersionStageOutcomeCallable;
-        typedef std::future<ValidateResourcePolicyOutcome> ValidateResourcePolicyOutcomeCallable;
-} // namespace Model
-
-  class SecretsManagerClient;
-
-    typedef std::function<void(const SecretsManagerClient*, const Model::CancelRotateSecretRequest&, const Model::CancelRotateSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelRotateSecretResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::CreateSecretRequest&, const Model::CreateSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecretResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::DeleteSecretRequest&, const Model::DeleteSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSecretResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::DescribeSecretRequest&, const Model::DescribeSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecretResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::GetRandomPasswordRequest&, const Model::GetRandomPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRandomPasswordResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::GetSecretValueRequest&, const Model::GetSecretValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSecretValueResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::ListSecretVersionIdsRequest&, const Model::ListSecretVersionIdsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecretVersionIdsResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::ListSecretsRequest&, const Model::ListSecretsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSecretsResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::PutSecretValueRequest&, const Model::PutSecretValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSecretValueResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::RemoveRegionsFromReplicationRequest&, const Model::RemoveRegionsFromReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveRegionsFromReplicationResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::ReplicateSecretToRegionsRequest&, const Model::ReplicateSecretToRegionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplicateSecretToRegionsResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::RestoreSecretRequest&, const Model::RestoreSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreSecretResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::RotateSecretRequest&, const Model::RotateSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RotateSecretResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::StopReplicationToReplicaRequest&, const Model::StopReplicationToReplicaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopReplicationToReplicaResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::UpdateSecretRequest&, const Model::UpdateSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecretResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::UpdateSecretVersionStageRequest&, const Model::UpdateSecretVersionStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecretVersionStageResponseReceivedHandler;
-    typedef std::function<void(const SecretsManagerClient*, const Model::ValidateResourcePolicyRequest&, const Model::ValidateResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateResourcePolicyResponseReceivedHandler;
-
   /**
    * <fullname>Amazon Web Services Secrets Manager</fullname> <p>Amazon Web Services
    * Secrets Manager provides a service to enable you to store, manage, and retrieve,
@@ -213,14 +61,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SecretsManagerClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SecretsManagerClient(const Aws::Auth::AWSCredentials& credentials,
+                             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SecretsManagerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~SecretsManagerClient();
 
@@ -463,11 +312,14 @@ namespace Model
          * client-side caching. Caching secrets improves speed and reduces your costs. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieving-secrets.html">Cache
-         * secrets for your applications</a>.</p> <p> <b>Required permissions: </b>
-         * <code>secretsmanager:GetSecretValue</code>. If the secret is encrypted using a
-         * customer-managed key instead of the Amazon Web Services managed key
-         * <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
-         * permissions for that key. For more information, see <a
+         * secrets for your applications</a>.</p> <p>To retrieve the previous version of a
+         * secret, use <code>VersionStage</code> and specify AWSPREVIOUS. To revert to the
+         * previous version of a secret, call <a
+         * href="https://docs.aws.amazon.com/cli/latest/reference/secretsmanager/update-secret-version-stage.html">UpdateSecretVersionStage</a>.</p>
+         * <p> <b>Required permissions: </b> <code>secretsmanager:GetSecretValue</code>. If
+         * the secret is encrypted using a customer-managed key instead of the Amazon Web
+         * Services managed key <code>aws/secretsmanager</code>, then you also need
+         * <code>kms:Decrypt</code> permissions for that key. For more information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
          * IAM policy actions for Secrets Manager</a> and <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
@@ -516,9 +368,12 @@ namespace Model
         /**
          * <p>Lists the secrets that are stored by Secrets Manager in the Amazon Web
          * Services account, not including secrets that are marked for deletion. To see
-         * secrets marked for deletion, use the Secrets Manager console.</p> <p>To list the
-         * versions of a secret, use <a>ListSecretVersionIds</a>.</p> <p>To get the secret
-         * value from <code>SecretString</code> or <code>SecretBinary</code>, call
+         * secrets marked for deletion, use the Secrets Manager console.</p> <p>ListSecrets
+         * is eventually consistent, however it might not reflect changes from the last
+         * five minutes. To get the latest information for a specific secret, use
+         * <a>DescribeSecret</a>.</p> <p>To list the versions of a secret, use
+         * <a>ListSecretVersionIds</a>.</p> <p>To get the secret value from
+         * <code>SecretString</code> or <code>SecretBinary</code>, call
          * <a>GetSecretValue</a>.</p> <p>For information about finding secrets in the
          * console, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html">Find
@@ -590,13 +445,13 @@ namespace Model
          * staging label <code>AWSCURRENT</code> from another version to this version, then
          * Secrets Manager also automatically moves the staging label
          * <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed
-         * from.</p> <p>This operation is idempotent. If a version with a
-         * <code>VersionId</code> with the same value as the
-         * <code>ClientRequestToken</code> parameter already exists, and you specify the
-         * same secret data, the operation succeeds but does nothing. However, if the
-         * secret data is different, then the operation fails because you can't modify an
-         * existing version; you can only create new ones.</p> <p> <b>Required permissions:
-         * </b> <code>secretsmanager:PutSecretValue</code>. For more information, see <a
+         * from.</p> <p>This operation is idempotent. If you call this operation with a
+         * <code>ClientRequestToken</code> that matches an existing version's VersionId,
+         * and you specify the same secret data, the operation succeeds but does nothing.
+         * However, if the secret data is different, then the operation fails because you
+         * can't modify an existing version; you can only create new ones.</p> <p>
+         * <b>Required permissions: </b> <code>secretsmanager:PutSecretValue</code>. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
          * IAM policy actions for Secrets Manager</a> and <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
@@ -857,20 +712,11 @@ namespace Model
          * secret versions.</p> <p>If you include <code>SecretString</code> or
          * <code>SecretBinary</code> to create a new secret version, Secrets Manager
          * automatically attaches the staging label <code>AWSCURRENT</code> to the new
-         * version. </p> <p>If you call this operation with a <code>VersionId</code> that
-         * matches an existing version's <code>ClientRequestToken</code>, the operation
-         * results in an error. You can't modify an existing version, you can only create a
-         * new version. To remove a version, remove all staging labels from it. See
-         * <a>UpdateSecretVersionStage</a>.</p> <p>If you don't specify an KMS encryption
-         * key, Secrets Manager uses the Amazon Web Services managed key
-         * <code>aws/secretsmanager</code>. If this key doesn't already exist in your
-         * account, then Secrets Manager creates it for you automatically. All users and
-         * roles in the Amazon Web Services account automatically have access to use
-         * <code>aws/secretsmanager</code>. Creating <code>aws/secretsmanager</code> can
-         * result in a one-time significant delay in returning the result. </p> <p>If the
-         * secret is in a different Amazon Web Services account from the credentials
-         * calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt
-         * the secret, and you must create and use a customer managed key. </p> <p>
+         * version. </p> <p>If you call this operation with a
+         * <code>ClientRequestToken</code> that matches an existing version's
+         * <code>VersionId</code>, the operation results in an error. You can't modify an
+         * existing version, you can only create a new version. To remove a version, remove
+         * all staging labels from it. See <a>UpdateSecretVersionStage</a>.</p> <p>
          * <b>Required permissions: </b> <code>secretsmanager:UpdateSecret</code>. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
@@ -970,28 +816,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CancelRotateSecretAsyncHelper(const Model::CancelRotateSecretRequest& request, const CancelRotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSecretAsyncHelper(const Model::CreateSecretRequest& request, const CreateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteResourcePolicyAsyncHelper(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSecretAsyncHelper(const Model::DeleteSecretRequest& request, const DeleteSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSecretAsyncHelper(const Model::DescribeSecretRequest& request, const DescribeSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetRandomPasswordAsyncHelper(const Model::GetRandomPasswordRequest& request, const GetRandomPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetResourcePolicyAsyncHelper(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSecretValueAsyncHelper(const Model::GetSecretValueRequest& request, const GetSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSecretVersionIdsAsyncHelper(const Model::ListSecretVersionIdsRequest& request, const ListSecretVersionIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListSecretsAsyncHelper(const Model::ListSecretsRequest& request, const ListSecretsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutSecretValueAsyncHelper(const Model::PutSecretValueRequest& request, const PutSecretValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RemoveRegionsFromReplicationAsyncHelper(const Model::RemoveRegionsFromReplicationRequest& request, const RemoveRegionsFromReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ReplicateSecretToRegionsAsyncHelper(const Model::ReplicateSecretToRegionsRequest& request, const ReplicateSecretToRegionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RestoreSecretAsyncHelper(const Model::RestoreSecretRequest& request, const RestoreSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RotateSecretAsyncHelper(const Model::RotateSecretRequest& request, const RotateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StopReplicationToReplicaAsyncHelper(const Model::StopReplicationToReplicaRequest& request, const StopReplicationToReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSecretAsyncHelper(const Model::UpdateSecretRequest& request, const UpdateSecretResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSecretVersionStageAsyncHelper(const Model::UpdateSecretVersionStageRequest& request, const UpdateSecretVersionStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ValidateResourcePolicyAsyncHelper(const Model::ValidateResourcePolicyRequest& request, const ValidateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

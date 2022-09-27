@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     StreamingConfiguration m_streamingConfiguration;
-    bool m_streamingConfigurationHasBeenSet;
+    bool m_streamingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_assignmentName;
-    bool m_assignmentNameHasBeenSet;
+    bool m_assignmentNameHasBeenSet = false;
 
     AssignmentStatus m_assignmentStatus;
-    bool m_assignmentStatusHasBeenSet;
+    bool m_assignmentStatusHasBeenSet = false;
   };
 
 } // namespace Model

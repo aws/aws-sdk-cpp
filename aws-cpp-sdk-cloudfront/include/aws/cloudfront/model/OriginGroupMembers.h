@@ -103,10 +103,10 @@ namespace Model
   private:
 
     int m_quantity;
-    bool m_quantityHasBeenSet;
+    bool m_quantityHasBeenSet = false;
 
     Aws::Vector<OriginGroupMember> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -273,25 +273,25 @@ namespace Model
   private:
 
     Aws::String m_contactId;
-    bool m_contactIdHasBeenSet;
+    bool m_contactIdHasBeenSet = false;
 
     Channel m_channel;
-    bool m_channelHasBeenSet;
+    bool m_channelHasBeenSet = false;
 
     ContactInitiationMethod m_initiationMethod;
-    bool m_initiationMethodHasBeenSet;
+    bool m_initiationMethodHasBeenSet = false;
 
     ContactState m_agentContactState;
-    bool m_agentContactStateHasBeenSet;
+    bool m_agentContactStateHasBeenSet = false;
 
     Aws::Utils::DateTime m_stateStartTimestamp;
-    bool m_stateStartTimestampHasBeenSet;
+    bool m_stateStartTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_connectedToAgentTimestamp;
-    bool m_connectedToAgentTimestampHasBeenSet;
+    bool m_connectedToAgentTimestampHasBeenSet = false;
 
     QueueReference m_queue;
-    bool m_queueHasBeenSet;
+    bool m_queueHasBeenSet = false;
   };
 
 } // namespace Model

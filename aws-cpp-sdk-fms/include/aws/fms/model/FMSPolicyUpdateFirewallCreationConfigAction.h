@@ -149,10 +149,10 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_firewallCreationConfig;
-    bool m_firewallCreationConfigHasBeenSet;
+    bool m_firewallCreationConfigHasBeenSet = false;
   };
 
 } // namespace Model

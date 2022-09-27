@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_policyTypeName;
-    bool m_policyTypeNameHasBeenSet;
+    bool m_policyTypeNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<PolicyAttributeTypeDescription> m_policyAttributeTypeDescriptions;
-    bool m_policyAttributeTypeDescriptionsHasBeenSet;
+    bool m_policyAttributeTypeDescriptionsHasBeenSet = false;
   };
 
 } // namespace Model

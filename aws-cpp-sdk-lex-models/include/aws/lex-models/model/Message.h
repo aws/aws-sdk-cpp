@@ -142,13 +142,13 @@ namespace Model
   private:
 
     ContentType m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     int m_groupNumber;
-    bool m_groupNumberHasBeenSet;
+    bool m_groupNumberHasBeenSet = false;
   };
 
 } // namespace Model

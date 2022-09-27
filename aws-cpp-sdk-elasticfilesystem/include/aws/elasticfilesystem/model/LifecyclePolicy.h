@@ -138,10 +138,10 @@ namespace Model
   private:
 
     TransitionToIARules m_transitionToIA;
-    bool m_transitionToIAHasBeenSet;
+    bool m_transitionToIAHasBeenSet = false;
 
     TransitionToPrimaryStorageClassRules m_transitionToPrimaryStorageClass;
-    bool m_transitionToPrimaryStorageClassHasBeenSet;
+    bool m_transitionToPrimaryStorageClassHasBeenSet = false;
   };
 
 } // namespace Model

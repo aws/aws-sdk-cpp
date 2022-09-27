@@ -344,25 +344,25 @@ namespace Model
   private:
 
     Aws::String m_ipId;
-    bool m_ipIdHasBeenSet;
+    bool m_ipIdHasBeenSet = false;
 
     Aws::String m_subnetId;
-    bool m_subnetIdHasBeenSet;
+    bool m_subnetIdHasBeenSet = false;
 
     Aws::String m_ip;
-    bool m_ipHasBeenSet;
+    bool m_ipHasBeenSet = false;
 
     IpAddressStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_modificationTime;
-    bool m_modificationTimeHasBeenSet;
+    bool m_modificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

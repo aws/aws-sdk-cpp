@@ -215,16 +215,16 @@ namespace Model
   private:
 
     OrganizationEventFilter m_filter;
-    bool m_filterHasBeenSet;
+    bool m_filterHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_locale;
-    bool m_localeHasBeenSet;
+    bool m_localeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -556,42 +556,50 @@ namespace Model
 
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline const Aws::Vector<LaunchTemplateTagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<LaunchTemplateTagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline ResponseLaunchTemplateData& WithTagSpecifications(const Aws::Vector<LaunchTemplateTagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline ResponseLaunchTemplateData& WithTagSpecifications(Aws::Vector<LaunchTemplateTagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline ResponseLaunchTemplateData& AddTagSpecifications(const LaunchTemplateTagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags.</p>
+     * <p>The tags that are applied to the resources that are created during instance
+     * launch.</p>
      */
     inline ResponseLaunchTemplateData& AddTagSpecifications(LaunchTemplateTagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
@@ -1228,97 +1236,97 @@ namespace Model
   private:
 
     Aws::String m_kernelId;
-    bool m_kernelIdHasBeenSet;
+    bool m_kernelIdHasBeenSet = false;
 
     bool m_ebsOptimized;
-    bool m_ebsOptimizedHasBeenSet;
+    bool m_ebsOptimizedHasBeenSet = false;
 
     LaunchTemplateIamInstanceProfileSpecification m_iamInstanceProfile;
-    bool m_iamInstanceProfileHasBeenSet;
+    bool m_iamInstanceProfileHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateBlockDeviceMapping> m_blockDeviceMappings;
-    bool m_blockDeviceMappingsHasBeenSet;
+    bool m_blockDeviceMappingsHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateInstanceNetworkInterfaceSpecification> m_networkInterfaces;
-    bool m_networkInterfacesHasBeenSet;
+    bool m_networkInterfacesHasBeenSet = false;
 
     Aws::String m_imageId;
-    bool m_imageIdHasBeenSet;
+    bool m_imageIdHasBeenSet = false;
 
     InstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     Aws::String m_keyName;
-    bool m_keyNameHasBeenSet;
+    bool m_keyNameHasBeenSet = false;
 
     LaunchTemplatesMonitoring m_monitoring;
-    bool m_monitoringHasBeenSet;
+    bool m_monitoringHasBeenSet = false;
 
     LaunchTemplatePlacement m_placement;
-    bool m_placementHasBeenSet;
+    bool m_placementHasBeenSet = false;
 
     Aws::String m_ramDiskId;
-    bool m_ramDiskIdHasBeenSet;
+    bool m_ramDiskIdHasBeenSet = false;
 
     bool m_disableApiTermination;
-    bool m_disableApiTerminationHasBeenSet;
+    bool m_disableApiTerminationHasBeenSet = false;
 
     ShutdownBehavior m_instanceInitiatedShutdownBehavior;
-    bool m_instanceInitiatedShutdownBehaviorHasBeenSet;
+    bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
     Aws::String m_userData;
-    bool m_userDataHasBeenSet;
+    bool m_userDataHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateTagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
+    bool m_tagSpecificationsHasBeenSet = false;
 
     Aws::Vector<ElasticGpuSpecificationResponse> m_elasticGpuSpecifications;
-    bool m_elasticGpuSpecificationsHasBeenSet;
+    bool m_elasticGpuSpecificationsHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateElasticInferenceAcceleratorResponse> m_elasticInferenceAccelerators;
-    bool m_elasticInferenceAcceleratorsHasBeenSet;
+    bool m_elasticInferenceAcceleratorsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroups;
-    bool m_securityGroupsHasBeenSet;
+    bool m_securityGroupsHasBeenSet = false;
 
     LaunchTemplateInstanceMarketOptions m_instanceMarketOptions;
-    bool m_instanceMarketOptionsHasBeenSet;
+    bool m_instanceMarketOptionsHasBeenSet = false;
 
     CreditSpecification m_creditSpecification;
-    bool m_creditSpecificationHasBeenSet;
+    bool m_creditSpecificationHasBeenSet = false;
 
     LaunchTemplateCpuOptions m_cpuOptions;
-    bool m_cpuOptionsHasBeenSet;
+    bool m_cpuOptionsHasBeenSet = false;
 
     LaunchTemplateCapacityReservationSpecificationResponse m_capacityReservationSpecification;
-    bool m_capacityReservationSpecificationHasBeenSet;
+    bool m_capacityReservationSpecificationHasBeenSet = false;
 
     Aws::Vector<LaunchTemplateLicenseConfiguration> m_licenseSpecifications;
-    bool m_licenseSpecificationsHasBeenSet;
+    bool m_licenseSpecificationsHasBeenSet = false;
 
     LaunchTemplateHibernationOptions m_hibernationOptions;
-    bool m_hibernationOptionsHasBeenSet;
+    bool m_hibernationOptionsHasBeenSet = false;
 
     LaunchTemplateInstanceMetadataOptions m_metadataOptions;
-    bool m_metadataOptionsHasBeenSet;
+    bool m_metadataOptionsHasBeenSet = false;
 
     LaunchTemplateEnclaveOptions m_enclaveOptions;
-    bool m_enclaveOptionsHasBeenSet;
+    bool m_enclaveOptionsHasBeenSet = false;
 
     InstanceRequirements m_instanceRequirements;
-    bool m_instanceRequirementsHasBeenSet;
+    bool m_instanceRequirementsHasBeenSet = false;
 
     LaunchTemplatePrivateDnsNameOptions m_privateDnsNameOptions;
-    bool m_privateDnsNameOptionsHasBeenSet;
+    bool m_privateDnsNameOptionsHasBeenSet = false;
 
     LaunchTemplateInstanceMaintenanceOptions m_maintenanceOptions;
-    bool m_maintenanceOptionsHasBeenSet;
+    bool m_maintenanceOptionsHasBeenSet = false;
 
     bool m_disableApiStop;
-    bool m_disableApiStopHasBeenSet;
+    bool m_disableApiStopHasBeenSet = false;
   };
 
 } // namespace Model

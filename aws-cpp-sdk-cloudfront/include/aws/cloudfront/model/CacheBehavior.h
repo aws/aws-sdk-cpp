@@ -1113,49 +1113,49 @@ namespace Model
   private:
 
     Aws::String m_pathPattern;
-    bool m_pathPatternHasBeenSet;
+    bool m_pathPatternHasBeenSet = false;
 
     Aws::String m_targetOriginId;
-    bool m_targetOriginIdHasBeenSet;
+    bool m_targetOriginIdHasBeenSet = false;
 
     TrustedSigners m_trustedSigners;
-    bool m_trustedSignersHasBeenSet;
+    bool m_trustedSignersHasBeenSet = false;
 
     TrustedKeyGroups m_trustedKeyGroups;
-    bool m_trustedKeyGroupsHasBeenSet;
+    bool m_trustedKeyGroupsHasBeenSet = false;
 
     ViewerProtocolPolicy m_viewerProtocolPolicy;
-    bool m_viewerProtocolPolicyHasBeenSet;
+    bool m_viewerProtocolPolicyHasBeenSet = false;
 
     AllowedMethods m_allowedMethods;
-    bool m_allowedMethodsHasBeenSet;
+    bool m_allowedMethodsHasBeenSet = false;
 
     bool m_smoothStreaming;
-    bool m_smoothStreamingHasBeenSet;
+    bool m_smoothStreamingHasBeenSet = false;
 
     bool m_compress;
-    bool m_compressHasBeenSet;
+    bool m_compressHasBeenSet = false;
 
     LambdaFunctionAssociations m_lambdaFunctionAssociations;
-    bool m_lambdaFunctionAssociationsHasBeenSet;
+    bool m_lambdaFunctionAssociationsHasBeenSet = false;
 
     FunctionAssociations m_functionAssociations;
-    bool m_functionAssociationsHasBeenSet;
+    bool m_functionAssociationsHasBeenSet = false;
 
     Aws::String m_fieldLevelEncryptionId;
-    bool m_fieldLevelEncryptionIdHasBeenSet;
+    bool m_fieldLevelEncryptionIdHasBeenSet = false;
 
     Aws::String m_realtimeLogConfigArn;
-    bool m_realtimeLogConfigArnHasBeenSet;
+    bool m_realtimeLogConfigArnHasBeenSet = false;
 
     Aws::String m_cachePolicyId;
-    bool m_cachePolicyIdHasBeenSet;
+    bool m_cachePolicyIdHasBeenSet = false;
 
     Aws::String m_originRequestPolicyId;
-    bool m_originRequestPolicyIdHasBeenSet;
+    bool m_originRequestPolicyIdHasBeenSet = false;
 
     Aws::String m_responseHeadersPolicyId;
-    bool m_responseHeadersPolicyIdHasBeenSet;
+    bool m_responseHeadersPolicyIdHasBeenSet = false;
   };
 
 } // namespace Model

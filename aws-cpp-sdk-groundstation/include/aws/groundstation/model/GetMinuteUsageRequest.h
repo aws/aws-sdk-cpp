@@ -77,10 +77,10 @@ namespace Model
   private:
 
     int m_month;
-    bool m_monthHasBeenSet;
+    bool m_monthHasBeenSet = false;
 
     int m_year;
-    bool m_yearHasBeenSet;
+    bool m_yearHasBeenSet = false;
   };
 
 } // namespace Model

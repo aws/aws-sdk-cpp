@@ -107,10 +107,10 @@ namespace Model
   private:
 
     Aws::String m_voiceConnectorId;
-    bool m_voiceConnectorIdHasBeenSet;
+    bool m_voiceConnectorIdHasBeenSet = false;
 
     EmergencyCallingConfiguration m_emergencyCallingConfiguration;
-    bool m_emergencyCallingConfigurationHasBeenSet;
+    bool m_emergencyCallingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

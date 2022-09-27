@@ -986,49 +986,49 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_gameSessionQueueArns;
-    bool m_gameSessionQueueArnsHasBeenSet;
+    bool m_gameSessionQueueArnsHasBeenSet = false;
 
     int m_requestTimeoutSeconds;
-    bool m_requestTimeoutSecondsHasBeenSet;
+    bool m_requestTimeoutSecondsHasBeenSet = false;
 
     int m_acceptanceTimeoutSeconds;
-    bool m_acceptanceTimeoutSecondsHasBeenSet;
+    bool m_acceptanceTimeoutSecondsHasBeenSet = false;
 
     bool m_acceptanceRequired;
-    bool m_acceptanceRequiredHasBeenSet;
+    bool m_acceptanceRequiredHasBeenSet = false;
 
     Aws::String m_ruleSetName;
-    bool m_ruleSetNameHasBeenSet;
+    bool m_ruleSetNameHasBeenSet = false;
 
     Aws::String m_notificationTarget;
-    bool m_notificationTargetHasBeenSet;
+    bool m_notificationTargetHasBeenSet = false;
 
     int m_additionalPlayerCount;
-    bool m_additionalPlayerCountHasBeenSet;
+    bool m_additionalPlayerCountHasBeenSet = false;
 
     Aws::String m_customEventData;
-    bool m_customEventDataHasBeenSet;
+    bool m_customEventDataHasBeenSet = false;
 
     Aws::Vector<GameProperty> m_gameProperties;
-    bool m_gamePropertiesHasBeenSet;
+    bool m_gamePropertiesHasBeenSet = false;
 
     Aws::String m_gameSessionData;
-    bool m_gameSessionDataHasBeenSet;
+    bool m_gameSessionDataHasBeenSet = false;
 
     BackfillMode m_backfillMode;
-    bool m_backfillModeHasBeenSet;
+    bool m_backfillModeHasBeenSet = false;
 
     FlexMatchMode m_flexMatchMode;
-    bool m_flexMatchModeHasBeenSet;
+    bool m_flexMatchModeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

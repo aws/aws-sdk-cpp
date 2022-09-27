@@ -113,10 +113,10 @@ namespace Model
   private:
 
     Aws::String m_indexName;
-    bool m_indexNameHasBeenSet;
+    bool m_indexNameHasBeenSet = false;
 
     ProvisionedThroughputOverride m_provisionedThroughputOverride;
-    bool m_provisionedThroughputOverrideHasBeenSet;
+    bool m_provisionedThroughputOverrideHasBeenSet = false;
   };
 
 } // namespace Model

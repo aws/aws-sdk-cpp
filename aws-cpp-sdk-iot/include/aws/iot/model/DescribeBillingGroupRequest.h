@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_billingGroupName;
-    bool m_billingGroupNameHasBeenSet;
+    bool m_billingGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

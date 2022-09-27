@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The list of fleet provisioning template versions.</p>
+     * <p>The list of provisioning template versions.</p>
      */
     inline const Aws::Vector<ProvisioningTemplateVersionSummary>& GetVersions() const{ return m_versions; }
 
     /**
-     * <p>The list of fleet provisioning template versions.</p>
+     * <p>The list of provisioning template versions.</p>
      */
     inline void SetVersions(const Aws::Vector<ProvisioningTemplateVersionSummary>& value) { m_versions = value; }
 
     /**
-     * <p>The list of fleet provisioning template versions.</p>
+     * <p>The list of provisioning template versions.</p>
      */
     inline void SetVersions(Aws::Vector<ProvisioningTemplateVersionSummary>&& value) { m_versions = std::move(value); }
 
     /**
-     * <p>The list of fleet provisioning template versions.</p>
+     * <p>The list of provisioning template versions.</p>
      */
     inline ListProvisioningTemplateVersionsResult& WithVersions(const Aws::Vector<ProvisioningTemplateVersionSummary>& value) { SetVersions(value); return *this;}
 
     /**
-     * <p>The list of fleet provisioning template versions.</p>
+     * <p>The list of provisioning template versions.</p>
      */
     inline ListProvisioningTemplateVersionsResult& WithVersions(Aws::Vector<ProvisioningTemplateVersionSummary>&& value) { SetVersions(std::move(value)); return *this;}
 
     /**
-     * <p>The list of fleet provisioning template versions.</p>
+     * <p>The list of provisioning template versions.</p>
      */
     inline ListProvisioningTemplateVersionsResult& AddVersions(const ProvisioningTemplateVersionSummary& value) { m_versions.push_back(value); return *this; }
 
     /**
-     * <p>The list of fleet provisioning template versions.</p>
+     * <p>The list of provisioning template versions.</p>
      */
     inline ListProvisioningTemplateVersionsResult& AddVersions(ProvisioningTemplateVersionSummary&& value) { m_versions.push_back(std::move(value)); return *this; }
 

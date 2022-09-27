@@ -174,16 +174,16 @@ namespace Model
   private:
 
     Aws::String m_hITId;
-    bool m_hITIdHasBeenSet;
+    bool m_hITIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<AssignmentStatus> m_assignmentStatuses;
-    bool m_assignmentStatusesHasBeenSet;
+    bool m_assignmentStatusesHasBeenSet = false;
   };
 
 } // namespace Model

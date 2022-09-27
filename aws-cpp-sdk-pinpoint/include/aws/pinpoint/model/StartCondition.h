@@ -140,13 +140,13 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     EventStartCondition m_eventStartCondition;
-    bool m_eventStartConditionHasBeenSet;
+    bool m_eventStartConditionHasBeenSet = false;
 
     SegmentCondition m_segmentStartCondition;
-    bool m_segmentStartConditionHasBeenSet;
+    bool m_segmentStartConditionHasBeenSet = false;
   };
 
 } // namespace Model

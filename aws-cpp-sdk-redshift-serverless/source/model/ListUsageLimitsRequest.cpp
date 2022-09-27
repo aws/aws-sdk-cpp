@@ -55,7 +55,7 @@ Aws::String ListUsageLimitsRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection ListUsageLimitsRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.ListUsageLimits"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.ListUsageLimits"));
   return headers;
 
 }

@@ -56,7 +56,7 @@ Job& Job::operator =(const XmlNode& xmlNode)
     XmlNode creationDateNode = resultNode.FirstChild("CreationDate");
     if(!creationDateNode.IsNull())
     {
-      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationDateHasBeenSet = true;
     }
     XmlNode isCanceledNode = resultNode.FirstChild("IsCanceled");
@@ -85,7 +85,7 @@ void Job::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
 
   if(m_creationDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_isCanceledHasBeenSet)
@@ -108,7 +108,7 @@ void Job::OutputToStream(Aws::OStream& oStream, const char* location) const
   }
   if(m_creationDateHasBeenSet)
   {
-      oStream << location << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreationDate=" << StringUtils::URLEncode(m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_isCanceledHasBeenSet)
   {

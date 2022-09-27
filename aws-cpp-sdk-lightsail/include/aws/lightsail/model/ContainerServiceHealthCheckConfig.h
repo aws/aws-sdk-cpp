@@ -270,22 +270,22 @@ namespace Model
   private:
 
     int m_healthyThreshold;
-    bool m_healthyThresholdHasBeenSet;
+    bool m_healthyThresholdHasBeenSet = false;
 
     int m_unhealthyThreshold;
-    bool m_unhealthyThresholdHasBeenSet;
+    bool m_unhealthyThresholdHasBeenSet = false;
 
     int m_timeoutSeconds;
-    bool m_timeoutSecondsHasBeenSet;
+    bool m_timeoutSecondsHasBeenSet = false;
 
     int m_intervalSeconds;
-    bool m_intervalSecondsHasBeenSet;
+    bool m_intervalSecondsHasBeenSet = false;
 
     Aws::String m_path;
-    bool m_pathHasBeenSet;
+    bool m_pathHasBeenSet = false;
 
     Aws::String m_successCodes;
-    bool m_successCodesHasBeenSet;
+    bool m_successCodesHasBeenSet = false;
   };
 
 } // namespace Model

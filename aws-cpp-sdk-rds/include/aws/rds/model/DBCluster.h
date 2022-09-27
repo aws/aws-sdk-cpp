@@ -2890,30 +2890,46 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
-     * Multi-AZ DB clusters.</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>This
+     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
-     * Multi-AZ DB clusters.</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>This
+     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
      */
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
-     * Multi-AZ DB clusters.</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>This
+     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
      */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>This setting is only for non-Aurora
-     * Multi-AZ DB clusters.</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>This
+     * setting is only for non-Aurora Multi-AZ DB clusters.</p>
      */
     inline DBCluster& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 
@@ -2936,211 +2952,319 @@ namespace Model
     
     inline DBCluster& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationInfo&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>This setting is only for Aurora DB clusters.</p>
+     */
+    inline const Aws::String& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>This setting is only for Aurora DB clusters.</p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>This setting is only for Aurora DB clusters.</p>
+     */
+    inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>This setting is only for Aurora DB clusters.</p>
+     */
+    inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>This setting is only for Aurora DB clusters.</p>
+     */
+    inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>This setting is only for Aurora DB clusters.</p>
+     */
+    inline DBCluster& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>This setting is only for Aurora DB clusters.</p>
+     */
+    inline DBCluster& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
+
+    /**
+     * <p>The network type of the DB instance.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>This setting is only for Aurora DB clusters.</p>
+     */
+    inline DBCluster& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
+
   private:
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_characterSetName;
-    bool m_characterSetNameHasBeenSet;
+    bool m_characterSetNameHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_dBClusterParameterGroup;
-    bool m_dBClusterParameterGroupHasBeenSet;
+    bool m_dBClusterParameterGroupHasBeenSet = false;
 
     Aws::String m_dBSubnetGroup;
-    bool m_dBSubnetGroupHasBeenSet;
+    bool m_dBSubnetGroupHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_automaticRestartTime;
-    bool m_automaticRestartTimeHasBeenSet;
+    bool m_automaticRestartTimeHasBeenSet = false;
 
     Aws::String m_percentProgress;
-    bool m_percentProgressHasBeenSet;
+    bool m_percentProgressHasBeenSet = false;
 
     Aws::Utils::DateTime m_earliestRestorableTime;
-    bool m_earliestRestorableTimeHasBeenSet;
+    bool m_earliestRestorableTimeHasBeenSet = false;
 
     Aws::String m_endpoint;
-    bool m_endpointHasBeenSet;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_readerEndpoint;
-    bool m_readerEndpointHasBeenSet;
+    bool m_readerEndpointHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_customEndpoints;
-    bool m_customEndpointsHasBeenSet;
+    bool m_customEndpointsHasBeenSet = false;
 
     bool m_multiAZ;
-    bool m_multiAZHasBeenSet;
+    bool m_multiAZHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_latestRestorableTime;
-    bool m_latestRestorableTimeHasBeenSet;
+    bool m_latestRestorableTimeHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::Vector<DBClusterOptionGroupStatus> m_dBClusterOptionGroupMemberships;
-    bool m_dBClusterOptionGroupMembershipsHasBeenSet;
+    bool m_dBClusterOptionGroupMembershipsHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::String m_replicationSourceIdentifier;
-    bool m_replicationSourceIdentifierHasBeenSet;
+    bool m_replicationSourceIdentifierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_readReplicaIdentifiers;
-    bool m_readReplicaIdentifiersHasBeenSet;
+    bool m_readReplicaIdentifiersHasBeenSet = false;
 
     Aws::Vector<DBClusterMember> m_dBClusterMembers;
-    bool m_dBClusterMembersHasBeenSet;
+    bool m_dBClusterMembersHasBeenSet = false;
 
     Aws::Vector<VpcSecurityGroupMembership> m_vpcSecurityGroups;
-    bool m_vpcSecurityGroupsHasBeenSet;
+    bool m_vpcSecurityGroupsHasBeenSet = false;
 
     Aws::String m_hostedZoneId;
-    bool m_hostedZoneIdHasBeenSet;
+    bool m_hostedZoneIdHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_dbClusterResourceId;
-    bool m_dbClusterResourceIdHasBeenSet;
+    bool m_dbClusterResourceIdHasBeenSet = false;
 
     Aws::String m_dBClusterArn;
-    bool m_dBClusterArnHasBeenSet;
+    bool m_dBClusterArnHasBeenSet = false;
 
     Aws::Vector<DBClusterRole> m_associatedRoles;
-    bool m_associatedRolesHasBeenSet;
+    bool m_associatedRolesHasBeenSet = false;
 
     bool m_iAMDatabaseAuthenticationEnabled;
-    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet;
+    bool m_iAMDatabaseAuthenticationEnabledHasBeenSet = false;
 
     Aws::String m_cloneGroupId;
-    bool m_cloneGroupIdHasBeenSet;
+    bool m_cloneGroupIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_clusterCreateTime;
-    bool m_clusterCreateTimeHasBeenSet;
+    bool m_clusterCreateTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_earliestBacktrackTime;
-    bool m_earliestBacktrackTimeHasBeenSet;
+    bool m_earliestBacktrackTimeHasBeenSet = false;
 
     long long m_backtrackWindow;
-    bool m_backtrackWindowHasBeenSet;
+    bool m_backtrackWindowHasBeenSet = false;
 
     long long m_backtrackConsumedChangeRecords;
-    bool m_backtrackConsumedChangeRecordsHasBeenSet;
+    bool m_backtrackConsumedChangeRecordsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
-    bool m_enabledCloudwatchLogsExportsHasBeenSet;
+    bool m_enabledCloudwatchLogsExportsHasBeenSet = false;
 
     int m_capacity;
-    bool m_capacityHasBeenSet;
+    bool m_capacityHasBeenSet = false;
 
     Aws::String m_engineMode;
-    bool m_engineModeHasBeenSet;
+    bool m_engineModeHasBeenSet = false;
 
     ScalingConfigurationInfo m_scalingConfigurationInfo;
-    bool m_scalingConfigurationInfoHasBeenSet;
+    bool m_scalingConfigurationInfoHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     bool m_httpEndpointEnabled;
-    bool m_httpEndpointEnabledHasBeenSet;
+    bool m_httpEndpointEnabledHasBeenSet = false;
 
     ActivityStreamMode m_activityStreamMode;
-    bool m_activityStreamModeHasBeenSet;
+    bool m_activityStreamModeHasBeenSet = false;
 
     ActivityStreamStatus m_activityStreamStatus;
-    bool m_activityStreamStatusHasBeenSet;
+    bool m_activityStreamStatusHasBeenSet = false;
 
     Aws::String m_activityStreamKmsKeyId;
-    bool m_activityStreamKmsKeyIdHasBeenSet;
+    bool m_activityStreamKmsKeyIdHasBeenSet = false;
 
     Aws::String m_activityStreamKinesisStreamName;
-    bool m_activityStreamKinesisStreamNameHasBeenSet;
+    bool m_activityStreamKinesisStreamNameHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     bool m_crossAccountClone;
-    bool m_crossAccountCloneHasBeenSet;
+    bool m_crossAccountCloneHasBeenSet = false;
 
     Aws::Vector<DomainMembership> m_domainMemberships;
-    bool m_domainMembershipsHasBeenSet;
+    bool m_domainMembershipsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
 
     WriteForwardingStatus m_globalWriteForwardingStatus;
-    bool m_globalWriteForwardingStatusHasBeenSet;
+    bool m_globalWriteForwardingStatusHasBeenSet = false;
 
     bool m_globalWriteForwardingRequested;
-    bool m_globalWriteForwardingRequestedHasBeenSet;
+    bool m_globalWriteForwardingRequestedHasBeenSet = false;
 
     ClusterPendingModifiedValues m_pendingModifiedValues;
-    bool m_pendingModifiedValuesHasBeenSet;
+    bool m_pendingModifiedValuesHasBeenSet = false;
 
     Aws::String m_dBClusterInstanceClass;
-    bool m_dBClusterInstanceClassHasBeenSet;
+    bool m_dBClusterInstanceClassHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     int m_monitoringInterval;
-    bool m_monitoringIntervalHasBeenSet;
+    bool m_monitoringIntervalHasBeenSet = false;
 
     Aws::String m_monitoringRoleArn;
-    bool m_monitoringRoleArnHasBeenSet;
+    bool m_monitoringRoleArnHasBeenSet = false;
 
     bool m_performanceInsightsEnabled;
-    bool m_performanceInsightsEnabledHasBeenSet;
+    bool m_performanceInsightsEnabledHasBeenSet = false;
 
     Aws::String m_performanceInsightsKMSKeyId;
-    bool m_performanceInsightsKMSKeyIdHasBeenSet;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
     int m_performanceInsightsRetentionPeriod;
-    bool m_performanceInsightsRetentionPeriodHasBeenSet;
+    bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
     ServerlessV2ScalingConfigurationInfo m_serverlessV2ScalingConfiguration;
-    bool m_serverlessV2ScalingConfigurationHasBeenSet;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

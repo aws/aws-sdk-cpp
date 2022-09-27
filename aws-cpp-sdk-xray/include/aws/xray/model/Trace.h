@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     double m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     bool m_limitExceeded;
-    bool m_limitExceededHasBeenSet;
+    bool m_limitExceededHasBeenSet = false;
 
     Aws::Vector<Segment> m_segments;
-    bool m_segmentsHasBeenSet;
+    bool m_segmentsHasBeenSet = false;
   };
 
 } // namespace Model

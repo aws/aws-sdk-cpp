@@ -393,28 +393,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     ChatChannel m_chatChannel;
-    bool m_chatChannelHasBeenSet;
+    bool m_chatChannelHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     int m_impact;
-    bool m_impactHasBeenSet;
+    bool m_impactHasBeenSet = false;
 
     Aws::Vector<NotificationTargetItem> m_notificationTargets;
-    bool m_notificationTargetsHasBeenSet;
+    bool m_notificationTargetsHasBeenSet = false;
 
     IncidentRecordStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_summary;
-    bool m_summaryHasBeenSet;
+    bool m_summaryHasBeenSet = false;
 
     Aws::String m_title;
-    bool m_titleHasBeenSet;
+    bool m_titleHasBeenSet = false;
   };
 
 } // namespace Model

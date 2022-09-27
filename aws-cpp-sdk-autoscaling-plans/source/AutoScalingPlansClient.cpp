@@ -38,33 +38,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "autoscaling-plans";
 static const char* ALLOCATION_TAG = "AutoScalingPlansClient";
 
-
 AutoScalingPlansClient::AutoScalingPlansClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AutoScalingPlansErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AutoScalingPlansErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-AutoScalingPlansClient::AutoScalingPlansClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+AutoScalingPlansClient::AutoScalingPlansClient(const AWSCredentials& credentials,
+                                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AutoScalingPlansErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AutoScalingPlansErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 AutoScalingPlansClient::AutoScalingPlansClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AutoScalingPlansErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AutoScalingPlansErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -76,7 +82,7 @@ AutoScalingPlansClient::~AutoScalingPlansClient()
 
 void AutoScalingPlansClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("Auto Scaling Plans");
+  AWSClient::SetServiceClientName("Auto Scaling Plans");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -116,12 +122,10 @@ CreateScalingPlanOutcomeCallable AutoScalingPlansClient::CreateScalingPlanCallab
 
 void AutoScalingPlansClient::CreateScalingPlanAsync(const CreateScalingPlanRequest& request, const CreateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateScalingPlanAsyncHelper( request, handler, context ); } );
-}
-
-void AutoScalingPlansClient::CreateScalingPlanAsyncHelper(const CreateScalingPlanRequest& request, const CreateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateScalingPlan(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateScalingPlan(request), context);
+    } );
 }
 
 DeleteScalingPlanOutcome AutoScalingPlansClient::DeleteScalingPlan(const DeleteScalingPlanRequest& request) const
@@ -140,12 +144,10 @@ DeleteScalingPlanOutcomeCallable AutoScalingPlansClient::DeleteScalingPlanCallab
 
 void AutoScalingPlansClient::DeleteScalingPlanAsync(const DeleteScalingPlanRequest& request, const DeleteScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteScalingPlanAsyncHelper( request, handler, context ); } );
-}
-
-void AutoScalingPlansClient::DeleteScalingPlanAsyncHelper(const DeleteScalingPlanRequest& request, const DeleteScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteScalingPlan(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteScalingPlan(request), context);
+    } );
 }
 
 DescribeScalingPlanResourcesOutcome AutoScalingPlansClient::DescribeScalingPlanResources(const DescribeScalingPlanResourcesRequest& request) const
@@ -164,12 +166,10 @@ DescribeScalingPlanResourcesOutcomeCallable AutoScalingPlansClient::DescribeScal
 
 void AutoScalingPlansClient::DescribeScalingPlanResourcesAsync(const DescribeScalingPlanResourcesRequest& request, const DescribeScalingPlanResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeScalingPlanResourcesAsyncHelper( request, handler, context ); } );
-}
-
-void AutoScalingPlansClient::DescribeScalingPlanResourcesAsyncHelper(const DescribeScalingPlanResourcesRequest& request, const DescribeScalingPlanResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeScalingPlanResources(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeScalingPlanResources(request), context);
+    } );
 }
 
 DescribeScalingPlansOutcome AutoScalingPlansClient::DescribeScalingPlans(const DescribeScalingPlansRequest& request) const
@@ -188,12 +188,10 @@ DescribeScalingPlansOutcomeCallable AutoScalingPlansClient::DescribeScalingPlans
 
 void AutoScalingPlansClient::DescribeScalingPlansAsync(const DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeScalingPlansAsyncHelper( request, handler, context ); } );
-}
-
-void AutoScalingPlansClient::DescribeScalingPlansAsyncHelper(const DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeScalingPlans(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeScalingPlans(request), context);
+    } );
 }
 
 GetScalingPlanResourceForecastDataOutcome AutoScalingPlansClient::GetScalingPlanResourceForecastData(const GetScalingPlanResourceForecastDataRequest& request) const
@@ -212,12 +210,10 @@ GetScalingPlanResourceForecastDataOutcomeCallable AutoScalingPlansClient::GetSca
 
 void AutoScalingPlansClient::GetScalingPlanResourceForecastDataAsync(const GetScalingPlanResourceForecastDataRequest& request, const GetScalingPlanResourceForecastDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetScalingPlanResourceForecastDataAsyncHelper( request, handler, context ); } );
-}
-
-void AutoScalingPlansClient::GetScalingPlanResourceForecastDataAsyncHelper(const GetScalingPlanResourceForecastDataRequest& request, const GetScalingPlanResourceForecastDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetScalingPlanResourceForecastData(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetScalingPlanResourceForecastData(request), context);
+    } );
 }
 
 UpdateScalingPlanOutcome AutoScalingPlansClient::UpdateScalingPlan(const UpdateScalingPlanRequest& request) const
@@ -236,11 +232,9 @@ UpdateScalingPlanOutcomeCallable AutoScalingPlansClient::UpdateScalingPlanCallab
 
 void AutoScalingPlansClient::UpdateScalingPlanAsync(const UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateScalingPlanAsyncHelper( request, handler, context ); } );
-}
-
-void AutoScalingPlansClient::UpdateScalingPlanAsyncHelper(const UpdateScalingPlanRequest& request, const UpdateScalingPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateScalingPlan(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateScalingPlan(request), context);
+    } );
 }
 

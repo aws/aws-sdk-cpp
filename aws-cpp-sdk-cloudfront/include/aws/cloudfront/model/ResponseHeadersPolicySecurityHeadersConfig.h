@@ -395,22 +395,22 @@ namespace Model
   private:
 
     ResponseHeadersPolicyXSSProtection m_xSSProtection;
-    bool m_xSSProtectionHasBeenSet;
+    bool m_xSSProtectionHasBeenSet = false;
 
     ResponseHeadersPolicyFrameOptions m_frameOptions;
-    bool m_frameOptionsHasBeenSet;
+    bool m_frameOptionsHasBeenSet = false;
 
     ResponseHeadersPolicyReferrerPolicy m_referrerPolicy;
-    bool m_referrerPolicyHasBeenSet;
+    bool m_referrerPolicyHasBeenSet = false;
 
     ResponseHeadersPolicyContentSecurityPolicy m_contentSecurityPolicy;
-    bool m_contentSecurityPolicyHasBeenSet;
+    bool m_contentSecurityPolicyHasBeenSet = false;
 
     ResponseHeadersPolicyContentTypeOptions m_contentTypeOptions;
-    bool m_contentTypeOptionsHasBeenSet;
+    bool m_contentTypeOptionsHasBeenSet = false;
 
     ResponseHeadersPolicyStrictTransportSecurity m_strictTransportSecurity;
-    bool m_strictTransportSecurityHasBeenSet;
+    bool m_strictTransportSecurityHasBeenSet = false;
   };
 
 } // namespace Model

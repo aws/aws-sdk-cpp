@@ -129,10 +129,10 @@ namespace Model
   private:
 
     Aws::String m_entityType;
-    bool m_entityTypeHasBeenSet;
+    bool m_entityTypeHasBeenSet = false;
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
   };
 
 } // namespace Model

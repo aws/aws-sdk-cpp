@@ -13,6 +13,7 @@
 #include <aws/glue/model/ConnectionsList.h>
 #include <aws/glue/model/WorkerType.h>
 #include <aws/glue/model/NotificationProperty.h>
+#include <aws/glue/model/ExecutionClass.h>
 #include <aws/glue/model/CodeGenConfigurationNode.h>
 #include <utility>
 
@@ -678,11 +679,11 @@ namespace Model
      * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
      * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
      * Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming
-     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2
-     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
-     * allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead
-     * specify a <code>Maximum capacity</code>. Instead, you should specify a
-     * <code>Worker type</code> and the <code>Number of workers</code>.</p>
+     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a
+     * minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a
+     * fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you
+     * cannot instead specify a <code>Maximum capacity</code>. Instead, you should
+     * specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
 
@@ -700,11 +701,11 @@ namespace Model
      * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
      * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
      * Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming
-     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2
-     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
-     * allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead
-     * specify a <code>Maximum capacity</code>. Instead, you should specify a
-     * <code>Worker type</code> and the <code>Number of workers</code>.</p>
+     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a
+     * minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a
+     * fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you
+     * cannot instead specify a <code>Maximum capacity</code>. Instead, you should
+     * specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
@@ -722,11 +723,11 @@ namespace Model
      * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
      * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
      * Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming
-     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2
-     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
-     * allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead
-     * specify a <code>Maximum capacity</code>. Instead, you should specify a
-     * <code>Worker type</code> and the <code>Number of workers</code>.</p>
+     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a
+     * minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a
+     * fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you
+     * cannot instead specify a <code>Maximum capacity</code>. Instead, you should
+     * specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
      */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
@@ -744,119 +745,145 @@ namespace Model
      * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
      * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
      * Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming
-     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2
-     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
-     * allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead
-     * specify a <code>Maximum capacity</code>. Instead, you should specify a
-     * <code>Worker type</code> and the <code>Number of workers</code>.</p>
+     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a
+     * minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a
+     * fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you
+     * cannot instead specify a <code>Maximum capacity</code>. Instead, you should
+     * specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
      */
     inline Job& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
 
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline const WorkerType& GetWorkerType() const{ return m_workerType; }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline Job& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, or G.2X.</p> <ul> <li> <p>For the <code>Standard</code>
-     * worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
-     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
-     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
-     * executor per worker. We recommend this worker type for memory-intensive
-     * jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each worker maps
-     * to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per
-     * worker. We recommend this worker type for memory-intensive jobs.</p> </li> </ul>
+     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
+     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
+     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
+     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for memory-intensive jobs.</p> </li> <li> <p>For the
+     * <code>G.025X</code> worker type, each worker maps to 0.25 DPU (2 vCPU, 4 GB of
+     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
+     * worker type for low volume streaming jobs. This worker type is only available
+     * for Glue version 3.0 streaming jobs.</p> </li> </ul>
      */
     inline Job& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
 
 
     /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
-     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     * when a job runs.</p>
      */
     inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
 
     /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
-     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     * when a job runs.</p>
      */
     inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
 
     /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
-     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     * when a job runs.</p>
      */
     inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
 
     /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a job runs.</p> <p>The maximum number of workers you can define are 299 for
-     * <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
+     * when a job runs.</p>
      */
     inline Job& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
 
@@ -1102,67 +1129,137 @@ namespace Model
      */
     inline Job& AddCodeGenConfigurationNodes(const char* key, const CodeGenConfigurationNode& value) { m_codeGenConfigurationNodesHasBeenSet = true; m_codeGenConfigurationNodes.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Indicates whether the job is run with a standard or flexible execution class.
+     * The standard execution class is ideal for time-sensitive workloads that require
+     * fast job startup and dedicated resources.</p> <p>The flexible execution class is
+     * appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p> <p>Only jobs with Glue version 3.0 and above and command type
+     * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
+     * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+     */
+    inline const ExecutionClass& GetExecutionClass() const{ return m_executionClass; }
+
+    /**
+     * <p>Indicates whether the job is run with a standard or flexible execution class.
+     * The standard execution class is ideal for time-sensitive workloads that require
+     * fast job startup and dedicated resources.</p> <p>The flexible execution class is
+     * appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p> <p>Only jobs with Glue version 3.0 and above and command type
+     * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
+     * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+     */
+    inline bool ExecutionClassHasBeenSet() const { return m_executionClassHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the job is run with a standard or flexible execution class.
+     * The standard execution class is ideal for time-sensitive workloads that require
+     * fast job startup and dedicated resources.</p> <p>The flexible execution class is
+     * appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p> <p>Only jobs with Glue version 3.0 and above and command type
+     * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
+     * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+     */
+    inline void SetExecutionClass(const ExecutionClass& value) { m_executionClassHasBeenSet = true; m_executionClass = value; }
+
+    /**
+     * <p>Indicates whether the job is run with a standard or flexible execution class.
+     * The standard execution class is ideal for time-sensitive workloads that require
+     * fast job startup and dedicated resources.</p> <p>The flexible execution class is
+     * appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p> <p>Only jobs with Glue version 3.0 and above and command type
+     * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
+     * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+     */
+    inline void SetExecutionClass(ExecutionClass&& value) { m_executionClassHasBeenSet = true; m_executionClass = std::move(value); }
+
+    /**
+     * <p>Indicates whether the job is run with a standard or flexible execution class.
+     * The standard execution class is ideal for time-sensitive workloads that require
+     * fast job startup and dedicated resources.</p> <p>The flexible execution class is
+     * appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p> <p>Only jobs with Glue version 3.0 and above and command type
+     * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
+     * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+     */
+    inline Job& WithExecutionClass(const ExecutionClass& value) { SetExecutionClass(value); return *this;}
+
+    /**
+     * <p>Indicates whether the job is run with a standard or flexible execution class.
+     * The standard execution class is ideal for time-sensitive workloads that require
+     * fast job startup and dedicated resources.</p> <p>The flexible execution class is
+     * appropriate for time-insensitive jobs whose start and completion times may vary.
+     * </p> <p>Only jobs with Glue version 3.0 and above and command type
+     * <code>glueetl</code> will be allowed to set <code>ExecutionClass</code> to
+     * <code>FLEX</code>. The flexible execution class is available for Spark jobs.</p>
+     */
+    inline Job& WithExecutionClass(ExecutionClass&& value) { SetExecutionClass(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_logUri;
-    bool m_logUriHasBeenSet;
+    bool m_logUriHasBeenSet = false;
 
     Aws::String m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdOn;
-    bool m_createdOnHasBeenSet;
+    bool m_createdOnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedOn;
-    bool m_lastModifiedOnHasBeenSet;
+    bool m_lastModifiedOnHasBeenSet = false;
 
     ExecutionProperty m_executionProperty;
-    bool m_executionPropertyHasBeenSet;
+    bool m_executionPropertyHasBeenSet = false;
 
     JobCommand m_command;
-    bool m_commandHasBeenSet;
+    bool m_commandHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_defaultArguments;
-    bool m_defaultArgumentsHasBeenSet;
+    bool m_defaultArgumentsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_nonOverridableArguments;
-    bool m_nonOverridableArgumentsHasBeenSet;
+    bool m_nonOverridableArgumentsHasBeenSet = false;
 
     ConnectionsList m_connections;
-    bool m_connectionsHasBeenSet;
+    bool m_connectionsHasBeenSet = false;
 
     int m_maxRetries;
-    bool m_maxRetriesHasBeenSet;
+    bool m_maxRetriesHasBeenSet = false;
 
     int m_timeout;
-    bool m_timeoutHasBeenSet;
+    bool m_timeoutHasBeenSet = false;
 
     double m_maxCapacity;
-    bool m_maxCapacityHasBeenSet;
+    bool m_maxCapacityHasBeenSet = false;
 
     WorkerType m_workerType;
-    bool m_workerTypeHasBeenSet;
+    bool m_workerTypeHasBeenSet = false;
 
     int m_numberOfWorkers;
-    bool m_numberOfWorkersHasBeenSet;
+    bool m_numberOfWorkersHasBeenSet = false;
 
     Aws::String m_securityConfiguration;
-    bool m_securityConfigurationHasBeenSet;
+    bool m_securityConfigurationHasBeenSet = false;
 
     NotificationProperty m_notificationProperty;
-    bool m_notificationPropertyHasBeenSet;
+    bool m_notificationPropertyHasBeenSet = false;
 
     Aws::String m_glueVersion;
-    bool m_glueVersionHasBeenSet;
+    bool m_glueVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, CodeGenConfigurationNode> m_codeGenConfigurationNodes;
-    bool m_codeGenConfigurationNodesHasBeenSet;
+    bool m_codeGenConfigurationNodesHasBeenSet = false;
+
+    ExecutionClass m_executionClass;
+    bool m_executionClassHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,201 +5,42 @@
 
 #pragma once
 #include <aws/budgets/Budgets_EXPORTS.h>
-#include <aws/budgets/BudgetsErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/budgets/model/CreateBudgetResult.h>
-#include <aws/budgets/model/CreateBudgetActionResult.h>
-#include <aws/budgets/model/CreateNotificationResult.h>
-#include <aws/budgets/model/CreateSubscriberResult.h>
-#include <aws/budgets/model/DeleteBudgetResult.h>
-#include <aws/budgets/model/DeleteBudgetActionResult.h>
-#include <aws/budgets/model/DeleteNotificationResult.h>
-#include <aws/budgets/model/DeleteSubscriberResult.h>
-#include <aws/budgets/model/DescribeBudgetResult.h>
-#include <aws/budgets/model/DescribeBudgetActionResult.h>
-#include <aws/budgets/model/DescribeBudgetActionHistoriesResult.h>
-#include <aws/budgets/model/DescribeBudgetActionsForAccountResult.h>
-#include <aws/budgets/model/DescribeBudgetActionsForBudgetResult.h>
-#include <aws/budgets/model/DescribeBudgetNotificationsForAccountResult.h>
-#include <aws/budgets/model/DescribeBudgetPerformanceHistoryResult.h>
-#include <aws/budgets/model/DescribeBudgetsResult.h>
-#include <aws/budgets/model/DescribeNotificationsForBudgetResult.h>
-#include <aws/budgets/model/DescribeSubscribersForNotificationResult.h>
-#include <aws/budgets/model/ExecuteBudgetActionResult.h>
-#include <aws/budgets/model/UpdateBudgetResult.h>
-#include <aws/budgets/model/UpdateBudgetActionResult.h>
-#include <aws/budgets/model/UpdateNotificationResult.h>
-#include <aws/budgets/model/UpdateSubscriberResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/budgets/BudgetsServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Budgets
 {
-
-namespace Model
-{
-        class CreateBudgetRequest;
-        class CreateBudgetActionRequest;
-        class CreateNotificationRequest;
-        class CreateSubscriberRequest;
-        class DeleteBudgetRequest;
-        class DeleteBudgetActionRequest;
-        class DeleteNotificationRequest;
-        class DeleteSubscriberRequest;
-        class DescribeBudgetRequest;
-        class DescribeBudgetActionRequest;
-        class DescribeBudgetActionHistoriesRequest;
-        class DescribeBudgetActionsForAccountRequest;
-        class DescribeBudgetActionsForBudgetRequest;
-        class DescribeBudgetNotificationsForAccountRequest;
-        class DescribeBudgetPerformanceHistoryRequest;
-        class DescribeBudgetsRequest;
-        class DescribeNotificationsForBudgetRequest;
-        class DescribeSubscribersForNotificationRequest;
-        class ExecuteBudgetActionRequest;
-        class UpdateBudgetRequest;
-        class UpdateBudgetActionRequest;
-        class UpdateNotificationRequest;
-        class UpdateSubscriberRequest;
-
-        typedef Aws::Utils::Outcome<CreateBudgetResult, BudgetsError> CreateBudgetOutcome;
-        typedef Aws::Utils::Outcome<CreateBudgetActionResult, BudgetsError> CreateBudgetActionOutcome;
-        typedef Aws::Utils::Outcome<CreateNotificationResult, BudgetsError> CreateNotificationOutcome;
-        typedef Aws::Utils::Outcome<CreateSubscriberResult, BudgetsError> CreateSubscriberOutcome;
-        typedef Aws::Utils::Outcome<DeleteBudgetResult, BudgetsError> DeleteBudgetOutcome;
-        typedef Aws::Utils::Outcome<DeleteBudgetActionResult, BudgetsError> DeleteBudgetActionOutcome;
-        typedef Aws::Utils::Outcome<DeleteNotificationResult, BudgetsError> DeleteNotificationOutcome;
-        typedef Aws::Utils::Outcome<DeleteSubscriberResult, BudgetsError> DeleteSubscriberOutcome;
-        typedef Aws::Utils::Outcome<DescribeBudgetResult, BudgetsError> DescribeBudgetOutcome;
-        typedef Aws::Utils::Outcome<DescribeBudgetActionResult, BudgetsError> DescribeBudgetActionOutcome;
-        typedef Aws::Utils::Outcome<DescribeBudgetActionHistoriesResult, BudgetsError> DescribeBudgetActionHistoriesOutcome;
-        typedef Aws::Utils::Outcome<DescribeBudgetActionsForAccountResult, BudgetsError> DescribeBudgetActionsForAccountOutcome;
-        typedef Aws::Utils::Outcome<DescribeBudgetActionsForBudgetResult, BudgetsError> DescribeBudgetActionsForBudgetOutcome;
-        typedef Aws::Utils::Outcome<DescribeBudgetNotificationsForAccountResult, BudgetsError> DescribeBudgetNotificationsForAccountOutcome;
-        typedef Aws::Utils::Outcome<DescribeBudgetPerformanceHistoryResult, BudgetsError> DescribeBudgetPerformanceHistoryOutcome;
-        typedef Aws::Utils::Outcome<DescribeBudgetsResult, BudgetsError> DescribeBudgetsOutcome;
-        typedef Aws::Utils::Outcome<DescribeNotificationsForBudgetResult, BudgetsError> DescribeNotificationsForBudgetOutcome;
-        typedef Aws::Utils::Outcome<DescribeSubscribersForNotificationResult, BudgetsError> DescribeSubscribersForNotificationOutcome;
-        typedef Aws::Utils::Outcome<ExecuteBudgetActionResult, BudgetsError> ExecuteBudgetActionOutcome;
-        typedef Aws::Utils::Outcome<UpdateBudgetResult, BudgetsError> UpdateBudgetOutcome;
-        typedef Aws::Utils::Outcome<UpdateBudgetActionResult, BudgetsError> UpdateBudgetActionOutcome;
-        typedef Aws::Utils::Outcome<UpdateNotificationResult, BudgetsError> UpdateNotificationOutcome;
-        typedef Aws::Utils::Outcome<UpdateSubscriberResult, BudgetsError> UpdateSubscriberOutcome;
-
-        typedef std::future<CreateBudgetOutcome> CreateBudgetOutcomeCallable;
-        typedef std::future<CreateBudgetActionOutcome> CreateBudgetActionOutcomeCallable;
-        typedef std::future<CreateNotificationOutcome> CreateNotificationOutcomeCallable;
-        typedef std::future<CreateSubscriberOutcome> CreateSubscriberOutcomeCallable;
-        typedef std::future<DeleteBudgetOutcome> DeleteBudgetOutcomeCallable;
-        typedef std::future<DeleteBudgetActionOutcome> DeleteBudgetActionOutcomeCallable;
-        typedef std::future<DeleteNotificationOutcome> DeleteNotificationOutcomeCallable;
-        typedef std::future<DeleteSubscriberOutcome> DeleteSubscriberOutcomeCallable;
-        typedef std::future<DescribeBudgetOutcome> DescribeBudgetOutcomeCallable;
-        typedef std::future<DescribeBudgetActionOutcome> DescribeBudgetActionOutcomeCallable;
-        typedef std::future<DescribeBudgetActionHistoriesOutcome> DescribeBudgetActionHistoriesOutcomeCallable;
-        typedef std::future<DescribeBudgetActionsForAccountOutcome> DescribeBudgetActionsForAccountOutcomeCallable;
-        typedef std::future<DescribeBudgetActionsForBudgetOutcome> DescribeBudgetActionsForBudgetOutcomeCallable;
-        typedef std::future<DescribeBudgetNotificationsForAccountOutcome> DescribeBudgetNotificationsForAccountOutcomeCallable;
-        typedef std::future<DescribeBudgetPerformanceHistoryOutcome> DescribeBudgetPerformanceHistoryOutcomeCallable;
-        typedef std::future<DescribeBudgetsOutcome> DescribeBudgetsOutcomeCallable;
-        typedef std::future<DescribeNotificationsForBudgetOutcome> DescribeNotificationsForBudgetOutcomeCallable;
-        typedef std::future<DescribeSubscribersForNotificationOutcome> DescribeSubscribersForNotificationOutcomeCallable;
-        typedef std::future<ExecuteBudgetActionOutcome> ExecuteBudgetActionOutcomeCallable;
-        typedef std::future<UpdateBudgetOutcome> UpdateBudgetOutcomeCallable;
-        typedef std::future<UpdateBudgetActionOutcome> UpdateBudgetActionOutcomeCallable;
-        typedef std::future<UpdateNotificationOutcome> UpdateNotificationOutcomeCallable;
-        typedef std::future<UpdateSubscriberOutcome> UpdateSubscriberOutcomeCallable;
-} // namespace Model
-
-  class BudgetsClient;
-
-    typedef std::function<void(const BudgetsClient*, const Model::CreateBudgetRequest&, const Model::CreateBudgetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBudgetResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::CreateBudgetActionRequest&, const Model::CreateBudgetActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBudgetActionResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::CreateNotificationRequest&, const Model::CreateNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNotificationResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::CreateSubscriberRequest&, const Model::CreateSubscriberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubscriberResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DeleteBudgetRequest&, const Model::DeleteBudgetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBudgetResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DeleteBudgetActionRequest&, const Model::DeleteBudgetActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBudgetActionResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DeleteNotificationRequest&, const Model::DeleteNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotificationResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DeleteSubscriberRequest&, const Model::DeleteSubscriberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriberResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DescribeBudgetRequest&, const Model::DescribeBudgetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBudgetResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DescribeBudgetActionRequest&, const Model::DescribeBudgetActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBudgetActionResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DescribeBudgetActionHistoriesRequest&, const Model::DescribeBudgetActionHistoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBudgetActionHistoriesResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DescribeBudgetActionsForAccountRequest&, const Model::DescribeBudgetActionsForAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBudgetActionsForAccountResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DescribeBudgetActionsForBudgetRequest&, const Model::DescribeBudgetActionsForBudgetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBudgetActionsForBudgetResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DescribeBudgetNotificationsForAccountRequest&, const Model::DescribeBudgetNotificationsForAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBudgetNotificationsForAccountResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DescribeBudgetPerformanceHistoryRequest&, const Model::DescribeBudgetPerformanceHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBudgetPerformanceHistoryResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DescribeBudgetsRequest&, const Model::DescribeBudgetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBudgetsResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DescribeNotificationsForBudgetRequest&, const Model::DescribeNotificationsForBudgetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotificationsForBudgetResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::DescribeSubscribersForNotificationRequest&, const Model::DescribeSubscribersForNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscribersForNotificationResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::ExecuteBudgetActionRequest&, const Model::ExecuteBudgetActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteBudgetActionResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::UpdateBudgetRequest&, const Model::UpdateBudgetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBudgetResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::UpdateBudgetActionRequest&, const Model::UpdateBudgetActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBudgetActionResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::UpdateNotificationRequest&, const Model::UpdateNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotificationResponseReceivedHandler;
-    typedef std::function<void(const BudgetsClient*, const Model::UpdateSubscriberRequest&, const Model::UpdateSubscriberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriberResponseReceivedHandler;
-
   /**
-   * <p>The Amazon Web Services Budgets API enables you to use Amazon Web Services
-   * Budgets to plan your service usage, service costs, and instance reservations.
-   * The API reference provides descriptions, syntax, and usage examples for each of
-   * the actions and data types for Amazon Web Services Budgets. </p> <p>Budgets
-   * provide you with a way to see the following information:</p> <ul> <li> <p>How
-   * close your plan is to your budgeted amount or to the free tier limits</p> </li>
-   * <li> <p>Your usage-to-date, including how much you've used of your Reserved
-   * Instances (RIs)</p> </li> <li> <p>Your current estimated charges from Amazon Web
-   * Services, and how much your predicted usage will accrue in charges by the end of
-   * the month</p> </li> <li> <p>How much of your budget has been used</p> </li>
-   * </ul> <p>Amazon Web Services updates your budget status several times a day.
-   * Budgets track your unblended costs, subscriptions, refunds, and RIs. You can
-   * create the following types of budgets:</p> <ul> <li> <p> <b>Cost budgets</b> -
-   * Plan how much you want to spend on a service.</p> </li> <li> <p> <b>Usage
-   * budgets</b> - Plan how much you want to use one or more services.</p> </li> <li>
-   * <p> <b>RI utilization budgets</b> - Define a utilization threshold, and receive
-   * alerts when your RI usage falls below that threshold. This lets you see if your
-   * RIs are unused or under-utilized.</p> </li> <li> <p> <b>RI coverage budgets</b>
-   * - Define a coverage threshold, and receive alerts when the number of your
-   * instance hours that are covered by RIs fall below that threshold. This lets you
-   * see how much of your instance usage is covered by a reservation.</p> </li> </ul>
-   * <p>Service Endpoint</p> <p>The Amazon Web Services Budgets API provides the
-   * following endpoint:</p> <ul> <li> <p>https://budgets.amazonaws.com</p> </li>
-   * </ul> <p>For information about costs that are associated with the Amazon Web
-   * Services Budgets API, see <a
-   * href="https://aws.amazon.com/aws-cost-management/pricing/">Amazon Web Services
-   * Cost Management Pricing</a>.</p>
+   * <p>Use the Amazon Web Services Budgets API to plan your service usage, service
+   * costs, and instance reservations. This API reference provides descriptions,
+   * syntax, and usage examples for each of the actions and data types for the Amazon
+   * Web Services Budgets feature. </p> <p>Budgets provide you with a way to see the
+   * following information:</p> <ul> <li> <p>How close your plan is to your budgeted
+   * amount or to the free tier limits</p> </li> <li> <p>Your usage-to-date,
+   * including how much you've used of your Reserved Instances (RIs)</p> </li> <li>
+   * <p>Your current estimated charges from Amazon Web Services, and how much your
+   * predicted usage will accrue in charges by the end of the month</p> </li> <li>
+   * <p>How much of your budget has been used</p> </li> </ul> <p>Amazon Web Services
+   * updates your budget status several times a day. Budgets track your unblended
+   * costs, subscriptions, refunds, and RIs. You can create the following types of
+   * budgets:</p> <ul> <li> <p> <b>Cost budgets</b> - Plan how much you want to spend
+   * on a service.</p> </li> <li> <p> <b>Usage budgets</b> - Plan how much you want
+   * to use one or more services.</p> </li> <li> <p> <b>RI utilization budgets</b> -
+   * Define a utilization threshold, and receive alerts when your RI usage falls
+   * below that threshold. This lets you see if your RIs are unused or
+   * under-utilized.</p> </li> <li> <p> <b>RI coverage budgets</b> - Define a
+   * coverage threshold, and receive alerts when the number of your instance hours
+   * that are covered by RIs fall below that threshold. This lets you see how much of
+   * your instance usage is covered by a reservation.</p> </li> </ul> <p>Service
+   * Endpoint</p> <p>The Amazon Web Services Budgets API provides the following
+   * endpoint:</p> <ul> <li> <p>https://budgets.amazonaws.com</p> </li> </ul> <p>For
+   * information about costs that are associated with the Amazon Web Services Budgets
+   * API, see <a href="https://aws.amazon.com/aws-cost-management/pricing/">Amazon
+   * Web Services Cost Management Pricing</a>.</p>
    */
   class AWS_BUDGETS_API BudgetsClient : public Aws::Client::AWSJsonClient
   {
@@ -216,14 +57,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        BudgetsClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        BudgetsClient(const Aws::Auth::AWSCredentials& credentials,
+                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         BudgetsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~BudgetsClient();
 
@@ -662,29 +504,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void CreateBudgetAsyncHelper(const Model::CreateBudgetRequest& request, const CreateBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateBudgetActionAsyncHelper(const Model::CreateBudgetActionRequest& request, const CreateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateNotificationAsyncHelper(const Model::CreateNotificationRequest& request, const CreateNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSubscriberAsyncHelper(const Model::CreateSubscriberRequest& request, const CreateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBudgetAsyncHelper(const Model::DeleteBudgetRequest& request, const DeleteBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteBudgetActionAsyncHelper(const Model::DeleteBudgetActionRequest& request, const DeleteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteNotificationAsyncHelper(const Model::DeleteNotificationRequest& request, const DeleteNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSubscriberAsyncHelper(const Model::DeleteSubscriberRequest& request, const DeleteSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBudgetAsyncHelper(const Model::DescribeBudgetRequest& request, const DescribeBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBudgetActionAsyncHelper(const Model::DescribeBudgetActionRequest& request, const DescribeBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBudgetActionHistoriesAsyncHelper(const Model::DescribeBudgetActionHistoriesRequest& request, const DescribeBudgetActionHistoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBudgetActionsForAccountAsyncHelper(const Model::DescribeBudgetActionsForAccountRequest& request, const DescribeBudgetActionsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBudgetActionsForBudgetAsyncHelper(const Model::DescribeBudgetActionsForBudgetRequest& request, const DescribeBudgetActionsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBudgetNotificationsForAccountAsyncHelper(const Model::DescribeBudgetNotificationsForAccountRequest& request, const DescribeBudgetNotificationsForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBudgetPerformanceHistoryAsyncHelper(const Model::DescribeBudgetPerformanceHistoryRequest& request, const DescribeBudgetPerformanceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBudgetsAsyncHelper(const Model::DescribeBudgetsRequest& request, const DescribeBudgetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeNotificationsForBudgetAsyncHelper(const Model::DescribeNotificationsForBudgetRequest& request, const DescribeNotificationsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSubscribersForNotificationAsyncHelper(const Model::DescribeSubscribersForNotificationRequest& request, const DescribeSubscribersForNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ExecuteBudgetActionAsyncHelper(const Model::ExecuteBudgetActionRequest& request, const ExecuteBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateBudgetAsyncHelper(const Model::UpdateBudgetRequest& request, const UpdateBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateBudgetActionAsyncHelper(const Model::UpdateBudgetActionRequest& request, const UpdateBudgetActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateNotificationAsyncHelper(const Model::UpdateNotificationRequest& request, const UpdateNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSubscriberAsyncHelper(const Model::UpdateSubscriberRequest& request, const UpdateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

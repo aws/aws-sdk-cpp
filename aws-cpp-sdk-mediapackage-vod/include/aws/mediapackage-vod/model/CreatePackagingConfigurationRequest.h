@@ -241,25 +241,25 @@ namespace Model
   private:
 
     CmafPackage m_cmafPackage;
-    bool m_cmafPackageHasBeenSet;
+    bool m_cmafPackageHasBeenSet = false;
 
     DashPackage m_dashPackage;
-    bool m_dashPackageHasBeenSet;
+    bool m_dashPackageHasBeenSet = false;
 
     HlsPackage m_hlsPackage;
-    bool m_hlsPackageHasBeenSet;
+    bool m_hlsPackageHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     MssPackage m_mssPackage;
-    bool m_mssPackageHasBeenSet;
+    bool m_mssPackageHasBeenSet = false;
 
     Aws::String m_packagingGroupId;
-    bool m_packagingGroupIdHasBeenSet;
+    bool m_packagingGroupIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

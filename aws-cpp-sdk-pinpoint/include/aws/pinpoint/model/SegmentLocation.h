@@ -109,10 +109,10 @@ namespace Model
   private:
 
     SetDimension m_country;
-    bool m_countryHasBeenSet;
+    bool m_countryHasBeenSet = false;
 
     GPSPointDimension m_gPSPoint;
-    bool m_gPSPointHasBeenSet;
+    bool m_gPSPointHasBeenSet = false;
   };
 
 } // namespace Model

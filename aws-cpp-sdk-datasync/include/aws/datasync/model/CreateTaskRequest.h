@@ -545,31 +545,31 @@ namespace Model
   private:
 
     Aws::String m_sourceLocationArn;
-    bool m_sourceLocationArnHasBeenSet;
+    bool m_sourceLocationArnHasBeenSet = false;
 
     Aws::String m_destinationLocationArn;
-    bool m_destinationLocationArnHasBeenSet;
+    bool m_destinationLocationArnHasBeenSet = false;
 
     Aws::String m_cloudWatchLogGroupArn;
-    bool m_cloudWatchLogGroupArnHasBeenSet;
+    bool m_cloudWatchLogGroupArnHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Options m_options;
-    bool m_optionsHasBeenSet;
+    bool m_optionsHasBeenSet = false;
 
     Aws::Vector<FilterRule> m_excludes;
-    bool m_excludesHasBeenSet;
+    bool m_excludesHasBeenSet = false;
 
     TaskSchedule m_schedule;
-    bool m_scheduleHasBeenSet;
+    bool m_scheduleHasBeenSet = false;
 
     Aws::Vector<TagListEntry> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Vector<FilterRule> m_includes;
-    bool m_includesHasBeenSet;
+    bool m_includesHasBeenSet = false;
   };
 
 } // namespace Model

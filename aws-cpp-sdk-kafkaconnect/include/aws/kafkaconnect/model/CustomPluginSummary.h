@@ -258,22 +258,22 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_customPluginArn;
-    bool m_customPluginArnHasBeenSet;
+    bool m_customPluginArnHasBeenSet = false;
 
     CustomPluginState m_customPluginState;
-    bool m_customPluginStateHasBeenSet;
+    bool m_customPluginStateHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     CustomPluginRevisionSummary m_latestRevision;
-    bool m_latestRevisionHasBeenSet;
+    bool m_latestRevisionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

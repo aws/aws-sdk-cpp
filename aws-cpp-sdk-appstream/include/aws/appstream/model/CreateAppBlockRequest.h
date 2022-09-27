@@ -290,22 +290,22 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_displayName;
-    bool m_displayNameHasBeenSet;
+    bool m_displayNameHasBeenSet = false;
 
     S3Location m_sourceS3Location;
-    bool m_sourceS3LocationHasBeenSet;
+    bool m_sourceS3LocationHasBeenSet = false;
 
     ScriptDetails m_setupScriptDetails;
-    bool m_setupScriptDetailsHasBeenSet;
+    bool m_setupScriptDetailsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

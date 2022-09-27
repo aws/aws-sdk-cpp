@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a rule for copying shared snapshots across Regions.</p><p><h3>See
+   * <p> <b>[Event-based policies only]</b> Specifies a cross-Region copy action for
+   * event-based policies.</p>  <p>To specify a cross-Region copy rule for
+   * snapshot and AMI policies, use <a>CrossRegionCopyRule</a>.</p> <p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CrossRegionCopyAction">AWS
    * API Reference</a></p>
@@ -133,13 +135,13 @@ namespace Model
   private:
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     EncryptionConfiguration m_encryptionConfiguration;
-    bool m_encryptionConfigurationHasBeenSet;
+    bool m_encryptionConfigurationHasBeenSet = false;
 
     CrossRegionCopyRetainRule m_retainRule;
-    bool m_retainRuleHasBeenSet;
+    bool m_retainRuleHasBeenSet = false;
   };
 
 } // namespace Model

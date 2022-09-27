@@ -92,7 +92,7 @@ namespace Model
   private:
 
     Aws::Vector<RandomSplitEntry> m_branches;
-    bool m_branchesHasBeenSet;
+    bool m_branchesHasBeenSet = false;
   };
 
 } // namespace Model

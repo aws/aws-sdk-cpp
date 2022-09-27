@@ -1344,76 +1344,76 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_taskSetArn;
-    bool m_taskSetArnHasBeenSet;
+    bool m_taskSetArnHasBeenSet = false;
 
     Aws::String m_serviceArn;
-    bool m_serviceArnHasBeenSet;
+    bool m_serviceArnHasBeenSet = false;
 
     Aws::String m_clusterArn;
-    bool m_clusterArnHasBeenSet;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_startedBy;
-    bool m_startedByHasBeenSet;
+    bool m_startedByHasBeenSet = false;
 
     Aws::String m_externalId;
-    bool m_externalIdHasBeenSet;
+    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
+    bool m_taskDefinitionHasBeenSet = false;
 
     int m_computedDesiredCount;
-    bool m_computedDesiredCountHasBeenSet;
+    bool m_computedDesiredCountHasBeenSet = false;
 
     int m_pendingCount;
-    bool m_pendingCountHasBeenSet;
+    bool m_pendingCountHasBeenSet = false;
 
     int m_runningCount;
-    bool m_runningCountHasBeenSet;
+    bool m_runningCountHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
-    bool m_updatedAtHasBeenSet;
+    bool m_updatedAtHasBeenSet = false;
 
     LaunchType m_launchType;
-    bool m_launchTypeHasBeenSet;
+    bool m_launchTypeHasBeenSet = false;
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
-    bool m_capacityProviderStrategyHasBeenSet;
+    bool m_capacityProviderStrategyHasBeenSet = false;
 
     Aws::String m_platformVersion;
-    bool m_platformVersionHasBeenSet;
+    bool m_platformVersionHasBeenSet = false;
 
     Aws::String m_platformFamily;
-    bool m_platformFamilyHasBeenSet;
+    bool m_platformFamilyHasBeenSet = false;
 
     NetworkConfiguration m_networkConfiguration;
-    bool m_networkConfigurationHasBeenSet;
+    bool m_networkConfigurationHasBeenSet = false;
 
     Aws::Vector<LoadBalancer> m_loadBalancers;
-    bool m_loadBalancersHasBeenSet;
+    bool m_loadBalancersHasBeenSet = false;
 
     Aws::Vector<ServiceRegistry> m_serviceRegistries;
-    bool m_serviceRegistriesHasBeenSet;
+    bool m_serviceRegistriesHasBeenSet = false;
 
     Scale m_scale;
-    bool m_scaleHasBeenSet;
+    bool m_scaleHasBeenSet = false;
 
     StabilityStatus m_stabilityStatus;
-    bool m_stabilityStatusHasBeenSet;
+    bool m_stabilityStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_stabilityStatusAt;
-    bool m_stabilityStatusAtHasBeenSet;
+    bool m_stabilityStatusAtHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

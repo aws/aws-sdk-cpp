@@ -240,16 +240,16 @@ namespace Model
   private:
 
     Aws::String m_categoryName;
-    bool m_categoryNameHasBeenSet;
+    bool m_categoryNameHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;
-    bool m_rulesHasBeenSet;
+    bool m_rulesHasBeenSet = false;
 
     Aws::Utils::DateTime m_createTime;
-    bool m_createTimeHasBeenSet;
+    bool m_createTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTime;
-    bool m_lastUpdateTimeHasBeenSet;
+    bool m_lastUpdateTimeHasBeenSet = false;
   };
 
 } // namespace Model

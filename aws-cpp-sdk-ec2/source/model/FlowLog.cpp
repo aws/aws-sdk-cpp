@@ -24,6 +24,7 @@ FlowLog::FlowLog() :
     m_creationTimeHasBeenSet(false),
     m_deliverLogsErrorMessageHasBeenSet(false),
     m_deliverLogsPermissionArnHasBeenSet(false),
+    m_deliverCrossAccountRoleHasBeenSet(false),
     m_deliverLogsStatusHasBeenSet(false),
     m_flowLogIdHasBeenSet(false),
     m_flowLogStatusHasBeenSet(false),
@@ -46,6 +47,7 @@ FlowLog::FlowLog(const XmlNode& xmlNode) :
     m_creationTimeHasBeenSet(false),
     m_deliverLogsErrorMessageHasBeenSet(false),
     m_deliverLogsPermissionArnHasBeenSet(false),
+    m_deliverCrossAccountRoleHasBeenSet(false),
     m_deliverLogsStatusHasBeenSet(false),
     m_flowLogIdHasBeenSet(false),
     m_flowLogStatusHasBeenSet(false),
@@ -74,7 +76,7 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
     if(!creationTimeNode.IsNull())
     {
-      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_creationTimeHasBeenSet = true;
     }
     XmlNode deliverLogsErrorMessageNode = resultNode.FirstChild("deliverLogsErrorMessage");
@@ -88,6 +90,12 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
     {
       m_deliverLogsPermissionArn = Aws::Utils::Xml::DecodeEscapedXmlText(deliverLogsPermissionArnNode.GetText());
       m_deliverLogsPermissionArnHasBeenSet = true;
+    }
+    XmlNode deliverCrossAccountRoleNode = resultNode.FirstChild("deliverCrossAccountRole");
+    if(!deliverCrossAccountRoleNode.IsNull())
+    {
+      m_deliverCrossAccountRole = Aws::Utils::Xml::DecodeEscapedXmlText(deliverCrossAccountRoleNode.GetText());
+      m_deliverCrossAccountRoleHasBeenSet = true;
     }
     XmlNode deliverLogsStatusNode = resultNode.FirstChild("deliverLogsStatus");
     if(!deliverLogsStatusNode.IsNull())
@@ -176,7 +184,7 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location, unsign
 {
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_deliverLogsErrorMessageHasBeenSet)
@@ -187,6 +195,11 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   if(m_deliverLogsPermissionArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".DeliverLogsPermissionArn=" << StringUtils::URLEncode(m_deliverLogsPermissionArn.c_str()) << "&";
+  }
+
+  if(m_deliverCrossAccountRoleHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeliverCrossAccountRole=" << StringUtils::URLEncode(m_deliverCrossAccountRole.c_str()) << "&";
   }
 
   if(m_deliverLogsStatusHasBeenSet)
@@ -263,7 +276,7 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
   if(m_creationTimeHasBeenSet)
   {
-      oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_deliverLogsErrorMessageHasBeenSet)
   {
@@ -272,6 +285,10 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_deliverLogsPermissionArnHasBeenSet)
   {
       oStream << location << ".DeliverLogsPermissionArn=" << StringUtils::URLEncode(m_deliverLogsPermissionArn.c_str()) << "&";
+  }
+  if(m_deliverCrossAccountRoleHasBeenSet)
+  {
+      oStream << location << ".DeliverCrossAccountRole=" << StringUtils::URLEncode(m_deliverCrossAccountRole.c_str()) << "&";
   }
   if(m_deliverLogsStatusHasBeenSet)
   {

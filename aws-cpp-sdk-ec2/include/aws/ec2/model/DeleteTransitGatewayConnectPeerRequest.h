@@ -112,10 +112,10 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayConnectPeerId;
-    bool m_transitGatewayConnectPeerIdHasBeenSet;
+    bool m_transitGatewayConnectPeerIdHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

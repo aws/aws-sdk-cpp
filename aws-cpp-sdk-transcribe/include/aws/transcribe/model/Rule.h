@@ -199,16 +199,16 @@ namespace Model
   private:
 
     NonTalkTimeFilter m_nonTalkTimeFilter;
-    bool m_nonTalkTimeFilterHasBeenSet;
+    bool m_nonTalkTimeFilterHasBeenSet = false;
 
     InterruptionFilter m_interruptionFilter;
-    bool m_interruptionFilterHasBeenSet;
+    bool m_interruptionFilterHasBeenSet = false;
 
     TranscriptFilter m_transcriptFilter;
-    bool m_transcriptFilterHasBeenSet;
+    bool m_transcriptFilterHasBeenSet = false;
 
     SentimentFilter m_sentimentFilter;
-    bool m_sentimentFilterHasBeenSet;
+    bool m_sentimentFilterHasBeenSet = false;
   };
 
 } // namespace Model

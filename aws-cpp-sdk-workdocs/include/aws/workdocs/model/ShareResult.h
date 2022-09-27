@@ -267,22 +267,22 @@ namespace Model
   private:
 
     Aws::String m_principalId;
-    bool m_principalIdHasBeenSet;
+    bool m_principalIdHasBeenSet = false;
 
     Aws::String m_inviteePrincipalId;
-    bool m_inviteePrincipalIdHasBeenSet;
+    bool m_inviteePrincipalIdHasBeenSet = false;
 
     RoleType m_role;
-    bool m_roleHasBeenSet;
+    bool m_roleHasBeenSet = false;
 
     ShareStatusType m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_shareId;
-    bool m_shareIdHasBeenSet;
+    bool m_shareIdHasBeenSet = false;
 
     Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet;
+    bool m_statusMessageHasBeenSet = false;
   };
 
 } // namespace Model

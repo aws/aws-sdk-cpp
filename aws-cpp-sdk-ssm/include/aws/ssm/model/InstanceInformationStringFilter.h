@@ -41,89 +41,113 @@ namespace Model
 
     /**
      * <p>The filter key name to describe your managed nodes. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
-     * Key"</p>  <p> <code>Tag key</code> isn't a valid filter. You must
-     * specify either <code>tag-key</code> or <code>tag:keyname</code> and a string.
-     * Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here are
-     * some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.</p>
-     * 
+     * <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" |
+     * "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" |
+     * "tag:<code>{keyname}</code> </p>  <p> <code>Tag Key</code> isn't a
+     * valid filter. You must specify either <code>tag-key</code> or
+     * <code>tag:{keyname}</code> and a string. Here are some valid examples:
+     * <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>,
+     * <code>tag:Windows</code>. Here are some <i>invalid</i> examples:
+     * <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>,
+     * <code>tagKey</code>, <code>abc:keyname</code>.</p> 
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
      * <p>The filter key name to describe your managed nodes. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
-     * Key"</p>  <p> <code>Tag key</code> isn't a valid filter. You must
-     * specify either <code>tag-key</code> or <code>tag:keyname</code> and a string.
-     * Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here are
-     * some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.</p>
-     * 
+     * <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" |
+     * "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" |
+     * "tag:<code>{keyname}</code> </p>  <p> <code>Tag Key</code> isn't a
+     * valid filter. You must specify either <code>tag-key</code> or
+     * <code>tag:{keyname}</code> and a string. Here are some valid examples:
+     * <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>,
+     * <code>tag:Windows</code>. Here are some <i>invalid</i> examples:
+     * <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>,
+     * <code>tagKey</code>, <code>abc:keyname</code>.</p> 
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The filter key name to describe your managed nodes. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
-     * Key"</p>  <p> <code>Tag key</code> isn't a valid filter. You must
-     * specify either <code>tag-key</code> or <code>tag:keyname</code> and a string.
-     * Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here are
-     * some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.</p>
-     * 
+     * <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" |
+     * "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" |
+     * "tag:<code>{keyname}</code> </p>  <p> <code>Tag Key</code> isn't a
+     * valid filter. You must specify either <code>tag-key</code> or
+     * <code>tag:{keyname}</code> and a string. Here are some valid examples:
+     * <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>,
+     * <code>tag:Windows</code>. Here are some <i>invalid</i> examples:
+     * <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>,
+     * <code>tagKey</code>, <code>abc:keyname</code>.</p> 
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>The filter key name to describe your managed nodes. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
-     * Key"</p>  <p> <code>Tag key</code> isn't a valid filter. You must
-     * specify either <code>tag-key</code> or <code>tag:keyname</code> and a string.
-     * Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here are
-     * some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.</p>
-     * 
+     * <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" |
+     * "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" |
+     * "tag:<code>{keyname}</code> </p>  <p> <code>Tag Key</code> isn't a
+     * valid filter. You must specify either <code>tag-key</code> or
+     * <code>tag:{keyname}</code> and a string. Here are some valid examples:
+     * <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>,
+     * <code>tag:Windows</code>. Here are some <i>invalid</i> examples:
+     * <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>,
+     * <code>tagKey</code>, <code>abc:keyname</code>.</p> 
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The filter key name to describe your managed nodes. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
-     * Key"</p>  <p> <code>Tag key</code> isn't a valid filter. You must
-     * specify either <code>tag-key</code> or <code>tag:keyname</code> and a string.
-     * Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here are
-     * some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.</p>
-     * 
+     * <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" |
+     * "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" |
+     * "tag:<code>{keyname}</code> </p>  <p> <code>Tag Key</code> isn't a
+     * valid filter. You must specify either <code>tag-key</code> or
+     * <code>tag:{keyname}</code> and a string. Here are some valid examples:
+     * <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>,
+     * <code>tag:Windows</code>. Here are some <i>invalid</i> examples:
+     * <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>,
+     * <code>tagKey</code>, <code>abc:keyname</code>.</p> 
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
      * <p>The filter key name to describe your managed nodes. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
-     * Key"</p>  <p> <code>Tag key</code> isn't a valid filter. You must
-     * specify either <code>tag-key</code> or <code>tag:keyname</code> and a string.
-     * Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here are
-     * some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.</p>
-     * 
+     * <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" |
+     * "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" |
+     * "tag:<code>{keyname}</code> </p>  <p> <code>Tag Key</code> isn't a
+     * valid filter. You must specify either <code>tag-key</code> or
+     * <code>tag:{keyname}</code> and a string. Here are some valid examples:
+     * <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>,
+     * <code>tag:Windows</code>. Here are some <i>invalid</i> examples:
+     * <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>,
+     * <code>tagKey</code>, <code>abc:keyname</code>.</p> 
      */
     inline InstanceInformationStringFilter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
      * <p>The filter key name to describe your managed nodes. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
-     * Key"</p>  <p> <code>Tag key</code> isn't a valid filter. You must
-     * specify either <code>tag-key</code> or <code>tag:keyname</code> and a string.
-     * Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here are
-     * some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.</p>
-     * 
+     * <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" |
+     * "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" |
+     * "tag:<code>{keyname}</code> </p>  <p> <code>Tag Key</code> isn't a
+     * valid filter. You must specify either <code>tag-key</code> or
+     * <code>tag:{keyname}</code> and a string. Here are some valid examples:
+     * <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>,
+     * <code>tag:Windows</code>. Here are some <i>invalid</i> examples:
+     * <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>,
+     * <code>tagKey</code>, <code>abc:keyname</code>.</p> 
      */
     inline InstanceInformationStringFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The filter key name to describe your managed nodes. For example:</p>
-     * <p>"InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|"AssociationStatus"|"Tag
-     * Key"</p>  <p> <code>Tag key</code> isn't a valid filter. You must
-     * specify either <code>tag-key</code> or <code>tag:keyname</code> and a string.
-     * Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here are
-     * some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.</p>
-     * 
+     * <p>"InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" |
+     * "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus" | "tag-key" |
+     * "tag:<code>{keyname}</code> </p>  <p> <code>Tag Key</code> isn't a
+     * valid filter. You must specify either <code>tag-key</code> or
+     * <code>tag:{keyname}</code> and a string. Here are some valid examples:
+     * <code>tag-key</code>, <code>tag:123</code>, <code>tag:al!</code>,
+     * <code>tag:Windows</code>. Here are some <i>invalid</i> examples:
+     * <code>tag-keys</code>, <code>Tag Key</code>, <code>tag:</code>,
+     * <code>tagKey</code>, <code>abc:keyname</code>.</p> 
      */
     inline InstanceInformationStringFilter& WithKey(const char* value) { SetKey(value); return *this;}
 
@@ -176,10 +200,10 @@ namespace Model
   private:
 
     Aws::String m_key;
-    bool m_keyHasBeenSet;
+    bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
-    bool m_valuesHasBeenSet;
+    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

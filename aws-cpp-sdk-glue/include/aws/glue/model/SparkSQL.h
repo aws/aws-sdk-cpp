@@ -304,19 +304,19 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inputs;
-    bool m_inputsHasBeenSet;
+    bool m_inputsHasBeenSet = false;
 
     Aws::String m_sqlQuery;
-    bool m_sqlQueryHasBeenSet;
+    bool m_sqlQueryHasBeenSet = false;
 
     Aws::Vector<SqlAlias> m_sqlAliases;
-    bool m_sqlAliasesHasBeenSet;
+    bool m_sqlAliasesHasBeenSet = false;
 
     Aws::Vector<GlueSchema> m_outputSchemas;
-    bool m_outputSchemasHasBeenSet;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

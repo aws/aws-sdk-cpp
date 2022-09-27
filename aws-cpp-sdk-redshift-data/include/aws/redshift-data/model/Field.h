@@ -196,22 +196,22 @@ namespace Model
   private:
 
     Aws::Utils::ByteBuffer m_blobValue;
-    bool m_blobValueHasBeenSet;
+    bool m_blobValueHasBeenSet = false;
 
     bool m_booleanValue;
-    bool m_booleanValueHasBeenSet;
+    bool m_booleanValueHasBeenSet = false;
 
     double m_doubleValue;
-    bool m_doubleValueHasBeenSet;
+    bool m_doubleValueHasBeenSet = false;
 
     bool m_isNull;
-    bool m_isNullHasBeenSet;
+    bool m_isNullHasBeenSet = false;
 
     long long m_longValue;
-    bool m_longValueHasBeenSet;
+    bool m_longValueHasBeenSet = false;
 
     Aws::String m_stringValue;
-    bool m_stringValueHasBeenSet;
+    bool m_stringValueHasBeenSet = false;
   };
 
 } // namespace Model

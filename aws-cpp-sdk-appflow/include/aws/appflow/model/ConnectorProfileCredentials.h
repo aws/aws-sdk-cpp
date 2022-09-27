@@ -603,58 +603,58 @@ namespace Model
   private:
 
     AmplitudeConnectorProfileCredentials m_amplitude;
-    bool m_amplitudeHasBeenSet;
+    bool m_amplitudeHasBeenSet = false;
 
     DatadogConnectorProfileCredentials m_datadog;
-    bool m_datadogHasBeenSet;
+    bool m_datadogHasBeenSet = false;
 
     DynatraceConnectorProfileCredentials m_dynatrace;
-    bool m_dynatraceHasBeenSet;
+    bool m_dynatraceHasBeenSet = false;
 
     GoogleAnalyticsConnectorProfileCredentials m_googleAnalytics;
-    bool m_googleAnalyticsHasBeenSet;
+    bool m_googleAnalyticsHasBeenSet = false;
 
     HoneycodeConnectorProfileCredentials m_honeycode;
-    bool m_honeycodeHasBeenSet;
+    bool m_honeycodeHasBeenSet = false;
 
     InforNexusConnectorProfileCredentials m_inforNexus;
-    bool m_inforNexusHasBeenSet;
+    bool m_inforNexusHasBeenSet = false;
 
     MarketoConnectorProfileCredentials m_marketo;
-    bool m_marketoHasBeenSet;
+    bool m_marketoHasBeenSet = false;
 
     RedshiftConnectorProfileCredentials m_redshift;
-    bool m_redshiftHasBeenSet;
+    bool m_redshiftHasBeenSet = false;
 
     SalesforceConnectorProfileCredentials m_salesforce;
-    bool m_salesforceHasBeenSet;
+    bool m_salesforceHasBeenSet = false;
 
     ServiceNowConnectorProfileCredentials m_serviceNow;
-    bool m_serviceNowHasBeenSet;
+    bool m_serviceNowHasBeenSet = false;
 
     SingularConnectorProfileCredentials m_singular;
-    bool m_singularHasBeenSet;
+    bool m_singularHasBeenSet = false;
 
     SlackConnectorProfileCredentials m_slack;
-    bool m_slackHasBeenSet;
+    bool m_slackHasBeenSet = false;
 
     SnowflakeConnectorProfileCredentials m_snowflake;
-    bool m_snowflakeHasBeenSet;
+    bool m_snowflakeHasBeenSet = false;
 
     TrendmicroConnectorProfileCredentials m_trendmicro;
-    bool m_trendmicroHasBeenSet;
+    bool m_trendmicroHasBeenSet = false;
 
     VeevaConnectorProfileCredentials m_veeva;
-    bool m_veevaHasBeenSet;
+    bool m_veevaHasBeenSet = false;
 
     ZendeskConnectorProfileCredentials m_zendesk;
-    bool m_zendeskHasBeenSet;
+    bool m_zendeskHasBeenSet = false;
 
     SAPODataConnectorProfileCredentials m_sAPOData;
-    bool m_sAPODataHasBeenSet;
+    bool m_sAPODataHasBeenSet = false;
 
     CustomConnectorProfileCredentials m_customConnector;
-    bool m_customConnectorHasBeenSet;
+    bool m_customConnectorHasBeenSet = false;
   };
 
 } // namespace Model

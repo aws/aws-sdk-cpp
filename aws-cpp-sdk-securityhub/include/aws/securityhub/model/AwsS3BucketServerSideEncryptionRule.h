@@ -82,7 +82,7 @@ namespace Model
   private:
 
     AwsS3BucketServerSideEncryptionByDefault m_applyServerSideEncryptionByDefault;
-    bool m_applyServerSideEncryptionByDefaultHasBeenSet;
+    bool m_applyServerSideEncryptionByDefaultHasBeenSet = false;
   };
 
 } // namespace Model

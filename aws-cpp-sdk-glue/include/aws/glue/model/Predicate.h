@@ -120,10 +120,10 @@ namespace Model
   private:
 
     Logical m_logical;
-    bool m_logicalHasBeenSet;
+    bool m_logicalHasBeenSet = false;
 
     Aws::Vector<Condition> m_conditions;
-    bool m_conditionsHasBeenSet;
+    bool m_conditionsHasBeenSet = false;
   };
 
 } // namespace Model

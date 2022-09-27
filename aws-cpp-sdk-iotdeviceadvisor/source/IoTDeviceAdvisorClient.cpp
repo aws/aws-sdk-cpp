@@ -46,33 +46,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "iotdeviceadvisor";
 static const char* ALLOCATION_TAG = "IoTDeviceAdvisorClient";
 
-
 IoTDeviceAdvisorClient::IoTDeviceAdvisorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<IoTDeviceAdvisorErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTDeviceAdvisorErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-IoTDeviceAdvisorClient::IoTDeviceAdvisorClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+IoTDeviceAdvisorClient::IoTDeviceAdvisorClient(const AWSCredentials& credentials,
+                                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<IoTDeviceAdvisorErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTDeviceAdvisorErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 IoTDeviceAdvisorClient::IoTDeviceAdvisorClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                               const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<IoTDeviceAdvisorErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTDeviceAdvisorErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -84,7 +90,7 @@ IoTDeviceAdvisorClient::~IoTDeviceAdvisorClient()
 
 void IoTDeviceAdvisorClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("IotDeviceAdvisor");
+  AWSClient::SetServiceClientName("IotDeviceAdvisor");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -125,12 +131,10 @@ CreateSuiteDefinitionOutcomeCallable IoTDeviceAdvisorClient::CreateSuiteDefiniti
 
 void IoTDeviceAdvisorClient::CreateSuiteDefinitionAsync(const CreateSuiteDefinitionRequest& request, const CreateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateSuiteDefinitionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::CreateSuiteDefinitionAsyncHelper(const CreateSuiteDefinitionRequest& request, const CreateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateSuiteDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateSuiteDefinition(request), context);
+    } );
 }
 
 DeleteSuiteDefinitionOutcome IoTDeviceAdvisorClient::DeleteSuiteDefinition(const DeleteSuiteDefinitionRequest& request) const
@@ -156,12 +160,10 @@ DeleteSuiteDefinitionOutcomeCallable IoTDeviceAdvisorClient::DeleteSuiteDefiniti
 
 void IoTDeviceAdvisorClient::DeleteSuiteDefinitionAsync(const DeleteSuiteDefinitionRequest& request, const DeleteSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteSuiteDefinitionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::DeleteSuiteDefinitionAsyncHelper(const DeleteSuiteDefinitionRequest& request, const DeleteSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteSuiteDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteSuiteDefinition(request), context);
+    } );
 }
 
 GetEndpointOutcome IoTDeviceAdvisorClient::GetEndpoint(const GetEndpointRequest& request) const
@@ -181,12 +183,10 @@ GetEndpointOutcomeCallable IoTDeviceAdvisorClient::GetEndpointCallable(const Get
 
 void IoTDeviceAdvisorClient::GetEndpointAsync(const GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetEndpointAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::GetEndpointAsyncHelper(const GetEndpointRequest& request, const GetEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetEndpoint(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetEndpoint(request), context);
+    } );
 }
 
 GetSuiteDefinitionOutcome IoTDeviceAdvisorClient::GetSuiteDefinition(const GetSuiteDefinitionRequest& request) const
@@ -212,12 +212,10 @@ GetSuiteDefinitionOutcomeCallable IoTDeviceAdvisorClient::GetSuiteDefinitionCall
 
 void IoTDeviceAdvisorClient::GetSuiteDefinitionAsync(const GetSuiteDefinitionRequest& request, const GetSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSuiteDefinitionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::GetSuiteDefinitionAsyncHelper(const GetSuiteDefinitionRequest& request, const GetSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSuiteDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSuiteDefinition(request), context);
+    } );
 }
 
 GetSuiteRunOutcome IoTDeviceAdvisorClient::GetSuiteRun(const GetSuiteRunRequest& request) const
@@ -250,12 +248,10 @@ GetSuiteRunOutcomeCallable IoTDeviceAdvisorClient::GetSuiteRunCallable(const Get
 
 void IoTDeviceAdvisorClient::GetSuiteRunAsync(const GetSuiteRunRequest& request, const GetSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSuiteRunAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::GetSuiteRunAsyncHelper(const GetSuiteRunRequest& request, const GetSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSuiteRun(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSuiteRun(request), context);
+    } );
 }
 
 GetSuiteRunReportOutcome IoTDeviceAdvisorClient::GetSuiteRunReport(const GetSuiteRunReportRequest& request) const
@@ -289,12 +285,10 @@ GetSuiteRunReportOutcomeCallable IoTDeviceAdvisorClient::GetSuiteRunReportCallab
 
 void IoTDeviceAdvisorClient::GetSuiteRunReportAsync(const GetSuiteRunReportRequest& request, const GetSuiteRunReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetSuiteRunReportAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::GetSuiteRunReportAsyncHelper(const GetSuiteRunReportRequest& request, const GetSuiteRunReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetSuiteRunReport(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetSuiteRunReport(request), context);
+    } );
 }
 
 ListSuiteDefinitionsOutcome IoTDeviceAdvisorClient::ListSuiteDefinitions(const ListSuiteDefinitionsRequest& request) const
@@ -314,12 +308,10 @@ ListSuiteDefinitionsOutcomeCallable IoTDeviceAdvisorClient::ListSuiteDefinitions
 
 void IoTDeviceAdvisorClient::ListSuiteDefinitionsAsync(const ListSuiteDefinitionsRequest& request, const ListSuiteDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSuiteDefinitionsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::ListSuiteDefinitionsAsyncHelper(const ListSuiteDefinitionsRequest& request, const ListSuiteDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSuiteDefinitions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSuiteDefinitions(request), context);
+    } );
 }
 
 ListSuiteRunsOutcome IoTDeviceAdvisorClient::ListSuiteRuns(const ListSuiteRunsRequest& request) const
@@ -339,12 +331,10 @@ ListSuiteRunsOutcomeCallable IoTDeviceAdvisorClient::ListSuiteRunsCallable(const
 
 void IoTDeviceAdvisorClient::ListSuiteRunsAsync(const ListSuiteRunsRequest& request, const ListSuiteRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListSuiteRunsAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::ListSuiteRunsAsyncHelper(const ListSuiteRunsRequest& request, const ListSuiteRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListSuiteRuns(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListSuiteRuns(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome IoTDeviceAdvisorClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -370,12 +360,10 @@ ListTagsForResourceOutcomeCallable IoTDeviceAdvisorClient::ListTagsForResourceCa
 
 void IoTDeviceAdvisorClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 StartSuiteRunOutcome IoTDeviceAdvisorClient::StartSuiteRun(const StartSuiteRunRequest& request) const
@@ -402,12 +390,10 @@ StartSuiteRunOutcomeCallable IoTDeviceAdvisorClient::StartSuiteRunCallable(const
 
 void IoTDeviceAdvisorClient::StartSuiteRunAsync(const StartSuiteRunRequest& request, const StartSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartSuiteRunAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::StartSuiteRunAsyncHelper(const StartSuiteRunRequest& request, const StartSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartSuiteRun(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartSuiteRun(request), context);
+    } );
 }
 
 StopSuiteRunOutcome IoTDeviceAdvisorClient::StopSuiteRun(const StopSuiteRunRequest& request) const
@@ -441,12 +427,10 @@ StopSuiteRunOutcomeCallable IoTDeviceAdvisorClient::StopSuiteRunCallable(const S
 
 void IoTDeviceAdvisorClient::StopSuiteRunAsync(const StopSuiteRunRequest& request, const StopSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StopSuiteRunAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::StopSuiteRunAsyncHelper(const StopSuiteRunRequest& request, const StopSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StopSuiteRun(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StopSuiteRun(request), context);
+    } );
 }
 
 TagResourceOutcome IoTDeviceAdvisorClient::TagResource(const TagResourceRequest& request) const
@@ -472,12 +456,10 @@ TagResourceOutcomeCallable IoTDeviceAdvisorClient::TagResourceCallable(const Tag
 
 void IoTDeviceAdvisorClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome IoTDeviceAdvisorClient::UntagResource(const UntagResourceRequest& request) const
@@ -508,12 +490,10 @@ UntagResourceOutcomeCallable IoTDeviceAdvisorClient::UntagResourceCallable(const
 
 void IoTDeviceAdvisorClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateSuiteDefinitionOutcome IoTDeviceAdvisorClient::UpdateSuiteDefinition(const UpdateSuiteDefinitionRequest& request) const
@@ -539,11 +519,9 @@ UpdateSuiteDefinitionOutcomeCallable IoTDeviceAdvisorClient::UpdateSuiteDefiniti
 
 void IoTDeviceAdvisorClient::UpdateSuiteDefinitionAsync(const UpdateSuiteDefinitionRequest& request, const UpdateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateSuiteDefinitionAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::UpdateSuiteDefinitionAsyncHelper(const UpdateSuiteDefinitionRequest& request, const UpdateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateSuiteDefinition(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSuiteDefinition(request), context);
+    } );
 }
 

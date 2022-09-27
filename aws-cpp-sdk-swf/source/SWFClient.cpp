@@ -69,33 +69,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "swf";
 static const char* ALLOCATION_TAG = "SWFClient";
 
-
 SWFClient::SWFClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<SWFErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<SWFErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-SWFClient::SWFClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+SWFClient::SWFClient(const AWSCredentials& credentials,
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<SWFErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<SWFErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 SWFClient::SWFClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                     const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<SWFErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<SWFErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -107,7 +113,7 @@ SWFClient::~SWFClient()
 
 void SWFClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("SWF");
+  AWSClient::SetServiceClientName("SWF");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -147,12 +153,10 @@ CountClosedWorkflowExecutionsOutcomeCallable SWFClient::CountClosedWorkflowExecu
 
 void SWFClient::CountClosedWorkflowExecutionsAsync(const CountClosedWorkflowExecutionsRequest& request, const CountClosedWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CountClosedWorkflowExecutionsAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::CountClosedWorkflowExecutionsAsyncHelper(const CountClosedWorkflowExecutionsRequest& request, const CountClosedWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CountClosedWorkflowExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CountClosedWorkflowExecutions(request), context);
+    } );
 }
 
 CountOpenWorkflowExecutionsOutcome SWFClient::CountOpenWorkflowExecutions(const CountOpenWorkflowExecutionsRequest& request) const
@@ -171,12 +175,10 @@ CountOpenWorkflowExecutionsOutcomeCallable SWFClient::CountOpenWorkflowExecution
 
 void SWFClient::CountOpenWorkflowExecutionsAsync(const CountOpenWorkflowExecutionsRequest& request, const CountOpenWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CountOpenWorkflowExecutionsAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::CountOpenWorkflowExecutionsAsyncHelper(const CountOpenWorkflowExecutionsRequest& request, const CountOpenWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CountOpenWorkflowExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CountOpenWorkflowExecutions(request), context);
+    } );
 }
 
 CountPendingActivityTasksOutcome SWFClient::CountPendingActivityTasks(const CountPendingActivityTasksRequest& request) const
@@ -195,12 +197,10 @@ CountPendingActivityTasksOutcomeCallable SWFClient::CountPendingActivityTasksCal
 
 void SWFClient::CountPendingActivityTasksAsync(const CountPendingActivityTasksRequest& request, const CountPendingActivityTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CountPendingActivityTasksAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::CountPendingActivityTasksAsyncHelper(const CountPendingActivityTasksRequest& request, const CountPendingActivityTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CountPendingActivityTasks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CountPendingActivityTasks(request), context);
+    } );
 }
 
 CountPendingDecisionTasksOutcome SWFClient::CountPendingDecisionTasks(const CountPendingDecisionTasksRequest& request) const
@@ -219,12 +219,10 @@ CountPendingDecisionTasksOutcomeCallable SWFClient::CountPendingDecisionTasksCal
 
 void SWFClient::CountPendingDecisionTasksAsync(const CountPendingDecisionTasksRequest& request, const CountPendingDecisionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CountPendingDecisionTasksAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::CountPendingDecisionTasksAsyncHelper(const CountPendingDecisionTasksRequest& request, const CountPendingDecisionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CountPendingDecisionTasks(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CountPendingDecisionTasks(request), context);
+    } );
 }
 
 DeprecateActivityTypeOutcome SWFClient::DeprecateActivityType(const DeprecateActivityTypeRequest& request) const
@@ -243,12 +241,10 @@ DeprecateActivityTypeOutcomeCallable SWFClient::DeprecateActivityTypeCallable(co
 
 void SWFClient::DeprecateActivityTypeAsync(const DeprecateActivityTypeRequest& request, const DeprecateActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeprecateActivityTypeAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::DeprecateActivityTypeAsyncHelper(const DeprecateActivityTypeRequest& request, const DeprecateActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeprecateActivityType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeprecateActivityType(request), context);
+    } );
 }
 
 DeprecateDomainOutcome SWFClient::DeprecateDomain(const DeprecateDomainRequest& request) const
@@ -267,12 +263,10 @@ DeprecateDomainOutcomeCallable SWFClient::DeprecateDomainCallable(const Deprecat
 
 void SWFClient::DeprecateDomainAsync(const DeprecateDomainRequest& request, const DeprecateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeprecateDomainAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::DeprecateDomainAsyncHelper(const DeprecateDomainRequest& request, const DeprecateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeprecateDomain(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeprecateDomain(request), context);
+    } );
 }
 
 DeprecateWorkflowTypeOutcome SWFClient::DeprecateWorkflowType(const DeprecateWorkflowTypeRequest& request) const
@@ -291,12 +285,10 @@ DeprecateWorkflowTypeOutcomeCallable SWFClient::DeprecateWorkflowTypeCallable(co
 
 void SWFClient::DeprecateWorkflowTypeAsync(const DeprecateWorkflowTypeRequest& request, const DeprecateWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeprecateWorkflowTypeAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::DeprecateWorkflowTypeAsyncHelper(const DeprecateWorkflowTypeRequest& request, const DeprecateWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeprecateWorkflowType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeprecateWorkflowType(request), context);
+    } );
 }
 
 DescribeActivityTypeOutcome SWFClient::DescribeActivityType(const DescribeActivityTypeRequest& request) const
@@ -315,12 +307,10 @@ DescribeActivityTypeOutcomeCallable SWFClient::DescribeActivityTypeCallable(cons
 
 void SWFClient::DescribeActivityTypeAsync(const DescribeActivityTypeRequest& request, const DescribeActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeActivityTypeAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::DescribeActivityTypeAsyncHelper(const DescribeActivityTypeRequest& request, const DescribeActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeActivityType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeActivityType(request), context);
+    } );
 }
 
 DescribeDomainOutcome SWFClient::DescribeDomain(const DescribeDomainRequest& request) const
@@ -339,12 +329,10 @@ DescribeDomainOutcomeCallable SWFClient::DescribeDomainCallable(const DescribeDo
 
 void SWFClient::DescribeDomainAsync(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeDomainAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::DescribeDomainAsyncHelper(const DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeDomain(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeDomain(request), context);
+    } );
 }
 
 DescribeWorkflowExecutionOutcome SWFClient::DescribeWorkflowExecution(const DescribeWorkflowExecutionRequest& request) const
@@ -363,12 +351,10 @@ DescribeWorkflowExecutionOutcomeCallable SWFClient::DescribeWorkflowExecutionCal
 
 void SWFClient::DescribeWorkflowExecutionAsync(const DescribeWorkflowExecutionRequest& request, const DescribeWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkflowExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::DescribeWorkflowExecutionAsyncHelper(const DescribeWorkflowExecutionRequest& request, const DescribeWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeWorkflowExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeWorkflowExecution(request), context);
+    } );
 }
 
 DescribeWorkflowTypeOutcome SWFClient::DescribeWorkflowType(const DescribeWorkflowTypeRequest& request) const
@@ -387,12 +373,10 @@ DescribeWorkflowTypeOutcomeCallable SWFClient::DescribeWorkflowTypeCallable(cons
 
 void SWFClient::DescribeWorkflowTypeAsync(const DescribeWorkflowTypeRequest& request, const DescribeWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkflowTypeAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::DescribeWorkflowTypeAsyncHelper(const DescribeWorkflowTypeRequest& request, const DescribeWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeWorkflowType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeWorkflowType(request), context);
+    } );
 }
 
 GetWorkflowExecutionHistoryOutcome SWFClient::GetWorkflowExecutionHistory(const GetWorkflowExecutionHistoryRequest& request) const
@@ -411,12 +395,10 @@ GetWorkflowExecutionHistoryOutcomeCallable SWFClient::GetWorkflowExecutionHistor
 
 void SWFClient::GetWorkflowExecutionHistoryAsync(const GetWorkflowExecutionHistoryRequest& request, const GetWorkflowExecutionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetWorkflowExecutionHistoryAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::GetWorkflowExecutionHistoryAsyncHelper(const GetWorkflowExecutionHistoryRequest& request, const GetWorkflowExecutionHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetWorkflowExecutionHistory(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetWorkflowExecutionHistory(request), context);
+    } );
 }
 
 ListActivityTypesOutcome SWFClient::ListActivityTypes(const ListActivityTypesRequest& request) const
@@ -435,12 +417,10 @@ ListActivityTypesOutcomeCallable SWFClient::ListActivityTypesCallable(const List
 
 void SWFClient::ListActivityTypesAsync(const ListActivityTypesRequest& request, const ListActivityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListActivityTypesAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::ListActivityTypesAsyncHelper(const ListActivityTypesRequest& request, const ListActivityTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListActivityTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListActivityTypes(request), context);
+    } );
 }
 
 ListClosedWorkflowExecutionsOutcome SWFClient::ListClosedWorkflowExecutions(const ListClosedWorkflowExecutionsRequest& request) const
@@ -459,12 +439,10 @@ ListClosedWorkflowExecutionsOutcomeCallable SWFClient::ListClosedWorkflowExecuti
 
 void SWFClient::ListClosedWorkflowExecutionsAsync(const ListClosedWorkflowExecutionsRequest& request, const ListClosedWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListClosedWorkflowExecutionsAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::ListClosedWorkflowExecutionsAsyncHelper(const ListClosedWorkflowExecutionsRequest& request, const ListClosedWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListClosedWorkflowExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListClosedWorkflowExecutions(request), context);
+    } );
 }
 
 ListDomainsOutcome SWFClient::ListDomains(const ListDomainsRequest& request) const
@@ -483,12 +461,10 @@ ListDomainsOutcomeCallable SWFClient::ListDomainsCallable(const ListDomainsReque
 
 void SWFClient::ListDomainsAsync(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDomainsAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListDomains(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListDomains(request), context);
+    } );
 }
 
 ListOpenWorkflowExecutionsOutcome SWFClient::ListOpenWorkflowExecutions(const ListOpenWorkflowExecutionsRequest& request) const
@@ -507,12 +483,10 @@ ListOpenWorkflowExecutionsOutcomeCallable SWFClient::ListOpenWorkflowExecutionsC
 
 void SWFClient::ListOpenWorkflowExecutionsAsync(const ListOpenWorkflowExecutionsRequest& request, const ListOpenWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListOpenWorkflowExecutionsAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::ListOpenWorkflowExecutionsAsyncHelper(const ListOpenWorkflowExecutionsRequest& request, const ListOpenWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListOpenWorkflowExecutions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListOpenWorkflowExecutions(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome SWFClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -531,12 +505,10 @@ ListTagsForResourceOutcomeCallable SWFClient::ListTagsForResourceCallable(const 
 
 void SWFClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListWorkflowTypesOutcome SWFClient::ListWorkflowTypes(const ListWorkflowTypesRequest& request) const
@@ -555,12 +527,10 @@ ListWorkflowTypesOutcomeCallable SWFClient::ListWorkflowTypesCallable(const List
 
 void SWFClient::ListWorkflowTypesAsync(const ListWorkflowTypesRequest& request, const ListWorkflowTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListWorkflowTypesAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::ListWorkflowTypesAsyncHelper(const ListWorkflowTypesRequest& request, const ListWorkflowTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListWorkflowTypes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListWorkflowTypes(request), context);
+    } );
 }
 
 PollForActivityTaskOutcome SWFClient::PollForActivityTask(const PollForActivityTaskRequest& request) const
@@ -579,12 +549,10 @@ PollForActivityTaskOutcomeCallable SWFClient::PollForActivityTaskCallable(const 
 
 void SWFClient::PollForActivityTaskAsync(const PollForActivityTaskRequest& request, const PollForActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PollForActivityTaskAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::PollForActivityTaskAsyncHelper(const PollForActivityTaskRequest& request, const PollForActivityTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PollForActivityTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PollForActivityTask(request), context);
+    } );
 }
 
 PollForDecisionTaskOutcome SWFClient::PollForDecisionTask(const PollForDecisionTaskRequest& request) const
@@ -603,12 +571,10 @@ PollForDecisionTaskOutcomeCallable SWFClient::PollForDecisionTaskCallable(const 
 
 void SWFClient::PollForDecisionTaskAsync(const PollForDecisionTaskRequest& request, const PollForDecisionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PollForDecisionTaskAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::PollForDecisionTaskAsyncHelper(const PollForDecisionTaskRequest& request, const PollForDecisionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PollForDecisionTask(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PollForDecisionTask(request), context);
+    } );
 }
 
 RecordActivityTaskHeartbeatOutcome SWFClient::RecordActivityTaskHeartbeat(const RecordActivityTaskHeartbeatRequest& request) const
@@ -627,12 +593,10 @@ RecordActivityTaskHeartbeatOutcomeCallable SWFClient::RecordActivityTaskHeartbea
 
 void SWFClient::RecordActivityTaskHeartbeatAsync(const RecordActivityTaskHeartbeatRequest& request, const RecordActivityTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RecordActivityTaskHeartbeatAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::RecordActivityTaskHeartbeatAsyncHelper(const RecordActivityTaskHeartbeatRequest& request, const RecordActivityTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RecordActivityTaskHeartbeat(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RecordActivityTaskHeartbeat(request), context);
+    } );
 }
 
 RegisterActivityTypeOutcome SWFClient::RegisterActivityType(const RegisterActivityTypeRequest& request) const
@@ -651,12 +615,10 @@ RegisterActivityTypeOutcomeCallable SWFClient::RegisterActivityTypeCallable(cons
 
 void SWFClient::RegisterActivityTypeAsync(const RegisterActivityTypeRequest& request, const RegisterActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterActivityTypeAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::RegisterActivityTypeAsyncHelper(const RegisterActivityTypeRequest& request, const RegisterActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterActivityType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterActivityType(request), context);
+    } );
 }
 
 RegisterDomainOutcome SWFClient::RegisterDomain(const RegisterDomainRequest& request) const
@@ -675,12 +637,10 @@ RegisterDomainOutcomeCallable SWFClient::RegisterDomainCallable(const RegisterDo
 
 void SWFClient::RegisterDomainAsync(const RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterDomainAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::RegisterDomainAsyncHelper(const RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterDomain(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterDomain(request), context);
+    } );
 }
 
 RegisterWorkflowTypeOutcome SWFClient::RegisterWorkflowType(const RegisterWorkflowTypeRequest& request) const
@@ -699,12 +659,10 @@ RegisterWorkflowTypeOutcomeCallable SWFClient::RegisterWorkflowTypeCallable(cons
 
 void SWFClient::RegisterWorkflowTypeAsync(const RegisterWorkflowTypeRequest& request, const RegisterWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RegisterWorkflowTypeAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::RegisterWorkflowTypeAsyncHelper(const RegisterWorkflowTypeRequest& request, const RegisterWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RegisterWorkflowType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterWorkflowType(request), context);
+    } );
 }
 
 RequestCancelWorkflowExecutionOutcome SWFClient::RequestCancelWorkflowExecution(const RequestCancelWorkflowExecutionRequest& request) const
@@ -723,12 +681,10 @@ RequestCancelWorkflowExecutionOutcomeCallable SWFClient::RequestCancelWorkflowEx
 
 void SWFClient::RequestCancelWorkflowExecutionAsync(const RequestCancelWorkflowExecutionRequest& request, const RequestCancelWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RequestCancelWorkflowExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::RequestCancelWorkflowExecutionAsyncHelper(const RequestCancelWorkflowExecutionRequest& request, const RequestCancelWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RequestCancelWorkflowExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RequestCancelWorkflowExecution(request), context);
+    } );
 }
 
 RespondActivityTaskCanceledOutcome SWFClient::RespondActivityTaskCanceled(const RespondActivityTaskCanceledRequest& request) const
@@ -747,12 +703,10 @@ RespondActivityTaskCanceledOutcomeCallable SWFClient::RespondActivityTaskCancele
 
 void SWFClient::RespondActivityTaskCanceledAsync(const RespondActivityTaskCanceledRequest& request, const RespondActivityTaskCanceledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RespondActivityTaskCanceledAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::RespondActivityTaskCanceledAsyncHelper(const RespondActivityTaskCanceledRequest& request, const RespondActivityTaskCanceledResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RespondActivityTaskCanceled(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RespondActivityTaskCanceled(request), context);
+    } );
 }
 
 RespondActivityTaskCompletedOutcome SWFClient::RespondActivityTaskCompleted(const RespondActivityTaskCompletedRequest& request) const
@@ -771,12 +725,10 @@ RespondActivityTaskCompletedOutcomeCallable SWFClient::RespondActivityTaskComple
 
 void SWFClient::RespondActivityTaskCompletedAsync(const RespondActivityTaskCompletedRequest& request, const RespondActivityTaskCompletedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RespondActivityTaskCompletedAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::RespondActivityTaskCompletedAsyncHelper(const RespondActivityTaskCompletedRequest& request, const RespondActivityTaskCompletedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RespondActivityTaskCompleted(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RespondActivityTaskCompleted(request), context);
+    } );
 }
 
 RespondActivityTaskFailedOutcome SWFClient::RespondActivityTaskFailed(const RespondActivityTaskFailedRequest& request) const
@@ -795,12 +747,10 @@ RespondActivityTaskFailedOutcomeCallable SWFClient::RespondActivityTaskFailedCal
 
 void SWFClient::RespondActivityTaskFailedAsync(const RespondActivityTaskFailedRequest& request, const RespondActivityTaskFailedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RespondActivityTaskFailedAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::RespondActivityTaskFailedAsyncHelper(const RespondActivityTaskFailedRequest& request, const RespondActivityTaskFailedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RespondActivityTaskFailed(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RespondActivityTaskFailed(request), context);
+    } );
 }
 
 RespondDecisionTaskCompletedOutcome SWFClient::RespondDecisionTaskCompleted(const RespondDecisionTaskCompletedRequest& request) const
@@ -819,12 +769,10 @@ RespondDecisionTaskCompletedOutcomeCallable SWFClient::RespondDecisionTaskComple
 
 void SWFClient::RespondDecisionTaskCompletedAsync(const RespondDecisionTaskCompletedRequest& request, const RespondDecisionTaskCompletedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RespondDecisionTaskCompletedAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::RespondDecisionTaskCompletedAsyncHelper(const RespondDecisionTaskCompletedRequest& request, const RespondDecisionTaskCompletedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RespondDecisionTaskCompleted(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RespondDecisionTaskCompleted(request), context);
+    } );
 }
 
 SignalWorkflowExecutionOutcome SWFClient::SignalWorkflowExecution(const SignalWorkflowExecutionRequest& request) const
@@ -843,12 +791,10 @@ SignalWorkflowExecutionOutcomeCallable SWFClient::SignalWorkflowExecutionCallabl
 
 void SWFClient::SignalWorkflowExecutionAsync(const SignalWorkflowExecutionRequest& request, const SignalWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->SignalWorkflowExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::SignalWorkflowExecutionAsyncHelper(const SignalWorkflowExecutionRequest& request, const SignalWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SignalWorkflowExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SignalWorkflowExecution(request), context);
+    } );
 }
 
 StartWorkflowExecutionOutcome SWFClient::StartWorkflowExecution(const StartWorkflowExecutionRequest& request) const
@@ -867,12 +813,10 @@ StartWorkflowExecutionOutcomeCallable SWFClient::StartWorkflowExecutionCallable(
 
 void SWFClient::StartWorkflowExecutionAsync(const StartWorkflowExecutionRequest& request, const StartWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->StartWorkflowExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::StartWorkflowExecutionAsyncHelper(const StartWorkflowExecutionRequest& request, const StartWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, StartWorkflowExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, StartWorkflowExecution(request), context);
+    } );
 }
 
 TagResourceOutcome SWFClient::TagResource(const TagResourceRequest& request) const
@@ -891,12 +835,10 @@ TagResourceOutcomeCallable SWFClient::TagResourceCallable(const TagResourceReque
 
 void SWFClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 TerminateWorkflowExecutionOutcome SWFClient::TerminateWorkflowExecution(const TerminateWorkflowExecutionRequest& request) const
@@ -915,12 +857,10 @@ TerminateWorkflowExecutionOutcomeCallable SWFClient::TerminateWorkflowExecutionC
 
 void SWFClient::TerminateWorkflowExecutionAsync(const TerminateWorkflowExecutionRequest& request, const TerminateWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TerminateWorkflowExecutionAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::TerminateWorkflowExecutionAsyncHelper(const TerminateWorkflowExecutionRequest& request, const TerminateWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TerminateWorkflowExecution(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TerminateWorkflowExecution(request), context);
+    } );
 }
 
 UndeprecateActivityTypeOutcome SWFClient::UndeprecateActivityType(const UndeprecateActivityTypeRequest& request) const
@@ -939,12 +879,10 @@ UndeprecateActivityTypeOutcomeCallable SWFClient::UndeprecateActivityTypeCallabl
 
 void SWFClient::UndeprecateActivityTypeAsync(const UndeprecateActivityTypeRequest& request, const UndeprecateActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UndeprecateActivityTypeAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::UndeprecateActivityTypeAsyncHelper(const UndeprecateActivityTypeRequest& request, const UndeprecateActivityTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UndeprecateActivityType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UndeprecateActivityType(request), context);
+    } );
 }
 
 UndeprecateDomainOutcome SWFClient::UndeprecateDomain(const UndeprecateDomainRequest& request) const
@@ -963,12 +901,10 @@ UndeprecateDomainOutcomeCallable SWFClient::UndeprecateDomainCallable(const Unde
 
 void SWFClient::UndeprecateDomainAsync(const UndeprecateDomainRequest& request, const UndeprecateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UndeprecateDomainAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::UndeprecateDomainAsyncHelper(const UndeprecateDomainRequest& request, const UndeprecateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UndeprecateDomain(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UndeprecateDomain(request), context);
+    } );
 }
 
 UndeprecateWorkflowTypeOutcome SWFClient::UndeprecateWorkflowType(const UndeprecateWorkflowTypeRequest& request) const
@@ -987,12 +923,10 @@ UndeprecateWorkflowTypeOutcomeCallable SWFClient::UndeprecateWorkflowTypeCallabl
 
 void SWFClient::UndeprecateWorkflowTypeAsync(const UndeprecateWorkflowTypeRequest& request, const UndeprecateWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UndeprecateWorkflowTypeAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::UndeprecateWorkflowTypeAsyncHelper(const UndeprecateWorkflowTypeRequest& request, const UndeprecateWorkflowTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UndeprecateWorkflowType(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UndeprecateWorkflowType(request), context);
+    } );
 }
 
 UntagResourceOutcome SWFClient::UntagResource(const UntagResourceRequest& request) const
@@ -1011,11 +945,9 @@ UntagResourceOutcomeCallable SWFClient::UntagResourceCallable(const UntagResourc
 
 void SWFClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void SWFClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 

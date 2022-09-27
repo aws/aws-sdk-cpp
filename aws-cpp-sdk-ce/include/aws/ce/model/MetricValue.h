@@ -121,10 +121,10 @@ namespace Model
   private:
 
     Aws::String m_amount;
-    bool m_amountHasBeenSet;
+    bool m_amountHasBeenSet = false;
 
     Aws::String m_unit;
-    bool m_unitHasBeenSet;
+    bool m_unitHasBeenSet = false;
   };
 
 } // namespace Model

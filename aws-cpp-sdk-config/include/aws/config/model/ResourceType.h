@@ -135,7 +135,31 @@ namespace Model
     AWS_ECR_PublicRepository,
     AWS_GuardDuty_Detector,
     AWS_EMR_SecurityConfiguration,
-    AWS_SageMaker_CodeRepository
+    AWS_SageMaker_CodeRepository,
+    AWS_Route53Resolver_ResolverEndpoint,
+    AWS_Route53Resolver_ResolverRule,
+    AWS_Route53Resolver_ResolverRuleAssociation,
+    AWS_DMS_ReplicationSubnetGroup,
+    AWS_DMS_EventSubscription,
+    AWS_MSK_Cluster,
+    AWS_StepFunctions_Activity,
+    AWS_WorkSpaces_Workspace,
+    AWS_WorkSpaces_ConnectionAlias,
+    AWS_SageMaker_Model,
+    AWS_ElasticLoadBalancingV2_Listener,
+    AWS_StepFunctions_StateMachine,
+    AWS_Batch_JobQueue,
+    AWS_Batch_ComputeEnvironment,
+    AWS_AccessAnalyzer_Analyzer,
+    AWS_Athena_WorkGroup,
+    AWS_Athena_DataCatalog,
+    AWS_Detective_Graph,
+    AWS_GlobalAccelerator_Accelerator,
+    AWS_GlobalAccelerator_EndpointGroup,
+    AWS_GlobalAccelerator_Listener,
+    AWS_EC2_TransitGatewayAttachment,
+    AWS_EC2_TransitGatewayRouteTable,
+    AWS_DMS_Certificate
   };
 
 namespace ResourceTypeMapper

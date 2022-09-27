@@ -158,10 +158,10 @@ namespace Model
   private:
 
     TimeSeriesGranularity m_timeSeriesGranularity;
-    bool m_timeSeriesGranularityHasBeenSet;
+    bool m_timeSeriesGranularityHasBeenSet = false;
 
     TimePointGranularity m_timePointGranularity;
-    bool m_timePointGranularityHasBeenSet;
+    bool m_timePointGranularityHasBeenSet = false;
   };
 
 } // namespace Model

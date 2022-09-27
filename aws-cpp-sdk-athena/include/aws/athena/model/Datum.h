@@ -80,7 +80,7 @@ namespace Model
   private:
 
     Aws::String m_varCharValue;
-    bool m_varCharValueHasBeenSet;
+    bool m_varCharValueHasBeenSet = false;
   };
 
 } // namespace Model

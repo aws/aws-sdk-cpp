@@ -173,10 +173,10 @@ namespace Model
   private:
 
     Aws::String m_sourceCodeArtifactsObjectKey;
-    bool m_sourceCodeArtifactsObjectKeyHasBeenSet;
+    bool m_sourceCodeArtifactsObjectKeyHasBeenSet = false;
 
     Aws::String m_buildArtifactsObjectKey;
-    bool m_buildArtifactsObjectKeyHasBeenSet;
+    bool m_buildArtifactsObjectKeyHasBeenSet = false;
   };
 
 } // namespace Model

@@ -41,7 +41,7 @@ Aws::String UpdateSnapshotRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection UpdateSnapshotRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.UpdateSnapshot"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.UpdateSnapshot"));
   return headers;
 
 }

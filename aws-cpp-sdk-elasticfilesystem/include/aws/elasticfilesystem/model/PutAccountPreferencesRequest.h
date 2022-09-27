@@ -101,7 +101,7 @@ namespace Model
   private:
 
     ResourceIdType m_resourceIdType;
-    bool m_resourceIdTypeHasBeenSet;
+    bool m_resourceIdTypeHasBeenSet = false;
   };
 
 } // namespace Model

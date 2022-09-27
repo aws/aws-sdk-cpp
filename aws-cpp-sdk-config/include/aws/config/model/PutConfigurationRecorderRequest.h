@@ -77,7 +77,7 @@ namespace Model
   private:
 
     ConfigurationRecorder m_configurationRecorder;
-    bool m_configurationRecorderHasBeenSet;
+    bool m_configurationRecorderHasBeenSet = false;
   };
 
 } // namespace Model

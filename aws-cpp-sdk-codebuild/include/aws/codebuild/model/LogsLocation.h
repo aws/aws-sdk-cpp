@@ -414,28 +414,28 @@ namespace Model
   private:
 
     Aws::String m_groupName;
-    bool m_groupNameHasBeenSet;
+    bool m_groupNameHasBeenSet = false;
 
     Aws::String m_streamName;
-    bool m_streamNameHasBeenSet;
+    bool m_streamNameHasBeenSet = false;
 
     Aws::String m_deepLink;
-    bool m_deepLinkHasBeenSet;
+    bool m_deepLinkHasBeenSet = false;
 
     Aws::String m_s3DeepLink;
-    bool m_s3DeepLinkHasBeenSet;
+    bool m_s3DeepLinkHasBeenSet = false;
 
     Aws::String m_cloudWatchLogsArn;
-    bool m_cloudWatchLogsArnHasBeenSet;
+    bool m_cloudWatchLogsArnHasBeenSet = false;
 
     Aws::String m_s3LogsArn;
-    bool m_s3LogsArnHasBeenSet;
+    bool m_s3LogsArnHasBeenSet = false;
 
     CloudWatchLogsConfig m_cloudWatchLogs;
-    bool m_cloudWatchLogsHasBeenSet;
+    bool m_cloudWatchLogsHasBeenSet = false;
 
     S3LogsConfig m_s3Logs;
-    bool m_s3LogsHasBeenSet;
+    bool m_s3LogsHasBeenSet = false;
   };
 
 } // namespace Model

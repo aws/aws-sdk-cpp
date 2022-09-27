@@ -82,6 +82,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline PeeringTgwInfo& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline PeeringTgwInfo& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the core network where the transit gateway peer is located.</p>
+     */
+    inline PeeringTgwInfo& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
+
+
+    /**
      * <p>The ID of the Amazon Web Services account that owns the transit gateway.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
@@ -165,13 +206,16 @@ namespace Model
   private:
 
     Aws::String m_transitGatewayId;
-    bool m_transitGatewayIdHasBeenSet;
+    bool m_transitGatewayIdHasBeenSet = false;
+
+    Aws::String m_coreNetworkId;
+    bool m_coreNetworkIdHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

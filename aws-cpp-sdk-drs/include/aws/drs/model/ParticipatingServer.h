@@ -154,13 +154,13 @@ namespace Model
   private:
 
     LaunchStatus m_launchStatus;
-    bool m_launchStatusHasBeenSet;
+    bool m_launchStatusHasBeenSet = false;
 
     Aws::String m_recoveryInstanceID;
-    bool m_recoveryInstanceIDHasBeenSet;
+    bool m_recoveryInstanceIDHasBeenSet = false;
 
     Aws::String m_sourceServerID;
-    bool m_sourceServerIDHasBeenSet;
+    bool m_sourceServerIDHasBeenSet = false;
   };
 
 } // namespace Model

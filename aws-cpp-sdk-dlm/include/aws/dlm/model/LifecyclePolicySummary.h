@@ -223,7 +223,9 @@ namespace Model
      * <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the
      * policy manages the lifecycle of Amazon EBS snapshots.
      * <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
-     * EBS-backed AMIs.</p>
+     * EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy
+     * automates cross-account snapshot copies for snapshots that are shared with your
+     * account.</p>
      */
     inline const PolicyTypeValues& GetPolicyType() const{ return m_policyType; }
 
@@ -231,7 +233,9 @@ namespace Model
      * <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the
      * policy manages the lifecycle of Amazon EBS snapshots.
      * <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
-     * EBS-backed AMIs.</p>
+     * EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy
+     * automates cross-account snapshot copies for snapshots that are shared with your
+     * account.</p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
@@ -239,7 +243,9 @@ namespace Model
      * <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the
      * policy manages the lifecycle of Amazon EBS snapshots.
      * <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
-     * EBS-backed AMIs.</p>
+     * EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy
+     * automates cross-account snapshot copies for snapshots that are shared with your
+     * account.</p>
      */
     inline void SetPolicyType(const PolicyTypeValues& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
@@ -247,7 +253,9 @@ namespace Model
      * <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the
      * policy manages the lifecycle of Amazon EBS snapshots.
      * <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
-     * EBS-backed AMIs.</p>
+     * EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy
+     * automates cross-account snapshot copies for snapshots that are shared with your
+     * account.</p>
      */
     inline void SetPolicyType(PolicyTypeValues&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
@@ -255,7 +263,9 @@ namespace Model
      * <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the
      * policy manages the lifecycle of Amazon EBS snapshots.
      * <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
-     * EBS-backed AMIs.</p>
+     * EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy
+     * automates cross-account snapshot copies for snapshots that are shared with your
+     * account.</p>
      */
     inline LifecyclePolicySummary& WithPolicyType(const PolicyTypeValues& value) { SetPolicyType(value); return *this;}
 
@@ -263,26 +273,28 @@ namespace Model
      * <p>The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the
      * policy manages the lifecycle of Amazon EBS snapshots.
      * <code>IMAGE_MANAGEMENT</code> indicates that the policy manages the lifecycle of
-     * EBS-backed AMIs.</p>
+     * EBS-backed AMIs. <code>EVENT_BASED_POLICY</code> indicates that the policy
+     * automates cross-account snapshot copies for snapshots that are shared with your
+     * account.</p>
      */
     inline LifecyclePolicySummary& WithPolicyType(PolicyTypeValues&& value) { SetPolicyType(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_policyId;
-    bool m_policyIdHasBeenSet;
+    bool m_policyIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     GettablePolicyStateValues m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     PolicyTypeValues m_policyType;
-    bool m_policyTypeHasBeenSet;
+    bool m_policyTypeHasBeenSet = false;
   };
 
 } // namespace Model

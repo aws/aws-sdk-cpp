@@ -65,7 +65,7 @@ namespace Model
   private:
 
     int m_scte35EsamPid;
-    bool m_scte35EsamPidHasBeenSet;
+    bool m_scte35EsamPidHasBeenSet = false;
   };
 
 } // namespace Model

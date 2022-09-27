@@ -97,7 +97,7 @@ namespace Model
   private:
 
     Aws::String m_pageNumber;
-    bool m_pageNumberHasBeenSet;
+    bool m_pageNumberHasBeenSet = false;
   };
 
 } // namespace Model

@@ -187,13 +187,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_jobNames;
-    bool m_jobNamesHasBeenSet;
+    bool m_jobNamesHasBeenSet = false;
 
     Aws::String m_cronExpression;
-    bool m_cronExpressionHasBeenSet;
+    bool m_cronExpressionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

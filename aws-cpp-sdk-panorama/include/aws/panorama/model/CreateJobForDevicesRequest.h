@@ -145,13 +145,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_deviceIds;
-    bool m_deviceIdsHasBeenSet;
+    bool m_deviceIdsHasBeenSet = false;
 
     DeviceJobConfig m_deviceJobConfig;
-    bool m_deviceJobConfigHasBeenSet;
+    bool m_deviceJobConfigHasBeenSet = false;
 
     JobType m_jobType;
-    bool m_jobTypeHasBeenSet;
+    bool m_jobTypeHasBeenSet = false;
   };
 
 } // namespace Model

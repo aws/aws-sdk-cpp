@@ -288,19 +288,19 @@ namespace Model
   private:
 
     int m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     ContainerServiceDeploymentState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Map<Aws::String, Container> m_containers;
-    bool m_containersHasBeenSet;
+    bool m_containersHasBeenSet = false;
 
     ContainerServiceEndpoint m_publicEndpoint;
-    bool m_publicEndpointHasBeenSet;
+    bool m_publicEndpointHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
   };
 
 } // namespace Model

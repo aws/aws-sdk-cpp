@@ -339,6 +339,31 @@ namespace Model
 
 
     /**
+     * <p>Removes a segment from being used in an experiment. You can't use this
+     * parameter if the experiment is currently running.</p>
+     */
+    inline bool GetRemoveSegment() const{ return m_removeSegment; }
+
+    /**
+     * <p>Removes a segment from being used in an experiment. You can't use this
+     * parameter if the experiment is currently running.</p>
+     */
+    inline bool RemoveSegmentHasBeenSet() const { return m_removeSegmentHasBeenSet; }
+
+    /**
+     * <p>Removes a segment from being used in an experiment. You can't use this
+     * parameter if the experiment is currently running.</p>
+     */
+    inline void SetRemoveSegment(bool value) { m_removeSegmentHasBeenSet = true; m_removeSegment = value; }
+
+    /**
+     * <p>Removes a segment from being used in an experiment. You can't use this
+     * parameter if the experiment is currently running.</p>
+     */
+    inline UpdateExperimentRequest& WithRemoveSegment(bool value) { SetRemoveSegment(value); return *this;}
+
+
+    /**
      * <p>The portion of the available audience that you want to allocate to this
      * experiment, in thousandths of a percent. The available audience is the total
      * audience minus the audience that you have allocated to overrides or current
@@ -377,6 +402,71 @@ namespace Model
      * audience.</p>
      */
     inline UpdateExperimentRequest& WithSamplingRate(long long value) { SetSamplingRate(value); return *this;}
+
+
+    /**
+     * <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in
+     * an experiment, only user sessions that match the segment pattern are used in the
+     * experiment. You can't use this parameter if the experiment is currently
+     * running.</p>
+     */
+    inline const Aws::String& GetSegment() const{ return m_segment; }
+
+    /**
+     * <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in
+     * an experiment, only user sessions that match the segment pattern are used in the
+     * experiment. You can't use this parameter if the experiment is currently
+     * running.</p>
+     */
+    inline bool SegmentHasBeenSet() const { return m_segmentHasBeenSet; }
+
+    /**
+     * <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in
+     * an experiment, only user sessions that match the segment pattern are used in the
+     * experiment. You can't use this parameter if the experiment is currently
+     * running.</p>
+     */
+    inline void SetSegment(const Aws::String& value) { m_segmentHasBeenSet = true; m_segment = value; }
+
+    /**
+     * <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in
+     * an experiment, only user sessions that match the segment pattern are used in the
+     * experiment. You can't use this parameter if the experiment is currently
+     * running.</p>
+     */
+    inline void SetSegment(Aws::String&& value) { m_segmentHasBeenSet = true; m_segment = std::move(value); }
+
+    /**
+     * <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in
+     * an experiment, only user sessions that match the segment pattern are used in the
+     * experiment. You can't use this parameter if the experiment is currently
+     * running.</p>
+     */
+    inline void SetSegment(const char* value) { m_segmentHasBeenSet = true; m_segment.assign(value); }
+
+    /**
+     * <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in
+     * an experiment, only user sessions that match the segment pattern are used in the
+     * experiment. You can't use this parameter if the experiment is currently
+     * running.</p>
+     */
+    inline UpdateExperimentRequest& WithSegment(const Aws::String& value) { SetSegment(value); return *this;}
+
+    /**
+     * <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in
+     * an experiment, only user sessions that match the segment pattern are used in the
+     * experiment. You can't use this parameter if the experiment is currently
+     * running.</p>
+     */
+    inline UpdateExperimentRequest& WithSegment(Aws::String&& value) { SetSegment(std::move(value)); return *this;}
+
+    /**
+     * <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in
+     * an experiment, only user sessions that match the segment pattern are used in the
+     * experiment. You can't use this parameter if the experiment is currently
+     * running.</p>
+     */
+    inline UpdateExperimentRequest& WithSegment(const char* value) { SetSegment(value); return *this;}
 
 
     /**
@@ -430,28 +520,34 @@ namespace Model
   private:
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_experiment;
-    bool m_experimentHasBeenSet;
+    bool m_experimentHasBeenSet = false;
 
     Aws::Vector<MetricGoalConfig> m_metricGoals;
-    bool m_metricGoalsHasBeenSet;
+    bool m_metricGoalsHasBeenSet = false;
 
     OnlineAbConfig m_onlineAbConfig;
-    bool m_onlineAbConfigHasBeenSet;
+    bool m_onlineAbConfigHasBeenSet = false;
 
     Aws::String m_project;
-    bool m_projectHasBeenSet;
+    bool m_projectHasBeenSet = false;
 
     Aws::String m_randomizationSalt;
-    bool m_randomizationSaltHasBeenSet;
+    bool m_randomizationSaltHasBeenSet = false;
+
+    bool m_removeSegment;
+    bool m_removeSegmentHasBeenSet = false;
 
     long long m_samplingRate;
-    bool m_samplingRateHasBeenSet;
+    bool m_samplingRateHasBeenSet = false;
+
+    Aws::String m_segment;
+    bool m_segmentHasBeenSet = false;
 
     Aws::Vector<TreatmentConfig> m_treatments;
-    bool m_treatmentsHasBeenSet;
+    bool m_treatmentsHasBeenSet = false;
   };
 
 } // namespace Model

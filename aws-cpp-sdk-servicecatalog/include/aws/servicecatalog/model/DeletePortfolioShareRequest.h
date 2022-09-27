@@ -134,42 +134,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline DeletePortfolioShareRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline DeletePortfolioShareRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The Amazon Web Services account ID.</p>
      */
     inline DeletePortfolioShareRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -207,16 +207,16 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_portfolioId;
-    bool m_portfolioIdHasBeenSet;
+    bool m_portfolioIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     OrganizationNode m_organizationNode;
-    bool m_organizationNodeHasBeenSet;
+    bool m_organizationNodeHasBeenSet = false;
   };
 
 } // namespace Model

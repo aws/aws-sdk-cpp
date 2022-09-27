@@ -1095,25 +1095,25 @@ namespace Model
   private:
 
     Aws::String m_clientId;
-    bool m_clientIdHasBeenSet;
+    bool m_clientIdHasBeenSet = false;
 
     ChallengeNameType m_challengeName;
-    bool m_challengeNameHasBeenSet;
+    bool m_challengeNameHasBeenSet = false;
 
     Aws::String m_session;
-    bool m_sessionHasBeenSet;
+    bool m_sessionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_challengeResponses;
-    bool m_challengeResponsesHasBeenSet;
+    bool m_challengeResponsesHasBeenSet = false;
 
     AnalyticsMetadataType m_analyticsMetadata;
-    bool m_analyticsMetadataHasBeenSet;
+    bool m_analyticsMetadataHasBeenSet = false;
 
     UserContextDataType m_userContextData;
-    bool m_userContextDataHasBeenSet;
+    bool m_userContextDataHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_clientMetadata;
-    bool m_clientMetadataHasBeenSet;
+    bool m_clientMetadataHasBeenSet = false;
   };
 
 } // namespace Model

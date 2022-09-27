@@ -70,7 +70,7 @@ namespace Model
   private:
 
     CaptureMode m_captureMode;
-    bool m_captureModeHasBeenSet;
+    bool m_captureModeHasBeenSet = false;
   };
 
 } // namespace Model

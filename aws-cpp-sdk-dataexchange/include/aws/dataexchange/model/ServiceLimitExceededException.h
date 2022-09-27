@@ -40,53 +40,53 @@ namespace Model
 
 
     /**
-     * <p>The name of the quota that was exceeded.</p>
+     * <p>The name of the limit that was reached.</p>
      */
     inline const LimitName& GetLimitName() const{ return m_limitName; }
 
     /**
-     * <p>The name of the quota that was exceeded.</p>
+     * <p>The name of the limit that was reached.</p>
      */
     inline bool LimitNameHasBeenSet() const { return m_limitNameHasBeenSet; }
 
     /**
-     * <p>The name of the quota that was exceeded.</p>
+     * <p>The name of the limit that was reached.</p>
      */
     inline void SetLimitName(const LimitName& value) { m_limitNameHasBeenSet = true; m_limitName = value; }
 
     /**
-     * <p>The name of the quota that was exceeded.</p>
+     * <p>The name of the limit that was reached.</p>
      */
     inline void SetLimitName(LimitName&& value) { m_limitNameHasBeenSet = true; m_limitName = std::move(value); }
 
     /**
-     * <p>The name of the quota that was exceeded.</p>
+     * <p>The name of the limit that was reached.</p>
      */
     inline ServiceLimitExceededException& WithLimitName(const LimitName& value) { SetLimitName(value); return *this;}
 
     /**
-     * <p>The name of the quota that was exceeded.</p>
+     * <p>The name of the limit that was reached.</p>
      */
     inline ServiceLimitExceededException& WithLimitName(LimitName&& value) { SetLimitName(std::move(value)); return *this;}
 
 
     /**
-     * <p>The maximum value for the service-specific limit.</p>
+     * <p>The value of the exceeded limit.</p>
      */
     inline double GetLimitValue() const{ return m_limitValue; }
 
     /**
-     * <p>The maximum value for the service-specific limit.</p>
+     * <p>The value of the exceeded limit.</p>
      */
     inline bool LimitValueHasBeenSet() const { return m_limitValueHasBeenSet; }
 
     /**
-     * <p>The maximum value for the service-specific limit.</p>
+     * <p>The value of the exceeded limit.</p>
      */
     inline void SetLimitValue(double value) { m_limitValueHasBeenSet = true; m_limitValue = value; }
 
     /**
-     * <p>The maximum value for the service-specific limit.</p>
+     * <p>The value of the exceeded limit.</p>
      */
     inline ServiceLimitExceededException& WithLimitValue(double value) { SetLimitValue(value); return *this;}
 
@@ -134,13 +134,13 @@ namespace Model
   private:
 
     LimitName m_limitName;
-    bool m_limitNameHasBeenSet;
+    bool m_limitNameHasBeenSet = false;
 
     double m_limitValue;
-    bool m_limitValueHasBeenSet;
+    bool m_limitValueHasBeenSet = false;
 
     Aws::String m_message;
-    bool m_messageHasBeenSet;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

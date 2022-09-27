@@ -362,28 +362,28 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdatedAt;
-    bool m_lastUpdatedAtHasBeenSet;
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     SimulationJobStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_simulationApplicationNames;
-    bool m_simulationApplicationNamesHasBeenSet;
+    bool m_simulationApplicationNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_robotApplicationNames;
-    bool m_robotApplicationNamesHasBeenSet;
+    bool m_robotApplicationNamesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dataSourceNames;
-    bool m_dataSourceNamesHasBeenSet;
+    bool m_dataSourceNamesHasBeenSet = false;
 
     ComputeType m_computeType;
-    bool m_computeTypeHasBeenSet;
+    bool m_computeTypeHasBeenSet = false;
   };
 
 } // namespace Model

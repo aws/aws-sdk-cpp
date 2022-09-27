@@ -243,19 +243,19 @@ namespace Model
   private:
 
     LogicalOperator m_logicalOperator;
-    bool m_logicalOperatorHasBeenSet;
+    bool m_logicalOperatorHasBeenSet = false;
 
     Aws::String m_jobName;
-    bool m_jobNameHasBeenSet;
+    bool m_jobNameHasBeenSet = false;
 
     JobRunState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_crawlerName;
-    bool m_crawlerNameHasBeenSet;
+    bool m_crawlerNameHasBeenSet = false;
 
     CrawlState m_crawlState;
-    bool m_crawlStateHasBeenSet;
+    bool m_crawlStateHasBeenSet = false;
   };
 
 } // namespace Model

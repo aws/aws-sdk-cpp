@@ -165,13 +165,13 @@ namespace Model
   private:
 
     Aws::String m_channelARN;
-    bool m_channelARNHasBeenSet;
+    bool m_channelARNHasBeenSet = false;
 
     Aws::String m_senderClientId;
-    bool m_senderClientIdHasBeenSet;
+    bool m_senderClientIdHasBeenSet = false;
 
     Aws::String m_messagePayload;
-    bool m_messagePayloadHasBeenSet;
+    bool m_messagePayloadHasBeenSet = false;
   };
 
 } // namespace Model

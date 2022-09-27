@@ -612,5 +612,70 @@ namespace Aws
             result.creds = creds;
             return result;
         }
+
+        // An internal SSO CreateToken implementation to lightweight core package and not introduce a dependency on sso-oidc
+        SSOCredentialsClient::SSOCreateTokenResult SSOCredentialsClient::CreateToken(const SSOCreateTokenRequest& request)
+        {
+            std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(m_endpoint, HttpMethod::HTTP_GET,
+                                                                       Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+            SSOCreateTokenResult result;
+            if(!httpRequest) {
+                AWS_LOGSTREAM_FATAL(SSO_RESOURCE_CLIENT_LOG_TAG, "Failed to CreateHttpRequest: nullptr returned");
+                return result;
+            }
+            httpRequest->SetUserAgent(ComputeUserAgentString());
+
+            Json::JsonValue requestDoc;
+            if(!request.clientId.empty()) {
+                requestDoc.WithString("clientId", request.clientId);
+            }
+            if(!request.clientSecret.empty()) {
+                requestDoc.WithString("clientSecret", request.clientSecret);
+            }
+            if(!request.grantType.empty()) {
+                requestDoc.WithString("grantType", request.grantType);
+            }
+            if(!request.refreshToken.empty()) {
+                requestDoc.WithString("refreshToken", request.refreshToken);
+            }
+
+            std::shared_ptr<Aws::IOStream> body = Aws::MakeShared<Aws::StringStream>("SSO_BEARER_TOKEN_CREATE_TOKEN");
+            if(!body) {
+                AWS_LOGSTREAM_FATAL(SSO_RESOURCE_CLIENT_LOG_TAG, "Failed to allocate body");  // exceptions disabled
+                return result;
+            }
+            *body << requestDoc.View().WriteReadable();;
+
+            httpRequest->AddContentBody(body);
+            body->seekg(0, body->end);
+            auto streamSize = body->tellg();
+            body->seekg(0, body->beg);
+            Aws::StringStream contentLength;
+            contentLength << streamSize;
+            httpRequest->SetContentLength(contentLength.str());
+            httpRequest->SetContentType("application/json");
+
+            Aws::String rawReply = GetResourceWithAWSWebServiceResult(httpRequest).GetPayload();
+            Json::JsonValue refreshTokenDoc(rawReply);
+            Utils::Json::JsonView jsonValue = refreshTokenDoc.View();
+
+            if(jsonValue.ValueExists("accessToken")) {
+                result.accessToken = jsonValue.GetString("accessToken");
+            }
+            if(jsonValue.ValueExists("tokenType")) {
+                result.tokenType = jsonValue.GetString("tokenType");
+            }
+            if(jsonValue.ValueExists("expiresIn")) {
+                result.expiresIn = jsonValue.GetInteger("expiresIn");
+            }
+            if(jsonValue.ValueExists("idToken")) {
+                result.idToken = jsonValue.GetString("idToken");
+            }
+            if(jsonValue.ValueExists("refreshToken")) {
+                result.refreshToken = jsonValue.GetString("refreshToken");
+            }
+
+            return result;
+        }
     }
 }

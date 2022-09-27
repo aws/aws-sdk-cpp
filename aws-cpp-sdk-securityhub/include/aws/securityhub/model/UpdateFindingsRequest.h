@@ -135,13 +135,13 @@ namespace Model
   private:
 
     AwsSecurityFindingFilters m_filters;
-    bool m_filtersHasBeenSet;
+    bool m_filtersHasBeenSet = false;
 
     NoteUpdate m_note;
-    bool m_noteHasBeenSet;
+    bool m_noteHasBeenSet = false;
 
     RecordState m_recordState;
-    bool m_recordStateHasBeenSet;
+    bool m_recordStateHasBeenSet = false;
   };
 
 } // namespace Model

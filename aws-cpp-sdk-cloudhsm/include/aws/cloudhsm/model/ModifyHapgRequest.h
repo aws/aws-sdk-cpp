@@ -174,13 +174,13 @@ namespace Model
   private:
 
     Aws::String m_hapgArn;
-    bool m_hapgArnHasBeenSet;
+    bool m_hapgArnHasBeenSet = false;
 
     Aws::String m_label;
-    bool m_labelHasBeenSet;
+    bool m_labelHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_partitionSerialList;
-    bool m_partitionSerialListHasBeenSet;
+    bool m_partitionSerialListHasBeenSet = false;
   };
 
 } // namespace Model

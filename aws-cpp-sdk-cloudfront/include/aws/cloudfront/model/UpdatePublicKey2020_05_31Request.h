@@ -158,13 +158,13 @@ namespace Model
   private:
 
     PublicKeyConfig m_publicKeyConfig;
-    bool m_publicKeyConfigHasBeenSet;
+    bool m_publicKeyConfigHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_ifMatch;
-    bool m_ifMatchHasBeenSet;
+    bool m_ifMatchHasBeenSet = false;
   };
 
 } // namespace Model

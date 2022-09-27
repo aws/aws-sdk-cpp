@@ -224,16 +224,16 @@ namespace Model
   private:
 
     Aws::String m_loadBalancerName;
-    bool m_loadBalancerNameHasBeenSet;
+    bool m_loadBalancerNameHasBeenSet = false;
 
     Aws::String m_policyName;
-    bool m_policyNameHasBeenSet;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policyTypeName;
-    bool m_policyTypeNameHasBeenSet;
+    bool m_policyTypeNameHasBeenSet = false;
 
     Aws::Vector<PolicyAttribute> m_policyAttributes;
-    bool m_policyAttributesHasBeenSet;
+    bool m_policyAttributesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -160,16 +160,16 @@ namespace Model
   private:
 
     int m_startPercentage;
-    bool m_startPercentageHasBeenSet;
+    bool m_startPercentageHasBeenSet = false;
 
     int m_endPercentage;
-    bool m_endPercentageHasBeenSet;
+    bool m_endPercentageHasBeenSet = false;
 
     int m_first;
-    bool m_firstHasBeenSet;
+    bool m_firstHasBeenSet = false;
 
     int m_last;
-    bool m_lastHasBeenSet;
+    bool m_lastHasBeenSet = false;
   };
 
 } // namespace Model

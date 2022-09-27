@@ -105,10 +105,10 @@ namespace Model
   private:
 
     AclGrantee m_grantee;
-    bool m_granteeHasBeenSet;
+    bool m_granteeHasBeenSet = false;
 
     AclPermission m_permission;
-    bool m_permissionHasBeenSet;
+    bool m_permissionHasBeenSet = false;
   };
 
 } // namespace Model

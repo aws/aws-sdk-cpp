@@ -23,7 +23,10 @@ PromptSpecification::PromptSpecification() :
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
     m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false)
+    m_allowInterruptHasBeenSet(false),
+    m_messageSelectionStrategy(MessageSelectionStrategy::NOT_SET),
+    m_messageSelectionStrategyHasBeenSet(false),
+    m_promptAttemptsSpecificationHasBeenSet(false)
 {
 }
 
@@ -32,7 +35,10 @@ PromptSpecification::PromptSpecification(JsonView jsonValue) :
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
     m_allowInterrupt(false),
-    m_allowInterruptHasBeenSet(false)
+    m_allowInterruptHasBeenSet(false),
+    m_messageSelectionStrategy(MessageSelectionStrategy::NOT_SET),
+    m_messageSelectionStrategyHasBeenSet(false),
+    m_promptAttemptsSpecificationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -63,6 +69,23 @@ PromptSpecification& PromptSpecification::operator =(JsonView jsonValue)
     m_allowInterruptHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("messageSelectionStrategy"))
+  {
+    m_messageSelectionStrategy = MessageSelectionStrategyMapper::GetMessageSelectionStrategyForName(jsonValue.GetString("messageSelectionStrategy"));
+
+    m_messageSelectionStrategyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("promptAttemptsSpecification"))
+  {
+    Aws::Map<Aws::String, JsonView> promptAttemptsSpecificationJsonMap = jsonValue.GetObject("promptAttemptsSpecification").GetAllObjects();
+    for(auto& promptAttemptsSpecificationItem : promptAttemptsSpecificationJsonMap)
+    {
+      m_promptAttemptsSpecification[PromptAttemptMapper::GetPromptAttemptForName(promptAttemptsSpecificationItem.first)] = promptAttemptsSpecificationItem.second.AsObject();
+    }
+    m_promptAttemptsSpecificationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +113,22 @@ JsonValue PromptSpecification::Jsonize() const
   if(m_allowInterruptHasBeenSet)
   {
    payload.WithBool("allowInterrupt", m_allowInterrupt);
+
+  }
+
+  if(m_messageSelectionStrategyHasBeenSet)
+  {
+   payload.WithString("messageSelectionStrategy", MessageSelectionStrategyMapper::GetNameForMessageSelectionStrategy(m_messageSelectionStrategy));
+  }
+
+  if(m_promptAttemptsSpecificationHasBeenSet)
+  {
+   JsonValue promptAttemptsSpecificationJsonMap;
+   for(auto& promptAttemptsSpecificationItem : m_promptAttemptsSpecification)
+   {
+     promptAttemptsSpecificationJsonMap.WithObject(PromptAttemptMapper::GetNameForPromptAttempt(promptAttemptsSpecificationItem.first), promptAttemptsSpecificationItem.second.Jsonize());
+   }
+   payload.WithObject("promptAttemptsSpecification", std::move(promptAttemptsSpecificationJsonMap));
 
   }
 

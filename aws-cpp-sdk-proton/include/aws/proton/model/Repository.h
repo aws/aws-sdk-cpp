@@ -244,19 +244,19 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_connectionArn;
-    bool m_connectionArnHasBeenSet;
+    bool m_connectionArnHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     RepositoryProvider m_provider;
-    bool m_providerHasBeenSet;
+    bool m_providerHasBeenSet = false;
   };
 
 } // namespace Model

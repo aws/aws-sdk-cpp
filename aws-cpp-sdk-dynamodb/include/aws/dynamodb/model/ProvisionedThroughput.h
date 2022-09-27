@@ -129,10 +129,10 @@ namespace Model
   private:
 
     long long m_readCapacityUnits;
-    bool m_readCapacityUnitsHasBeenSet;
+    bool m_readCapacityUnitsHasBeenSet = false;
 
     long long m_writeCapacityUnits;
-    bool m_writeCapacityUnitsHasBeenSet;
+    bool m_writeCapacityUnitsHasBeenSet = false;
   };
 
 } // namespace Model

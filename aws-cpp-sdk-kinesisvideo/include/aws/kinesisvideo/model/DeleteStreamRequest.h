@@ -148,10 +148,10 @@ namespace Model
   private:
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
   };
 
 } // namespace Model

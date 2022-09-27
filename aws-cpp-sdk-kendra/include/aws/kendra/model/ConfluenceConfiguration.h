@@ -13,6 +13,8 @@
 #include <aws/kendra/model/ConfluenceAttachmentConfiguration.h>
 #include <aws/kendra/model/DataSourceVpcConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/ProxyConfiguration.h>
+#include <aws/kendra/model/ConfluenceAuthenticationType.h>
 #include <utility>
 
 namespace Aws
@@ -104,118 +106,136 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence Cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence Cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence Cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence Cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence Cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence Cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline ConfluenceConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence Cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline ConfluenceConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * key-value pairs required to connect to your Confluence server. The secret must
-     * contain a JSON structure with the following keys:</p> <ul> <li> <p>username—The
-     * user name or email address of a user with administrative privileges for the
-     * Confluence server.</p> </li> <li> <p>password—The password associated with the
-     * user logging in to the Confluence server.</p> </li> </ul>
+     * user name and password required to connect to the Confluence instance. If you
+     * use Confluence Cloud, you use a generated API token as the password. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     * a Confluence data source</a>.</p> <p>You can also provide authentication
+     * credentials in the form of a personal access token. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">Authentication
+     * for a Confluence data source</a>.</p>
      */
     inline ConfluenceConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
 
     /**
-     * <p>Specifies the version of the Confluence installation that you are connecting
-     * to.</p>
+     * <p>The version or the type of Confluence installation to connect to.</p>
      */
     inline const ConfluenceVersion& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Specifies the version of the Confluence installation that you are connecting
-     * to.</p>
+     * <p>The version or the type of Confluence installation to connect to.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Specifies the version of the Confluence installation that you are connecting
-     * to.</p>
+     * <p>The version or the type of Confluence installation to connect to.</p>
      */
     inline void SetVersion(const ConfluenceVersion& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Specifies the version of the Confluence installation that you are connecting
-     * to.</p>
+     * <p>The version or the type of Confluence installation to connect to.</p>
      */
     inline void SetVersion(ConfluenceVersion&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Specifies the version of the Confluence installation that you are connecting
-     * to.</p>
+     * <p>The version or the type of Confluence installation to connect to.</p>
      */
     inline ConfluenceConfiguration& WithVersion(const ConfluenceVersion& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Specifies the version of the Confluence installation that you are connecting
-     * to.</p>
+     * <p>The version or the type of Confluence installation to connect to.</p>
      */
     inline ConfluenceConfiguration& WithVersion(ConfluenceVersion&& value) { SetVersion(std::move(value)); return *this;}
 
@@ -491,126 +511,278 @@ namespace Model
 
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline ConfluenceConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline ConfluenceConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline ConfluenceConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline ConfluenceConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>&gt;A list of regular expression patterns to exclude certain blog posts,
-     * pages, spaces, or attachments in your Confluence. Content that matches the
-     * patterns are excluded from the index. Content that doesn't match the patterns is
-     * included in the index. If content matches both an inclusion and exclusion
-     * pattern, the exclusion pattern takes precedence and the content isn't included
-     * in the index.</p>
+     * <p>A list of regular expression patterns to exclude certain blog posts, pages,
+     * spaces, or attachments in your Confluence. Content that matches the patterns are
+     * excluded from the index. Content that doesn't match the patterns is included in
+     * the index. If content matches both an inclusion and exclusion pattern, the
+     * exclusion pattern takes precedence and the content isn't included in the
+     * index.</p>
      */
     inline ConfluenceConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
+
+
+    /**
+     * <p>Configuration information to connect to your Confluence URL instance via a
+     * web proxy. You can use this option for Confluence Server.</p> <p>You must
+     * provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443,
+     * the standard port for HTTPS.</p> <p>Web proxy credentials are optional and you
+     * can use them to connect to a web proxy server that requires basic authentication
+     * of user name and password. To store web proxy credentials, you use a secret in
+     * Secrets Manager.</p> <p>It is recommended that you follow best security
+     * practices when configuring your web proxy. This includes setting up throttling,
+     * setting up logging and monitoring, and applying security patches on a regular
+     * basis. If you use your web proxy with multiple data sources, sync jobs that
+     * occur at the same time could strain the load on your proxy. It is recommended
+     * you prepare your proxy beforehand for any security and load requirements.</p>
+     */
+    inline const ProxyConfiguration& GetProxyConfiguration() const{ return m_proxyConfiguration; }
+
+    /**
+     * <p>Configuration information to connect to your Confluence URL instance via a
+     * web proxy. You can use this option for Confluence Server.</p> <p>You must
+     * provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443,
+     * the standard port for HTTPS.</p> <p>Web proxy credentials are optional and you
+     * can use them to connect to a web proxy server that requires basic authentication
+     * of user name and password. To store web proxy credentials, you use a secret in
+     * Secrets Manager.</p> <p>It is recommended that you follow best security
+     * practices when configuring your web proxy. This includes setting up throttling,
+     * setting up logging and monitoring, and applying security patches on a regular
+     * basis. If you use your web proxy with multiple data sources, sync jobs that
+     * occur at the same time could strain the load on your proxy. It is recommended
+     * you prepare your proxy beforehand for any security and load requirements.</p>
+     */
+    inline bool ProxyConfigurationHasBeenSet() const { return m_proxyConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration information to connect to your Confluence URL instance via a
+     * web proxy. You can use this option for Confluence Server.</p> <p>You must
+     * provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443,
+     * the standard port for HTTPS.</p> <p>Web proxy credentials are optional and you
+     * can use them to connect to a web proxy server that requires basic authentication
+     * of user name and password. To store web proxy credentials, you use a secret in
+     * Secrets Manager.</p> <p>It is recommended that you follow best security
+     * practices when configuring your web proxy. This includes setting up throttling,
+     * setting up logging and monitoring, and applying security patches on a regular
+     * basis. If you use your web proxy with multiple data sources, sync jobs that
+     * occur at the same time could strain the load on your proxy. It is recommended
+     * you prepare your proxy beforehand for any security and load requirements.</p>
+     */
+    inline void SetProxyConfiguration(const ProxyConfiguration& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = value; }
+
+    /**
+     * <p>Configuration information to connect to your Confluence URL instance via a
+     * web proxy. You can use this option for Confluence Server.</p> <p>You must
+     * provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443,
+     * the standard port for HTTPS.</p> <p>Web proxy credentials are optional and you
+     * can use them to connect to a web proxy server that requires basic authentication
+     * of user name and password. To store web proxy credentials, you use a secret in
+     * Secrets Manager.</p> <p>It is recommended that you follow best security
+     * practices when configuring your web proxy. This includes setting up throttling,
+     * setting up logging and monitoring, and applying security patches on a regular
+     * basis. If you use your web proxy with multiple data sources, sync jobs that
+     * occur at the same time could strain the load on your proxy. It is recommended
+     * you prepare your proxy beforehand for any security and load requirements.</p>
+     */
+    inline void SetProxyConfiguration(ProxyConfiguration&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration information to connect to your Confluence URL instance via a
+     * web proxy. You can use this option for Confluence Server.</p> <p>You must
+     * provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443,
+     * the standard port for HTTPS.</p> <p>Web proxy credentials are optional and you
+     * can use them to connect to a web proxy server that requires basic authentication
+     * of user name and password. To store web proxy credentials, you use a secret in
+     * Secrets Manager.</p> <p>It is recommended that you follow best security
+     * practices when configuring your web proxy. This includes setting up throttling,
+     * setting up logging and monitoring, and applying security patches on a regular
+     * basis. If you use your web proxy with multiple data sources, sync jobs that
+     * occur at the same time could strain the load on your proxy. It is recommended
+     * you prepare your proxy beforehand for any security and load requirements.</p>
+     */
+    inline ConfluenceConfiguration& WithProxyConfiguration(const ProxyConfiguration& value) { SetProxyConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration information to connect to your Confluence URL instance via a
+     * web proxy. You can use this option for Confluence Server.</p> <p>You must
+     * provide the website host name and port number. For example, the host name of
+     * <i>https://a.example.com/page1.html</i> is "a.example.com" and the port is 443,
+     * the standard port for HTTPS.</p> <p>Web proxy credentials are optional and you
+     * can use them to connect to a web proxy server that requires basic authentication
+     * of user name and password. To store web proxy credentials, you use a secret in
+     * Secrets Manager.</p> <p>It is recommended that you follow best security
+     * practices when configuring your web proxy. This includes setting up throttling,
+     * setting up logging and monitoring, and applying security patches on a regular
+     * basis. If you use your web proxy with multiple data sources, sync jobs that
+     * occur at the same time could strain the load on your proxy. It is recommended
+     * you prepare your proxy beforehand for any security and load requirements.</p>
+     */
+    inline ConfluenceConfiguration& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Whether you want to connect to Confluence using basic authentication of user
+     * name and password, or a personal access token. You can use a personal access
+     * token for Confluence Server.</p>
+     */
+    inline const ConfluenceAuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+
+    /**
+     * <p>Whether you want to connect to Confluence using basic authentication of user
+     * name and password, or a personal access token. You can use a personal access
+     * token for Confluence Server.</p>
+     */
+    inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
+
+    /**
+     * <p>Whether you want to connect to Confluence using basic authentication of user
+     * name and password, or a personal access token. You can use a personal access
+     * token for Confluence Server.</p>
+     */
+    inline void SetAuthenticationType(const ConfluenceAuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+
+    /**
+     * <p>Whether you want to connect to Confluence using basic authentication of user
+     * name and password, or a personal access token. You can use a personal access
+     * token for Confluence Server.</p>
+     */
+    inline void SetAuthenticationType(ConfluenceAuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
+
+    /**
+     * <p>Whether you want to connect to Confluence using basic authentication of user
+     * name and password, or a personal access token. You can use a personal access
+     * token for Confluence Server.</p>
+     */
+    inline ConfluenceConfiguration& WithAuthenticationType(const ConfluenceAuthenticationType& value) { SetAuthenticationType(value); return *this;}
+
+    /**
+     * <p>Whether you want to connect to Confluence using basic authentication of user
+     * name and password, or a personal access token. You can use a personal access
+     * token for Confluence Server.</p>
+     */
+    inline ConfluenceConfiguration& WithAuthenticationType(ConfluenceAuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_serverUrl;
-    bool m_serverUrlHasBeenSet;
+    bool m_serverUrlHasBeenSet = false;
 
     Aws::String m_secretArn;
-    bool m_secretArnHasBeenSet;
+    bool m_secretArnHasBeenSet = false;
 
     ConfluenceVersion m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     ConfluenceSpaceConfiguration m_spaceConfiguration;
-    bool m_spaceConfigurationHasBeenSet;
+    bool m_spaceConfigurationHasBeenSet = false;
 
     ConfluencePageConfiguration m_pageConfiguration;
-    bool m_pageConfigurationHasBeenSet;
+    bool m_pageConfigurationHasBeenSet = false;
 
     ConfluenceBlogConfiguration m_blogConfiguration;
-    bool m_blogConfigurationHasBeenSet;
+    bool m_blogConfigurationHasBeenSet = false;
 
     ConfluenceAttachmentConfiguration m_attachmentConfiguration;
-    bool m_attachmentConfigurationHasBeenSet;
+    bool m_attachmentConfigurationHasBeenSet = false;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
-    bool m_vpcConfigurationHasBeenSet;
+    bool m_vpcConfigurationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;
-    bool m_inclusionPatternsHasBeenSet;
+    bool m_inclusionPatternsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_exclusionPatterns;
-    bool m_exclusionPatternsHasBeenSet;
+    bool m_exclusionPatternsHasBeenSet = false;
+
+    ProxyConfiguration m_proxyConfiguration;
+    bool m_proxyConfigurationHasBeenSet = false;
+
+    ConfluenceAuthenticationType m_authenticationType;
+    bool m_authenticationTypeHasBeenSet = false;
   };
 
 } // namespace Model

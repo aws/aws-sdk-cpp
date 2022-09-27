@@ -309,19 +309,19 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
-    bool m_attributesHasBeenSet;
+    bool m_attributesHasBeenSet = false;
 
     Aws::Vector<ChatTokenCapability> m_capabilities;
-    bool m_capabilitiesHasBeenSet;
+    bool m_capabilitiesHasBeenSet = false;
 
     Aws::String m_roomIdentifier;
-    bool m_roomIdentifierHasBeenSet;
+    bool m_roomIdentifierHasBeenSet = false;
 
     int m_sessionDurationInMinutes;
-    bool m_sessionDurationInMinutesHasBeenSet;
+    bool m_sessionDurationInMinutesHasBeenSet = false;
 
     Aws::String m_userId;
-    bool m_userIdHasBeenSet;
+    bool m_userIdHasBeenSet = false;
   };
 
 } // namespace Model

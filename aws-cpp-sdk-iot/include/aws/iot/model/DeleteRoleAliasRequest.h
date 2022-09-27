@@ -75,7 +75,7 @@ namespace Model
   private:
 
     Aws::String m_roleAlias;
-    bool m_roleAliasHasBeenSet;
+    bool m_roleAliasHasBeenSet = false;
   };
 
 } // namespace Model

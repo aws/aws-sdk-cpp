@@ -119,10 +119,10 @@ namespace Model
   private:
 
     PushNotificationTemplateRequest m_pushNotificationTemplateRequest;
-    bool m_pushNotificationTemplateRequestHasBeenSet;
+    bool m_pushNotificationTemplateRequestHasBeenSet = false;
 
     Aws::String m_templateName;
-    bool m_templateNameHasBeenSet;
+    bool m_templateNameHasBeenSet = false;
   };
 
 } // namespace Model

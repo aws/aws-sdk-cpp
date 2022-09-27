@@ -255,16 +255,16 @@ namespace Model
   private:
 
     Aws::String m_projectName;
-    bool m_projectNameHasBeenSet;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_projectDescription;
-    bool m_projectDescriptionHasBeenSet;
+    bool m_projectDescriptionHasBeenSet = false;
 
     ServiceCatalogProvisioningDetails m_serviceCatalogProvisioningDetails;
-    bool m_serviceCatalogProvisioningDetailsHasBeenSet;
+    bool m_serviceCatalogProvisioningDetailsHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

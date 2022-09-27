@@ -305,25 +305,25 @@ namespace Model
   private:
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_resourceCidr;
-    bool m_resourceCidrHasBeenSet;
+    bool m_resourceCidrHasBeenSet = false;
 
     Aws::String m_resourceRegion;
-    bool m_resourceRegionHasBeenSet;
+    bool m_resourceRegionHasBeenSet = false;
 
     Aws::String m_currentIpamScopeId;
-    bool m_currentIpamScopeIdHasBeenSet;
+    bool m_currentIpamScopeIdHasBeenSet = false;
 
     Aws::String m_destinationIpamScopeId;
-    bool m_destinationIpamScopeIdHasBeenSet;
+    bool m_destinationIpamScopeIdHasBeenSet = false;
 
     bool m_monitored;
-    bool m_monitoredHasBeenSet;
+    bool m_monitoredHasBeenSet = false;
   };
 
 } // namespace Model

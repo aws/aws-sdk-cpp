@@ -510,37 +510,37 @@ namespace Model
   private:
 
     Aws::String m_acceptLanguage;
-    bool m_acceptLanguageHasBeenSet;
+    bool m_acceptLanguageHasBeenSet = false;
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_distributor;
-    bool m_distributorHasBeenSet;
+    bool m_distributorHasBeenSet = false;
 
     Aws::String m_supportDescription;
-    bool m_supportDescriptionHasBeenSet;
+    bool m_supportDescriptionHasBeenSet = false;
 
     Aws::String m_supportEmail;
-    bool m_supportEmailHasBeenSet;
+    bool m_supportEmailHasBeenSet = false;
 
     Aws::String m_supportUrl;
-    bool m_supportUrlHasBeenSet;
+    bool m_supportUrlHasBeenSet = false;
 
     Aws::Vector<Tag> m_addTags;
-    bool m_addTagsHasBeenSet;
+    bool m_addTagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_removeTags;
-    bool m_removeTagsHasBeenSet;
+    bool m_removeTagsHasBeenSet = false;
   };
 
 } // namespace Model

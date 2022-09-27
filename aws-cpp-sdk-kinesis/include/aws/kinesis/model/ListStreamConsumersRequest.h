@@ -387,16 +387,16 @@ namespace Model
   private:
 
     Aws::String m_streamARN;
-    bool m_streamARNHasBeenSet;
+    bool m_streamARNHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::Utils::DateTime m_streamCreationTimestamp;
-    bool m_streamCreationTimestampHasBeenSet;
+    bool m_streamCreationTimestampHasBeenSet = false;
   };
 
 } // namespace Model

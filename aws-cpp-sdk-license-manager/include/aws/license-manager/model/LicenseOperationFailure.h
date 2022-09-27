@@ -351,28 +351,28 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_errorMessage;
-    bool m_errorMessageHasBeenSet;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Utils::DateTime m_failureTime;
-    bool m_failureTimeHasBeenSet;
+    bool m_failureTimeHasBeenSet = false;
 
     Aws::String m_operationName;
-    bool m_operationNameHasBeenSet;
+    bool m_operationNameHasBeenSet = false;
 
     Aws::String m_resourceOwnerId;
-    bool m_resourceOwnerIdHasBeenSet;
+    bool m_resourceOwnerIdHasBeenSet = false;
 
     Aws::String m_operationRequestedBy;
-    bool m_operationRequestedByHasBeenSet;
+    bool m_operationRequestedByHasBeenSet = false;
 
     Aws::Vector<Metadata> m_metadataList;
-    bool m_metadataListHasBeenSet;
+    bool m_metadataListHasBeenSet = false;
   };
 
 } // namespace Model

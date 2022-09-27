@@ -79,7 +79,7 @@ namespace Model
   private:
 
     Aws::String m_dBProxyName;
-    bool m_dBProxyNameHasBeenSet;
+    bool m_dBProxyNameHasBeenSet = false;
   };
 
 } // namespace Model

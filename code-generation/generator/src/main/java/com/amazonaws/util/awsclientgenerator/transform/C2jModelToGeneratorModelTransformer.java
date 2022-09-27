@@ -9,6 +9,10 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.*;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Error;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.*;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
+import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerationFailedException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.lang.WordUtils;
 
 import java.util.*;
@@ -29,12 +33,70 @@ public class C2jModelToGeneratorModelTransformer {
     String endpointOperationName;
 
     public static final HashSet<String> UNSUPPORTEDHTMLTAGS = new HashSet<>();
-
     static {
         UNSUPPORTEDHTMLTAGS.add("<note>");
         UNSUPPORTEDHTMLTAGS.add("</note>");
         UNSUPPORTEDHTMLTAGS.add("<important>");
         UNSUPPORTEDHTMLTAGS.add("</important>");
+    }
+
+    // A list of non-compliant service models that are already released, so we keep them backward-compatible.
+    public static final HashSet<String> LEGACY_SERVICE_IDS = new HashSet<>();
+    static {
+        LEGACY_SERVICE_IDS.add("amp");
+        LEGACY_SERVICE_IDS.add("appintegrations");
+        LEGACY_SERVICE_IDS.add("billingconductor");
+        LEGACY_SERVICE_IDS.add("clouddirectory");
+        LEGACY_SERVICE_IDS.add("cloudfront");
+        LEGACY_SERVICE_IDS.add("cloudsearch");
+        LEGACY_SERVICE_IDS.add("cloudsearchdomain");
+        LEGACY_SERVICE_IDS.add("codeartifact");
+        LEGACY_SERVICE_IDS.add("codestar-notifications");
+        LEGACY_SERVICE_IDS.add("config");
+        LEGACY_SERVICE_IDS.add("databrew");
+        LEGACY_SERVICE_IDS.add("ec2");
+        LEGACY_SERVICE_IDS.add("elasticache");
+        LEGACY_SERVICE_IDS.add("emr-containers");
+        LEGACY_SERVICE_IDS.add("entitlement.marketplace");
+        LEGACY_SERVICE_IDS.add("events");
+        LEGACY_SERVICE_IDS.add("evidently");
+        LEGACY_SERVICE_IDS.add("forecast");
+        LEGACY_SERVICE_IDS.add("forecastquery");
+        LEGACY_SERVICE_IDS.add("grafana");
+        LEGACY_SERVICE_IDS.add("importexport");
+        LEGACY_SERVICE_IDS.add("inspector");
+        LEGACY_SERVICE_IDS.add("lambda");
+        LEGACY_SERVICE_IDS.add("location");
+        LEGACY_SERVICE_IDS.add("lookoutvision");
+        LEGACY_SERVICE_IDS.add("m2");
+        LEGACY_SERVICE_IDS.add("migrationhubstrategy");
+        LEGACY_SERVICE_IDS.add("mobile");
+        LEGACY_SERVICE_IDS.add("mobileanalytics");
+        LEGACY_SERVICE_IDS.add("mq");
+        LEGACY_SERVICE_IDS.add("nimble");
+        LEGACY_SERVICE_IDS.add("opensearch");
+        LEGACY_SERVICE_IDS.add("rbin");
+        LEGACY_SERVICE_IDS.add("rds-data");
+        LEGACY_SERVICE_IDS.add("redshift-data");
+        LEGACY_SERVICE_IDS.add("resiliencehub");
+        LEGACY_SERVICE_IDS.add("rum");
+        LEGACY_SERVICE_IDS.add("sagemaker-a2i-runtime");
+        LEGACY_SERVICE_IDS.add("sagemaker-edge");
+        LEGACY_SERVICE_IDS.add("schemas");
+        LEGACY_SERVICE_IDS.add("sdb");
+        LEGACY_SERVICE_IDS.add("transcribe");
+        LEGACY_SERVICE_IDS.add("transcribe-streaming");
+        LEGACY_SERVICE_IDS.add("wisdom");
+
+        // remaps
+        LEGACY_SERVICE_IDS.add("lex");
+        LEGACY_SERVICE_IDS.add("lexv2-runtime");
+        LEGACY_SERVICE_IDS.add("lexv2-models");
+        LEGACY_SERVICE_IDS.add("marketplace-entitlement");
+        LEGACY_SERVICE_IDS.add("sagemaker-runtime");
+        LEGACY_SERVICE_IDS.add("awstransfer");
+        LEGACY_SERVICE_IDS.add("transcribestreaming");
+        LEGACY_SERVICE_IDS.add("dynamodbstreams");
     }
 
     public C2jModelToGeneratorModelTransformer(C2jServiceModel c2jServiceModel, boolean standalone) {
@@ -62,6 +124,20 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.getMetadata().setHasEndpointDiscoveryTrait(hasEndpointDiscoveryTrait && !endpointOperationName.isEmpty());
         serviceModel.getMetadata().setRequireEndpointDiscovery(requireEndpointDiscovery);
         serviceModel.getMetadata().setEndpointOperationName(endpointOperationName);
+
+        if (c2jServiceModel.getEndpointRules() != null) {
+            ObjectMapper objectMapper = new ObjectMapper();
+            JsonNode jsonNode = null;
+            String shortenedRules = c2jServiceModel.getEndpointRules();
+            try {
+                jsonNode = objectMapper.readValue(shortenedRules, JsonNode.class);
+            } catch (JsonProcessingException e) {
+                System.err.println("Unable to parse endpoint rules as a json: " + e.getMessage());
+            }
+            shortenedRules = jsonNode.toString();
+            serviceModel.setEndpointRules(shortenedRules);
+        }
+        serviceModel.setEndpointTests(c2jServiceModel.getEndpointTests());
 
         return serviceModel;
     }
@@ -110,7 +186,6 @@ public class C2jModelToGeneratorModelTransformer {
         metadata.setApiVersion(c2jMetadata.getApiVersion());
         metadata.setConcatAPIVersion(c2jMetadata.getApiVersion().replace("-", ""));
         metadata.setSigningName(c2jMetadata.getSigningName() != null ? c2jMetadata.getSigningName() : c2jMetadata.getEndpointPrefix());
-        metadata.setServiceId(c2jMetadata.getServiceId() != null ? c2jMetadata.getServiceId() : c2jMetadata.getEndpointPrefix());
 
         metadata.setJsonVersion(c2jMetadata.getJsonVersion());
         if("api-gateway".equalsIgnoreCase(c2jMetadata.getProtocol())) {
@@ -129,10 +204,18 @@ public class C2jModelToGeneratorModelTransformer {
         metadata.setTimestampFormat(c2jMetadata.getTimestampFormat());
 
         if (metadata.getNamespace() == null || metadata.getNamespace().isEmpty()) {
-            metadata.setNamespace(sanitizeServiceAbbreviation(metadata.getServiceFullName()));
+            String serviceId = c2jMetadata.getServiceId();
+            if(LEGACY_SERVICE_IDS.contains(this.c2jServiceModel.getServiceName())) {
+                serviceId = c2jMetadata.getServiceFullName(); // fallback to full name for legacy already released models
+            }
+            if(serviceId == null || serviceId.isEmpty()) {
+                throw new SourceGenerationFailedException(String.format("Service model file %s must have metadata.serviceId present", c2jServiceModel.getServiceName()));
+            }
+            metadata.setNamespace(sanitizeServiceAbbreviation(serviceId));
         } else {
             metadata.setNamespace(sanitizeServiceAbbreviation(metadata.getNamespace()));
         }
+        metadata.setServiceId(c2jMetadata.getServiceId() != null ? c2jMetadata.getServiceId() : c2jMetadata.getEndpointPrefix());
 
         if ("S3-CRT".equalsIgnoreCase(c2jServiceModel.getServiceName())) {
             metadata.setNamespace("S3Crt");
@@ -317,6 +400,7 @@ public class C2jModelToGeneratorModelTransformer {
         shapeMember.setLocationName(c2jShapeMember.getLocationName());
         shapeMember.setLocation(c2jShapeMember.getLocation());
         shapeMember.setQueryName(c2jShapeMember.getQueryName());
+        shapeMember.setContextParam(c2jShapeMember.getContextParam());
         shapeMember.setStreaming(c2jShapeMember.isStreaming());
         shapeMember.setIdempotencyToken(c2jShapeMember.isIdempotencyToken());
         shapeMember.setEventPayload(c2jShapeMember.isEventpayload());
@@ -428,6 +512,25 @@ public class C2jModelToGeneratorModelTransformer {
             operation.setHasEndpointTrait(true);
         }
 
+        if(operation.getAuthtype() == null) {
+            if(c2jServiceModel.getMetadata().getSignatureVersion() != null &&
+                    c2jServiceModel.getMetadata().getSignatureVersion().equals("bearer")) {
+                operation.setSignerName("Aws::Auth::BEARER_SIGNER");
+            } else {
+                operation.setSignerName("Aws::Auth::SIGV4_SIGNER");
+            }
+        } else if (operation.getAuthtype().equals("v4-unsigned-body")) {
+            operation.setSignerName("Aws::Auth::SIGV4_SIGNER");
+        } else if (operation.getAuthtype().equals("bearer")) {
+            operation.setSignerName("Aws::Auth::BEARER_SIGNER");
+        } else if (operation.getAuthtype().equals("custom")) {
+            operation.setSignerName("\"" + operation.getAuthorizer() + "\"");
+        } else {
+            operation.setSignerName("Aws::Auth::NULL_SIGNER");
+        }
+
+        operation.setStaticContextParams(c2jOperation.getStaticContextParams());
+
         // input
         if (c2jOperation.getInput() != null) {
             String requestName = c2jOperation.getName() + "Request";
@@ -448,16 +551,8 @@ public class C2jModelToGeneratorModelTransformer {
             }
 
             requestShape.setSignBody(true);
-
-            if(operation.getAuthtype() == null) {
-                requestShape.setSignerName("Aws::Auth::SIGV4_SIGNER");
-            } else if (operation.getAuthtype().equals("v4-unsigned-body")) {
+            if (operation.getAuthtype() != null && operation.getAuthtype().equals("v4-unsigned-body")) {
                 requestShape.setSignBody(false);
-                requestShape.setSignerName("Aws::Auth::SIGV4_SIGNER");
-            } else if (operation.getAuthtype().equals("custom")) {
-               requestShape.setSignerName("\"" + operation.getAuthorizer() + "\"");
-            } else {
-                requestShape.setSignerName("Aws::Auth::NULL_SIGNER");
             }
 
             if(c2jOperation.isHttpChecksumRequired()) {

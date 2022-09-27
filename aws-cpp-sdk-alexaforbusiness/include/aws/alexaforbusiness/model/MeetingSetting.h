@@ -75,7 +75,7 @@ namespace Model
   private:
 
     RequirePin m_requirePin;
-    bool m_requirePinHasBeenSet;
+    bool m_requirePinHasBeenSet = false;
   };
 
 } // namespace Model

@@ -101,13 +101,13 @@ namespace Model
   private:
 
     long long m_faultCount;
-    bool m_faultCountHasBeenSet;
+    bool m_faultCountHasBeenSet = false;
 
     long long m_okCount;
-    bool m_okCountHasBeenSet;
+    bool m_okCountHasBeenSet = false;
 
     long long m_totalCount;
-    bool m_totalCountHasBeenSet;
+    bool m_totalCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -241,19 +241,19 @@ namespace Model
   private:
 
     Aws::Vector<StringFilter> m_accountIds;
-    bool m_accountIdsHasBeenSet;
+    bool m_accountIdsHasBeenSet = false;
 
     AggregationRequest m_aggregationRequest;
-    bool m_aggregationRequestHasBeenSet;
+    bool m_aggregationRequestHasBeenSet = false;
 
     AggregationType m_aggregationType;
-    bool m_aggregationTypeHasBeenSet;
+    bool m_aggregationTypeHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

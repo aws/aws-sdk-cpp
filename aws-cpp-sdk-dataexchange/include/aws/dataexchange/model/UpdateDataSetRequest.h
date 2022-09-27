@@ -17,9 +17,6 @@ namespace Model
 {
 
   /**
-   * <p>The request body for UpdateDataSet.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/UpdateDataSetRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_DATAEXCHANGE_API UpdateDataSetRequest : public DataExchangeRequest
   {
@@ -160,13 +157,13 @@ namespace Model
   private:
 
     Aws::String m_dataSetId;
-    bool m_dataSetIdHasBeenSet;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

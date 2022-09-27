@@ -27,8 +27,12 @@ namespace Model
 {
 
   /**
-   * <p>Used to specify a set of resources to a backup plan.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Used to specify a set of resources to a backup plan.</p> <p>Specifying your
+   * desired <code>Conditions</code>, <code>ListOfTags</code>,
+   * <code>NotResources</code>, and/or <code>Resources</code> is recommended. If none
+   * of these are specified, Backup will attempt to select all supported and opted-in
+   * storage resources, which could have unintended cost implications.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/BackupSelection">AWS
    * API Reference</a></p>
    */
@@ -231,113 +235,113 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you assign all resources
-     * that match AT LEAST ONE condition (using OR logic).</p> </li> <li> <p>
-     * <code>ListOfTags</code> only supports <code>StringEquals</code>.
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. </p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you assign all resources that match AT LEAST ONE condition (using
+     * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
+     * <code>StringEquals</code>. <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>. </p> </li> </ul>
      */
     inline const Aws::Vector<Condition>& GetListOfTags() const{ return m_listOfTags; }
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you assign all resources
-     * that match AT LEAST ONE condition (using OR logic).</p> </li> <li> <p>
-     * <code>ListOfTags</code> only supports <code>StringEquals</code>.
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. </p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you assign all resources that match AT LEAST ONE condition (using
+     * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
+     * <code>StringEquals</code>. <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>. </p> </li> </ul>
      */
     inline bool ListOfTagsHasBeenSet() const { return m_listOfTagsHasBeenSet; }
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you assign all resources
-     * that match AT LEAST ONE condition (using OR logic).</p> </li> <li> <p>
-     * <code>ListOfTags</code> only supports <code>StringEquals</code>.
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. </p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you assign all resources that match AT LEAST ONE condition (using
+     * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
+     * <code>StringEquals</code>. <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>. </p> </li> </ul>
      */
     inline void SetListOfTags(const Aws::Vector<Condition>& value) { m_listOfTagsHasBeenSet = true; m_listOfTags = value; }
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you assign all resources
-     * that match AT LEAST ONE condition (using OR logic).</p> </li> <li> <p>
-     * <code>ListOfTags</code> only supports <code>StringEquals</code>.
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. </p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you assign all resources that match AT LEAST ONE condition (using
+     * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
+     * <code>StringEquals</code>. <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>. </p> </li> </ul>
      */
     inline void SetListOfTags(Aws::Vector<Condition>&& value) { m_listOfTagsHasBeenSet = true; m_listOfTags = std::move(value); }
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you assign all resources
-     * that match AT LEAST ONE condition (using OR logic).</p> </li> <li> <p>
-     * <code>ListOfTags</code> only supports <code>StringEquals</code>.
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. </p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you assign all resources that match AT LEAST ONE condition (using
+     * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
+     * <code>StringEquals</code>. <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>. </p> </li> </ul>
      */
     inline BackupSelection& WithListOfTags(const Aws::Vector<Condition>& value) { SetListOfTags(value); return *this;}
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you assign all resources
-     * that match AT LEAST ONE condition (using OR logic).</p> </li> <li> <p>
-     * <code>ListOfTags</code> only supports <code>StringEquals</code>.
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. </p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you assign all resources that match AT LEAST ONE condition (using
+     * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
+     * <code>StringEquals</code>. <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>. </p> </li> </ul>
      */
     inline BackupSelection& WithListOfTags(Aws::Vector<Condition>&& value) { SetListOfTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you assign all resources
-     * that match AT LEAST ONE condition (using OR logic).</p> </li> <li> <p>
-     * <code>ListOfTags</code> only supports <code>StringEquals</code>.
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. </p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you assign all resources that match AT LEAST ONE condition (using
+     * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
+     * <code>StringEquals</code>. <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>. </p> </li> </ul>
      */
     inline BackupSelection& AddListOfTags(const Condition& value) { m_listOfTagsHasBeenSet = true; m_listOfTags.push_back(value); return *this; }
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>ListOfTags</code> differs from <code>Conditions</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you assign all resources
-     * that match AT LEAST ONE condition (using OR logic).</p> </li> <li> <p>
-     * <code>ListOfTags</code> only supports <code>StringEquals</code>.
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. </p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>ListOfTags</code> differs from
+     * <code>Conditions</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you assign all resources that match AT LEAST ONE condition (using
+     * OR logic).</p> </li> <li> <p> <code>ListOfTags</code> only supports
+     * <code>StringEquals</code>. <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>. </p> </li> </ul>
      */
     inline BackupSelection& AddListOfTags(Condition&& value) { m_listOfTagsHasBeenSet = true; m_listOfTags.push_back(std::move(value)); return *this; }
 
@@ -426,107 +430,107 @@ namespace Model
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you only assign the
-     * resources that match ALL conditions (using AND logic).</p> </li> <li> <p>
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. <code>ListOfTags</code> only supports
-     * <code>StringEquals</code>.</p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>Conditions</code> differs from
+     * <code>ListOfTags</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you only assign the resources that match ALL conditions (using
+     * AND logic).</p> </li> <li> <p> <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>.
+     * <code>ListOfTags</code> only supports <code>StringEquals</code>.</p> </li> </ul>
      */
     inline const Conditions& GetConditions() const{ return m_conditions; }
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you only assign the
-     * resources that match ALL conditions (using AND logic).</p> </li> <li> <p>
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. <code>ListOfTags</code> only supports
-     * <code>StringEquals</code>.</p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>Conditions</code> differs from
+     * <code>ListOfTags</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you only assign the resources that match ALL conditions (using
+     * AND logic).</p> </li> <li> <p> <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>.
+     * <code>ListOfTags</code> only supports <code>StringEquals</code>.</p> </li> </ul>
      */
     inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you only assign the
-     * resources that match ALL conditions (using AND logic).</p> </li> <li> <p>
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. <code>ListOfTags</code> only supports
-     * <code>StringEquals</code>.</p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>Conditions</code> differs from
+     * <code>ListOfTags</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you only assign the resources that match ALL conditions (using
+     * AND logic).</p> </li> <li> <p> <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>.
+     * <code>ListOfTags</code> only supports <code>StringEquals</code>.</p> </li> </ul>
      */
     inline void SetConditions(const Conditions& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you only assign the
-     * resources that match ALL conditions (using AND logic).</p> </li> <li> <p>
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. <code>ListOfTags</code> only supports
-     * <code>StringEquals</code>.</p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>Conditions</code> differs from
+     * <code>ListOfTags</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you only assign the resources that match ALL conditions (using
+     * AND logic).</p> </li> <li> <p> <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>.
+     * <code>ListOfTags</code> only supports <code>StringEquals</code>.</p> </li> </ul>
      */
     inline void SetConditions(Conditions&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you only assign the
-     * resources that match ALL conditions (using AND logic).</p> </li> <li> <p>
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. <code>ListOfTags</code> only supports
-     * <code>StringEquals</code>.</p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>Conditions</code> differs from
+     * <code>ListOfTags</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you only assign the resources that match ALL conditions (using
+     * AND logic).</p> </li> <li> <p> <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>.
+     * <code>ListOfTags</code> only supports <code>StringEquals</code>.</p> </li> </ul>
      */
     inline BackupSelection& WithConditions(const Conditions& value) { SetConditions(value); return *this;}
 
     /**
      * <p>A list of conditions that you define to assign resources to your backup plans
-     * using tags. For example, <code>"StringEquals": {"Department":
-     * "accounting"</code>. Condition operators are case sensitive.</p> <p>
-     * <code>Conditions</code> differs from <code>ListOfTags</code> as follows:</p>
-     * <ul> <li> <p>When you specify more than one condition, you only assign the
-     * resources that match ALL conditions (using AND logic).</p> </li> <li> <p>
-     * <code>Conditions</code> supports <code>StringEquals</code>,
-     * <code>StringLike</code>, <code>StringNotEquals</code>, and
-     * <code>StringNotLike</code>. <code>ListOfTags</code> only supports
-     * <code>StringEquals</code>.</p> </li> </ul>
+     * using tags. For example, <code>"StringEquals": { "ConditionKey":
+     * "aws:ResourceTag/CreatedByCryo", "ConditionValue": "true" },</code>. Condition
+     * operators are case sensitive.</p> <p> <code>Conditions</code> differs from
+     * <code>ListOfTags</code> as follows:</p> <ul> <li> <p>When you specify more than
+     * one condition, you only assign the resources that match ALL conditions (using
+     * AND logic).</p> </li> <li> <p> <code>Conditions</code> supports
+     * <code>StringEquals</code>, <code>StringLike</code>,
+     * <code>StringNotEquals</code>, and <code>StringNotLike</code>.
+     * <code>ListOfTags</code> only supports <code>StringEquals</code>.</p> </li> </ul>
      */
     inline BackupSelection& WithConditions(Conditions&& value) { SetConditions(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_selectionName;
-    bool m_selectionNameHasBeenSet;
+    bool m_selectionNameHasBeenSet = false;
 
     Aws::String m_iamRoleArn;
-    bool m_iamRoleArnHasBeenSet;
+    bool m_iamRoleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
 
     Aws::Vector<Condition> m_listOfTags;
-    bool m_listOfTagsHasBeenSet;
+    bool m_listOfTagsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_notResources;
-    bool m_notResourcesHasBeenSet;
+    bool m_notResourcesHasBeenSet = false;
 
     Conditions m_conditions;
-    bool m_conditionsHasBeenSet;
+    bool m_conditionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,343 +5,15 @@
 
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
-#include <aws/macie2/Macie2Errors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/macie2/model/AcceptInvitationResult.h>
-#include <aws/macie2/model/BatchGetCustomDataIdentifiersResult.h>
-#include <aws/macie2/model/CreateClassificationJobResult.h>
-#include <aws/macie2/model/CreateCustomDataIdentifierResult.h>
-#include <aws/macie2/model/CreateFindingsFilterResult.h>
-#include <aws/macie2/model/CreateInvitationsResult.h>
-#include <aws/macie2/model/CreateMemberResult.h>
-#include <aws/macie2/model/CreateSampleFindingsResult.h>
-#include <aws/macie2/model/DeclineInvitationsResult.h>
-#include <aws/macie2/model/DeleteCustomDataIdentifierResult.h>
-#include <aws/macie2/model/DeleteFindingsFilterResult.h>
-#include <aws/macie2/model/DeleteInvitationsResult.h>
-#include <aws/macie2/model/DeleteMemberResult.h>
-#include <aws/macie2/model/DescribeBucketsResult.h>
-#include <aws/macie2/model/DescribeClassificationJobResult.h>
-#include <aws/macie2/model/DescribeOrganizationConfigurationResult.h>
-#include <aws/macie2/model/DisableMacieResult.h>
-#include <aws/macie2/model/DisableOrganizationAdminAccountResult.h>
-#include <aws/macie2/model/DisassociateFromAdministratorAccountResult.h>
-#include <aws/macie2/model/DisassociateFromMasterAccountResult.h>
-#include <aws/macie2/model/DisassociateMemberResult.h>
-#include <aws/macie2/model/EnableMacieResult.h>
-#include <aws/macie2/model/EnableOrganizationAdminAccountResult.h>
-#include <aws/macie2/model/GetAdministratorAccountResult.h>
-#include <aws/macie2/model/GetBucketStatisticsResult.h>
-#include <aws/macie2/model/GetClassificationExportConfigurationResult.h>
-#include <aws/macie2/model/GetCustomDataIdentifierResult.h>
-#include <aws/macie2/model/GetFindingStatisticsResult.h>
-#include <aws/macie2/model/GetFindingsResult.h>
-#include <aws/macie2/model/GetFindingsFilterResult.h>
-#include <aws/macie2/model/GetFindingsPublicationConfigurationResult.h>
-#include <aws/macie2/model/GetInvitationsCountResult.h>
-#include <aws/macie2/model/GetMacieSessionResult.h>
-#include <aws/macie2/model/GetMasterAccountResult.h>
-#include <aws/macie2/model/GetMemberResult.h>
-#include <aws/macie2/model/GetUsageStatisticsResult.h>
-#include <aws/macie2/model/GetUsageTotalsResult.h>
-#include <aws/macie2/model/ListClassificationJobsResult.h>
-#include <aws/macie2/model/ListCustomDataIdentifiersResult.h>
-#include <aws/macie2/model/ListFindingsResult.h>
-#include <aws/macie2/model/ListFindingsFiltersResult.h>
-#include <aws/macie2/model/ListInvitationsResult.h>
-#include <aws/macie2/model/ListManagedDataIdentifiersResult.h>
-#include <aws/macie2/model/ListMembersResult.h>
-#include <aws/macie2/model/ListOrganizationAdminAccountsResult.h>
-#include <aws/macie2/model/ListTagsForResourceResult.h>
-#include <aws/macie2/model/PutClassificationExportConfigurationResult.h>
-#include <aws/macie2/model/PutFindingsPublicationConfigurationResult.h>
-#include <aws/macie2/model/SearchResourcesResult.h>
-#include <aws/macie2/model/TagResourceResult.h>
-#include <aws/macie2/model/TestCustomDataIdentifierResult.h>
-#include <aws/macie2/model/UntagResourceResult.h>
-#include <aws/macie2/model/UpdateClassificationJobResult.h>
-#include <aws/macie2/model/UpdateFindingsFilterResult.h>
-#include <aws/macie2/model/UpdateMacieSessionResult.h>
-#include <aws/macie2/model/UpdateMemberSessionResult.h>
-#include <aws/macie2/model/UpdateOrganizationConfigurationResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/macie2/Macie2ServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Macie2
 {
-
-namespace Model
-{
-        class AcceptInvitationRequest;
-        class BatchGetCustomDataIdentifiersRequest;
-        class CreateClassificationJobRequest;
-        class CreateCustomDataIdentifierRequest;
-        class CreateFindingsFilterRequest;
-        class CreateInvitationsRequest;
-        class CreateMemberRequest;
-        class CreateSampleFindingsRequest;
-        class DeclineInvitationsRequest;
-        class DeleteCustomDataIdentifierRequest;
-        class DeleteFindingsFilterRequest;
-        class DeleteInvitationsRequest;
-        class DeleteMemberRequest;
-        class DescribeBucketsRequest;
-        class DescribeClassificationJobRequest;
-        class DescribeOrganizationConfigurationRequest;
-        class DisableMacieRequest;
-        class DisableOrganizationAdminAccountRequest;
-        class DisassociateFromAdministratorAccountRequest;
-        class DisassociateFromMasterAccountRequest;
-        class DisassociateMemberRequest;
-        class EnableMacieRequest;
-        class EnableOrganizationAdminAccountRequest;
-        class GetAdministratorAccountRequest;
-        class GetBucketStatisticsRequest;
-        class GetClassificationExportConfigurationRequest;
-        class GetCustomDataIdentifierRequest;
-        class GetFindingStatisticsRequest;
-        class GetFindingsRequest;
-        class GetFindingsFilterRequest;
-        class GetFindingsPublicationConfigurationRequest;
-        class GetInvitationsCountRequest;
-        class GetMacieSessionRequest;
-        class GetMasterAccountRequest;
-        class GetMemberRequest;
-        class GetUsageStatisticsRequest;
-        class GetUsageTotalsRequest;
-        class ListClassificationJobsRequest;
-        class ListCustomDataIdentifiersRequest;
-        class ListFindingsRequest;
-        class ListFindingsFiltersRequest;
-        class ListInvitationsRequest;
-        class ListManagedDataIdentifiersRequest;
-        class ListMembersRequest;
-        class ListOrganizationAdminAccountsRequest;
-        class ListTagsForResourceRequest;
-        class PutClassificationExportConfigurationRequest;
-        class PutFindingsPublicationConfigurationRequest;
-        class SearchResourcesRequest;
-        class TagResourceRequest;
-        class TestCustomDataIdentifierRequest;
-        class UntagResourceRequest;
-        class UpdateClassificationJobRequest;
-        class UpdateFindingsFilterRequest;
-        class UpdateMacieSessionRequest;
-        class UpdateMemberSessionRequest;
-        class UpdateOrganizationConfigurationRequest;
-
-        typedef Aws::Utils::Outcome<AcceptInvitationResult, Macie2Error> AcceptInvitationOutcome;
-        typedef Aws::Utils::Outcome<BatchGetCustomDataIdentifiersResult, Macie2Error> BatchGetCustomDataIdentifiersOutcome;
-        typedef Aws::Utils::Outcome<CreateClassificationJobResult, Macie2Error> CreateClassificationJobOutcome;
-        typedef Aws::Utils::Outcome<CreateCustomDataIdentifierResult, Macie2Error> CreateCustomDataIdentifierOutcome;
-        typedef Aws::Utils::Outcome<CreateFindingsFilterResult, Macie2Error> CreateFindingsFilterOutcome;
-        typedef Aws::Utils::Outcome<CreateInvitationsResult, Macie2Error> CreateInvitationsOutcome;
-        typedef Aws::Utils::Outcome<CreateMemberResult, Macie2Error> CreateMemberOutcome;
-        typedef Aws::Utils::Outcome<CreateSampleFindingsResult, Macie2Error> CreateSampleFindingsOutcome;
-        typedef Aws::Utils::Outcome<DeclineInvitationsResult, Macie2Error> DeclineInvitationsOutcome;
-        typedef Aws::Utils::Outcome<DeleteCustomDataIdentifierResult, Macie2Error> DeleteCustomDataIdentifierOutcome;
-        typedef Aws::Utils::Outcome<DeleteFindingsFilterResult, Macie2Error> DeleteFindingsFilterOutcome;
-        typedef Aws::Utils::Outcome<DeleteInvitationsResult, Macie2Error> DeleteInvitationsOutcome;
-        typedef Aws::Utils::Outcome<DeleteMemberResult, Macie2Error> DeleteMemberOutcome;
-        typedef Aws::Utils::Outcome<DescribeBucketsResult, Macie2Error> DescribeBucketsOutcome;
-        typedef Aws::Utils::Outcome<DescribeClassificationJobResult, Macie2Error> DescribeClassificationJobOutcome;
-        typedef Aws::Utils::Outcome<DescribeOrganizationConfigurationResult, Macie2Error> DescribeOrganizationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DisableMacieResult, Macie2Error> DisableMacieOutcome;
-        typedef Aws::Utils::Outcome<DisableOrganizationAdminAccountResult, Macie2Error> DisableOrganizationAdminAccountOutcome;
-        typedef Aws::Utils::Outcome<DisassociateFromAdministratorAccountResult, Macie2Error> DisassociateFromAdministratorAccountOutcome;
-        typedef Aws::Utils::Outcome<DisassociateFromMasterAccountResult, Macie2Error> DisassociateFromMasterAccountOutcome;
-        typedef Aws::Utils::Outcome<DisassociateMemberResult, Macie2Error> DisassociateMemberOutcome;
-        typedef Aws::Utils::Outcome<EnableMacieResult, Macie2Error> EnableMacieOutcome;
-        typedef Aws::Utils::Outcome<EnableOrganizationAdminAccountResult, Macie2Error> EnableOrganizationAdminAccountOutcome;
-        typedef Aws::Utils::Outcome<GetAdministratorAccountResult, Macie2Error> GetAdministratorAccountOutcome;
-        typedef Aws::Utils::Outcome<GetBucketStatisticsResult, Macie2Error> GetBucketStatisticsOutcome;
-        typedef Aws::Utils::Outcome<GetClassificationExportConfigurationResult, Macie2Error> GetClassificationExportConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetCustomDataIdentifierResult, Macie2Error> GetCustomDataIdentifierOutcome;
-        typedef Aws::Utils::Outcome<GetFindingStatisticsResult, Macie2Error> GetFindingStatisticsOutcome;
-        typedef Aws::Utils::Outcome<GetFindingsResult, Macie2Error> GetFindingsOutcome;
-        typedef Aws::Utils::Outcome<GetFindingsFilterResult, Macie2Error> GetFindingsFilterOutcome;
-        typedef Aws::Utils::Outcome<GetFindingsPublicationConfigurationResult, Macie2Error> GetFindingsPublicationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetInvitationsCountResult, Macie2Error> GetInvitationsCountOutcome;
-        typedef Aws::Utils::Outcome<GetMacieSessionResult, Macie2Error> GetMacieSessionOutcome;
-        typedef Aws::Utils::Outcome<GetMasterAccountResult, Macie2Error> GetMasterAccountOutcome;
-        typedef Aws::Utils::Outcome<GetMemberResult, Macie2Error> GetMemberOutcome;
-        typedef Aws::Utils::Outcome<GetUsageStatisticsResult, Macie2Error> GetUsageStatisticsOutcome;
-        typedef Aws::Utils::Outcome<GetUsageTotalsResult, Macie2Error> GetUsageTotalsOutcome;
-        typedef Aws::Utils::Outcome<ListClassificationJobsResult, Macie2Error> ListClassificationJobsOutcome;
-        typedef Aws::Utils::Outcome<ListCustomDataIdentifiersResult, Macie2Error> ListCustomDataIdentifiersOutcome;
-        typedef Aws::Utils::Outcome<ListFindingsResult, Macie2Error> ListFindingsOutcome;
-        typedef Aws::Utils::Outcome<ListFindingsFiltersResult, Macie2Error> ListFindingsFiltersOutcome;
-        typedef Aws::Utils::Outcome<ListInvitationsResult, Macie2Error> ListInvitationsOutcome;
-        typedef Aws::Utils::Outcome<ListManagedDataIdentifiersResult, Macie2Error> ListManagedDataIdentifiersOutcome;
-        typedef Aws::Utils::Outcome<ListMembersResult, Macie2Error> ListMembersOutcome;
-        typedef Aws::Utils::Outcome<ListOrganizationAdminAccountsResult, Macie2Error> ListOrganizationAdminAccountsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Macie2Error> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutClassificationExportConfigurationResult, Macie2Error> PutClassificationExportConfigurationOutcome;
-        typedef Aws::Utils::Outcome<PutFindingsPublicationConfigurationResult, Macie2Error> PutFindingsPublicationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<SearchResourcesResult, Macie2Error> SearchResourcesOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Macie2Error> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TestCustomDataIdentifierResult, Macie2Error> TestCustomDataIdentifierOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Macie2Error> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateClassificationJobResult, Macie2Error> UpdateClassificationJobOutcome;
-        typedef Aws::Utils::Outcome<UpdateFindingsFilterResult, Macie2Error> UpdateFindingsFilterOutcome;
-        typedef Aws::Utils::Outcome<UpdateMacieSessionResult, Macie2Error> UpdateMacieSessionOutcome;
-        typedef Aws::Utils::Outcome<UpdateMemberSessionResult, Macie2Error> UpdateMemberSessionOutcome;
-        typedef Aws::Utils::Outcome<UpdateOrganizationConfigurationResult, Macie2Error> UpdateOrganizationConfigurationOutcome;
-
-        typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
-        typedef std::future<BatchGetCustomDataIdentifiersOutcome> BatchGetCustomDataIdentifiersOutcomeCallable;
-        typedef std::future<CreateClassificationJobOutcome> CreateClassificationJobOutcomeCallable;
-        typedef std::future<CreateCustomDataIdentifierOutcome> CreateCustomDataIdentifierOutcomeCallable;
-        typedef std::future<CreateFindingsFilterOutcome> CreateFindingsFilterOutcomeCallable;
-        typedef std::future<CreateInvitationsOutcome> CreateInvitationsOutcomeCallable;
-        typedef std::future<CreateMemberOutcome> CreateMemberOutcomeCallable;
-        typedef std::future<CreateSampleFindingsOutcome> CreateSampleFindingsOutcomeCallable;
-        typedef std::future<DeclineInvitationsOutcome> DeclineInvitationsOutcomeCallable;
-        typedef std::future<DeleteCustomDataIdentifierOutcome> DeleteCustomDataIdentifierOutcomeCallable;
-        typedef std::future<DeleteFindingsFilterOutcome> DeleteFindingsFilterOutcomeCallable;
-        typedef std::future<DeleteInvitationsOutcome> DeleteInvitationsOutcomeCallable;
-        typedef std::future<DeleteMemberOutcome> DeleteMemberOutcomeCallable;
-        typedef std::future<DescribeBucketsOutcome> DescribeBucketsOutcomeCallable;
-        typedef std::future<DescribeClassificationJobOutcome> DescribeClassificationJobOutcomeCallable;
-        typedef std::future<DescribeOrganizationConfigurationOutcome> DescribeOrganizationConfigurationOutcomeCallable;
-        typedef std::future<DisableMacieOutcome> DisableMacieOutcomeCallable;
-        typedef std::future<DisableOrganizationAdminAccountOutcome> DisableOrganizationAdminAccountOutcomeCallable;
-        typedef std::future<DisassociateFromAdministratorAccountOutcome> DisassociateFromAdministratorAccountOutcomeCallable;
-        typedef std::future<DisassociateFromMasterAccountOutcome> DisassociateFromMasterAccountOutcomeCallable;
-        typedef std::future<DisassociateMemberOutcome> DisassociateMemberOutcomeCallable;
-        typedef std::future<EnableMacieOutcome> EnableMacieOutcomeCallable;
-        typedef std::future<EnableOrganizationAdminAccountOutcome> EnableOrganizationAdminAccountOutcomeCallable;
-        typedef std::future<GetAdministratorAccountOutcome> GetAdministratorAccountOutcomeCallable;
-        typedef std::future<GetBucketStatisticsOutcome> GetBucketStatisticsOutcomeCallable;
-        typedef std::future<GetClassificationExportConfigurationOutcome> GetClassificationExportConfigurationOutcomeCallable;
-        typedef std::future<GetCustomDataIdentifierOutcome> GetCustomDataIdentifierOutcomeCallable;
-        typedef std::future<GetFindingStatisticsOutcome> GetFindingStatisticsOutcomeCallable;
-        typedef std::future<GetFindingsOutcome> GetFindingsOutcomeCallable;
-        typedef std::future<GetFindingsFilterOutcome> GetFindingsFilterOutcomeCallable;
-        typedef std::future<GetFindingsPublicationConfigurationOutcome> GetFindingsPublicationConfigurationOutcomeCallable;
-        typedef std::future<GetInvitationsCountOutcome> GetInvitationsCountOutcomeCallable;
-        typedef std::future<GetMacieSessionOutcome> GetMacieSessionOutcomeCallable;
-        typedef std::future<GetMasterAccountOutcome> GetMasterAccountOutcomeCallable;
-        typedef std::future<GetMemberOutcome> GetMemberOutcomeCallable;
-        typedef std::future<GetUsageStatisticsOutcome> GetUsageStatisticsOutcomeCallable;
-        typedef std::future<GetUsageTotalsOutcome> GetUsageTotalsOutcomeCallable;
-        typedef std::future<ListClassificationJobsOutcome> ListClassificationJobsOutcomeCallable;
-        typedef std::future<ListCustomDataIdentifiersOutcome> ListCustomDataIdentifiersOutcomeCallable;
-        typedef std::future<ListFindingsOutcome> ListFindingsOutcomeCallable;
-        typedef std::future<ListFindingsFiltersOutcome> ListFindingsFiltersOutcomeCallable;
-        typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
-        typedef std::future<ListManagedDataIdentifiersOutcome> ListManagedDataIdentifiersOutcomeCallable;
-        typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
-        typedef std::future<ListOrganizationAdminAccountsOutcome> ListOrganizationAdminAccountsOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<PutClassificationExportConfigurationOutcome> PutClassificationExportConfigurationOutcomeCallable;
-        typedef std::future<PutFindingsPublicationConfigurationOutcome> PutFindingsPublicationConfigurationOutcomeCallable;
-        typedef std::future<SearchResourcesOutcome> SearchResourcesOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<TestCustomDataIdentifierOutcome> TestCustomDataIdentifierOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateClassificationJobOutcome> UpdateClassificationJobOutcomeCallable;
-        typedef std::future<UpdateFindingsFilterOutcome> UpdateFindingsFilterOutcomeCallable;
-        typedef std::future<UpdateMacieSessionOutcome> UpdateMacieSessionOutcomeCallable;
-        typedef std::future<UpdateMemberSessionOutcome> UpdateMemberSessionOutcomeCallable;
-        typedef std::future<UpdateOrganizationConfigurationOutcome> UpdateOrganizationConfigurationOutcomeCallable;
-} // namespace Model
-
-  class Macie2Client;
-
-    typedef std::function<void(const Macie2Client*, const Model::AcceptInvitationRequest&, const Model::AcceptInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptInvitationResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::BatchGetCustomDataIdentifiersRequest&, const Model::BatchGetCustomDataIdentifiersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetCustomDataIdentifiersResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::CreateClassificationJobRequest&, const Model::CreateClassificationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClassificationJobResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::CreateCustomDataIdentifierRequest&, const Model::CreateCustomDataIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomDataIdentifierResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::CreateFindingsFilterRequest&, const Model::CreateFindingsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFindingsFilterResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::CreateInvitationsRequest&, const Model::CreateInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInvitationsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::CreateMemberRequest&, const Model::CreateMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMemberResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::CreateSampleFindingsRequest&, const Model::CreateSampleFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSampleFindingsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::DeclineInvitationsRequest&, const Model::DeclineInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeclineInvitationsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::DeleteCustomDataIdentifierRequest&, const Model::DeleteCustomDataIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomDataIdentifierResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::DeleteFindingsFilterRequest&, const Model::DeleteFindingsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFindingsFilterResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::DeleteInvitationsRequest&, const Model::DeleteInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInvitationsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::DeleteMemberRequest&, const Model::DeleteMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMemberResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::DescribeBucketsRequest&, const Model::DescribeBucketsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBucketsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::DescribeClassificationJobRequest&, const Model::DescribeClassificationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClassificationJobResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::DescribeOrganizationConfigurationRequest&, const Model::DescribeOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::DisableMacieRequest&, const Model::DisableMacieOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableMacieResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::DisableOrganizationAdminAccountRequest&, const Model::DisableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableOrganizationAdminAccountResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::DisassociateFromAdministratorAccountRequest&, const Model::DisassociateFromAdministratorAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFromAdministratorAccountResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::DisassociateFromMasterAccountRequest&, const Model::DisassociateFromMasterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFromMasterAccountResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::DisassociateMemberRequest&, const Model::DisassociateMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateMemberResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::EnableMacieRequest&, const Model::EnableMacieOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableMacieResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::EnableOrganizationAdminAccountRequest&, const Model::EnableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableOrganizationAdminAccountResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetAdministratorAccountRequest&, const Model::GetAdministratorAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAdministratorAccountResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetBucketStatisticsRequest&, const Model::GetBucketStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketStatisticsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetClassificationExportConfigurationRequest&, const Model::GetClassificationExportConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClassificationExportConfigurationResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetCustomDataIdentifierRequest&, const Model::GetCustomDataIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCustomDataIdentifierResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetFindingStatisticsRequest&, const Model::GetFindingStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingStatisticsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetFindingsRequest&, const Model::GetFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetFindingsFilterRequest&, const Model::GetFindingsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsFilterResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetFindingsPublicationConfigurationRequest&, const Model::GetFindingsPublicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsPublicationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetInvitationsCountRequest&, const Model::GetInvitationsCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInvitationsCountResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetMacieSessionRequest&, const Model::GetMacieSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMacieSessionResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetMasterAccountRequest&, const Model::GetMasterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMasterAccountResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetMemberRequest&, const Model::GetMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMemberResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetUsageStatisticsRequest&, const Model::GetUsageStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageStatisticsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::GetUsageTotalsRequest&, const Model::GetUsageTotalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageTotalsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::ListClassificationJobsRequest&, const Model::ListClassificationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClassificationJobsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::ListCustomDataIdentifiersRequest&, const Model::ListCustomDataIdentifiersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomDataIdentifiersResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::ListFindingsRequest&, const Model::ListFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::ListFindingsFiltersRequest&, const Model::ListFindingsFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingsFiltersResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::ListManagedDataIdentifiersRequest&, const Model::ListManagedDataIdentifiersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedDataIdentifiersResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::ListOrganizationAdminAccountsRequest&, const Model::ListOrganizationAdminAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationAdminAccountsResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::PutClassificationExportConfigurationRequest&, const Model::PutClassificationExportConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutClassificationExportConfigurationResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::PutFindingsPublicationConfigurationRequest&, const Model::PutFindingsPublicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFindingsPublicationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::SearchResourcesRequest&, const Model::SearchResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResourcesResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::TestCustomDataIdentifierRequest&, const Model::TestCustomDataIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestCustomDataIdentifierResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::UpdateClassificationJobRequest&, const Model::UpdateClassificationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClassificationJobResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::UpdateFindingsFilterRequest&, const Model::UpdateFindingsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsFilterResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::UpdateMacieSessionRequest&, const Model::UpdateMacieSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMacieSessionResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::UpdateMemberSessionRequest&, const Model::UpdateMemberSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMemberSessionResponseReceivedHandler;
-    typedef std::function<void(const Macie2Client*, const Model::UpdateOrganizationConfigurationRequest&, const Model::UpdateOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOrganizationConfigurationResponseReceivedHandler;
-
   /**
    * <p>Amazon Macie is a fully managed data security and data privacy service that
    * uses machine learning and pattern matching to discover and protect your
@@ -367,14 +39,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        Macie2Client(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        Macie2Client(const Aws::Auth::AWSCredentials& credentials,
+                     const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         Macie2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                     const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~Macie2Client();
 
@@ -414,6 +87,24 @@ namespace Model
          * An Async wrapper for BatchGetCustomDataIdentifiers that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchGetCustomDataIdentifiersAsync(const Model::BatchGetCustomDataIdentifiersRequest& request, const BatchGetCustomDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates and defines the settings for an allow list.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateAllowList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAllowListOutcome CreateAllowList(const Model::CreateAllowListRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAllowList that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAllowListOutcomeCallable CreateAllowListCallable(const Model::CreateAllowListRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateAllowList that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAllowListAsync(const Model::CreateAllowListRequest& request, const CreateAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates and defines the settings for a classification job.</p><p><h3>See
@@ -539,6 +230,23 @@ namespace Model
          * An Async wrapper for DeclineInvitations that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeclineInvitationsAsync(const Model::DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an allow list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteAllowList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAllowListOutcome DeleteAllowList(const Model::DeleteAllowListRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAllowList that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAllowListOutcomeCallable DeleteAllowListCallable(const Model::DeleteAllowListRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteAllowList that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAllowListAsync(const Model::DeleteAllowListRequest& request, const DeleteAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Soft deletes a custom data identifier.</p><p><h3>See Also:</h3>   <a
@@ -812,6 +520,24 @@ namespace Model
         virtual void GetAdministratorAccountAsync(const Model::GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the settings and status of an allow list.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAllowList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAllowListOutcome GetAllowList(const Model::GetAllowListRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAllowList that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAllowListOutcomeCallable GetAllowListCallable(const Model::GetAllowListRequest& request) const;
+
+        /**
+         * An Async wrapper for GetAllowList that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAllowListAsync(const Model::GetAllowListRequest& request, const GetAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves (queries) aggregated statistical data about S3 buckets that Amazon
          * Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">AWS
@@ -1011,6 +737,60 @@ namespace Model
         virtual void GetMemberAsync(const Model::GetMemberRequest& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the status and configuration settings for retrieving occurrences of
+         * sensitive data reported by findings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetRevealConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRevealConfigurationOutcome GetRevealConfiguration(const Model::GetRevealConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRevealConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRevealConfigurationOutcomeCallable GetRevealConfigurationCallable(const Model::GetRevealConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for GetRevealConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRevealConfigurationAsync(const Model::GetRevealConfigurationRequest& request, const GetRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves occurrences of sensitive data reported by a finding.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrences">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSensitiveDataOccurrencesOutcome GetSensitiveDataOccurrences(const Model::GetSensitiveDataOccurrencesRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSensitiveDataOccurrences that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSensitiveDataOccurrencesOutcomeCallable GetSensitiveDataOccurrencesCallable(const Model::GetSensitiveDataOccurrencesRequest& request) const;
+
+        /**
+         * An Async wrapper for GetSensitiveDataOccurrences that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSensitiveDataOccurrencesAsync(const Model::GetSensitiveDataOccurrencesRequest& request, const GetSensitiveDataOccurrencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Checks whether occurrences of sensitive data can be retrieved for a
+         * finding.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitiveDataOccurrencesAvailability">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSensitiveDataOccurrencesAvailabilityOutcome GetSensitiveDataOccurrencesAvailability(const Model::GetSensitiveDataOccurrencesAvailabilityRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSensitiveDataOccurrencesAvailability that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSensitiveDataOccurrencesAvailabilityOutcomeCallable GetSensitiveDataOccurrencesAvailabilityCallable(const Model::GetSensitiveDataOccurrencesAvailabilityRequest& request) const;
+
+        /**
+         * An Async wrapper for GetSensitiveDataOccurrencesAvailability that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSensitiveDataOccurrencesAvailabilityAsync(const Model::GetSensitiveDataOccurrencesAvailabilityRequest& request, const GetSensitiveDataOccurrencesAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves (queries) quotas and aggregated usage data for one or more
          * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageStatistics">AWS
@@ -1045,6 +825,24 @@ namespace Model
          * An Async wrapper for GetUsageTotals that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetUsageTotalsAsync(const Model::GetUsageTotalsRequest& request, const GetUsageTotalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a subset of information about all the allow lists for an
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListAllowLists">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAllowListsOutcome ListAllowLists(const Model::ListAllowListsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAllowLists that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAllowListsOutcomeCallable ListAllowListsCallable(const Model::ListAllowListsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListAllowLists that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAllowListsAsync(const Model::ListAllowListsRequest& request, const ListAllowListsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a subset of information about one or more classification
@@ -1191,9 +989,8 @@ namespace Model
         virtual void ListOrganizationAdminAccountsAsync(const Model::ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the tags (keys and values) that are associated with a
-         * classification job, custom data identifier, findings filter, or member
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the tags (keys and values) that are associated with an Amazon Macie
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -1265,9 +1062,8 @@ namespace Model
         virtual void SearchResourcesAsync(const Model::SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or updates one or more tags (keys and values) that are associated with a
-         * classification job, custom data identifier, findings filter, or member
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or updates one or more tags (keys and values) that are associated with
+         * an Amazon Macie resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1301,9 +1097,8 @@ namespace Model
         virtual void TestCustomDataIdentifierAsync(const Model::TestCustomDataIdentifierRequest& request, const TestCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags (keys and values) from a classification job, custom
-         * data identifier, findings filter, or member account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Removes one or more tags (keys and values) from an Amazon Macie
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -1318,6 +1113,23 @@ namespace Model
          * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the settings for an allow list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAllowList">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAllowListOutcome UpdateAllowList(const Model::UpdateAllowListRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAllowList that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateAllowListOutcomeCallable UpdateAllowListCallable(const Model::UpdateAllowListRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateAllowList that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateAllowListAsync(const Model::UpdateAllowListRequest& request, const UpdateAllowListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the status of a classification job.</p><p><h3>See Also:</h3>   <a
@@ -1408,67 +1220,28 @@ namespace Model
          */
         virtual void UpdateOrganizationConfigurationAsync(const Model::UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the status and configuration settings for retrieving occurrences of
+         * sensitive data reported by findings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateRevealConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRevealConfigurationOutcome UpdateRevealConfiguration(const Model::UpdateRevealConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRevealConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRevealConfigurationOutcomeCallable UpdateRevealConfigurationCallable(const Model::UpdateRevealConfigurationRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateRevealConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRevealConfigurationAsync(const Model::UpdateRevealConfigurationRequest& request, const UpdateRevealConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AcceptInvitationAsyncHelper(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void BatchGetCustomDataIdentifiersAsyncHelper(const Model::BatchGetCustomDataIdentifiersRequest& request, const BatchGetCustomDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateClassificationJobAsyncHelper(const Model::CreateClassificationJobRequest& request, const CreateClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateCustomDataIdentifierAsyncHelper(const Model::CreateCustomDataIdentifierRequest& request, const CreateCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateFindingsFilterAsyncHelper(const Model::CreateFindingsFilterRequest& request, const CreateFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateInvitationsAsyncHelper(const Model::CreateInvitationsRequest& request, const CreateInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateMemberAsyncHelper(const Model::CreateMemberRequest& request, const CreateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSampleFindingsAsyncHelper(const Model::CreateSampleFindingsRequest& request, const CreateSampleFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeclineInvitationsAsyncHelper(const Model::DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteCustomDataIdentifierAsyncHelper(const Model::DeleteCustomDataIdentifierRequest& request, const DeleteCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteFindingsFilterAsyncHelper(const Model::DeleteFindingsFilterRequest& request, const DeleteFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteInvitationsAsyncHelper(const Model::DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteMemberAsyncHelper(const Model::DeleteMemberRequest& request, const DeleteMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeBucketsAsyncHelper(const Model::DescribeBucketsRequest& request, const DescribeBucketsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeClassificationJobAsyncHelper(const Model::DescribeClassificationJobRequest& request, const DescribeClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeOrganizationConfigurationAsyncHelper(const Model::DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisableMacieAsyncHelper(const Model::DisableMacieRequest& request, const DisableMacieResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisableOrganizationAdminAccountAsyncHelper(const Model::DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateFromAdministratorAccountAsyncHelper(const Model::DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateFromMasterAccountAsyncHelper(const Model::DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateMemberAsyncHelper(const Model::DisassociateMemberRequest& request, const DisassociateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EnableMacieAsyncHelper(const Model::EnableMacieRequest& request, const EnableMacieResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EnableOrganizationAdminAccountAsyncHelper(const Model::EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetAdministratorAccountAsyncHelper(const Model::GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetBucketStatisticsAsyncHelper(const Model::GetBucketStatisticsRequest& request, const GetBucketStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetClassificationExportConfigurationAsyncHelper(const Model::GetClassificationExportConfigurationRequest& request, const GetClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetCustomDataIdentifierAsyncHelper(const Model::GetCustomDataIdentifierRequest& request, const GetCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFindingStatisticsAsyncHelper(const Model::GetFindingStatisticsRequest& request, const GetFindingStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFindingsAsyncHelper(const Model::GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFindingsFilterAsyncHelper(const Model::GetFindingsFilterRequest& request, const GetFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetFindingsPublicationConfigurationAsyncHelper(const Model::GetFindingsPublicationConfigurationRequest& request, const GetFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetInvitationsCountAsyncHelper(const Model::GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetMacieSessionAsyncHelper(const Model::GetMacieSessionRequest& request, const GetMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetMasterAccountAsyncHelper(const Model::GetMasterAccountRequest& request, const GetMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetMemberAsyncHelper(const Model::GetMemberRequest& request, const GetMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetUsageStatisticsAsyncHelper(const Model::GetUsageStatisticsRequest& request, const GetUsageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetUsageTotalsAsyncHelper(const Model::GetUsageTotalsRequest& request, const GetUsageTotalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListClassificationJobsAsyncHelper(const Model::ListClassificationJobsRequest& request, const ListClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListCustomDataIdentifiersAsyncHelper(const Model::ListCustomDataIdentifiersRequest& request, const ListCustomDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListFindingsAsyncHelper(const Model::ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListFindingsFiltersAsyncHelper(const Model::ListFindingsFiltersRequest& request, const ListFindingsFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListInvitationsAsyncHelper(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListManagedDataIdentifiersAsyncHelper(const Model::ListManagedDataIdentifiersRequest& request, const ListManagedDataIdentifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListMembersAsyncHelper(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListOrganizationAdminAccountsAsyncHelper(const Model::ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutClassificationExportConfigurationAsyncHelper(const Model::PutClassificationExportConfigurationRequest& request, const PutClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PutFindingsPublicationConfigurationAsyncHelper(const Model::PutFindingsPublicationConfigurationRequest& request, const PutFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SearchResourcesAsyncHelper(const Model::SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TestCustomDataIdentifierAsyncHelper(const Model::TestCustomDataIdentifierRequest& request, const TestCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateClassificationJobAsyncHelper(const Model::UpdateClassificationJobRequest& request, const UpdateClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateFindingsFilterAsyncHelper(const Model::UpdateFindingsFilterRequest& request, const UpdateFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateMacieSessionAsyncHelper(const Model::UpdateMacieSessionRequest& request, const UpdateMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateMemberSessionAsyncHelper(const Model::UpdateMemberSessionRequest& request, const UpdateMemberSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateOrganizationConfigurationAsyncHelper(const Model::UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

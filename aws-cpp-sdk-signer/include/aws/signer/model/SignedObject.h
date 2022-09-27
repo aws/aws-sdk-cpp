@@ -71,7 +71,7 @@ namespace Model
   private:
 
     S3SignedObject m_s3;
-    bool m_s3HasBeenSet;
+    bool m_s3HasBeenSet = false;
   };
 
 } // namespace Model

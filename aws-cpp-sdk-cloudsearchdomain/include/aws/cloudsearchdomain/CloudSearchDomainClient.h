@@ -5,73 +5,15 @@
 
 #pragma once
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
-#include <aws/cloudsearchdomain/CloudSearchDomainErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/cloudsearchdomain/model/SearchResult.h>
-#include <aws/cloudsearchdomain/model/SuggestResult.h>
-#include <aws/cloudsearchdomain/model/UploadDocumentsResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/cloudsearchdomain/CloudSearchDomainServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace CloudSearchDomain
 {
-
-namespace Model
-{
-        class SearchRequest;
-        class SuggestRequest;
-        class UploadDocumentsRequest;
-
-        typedef Aws::Utils::Outcome<SearchResult, CloudSearchDomainError> SearchOutcome;
-        typedef Aws::Utils::Outcome<SuggestResult, CloudSearchDomainError> SuggestOutcome;
-        typedef Aws::Utils::Outcome<UploadDocumentsResult, CloudSearchDomainError> UploadDocumentsOutcome;
-
-        typedef std::future<SearchOutcome> SearchOutcomeCallable;
-        typedef std::future<SuggestOutcome> SuggestOutcomeCallable;
-        typedef std::future<UploadDocumentsOutcome> UploadDocumentsOutcomeCallable;
-} // namespace Model
-
-  class CloudSearchDomainClient;
-
-    typedef std::function<void(const CloudSearchDomainClient*, const Model::SearchRequest&, const Model::SearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResponseReceivedHandler;
-    typedef std::function<void(const CloudSearchDomainClient*, const Model::SuggestRequest&, const Model::SuggestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SuggestResponseReceivedHandler;
-    typedef std::function<void(const CloudSearchDomainClient*, const Model::UploadDocumentsRequest&, const Model::UploadDocumentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadDocumentsResponseReceivedHandler;
-
   /**
    * <p>You use the AmazonCloudSearch2013 API to upload documents to a search domain
    * and search those documents. </p> <p>The endpoints for submitting
@@ -99,14 +41,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudSearchDomainClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudSearchDomainClient(const Aws::Auth::AWSCredentials& credentials,
+                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CloudSearchDomainClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~CloudSearchDomainClient();
 
@@ -221,9 +164,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void SearchAsyncHelper(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void SuggestAsyncHelper(const Model::SuggestRequest& request, const SuggestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UploadDocumentsAsyncHelper(const Model::UploadDocumentsRequest& request, const UploadDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

@@ -65,7 +65,7 @@ namespace Model
   private:
 
     LoggingOptions m_loggingOptions;
-    bool m_loggingOptionsHasBeenSet;
+    bool m_loggingOptionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -55,33 +55,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "acm-pca";
 static const char* ALLOCATION_TAG = "ACMPCAClient";
 
-
 ACMPCAClient::ACMPCAClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ACMPCAErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ACMPCAErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-ACMPCAClient::ACMPCAClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+ACMPCAClient::ACMPCAClient(const AWSCredentials& credentials,
+                           const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ACMPCAErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ACMPCAErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 ACMPCAClient::ACMPCAClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                           const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<ACMPCAErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ACMPCAErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -93,7 +99,7 @@ ACMPCAClient::~ACMPCAClient()
 
 void ACMPCAClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("ACM PCA");
+  AWSClient::SetServiceClientName("ACM PCA");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -133,12 +139,10 @@ CreateCertificateAuthorityOutcomeCallable ACMPCAClient::CreateCertificateAuthori
 
 void ACMPCAClient::CreateCertificateAuthorityAsync(const CreateCertificateAuthorityRequest& request, const CreateCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCertificateAuthorityAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::CreateCertificateAuthorityAsyncHelper(const CreateCertificateAuthorityRequest& request, const CreateCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCertificateAuthority(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCertificateAuthority(request), context);
+    } );
 }
 
 CreateCertificateAuthorityAuditReportOutcome ACMPCAClient::CreateCertificateAuthorityAuditReport(const CreateCertificateAuthorityAuditReportRequest& request) const
@@ -157,12 +161,10 @@ CreateCertificateAuthorityAuditReportOutcomeCallable ACMPCAClient::CreateCertifi
 
 void ACMPCAClient::CreateCertificateAuthorityAuditReportAsync(const CreateCertificateAuthorityAuditReportRequest& request, const CreateCertificateAuthorityAuditReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateCertificateAuthorityAuditReportAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::CreateCertificateAuthorityAuditReportAsyncHelper(const CreateCertificateAuthorityAuditReportRequest& request, const CreateCertificateAuthorityAuditReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateCertificateAuthorityAuditReport(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateCertificateAuthorityAuditReport(request), context);
+    } );
 }
 
 CreatePermissionOutcome ACMPCAClient::CreatePermission(const CreatePermissionRequest& request) const
@@ -181,12 +183,10 @@ CreatePermissionOutcomeCallable ACMPCAClient::CreatePermissionCallable(const Cre
 
 void ACMPCAClient::CreatePermissionAsync(const CreatePermissionRequest& request, const CreatePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePermissionAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::CreatePermissionAsyncHelper(const CreatePermissionRequest& request, const CreatePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePermission(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreatePermission(request), context);
+    } );
 }
 
 DeleteCertificateAuthorityOutcome ACMPCAClient::DeleteCertificateAuthority(const DeleteCertificateAuthorityRequest& request) const
@@ -205,12 +205,10 @@ DeleteCertificateAuthorityOutcomeCallable ACMPCAClient::DeleteCertificateAuthori
 
 void ACMPCAClient::DeleteCertificateAuthorityAsync(const DeleteCertificateAuthorityRequest& request, const DeleteCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteCertificateAuthorityAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::DeleteCertificateAuthorityAsyncHelper(const DeleteCertificateAuthorityRequest& request, const DeleteCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteCertificateAuthority(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteCertificateAuthority(request), context);
+    } );
 }
 
 DeletePermissionOutcome ACMPCAClient::DeletePermission(const DeletePermissionRequest& request) const
@@ -229,12 +227,10 @@ DeletePermissionOutcomeCallable ACMPCAClient::DeletePermissionCallable(const Del
 
 void ACMPCAClient::DeletePermissionAsync(const DeletePermissionRequest& request, const DeletePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePermissionAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::DeletePermissionAsyncHelper(const DeletePermissionRequest& request, const DeletePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePermission(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePermission(request), context);
+    } );
 }
 
 DeletePolicyOutcome ACMPCAClient::DeletePolicy(const DeletePolicyRequest& request) const
@@ -253,12 +249,10 @@ DeletePolicyOutcomeCallable ACMPCAClient::DeletePolicyCallable(const DeletePolic
 
 void ACMPCAClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePolicyAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePolicy(request), context);
+    } );
 }
 
 DescribeCertificateAuthorityOutcome ACMPCAClient::DescribeCertificateAuthority(const DescribeCertificateAuthorityRequest& request) const
@@ -277,12 +271,10 @@ DescribeCertificateAuthorityOutcomeCallable ACMPCAClient::DescribeCertificateAut
 
 void ACMPCAClient::DescribeCertificateAuthorityAsync(const DescribeCertificateAuthorityRequest& request, const DescribeCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCertificateAuthorityAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::DescribeCertificateAuthorityAsyncHelper(const DescribeCertificateAuthorityRequest& request, const DescribeCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeCertificateAuthority(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeCertificateAuthority(request), context);
+    } );
 }
 
 DescribeCertificateAuthorityAuditReportOutcome ACMPCAClient::DescribeCertificateAuthorityAuditReport(const DescribeCertificateAuthorityAuditReportRequest& request) const
@@ -301,12 +293,10 @@ DescribeCertificateAuthorityAuditReportOutcomeCallable ACMPCAClient::DescribeCer
 
 void ACMPCAClient::DescribeCertificateAuthorityAuditReportAsync(const DescribeCertificateAuthorityAuditReportRequest& request, const DescribeCertificateAuthorityAuditReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeCertificateAuthorityAuditReportAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::DescribeCertificateAuthorityAuditReportAsyncHelper(const DescribeCertificateAuthorityAuditReportRequest& request, const DescribeCertificateAuthorityAuditReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeCertificateAuthorityAuditReport(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeCertificateAuthorityAuditReport(request), context);
+    } );
 }
 
 GetCertificateOutcome ACMPCAClient::GetCertificate(const GetCertificateRequest& request) const
@@ -325,12 +315,10 @@ GetCertificateOutcomeCallable ACMPCAClient::GetCertificateCallable(const GetCert
 
 void ACMPCAClient::GetCertificateAsync(const GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCertificateAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::GetCertificateAsyncHelper(const GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCertificate(request), context);
+    } );
 }
 
 GetCertificateAuthorityCertificateOutcome ACMPCAClient::GetCertificateAuthorityCertificate(const GetCertificateAuthorityCertificateRequest& request) const
@@ -349,12 +337,10 @@ GetCertificateAuthorityCertificateOutcomeCallable ACMPCAClient::GetCertificateAu
 
 void ACMPCAClient::GetCertificateAuthorityCertificateAsync(const GetCertificateAuthorityCertificateRequest& request, const GetCertificateAuthorityCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCertificateAuthorityCertificateAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::GetCertificateAuthorityCertificateAsyncHelper(const GetCertificateAuthorityCertificateRequest& request, const GetCertificateAuthorityCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCertificateAuthorityCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCertificateAuthorityCertificate(request), context);
+    } );
 }
 
 GetCertificateAuthorityCsrOutcome ACMPCAClient::GetCertificateAuthorityCsr(const GetCertificateAuthorityCsrRequest& request) const
@@ -373,12 +359,10 @@ GetCertificateAuthorityCsrOutcomeCallable ACMPCAClient::GetCertificateAuthorityC
 
 void ACMPCAClient::GetCertificateAuthorityCsrAsync(const GetCertificateAuthorityCsrRequest& request, const GetCertificateAuthorityCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetCertificateAuthorityCsrAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::GetCertificateAuthorityCsrAsyncHelper(const GetCertificateAuthorityCsrRequest& request, const GetCertificateAuthorityCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetCertificateAuthorityCsr(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetCertificateAuthorityCsr(request), context);
+    } );
 }
 
 GetPolicyOutcome ACMPCAClient::GetPolicy(const GetPolicyRequest& request) const
@@ -397,12 +381,10 @@ GetPolicyOutcomeCallable ACMPCAClient::GetPolicyCallable(const GetPolicyRequest&
 
 void ACMPCAClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPolicy(request), context);
+    } );
 }
 
 ImportCertificateAuthorityCertificateOutcome ACMPCAClient::ImportCertificateAuthorityCertificate(const ImportCertificateAuthorityCertificateRequest& request) const
@@ -421,12 +403,10 @@ ImportCertificateAuthorityCertificateOutcomeCallable ACMPCAClient::ImportCertifi
 
 void ACMPCAClient::ImportCertificateAuthorityCertificateAsync(const ImportCertificateAuthorityCertificateRequest& request, const ImportCertificateAuthorityCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ImportCertificateAuthorityCertificateAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::ImportCertificateAuthorityCertificateAsyncHelper(const ImportCertificateAuthorityCertificateRequest& request, const ImportCertificateAuthorityCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ImportCertificateAuthorityCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ImportCertificateAuthorityCertificate(request), context);
+    } );
 }
 
 IssueCertificateOutcome ACMPCAClient::IssueCertificate(const IssueCertificateRequest& request) const
@@ -445,12 +425,10 @@ IssueCertificateOutcomeCallable ACMPCAClient::IssueCertificateCallable(const Iss
 
 void ACMPCAClient::IssueCertificateAsync(const IssueCertificateRequest& request, const IssueCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->IssueCertificateAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::IssueCertificateAsyncHelper(const IssueCertificateRequest& request, const IssueCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, IssueCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, IssueCertificate(request), context);
+    } );
 }
 
 ListCertificateAuthoritiesOutcome ACMPCAClient::ListCertificateAuthorities(const ListCertificateAuthoritiesRequest& request) const
@@ -469,12 +447,10 @@ ListCertificateAuthoritiesOutcomeCallable ACMPCAClient::ListCertificateAuthoriti
 
 void ACMPCAClient::ListCertificateAuthoritiesAsync(const ListCertificateAuthoritiesRequest& request, const ListCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListCertificateAuthoritiesAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::ListCertificateAuthoritiesAsyncHelper(const ListCertificateAuthoritiesRequest& request, const ListCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListCertificateAuthorities(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListCertificateAuthorities(request), context);
+    } );
 }
 
 ListPermissionsOutcome ACMPCAClient::ListPermissions(const ListPermissionsRequest& request) const
@@ -493,12 +469,10 @@ ListPermissionsOutcomeCallable ACMPCAClient::ListPermissionsCallable(const ListP
 
 void ACMPCAClient::ListPermissionsAsync(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionsAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::ListPermissionsAsyncHelper(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPermissions(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPermissions(request), context);
+    } );
 }
 
 ListTagsOutcome ACMPCAClient::ListTags(const ListTagsRequest& request) const
@@ -517,12 +491,10 @@ ListTagsOutcomeCallable ACMPCAClient::ListTagsCallable(const ListTagsRequest& re
 
 void ACMPCAClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTags(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTags(request), context);
+    } );
 }
 
 PutPolicyOutcome ACMPCAClient::PutPolicy(const PutPolicyRequest& request) const
@@ -541,12 +513,10 @@ PutPolicyOutcomeCallable ACMPCAClient::PutPolicyCallable(const PutPolicyRequest&
 
 void ACMPCAClient::PutPolicyAsync(const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->PutPolicyAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::PutPolicyAsyncHelper(const PutPolicyRequest& request, const PutPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, PutPolicy(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutPolicy(request), context);
+    } );
 }
 
 RestoreCertificateAuthorityOutcome ACMPCAClient::RestoreCertificateAuthority(const RestoreCertificateAuthorityRequest& request) const
@@ -565,12 +535,10 @@ RestoreCertificateAuthorityOutcomeCallable ACMPCAClient::RestoreCertificateAutho
 
 void ACMPCAClient::RestoreCertificateAuthorityAsync(const RestoreCertificateAuthorityRequest& request, const RestoreCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RestoreCertificateAuthorityAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::RestoreCertificateAuthorityAsyncHelper(const RestoreCertificateAuthorityRequest& request, const RestoreCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RestoreCertificateAuthority(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RestoreCertificateAuthority(request), context);
+    } );
 }
 
 RevokeCertificateOutcome ACMPCAClient::RevokeCertificate(const RevokeCertificateRequest& request) const
@@ -589,12 +557,10 @@ RevokeCertificateOutcomeCallable ACMPCAClient::RevokeCertificateCallable(const R
 
 void ACMPCAClient::RevokeCertificateAsync(const RevokeCertificateRequest& request, const RevokeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->RevokeCertificateAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::RevokeCertificateAsyncHelper(const RevokeCertificateRequest& request, const RevokeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, RevokeCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RevokeCertificate(request), context);
+    } );
 }
 
 TagCertificateAuthorityOutcome ACMPCAClient::TagCertificateAuthority(const TagCertificateAuthorityRequest& request) const
@@ -613,12 +579,10 @@ TagCertificateAuthorityOutcomeCallable ACMPCAClient::TagCertificateAuthorityCall
 
 void ACMPCAClient::TagCertificateAuthorityAsync(const TagCertificateAuthorityRequest& request, const TagCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagCertificateAuthorityAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::TagCertificateAuthorityAsyncHelper(const TagCertificateAuthorityRequest& request, const TagCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagCertificateAuthority(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagCertificateAuthority(request), context);
+    } );
 }
 
 UntagCertificateAuthorityOutcome ACMPCAClient::UntagCertificateAuthority(const UntagCertificateAuthorityRequest& request) const
@@ -637,12 +601,10 @@ UntagCertificateAuthorityOutcomeCallable ACMPCAClient::UntagCertificateAuthority
 
 void ACMPCAClient::UntagCertificateAuthorityAsync(const UntagCertificateAuthorityRequest& request, const UntagCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagCertificateAuthorityAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::UntagCertificateAuthorityAsyncHelper(const UntagCertificateAuthorityRequest& request, const UntagCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagCertificateAuthority(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagCertificateAuthority(request), context);
+    } );
 }
 
 UpdateCertificateAuthorityOutcome ACMPCAClient::UpdateCertificateAuthority(const UpdateCertificateAuthorityRequest& request) const
@@ -661,11 +623,9 @@ UpdateCertificateAuthorityOutcomeCallable ACMPCAClient::UpdateCertificateAuthori
 
 void ACMPCAClient::UpdateCertificateAuthorityAsync(const UpdateCertificateAuthorityRequest& request, const UpdateCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateCertificateAuthorityAsyncHelper( request, handler, context ); } );
-}
-
-void ACMPCAClient::UpdateCertificateAuthorityAsyncHelper(const UpdateCertificateAuthorityRequest& request, const UpdateCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateCertificateAuthority(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateCertificateAuthority(request), context);
+    } );
 }
 

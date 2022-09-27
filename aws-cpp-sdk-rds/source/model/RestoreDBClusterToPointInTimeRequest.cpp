@@ -44,7 +44,8 @@ RestoreDBClusterToPointInTimeRequest::RestoreDBClusterToPointInTimeRequest() :
     m_publiclyAccessibleHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_serverlessV2ScalingConfigurationHasBeenSet(false)
+    m_serverlessV2ScalingConfigurationHasBeenSet(false),
+    m_networkTypeHasBeenSet(false)
 {
 }
 
@@ -69,7 +70,7 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
 
   if(m_restoreToTimeHasBeenSet)
   {
-    ss << "RestoreToTime=" << StringUtils::URLEncode(m_restoreToTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+    ss << "RestoreToTime=" << StringUtils::URLEncode(m_restoreToTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_useLatestRestorableTimeHasBeenSet)
@@ -197,6 +198,11 @@ Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
   if(m_serverlessV2ScalingConfigurationHasBeenSet)
   {
     m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
+  }
+
+  if(m_networkTypeHasBeenSet)
+  {
+    ss << "NetworkType=" << StringUtils::URLEncode(m_networkType.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

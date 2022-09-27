@@ -220,19 +220,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_allocationIds;
-    bool m_allocationIdsHasBeenSet;
+    bool m_allocationIdsHasBeenSet = false;
 
     AddressAttributeName m_attribute;
-    bool m_attributeHasBeenSet;
+    bool m_attributeHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

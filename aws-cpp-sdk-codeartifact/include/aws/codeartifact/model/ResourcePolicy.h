@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_resourceArn;
-    bool m_resourceArnHasBeenSet;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     Aws::String m_document;
-    bool m_documentHasBeenSet;
+    bool m_documentHasBeenSet = false;
   };
 
 } // namespace Model

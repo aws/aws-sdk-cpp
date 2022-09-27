@@ -5,201 +5,15 @@
 
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
-#include <aws/mgn/MgnErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/mgn/model/ChangeServerLifeCycleStateResult.h>
-#include <aws/mgn/model/CreateReplicationConfigurationTemplateResult.h>
-#include <aws/mgn/model/DeleteJobResult.h>
-#include <aws/mgn/model/DeleteReplicationConfigurationTemplateResult.h>
-#include <aws/mgn/model/DeleteSourceServerResult.h>
-#include <aws/mgn/model/DescribeJobLogItemsResult.h>
-#include <aws/mgn/model/DescribeJobsResult.h>
-#include <aws/mgn/model/DescribeReplicationConfigurationTemplatesResult.h>
-#include <aws/mgn/model/DescribeSourceServersResult.h>
-#include <aws/mgn/model/DescribeVcenterClientsResult.h>
-#include <aws/mgn/model/DisconnectFromServiceResult.h>
-#include <aws/mgn/model/FinalizeCutoverResult.h>
-#include <aws/mgn/model/GetLaunchConfigurationResult.h>
-#include <aws/mgn/model/GetReplicationConfigurationResult.h>
-#include <aws/mgn/model/InitializeServiceResult.h>
-#include <aws/mgn/model/ListTagsForResourceResult.h>
-#include <aws/mgn/model/MarkAsArchivedResult.h>
-#include <aws/mgn/model/RetryDataReplicationResult.h>
-#include <aws/mgn/model/StartCutoverResult.h>
-#include <aws/mgn/model/StartReplicationResult.h>
-#include <aws/mgn/model/StartTestResult.h>
-#include <aws/mgn/model/TerminateTargetInstancesResult.h>
-#include <aws/mgn/model/UpdateLaunchConfigurationResult.h>
-#include <aws/mgn/model/UpdateReplicationConfigurationResult.h>
-#include <aws/mgn/model/UpdateReplicationConfigurationTemplateResult.h>
-#include <aws/mgn/model/UpdateSourceServerReplicationTypeResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/mgn/MgnServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace mgn
 {
-
-namespace Model
-{
-        class ChangeServerLifeCycleStateRequest;
-        class CreateReplicationConfigurationTemplateRequest;
-        class DeleteJobRequest;
-        class DeleteReplicationConfigurationTemplateRequest;
-        class DeleteSourceServerRequest;
-        class DeleteVcenterClientRequest;
-        class DescribeJobLogItemsRequest;
-        class DescribeJobsRequest;
-        class DescribeReplicationConfigurationTemplatesRequest;
-        class DescribeSourceServersRequest;
-        class DescribeVcenterClientsRequest;
-        class DisconnectFromServiceRequest;
-        class FinalizeCutoverRequest;
-        class GetLaunchConfigurationRequest;
-        class GetReplicationConfigurationRequest;
-        class InitializeServiceRequest;
-        class ListTagsForResourceRequest;
-        class MarkAsArchivedRequest;
-        class RetryDataReplicationRequest;
-        class StartCutoverRequest;
-        class StartReplicationRequest;
-        class StartTestRequest;
-        class TagResourceRequest;
-        class TerminateTargetInstancesRequest;
-        class UntagResourceRequest;
-        class UpdateLaunchConfigurationRequest;
-        class UpdateReplicationConfigurationRequest;
-        class UpdateReplicationConfigurationTemplateRequest;
-        class UpdateSourceServerReplicationTypeRequest;
-
-        typedef Aws::Utils::Outcome<ChangeServerLifeCycleStateResult, MgnError> ChangeServerLifeCycleStateOutcome;
-        typedef Aws::Utils::Outcome<CreateReplicationConfigurationTemplateResult, MgnError> CreateReplicationConfigurationTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeleteJobResult, MgnError> DeleteJobOutcome;
-        typedef Aws::Utils::Outcome<DeleteReplicationConfigurationTemplateResult, MgnError> DeleteReplicationConfigurationTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeleteSourceServerResult, MgnError> DeleteSourceServerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, MgnError> DeleteVcenterClientOutcome;
-        typedef Aws::Utils::Outcome<DescribeJobLogItemsResult, MgnError> DescribeJobLogItemsOutcome;
-        typedef Aws::Utils::Outcome<DescribeJobsResult, MgnError> DescribeJobsOutcome;
-        typedef Aws::Utils::Outcome<DescribeReplicationConfigurationTemplatesResult, MgnError> DescribeReplicationConfigurationTemplatesOutcome;
-        typedef Aws::Utils::Outcome<DescribeSourceServersResult, MgnError> DescribeSourceServersOutcome;
-        typedef Aws::Utils::Outcome<DescribeVcenterClientsResult, MgnError> DescribeVcenterClientsOutcome;
-        typedef Aws::Utils::Outcome<DisconnectFromServiceResult, MgnError> DisconnectFromServiceOutcome;
-        typedef Aws::Utils::Outcome<FinalizeCutoverResult, MgnError> FinalizeCutoverOutcome;
-        typedef Aws::Utils::Outcome<GetLaunchConfigurationResult, MgnError> GetLaunchConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetReplicationConfigurationResult, MgnError> GetReplicationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<InitializeServiceResult, MgnError> InitializeServiceOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, MgnError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<MarkAsArchivedResult, MgnError> MarkAsArchivedOutcome;
-        typedef Aws::Utils::Outcome<RetryDataReplicationResult, MgnError> RetryDataReplicationOutcome;
-        typedef Aws::Utils::Outcome<StartCutoverResult, MgnError> StartCutoverOutcome;
-        typedef Aws::Utils::Outcome<StartReplicationResult, MgnError> StartReplicationOutcome;
-        typedef Aws::Utils::Outcome<StartTestResult, MgnError> StartTestOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, MgnError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<TerminateTargetInstancesResult, MgnError> TerminateTargetInstancesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, MgnError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateLaunchConfigurationResult, MgnError> UpdateLaunchConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateReplicationConfigurationResult, MgnError> UpdateReplicationConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateReplicationConfigurationTemplateResult, MgnError> UpdateReplicationConfigurationTemplateOutcome;
-        typedef Aws::Utils::Outcome<UpdateSourceServerReplicationTypeResult, MgnError> UpdateSourceServerReplicationTypeOutcome;
-
-        typedef std::future<ChangeServerLifeCycleStateOutcome> ChangeServerLifeCycleStateOutcomeCallable;
-        typedef std::future<CreateReplicationConfigurationTemplateOutcome> CreateReplicationConfigurationTemplateOutcomeCallable;
-        typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
-        typedef std::future<DeleteReplicationConfigurationTemplateOutcome> DeleteReplicationConfigurationTemplateOutcomeCallable;
-        typedef std::future<DeleteSourceServerOutcome> DeleteSourceServerOutcomeCallable;
-        typedef std::future<DeleteVcenterClientOutcome> DeleteVcenterClientOutcomeCallable;
-        typedef std::future<DescribeJobLogItemsOutcome> DescribeJobLogItemsOutcomeCallable;
-        typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
-        typedef std::future<DescribeReplicationConfigurationTemplatesOutcome> DescribeReplicationConfigurationTemplatesOutcomeCallable;
-        typedef std::future<DescribeSourceServersOutcome> DescribeSourceServersOutcomeCallable;
-        typedef std::future<DescribeVcenterClientsOutcome> DescribeVcenterClientsOutcomeCallable;
-        typedef std::future<DisconnectFromServiceOutcome> DisconnectFromServiceOutcomeCallable;
-        typedef std::future<FinalizeCutoverOutcome> FinalizeCutoverOutcomeCallable;
-        typedef std::future<GetLaunchConfigurationOutcome> GetLaunchConfigurationOutcomeCallable;
-        typedef std::future<GetReplicationConfigurationOutcome> GetReplicationConfigurationOutcomeCallable;
-        typedef std::future<InitializeServiceOutcome> InitializeServiceOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<MarkAsArchivedOutcome> MarkAsArchivedOutcomeCallable;
-        typedef std::future<RetryDataReplicationOutcome> RetryDataReplicationOutcomeCallable;
-        typedef std::future<StartCutoverOutcome> StartCutoverOutcomeCallable;
-        typedef std::future<StartReplicationOutcome> StartReplicationOutcomeCallable;
-        typedef std::future<StartTestOutcome> StartTestOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<TerminateTargetInstancesOutcome> TerminateTargetInstancesOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateLaunchConfigurationOutcome> UpdateLaunchConfigurationOutcomeCallable;
-        typedef std::future<UpdateReplicationConfigurationOutcome> UpdateReplicationConfigurationOutcomeCallable;
-        typedef std::future<UpdateReplicationConfigurationTemplateOutcome> UpdateReplicationConfigurationTemplateOutcomeCallable;
-        typedef std::future<UpdateSourceServerReplicationTypeOutcome> UpdateSourceServerReplicationTypeOutcomeCallable;
-} // namespace Model
-
-  class MgnClient;
-
-    typedef std::function<void(const MgnClient*, const Model::ChangeServerLifeCycleStateRequest&, const Model::ChangeServerLifeCycleStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ChangeServerLifeCycleStateResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::CreateReplicationConfigurationTemplateRequest&, const Model::CreateReplicationConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationConfigurationTemplateResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::DeleteJobRequest&, const Model::DeleteJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::DeleteReplicationConfigurationTemplateRequest&, const Model::DeleteReplicationConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationConfigurationTemplateResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::DeleteSourceServerRequest&, const Model::DeleteSourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSourceServerResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::DeleteVcenterClientRequest&, const Model::DeleteVcenterClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVcenterClientResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::DescribeJobLogItemsRequest&, const Model::DescribeJobLogItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobLogItemsResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::DescribeJobsRequest&, const Model::DescribeJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobsResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::DescribeReplicationConfigurationTemplatesRequest&, const Model::DescribeReplicationConfigurationTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplicationConfigurationTemplatesResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::DescribeSourceServersRequest&, const Model::DescribeSourceServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSourceServersResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::DescribeVcenterClientsRequest&, const Model::DescribeVcenterClientsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVcenterClientsResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::DisconnectFromServiceRequest&, const Model::DisconnectFromServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisconnectFromServiceResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::FinalizeCutoverRequest&, const Model::FinalizeCutoverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FinalizeCutoverResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::GetLaunchConfigurationRequest&, const Model::GetLaunchConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLaunchConfigurationResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::GetReplicationConfigurationRequest&, const Model::GetReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReplicationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::InitializeServiceRequest&, const Model::InitializeServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitializeServiceResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::MarkAsArchivedRequest&, const Model::MarkAsArchivedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MarkAsArchivedResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::RetryDataReplicationRequest&, const Model::RetryDataReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetryDataReplicationResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::StartCutoverRequest&, const Model::StartCutoverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCutoverResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::StartReplicationRequest&, const Model::StartReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartReplicationResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::StartTestRequest&, const Model::StartTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTestResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::TerminateTargetInstancesRequest&, const Model::TerminateTargetInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateTargetInstancesResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::UpdateLaunchConfigurationRequest&, const Model::UpdateLaunchConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLaunchConfigurationResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::UpdateReplicationConfigurationRequest&, const Model::UpdateReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReplicationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::UpdateReplicationConfigurationTemplateRequest&, const Model::UpdateReplicationConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReplicationConfigurationTemplateResponseReceivedHandler;
-    typedef std::function<void(const MgnClient*, const Model::UpdateSourceServerReplicationTypeRequest&, const Model::UpdateSourceServerReplicationTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSourceServerReplicationTypeResponseReceivedHandler;
-
   /**
    * <p>The Application Migration Service service.</p>
    */
@@ -218,14 +32,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        MgnClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        MgnClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         MgnClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~MgnClient();
 
@@ -249,6 +64,23 @@ namespace Model
          * An Async wrapper for ChangeServerLifeCycleState that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ChangeServerLifeCycleStateAsync(const Model::ChangeServerLifeCycleStateRequest& request, const ChangeServerLifeCycleStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new ReplicationConfigurationTemplate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateLaunchConfigurationTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLaunchConfigurationTemplateOutcome CreateLaunchConfigurationTemplate(const Model::CreateLaunchConfigurationTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLaunchConfigurationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLaunchConfigurationTemplateOutcomeCallable CreateLaunchConfigurationTemplateCallable(const Model::CreateLaunchConfigurationTemplateRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateLaunchConfigurationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLaunchConfigurationTemplateAsync(const Model::CreateLaunchConfigurationTemplateRequest& request, const CreateLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new ReplicationConfigurationTemplate.</p><p><h3>See Also:</h3>   <a
@@ -283,6 +115,23 @@ namespace Model
          * An Async wrapper for DeleteJob that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new ReplicationConfigurationTemplate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteLaunchConfigurationTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLaunchConfigurationTemplateOutcome DeleteLaunchConfigurationTemplate(const Model::DeleteLaunchConfigurationTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLaunchConfigurationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLaunchConfigurationTemplateOutcomeCallable DeleteLaunchConfigurationTemplateCallable(const Model::DeleteLaunchConfigurationTemplateRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteLaunchConfigurationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLaunchConfigurationTemplateAsync(const Model::DeleteLaunchConfigurationTemplateRequest& request, const DeleteLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a single Replication Configuration Template by ID</p><p><h3>See
@@ -374,6 +223,23 @@ namespace Model
          * An Async wrapper for DescribeJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeJobsAsync(const Model::DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new ReplicationConfigurationTemplate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DescribeLaunchConfigurationTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLaunchConfigurationTemplatesOutcome DescribeLaunchConfigurationTemplates(const Model::DescribeLaunchConfigurationTemplatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeLaunchConfigurationTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLaunchConfigurationTemplatesOutcomeCallable DescribeLaunchConfigurationTemplatesCallable(const Model::DescribeLaunchConfigurationTemplatesRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeLaunchConfigurationTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLaunchConfigurationTemplatesAsync(const Model::DescribeLaunchConfigurationTemplatesRequest& request, const DescribeLaunchConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all ReplicationConfigurationTemplates, filtered by Source Server
@@ -728,6 +594,23 @@ namespace Model
         virtual void UpdateLaunchConfigurationAsync(const Model::UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a new ReplicationConfigurationTemplate.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateLaunchConfigurationTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLaunchConfigurationTemplateOutcome UpdateLaunchConfigurationTemplate(const Model::UpdateLaunchConfigurationTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLaunchConfigurationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateLaunchConfigurationTemplateOutcomeCallable UpdateLaunchConfigurationTemplateCallable(const Model::UpdateLaunchConfigurationTemplateRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateLaunchConfigurationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateLaunchConfigurationTemplateAsync(const Model::UpdateLaunchConfigurationTemplateRequest& request, const UpdateLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Allows you to update multiple ReplicationConfigurations by Source Server
          * ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateReplicationConfiguration">AWS
@@ -785,35 +668,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void ChangeServerLifeCycleStateAsyncHelper(const Model::ChangeServerLifeCycleStateRequest& request, const ChangeServerLifeCycleStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateReplicationConfigurationTemplateAsyncHelper(const Model::CreateReplicationConfigurationTemplateRequest& request, const CreateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteJobAsyncHelper(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteReplicationConfigurationTemplateAsyncHelper(const Model::DeleteReplicationConfigurationTemplateRequest& request, const DeleteReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteSourceServerAsyncHelper(const Model::DeleteSourceServerRequest& request, const DeleteSourceServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteVcenterClientAsyncHelper(const Model::DeleteVcenterClientRequest& request, const DeleteVcenterClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeJobLogItemsAsyncHelper(const Model::DescribeJobLogItemsRequest& request, const DescribeJobLogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeJobsAsyncHelper(const Model::DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeReplicationConfigurationTemplatesAsyncHelper(const Model::DescribeReplicationConfigurationTemplatesRequest& request, const DescribeReplicationConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSourceServersAsyncHelper(const Model::DescribeSourceServersRequest& request, const DescribeSourceServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeVcenterClientsAsyncHelper(const Model::DescribeVcenterClientsRequest& request, const DescribeVcenterClientsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisconnectFromServiceAsyncHelper(const Model::DisconnectFromServiceRequest& request, const DisconnectFromServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void FinalizeCutoverAsyncHelper(const Model::FinalizeCutoverRequest& request, const FinalizeCutoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetLaunchConfigurationAsyncHelper(const Model::GetLaunchConfigurationRequest& request, const GetLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetReplicationConfigurationAsyncHelper(const Model::GetReplicationConfigurationRequest& request, const GetReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void InitializeServiceAsyncHelper(const Model::InitializeServiceRequest& request, const InitializeServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void MarkAsArchivedAsyncHelper(const Model::MarkAsArchivedRequest& request, const MarkAsArchivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void RetryDataReplicationAsyncHelper(const Model::RetryDataReplicationRequest& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartCutoverAsyncHelper(const Model::StartCutoverRequest& request, const StartCutoverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartReplicationAsyncHelper(const Model::StartReplicationRequest& request, const StartReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void StartTestAsyncHelper(const Model::StartTestRequest& request, const StartTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TerminateTargetInstancesAsyncHelper(const Model::TerminateTargetInstancesRequest& request, const TerminateTargetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateLaunchConfigurationAsyncHelper(const Model::UpdateLaunchConfigurationRequest& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateReplicationConfigurationAsyncHelper(const Model::UpdateReplicationConfigurationRequest& request, const UpdateReplicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateReplicationConfigurationTemplateAsyncHelper(const Model::UpdateReplicationConfigurationTemplateRequest& request, const UpdateReplicationConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSourceServerReplicationTypeAsyncHelper(const Model::UpdateSourceServerReplicationTypeRequest& request, const UpdateSourceServerReplicationTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

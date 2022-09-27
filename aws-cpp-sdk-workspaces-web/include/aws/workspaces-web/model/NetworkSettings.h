@@ -289,19 +289,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_associatedPortalArns;
-    bool m_associatedPortalArnsHasBeenSet;
+    bool m_associatedPortalArnsHasBeenSet = false;
 
     Aws::String m_networkSettingsArn;
-    bool m_networkSettingsArnHasBeenSet;
+    bool m_networkSettingsArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
-    bool m_securityGroupIdsHasBeenSet;
+    bool m_securityGroupIdsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
-    bool m_subnetIdsHasBeenSet;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

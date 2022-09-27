@@ -169,7 +169,7 @@ namespace Model
   private:
 
     Aws::String m_transcriptFileUri;
-    bool m_transcriptFileUriHasBeenSet;
+    bool m_transcriptFileUriHasBeenSet = false;
   };
 
 } // namespace Model

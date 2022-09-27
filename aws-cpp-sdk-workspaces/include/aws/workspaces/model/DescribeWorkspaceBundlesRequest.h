@@ -206,13 +206,13 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_bundleIds;
-    bool m_bundleIdsHasBeenSet;
+    bool m_bundleIdsHasBeenSet = false;
 
     Aws::String m_owner;
-    bool m_ownerHasBeenSet;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

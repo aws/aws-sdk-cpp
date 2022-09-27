@@ -76,33 +76,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "workspaces-web";
 static const char* ALLOCATION_TAG = "WorkSpacesWebClient";
 
-
 WorkSpacesWebClient::WorkSpacesWebClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<WorkSpacesWebErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<WorkSpacesWebErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-WorkSpacesWebClient::WorkSpacesWebClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+WorkSpacesWebClient::WorkSpacesWebClient(const AWSCredentials& credentials,
+                                         const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<WorkSpacesWebErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<WorkSpacesWebErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 WorkSpacesWebClient::WorkSpacesWebClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                                         const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<WorkSpacesWebErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<WorkSpacesWebErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -114,7 +120,7 @@ WorkSpacesWebClient::~WorkSpacesWebClient()
 
 void WorkSpacesWebClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("WorkSpaces Web");
+  AWSClient::SetServiceClientName("WorkSpaces Web");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -167,12 +173,10 @@ AssociateBrowserSettingsOutcomeCallable WorkSpacesWebClient::AssociateBrowserSet
 
 void WorkSpacesWebClient::AssociateBrowserSettingsAsync(const AssociateBrowserSettingsRequest& request, const AssociateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateBrowserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::AssociateBrowserSettingsAsyncHelper(const AssociateBrowserSettingsRequest& request, const AssociateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateBrowserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateBrowserSettings(request), context);
+    } );
 }
 
 AssociateNetworkSettingsOutcome WorkSpacesWebClient::AssociateNetworkSettings(const AssociateNetworkSettingsRequest& request) const
@@ -204,12 +208,10 @@ AssociateNetworkSettingsOutcomeCallable WorkSpacesWebClient::AssociateNetworkSet
 
 void WorkSpacesWebClient::AssociateNetworkSettingsAsync(const AssociateNetworkSettingsRequest& request, const AssociateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateNetworkSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::AssociateNetworkSettingsAsyncHelper(const AssociateNetworkSettingsRequest& request, const AssociateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateNetworkSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateNetworkSettings(request), context);
+    } );
 }
 
 AssociateTrustStoreOutcome WorkSpacesWebClient::AssociateTrustStore(const AssociateTrustStoreRequest& request) const
@@ -241,12 +243,10 @@ AssociateTrustStoreOutcomeCallable WorkSpacesWebClient::AssociateTrustStoreCalla
 
 void WorkSpacesWebClient::AssociateTrustStoreAsync(const AssociateTrustStoreRequest& request, const AssociateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateTrustStoreAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::AssociateTrustStoreAsyncHelper(const AssociateTrustStoreRequest& request, const AssociateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateTrustStore(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateTrustStore(request), context);
+    } );
 }
 
 AssociateUserSettingsOutcome WorkSpacesWebClient::AssociateUserSettings(const AssociateUserSettingsRequest& request) const
@@ -278,12 +278,10 @@ AssociateUserSettingsOutcomeCallable WorkSpacesWebClient::AssociateUserSettingsC
 
 void WorkSpacesWebClient::AssociateUserSettingsAsync(const AssociateUserSettingsRequest& request, const AssociateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AssociateUserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::AssociateUserSettingsAsyncHelper(const AssociateUserSettingsRequest& request, const AssociateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, AssociateUserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateUserSettings(request), context);
+    } );
 }
 
 CreateBrowserSettingsOutcome WorkSpacesWebClient::CreateBrowserSettings(const CreateBrowserSettingsRequest& request) const
@@ -303,12 +301,10 @@ CreateBrowserSettingsOutcomeCallable WorkSpacesWebClient::CreateBrowserSettingsC
 
 void WorkSpacesWebClient::CreateBrowserSettingsAsync(const CreateBrowserSettingsRequest& request, const CreateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateBrowserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::CreateBrowserSettingsAsyncHelper(const CreateBrowserSettingsRequest& request, const CreateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateBrowserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateBrowserSettings(request), context);
+    } );
 }
 
 CreateIdentityProviderOutcome WorkSpacesWebClient::CreateIdentityProvider(const CreateIdentityProviderRequest& request) const
@@ -328,12 +324,10 @@ CreateIdentityProviderOutcomeCallable WorkSpacesWebClient::CreateIdentityProvide
 
 void WorkSpacesWebClient::CreateIdentityProviderAsync(const CreateIdentityProviderRequest& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateIdentityProviderAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::CreateIdentityProviderAsyncHelper(const CreateIdentityProviderRequest& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateIdentityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateIdentityProvider(request), context);
+    } );
 }
 
 CreateNetworkSettingsOutcome WorkSpacesWebClient::CreateNetworkSettings(const CreateNetworkSettingsRequest& request) const
@@ -353,12 +347,10 @@ CreateNetworkSettingsOutcomeCallable WorkSpacesWebClient::CreateNetworkSettingsC
 
 void WorkSpacesWebClient::CreateNetworkSettingsAsync(const CreateNetworkSettingsRequest& request, const CreateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateNetworkSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::CreateNetworkSettingsAsyncHelper(const CreateNetworkSettingsRequest& request, const CreateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateNetworkSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateNetworkSettings(request), context);
+    } );
 }
 
 CreatePortalOutcome WorkSpacesWebClient::CreatePortal(const CreatePortalRequest& request) const
@@ -378,12 +370,10 @@ CreatePortalOutcomeCallable WorkSpacesWebClient::CreatePortalCallable(const Crea
 
 void WorkSpacesWebClient::CreatePortalAsync(const CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreatePortalAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::CreatePortalAsyncHelper(const CreatePortalRequest& request, const CreatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreatePortal(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreatePortal(request), context);
+    } );
 }
 
 CreateTrustStoreOutcome WorkSpacesWebClient::CreateTrustStore(const CreateTrustStoreRequest& request) const
@@ -403,12 +393,10 @@ CreateTrustStoreOutcomeCallable WorkSpacesWebClient::CreateTrustStoreCallable(co
 
 void WorkSpacesWebClient::CreateTrustStoreAsync(const CreateTrustStoreRequest& request, const CreateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateTrustStoreAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::CreateTrustStoreAsyncHelper(const CreateTrustStoreRequest& request, const CreateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateTrustStore(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTrustStore(request), context);
+    } );
 }
 
 CreateUserSettingsOutcome WorkSpacesWebClient::CreateUserSettings(const CreateUserSettingsRequest& request) const
@@ -428,12 +416,10 @@ CreateUserSettingsOutcomeCallable WorkSpacesWebClient::CreateUserSettingsCallabl
 
 void WorkSpacesWebClient::CreateUserSettingsAsync(const CreateUserSettingsRequest& request, const CreateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateUserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::CreateUserSettingsAsyncHelper(const CreateUserSettingsRequest& request, const CreateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateUserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateUserSettings(request), context);
+    } );
 }
 
 DeleteBrowserSettingsOutcome WorkSpacesWebClient::DeleteBrowserSettings(const DeleteBrowserSettingsRequest& request) const
@@ -459,12 +445,10 @@ DeleteBrowserSettingsOutcomeCallable WorkSpacesWebClient::DeleteBrowserSettingsC
 
 void WorkSpacesWebClient::DeleteBrowserSettingsAsync(const DeleteBrowserSettingsRequest& request, const DeleteBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteBrowserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::DeleteBrowserSettingsAsyncHelper(const DeleteBrowserSettingsRequest& request, const DeleteBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteBrowserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteBrowserSettings(request), context);
+    } );
 }
 
 DeleteIdentityProviderOutcome WorkSpacesWebClient::DeleteIdentityProvider(const DeleteIdentityProviderRequest& request) const
@@ -490,12 +474,10 @@ DeleteIdentityProviderOutcomeCallable WorkSpacesWebClient::DeleteIdentityProvide
 
 void WorkSpacesWebClient::DeleteIdentityProviderAsync(const DeleteIdentityProviderRequest& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteIdentityProviderAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::DeleteIdentityProviderAsyncHelper(const DeleteIdentityProviderRequest& request, const DeleteIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteIdentityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteIdentityProvider(request), context);
+    } );
 }
 
 DeleteNetworkSettingsOutcome WorkSpacesWebClient::DeleteNetworkSettings(const DeleteNetworkSettingsRequest& request) const
@@ -521,12 +503,10 @@ DeleteNetworkSettingsOutcomeCallable WorkSpacesWebClient::DeleteNetworkSettingsC
 
 void WorkSpacesWebClient::DeleteNetworkSettingsAsync(const DeleteNetworkSettingsRequest& request, const DeleteNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteNetworkSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::DeleteNetworkSettingsAsyncHelper(const DeleteNetworkSettingsRequest& request, const DeleteNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteNetworkSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteNetworkSettings(request), context);
+    } );
 }
 
 DeletePortalOutcome WorkSpacesWebClient::DeletePortal(const DeletePortalRequest& request) const
@@ -552,12 +532,10 @@ DeletePortalOutcomeCallable WorkSpacesWebClient::DeletePortalCallable(const Dele
 
 void WorkSpacesWebClient::DeletePortalAsync(const DeletePortalRequest& request, const DeletePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeletePortalAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::DeletePortalAsyncHelper(const DeletePortalRequest& request, const DeletePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeletePortal(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeletePortal(request), context);
+    } );
 }
 
 DeleteTrustStoreOutcome WorkSpacesWebClient::DeleteTrustStore(const DeleteTrustStoreRequest& request) const
@@ -583,12 +561,10 @@ DeleteTrustStoreOutcomeCallable WorkSpacesWebClient::DeleteTrustStoreCallable(co
 
 void WorkSpacesWebClient::DeleteTrustStoreAsync(const DeleteTrustStoreRequest& request, const DeleteTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteTrustStoreAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::DeleteTrustStoreAsyncHelper(const DeleteTrustStoreRequest& request, const DeleteTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteTrustStore(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTrustStore(request), context);
+    } );
 }
 
 DeleteUserSettingsOutcome WorkSpacesWebClient::DeleteUserSettings(const DeleteUserSettingsRequest& request) const
@@ -614,12 +590,10 @@ DeleteUserSettingsOutcomeCallable WorkSpacesWebClient::DeleteUserSettingsCallabl
 
 void WorkSpacesWebClient::DeleteUserSettingsAsync(const DeleteUserSettingsRequest& request, const DeleteUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::DeleteUserSettingsAsyncHelper(const DeleteUserSettingsRequest& request, const DeleteUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteUserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteUserSettings(request), context);
+    } );
 }
 
 DisassociateBrowserSettingsOutcome WorkSpacesWebClient::DisassociateBrowserSettings(const DisassociateBrowserSettingsRequest& request) const
@@ -646,12 +620,10 @@ DisassociateBrowserSettingsOutcomeCallable WorkSpacesWebClient::DisassociateBrow
 
 void WorkSpacesWebClient::DisassociateBrowserSettingsAsync(const DisassociateBrowserSettingsRequest& request, const DisassociateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateBrowserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::DisassociateBrowserSettingsAsyncHelper(const DisassociateBrowserSettingsRequest& request, const DisassociateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateBrowserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateBrowserSettings(request), context);
+    } );
 }
 
 DisassociateNetworkSettingsOutcome WorkSpacesWebClient::DisassociateNetworkSettings(const DisassociateNetworkSettingsRequest& request) const
@@ -678,12 +650,10 @@ DisassociateNetworkSettingsOutcomeCallable WorkSpacesWebClient::DisassociateNetw
 
 void WorkSpacesWebClient::DisassociateNetworkSettingsAsync(const DisassociateNetworkSettingsRequest& request, const DisassociateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateNetworkSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::DisassociateNetworkSettingsAsyncHelper(const DisassociateNetworkSettingsRequest& request, const DisassociateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateNetworkSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateNetworkSettings(request), context);
+    } );
 }
 
 DisassociateTrustStoreOutcome WorkSpacesWebClient::DisassociateTrustStore(const DisassociateTrustStoreRequest& request) const
@@ -710,12 +680,10 @@ DisassociateTrustStoreOutcomeCallable WorkSpacesWebClient::DisassociateTrustStor
 
 void WorkSpacesWebClient::DisassociateTrustStoreAsync(const DisassociateTrustStoreRequest& request, const DisassociateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTrustStoreAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::DisassociateTrustStoreAsyncHelper(const DisassociateTrustStoreRequest& request, const DisassociateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateTrustStore(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateTrustStore(request), context);
+    } );
 }
 
 DisassociateUserSettingsOutcome WorkSpacesWebClient::DisassociateUserSettings(const DisassociateUserSettingsRequest& request) const
@@ -742,12 +710,10 @@ DisassociateUserSettingsOutcomeCallable WorkSpacesWebClient::DisassociateUserSet
 
 void WorkSpacesWebClient::DisassociateUserSettingsAsync(const DisassociateUserSettingsRequest& request, const DisassociateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateUserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::DisassociateUserSettingsAsyncHelper(const DisassociateUserSettingsRequest& request, const DisassociateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DisassociateUserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateUserSettings(request), context);
+    } );
 }
 
 GetBrowserSettingsOutcome WorkSpacesWebClient::GetBrowserSettings(const GetBrowserSettingsRequest& request) const
@@ -773,12 +739,10 @@ GetBrowserSettingsOutcomeCallable WorkSpacesWebClient::GetBrowserSettingsCallabl
 
 void WorkSpacesWebClient::GetBrowserSettingsAsync(const GetBrowserSettingsRequest& request, const GetBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetBrowserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::GetBrowserSettingsAsyncHelper(const GetBrowserSettingsRequest& request, const GetBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetBrowserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetBrowserSettings(request), context);
+    } );
 }
 
 GetIdentityProviderOutcome WorkSpacesWebClient::GetIdentityProvider(const GetIdentityProviderRequest& request) const
@@ -804,12 +768,10 @@ GetIdentityProviderOutcomeCallable WorkSpacesWebClient::GetIdentityProviderCalla
 
 void WorkSpacesWebClient::GetIdentityProviderAsync(const GetIdentityProviderRequest& request, const GetIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetIdentityProviderAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::GetIdentityProviderAsyncHelper(const GetIdentityProviderRequest& request, const GetIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetIdentityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetIdentityProvider(request), context);
+    } );
 }
 
 GetNetworkSettingsOutcome WorkSpacesWebClient::GetNetworkSettings(const GetNetworkSettingsRequest& request) const
@@ -835,12 +797,10 @@ GetNetworkSettingsOutcomeCallable WorkSpacesWebClient::GetNetworkSettingsCallabl
 
 void WorkSpacesWebClient::GetNetworkSettingsAsync(const GetNetworkSettingsRequest& request, const GetNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetNetworkSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::GetNetworkSettingsAsyncHelper(const GetNetworkSettingsRequest& request, const GetNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetNetworkSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetNetworkSettings(request), context);
+    } );
 }
 
 GetPortalOutcome WorkSpacesWebClient::GetPortal(const GetPortalRequest& request) const
@@ -866,12 +826,10 @@ GetPortalOutcomeCallable WorkSpacesWebClient::GetPortalCallable(const GetPortalR
 
 void WorkSpacesWebClient::GetPortalAsync(const GetPortalRequest& request, const GetPortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPortalAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::GetPortalAsyncHelper(const GetPortalRequest& request, const GetPortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPortal(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPortal(request), context);
+    } );
 }
 
 GetPortalServiceProviderMetadataOutcome WorkSpacesWebClient::GetPortalServiceProviderMetadata(const GetPortalServiceProviderMetadataRequest& request) const
@@ -897,12 +855,10 @@ GetPortalServiceProviderMetadataOutcomeCallable WorkSpacesWebClient::GetPortalSe
 
 void WorkSpacesWebClient::GetPortalServiceProviderMetadataAsync(const GetPortalServiceProviderMetadataRequest& request, const GetPortalServiceProviderMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetPortalServiceProviderMetadataAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::GetPortalServiceProviderMetadataAsyncHelper(const GetPortalServiceProviderMetadataRequest& request, const GetPortalServiceProviderMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetPortalServiceProviderMetadata(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetPortalServiceProviderMetadata(request), context);
+    } );
 }
 
 GetTrustStoreOutcome WorkSpacesWebClient::GetTrustStore(const GetTrustStoreRequest& request) const
@@ -928,12 +884,10 @@ GetTrustStoreOutcomeCallable WorkSpacesWebClient::GetTrustStoreCallable(const Ge
 
 void WorkSpacesWebClient::GetTrustStoreAsync(const GetTrustStoreRequest& request, const GetTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTrustStoreAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::GetTrustStoreAsyncHelper(const GetTrustStoreRequest& request, const GetTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTrustStore(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTrustStore(request), context);
+    } );
 }
 
 GetTrustStoreCertificateOutcome WorkSpacesWebClient::GetTrustStoreCertificate(const GetTrustStoreCertificateRequest& request) const
@@ -965,12 +919,10 @@ GetTrustStoreCertificateOutcomeCallable WorkSpacesWebClient::GetTrustStoreCertif
 
 void WorkSpacesWebClient::GetTrustStoreCertificateAsync(const GetTrustStoreCertificateRequest& request, const GetTrustStoreCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetTrustStoreCertificateAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::GetTrustStoreCertificateAsyncHelper(const GetTrustStoreCertificateRequest& request, const GetTrustStoreCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetTrustStoreCertificate(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTrustStoreCertificate(request), context);
+    } );
 }
 
 GetUserSettingsOutcome WorkSpacesWebClient::GetUserSettings(const GetUserSettingsRequest& request) const
@@ -996,12 +948,10 @@ GetUserSettingsOutcomeCallable WorkSpacesWebClient::GetUserSettingsCallable(cons
 
 void WorkSpacesWebClient::GetUserSettingsAsync(const GetUserSettingsRequest& request, const GetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetUserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::GetUserSettingsAsyncHelper(const GetUserSettingsRequest& request, const GetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetUserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetUserSettings(request), context);
+    } );
 }
 
 ListBrowserSettingsOutcome WorkSpacesWebClient::ListBrowserSettings(const ListBrowserSettingsRequest& request) const
@@ -1021,12 +971,10 @@ ListBrowserSettingsOutcomeCallable WorkSpacesWebClient::ListBrowserSettingsCalla
 
 void WorkSpacesWebClient::ListBrowserSettingsAsync(const ListBrowserSettingsRequest& request, const ListBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListBrowserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::ListBrowserSettingsAsyncHelper(const ListBrowserSettingsRequest& request, const ListBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListBrowserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListBrowserSettings(request), context);
+    } );
 }
 
 ListIdentityProvidersOutcome WorkSpacesWebClient::ListIdentityProviders(const ListIdentityProvidersRequest& request) const
@@ -1053,12 +1001,10 @@ ListIdentityProvidersOutcomeCallable WorkSpacesWebClient::ListIdentityProvidersC
 
 void WorkSpacesWebClient::ListIdentityProvidersAsync(const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListIdentityProvidersAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::ListIdentityProvidersAsyncHelper(const ListIdentityProvidersRequest& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListIdentityProviders(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListIdentityProviders(request), context);
+    } );
 }
 
 ListNetworkSettingsOutcome WorkSpacesWebClient::ListNetworkSettings(const ListNetworkSettingsRequest& request) const
@@ -1078,12 +1024,10 @@ ListNetworkSettingsOutcomeCallable WorkSpacesWebClient::ListNetworkSettingsCalla
 
 void WorkSpacesWebClient::ListNetworkSettingsAsync(const ListNetworkSettingsRequest& request, const ListNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListNetworkSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::ListNetworkSettingsAsyncHelper(const ListNetworkSettingsRequest& request, const ListNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListNetworkSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListNetworkSettings(request), context);
+    } );
 }
 
 ListPortalsOutcome WorkSpacesWebClient::ListPortals(const ListPortalsRequest& request) const
@@ -1103,12 +1047,10 @@ ListPortalsOutcomeCallable WorkSpacesWebClient::ListPortalsCallable(const ListPo
 
 void WorkSpacesWebClient::ListPortalsAsync(const ListPortalsRequest& request, const ListPortalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListPortalsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::ListPortalsAsyncHelper(const ListPortalsRequest& request, const ListPortalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListPortals(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListPortals(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome WorkSpacesWebClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1134,12 +1076,10 @@ ListTagsForResourceOutcomeCallable WorkSpacesWebClient::ListTagsForResourceCalla
 
 void WorkSpacesWebClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListTrustStoreCertificatesOutcome WorkSpacesWebClient::ListTrustStoreCertificates(const ListTrustStoreCertificatesRequest& request) const
@@ -1166,12 +1106,10 @@ ListTrustStoreCertificatesOutcomeCallable WorkSpacesWebClient::ListTrustStoreCer
 
 void WorkSpacesWebClient::ListTrustStoreCertificatesAsync(const ListTrustStoreCertificatesRequest& request, const ListTrustStoreCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrustStoreCertificatesAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::ListTrustStoreCertificatesAsyncHelper(const ListTrustStoreCertificatesRequest& request, const ListTrustStoreCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTrustStoreCertificates(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTrustStoreCertificates(request), context);
+    } );
 }
 
 ListTrustStoresOutcome WorkSpacesWebClient::ListTrustStores(const ListTrustStoresRequest& request) const
@@ -1191,12 +1129,10 @@ ListTrustStoresOutcomeCallable WorkSpacesWebClient::ListTrustStoresCallable(cons
 
 void WorkSpacesWebClient::ListTrustStoresAsync(const ListTrustStoresRequest& request, const ListTrustStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTrustStoresAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::ListTrustStoresAsyncHelper(const ListTrustStoresRequest& request, const ListTrustStoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTrustStores(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTrustStores(request), context);
+    } );
 }
 
 ListUserSettingsOutcome WorkSpacesWebClient::ListUserSettings(const ListUserSettingsRequest& request) const
@@ -1216,12 +1152,10 @@ ListUserSettingsOutcomeCallable WorkSpacesWebClient::ListUserSettingsCallable(co
 
 void WorkSpacesWebClient::ListUserSettingsAsync(const ListUserSettingsRequest& request, const ListUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListUserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::ListUserSettingsAsyncHelper(const ListUserSettingsRequest& request, const ListUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListUserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListUserSettings(request), context);
+    } );
 }
 
 TagResourceOutcome WorkSpacesWebClient::TagResource(const TagResourceRequest& request) const
@@ -1247,12 +1181,10 @@ TagResourceOutcomeCallable WorkSpacesWebClient::TagResourceCallable(const TagRes
 
 void WorkSpacesWebClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome WorkSpacesWebClient::UntagResource(const UntagResourceRequest& request) const
@@ -1283,12 +1215,10 @@ UntagResourceOutcomeCallable WorkSpacesWebClient::UntagResourceCallable(const Un
 
 void WorkSpacesWebClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateBrowserSettingsOutcome WorkSpacesWebClient::UpdateBrowserSettings(const UpdateBrowserSettingsRequest& request) const
@@ -1314,12 +1244,10 @@ UpdateBrowserSettingsOutcomeCallable WorkSpacesWebClient::UpdateBrowserSettingsC
 
 void WorkSpacesWebClient::UpdateBrowserSettingsAsync(const UpdateBrowserSettingsRequest& request, const UpdateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateBrowserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::UpdateBrowserSettingsAsyncHelper(const UpdateBrowserSettingsRequest& request, const UpdateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateBrowserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateBrowserSettings(request), context);
+    } );
 }
 
 UpdateIdentityProviderOutcome WorkSpacesWebClient::UpdateIdentityProvider(const UpdateIdentityProviderRequest& request) const
@@ -1345,12 +1273,10 @@ UpdateIdentityProviderOutcomeCallable WorkSpacesWebClient::UpdateIdentityProvide
 
 void WorkSpacesWebClient::UpdateIdentityProviderAsync(const UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateIdentityProviderAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::UpdateIdentityProviderAsyncHelper(const UpdateIdentityProviderRequest& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateIdentityProvider(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateIdentityProvider(request), context);
+    } );
 }
 
 UpdateNetworkSettingsOutcome WorkSpacesWebClient::UpdateNetworkSettings(const UpdateNetworkSettingsRequest& request) const
@@ -1376,12 +1302,10 @@ UpdateNetworkSettingsOutcomeCallable WorkSpacesWebClient::UpdateNetworkSettingsC
 
 void WorkSpacesWebClient::UpdateNetworkSettingsAsync(const UpdateNetworkSettingsRequest& request, const UpdateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateNetworkSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::UpdateNetworkSettingsAsyncHelper(const UpdateNetworkSettingsRequest& request, const UpdateNetworkSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateNetworkSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateNetworkSettings(request), context);
+    } );
 }
 
 UpdatePortalOutcome WorkSpacesWebClient::UpdatePortal(const UpdatePortalRequest& request) const
@@ -1407,12 +1331,10 @@ UpdatePortalOutcomeCallable WorkSpacesWebClient::UpdatePortalCallable(const Upda
 
 void WorkSpacesWebClient::UpdatePortalAsync(const UpdatePortalRequest& request, const UpdatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdatePortalAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::UpdatePortalAsyncHelper(const UpdatePortalRequest& request, const UpdatePortalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdatePortal(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdatePortal(request), context);
+    } );
 }
 
 UpdateTrustStoreOutcome WorkSpacesWebClient::UpdateTrustStore(const UpdateTrustStoreRequest& request) const
@@ -1438,12 +1360,10 @@ UpdateTrustStoreOutcomeCallable WorkSpacesWebClient::UpdateTrustStoreCallable(co
 
 void WorkSpacesWebClient::UpdateTrustStoreAsync(const UpdateTrustStoreRequest& request, const UpdateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateTrustStoreAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::UpdateTrustStoreAsyncHelper(const UpdateTrustStoreRequest& request, const UpdateTrustStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateTrustStore(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTrustStore(request), context);
+    } );
 }
 
 UpdateUserSettingsOutcome WorkSpacesWebClient::UpdateUserSettings(const UpdateUserSettingsRequest& request) const
@@ -1469,11 +1389,9 @@ UpdateUserSettingsOutcomeCallable WorkSpacesWebClient::UpdateUserSettingsCallabl
 
 void WorkSpacesWebClient::UpdateUserSettingsAsync(const UpdateUserSettingsRequest& request, const UpdateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateUserSettingsAsyncHelper( request, handler, context ); } );
-}
-
-void WorkSpacesWebClient::UpdateUserSettingsAsyncHelper(const UpdateUserSettingsRequest& request, const UpdateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateUserSettings(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateUserSettings(request), context);
+    } );
 }
 

@@ -29,7 +29,10 @@ ConfluenceConfiguration::ConfluenceConfiguration() :
     m_attachmentConfigurationHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false)
+    m_exclusionPatternsHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false),
+    m_authenticationType(ConfluenceAuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false)
 {
 }
 
@@ -44,7 +47,10 @@ ConfluenceConfiguration::ConfluenceConfiguration(JsonView jsonValue) :
     m_attachmentConfigurationHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false)
+    m_exclusionPatternsHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false),
+    m_authenticationType(ConfluenceAuthenticationType::NOT_SET),
+    m_authenticationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -127,6 +133,20 @@ ConfluenceConfiguration& ConfluenceConfiguration::operator =(JsonView jsonValue)
     m_exclusionPatternsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProxyConfiguration"))
+  {
+    m_proxyConfiguration = jsonValue.GetObject("ProxyConfiguration");
+
+    m_proxyConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AuthenticationType"))
+  {
+    m_authenticationType = ConfluenceAuthenticationTypeMapper::GetConfluenceAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
+
+    m_authenticationTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -201,6 +221,17 @@ JsonValue ConfluenceConfiguration::Jsonize() const
    }
    payload.WithArray("ExclusionPatterns", std::move(exclusionPatternsJsonList));
 
+  }
+
+  if(m_proxyConfigurationHasBeenSet)
+  {
+   payload.WithObject("ProxyConfiguration", m_proxyConfiguration.Jsonize());
+
+  }
+
+  if(m_authenticationTypeHasBeenSet)
+  {
+   payload.WithString("AuthenticationType", ConfluenceAuthenticationTypeMapper::GetNameForConfluenceAuthenticationType(m_authenticationType));
   }
 
   return payload;

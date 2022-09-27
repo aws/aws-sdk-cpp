@@ -160,42 +160,90 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the object template.</p>
+     * <p>A unique identifier for the object template. For some attributes in the
+     * request, the service will use the default value from the object template when
+     * TemplateId is present. If these attributes are present in the request, the
+     * service may return a <code>BadRequestException</code>. These attributes include:
+     * AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For
+     * example, if AllowProfileCreation is set to true when TemplateId is set, the
+     * service may return a <code>BadRequestException</code>.</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
 
     /**
-     * <p>A unique identifier for the object template.</p>
+     * <p>A unique identifier for the object template. For some attributes in the
+     * request, the service will use the default value from the object template when
+     * TemplateId is present. If these attributes are present in the request, the
+     * service may return a <code>BadRequestException</code>. These attributes include:
+     * AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For
+     * example, if AllowProfileCreation is set to true when TemplateId is set, the
+     * service may return a <code>BadRequestException</code>.</p>
      */
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the object template.</p>
+     * <p>A unique identifier for the object template. For some attributes in the
+     * request, the service will use the default value from the object template when
+     * TemplateId is present. If these attributes are present in the request, the
+     * service may return a <code>BadRequestException</code>. These attributes include:
+     * AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For
+     * example, if AllowProfileCreation is set to true when TemplateId is set, the
+     * service may return a <code>BadRequestException</code>.</p>
      */
     inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
 
     /**
-     * <p>A unique identifier for the object template.</p>
+     * <p>A unique identifier for the object template. For some attributes in the
+     * request, the service will use the default value from the object template when
+     * TemplateId is present. If these attributes are present in the request, the
+     * service may return a <code>BadRequestException</code>. These attributes include:
+     * AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For
+     * example, if AllowProfileCreation is set to true when TemplateId is set, the
+     * service may return a <code>BadRequestException</code>.</p>
      */
     inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the object template.</p>
+     * <p>A unique identifier for the object template. For some attributes in the
+     * request, the service will use the default value from the object template when
+     * TemplateId is present. If these attributes are present in the request, the
+     * service may return a <code>BadRequestException</code>. These attributes include:
+     * AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For
+     * example, if AllowProfileCreation is set to true when TemplateId is set, the
+     * service may return a <code>BadRequestException</code>.</p>
      */
     inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
 
     /**
-     * <p>A unique identifier for the object template.</p>
+     * <p>A unique identifier for the object template. For some attributes in the
+     * request, the service will use the default value from the object template when
+     * TemplateId is present. If these attributes are present in the request, the
+     * service may return a <code>BadRequestException</code>. These attributes include:
+     * AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For
+     * example, if AllowProfileCreation is set to true when TemplateId is set, the
+     * service may return a <code>BadRequestException</code>.</p>
      */
     inline PutProfileObjectTypeRequest& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the object template.</p>
+     * <p>A unique identifier for the object template. For some attributes in the
+     * request, the service will use the default value from the object template when
+     * TemplateId is present. If these attributes are present in the request, the
+     * service may return a <code>BadRequestException</code>. These attributes include:
+     * AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For
+     * example, if AllowProfileCreation is set to true when TemplateId is set, the
+     * service may return a <code>BadRequestException</code>.</p>
      */
     inline PutProfileObjectTypeRequest& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the object template.</p>
+     * <p>A unique identifier for the object template. For some attributes in the
+     * request, the service will use the default value from the object template when
+     * TemplateId is present. If these attributes are present in the request, the
+     * service may return a <code>BadRequestException</code>. These attributes include:
+     * AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For
+     * example, if AllowProfileCreation is set to true when TemplateId is set, the
+     * service may return a <code>BadRequestException</code>.</p>
      */
     inline PutProfileObjectTypeRequest& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
 
@@ -550,37 +598,37 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     Aws::String m_objectTypeName;
-    bool m_objectTypeNameHasBeenSet;
+    bool m_objectTypeNameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_templateId;
-    bool m_templateIdHasBeenSet;
+    bool m_templateIdHasBeenSet = false;
 
     int m_expirationDays;
-    bool m_expirationDaysHasBeenSet;
+    bool m_expirationDaysHasBeenSet = false;
 
     Aws::String m_encryptionKey;
-    bool m_encryptionKeyHasBeenSet;
+    bool m_encryptionKeyHasBeenSet = false;
 
     bool m_allowProfileCreation;
-    bool m_allowProfileCreationHasBeenSet;
+    bool m_allowProfileCreationHasBeenSet = false;
 
     Aws::String m_sourceLastUpdatedTimestampFormat;
-    bool m_sourceLastUpdatedTimestampFormatHasBeenSet;
+    bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
 
     Aws::Map<Aws::String, ObjectTypeField> m_fields;
-    bool m_fieldsHasBeenSet;
+    bool m_fieldsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>> m_keys;
-    bool m_keysHasBeenSet;
+    bool m_keysHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

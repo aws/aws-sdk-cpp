@@ -121,10 +121,10 @@ namespace Model
   private:
 
     LambdaIsolationMode m_isolationMode;
-    bool m_isolationModeHasBeenSet;
+    bool m_isolationModeHasBeenSet = false;
 
     LambdaContainerParams m_containerParams;
-    bool m_containerParamsHasBeenSet;
+    bool m_containerParamsHasBeenSet = false;
   };
 
 } // namespace Model

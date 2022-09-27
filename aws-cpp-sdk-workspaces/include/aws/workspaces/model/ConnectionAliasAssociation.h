@@ -222,16 +222,16 @@ namespace Model
   private:
 
     AssociationStatus m_associationStatus;
-    bool m_associationStatusHasBeenSet;
+    bool m_associationStatusHasBeenSet = false;
 
     Aws::String m_associatedAccountId;
-    bool m_associatedAccountIdHasBeenSet;
+    bool m_associatedAccountIdHasBeenSet = false;
 
     Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet;
+    bool m_resourceIdHasBeenSet = false;
 
     Aws::String m_connectionIdentifier;
-    bool m_connectionIdentifierHasBeenSet;
+    bool m_connectionIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

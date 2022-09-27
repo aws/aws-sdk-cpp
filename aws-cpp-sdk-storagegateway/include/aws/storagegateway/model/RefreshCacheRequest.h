@@ -212,13 +212,13 @@ namespace Model
   private:
 
     Aws::String m_fileShareARN;
-    bool m_fileShareARNHasBeenSet;
+    bool m_fileShareARNHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_folderList;
-    bool m_folderListHasBeenSet;
+    bool m_folderListHasBeenSet = false;
 
     bool m_recursive;
-    bool m_recursiveHasBeenSet;
+    bool m_recursiveHasBeenSet = false;
   };
 
 } // namespace Model

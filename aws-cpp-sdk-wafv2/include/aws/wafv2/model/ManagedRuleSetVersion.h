@@ -300,22 +300,22 @@ namespace Model
   private:
 
     Aws::String m_associatedRuleGroupArn;
-    bool m_associatedRuleGroupArnHasBeenSet;
+    bool m_associatedRuleGroupArnHasBeenSet = false;
 
     long long m_capacity;
-    bool m_capacityHasBeenSet;
+    bool m_capacityHasBeenSet = false;
 
     int m_forecastedLifetime;
-    bool m_forecastedLifetimeHasBeenSet;
+    bool m_forecastedLifetimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_publishTimestamp;
-    bool m_publishTimestampHasBeenSet;
+    bool m_publishTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastUpdateTimestamp;
-    bool m_lastUpdateTimestampHasBeenSet;
+    bool m_lastUpdateTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_expiryTimestamp;
-    bool m_expiryTimestampHasBeenSet;
+    bool m_expiryTimestampHasBeenSet = false;
   };
 
 } // namespace Model

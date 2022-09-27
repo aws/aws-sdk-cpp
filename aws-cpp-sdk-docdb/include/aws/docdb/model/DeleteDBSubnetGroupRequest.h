@@ -107,7 +107,7 @@ namespace Model
   private:
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

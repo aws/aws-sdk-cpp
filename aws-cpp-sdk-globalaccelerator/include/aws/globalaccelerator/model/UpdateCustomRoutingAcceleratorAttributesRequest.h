@@ -88,7 +88,7 @@ namespace Model
      * value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code>
      * must be specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline bool GetFlowLogsEnabled() const{ return m_flowLogsEnabled; }
 
@@ -97,7 +97,7 @@ namespace Model
      * value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code>
      * must be specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline bool FlowLogsEnabledHasBeenSet() const { return m_flowLogsEnabledHasBeenSet; }
 
@@ -106,7 +106,7 @@ namespace Model
      * value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code>
      * must be specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline void SetFlowLogsEnabled(bool value) { m_flowLogsEnabledHasBeenSet = true; m_flowLogsEnabled = value; }
 
@@ -115,7 +115,7 @@ namespace Model
      * value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code>
      * must be specified.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
-     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
+     * logs</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
     inline UpdateCustomRoutingAcceleratorAttributesRequest& WithFlowLogsEnabled(bool value) { SetFlowLogsEnabled(value); return *this;}
 
@@ -123,64 +123,64 @@ namespace Model
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline const Aws::String& GetFlowLogsS3Bucket() const{ return m_flowLogsS3Bucket; }
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline bool FlowLogsS3BucketHasBeenSet() const { return m_flowLogsS3BucketHasBeenSet; }
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline void SetFlowLogsS3Bucket(const Aws::String& value) { m_flowLogsS3BucketHasBeenSet = true; m_flowLogsS3Bucket = value; }
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline void SetFlowLogsS3Bucket(Aws::String&& value) { m_flowLogsS3BucketHasBeenSet = true; m_flowLogsS3Bucket = std::move(value); }
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline void SetFlowLogsS3Bucket(const char* value) { m_flowLogsS3BucketHasBeenSet = true; m_flowLogsS3Bucket.assign(value); }
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline UpdateCustomRoutingAcceleratorAttributesRequest& WithFlowLogsS3Bucket(const Aws::String& value) { SetFlowLogsS3Bucket(value); return *this;}
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline UpdateCustomRoutingAcceleratorAttributesRequest& WithFlowLogsS3Bucket(Aws::String&& value) { SetFlowLogsS3Bucket(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
      * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
-     * have a bucket policy that grants AWS Global Accelerator permission to write to
-     * the bucket.</p>
+     * have a bucket policy that grants Global Accelerator permission to write to the
+     * bucket.</p>
      */
     inline UpdateCustomRoutingAcceleratorAttributesRequest& WithFlowLogsS3Bucket(const char* value) { SetFlowLogsS3Bucket(value); return *this;}
 
@@ -268,16 +268,16 @@ namespace Model
   private:
 
     Aws::String m_acceleratorArn;
-    bool m_acceleratorArnHasBeenSet;
+    bool m_acceleratorArnHasBeenSet = false;
 
     bool m_flowLogsEnabled;
-    bool m_flowLogsEnabledHasBeenSet;
+    bool m_flowLogsEnabledHasBeenSet = false;
 
     Aws::String m_flowLogsS3Bucket;
-    bool m_flowLogsS3BucketHasBeenSet;
+    bool m_flowLogsS3BucketHasBeenSet = false;
 
     Aws::String m_flowLogsS3Prefix;
-    bool m_flowLogsS3PrefixHasBeenSet;
+    bool m_flowLogsS3PrefixHasBeenSet = false;
   };
 
 } // namespace Model

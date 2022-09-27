@@ -122,10 +122,10 @@ namespace Model
   private:
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_defaultBranchName;
-    bool m_defaultBranchNameHasBeenSet;
+    bool m_defaultBranchNameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,233 +5,15 @@
 
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
-#include <aws/shield/ShieldErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/shield/model/AssociateDRTLogBucketResult.h>
-#include <aws/shield/model/AssociateDRTRoleResult.h>
-#include <aws/shield/model/AssociateHealthCheckResult.h>
-#include <aws/shield/model/AssociateProactiveEngagementDetailsResult.h>
-#include <aws/shield/model/CreateProtectionResult.h>
-#include <aws/shield/model/CreateProtectionGroupResult.h>
-#include <aws/shield/model/CreateSubscriptionResult.h>
-#include <aws/shield/model/DeleteProtectionResult.h>
-#include <aws/shield/model/DeleteProtectionGroupResult.h>
-#include <aws/shield/model/DescribeAttackResult.h>
-#include <aws/shield/model/DescribeAttackStatisticsResult.h>
-#include <aws/shield/model/DescribeDRTAccessResult.h>
-#include <aws/shield/model/DescribeEmergencyContactSettingsResult.h>
-#include <aws/shield/model/DescribeProtectionResult.h>
-#include <aws/shield/model/DescribeProtectionGroupResult.h>
-#include <aws/shield/model/DescribeSubscriptionResult.h>
-#include <aws/shield/model/DisableApplicationLayerAutomaticResponseResult.h>
-#include <aws/shield/model/DisableProactiveEngagementResult.h>
-#include <aws/shield/model/DisassociateDRTLogBucketResult.h>
-#include <aws/shield/model/DisassociateDRTRoleResult.h>
-#include <aws/shield/model/DisassociateHealthCheckResult.h>
-#include <aws/shield/model/EnableApplicationLayerAutomaticResponseResult.h>
-#include <aws/shield/model/EnableProactiveEngagementResult.h>
-#include <aws/shield/model/GetSubscriptionStateResult.h>
-#include <aws/shield/model/ListAttacksResult.h>
-#include <aws/shield/model/ListProtectionGroupsResult.h>
-#include <aws/shield/model/ListProtectionsResult.h>
-#include <aws/shield/model/ListResourcesInProtectionGroupResult.h>
-#include <aws/shield/model/ListTagsForResourceResult.h>
-#include <aws/shield/model/TagResourceResult.h>
-#include <aws/shield/model/UntagResourceResult.h>
-#include <aws/shield/model/UpdateApplicationLayerAutomaticResponseResult.h>
-#include <aws/shield/model/UpdateEmergencyContactSettingsResult.h>
-#include <aws/shield/model/UpdateProtectionGroupResult.h>
-#include <aws/shield/model/UpdateSubscriptionResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/shield/ShieldServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace Shield
 {
-
-namespace Model
-{
-        class AssociateDRTLogBucketRequest;
-        class AssociateDRTRoleRequest;
-        class AssociateHealthCheckRequest;
-        class AssociateProactiveEngagementDetailsRequest;
-        class CreateProtectionRequest;
-        class CreateProtectionGroupRequest;
-        class CreateSubscriptionRequest;
-        class DeleteProtectionRequest;
-        class DeleteProtectionGroupRequest;
-        class DescribeAttackRequest;
-        class DescribeAttackStatisticsRequest;
-        class DescribeDRTAccessRequest;
-        class DescribeEmergencyContactSettingsRequest;
-        class DescribeProtectionRequest;
-        class DescribeProtectionGroupRequest;
-        class DescribeSubscriptionRequest;
-        class DisableApplicationLayerAutomaticResponseRequest;
-        class DisableProactiveEngagementRequest;
-        class DisassociateDRTLogBucketRequest;
-        class DisassociateDRTRoleRequest;
-        class DisassociateHealthCheckRequest;
-        class EnableApplicationLayerAutomaticResponseRequest;
-        class EnableProactiveEngagementRequest;
-        class GetSubscriptionStateRequest;
-        class ListAttacksRequest;
-        class ListProtectionGroupsRequest;
-        class ListProtectionsRequest;
-        class ListResourcesInProtectionGroupRequest;
-        class ListTagsForResourceRequest;
-        class TagResourceRequest;
-        class UntagResourceRequest;
-        class UpdateApplicationLayerAutomaticResponseRequest;
-        class UpdateEmergencyContactSettingsRequest;
-        class UpdateProtectionGroupRequest;
-        class UpdateSubscriptionRequest;
-
-        typedef Aws::Utils::Outcome<AssociateDRTLogBucketResult, ShieldError> AssociateDRTLogBucketOutcome;
-        typedef Aws::Utils::Outcome<AssociateDRTRoleResult, ShieldError> AssociateDRTRoleOutcome;
-        typedef Aws::Utils::Outcome<AssociateHealthCheckResult, ShieldError> AssociateHealthCheckOutcome;
-        typedef Aws::Utils::Outcome<AssociateProactiveEngagementDetailsResult, ShieldError> AssociateProactiveEngagementDetailsOutcome;
-        typedef Aws::Utils::Outcome<CreateProtectionResult, ShieldError> CreateProtectionOutcome;
-        typedef Aws::Utils::Outcome<CreateProtectionGroupResult, ShieldError> CreateProtectionGroupOutcome;
-        typedef Aws::Utils::Outcome<CreateSubscriptionResult, ShieldError> CreateSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<DeleteProtectionResult, ShieldError> DeleteProtectionOutcome;
-        typedef Aws::Utils::Outcome<DeleteProtectionGroupResult, ShieldError> DeleteProtectionGroupOutcome;
-        typedef Aws::Utils::Outcome<DescribeAttackResult, ShieldError> DescribeAttackOutcome;
-        typedef Aws::Utils::Outcome<DescribeAttackStatisticsResult, ShieldError> DescribeAttackStatisticsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDRTAccessResult, ShieldError> DescribeDRTAccessOutcome;
-        typedef Aws::Utils::Outcome<DescribeEmergencyContactSettingsResult, ShieldError> DescribeEmergencyContactSettingsOutcome;
-        typedef Aws::Utils::Outcome<DescribeProtectionResult, ShieldError> DescribeProtectionOutcome;
-        typedef Aws::Utils::Outcome<DescribeProtectionGroupResult, ShieldError> DescribeProtectionGroupOutcome;
-        typedef Aws::Utils::Outcome<DescribeSubscriptionResult, ShieldError> DescribeSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<DisableApplicationLayerAutomaticResponseResult, ShieldError> DisableApplicationLayerAutomaticResponseOutcome;
-        typedef Aws::Utils::Outcome<DisableProactiveEngagementResult, ShieldError> DisableProactiveEngagementOutcome;
-        typedef Aws::Utils::Outcome<DisassociateDRTLogBucketResult, ShieldError> DisassociateDRTLogBucketOutcome;
-        typedef Aws::Utils::Outcome<DisassociateDRTRoleResult, ShieldError> DisassociateDRTRoleOutcome;
-        typedef Aws::Utils::Outcome<DisassociateHealthCheckResult, ShieldError> DisassociateHealthCheckOutcome;
-        typedef Aws::Utils::Outcome<EnableApplicationLayerAutomaticResponseResult, ShieldError> EnableApplicationLayerAutomaticResponseOutcome;
-        typedef Aws::Utils::Outcome<EnableProactiveEngagementResult, ShieldError> EnableProactiveEngagementOutcome;
-        typedef Aws::Utils::Outcome<GetSubscriptionStateResult, ShieldError> GetSubscriptionStateOutcome;
-        typedef Aws::Utils::Outcome<ListAttacksResult, ShieldError> ListAttacksOutcome;
-        typedef Aws::Utils::Outcome<ListProtectionGroupsResult, ShieldError> ListProtectionGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListProtectionsResult, ShieldError> ListProtectionsOutcome;
-        typedef Aws::Utils::Outcome<ListResourcesInProtectionGroupResult, ShieldError> ListResourcesInProtectionGroupOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ShieldError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, ShieldError> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, ShieldError> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateApplicationLayerAutomaticResponseResult, ShieldError> UpdateApplicationLayerAutomaticResponseOutcome;
-        typedef Aws::Utils::Outcome<UpdateEmergencyContactSettingsResult, ShieldError> UpdateEmergencyContactSettingsOutcome;
-        typedef Aws::Utils::Outcome<UpdateProtectionGroupResult, ShieldError> UpdateProtectionGroupOutcome;
-        typedef Aws::Utils::Outcome<UpdateSubscriptionResult, ShieldError> UpdateSubscriptionOutcome;
-
-        typedef std::future<AssociateDRTLogBucketOutcome> AssociateDRTLogBucketOutcomeCallable;
-        typedef std::future<AssociateDRTRoleOutcome> AssociateDRTRoleOutcomeCallable;
-        typedef std::future<AssociateHealthCheckOutcome> AssociateHealthCheckOutcomeCallable;
-        typedef std::future<AssociateProactiveEngagementDetailsOutcome> AssociateProactiveEngagementDetailsOutcomeCallable;
-        typedef std::future<CreateProtectionOutcome> CreateProtectionOutcomeCallable;
-        typedef std::future<CreateProtectionGroupOutcome> CreateProtectionGroupOutcomeCallable;
-        typedef std::future<CreateSubscriptionOutcome> CreateSubscriptionOutcomeCallable;
-        typedef std::future<DeleteProtectionOutcome> DeleteProtectionOutcomeCallable;
-        typedef std::future<DeleteProtectionGroupOutcome> DeleteProtectionGroupOutcomeCallable;
-        typedef std::future<DescribeAttackOutcome> DescribeAttackOutcomeCallable;
-        typedef std::future<DescribeAttackStatisticsOutcome> DescribeAttackStatisticsOutcomeCallable;
-        typedef std::future<DescribeDRTAccessOutcome> DescribeDRTAccessOutcomeCallable;
-        typedef std::future<DescribeEmergencyContactSettingsOutcome> DescribeEmergencyContactSettingsOutcomeCallable;
-        typedef std::future<DescribeProtectionOutcome> DescribeProtectionOutcomeCallable;
-        typedef std::future<DescribeProtectionGroupOutcome> DescribeProtectionGroupOutcomeCallable;
-        typedef std::future<DescribeSubscriptionOutcome> DescribeSubscriptionOutcomeCallable;
-        typedef std::future<DisableApplicationLayerAutomaticResponseOutcome> DisableApplicationLayerAutomaticResponseOutcomeCallable;
-        typedef std::future<DisableProactiveEngagementOutcome> DisableProactiveEngagementOutcomeCallable;
-        typedef std::future<DisassociateDRTLogBucketOutcome> DisassociateDRTLogBucketOutcomeCallable;
-        typedef std::future<DisassociateDRTRoleOutcome> DisassociateDRTRoleOutcomeCallable;
-        typedef std::future<DisassociateHealthCheckOutcome> DisassociateHealthCheckOutcomeCallable;
-        typedef std::future<EnableApplicationLayerAutomaticResponseOutcome> EnableApplicationLayerAutomaticResponseOutcomeCallable;
-        typedef std::future<EnableProactiveEngagementOutcome> EnableProactiveEngagementOutcomeCallable;
-        typedef std::future<GetSubscriptionStateOutcome> GetSubscriptionStateOutcomeCallable;
-        typedef std::future<ListAttacksOutcome> ListAttacksOutcomeCallable;
-        typedef std::future<ListProtectionGroupsOutcome> ListProtectionGroupsOutcomeCallable;
-        typedef std::future<ListProtectionsOutcome> ListProtectionsOutcomeCallable;
-        typedef std::future<ListResourcesInProtectionGroupOutcome> ListResourcesInProtectionGroupOutcomeCallable;
-        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
-        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
-        typedef std::future<UpdateApplicationLayerAutomaticResponseOutcome> UpdateApplicationLayerAutomaticResponseOutcomeCallable;
-        typedef std::future<UpdateEmergencyContactSettingsOutcome> UpdateEmergencyContactSettingsOutcomeCallable;
-        typedef std::future<UpdateProtectionGroupOutcome> UpdateProtectionGroupOutcomeCallable;
-        typedef std::future<UpdateSubscriptionOutcome> UpdateSubscriptionOutcomeCallable;
-} // namespace Model
-
-  class ShieldClient;
-
-    typedef std::function<void(const ShieldClient*, const Model::AssociateDRTLogBucketRequest&, const Model::AssociateDRTLogBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDRTLogBucketResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::AssociateDRTRoleRequest&, const Model::AssociateDRTRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDRTRoleResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::AssociateHealthCheckRequest&, const Model::AssociateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateHealthCheckResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::AssociateProactiveEngagementDetailsRequest&, const Model::AssociateProactiveEngagementDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateProactiveEngagementDetailsResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::CreateProtectionRequest&, const Model::CreateProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProtectionResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::CreateProtectionGroupRequest&, const Model::CreateProtectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProtectionGroupResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::CreateSubscriptionRequest&, const Model::CreateSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubscriptionResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DeleteProtectionRequest&, const Model::DeleteProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProtectionResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DeleteProtectionGroupRequest&, const Model::DeleteProtectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProtectionGroupResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DescribeAttackRequest&, const Model::DescribeAttackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAttackResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DescribeAttackStatisticsRequest&, const Model::DescribeAttackStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAttackStatisticsResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DescribeDRTAccessRequest&, const Model::DescribeDRTAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDRTAccessResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DescribeEmergencyContactSettingsRequest&, const Model::DescribeEmergencyContactSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEmergencyContactSettingsResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DescribeProtectionRequest&, const Model::DescribeProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProtectionResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DescribeProtectionGroupRequest&, const Model::DescribeProtectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProtectionGroupResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DescribeSubscriptionRequest&, const Model::DescribeSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscriptionResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DisableApplicationLayerAutomaticResponseRequest&, const Model::DisableApplicationLayerAutomaticResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableApplicationLayerAutomaticResponseResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DisableProactiveEngagementRequest&, const Model::DisableProactiveEngagementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableProactiveEngagementResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DisassociateDRTLogBucketRequest&, const Model::DisassociateDRTLogBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDRTLogBucketResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DisassociateDRTRoleRequest&, const Model::DisassociateDRTRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDRTRoleResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::DisassociateHealthCheckRequest&, const Model::DisassociateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateHealthCheckResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::EnableApplicationLayerAutomaticResponseRequest&, const Model::EnableApplicationLayerAutomaticResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableApplicationLayerAutomaticResponseResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::EnableProactiveEngagementRequest&, const Model::EnableProactiveEngagementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableProactiveEngagementResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::GetSubscriptionStateRequest&, const Model::GetSubscriptionStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionStateResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::ListAttacksRequest&, const Model::ListAttacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttacksResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::ListProtectionGroupsRequest&, const Model::ListProtectionGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectionGroupsResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::ListProtectionsRequest&, const Model::ListProtectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectionsResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::ListResourcesInProtectionGroupRequest&, const Model::ListResourcesInProtectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesInProtectionGroupResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::UpdateApplicationLayerAutomaticResponseRequest&, const Model::UpdateApplicationLayerAutomaticResponseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationLayerAutomaticResponseResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::UpdateEmergencyContactSettingsRequest&, const Model::UpdateEmergencyContactSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEmergencyContactSettingsResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::UpdateProtectionGroupRequest&, const Model::UpdateProtectionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProtectionGroupResponseReceivedHandler;
-    typedef std::function<void(const ShieldClient*, const Model::UpdateSubscriptionRequest&, const Model::UpdateSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriptionResponseReceivedHandler;
-
   /**
    * <fullname>Shield Advanced</fullname> <p>This is the <i>Shield Advanced API
    * Reference</i>. This guide is for developers who need detailed information about
@@ -256,14 +38,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ShieldClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ShieldClient(const Aws::Auth::AWSCredentials& credentials,
+                     const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ShieldClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                     const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ShieldClient();
 
@@ -274,10 +57,9 @@ namespace Model
          * CloudFront logs, or logs from third party sources. You can associate up to 10
          * Amazon S3 buckets with your subscription.</p> <p>To use the services of the SRT
          * and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed
-         * to the <a
-         * href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
+         * to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business
          * Support plan</a> or the <a
-         * href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+         * href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
          * Support plan</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTLogBucket">AWS
          * API Reference</a></p>
@@ -322,9 +104,9 @@ namespace Model
          * a user permissions to pass a role to an Amazon Web Services service</a>. </p>
          * <p>To use the services of the SRT and make an <code>AssociateDRTRole</code>
          * request, you must be subscribed to the <a
-         * href="https://docs.aws.amazon.com/premiumsupport/business-support/">Business
-         * Support plan</a> or the <a
-         * href="https://docs.aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
+         * href="http://aws.amazon.com/premiumsupport/business-support/">Business Support
+         * plan</a> or the <a
+         * href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
          * Support plan</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTRole">AWS
          * API Reference</a></p>
@@ -395,11 +177,13 @@ namespace Model
 
         /**
          * <p>Enables Shield Advanced for a specific Amazon Web Services resource. The
-         * resource can be an Amazon CloudFront distribution, Elastic Load Balancing load
-         * balancer, Global Accelerator accelerator, Elastic IP Address, or an Amazon
-         * Route 53 hosted zone.</p> <p>You can add protection to only a single resource
-         * with each <code>CreateProtection</code> request. You can add protection to
-         * multiple resources at once through the Shield Advanced console at <a
+         * resource can be an Amazon CloudFront distribution, Amazon Route 53 hosted zone,
+         * Global Accelerator standard accelerator, Elastic IP Address, Application Load
+         * Balancer, or a Classic Load Balancer. You can protect Amazon EC2 instances and
+         * Network Load Balancers by association with protected Amazon EC2 Elastic IP
+         * addresses.</p> <p>You can add protection to only a single resource with each
+         * <code>CreateProtection</code> request. You can add protection to multiple
+         * resources at once through the Shield Advanced console at <a
          * href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
          * For more information see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
@@ -442,7 +226,10 @@ namespace Model
         virtual void CreateProtectionGroupAsync(const Model::CreateProtectionGroupRequest& request, const CreateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Activates Shield Advanced for an account.</p> <p>When you initally create a
+         * <p>Activates Shield Advanced for an account.</p>  <p>For accounts that are
+         * members of an Organizations organization, Shield Advanced subscriptions are
+         * billed against the organization's payer account, regardless of whether the payer
+         * account itself is subscribed. </p>  <p>When you initially create a
          * subscription, your subscription is set to be automatically renewed at the end of
          * the existing subscription period. You can change this by submitting an
          * <code>UpdateSubscription</code> request. </p><p><h3>See Also:</h3>   <a
@@ -634,8 +421,8 @@ namespace Model
 
         /**
          * <p>Disable the Shield Advanced automatic application layer DDoS mitigation
-         * feature for the resource. This stops Shield Advanced from creating, verifying,
-         * and applying WAF rules for attacks that it detects for the resource.
+         * feature for the protected resource. This stops Shield Advanced from creating,
+         * verifying, and applying WAF rules for attacks that it detects for the resource.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableApplicationLayerAutomaticResponse">AWS
          * API Reference</a></p>
@@ -735,28 +522,29 @@ namespace Model
 
         /**
          * <p>Enable the Shield Advanced automatic application layer DDoS mitigation for
-         * the resource. </p>  <p>This feature is available for Amazon CloudFront
-         * distributions only.</p>  <p>This causes Shield Advanced to create,
-         * verify, and apply WAF rules for DDoS attacks that it detects for the resource.
-         * Shield Advanced applies the rules in a Shield rule group inside the web ACL that
-         * you've associated with the resource. For information about how automatic
-         * mitigation works and the requirements for using it, see <a
+         * the protected resource. </p>  <p>This feature is available for Amazon
+         * CloudFront distributions and Application Load Balancers only.</p> 
+         * <p>This causes Shield Advanced to create, verify, and apply WAF rules for DDoS
+         * attacks that it detects for the resource. Shield Advanced applies the rules in a
+         * Shield rule group inside the web ACL that you've associated with the resource.
+         * For information about how automatic mitigation works and the requirements for
+         * using it, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-advanced-automatic-app-layer-response.html">Shield
-         * Advanced automatic application layer DDoS mitigation</a>.</p> <p>Don't use this
-         * action to make changes to automatic mitigation settings when it's already
-         * enabled for a resource. Instead, use
-         * <a>UpdateApplicationLayerAutomaticResponse</a>.</p> <p>To use this feature, you
-         * must associate a web ACL with the protected resource. The web ACL must be
-         * created using the latest version of WAF (v2). You can associate the web ACL
-         * through the Shield Advanced console at <a
+         * Advanced automatic application layer DDoS mitigation</a>.</p>  <p>Don't
+         * use this action to make changes to automatic mitigation settings when it's
+         * already enabled for a resource. Instead, use
+         * <a>UpdateApplicationLayerAutomaticResponse</a>.</p>  <p>To use this
+         * feature, you must associate a web ACL with the protected resource. The web ACL
+         * must be created using the latest version of WAF (v2). You can associate the web
+         * ACL through the Shield Advanced console at <a
          * href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
-         * Started with Shield Advanced</a>.</p> <p>You can also do this through the WAF
-         * console or the WAF API, but you must manage Shield Advanced automatic mitigation
-         * through Shield Advanced. For information about WAF, see <a
-         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF Developer
-         * Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * Started with Shield Advanced</a>. You can also associate the web ACL to the
+         * resource through the WAF console or the WAF API, but you must manage Shield
+         * Advanced automatic mitigation through Shield Advanced. For information about
+         * WAF, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">WAF
+         * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableApplicationLayerAutomaticResponse">AWS
          * API Reference</a></p>
          */
@@ -828,7 +616,9 @@ namespace Model
         virtual void ListAttacksAsync(const Model::ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the <a>ProtectionGroup</a> objects for the account.</p><p><h3>See
+         * <p>Retrieves <a>ProtectionGroup</a> objects for the account. You can retrieve
+         * all protection groups or you can provide filtering criteria and retrieve just
+         * the subset of protection groups that match the criteria. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtectionGroups">AWS
          * API Reference</a></p>
@@ -846,8 +636,9 @@ namespace Model
         virtual void ListProtectionGroupsAsync(const Model::ListProtectionGroupsRequest& request, const ListProtectionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all <a>Protection</a> objects for the account.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Retrieves <a>Protection</a> objects for the account. You can retrieve all
+         * protections or you can provide filtering criteria and retrieve just the subset
+         * of protections that match the criteria. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections">AWS
          * API Reference</a></p>
          */
@@ -994,8 +785,11 @@ namespace Model
 
         /**
          * <p>Updates the details of an existing subscription. Only enter values for
-         * parameters you want to change. Empty parameters are not updated.</p><p><h3>See
-         * Also:</h3>   <a
+         * parameters you want to change. Empty parameters are not updated.</p> 
+         * <p>For accounts that are members of an Organizations organization, Shield
+         * Advanced subscriptions are billed against the organization's payer account,
+         * regardless of whether the payer account itself is subscribed. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateSubscription">AWS
          * API Reference</a></p>
          */
@@ -1015,41 +809,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AssociateDRTLogBucketAsyncHelper(const Model::AssociateDRTLogBucketRequest& request, const AssociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateDRTRoleAsyncHelper(const Model::AssociateDRTRoleRequest& request, const AssociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateHealthCheckAsyncHelper(const Model::AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void AssociateProactiveEngagementDetailsAsyncHelper(const Model::AssociateProactiveEngagementDetailsRequest& request, const AssociateProactiveEngagementDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateProtectionAsyncHelper(const Model::CreateProtectionRequest& request, const CreateProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateProtectionGroupAsyncHelper(const Model::CreateProtectionGroupRequest& request, const CreateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateSubscriptionAsyncHelper(const Model::CreateSubscriptionRequest& request, const CreateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProtectionAsyncHelper(const Model::DeleteProtectionRequest& request, const DeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteProtectionGroupAsyncHelper(const Model::DeleteProtectionGroupRequest& request, const DeleteProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAttackAsyncHelper(const Model::DescribeAttackRequest& request, const DescribeAttackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeAttackStatisticsAsyncHelper(const Model::DescribeAttackStatisticsRequest& request, const DescribeAttackStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeDRTAccessAsyncHelper(const Model::DescribeDRTAccessRequest& request, const DescribeDRTAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeEmergencyContactSettingsAsyncHelper(const Model::DescribeEmergencyContactSettingsRequest& request, const DescribeEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeProtectionAsyncHelper(const Model::DescribeProtectionRequest& request, const DescribeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeProtectionGroupAsyncHelper(const Model::DescribeProtectionGroupRequest& request, const DescribeProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSubscriptionAsyncHelper(const Model::DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisableApplicationLayerAutomaticResponseAsyncHelper(const Model::DisableApplicationLayerAutomaticResponseRequest& request, const DisableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisableProactiveEngagementAsyncHelper(const Model::DisableProactiveEngagementRequest& request, const DisableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateDRTLogBucketAsyncHelper(const Model::DisassociateDRTLogBucketRequest& request, const DisassociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateDRTRoleAsyncHelper(const Model::DisassociateDRTRoleRequest& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateHealthCheckAsyncHelper(const Model::DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EnableApplicationLayerAutomaticResponseAsyncHelper(const Model::EnableApplicationLayerAutomaticResponseRequest& request, const EnableApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void EnableProactiveEngagementAsyncHelper(const Model::EnableProactiveEngagementRequest& request, const EnableProactiveEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetSubscriptionStateAsyncHelper(const Model::GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListAttacksAsyncHelper(const Model::ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProtectionGroupsAsyncHelper(const Model::ListProtectionGroupsRequest& request, const ListProtectionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListProtectionsAsyncHelper(const Model::ListProtectionsRequest& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListResourcesInProtectionGroupAsyncHelper(const Model::ListResourcesInProtectionGroupRequest& request, const ListResourcesInProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateApplicationLayerAutomaticResponseAsyncHelper(const Model::UpdateApplicationLayerAutomaticResponseRequest& request, const UpdateApplicationLayerAutomaticResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateEmergencyContactSettingsAsyncHelper(const Model::UpdateEmergencyContactSettingsRequest& request, const UpdateEmergencyContactSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateProtectionGroupAsyncHelper(const Model::UpdateProtectionGroupRequest& request, const UpdateProtectionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void UpdateSubscriptionAsyncHelper(const Model::UpdateSubscriptionRequest& request, const UpdateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

@@ -145,10 +145,10 @@ namespace Model
   private:
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_checkedTime;
-    bool m_checkedTimeHasBeenSet;
+    bool m_checkedTimeHasBeenSet = false;
   };
 
 } // namespace Model

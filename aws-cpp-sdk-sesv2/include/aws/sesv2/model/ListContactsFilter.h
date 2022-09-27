@@ -109,10 +109,10 @@ namespace Model
   private:
 
     SubscriptionStatus m_filteredStatus;
-    bool m_filteredStatusHasBeenSet;
+    bool m_filteredStatusHasBeenSet = false;
 
     TopicFilter m_topicFilter;
-    bool m_topicFilterHasBeenSet;
+    bool m_topicFilterHasBeenSet = false;
   };
 
 } // namespace Model

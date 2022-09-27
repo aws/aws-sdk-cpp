@@ -64,7 +64,7 @@ namespace Model
   private:
 
     bool m_sendingEnabled;
-    bool m_sendingEnabledHasBeenSet;
+    bool m_sendingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

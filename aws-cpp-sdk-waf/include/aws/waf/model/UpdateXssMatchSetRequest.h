@@ -228,13 +228,13 @@ namespace Model
   private:
 
     Aws::String m_xssMatchSetId;
-    bool m_xssMatchSetIdHasBeenSet;
+    bool m_xssMatchSetIdHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
 
     Aws::Vector<XssMatchSetUpdate> m_updates;
-    bool m_updatesHasBeenSet;
+    bool m_updatesHasBeenSet = false;
   };
 
 } // namespace Model

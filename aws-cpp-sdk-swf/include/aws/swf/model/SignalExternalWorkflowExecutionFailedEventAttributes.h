@@ -322,22 +322,22 @@ namespace Model
   private:
 
     Aws::String m_workflowId;
-    bool m_workflowIdHasBeenSet;
+    bool m_workflowIdHasBeenSet = false;
 
     Aws::String m_runId;
-    bool m_runIdHasBeenSet;
+    bool m_runIdHasBeenSet = false;
 
     SignalExternalWorkflowExecutionFailedCause m_cause;
-    bool m_causeHasBeenSet;
+    bool m_causeHasBeenSet = false;
 
     long long m_initiatedEventId;
-    bool m_initiatedEventIdHasBeenSet;
+    bool m_initiatedEventIdHasBeenSet = false;
 
     long long m_decisionTaskCompletedEventId;
-    bool m_decisionTaskCompletedEventIdHasBeenSet;
+    bool m_decisionTaskCompletedEventIdHasBeenSet = false;
 
     Aws::String m_control;
-    bool m_controlHasBeenSet;
+    bool m_controlHasBeenSet = false;
   };
 
 } // namespace Model

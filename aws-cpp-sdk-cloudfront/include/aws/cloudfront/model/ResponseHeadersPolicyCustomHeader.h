@@ -148,13 +148,13 @@ namespace Model
   private:
 
     Aws::String m_header;
-    bool m_headerHasBeenSet;
+    bool m_headerHasBeenSet = false;
 
     Aws::String m_value;
-    bool m_valueHasBeenSet;
+    bool m_valueHasBeenSet = false;
 
     bool m_override;
-    bool m_overrideHasBeenSet;
+    bool m_overrideHasBeenSet = false;
   };
 
 } // namespace Model

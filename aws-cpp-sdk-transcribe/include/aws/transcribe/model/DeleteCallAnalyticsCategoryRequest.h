@@ -85,7 +85,7 @@ namespace Model
   private:
 
     Aws::String m_categoryName;
-    bool m_categoryNameHasBeenSet;
+    bool m_categoryNameHasBeenSet = false;
   };
 
 } // namespace Model

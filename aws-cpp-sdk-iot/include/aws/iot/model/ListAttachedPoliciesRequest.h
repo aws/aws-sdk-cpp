@@ -204,16 +204,16 @@ namespace Model
   private:
 
     Aws::String m_target;
-    bool m_targetHasBeenSet;
+    bool m_targetHasBeenSet = false;
 
     bool m_recursive;
-    bool m_recursiveHasBeenSet;
+    bool m_recursiveHasBeenSet = false;
 
     Aws::String m_marker;
-    bool m_markerHasBeenSet;
+    bool m_markerHasBeenSet = false;
 
     int m_pageSize;
-    bool m_pageSizeHasBeenSet;
+    bool m_pageSizeHasBeenSet = false;
   };
 
 } // namespace Model

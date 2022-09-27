@@ -158,16 +158,16 @@ namespace Model
   private:
 
     bool m_facetable;
-    bool m_facetableHasBeenSet;
+    bool m_facetableHasBeenSet = false;
 
     bool m_searchable;
-    bool m_searchableHasBeenSet;
+    bool m_searchableHasBeenSet = false;
 
     bool m_displayable;
-    bool m_displayableHasBeenSet;
+    bool m_displayableHasBeenSet = false;
 
     bool m_sortable;
-    bool m_sortableHasBeenSet;
+    bool m_sortableHasBeenSet = false;
   };
 
 } // namespace Model

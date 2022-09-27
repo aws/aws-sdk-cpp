@@ -27,7 +27,9 @@ StudioComponent::StudioComponent() :
     m_ec2SecurityGroupIdsHasBeenSet(false),
     m_initializationScriptsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_runtimeRoleArnHasBeenSet(false),
     m_scriptParametersHasBeenSet(false),
+    m_secureInitializationRoleArnHasBeenSet(false),
     m_state(StudioComponentState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusCode(StudioComponentStatusCode::NOT_SET),
@@ -53,7 +55,9 @@ StudioComponent::StudioComponent(JsonView jsonValue) :
     m_ec2SecurityGroupIdsHasBeenSet(false),
     m_initializationScriptsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_runtimeRoleArnHasBeenSet(false),
     m_scriptParametersHasBeenSet(false),
+    m_secureInitializationRoleArnHasBeenSet(false),
     m_state(StudioComponentState::NOT_SET),
     m_stateHasBeenSet(false),
     m_statusCode(StudioComponentStatusCode::NOT_SET),
@@ -135,6 +139,13 @@ StudioComponent& StudioComponent::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("runtimeRoleArn"))
+  {
+    m_runtimeRoleArn = jsonValue.GetString("runtimeRoleArn");
+
+    m_runtimeRoleArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("scriptParameters"))
   {
     Array<JsonView> scriptParametersJsonList = jsonValue.GetArray("scriptParameters");
@@ -143,6 +154,13 @@ StudioComponent& StudioComponent::operator =(JsonView jsonValue)
       m_scriptParameters.push_back(scriptParametersJsonList[scriptParametersIndex].AsObject());
     }
     m_scriptParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("secureInitializationRoleArn"))
+  {
+    m_secureInitializationRoleArn = jsonValue.GetString("secureInitializationRoleArn");
+
+    m_secureInitializationRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -232,7 +250,7 @@ JsonValue StudioComponent::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_createdByHasBeenSet)
@@ -275,6 +293,12 @@ JsonValue StudioComponent::Jsonize() const
 
   }
 
+  if(m_runtimeRoleArnHasBeenSet)
+  {
+   payload.WithString("runtimeRoleArn", m_runtimeRoleArn);
+
+  }
+
   if(m_scriptParametersHasBeenSet)
   {
    Array<JsonValue> scriptParametersJsonList(m_scriptParameters.size());
@@ -283,6 +307,12 @@ JsonValue StudioComponent::Jsonize() const
      scriptParametersJsonList[scriptParametersIndex].AsObject(m_scriptParameters[scriptParametersIndex].Jsonize());
    }
    payload.WithArray("scriptParameters", std::move(scriptParametersJsonList));
+
+  }
+
+  if(m_secureInitializationRoleArnHasBeenSet)
+  {
+   payload.WithString("secureInitializationRoleArn", m_secureInitializationRoleArn);
 
   }
 
@@ -331,7 +361,7 @@ JsonValue StudioComponent::Jsonize() const
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_updatedByHasBeenSet)

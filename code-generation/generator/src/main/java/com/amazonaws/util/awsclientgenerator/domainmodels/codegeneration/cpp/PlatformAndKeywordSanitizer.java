@@ -5,18 +5,32 @@
 
 package com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp;
 
+import com.google.common.collect.ImmutableMap;
+
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.List;
-import java.util.Arrays;
 
 public class PlatformAndKeywordSanitizer {
     private static final Set<String> FORBIDDEN_WORDS;
 
-    private static final Map<Character,Character> ENUM_CHARS_MAPPING;
+    private static final Map<String, String> ENUM_CHARS_MAPPING =
+            ImmutableMap.<String, String>builder()
+                    .put("-", "_")
+                    .put("+", "_")
+                    .put(":", "_")
+                    .put(".", "_")
+                    .put(",", "_COMMA_")
+                    .put("*", "_")
+                    .put("/", "_")
+                    .put("(", "_")
+                    .put(")", "_")
+                    .put(" ", "_")
+                    .build();
 
     private static final Map<String, List<String>> PREDEFINED_SYMBOLS_MAPPING;
 
@@ -140,19 +154,6 @@ public class PlatformAndKeywordSanitizer {
     }
 
     static {
-        Map<Character,Character> mapping = new HashMap<>();
-        mapping.put('-', '_');
-        mapping.put(':', '_');
-        mapping.put('.', '_');
-        mapping.put('*', '_');
-        mapping.put('/', '_');
-        mapping.put('(', '_');
-        mapping.put(')', '_');
-        mapping.put(' ', '_');
-        ENUM_CHARS_MAPPING = Collections.unmodifiableMap(mapping);
-    }
-
-    static {
         Map<String, List<String>> mapping = new HashMap<String, List<String>>();
         mapping.put("DynamoDB", Arrays.asList("IN"));
         mapping.put("EC2", Arrays.asList("interface"));
@@ -164,7 +165,7 @@ public class PlatformAndKeywordSanitizer {
     public static String fixEnumValue (String enumValue) {
         String enumMemberName = enumValue;
 
-        for (Character invalid : ENUM_CHARS_MAPPING.keySet()) {
+        for (String invalid : ENUM_CHARS_MAPPING.keySet()) {
             enumMemberName = enumMemberName.replace(invalid, ENUM_CHARS_MAPPING.get(invalid));
         }
 

@@ -245,22 +245,22 @@ namespace Model
   private:
 
     Aws::String m_clusterIdentifier;
-    bool m_clusterIdentifierHasBeenSet;
+    bool m_clusterIdentifierHasBeenSet = false;
 
     bool m_deferMaintenance;
-    bool m_deferMaintenanceHasBeenSet;
+    bool m_deferMaintenanceHasBeenSet = false;
 
     Aws::String m_deferMaintenanceIdentifier;
-    bool m_deferMaintenanceIdentifierHasBeenSet;
+    bool m_deferMaintenanceIdentifierHasBeenSet = false;
 
     Aws::Utils::DateTime m_deferMaintenanceStartTime;
-    bool m_deferMaintenanceStartTimeHasBeenSet;
+    bool m_deferMaintenanceStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_deferMaintenanceEndTime;
-    bool m_deferMaintenanceEndTimeHasBeenSet;
+    bool m_deferMaintenanceEndTimeHasBeenSet = false;
 
     int m_deferMaintenanceDuration;
-    bool m_deferMaintenanceDurationHasBeenSet;
+    bool m_deferMaintenanceDurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -328,25 +328,25 @@ namespace Model
   private:
 
     Aws::String m_cidrBlock;
-    bool m_cidrBlockHasBeenSet;
+    bool m_cidrBlockHasBeenSet = false;
 
     Aws::Vector<Ipv6CidrBlock> m_ipv6CidrBlockSet;
-    bool m_ipv6CidrBlockSetHasBeenSet;
+    bool m_ipv6CidrBlockSetHasBeenSet = false;
 
     Aws::Vector<CidrBlock> m_cidrBlockSet;
-    bool m_cidrBlockSetHasBeenSet;
+    bool m_cidrBlockSetHasBeenSet = false;
 
     Aws::String m_ownerId;
-    bool m_ownerIdHasBeenSet;
+    bool m_ownerIdHasBeenSet = false;
 
     VpcPeeringConnectionOptionsDescription m_peeringOptions;
-    bool m_peeringOptionsHasBeenSet;
+    bool m_peeringOptionsHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
 
     Aws::String m_region;
-    bool m_regionHasBeenSet;
+    bool m_regionHasBeenSet = false;
   };
 
 } // namespace Model

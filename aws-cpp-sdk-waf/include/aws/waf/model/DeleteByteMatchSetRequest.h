@@ -134,10 +134,10 @@ namespace Model
   private:
 
     Aws::String m_byteMatchSetId;
-    bool m_byteMatchSetIdHasBeenSet;
+    bool m_byteMatchSetIdHasBeenSet = false;
 
     Aws::String m_changeToken;
-    bool m_changeTokenHasBeenSet;
+    bool m_changeTokenHasBeenSet = false;
   };
 
 } // namespace Model

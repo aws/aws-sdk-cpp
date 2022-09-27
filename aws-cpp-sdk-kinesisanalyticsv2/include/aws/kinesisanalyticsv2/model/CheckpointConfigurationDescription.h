@@ -226,16 +226,16 @@ namespace Model
   private:
 
     ConfigurationType m_configurationType;
-    bool m_configurationTypeHasBeenSet;
+    bool m_configurationTypeHasBeenSet = false;
 
     bool m_checkpointingEnabled;
-    bool m_checkpointingEnabledHasBeenSet;
+    bool m_checkpointingEnabledHasBeenSet = false;
 
     long long m_checkpointInterval;
-    bool m_checkpointIntervalHasBeenSet;
+    bool m_checkpointIntervalHasBeenSet = false;
 
     long long m_minPauseBetweenCheckpoints;
-    bool m_minPauseBetweenCheckpointsHasBeenSet;
+    bool m_minPauseBetweenCheckpointsHasBeenSet = false;
   };
 
 } // namespace Model

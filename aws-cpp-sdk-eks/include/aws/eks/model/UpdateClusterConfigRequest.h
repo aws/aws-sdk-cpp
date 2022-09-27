@@ -225,16 +225,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     VpcConfigRequest m_resourcesVpcConfig;
-    bool m_resourcesVpcConfigHasBeenSet;
+    bool m_resourcesVpcConfigHasBeenSet = false;
 
     Logging m_logging;
-    bool m_loggingHasBeenSet;
+    bool m_loggingHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
-    bool m_clientRequestTokenHasBeenSet;
+    bool m_clientRequestTokenHasBeenSet = false;
   };
 
 } // namespace Model

@@ -119,10 +119,10 @@ namespace Model
   private:
 
     Aws::String m_thingName;
-    bool m_thingNameHasBeenSet;
+    bool m_thingNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_associationTimestamp;
-    bool m_associationTimestampHasBeenSet;
+    bool m_associationTimestampHasBeenSet = false;
   };
 
 } // namespace Model

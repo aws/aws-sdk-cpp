@@ -282,22 +282,22 @@ namespace Model
   private:
 
     Aws::String m_clientVpnEndpointId;
-    bool m_clientVpnEndpointIdHasBeenSet;
+    bool m_clientVpnEndpointIdHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_groupId;
-    bool m_groupIdHasBeenSet;
+    bool m_groupIdHasBeenSet = false;
 
     bool m_accessAll;
-    bool m_accessAllHasBeenSet;
+    bool m_accessAllHasBeenSet = false;
 
     Aws::String m_destinationCidr;
-    bool m_destinationCidrHasBeenSet;
+    bool m_destinationCidrHasBeenSet = false;
 
     ClientVpnAuthorizationRuleStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -152,16 +152,16 @@ namespace Model
   private:
 
     long long m_boundedSize;
-    bool m_boundedSizeHasBeenSet;
+    bool m_boundedSizeHasBeenSet = false;
 
     long long m_boundedFiles;
-    bool m_boundedFilesHasBeenSet;
+    bool m_boundedFilesHasBeenSet = false;
 
     bool m_enableSamplePath;
-    bool m_enableSamplePathHasBeenSet;
+    bool m_enableSamplePathHasBeenSet = false;
 
     Aws::String m_samplePath;
-    bool m_samplePathHasBeenSet;
+    bool m_samplePathHasBeenSet = false;
   };
 
 } // namespace Model

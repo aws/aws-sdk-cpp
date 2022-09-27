@@ -108,10 +108,10 @@ namespace Model
   private:
 
     Aws::String m_flowName;
-    bool m_flowNameHasBeenSet;
+    bool m_flowNameHasBeenSet = false;
 
     bool m_forceDelete;
-    bool m_forceDeleteHasBeenSet;
+    bool m_forceDeleteHasBeenSet = false;
   };
 
 } // namespace Model

@@ -138,10 +138,10 @@ namespace Model
   private:
 
     Aws::String m_resourceARN;
-    bool m_resourceARNHasBeenSet;
+    bool m_resourceARNHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
-    bool m_tagListHasBeenSet;
+    bool m_tagListHasBeenSet = false;
   };
 
 } // namespace Model

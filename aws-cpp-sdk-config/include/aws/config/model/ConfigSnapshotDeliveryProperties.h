@@ -98,7 +98,7 @@ namespace Model
   private:
 
     MaximumExecutionFrequency m_deliveryFrequency;
-    bool m_deliveryFrequencyHasBeenSet;
+    bool m_deliveryFrequencyHasBeenSet = false;
   };
 
 } // namespace Model

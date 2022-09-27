@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_stackId;
-    bool m_stackIdHasBeenSet;
+    bool m_stackIdHasBeenSet = false;
   };
 
 } // namespace Model

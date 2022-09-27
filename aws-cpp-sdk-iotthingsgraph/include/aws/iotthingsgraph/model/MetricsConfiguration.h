@@ -102,10 +102,10 @@ namespace Model
   private:
 
     bool m_cloudMetricEnabled;
-    bool m_cloudMetricEnabledHasBeenSet;
+    bool m_cloudMetricEnabledHasBeenSet = false;
 
     Aws::String m_metricRuleRoleArn;
-    bool m_metricRuleRoleArnHasBeenSet;
+    bool m_metricRuleRoleArnHasBeenSet = false;
   };
 
 } // namespace Model

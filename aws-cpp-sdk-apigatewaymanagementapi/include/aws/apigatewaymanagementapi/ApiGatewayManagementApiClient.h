@@ -5,72 +5,15 @@
 
 #pragma once
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApi_EXPORTS.h>
-#include <aws/apigatewaymanagementapi/ApiGatewayManagementApiErrors.h>
-#include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSClient.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/apigatewaymanagementapi/model/GetConnectionResult.h>
-#include <aws/core/NoResult.h>
-#include <aws/core/client/AsyncCallerContext.h>
-#include <aws/core/http/HttpTypes.h>
-#include <future>
-#include <functional>
+#include <aws/apigatewaymanagementapi/ApiGatewayManagementApiServiceClientModel.h>
 
 namespace Aws
 {
-
-namespace Http
-{
-  class HttpClient;
-  class HttpClientFactory;
-} // namespace Http
-
-namespace Utils
-{
-  template< typename R, typename E> class Outcome;
-namespace Threading
-{
-  class Executor;
-} // namespace Threading
-} // namespace Utils
-
-namespace Auth
-{
-  class AWSCredentials;
-  class AWSCredentialsProvider;
-} // namespace Auth
-
-namespace Client
-{
-  class RetryStrategy;
-} // namespace Client
-
 namespace ApiGatewayManagementApi
 {
-
-namespace Model
-{
-        class DeleteConnectionRequest;
-        class GetConnectionRequest;
-        class PostToConnectionRequest;
-
-        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayManagementApiError> DeleteConnectionOutcome;
-        typedef Aws::Utils::Outcome<GetConnectionResult, ApiGatewayManagementApiError> GetConnectionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayManagementApiError> PostToConnectionOutcome;
-
-        typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
-        typedef std::future<GetConnectionOutcome> GetConnectionOutcomeCallable;
-        typedef std::future<PostToConnectionOutcome> PostToConnectionOutcomeCallable;
-} // namespace Model
-
-  class ApiGatewayManagementApiClient;
-
-    typedef std::function<void(const ApiGatewayManagementApiClient*, const Model::DeleteConnectionRequest&, const Model::DeleteConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectionResponseReceivedHandler;
-    typedef std::function<void(const ApiGatewayManagementApiClient*, const Model::GetConnectionRequest&, const Model::GetConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectionResponseReceivedHandler;
-    typedef std::function<void(const ApiGatewayManagementApiClient*, const Model::PostToConnectionRequest&, const Model::PostToConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostToConnectionResponseReceivedHandler;
-
   /**
    * <p>The Amazon API Gateway Management API allows you to directly manage runtime
    * aspects of your deployed APIs. To use it, you must explicitly set the SDK's
@@ -94,14 +37,15 @@ namespace Model
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ApiGatewayManagementApiClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ApiGatewayManagementApiClient(const Aws::Auth::AWSCredentials& credentials,
+                                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ApiGatewayManagementApiClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
         virtual ~ApiGatewayManagementApiClient();
 
@@ -163,9 +107,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void DeleteConnectionAsyncHelper(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetConnectionAsyncHelper(const Model::GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void PostToConnectionAsyncHelper(const Model::PostToConnectionRequest& request, const PostToConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

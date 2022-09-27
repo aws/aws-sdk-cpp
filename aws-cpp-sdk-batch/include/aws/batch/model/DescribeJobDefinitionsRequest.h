@@ -353,19 +353,19 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_jobDefinitions;
-    bool m_jobDefinitionsHasBeenSet;
+    bool m_jobDefinitionsHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_jobDefinitionName;
-    bool m_jobDefinitionNameHasBeenSet;
+    bool m_jobDefinitionNameHasBeenSet = false;
 
     Aws::String m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
   };
 
 } // namespace Model

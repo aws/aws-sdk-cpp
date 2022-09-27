@@ -19,14 +19,18 @@ namespace Model
 {
 
 LaunchProfileInitializationScript::LaunchProfileInitializationScript() : 
+    m_runtimeRoleArnHasBeenSet(false),
     m_scriptHasBeenSet(false),
+    m_secureInitializationRoleArnHasBeenSet(false),
     m_studioComponentIdHasBeenSet(false),
     m_studioComponentNameHasBeenSet(false)
 {
 }
 
 LaunchProfileInitializationScript::LaunchProfileInitializationScript(JsonView jsonValue) : 
+    m_runtimeRoleArnHasBeenSet(false),
     m_scriptHasBeenSet(false),
+    m_secureInitializationRoleArnHasBeenSet(false),
     m_studioComponentIdHasBeenSet(false),
     m_studioComponentNameHasBeenSet(false)
 {
@@ -35,11 +39,25 @@ LaunchProfileInitializationScript::LaunchProfileInitializationScript(JsonView js
 
 LaunchProfileInitializationScript& LaunchProfileInitializationScript::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("runtimeRoleArn"))
+  {
+    m_runtimeRoleArn = jsonValue.GetString("runtimeRoleArn");
+
+    m_runtimeRoleArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("script"))
   {
     m_script = jsonValue.GetString("script");
 
     m_scriptHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("secureInitializationRoleArn"))
+  {
+    m_secureInitializationRoleArn = jsonValue.GetString("secureInitializationRoleArn");
+
+    m_secureInitializationRoleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("studioComponentId"))
@@ -63,9 +81,21 @@ JsonValue LaunchProfileInitializationScript::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_runtimeRoleArnHasBeenSet)
+  {
+   payload.WithString("runtimeRoleArn", m_runtimeRoleArn);
+
+  }
+
   if(m_scriptHasBeenSet)
   {
    payload.WithString("script", m_script);
+
+  }
+
+  if(m_secureInitializationRoleArnHasBeenSet)
+  {
+   payload.WithString("secureInitializationRoleArn", m_secureInitializationRoleArn);
 
   }
 

@@ -148,10 +148,10 @@ namespace Model
   private:
 
     ChangeAction m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     ActivatedRule m_activatedRule;
-    bool m_activatedRuleHasBeenSet;
+    bool m_activatedRuleHasBeenSet = false;
   };
 
 } // namespace Model

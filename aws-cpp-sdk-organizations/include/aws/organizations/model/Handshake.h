@@ -584,28 +584,28 @@ namespace Model
   private:
 
     Aws::String m_id;
-    bool m_idHasBeenSet;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::Vector<HandshakeParty> m_parties;
-    bool m_partiesHasBeenSet;
+    bool m_partiesHasBeenSet = false;
 
     HandshakeState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
 
     Aws::Utils::DateTime m_requestedTimestamp;
-    bool m_requestedTimestampHasBeenSet;
+    bool m_requestedTimestampHasBeenSet = false;
 
     Aws::Utils::DateTime m_expirationTimestamp;
-    bool m_expirationTimestampHasBeenSet;
+    bool m_expirationTimestampHasBeenSet = false;
 
     ActionType m_action;
-    bool m_actionHasBeenSet;
+    bool m_actionHasBeenSet = false;
 
     Aws::Vector<HandshakeResource> m_resources;
-    bool m_resourcesHasBeenSet;
+    bool m_resourcesHasBeenSet = false;
   };
 
 } // namespace Model

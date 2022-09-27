@@ -170,13 +170,13 @@ namespace Model
   private:
 
     Aws::String m_jobId;
-    bool m_jobIdHasBeenSet;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet;
+    bool m_clientTokenHasBeenSet = false;
 
     FailureDetails m_failureDetails;
-    bool m_failureDetailsHasBeenSet;
+    bool m_failureDetailsHasBeenSet = false;
   };
 
 } // namespace Model

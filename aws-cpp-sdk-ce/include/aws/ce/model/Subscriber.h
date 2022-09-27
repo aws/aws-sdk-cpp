@@ -153,13 +153,13 @@ namespace Model
   private:
 
     Aws::String m_address;
-    bool m_addressHasBeenSet;
+    bool m_addressHasBeenSet = false;
 
     SubscriberType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     SubscriberStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

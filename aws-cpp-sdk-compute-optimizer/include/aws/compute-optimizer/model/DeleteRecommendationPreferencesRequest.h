@@ -232,13 +232,13 @@ namespace Model
   private:
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     Scope m_scope;
-    bool m_scopeHasBeenSet;
+    bool m_scopeHasBeenSet = false;
 
     Aws::Vector<RecommendationPreferenceName> m_recommendationPreferenceNames;
-    bool m_recommendationPreferenceNamesHasBeenSet;
+    bool m_recommendationPreferenceNamesHasBeenSet = false;
   };
 
 } // namespace Model

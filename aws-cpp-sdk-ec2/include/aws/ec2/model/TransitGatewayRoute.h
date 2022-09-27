@@ -127,6 +127,47 @@ namespace Model
 
 
     /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline const Aws::String& GetTransitGatewayRouteTableAnnouncementId() const{ return m_transitGatewayRouteTableAnnouncementId; }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline bool TransitGatewayRouteTableAnnouncementIdHasBeenSet() const { return m_transitGatewayRouteTableAnnouncementIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline void SetTransitGatewayRouteTableAnnouncementId(const Aws::String& value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId = value; }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline void SetTransitGatewayRouteTableAnnouncementId(Aws::String&& value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId = std::move(value); }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline void SetTransitGatewayRouteTableAnnouncementId(const char* value) { m_transitGatewayRouteTableAnnouncementIdHasBeenSet = true; m_transitGatewayRouteTableAnnouncementId.assign(value); }
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline TransitGatewayRoute& WithTransitGatewayRouteTableAnnouncementId(const Aws::String& value) { SetTransitGatewayRouteTableAnnouncementId(value); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline TransitGatewayRoute& WithTransitGatewayRouteTableAnnouncementId(Aws::String&& value) { SetTransitGatewayRouteTableAnnouncementId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway route table announcement. </p>
+     */
+    inline TransitGatewayRoute& WithTransitGatewayRouteTableAnnouncementId(const char* value) { SetTransitGatewayRouteTableAnnouncementId(value); return *this;}
+
+
+    /**
      * <p>The attachments.</p>
      */
     inline const Aws::Vector<TransitGatewayRouteAttachment>& GetTransitGatewayAttachments() const{ return m_transitGatewayAttachments; }
@@ -231,19 +272,22 @@ namespace Model
   private:
 
     Aws::String m_destinationCidrBlock;
-    bool m_destinationCidrBlockHasBeenSet;
+    bool m_destinationCidrBlockHasBeenSet = false;
 
     Aws::String m_prefixListId;
-    bool m_prefixListIdHasBeenSet;
+    bool m_prefixListIdHasBeenSet = false;
+
+    Aws::String m_transitGatewayRouteTableAnnouncementId;
+    bool m_transitGatewayRouteTableAnnouncementIdHasBeenSet = false;
 
     Aws::Vector<TransitGatewayRouteAttachment> m_transitGatewayAttachments;
-    bool m_transitGatewayAttachmentsHasBeenSet;
+    bool m_transitGatewayAttachmentsHasBeenSet = false;
 
     TransitGatewayRouteType m_type;
-    bool m_typeHasBeenSet;
+    bool m_typeHasBeenSet = false;
 
     TransitGatewayRouteState m_state;
-    bool m_stateHasBeenSet;
+    bool m_stateHasBeenSet = false;
   };
 
 } // namespace Model

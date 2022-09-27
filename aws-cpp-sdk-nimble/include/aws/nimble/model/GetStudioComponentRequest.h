@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_studioComponentId;
-    bool m_studioComponentIdHasBeenSet;
+    bool m_studioComponentIdHasBeenSet = false;
 
     Aws::String m_studioId;
-    bool m_studioIdHasBeenSet;
+    bool m_studioIdHasBeenSet = false;
   };
 
 } // namespace Model

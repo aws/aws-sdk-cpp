@@ -335,25 +335,25 @@ namespace Model
   private:
 
     Aws::String m_layerVersionArn;
-    bool m_layerVersionArnHasBeenSet;
+    bool m_layerVersionArnHasBeenSet = false;
 
     long long m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_createdDate;
-    bool m_createdDateHasBeenSet;
+    bool m_createdDateHasBeenSet = false;
 
     Aws::Vector<Runtime> m_compatibleRuntimes;
-    bool m_compatibleRuntimesHasBeenSet;
+    bool m_compatibleRuntimesHasBeenSet = false;
 
     Aws::String m_licenseInfo;
-    bool m_licenseInfoHasBeenSet;
+    bool m_licenseInfoHasBeenSet = false;
 
     Aws::Vector<Architecture> m_compatibleArchitectures;
-    bool m_compatibleArchitecturesHasBeenSet;
+    bool m_compatibleArchitecturesHasBeenSet = false;
   };
 
 } // namespace Model

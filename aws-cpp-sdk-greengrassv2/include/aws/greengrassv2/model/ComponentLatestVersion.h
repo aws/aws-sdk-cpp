@@ -301,22 +301,22 @@ namespace Model
   private:
 
     Aws::String m_arn;
-    bool m_arnHasBeenSet;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_componentVersion;
-    bool m_componentVersionHasBeenSet;
+    bool m_componentVersionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTimestamp;
-    bool m_creationTimestampHasBeenSet;
+    bool m_creationTimestampHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_publisher;
-    bool m_publisherHasBeenSet;
+    bool m_publisherHasBeenSet = false;
 
     Aws::Vector<ComponentPlatform> m_platforms;
-    bool m_platformsHasBeenSet;
+    bool m_platformsHasBeenSet = false;
   };
 
 } // namespace Model

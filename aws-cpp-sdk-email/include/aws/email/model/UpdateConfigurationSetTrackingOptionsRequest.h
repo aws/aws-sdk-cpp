@@ -111,10 +111,10 @@ namespace Model
   private:
 
     Aws::String m_configurationSetName;
-    bool m_configurationSetNameHasBeenSet;
+    bool m_configurationSetNameHasBeenSet = false;
 
     TrackingOptions m_trackingOptions;
-    bool m_trackingOptionsHasBeenSet;
+    bool m_trackingOptionsHasBeenSet = false;
   };
 
 } // namespace Model

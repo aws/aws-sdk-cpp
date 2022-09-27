@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>Provides information about origin groups that are associated with the
-   * distribution.</p><p><h3>See Also:</h3>   <a
+   * CloudFront distribution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOriginGroups">AWS
    * API Reference</a></p>
    */
@@ -82,7 +82,7 @@ namespace Model
   private:
 
     Aws::Vector<AwsCloudFrontDistributionOriginGroup> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

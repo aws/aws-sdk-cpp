@@ -5,6 +5,7 @@
 
 #include <aws/lookoutvision/model/DetectAnomalyResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 
@@ -23,7 +24,9 @@ DetectAnomalyResult::DetectAnomalyResult() :
     m_isAnomalous(false),
     m_isAnomalousHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_anomaliesHasBeenSet(false),
+    m_anomalyMaskHasBeenSet(false)
 {
 }
 
@@ -32,7 +35,9 @@ DetectAnomalyResult::DetectAnomalyResult(JsonView jsonValue) :
     m_isAnomalous(false),
     m_isAnomalousHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_anomaliesHasBeenSet(false),
+    m_anomalyMaskHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +65,22 @@ DetectAnomalyResult& DetectAnomalyResult::operator =(JsonView jsonValue)
     m_confidenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Anomalies"))
+  {
+    Array<JsonView> anomaliesJsonList = jsonValue.GetArray("Anomalies");
+    for(unsigned anomaliesIndex = 0; anomaliesIndex < anomaliesJsonList.GetLength(); ++anomaliesIndex)
+    {
+      m_anomalies.push_back(anomaliesJsonList[anomaliesIndex].AsObject());
+    }
+    m_anomaliesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AnomalyMask"))
+  {
+    m_anomalyMask = HashingUtils::Base64Decode(jsonValue.GetString("AnomalyMask"));
+    m_anomalyMaskHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -83,6 +104,22 @@ JsonValue DetectAnomalyResult::Jsonize() const
   {
    payload.WithDouble("Confidence", m_confidence);
 
+  }
+
+  if(m_anomaliesHasBeenSet)
+  {
+   Array<JsonValue> anomaliesJsonList(m_anomalies.size());
+   for(unsigned anomaliesIndex = 0; anomaliesIndex < anomaliesJsonList.GetLength(); ++anomaliesIndex)
+   {
+     anomaliesJsonList[anomaliesIndex].AsObject(m_anomalies[anomaliesIndex].Jsonize());
+   }
+   payload.WithArray("Anomalies", std::move(anomaliesJsonList));
+
+  }
+
+  if(m_anomalyMaskHasBeenSet)
+  {
+   payload.WithString("AnomalyMask", HashingUtils::Base64Encode(m_anomalyMask));
   }
 
   return payload;

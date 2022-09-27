@@ -19,7 +19,8 @@ CreateAlertRequest::CreateAlertRequest() :
     m_alertDescriptionHasBeenSet(false),
     m_anomalyDetectorArnHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_alertFiltersHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,12 @@ Aws::String CreateAlertRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_alertFiltersHasBeenSet)
+  {
+   payload.WithObject("AlertFilters", m_alertFilters.Jsonize());
 
   }
 

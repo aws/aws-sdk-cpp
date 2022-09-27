@@ -227,13 +227,13 @@ namespace Model
   private:
 
     Aws::String m_vocabularyFilterName;
-    bool m_vocabularyFilterNameHasBeenSet;
+    bool m_vocabularyFilterNameHasBeenSet = false;
 
     LanguageCode m_languageCode;
-    bool m_languageCodeHasBeenSet;
+    bool m_languageCodeHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedTime;
-    bool m_lastModifiedTimeHasBeenSet;
+    bool m_lastModifiedTimeHasBeenSet = false;
   };
 
 } // namespace Model

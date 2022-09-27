@@ -133,10 +133,10 @@ namespace Model
   private:
 
     SuiteDefinitionConfiguration m_suiteDefinitionConfiguration;
-    bool m_suiteDefinitionConfigurationHasBeenSet;
+    bool m_suiteDefinitionConfigurationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

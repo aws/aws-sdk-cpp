@@ -198,16 +198,16 @@ namespace Model
   private:
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_repositoryName;
-    bool m_repositoryNameHasBeenSet;
+    bool m_repositoryNameHasBeenSet = false;
 
     RepositoryProvider m_repositoryProvider;
-    bool m_repositoryProviderHasBeenSet;
+    bool m_repositoryProviderHasBeenSet = false;
 
     SyncType m_syncType;
-    bool m_syncTypeHasBeenSet;
+    bool m_syncTypeHasBeenSet = false;
   };
 
 } // namespace Model

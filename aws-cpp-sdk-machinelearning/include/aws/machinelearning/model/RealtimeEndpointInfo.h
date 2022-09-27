@@ -222,16 +222,16 @@ namespace Model
   private:
 
     int m_peakRequestsPerSecond;
-    bool m_peakRequestsPerSecondHasBeenSet;
+    bool m_peakRequestsPerSecondHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_endpointUrl;
-    bool m_endpointUrlHasBeenSet;
+    bool m_endpointUrlHasBeenSet = false;
 
     RealtimeEndpointStatus m_endpointStatus;
-    bool m_endpointStatusHasBeenSet;
+    bool m_endpointStatusHasBeenSet = false;
   };
 
 } // namespace Model

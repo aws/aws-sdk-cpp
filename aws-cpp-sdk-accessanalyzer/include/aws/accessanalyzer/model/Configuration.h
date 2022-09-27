@@ -200,19 +200,19 @@ namespace Model
   private:
 
     IamRoleConfiguration m_iamRole;
-    bool m_iamRoleHasBeenSet;
+    bool m_iamRoleHasBeenSet = false;
 
     KmsKeyConfiguration m_kmsKey;
-    bool m_kmsKeyHasBeenSet;
+    bool m_kmsKeyHasBeenSet = false;
 
     S3BucketConfiguration m_s3Bucket;
-    bool m_s3BucketHasBeenSet;
+    bool m_s3BucketHasBeenSet = false;
 
     SecretsManagerSecretConfiguration m_secretsManagerSecret;
-    bool m_secretsManagerSecretHasBeenSet;
+    bool m_secretsManagerSecretHasBeenSet = false;
 
     SqsQueueConfiguration m_sqsQueue;
-    bool m_sqsQueueHasBeenSet;
+    bool m_sqsQueueHasBeenSet = false;
   };
 
 } // namespace Model

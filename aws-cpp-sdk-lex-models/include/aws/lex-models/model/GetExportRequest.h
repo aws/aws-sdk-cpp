@@ -186,16 +186,16 @@ namespace Model
   private:
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     ResourceType m_resourceType;
-    bool m_resourceTypeHasBeenSet;
+    bool m_resourceTypeHasBeenSet = false;
 
     ExportType m_exportType;
-    bool m_exportTypeHasBeenSet;
+    bool m_exportTypeHasBeenSet = false;
   };
 
 } // namespace Model

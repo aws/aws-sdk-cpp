@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about origins and origin groups for
-   * this distribution.</p><p><h3>See Also:</h3>   <a
+   * this CloudFront distribution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsCloudFrontDistributionOrigins">AWS
    * API Reference</a></p>
    */
@@ -90,7 +90,7 @@ namespace Model
   private:
 
     Aws::Vector<AwsCloudFrontDistributionOriginItem> m_items;
-    bool m_itemsHasBeenSet;
+    bool m_itemsHasBeenSet = false;
   };
 
 } // namespace Model

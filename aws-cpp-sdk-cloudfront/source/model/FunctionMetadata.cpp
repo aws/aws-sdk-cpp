@@ -60,13 +60,13 @@ FunctionMetadata& FunctionMetadata::operator =(const XmlNode& xmlNode)
     XmlNode createdTimeNode = resultNode.FirstChild("CreatedTime");
     if(!createdTimeNode.IsNull())
     {
-      m_createdTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_createdTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_createdTimeHasBeenSet = true;
     }
     XmlNode lastModifiedTimeNode = resultNode.FirstChild("LastModifiedTime");
     if(!lastModifiedTimeNode.IsNull())
     {
-      m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastModifiedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastModifiedTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastModifiedTimeHasBeenSet = true;
     }
   }
@@ -92,13 +92,13 @@ void FunctionMetadata::AddToNode(XmlNode& parentNode) const
   if(m_createdTimeHasBeenSet)
   {
    XmlNode createdTimeNode = parentNode.CreateChildElement("CreatedTime");
-   createdTimeNode.SetText(m_createdTime.ToGmtString(DateFormat::ISO_8601));
+   createdTimeNode.SetText(m_createdTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_lastModifiedTimeHasBeenSet)
   {
    XmlNode lastModifiedTimeNode = parentNode.CreateChildElement("LastModifiedTime");
-   lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(DateFormat::ISO_8601));
+   lastModifiedTimeNode.SetText(m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
 }

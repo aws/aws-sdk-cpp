@@ -253,19 +253,19 @@ namespace Model
   private:
 
     Aws::String m_functionName;
-    bool m_functionNameHasBeenSet;
+    bool m_functionNameHasBeenSet = false;
 
     Aws::String m_functionAlias;
-    bool m_functionAliasHasBeenSet;
+    bool m_functionAliasHasBeenSet = false;
 
     Aws::String m_currentVersion;
-    bool m_currentVersionHasBeenSet;
+    bool m_currentVersionHasBeenSet = false;
 
     Aws::String m_targetVersion;
-    bool m_targetVersionHasBeenSet;
+    bool m_targetVersionHasBeenSet = false;
 
     double m_targetVersionWeight;
-    bool m_targetVersionWeightHasBeenSet;
+    bool m_targetVersionWeightHasBeenSet = false;
   };
 
 } // namespace Model

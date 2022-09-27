@@ -105,13 +105,13 @@ namespace Model
   private:
 
     int m_translatedDocumentsCount;
-    bool m_translatedDocumentsCountHasBeenSet;
+    bool m_translatedDocumentsCountHasBeenSet = false;
 
     int m_documentsWithErrorsCount;
-    bool m_documentsWithErrorsCountHasBeenSet;
+    bool m_documentsWithErrorsCountHasBeenSet = false;
 
     int m_inputDocumentsCount;
-    bool m_inputDocumentsCountHasBeenSet;
+    bool m_inputDocumentsCountHasBeenSet = false;
   };
 
 } // namespace Model

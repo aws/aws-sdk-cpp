@@ -195,19 +195,19 @@ namespace Model
   private:
 
     HierarchyLevelUpdate m_levelOne;
-    bool m_levelOneHasBeenSet;
+    bool m_levelOneHasBeenSet = false;
 
     HierarchyLevelUpdate m_levelTwo;
-    bool m_levelTwoHasBeenSet;
+    bool m_levelTwoHasBeenSet = false;
 
     HierarchyLevelUpdate m_levelThree;
-    bool m_levelThreeHasBeenSet;
+    bool m_levelThreeHasBeenSet = false;
 
     HierarchyLevelUpdate m_levelFour;
-    bool m_levelFourHasBeenSet;
+    bool m_levelFourHasBeenSet = false;
 
     HierarchyLevelUpdate m_levelFive;
-    bool m_levelFiveHasBeenSet;
+    bool m_levelFiveHasBeenSet = false;
   };
 
 } // namespace Model

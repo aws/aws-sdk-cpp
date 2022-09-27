@@ -7,6 +7,7 @@
 #include <aws/codeartifact/CodeArtifact_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codeartifact/model/PackageVersionStatus.h>
+#include <aws/codeartifact/model/PackageVersionOrigin.h>
 #include <utility>
 
 namespace Aws
@@ -160,16 +161,68 @@ namespace Model
      */
     inline PackageVersionSummary& WithStatus(PackageVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a>
+     * object that contains information about how the package version was added to the
+     * repository.</p>
+     */
+    inline const PackageVersionOrigin& GetOrigin() const{ return m_origin; }
+
+    /**
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a>
+     * object that contains information about how the package version was added to the
+     * repository.</p>
+     */
+    inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
+
+    /**
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a>
+     * object that contains information about how the package version was added to the
+     * repository.</p>
+     */
+    inline void SetOrigin(const PackageVersionOrigin& value) { m_originHasBeenSet = true; m_origin = value; }
+
+    /**
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a>
+     * object that contains information about how the package version was added to the
+     * repository.</p>
+     */
+    inline void SetOrigin(PackageVersionOrigin&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
+
+    /**
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a>
+     * object that contains information about how the package version was added to the
+     * repository.</p>
+     */
+    inline PackageVersionSummary& WithOrigin(const PackageVersionOrigin& value) { SetOrigin(value); return *this;}
+
+    /**
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionOrigin.html">PackageVersionOrigin</a>
+     * object that contains information about how the package version was added to the
+     * repository.</p>
+     */
+    inline PackageVersionSummary& WithOrigin(PackageVersionOrigin&& value) { SetOrigin(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_version;
-    bool m_versionHasBeenSet;
+    bool m_versionHasBeenSet = false;
 
     Aws::String m_revision;
-    bool m_revisionHasBeenSet;
+    bool m_revisionHasBeenSet = false;
 
     PackageVersionStatus m_status;
-    bool m_statusHasBeenSet;
+    bool m_statusHasBeenSet = false;
+
+    PackageVersionOrigin m_origin;
+    bool m_originHasBeenSet = false;
   };
 
 } // namespace Model

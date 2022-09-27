@@ -195,13 +195,13 @@ namespace Model
   private:
 
     Aws::String m_directoryId;
-    bool m_directoryIdHasBeenSet;
+    bool m_directoryIdHasBeenSet = false;
 
     Aws::String m_remoteDomainName;
-    bool m_remoteDomainNameHasBeenSet;
+    bool m_remoteDomainNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsIpAddrs;
-    bool m_dnsIpAddrsHasBeenSet;
+    bool m_dnsIpAddrsHasBeenSet = false;
   };
 
 } // namespace Model

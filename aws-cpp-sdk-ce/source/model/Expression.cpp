@@ -39,6 +39,13 @@ Expression::Expression(JsonView jsonValue) :
   *this = jsonValue;
 }
 
+const Expression& Expression::GetNot() const{ return *m_not; }
+bool Expression::NotHasBeenSet() const { return m_notHasBeenSet; }
+void Expression::SetNot(const Expression& value) { m_notHasBeenSet = true; m_not = Aws::MakeShared<Expression>("Expression", value); }
+void Expression::SetNot(Expression&& value) { m_notHasBeenSet = true; m_not = Aws::MakeShared<Expression>("Expression", std::move(value)); }
+Expression& Expression::WithNot(const Expression& value) { SetNot(value); return *this;}
+Expression& Expression::WithNot(Expression&& value) { SetNot(std::move(value)); return *this;}
+
 Expression& Expression::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Or"))
@@ -63,8 +70,7 @@ Expression& Expression::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Not"))
   {
-    m_not.resize(1);
-    m_not[0] = jsonValue.GetObject("Not");
+    m_not = Aws::MakeShared<Expression>("Expression", jsonValue.GetObject("Not"));
 
     m_notHasBeenSet = true;
   }
@@ -121,7 +127,7 @@ JsonValue Expression::Jsonize() const
 
   if(m_notHasBeenSet)
   {
-   payload.WithObject("Not", m_not[0].Jsonize());
+   payload.WithObject("Not", m_not->Jsonize());
 
   }
 

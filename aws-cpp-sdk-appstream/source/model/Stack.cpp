@@ -31,7 +31,8 @@ Stack::Stack() :
     m_userSettingsHasBeenSet(false),
     m_applicationSettingsHasBeenSet(false),
     m_accessEndpointsHasBeenSet(false),
-    m_embedHostDomainsHasBeenSet(false)
+    m_embedHostDomainsHasBeenSet(false),
+    m_streamingExperienceSettingsHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ Stack::Stack(JsonView jsonValue) :
     m_userSettingsHasBeenSet(false),
     m_applicationSettingsHasBeenSet(false),
     m_accessEndpointsHasBeenSet(false),
-    m_embedHostDomainsHasBeenSet(false)
+    m_embedHostDomainsHasBeenSet(false),
+    m_streamingExperienceSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -161,6 +163,13 @@ Stack& Stack::operator =(JsonView jsonValue)
     m_embedHostDomainsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StreamingExperienceSettings"))
+  {
+    m_streamingExperienceSettings = jsonValue.GetObject("StreamingExperienceSettings");
+
+    m_streamingExperienceSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -267,6 +276,12 @@ JsonValue Stack::Jsonize() const
      embedHostDomainsJsonList[embedHostDomainsIndex].AsString(m_embedHostDomains[embedHostDomainsIndex]);
    }
    payload.WithArray("EmbedHostDomains", std::move(embedHostDomainsJsonList));
+
+  }
+
+  if(m_streamingExperienceSettingsHasBeenSet)
+  {
+   payload.WithObject("StreamingExperienceSettings", m_streamingExperienceSettings.Jsonize());
 
   }
 

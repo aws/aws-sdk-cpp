@@ -23,6 +23,8 @@ namespace Aws
         static const int SignIn_HASH = HashingUtils::HashString("SignIn");
         static const int SignUp_HASH = HashingUtils::HashString("SignUp");
         static const int ForgotPassword_HASH = HashingUtils::HashString("ForgotPassword");
+        static const int PasswordChange_HASH = HashingUtils::HashString("PasswordChange");
+        static const int ResendCode_HASH = HashingUtils::HashString("ResendCode");
 
 
         EventType GetEventTypeForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           else if (hashCode == ForgotPassword_HASH)
           {
             return EventType::ForgotPassword;
+          }
+          else if (hashCode == PasswordChange_HASH)
+          {
+            return EventType::PasswordChange;
+          }
+          else if (hashCode == ResendCode_HASH)
+          {
+            return EventType::ResendCode;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +70,10 @@ namespace Aws
             return "SignUp";
           case EventType::ForgotPassword:
             return "ForgotPassword";
+          case EventType::PasswordChange:
+            return "PasswordChange";
+          case EventType::ResendCode:
+            return "ResendCode";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

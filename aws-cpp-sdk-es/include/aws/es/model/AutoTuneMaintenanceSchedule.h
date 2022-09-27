@@ -181,13 +181,13 @@ namespace Model
   private:
 
     Aws::Utils::DateTime m_startAt;
-    bool m_startAtHasBeenSet;
+    bool m_startAtHasBeenSet = false;
 
     Duration m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     Aws::String m_cronExpressionForRecurrence;
-    bool m_cronExpressionForRecurrenceHasBeenSet;
+    bool m_cronExpressionForRecurrenceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -195,13 +195,13 @@ namespace Model
   private:
 
     Aws::String m_entityId;
-    bool m_entityIdHasBeenSet;
+    bool m_entityIdHasBeenSet = false;
 
     Aws::String m_evaluationContext;
-    bool m_evaluationContextHasBeenSet;
+    bool m_evaluationContextHasBeenSet = false;
 
     Aws::String m_feature;
-    bool m_featureHasBeenSet;
+    bool m_featureHasBeenSet = false;
   };
 
 } // namespace Model

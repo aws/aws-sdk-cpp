@@ -154,10 +154,10 @@ namespace Model
   private:
 
     Aws::String m_destination;
-    bool m_destinationHasBeenSet;
+    bool m_destinationHasBeenSet = false;
 
     DestinationSettings m_destinationSettings;
-    bool m_destinationSettingsHasBeenSet;
+    bool m_destinationSettingsHasBeenSet = false;
   };
 
 } // namespace Model

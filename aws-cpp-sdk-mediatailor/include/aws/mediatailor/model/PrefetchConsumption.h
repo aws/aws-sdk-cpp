@@ -192,13 +192,13 @@ namespace Model
   private:
 
     Aws::Vector<AvailMatchingCriteria> m_availMatchingCriteria;
-    bool m_availMatchingCriteriaHasBeenSet;
+    bool m_availMatchingCriteriaHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
   };
 
 } // namespace Model

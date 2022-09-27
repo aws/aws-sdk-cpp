@@ -101,10 +101,10 @@ namespace Model
   private:
 
     Aws::String m_percentile;
-    bool m_percentileHasBeenSet;
+    bool m_percentileHasBeenSet = false;
 
     int m_valueInMilliseconds;
-    bool m_valueInMillisecondsHasBeenSet;
+    bool m_valueInMillisecondsHasBeenSet = false;
   };
 
 } // namespace Model

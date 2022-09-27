@@ -133,13 +133,13 @@ namespace Model
   private:
 
     Aws::String m_content;
-    bool m_contentHasBeenSet;
+    bool m_contentHasBeenSet = false;
 
     MessageContentType m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     ImageResponseCard m_imageResponseCard;
-    bool m_imageResponseCardHasBeenSet;
+    bool m_imageResponseCardHasBeenSet = false;
   };
 
 } // namespace Model

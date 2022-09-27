@@ -241,10 +241,10 @@ namespace Model
   private:
 
     Aws::String m_deploymentId;
-    bool m_deploymentIdHasBeenSet;
+    bool m_deploymentIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetIds;
-    bool m_targetIdsHasBeenSet;
+    bool m_targetIdsHasBeenSet = false;
   };
 
 } // namespace Model

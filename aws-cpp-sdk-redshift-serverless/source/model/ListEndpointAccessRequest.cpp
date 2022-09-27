@@ -55,7 +55,7 @@ Aws::String ListEndpointAccessRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection ListEndpointAccessRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.ListEndpointAccess"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.ListEndpointAccess"));
   return headers;
 
 }

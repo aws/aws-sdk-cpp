@@ -60,7 +60,7 @@ Aws::String ListRecoveryPointsRequest::SerializePayload() const
 Aws::Http::HeaderValueCollection ListRecoveryPointsRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "redshift-serverless.ListRecoveryPoints"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RedshiftServerless.ListRecoveryPoints"));
   return headers;
 
 }

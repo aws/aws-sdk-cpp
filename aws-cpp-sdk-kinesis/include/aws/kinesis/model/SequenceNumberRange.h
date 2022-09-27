@@ -130,10 +130,10 @@ namespace Model
   private:
 
     Aws::String m_startingSequenceNumber;
-    bool m_startingSequenceNumberHasBeenSet;
+    bool m_startingSequenceNumberHasBeenSet = false;
 
     Aws::String m_endingSequenceNumber;
-    bool m_endingSequenceNumberHasBeenSet;
+    bool m_endingSequenceNumberHasBeenSet = false;
   };
 
 } // namespace Model

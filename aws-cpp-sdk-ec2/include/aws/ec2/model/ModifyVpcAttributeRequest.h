@@ -202,13 +202,13 @@ namespace Model
   private:
 
     AttributeBooleanValue m_enableDnsHostnames;
-    bool m_enableDnsHostnamesHasBeenSet;
+    bool m_enableDnsHostnamesHasBeenSet = false;
 
     AttributeBooleanValue m_enableDnsSupport;
-    bool m_enableDnsSupportHasBeenSet;
+    bool m_enableDnsSupportHasBeenSet = false;
 
     Aws::String m_vpcId;
-    bool m_vpcIdHasBeenSet;
+    bool m_vpcIdHasBeenSet = false;
   };
 
 } // namespace Model

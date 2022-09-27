@@ -70,33 +70,39 @@ using namespace Aws::Utils::Json;
 static const char* SERVICE_NAME = "appmesh";
 static const char* ALLOCATION_TAG = "AppMeshClient";
 
-
 AppMeshClient::AppMeshClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
-AppMeshClient::AppMeshClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+AppMeshClient::AppMeshClient(const AWSCredentials& credentials,
+                             const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
 }
 
 AppMeshClient::AppMeshClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration) :
+                             const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-    Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
   init(clientConfiguration);
@@ -108,7 +114,7 @@ AppMeshClient::~AppMeshClient()
 
 void AppMeshClient::init(const Client::ClientConfiguration& config)
 {
-  SetServiceClientName("App Mesh");
+  AWSClient::SetServiceClientName("App Mesh");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -163,12 +169,10 @@ CreateGatewayRouteOutcomeCallable AppMeshClient::CreateGatewayRouteCallable(cons
 
 void AppMeshClient::CreateGatewayRouteAsync(const CreateGatewayRouteRequest& request, const CreateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateGatewayRouteAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::CreateGatewayRouteAsyncHelper(const CreateGatewayRouteRequest& request, const CreateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateGatewayRoute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateGatewayRoute(request), context);
+    } );
 }
 
 CreateMeshOutcome AppMeshClient::CreateMesh(const CreateMeshRequest& request) const
@@ -188,12 +192,10 @@ CreateMeshOutcomeCallable AppMeshClient::CreateMeshCallable(const CreateMeshRequ
 
 void AppMeshClient::CreateMeshAsync(const CreateMeshRequest& request, const CreateMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateMeshAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::CreateMeshAsyncHelper(const CreateMeshRequest& request, const CreateMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateMesh(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateMesh(request), context);
+    } );
 }
 
 CreateRouteOutcome AppMeshClient::CreateRoute(const CreateRouteRequest& request) const
@@ -227,12 +229,10 @@ CreateRouteOutcomeCallable AppMeshClient::CreateRouteCallable(const CreateRouteR
 
 void AppMeshClient::CreateRouteAsync(const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateRouteAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::CreateRouteAsyncHelper(const CreateRouteRequest& request, const CreateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateRoute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateRoute(request), context);
+    } );
 }
 
 CreateVirtualGatewayOutcome AppMeshClient::CreateVirtualGateway(const CreateVirtualGatewayRequest& request) const
@@ -259,12 +259,10 @@ CreateVirtualGatewayOutcomeCallable AppMeshClient::CreateVirtualGatewayCallable(
 
 void AppMeshClient::CreateVirtualGatewayAsync(const CreateVirtualGatewayRequest& request, const CreateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVirtualGatewayAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::CreateVirtualGatewayAsyncHelper(const CreateVirtualGatewayRequest& request, const CreateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateVirtualGateway(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVirtualGateway(request), context);
+    } );
 }
 
 CreateVirtualNodeOutcome AppMeshClient::CreateVirtualNode(const CreateVirtualNodeRequest& request) const
@@ -291,12 +289,10 @@ CreateVirtualNodeOutcomeCallable AppMeshClient::CreateVirtualNodeCallable(const 
 
 void AppMeshClient::CreateVirtualNodeAsync(const CreateVirtualNodeRequest& request, const CreateVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVirtualNodeAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::CreateVirtualNodeAsyncHelper(const CreateVirtualNodeRequest& request, const CreateVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateVirtualNode(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVirtualNode(request), context);
+    } );
 }
 
 CreateVirtualRouterOutcome AppMeshClient::CreateVirtualRouter(const CreateVirtualRouterRequest& request) const
@@ -323,12 +319,10 @@ CreateVirtualRouterOutcomeCallable AppMeshClient::CreateVirtualRouterCallable(co
 
 void AppMeshClient::CreateVirtualRouterAsync(const CreateVirtualRouterRequest& request, const CreateVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVirtualRouterAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::CreateVirtualRouterAsyncHelper(const CreateVirtualRouterRequest& request, const CreateVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateVirtualRouter(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVirtualRouter(request), context);
+    } );
 }
 
 CreateVirtualServiceOutcome AppMeshClient::CreateVirtualService(const CreateVirtualServiceRequest& request) const
@@ -355,12 +349,10 @@ CreateVirtualServiceOutcomeCallable AppMeshClient::CreateVirtualServiceCallable(
 
 void AppMeshClient::CreateVirtualServiceAsync(const CreateVirtualServiceRequest& request, const CreateVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->CreateVirtualServiceAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::CreateVirtualServiceAsyncHelper(const CreateVirtualServiceRequest& request, const CreateVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, CreateVirtualService(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVirtualService(request), context);
+    } );
 }
 
 DeleteGatewayRouteOutcome AppMeshClient::DeleteGatewayRoute(const DeleteGatewayRouteRequest& request) const
@@ -400,12 +392,10 @@ DeleteGatewayRouteOutcomeCallable AppMeshClient::DeleteGatewayRouteCallable(cons
 
 void AppMeshClient::DeleteGatewayRouteAsync(const DeleteGatewayRouteRequest& request, const DeleteGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteGatewayRouteAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DeleteGatewayRouteAsyncHelper(const DeleteGatewayRouteRequest& request, const DeleteGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteGatewayRoute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteGatewayRoute(request), context);
+    } );
 }
 
 DeleteMeshOutcome AppMeshClient::DeleteMesh(const DeleteMeshRequest& request) const
@@ -431,12 +421,10 @@ DeleteMeshOutcomeCallable AppMeshClient::DeleteMeshCallable(const DeleteMeshRequ
 
 void AppMeshClient::DeleteMeshAsync(const DeleteMeshRequest& request, const DeleteMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteMeshAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DeleteMeshAsyncHelper(const DeleteMeshRequest& request, const DeleteMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteMesh(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteMesh(request), context);
+    } );
 }
 
 DeleteRouteOutcome AppMeshClient::DeleteRoute(const DeleteRouteRequest& request) const
@@ -476,12 +464,10 @@ DeleteRouteOutcomeCallable AppMeshClient::DeleteRouteCallable(const DeleteRouteR
 
 void AppMeshClient::DeleteRouteAsync(const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteRouteAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DeleteRouteAsyncHelper(const DeleteRouteRequest& request, const DeleteRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteRoute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRoute(request), context);
+    } );
 }
 
 DeleteVirtualGatewayOutcome AppMeshClient::DeleteVirtualGateway(const DeleteVirtualGatewayRequest& request) const
@@ -514,12 +500,10 @@ DeleteVirtualGatewayOutcomeCallable AppMeshClient::DeleteVirtualGatewayCallable(
 
 void AppMeshClient::DeleteVirtualGatewayAsync(const DeleteVirtualGatewayRequest& request, const DeleteVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVirtualGatewayAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DeleteVirtualGatewayAsyncHelper(const DeleteVirtualGatewayRequest& request, const DeleteVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteVirtualGateway(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVirtualGateway(request), context);
+    } );
 }
 
 DeleteVirtualNodeOutcome AppMeshClient::DeleteVirtualNode(const DeleteVirtualNodeRequest& request) const
@@ -552,12 +536,10 @@ DeleteVirtualNodeOutcomeCallable AppMeshClient::DeleteVirtualNodeCallable(const 
 
 void AppMeshClient::DeleteVirtualNodeAsync(const DeleteVirtualNodeRequest& request, const DeleteVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVirtualNodeAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DeleteVirtualNodeAsyncHelper(const DeleteVirtualNodeRequest& request, const DeleteVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteVirtualNode(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVirtualNode(request), context);
+    } );
 }
 
 DeleteVirtualRouterOutcome AppMeshClient::DeleteVirtualRouter(const DeleteVirtualRouterRequest& request) const
@@ -590,12 +572,10 @@ DeleteVirtualRouterOutcomeCallable AppMeshClient::DeleteVirtualRouterCallable(co
 
 void AppMeshClient::DeleteVirtualRouterAsync(const DeleteVirtualRouterRequest& request, const DeleteVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVirtualRouterAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DeleteVirtualRouterAsyncHelper(const DeleteVirtualRouterRequest& request, const DeleteVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteVirtualRouter(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVirtualRouter(request), context);
+    } );
 }
 
 DeleteVirtualServiceOutcome AppMeshClient::DeleteVirtualService(const DeleteVirtualServiceRequest& request) const
@@ -628,12 +608,10 @@ DeleteVirtualServiceOutcomeCallable AppMeshClient::DeleteVirtualServiceCallable(
 
 void AppMeshClient::DeleteVirtualServiceAsync(const DeleteVirtualServiceRequest& request, const DeleteVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DeleteVirtualServiceAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DeleteVirtualServiceAsyncHelper(const DeleteVirtualServiceRequest& request, const DeleteVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DeleteVirtualService(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVirtualService(request), context);
+    } );
 }
 
 DescribeGatewayRouteOutcome AppMeshClient::DescribeGatewayRoute(const DescribeGatewayRouteRequest& request) const
@@ -673,12 +651,10 @@ DescribeGatewayRouteOutcomeCallable AppMeshClient::DescribeGatewayRouteCallable(
 
 void AppMeshClient::DescribeGatewayRouteAsync(const DescribeGatewayRouteRequest& request, const DescribeGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeGatewayRouteAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DescribeGatewayRouteAsyncHelper(const DescribeGatewayRouteRequest& request, const DescribeGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeGatewayRoute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeGatewayRoute(request), context);
+    } );
 }
 
 DescribeMeshOutcome AppMeshClient::DescribeMesh(const DescribeMeshRequest& request) const
@@ -704,12 +680,10 @@ DescribeMeshOutcomeCallable AppMeshClient::DescribeMeshCallable(const DescribeMe
 
 void AppMeshClient::DescribeMeshAsync(const DescribeMeshRequest& request, const DescribeMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeMeshAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DescribeMeshAsyncHelper(const DescribeMeshRequest& request, const DescribeMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeMesh(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeMesh(request), context);
+    } );
 }
 
 DescribeRouteOutcome AppMeshClient::DescribeRoute(const DescribeRouteRequest& request) const
@@ -749,12 +723,10 @@ DescribeRouteOutcomeCallable AppMeshClient::DescribeRouteCallable(const Describe
 
 void AppMeshClient::DescribeRouteAsync(const DescribeRouteRequest& request, const DescribeRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeRouteAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DescribeRouteAsyncHelper(const DescribeRouteRequest& request, const DescribeRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeRoute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeRoute(request), context);
+    } );
 }
 
 DescribeVirtualGatewayOutcome AppMeshClient::DescribeVirtualGateway(const DescribeVirtualGatewayRequest& request) const
@@ -787,12 +759,10 @@ DescribeVirtualGatewayOutcomeCallable AppMeshClient::DescribeVirtualGatewayCalla
 
 void AppMeshClient::DescribeVirtualGatewayAsync(const DescribeVirtualGatewayRequest& request, const DescribeVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVirtualGatewayAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DescribeVirtualGatewayAsyncHelper(const DescribeVirtualGatewayRequest& request, const DescribeVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeVirtualGateway(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVirtualGateway(request), context);
+    } );
 }
 
 DescribeVirtualNodeOutcome AppMeshClient::DescribeVirtualNode(const DescribeVirtualNodeRequest& request) const
@@ -825,12 +795,10 @@ DescribeVirtualNodeOutcomeCallable AppMeshClient::DescribeVirtualNodeCallable(co
 
 void AppMeshClient::DescribeVirtualNodeAsync(const DescribeVirtualNodeRequest& request, const DescribeVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVirtualNodeAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DescribeVirtualNodeAsyncHelper(const DescribeVirtualNodeRequest& request, const DescribeVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeVirtualNode(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVirtualNode(request), context);
+    } );
 }
 
 DescribeVirtualRouterOutcome AppMeshClient::DescribeVirtualRouter(const DescribeVirtualRouterRequest& request) const
@@ -863,12 +831,10 @@ DescribeVirtualRouterOutcomeCallable AppMeshClient::DescribeVirtualRouterCallabl
 
 void AppMeshClient::DescribeVirtualRouterAsync(const DescribeVirtualRouterRequest& request, const DescribeVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVirtualRouterAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DescribeVirtualRouterAsyncHelper(const DescribeVirtualRouterRequest& request, const DescribeVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeVirtualRouter(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVirtualRouter(request), context);
+    } );
 }
 
 DescribeVirtualServiceOutcome AppMeshClient::DescribeVirtualService(const DescribeVirtualServiceRequest& request) const
@@ -901,12 +867,10 @@ DescribeVirtualServiceOutcomeCallable AppMeshClient::DescribeVirtualServiceCalla
 
 void AppMeshClient::DescribeVirtualServiceAsync(const DescribeVirtualServiceRequest& request, const DescribeVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DescribeVirtualServiceAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::DescribeVirtualServiceAsyncHelper(const DescribeVirtualServiceRequest& request, const DescribeVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, DescribeVirtualService(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVirtualService(request), context);
+    } );
 }
 
 ListGatewayRoutesOutcome AppMeshClient::ListGatewayRoutes(const ListGatewayRoutesRequest& request) const
@@ -940,12 +904,10 @@ ListGatewayRoutesOutcomeCallable AppMeshClient::ListGatewayRoutesCallable(const 
 
 void AppMeshClient::ListGatewayRoutesAsync(const ListGatewayRoutesRequest& request, const ListGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListGatewayRoutesAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::ListGatewayRoutesAsyncHelper(const ListGatewayRoutesRequest& request, const ListGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListGatewayRoutes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListGatewayRoutes(request), context);
+    } );
 }
 
 ListMeshesOutcome AppMeshClient::ListMeshes(const ListMeshesRequest& request) const
@@ -965,12 +927,10 @@ ListMeshesOutcomeCallable AppMeshClient::ListMeshesCallable(const ListMeshesRequ
 
 void AppMeshClient::ListMeshesAsync(const ListMeshesRequest& request, const ListMeshesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListMeshesAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::ListMeshesAsyncHelper(const ListMeshesRequest& request, const ListMeshesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListMeshes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListMeshes(request), context);
+    } );
 }
 
 ListRoutesOutcome AppMeshClient::ListRoutes(const ListRoutesRequest& request) const
@@ -1004,12 +964,10 @@ ListRoutesOutcomeCallable AppMeshClient::ListRoutesCallable(const ListRoutesRequ
 
 void AppMeshClient::ListRoutesAsync(const ListRoutesRequest& request, const ListRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListRoutesAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::ListRoutesAsyncHelper(const ListRoutesRequest& request, const ListRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListRoutes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRoutes(request), context);
+    } );
 }
 
 ListTagsForResourceOutcome AppMeshClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1034,12 +992,10 @@ ListTagsForResourceOutcomeCallable AppMeshClient::ListTagsForResourceCallable(co
 
 void AppMeshClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTagsForResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
 }
 
 ListVirtualGatewaysOutcome AppMeshClient::ListVirtualGateways(const ListVirtualGatewaysRequest& request) const
@@ -1066,12 +1022,10 @@ ListVirtualGatewaysOutcomeCallable AppMeshClient::ListVirtualGatewaysCallable(co
 
 void AppMeshClient::ListVirtualGatewaysAsync(const ListVirtualGatewaysRequest& request, const ListVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVirtualGatewaysAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::ListVirtualGatewaysAsyncHelper(const ListVirtualGatewaysRequest& request, const ListVirtualGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListVirtualGateways(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListVirtualGateways(request), context);
+    } );
 }
 
 ListVirtualNodesOutcome AppMeshClient::ListVirtualNodes(const ListVirtualNodesRequest& request) const
@@ -1098,12 +1052,10 @@ ListVirtualNodesOutcomeCallable AppMeshClient::ListVirtualNodesCallable(const Li
 
 void AppMeshClient::ListVirtualNodesAsync(const ListVirtualNodesRequest& request, const ListVirtualNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVirtualNodesAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::ListVirtualNodesAsyncHelper(const ListVirtualNodesRequest& request, const ListVirtualNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListVirtualNodes(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListVirtualNodes(request), context);
+    } );
 }
 
 ListVirtualRoutersOutcome AppMeshClient::ListVirtualRouters(const ListVirtualRoutersRequest& request) const
@@ -1130,12 +1082,10 @@ ListVirtualRoutersOutcomeCallable AppMeshClient::ListVirtualRoutersCallable(cons
 
 void AppMeshClient::ListVirtualRoutersAsync(const ListVirtualRoutersRequest& request, const ListVirtualRoutersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVirtualRoutersAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::ListVirtualRoutersAsyncHelper(const ListVirtualRoutersRequest& request, const ListVirtualRoutersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListVirtualRouters(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListVirtualRouters(request), context);
+    } );
 }
 
 ListVirtualServicesOutcome AppMeshClient::ListVirtualServices(const ListVirtualServicesRequest& request) const
@@ -1162,12 +1112,10 @@ ListVirtualServicesOutcomeCallable AppMeshClient::ListVirtualServicesCallable(co
 
 void AppMeshClient::ListVirtualServicesAsync(const ListVirtualServicesRequest& request, const ListVirtualServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListVirtualServicesAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::ListVirtualServicesAsyncHelper(const ListVirtualServicesRequest& request, const ListVirtualServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListVirtualServices(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListVirtualServices(request), context);
+    } );
 }
 
 TagResourceOutcome AppMeshClient::TagResource(const TagResourceRequest& request) const
@@ -1192,12 +1140,10 @@ TagResourceOutcomeCallable AppMeshClient::TagResourceCallable(const TagResourceR
 
 void AppMeshClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, TagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
 }
 
 UntagResourceOutcome AppMeshClient::UntagResource(const UntagResourceRequest& request) const
@@ -1222,12 +1168,10 @@ UntagResourceOutcomeCallable AppMeshClient::UntagResourceCallable(const UntagRes
 
 void AppMeshClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UntagResource(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
+    } );
 }
 
 UpdateGatewayRouteOutcome AppMeshClient::UpdateGatewayRoute(const UpdateGatewayRouteRequest& request) const
@@ -1267,12 +1211,10 @@ UpdateGatewayRouteOutcomeCallable AppMeshClient::UpdateGatewayRouteCallable(cons
 
 void AppMeshClient::UpdateGatewayRouteAsync(const UpdateGatewayRouteRequest& request, const UpdateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateGatewayRouteAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::UpdateGatewayRouteAsyncHelper(const UpdateGatewayRouteRequest& request, const UpdateGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateGatewayRoute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateGatewayRoute(request), context);
+    } );
 }
 
 UpdateMeshOutcome AppMeshClient::UpdateMesh(const UpdateMeshRequest& request) const
@@ -1298,12 +1240,10 @@ UpdateMeshOutcomeCallable AppMeshClient::UpdateMeshCallable(const UpdateMeshRequ
 
 void AppMeshClient::UpdateMeshAsync(const UpdateMeshRequest& request, const UpdateMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateMeshAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::UpdateMeshAsyncHelper(const UpdateMeshRequest& request, const UpdateMeshResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateMesh(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateMesh(request), context);
+    } );
 }
 
 UpdateRouteOutcome AppMeshClient::UpdateRoute(const UpdateRouteRequest& request) const
@@ -1343,12 +1283,10 @@ UpdateRouteOutcomeCallable AppMeshClient::UpdateRouteCallable(const UpdateRouteR
 
 void AppMeshClient::UpdateRouteAsync(const UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateRouteAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::UpdateRouteAsyncHelper(const UpdateRouteRequest& request, const UpdateRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateRoute(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRoute(request), context);
+    } );
 }
 
 UpdateVirtualGatewayOutcome AppMeshClient::UpdateVirtualGateway(const UpdateVirtualGatewayRequest& request) const
@@ -1381,12 +1319,10 @@ UpdateVirtualGatewayOutcomeCallable AppMeshClient::UpdateVirtualGatewayCallable(
 
 void AppMeshClient::UpdateVirtualGatewayAsync(const UpdateVirtualGatewayRequest& request, const UpdateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVirtualGatewayAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::UpdateVirtualGatewayAsyncHelper(const UpdateVirtualGatewayRequest& request, const UpdateVirtualGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateVirtualGateway(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateVirtualGateway(request), context);
+    } );
 }
 
 UpdateVirtualNodeOutcome AppMeshClient::UpdateVirtualNode(const UpdateVirtualNodeRequest& request) const
@@ -1419,12 +1355,10 @@ UpdateVirtualNodeOutcomeCallable AppMeshClient::UpdateVirtualNodeCallable(const 
 
 void AppMeshClient::UpdateVirtualNodeAsync(const UpdateVirtualNodeRequest& request, const UpdateVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVirtualNodeAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::UpdateVirtualNodeAsyncHelper(const UpdateVirtualNodeRequest& request, const UpdateVirtualNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateVirtualNode(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateVirtualNode(request), context);
+    } );
 }
 
 UpdateVirtualRouterOutcome AppMeshClient::UpdateVirtualRouter(const UpdateVirtualRouterRequest& request) const
@@ -1457,12 +1391,10 @@ UpdateVirtualRouterOutcomeCallable AppMeshClient::UpdateVirtualRouterCallable(co
 
 void AppMeshClient::UpdateVirtualRouterAsync(const UpdateVirtualRouterRequest& request, const UpdateVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVirtualRouterAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::UpdateVirtualRouterAsyncHelper(const UpdateVirtualRouterRequest& request, const UpdateVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateVirtualRouter(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateVirtualRouter(request), context);
+    } );
 }
 
 UpdateVirtualServiceOutcome AppMeshClient::UpdateVirtualService(const UpdateVirtualServiceRequest& request) const
@@ -1495,11 +1427,9 @@ UpdateVirtualServiceOutcomeCallable AppMeshClient::UpdateVirtualServiceCallable(
 
 void AppMeshClient::UpdateVirtualServiceAsync(const UpdateVirtualServiceRequest& request, const UpdateVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->UpdateVirtualServiceAsyncHelper( request, handler, context ); } );
-}
-
-void AppMeshClient::UpdateVirtualServiceAsyncHelper(const UpdateVirtualServiceRequest& request, const UpdateVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UpdateVirtualService(request), context);
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateVirtualService(request), context);
+    } );
 }
 

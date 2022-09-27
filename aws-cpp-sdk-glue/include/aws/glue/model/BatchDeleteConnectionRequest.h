@@ -132,10 +132,10 @@ namespace Model
   private:
 
     Aws::String m_catalogId;
-    bool m_catalogIdHasBeenSet;
+    bool m_catalogIdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_connectionNameList;
-    bool m_connectionNameListHasBeenSet;
+    bool m_connectionNameListHasBeenSet = false;
   };
 
 } // namespace Model

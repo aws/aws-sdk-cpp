@@ -56,13 +56,13 @@ PendingMaintenanceAction& PendingMaintenanceAction::operator =(const XmlNode& xm
     XmlNode autoAppliedAfterDateNode = resultNode.FirstChild("AutoAppliedAfterDate");
     if(!autoAppliedAfterDateNode.IsNull())
     {
-      m_autoAppliedAfterDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoAppliedAfterDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_autoAppliedAfterDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoAppliedAfterDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_autoAppliedAfterDateHasBeenSet = true;
     }
     XmlNode forcedApplyDateNode = resultNode.FirstChild("ForcedApplyDate");
     if(!forcedApplyDateNode.IsNull())
     {
-      m_forcedApplyDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(forcedApplyDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_forcedApplyDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(forcedApplyDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_forcedApplyDateHasBeenSet = true;
     }
     XmlNode optInStatusNode = resultNode.FirstChild("OptInStatus");
@@ -74,7 +74,7 @@ PendingMaintenanceAction& PendingMaintenanceAction::operator =(const XmlNode& xm
     XmlNode currentApplyDateNode = resultNode.FirstChild("CurrentApplyDate");
     if(!currentApplyDateNode.IsNull())
     {
-      m_currentApplyDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentApplyDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_currentApplyDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentApplyDateNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_currentApplyDateHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
@@ -97,12 +97,12 @@ void PendingMaintenanceAction::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_autoAppliedAfterDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".AutoAppliedAfterDate=" << StringUtils::URLEncode(m_autoAppliedAfterDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".AutoAppliedAfterDate=" << StringUtils::URLEncode(m_autoAppliedAfterDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_forcedApplyDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ForcedApplyDate=" << StringUtils::URLEncode(m_forcedApplyDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".ForcedApplyDate=" << StringUtils::URLEncode(m_forcedApplyDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_optInStatusHasBeenSet)
@@ -112,7 +112,7 @@ void PendingMaintenanceAction::OutputToStream(Aws::OStream& oStream, const char*
 
   if(m_currentApplyDateHasBeenSet)
   {
-      oStream << location << index << locationValue << ".CurrentApplyDate=" << StringUtils::URLEncode(m_currentApplyDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << index << locationValue << ".CurrentApplyDate=" << StringUtils::URLEncode(m_currentApplyDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
   if(m_descriptionHasBeenSet)
@@ -130,11 +130,11 @@ void PendingMaintenanceAction::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_autoAppliedAfterDateHasBeenSet)
   {
-      oStream << location << ".AutoAppliedAfterDate=" << StringUtils::URLEncode(m_autoAppliedAfterDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".AutoAppliedAfterDate=" << StringUtils::URLEncode(m_autoAppliedAfterDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_forcedApplyDateHasBeenSet)
   {
-      oStream << location << ".ForcedApplyDate=" << StringUtils::URLEncode(m_forcedApplyDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".ForcedApplyDate=" << StringUtils::URLEncode(m_forcedApplyDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_optInStatusHasBeenSet)
   {
@@ -142,7 +142,7 @@ void PendingMaintenanceAction::OutputToStream(Aws::OStream& oStream, const char*
   }
   if(m_currentApplyDateHasBeenSet)
   {
-      oStream << location << ".CurrentApplyDate=" << StringUtils::URLEncode(m_currentApplyDate.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      oStream << location << ".CurrentApplyDate=" << StringUtils::URLEncode(m_currentApplyDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
   if(m_descriptionHasBeenSet)
   {

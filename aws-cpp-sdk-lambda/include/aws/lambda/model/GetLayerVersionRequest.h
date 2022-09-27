@@ -96,10 +96,10 @@ namespace Model
   private:
 
     Aws::String m_layerName;
-    bool m_layerNameHasBeenSet;
+    bool m_layerNameHasBeenSet = false;
 
     long long m_versionNumber;
-    bool m_versionNumberHasBeenSet;
+    bool m_versionNumberHasBeenSet = false;
   };
 
 } // namespace Model

@@ -316,22 +316,22 @@ namespace Model
   private:
 
     Aws::String m_frameworkName;
-    bool m_frameworkNameHasBeenSet;
+    bool m_frameworkNameHasBeenSet = false;
 
     Aws::String m_frameworkArn;
-    bool m_frameworkArnHasBeenSet;
+    bool m_frameworkArnHasBeenSet = false;
 
     Aws::String m_frameworkDescription;
-    bool m_frameworkDescriptionHasBeenSet;
+    bool m_frameworkDescriptionHasBeenSet = false;
 
     int m_numberOfControls;
-    bool m_numberOfControlsHasBeenSet;
+    bool m_numberOfControlsHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_deploymentStatus;
-    bool m_deploymentStatusHasBeenSet;
+    bool m_deploymentStatusHasBeenSet = false;
   };
 
 } // namespace Model

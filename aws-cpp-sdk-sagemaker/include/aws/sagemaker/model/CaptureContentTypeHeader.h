@@ -152,10 +152,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_csvContentTypes;
-    bool m_csvContentTypesHasBeenSet;
+    bool m_csvContentTypesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_jsonContentTypes;
-    bool m_jsonContentTypesHasBeenSet;
+    bool m_jsonContentTypesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -370,28 +370,28 @@ namespace Model
   private:
 
     Aws::String m_applicationInstanceIdToReplace;
-    bool m_applicationInstanceIdToReplaceHasBeenSet;
+    bool m_applicationInstanceIdToReplaceHasBeenSet = false;
 
     Aws::String m_defaultRuntimeContextDevice;
-    bool m_defaultRuntimeContextDeviceHasBeenSet;
+    bool m_defaultRuntimeContextDeviceHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     ManifestOverridesPayload m_manifestOverridesPayload;
-    bool m_manifestOverridesPayloadHasBeenSet;
+    bool m_manifestOverridesPayloadHasBeenSet = false;
 
     ManifestPayload m_manifestPayload;
-    bool m_manifestPayloadHasBeenSet;
+    bool m_manifestPayloadHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_runtimeRoleArn;
-    bool m_runtimeRoleArnHasBeenSet;
+    bool m_runtimeRoleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

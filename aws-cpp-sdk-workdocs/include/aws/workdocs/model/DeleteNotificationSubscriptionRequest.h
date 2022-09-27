@@ -116,10 +116,10 @@ namespace Model
   private:
 
     Aws::String m_subscriptionId;
-    bool m_subscriptionIdHasBeenSet;
+    bool m_subscriptionIdHasBeenSet = false;
 
     Aws::String m_organizationId;
-    bool m_organizationIdHasBeenSet;
+    bool m_organizationIdHasBeenSet = false;
   };
 
 } // namespace Model

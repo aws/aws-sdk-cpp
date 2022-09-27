@@ -712,49 +712,49 @@ namespace Model
   private:
 
     Aws::String m_domainName;
-    bool m_domainNameHasBeenSet;
+    bool m_domainNameHasBeenSet = false;
 
     ClusterConfig m_clusterConfig;
-    bool m_clusterConfigHasBeenSet;
+    bool m_clusterConfigHasBeenSet = false;
 
     EBSOptions m_eBSOptions;
-    bool m_eBSOptionsHasBeenSet;
+    bool m_eBSOptionsHasBeenSet = false;
 
     SnapshotOptions m_snapshotOptions;
-    bool m_snapshotOptionsHasBeenSet;
+    bool m_snapshotOptionsHasBeenSet = false;
 
     VPCOptions m_vPCOptions;
-    bool m_vPCOptionsHasBeenSet;
+    bool m_vPCOptionsHasBeenSet = false;
 
     CognitoOptions m_cognitoOptions;
-    bool m_cognitoOptionsHasBeenSet;
+    bool m_cognitoOptionsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_advancedOptions;
-    bool m_advancedOptionsHasBeenSet;
+    bool m_advancedOptionsHasBeenSet = false;
 
     Aws::String m_accessPolicies;
-    bool m_accessPoliciesHasBeenSet;
+    bool m_accessPoliciesHasBeenSet = false;
 
     Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
-    bool m_logPublishingOptionsHasBeenSet;
+    bool m_logPublishingOptionsHasBeenSet = false;
 
     EncryptionAtRestOptions m_encryptionAtRestOptions;
-    bool m_encryptionAtRestOptionsHasBeenSet;
+    bool m_encryptionAtRestOptionsHasBeenSet = false;
 
     DomainEndpointOptions m_domainEndpointOptions;
-    bool m_domainEndpointOptionsHasBeenSet;
+    bool m_domainEndpointOptionsHasBeenSet = false;
 
     NodeToNodeEncryptionOptions m_nodeToNodeEncryptionOptions;
-    bool m_nodeToNodeEncryptionOptionsHasBeenSet;
+    bool m_nodeToNodeEncryptionOptionsHasBeenSet = false;
 
     AdvancedSecurityOptionsInput m_advancedSecurityOptions;
-    bool m_advancedSecurityOptionsHasBeenSet;
+    bool m_advancedSecurityOptionsHasBeenSet = false;
 
     AutoTuneOptions m_autoTuneOptions;
-    bool m_autoTuneOptionsHasBeenSet;
+    bool m_autoTuneOptionsHasBeenSet = false;
 
     bool m_dryRun;
-    bool m_dryRunHasBeenSet;
+    bool m_dryRunHasBeenSet = false;
   };
 
 } // namespace Model

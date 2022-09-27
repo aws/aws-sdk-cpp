@@ -1708,27 +1708,28 @@ namespace Model
 
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source Amazon Web
-     * Services Region where the DB cluster is replicated from. Specify
-     * <code>PreSignedUrl</code> only when you are performing cross-Region replication
-     * from an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request
-     * for the <code>CreateDBCluster</code> API action that can be executed in the
-     * source Amazon Web Services Region that contains the encrypted DB cluster to be
-     * copied.</p> <p>The pre-signed URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS
-     * key identifier for the KMS key to use to encrypt the copy of the DB cluster in
-     * the destination Amazon Web Services Region. This should refer to the same KMS
-     * key for both the <code>CreateDBCluster</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the Amazon Web Services Region that Aurora read replica will be created in.</p>
-     * </li> <li> <p> <code>ReplicationSourceIdentifier</code> - The DB cluster
-     * identifier for the encrypted DB cluster to be copied. This identifier must be in
-     * the Amazon Resource Name (ARN) format for the source Amazon Web Services Region.
-     * For example, if you are copying an encrypted DB cluster from the us-west-2
-     * Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code>
-     * would look like Example:
+     * <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud
+     * (US) Region to another, an URL that contains a Signature Version 4 signed
+     * request for the <code>CreateDBCluster</code> operation to be called in the
+     * source Amazon Web Services Region where the DB cluster is replicated from.
+     * Specify <code>PreSignedUrl</code> only when you are performing cross-Region
+     * replication from an encrypted DB cluster.</p> <p>The presigned URL must be a
+     * valid request for the <code>CreateDBCluster</code> API operation that can run in
+     * the source Amazon Web Services Region that contains the encrypted DB cluster to
+     * copy.</p> <p>The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the
+     * KMS key to use to encrypt the copy of the DB cluster in the destination Amazon
+     * Web Services Region. This should refer to the same KMS key for both the
+     * <code>CreateDBCluster</code> operation that is called in the destination Amazon
+     * Web Services Region, and the operation contained in the presigned URL.</p> </li>
+     * <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services
+     * Region that Aurora read replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are copying an encrypted DB cluster from the us-west-2 Amazon
+     * Web Services Region, then your <code>ReplicationSourceIdentifier</code> would
+     * look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1740,34 +1741,35 @@ namespace Model
      * Amazon Web Services SDK tool or the CLI, you can specify
      * <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead
      * of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request
-     * for the operation that can be executed in the source Amazon Web Services
-     * Region.</p>  <p>Valid for: Aurora DB clusters only</p>
+     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request
+     * for the operation that can run in the source Amazon Web Services Region.</p>
+     *  <p>Valid for: Aurora DB clusters only</p>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source Amazon Web
-     * Services Region where the DB cluster is replicated from. Specify
-     * <code>PreSignedUrl</code> only when you are performing cross-Region replication
-     * from an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request
-     * for the <code>CreateDBCluster</code> API action that can be executed in the
-     * source Amazon Web Services Region that contains the encrypted DB cluster to be
-     * copied.</p> <p>The pre-signed URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS
-     * key identifier for the KMS key to use to encrypt the copy of the DB cluster in
-     * the destination Amazon Web Services Region. This should refer to the same KMS
-     * key for both the <code>CreateDBCluster</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the Amazon Web Services Region that Aurora read replica will be created in.</p>
-     * </li> <li> <p> <code>ReplicationSourceIdentifier</code> - The DB cluster
-     * identifier for the encrypted DB cluster to be copied. This identifier must be in
-     * the Amazon Resource Name (ARN) format for the source Amazon Web Services Region.
-     * For example, if you are copying an encrypted DB cluster from the us-west-2
-     * Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code>
-     * would look like Example:
+     * <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud
+     * (US) Region to another, an URL that contains a Signature Version 4 signed
+     * request for the <code>CreateDBCluster</code> operation to be called in the
+     * source Amazon Web Services Region where the DB cluster is replicated from.
+     * Specify <code>PreSignedUrl</code> only when you are performing cross-Region
+     * replication from an encrypted DB cluster.</p> <p>The presigned URL must be a
+     * valid request for the <code>CreateDBCluster</code> API operation that can run in
+     * the source Amazon Web Services Region that contains the encrypted DB cluster to
+     * copy.</p> <p>The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the
+     * KMS key to use to encrypt the copy of the DB cluster in the destination Amazon
+     * Web Services Region. This should refer to the same KMS key for both the
+     * <code>CreateDBCluster</code> operation that is called in the destination Amazon
+     * Web Services Region, and the operation contained in the presigned URL.</p> </li>
+     * <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services
+     * Region that Aurora read replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are copying an encrypted DB cluster from the us-west-2 Amazon
+     * Web Services Region, then your <code>ReplicationSourceIdentifier</code> would
+     * look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1779,34 +1781,35 @@ namespace Model
      * Amazon Web Services SDK tool or the CLI, you can specify
      * <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead
      * of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request
-     * for the operation that can be executed in the source Amazon Web Services
-     * Region.</p>  <p>Valid for: Aurora DB clusters only</p>
+     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request
+     * for the operation that can run in the source Amazon Web Services Region.</p>
+     *  <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source Amazon Web
-     * Services Region where the DB cluster is replicated from. Specify
-     * <code>PreSignedUrl</code> only when you are performing cross-Region replication
-     * from an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request
-     * for the <code>CreateDBCluster</code> API action that can be executed in the
-     * source Amazon Web Services Region that contains the encrypted DB cluster to be
-     * copied.</p> <p>The pre-signed URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS
-     * key identifier for the KMS key to use to encrypt the copy of the DB cluster in
-     * the destination Amazon Web Services Region. This should refer to the same KMS
-     * key for both the <code>CreateDBCluster</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the Amazon Web Services Region that Aurora read replica will be created in.</p>
-     * </li> <li> <p> <code>ReplicationSourceIdentifier</code> - The DB cluster
-     * identifier for the encrypted DB cluster to be copied. This identifier must be in
-     * the Amazon Resource Name (ARN) format for the source Amazon Web Services Region.
-     * For example, if you are copying an encrypted DB cluster from the us-west-2
-     * Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code>
-     * would look like Example:
+     * <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud
+     * (US) Region to another, an URL that contains a Signature Version 4 signed
+     * request for the <code>CreateDBCluster</code> operation to be called in the
+     * source Amazon Web Services Region where the DB cluster is replicated from.
+     * Specify <code>PreSignedUrl</code> only when you are performing cross-Region
+     * replication from an encrypted DB cluster.</p> <p>The presigned URL must be a
+     * valid request for the <code>CreateDBCluster</code> API operation that can run in
+     * the source Amazon Web Services Region that contains the encrypted DB cluster to
+     * copy.</p> <p>The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the
+     * KMS key to use to encrypt the copy of the DB cluster in the destination Amazon
+     * Web Services Region. This should refer to the same KMS key for both the
+     * <code>CreateDBCluster</code> operation that is called in the destination Amazon
+     * Web Services Region, and the operation contained in the presigned URL.</p> </li>
+     * <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services
+     * Region that Aurora read replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are copying an encrypted DB cluster from the us-west-2 Amazon
+     * Web Services Region, then your <code>ReplicationSourceIdentifier</code> would
+     * look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1818,34 +1821,35 @@ namespace Model
      * Amazon Web Services SDK tool or the CLI, you can specify
      * <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead
      * of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request
-     * for the operation that can be executed in the source Amazon Web Services
-     * Region.</p>  <p>Valid for: Aurora DB clusters only</p>
+     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request
+     * for the operation that can run in the source Amazon Web Services Region.</p>
+     *  <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source Amazon Web
-     * Services Region where the DB cluster is replicated from. Specify
-     * <code>PreSignedUrl</code> only when you are performing cross-Region replication
-     * from an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request
-     * for the <code>CreateDBCluster</code> API action that can be executed in the
-     * source Amazon Web Services Region that contains the encrypted DB cluster to be
-     * copied.</p> <p>The pre-signed URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS
-     * key identifier for the KMS key to use to encrypt the copy of the DB cluster in
-     * the destination Amazon Web Services Region. This should refer to the same KMS
-     * key for both the <code>CreateDBCluster</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the Amazon Web Services Region that Aurora read replica will be created in.</p>
-     * </li> <li> <p> <code>ReplicationSourceIdentifier</code> - The DB cluster
-     * identifier for the encrypted DB cluster to be copied. This identifier must be in
-     * the Amazon Resource Name (ARN) format for the source Amazon Web Services Region.
-     * For example, if you are copying an encrypted DB cluster from the us-west-2
-     * Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code>
-     * would look like Example:
+     * <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud
+     * (US) Region to another, an URL that contains a Signature Version 4 signed
+     * request for the <code>CreateDBCluster</code> operation to be called in the
+     * source Amazon Web Services Region where the DB cluster is replicated from.
+     * Specify <code>PreSignedUrl</code> only when you are performing cross-Region
+     * replication from an encrypted DB cluster.</p> <p>The presigned URL must be a
+     * valid request for the <code>CreateDBCluster</code> API operation that can run in
+     * the source Amazon Web Services Region that contains the encrypted DB cluster to
+     * copy.</p> <p>The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the
+     * KMS key to use to encrypt the copy of the DB cluster in the destination Amazon
+     * Web Services Region. This should refer to the same KMS key for both the
+     * <code>CreateDBCluster</code> operation that is called in the destination Amazon
+     * Web Services Region, and the operation contained in the presigned URL.</p> </li>
+     * <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services
+     * Region that Aurora read replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are copying an encrypted DB cluster from the us-west-2 Amazon
+     * Web Services Region, then your <code>ReplicationSourceIdentifier</code> would
+     * look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1857,34 +1861,35 @@ namespace Model
      * Amazon Web Services SDK tool or the CLI, you can specify
      * <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead
      * of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request
-     * for the operation that can be executed in the source Amazon Web Services
-     * Region.</p>  <p>Valid for: Aurora DB clusters only</p>
+     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request
+     * for the operation that can run in the source Amazon Web Services Region.</p>
+     *  <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source Amazon Web
-     * Services Region where the DB cluster is replicated from. Specify
-     * <code>PreSignedUrl</code> only when you are performing cross-Region replication
-     * from an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request
-     * for the <code>CreateDBCluster</code> API action that can be executed in the
-     * source Amazon Web Services Region that contains the encrypted DB cluster to be
-     * copied.</p> <p>The pre-signed URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS
-     * key identifier for the KMS key to use to encrypt the copy of the DB cluster in
-     * the destination Amazon Web Services Region. This should refer to the same KMS
-     * key for both the <code>CreateDBCluster</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the Amazon Web Services Region that Aurora read replica will be created in.</p>
-     * </li> <li> <p> <code>ReplicationSourceIdentifier</code> - The DB cluster
-     * identifier for the encrypted DB cluster to be copied. This identifier must be in
-     * the Amazon Resource Name (ARN) format for the source Amazon Web Services Region.
-     * For example, if you are copying an encrypted DB cluster from the us-west-2
-     * Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code>
-     * would look like Example:
+     * <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud
+     * (US) Region to another, an URL that contains a Signature Version 4 signed
+     * request for the <code>CreateDBCluster</code> operation to be called in the
+     * source Amazon Web Services Region where the DB cluster is replicated from.
+     * Specify <code>PreSignedUrl</code> only when you are performing cross-Region
+     * replication from an encrypted DB cluster.</p> <p>The presigned URL must be a
+     * valid request for the <code>CreateDBCluster</code> API operation that can run in
+     * the source Amazon Web Services Region that contains the encrypted DB cluster to
+     * copy.</p> <p>The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the
+     * KMS key to use to encrypt the copy of the DB cluster in the destination Amazon
+     * Web Services Region. This should refer to the same KMS key for both the
+     * <code>CreateDBCluster</code> operation that is called in the destination Amazon
+     * Web Services Region, and the operation contained in the presigned URL.</p> </li>
+     * <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services
+     * Region that Aurora read replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are copying an encrypted DB cluster from the us-west-2 Amazon
+     * Web Services Region, then your <code>ReplicationSourceIdentifier</code> would
+     * look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1896,34 +1901,35 @@ namespace Model
      * Amazon Web Services SDK tool or the CLI, you can specify
      * <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead
      * of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request
-     * for the operation that can be executed in the source Amazon Web Services
-     * Region.</p>  <p>Valid for: Aurora DB clusters only</p>
+     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request
+     * for the operation that can run in the source Amazon Web Services Region.</p>
+     *  <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source Amazon Web
-     * Services Region where the DB cluster is replicated from. Specify
-     * <code>PreSignedUrl</code> only when you are performing cross-Region replication
-     * from an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request
-     * for the <code>CreateDBCluster</code> API action that can be executed in the
-     * source Amazon Web Services Region that contains the encrypted DB cluster to be
-     * copied.</p> <p>The pre-signed URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS
-     * key identifier for the KMS key to use to encrypt the copy of the DB cluster in
-     * the destination Amazon Web Services Region. This should refer to the same KMS
-     * key for both the <code>CreateDBCluster</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the Amazon Web Services Region that Aurora read replica will be created in.</p>
-     * </li> <li> <p> <code>ReplicationSourceIdentifier</code> - The DB cluster
-     * identifier for the encrypted DB cluster to be copied. This identifier must be in
-     * the Amazon Resource Name (ARN) format for the source Amazon Web Services Region.
-     * For example, if you are copying an encrypted DB cluster from the us-west-2
-     * Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code>
-     * would look like Example:
+     * <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud
+     * (US) Region to another, an URL that contains a Signature Version 4 signed
+     * request for the <code>CreateDBCluster</code> operation to be called in the
+     * source Amazon Web Services Region where the DB cluster is replicated from.
+     * Specify <code>PreSignedUrl</code> only when you are performing cross-Region
+     * replication from an encrypted DB cluster.</p> <p>The presigned URL must be a
+     * valid request for the <code>CreateDBCluster</code> API operation that can run in
+     * the source Amazon Web Services Region that contains the encrypted DB cluster to
+     * copy.</p> <p>The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the
+     * KMS key to use to encrypt the copy of the DB cluster in the destination Amazon
+     * Web Services Region. This should refer to the same KMS key for both the
+     * <code>CreateDBCluster</code> operation that is called in the destination Amazon
+     * Web Services Region, and the operation contained in the presigned URL.</p> </li>
+     * <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services
+     * Region that Aurora read replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are copying an encrypted DB cluster from the us-west-2 Amazon
+     * Web Services Region, then your <code>ReplicationSourceIdentifier</code> would
+     * look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1935,34 +1941,35 @@ namespace Model
      * Amazon Web Services SDK tool or the CLI, you can specify
      * <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead
      * of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request
-     * for the operation that can be executed in the source Amazon Web Services
-     * Region.</p>  <p>Valid for: Aurora DB clusters only</p>
+     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request
+     * for the operation that can run in the source Amazon Web Services Region.</p>
+     *  <p>Valid for: Aurora DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source Amazon Web
-     * Services Region where the DB cluster is replicated from. Specify
-     * <code>PreSignedUrl</code> only when you are performing cross-Region replication
-     * from an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request
-     * for the <code>CreateDBCluster</code> API action that can be executed in the
-     * source Amazon Web Services Region that contains the encrypted DB cluster to be
-     * copied.</p> <p>The pre-signed URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS
-     * key identifier for the KMS key to use to encrypt the copy of the DB cluster in
-     * the destination Amazon Web Services Region. This should refer to the same KMS
-     * key for both the <code>CreateDBCluster</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the Amazon Web Services Region that Aurora read replica will be created in.</p>
-     * </li> <li> <p> <code>ReplicationSourceIdentifier</code> - The DB cluster
-     * identifier for the encrypted DB cluster to be copied. This identifier must be in
-     * the Amazon Resource Name (ARN) format for the source Amazon Web Services Region.
-     * For example, if you are copying an encrypted DB cluster from the us-west-2
-     * Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code>
-     * would look like Example:
+     * <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud
+     * (US) Region to another, an URL that contains a Signature Version 4 signed
+     * request for the <code>CreateDBCluster</code> operation to be called in the
+     * source Amazon Web Services Region where the DB cluster is replicated from.
+     * Specify <code>PreSignedUrl</code> only when you are performing cross-Region
+     * replication from an encrypted DB cluster.</p> <p>The presigned URL must be a
+     * valid request for the <code>CreateDBCluster</code> API operation that can run in
+     * the source Amazon Web Services Region that contains the encrypted DB cluster to
+     * copy.</p> <p>The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the
+     * KMS key to use to encrypt the copy of the DB cluster in the destination Amazon
+     * Web Services Region. This should refer to the same KMS key for both the
+     * <code>CreateDBCluster</code> operation that is called in the destination Amazon
+     * Web Services Region, and the operation contained in the presigned URL.</p> </li>
+     * <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services
+     * Region that Aurora read replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are copying an encrypted DB cluster from the us-west-2 Amazon
+     * Web Services Region, then your <code>ReplicationSourceIdentifier</code> would
+     * look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -1974,34 +1981,35 @@ namespace Model
      * Amazon Web Services SDK tool or the CLI, you can specify
      * <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead
      * of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request
-     * for the operation that can be executed in the source Amazon Web Services
-     * Region.</p>  <p>Valid for: Aurora DB clusters only</p>
+     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request
+     * for the operation that can run in the source Amazon Web Services Region.</p>
+     *  <p>Valid for: Aurora DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A URL that contains a Signature Version 4 signed request for the
-     * <code>CreateDBCluster</code> action to be called in the source Amazon Web
-     * Services Region where the DB cluster is replicated from. Specify
-     * <code>PreSignedUrl</code> only when you are performing cross-Region replication
-     * from an encrypted DB cluster.</p> <p>The pre-signed URL must be a valid request
-     * for the <code>CreateDBCluster</code> API action that can be executed in the
-     * source Amazon Web Services Region that contains the encrypted DB cluster to be
-     * copied.</p> <p>The pre-signed URL request must contain the following parameter
-     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The Amazon Web Services KMS
-     * key identifier for the KMS key to use to encrypt the copy of the DB cluster in
-     * the destination Amazon Web Services Region. This should refer to the same KMS
-     * key for both the <code>CreateDBCluster</code> action that is called in the
-     * destination Amazon Web Services Region, and the action contained in the
-     * pre-signed URL.</p> </li> <li> <p> <code>DestinationRegion</code> - The name of
-     * the Amazon Web Services Region that Aurora read replica will be created in.</p>
-     * </li> <li> <p> <code>ReplicationSourceIdentifier</code> - The DB cluster
-     * identifier for the encrypted DB cluster to be copied. This identifier must be in
-     * the Amazon Resource Name (ARN) format for the source Amazon Web Services Region.
-     * For example, if you are copying an encrypted DB cluster from the us-west-2
-     * Amazon Web Services Region, then your <code>ReplicationSourceIdentifier</code>
-     * would look like Example:
+     * <p>When you are replicating a DB cluster from one Amazon Web Services GovCloud
+     * (US) Region to another, an URL that contains a Signature Version 4 signed
+     * request for the <code>CreateDBCluster</code> operation to be called in the
+     * source Amazon Web Services Region where the DB cluster is replicated from.
+     * Specify <code>PreSignedUrl</code> only when you are performing cross-Region
+     * replication from an encrypted DB cluster.</p> <p>The presigned URL must be a
+     * valid request for the <code>CreateDBCluster</code> API operation that can run in
+     * the source Amazon Web Services Region that contains the encrypted DB cluster to
+     * copy.</p> <p>The presigned URL request must contain the following parameter
+     * values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The KMS key identifier for the
+     * KMS key to use to encrypt the copy of the DB cluster in the destination Amazon
+     * Web Services Region. This should refer to the same KMS key for both the
+     * <code>CreateDBCluster</code> operation that is called in the destination Amazon
+     * Web Services Region, and the operation contained in the presigned URL.</p> </li>
+     * <li> <p> <code>DestinationRegion</code> - The name of the Amazon Web Services
+     * Region that Aurora read replica will be created in.</p> </li> <li> <p>
+     * <code>ReplicationSourceIdentifier</code> - The DB cluster identifier for the
+     * encrypted DB cluster to be copied. This identifier must be in the Amazon
+     * Resource Name (ARN) format for the source Amazon Web Services Region. For
+     * example, if you are copying an encrypted DB cluster from the us-west-2 Amazon
+     * Web Services Region, then your <code>ReplicationSourceIdentifier</code> would
+     * look like Example:
      * <code>arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
@@ -2013,9 +2021,9 @@ namespace Model
      * Amazon Web Services SDK tool or the CLI, you can specify
      * <code>SourceRegion</code> (or <code>--source-region</code> for the CLI) instead
      * of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request
-     * for the operation that can be executed in the source Amazon Web Services
-     * Region.</p>  <p>Valid for: Aurora DB clusters only</p>
+     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request
+     * for the operation that can run in the source Amazon Web Services Region.</p>
+     *  <p>Valid for: Aurora DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
 
@@ -2025,7 +2033,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.</p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
@@ -2035,7 +2043,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.</p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
@@ -2045,7 +2053,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.</p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
@@ -2055,7 +2063,7 @@ namespace Model
      * Identity and Access Management (IAM) accounts to database accounts. By default,
      * mapping isn't enabled.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
-     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.</p>
+     * IAM Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.</p>
      * <p>Valid for: Aurora DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
@@ -2293,21 +2301,24 @@ namespace Model
      * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
      * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
      * <code>multimaster</code> engine mode only applies for DB clusters created with
-     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
-     * <code>global</code> engine mode isn't required, and both the
+     * Aurora MySQL version 5.6.10a.</p> <p>The <code>serverless</code> engine mode
+     * only applies for Aurora Serverless v1 DB clusters.</p> <p>For Aurora PostgreSQL,
+     * the <code>global</code> engine mode isn't required, and both the
      * <code>parallelquery</code> and the <code>multimaster</code> engine modes
      * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
-     * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
-     * Limitations of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora
-     * DB clusters only</p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
+     * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
+     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
+     * of Parallel Query</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
+     * of Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">Limitations
+     * of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * only</p>
      */
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
 
@@ -2320,21 +2331,24 @@ namespace Model
      * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
      * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
      * <code>multimaster</code> engine mode only applies for DB clusters created with
-     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
-     * <code>global</code> engine mode isn't required, and both the
+     * Aurora MySQL version 5.6.10a.</p> <p>The <code>serverless</code> engine mode
+     * only applies for Aurora Serverless v1 DB clusters.</p> <p>For Aurora PostgreSQL,
+     * the <code>global</code> engine mode isn't required, and both the
      * <code>parallelquery</code> and the <code>multimaster</code> engine modes
      * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
-     * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
-     * Limitations of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora
-     * DB clusters only</p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
+     * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
+     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
+     * of Parallel Query</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
+     * of Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">Limitations
+     * of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * only</p>
      */
     inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
 
@@ -2347,21 +2361,24 @@ namespace Model
      * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
      * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
      * <code>multimaster</code> engine mode only applies for DB clusters created with
-     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
-     * <code>global</code> engine mode isn't required, and both the
+     * Aurora MySQL version 5.6.10a.</p> <p>The <code>serverless</code> engine mode
+     * only applies for Aurora Serverless v1 DB clusters.</p> <p>For Aurora PostgreSQL,
+     * the <code>global</code> engine mode isn't required, and both the
      * <code>parallelquery</code> and the <code>multimaster</code> engine modes
      * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
-     * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
-     * Limitations of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora
-     * DB clusters only</p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
+     * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
+     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
+     * of Parallel Query</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
+     * of Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">Limitations
+     * of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * only</p>
      */
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
 
@@ -2374,21 +2391,24 @@ namespace Model
      * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
      * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
      * <code>multimaster</code> engine mode only applies for DB clusters created with
-     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
-     * <code>global</code> engine mode isn't required, and both the
+     * Aurora MySQL version 5.6.10a.</p> <p>The <code>serverless</code> engine mode
+     * only applies for Aurora Serverless v1 DB clusters.</p> <p>For Aurora PostgreSQL,
+     * the <code>global</code> engine mode isn't required, and both the
      * <code>parallelquery</code> and the <code>multimaster</code> engine modes
      * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
-     * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
-     * Limitations of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora
-     * DB clusters only</p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
+     * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
+     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
+     * of Parallel Query</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
+     * of Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">Limitations
+     * of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * only</p>
      */
     inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
 
@@ -2401,21 +2421,24 @@ namespace Model
      * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
      * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
      * <code>multimaster</code> engine mode only applies for DB clusters created with
-     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
-     * <code>global</code> engine mode isn't required, and both the
+     * Aurora MySQL version 5.6.10a.</p> <p>The <code>serverless</code> engine mode
+     * only applies for Aurora Serverless v1 DB clusters.</p> <p>For Aurora PostgreSQL,
+     * the <code>global</code> engine mode isn't required, and both the
      * <code>parallelquery</code> and the <code>multimaster</code> engine modes
      * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
-     * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
-     * Limitations of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora
-     * DB clusters only</p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
+     * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
+     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
+     * of Parallel Query</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
+     * of Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">Limitations
+     * of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * only</p>
      */
     inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
 
@@ -2428,21 +2451,24 @@ namespace Model
      * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
      * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
      * <code>multimaster</code> engine mode only applies for DB clusters created with
-     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
-     * <code>global</code> engine mode isn't required, and both the
+     * Aurora MySQL version 5.6.10a.</p> <p>The <code>serverless</code> engine mode
+     * only applies for Aurora Serverless v1 DB clusters.</p> <p>For Aurora PostgreSQL,
+     * the <code>global</code> engine mode isn't required, and both the
      * <code>parallelquery</code> and the <code>multimaster</code> engine modes
      * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
-     * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
-     * Limitations of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora
-     * DB clusters only</p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
+     * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
+     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
+     * of Parallel Query</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
+     * of Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">Limitations
+     * of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * only</p>
      */
     inline CreateDBClusterRequest& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
 
@@ -2455,21 +2481,24 @@ namespace Model
      * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
      * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
      * <code>multimaster</code> engine mode only applies for DB clusters created with
-     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
-     * <code>global</code> engine mode isn't required, and both the
+     * Aurora MySQL version 5.6.10a.</p> <p>The <code>serverless</code> engine mode
+     * only applies for Aurora Serverless v1 DB clusters.</p> <p>For Aurora PostgreSQL,
+     * the <code>global</code> engine mode isn't required, and both the
      * <code>parallelquery</code> and the <code>multimaster</code> engine modes
      * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
-     * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
-     * Limitations of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora
-     * DB clusters only</p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
+     * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
+     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
+     * of Parallel Query</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
+     * of Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">Limitations
+     * of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * only</p>
      */
     inline CreateDBClusterRequest& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
 
@@ -2482,21 +2511,24 @@ namespace Model
      * isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
      * <code>global</code> engine mode isn't required for any 2.x versions.</p> <p>The
      * <code>multimaster</code> engine mode only applies for DB clusters created with
-     * Aurora MySQL version 5.6.10a.</p> <p>For Aurora PostgreSQL, the
-     * <code>global</code> engine mode isn't required, and both the
+     * Aurora MySQL version 5.6.10a.</p> <p>The <code>serverless</code> engine mode
+     * only applies for Aurora Serverless v1 DB clusters.</p> <p>For Aurora PostgreSQL,
+     * the <code>global</code> engine mode isn't required, and both the
      * <code>parallelquery</code> and the <code>multimaster</code> engine modes
      * currently aren't supported.</p> <p>Limitations and requirements apply to some DB
      * engine modes. For more information, see the following sections in the <i>Amazon
      * Aurora User Guide</i>:</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">
-     * Limitations of Aurora Serverless v1</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">
-     * Limitations of Parallel Query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">
-     * Limitations of Aurora Global Databases</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">
-     * Limitations of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora
-     * DB clusters only</p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
+     * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
+     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
+     * of Parallel Query</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
+     * of Aurora Global Databases</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">Limitations
+     * of Multi-Master Clusters</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * only</p>
      */
     inline CreateDBClusterRequest& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
 
@@ -2911,8 +2943,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
@@ -2923,8 +2955,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
@@ -2935,8 +2967,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
@@ -2947,8 +2979,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
@@ -2959,8 +2991,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
@@ -2971,8 +3003,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
@@ -2983,8 +3015,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
@@ -2995,8 +3027,8 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of each DB instance in the Multi-AZ DB
-     * cluster, for example db.m6g.xlarge. Not all DB instance classes are available in
-     * all Amazon Web Services Regions, or for all database engines.</p> <p>For the
+     * cluster, for example db.m6gd.xlarge. Not all DB instance classes are available
+     * in all Amazon Web Services Regions, or for all database engines.</p> <p>For the
      * full list of DB instance classes and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * instance class</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting is
@@ -3564,26 +3596,50 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
-     * <p>The amount of time, in days, to retain Performance Insights data. Valid
-     * values are 7 or 731 (2 years).</p> <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>The number of days to retain Performance Insights data. The default is 7
+     * days. The following values are valid:</p> <ul> <li> <p>7</p> </li> <li> <p>
+     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23</p> </li>
+     * <li> <p>731</p> </li> </ul> <p>For example, the following values are valid:</p>
+     * <ul> <li> <p>93 (3 months * 31)</p> </li> <li> <p>341 (11 months * 31)</p> </li>
+     * <li> <p>589 (19 months * 31)</p> </li> <li> <p>731</p> </li> </ul> <p>If you
+     * specify a retention period such as 94, which isn't a valid value, RDS issues an
+     * error.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 
@@ -3605,6 +3661,111 @@ namespace Model
 
     
     inline CreateDBClusterRequest& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfiguration&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline const Aws::String& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline CreateDBClusterRequest& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline CreateDBClusterRequest& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
+
+    /**
+     * <p>The network type of the DB cluster.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>IPV4</code> </p> </li> <li> <p> <code>DUAL</code> </p> </li> </ul> <p>The
+     * network type is determined by the <code>DBSubnetGroup</code> specified for the
+     * DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or
+     * the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html">
+     * Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline CreateDBClusterRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
 
 
     /**
@@ -3650,142 +3811,145 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
-    bool m_availabilityZonesHasBeenSet;
+    bool m_availabilityZonesHasBeenSet = false;
 
     int m_backupRetentionPeriod;
-    bool m_backupRetentionPeriodHasBeenSet;
+    bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_characterSetName;
-    bool m_characterSetNameHasBeenSet;
+    bool m_characterSetNameHasBeenSet = false;
 
     Aws::String m_databaseName;
-    bool m_databaseNameHasBeenSet;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_dBClusterIdentifier;
-    bool m_dBClusterIdentifierHasBeenSet;
+    bool m_dBClusterIdentifierHasBeenSet = false;
 
     Aws::String m_dBClusterParameterGroupName;
-    bool m_dBClusterParameterGroupNameHasBeenSet;
+    bool m_dBClusterParameterGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
-    bool m_vpcSecurityGroupIdsHasBeenSet;
+    bool m_vpcSecurityGroupIdsHasBeenSet = false;
 
     Aws::String m_dBSubnetGroupName;
-    bool m_dBSubnetGroupNameHasBeenSet;
+    bool m_dBSubnetGroupNameHasBeenSet = false;
 
     Aws::String m_engine;
-    bool m_engineHasBeenSet;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_engineVersion;
-    bool m_engineVersionHasBeenSet;
+    bool m_engineVersionHasBeenSet = false;
 
     int m_port;
-    bool m_portHasBeenSet;
+    bool m_portHasBeenSet = false;
 
     Aws::String m_masterUsername;
-    bool m_masterUsernameHasBeenSet;
+    bool m_masterUsernameHasBeenSet = false;
 
     Aws::String m_masterUserPassword;
-    bool m_masterUserPasswordHasBeenSet;
+    bool m_masterUserPasswordHasBeenSet = false;
 
     Aws::String m_optionGroupName;
-    bool m_optionGroupNameHasBeenSet;
+    bool m_optionGroupNameHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
-    bool m_preferredBackupWindowHasBeenSet;
+    bool m_preferredBackupWindowHasBeenSet = false;
 
     Aws::String m_preferredMaintenanceWindow;
-    bool m_preferredMaintenanceWindowHasBeenSet;
+    bool m_preferredMaintenanceWindowHasBeenSet = false;
 
     Aws::String m_replicationSourceIdentifier;
-    bool m_replicationSourceIdentifierHasBeenSet;
+    bool m_replicationSourceIdentifierHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     bool m_storageEncrypted;
-    bool m_storageEncryptedHasBeenSet;
+    bool m_storageEncryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
-    bool m_kmsKeyIdHasBeenSet;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_preSignedUrl;
-    bool m_preSignedUrlHasBeenSet;
+    bool m_preSignedUrlHasBeenSet = false;
 
     bool m_enableIAMDatabaseAuthentication;
-    bool m_enableIAMDatabaseAuthenticationHasBeenSet;
+    bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
     long long m_backtrackWindow;
-    bool m_backtrackWindowHasBeenSet;
+    bool m_backtrackWindowHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
-    bool m_enableCloudwatchLogsExportsHasBeenSet;
+    bool m_enableCloudwatchLogsExportsHasBeenSet = false;
 
     Aws::String m_engineMode;
-    bool m_engineModeHasBeenSet;
+    bool m_engineModeHasBeenSet = false;
 
     ScalingConfiguration m_scalingConfiguration;
-    bool m_scalingConfigurationHasBeenSet;
+    bool m_scalingConfigurationHasBeenSet = false;
 
     bool m_deletionProtection;
-    bool m_deletionProtectionHasBeenSet;
+    bool m_deletionProtectionHasBeenSet = false;
 
     Aws::String m_globalClusterIdentifier;
-    bool m_globalClusterIdentifierHasBeenSet;
+    bool m_globalClusterIdentifierHasBeenSet = false;
 
     bool m_enableHttpEndpoint;
-    bool m_enableHttpEndpointHasBeenSet;
+    bool m_enableHttpEndpointHasBeenSet = false;
 
     bool m_copyTagsToSnapshot;
-    bool m_copyTagsToSnapshotHasBeenSet;
+    bool m_copyTagsToSnapshotHasBeenSet = false;
 
     Aws::String m_domain;
-    bool m_domainHasBeenSet;
+    bool m_domainHasBeenSet = false;
 
     Aws::String m_domainIAMRoleName;
-    bool m_domainIAMRoleNameHasBeenSet;
+    bool m_domainIAMRoleNameHasBeenSet = false;
 
     bool m_enableGlobalWriteForwarding;
-    bool m_enableGlobalWriteForwardingHasBeenSet;
+    bool m_enableGlobalWriteForwardingHasBeenSet = false;
 
     Aws::String m_dBClusterInstanceClass;
-    bool m_dBClusterInstanceClassHasBeenSet;
+    bool m_dBClusterInstanceClassHasBeenSet = false;
 
     int m_allocatedStorage;
-    bool m_allocatedStorageHasBeenSet;
+    bool m_allocatedStorageHasBeenSet = false;
 
     Aws::String m_storageType;
-    bool m_storageTypeHasBeenSet;
+    bool m_storageTypeHasBeenSet = false;
 
     int m_iops;
-    bool m_iopsHasBeenSet;
+    bool m_iopsHasBeenSet = false;
 
     bool m_publiclyAccessible;
-    bool m_publiclyAccessibleHasBeenSet;
+    bool m_publiclyAccessibleHasBeenSet = false;
 
     bool m_autoMinorVersionUpgrade;
-    bool m_autoMinorVersionUpgradeHasBeenSet;
+    bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     int m_monitoringInterval;
-    bool m_monitoringIntervalHasBeenSet;
+    bool m_monitoringIntervalHasBeenSet = false;
 
     Aws::String m_monitoringRoleArn;
-    bool m_monitoringRoleArnHasBeenSet;
+    bool m_monitoringRoleArnHasBeenSet = false;
 
     bool m_enablePerformanceInsights;
-    bool m_enablePerformanceInsightsHasBeenSet;
+    bool m_enablePerformanceInsightsHasBeenSet = false;
 
     Aws::String m_performanceInsightsKMSKeyId;
-    bool m_performanceInsightsKMSKeyIdHasBeenSet;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
     int m_performanceInsightsRetentionPeriod;
-    bool m_performanceInsightsRetentionPeriodHasBeenSet;
+    bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
     ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
-    bool m_serverlessV2ScalingConfigurationHasBeenSet;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+
+    Aws::String m_networkType;
+    bool m_networkTypeHasBeenSet = false;
 
     Aws::String m_sourceRegion;
-    bool m_sourceRegionHasBeenSet;
+    bool m_sourceRegionHasBeenSet = false;
   };
 
 } // namespace Model

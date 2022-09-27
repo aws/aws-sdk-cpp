@@ -151,10 +151,10 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_actions;
-    bool m_actionsHasBeenSet;
+    bool m_actionsHasBeenSet = false;
 
     RuleGroupSourceStatelessRuleMatchAttributes m_matchAttributes;
-    bool m_matchAttributesHasBeenSet;
+    bool m_matchAttributesHasBeenSet = false;
   };
 
 } // namespace Model

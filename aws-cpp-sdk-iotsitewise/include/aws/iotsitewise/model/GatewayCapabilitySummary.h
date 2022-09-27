@@ -167,10 +167,10 @@ namespace Model
   private:
 
     Aws::String m_capabilityNamespace;
-    bool m_capabilityNamespaceHasBeenSet;
+    bool m_capabilityNamespaceHasBeenSet = false;
 
     CapabilitySyncStatus m_capabilitySyncStatus;
-    bool m_capabilitySyncStatusHasBeenSet;
+    bool m_capabilitySyncStatusHasBeenSet = false;
   };
 
 } // namespace Model

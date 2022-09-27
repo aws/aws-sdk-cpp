@@ -10,6 +10,9 @@
 \#include <aws/${metadata.projectName}/model/${operation.name}Handler.h>
 \#include <aws/core/utils/event/EventStreamDecoder.h>
 #end
+#if($serviceModel.endpointRules && $operation.request.shape.hasContextParam())
+\#include <aws/core/utils/memory/stl/AWSMap.h>
+#end
 #if($operation.request.shape.hasEventStreamMembers())
 \#include <memory>
 #end
@@ -73,6 +76,9 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 #end
+#if($shape.hasEmbeddedErrors())
+    bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
+#end
 #if($operation.requestAlgorithmMember)
     Aws::String GetChecksumAlgorithmName() const override;
 
@@ -129,6 +135,13 @@ namespace Model
     void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
   public:
+#end
+#if($serviceModel.endpointRules && $operation.request.shape.hasContextParam())
+    Aws::UnorderedMap<Aws::String, Aws::String> GetRequestContextEndpointRulesParam() const
+    {
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamBody.vm")
+    }
+
 #end
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersAndInlines.vm")

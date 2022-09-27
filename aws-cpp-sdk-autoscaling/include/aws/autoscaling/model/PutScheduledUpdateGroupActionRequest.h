@@ -120,32 +120,32 @@ namespace Model
 
 
     /**
-     * <p>This parameter is no longer used.</p>
+     * <p>This property is no longer used.</p>
      */
     inline const Aws::Utils::DateTime& GetTime() const{ return m_time; }
 
     /**
-     * <p>This parameter is no longer used.</p>
+     * <p>This property is no longer used.</p>
      */
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
 
     /**
-     * <p>This parameter is no longer used.</p>
+     * <p>This property is no longer used.</p>
      */
     inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
 
     /**
-     * <p>This parameter is no longer used.</p>
+     * <p>This property is no longer used.</p>
      */
     inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
 
     /**
-     * <p>This parameter is no longer used.</p>
+     * <p>This property is no longer used.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithTime(const Aws::Utils::DateTime& value) { SetTime(value); return *this;}
 
     /**
-     * <p>This parameter is no longer used.</p>
+     * <p>This property is no longer used.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
 
@@ -153,97 +153,97 @@ namespace Model
     /**
      * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
      * UTC/GMT only and in quotes (for example,
-     * <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If you specify
+     * <code>"2021-06-01T00:00:00Z"</code>).</p> <p>If you specify
      * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
      * performs the action at this time, and then performs the action based on the
-     * specified recurrence.</p> <p>If you try to schedule your action in the past,
-     * Amazon EC2 Auto Scaling returns an error message.</p>
+     * specified recurrence.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
      * UTC/GMT only and in quotes (for example,
-     * <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If you specify
+     * <code>"2021-06-01T00:00:00Z"</code>).</p> <p>If you specify
      * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
      * performs the action at this time, and then performs the action based on the
-     * specified recurrence.</p> <p>If you try to schedule your action in the past,
-     * Amazon EC2 Auto Scaling returns an error message.</p>
+     * specified recurrence.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
      * UTC/GMT only and in quotes (for example,
-     * <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If you specify
+     * <code>"2021-06-01T00:00:00Z"</code>).</p> <p>If you specify
      * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
      * performs the action at this time, and then performs the action based on the
-     * specified recurrence.</p> <p>If you try to schedule your action in the past,
-     * Amazon EC2 Auto Scaling returns an error message.</p>
+     * specified recurrence.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
      * UTC/GMT only and in quotes (for example,
-     * <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If you specify
+     * <code>"2021-06-01T00:00:00Z"</code>).</p> <p>If you specify
      * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
      * performs the action at this time, and then performs the action based on the
-     * specified recurrence.</p> <p>If you try to schedule your action in the past,
-     * Amazon EC2 Auto Scaling returns an error message.</p>
+     * specified recurrence.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
      * UTC/GMT only and in quotes (for example,
-     * <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If you specify
+     * <code>"2021-06-01T00:00:00Z"</code>).</p> <p>If you specify
      * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
      * performs the action at this time, and then performs the action based on the
-     * specified recurrence.</p> <p>If you try to schedule your action in the past,
-     * Amazon EC2 Auto Scaling returns an error message.</p>
+     * specified recurrence.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in
      * UTC/GMT only and in quotes (for example,
-     * <code>"2019-06-01T00:00:00Z"</code>).</p> <p>If you specify
+     * <code>"2021-06-01T00:00:00Z"</code>).</p> <p>If you specify
      * <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling
      * performs the action at this time, and then performs the action based on the
-     * specified recurrence.</p> <p>If you try to schedule your action in the past,
-     * Amazon EC2 Auto Scaling returns an error message.</p>
+     * specified recurrence.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time for the recurring schedule to end, in UTC.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC. For example,
+     * <code>"2021-06-01T00:00:00Z"</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The date and time for the recurring schedule to end, in UTC.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC. For example,
+     * <code>"2021-06-01T00:00:00Z"</code>.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The date and time for the recurring schedule to end, in UTC.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC. For example,
+     * <code>"2021-06-01T00:00:00Z"</code>.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The date and time for the recurring schedule to end, in UTC.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC. For example,
+     * <code>"2021-06-01T00:00:00Z"</code>.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The date and time for the recurring schedule to end, in UTC.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC. For example,
+     * <code>"2021-06-01T00:00:00Z"</code>.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The date and time for the recurring schedule to end, in UTC.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC. For example,
+     * <code>"2021-06-01T00:00:00Z"</code>.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -390,28 +390,36 @@ namespace Model
     /**
      * <p>The desired capacity is the initial capacity of the Auto Scaling group after
      * the scheduled action runs and the capacity it attempts to maintain. It can scale
-     * beyond this capacity if you add more scaling conditions. </p>
+     * beyond this capacity if you add more scaling conditions. </p>  <p>You must
+     * specify at least one of the following properties: <code>MaxSize</code>,
+     * <code>MinSize</code>, or <code>DesiredCapacity</code>. </p> 
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
      * <p>The desired capacity is the initial capacity of the Auto Scaling group after
      * the scheduled action runs and the capacity it attempts to maintain. It can scale
-     * beyond this capacity if you add more scaling conditions. </p>
+     * beyond this capacity if you add more scaling conditions. </p>  <p>You must
+     * specify at least one of the following properties: <code>MaxSize</code>,
+     * <code>MinSize</code>, or <code>DesiredCapacity</code>. </p> 
      */
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
 
     /**
      * <p>The desired capacity is the initial capacity of the Auto Scaling group after
      * the scheduled action runs and the capacity it attempts to maintain. It can scale
-     * beyond this capacity if you add more scaling conditions. </p>
+     * beyond this capacity if you add more scaling conditions. </p>  <p>You must
+     * specify at least one of the following properties: <code>MaxSize</code>,
+     * <code>MinSize</code>, or <code>DesiredCapacity</code>. </p> 
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
      * <p>The desired capacity is the initial capacity of the Auto Scaling group after
      * the scheduled action runs and the capacity it attempts to maintain. It can scale
-     * beyond this capacity if you add more scaling conditions. </p>
+     * beyond this capacity if you add more scaling conditions. </p>  <p>You must
+     * specify at least one of the following properties: <code>MaxSize</code>,
+     * <code>MinSize</code>, or <code>DesiredCapacity</code>. </p> 
      */
     inline PutScheduledUpdateGroupActionRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 
@@ -499,34 +507,34 @@ namespace Model
   private:
 
     Aws::String m_autoScalingGroupName;
-    bool m_autoScalingGroupNameHasBeenSet;
+    bool m_autoScalingGroupNameHasBeenSet = false;
 
     Aws::String m_scheduledActionName;
-    bool m_scheduledActionNameHasBeenSet;
+    bool m_scheduledActionNameHasBeenSet = false;
 
     Aws::Utils::DateTime m_time;
-    bool m_timeHasBeenSet;
+    bool m_timeHasBeenSet = false;
 
     Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet;
+    bool m_startTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_endTime;
-    bool m_endTimeHasBeenSet;
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_recurrence;
-    bool m_recurrenceHasBeenSet;
+    bool m_recurrenceHasBeenSet = false;
 
     int m_minSize;
-    bool m_minSizeHasBeenSet;
+    bool m_minSizeHasBeenSet = false;
 
     int m_maxSize;
-    bool m_maxSizeHasBeenSet;
+    bool m_maxSizeHasBeenSet = false;
 
     int m_desiredCapacity;
-    bool m_desiredCapacityHasBeenSet;
+    bool m_desiredCapacityHasBeenSet = false;
 
     Aws::String m_timeZone;
-    bool m_timeZoneHasBeenSet;
+    bool m_timeZoneHasBeenSet = false;
   };
 
 } // namespace Model

@@ -312,28 +312,28 @@ namespace Model
   private:
 
     Aws::String m_reservedInstanceOfferingId;
-    bool m_reservedInstanceOfferingIdHasBeenSet;
+    bool m_reservedInstanceOfferingIdHasBeenSet = false;
 
     OpenSearchPartitionInstanceType m_instanceType;
-    bool m_instanceTypeHasBeenSet;
+    bool m_instanceTypeHasBeenSet = false;
 
     int m_duration;
-    bool m_durationHasBeenSet;
+    bool m_durationHasBeenSet = false;
 
     double m_fixedPrice;
-    bool m_fixedPriceHasBeenSet;
+    bool m_fixedPriceHasBeenSet = false;
 
     double m_usagePrice;
-    bool m_usagePriceHasBeenSet;
+    bool m_usagePriceHasBeenSet = false;
 
     Aws::String m_currencyCode;
-    bool m_currencyCodeHasBeenSet;
+    bool m_currencyCodeHasBeenSet = false;
 
     ReservedInstancePaymentOption m_paymentOption;
-    bool m_paymentOptionHasBeenSet;
+    bool m_paymentOptionHasBeenSet = false;
 
     Aws::Vector<RecurringCharge> m_recurringCharges;
-    bool m_recurringChargesHasBeenSet;
+    bool m_recurringChargesHasBeenSet = false;
   };
 
 } // namespace Model

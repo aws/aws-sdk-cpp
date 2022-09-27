@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/external/gtest.h>
+#include <gtest/gtest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -14,7 +14,7 @@
 #include <aws/core/platform/Platform.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/auth/private/aws_signing.h>
+#include <aws/auth/signing.h>
 #include <aws/cal/ecc.h>
 #include <aws/common/encoding.h>
 #include <fstream>

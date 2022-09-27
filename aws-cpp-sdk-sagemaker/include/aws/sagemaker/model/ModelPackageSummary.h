@@ -353,28 +353,28 @@ namespace Model
   private:
 
     Aws::String m_modelPackageName;
-    bool m_modelPackageNameHasBeenSet;
+    bool m_modelPackageNameHasBeenSet = false;
 
     Aws::String m_modelPackageGroupName;
-    bool m_modelPackageGroupNameHasBeenSet;
+    bool m_modelPackageGroupNameHasBeenSet = false;
 
     int m_modelPackageVersion;
-    bool m_modelPackageVersionHasBeenSet;
+    bool m_modelPackageVersionHasBeenSet = false;
 
     Aws::String m_modelPackageArn;
-    bool m_modelPackageArnHasBeenSet;
+    bool m_modelPackageArnHasBeenSet = false;
 
     Aws::String m_modelPackageDescription;
-    bool m_modelPackageDescriptionHasBeenSet;
+    bool m_modelPackageDescriptionHasBeenSet = false;
 
     Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet;
+    bool m_creationTimeHasBeenSet = false;
 
     ModelPackageStatus m_modelPackageStatus;
-    bool m_modelPackageStatusHasBeenSet;
+    bool m_modelPackageStatusHasBeenSet = false;
 
     ModelApprovalStatus m_modelApprovalStatus;
-    bool m_modelApprovalStatusHasBeenSet;
+    bool m_modelApprovalStatusHasBeenSet = false;
   };
 
 } // namespace Model

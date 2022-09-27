@@ -163,16 +163,16 @@ namespace Model
   private:
 
     long long m_coreNetworkAsn;
-    bool m_coreNetworkAsnHasBeenSet;
+    bool m_coreNetworkAsnHasBeenSet = false;
 
     long long m_peerAsn;
-    bool m_peerAsnHasBeenSet;
+    bool m_peerAsnHasBeenSet = false;
 
     Aws::String m_coreNetworkAddress;
-    bool m_coreNetworkAddressHasBeenSet;
+    bool m_coreNetworkAddressHasBeenSet = false;
 
     Aws::String m_peerAddress;
-    bool m_peerAddressHasBeenSet;
+    bool m_peerAddressHasBeenSet = false;
   };
 
 } // namespace Model

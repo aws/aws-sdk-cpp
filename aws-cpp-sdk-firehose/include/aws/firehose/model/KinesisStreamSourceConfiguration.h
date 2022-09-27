@@ -162,10 +162,10 @@ namespace Model
   private:
 
     Aws::String m_kinesisStreamARN;
-    bool m_kinesisStreamARNHasBeenSet;
+    bool m_kinesisStreamARNHasBeenSet = false;
 
     Aws::String m_roleARN;
-    bool m_roleARNHasBeenSet;
+    bool m_roleARNHasBeenSet = false;
   };
 
 } // namespace Model

@@ -77,7 +77,7 @@ namespace Model
   private:
 
     Aws::String m_directoryName;
-    bool m_directoryNameHasBeenSet;
+    bool m_directoryNameHasBeenSet = false;
   };
 
 } // namespace Model

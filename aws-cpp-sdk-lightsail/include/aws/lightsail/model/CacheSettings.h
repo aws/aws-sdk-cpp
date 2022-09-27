@@ -490,28 +490,28 @@ namespace Model
   private:
 
     long long m_defaultTTL;
-    bool m_defaultTTLHasBeenSet;
+    bool m_defaultTTLHasBeenSet = false;
 
     long long m_minimumTTL;
-    bool m_minimumTTLHasBeenSet;
+    bool m_minimumTTLHasBeenSet = false;
 
     long long m_maximumTTL;
-    bool m_maximumTTLHasBeenSet;
+    bool m_maximumTTLHasBeenSet = false;
 
     Aws::String m_allowedHTTPMethods;
-    bool m_allowedHTTPMethodsHasBeenSet;
+    bool m_allowedHTTPMethodsHasBeenSet = false;
 
     Aws::String m_cachedHTTPMethods;
-    bool m_cachedHTTPMethodsHasBeenSet;
+    bool m_cachedHTTPMethodsHasBeenSet = false;
 
     CookieObject m_forwardedCookies;
-    bool m_forwardedCookiesHasBeenSet;
+    bool m_forwardedCookiesHasBeenSet = false;
 
     HeaderObject m_forwardedHeaders;
-    bool m_forwardedHeadersHasBeenSet;
+    bool m_forwardedHeadersHasBeenSet = false;
 
     QueryStringObject m_forwardedQueryStrings;
-    bool m_forwardedQueryStringsHasBeenSet;
+    bool m_forwardedQueryStringsHasBeenSet = false;
   };
 
 } // namespace Model

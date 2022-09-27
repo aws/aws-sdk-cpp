@@ -451,25 +451,25 @@ namespace Model
   private:
 
     Aws::String m_endpointName;
-    bool m_endpointNameHasBeenSet;
+    bool m_endpointNameHasBeenSet = false;
 
     Aws::String m_contentType;
-    bool m_contentTypeHasBeenSet;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_accept;
-    bool m_acceptHasBeenSet;
+    bool m_acceptHasBeenSet = false;
 
     Aws::String m_customAttributes;
-    bool m_customAttributesHasBeenSet;
+    bool m_customAttributesHasBeenSet = false;
 
     Aws::String m_inferenceId;
-    bool m_inferenceIdHasBeenSet;
+    bool m_inferenceIdHasBeenSet = false;
 
     Aws::String m_inputLocation;
-    bool m_inputLocationHasBeenSet;
+    bool m_inputLocationHasBeenSet = false;
 
     int m_requestTTLSeconds;
-    bool m_requestTTLSecondsHasBeenSet;
+    bool m_requestTTLSecondsHasBeenSet = false;
   };
 
 } // namespace Model

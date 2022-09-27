@@ -41,26 +41,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether Amazon Kendra indexes attachments to the pages and blogs in
-     * the Confluence data source. </p>
+     * <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
      */
     inline bool GetCrawlAttachments() const{ return m_crawlAttachments; }
 
     /**
-     * <p>Indicates whether Amazon Kendra indexes attachments to the pages and blogs in
-     * the Confluence data source. </p>
+     * <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
      */
     inline bool CrawlAttachmentsHasBeenSet() const { return m_crawlAttachmentsHasBeenSet; }
 
     /**
-     * <p>Indicates whether Amazon Kendra indexes attachments to the pages and blogs in
-     * the Confluence data source. </p>
+     * <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
      */
     inline void SetCrawlAttachments(bool value) { m_crawlAttachmentsHasBeenSet = true; m_crawlAttachments = value; }
 
     /**
-     * <p>Indicates whether Amazon Kendra indexes attachments to the pages and blogs in
-     * the Confluence data source. </p>
+     * <p> <code>TRUE</code> to index attachments of pages and blogs in Confluence.</p>
      */
     inline ConfluenceAttachmentConfiguration& WithCrawlAttachments(bool value) { SetCrawlAttachments(value); return *this;}
 
@@ -164,10 +160,10 @@ namespace Model
   private:
 
     bool m_crawlAttachments;
-    bool m_crawlAttachmentsHasBeenSet;
+    bool m_crawlAttachmentsHasBeenSet = false;
 
     Aws::Vector<ConfluenceAttachmentToIndexFieldMapping> m_attachmentFieldMappings;
-    bool m_attachmentFieldMappingsHasBeenSet;
+    bool m_attachmentFieldMappingsHasBeenSet = false;
   };
 
 } // namespace Model

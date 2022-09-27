@@ -11,6 +11,6 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
   );
   return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #else
-  return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.request.shape.signerName}));
+  return ${operation.name}Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}));
 #end
 }

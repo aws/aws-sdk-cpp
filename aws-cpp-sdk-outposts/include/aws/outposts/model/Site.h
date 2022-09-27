@@ -441,37 +441,37 @@ namespace Model
   private:
 
     Aws::String m_siteId;
-    bool m_siteIdHasBeenSet;
+    bool m_siteIdHasBeenSet = false;
 
     Aws::String m_accountId;
-    bool m_accountIdHasBeenSet;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_name;
-    bool m_nameHasBeenSet;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
-    bool m_descriptionHasBeenSet;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
-    bool m_tagsHasBeenSet;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_siteArn;
-    bool m_siteArnHasBeenSet;
+    bool m_siteArnHasBeenSet = false;
 
     Aws::String m_notes;
-    bool m_notesHasBeenSet;
+    bool m_notesHasBeenSet = false;
 
     Aws::String m_operatingAddressCountryCode;
-    bool m_operatingAddressCountryCodeHasBeenSet;
+    bool m_operatingAddressCountryCodeHasBeenSet = false;
 
     Aws::String m_operatingAddressStateOrRegion;
-    bool m_operatingAddressStateOrRegionHasBeenSet;
+    bool m_operatingAddressStateOrRegionHasBeenSet = false;
 
     Aws::String m_operatingAddressCity;
-    bool m_operatingAddressCityHasBeenSet;
+    bool m_operatingAddressCityHasBeenSet = false;
 
     RackPhysicalProperties m_rackPhysicalProperties;
-    bool m_rackPhysicalPropertiesHasBeenSet;
+    bool m_rackPhysicalPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

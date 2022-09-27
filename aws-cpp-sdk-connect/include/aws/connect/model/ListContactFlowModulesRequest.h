@@ -159,48 +159,48 @@ namespace Model
 
 
     /**
-     * <p>The state of the contact flow module.</p>
+     * <p>The state of the flow module.</p>
      */
     inline const ContactFlowModuleState& GetContactFlowModuleState() const{ return m_contactFlowModuleState; }
 
     /**
-     * <p>The state of the contact flow module.</p>
+     * <p>The state of the flow module.</p>
      */
     inline bool ContactFlowModuleStateHasBeenSet() const { return m_contactFlowModuleStateHasBeenSet; }
 
     /**
-     * <p>The state of the contact flow module.</p>
+     * <p>The state of the flow module.</p>
      */
     inline void SetContactFlowModuleState(const ContactFlowModuleState& value) { m_contactFlowModuleStateHasBeenSet = true; m_contactFlowModuleState = value; }
 
     /**
-     * <p>The state of the contact flow module.</p>
+     * <p>The state of the flow module.</p>
      */
     inline void SetContactFlowModuleState(ContactFlowModuleState&& value) { m_contactFlowModuleStateHasBeenSet = true; m_contactFlowModuleState = std::move(value); }
 
     /**
-     * <p>The state of the contact flow module.</p>
+     * <p>The state of the flow module.</p>
      */
     inline ListContactFlowModulesRequest& WithContactFlowModuleState(const ContactFlowModuleState& value) { SetContactFlowModuleState(value); return *this;}
 
     /**
-     * <p>The state of the contact flow module.</p>
+     * <p>The state of the flow module.</p>
      */
     inline ListContactFlowModulesRequest& WithContactFlowModuleState(ContactFlowModuleState&& value) { SetContactFlowModuleState(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_instanceId;
-    bool m_instanceIdHasBeenSet;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_nextToken;
-    bool m_nextTokenHasBeenSet;
+    bool m_nextTokenHasBeenSet = false;
 
     int m_maxResults;
-    bool m_maxResultsHasBeenSet;
+    bool m_maxResultsHasBeenSet = false;
 
     ContactFlowModuleState m_contactFlowModuleState;
-    bool m_contactFlowModuleStateHasBeenSet;
+    bool m_contactFlowModuleStateHasBeenSet = false;
   };
 
 } // namespace Model

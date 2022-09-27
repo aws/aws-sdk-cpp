@@ -163,13 +163,13 @@ namespace Model
   private:
 
     Aws::String m_channelName;
-    bool m_channelNameHasBeenSet;
+    bool m_channelNameHasBeenSet = false;
 
     ChannelStorage m_channelStorage;
-    bool m_channelStorageHasBeenSet;
+    bool m_channelStorageHasBeenSet = false;
 
     RetentionPeriod m_retentionPeriod;
-    bool m_retentionPeriodHasBeenSet;
+    bool m_retentionPeriodHasBeenSet = false;
   };
 
 } // namespace Model
