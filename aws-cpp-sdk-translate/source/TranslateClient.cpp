@@ -29,11 +29,14 @@
 #include <aws/translate/model/ImportTerminologyRequest.h>
 #include <aws/translate/model/ListLanguagesRequest.h>
 #include <aws/translate/model/ListParallelDataRequest.h>
+#include <aws/translate/model/ListTagsForResourceRequest.h>
 #include <aws/translate/model/ListTerminologiesRequest.h>
 #include <aws/translate/model/ListTextTranslationJobsRequest.h>
 #include <aws/translate/model/StartTextTranslationJobRequest.h>
 #include <aws/translate/model/StopTextTranslationJobRequest.h>
+#include <aws/translate/model/TagResourceRequest.h>
 #include <aws/translate/model/TranslateTextRequest.h>
+#include <aws/translate/model/UntagResourceRequest.h>
 #include <aws/translate/model/UpdateParallelDataRequest.h>
 
 using namespace Aws;
@@ -313,6 +316,28 @@ void TranslateClient::ListParallelDataAsync(const ListParallelDataRequest& reque
     } );
 }
 
+ListTagsForResourceOutcome TranslateClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTagsForResourceOutcomeCallable TranslateClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranslateClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTagsForResource(request), context);
+    } );
+}
+
 ListTerminologiesOutcome TranslateClient::ListTerminologies(const ListTerminologiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -401,6 +426,28 @@ void TranslateClient::StopTextTranslationJobAsync(const StopTextTranslationJobRe
     } );
 }
 
+TagResourceOutcome TranslateClient::TagResource(const TagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TagResourceOutcomeCallable TranslateClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranslateClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, TagResource(request), context);
+    } );
+}
+
 TranslateTextOutcome TranslateClient::TranslateText(const TranslateTextRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -420,6 +467,28 @@ void TranslateClient::TranslateTextAsync(const TranslateTextRequest& request, co
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, TranslateText(request), context);
+    } );
+}
+
+UntagResourceOutcome TranslateClient::UntagResource(const UntagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UntagResourceOutcomeCallable TranslateClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranslateClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UntagResource(request), context);
     } );
 }
 

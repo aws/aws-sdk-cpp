@@ -26,7 +26,9 @@ ResourceConfig::ResourceConfig() :
     m_volumeSizeInGB(0),
     m_volumeSizeInGBHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false)
+    m_instanceGroupsHasBeenSet(false),
+    m_keepAlivePeriodInSeconds(0),
+    m_keepAlivePeriodInSecondsHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ ResourceConfig::ResourceConfig(JsonView jsonValue) :
     m_volumeSizeInGB(0),
     m_volumeSizeInGBHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_instanceGroupsHasBeenSet(false)
+    m_instanceGroupsHasBeenSet(false),
+    m_keepAlivePeriodInSeconds(0),
+    m_keepAlivePeriodInSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +87,13 @@ ResourceConfig& ResourceConfig::operator =(JsonView jsonValue)
     m_instanceGroupsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KeepAlivePeriodInSeconds"))
+  {
+    m_keepAlivePeriodInSeconds = jsonValue.GetInteger("KeepAlivePeriodInSeconds");
+
+    m_keepAlivePeriodInSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -121,6 +132,12 @@ JsonValue ResourceConfig::Jsonize() const
      instanceGroupsJsonList[instanceGroupsIndex].AsObject(m_instanceGroups[instanceGroupsIndex].Jsonize());
    }
    payload.WithArray("InstanceGroups", std::move(instanceGroupsJsonList));
+
+  }
+
+  if(m_keepAlivePeriodInSecondsHasBeenSet)
+  {
+   payload.WithInteger("KeepAlivePeriodInSeconds", m_keepAlivePeriodInSeconds);
 
   }
 

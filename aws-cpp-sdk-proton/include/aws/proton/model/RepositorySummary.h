@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Summary data of a repository that has been registered with
-   * Proton.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary data of a linked repository—a repository that has been registered
+   * with Proton.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RepositorySummary">AWS
    * API Reference</a></p>
    */
@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a repository.</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a repository.</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a repository.</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a repository.</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a repository.</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a repository.</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline RepositorySummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a repository.</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline RepositorySummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for a repository.</p>
+     * <p>The Amazon Resource Name (ARN) of the linked repository.</p>
      */
     inline RepositorySummary& WithArn(const char* value) { SetArn(value); return *this;}
 

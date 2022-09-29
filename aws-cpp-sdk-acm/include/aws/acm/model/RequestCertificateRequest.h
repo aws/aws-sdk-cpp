@@ -40,90 +40,114 @@ namespace Model
 
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com, that you want
-     * to secure with an ACM certificate. Use an asterisk (*) to create a wildcard
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to
+     * secure with an ACM certificate. Use an asterisk (*) to create a wildcard
      * certificate that protects several sites in the same domain. For example,
      * *.example.com protects www.example.com, site.example.com, and
-     * images.example.com. </p> <p> The first domain name you enter cannot exceed 64
-     * octets, including periods. Each subsequent Subject Alternative Name (SAN),
-     * however, can be up to 253 octets in length. </p>
+     * images.example.com. </p> <p>In compliance with <a
+     * href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of
+     * the domain name (technically, the Common Name) that you provide cannot exceed 64
+     * octets (characters), including periods. To add a longer domain name, specify it
+     * in the Subject Alternative Name field, which supports names up to 253 octets in
+     * length. </p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com, that you want
-     * to secure with an ACM certificate. Use an asterisk (*) to create a wildcard
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to
+     * secure with an ACM certificate. Use an asterisk (*) to create a wildcard
      * certificate that protects several sites in the same domain. For example,
      * *.example.com protects www.example.com, site.example.com, and
-     * images.example.com. </p> <p> The first domain name you enter cannot exceed 64
-     * octets, including periods. Each subsequent Subject Alternative Name (SAN),
-     * however, can be up to 253 octets in length. </p>
+     * images.example.com. </p> <p>In compliance with <a
+     * href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of
+     * the domain name (technically, the Common Name) that you provide cannot exceed 64
+     * octets (characters), including periods. To add a longer domain name, specify it
+     * in the Subject Alternative Name field, which supports names up to 253 octets in
+     * length. </p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com, that you want
-     * to secure with an ACM certificate. Use an asterisk (*) to create a wildcard
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to
+     * secure with an ACM certificate. Use an asterisk (*) to create a wildcard
      * certificate that protects several sites in the same domain. For example,
      * *.example.com protects www.example.com, site.example.com, and
-     * images.example.com. </p> <p> The first domain name you enter cannot exceed 64
-     * octets, including periods. Each subsequent Subject Alternative Name (SAN),
-     * however, can be up to 253 octets in length. </p>
+     * images.example.com. </p> <p>In compliance with <a
+     * href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of
+     * the domain name (technically, the Common Name) that you provide cannot exceed 64
+     * octets (characters), including periods. To add a longer domain name, specify it
+     * in the Subject Alternative Name field, which supports names up to 253 octets in
+     * length. </p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com, that you want
-     * to secure with an ACM certificate. Use an asterisk (*) to create a wildcard
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to
+     * secure with an ACM certificate. Use an asterisk (*) to create a wildcard
      * certificate that protects several sites in the same domain. For example,
      * *.example.com protects www.example.com, site.example.com, and
-     * images.example.com. </p> <p> The first domain name you enter cannot exceed 64
-     * octets, including periods. Each subsequent Subject Alternative Name (SAN),
-     * however, can be up to 253 octets in length. </p>
+     * images.example.com. </p> <p>In compliance with <a
+     * href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of
+     * the domain name (technically, the Common Name) that you provide cannot exceed 64
+     * octets (characters), including periods. To add a longer domain name, specify it
+     * in the Subject Alternative Name field, which supports names up to 253 octets in
+     * length. </p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com, that you want
-     * to secure with an ACM certificate. Use an asterisk (*) to create a wildcard
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to
+     * secure with an ACM certificate. Use an asterisk (*) to create a wildcard
      * certificate that protects several sites in the same domain. For example,
      * *.example.com protects www.example.com, site.example.com, and
-     * images.example.com. </p> <p> The first domain name you enter cannot exceed 64
-     * octets, including periods. Each subsequent Subject Alternative Name (SAN),
-     * however, can be up to 253 octets in length. </p>
+     * images.example.com. </p> <p>In compliance with <a
+     * href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of
+     * the domain name (technically, the Common Name) that you provide cannot exceed 64
+     * octets (characters), including periods. To add a longer domain name, specify it
+     * in the Subject Alternative Name field, which supports names up to 253 octets in
+     * length. </p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com, that you want
-     * to secure with an ACM certificate. Use an asterisk (*) to create a wildcard
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to
+     * secure with an ACM certificate. Use an asterisk (*) to create a wildcard
      * certificate that protects several sites in the same domain. For example,
      * *.example.com protects www.example.com, site.example.com, and
-     * images.example.com. </p> <p> The first domain name you enter cannot exceed 64
-     * octets, including periods. Each subsequent Subject Alternative Name (SAN),
-     * however, can be up to 253 octets in length. </p>
+     * images.example.com. </p> <p>In compliance with <a
+     * href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of
+     * the domain name (technically, the Common Name) that you provide cannot exceed 64
+     * octets (characters), including periods. To add a longer domain name, specify it
+     * in the Subject Alternative Name field, which supports names up to 253 octets in
+     * length. </p>
      */
     inline RequestCertificateRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com, that you want
-     * to secure with an ACM certificate. Use an asterisk (*) to create a wildcard
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to
+     * secure with an ACM certificate. Use an asterisk (*) to create a wildcard
      * certificate that protects several sites in the same domain. For example,
      * *.example.com protects www.example.com, site.example.com, and
-     * images.example.com. </p> <p> The first domain name you enter cannot exceed 64
-     * octets, including periods. Each subsequent Subject Alternative Name (SAN),
-     * however, can be up to 253 octets in length. </p>
+     * images.example.com. </p> <p>In compliance with <a
+     * href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of
+     * the domain name (technically, the Common Name) that you provide cannot exceed 64
+     * octets (characters), including periods. To add a longer domain name, specify it
+     * in the Subject Alternative Name field, which supports names up to 253 octets in
+     * length. </p>
      */
     inline RequestCertificateRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p> Fully qualified domain name (FQDN), such as www.example.com, that you want
-     * to secure with an ACM certificate. Use an asterisk (*) to create a wildcard
+     * <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to
+     * secure with an ACM certificate. Use an asterisk (*) to create a wildcard
      * certificate that protects several sites in the same domain. For example,
      * *.example.com protects www.example.com, site.example.com, and
-     * images.example.com. </p> <p> The first domain name you enter cannot exceed 64
-     * octets, including periods. Each subsequent Subject Alternative Name (SAN),
-     * however, can be up to 253 octets in length. </p>
+     * images.example.com. </p> <p>In compliance with <a
+     * href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>, the length of
+     * the domain name (technically, the Common Name) that you provide cannot exceed 64
+     * octets (characters), including periods. To add a longer domain name, specify it
+     * in the Subject Alternative Name field, which supports names up to 253 octets in
+     * length. </p>
      */
     inline RequestCertificateRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
@@ -598,9 +622,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
-     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
-     * guide. The ARN must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
+     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -611,9 +635,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
-     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
-     * guide. The ARN must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
+     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -624,9 +648,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
-     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
-     * guide. The ARN must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
+     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -637,9 +661,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
-     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
-     * guide. The ARN must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
+     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -650,9 +674,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
-     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
-     * guide. The ARN must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
+     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -663,9 +687,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
-     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
-     * guide. The ARN must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
+     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -676,9 +700,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
-     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
-     * guide. The ARN must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
+     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
@@ -689,9 +713,9 @@ namespace Model
      * will be used to issue the certificate. If you do not provide an ARN and you are
      * trying to request a private certificate, ACM will attempt to issue a public
      * certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon
-     * Web Services Certificate Manager Private Certificate Authority (PCA)</a> user
-     * guide. The ARN must have the following form: </p> <p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate
+     * Manager Private Certificate Authority</a> user guide. The ARN must have the
+     * following form: </p> <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */

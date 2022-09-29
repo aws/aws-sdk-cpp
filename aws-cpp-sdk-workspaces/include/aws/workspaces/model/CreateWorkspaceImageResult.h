@@ -269,37 +269,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountId = value; }
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountId = std::move(value); }
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline void SetOwnerAccountId(const char* value) { m_ownerAccountId.assign(value); }
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline CreateWorkspaceImageResult& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline CreateWorkspaceImageResult& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the AWS account that owns the image.</p>
+     * <p>The identifier of the Amazon Web Services account that owns the image.</p>
      */
     inline CreateWorkspaceImageResult& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
 
