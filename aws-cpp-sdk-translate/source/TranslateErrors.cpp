@@ -9,6 +9,7 @@
 #include <aws/translate/model/UnsupportedLanguagePairException.h>
 #include <aws/translate/model/DetectedLanguageLowConfidenceException.h>
 #include <aws/translate/model/UnsupportedDisplayLanguageCodeException.h>
+#include <aws/translate/model/TooManyTagsException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -37,6 +38,12 @@ template<> AWS_TRANSLATE_API UnsupportedDisplayLanguageCodeException TranslateEr
   return UnsupportedDisplayLanguageCodeException(this->GetJsonPayload().View());
 }
 
+template<> AWS_TRANSLATE_API TooManyTagsException TranslateError::GetModeledError()
+{
+  assert(this->GetErrorType() == TranslateErrors::TOO_MANY_TAGS);
+  return TooManyTagsException(this->GetJsonPayload().View());
+}
+
 namespace TranslateErrorMapper
 {
 
@@ -46,6 +53,7 @@ static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServer
 static const int DETECTED_LANGUAGE_LOW_CONFIDENCE_HASH = HashingUtils::HashString("DetectedLanguageLowConfidenceException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int UNSUPPORTED_DISPLAY_LANGUAGE_CODE_HASH = HashingUtils::HashString("UnsupportedDisplayLanguageCodeException");
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int INVALID_FILTER_HASH = HashingUtils::HashString("InvalidFilterException");
@@ -80,6 +88,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == UNSUPPORTED_DISPLAY_LANGUAGE_CODE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::UNSUPPORTED_DISPLAY_LANGUAGE_CODE), false);
+  }
+  else if (hashCode == TOO_MANY_TAGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::TOO_MANY_TAGS), false);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {

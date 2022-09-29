@@ -89,8 +89,8 @@ namespace Model
      * <code>componentRoleArn</code> to allow directly defined components to be
      * associated with any environments running in the account.</p> <p>For more
      * information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::String& GetComponentRoleArn() const{ return m_componentRoleArn; }
 
@@ -102,8 +102,8 @@ namespace Model
      * <code>componentRoleArn</code> to allow directly defined components to be
      * associated with any environments running in the account.</p> <p>For more
      * information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool ComponentRoleArnHasBeenSet() const { return m_componentRoleArnHasBeenSet; }
 
@@ -115,8 +115,8 @@ namespace Model
      * <code>componentRoleArn</code> to allow directly defined components to be
      * associated with any environments running in the account.</p> <p>For more
      * information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetComponentRoleArn(const Aws::String& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = value; }
 
@@ -128,8 +128,8 @@ namespace Model
      * <code>componentRoleArn</code> to allow directly defined components to be
      * associated with any environments running in the account.</p> <p>For more
      * information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetComponentRoleArn(Aws::String&& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = std::move(value); }
 
@@ -141,8 +141,8 @@ namespace Model
      * <code>componentRoleArn</code> to allow directly defined components to be
      * associated with any environments running in the account.</p> <p>For more
      * information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetComponentRoleArn(const char* value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn.assign(value); }
 
@@ -154,8 +154,8 @@ namespace Model
      * <code>componentRoleArn</code> to allow directly defined components to be
      * associated with any environments running in the account.</p> <p>For more
      * information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline EnvironmentAccountConnectionSummary& WithComponentRoleArn(const Aws::String& value) { SetComponentRoleArn(value); return *this;}
 
@@ -167,8 +167,8 @@ namespace Model
      * <code>componentRoleArn</code> to allow directly defined components to be
      * associated with any environments running in the account.</p> <p>For more
      * information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline EnvironmentAccountConnectionSummary& WithComponentRoleArn(Aws::String&& value) { SetComponentRoleArn(std::move(value)); return *this;}
 
@@ -180,8 +180,8 @@ namespace Model
      * <code>componentRoleArn</code> to allow directly defined components to be
      * associated with any environments running in the account.</p> <p>For more
      * information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline EnvironmentAccountConnectionSummary& WithComponentRoleArn(const char* value) { SetComponentRoleArn(value); return *this;}
 

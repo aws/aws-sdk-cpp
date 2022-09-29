@@ -106,6 +106,7 @@ static const int INVALID_EXPORT_PATH_HASH = HashingUtils::HashString("InvalidExp
 static const int BACKUP_IN_PROGRESS_HASH = HashingUtils::HashString("BackupInProgress");
 static const int BACKUP_NOT_FOUND_HASH = HashingUtils::HashString("BackupNotFound");
 static const int DATA_REPOSITORY_TASK_NOT_FOUND_HASH = HashingUtils::HashString("DataRepositoryTaskNotFound");
+static const int MISSING_FILE_CACHE_CONFIGURATION_HASH = HashingUtils::HashString("MissingFileCacheConfiguration");
 static const int BACKUP_RESTORING_HASH = HashingUtils::HashString("BackupRestoring");
 static const int INCOMPATIBLE_REGION_FOR_MULTI_A_Z_HASH = HashingUtils::HashString("IncompatibleRegionForMultiAZ");
 static const int SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ServiceLimitExceeded");
@@ -116,6 +117,7 @@ static const int INVALID_DESTINATION_KMS_KEY_HASH = HashingUtils::HashString("In
 static const int RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH = HashingUtils::HashString("ResourceDoesNotSupportTagging");
 static const int DATA_REPOSITORY_TASK_EXECUTING_HASH = HashingUtils::HashString("DataRepositoryTaskExecuting");
 static const int STORAGE_VIRTUAL_MACHINE_NOT_FOUND_HASH = HashingUtils::HashString("StorageVirtualMachineNotFound");
+static const int FILE_CACHE_NOT_FOUND_HASH = HashingUtils::HashString("FileCacheNotFound");
 static const int VOLUME_NOT_FOUND_HASH = HashingUtils::HashString("VolumeNotFound");
 static const int MISSING_VOLUME_CONFIGURATION_HASH = HashingUtils::HashString("MissingVolumeConfiguration");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequest");
@@ -194,6 +196,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_TASK_NOT_FOUND), false);
   }
+  else if (hashCode == MISSING_FILE_CACHE_CONFIGURATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::MISSING_FILE_CACHE_CONFIGURATION), false);
+  }
   else if (hashCode == BACKUP_RESTORING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_RESTORING), false);
@@ -233,6 +239,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == STORAGE_VIRTUAL_MACHINE_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::STORAGE_VIRTUAL_MACHINE_NOT_FOUND), false);
+  }
+  else if (hashCode == FILE_CACHE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::FILE_CACHE_NOT_FOUND), false);
   }
   else if (hashCode == VOLUME_NOT_FOUND_HASH)
   {

@@ -131,6 +131,23 @@ namespace EMRServerless
         virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a URL to access the job run dashboard.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetDashboardForJobRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDashboardForJobRunOutcome GetDashboardForJobRun(const Model::GetDashboardForJobRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDashboardForJobRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDashboardForJobRunOutcomeCallable GetDashboardForJobRunCallable(const Model::GetDashboardForJobRunRequest& request) const;
+
+        /**
+         * An Async wrapper for GetDashboardForJobRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDashboardForJobRunAsync(const Model::GetDashboardForJobRunRequest& request, const GetDashboardForJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Displays detailed information about a job run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetJobRun">AWS
          * API Reference</a></p>

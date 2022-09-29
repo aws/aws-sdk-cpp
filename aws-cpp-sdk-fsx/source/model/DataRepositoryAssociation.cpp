@@ -33,7 +33,11 @@ DataRepositoryAssociation::DataRepositoryAssociation() :
     m_importedFileChunkSizeHasBeenSet(false),
     m_s3HasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_fileCacheIdHasBeenSet(false),
+    m_fileCachePathHasBeenSet(false),
+    m_dataRepositorySubdirectoriesHasBeenSet(false),
+    m_nFSHasBeenSet(false)
 {
 }
 
@@ -52,7 +56,11 @@ DataRepositoryAssociation::DataRepositoryAssociation(JsonView jsonValue) :
     m_importedFileChunkSizeHasBeenSet(false),
     m_s3HasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_fileCacheIdHasBeenSet(false),
+    m_fileCachePathHasBeenSet(false),
+    m_dataRepositorySubdirectoriesHasBeenSet(false),
+    m_nFSHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +154,37 @@ DataRepositoryAssociation& DataRepositoryAssociation::operator =(JsonView jsonVa
     m_creationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FileCacheId"))
+  {
+    m_fileCacheId = jsonValue.GetString("FileCacheId");
+
+    m_fileCacheIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FileCachePath"))
+  {
+    m_fileCachePath = jsonValue.GetString("FileCachePath");
+
+    m_fileCachePathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataRepositorySubdirectories"))
+  {
+    Array<JsonView> dataRepositorySubdirectoriesJsonList = jsonValue.GetArray("DataRepositorySubdirectories");
+    for(unsigned dataRepositorySubdirectoriesIndex = 0; dataRepositorySubdirectoriesIndex < dataRepositorySubdirectoriesJsonList.GetLength(); ++dataRepositorySubdirectoriesIndex)
+    {
+      m_dataRepositorySubdirectories.push_back(dataRepositorySubdirectoriesJsonList[dataRepositorySubdirectoriesIndex].AsString());
+    }
+    m_dataRepositorySubdirectoriesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NFS"))
+  {
+    m_nFS = jsonValue.GetObject("NFS");
+
+    m_nFSHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -226,6 +265,35 @@ JsonValue DataRepositoryAssociation::Jsonize() const
   if(m_creationTimeHasBeenSet)
   {
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_fileCacheIdHasBeenSet)
+  {
+   payload.WithString("FileCacheId", m_fileCacheId);
+
+  }
+
+  if(m_fileCachePathHasBeenSet)
+  {
+   payload.WithString("FileCachePath", m_fileCachePath);
+
+  }
+
+  if(m_dataRepositorySubdirectoriesHasBeenSet)
+  {
+   Array<JsonValue> dataRepositorySubdirectoriesJsonList(m_dataRepositorySubdirectories.size());
+   for(unsigned dataRepositorySubdirectoriesIndex = 0; dataRepositorySubdirectoriesIndex < dataRepositorySubdirectoriesJsonList.GetLength(); ++dataRepositorySubdirectoriesIndex)
+   {
+     dataRepositorySubdirectoriesJsonList[dataRepositorySubdirectoriesIndex].AsString(m_dataRepositorySubdirectories[dataRepositorySubdirectoriesIndex]);
+   }
+   payload.WithArray("DataRepositorySubdirectories", std::move(dataRepositorySubdirectoriesJsonList));
+
+  }
+
+  if(m_nFSHasBeenSet)
+  {
+   payload.WithObject("NFS", m_nFS.Jsonize());
+
   }
 
   return payload;

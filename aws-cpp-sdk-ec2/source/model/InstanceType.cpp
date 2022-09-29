@@ -588,6 +588,7 @@ namespace Aws
         static const int r6a_48xlarge_HASH = HashingUtils::HashString("r6a.48xlarge");
         static const int r6a_metal_HASH = HashingUtils::HashString("r6a.metal");
         static const int p4de_24xlarge_HASH = HashingUtils::HashString("p4de.24xlarge");
+        static const int u_3tb1_56xlarge_HASH = HashingUtils::HashString("u-3tb1.56xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -3452,6 +3453,11 @@ namespace Aws
             enumValue = InstanceType::p4de_24xlarge;
             return true;
           }
+          else if (hashCode == u_3tb1_56xlarge_HASH)
+          {
+            enumValue = InstanceType::u_3tb1_56xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -5194,6 +5200,9 @@ namespace Aws
             return true;
           case InstanceType::p4de_24xlarge:
             value = "p4de.24xlarge";
+            return true;
+          case InstanceType::u_3tb1_56xlarge:
+            value = "u-3tb1.56xlarge";
             return true;
           default:
             return false;

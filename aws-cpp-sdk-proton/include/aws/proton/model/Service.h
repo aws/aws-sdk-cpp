@@ -308,80 +308,64 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::String& GetRepositoryConnectionArn() const{ return m_repositoryConnectionArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool RepositoryConnectionArnHasBeenSet() const { return m_repositoryConnectionArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetRepositoryConnectionArn(const Aws::String& value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetRepositoryConnectionArn(Aws::String&& value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetRepositoryConnectionArn(const char* value) { m_repositoryConnectionArnHasBeenSet = true; m_repositoryConnectionArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
      */
     inline Service& WithRepositoryConnectionArn(const Aws::String& value) { SetRepositoryConnectionArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
      */
     inline Service& WithRepositoryConnectionArn(Aws::String&& value) { SetRepositoryConnectionArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the repository connection. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set
-     * up a repository connection</a> in the <i>Proton Administrator Guide</i> and <a
-     * href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting
-     * up with Proton</a> in the <i>Proton User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html#setting-up-vcontrol">Setting
+     * up an AWS CodeStar connection</a> in the <i>Proton User Guide</i>.</p>
      */
     inline Service& WithRepositoryConnectionArn(const char* value) { SetRepositoryConnectionArn(value); return *this;}
 

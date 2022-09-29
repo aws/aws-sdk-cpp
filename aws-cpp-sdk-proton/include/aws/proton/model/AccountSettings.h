@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The Proton pipeline service role and repository data shared across the Amazon
-   * Web Services account.</p><p><h3>See Also:</h3>   <a
+   * <p>Proton settings that are used for multiple services in the Amazon Web
+   * Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AccountSettings">AWS
    * API Reference</a></p>
    */
@@ -40,44 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The repository configured in the Amazon Web Services account for pipeline
-     * provisioning. Required it if you have environments configured for self-managed
-     * provisioning with services that include pipelines.</p>
+     * <p>The linked repository for pipeline provisioning. Required if you have
+     * environments configured for self-managed provisioning with services that include
+     * pipelines. A linked repository is a repository that has been registered with
+     * Proton. For more information, see <a>CreateRepository</a>.</p>
      */
     inline const RepositoryBranch& GetPipelineProvisioningRepository() const{ return m_pipelineProvisioningRepository; }
 
     /**
-     * <p>The repository configured in the Amazon Web Services account for pipeline
-     * provisioning. Required it if you have environments configured for self-managed
-     * provisioning with services that include pipelines.</p>
+     * <p>The linked repository for pipeline provisioning. Required if you have
+     * environments configured for self-managed provisioning with services that include
+     * pipelines. A linked repository is a repository that has been registered with
+     * Proton. For more information, see <a>CreateRepository</a>.</p>
      */
     inline bool PipelineProvisioningRepositoryHasBeenSet() const { return m_pipelineProvisioningRepositoryHasBeenSet; }
 
     /**
-     * <p>The repository configured in the Amazon Web Services account for pipeline
-     * provisioning. Required it if you have environments configured for self-managed
-     * provisioning with services that include pipelines.</p>
+     * <p>The linked repository for pipeline provisioning. Required if you have
+     * environments configured for self-managed provisioning with services that include
+     * pipelines. A linked repository is a repository that has been registered with
+     * Proton. For more information, see <a>CreateRepository</a>.</p>
      */
     inline void SetPipelineProvisioningRepository(const RepositoryBranch& value) { m_pipelineProvisioningRepositoryHasBeenSet = true; m_pipelineProvisioningRepository = value; }
 
     /**
-     * <p>The repository configured in the Amazon Web Services account for pipeline
-     * provisioning. Required it if you have environments configured for self-managed
-     * provisioning with services that include pipelines.</p>
+     * <p>The linked repository for pipeline provisioning. Required if you have
+     * environments configured for self-managed provisioning with services that include
+     * pipelines. A linked repository is a repository that has been registered with
+     * Proton. For more information, see <a>CreateRepository</a>.</p>
      */
     inline void SetPipelineProvisioningRepository(RepositoryBranch&& value) { m_pipelineProvisioningRepositoryHasBeenSet = true; m_pipelineProvisioningRepository = std::move(value); }
 
     /**
-     * <p>The repository configured in the Amazon Web Services account for pipeline
-     * provisioning. Required it if you have environments configured for self-managed
-     * provisioning with services that include pipelines.</p>
+     * <p>The linked repository for pipeline provisioning. Required if you have
+     * environments configured for self-managed provisioning with services that include
+     * pipelines. A linked repository is a repository that has been registered with
+     * Proton. For more information, see <a>CreateRepository</a>.</p>
      */
     inline AccountSettings& WithPipelineProvisioningRepository(const RepositoryBranch& value) { SetPipelineProvisioningRepository(value); return *this;}
 
     /**
-     * <p>The repository configured in the Amazon Web Services account for pipeline
-     * provisioning. Required it if you have environments configured for self-managed
-     * provisioning with services that include pipelines.</p>
+     * <p>The linked repository for pipeline provisioning. Required if you have
+     * environments configured for self-managed provisioning with services that include
+     * pipelines. A linked repository is a repository that has been registered with
+     * Proton. For more information, see <a>CreateRepository</a>.</p>
      */
     inline AccountSettings& WithPipelineProvisioningRepository(RepositoryBranch&& value) { SetPipelineProvisioningRepository(std::move(value)); return *this;}
 

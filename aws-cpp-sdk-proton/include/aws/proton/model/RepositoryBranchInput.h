@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Detail input data for a repository branch.</p><p><h3>See Also:</h3>   <a
+   * <p>Detail input data for a linked repository branch.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RepositoryBranchInput">AWS
    * API Reference</a></p>
    */

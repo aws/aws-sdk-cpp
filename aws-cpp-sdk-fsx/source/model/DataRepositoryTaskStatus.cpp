@@ -25,7 +25,9 @@ DataRepositoryTaskStatus::DataRepositoryTaskStatus() :
     m_succeededCountHasBeenSet(false),
     m_failedCount(0),
     m_failedCountHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_releasedCapacity(0),
+    m_releasedCapacityHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ DataRepositoryTaskStatus::DataRepositoryTaskStatus(JsonView jsonValue) :
     m_succeededCountHasBeenSet(false),
     m_failedCount(0),
     m_failedCountHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_releasedCapacity(0),
+    m_releasedCapacityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +75,13 @@ DataRepositoryTaskStatus& DataRepositoryTaskStatus::operator =(JsonView jsonValu
     m_lastUpdatedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReleasedCapacity"))
+  {
+    m_releasedCapacity = jsonValue.GetInt64("ReleasedCapacity");
+
+    m_releasedCapacityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -99,6 +110,12 @@ JsonValue DataRepositoryTaskStatus::Jsonize() const
   if(m_lastUpdatedTimeHasBeenSet)
   {
    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_releasedCapacityHasBeenSet)
+  {
+   payload.WithInt64("ReleasedCapacity", m_releasedCapacity);
+
   }
 
   return payload;

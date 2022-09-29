@@ -22,6 +22,8 @@ namespace Aws
 
         static const int EXPORT_TO_REPOSITORY_HASH = HashingUtils::HashString("EXPORT_TO_REPOSITORY");
         static const int IMPORT_METADATA_FROM_REPOSITORY_HASH = HashingUtils::HashString("IMPORT_METADATA_FROM_REPOSITORY");
+        static const int RELEASE_DATA_FROM_FILESYSTEM_HASH = HashingUtils::HashString("RELEASE_DATA_FROM_FILESYSTEM");
+        static const int AUTO_RELEASE_DATA_HASH = HashingUtils::HashString("AUTO_RELEASE_DATA");
 
 
         DataRepositoryTaskType GetDataRepositoryTaskTypeForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == IMPORT_METADATA_FROM_REPOSITORY_HASH)
           {
             return DataRepositoryTaskType::IMPORT_METADATA_FROM_REPOSITORY;
+          }
+          else if (hashCode == RELEASE_DATA_FROM_FILESYSTEM_HASH)
+          {
+            return DataRepositoryTaskType::RELEASE_DATA_FROM_FILESYSTEM;
+          }
+          else if (hashCode == AUTO_RELEASE_DATA_HASH)
+          {
+            return DataRepositoryTaskType::AUTO_RELEASE_DATA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +63,10 @@ namespace Aws
             return "EXPORT_TO_REPOSITORY";
           case DataRepositoryTaskType::IMPORT_METADATA_FROM_REPOSITORY:
             return "IMPORT_METADATA_FROM_REPOSITORY";
+          case DataRepositoryTaskType::RELEASE_DATA_FROM_FILESYSTEM:
+            return "RELEASE_DATA_FROM_FILESYSTEM";
+          case DataRepositoryTaskType::AUTO_RELEASE_DATA:
+            return "AUTO_RELEASE_DATA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

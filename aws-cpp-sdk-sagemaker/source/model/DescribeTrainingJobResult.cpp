@@ -311,6 +311,12 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
     }
   }
 
+  if(jsonValue.ValueExists("WarmPoolStatus"))
+  {
+    m_warmPoolStatus = jsonValue.GetObject("WarmPoolStatus");
+
+  }
+
 
 
   return *this;

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The repository sync definition.</p><p><h3>See Also:</h3>   <a
+   * <p>A repository sync definition.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RepositorySyncDefinition">AWS
    * API Reference</a></p>
    */

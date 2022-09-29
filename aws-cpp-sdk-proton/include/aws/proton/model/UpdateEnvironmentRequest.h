@@ -43,8 +43,8 @@ namespace Model
      * must have a <code>componentRoleArn</code> to allow directly defined components
      * to be associated with the environment.</p> <p>For more information about
      * components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::String& GetComponentRoleArn() const{ return m_componentRoleArn; }
 
@@ -55,8 +55,8 @@ namespace Model
      * must have a <code>componentRoleArn</code> to allow directly defined components
      * to be associated with the environment.</p> <p>For more information about
      * components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool ComponentRoleArnHasBeenSet() const { return m_componentRoleArnHasBeenSet; }
 
@@ -67,8 +67,8 @@ namespace Model
      * must have a <code>componentRoleArn</code> to allow directly defined components
      * to be associated with the environment.</p> <p>For more information about
      * components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetComponentRoleArn(const Aws::String& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = value; }
 
@@ -79,8 +79,8 @@ namespace Model
      * must have a <code>componentRoleArn</code> to allow directly defined components
      * to be associated with the environment.</p> <p>For more information about
      * components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetComponentRoleArn(Aws::String&& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = std::move(value); }
 
@@ -91,8 +91,8 @@ namespace Model
      * must have a <code>componentRoleArn</code> to allow directly defined components
      * to be associated with the environment.</p> <p>For more information about
      * components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetComponentRoleArn(const char* value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn.assign(value); }
 
@@ -103,8 +103,8 @@ namespace Model
      * must have a <code>componentRoleArn</code> to allow directly defined components
      * to be associated with the environment.</p> <p>For more information about
      * components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline UpdateEnvironmentRequest& WithComponentRoleArn(const Aws::String& value) { SetComponentRoleArn(value); return *this;}
 
@@ -115,8 +115,8 @@ namespace Model
      * must have a <code>componentRoleArn</code> to allow directly defined components
      * to be associated with the environment.</p> <p>For more information about
      * components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline UpdateEnvironmentRequest& WithComponentRoleArn(Aws::String&& value) { SetComponentRoleArn(std::move(value)); return *this;}
 
@@ -127,8 +127,8 @@ namespace Model
      * must have a <code>componentRoleArn</code> to allow directly defined components
      * to be associated with the environment.</p> <p>For more information about
      * components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline UpdateEnvironmentRequest& WithComponentRoleArn(const char* value) { SetComponentRoleArn(value); return *this;}
 
@@ -457,38 +457,50 @@ namespace Model
 
 
     /**
-     * <p>The infrastructure repository that you use to host your rendered
-     * infrastructure templates for self-managed provisioning.</p>
+     * <p>The linked repository that you use to host your rendered infrastructure
+     * templates for self-managed provisioning. A linked repository is a repository
+     * that has been registered with Proton. For more information, see
+     * <a>CreateRepository</a>.</p>
      */
     inline const RepositoryBranchInput& GetProvisioningRepository() const{ return m_provisioningRepository; }
 
     /**
-     * <p>The infrastructure repository that you use to host your rendered
-     * infrastructure templates for self-managed provisioning.</p>
+     * <p>The linked repository that you use to host your rendered infrastructure
+     * templates for self-managed provisioning. A linked repository is a repository
+     * that has been registered with Proton. For more information, see
+     * <a>CreateRepository</a>.</p>
      */
     inline bool ProvisioningRepositoryHasBeenSet() const { return m_provisioningRepositoryHasBeenSet; }
 
     /**
-     * <p>The infrastructure repository that you use to host your rendered
-     * infrastructure templates for self-managed provisioning.</p>
+     * <p>The linked repository that you use to host your rendered infrastructure
+     * templates for self-managed provisioning. A linked repository is a repository
+     * that has been registered with Proton. For more information, see
+     * <a>CreateRepository</a>.</p>
      */
     inline void SetProvisioningRepository(const RepositoryBranchInput& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = value; }
 
     /**
-     * <p>The infrastructure repository that you use to host your rendered
-     * infrastructure templates for self-managed provisioning.</p>
+     * <p>The linked repository that you use to host your rendered infrastructure
+     * templates for self-managed provisioning. A linked repository is a repository
+     * that has been registered with Proton. For more information, see
+     * <a>CreateRepository</a>.</p>
      */
     inline void SetProvisioningRepository(RepositoryBranchInput&& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = std::move(value); }
 
     /**
-     * <p>The infrastructure repository that you use to host your rendered
-     * infrastructure templates for self-managed provisioning.</p>
+     * <p>The linked repository that you use to host your rendered infrastructure
+     * templates for self-managed provisioning. A linked repository is a repository
+     * that has been registered with Proton. For more information, see
+     * <a>CreateRepository</a>.</p>
      */
     inline UpdateEnvironmentRequest& WithProvisioningRepository(const RepositoryBranchInput& value) { SetProvisioningRepository(value); return *this;}
 
     /**
-     * <p>The infrastructure repository that you use to host your rendered
-     * infrastructure templates for self-managed provisioning.</p>
+     * <p>The linked repository that you use to host your rendered infrastructure
+     * templates for self-managed provisioning. A linked repository is a repository
+     * that has been registered with Proton. For more information, see
+     * <a>CreateRepository</a>.</p>
      */
     inline UpdateEnvironmentRequest& WithProvisioningRepository(RepositoryBranchInput&& value) { SetProvisioningRepository(std::move(value)); return *this;}
 

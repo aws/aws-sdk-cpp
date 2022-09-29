@@ -101,8 +101,8 @@ namespace Model
      * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
      * defined components to be associated with any environments running in this
      * account.</p> <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::String& GetComponentRoleArn() const{ return m_componentRoleArn; }
 
@@ -113,8 +113,8 @@ namespace Model
      * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
      * defined components to be associated with any environments running in this
      * account.</p> <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool ComponentRoleArnHasBeenSet() const { return m_componentRoleArnHasBeenSet; }
 
@@ -125,8 +125,8 @@ namespace Model
      * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
      * defined components to be associated with any environments running in this
      * account.</p> <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetComponentRoleArn(const Aws::String& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = value; }
 
@@ -137,8 +137,8 @@ namespace Model
      * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
      * defined components to be associated with any environments running in this
      * account.</p> <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetComponentRoleArn(Aws::String&& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = std::move(value); }
 
@@ -149,8 +149,8 @@ namespace Model
      * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
      * defined components to be associated with any environments running in this
      * account.</p> <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetComponentRoleArn(const char* value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn.assign(value); }
 
@@ -161,8 +161,8 @@ namespace Model
      * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
      * defined components to be associated with any environments running in this
      * account.</p> <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithComponentRoleArn(const Aws::String& value) { SetComponentRoleArn(value); return *this;}
 
@@ -173,8 +173,8 @@ namespace Model
      * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
      * defined components to be associated with any environments running in this
      * account.</p> <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithComponentRoleArn(Aws::String&& value) { SetComponentRoleArn(std::move(value)); return *this;}
 
@@ -185,8 +185,8 @@ namespace Model
      * account.</p> <p>You must specify <code>componentRoleArn</code> to allow directly
      * defined components to be associated with any environments running in this
      * account.</p> <p>For more information about components, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-     * components</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+     * components</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithComponentRoleArn(const char* value) { SetComponentRoleArn(value); return *this;}
 
@@ -374,8 +374,8 @@ namespace Model
      * <p>An optional list of metadata items that you can associate with the Proton
      * environment account connection. A tag is a key-value pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -383,8 +383,8 @@ namespace Model
      * <p>An optional list of metadata items that you can associate with the Proton
      * environment account connection. A tag is a key-value pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -392,8 +392,8 @@ namespace Model
      * <p>An optional list of metadata items that you can associate with the Proton
      * environment account connection. A tag is a key-value pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -401,8 +401,8 @@ namespace Model
      * <p>An optional list of metadata items that you can associate with the Proton
      * environment account connection. A tag is a key-value pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -410,8 +410,8 @@ namespace Model
      * <p>An optional list of metadata items that you can associate with the Proton
      * environment account connection. A tag is a key-value pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -419,8 +419,8 @@ namespace Model
      * <p>An optional list of metadata items that you can associate with the Proton
      * environment account connection. A tag is a key-value pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -428,8 +428,8 @@ namespace Model
      * <p>An optional list of metadata items that you can associate with the Proton
      * environment account connection. A tag is a key-value pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -437,8 +437,8 @@ namespace Model
      * <p>An optional list of metadata items that you can associate with the Proton
      * environment account connection. A tag is a key-value pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-     * resources and tagging</a> in the <i>Proton Administrator Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
+     * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
     inline CreateEnvironmentAccountConnectionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

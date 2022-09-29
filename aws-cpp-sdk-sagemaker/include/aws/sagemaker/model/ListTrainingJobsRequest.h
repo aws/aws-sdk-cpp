@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/TrainingJobStatus.h>
 #include <aws/sagemaker/model/SortBy.h>
 #include <aws/sagemaker/model/SortOrder.h>
+#include <aws/sagemaker/model/WarmPoolResourceStatus.h>
 #include <utility>
 
 namespace Aws
@@ -405,6 +406,43 @@ namespace Model
      */
     inline ListTrainingJobsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A filter that retrieves only training jobs with a specific warm pool
+     * status.</p>
+     */
+    inline const WarmPoolResourceStatus& GetWarmPoolStatusEquals() const{ return m_warmPoolStatusEquals; }
+
+    /**
+     * <p>A filter that retrieves only training jobs with a specific warm pool
+     * status.</p>
+     */
+    inline bool WarmPoolStatusEqualsHasBeenSet() const { return m_warmPoolStatusEqualsHasBeenSet; }
+
+    /**
+     * <p>A filter that retrieves only training jobs with a specific warm pool
+     * status.</p>
+     */
+    inline void SetWarmPoolStatusEquals(const WarmPoolResourceStatus& value) { m_warmPoolStatusEqualsHasBeenSet = true; m_warmPoolStatusEquals = value; }
+
+    /**
+     * <p>A filter that retrieves only training jobs with a specific warm pool
+     * status.</p>
+     */
+    inline void SetWarmPoolStatusEquals(WarmPoolResourceStatus&& value) { m_warmPoolStatusEqualsHasBeenSet = true; m_warmPoolStatusEquals = std::move(value); }
+
+    /**
+     * <p>A filter that retrieves only training jobs with a specific warm pool
+     * status.</p>
+     */
+    inline ListTrainingJobsRequest& WithWarmPoolStatusEquals(const WarmPoolResourceStatus& value) { SetWarmPoolStatusEquals(value); return *this;}
+
+    /**
+     * <p>A filter that retrieves only training jobs with a specific warm pool
+     * status.</p>
+     */
+    inline ListTrainingJobsRequest& WithWarmPoolStatusEquals(WarmPoolResourceStatus&& value) { SetWarmPoolStatusEquals(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -436,6 +474,9 @@ namespace Model
 
     SortOrder m_sortOrder;
     bool m_sortOrderHasBeenSet = false;
+
+    WarmPoolResourceStatus m_warmPoolStatusEquals;
+    bool m_warmPoolStatusEqualsHasBeenSet = false;
   };
 
 } // namespace Model

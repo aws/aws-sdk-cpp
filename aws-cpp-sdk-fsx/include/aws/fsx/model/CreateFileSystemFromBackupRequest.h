@@ -672,6 +672,59 @@ namespace Model
      */
     inline CreateFileSystemFromBackupRequest& WithOpenZFSConfiguration(CreateFileSystemOpenZFSConfiguration&& value) { SetOpenZFSConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Sets the storage capacity of the OpenZFS file system that you're creating
+     * from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288
+     * GiB (512 TiB). However, the value that you specify must be equal to or greater
+     * than the backup's storage capacity value. If you don't use the
+     * <code>StorageCapacity</code> parameter, the default is the backup's
+     * <code>StorageCapacity</code> value.</p> <p>If used to create a file system other
+     * than OpenZFS, you must provide a value that matches the backup's
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx
+     * responds with a 400 Bad Request. </p>
+     */
+    inline int GetStorageCapacity() const{ return m_storageCapacity; }
+
+    /**
+     * <p>Sets the storage capacity of the OpenZFS file system that you're creating
+     * from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288
+     * GiB (512 TiB). However, the value that you specify must be equal to or greater
+     * than the backup's storage capacity value. If you don't use the
+     * <code>StorageCapacity</code> parameter, the default is the backup's
+     * <code>StorageCapacity</code> value.</p> <p>If used to create a file system other
+     * than OpenZFS, you must provide a value that matches the backup's
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx
+     * responds with a 400 Bad Request. </p>
+     */
+    inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
+
+    /**
+     * <p>Sets the storage capacity of the OpenZFS file system that you're creating
+     * from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288
+     * GiB (512 TiB). However, the value that you specify must be equal to or greater
+     * than the backup's storage capacity value. If you don't use the
+     * <code>StorageCapacity</code> parameter, the default is the backup's
+     * <code>StorageCapacity</code> value.</p> <p>If used to create a file system other
+     * than OpenZFS, you must provide a value that matches the backup's
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx
+     * responds with a 400 Bad Request. </p>
+     */
+    inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
+
+    /**
+     * <p>Sets the storage capacity of the OpenZFS file system that you're creating
+     * from a backup, in gibibytes (GiB). Valid values are from 64 GiB up to 524,288
+     * GiB (512 TiB). However, the value that you specify must be equal to or greater
+     * than the backup's storage capacity value. If you don't use the
+     * <code>StorageCapacity</code> parameter, the default is the backup's
+     * <code>StorageCapacity</code> value.</p> <p>If used to create a file system other
+     * than OpenZFS, you must provide a value that matches the backup's
+     * <code>StorageCapacity</code> value. If you provide any other value, Amazon FSx
+     * responds with a 400 Bad Request. </p>
+     */
+    inline CreateFileSystemFromBackupRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
+
   private:
 
     Aws::String m_backupId;
@@ -706,6 +759,9 @@ namespace Model
 
     CreateFileSystemOpenZFSConfiguration m_openZFSConfiguration;
     bool m_openZFSConfigurationHasBeenSet = false;
+
+    int m_storageCapacity;
+    bool m_storageCapacityHasBeenSet = false;
   };
 
 } // namespace Model

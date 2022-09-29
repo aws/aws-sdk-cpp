@@ -5270,8 +5270,8 @@ namespace SageMaker
         virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update a model training job to request a new Debugger profiling
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Update a model training job to request a new Debugger profiling configuration
+         * or to change warm pool retention length.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob">AWS
          * API Reference</a></p>
          */

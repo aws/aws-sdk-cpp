@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateTrainingJobRequest::UpdateTrainingJobRequest() : 
     m_trainingJobNameHasBeenSet(false),
     m_profilerConfigHasBeenSet(false),
-    m_profilerRuleConfigurationsHasBeenSet(false)
+    m_profilerRuleConfigurationsHasBeenSet(false),
+    m_resourceConfigHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String UpdateTrainingJobRequest::SerializePayload() const
      profilerRuleConfigurationsJsonList[profilerRuleConfigurationsIndex].AsObject(m_profilerRuleConfigurations[profilerRuleConfigurationsIndex].Jsonize());
    }
    payload.WithArray("ProfilerRuleConfigurations", std::move(profilerRuleConfigurationsJsonList));
+
+  }
+
+  if(m_resourceConfigHasBeenSet)
+  {
+   payload.WithObject("ResourceConfig", m_resourceConfig.Jsonize());
 
   }
 

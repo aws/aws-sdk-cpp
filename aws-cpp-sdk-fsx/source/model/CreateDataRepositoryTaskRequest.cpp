@@ -20,7 +20,9 @@ CreateDataRepositoryTaskRequest::CreateDataRepositoryTaskRequest() :
     m_reportHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_capacityToRelease(0),
+    m_capacityToReleaseHasBeenSet(false)
 {
 }
 
@@ -70,6 +72,12 @@ Aws::String CreateDataRepositoryTaskRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_capacityToReleaseHasBeenSet)
+  {
+   payload.WithInt64("CapacityToRelease", m_capacityToRelease);
 
   }
 

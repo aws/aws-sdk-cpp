@@ -37,10 +37,7 @@ namespace Proton
    * running on Proton, developers need permissions to the service <i>create</i>,
    * <i>list</i>, <i>update</i> and <i>delete</i> API operations and the service
    * instance <i>list</i> and <i>update</i> API operations.</p> <p>To learn more
-   * about Proton administration, see the <a
-   * href="https://docs.aws.amazon.com/proton/latest/adminguide/Welcome.html">Proton
-   * Administrator Guide</a>.</p> <p>To learn more about deploying serverless and
-   * containerized applications on Proton, see the <a
+   * about Proton, see the <a
    * href="https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html">Proton
    * User Guide</a>.</p> <p> <b>Ensuring Idempotency</b> </p> <p>When you make a
    * mutating API request, the request typically returns a result before the
@@ -139,8 +136,8 @@ namespace Proton
          * can use the associated IAM role to provision environment infrastructure
          * resources in the associated environment account.</p> <p>For more information,
          * see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>Proton Administrator guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+         * account connections</a> in the <i>Proton User guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/AcceptEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -161,9 +158,8 @@ namespace Proton
          * <p>Attempts to cancel a component deployment (for a component that is in the
          * <code>IN_PROGRESS</code> deployment status).</p> <p>For more information about
          * components, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+         * components</a> in the <i>Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment">AWS
          * API Reference</a></p>
          */
@@ -183,15 +179,15 @@ namespace Proton
          * <p>Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a>
          * action, if the deployment is <code>IN_PROGRESS</code>. For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update
-         * an environment</a> in the <i>Proton Administrator guide</i>.</p> <p>The
-         * following list includes potential cancellation scenarios.</p> <ul> <li> <p>If
-         * the cancellation attempt succeeds, the resulting deployment state is
-         * <code>CANCELLED</code>.</p> </li> <li> <p>If the cancellation attempt fails, the
-         * resulting deployment state is <code>FAILED</code>.</p> </li> <li> <p>If the
-         * current <a>UpdateEnvironment</a> action succeeds before the cancellation attempt
-         * starts, the resulting deployment state is <code>SUCCEEDED</code> and the
-         * cancellation attempt has no effect.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-update.html">Update
+         * an environment</a> in the <i>Proton User guide</i>.</p> <p>The following list
+         * includes potential cancellation scenarios.</p> <ul> <li> <p>If the cancellation
+         * attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.</p>
+         * </li> <li> <p>If the cancellation attempt fails, the resulting deployment state
+         * is <code>FAILED</code>.</p> </li> <li> <p>If the current
+         * <a>UpdateEnvironment</a> action succeeds before the cancellation attempt starts,
+         * the resulting deployment state is <code>SUCCEEDED</code> and the cancellation
+         * attempt has no effect.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelEnvironmentDeployment">AWS
          * API Reference</a></p>
          */
@@ -210,18 +206,15 @@ namespace Proton
         /**
          * <p>Attempts to cancel a service instance deployment on an
          * <a>UpdateServiceInstance</a> action, if the deployment is
-         * <code>IN_PROGRESS</code>. For more information, see <i>Update a service
-         * instance</i> in the <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-instance-update.html">Proton
-         * Administrator guide</a> or the <a
-         * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-instance-update.html">Proton
-         * User guide</a>.</p> <p>The following list includes potential cancellation
-         * scenarios.</p> <ul> <li> <p>If the cancellation attempt succeeds, the resulting
-         * deployment state is <code>CANCELLED</code>.</p> </li> <li> <p>If the
-         * cancellation attempt fails, the resulting deployment state is
-         * <code>FAILED</code>.</p> </li> <li> <p>If the current
-         * <a>UpdateServiceInstance</a> action succeeds before the cancellation attempt
-         * starts, the resulting deployment state is <code>SUCCEEDED</code> and the
+         * <code>IN_PROGRESS</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-instance-update.html">Update
+         * a service instance</a> in the <i>Proton User guide</i>.</p> <p>The following
+         * list includes potential cancellation scenarios.</p> <ul> <li> <p>If the
+         * cancellation attempt succeeds, the resulting deployment state is
+         * <code>CANCELLED</code>.</p> </li> <li> <p>If the cancellation attempt fails, the
+         * resulting deployment state is <code>FAILED</code>.</p> </li> <li> <p>If the
+         * current <a>UpdateServiceInstance</a> action succeeds before the cancellation
+         * attempt starts, the resulting deployment state is <code>SUCCEEDED</code> and the
          * cancellation attempt has no effect.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServiceInstanceDeployment">AWS
          * API Reference</a></p>
@@ -241,18 +234,15 @@ namespace Proton
         /**
          * <p>Attempts to cancel a service pipeline deployment on an
          * <a>UpdateServicePipeline</a> action, if the deployment is
-         * <code>IN_PROGRESS</code>. For more information, see <i>Update a service
-         * pipeline</i> in the <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">Proton
-         * Administrator guide</a> or the <a
-         * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">Proton
-         * User guide</a>.</p> <p>The following list includes potential cancellation
-         * scenarios.</p> <ul> <li> <p>If the cancellation attempt succeeds, the resulting
-         * deployment state is <code>CANCELLED</code>.</p> </li> <li> <p>If the
-         * cancellation attempt fails, the resulting deployment state is
-         * <code>FAILED</code>.</p> </li> <li> <p>If the current
-         * <a>UpdateServicePipeline</a> action succeeds before the cancellation attempt
-         * starts, the resulting deployment state is <code>SUCCEEDED</code> and the
+         * <code>IN_PROGRESS</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-pipeline-update.html">Update
+         * a service pipeline</a> in the <i>Proton User guide</i>.</p> <p>The following
+         * list includes potential cancellation scenarios.</p> <ul> <li> <p>If the
+         * cancellation attempt succeeds, the resulting deployment state is
+         * <code>CANCELLED</code>.</p> </li> <li> <p>If the cancellation attempt fails, the
+         * resulting deployment state is <code>FAILED</code>.</p> </li> <li> <p>If the
+         * current <a>UpdateServicePipeline</a> action succeeds before the cancellation
+         * attempt starts, the resulting deployment state is <code>SUCCEEDED</code> and the
          * cancellation attempt has no effect.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelServicePipelineDeployment">AWS
          * API Reference</a></p>
@@ -272,9 +262,8 @@ namespace Proton
         /**
          * <p>Create an Proton component. A component is an infrastructure extension for a
          * service instance.</p> <p>For more information about components, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+         * components</a> in the <i>Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent">AWS
          * API Reference</a></p>
          */
@@ -299,11 +288,10 @@ namespace Proton
          * <li> <p>Self-managed provisioning: Proton makes pull requests on your repository
          * to provide compiled infrastructure as code (IaC) files that your IaC engine uses
          * to provision resources.</p> </li> </ul> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a>
          * and <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
-         * methods</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning
+         * methods</a> in the <i>Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironment">AWS
          * API Reference</a></p>
          */
@@ -326,8 +314,8 @@ namespace Proton
          * secure bi-directional connection between a <i>management account</i> and an
          * <i>environment account</i> that maintains authorization and permissions. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>Proton Administrator guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+         * account connections</a> in the <i>Proton User guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -346,8 +334,8 @@ namespace Proton
 
         /**
          * <p>Create an environment template for Proton. For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment
-         * Templates</a> in the <i>Proton Administrator Guide</i>.</p> <p>You can create an
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment
+         * Templates</a> in the <i>Proton User Guide</i>.</p> <p>You can create an
          * environment template in one of the two following ways:</p> <ul> <li> <p>Register
          * and publish a <i>standard</i> environment template that instructs Proton to
          * deploy and manage environment infrastructure.</p> </li> <li> <p>Register and
@@ -357,9 +345,9 @@ namespace Proton
          * template for customer provisioned and managed infrastructure, include the
          * <code>provisioning</code> parameter and set the value to
          * <code>CUSTOMER_MANAGED</code>. For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register
-         * and publish an environment template</a> in the <i>Proton Administrator
-         * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/template-create.html">Register
+         * and publish an environment template</a> in the <i>Proton User Guide</i>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateEnvironmentTemplate">AWS
          * API Reference</a></p>
          */
@@ -396,17 +384,19 @@ namespace Proton
         virtual void CreateEnvironmentTemplateVersionAsync(const Model::CreateEnvironmentTemplateVersionRequest& request, const CreateEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create and register a link to a repository that can be used with self-managed
-         * provisioning (infrastructure or pipelines) or for template sync configurations.
-         * When you create a repository link, Proton creates a <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/using-service-linked-roles.html">service-linked
+         * <p>Create and register a link to a repository. Proton uses the link to
+         * repeatedly access the repository, to either push to it (self-managed
+         * provisioning) or pull from it (template sync). You can share a linked repository
+         * across multiple resources (like environments using self-managed provisioning, or
+         * synced templates). When you create a repository link, Proton creates a <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/using-service-linked-roles.html">service-linked
          * role</a> for you.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
          * provisioning</a>, <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Template
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-authoring.html#ag-template-bundles">Template
          * bundles</a>, and <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
-         * sync configurations</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template
+         * sync configurations</a> in the <i>Proton User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateRepository">AWS
          * API Reference</a></p>
@@ -427,9 +417,7 @@ namespace Proton
          * <p>Create an Proton service. An Proton service is an instantiation of a service
          * template and often includes several service instances and pipeline. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a>
-         * in the <i>Proton Administrator Guide</i> and <a
-         * href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a>
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-services.html">Services</a>
          * in the <i>Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateService">AWS
          * API Reference</a></p>
@@ -453,9 +441,8 @@ namespace Proton
          * service template includes a service pipeline definition, they provide a link to
          * their source code repository. Proton then deploys and manages the infrastructure
          * defined by the selected service template. For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service
-         * Templates</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See Also:</h3>
-         * <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Proton
+         * templates</a> in the <i>Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceTemplate">AWS
          * API Reference</a></p>
          */
@@ -492,14 +479,15 @@ namespace Proton
         virtual void CreateServiceTemplateVersionAsync(const Model::CreateServiceTemplateVersionRequest& request, const CreateServiceTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Set up a template to create new template versions automatically. When a
-         * commit is pushed to your registered <a
-         * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_Repository.html">repository</a>,
-         * Proton checks for changes to your repository template bundles. If it detects a
-         * template bundle change, a new major or minor version of its template is created,
-         * if the version doesn’t already exist. For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-sync-configs.html">Template
-         * sync configurations</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
+         * <p>Set up a template to create new template versions automatically by tracking a
+         * linked repository. A linked repository is a repository that has been registered
+         * with Proton. For more information, see <a>CreateRepository</a>.</p> <p>When a
+         * commit is pushed to your linked repository, Proton checks for changes to your
+         * repository template bundles. If it detects a template bundle change, a new major
+         * or minor version of its template is created, if the version doesn’t already
+         * exist. For more information, see <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template
+         * sync configurations</a> in the <i>Proton User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateTemplateSyncConfig">AWS
          * API Reference</a></p>
@@ -519,9 +507,8 @@ namespace Proton
         /**
          * <p>Delete an Proton component resource.</p> <p>For more information about
          * components, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+         * components</a> in the <i>Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent">AWS
          * API Reference</a></p>
          */
@@ -562,8 +549,8 @@ namespace Proton
          * account and associated environment. You're responsible for cleaning up
          * provisioned resources that remain without an environment connection.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>Proton Administrator guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+         * account connections</a> in the <i>Proton User guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -646,9 +633,9 @@ namespace Proton
          * <p>Delete a service, with its instances and pipeline.</p>  <p>You can't
          * delete a service if it has any service instances that have components attached
          * to them.</p> <p>For more information about components, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-         * components</a> in the <i>Proton Administrator Guide</i>.</p> <p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+         * components</a> in the <i>Proton User Guide</i>.</p> <p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteService">AWS
          * API Reference</a></p>
          */
@@ -726,8 +713,8 @@ namespace Proton
         virtual void DeleteTemplateSyncConfigAsync(const Model::DeleteTemplateSyncConfigRequest& request, const DeleteTemplateSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get detail data for the Proton pipeline service role.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Get detail data for Proton account-wide settings.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetAccountSettings">AWS
          * API Reference</a></p>
          */
@@ -746,9 +733,8 @@ namespace Proton
         /**
          * <p>Get detailed data for a component.</p> <p>For more information about
          * components, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+         * components</a> in the <i>Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent">AWS
          * API Reference</a></p>
          */
@@ -784,8 +770,8 @@ namespace Proton
         /**
          * <p>In an environment account, get the detailed data for an environment account
          * connection.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>Proton Administrator guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+         * account connections</a> in the <i>Proton User guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -838,7 +824,7 @@ namespace Proton
         virtual void GetEnvironmentTemplateVersionAsync(const Model::GetEnvironmentTemplateVersionRequest& request, const GetEnvironmentTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get detail data for a repository.</p><p><h3>See Also:</h3>   <a
+         * <p>Get detail data for a linked repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepository">AWS
          * API Reference</a></p>
          */
@@ -862,8 +848,8 @@ namespace Proton
          * Specifically, you can't use these tags to control access to this action using
          * Attribute-based access control (ABAC).</p> <p>For more information about ABAC,
          * see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
-         * in the <i>Proton Administrator Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags">ABAC</a>
+         * in the <i>Proton User Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetRepositorySyncStatus">AWS
          * API Reference</a></p>
          */
@@ -988,9 +974,8 @@ namespace Proton
         /**
          * <p>Get a list of component Infrastructure as Code (IaC) outputs.</p> <p>For more
          * information about components, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+         * components</a> in the <i>Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs">AWS
          * API Reference</a></p>
          */
@@ -1009,9 +994,8 @@ namespace Proton
         /**
          * <p>List provisioned resources for a component with details.</p> <p>For more
          * information about components, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+         * components</a> in the <i>Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources">AWS
          * API Reference</a></p>
          */
@@ -1031,9 +1015,8 @@ namespace Proton
          * <p>List components with summary data. You can filter the result list by
          * environment, service, or a single service instance.</p> <p>For more information
          * about components, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+         * components</a> in the <i>Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents">AWS
          * API Reference</a></p>
          */
@@ -1052,8 +1035,8 @@ namespace Proton
         /**
          * <p>View a list of environment account connections.</p> <p>For more information,
          * see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>Proton Administrator guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+         * account connections</a> in the <i>Proton User guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListEnvironmentAccountConnections">AWS
          * API Reference</a></p>
@@ -1159,7 +1142,7 @@ namespace Proton
         virtual void ListEnvironmentsAsync(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List repositories with detail data.</p><p><h3>See Also:</h3>   <a
+         * <p>List linked repositories with detail data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListRepositories">AWS
          * API Reference</a></p>
          */
@@ -1335,12 +1318,10 @@ namespace Proton
         virtual void ListServicesAsync(const Model::ListServicesRequest& request, const ListServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List tags for a resource. For more information, see <i>Proton resources and
-         * tagging</i> in the <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-         * Administrator Guide</a> or <a
+         * <p>List tags for a resource. For more information, see <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-         * User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * resources and tagging</a> in the <i>Proton User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -1359,9 +1340,8 @@ namespace Proton
         /**
          * <p>Notify Proton of status changes to a provisioned resource when you use
          * self-managed provisioning.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
-         * provisioning</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html#ag-works-prov-methods-self">Self-managed
+         * provisioning</a> in the <i>Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/NotifyResourceDeploymentStatusChange">AWS
          * API Reference</a></p>
          */
@@ -1384,8 +1364,8 @@ namespace Proton
          * account connection.</p> <p>You <i>can’t</i> reject an environment account
          * connection that's connected to an environment.</p> <p>For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>Proton Administrator guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+         * account connections</a> in the <i>Proton User guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RejectEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -1404,12 +1384,10 @@ namespace Proton
 
         /**
          * <p>Tag a resource. A tag is a key-value pair of metadata that you associate with
-         * an Proton resource.</p> <p>For more information, see <i>Proton resources and
-         * tagging</i> in the <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-         * Administrator Guide</a> or <a
+         * an Proton resource.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-         * User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * resources and tagging</a> in the <i>Proton User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1427,12 +1405,10 @@ namespace Proton
 
         /**
          * <p>Remove a customer tag from a resource. A tag is a key-value pair of metadata
-         * associated with an Proton resource.</p> <p>For more information, see <i>Proton
-         * resources and tagging</i> in the <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">Proton
-         * Administrator Guide</a> or <a
+         * associated with an Proton resource.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
-         * User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * resources and tagging</a> in the <i>Proton User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -1449,8 +1425,8 @@ namespace Proton
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update the Proton service pipeline role or repository settings.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Update Proton settings that are used for multiple services in the Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateAccountSettings">AWS
          * API Reference</a></p>
          */
@@ -1472,9 +1448,8 @@ namespace Proton
          * update a component while its deployment status, or the deployment status of a
          * service instance attached to it, is <code>IN_PROGRESS</code>.</p>  <p>For
          * more information about components, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-         * components</a> in the <i>Proton Administrator Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+         * components</a> in the <i>Proton User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent">AWS
          * API Reference</a></p>
          */
@@ -1512,12 +1487,12 @@ namespace Proton
          * <code>protonServiceRoleArn</code> and
          * <code>environmentAccountConnectionId</code> parameters.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a>
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a>
          * and <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-works-prov-methods.html">Provisioning
-         * methods</a> in the <i>Proton Administrator Guide</i>.</p> <p>There are four
-         * modes for updating an environment. The <code>deploymentType</code> field defines
-         * the mode.</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-works-prov-methods.html">Provisioning
+         * methods</a> in the <i>Proton User Guide</i>.</p> <p>There are four modes for
+         * updating an environment. The <code>deploymentType</code> field defines the
+         * mode.</p> <dl> <dt/> <dd> <p> <code>NONE</code> </p> <p>In this mode, a
          * deployment <i>doesn't</i> occur. Only the requested metadata parameters are
          * updated.</p> </dd> <dt/> <dd> <p> <code>CURRENT_VERSION</code> </p> <p>In this
          * mode, the environment is deployed and updated with the new spec that you
@@ -1550,8 +1525,8 @@ namespace Proton
         /**
          * <p>In an environment account, update an environment account connection to use a
          * new IAM role.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment
-         * account connections</a> in the <i>Proton Administrator guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-account-connections.html">Environment
+         * account connections</a> in the <i>Proton User guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateEnvironmentAccountConnection">AWS
          * API Reference</a></p>
@@ -1611,9 +1586,9 @@ namespace Proton
          * <p>Edit the <code>spec</code> parameter to add or delete instances.</p> 
          * <p>You can't delete a service instance (remove it from the spec) if it has an
          * attached component.</p> <p>For more information about components, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-         * components</a> in the <i>Proton Administrator Guide</i>.</p> <p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+         * components</a> in the <i>Proton User Guide</i>.</p> <p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateService">AWS
          * API Reference</a></p>
          */
@@ -1635,9 +1610,9 @@ namespace Proton
          *  <p>You can't update a service instance while its deployment status, or
          * the deployment status of a component attached to it, is
          * <code>IN_PROGRESS</code>.</p> <p>For more information about components, see <a
-         * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton
-         * components</a> in the <i>Proton Administrator Guide</i>.</p> <p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
+         * components</a> in the <i>Proton User Guide</i>.</p> <p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceInstance">AWS
          * API Reference</a></p>
          */
@@ -1723,8 +1698,10 @@ namespace Proton
 
         /**
          * <p>Update template sync configuration parameters, except for the
-         * <code>templateName</code> and <code>templateType</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>templateName</code> and <code>templateType</code>. Repository details
+         * (branch, name, and provider) should be of a linked repository. A linked
+         * repository is a repository that has been registered with Proton. For more
+         * information, see <a>CreateRepository</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateTemplateSyncConfig">AWS
          * API Reference</a></p>
          */

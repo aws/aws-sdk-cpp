@@ -26,6 +26,7 @@
 #include <aws/fsx/model/CreateBackupRequest.h>
 #include <aws/fsx/model/CreateDataRepositoryAssociationRequest.h>
 #include <aws/fsx/model/CreateDataRepositoryTaskRequest.h>
+#include <aws/fsx/model/CreateFileCacheRequest.h>
 #include <aws/fsx/model/CreateFileSystemRequest.h>
 #include <aws/fsx/model/CreateFileSystemFromBackupRequest.h>
 #include <aws/fsx/model/CreateSnapshotRequest.h>
@@ -34,6 +35,7 @@
 #include <aws/fsx/model/CreateVolumeFromBackupRequest.h>
 #include <aws/fsx/model/DeleteBackupRequest.h>
 #include <aws/fsx/model/DeleteDataRepositoryAssociationRequest.h>
+#include <aws/fsx/model/DeleteFileCacheRequest.h>
 #include <aws/fsx/model/DeleteFileSystemRequest.h>
 #include <aws/fsx/model/DeleteSnapshotRequest.h>
 #include <aws/fsx/model/DeleteStorageVirtualMachineRequest.h>
@@ -41,6 +43,7 @@
 #include <aws/fsx/model/DescribeBackupsRequest.h>
 #include <aws/fsx/model/DescribeDataRepositoryAssociationsRequest.h>
 #include <aws/fsx/model/DescribeDataRepositoryTasksRequest.h>
+#include <aws/fsx/model/DescribeFileCachesRequest.h>
 #include <aws/fsx/model/DescribeFileSystemAliasesRequest.h>
 #include <aws/fsx/model/DescribeFileSystemsRequest.h>
 #include <aws/fsx/model/DescribeSnapshotsRequest.h>
@@ -53,6 +56,7 @@
 #include <aws/fsx/model/TagResourceRequest.h>
 #include <aws/fsx/model/UntagResourceRequest.h>
 #include <aws/fsx/model/UpdateDataRepositoryAssociationRequest.h>
+#include <aws/fsx/model/UpdateFileCacheRequest.h>
 #include <aws/fsx/model/UpdateFileSystemRequest.h>
 #include <aws/fsx/model/UpdateSnapshotRequest.h>
 #include <aws/fsx/model/UpdateStorageVirtualMachineRequest.h>
@@ -269,6 +273,28 @@ void FSxClient::CreateDataRepositoryTaskAsync(const CreateDataRepositoryTaskRequ
     } );
 }
 
+CreateFileCacheOutcome FSxClient::CreateFileCache(const CreateFileCacheRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateFileCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFileCacheOutcomeCallable FSxClient::CreateFileCacheCallable(const CreateFileCacheRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFileCacheOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFileCache(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::CreateFileCacheAsync(const CreateFileCacheRequest& request, const CreateFileCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateFileCache(request), context);
+    } );
+}
+
 CreateFileSystemOutcome FSxClient::CreateFileSystem(const CreateFileSystemRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -445,6 +471,28 @@ void FSxClient::DeleteDataRepositoryAssociationAsync(const DeleteDataRepositoryA
     } );
 }
 
+DeleteFileCacheOutcome FSxClient::DeleteFileCache(const DeleteFileCacheRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteFileCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFileCacheOutcomeCallable FSxClient::DeleteFileCacheCallable(const DeleteFileCacheRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFileCacheOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFileCache(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::DeleteFileCacheAsync(const DeleteFileCacheRequest& request, const DeleteFileCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteFileCache(request), context);
+    } );
+}
+
 DeleteFileSystemOutcome FSxClient::DeleteFileSystem(const DeleteFileSystemRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -596,6 +644,28 @@ void FSxClient::DescribeDataRepositoryTasksAsync(const DescribeDataRepositoryTas
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeDataRepositoryTasks(request), context);
+    } );
+}
+
+DescribeFileCachesOutcome FSxClient::DescribeFileCaches(const DescribeFileCachesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeFileCachesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFileCachesOutcomeCallable FSxClient::DescribeFileCachesCallable(const DescribeFileCachesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFileCachesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFileCaches(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::DescribeFileCachesAsync(const DescribeFileCachesRequest& request, const DescribeFileCachesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeFileCaches(request), context);
     } );
 }
 
@@ -860,6 +930,28 @@ void FSxClient::UpdateDataRepositoryAssociationAsync(const UpdateDataRepositoryA
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateDataRepositoryAssociation(request), context);
+    } );
+}
+
+UpdateFileCacheOutcome FSxClient::UpdateFileCache(const UpdateFileCacheRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateFileCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFileCacheOutcomeCallable FSxClient::UpdateFileCacheCallable(const UpdateFileCacheRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFileCacheOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFileCache(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::UpdateFileCacheAsync(const UpdateFileCacheRequest& request, const UpdateFileCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateFileCache(request), context);
     } );
 }
 
