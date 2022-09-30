@@ -29,7 +29,8 @@ Schedule::Schedule() :
     m_fastRestoreRuleHasBeenSet(false),
     m_crossRegionCopyRulesHasBeenSet(false),
     m_shareRulesHasBeenSet(false),
-    m_deprecateRuleHasBeenSet(false)
+    m_deprecateRuleHasBeenSet(false),
+    m_archiveRuleHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Schedule::Schedule(JsonView jsonValue) :
     m_fastRestoreRuleHasBeenSet(false),
     m_crossRegionCopyRulesHasBeenSet(false),
     m_shareRulesHasBeenSet(false),
-    m_deprecateRuleHasBeenSet(false)
+    m_deprecateRuleHasBeenSet(false),
+    m_archiveRuleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -133,6 +135,13 @@ Schedule& Schedule::operator =(JsonView jsonValue)
     m_deprecateRuleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ArchiveRule"))
+  {
+    m_archiveRule = jsonValue.GetObject("ArchiveRule");
+
+    m_archiveRuleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -217,6 +226,12 @@ JsonValue Schedule::Jsonize() const
   if(m_deprecateRuleHasBeenSet)
   {
    payload.WithObject("DeprecateRule", m_deprecateRule.Jsonize());
+
+  }
+
+  if(m_archiveRuleHasBeenSet)
+  {
+   payload.WithObject("ArchiveRule", m_archiveRule.Jsonize());
 
   }
 

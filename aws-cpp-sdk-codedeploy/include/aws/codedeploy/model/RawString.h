@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>A revision for an AWS Lambda deployment that is a YAML-formatted or
-   * JSON-formatted string. For AWS Lambda deployments, the revision is the same as
-   * the AppSpec file.</p><p><h3>See Also:</h3>   <a
+   * <p>A revision for an Lambda deployment that is a YAML-formatted or
+   * JSON-formatted string. For Lambda deployments, the revision is the same as the
+   * AppSpec file.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RawString">AWS
    * API Reference</a></p>
    */

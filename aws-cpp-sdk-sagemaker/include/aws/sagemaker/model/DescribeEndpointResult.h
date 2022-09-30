@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/DeploymentConfig.h>
 #include <aws/sagemaker/model/AsyncInferenceConfig.h>
 #include <aws/sagemaker/model/PendingDeploymentSummary.h>
+#include <aws/sagemaker/model/ExplainerConfig.h>
 #include <aws/sagemaker/model/ProductionVariantSummary.h>
 #include <utility>
 
@@ -530,6 +531,32 @@ namespace Model
      */
     inline DescribeEndpointResult& WithPendingDeploymentSummary(PendingDeploymentSummary&& value) { SetPendingDeploymentSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline const ExplainerConfig& GetExplainerConfig() const{ return m_explainerConfig; }
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline void SetExplainerConfig(const ExplainerConfig& value) { m_explainerConfig = value; }
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline void SetExplainerConfig(ExplainerConfig&& value) { m_explainerConfig = std::move(value); }
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline DescribeEndpointResult& WithExplainerConfig(const ExplainerConfig& value) { SetExplainerConfig(value); return *this;}
+
+    /**
+     * <p>The configuration parameters for an explainer.</p>
+     */
+    inline DescribeEndpointResult& WithExplainerConfig(ExplainerConfig&& value) { SetExplainerConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_endpointName;
@@ -555,6 +582,8 @@ namespace Model
     AsyncInferenceConfig m_asyncInferenceConfig;
 
     PendingDeploymentSummary m_pendingDeploymentSummary;
+
+    ExplainerConfig m_explainerConfig;
   };
 
 } // namespace Model

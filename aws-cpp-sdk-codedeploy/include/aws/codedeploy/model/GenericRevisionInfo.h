@@ -127,94 +127,94 @@ namespace Model
 
 
     /**
-     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     * <p>When the revision was first used by CodeDeploy.</p>
      */
     inline const Aws::Utils::DateTime& GetFirstUsedTime() const{ return m_firstUsedTime; }
 
     /**
-     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     * <p>When the revision was first used by CodeDeploy.</p>
      */
     inline bool FirstUsedTimeHasBeenSet() const { return m_firstUsedTimeHasBeenSet; }
 
     /**
-     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     * <p>When the revision was first used by CodeDeploy.</p>
      */
     inline void SetFirstUsedTime(const Aws::Utils::DateTime& value) { m_firstUsedTimeHasBeenSet = true; m_firstUsedTime = value; }
 
     /**
-     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     * <p>When the revision was first used by CodeDeploy.</p>
      */
     inline void SetFirstUsedTime(Aws::Utils::DateTime&& value) { m_firstUsedTimeHasBeenSet = true; m_firstUsedTime = std::move(value); }
 
     /**
-     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     * <p>When the revision was first used by CodeDeploy.</p>
      */
     inline GenericRevisionInfo& WithFirstUsedTime(const Aws::Utils::DateTime& value) { SetFirstUsedTime(value); return *this;}
 
     /**
-     * <p>When the revision was first used by AWS CodeDeploy.</p>
+     * <p>When the revision was first used by CodeDeploy.</p>
      */
     inline GenericRevisionInfo& WithFirstUsedTime(Aws::Utils::DateTime&& value) { SetFirstUsedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     * <p>When the revision was last used by CodeDeploy.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUsedTime() const{ return m_lastUsedTime; }
 
     /**
-     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     * <p>When the revision was last used by CodeDeploy.</p>
      */
     inline bool LastUsedTimeHasBeenSet() const { return m_lastUsedTimeHasBeenSet; }
 
     /**
-     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     * <p>When the revision was last used by CodeDeploy.</p>
      */
     inline void SetLastUsedTime(const Aws::Utils::DateTime& value) { m_lastUsedTimeHasBeenSet = true; m_lastUsedTime = value; }
 
     /**
-     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     * <p>When the revision was last used by CodeDeploy.</p>
      */
     inline void SetLastUsedTime(Aws::Utils::DateTime&& value) { m_lastUsedTimeHasBeenSet = true; m_lastUsedTime = std::move(value); }
 
     /**
-     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     * <p>When the revision was last used by CodeDeploy.</p>
      */
     inline GenericRevisionInfo& WithLastUsedTime(const Aws::Utils::DateTime& value) { SetLastUsedTime(value); return *this;}
 
     /**
-     * <p>When the revision was last used by AWS CodeDeploy.</p>
+     * <p>When the revision was last used by CodeDeploy.</p>
      */
     inline GenericRevisionInfo& WithLastUsedTime(Aws::Utils::DateTime&& value) { SetLastUsedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     * <p>When the revision was registered with CodeDeploy.</p>
      */
     inline const Aws::Utils::DateTime& GetRegisterTime() const{ return m_registerTime; }
 
     /**
-     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     * <p>When the revision was registered with CodeDeploy.</p>
      */
     inline bool RegisterTimeHasBeenSet() const { return m_registerTimeHasBeenSet; }
 
     /**
-     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     * <p>When the revision was registered with CodeDeploy.</p>
      */
     inline void SetRegisterTime(const Aws::Utils::DateTime& value) { m_registerTimeHasBeenSet = true; m_registerTime = value; }
 
     /**
-     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     * <p>When the revision was registered with CodeDeploy.</p>
      */
     inline void SetRegisterTime(Aws::Utils::DateTime&& value) { m_registerTimeHasBeenSet = true; m_registerTime = std::move(value); }
 
     /**
-     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     * <p>When the revision was registered with CodeDeploy.</p>
      */
     inline GenericRevisionInfo& WithRegisterTime(const Aws::Utils::DateTime& value) { SetRegisterTime(value); return *this;}
 
     /**
-     * <p>When the revision was registered with AWS CodeDeploy.</p>
+     * <p>When the revision was registered with CodeDeploy.</p>
      */
     inline GenericRevisionInfo& WithRegisterTime(Aws::Utils::DateTime&& value) { SetRegisterTime(std::move(value)); return *this;}
 

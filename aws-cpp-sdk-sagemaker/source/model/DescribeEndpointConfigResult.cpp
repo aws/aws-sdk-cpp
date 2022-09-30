@@ -73,6 +73,12 @@ DescribeEndpointConfigResult& DescribeEndpointConfigResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("ExplainerConfig"))
+  {
+    m_explainerConfig = jsonValue.GetObject("ExplainerConfig");
+
+  }
+
 
 
   return *this;

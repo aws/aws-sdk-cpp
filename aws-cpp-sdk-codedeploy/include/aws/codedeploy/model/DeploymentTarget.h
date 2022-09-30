@@ -116,38 +116,38 @@ namespace Model
 
 
     /**
-     * <p> Information about the target for a deployment that uses the AWS Lambda
-     * compute platform. </p>
+     * <p> Information about the target for a deployment that uses the Lambda compute
+     * platform. </p>
      */
     inline const LambdaTarget& GetLambdaTarget() const{ return m_lambdaTarget; }
 
     /**
-     * <p> Information about the target for a deployment that uses the AWS Lambda
-     * compute platform. </p>
+     * <p> Information about the target for a deployment that uses the Lambda compute
+     * platform. </p>
      */
     inline bool LambdaTargetHasBeenSet() const { return m_lambdaTargetHasBeenSet; }
 
     /**
-     * <p> Information about the target for a deployment that uses the AWS Lambda
-     * compute platform. </p>
+     * <p> Information about the target for a deployment that uses the Lambda compute
+     * platform. </p>
      */
     inline void SetLambdaTarget(const LambdaTarget& value) { m_lambdaTargetHasBeenSet = true; m_lambdaTarget = value; }
 
     /**
-     * <p> Information about the target for a deployment that uses the AWS Lambda
-     * compute platform. </p>
+     * <p> Information about the target for a deployment that uses the Lambda compute
+     * platform. </p>
      */
     inline void SetLambdaTarget(LambdaTarget&& value) { m_lambdaTargetHasBeenSet = true; m_lambdaTarget = std::move(value); }
 
     /**
-     * <p> Information about the target for a deployment that uses the AWS Lambda
-     * compute platform. </p>
+     * <p> Information about the target for a deployment that uses the Lambda compute
+     * platform. </p>
      */
     inline DeploymentTarget& WithLambdaTarget(const LambdaTarget& value) { SetLambdaTarget(value); return *this;}
 
     /**
-     * <p> Information about the target for a deployment that uses the AWS Lambda
-     * compute platform. </p>
+     * <p> Information about the target for a deployment that uses the Lambda compute
+     * platform. </p>
      */
     inline DeploymentTarget& WithLambdaTarget(LambdaTarget&& value) { SetLambdaTarget(std::move(value)); return *this;}
 

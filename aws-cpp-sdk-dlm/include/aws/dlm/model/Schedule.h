@@ -11,6 +11,7 @@
 #include <aws/dlm/model/RetainRule.h>
 #include <aws/dlm/model/FastRestoreRule.h>
 #include <aws/dlm/model/DeprecateRule.h>
+#include <aws/dlm/model/ArchiveRule.h>
 #include <aws/dlm/model/Tag.h>
 #include <aws/dlm/model/CrossRegionCopyRule.h>
 #include <aws/dlm/model/ShareRule.h>
@@ -485,6 +486,79 @@ namespace Model
      */
     inline Schedule& WithDeprecateRule(DeprecateRule&& value) { SetDeprecateRule(std::move(value)); return *this;}
 
+
+    /**
+     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
+     * rule for the schedule. When you specify an archiving rule, snapshots are
+     * automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the
+     * archive tier for the archive retention period that you specify. </p> <p>For more
+     * information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.</p>
+     */
+    inline const ArchiveRule& GetArchiveRule() const{ return m_archiveRule; }
+
+    /**
+     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
+     * rule for the schedule. When you specify an archiving rule, snapshots are
+     * automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the
+     * archive tier for the archive retention period that you specify. </p> <p>For more
+     * information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.</p>
+     */
+    inline bool ArchiveRuleHasBeenSet() const { return m_archiveRuleHasBeenSet; }
+
+    /**
+     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
+     * rule for the schedule. When you specify an archiving rule, snapshots are
+     * automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the
+     * archive tier for the archive retention period that you specify. </p> <p>For more
+     * information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.</p>
+     */
+    inline void SetArchiveRule(const ArchiveRule& value) { m_archiveRuleHasBeenSet = true; m_archiveRule = value; }
+
+    /**
+     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
+     * rule for the schedule. When you specify an archiving rule, snapshots are
+     * automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the
+     * archive tier for the archive retention period that you specify. </p> <p>For more
+     * information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.</p>
+     */
+    inline void SetArchiveRule(ArchiveRule&& value) { m_archiveRuleHasBeenSet = true; m_archiveRule = std::move(value); }
+
+    /**
+     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
+     * rule for the schedule. When you specify an archiving rule, snapshots are
+     * automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the
+     * archive tier for the archive retention period that you specify. </p> <p>For more
+     * information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.</p>
+     */
+    inline Schedule& WithArchiveRule(const ArchiveRule& value) { SetArchiveRule(value); return *this;}
+
+    /**
+     * <p> <b>[Snapshot policies that target volumes only]</b> The snapshot archiving
+     * rule for the schedule. When you specify an archiving rule, snapshots are
+     * automatically moved from the standard tier to the archive tier once the
+     * schedule's retention threshold is met. Snapshots are then retained in the
+     * archive tier for the archive retention period that you specify. </p> <p>For more
+     * information about using snapshot archiving, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive">Considerations
+     * for snapshot lifecycle policies</a>.</p>
+     */
+    inline Schedule& WithArchiveRule(ArchiveRule&& value) { SetArchiveRule(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -516,6 +590,9 @@ namespace Model
 
     DeprecateRule m_deprecateRule;
     bool m_deprecateRuleHasBeenSet = false;
+
+    ArchiveRule m_archiveRule;
+    bool m_archiveRuleHasBeenSet = false;
   };
 
 } // namespace Model

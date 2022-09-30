@@ -54,7 +54,8 @@ DeploymentInfo::DeploymentInfo() :
     m_computePlatform(ComputePlatform::NOT_SET),
     m_computePlatformHasBeenSet(false),
     m_externalIdHasBeenSet(false),
-    m_relatedDeploymentsHasBeenSet(false)
+    m_relatedDeploymentsHasBeenSet(false),
+    m_overrideAlarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -94,7 +95,8 @@ DeploymentInfo::DeploymentInfo(JsonView jsonValue) :
     m_computePlatform(ComputePlatform::NOT_SET),
     m_computePlatformHasBeenSet(false),
     m_externalIdHasBeenSet(false),
-    m_relatedDeploymentsHasBeenSet(false)
+    m_relatedDeploymentsHasBeenSet(false),
+    m_overrideAlarmConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -307,6 +309,13 @@ DeploymentInfo& DeploymentInfo::operator =(JsonView jsonValue)
     m_relatedDeploymentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("overrideAlarmConfiguration"))
+  {
+    m_overrideAlarmConfiguration = jsonValue.GetObject("overrideAlarmConfiguration");
+
+    m_overrideAlarmConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -483,6 +492,12 @@ JsonValue DeploymentInfo::Jsonize() const
   if(m_relatedDeploymentsHasBeenSet)
   {
    payload.WithObject("relatedDeployments", m_relatedDeployments.Jsonize());
+
+  }
+
+  if(m_overrideAlarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("overrideAlarmConfiguration", m_overrideAlarmConfiguration.Jsonize());
 
   }
 

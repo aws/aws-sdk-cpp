@@ -25,7 +25,8 @@ CreateDeploymentRequest::CreateDeploymentRequest() :
     m_updateOutdatedInstancesOnly(false),
     m_updateOutdatedInstancesOnlyHasBeenSet(false),
     m_fileExistsBehavior(FileExistsBehavior::NOT_SET),
-    m_fileExistsBehaviorHasBeenSet(false)
+    m_fileExistsBehaviorHasBeenSet(false),
+    m_overrideAlarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,12 @@ Aws::String CreateDeploymentRequest::SerializePayload() const
   if(m_fileExistsBehaviorHasBeenSet)
   {
    payload.WithString("fileExistsBehavior", FileExistsBehaviorMapper::GetNameForFileExistsBehavior(m_fileExistsBehavior));
+  }
+
+  if(m_overrideAlarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("overrideAlarmConfiguration", m_overrideAlarmConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

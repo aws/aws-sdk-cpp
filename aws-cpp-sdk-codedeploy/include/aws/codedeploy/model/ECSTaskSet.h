@@ -26,10 +26,10 @@ namespace Model
 {
 
   /**
-   * <p> Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment.
-   * An Amazon ECS task set includes details such as the desired number of tasks, how
+   * <p> Information about a set of Amazon ECS tasks in an CodeDeploy deployment. An
+   * Amazon ECS task set includes details such as the desired number of tasks, how
    * many tasks are running, and whether the task set serves production traffic. An
-   * AWS CodeDeploy application that uses the Amazon ECS compute platform deploys a
+   * CodeDeploy application that uses the Amazon ECS compute platform deploys a
    * containerized application in an Amazon ECS service as a task set. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ECSTaskSet">AWS
@@ -288,37 +288,37 @@ namespace Model
 
     /**
      * <p> The target group associated with the task set. The target group is used by
-     * AWS CodeDeploy to manage traffic to a task set. </p>
+     * CodeDeploy to manage traffic to a task set. </p>
      */
     inline const TargetGroupInfo& GetTargetGroup() const{ return m_targetGroup; }
 
     /**
      * <p> The target group associated with the task set. The target group is used by
-     * AWS CodeDeploy to manage traffic to a task set. </p>
+     * CodeDeploy to manage traffic to a task set. </p>
      */
     inline bool TargetGroupHasBeenSet() const { return m_targetGroupHasBeenSet; }
 
     /**
      * <p> The target group associated with the task set. The target group is used by
-     * AWS CodeDeploy to manage traffic to a task set. </p>
+     * CodeDeploy to manage traffic to a task set. </p>
      */
     inline void SetTargetGroup(const TargetGroupInfo& value) { m_targetGroupHasBeenSet = true; m_targetGroup = value; }
 
     /**
      * <p> The target group associated with the task set. The target group is used by
-     * AWS CodeDeploy to manage traffic to a task set. </p>
+     * CodeDeploy to manage traffic to a task set. </p>
      */
     inline void SetTargetGroup(TargetGroupInfo&& value) { m_targetGroupHasBeenSet = true; m_targetGroup = std::move(value); }
 
     /**
      * <p> The target group associated with the task set. The target group is used by
-     * AWS CodeDeploy to manage traffic to a task set. </p>
+     * CodeDeploy to manage traffic to a task set. </p>
      */
     inline ECSTaskSet& WithTargetGroup(const TargetGroupInfo& value) { SetTargetGroup(value); return *this;}
 
     /**
      * <p> The target group associated with the task set. The target group is used by
-     * AWS CodeDeploy to manage traffic to a task set. </p>
+     * CodeDeploy to manage traffic to a task set. </p>
      */
     inline ECSTaskSet& WithTargetGroup(TargetGroupInfo&& value) { SetTargetGroup(std::move(value)); return *this;}
 

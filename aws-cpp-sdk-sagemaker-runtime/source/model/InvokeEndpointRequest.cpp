@@ -22,7 +22,8 @@ InvokeEndpointRequest::InvokeEndpointRequest() :
     m_targetModelHasBeenSet(false),
     m_targetVariantHasBeenSet(false),
     m_targetContainerHostnameHasBeenSet(false),
-    m_inferenceIdHasBeenSet(false)
+    m_inferenceIdHasBeenSet(false),
+    m_enableExplanationsHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,13 @@ Aws::Http::HeaderValueCollection InvokeEndpointRequest::GetRequestSpecificHeader
   {
     ss << m_inferenceId;
     headers.emplace("x-amzn-sagemaker-inference-id",  ss.str());
+    ss.str("");
+  }
+
+  if(m_enableExplanationsHasBeenSet)
+  {
+    ss << m_enableExplanations;
+    headers.emplace("x-amzn-sagemaker-enable-explanations",  ss.str());
     ss.str("");
   }
 
