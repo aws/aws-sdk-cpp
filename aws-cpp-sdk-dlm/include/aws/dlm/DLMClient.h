@@ -18,10 +18,11 @@ namespace DLM
    * <fullname>Amazon Data Lifecycle Manager</fullname> <p>With Amazon Data Lifecycle
    * Manager, you can manage the lifecycle of your Amazon Web Services resources. You
    * create lifecycle policies, which are used to automate operations on the
-   * specified resources.</p> <p>Amazon DLM supports Amazon EBS volumes and
-   * snapshots. For information about using Amazon DLM with Amazon EBS, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">Automating
-   * the Amazon EBS Snapshot Lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p>
+   * specified resources.</p> <p>Amazon Data Lifecycle Manager supports Amazon EBS
+   * volumes and snapshots. For information about using Amazon Data Lifecycle Manager
+   * with Amazon EBS, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html">
+   * Amazon Data Lifecycle Manager</a> in the <i>Amazon EC2 User Guide</i>.</p>
    */
   class AWS_DLM_API DLMClient : public Aws::Client::AWSJsonClient
   {
@@ -72,7 +73,10 @@ namespace DLM
 
         /**
          * <p>Deletes the specified lifecycle policy and halts the automated operations
-         * that the policy specified.</p><p><h3>See Also:</h3>   <a
+         * that the policy specified.</p> <p>For more information about deleting a policy,
+         * see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#delete">Delete
+         * lifecycle policies</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/DeleteLifecyclePolicy">AWS
          * API Reference</a></p>
          */
@@ -178,7 +182,10 @@ namespace DLM
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified lifecycle policy.</p> <p>For more information about
+         * updating a policy, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#modify">Modify
+         * lifecycle policies</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/UpdateLifecyclePolicy">AWS
          * API Reference</a></p>
          */

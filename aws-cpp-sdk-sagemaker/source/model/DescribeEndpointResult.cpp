@@ -105,6 +105,12 @@ DescribeEndpointResult& DescribeEndpointResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("ExplainerConfig"))
+  {
+    m_explainerConfig = jsonValue.GetObject("ExplainerConfig");
+
+  }
+
 
 
   return *this;
