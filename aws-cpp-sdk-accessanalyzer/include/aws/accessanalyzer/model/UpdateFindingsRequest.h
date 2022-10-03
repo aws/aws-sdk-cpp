@@ -7,8 +7,8 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/accessanalyzer/AccessAnalyzerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/accessanalyzer/model/FindingStatusUpdate.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -97,44 +97,46 @@ namespace Model
 
 
     /**
-     * <p>A client token.</p>
+     * <p>The state represents the action to take to update the finding Status. Use
+     * <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
+     * <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const FindingStatusUpdate& GetStatus() const{ return m_status; }
 
     /**
-     * <p>A client token.</p>
+     * <p>The state represents the action to take to update the finding Status. Use
+     * <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
+     * <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
      */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>A client token.</p>
+     * <p>The state represents the action to take to update the finding Status. Use
+     * <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
+     * <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
      */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetStatus(const FindingStatusUpdate& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>A client token.</p>
+     * <p>The state represents the action to take to update the finding Status. Use
+     * <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
+     * <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetStatus(FindingStatusUpdate&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>A client token.</p>
+     * <p>The state represents the action to take to update the finding Status. Use
+     * <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
+     * <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
      */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline UpdateFindingsRequest& WithStatus(const FindingStatusUpdate& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>A client token.</p>
+     * <p>The state represents the action to take to update the finding Status. Use
+     * <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
+     * <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
      */
-    inline UpdateFindingsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline UpdateFindingsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline UpdateFindingsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline UpdateFindingsRequest& WithStatus(FindingStatusUpdate&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -225,54 +227,52 @@ namespace Model
 
 
     /**
-     * <p>The state represents the action to take to update the finding Status. Use
-     * <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-     * <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+     * <p>A client token.</p>
      */
-    inline const FindingStatusUpdate& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The state represents the action to take to update the finding Status. Use
-     * <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-     * <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+     * <p>A client token.</p>
      */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The state represents the action to take to update the finding Status. Use
-     * <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-     * <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+     * <p>A client token.</p>
      */
-    inline void SetStatus(const FindingStatusUpdate& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The state represents the action to take to update the finding Status. Use
-     * <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-     * <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+     * <p>A client token.</p>
      */
-    inline void SetStatus(FindingStatusUpdate&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The state represents the action to take to update the finding Status. Use
-     * <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-     * <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+     * <p>A client token.</p>
      */
-    inline UpdateFindingsRequest& WithStatus(const FindingStatusUpdate& value) { SetStatus(value); return *this;}
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The state represents the action to take to update the finding Status. Use
-     * <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use
-     * <code>ACTIVE</code> to change an Archived finding to an Active finding.</p>
+     * <p>A client token.</p>
      */
-    inline UpdateFindingsRequest& WithStatus(FindingStatusUpdate&& value) { SetStatus(std::move(value)); return *this;}
+    inline UpdateFindingsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline UpdateFindingsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline UpdateFindingsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
   private:
 
     Aws::String m_analyzerArn;
     bool m_analyzerArnHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    FindingStatusUpdate m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ids;
     bool m_idsHasBeenSet = false;
@@ -280,8 +280,8 @@ namespace Model
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet = false;
 
-    FindingStatusUpdate m_status;
-    bool m_statusHasBeenSet = false;
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

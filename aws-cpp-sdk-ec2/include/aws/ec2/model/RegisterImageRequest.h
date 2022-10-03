@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/BootModeValues.h>
 #include <aws/ec2/model/TpmSupportValues.h>
+#include <aws/ec2/model/ImdsSupportValues.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <utility>
 
@@ -934,6 +935,91 @@ namespace Model
      */
     inline RegisterImageRequest& WithUefiData(const char* value) { SetUefiData(value); return *this;}
 
+
+    /**
+     * <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
+     * <p>If you set the value to <code>v2.0</code>, make sure that your AMI software
+     * can support IMDSv2.</p> 
+     */
+    inline const ImdsSupportValues& GetImdsSupport() const{ return m_imdsSupport; }
+
+    /**
+     * <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
+     * <p>If you set the value to <code>v2.0</code>, make sure that your AMI software
+     * can support IMDSv2.</p> 
+     */
+    inline bool ImdsSupportHasBeenSet() const { return m_imdsSupportHasBeenSet; }
+
+    /**
+     * <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
+     * <p>If you set the value to <code>v2.0</code>, make sure that your AMI software
+     * can support IMDSv2.</p> 
+     */
+    inline void SetImdsSupport(const ImdsSupportValues& value) { m_imdsSupportHasBeenSet = true; m_imdsSupport = value; }
+
+    /**
+     * <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
+     * <p>If you set the value to <code>v2.0</code>, make sure that your AMI software
+     * can support IMDSv2.</p> 
+     */
+    inline void SetImdsSupport(ImdsSupportValues&& value) { m_imdsSupportHasBeenSet = true; m_imdsSupport = std::move(value); }
+
+    /**
+     * <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
+     * <p>If you set the value to <code>v2.0</code>, make sure that your AMI software
+     * can support IMDSv2.</p> 
+     */
+    inline RegisterImageRequest& WithImdsSupport(const ImdsSupportValues& value) { SetImdsSupport(value); return *this;}
+
+    /**
+     * <p>Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI.
+     * Instances launched from this AMI will have <code>HttpTokens</code> automatically
+     * set to <code>required</code> so that, by default, the instance requires that
+     * IMDSv2 is used when requesting instance metadata. In addition,
+     * <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+     * the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
+     * <p>If you set the value to <code>v2.0</code>, make sure that your AMI software
+     * can support IMDSv2.</p> 
+     */
+    inline RegisterImageRequest& WithImdsSupport(ImdsSupportValues&& value) { SetImdsSupport(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_imageLocation;
@@ -983,6 +1069,9 @@ namespace Model
 
     Aws::String m_uefiData;
     bool m_uefiDataHasBeenSet = false;
+
+    ImdsSupportValues m_imdsSupport;
+    bool m_imdsSupportHasBeenSet = false;
   };
 
 } // namespace Model

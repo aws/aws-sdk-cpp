@@ -84,47 +84,6 @@ namespace Model
 
 
     /**
-     * <p>A client token.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline DeleteArchiveRuleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline DeleteArchiveRuleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A client token.</p>
-     */
-    inline DeleteArchiveRuleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
-
-    /**
      * <p>The name of the rule to delete.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
@@ -164,16 +123,57 @@ namespace Model
      */
     inline DeleteArchiveRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
 
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline DeleteArchiveRuleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline DeleteArchiveRuleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A client token.</p>
+     */
+    inline DeleteArchiveRuleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
   private:
 
     Aws::String m_analyzerName;
     bool m_analyzerNameHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
     Aws::String m_ruleName;
     bool m_ruleNameHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

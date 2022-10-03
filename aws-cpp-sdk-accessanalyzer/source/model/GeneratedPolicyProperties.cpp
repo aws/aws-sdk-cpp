@@ -19,31 +19,24 @@ namespace Model
 {
 
 GeneratedPolicyProperties::GeneratedPolicyProperties() : 
-    m_cloudTrailPropertiesHasBeenSet(false),
     m_isComplete(false),
     m_isCompleteHasBeenSet(false),
-    m_principalArnHasBeenSet(false)
+    m_principalArnHasBeenSet(false),
+    m_cloudTrailPropertiesHasBeenSet(false)
 {
 }
 
 GeneratedPolicyProperties::GeneratedPolicyProperties(JsonView jsonValue) : 
-    m_cloudTrailPropertiesHasBeenSet(false),
     m_isComplete(false),
     m_isCompleteHasBeenSet(false),
-    m_principalArnHasBeenSet(false)
+    m_principalArnHasBeenSet(false),
+    m_cloudTrailPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 GeneratedPolicyProperties& GeneratedPolicyProperties::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("cloudTrailProperties"))
-  {
-    m_cloudTrailProperties = jsonValue.GetObject("cloudTrailProperties");
-
-    m_cloudTrailPropertiesHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("isComplete"))
   {
     m_isComplete = jsonValue.GetBool("isComplete");
@@ -58,18 +51,19 @@ GeneratedPolicyProperties& GeneratedPolicyProperties::operator =(JsonView jsonVa
     m_principalArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cloudTrailProperties"))
+  {
+    m_cloudTrailProperties = jsonValue.GetObject("cloudTrailProperties");
+
+    m_cloudTrailPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue GeneratedPolicyProperties::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_cloudTrailPropertiesHasBeenSet)
-  {
-   payload.WithObject("cloudTrailProperties", m_cloudTrailProperties.Jsonize());
-
-  }
 
   if(m_isCompleteHasBeenSet)
   {
@@ -80,6 +74,12 @@ JsonValue GeneratedPolicyProperties::Jsonize() const
   if(m_principalArnHasBeenSet)
   {
    payload.WithString("principalArn", m_principalArn);
+
+  }
+
+  if(m_cloudTrailPropertiesHasBeenSet)
+  {
+   payload.WithObject("cloudTrailProperties", m_cloudTrailProperties.Jsonize());
 
   }
 
