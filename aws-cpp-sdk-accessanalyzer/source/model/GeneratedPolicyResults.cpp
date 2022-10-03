@@ -19,20 +19,27 @@ namespace Model
 {
 
 GeneratedPolicyResults::GeneratedPolicyResults() : 
-    m_generatedPoliciesHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+    m_propertiesHasBeenSet(false),
+    m_generatedPoliciesHasBeenSet(false)
 {
 }
 
 GeneratedPolicyResults::GeneratedPolicyResults(JsonView jsonValue) : 
-    m_generatedPoliciesHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+    m_propertiesHasBeenSet(false),
+    m_generatedPoliciesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 GeneratedPolicyResults& GeneratedPolicyResults::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("properties"))
+  {
+    m_properties = jsonValue.GetObject("properties");
+
+    m_propertiesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("generatedPolicies"))
   {
     Array<JsonView> generatedPoliciesJsonList = jsonValue.GetArray("generatedPolicies");
@@ -43,19 +50,18 @@ GeneratedPolicyResults& GeneratedPolicyResults::operator =(JsonView jsonValue)
     m_generatedPoliciesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("properties"))
-  {
-    m_properties = jsonValue.GetObject("properties");
-
-    m_propertiesHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue GeneratedPolicyResults::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_propertiesHasBeenSet)
+  {
+   payload.WithObject("properties", m_properties.Jsonize());
+
+  }
 
   if(m_generatedPoliciesHasBeenSet)
   {
@@ -65,12 +71,6 @@ JsonValue GeneratedPolicyResults::Jsonize() const
      generatedPoliciesJsonList[generatedPoliciesIndex].AsObject(m_generatedPolicies[generatedPoliciesIndex].Jsonize());
    }
    payload.WithArray("generatedPolicies", std::move(generatedPoliciesJsonList));
-
-  }
-
-  if(m_propertiesHasBeenSet)
-  {
-   payload.WithObject("properties", m_properties.Jsonize());
 
   }
 

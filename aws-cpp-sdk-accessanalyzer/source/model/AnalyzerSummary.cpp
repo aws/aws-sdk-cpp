@@ -20,31 +20,31 @@ namespace Model
 
 AnalyzerSummary::AnalyzerSummary() : 
     m_arnHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_type(Type::NOT_SET),
+    m_typeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastResourceAnalyzedHasBeenSet(false),
     m_lastResourceAnalyzedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_status(AnalyzerStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_statusReasonHasBeenSet(false)
 {
 }
 
 AnalyzerSummary::AnalyzerSummary(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_type(Type::NOT_SET),
+    m_typeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastResourceAnalyzedHasBeenSet(false),
     m_lastResourceAnalyzedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_status(AnalyzerStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_statusReasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +56,20 @@ AnalyzerSummary& AnalyzerSummary::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = TypeMapper::GetTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -79,11 +93,14 @@ AnalyzerSummary& AnalyzerSummary::operator =(JsonView jsonValue)
     m_lastResourceAnalyzedAtHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("tags"))
   {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -100,23 +117,6 @@ AnalyzerSummary& AnalyzerSummary::operator =(JsonView jsonValue)
     m_statusReasonHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("tags"))
-  {
-    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
-      m_tags[tagsItem.first] = tagsItem.second.AsString();
-    }
-    m_tagsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = TypeMapper::GetTypeForName(jsonValue.GetString("type"));
-
-    m_typeHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -128,6 +128,17 @@ JsonValue AnalyzerSummary::Jsonize() const
   {
    payload.WithString("arn", m_arn);
 
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", TypeMapper::GetNameForType(m_type));
   }
 
   if(m_createdAtHasBeenSet)
@@ -146,9 +157,14 @@ JsonValue AnalyzerSummary::Jsonize() const
    payload.WithString("lastResourceAnalyzedAt", m_lastResourceAnalyzedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_nameHasBeenSet)
+  if(m_tagsHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 
@@ -161,22 +177,6 @@ JsonValue AnalyzerSummary::Jsonize() const
   {
    payload.WithObject("statusReason", m_statusReason.Jsonize());
 
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", TypeMapper::GetNameForType(m_type));
   }
 
   return payload;

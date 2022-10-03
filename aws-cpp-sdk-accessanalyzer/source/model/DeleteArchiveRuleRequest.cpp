@@ -17,9 +17,9 @@ using namespace Aws::Http;
 
 DeleteArchiveRuleRequest::DeleteArchiveRuleRequest() : 
     m_analyzerNameHasBeenSet(false),
+    m_ruleNameHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_ruleNameHasBeenSet(false)
+    m_clientTokenHasBeenSet(true)
 {
 }
 

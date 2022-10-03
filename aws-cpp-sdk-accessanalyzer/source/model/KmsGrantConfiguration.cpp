@@ -19,47 +19,26 @@ namespace Model
 {
 
 KmsGrantConfiguration::KmsGrantConfiguration() : 
-    m_constraintsHasBeenSet(false),
-    m_granteePrincipalHasBeenSet(false),
-    m_issuingAccountHasBeenSet(false),
     m_operationsHasBeenSet(false),
-    m_retiringPrincipalHasBeenSet(false)
+    m_granteePrincipalHasBeenSet(false),
+    m_retiringPrincipalHasBeenSet(false),
+    m_constraintsHasBeenSet(false),
+    m_issuingAccountHasBeenSet(false)
 {
 }
 
 KmsGrantConfiguration::KmsGrantConfiguration(JsonView jsonValue) : 
-    m_constraintsHasBeenSet(false),
-    m_granteePrincipalHasBeenSet(false),
-    m_issuingAccountHasBeenSet(false),
     m_operationsHasBeenSet(false),
-    m_retiringPrincipalHasBeenSet(false)
+    m_granteePrincipalHasBeenSet(false),
+    m_retiringPrincipalHasBeenSet(false),
+    m_constraintsHasBeenSet(false),
+    m_issuingAccountHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 KmsGrantConfiguration& KmsGrantConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("constraints"))
-  {
-    m_constraints = jsonValue.GetObject("constraints");
-
-    m_constraintsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("granteePrincipal"))
-  {
-    m_granteePrincipal = jsonValue.GetString("granteePrincipal");
-
-    m_granteePrincipalHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("issuingAccount"))
-  {
-    m_issuingAccount = jsonValue.GetString("issuingAccount");
-
-    m_issuingAccountHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("operations"))
   {
     Array<JsonView> operationsJsonList = jsonValue.GetArray("operations");
@@ -70,11 +49,32 @@ KmsGrantConfiguration& KmsGrantConfiguration::operator =(JsonView jsonValue)
     m_operationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("granteePrincipal"))
+  {
+    m_granteePrincipal = jsonValue.GetString("granteePrincipal");
+
+    m_granteePrincipalHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("retiringPrincipal"))
   {
     m_retiringPrincipal = jsonValue.GetString("retiringPrincipal");
 
     m_retiringPrincipalHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("constraints"))
+  {
+    m_constraints = jsonValue.GetObject("constraints");
+
+    m_constraintsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("issuingAccount"))
+  {
+    m_issuingAccount = jsonValue.GetString("issuingAccount");
+
+    m_issuingAccountHasBeenSet = true;
   }
 
   return *this;
@@ -83,24 +83,6 @@ KmsGrantConfiguration& KmsGrantConfiguration::operator =(JsonView jsonValue)
 JsonValue KmsGrantConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_constraintsHasBeenSet)
-  {
-   payload.WithObject("constraints", m_constraints.Jsonize());
-
-  }
-
-  if(m_granteePrincipalHasBeenSet)
-  {
-   payload.WithString("granteePrincipal", m_granteePrincipal);
-
-  }
-
-  if(m_issuingAccountHasBeenSet)
-  {
-   payload.WithString("issuingAccount", m_issuingAccount);
-
-  }
 
   if(m_operationsHasBeenSet)
   {
@@ -113,9 +95,27 @@ JsonValue KmsGrantConfiguration::Jsonize() const
 
   }
 
+  if(m_granteePrincipalHasBeenSet)
+  {
+   payload.WithString("granteePrincipal", m_granteePrincipal);
+
+  }
+
   if(m_retiringPrincipalHasBeenSet)
   {
    payload.WithString("retiringPrincipal", m_retiringPrincipal);
+
+  }
+
+  if(m_constraintsHasBeenSet)
+  {
+   payload.WithObject("constraints", m_constraints.Jsonize());
+
+  }
+
+  if(m_issuingAccountHasBeenSet)
+  {
+   payload.WithString("issuingAccount", m_issuingAccount);
 
   }
 

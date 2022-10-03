@@ -404,7 +404,7 @@ namespace Model
 
 
     /**
-     * <p>The type of Snow Family Devices to use for this cluster. </p>  <p>For
+     * <p>The type of Snow Family devices to use for this cluster. </p>  <p>For
      * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p>  <p>For more information, see
      * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
@@ -415,7 +415,7 @@ namespace Model
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of Snow Family Devices to use for this cluster. </p>  <p>For
+     * <p>The type of Snow Family devices to use for this cluster. </p>  <p>For
      * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p>  <p>For more information, see
      * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
@@ -426,7 +426,7 @@ namespace Model
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
-     * <p>The type of Snow Family Devices to use for this cluster. </p>  <p>For
+     * <p>The type of Snow Family devices to use for this cluster. </p>  <p>For
      * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p>  <p>For more information, see
      * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
@@ -437,7 +437,7 @@ namespace Model
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of Snow Family Devices to use for this cluster. </p>  <p>For
+     * <p>The type of Snow Family devices to use for this cluster. </p>  <p>For
      * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p>  <p>For more information, see
      * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
@@ -448,7 +448,7 @@ namespace Model
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of Snow Family Devices to use for this cluster. </p>  <p>For
+     * <p>The type of Snow Family devices to use for this cluster. </p>  <p>For
      * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p>  <p>For more information, see
      * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
@@ -459,7 +459,7 @@ namespace Model
     inline CreateClusterRequest& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of Snow Family Devices to use for this cluster. </p>  <p>For
+     * <p>The type of Snow Family devices to use for this cluster. </p>  <p>For
      * cluster jobs, Amazon Web Services Snow Family currently supports only the
      * <code>EDGE</code> device type.</p>  <p>For more information, see
      * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"

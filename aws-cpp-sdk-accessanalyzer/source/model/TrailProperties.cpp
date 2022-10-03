@@ -19,31 +19,24 @@ namespace Model
 {
 
 TrailProperties::TrailProperties() : 
-    m_allRegions(false),
-    m_allRegionsHasBeenSet(false),
     m_cloudTrailArnHasBeenSet(false),
-    m_regionsHasBeenSet(false)
+    m_regionsHasBeenSet(false),
+    m_allRegions(false),
+    m_allRegionsHasBeenSet(false)
 {
 }
 
 TrailProperties::TrailProperties(JsonView jsonValue) : 
-    m_allRegions(false),
-    m_allRegionsHasBeenSet(false),
     m_cloudTrailArnHasBeenSet(false),
-    m_regionsHasBeenSet(false)
+    m_regionsHasBeenSet(false),
+    m_allRegions(false),
+    m_allRegionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 TrailProperties& TrailProperties::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("allRegions"))
-  {
-    m_allRegions = jsonValue.GetBool("allRegions");
-
-    m_allRegionsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("cloudTrailArn"))
   {
     m_cloudTrailArn = jsonValue.GetString("cloudTrailArn");
@@ -61,18 +54,19 @@ TrailProperties& TrailProperties::operator =(JsonView jsonValue)
     m_regionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("allRegions"))
+  {
+    m_allRegions = jsonValue.GetBool("allRegions");
+
+    m_allRegionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue TrailProperties::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_allRegionsHasBeenSet)
-  {
-   payload.WithBool("allRegions", m_allRegions);
-
-  }
 
   if(m_cloudTrailArnHasBeenSet)
   {
@@ -88,6 +82,12 @@ JsonValue TrailProperties::Jsonize() const
      regionsJsonList[regionsIndex].AsString(m_regions[regionsIndex]);
    }
    payload.WithArray("regions", std::move(regionsJsonList));
+
+  }
+
+  if(m_allRegionsHasBeenSet)
+  {
+   payload.WithBool("allRegions", m_allRegions);
 
   }
 

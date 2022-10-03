@@ -194,27 +194,6 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return in the response.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return in the response.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return in the response.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return in the response.</p>
-     */
-    inline ListAccessPreviewFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
-
-    /**
      * <p>A token used for pagination of results returned.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -254,6 +233,27 @@ namespace Model
      */
     inline ListAccessPreviewFindingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of results to return in the response.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in the response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in the response.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of results to return in the response.</p>
+     */
+    inline ListAccessPreviewFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
   private:
 
     Aws::String m_accessPreviewId;
@@ -265,11 +265,11 @@ namespace Model
     Aws::Map<Aws::String, Criterion> m_filter;
     bool m_filterHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
-
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

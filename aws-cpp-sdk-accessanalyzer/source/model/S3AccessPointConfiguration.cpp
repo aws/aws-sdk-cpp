@@ -20,15 +20,15 @@ namespace Model
 
 S3AccessPointConfiguration::S3AccessPointConfiguration() : 
     m_accessPointPolicyHasBeenSet(false),
-    m_networkOriginHasBeenSet(false),
-    m_publicAccessBlockHasBeenSet(false)
+    m_publicAccessBlockHasBeenSet(false),
+    m_networkOriginHasBeenSet(false)
 {
 }
 
 S3AccessPointConfiguration::S3AccessPointConfiguration(JsonView jsonValue) : 
     m_accessPointPolicyHasBeenSet(false),
-    m_networkOriginHasBeenSet(false),
-    m_publicAccessBlockHasBeenSet(false)
+    m_publicAccessBlockHasBeenSet(false),
+    m_networkOriginHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -42,18 +42,18 @@ S3AccessPointConfiguration& S3AccessPointConfiguration::operator =(JsonView json
     m_accessPointPolicyHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("networkOrigin"))
-  {
-    m_networkOrigin = jsonValue.GetObject("networkOrigin");
-
-    m_networkOriginHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("publicAccessBlock"))
   {
     m_publicAccessBlock = jsonValue.GetObject("publicAccessBlock");
 
     m_publicAccessBlockHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("networkOrigin"))
+  {
+    m_networkOrigin = jsonValue.GetObject("networkOrigin");
+
+    m_networkOriginHasBeenSet = true;
   }
 
   return *this;
@@ -69,15 +69,15 @@ JsonValue S3AccessPointConfiguration::Jsonize() const
 
   }
 
-  if(m_networkOriginHasBeenSet)
-  {
-   payload.WithObject("networkOrigin", m_networkOrigin.Jsonize());
-
-  }
-
   if(m_publicAccessBlockHasBeenSet)
   {
    payload.WithObject("publicAccessBlock", m_publicAccessBlock.Jsonize());
+
+  }
+
+  if(m_networkOriginHasBeenSet)
+  {
+   payload.WithObject("networkOrigin", m_networkOrigin.Jsonize());
 
   }
 

@@ -42,6 +42,47 @@ namespace Model
 
 
     /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline AccessPreviewSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline AccessPreviewSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique ID for the access preview.</p>
+     */
+    inline AccessPreviewSummary& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
      * <p>The ARN of the analyzer used to generate the access preview.</p>
      */
     inline const Aws::String& GetAnalyzerArn() const{ return m_analyzerArn; }
@@ -111,47 +152,6 @@ namespace Model
      * <p>The time at which the access preview was created.</p>
      */
     inline AccessPreviewSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline AccessPreviewSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline AccessPreviewSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID for the access preview.</p>
-     */
-    inline AccessPreviewSummary& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
@@ -229,14 +229,14 @@ namespace Model
 
   private:
 
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
     Aws::String m_analyzerArn;
     bool m_analyzerArnHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_id;
-    bool m_idHasBeenSet = false;
 
     AccessPreviewStatus m_status;
     bool m_statusHasBeenSet = false;

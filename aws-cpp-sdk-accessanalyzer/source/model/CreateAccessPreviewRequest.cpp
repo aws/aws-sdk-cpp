@@ -14,9 +14,9 @@ using namespace Aws::Utils;
 
 CreateAccessPreviewRequest::CreateAccessPreviewRequest() : 
     m_analyzerArnHasBeenSet(false),
+    m_configurationsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_configurationsHasBeenSet(false)
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -30,12 +30,6 @@ Aws::String CreateAccessPreviewRequest::SerializePayload() const
 
   }
 
-  if(m_clientTokenHasBeenSet)
-  {
-   payload.WithString("clientToken", m_clientToken);
-
-  }
-
   if(m_configurationsHasBeenSet)
   {
    JsonValue configurationsJsonMap;
@@ -44,6 +38,12 @@ Aws::String CreateAccessPreviewRequest::SerializePayload() const
      configurationsJsonMap.WithObject(configurationsItem.first, configurationsItem.second.Jsonize());
    }
    payload.WithObject("configurations", std::move(configurationsJsonMap));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

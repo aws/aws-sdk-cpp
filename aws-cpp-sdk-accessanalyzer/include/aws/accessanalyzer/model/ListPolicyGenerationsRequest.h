@@ -39,6 +39,63 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the IAM entity (user or role) for which you are generating a
+     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
+     * to only include results for a specific principal.</p>
+     */
+    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
+
+    /**
+     * <p>The ARN of the IAM entity (user or role) for which you are generating a
+     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
+     * to only include results for a specific principal.</p>
+     */
+    inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM entity (user or role) for which you are generating a
+     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
+     * to only include results for a specific principal.</p>
+     */
+    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
+
+    /**
+     * <p>The ARN of the IAM entity (user or role) for which you are generating a
+     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
+     * to only include results for a specific principal.</p>
+     */
+    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the IAM entity (user or role) for which you are generating a
+     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
+     * to only include results for a specific principal.</p>
+     */
+    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
+
+    /**
+     * <p>The ARN of the IAM entity (user or role) for which you are generating a
+     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
+     * to only include results for a specific principal.</p>
+     */
+    inline ListPolicyGenerationsRequest& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the IAM entity (user or role) for which you are generating a
+     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
+     * to only include results for a specific principal.</p>
+     */
+    inline ListPolicyGenerationsRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the IAM entity (user or role) for which you are generating a
+     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
+     * to only include results for a specific principal.</p>
+     */
+    inline ListPolicyGenerationsRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+
+
+    /**
      * <p>The maximum number of results to return in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -99,73 +156,16 @@ namespace Model
      */
     inline ListPolicyGenerationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
-     * to only include results for a specific principal.</p>
-     */
-    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
-     * to only include results for a specific principal.</p>
-     */
-    inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
-     * to only include results for a specific principal.</p>
-     */
-    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
-     * to only include results for a specific principal.</p>
-     */
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
-     * to only include results for a specific principal.</p>
-     */
-    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
-     * to only include results for a specific principal.</p>
-     */
-    inline ListPolicyGenerationsRequest& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
-     * to only include results for a specific principal.</p>
-     */
-    inline ListPolicyGenerationsRequest& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy. Use this with <code>ListGeneratedPolicies</code> to filter the results
-     * to only include results for a specific principal.</p>
-     */
-    inline ListPolicyGenerationsRequest& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
-
   private:
+
+    Aws::String m_principalArn;
+    bool m_principalArnHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
-
-    Aws::String m_principalArn;
-    bool m_principalArnHasBeenSet = false;
   };
 
 } // namespace Model

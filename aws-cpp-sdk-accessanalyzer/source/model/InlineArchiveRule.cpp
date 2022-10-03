@@ -19,20 +19,27 @@ namespace Model
 {
 
 InlineArchiveRule::InlineArchiveRule() : 
-    m_filterHasBeenSet(false),
-    m_ruleNameHasBeenSet(false)
+    m_ruleNameHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
 }
 
 InlineArchiveRule::InlineArchiveRule(JsonView jsonValue) : 
-    m_filterHasBeenSet(false),
-    m_ruleNameHasBeenSet(false)
+    m_ruleNameHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 InlineArchiveRule& InlineArchiveRule::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ruleName"))
+  {
+    m_ruleName = jsonValue.GetString("ruleName");
+
+    m_ruleNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("filter"))
   {
     Aws::Map<Aws::String, JsonView> filterJsonMap = jsonValue.GetObject("filter").GetAllObjects();
@@ -43,19 +50,18 @@ InlineArchiveRule& InlineArchiveRule::operator =(JsonView jsonValue)
     m_filterHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ruleName"))
-  {
-    m_ruleName = jsonValue.GetString("ruleName");
-
-    m_ruleNameHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue InlineArchiveRule::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_ruleNameHasBeenSet)
+  {
+   payload.WithString("ruleName", m_ruleName);
+
+  }
 
   if(m_filterHasBeenSet)
   {
@@ -65,12 +71,6 @@ JsonValue InlineArchiveRule::Jsonize() const
      filterJsonMap.WithObject(filterItem.first, filterItem.second.Jsonize());
    }
    payload.WithObject("filter", std::move(filterJsonMap));
-
-  }
-
-  if(m_ruleNameHasBeenSet)
-  {
-   payload.WithString("ruleName", m_ruleName);
 
   }
 

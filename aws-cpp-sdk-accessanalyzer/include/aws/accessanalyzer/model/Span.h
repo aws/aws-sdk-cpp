@@ -39,37 +39,6 @@ namespace Model
 
 
     /**
-     * <p>The end position of the span (exclusive).</p>
-     */
-    inline const Position& GetEnd() const{ return m_end; }
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
-    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
-    inline void SetEnd(const Position& value) { m_endHasBeenSet = true; m_end = value; }
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
-    inline void SetEnd(Position&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
-    inline Span& WithEnd(const Position& value) { SetEnd(value); return *this;}
-
-    /**
-     * <p>The end position of the span (exclusive).</p>
-     */
-    inline Span& WithEnd(Position&& value) { SetEnd(std::move(value)); return *this;}
-
-
-    /**
      * <p>The start position of the span (inclusive).</p>
      */
     inline const Position& GetStart() const{ return m_start; }
@@ -99,13 +68,44 @@ namespace Model
      */
     inline Span& WithStart(Position&& value) { SetStart(std::move(value)); return *this;}
 
-  private:
 
-    Position m_end;
-    bool m_endHasBeenSet = false;
+    /**
+     * <p>The end position of the span (exclusive).</p>
+     */
+    inline const Position& GetEnd() const{ return m_end; }
+
+    /**
+     * <p>The end position of the span (exclusive).</p>
+     */
+    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
+
+    /**
+     * <p>The end position of the span (exclusive).</p>
+     */
+    inline void SetEnd(const Position& value) { m_endHasBeenSet = true; m_end = value; }
+
+    /**
+     * <p>The end position of the span (exclusive).</p>
+     */
+    inline void SetEnd(Position&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
+
+    /**
+     * <p>The end position of the span (exclusive).</p>
+     */
+    inline Span& WithEnd(const Position& value) { SetEnd(value); return *this;}
+
+    /**
+     * <p>The end position of the span (exclusive).</p>
+     */
+    inline Span& WithEnd(Position&& value) { SetEnd(std::move(value)); return *this;}
+
+  private:
 
     Position m_start;
     bool m_startHasBeenSet = false;
+
+    Position m_end;
+    bool m_endHasBeenSet = false;
   };
 
 } // namespace Model

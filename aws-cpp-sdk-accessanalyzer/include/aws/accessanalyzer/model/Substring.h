@@ -37,27 +37,6 @@ namespace Model
 
 
     /**
-     * <p>The length of the substring.</p>
-     */
-    inline int GetLength() const{ return m_length; }
-
-    /**
-     * <p>The length of the substring.</p>
-     */
-    inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
-
-    /**
-     * <p>The length of the substring.</p>
-     */
-    inline void SetLength(int value) { m_lengthHasBeenSet = true; m_length = value; }
-
-    /**
-     * <p>The length of the substring.</p>
-     */
-    inline Substring& WithLength(int value) { SetLength(value); return *this;}
-
-
-    /**
      * <p>The start index of the substring, starting from 0.</p>
      */
     inline int GetStart() const{ return m_start; }
@@ -77,13 +56,34 @@ namespace Model
      */
     inline Substring& WithStart(int value) { SetStart(value); return *this;}
 
-  private:
 
-    int m_length;
-    bool m_lengthHasBeenSet = false;
+    /**
+     * <p>The length of the substring.</p>
+     */
+    inline int GetLength() const{ return m_length; }
+
+    /**
+     * <p>The length of the substring.</p>
+     */
+    inline bool LengthHasBeenSet() const { return m_lengthHasBeenSet; }
+
+    /**
+     * <p>The length of the substring.</p>
+     */
+    inline void SetLength(int value) { m_lengthHasBeenSet = true; m_length = value; }
+
+    /**
+     * <p>The length of the substring.</p>
+     */
+    inline Substring& WithLength(int value) { SetLength(value); return *this;}
+
+  private:
 
     int m_start;
     bool m_startHasBeenSet = false;
+
+    int m_length;
+    bool m_lengthHasBeenSet = false;
   };
 
 } // namespace Model

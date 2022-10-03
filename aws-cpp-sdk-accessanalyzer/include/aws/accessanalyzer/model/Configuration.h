@@ -7,8 +7,8 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/accessanalyzer/model/IamRoleConfiguration.h>
 #include <aws/accessanalyzer/model/KmsKeyConfiguration.h>
-#include <aws/accessanalyzer/model/S3BucketConfiguration.h>
 #include <aws/accessanalyzer/model/SecretsManagerSecretConfiguration.h>
+#include <aws/accessanalyzer/model/S3BucketConfiguration.h>
 #include <aws/accessanalyzer/model/SqsQueueConfiguration.h>
 #include <utility>
 
@@ -106,37 +106,6 @@ namespace Model
 
 
     /**
-     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
-     */
-    inline const S3BucketConfiguration& GetS3Bucket() const{ return m_s3Bucket; }
-
-    /**
-     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
-     */
-    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-
-    /**
-     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
-     */
-    inline void SetS3Bucket(const S3BucketConfiguration& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-
-    /**
-     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
-     */
-    inline void SetS3Bucket(S3BucketConfiguration&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-
-    /**
-     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
-     */
-    inline Configuration& WithS3Bucket(const S3BucketConfiguration& value) { SetS3Bucket(value); return *this;}
-
-    /**
-     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
-     */
-    inline Configuration& WithS3Bucket(S3BucketConfiguration&& value) { SetS3Bucket(std::move(value)); return *this;}
-
-
-    /**
      * <p>The access control configuration is for a Secrets Manager secret.</p>
      */
     inline const SecretsManagerSecretConfiguration& GetSecretsManagerSecret() const{ return m_secretsManagerSecret; }
@@ -165,6 +134,37 @@ namespace Model
      * <p>The access control configuration is for a Secrets Manager secret.</p>
      */
     inline Configuration& WithSecretsManagerSecret(SecretsManagerSecretConfiguration&& value) { SetSecretsManagerSecret(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
+     */
+    inline const S3BucketConfiguration& GetS3Bucket() const{ return m_s3Bucket; }
+
+    /**
+     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
+     */
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+
+    /**
+     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
+     */
+    inline void SetS3Bucket(const S3BucketConfiguration& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
+
+    /**
+     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
+     */
+    inline void SetS3Bucket(S3BucketConfiguration&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
+
+    /**
+     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
+     */
+    inline Configuration& WithS3Bucket(const S3BucketConfiguration& value) { SetS3Bucket(value); return *this;}
+
+    /**
+     * <p>The access control configuration is for an Amazon S3 Bucket. </p>
+     */
+    inline Configuration& WithS3Bucket(S3BucketConfiguration&& value) { SetS3Bucket(std::move(value)); return *this;}
 
 
     /**
@@ -205,11 +205,11 @@ namespace Model
     KmsKeyConfiguration m_kmsKey;
     bool m_kmsKeyHasBeenSet = false;
 
-    S3BucketConfiguration m_s3Bucket;
-    bool m_s3BucketHasBeenSet = false;
-
     SecretsManagerSecretConfiguration m_secretsManagerSecret;
     bool m_secretsManagerSecretHasBeenSet = false;
+
+    S3BucketConfiguration m_s3Bucket;
+    bool m_s3BucketHasBeenSet = false;
 
     SqsQueueConfiguration m_sqsQueue;
     bool m_sqsQueueHasBeenSet = false;

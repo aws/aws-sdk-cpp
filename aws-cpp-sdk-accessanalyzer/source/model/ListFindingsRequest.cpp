@@ -15,10 +15,10 @@ using namespace Aws::Utils;
 ListFindingsRequest::ListFindingsRequest() : 
     m_analyzerArnHasBeenSet(false),
     m_filterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
+    m_sortHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_sortHasBeenSet(false)
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -43,9 +43,9 @@ Aws::String ListFindingsRequest::SerializePayload() const
 
   }
 
-  if(m_maxResultsHasBeenSet)
+  if(m_sortHasBeenSet)
   {
-   payload.WithInteger("maxResults", m_maxResults);
+   payload.WithObject("sort", m_sort.Jsonize());
 
   }
 
@@ -55,9 +55,9 @@ Aws::String ListFindingsRequest::SerializePayload() const
 
   }
 
-  if(m_sortHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-   payload.WithObject("sort", m_sort.Jsonize());
+   payload.WithInteger("maxResults", m_maxResults);
 
   }
 

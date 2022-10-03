@@ -19,36 +19,26 @@ namespace Model
 {
 
 Criterion::Criterion() : 
-    m_containsHasBeenSet(false),
     m_eqHasBeenSet(false),
+    m_neqHasBeenSet(false),
+    m_containsHasBeenSet(false),
     m_exists(false),
-    m_existsHasBeenSet(false),
-    m_neqHasBeenSet(false)
+    m_existsHasBeenSet(false)
 {
 }
 
 Criterion::Criterion(JsonView jsonValue) : 
-    m_containsHasBeenSet(false),
     m_eqHasBeenSet(false),
+    m_neqHasBeenSet(false),
+    m_containsHasBeenSet(false),
     m_exists(false),
-    m_existsHasBeenSet(false),
-    m_neqHasBeenSet(false)
+    m_existsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Criterion& Criterion::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("contains"))
-  {
-    Array<JsonView> containsJsonList = jsonValue.GetArray("contains");
-    for(unsigned containsIndex = 0; containsIndex < containsJsonList.GetLength(); ++containsIndex)
-    {
-      m_contains.push_back(containsJsonList[containsIndex].AsString());
-    }
-    m_containsHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("eq"))
   {
     Array<JsonView> eqJsonList = jsonValue.GetArray("eq");
@@ -57,13 +47,6 @@ Criterion& Criterion::operator =(JsonView jsonValue)
       m_eq.push_back(eqJsonList[eqIndex].AsString());
     }
     m_eqHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("exists"))
-  {
-    m_exists = jsonValue.GetBool("exists");
-
-    m_existsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("neq"))
@@ -76,23 +59,29 @@ Criterion& Criterion::operator =(JsonView jsonValue)
     m_neqHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("contains"))
+  {
+    Array<JsonView> containsJsonList = jsonValue.GetArray("contains");
+    for(unsigned containsIndex = 0; containsIndex < containsJsonList.GetLength(); ++containsIndex)
+    {
+      m_contains.push_back(containsJsonList[containsIndex].AsString());
+    }
+    m_containsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("exists"))
+  {
+    m_exists = jsonValue.GetBool("exists");
+
+    m_existsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue Criterion::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_containsHasBeenSet)
-  {
-   Array<JsonValue> containsJsonList(m_contains.size());
-   for(unsigned containsIndex = 0; containsIndex < containsJsonList.GetLength(); ++containsIndex)
-   {
-     containsJsonList[containsIndex].AsString(m_contains[containsIndex]);
-   }
-   payload.WithArray("contains", std::move(containsJsonList));
-
-  }
 
   if(m_eqHasBeenSet)
   {
@@ -105,12 +94,6 @@ JsonValue Criterion::Jsonize() const
 
   }
 
-  if(m_existsHasBeenSet)
-  {
-   payload.WithBool("exists", m_exists);
-
-  }
-
   if(m_neqHasBeenSet)
   {
    Array<JsonValue> neqJsonList(m_neq.size());
@@ -119,6 +102,23 @@ JsonValue Criterion::Jsonize() const
      neqJsonList[neqIndex].AsString(m_neq[neqIndex]);
    }
    payload.WithArray("neq", std::move(neqJsonList));
+
+  }
+
+  if(m_containsHasBeenSet)
+  {
+   Array<JsonValue> containsJsonList(m_contains.size());
+   for(unsigned containsIndex = 0; containsIndex < containsJsonList.GetLength(); ++containsIndex)
+   {
+     containsJsonList[containsIndex].AsString(m_contains[containsIndex]);
+   }
+   payload.WithArray("contains", std::move(containsJsonList));
+
+  }
+
+  if(m_existsHasBeenSet)
+  {
+   payload.WithBool("exists", m_exists);
 
   }
 

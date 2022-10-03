@@ -19,32 +19,32 @@ namespace Model
 {
 
 Span::Span() : 
-    m_endHasBeenSet(false),
-    m_startHasBeenSet(false)
+    m_startHasBeenSet(false),
+    m_endHasBeenSet(false)
 {
 }
 
 Span::Span(JsonView jsonValue) : 
-    m_endHasBeenSet(false),
-    m_startHasBeenSet(false)
+    m_startHasBeenSet(false),
+    m_endHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Span& Span::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("end"))
-  {
-    m_end = jsonValue.GetObject("end");
-
-    m_endHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("start"))
   {
     m_start = jsonValue.GetObject("start");
 
     m_startHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("end"))
+  {
+    m_end = jsonValue.GetObject("end");
+
+    m_endHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue Span::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_endHasBeenSet)
-  {
-   payload.WithObject("end", m_end.Jsonize());
-
-  }
-
   if(m_startHasBeenSet)
   {
    payload.WithObject("start", m_start.Jsonize());
+
+  }
+
+  if(m_endHasBeenSet)
+  {
+   payload.WithObject("end", m_end.Jsonize());
 
   }
 

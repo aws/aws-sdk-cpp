@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/accessanalyzer/model/InternetConfiguration.h>
 #include <aws/accessanalyzer/model/VpcConfiguration.h>
+#include <aws/accessanalyzer/model/InternetConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -46,6 +46,25 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    
+    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+
+    
+    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+
+    
+    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
+
+    
+    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
+
+    
+    inline NetworkOriginConfiguration& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
+
+    
+    inline NetworkOriginConfiguration& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+
+
     /**
      * <p>The configuration for the Amazon S3 access point or multi-region access point
      * with an <code>Internet</code> origin.</p>
@@ -82,32 +101,13 @@ namespace Model
      */
     inline NetworkOriginConfiguration& WithInternetConfiguration(InternetConfiguration&& value) { SetInternetConfiguration(std::move(value)); return *this;}
 
-
-    
-    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
-
-    
-    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-
-    
-    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
-
-    
-    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
-
-    
-    inline NetworkOriginConfiguration& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
-
-    
-    inline NetworkOriginConfiguration& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
-
   private:
-
-    InternetConfiguration m_internetConfiguration;
-    bool m_internetConfigurationHasBeenSet = false;
 
     VpcConfiguration m_vpcConfiguration;
     bool m_vpcConfigurationHasBeenSet = false;
+
+    InternetConfiguration m_internetConfiguration;
+    bool m_internetConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

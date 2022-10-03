@@ -24,6 +24,7 @@ namespace Aws
         static const int AWS_S3_AccessPoint_HASH = HashingUtils::HashString("AWS::S3::AccessPoint");
         static const int AWS_S3_MultiRegionAccessPoint_HASH = HashingUtils::HashString("AWS::S3::MultiRegionAccessPoint");
         static const int AWS_S3ObjectLambda_AccessPoint_HASH = HashingUtils::HashString("AWS::S3ObjectLambda::AccessPoint");
+        static const int AWS_IAM_AssumeRolePolicyDocument_HASH = HashingUtils::HashString("AWS::IAM::AssumeRolePolicyDocument");
 
 
         ValidatePolicyResourceType GetValidatePolicyResourceTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == AWS_S3ObjectLambda_AccessPoint_HASH)
           {
             return ValidatePolicyResourceType::AWS_S3ObjectLambda_AccessPoint;
+          }
+          else if (hashCode == AWS_IAM_AssumeRolePolicyDocument_HASH)
+          {
+            return ValidatePolicyResourceType::AWS_IAM_AssumeRolePolicyDocument;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "AWS::S3::MultiRegionAccessPoint";
           case ValidatePolicyResourceType::AWS_S3ObjectLambda_AccessPoint:
             return "AWS::S3ObjectLambda::AccessPoint";
+          case ValidatePolicyResourceType::AWS_IAM_AssumeRolePolicyDocument:
+            return "AWS::IAM::AssumeRolePolicyDocument";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

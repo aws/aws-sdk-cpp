@@ -158,24 +158,34 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return in the response.</p>
+     * <p>The sort order for the findings returned.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline const SortCriteria& GetSort() const{ return m_sort; }
 
     /**
-     * <p>The maximum number of results to return in the response.</p>
+     * <p>The sort order for the findings returned.</p>
      */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return in the response.</p>
+     * <p>The sort order for the findings returned.</p>
      */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetSort(const SortCriteria& value) { m_sortHasBeenSet = true; m_sort = value; }
 
     /**
-     * <p>The maximum number of results to return in the response.</p>
+     * <p>The sort order for the findings returned.</p>
      */
-    inline ListFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline void SetSort(SortCriteria&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
+
+    /**
+     * <p>The sort order for the findings returned.</p>
+     */
+    inline ListFindingsRequest& WithSort(const SortCriteria& value) { SetSort(value); return *this;}
+
+    /**
+     * <p>The sort order for the findings returned.</p>
+     */
+    inline ListFindingsRequest& WithSort(SortCriteria&& value) { SetSort(std::move(value)); return *this;}
 
 
     /**
@@ -220,34 +230,24 @@ namespace Model
 
 
     /**
-     * <p>The sort order for the findings returned.</p>
+     * <p>The maximum number of results to return in the response.</p>
      */
-    inline const SortCriteria& GetSort() const{ return m_sort; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The sort order for the findings returned.</p>
+     * <p>The maximum number of results to return in the response.</p>
      */
-    inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The sort order for the findings returned.</p>
+     * <p>The maximum number of results to return in the response.</p>
      */
-    inline void SetSort(const SortCriteria& value) { m_sortHasBeenSet = true; m_sort = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The sort order for the findings returned.</p>
+     * <p>The maximum number of results to return in the response.</p>
      */
-    inline void SetSort(SortCriteria&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
-
-    /**
-     * <p>The sort order for the findings returned.</p>
-     */
-    inline ListFindingsRequest& WithSort(const SortCriteria& value) { SetSort(value); return *this;}
-
-    /**
-     * <p>The sort order for the findings returned.</p>
-     */
-    inline ListFindingsRequest& WithSort(SortCriteria&& value) { SetSort(std::move(value)); return *this;}
+    inline ListFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
@@ -257,14 +257,14 @@ namespace Model
     Aws::Map<Aws::String, Criterion> m_filter;
     bool m_filterHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    SortCriteria m_sort;
+    bool m_sortHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    SortCriteria m_sort;
-    bool m_sortHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model
