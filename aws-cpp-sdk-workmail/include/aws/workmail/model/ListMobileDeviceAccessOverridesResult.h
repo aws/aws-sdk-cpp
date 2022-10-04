@@ -36,43 +36,43 @@ namespace Model
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline const Aws::Vector<MobileDeviceAccessOverride>& GetOverrides() const{ return m_overrides; }
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline void SetOverrides(const Aws::Vector<MobileDeviceAccessOverride>& value) { m_overrides = value; }
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline void SetOverrides(Aws::Vector<MobileDeviceAccessOverride>&& value) { m_overrides = std::move(value); }
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline ListMobileDeviceAccessOverridesResult& WithOverrides(const Aws::Vector<MobileDeviceAccessOverride>& value) { SetOverrides(value); return *this;}
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline ListMobileDeviceAccessOverridesResult& WithOverrides(Aws::Vector<MobileDeviceAccessOverride>&& value) { SetOverrides(std::move(value)); return *this;}
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline ListMobileDeviceAccessOverridesResult& AddOverrides(const MobileDeviceAccessOverride& value) { m_overrides.push_back(value); return *this; }
 
     /**
      * <p>The list of mobile device access overrides that exist for the specified
-     * Amazon WorkMail organization and user.</p>
+     * WorkMail organization and user.</p>
      */
     inline ListMobileDeviceAccessOverridesResult& AddOverrides(MobileDeviceAccessOverride&& value) { m_overrides.push_back(std::move(value)); return *this; }
 

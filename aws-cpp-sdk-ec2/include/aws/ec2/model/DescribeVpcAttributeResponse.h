@@ -142,6 +142,32 @@ namespace Model
     inline DescribeVpcAttributeResponse& WithEnableDnsSupport(AttributeBooleanValue&& value) { SetEnableDnsSupport(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+     */
+    inline const AttributeBooleanValue& GetEnableNetworkAddressUsageMetrics() const{ return m_enableNetworkAddressUsageMetrics; }
+
+    /**
+     * <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+     */
+    inline void SetEnableNetworkAddressUsageMetrics(const AttributeBooleanValue& value) { m_enableNetworkAddressUsageMetrics = value; }
+
+    /**
+     * <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+     */
+    inline void SetEnableNetworkAddressUsageMetrics(AttributeBooleanValue&& value) { m_enableNetworkAddressUsageMetrics = std::move(value); }
+
+    /**
+     * <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+     */
+    inline DescribeVpcAttributeResponse& WithEnableNetworkAddressUsageMetrics(const AttributeBooleanValue& value) { SetEnableNetworkAddressUsageMetrics(value); return *this;}
+
+    /**
+     * <p>Indicates whether Network Address Usage metrics are enabled for your VPC.</p>
+     */
+    inline DescribeVpcAttributeResponse& WithEnableNetworkAddressUsageMetrics(AttributeBooleanValue&& value) { SetEnableNetworkAddressUsageMetrics(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -164,6 +190,8 @@ namespace Model
     AttributeBooleanValue m_enableDnsHostnames;
 
     AttributeBooleanValue m_enableDnsSupport;
+
+    AttributeBooleanValue m_enableNetworkAddressUsageMetrics;
 
     ResponseMetadata m_responseMetadata;
   };

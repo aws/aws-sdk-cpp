@@ -53,6 +53,11 @@ DescribeVpcAttributeResponse& DescribeVpcAttributeResponse::operator =(const Aws
     {
       m_enableDnsSupport = enableDnsSupportNode;
     }
+    XmlNode enableNetworkAddressUsageMetricsNode = resultNode.FirstChild("enableNetworkAddressUsageMetrics");
+    if(!enableNetworkAddressUsageMetricsNode.IsNull())
+    {
+      m_enableNetworkAddressUsageMetrics = enableNetworkAddressUsageMetricsNode;
+    }
   }
 
   if (!rootNode.IsNull()) {

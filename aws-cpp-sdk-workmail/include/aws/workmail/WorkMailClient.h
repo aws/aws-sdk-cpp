@@ -15,8 +15,8 @@ namespace Aws
 namespace WorkMail
 {
   /**
-   * <p>Amazon WorkMail is a secure, managed business email and calendaring service
-   * with support for existing desktop and mobile email clients. You can access your
+   * <p>WorkMail is a secure, managed business email and calendaring service with
+   * support for existing desktop and mobile email clients. You can access your
    * email, contacts, and calendars using Microsoft Outlook, your browser, or other
    * native iOS and Android email applications. You can integrate WorkMail with your
    * existing corporate directory and control both the keys that encrypt your data
@@ -100,6 +100,25 @@ namespace WorkMail
         virtual void AssociateMemberToGroupAsync(const Model::AssociateMemberToGroupRequest& request, const AssociateMemberToGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Assumes an impersonation role for the given WorkMail organization. This
+         * method returns an authentication token you can use to make impersonated
+         * calls.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssumeImpersonationRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssumeImpersonationRoleOutcome AssumeImpersonationRole(const Model::AssumeImpersonationRoleRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssumeImpersonationRole that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssumeImpersonationRoleOutcomeCallable AssumeImpersonationRoleCallable(const Model::AssumeImpersonationRoleRequest& request) const;
+
+        /**
+         * An Async wrapper for AssumeImpersonationRole that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssumeImpersonationRoleAsync(const Model::AssumeImpersonationRoleRequest& request, const AssumeImpersonationRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Cancels a mailbox export job.</p>  <p>If the mailbox export job is near
          * completion, it might not be possible to cancel it.</p> <p><h3>See
          * Also:</h3>   <a
@@ -119,7 +138,7 @@ namespace WorkMail
         virtual void CancelMailboxExportJobAsync(const Model::CancelMailboxExportJobRequest& request, const CancelMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds an alias to the set of a given member (user or group) of Amazon
+         * <p>Adds an alias to the set of a given member (user or group) of
          * WorkMail.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateAlias">AWS
          * API Reference</a></p>
@@ -155,7 +174,7 @@ namespace WorkMail
         virtual void CreateAvailabilityConfigurationAsync(const Model::CreateAvailabilityConfigurationRequest& request, const CreateAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a group that can be used in Amazon WorkMail by calling the
+         * <p>Creates a group that can be used in WorkMail by calling the
          * <a>RegisterToWorkMail</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateGroup">AWS
          * API Reference</a></p>
@@ -173,7 +192,28 @@ namespace WorkMail
         virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new mobile device access rule for the specified Amazon WorkMail
+         * <p>Creates an impersonation role for the given WorkMail organization.</p> <p>
+         * <i>Idempotency</i> ensures that an API request completes no more than one time.
+         * With an idempotent request, if the original request completes successfully, any
+         * subsequent retries also complete successfully without performing any further
+         * actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateImpersonationRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateImpersonationRoleOutcome CreateImpersonationRole(const Model::CreateImpersonationRoleRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateImpersonationRole that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateImpersonationRoleOutcomeCallable CreateImpersonationRoleCallable(const Model::CreateImpersonationRoleRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateImpersonationRole that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateImpersonationRoleAsync(const Model::CreateImpersonationRoleRequest& request, const CreateImpersonationRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new mobile device access rule for the specified WorkMail
          * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule">AWS
          * API Reference</a></p>
@@ -191,25 +231,24 @@ namespace WorkMail
         virtual void CreateMobileDeviceAccessRuleAsync(const Model::CreateMobileDeviceAccessRuleRequest& request, const CreateMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Amazon WorkMail organization. Optionally, you can choose to
-         * associate an existing AWS Directory Service directory with your organization. If
-         * an AWS Directory Service directory ID is specified, the organization alias must
-         * match the directory alias. If you choose not to associate an existing directory
-         * with your organization, then we create a new Amazon WorkMail directory for you.
-         * For more information, see <a
-         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding
-         * an organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
-         * <p>You can associate multiple email domains with an organization, then set your
-         * default email domain from the Amazon WorkMail console. You can also associate a
-         * domain that is managed in an Amazon Route 53 public hosted zone. For more
+         * <p>Creates a new WorkMail organization. Optionally, you can choose to associate
+         * an existing AWS Directory Service directory with your organization. If an AWS
+         * Directory Service directory ID is specified, the organization alias must match
+         * the directory alias. If you choose not to associate an existing directory with
+         * your organization, then we create a new WorkMail directory for you. For more
          * information, see <a
+         * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding
+         * an organization</a> in the <i>WorkMail Administrator Guide</i>.</p> <p>You can
+         * associate multiple email domains with an organization, then choose your default
+         * email domain from the WorkMail console. You can also associate a domain that is
+         * managed in an Amazon Route 53 public hosted zone. For more information, see <a
          * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding
          * a domain</a> and <a
          * href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing
-         * the default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.</p>
-         * <p>Optionally, you can use a customer managed master key from AWS Key Management
+         * the default domain</a> in the <i>WorkMail Administrator Guide</i>.</p>
+         * <p>Optionally, you can use a customer managed key from AWS Key Management
          * Service (AWS KMS) to encrypt email for your organization. If you don't associate
-         * an AWS KMS key, Amazon WorkMail creates a default AWS managed master key for
+         * an AWS KMS key, WorkMail creates a default, AWS managed key for
          * you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization">AWS
          * API Reference</a></p>
@@ -227,7 +266,7 @@ namespace WorkMail
         virtual void CreateOrganizationAsync(const Model::CreateOrganizationRequest& request, const CreateOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Amazon WorkMail resource. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new WorkMail resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateResource">AWS
          * API Reference</a></p>
          */
@@ -244,7 +283,7 @@ namespace WorkMail
         virtual void CreateResourceAsync(const Model::CreateResourceRequest& request, const CreateResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a user who can be used in Amazon WorkMail by calling the
+         * <p>Creates a user who can be used in WorkMail by calling the
          * <a>RegisterToWorkMail</a> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateUser">AWS
          * API Reference</a></p>
@@ -336,7 +375,7 @@ namespace WorkMail
         virtual void DeleteEmailMonitoringConfigurationAsync(const Model::DeleteEmailMonitoringConfigurationRequest& request, const DeleteEmailMonitoringConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a group from Amazon WorkMail.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a group from WorkMail.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteGroup">AWS
          * API Reference</a></p>
          */
@@ -351,6 +390,24 @@ namespace WorkMail
          * An Async wrapper for DeleteGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an impersonation role for the given WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteImpersonationRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteImpersonationRoleOutcome DeleteImpersonationRole(const Model::DeleteImpersonationRoleRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteImpersonationRole that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteImpersonationRoleOutcomeCallable DeleteImpersonationRoleCallable(const Model::DeleteImpersonationRoleRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteImpersonationRole that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteImpersonationRoleAsync(const Model::DeleteImpersonationRoleRequest& request, const DeleteImpersonationRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes permissions granted to a member (user or group).</p><p><h3>See
@@ -392,7 +449,7 @@ namespace WorkMail
         virtual void DeleteMobileDeviceAccessOverrideAsync(const Model::DeleteMobileDeviceAccessOverrideRequest& request, const DeleteMobileDeviceAccessOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a mobile device access rule for the specified Amazon WorkMail
+         * <p>Deletes a mobile device access rule for the specified WorkMail
          * organization.</p>  <p>Deleting already deleted and non-existing rules does
          * not produce an error. In those cases, the service sends back an HTTP 200
          * response with an empty HTTP body.</p> <p><h3>See Also:</h3>   <a
@@ -412,12 +469,12 @@ namespace WorkMail
         virtual void DeleteMobileDeviceAccessRuleAsync(const Model::DeleteMobileDeviceAccessRuleRequest& request, const DeleteMobileDeviceAccessRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an Amazon WorkMail organization and all underlying AWS resources
-         * managed by Amazon WorkMail as part of the organization. You can choose whether
-         * to delete the associated directory. For more information, see <a
+         * <p>Deletes an WorkMail organization and all underlying AWS resources managed by
+         * WorkMail as part of the organization. You can choose whether to delete the
+         * associated directory. For more information, see <a
          * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing
-         * an organization</a> in the <i>Amazon WorkMail Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * an organization</a> in the <i>WorkMail Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization">AWS
          * API Reference</a></p>
          */
@@ -434,7 +491,7 @@ namespace WorkMail
         virtual void DeleteOrganizationAsync(const Model::DeleteOrganizationRequest& request, const DeleteOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified resource. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteResource">AWS
          * API Reference</a></p>
          */
@@ -469,8 +526,8 @@ namespace WorkMail
         virtual void DeleteRetentionPolicyAsync(const Model::DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a user from Amazon WorkMail and all subsequent systems. Before you
-         * can delete a user, the user state must be <code>DISABLED</code>. Use the
+         * <p>Deletes a user from WorkMail and all subsequent systems. Before you can
+         * delete a user, the user state must be <code>DISABLED</code>. Use the
          * <a>DescribeUser</a> action to confirm the user state.</p> <p>Deleting a user is
          * permanent and cannot be undone. WorkMail archives user mailboxes for 30 days
          * before they are permanently removed.</p><p><h3>See Also:</h3>   <a
@@ -490,8 +547,8 @@ namespace WorkMail
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Mark a user, group, or resource as no longer used in Amazon WorkMail. This
-         * action disassociates the mailbox and schedules it for clean-up. WorkMail keeps
+         * <p>Mark a user, group, or resource as no longer used in WorkMail. This action
+         * disassociates the mailbox and schedules it for clean-up. WorkMail keeps
          * mailboxes for 30 days before they are permanently removed. The functionality in
          * the console is <i>Disable</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterFromWorkMail">AWS
@@ -510,9 +567,9 @@ namespace WorkMail
         virtual void DeregisterFromWorkMailAsync(const Model::DeregisterFromWorkMailRequest& request, const DeregisterFromWorkMailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and
-         * removes the authorization allowing WorkMail use. SES keeps the domain because
-         * other applications may use it. You must first remove any email address used by
+         * <p>Removes a domain from WorkMail, stops email routing to WorkMail, and removes
+         * the authorization allowing WorkMail use. SES keeps the domain because other
+         * applications may use it. You must first remove any email address used by
          * WorkMail entities before you remove the domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterMailDomain">AWS
          * API Reference</a></p>
@@ -689,8 +746,10 @@ namespace WorkMail
 
         /**
          * <p>Gets the effects of an organization's access control rules as they apply to a
-         * specified IPv4 address, access protocol action, or user ID. </p><p><h3>See
-         * Also:</h3>   <a
+         * specified IPv4 address, access protocol action, and user ID or impersonation
+         * role ID. You must provide either the user ID or impersonation role ID.
+         * Impersonation role ID can only be used with Action EWS.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect">AWS
          * API Reference</a></p>
          */
@@ -723,6 +782,42 @@ namespace WorkMail
          * An Async wrapper for GetDefaultRetentionPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDefaultRetentionPolicyAsync(const Model::GetDefaultRetentionPolicyRequest& request, const GetDefaultRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the impersonation role details for the given WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetImpersonationRoleOutcome GetImpersonationRole(const Model::GetImpersonationRoleRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetImpersonationRole that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetImpersonationRoleOutcomeCallable GetImpersonationRoleCallable(const Model::GetImpersonationRoleRequest& request) const;
+
+        /**
+         * An Async wrapper for GetImpersonationRole that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetImpersonationRoleAsync(const Model::GetImpersonationRoleRequest& request, const GetImpersonationRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Tests whether the given impersonation role can impersonate a target
+         * user.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRoleEffect">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetImpersonationRoleEffectOutcome GetImpersonationRoleEffect(const Model::GetImpersonationRoleEffectRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetImpersonationRoleEffect that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetImpersonationRoleEffectOutcomeCallable GetImpersonationRoleEffectCallable(const Model::GetImpersonationRoleEffectRequest& request) const;
+
+        /**
+         * An Async wrapper for GetImpersonationRoleEffect that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetImpersonationRoleEffectAsync(const Model::GetImpersonationRoleEffectRequest& request, const GetImpersonationRoleEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets details for a mail domain, including domain records required to
@@ -763,8 +858,8 @@ namespace WorkMail
         /**
          * <p>Simulates the effect of the mobile device access rules for the given
          * attributes of a sample access event. Use this method to test the effects of the
-         * current set of mobile device access rules for the Amazon WorkMail organization
-         * for a particular user's attributes.</p><p><h3>See Also:</h3>   <a
+         * current set of mobile device access rules for the WorkMail organization for a
+         * particular user's attributes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect">AWS
          * API Reference</a></p>
          */
@@ -888,7 +983,25 @@ namespace WorkMail
         virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the mail domains in a given Amazon WorkMail organization.</p><p><h3>See
+         * <p>Lists all the impersonation roles for the given WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListImpersonationRoles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImpersonationRolesOutcome ListImpersonationRoles(const Model::ListImpersonationRolesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListImpersonationRoles that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListImpersonationRolesOutcomeCallable ListImpersonationRolesCallable(const Model::ListImpersonationRolesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListImpersonationRoles that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListImpersonationRolesAsync(const Model::ListImpersonationRolesRequest& request, const ListImpersonationRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the mail domains in a given WorkMail organization.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailDomains">AWS
          * API Reference</a></p>
@@ -960,7 +1073,7 @@ namespace WorkMail
         virtual void ListMobileDeviceAccessOverridesAsync(const Model::ListMobileDeviceAccessOverridesRequest& request, const ListMobileDeviceAccessOverridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the mobile device access rules for the specified Amazon WorkMail
+         * <p>Lists the mobile device access rules for the specified WorkMail
          * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules">AWS
          * API Reference</a></p>
@@ -1033,8 +1146,8 @@ namespace WorkMail
         virtual void ListResourcesAsync(const Model::ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the tags applied to an Amazon WorkMail organization
-         * resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags applied to an WorkMail organization resource.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -1070,8 +1183,9 @@ namespace WorkMail
         /**
          * <p>Adds a new access control rule for the specified organization. The rule
          * allows or denies access to the organization for the specified IPv4 addresses,
-         * access protocol actions, and user IDs. Adding a new rule with the same name as
-         * an existing rule replaces the older rule.</p><p><h3>See Also:</h3>   <a
+         * access protocol actions, user IDs and impersonation IDs. Adding a new rule with
+         * the same name as an existing rule replaces the older rule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule">AWS
          * API Reference</a></p>
          */
@@ -1178,8 +1292,8 @@ namespace WorkMail
         virtual void PutRetentionPolicyAsync(const Model::PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers a new domain in Amazon WorkMail and SES, and configures it for use
-         * by WorkMail. Emails received by SES for this domain are routed to the specified
+         * <p>Registers a new domain in WorkMail and SES, and configures it for use by
+         * WorkMail. Emails received by SES for this domain are routed to the specified
          * WorkMail organization, and WorkMail has permanent permission to use the
          * specified domain for sending your users' emails.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterMailDomain">AWS
@@ -1198,13 +1312,13 @@ namespace WorkMail
         virtual void RegisterMailDomainAsync(const Model::RegisterMailDomainRequest& request, const RegisterMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers an existing and disabled user, group, or resource for Amazon
-         * WorkMail use by associating a mailbox and calendaring capabilities. It performs
-         * no change if the user, group, or resource is enabled and fails if the user,
-         * group, or resource is deleted. This operation results in the accumulation of
-         * costs. For more information, see <a
+         * <p>Registers an existing and disabled user, group, or resource for WorkMail use
+         * by associating a mailbox and calendaring capabilities. It performs no change if
+         * the user, group, or resource is enabled and fails if the user, group, or
+         * resource is deleted. This operation results in the accumulation of costs. For
+         * more information, see <a
          * href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent
-         * console functionality for this operation is <i>Enable</i>. </p> <p>Users can
+         * console functionality for this operation is <i>Enable</i>.</p> <p>Users can
          * either be created by calling the <a>CreateUser</a> API operation or they can be
          * synchronized from your directory. For more information, see
          * <a>DeregisterFromWorkMail</a>.</p><p><h3>See Also:</h3>   <a
@@ -1246,8 +1360,8 @@ namespace WorkMail
          * items from the specified mailbox to the specified Amazon Simple Storage Service
          * (Amazon S3) bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting
-         * mailbox content</a> in the <i>Amazon WorkMail Administrator
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * mailbox content</a> in the <i>WorkMail Administrator Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/StartMailboxExportJob">AWS
          * API Reference</a></p>
          */
@@ -1264,7 +1378,7 @@ namespace WorkMail
         virtual void StartMailboxExportJobAsync(const Model::StartMailboxExportJobRequest& request, const StartMailboxExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Applies the specified tags to the specified Amazon WorkMail organization
+         * <p>Applies the specified tags to the specified WorkMailorganization
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TagResource">AWS
          * API Reference</a></p>
@@ -1291,7 +1405,7 @@ namespace WorkMail
          * one provider definition (<code>EwsProvider</code> or
          * <code>LambdaProvider</code>) or the <code>DomainName</code> parameter. If the
          * <code>DomainName</code> parameter is provided, the configuration stored under
-         * the <code>DomainName</code> will be tested. </p> <p><h3>See Also:</h3>  
+         * the <code>DomainName</code> will be tested.</p> <p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TestAvailabilityConfiguration">AWS
          * API Reference</a></p>
@@ -1309,7 +1423,7 @@ namespace WorkMail
         virtual void TestAvailabilityConfigurationAsync(const Model::TestAvailabilityConfigurationRequest& request, const TestAvailabilityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Untags the specified tags from the specified Amazon WorkMail organization
+         * <p>Untags the specified tags from the specified WorkMail organization
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UntagResource">AWS
          * API Reference</a></p>
@@ -1364,6 +1478,24 @@ namespace WorkMail
         virtual void UpdateDefaultMailDomainAsync(const Model::UpdateDefaultMailDomainRequest& request, const UpdateDefaultMailDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an impersonation role for the given WorkMail
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateImpersonationRole">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateImpersonationRoleOutcome UpdateImpersonationRole(const Model::UpdateImpersonationRoleRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateImpersonationRole that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateImpersonationRoleOutcomeCallable UpdateImpersonationRoleCallable(const Model::UpdateImpersonationRoleRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateImpersonationRole that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateImpersonationRoleAsync(const Model::UpdateImpersonationRoleRequest& request, const UpdateImpersonationRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a user's current mailbox quota for a specified organization and
          * user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMailboxQuota">AWS
@@ -1382,7 +1514,7 @@ namespace WorkMail
         virtual void UpdateMailboxQuotaAsync(const Model::UpdateMailboxQuotaRequest& request, const UpdateMailboxQuotaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a mobile device access rule for the specified Amazon WorkMail
+         * <p>Updates a mobile device access rule for the specified WorkMail
          * organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule">AWS
          * API Reference</a></p>
