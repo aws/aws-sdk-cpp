@@ -13,7 +13,8 @@ using namespace Aws::Utils;
 ModifyVpcAttributeRequest::ModifyVpcAttributeRequest() : 
     m_enableDnsHostnamesHasBeenSet(false),
     m_enableDnsSupportHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_enableNetworkAddressUsageMetricsHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,11 @@ Aws::String ModifyVpcAttributeRequest::SerializePayload() const
   if(m_vpcIdHasBeenSet)
   {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
+  if(m_enableNetworkAddressUsageMetricsHasBeenSet)
+  {
+    m_enableNetworkAddressUsageMetrics.OutputToStream(ss, "EnableNetworkAddressUsageMetrics");
   }
 
   ss << "Version=2016-11-15";

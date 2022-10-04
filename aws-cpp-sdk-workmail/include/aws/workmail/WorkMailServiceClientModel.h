@@ -18,10 +18,12 @@
 /* Service model headers required in WorkMailClient header */
 #include <aws/workmail/model/AssociateDelegateToResourceResult.h>
 #include <aws/workmail/model/AssociateMemberToGroupResult.h>
+#include <aws/workmail/model/AssumeImpersonationRoleResult.h>
 #include <aws/workmail/model/CancelMailboxExportJobResult.h>
 #include <aws/workmail/model/CreateAliasResult.h>
 #include <aws/workmail/model/CreateAvailabilityConfigurationResult.h>
 #include <aws/workmail/model/CreateGroupResult.h>
+#include <aws/workmail/model/CreateImpersonationRoleResult.h>
 #include <aws/workmail/model/CreateMobileDeviceAccessRuleResult.h>
 #include <aws/workmail/model/CreateOrganizationResult.h>
 #include <aws/workmail/model/CreateResourceResult.h>
@@ -31,6 +33,7 @@
 #include <aws/workmail/model/DeleteAvailabilityConfigurationResult.h>
 #include <aws/workmail/model/DeleteEmailMonitoringConfigurationResult.h>
 #include <aws/workmail/model/DeleteGroupResult.h>
+#include <aws/workmail/model/DeleteImpersonationRoleResult.h>
 #include <aws/workmail/model/DeleteMailboxPermissionsResult.h>
 #include <aws/workmail/model/DeleteMobileDeviceAccessOverrideResult.h>
 #include <aws/workmail/model/DeleteMobileDeviceAccessRuleResult.h>
@@ -51,6 +54,8 @@
 #include <aws/workmail/model/DisassociateMemberFromGroupResult.h>
 #include <aws/workmail/model/GetAccessControlEffectResult.h>
 #include <aws/workmail/model/GetDefaultRetentionPolicyResult.h>
+#include <aws/workmail/model/GetImpersonationRoleResult.h>
+#include <aws/workmail/model/GetImpersonationRoleEffectResult.h>
 #include <aws/workmail/model/GetMailDomainResult.h>
 #include <aws/workmail/model/GetMailboxDetailsResult.h>
 #include <aws/workmail/model/GetMobileDeviceAccessEffectResult.h>
@@ -60,6 +65,7 @@
 #include <aws/workmail/model/ListAvailabilityConfigurationsResult.h>
 #include <aws/workmail/model/ListGroupMembersResult.h>
 #include <aws/workmail/model/ListGroupsResult.h>
+#include <aws/workmail/model/ListImpersonationRolesResult.h>
 #include <aws/workmail/model/ListMailDomainsResult.h>
 #include <aws/workmail/model/ListMailboxExportJobsResult.h>
 #include <aws/workmail/model/ListMailboxPermissionsResult.h>
@@ -85,6 +91,7 @@
 #include <aws/workmail/model/UntagResourceResult.h>
 #include <aws/workmail/model/UpdateAvailabilityConfigurationResult.h>
 #include <aws/workmail/model/UpdateDefaultMailDomainResult.h>
+#include <aws/workmail/model/UpdateImpersonationRoleResult.h>
 #include <aws/workmail/model/UpdateMailboxQuotaResult.h>
 #include <aws/workmail/model/UpdateMobileDeviceAccessRuleResult.h>
 #include <aws/workmail/model/UpdatePrimaryEmailAddressResult.h>
@@ -127,10 +134,12 @@ namespace Aws
       /* Service model forward declarations required in WorkMailClient header */
       class AssociateDelegateToResourceRequest;
       class AssociateMemberToGroupRequest;
+      class AssumeImpersonationRoleRequest;
       class CancelMailboxExportJobRequest;
       class CreateAliasRequest;
       class CreateAvailabilityConfigurationRequest;
       class CreateGroupRequest;
+      class CreateImpersonationRoleRequest;
       class CreateMobileDeviceAccessRuleRequest;
       class CreateOrganizationRequest;
       class CreateResourceRequest;
@@ -140,6 +149,7 @@ namespace Aws
       class DeleteAvailabilityConfigurationRequest;
       class DeleteEmailMonitoringConfigurationRequest;
       class DeleteGroupRequest;
+      class DeleteImpersonationRoleRequest;
       class DeleteMailboxPermissionsRequest;
       class DeleteMobileDeviceAccessOverrideRequest;
       class DeleteMobileDeviceAccessRuleRequest;
@@ -160,6 +170,8 @@ namespace Aws
       class DisassociateMemberFromGroupRequest;
       class GetAccessControlEffectRequest;
       class GetDefaultRetentionPolicyRequest;
+      class GetImpersonationRoleRequest;
+      class GetImpersonationRoleEffectRequest;
       class GetMailDomainRequest;
       class GetMailboxDetailsRequest;
       class GetMobileDeviceAccessEffectRequest;
@@ -169,6 +181,7 @@ namespace Aws
       class ListAvailabilityConfigurationsRequest;
       class ListGroupMembersRequest;
       class ListGroupsRequest;
+      class ListImpersonationRolesRequest;
       class ListMailDomainsRequest;
       class ListMailboxExportJobsRequest;
       class ListMailboxPermissionsRequest;
@@ -194,6 +207,7 @@ namespace Aws
       class UntagResourceRequest;
       class UpdateAvailabilityConfigurationRequest;
       class UpdateDefaultMailDomainRequest;
+      class UpdateImpersonationRoleRequest;
       class UpdateMailboxQuotaRequest;
       class UpdateMobileDeviceAccessRuleRequest;
       class UpdatePrimaryEmailAddressRequest;
@@ -203,10 +217,12 @@ namespace Aws
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<AssociateDelegateToResourceResult, WorkMailError> AssociateDelegateToResourceOutcome;
       typedef Aws::Utils::Outcome<AssociateMemberToGroupResult, WorkMailError> AssociateMemberToGroupOutcome;
+      typedef Aws::Utils::Outcome<AssumeImpersonationRoleResult, WorkMailError> AssumeImpersonationRoleOutcome;
       typedef Aws::Utils::Outcome<CancelMailboxExportJobResult, WorkMailError> CancelMailboxExportJobOutcome;
       typedef Aws::Utils::Outcome<CreateAliasResult, WorkMailError> CreateAliasOutcome;
       typedef Aws::Utils::Outcome<CreateAvailabilityConfigurationResult, WorkMailError> CreateAvailabilityConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateGroupResult, WorkMailError> CreateGroupOutcome;
+      typedef Aws::Utils::Outcome<CreateImpersonationRoleResult, WorkMailError> CreateImpersonationRoleOutcome;
       typedef Aws::Utils::Outcome<CreateMobileDeviceAccessRuleResult, WorkMailError> CreateMobileDeviceAccessRuleOutcome;
       typedef Aws::Utils::Outcome<CreateOrganizationResult, WorkMailError> CreateOrganizationOutcome;
       typedef Aws::Utils::Outcome<CreateResourceResult, WorkMailError> CreateResourceOutcome;
@@ -216,6 +232,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteAvailabilityConfigurationResult, WorkMailError> DeleteAvailabilityConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeleteEmailMonitoringConfigurationResult, WorkMailError> DeleteEmailMonitoringConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeleteGroupResult, WorkMailError> DeleteGroupOutcome;
+      typedef Aws::Utils::Outcome<DeleteImpersonationRoleResult, WorkMailError> DeleteImpersonationRoleOutcome;
       typedef Aws::Utils::Outcome<DeleteMailboxPermissionsResult, WorkMailError> DeleteMailboxPermissionsOutcome;
       typedef Aws::Utils::Outcome<DeleteMobileDeviceAccessOverrideResult, WorkMailError> DeleteMobileDeviceAccessOverrideOutcome;
       typedef Aws::Utils::Outcome<DeleteMobileDeviceAccessRuleResult, WorkMailError> DeleteMobileDeviceAccessRuleOutcome;
@@ -236,6 +253,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateMemberFromGroupResult, WorkMailError> DisassociateMemberFromGroupOutcome;
       typedef Aws::Utils::Outcome<GetAccessControlEffectResult, WorkMailError> GetAccessControlEffectOutcome;
       typedef Aws::Utils::Outcome<GetDefaultRetentionPolicyResult, WorkMailError> GetDefaultRetentionPolicyOutcome;
+      typedef Aws::Utils::Outcome<GetImpersonationRoleResult, WorkMailError> GetImpersonationRoleOutcome;
+      typedef Aws::Utils::Outcome<GetImpersonationRoleEffectResult, WorkMailError> GetImpersonationRoleEffectOutcome;
       typedef Aws::Utils::Outcome<GetMailDomainResult, WorkMailError> GetMailDomainOutcome;
       typedef Aws::Utils::Outcome<GetMailboxDetailsResult, WorkMailError> GetMailboxDetailsOutcome;
       typedef Aws::Utils::Outcome<GetMobileDeviceAccessEffectResult, WorkMailError> GetMobileDeviceAccessEffectOutcome;
@@ -245,6 +264,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAvailabilityConfigurationsResult, WorkMailError> ListAvailabilityConfigurationsOutcome;
       typedef Aws::Utils::Outcome<ListGroupMembersResult, WorkMailError> ListGroupMembersOutcome;
       typedef Aws::Utils::Outcome<ListGroupsResult, WorkMailError> ListGroupsOutcome;
+      typedef Aws::Utils::Outcome<ListImpersonationRolesResult, WorkMailError> ListImpersonationRolesOutcome;
       typedef Aws::Utils::Outcome<ListMailDomainsResult, WorkMailError> ListMailDomainsOutcome;
       typedef Aws::Utils::Outcome<ListMailboxExportJobsResult, WorkMailError> ListMailboxExportJobsOutcome;
       typedef Aws::Utils::Outcome<ListMailboxPermissionsResult, WorkMailError> ListMailboxPermissionsOutcome;
@@ -270,6 +290,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UntagResourceResult, WorkMailError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAvailabilityConfigurationResult, WorkMailError> UpdateAvailabilityConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateDefaultMailDomainResult, WorkMailError> UpdateDefaultMailDomainOutcome;
+      typedef Aws::Utils::Outcome<UpdateImpersonationRoleResult, WorkMailError> UpdateImpersonationRoleOutcome;
       typedef Aws::Utils::Outcome<UpdateMailboxQuotaResult, WorkMailError> UpdateMailboxQuotaOutcome;
       typedef Aws::Utils::Outcome<UpdateMobileDeviceAccessRuleResult, WorkMailError> UpdateMobileDeviceAccessRuleOutcome;
       typedef Aws::Utils::Outcome<UpdatePrimaryEmailAddressResult, WorkMailError> UpdatePrimaryEmailAddressOutcome;
@@ -279,10 +300,12 @@ namespace Aws
       /* Service model Outcome callable definitions */
       typedef std::future<AssociateDelegateToResourceOutcome> AssociateDelegateToResourceOutcomeCallable;
       typedef std::future<AssociateMemberToGroupOutcome> AssociateMemberToGroupOutcomeCallable;
+      typedef std::future<AssumeImpersonationRoleOutcome> AssumeImpersonationRoleOutcomeCallable;
       typedef std::future<CancelMailboxExportJobOutcome> CancelMailboxExportJobOutcomeCallable;
       typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
       typedef std::future<CreateAvailabilityConfigurationOutcome> CreateAvailabilityConfigurationOutcomeCallable;
       typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
+      typedef std::future<CreateImpersonationRoleOutcome> CreateImpersonationRoleOutcomeCallable;
       typedef std::future<CreateMobileDeviceAccessRuleOutcome> CreateMobileDeviceAccessRuleOutcomeCallable;
       typedef std::future<CreateOrganizationOutcome> CreateOrganizationOutcomeCallable;
       typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
@@ -292,6 +315,7 @@ namespace Aws
       typedef std::future<DeleteAvailabilityConfigurationOutcome> DeleteAvailabilityConfigurationOutcomeCallable;
       typedef std::future<DeleteEmailMonitoringConfigurationOutcome> DeleteEmailMonitoringConfigurationOutcomeCallable;
       typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
+      typedef std::future<DeleteImpersonationRoleOutcome> DeleteImpersonationRoleOutcomeCallable;
       typedef std::future<DeleteMailboxPermissionsOutcome> DeleteMailboxPermissionsOutcomeCallable;
       typedef std::future<DeleteMobileDeviceAccessOverrideOutcome> DeleteMobileDeviceAccessOverrideOutcomeCallable;
       typedef std::future<DeleteMobileDeviceAccessRuleOutcome> DeleteMobileDeviceAccessRuleOutcomeCallable;
@@ -312,6 +336,8 @@ namespace Aws
       typedef std::future<DisassociateMemberFromGroupOutcome> DisassociateMemberFromGroupOutcomeCallable;
       typedef std::future<GetAccessControlEffectOutcome> GetAccessControlEffectOutcomeCallable;
       typedef std::future<GetDefaultRetentionPolicyOutcome> GetDefaultRetentionPolicyOutcomeCallable;
+      typedef std::future<GetImpersonationRoleOutcome> GetImpersonationRoleOutcomeCallable;
+      typedef std::future<GetImpersonationRoleEffectOutcome> GetImpersonationRoleEffectOutcomeCallable;
       typedef std::future<GetMailDomainOutcome> GetMailDomainOutcomeCallable;
       typedef std::future<GetMailboxDetailsOutcome> GetMailboxDetailsOutcomeCallable;
       typedef std::future<GetMobileDeviceAccessEffectOutcome> GetMobileDeviceAccessEffectOutcomeCallable;
@@ -321,6 +347,7 @@ namespace Aws
       typedef std::future<ListAvailabilityConfigurationsOutcome> ListAvailabilityConfigurationsOutcomeCallable;
       typedef std::future<ListGroupMembersOutcome> ListGroupMembersOutcomeCallable;
       typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
+      typedef std::future<ListImpersonationRolesOutcome> ListImpersonationRolesOutcomeCallable;
       typedef std::future<ListMailDomainsOutcome> ListMailDomainsOutcomeCallable;
       typedef std::future<ListMailboxExportJobsOutcome> ListMailboxExportJobsOutcomeCallable;
       typedef std::future<ListMailboxPermissionsOutcome> ListMailboxPermissionsOutcomeCallable;
@@ -346,6 +373,7 @@ namespace Aws
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAvailabilityConfigurationOutcome> UpdateAvailabilityConfigurationOutcomeCallable;
       typedef std::future<UpdateDefaultMailDomainOutcome> UpdateDefaultMailDomainOutcomeCallable;
+      typedef std::future<UpdateImpersonationRoleOutcome> UpdateImpersonationRoleOutcomeCallable;
       typedef std::future<UpdateMailboxQuotaOutcome> UpdateMailboxQuotaOutcomeCallable;
       typedef std::future<UpdateMobileDeviceAccessRuleOutcome> UpdateMobileDeviceAccessRuleOutcomeCallable;
       typedef std::future<UpdatePrimaryEmailAddressOutcome> UpdatePrimaryEmailAddressOutcomeCallable;
@@ -358,10 +386,12 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const WorkMailClient*, const Model::AssociateDelegateToResourceRequest&, const Model::AssociateDelegateToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDelegateToResourceResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::AssociateMemberToGroupRequest&, const Model::AssociateMemberToGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateMemberToGroupResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::AssumeImpersonationRoleRequest&, const Model::AssumeImpersonationRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssumeImpersonationRoleResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CancelMailboxExportJobRequest&, const Model::CancelMailboxExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelMailboxExportJobResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateAliasRequest&, const Model::CreateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAliasResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateAvailabilityConfigurationRequest&, const Model::CreateAvailabilityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAvailabilityConfigurationResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGroupResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::CreateImpersonationRoleRequest&, const Model::CreateImpersonationRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateImpersonationRoleResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateMobileDeviceAccessRuleRequest&, const Model::CreateMobileDeviceAccessRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMobileDeviceAccessRuleResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateOrganizationRequest&, const Model::CreateOrganizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOrganizationResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::CreateResourceRequest&, const Model::CreateResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourceResponseReceivedHandler;
@@ -371,6 +401,7 @@ namespace Aws
     typedef std::function<void(const WorkMailClient*, const Model::DeleteAvailabilityConfigurationRequest&, const Model::DeleteAvailabilityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAvailabilityConfigurationResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteEmailMonitoringConfigurationRequest&, const Model::DeleteEmailMonitoringConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEmailMonitoringConfigurationResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::DeleteImpersonationRoleRequest&, const Model::DeleteImpersonationRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImpersonationRoleResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteMailboxPermissionsRequest&, const Model::DeleteMailboxPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMailboxPermissionsResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteMobileDeviceAccessOverrideRequest&, const Model::DeleteMobileDeviceAccessOverrideOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMobileDeviceAccessOverrideResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::DeleteMobileDeviceAccessRuleRequest&, const Model::DeleteMobileDeviceAccessRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMobileDeviceAccessRuleResponseReceivedHandler;
@@ -391,6 +422,8 @@ namespace Aws
     typedef std::function<void(const WorkMailClient*, const Model::DisassociateMemberFromGroupRequest&, const Model::DisassociateMemberFromGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateMemberFromGroupResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::GetAccessControlEffectRequest&, const Model::GetAccessControlEffectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessControlEffectResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::GetDefaultRetentionPolicyRequest&, const Model::GetDefaultRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDefaultRetentionPolicyResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::GetImpersonationRoleRequest&, const Model::GetImpersonationRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImpersonationRoleResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::GetImpersonationRoleEffectRequest&, const Model::GetImpersonationRoleEffectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetImpersonationRoleEffectResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::GetMailDomainRequest&, const Model::GetMailDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMailDomainResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::GetMailboxDetailsRequest&, const Model::GetMailboxDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMailboxDetailsResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::GetMobileDeviceAccessEffectRequest&, const Model::GetMobileDeviceAccessEffectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMobileDeviceAccessEffectResponseReceivedHandler;
@@ -400,6 +433,7 @@ namespace Aws
     typedef std::function<void(const WorkMailClient*, const Model::ListAvailabilityConfigurationsRequest&, const Model::ListAvailabilityConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailabilityConfigurationsResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListGroupMembersRequest&, const Model::ListGroupMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupMembersResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListGroupsRequest&, const Model::ListGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupsResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::ListImpersonationRolesRequest&, const Model::ListImpersonationRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImpersonationRolesResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListMailDomainsRequest&, const Model::ListMailDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMailDomainsResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListMailboxExportJobsRequest&, const Model::ListMailboxExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMailboxExportJobsResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::ListMailboxPermissionsRequest&, const Model::ListMailboxPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMailboxPermissionsResponseReceivedHandler;
@@ -425,6 +459,7 @@ namespace Aws
     typedef std::function<void(const WorkMailClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::UpdateAvailabilityConfigurationRequest&, const Model::UpdateAvailabilityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAvailabilityConfigurationResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::UpdateDefaultMailDomainRequest&, const Model::UpdateDefaultMailDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDefaultMailDomainResponseReceivedHandler;
+    typedef std::function<void(const WorkMailClient*, const Model::UpdateImpersonationRoleRequest&, const Model::UpdateImpersonationRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateImpersonationRoleResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::UpdateMailboxQuotaRequest&, const Model::UpdateMailboxQuotaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMailboxQuotaResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::UpdateMobileDeviceAccessRuleRequest&, const Model::UpdateMobileDeviceAccessRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMobileDeviceAccessRuleResponseReceivedHandler;
     typedef std::function<void(const WorkMailClient*, const Model::UpdatePrimaryEmailAddressRequest&, const Model::UpdatePrimaryEmailAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePrimaryEmailAddressResponseReceivedHandler;

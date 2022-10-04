@@ -35,49 +35,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon WorkMail organization under which to list mobile device access
+     * <p>The WorkMail organization under which to list mobile device access
      * overrides.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
 
     /**
-     * <p>The Amazon WorkMail organization under which to list mobile device access
+     * <p>The WorkMail organization under which to list mobile device access
      * overrides.</p>
      */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
-     * <p>The Amazon WorkMail organization under which to list mobile device access
+     * <p>The WorkMail organization under which to list mobile device access
      * overrides.</p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
-     * <p>The Amazon WorkMail organization under which to list mobile device access
+     * <p>The WorkMail organization under which to list mobile device access
      * overrides.</p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
 
     /**
-     * <p>The Amazon WorkMail organization under which to list mobile device access
+     * <p>The WorkMail organization under which to list mobile device access
      * overrides.</p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
 
     /**
-     * <p>The Amazon WorkMail organization under which to list mobile device access
+     * <p>The WorkMail organization under which to list mobile device access
      * overrides.</p>
      */
     inline ListMobileDeviceAccessOverridesRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization under which to list mobile device access
+     * <p>The WorkMail organization under which to list mobile device access
      * overrides.</p>
      */
     inline ListMobileDeviceAccessOverridesRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon WorkMail organization under which to list mobile device access
+     * <p>The WorkMail organization under which to list mobile device access
      * overrides.</p>
      */
     inline ListMobileDeviceAccessOverridesRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}

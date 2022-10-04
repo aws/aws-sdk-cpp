@@ -729,7 +729,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters aren't supported for tasks run on Fargate.</p> 
+     * parameters aren't supported for tasks run on Fargate. </p> 
      */
     inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
 
@@ -739,7 +739,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters aren't supported for tasks run on Fargate.</p> 
+     * parameters aren't supported for tasks run on Fargate. </p> 
      */
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
 
@@ -749,7 +749,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters aren't supported for tasks run on Fargate.</p> 
+     * parameters aren't supported for tasks run on Fargate. </p> 
      */
     inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
 
@@ -759,7 +759,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters aren't supported for tasks run on Fargate.</p> 
+     * parameters aren't supported for tasks run on Fargate. </p> 
      */
     inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
 
@@ -769,7 +769,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters aren't supported for tasks run on Fargate.</p> 
+     * parameters aren't supported for tasks run on Fargate. </p> 
      */
     inline TaskDefinition& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
 
@@ -779,7 +779,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters aren't supported for tasks run on Fargate.</p> 
+     * parameters aren't supported for tasks run on Fargate. </p> 
      */
     inline TaskDefinition& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
 
@@ -789,7 +789,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters aren't supported for tasks run on Fargate.</p> 
+     * parameters aren't supported for tasks run on Fargate. </p> 
      */
     inline TaskDefinition& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
 
@@ -799,7 +799,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
      * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
-     * parameters aren't supported for tasks run on Fargate.</p> 
+     * parameters aren't supported for tasks run on Fargate. </p> 
      */
     inline TaskDefinition& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 

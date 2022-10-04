@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     enableDnsSupport,
-    enableDnsHostnames
+    enableDnsHostnames,
+    enableNetworkAddressUsageMetrics
   };
 
 namespace VpcAttributeNameMapper

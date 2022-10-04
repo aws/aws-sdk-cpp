@@ -23,7 +23,9 @@ PutAccessControlRuleRequest::PutAccessControlRuleRequest() :
     m_notActionsHasBeenSet(false),
     m_userIdsHasBeenSet(false),
     m_notUserIdsHasBeenSet(false),
-    m_organizationIdHasBeenSet(false)
+    m_organizationIdHasBeenSet(false),
+    m_impersonationRoleIdsHasBeenSet(false),
+    m_notImpersonationRoleIdsHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,28 @@ Aws::String PutAccessControlRuleRequest::SerializePayload() const
   if(m_organizationIdHasBeenSet)
   {
    payload.WithString("OrganizationId", m_organizationId);
+
+  }
+
+  if(m_impersonationRoleIdsHasBeenSet)
+  {
+   Array<JsonValue> impersonationRoleIdsJsonList(m_impersonationRoleIds.size());
+   for(unsigned impersonationRoleIdsIndex = 0; impersonationRoleIdsIndex < impersonationRoleIdsJsonList.GetLength(); ++impersonationRoleIdsIndex)
+   {
+     impersonationRoleIdsJsonList[impersonationRoleIdsIndex].AsString(m_impersonationRoleIds[impersonationRoleIdsIndex]);
+   }
+   payload.WithArray("ImpersonationRoleIds", std::move(impersonationRoleIdsJsonList));
+
+  }
+
+  if(m_notImpersonationRoleIdsHasBeenSet)
+  {
+   Array<JsonValue> notImpersonationRoleIdsJsonList(m_notImpersonationRoleIds.size());
+   for(unsigned notImpersonationRoleIdsIndex = 0; notImpersonationRoleIdsIndex < notImpersonationRoleIdsJsonList.GetLength(); ++notImpersonationRoleIdsIndex)
+   {
+     notImpersonationRoleIdsJsonList[notImpersonationRoleIdsIndex].AsString(m_notImpersonationRoleIds[notImpersonationRoleIdsIndex]);
+   }
+   payload.WithArray("NotImpersonationRoleIds", std::move(notImpersonationRoleIdsJsonList));
 
   }
 

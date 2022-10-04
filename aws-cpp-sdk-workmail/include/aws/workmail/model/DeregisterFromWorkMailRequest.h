@@ -35,49 +35,49 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the organization under which the Amazon WorkMail entity
+     * <p>The identifier for the organization under which the WorkMail entity
      * exists.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
 
     /**
-     * <p>The identifier for the organization under which the Amazon WorkMail entity
+     * <p>The identifier for the organization under which the WorkMail entity
      * exists.</p>
      */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the organization under which the Amazon WorkMail entity
+     * <p>The identifier for the organization under which the WorkMail entity
      * exists.</p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
-     * <p>The identifier for the organization under which the Amazon WorkMail entity
+     * <p>The identifier for the organization under which the WorkMail entity
      * exists.</p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
 
     /**
-     * <p>The identifier for the organization under which the Amazon WorkMail entity
+     * <p>The identifier for the organization under which the WorkMail entity
      * exists.</p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
 
     /**
-     * <p>The identifier for the organization under which the Amazon WorkMail entity
+     * <p>The identifier for the organization under which the WorkMail entity
      * exists.</p>
      */
     inline DeregisterFromWorkMailRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
 
     /**
-     * <p>The identifier for the organization under which the Amazon WorkMail entity
+     * <p>The identifier for the organization under which the WorkMail entity
      * exists.</p>
      */
     inline DeregisterFromWorkMailRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the organization under which the Amazon WorkMail entity
+     * <p>The identifier for the organization under which the WorkMail entity
      * exists.</p>
      */
     inline DeregisterFromWorkMailRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}

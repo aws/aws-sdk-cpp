@@ -213,6 +213,47 @@ namespace Model
      */
     inline GetAccessControlEffectRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
 
+
+    /**
+     * <p>The impersonation role ID.</p>
+     */
+    inline const Aws::String& GetImpersonationRoleId() const{ return m_impersonationRoleId; }
+
+    /**
+     * <p>The impersonation role ID.</p>
+     */
+    inline bool ImpersonationRoleIdHasBeenSet() const { return m_impersonationRoleIdHasBeenSet; }
+
+    /**
+     * <p>The impersonation role ID.</p>
+     */
+    inline void SetImpersonationRoleId(const Aws::String& value) { m_impersonationRoleIdHasBeenSet = true; m_impersonationRoleId = value; }
+
+    /**
+     * <p>The impersonation role ID.</p>
+     */
+    inline void SetImpersonationRoleId(Aws::String&& value) { m_impersonationRoleIdHasBeenSet = true; m_impersonationRoleId = std::move(value); }
+
+    /**
+     * <p>The impersonation role ID.</p>
+     */
+    inline void SetImpersonationRoleId(const char* value) { m_impersonationRoleIdHasBeenSet = true; m_impersonationRoleId.assign(value); }
+
+    /**
+     * <p>The impersonation role ID.</p>
+     */
+    inline GetAccessControlEffectRequest& WithImpersonationRoleId(const Aws::String& value) { SetImpersonationRoleId(value); return *this;}
+
+    /**
+     * <p>The impersonation role ID.</p>
+     */
+    inline GetAccessControlEffectRequest& WithImpersonationRoleId(Aws::String&& value) { SetImpersonationRoleId(std::move(value)); return *this;}
+
+    /**
+     * <p>The impersonation role ID.</p>
+     */
+    inline GetAccessControlEffectRequest& WithImpersonationRoleId(const char* value) { SetImpersonationRoleId(value); return *this;}
+
   private:
 
     Aws::String m_organizationId;
@@ -226,6 +267,9 @@ namespace Model
 
     Aws::String m_userId;
     bool m_userIdHasBeenSet = false;
+
+    Aws::String m_impersonationRoleId;
+    bool m_impersonationRoleIdHasBeenSet = false;
   };
 
 } // namespace Model

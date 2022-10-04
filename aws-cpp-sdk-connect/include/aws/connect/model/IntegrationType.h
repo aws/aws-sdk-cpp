@@ -20,7 +20,8 @@ namespace Model
     VOICE_ID,
     PINPOINT_APP,
     WISDOM_ASSISTANT,
-    WISDOM_KNOWLEDGE_BASE
+    WISDOM_KNOWLEDGE_BASE,
+    CASES_DOMAIN
   };
 
 namespace IntegrationTypeMapper

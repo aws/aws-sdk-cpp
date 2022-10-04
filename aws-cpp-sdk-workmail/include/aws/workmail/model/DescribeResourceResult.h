@@ -197,31 +197,31 @@ namespace Model
 
 
     /**
-     * <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled
+     * <p>The state of the resource: enabled (registered to WorkMail), disabled
      * (deregistered or never registered to WorkMail), or deleted.</p>
      */
     inline const EntityState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled
+     * <p>The state of the resource: enabled (registered to WorkMail), disabled
      * (deregistered or never registered to WorkMail), or deleted.</p>
      */
     inline void SetState(const EntityState& value) { m_state = value; }
 
     /**
-     * <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled
+     * <p>The state of the resource: enabled (registered to WorkMail), disabled
      * (deregistered or never registered to WorkMail), or deleted.</p>
      */
     inline void SetState(EntityState&& value) { m_state = std::move(value); }
 
     /**
-     * <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled
+     * <p>The state of the resource: enabled (registered to WorkMail), disabled
      * (deregistered or never registered to WorkMail), or deleted.</p>
      */
     inline DescribeResourceResult& WithState(const EntityState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of the resource: enabled (registered to Amazon WorkMail), disabled
+     * <p>The state of the resource: enabled (registered to WorkMail), disabled
      * (deregistered or never registered to WorkMail), or deleted.</p>
      */
     inline DescribeResourceResult& WithState(EntityState&& value) { SetState(std::move(value)); return *this;}

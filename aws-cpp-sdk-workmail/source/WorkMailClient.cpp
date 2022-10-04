@@ -22,10 +22,12 @@
 #include <aws/workmail/WorkMailErrorMarshaller.h>
 #include <aws/workmail/model/AssociateDelegateToResourceRequest.h>
 #include <aws/workmail/model/AssociateMemberToGroupRequest.h>
+#include <aws/workmail/model/AssumeImpersonationRoleRequest.h>
 #include <aws/workmail/model/CancelMailboxExportJobRequest.h>
 #include <aws/workmail/model/CreateAliasRequest.h>
 #include <aws/workmail/model/CreateAvailabilityConfigurationRequest.h>
 #include <aws/workmail/model/CreateGroupRequest.h>
+#include <aws/workmail/model/CreateImpersonationRoleRequest.h>
 #include <aws/workmail/model/CreateMobileDeviceAccessRuleRequest.h>
 #include <aws/workmail/model/CreateOrganizationRequest.h>
 #include <aws/workmail/model/CreateResourceRequest.h>
@@ -35,6 +37,7 @@
 #include <aws/workmail/model/DeleteAvailabilityConfigurationRequest.h>
 #include <aws/workmail/model/DeleteEmailMonitoringConfigurationRequest.h>
 #include <aws/workmail/model/DeleteGroupRequest.h>
+#include <aws/workmail/model/DeleteImpersonationRoleRequest.h>
 #include <aws/workmail/model/DeleteMailboxPermissionsRequest.h>
 #include <aws/workmail/model/DeleteMobileDeviceAccessOverrideRequest.h>
 #include <aws/workmail/model/DeleteMobileDeviceAccessRuleRequest.h>
@@ -55,6 +58,8 @@
 #include <aws/workmail/model/DisassociateMemberFromGroupRequest.h>
 #include <aws/workmail/model/GetAccessControlEffectRequest.h>
 #include <aws/workmail/model/GetDefaultRetentionPolicyRequest.h>
+#include <aws/workmail/model/GetImpersonationRoleRequest.h>
+#include <aws/workmail/model/GetImpersonationRoleEffectRequest.h>
 #include <aws/workmail/model/GetMailDomainRequest.h>
 #include <aws/workmail/model/GetMailboxDetailsRequest.h>
 #include <aws/workmail/model/GetMobileDeviceAccessEffectRequest.h>
@@ -64,6 +69,7 @@
 #include <aws/workmail/model/ListAvailabilityConfigurationsRequest.h>
 #include <aws/workmail/model/ListGroupMembersRequest.h>
 #include <aws/workmail/model/ListGroupsRequest.h>
+#include <aws/workmail/model/ListImpersonationRolesRequest.h>
 #include <aws/workmail/model/ListMailDomainsRequest.h>
 #include <aws/workmail/model/ListMailboxExportJobsRequest.h>
 #include <aws/workmail/model/ListMailboxPermissionsRequest.h>
@@ -89,6 +95,7 @@
 #include <aws/workmail/model/UntagResourceRequest.h>
 #include <aws/workmail/model/UpdateAvailabilityConfigurationRequest.h>
 #include <aws/workmail/model/UpdateDefaultMailDomainRequest.h>
+#include <aws/workmail/model/UpdateImpersonationRoleRequest.h>
 #include <aws/workmail/model/UpdateMailboxQuotaRequest.h>
 #include <aws/workmail/model/UpdateMobileDeviceAccessRuleRequest.h>
 #include <aws/workmail/model/UpdatePrimaryEmailAddressRequest.h>
@@ -217,6 +224,28 @@ void WorkMailClient::AssociateMemberToGroupAsync(const AssociateMemberToGroupReq
     } );
 }
 
+AssumeImpersonationRoleOutcome WorkMailClient::AssumeImpersonationRole(const AssumeImpersonationRoleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AssumeImpersonationRoleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssumeImpersonationRoleOutcomeCallable WorkMailClient::AssumeImpersonationRoleCallable(const AssumeImpersonationRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssumeImpersonationRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssumeImpersonationRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::AssumeImpersonationRoleAsync(const AssumeImpersonationRoleRequest& request, const AssumeImpersonationRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssumeImpersonationRole(request), context);
+    } );
+}
+
 CancelMailboxExportJobOutcome WorkMailClient::CancelMailboxExportJob(const CancelMailboxExportJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -302,6 +331,28 @@ void WorkMailClient::CreateGroupAsync(const CreateGroupRequest& request, const C
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreateGroup(request), context);
+    } );
+}
+
+CreateImpersonationRoleOutcome WorkMailClient::CreateImpersonationRole(const CreateImpersonationRoleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateImpersonationRoleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateImpersonationRoleOutcomeCallable WorkMailClient::CreateImpersonationRoleCallable(const CreateImpersonationRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateImpersonationRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateImpersonationRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::CreateImpersonationRoleAsync(const CreateImpersonationRoleRequest& request, const CreateImpersonationRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateImpersonationRole(request), context);
     } );
 }
 
@@ -500,6 +551,28 @@ void WorkMailClient::DeleteGroupAsync(const DeleteGroupRequest& request, const D
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteGroup(request), context);
+    } );
+}
+
+DeleteImpersonationRoleOutcome WorkMailClient::DeleteImpersonationRole(const DeleteImpersonationRoleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteImpersonationRoleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteImpersonationRoleOutcomeCallable WorkMailClient::DeleteImpersonationRoleCallable(const DeleteImpersonationRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteImpersonationRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteImpersonationRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DeleteImpersonationRoleAsync(const DeleteImpersonationRoleRequest& request, const DeleteImpersonationRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteImpersonationRole(request), context);
     } );
 }
 
@@ -943,6 +1016,50 @@ void WorkMailClient::GetDefaultRetentionPolicyAsync(const GetDefaultRetentionPol
     } );
 }
 
+GetImpersonationRoleOutcome WorkMailClient::GetImpersonationRole(const GetImpersonationRoleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetImpersonationRoleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetImpersonationRoleOutcomeCallable WorkMailClient::GetImpersonationRoleCallable(const GetImpersonationRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetImpersonationRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImpersonationRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::GetImpersonationRoleAsync(const GetImpersonationRoleRequest& request, const GetImpersonationRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetImpersonationRole(request), context);
+    } );
+}
+
+GetImpersonationRoleEffectOutcome WorkMailClient::GetImpersonationRoleEffect(const GetImpersonationRoleEffectRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetImpersonationRoleEffectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetImpersonationRoleEffectOutcomeCallable WorkMailClient::GetImpersonationRoleEffectCallable(const GetImpersonationRoleEffectRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetImpersonationRoleEffectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetImpersonationRoleEffect(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::GetImpersonationRoleEffectAsync(const GetImpersonationRoleEffectRequest& request, const GetImpersonationRoleEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetImpersonationRoleEffect(request), context);
+    } );
+}
+
 GetMailDomainOutcome WorkMailClient::GetMailDomain(const GetMailDomainRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1138,6 +1255,28 @@ void WorkMailClient::ListGroupsAsync(const ListGroupsRequest& request, const Lis
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListGroups(request), context);
+    } );
+}
+
+ListImpersonationRolesOutcome WorkMailClient::ListImpersonationRoles(const ListImpersonationRolesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListImpersonationRolesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImpersonationRolesOutcomeCallable WorkMailClient::ListImpersonationRolesCallable(const ListImpersonationRolesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListImpersonationRolesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImpersonationRoles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::ListImpersonationRolesAsync(const ListImpersonationRolesRequest& request, const ListImpersonationRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListImpersonationRoles(request), context);
     } );
 }
 
@@ -1688,6 +1827,28 @@ void WorkMailClient::UpdateDefaultMailDomainAsync(const UpdateDefaultMailDomainR
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateDefaultMailDomain(request), context);
+    } );
+}
+
+UpdateImpersonationRoleOutcome WorkMailClient::UpdateImpersonationRole(const UpdateImpersonationRoleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateImpersonationRoleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateImpersonationRoleOutcomeCallable WorkMailClient::UpdateImpersonationRoleCallable(const UpdateImpersonationRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateImpersonationRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateImpersonationRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::UpdateImpersonationRoleAsync(const UpdateImpersonationRoleRequest& request, const UpdateImpersonationRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateImpersonationRole(request), context);
     } );
 }
 
