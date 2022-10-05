@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/outposts/model/PaymentTerm.h>
+#include <aws/network-firewall/model/StreamExceptionPolicy.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,46 +13,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace Outposts
+  namespace NetworkFirewall
   {
     namespace Model
     {
-      namespace PaymentTermMapper
+      namespace StreamExceptionPolicyMapper
       {
 
-        static const int THREE_YEARS_HASH = HashingUtils::HashString("THREE_YEARS");
-        static const int ONE_YEAR_HASH = HashingUtils::HashString("ONE_YEAR");
+        static const int DROP_HASH = HashingUtils::HashString("DROP");
+        static const int CONTINUE_HASH = HashingUtils::HashString("CONTINUE");
 
 
-        PaymentTerm GetPaymentTermForName(const Aws::String& name)
+        StreamExceptionPolicy GetStreamExceptionPolicyForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == THREE_YEARS_HASH)
+          if (hashCode == DROP_HASH)
           {
-            return PaymentTerm::THREE_YEARS;
+            return StreamExceptionPolicy::DROP;
           }
-          else if (hashCode == ONE_YEAR_HASH)
+          else if (hashCode == CONTINUE_HASH)
           {
-            return PaymentTerm::ONE_YEAR;
+            return StreamExceptionPolicy::CONTINUE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<PaymentTerm>(hashCode);
+            return static_cast<StreamExceptionPolicy>(hashCode);
           }
 
-          return PaymentTerm::NOT_SET;
+          return StreamExceptionPolicy::NOT_SET;
         }
 
-        Aws::String GetNameForPaymentTerm(PaymentTerm enumValue)
+        Aws::String GetNameForStreamExceptionPolicy(StreamExceptionPolicy enumValue)
         {
           switch(enumValue)
           {
-          case PaymentTerm::THREE_YEARS:
-            return "THREE_YEARS";
-          case PaymentTerm::ONE_YEAR:
-            return "ONE_YEAR";
+          case StreamExceptionPolicy::DROP:
+            return "DROP";
+          case StreamExceptionPolicy::CONTINUE:
+            return "CONTINUE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace PaymentTermMapper
+      } // namespace StreamExceptionPolicyMapper
     } // namespace Model
-  } // namespace Outposts
+  } // namespace NetworkFirewall
 } // namespace Aws

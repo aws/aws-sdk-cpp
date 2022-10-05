@@ -196,10 +196,12 @@
 #include <aws/glue/model/UpdateDatabaseRequest.h>
 #include <aws/glue/model/UpdateDevEndpointRequest.h>
 #include <aws/glue/model/UpdateJobRequest.h>
+#include <aws/glue/model/UpdateJobFromSourceControlRequest.h>
 #include <aws/glue/model/UpdateMLTransformRequest.h>
 #include <aws/glue/model/UpdatePartitionRequest.h>
 #include <aws/glue/model/UpdateRegistryRequest.h>
 #include <aws/glue/model/UpdateSchemaRequest.h>
+#include <aws/glue/model/UpdateSourceControlFromJobRequest.h>
 #include <aws/glue/model/UpdateTableRequest.h>
 #include <aws/glue/model/UpdateTriggerRequest.h>
 #include <aws/glue/model/UpdateUserDefinedFunctionRequest.h>
@@ -4156,6 +4158,28 @@ void GlueClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJob
     } );
 }
 
+UpdateJobFromSourceControlOutcome GlueClient::UpdateJobFromSourceControl(const UpdateJobFromSourceControlRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateJobFromSourceControlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateJobFromSourceControlOutcomeCallable GlueClient::UpdateJobFromSourceControlCallable(const UpdateJobFromSourceControlRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateJobFromSourceControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJobFromSourceControl(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::UpdateJobFromSourceControlAsync(const UpdateJobFromSourceControlRequest& request, const UpdateJobFromSourceControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateJobFromSourceControl(request), context);
+    } );
+}
+
 UpdateMLTransformOutcome GlueClient::UpdateMLTransform(const UpdateMLTransformRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -4241,6 +4265,28 @@ void GlueClient::UpdateSchemaAsync(const UpdateSchemaRequest& request, const Upd
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateSchema(request), context);
+    } );
+}
+
+UpdateSourceControlFromJobOutcome GlueClient::UpdateSourceControlFromJob(const UpdateSourceControlFromJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateSourceControlFromJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSourceControlFromJobOutcomeCallable GlueClient::UpdateSourceControlFromJobCallable(const UpdateSourceControlFromJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSourceControlFromJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSourceControlFromJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::UpdateSourceControlFromJobAsync(const UpdateSourceControlFromJobRequest& request, const UpdateSourceControlFromJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateSourceControlFromJob(request), context);
     } );
 }
 

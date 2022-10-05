@@ -13,19 +13,19 @@ namespace Outposts
 {
 namespace Model
 {
-  enum class PaymentTerm
+  enum class AssetState
   {
     NOT_SET,
-    THREE_YEARS,
-    ONE_YEAR
+    ACTIVE,
+    RETIRING
   };
 
-namespace PaymentTermMapper
+namespace AssetStateMapper
 {
-AWS_OUTPOSTS_API PaymentTerm GetPaymentTermForName(const Aws::String& name);
+AWS_OUTPOSTS_API AssetState GetAssetStateForName(const Aws::String& name);
 
-AWS_OUTPOSTS_API Aws::String GetNameForPaymentTerm(PaymentTerm value);
-} // namespace PaymentTermMapper
+AWS_OUTPOSTS_API Aws::String GetNameForAssetState(AssetState value);
+} // namespace AssetStateMapper
 } // namespace Model
 } // namespace Outposts
 } // namespace Aws

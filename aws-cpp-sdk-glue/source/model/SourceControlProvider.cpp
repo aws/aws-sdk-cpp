@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/outposts/model/PaymentTerm.h>
+#include <aws/glue/model/SourceControlProvider.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,46 +13,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace Outposts
+  namespace Glue
   {
     namespace Model
     {
-      namespace PaymentTermMapper
+      namespace SourceControlProviderMapper
       {
 
-        static const int THREE_YEARS_HASH = HashingUtils::HashString("THREE_YEARS");
-        static const int ONE_YEAR_HASH = HashingUtils::HashString("ONE_YEAR");
+        static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
+        static const int AWS_CODE_COMMIT_HASH = HashingUtils::HashString("AWS_CODE_COMMIT");
 
 
-        PaymentTerm GetPaymentTermForName(const Aws::String& name)
+        SourceControlProvider GetSourceControlProviderForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == THREE_YEARS_HASH)
+          if (hashCode == GITHUB_HASH)
           {
-            return PaymentTerm::THREE_YEARS;
+            return SourceControlProvider::GITHUB;
           }
-          else if (hashCode == ONE_YEAR_HASH)
+          else if (hashCode == AWS_CODE_COMMIT_HASH)
           {
-            return PaymentTerm::ONE_YEAR;
+            return SourceControlProvider::AWS_CODE_COMMIT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<PaymentTerm>(hashCode);
+            return static_cast<SourceControlProvider>(hashCode);
           }
 
-          return PaymentTerm::NOT_SET;
+          return SourceControlProvider::NOT_SET;
         }
 
-        Aws::String GetNameForPaymentTerm(PaymentTerm enumValue)
+        Aws::String GetNameForSourceControlProvider(SourceControlProvider enumValue)
         {
           switch(enumValue)
           {
-          case PaymentTerm::THREE_YEARS:
-            return "THREE_YEARS";
-          case PaymentTerm::ONE_YEAR:
-            return "ONE_YEAR";
+          case SourceControlProvider::GITHUB:
+            return "GITHUB";
+          case SourceControlProvider::AWS_CODE_COMMIT:
+            return "AWS_CODE_COMMIT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace PaymentTermMapper
+      } // namespace SourceControlProviderMapper
     } // namespace Model
-  } // namespace Outposts
+  } // namespace Glue
 } // namespace Aws
