@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/outposts/model/PaymentTerm.h>
+#include <aws/outposts/model/AssetState.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,42 +17,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace PaymentTermMapper
+      namespace AssetStateMapper
       {
 
-        static const int THREE_YEARS_HASH = HashingUtils::HashString("THREE_YEARS");
-        static const int ONE_YEAR_HASH = HashingUtils::HashString("ONE_YEAR");
+        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int RETIRING_HASH = HashingUtils::HashString("RETIRING");
 
 
-        PaymentTerm GetPaymentTermForName(const Aws::String& name)
+        AssetState GetAssetStateForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == THREE_YEARS_HASH)
+          if (hashCode == ACTIVE_HASH)
           {
-            return PaymentTerm::THREE_YEARS;
+            return AssetState::ACTIVE;
           }
-          else if (hashCode == ONE_YEAR_HASH)
+          else if (hashCode == RETIRING_HASH)
           {
-            return PaymentTerm::ONE_YEAR;
+            return AssetState::RETIRING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<PaymentTerm>(hashCode);
+            return static_cast<AssetState>(hashCode);
           }
 
-          return PaymentTerm::NOT_SET;
+          return AssetState::NOT_SET;
         }
 
-        Aws::String GetNameForPaymentTerm(PaymentTerm enumValue)
+        Aws::String GetNameForAssetState(AssetState enumValue)
         {
           switch(enumValue)
           {
-          case PaymentTerm::THREE_YEARS:
-            return "THREE_YEARS";
-          case PaymentTerm::ONE_YEAR:
-            return "ONE_YEAR";
+          case AssetState::ACTIVE:
+            return "ACTIVE";
+          case AssetState::RETIRING:
+            return "RETIRING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace PaymentTermMapper
+      } // namespace AssetStateMapper
     } // namespace Model
   } // namespace Outposts
 } // namespace Aws

@@ -3404,6 +3404,27 @@ namespace Glue
         virtual void UpdateJobAsync(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Synchronizes a job from the source control repository. This operation takes
+         * the job artifacts that are located in the remote repository and updates the Glue
+         * internal stores with these artifacts.</p> <p>This API supports optional
+         * parameters which take in the repository information.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateJobFromSourceControl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateJobFromSourceControlOutcome UpdateJobFromSourceControl(const Model::UpdateJobFromSourceControlRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateJobFromSourceControl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateJobFromSourceControlOutcomeCallable UpdateJobFromSourceControlCallable(const Model::UpdateJobFromSourceControlRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateJobFromSourceControl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateJobFromSourceControlAsync(const Model::UpdateJobFromSourceControlRequest& request, const UpdateJobFromSourceControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing machine learning transform. Call this operation to tune
          * the algorithm parameters to achieve better results.</p> <p>After calling this
          * operation, you can call the <code>StartMLEvaluationTaskRun</code> operation to
@@ -3486,6 +3507,27 @@ namespace Glue
          * An Async wrapper for UpdateSchema that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateSchemaAsync(const Model::UpdateSchemaRequest& request, const UpdateSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Synchronizes a job to the source control repository. This operation takes the
+         * job artifacts from the Glue internal stores and makes a commit to the remote
+         * repository that is configured on the job.</p> <p>This API supports optional
+         * parameters which take in the repository information.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateSourceControlFromJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSourceControlFromJobOutcome UpdateSourceControlFromJob(const Model::UpdateSourceControlFromJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSourceControlFromJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSourceControlFromJobOutcomeCallable UpdateSourceControlFromJobCallable(const Model::UpdateSourceControlFromJobRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateSourceControlFromJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSourceControlFromJobAsync(const Model::UpdateSourceControlFromJobRequest& request, const UpdateSourceControlFromJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a metadata table in the Data Catalog.</p><p><h3>See Also:</h3>   <a

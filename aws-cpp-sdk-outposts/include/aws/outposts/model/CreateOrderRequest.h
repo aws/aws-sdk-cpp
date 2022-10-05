@@ -119,63 +119,63 @@ namespace Model
 
 
     /**
-     * <p>The payment option for the order.</p>
+     * <p>The payment option.</p>
      */
     inline const PaymentOption& GetPaymentOption() const{ return m_paymentOption; }
 
     /**
-     * <p>The payment option for the order.</p>
+     * <p>The payment option.</p>
      */
     inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
 
     /**
-     * <p>The payment option for the order.</p>
+     * <p>The payment option.</p>
      */
     inline void SetPaymentOption(const PaymentOption& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
 
     /**
-     * <p>The payment option for the order.</p>
+     * <p>The payment option.</p>
      */
     inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
 
     /**
-     * <p>The payment option for the order.</p>
+     * <p>The payment option.</p>
      */
     inline CreateOrderRequest& WithPaymentOption(const PaymentOption& value) { SetPaymentOption(value); return *this;}
 
     /**
-     * <p>The payment option for the order.</p>
+     * <p>The payment option.</p>
      */
     inline CreateOrderRequest& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
 
 
     /**
-     * <p>The payment terms for the order.</p>
+     * <p>The payment terms.</p>
      */
     inline const PaymentTerm& GetPaymentTerm() const{ return m_paymentTerm; }
 
     /**
-     * <p>The payment terms for the order.</p>
+     * <p>The payment terms.</p>
      */
     inline bool PaymentTermHasBeenSet() const { return m_paymentTermHasBeenSet; }
 
     /**
-     * <p>The payment terms for the order.</p>
+     * <p>The payment terms.</p>
      */
     inline void SetPaymentTerm(const PaymentTerm& value) { m_paymentTermHasBeenSet = true; m_paymentTerm = value; }
 
     /**
-     * <p>The payment terms for the order.</p>
+     * <p>The payment terms.</p>
      */
     inline void SetPaymentTerm(PaymentTerm&& value) { m_paymentTermHasBeenSet = true; m_paymentTerm = std::move(value); }
 
     /**
-     * <p>The payment terms for the order.</p>
+     * <p>The payment terms.</p>
      */
     inline CreateOrderRequest& WithPaymentTerm(const PaymentTerm& value) { SetPaymentTerm(value); return *this;}
 
     /**
-     * <p>The payment terms for the order.</p>
+     * <p>The payment terms.</p>
      */
     inline CreateOrderRequest& WithPaymentTerm(PaymentTerm&& value) { SetPaymentTerm(std::move(value)); return *this;}
 

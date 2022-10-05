@@ -38,11 +38,11 @@ namespace NetworkFirewall
    * traffic at the perimeter of your VPC. This includes filtering traffic going to
    * and coming from an internet gateway, NAT gateway, or over VPN or Direct Connect.
    * Network Firewall uses rules that are compatible with Suricata, a free, open
-   * source intrusion detection system (IDS) engine. Network Firewall supports
+   * source network analysis and threat detection engine. Network Firewall supports
    * Suricata version 5.0.2. For information about Suricata, see the <a
-   * href="https://suricata-ids.org/">Suricata website</a>.</p> <p>You can use
-   * Network Firewall to monitor and protect your VPC traffic in a number of ways.
-   * The following are just a few examples: </p> <ul> <li> <p>Allow domains or IP
+   * href="https://suricata.io/">Suricata website</a>.</p> <p>You can use Network
+   * Firewall to monitor and protect your VPC traffic in a number of ways. The
+   * following are just a few examples: </p> <ul> <li> <p>Allow domains or IP
    * addresses for known Amazon Web Services service endpoints, such as Amazon S3,
    * and block all other forms of traffic.</p> </li> <li> <p>Use custom lists of
    * known bad domains to limit the types of domain names that your applications can

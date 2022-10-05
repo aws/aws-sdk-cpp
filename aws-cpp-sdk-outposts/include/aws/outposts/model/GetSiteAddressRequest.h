@@ -40,113 +40,73 @@ namespace Model
 
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline const Aws::String& GetSiteId() const{ return m_siteId; }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline bool SiteIdHasBeenSet() const { return m_siteIdHasBeenSet; }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline void SetSiteId(const Aws::String& value) { m_siteIdHasBeenSet = true; m_siteId = value; }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline void SetSiteId(Aws::String&& value) { m_siteIdHasBeenSet = true; m_siteId = std::move(value); }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline void SetSiteId(const char* value) { m_siteIdHasBeenSet = true; m_siteId.assign(value); }
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline GetSiteAddressRequest& WithSiteId(const Aws::String& value) { SetSiteId(value); return *this;}
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline GetSiteAddressRequest& WithSiteId(Aws::String&& value) { SetSiteId(std::move(value)); return *this;}
 
     /**
-     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>  <p>In
-     * requests, Amazon Web Services Outposts accepts the Amazon Resource Name (ARN) or
-     * an ID for Outposts and sites throughout the Outposts Query API. To address
-     * backwards compatibility, the parameter names <code>OutpostID</code> or
-     * <code>SiteID</code> remain in use. Despite the parameter name, you can make the
-     * request with an ARN.</p> 
+     * <p> The ID or the Amazon Resource Name (ARN) of the site. </p>
      */
     inline GetSiteAddressRequest& WithSiteId(const char* value) { SetSiteId(value); return *this;}
 
 
     /**
-     * <p> The type of the address you request. </p>
+     * <p>The type of the address you request. </p>
      */
     inline const AddressType& GetAddressType() const{ return m_addressType; }
 
     /**
-     * <p> The type of the address you request. </p>
+     * <p>The type of the address you request. </p>
      */
     inline bool AddressTypeHasBeenSet() const { return m_addressTypeHasBeenSet; }
 
     /**
-     * <p> The type of the address you request. </p>
+     * <p>The type of the address you request. </p>
      */
     inline void SetAddressType(const AddressType& value) { m_addressTypeHasBeenSet = true; m_addressType = value; }
 
     /**
-     * <p> The type of the address you request. </p>
+     * <p>The type of the address you request. </p>
      */
     inline void SetAddressType(AddressType&& value) { m_addressTypeHasBeenSet = true; m_addressType = std::move(value); }
 
     /**
-     * <p> The type of the address you request. </p>
+     * <p>The type of the address you request. </p>
      */
     inline GetSiteAddressRequest& WithAddressType(const AddressType& value) { SetAddressType(value); return *this;}
 
     /**
-     * <p> The type of the address you request. </p>
+     * <p>The type of the address you request. </p>
      */
     inline GetSiteAddressRequest& WithAddressType(AddressType&& value) { SetAddressType(std::move(value)); return *this;}
 
