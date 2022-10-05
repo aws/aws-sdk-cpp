@@ -246,20 +246,20 @@ def parse_arguments() -> dict:
     :return: dict with parsed arguments
     """
     parser = argparse.ArgumentParser(description="Code generation wrapper for AWS-SDK-CPP")
-    parser.add_argument("--client_list", type=str, help="Comma-separated or semi-colon-separated list of SDK clients "
+    parser.add_argument("--client-list", type=str, help="Comma-separated or semi-colon-separated list of SDK clients "
                                                         "to be (re)generated")
     parser.add_argument("--defaults", action="store_true", help="Generates defaults configuration")
     parser.add_argument("--all",
                         help="Generate all found clients and defaults. Always True unless client_list provided",
                         action="store_true")
-    parser.add_argument("--output_location", action="store", help="Where generated clients should be extracted")
-    parser.add_argument("--api_definition_file", action="store", help="Override input client definition model file")
+    parser.add_argument("--output-dir", action="store", help="Where generated clients should be extracted")
+    parser.add_argument("--api-definition-file", action="store", help="Override input client definition model file")
 
-    parser.add_argument("--path_to_api_definitions", action="store")
-    parser.add_argument("--path_to_generator", action="store")
-    parser.add_argument("--prepare_tools", help="Just build the generator", action="store_true")
+    parser.add_argument("--api-definitions-dir", action="store")
+    parser.add_argument("--generator-path", action="store")
+    parser.add_argument("--prepare-tools", help="Just build the generator", action="store_true")
 
-    parser.add_argument("--list_all", help="Lists all available SDKs for generation.", action="store_true")
+    parser.add_argument("--list-all", help="Lists all available SDKs for generation.", action="store_true")
     # raw generator params to pass through
     parser.add_argument("--license-text", action="store", help="License text to use, "
                                                                "raw argument to be passed to the generator")
@@ -293,32 +293,32 @@ def parse_arguments() -> dict:
         if args.get("defaults", None):
             arg_map["defaults"] = args.get("defaults")
 
-    output_location = args["output_location"] or None
-    if not output_location:
-        output_location = os.getcwd()
-        if output_location.endswith("scripts"):
-            output_location = output_location[:-len("scripts")]
-    arg_map["output_location"] = output_location
+    output_dir = args["output_dir"] or None
+    if not output_dir:
+        output_dir = os.getcwd()
+        if output_dir.endswith("scripts"):
+            output_dir = output_dir[:-len("scripts")]
+    arg_map["output_dir"] = output_dir
 
-    api_definitions_location = args["path_to_api_definitions"] or CLIENT_MODEL_FILE_LOCATION
+    api_definitions_location = args["api_definitions_dir"] or CLIENT_MODEL_FILE_LOCATION
     api_definitions_location = str(Path(api_definitions_location).absolute())
     if not os.path.exists(api_definitions_location):
-        if args["path_to_api_definitions"] is not None and args["path_to_api_definitions"] != "":
-            raise RuntimeError("Provided path_to_api_definitions does not exist!")
+        if args["api_definitions_dir"] is not None and args["api_definitions_dir"] != "":
+            raise RuntimeError("Provided api_definitions_dir does not exist!")
         api_definitions_location = str(Path(sys.path[0] + "/../" + CLIENT_MODEL_FILE_LOCATION).absolute())
         if not os.path.exists(api_definitions_location):
             raise RuntimeError("Could not find api definitions location!")
-    arg_map["path_to_api_definitions"] = api_definitions_location
+    arg_map["api_definitions_dir"] = api_definitions_location
 
-    generator_location = args["path_to_generator"] or DEFAULT_GENERATOR_LOCATION
+    generator_location = args["generator_path"] or DEFAULT_GENERATOR_LOCATION
     generator_location = str(Path(generator_location).absolute())
     if not os.path.exists(generator_location):
-        if args["path_to_generator"] is not None and args["path_to_generator"] != "":
-            raise RuntimeError("Provided path_to_generator does not exist!")
+        if args["generator_path"] is not None and args["generator_path"] != "":
+            raise RuntimeError("Provided generator_path does not exist!")
         generator_location = str(Path(sys.path[0] + "/../" + DEFAULT_GENERATOR_LOCATION).absolute())
         if not os.path.exists(generator_location):
             raise RuntimeError("Could not find generator location!")
-    arg_map["path_to_generator"] = generator_location
+    arg_map["generator_path"] = generator_location
 
     arg_map["prepare_tools"] = args["prepare_tools"] or False
     arg_map["list_all"] = args["list_all"] or False
@@ -346,12 +346,12 @@ def main():
         build_generator_future = None
 
         if not args.get("list_all"):
-            build_generator_future = executor.submit(build_generator, args["path_to_generator"], max_workers)
+            build_generator_future = executor.submit(build_generator, args["generator_path"], max_workers)
         if args.get("prepare_tools"):
             build_generator_future.result()  # will rethrow any exceptions
             return 0
 
-        available_models = collect_available_models(args["path_to_api_definitions"])
+        available_models = collect_available_models(args["api_definitions_dir"])
         if args.get("list_all"):
             model_list = available_models.keys()
             print(model_list)
@@ -378,9 +378,9 @@ def main():
         sys.stdout.flush()
         if args.get("all") or args.get("defaults"):
             task = executor.submit(generate_defaults,
-                                   args["path_to_api_definitions"],
-                                   args["path_to_generator"],
-                                   args["output_location"],
+                                   args["api_definitions_dir"],
+                                   args["generator_path"],
+                                   args["output_dir"],
                                    None,
                                    args["raw_generator_arguments"])
             pending.add(task)
@@ -395,9 +395,9 @@ def main():
             task = executor.submit(generate_single_client,
                                    service,
                                    model_file,
-                                   args["path_to_api_definitions"],
-                                   args["path_to_generator"],
-                                   args["output_location"],
+                                   args["api_definitions_dir"],
+                                   args["generator_path"],
+                                   args["output_dir"],
                                    None,
                                    args["raw_generator_arguments"])
             pending.add(task)
