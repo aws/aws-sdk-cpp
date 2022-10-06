@@ -4721,8 +4721,6 @@ namespace Aws
           std::shared_ptr<Aws::Http::HttpRequest> request;
           std::shared_ptr<Aws::Http::HttpResponse> response;
           std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest;
-          mutable std::mutex underlyingS3RequestMutex;
-          aws_s3_meta_request *underlyingS3Request;
         };
 
         Aws::Client::XmlOutcome GenerateXmlOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
