@@ -99,7 +99,11 @@ if(REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     if(REGENERATE_CLIENTS)
         set(MERGED_BUILD_LIST_STR "${MERGED_BUILD_LIST}")
         STRING(REPLACE ";" "," MERGED_BUILD_LIST_STR "${MERGED_BUILD_LIST_STR}")
-        set(REGENERATE_CLIENTS_ARG "--client-list")
+        if(DEFINED MERGED_BUILD_LIST_STR AND NOT MERGED_BUILD_LIST_STR STREQUAL "")
+            set(REGENERATE_CLIENTS_ARG "--client-list")
+        else()
+            set(REGENERATE_CLIENTS_ARG "--all")
+        endif()
     else()
         set(REGENERATE_CLIENTS_ARG "")
     endif()
@@ -111,7 +115,7 @@ if(REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     endif()
 
     execute_process(
-        COMMAND ${PYTHON3_CMD} scripts/run_code_generation.py ${REGENERATE_CLIENTS_ARG} ${MERGED_BUILD_LIST_STR} ${REGENERATE_DEFAULTS_ARG} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --output-dir ./generated/
+        COMMAND ${PYTHON3_CMD} tools/scripts/run_code_generation.py ${REGENERATE_CLIENTS_ARG} ${MERGED_BUILD_LIST_STR} ${REGENERATE_DEFAULTS_ARG} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --output-dir ./generated/
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         RESULT_VARIABLE ret
     )
@@ -207,7 +211,7 @@ function(add_sdks)
 
     #testing
     if(ENABLE_TESTING)
-        add_subdirectory(src/aws-cpp-sdk-core-tests/testing-resources)
+        add_subdirectory(tests/testing-resources)
 
         if(ENABLE_FUNCTIONAL_TESTING)
             message(STATUS "Clearing existing directory for document-test to prepare for generation.")
@@ -260,11 +264,7 @@ function(add_sdks)
                             endif()
 
                             if(ADD_TEST)
-                                if (TEST_PROJECT STREQUAL "aws-cpp-sdk-core-tests")
-                                    add_subdirectory(src/${TEST_PROJECT})
-                                else()
-                                    add_subdirectory(tests/${TEST_PROJECT})
-                                endif()
+                               add_subdirectory(tests/${TEST_PROJECT})
                             endif()
                         endif()
                     endforeach()

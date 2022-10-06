@@ -287,7 +287,9 @@ def parse_arguments() -> dict:
             arg_map["all"] = False
             arg_map["defaults"] = False
         else:
-            arg_map["all"] = True
+            if arg_map.get("all") is not True:
+                parser.print_help()
+                exit(1)
             arg_map["defaults"] = True
 
         if args.get("defaults", None):

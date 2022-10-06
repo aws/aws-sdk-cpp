@@ -77,7 +77,7 @@ credentials
 toolchains/android/
 
 # codegen
-code-generation/generator/target/
+tools/code-generation/generator/target/
 
 #config output
 src/aws-cpp-sdk-core/include/aws/core/SDKConfig.h

@@ -4,7 +4,6 @@
  */
 
 // DEPRECATED: This file is used by legacy_build generators only
-
 #define AWS_SDK_VERSION_STRING "@AWSSDK_VERSION_STRING@"
 #define AWS_SDK_VERSION_MAJOR @AWSSDK_VERSION_MAJOR@
 #define AWS_SDK_VERSION_MINOR @AWSSDK_VERSION_MINOR@
