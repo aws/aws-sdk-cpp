@@ -76,61 +76,91 @@ namespace Model
 
     /**
      * <p>The type of resiliency policy to be created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
+     * objective (RTO) and recovery point objective (RPO) in seconds.</p>  <p>If
+     * you do not want to specify regional targets for a regional policy, you must set
+     * the values of <code>rpoInSecs</code> and <code>rtoInSecs</code> to
+     * <code>-1</code>.</p> 
      */
     inline const Aws::Map<DisruptionType, FailurePolicy>& GetPolicy() const{ return m_policy; }
 
     /**
      * <p>The type of resiliency policy to be created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
+     * objective (RTO) and recovery point objective (RPO) in seconds.</p>  <p>If
+     * you do not want to specify regional targets for a regional policy, you must set
+     * the values of <code>rpoInSecs</code> and <code>rtoInSecs</code> to
+     * <code>-1</code>.</p> 
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
      * <p>The type of resiliency policy to be created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
+     * objective (RTO) and recovery point objective (RPO) in seconds.</p>  <p>If
+     * you do not want to specify regional targets for a regional policy, you must set
+     * the values of <code>rpoInSecs</code> and <code>rtoInSecs</code> to
+     * <code>-1</code>.</p> 
      */
     inline void SetPolicy(const Aws::Map<DisruptionType, FailurePolicy>& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
      * <p>The type of resiliency policy to be created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
+     * objective (RTO) and recovery point objective (RPO) in seconds.</p>  <p>If
+     * you do not want to specify regional targets for a regional policy, you must set
+     * the values of <code>rpoInSecs</code> and <code>rtoInSecs</code> to
+     * <code>-1</code>.</p> 
      */
     inline void SetPolicy(Aws::Map<DisruptionType, FailurePolicy>&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>The type of resiliency policy to be created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
+     * objective (RTO) and recovery point objective (RPO) in seconds.</p>  <p>If
+     * you do not want to specify regional targets for a regional policy, you must set
+     * the values of <code>rpoInSecs</code> and <code>rtoInSecs</code> to
+     * <code>-1</code>.</p> 
      */
     inline UpdateResiliencyPolicyRequest& WithPolicy(const Aws::Map<DisruptionType, FailurePolicy>& value) { SetPolicy(value); return *this;}
 
     /**
      * <p>The type of resiliency policy to be created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
+     * objective (RTO) and recovery point objective (RPO) in seconds.</p>  <p>If
+     * you do not want to specify regional targets for a regional policy, you must set
+     * the values of <code>rpoInSecs</code> and <code>rtoInSecs</code> to
+     * <code>-1</code>.</p> 
      */
     inline UpdateResiliencyPolicyRequest& WithPolicy(Aws::Map<DisruptionType, FailurePolicy>&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>The type of resiliency policy to be created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
+     * objective (RTO) and recovery point objective (RPO) in seconds.</p>  <p>If
+     * you do not want to specify regional targets for a regional policy, you must set
+     * the values of <code>rpoInSecs</code> and <code>rtoInSecs</code> to
+     * <code>-1</code>.</p> 
      */
     inline UpdateResiliencyPolicyRequest& AddPolicy(const DisruptionType& key, const FailurePolicy& value) { m_policyHasBeenSet = true; m_policy.emplace(key, value); return *this; }
 
     /**
      * <p>The type of resiliency policy to be created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
+     * objective (RTO) and recovery point objective (RPO) in seconds.</p>  <p>If
+     * you do not want to specify regional targets for a regional policy, you must set
+     * the values of <code>rpoInSecs</code> and <code>rtoInSecs</code> to
+     * <code>-1</code>.</p> 
      */
     inline UpdateResiliencyPolicyRequest& AddPolicy(DisruptionType&& key, const FailurePolicy& value) { m_policyHasBeenSet = true; m_policy.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The type of resiliency policy to be created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
+     * objective (RTO) and recovery point objective (RPO) in seconds.</p>  <p>If
+     * you do not want to specify regional targets for a regional policy, you must set
+     * the values of <code>rpoInSecs</code> and <code>rtoInSecs</code> to
+     * <code>-1</code>.</p> 
      */
     inline UpdateResiliencyPolicyRequest& AddPolicy(const DisruptionType& key, FailurePolicy&& value) { m_policyHasBeenSet = true; m_policy.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The type of resiliency policy to be created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
+     * objective (RTO) and recovery point objective (RPO) in seconds.</p>  <p>If
+     * you do not want to specify regional targets for a regional policy, you must set
+     * the values of <code>rpoInSecs</code> and <code>rtoInSecs</code> to
+     * <code>-1</code>.</p> 
      */
     inline UpdateResiliencyPolicyRequest& AddPolicy(DisruptionType&& key, FailurePolicy&& value) { m_policyHasBeenSet = true; m_policy.emplace(std::move(key), std::move(value)); return *this; }
 
