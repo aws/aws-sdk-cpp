@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/greengrassv2/model/InstalledComponentLifecycleState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -154,42 +155,50 @@ namespace Model
 
 
     /**
-     * <p>The details about the lifecycle state of the component.</p>
+     * <p>A detailed response about the lifecycle state of the component that explains
+     * the reason why a component has an error or is broken.</p>
      */
     inline const Aws::String& GetLifecycleStateDetails() const{ return m_lifecycleStateDetails; }
 
     /**
-     * <p>The details about the lifecycle state of the component.</p>
+     * <p>A detailed response about the lifecycle state of the component that explains
+     * the reason why a component has an error or is broken.</p>
      */
     inline bool LifecycleStateDetailsHasBeenSet() const { return m_lifecycleStateDetailsHasBeenSet; }
 
     /**
-     * <p>The details about the lifecycle state of the component.</p>
+     * <p>A detailed response about the lifecycle state of the component that explains
+     * the reason why a component has an error or is broken.</p>
      */
     inline void SetLifecycleStateDetails(const Aws::String& value) { m_lifecycleStateDetailsHasBeenSet = true; m_lifecycleStateDetails = value; }
 
     /**
-     * <p>The details about the lifecycle state of the component.</p>
+     * <p>A detailed response about the lifecycle state of the component that explains
+     * the reason why a component has an error or is broken.</p>
      */
     inline void SetLifecycleStateDetails(Aws::String&& value) { m_lifecycleStateDetailsHasBeenSet = true; m_lifecycleStateDetails = std::move(value); }
 
     /**
-     * <p>The details about the lifecycle state of the component.</p>
+     * <p>A detailed response about the lifecycle state of the component that explains
+     * the reason why a component has an error or is broken.</p>
      */
     inline void SetLifecycleStateDetails(const char* value) { m_lifecycleStateDetailsHasBeenSet = true; m_lifecycleStateDetails.assign(value); }
 
     /**
-     * <p>The details about the lifecycle state of the component.</p>
+     * <p>A detailed response about the lifecycle state of the component that explains
+     * the reason why a component has an error or is broken.</p>
      */
     inline InstalledComponent& WithLifecycleStateDetails(const Aws::String& value) { SetLifecycleStateDetails(value); return *this;}
 
     /**
-     * <p>The details about the lifecycle state of the component.</p>
+     * <p>A detailed response about the lifecycle state of the component that explains
+     * the reason why a component has an error or is broken.</p>
      */
     inline InstalledComponent& WithLifecycleStateDetails(Aws::String&& value) { SetLifecycleStateDetails(std::move(value)); return *this;}
 
     /**
-     * <p>The details about the lifecycle state of the component.</p>
+     * <p>A detailed response about the lifecycle state of the component that explains
+     * the reason why a component has an error or is broken.</p>
      */
     inline InstalledComponent& WithLifecycleStateDetails(const char* value) { SetLifecycleStateDetails(value); return *this;}
 
@@ -269,6 +278,196 @@ namespace Model
      */
     inline InstalledComponent& WithLastStatusChangeTimestamp(Aws::Utils::DateTime&& value) { SetLastStatusChangeTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The last time the Greengrass core device sent a message containing a certain
+     * component to the Amazon Web Services Cloud.</p> <p>A component does not need to
+     * see a state change for this field to update.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastReportedTimestamp() const{ return m_lastReportedTimestamp; }
+
+    /**
+     * <p>The last time the Greengrass core device sent a message containing a certain
+     * component to the Amazon Web Services Cloud.</p> <p>A component does not need to
+     * see a state change for this field to update.</p>
+     */
+    inline bool LastReportedTimestampHasBeenSet() const { return m_lastReportedTimestampHasBeenSet; }
+
+    /**
+     * <p>The last time the Greengrass core device sent a message containing a certain
+     * component to the Amazon Web Services Cloud.</p> <p>A component does not need to
+     * see a state change for this field to update.</p>
+     */
+    inline void SetLastReportedTimestamp(const Aws::Utils::DateTime& value) { m_lastReportedTimestampHasBeenSet = true; m_lastReportedTimestamp = value; }
+
+    /**
+     * <p>The last time the Greengrass core device sent a message containing a certain
+     * component to the Amazon Web Services Cloud.</p> <p>A component does not need to
+     * see a state change for this field to update.</p>
+     */
+    inline void SetLastReportedTimestamp(Aws::Utils::DateTime&& value) { m_lastReportedTimestampHasBeenSet = true; m_lastReportedTimestamp = std::move(value); }
+
+    /**
+     * <p>The last time the Greengrass core device sent a message containing a certain
+     * component to the Amazon Web Services Cloud.</p> <p>A component does not need to
+     * see a state change for this field to update.</p>
+     */
+    inline InstalledComponent& WithLastReportedTimestamp(const Aws::Utils::DateTime& value) { SetLastReportedTimestamp(value); return *this;}
+
+    /**
+     * <p>The last time the Greengrass core device sent a message containing a certain
+     * component to the Amazon Web Services Cloud.</p> <p>A component does not need to
+     * see a state change for this field to update.</p>
+     */
+    inline InstalledComponent& WithLastReportedTimestamp(Aws::Utils::DateTime&& value) { SetLastReportedTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The most recent deployment source that brought the component to the
+     * Greengrass core device. For a thing group deployment or thing deployment, the
+     * source will be the The ID of the deployment. and for local deployments it will
+     * be <code>LOCAL</code>.</p>
+     */
+    inline const Aws::String& GetLastInstallationSource() const{ return m_lastInstallationSource; }
+
+    /**
+     * <p>The most recent deployment source that brought the component to the
+     * Greengrass core device. For a thing group deployment or thing deployment, the
+     * source will be the The ID of the deployment. and for local deployments it will
+     * be <code>LOCAL</code>.</p>
+     */
+    inline bool LastInstallationSourceHasBeenSet() const { return m_lastInstallationSourceHasBeenSet; }
+
+    /**
+     * <p>The most recent deployment source that brought the component to the
+     * Greengrass core device. For a thing group deployment or thing deployment, the
+     * source will be the The ID of the deployment. and for local deployments it will
+     * be <code>LOCAL</code>.</p>
+     */
+    inline void SetLastInstallationSource(const Aws::String& value) { m_lastInstallationSourceHasBeenSet = true; m_lastInstallationSource = value; }
+
+    /**
+     * <p>The most recent deployment source that brought the component to the
+     * Greengrass core device. For a thing group deployment or thing deployment, the
+     * source will be the The ID of the deployment. and for local deployments it will
+     * be <code>LOCAL</code>.</p>
+     */
+    inline void SetLastInstallationSource(Aws::String&& value) { m_lastInstallationSourceHasBeenSet = true; m_lastInstallationSource = std::move(value); }
+
+    /**
+     * <p>The most recent deployment source that brought the component to the
+     * Greengrass core device. For a thing group deployment or thing deployment, the
+     * source will be the The ID of the deployment. and for local deployments it will
+     * be <code>LOCAL</code>.</p>
+     */
+    inline void SetLastInstallationSource(const char* value) { m_lastInstallationSourceHasBeenSet = true; m_lastInstallationSource.assign(value); }
+
+    /**
+     * <p>The most recent deployment source that brought the component to the
+     * Greengrass core device. For a thing group deployment or thing deployment, the
+     * source will be the The ID of the deployment. and for local deployments it will
+     * be <code>LOCAL</code>.</p>
+     */
+    inline InstalledComponent& WithLastInstallationSource(const Aws::String& value) { SetLastInstallationSource(value); return *this;}
+
+    /**
+     * <p>The most recent deployment source that brought the component to the
+     * Greengrass core device. For a thing group deployment or thing deployment, the
+     * source will be the The ID of the deployment. and for local deployments it will
+     * be <code>LOCAL</code>.</p>
+     */
+    inline InstalledComponent& WithLastInstallationSource(Aws::String&& value) { SetLastInstallationSource(std::move(value)); return *this;}
+
+    /**
+     * <p>The most recent deployment source that brought the component to the
+     * Greengrass core device. For a thing group deployment or thing deployment, the
+     * source will be the The ID of the deployment. and for local deployments it will
+     * be <code>LOCAL</code>.</p>
+     */
+    inline InstalledComponent& WithLastInstallationSource(const char* value) { SetLastInstallationSource(value); return *this;}
+
+
+    /**
+     * <p>The status codes that indicate the reason for failure whenever the
+     * <code>lifecycleState</code> has an error or is in a broken state.</p> 
+     * <p>Greengrass nucleus v2.8.0 or later is required to get an accurate
+     * <code>lifecycleStatusCodes</code> response. This response can be inaccurate in
+     * earlier Greengrass nucleus versions.</p> 
+     */
+    inline const Aws::Vector<Aws::String>& GetLifecycleStatusCodes() const{ return m_lifecycleStatusCodes; }
+
+    /**
+     * <p>The status codes that indicate the reason for failure whenever the
+     * <code>lifecycleState</code> has an error or is in a broken state.</p> 
+     * <p>Greengrass nucleus v2.8.0 or later is required to get an accurate
+     * <code>lifecycleStatusCodes</code> response. This response can be inaccurate in
+     * earlier Greengrass nucleus versions.</p> 
+     */
+    inline bool LifecycleStatusCodesHasBeenSet() const { return m_lifecycleStatusCodesHasBeenSet; }
+
+    /**
+     * <p>The status codes that indicate the reason for failure whenever the
+     * <code>lifecycleState</code> has an error or is in a broken state.</p> 
+     * <p>Greengrass nucleus v2.8.0 or later is required to get an accurate
+     * <code>lifecycleStatusCodes</code> response. This response can be inaccurate in
+     * earlier Greengrass nucleus versions.</p> 
+     */
+    inline void SetLifecycleStatusCodes(const Aws::Vector<Aws::String>& value) { m_lifecycleStatusCodesHasBeenSet = true; m_lifecycleStatusCodes = value; }
+
+    /**
+     * <p>The status codes that indicate the reason for failure whenever the
+     * <code>lifecycleState</code> has an error or is in a broken state.</p> 
+     * <p>Greengrass nucleus v2.8.0 or later is required to get an accurate
+     * <code>lifecycleStatusCodes</code> response. This response can be inaccurate in
+     * earlier Greengrass nucleus versions.</p> 
+     */
+    inline void SetLifecycleStatusCodes(Aws::Vector<Aws::String>&& value) { m_lifecycleStatusCodesHasBeenSet = true; m_lifecycleStatusCodes = std::move(value); }
+
+    /**
+     * <p>The status codes that indicate the reason for failure whenever the
+     * <code>lifecycleState</code> has an error or is in a broken state.</p> 
+     * <p>Greengrass nucleus v2.8.0 or later is required to get an accurate
+     * <code>lifecycleStatusCodes</code> response. This response can be inaccurate in
+     * earlier Greengrass nucleus versions.</p> 
+     */
+    inline InstalledComponent& WithLifecycleStatusCodes(const Aws::Vector<Aws::String>& value) { SetLifecycleStatusCodes(value); return *this;}
+
+    /**
+     * <p>The status codes that indicate the reason for failure whenever the
+     * <code>lifecycleState</code> has an error or is in a broken state.</p> 
+     * <p>Greengrass nucleus v2.8.0 or later is required to get an accurate
+     * <code>lifecycleStatusCodes</code> response. This response can be inaccurate in
+     * earlier Greengrass nucleus versions.</p> 
+     */
+    inline InstalledComponent& WithLifecycleStatusCodes(Aws::Vector<Aws::String>&& value) { SetLifecycleStatusCodes(std::move(value)); return *this;}
+
+    /**
+     * <p>The status codes that indicate the reason for failure whenever the
+     * <code>lifecycleState</code> has an error or is in a broken state.</p> 
+     * <p>Greengrass nucleus v2.8.0 or later is required to get an accurate
+     * <code>lifecycleStatusCodes</code> response. This response can be inaccurate in
+     * earlier Greengrass nucleus versions.</p> 
+     */
+    inline InstalledComponent& AddLifecycleStatusCodes(const Aws::String& value) { m_lifecycleStatusCodesHasBeenSet = true; m_lifecycleStatusCodes.push_back(value); return *this; }
+
+    /**
+     * <p>The status codes that indicate the reason for failure whenever the
+     * <code>lifecycleState</code> has an error or is in a broken state.</p> 
+     * <p>Greengrass nucleus v2.8.0 or later is required to get an accurate
+     * <code>lifecycleStatusCodes</code> response. This response can be inaccurate in
+     * earlier Greengrass nucleus versions.</p> 
+     */
+    inline InstalledComponent& AddLifecycleStatusCodes(Aws::String&& value) { m_lifecycleStatusCodesHasBeenSet = true; m_lifecycleStatusCodes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The status codes that indicate the reason for failure whenever the
+     * <code>lifecycleState</code> has an error or is in a broken state.</p> 
+     * <p>Greengrass nucleus v2.8.0 or later is required to get an accurate
+     * <code>lifecycleStatusCodes</code> response. This response can be inaccurate in
+     * earlier Greengrass nucleus versions.</p> 
+     */
+    inline InstalledComponent& AddLifecycleStatusCodes(const char* value) { m_lifecycleStatusCodesHasBeenSet = true; m_lifecycleStatusCodes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_componentName;
@@ -288,6 +487,15 @@ namespace Model
 
     Aws::Utils::DateTime m_lastStatusChangeTimestamp;
     bool m_lastStatusChangeTimestampHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastReportedTimestamp;
+    bool m_lastReportedTimestampHasBeenSet = false;
+
+    Aws::String m_lastInstallationSource;
+    bool m_lastInstallationSourceHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_lifecycleStatusCodes;
+    bool m_lifecycleStatusCodesHasBeenSet = false;
   };
 
 } // namespace Model
