@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/greengrassv2/model/EffectiveDeploymentExecutionStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/greengrassv2/model/EffectiveDeploymentStatusDetails.h>
 #include <utility>
 
 namespace Aws
@@ -463,6 +464,43 @@ namespace Model
      */
     inline EffectiveDeployment& WithModifiedTimestamp(Aws::Utils::DateTime&& value) { SetModifiedTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status details that explain why a deployment has an error. This response
+     * will be null if the deployment is in a success state.</p>
+     */
+    inline const EffectiveDeploymentStatusDetails& GetStatusDetails() const{ return m_statusDetails; }
+
+    /**
+     * <p>The status details that explain why a deployment has an error. This response
+     * will be null if the deployment is in a success state.</p>
+     */
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
+
+    /**
+     * <p>The status details that explain why a deployment has an error. This response
+     * will be null if the deployment is in a success state.</p>
+     */
+    inline void SetStatusDetails(const EffectiveDeploymentStatusDetails& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
+
+    /**
+     * <p>The status details that explain why a deployment has an error. This response
+     * will be null if the deployment is in a success state.</p>
+     */
+    inline void SetStatusDetails(EffectiveDeploymentStatusDetails&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
+
+    /**
+     * <p>The status details that explain why a deployment has an error. This response
+     * will be null if the deployment is in a success state.</p>
+     */
+    inline EffectiveDeployment& WithStatusDetails(const EffectiveDeploymentStatusDetails& value) { SetStatusDetails(value); return *this;}
+
+    /**
+     * <p>The status details that explain why a deployment has an error. This response
+     * will be null if the deployment is in a success state.</p>
+     */
+    inline EffectiveDeployment& WithStatusDetails(EffectiveDeploymentStatusDetails&& value) { SetStatusDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deploymentId;
@@ -494,6 +532,9 @@ namespace Model
 
     Aws::Utils::DateTime m_modifiedTimestamp;
     bool m_modifiedTimestampHasBeenSet = false;
+
+    EffectiveDeploymentStatusDetails m_statusDetails;
+    bool m_statusDetailsHasBeenSet = false;
   };
 
 } // namespace Model
