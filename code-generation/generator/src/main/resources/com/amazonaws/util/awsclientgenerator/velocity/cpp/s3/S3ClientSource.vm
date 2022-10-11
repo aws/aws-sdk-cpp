@@ -6,10 +6,13 @@
 #set($serviceNamespace = $serviceModel.metadata.namespace)
 #set($USEast1RegionalEndpointArgString = ", Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption")
 #set($USEast1RegionalEndpointInitString = ", m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)")
+#if(!$serviceModel.endpointRules)
 #set($AdditionalServiceSpecificConfigLoadString = "Load${serviceNamespace}SpecificConfig(config.profileName);")
+#end
 #set($ForRegionExtraArgsString = ", m_USEast1RegionalEndpointOption == Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
 
+#if(!$serviceModel.endpointRules)
 static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
 static const char US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR[] = "s3_us_east_1_regional_endpoint";
 static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
@@ -76,6 +79,7 @@ void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::Stri
     m_disableMultiRegionAccessPoints = false;
   }
 }
+#end
 
 #set($clsWSpace = $className.replaceAll(".", " "))
 \#include<aws/core/utils/HashingUtils.h>
@@ -197,6 +201,7 @@ Aws::String ${className}::GeneratePresignedUrlWithSSEC(const Aws::String& bucket
     customizedHeaders.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
     return GeneratePresignedUrl(bucket, key, method, customizedHeaders, expirationInSeconds);
 }
+#if(!$serviceModel.endpointRules)
 
 ComputeEndpointOutcome ${className}::ComputeEndpointString(const Aws::String& bucketOrArn) const
 {
@@ -340,6 +345,8 @@ ComputeEndpointOutcome ${className}::ComputeEndpointStringWithServiceName(const 
         }
     }
 }
+#end
+
 
 bool ${className}::MultipartUploadSupported() const
 {

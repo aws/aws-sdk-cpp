@@ -80,6 +80,9 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.add(generateErrorSourceFile(serviceModel));
         fileList.add(generateErrorMarshallingSourceFile(serviceModel));
         fileList.add(generateServiceRequestHeader(serviceModel));
+        if (serviceModel.getEndpointRules() != null) {
+            fileList.add(generateServiceRequestSource(serviceModel));
+        }
         fileList.add(generateExportHeader(serviceModel));
         fileList.add(generateCmakeFile(serviceModel));
 
@@ -357,13 +360,25 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     private SdkFileEntry generateServiceRequestHeader(final ServiceModel serviceModel) throws Exception {
 
-        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/AbstractServiceRequest.vm", StandardCharsets.UTF_8.name());
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/AbstractServiceRequestHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("CppViewHelper", CppViewHelper.class);
 
         String fileName = String.format("include/aws/%s/%sRequest.h", serviceModel.getMetadata().getProjectName(),
                 serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    private SdkFileEntry generateServiceRequestSource(final ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/AbstractServiceRequestSource.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("CppViewHelper", CppViewHelper.class);
+
+        String fileName = String.format("source/%sRequest.cpp", serviceModel.getMetadata().getClassNamePrefix());
 
         return makeFile(template, context, fileName, true);
     }

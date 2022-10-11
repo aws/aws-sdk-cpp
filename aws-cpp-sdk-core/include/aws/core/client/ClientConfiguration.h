@@ -81,17 +81,17 @@ namespace Aws
             /**
              * Use dual stack endpoint in the endpoint calculation. It is your responsibility to verify that the service supports ipv6 in the region you select.
              */
-            bool useDualStack;
+            bool useDualStack = false;
             /**
              * Max concurrent tcp connections for a single http client to use. Default 25.
              */
-            unsigned maxConnections;
+            unsigned maxConnections = 25;
             /**
              * This is currently only applicable for Curl to set the http request level timeout, including possible dns lookup time, connection establish time, ssl handshake time and actual data transmission time.
              * the corresponding Curl option is CURLOPT_TIMEOUT_MS
              * defaults to 0, no http request level timeout.
              */
-            long httpRequestTimeoutMs;
+            long httpRequestTimeoutMs = 0;
             /**
              * Socket read timeouts for HTTP clients on Windows. Default 3000 ms. This should be more than adequate for most services. However, if you are transferring large amounts of data
              * or are worried about higher latencies, you should set to something that makes more sense for your use case.
@@ -99,27 +99,27 @@ namespace Aws
              * Note that for Curl this config is converted to seconds by rounding down to the nearest whole second except when the value is greater than 0 and less than 1000. In this case it is set to one second. When it's 0, low speed limit check will be disabled.
              * Note that for Windows when this config is 0, the behavior is not specified by Windows.
              */
-            long requestTimeoutMs;
+            long requestTimeoutMs = 0;
             /**
              * Socket connect timeout. Default 1000 ms. Unless you are very far away from your the data center you are talking to. 1000ms is more than sufficient.
              */
-            long connectTimeoutMs;
+            long connectTimeoutMs = 1000;
             /**
              * Enable TCP keep-alive. Default true;
              * No-op for WinHTTP, WinINet and IXMLHTTPRequest2 client.
              */
-            bool enableTcpKeepAlive;
+            bool enableTcpKeepAlive = true;
             /**
              * Interval to send a keep-alive packet over the connection. Default 30 seconds. Minimum 15 seconds.
              * WinHTTP & libcurl support this option. Note that for Curl, this value will be rounded to an integer with second granularity.
              * No-op for WinINet and IXMLHTTPRequest2 client.
              */
-            unsigned long tcpKeepAliveIntervalMs;
+            unsigned long tcpKeepAliveIntervalMs = 30000;
             /**
              * Average transfer speed in bytes per second that the transfer should be below during the request timeout interval for it to be considered too slow and abort.
              * Default 1 byte/second. Only for CURL client currently.
              */
-            unsigned long lowSpeedLimit;
+            unsigned long lowSpeedLimit = 1;
             /**
              * Strategy to use in case of failed requests. Default is DefaultRetryStrategy (i.e. exponential backoff)
              */
@@ -139,7 +139,7 @@ namespace Aws
             /**
              * If you have users going through a proxy, set the port here.
              */
-            unsigned proxyPort;
+            unsigned proxyPort = 0;
             /**
              * If you have users going through a proxy, set the username here.
              */
@@ -185,7 +185,7 @@ namespace Aws
              * If you need to test and want to get around TLS validation errors, do that here.
              * you probably shouldn't use this flag in a production scenario.
              */
-            bool verifySSL;
+            bool verifySSL = true;
             /**
              * If your Certificate Authority path is different from the default, you can tell
              * clients that aren't using the default trust store where to find your CA trust store.
@@ -224,19 +224,19 @@ namespace Aws
              * But be careful when Http request has large payload such S3 PutObject. You don't want to spend long time sending a large payload just getting a error response for server.
              * The default value will be false.
              */
-            bool disableExpectHeader;
+            bool disableExpectHeader = false;
 
             /**
              * If set to true clock skew will be adjusted after each http attempt, default to true.
              */
-            bool enableClockSkewAdjustment;
+            bool enableClockSkewAdjustment = true;
 
             /**
              * Enable host prefix injection.
              * For services whose endpoint is injectable. e.g. servicediscovery, you can modify the http host's prefix so as to add "data-" prefix for DiscoverInstances request.
              * Default to true, enabled. You can disable it for testing purpose.
              */
-            bool enableHostPrefixInjection;
+            bool enableHostPrefixInjection = true;
 
             /**
              * Enable endpoint discovery
