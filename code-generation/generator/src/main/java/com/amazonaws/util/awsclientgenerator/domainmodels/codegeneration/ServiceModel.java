@@ -69,4 +69,5 @@ public class ServiceModel {
 
     String endpointRules;
     EndpointTests endpointTests;
+    ClientContextParams clientContextParams;
 }

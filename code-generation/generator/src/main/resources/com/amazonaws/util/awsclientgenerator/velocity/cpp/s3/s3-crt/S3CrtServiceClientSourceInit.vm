@@ -13,7 +13,7 @@
 #else
 #set($doubleEncodeValue = "")
 #end
-#if($virtualAddressingSupported)
+#if($virtualAddressingSupported && !$serviceModel.endpointRules)
 #set($virtualAddressing = ", bool useVirtualAddressing")
 #set($virtualAddressingInit = ", m_useVirtualAddressing(useVirtualAddressing)")
 #else
@@ -29,7 +29,7 @@
 #if(!$ForRegionExtraArgsString)
 #set($ForRegionExtraArgsString = "")
 #end
-#if($metadata.hasEndpointDiscoveryTrait)
+#if($metadata.hasEndpointDiscoveryTrait && !$serviceModel.endpointRules)
 #set($AdditionalServiceSpecificConfigLoadString = "Load${metadata.classNamePrefix}SpecificConfig(config);")
 #end
 #set($clientConfigurationNamespace = $serviceNamespace)

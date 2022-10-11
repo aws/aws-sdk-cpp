@@ -1,3 +1,4 @@
+#if(!$serviceModel.endpointRules)
 #set($startIndex = 0)
 #set($skipFirst = false)
 #if($virtualAddressingSupported || $arnEndpointSupported)
@@ -172,3 +173,4 @@
     newRequest.SetPreSignedUrl(GeneratePresignedUrl(request, sourceUri, Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(), {{ "DestinationRegion", m_region }}, 3600));
   }
 #end
+#end##-#if(!$serviceModel.endpointRules)

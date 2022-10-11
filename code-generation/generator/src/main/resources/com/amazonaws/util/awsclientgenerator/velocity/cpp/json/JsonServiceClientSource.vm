@@ -23,6 +23,9 @@
 \#include <aws/core/utils/threading/Executor.h>
 \#include <aws/core/utils/DNS.h>
 \#include <aws/core/utils/logging/LogMacros.h>
+#if($serviceModel.endpointRules)
+\#include <aws/core/utils/logging/ErrorMacros.h>
+#end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
 
 using namespace Aws;
@@ -32,6 +35,9 @@ using namespace ${rootNamespace}::${serviceNamespace};
 using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+#if($serviceModel.endpointRules)
+using ResolveEndpointOutcome = Aws::${serviceNamespace}::Endpoint::${serviceNamespace}EndpointProvider::${metadata.classNamePrefix}ResolveEndpointOutcome;
+#end
 
 const char* ${className}::SERVICE_NAME = "${metadata.signingName}";
 const char* ${className}::ALLOCATION_TAG = "${className}";

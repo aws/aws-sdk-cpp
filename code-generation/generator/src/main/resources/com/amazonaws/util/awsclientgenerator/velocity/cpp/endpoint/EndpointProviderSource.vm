@@ -4,14 +4,38 @@
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
 #set($endpointPrefix = $metadata.endpointPrefix)
+#set($epContextClassName = "${metadata.classNamePrefix}ClientContextParameters")
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
 
 namespace ${rootNamespace}
 {
 namespace ${serviceNamespace}
 {
+namespace Endpoint
+{
 #if ($serviceModel.endpointRules)
-
+#if ($serviceModel.clientContextParams)
+#foreach($memberEntry in $serviceModel.clientContextParams.entrySet())
+#if(${memberEntry.value.type} == "boolean")
+#set($paramType = "bool")
+#else
+#set($paramType = "Aws::String")
 #end
+  void ${epContextClassName}::Set${memberEntry.key}(${paramType} value)
+  {
+#if(${memberEntry.value.type} == "boolean")
+    return SetBooleanParameter(Aws::String("${memberEntry.key}"), value);
+#else
+    return SetStringParameter(Aws::String("${memberEntry.key}"), std::move(value));
+#end
+  }
+  const ${epContextClassName}::ClientContextParameters::EndpointParameter& ${epContextClassName}::Get${memberEntry.key}() const
+  {
+    return GetParameter("${memberEntry.key}");
+  }
+#end
+#end
+#end
+} // namespace Endpoint
 } // namespace ${serviceNamespace}
 } // namespace ${rootNamespace}

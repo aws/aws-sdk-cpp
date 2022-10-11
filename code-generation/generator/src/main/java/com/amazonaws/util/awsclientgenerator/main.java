@@ -18,8 +18,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class main {
 
@@ -31,6 +35,8 @@ public class main {
     static final String LANGUAGE_BINDING_OPTION = "language-binding";
     static final String SERVICE_OPTION = "service";
     static final String DEFAULTS_OPTION = "defaults";
+    static final String PARTITIONS_OPTION = "partitions";
+    static final String GENERATE_TESTS_OPTION = "generate-tests";
     static final String NAMESPACE = "namespace";
     static final String LICENSE_TEXT = "license-text";
     static final String STANDALONE_OPTION = "standalone";
@@ -51,13 +57,20 @@ public class main {
         if (argPairs.containsKey(ARBITRARY_OPTION) || argPairs.containsKey(INPUT_FILE_NAME)) {
             if (!argPairs.containsKey(LANGUAGE_BINDING_OPTION) || argPairs.get(LANGUAGE_BINDING_OPTION).isEmpty()) {
                 System.err.println("Error: A language binding must be specified with the --arbitrary option.");
+                System.exit(-1);
                 return;
             }
-            if ((!argPairs.containsKey(SERVICE_OPTION) || argPairs.get(SERVICE_OPTION).isEmpty()) &&
-                (!argPairs.containsKey(DEFAULTS_OPTION) || argPairs.get(DEFAULTS_OPTION).isEmpty())) {
-                System.err.println("Error: A service name or defaults must be specified with the --arbitrary option.");
+            final Set<String> ALLOWED_OPTIONS = new HashSet<>(Arrays.asList(SERVICE_OPTION, DEFAULTS_OPTION, PARTITIONS_OPTION));
+            Set<String> selectedOptions = ALLOWED_OPTIONS;
+            selectedOptions.retainAll(argPairs.keySet());
+            if (selectedOptions.size() != 1) {
+                System.err.println(String.format("Error: one and only one option from {%s} must be specified to the generator, found: {%s}",
+                        ALLOWED_OPTIONS, selectedOptions));
+                System.exit(-1);
                 return;
             }
+            final String selectedOption = selectedOptions.iterator().next();
+
             String namespace = "Aws";
             if (argPairs.containsKey(NAMESPACE) && !argPairs.get(NAMESPACE).isEmpty()) {
                 namespace = argPairs.get(NAMESPACE);
@@ -66,7 +79,8 @@ public class main {
             if (argPairs.containsKey(LICENSE_TEXT) && !argPairs.get(LICENSE_TEXT).isEmpty()) {
                 licenseText = argPairs.get(LICENSE_TEXT);
             }
-            boolean generateStandalonePakckage = argPairs.containsKey(STANDALONE_OPTION);
+            boolean generateStandalonePackage = argPairs.containsKey(STANDALONE_OPTION);
+            boolean generateTests = argPairs.containsKey(GENERATE_TESTS_OPTION);
             String languageBinding = argPairs.get(LANGUAGE_BINDING_OPTION);
             String serviceName = argPairs.get(SERVICE_OPTION);
             boolean enableVirtualOperations = argPairs.containsKey(ENABLE_VIRTUAL_OPERATIONS);
@@ -92,14 +106,34 @@ public class main {
 
                     String componentOutputName;
                     if (serviceName != null && !serviceName.isEmpty()) {
-                        generated = generateService(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
-                                licenseText, generateStandalonePakckage, enableVirtualOperations);
+                        if (!generateTests) {
+                            generated = generateService(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
+                                    licenseText, generateStandalonePackage, enableVirtualOperations);
 
-                        componentOutputName = String.format("aws-cpp-sdk-%s", serviceName);
+                            componentOutputName = String.format("aws-cpp-sdk-%s", serviceName);
+                        } else {
+                            generated = generateServiceTest(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
+                                    licenseText);
+
+                            componentOutputName = String.format("aws-cpp-sdk-%s-generated-tests", serviceName);
+                        }
                     } else {
-                        generated = generateDefaults(arbitraryJson, languageBinding, serviceName, namespace,
-                                licenseText, generateStandalonePakckage, enableVirtualOperations);
+                        if (generateTests) {
+                            System.out.println("Test generation for defaults is not supported by the generator.");
+                            System.exit(-1);
+                        }
 
+                        if (selectedOption.equalsIgnoreCase(DEFAULTS_OPTION)) {
+                            generated = generateDefaults(arbitraryJson, languageBinding, serviceName, namespace,
+                                    licenseText, generateStandalonePackage, enableVirtualOperations);
+                        } else if (selectedOption.equalsIgnoreCase(PARTITIONS_OPTION)) {
+                            generated = generatePartitions(arbitraryJson, languageBinding, serviceName, namespace,
+                                    licenseText, generateStandalonePackage, enableVirtualOperations);
+                        } else {
+                            System.err.println(String.format("Unsupported core component %s requested for generation", selectedOption));
+                            System.exit(-1);
+                            return;
+                        }
                         componentOutputName = String.format("aws-cpp-sdk-core");
                     }
 
@@ -118,17 +152,18 @@ public class main {
                         System.out.println(finalOutputFile.getAbsolutePath());
                     }
 
-
-
                 } catch (GeneratorNotImplementedException e) {
                     System.err.println(e.getMessage());
                     e.printStackTrace();
+                    System.exit(-1);
                 } catch (Exception e) {
                     System.err.println(e.getMessage());
                     e.printStackTrace();
+                    System.exit(-1);
                 }
             } else {
                 System.err.println("You must supply standard input if you specify the --arbitrary option.");
+                System.exit(-1);
             }
             return;
         }
@@ -161,9 +196,30 @@ public class main {
         return outputStream;
     }
 
+    private static ByteArrayOutputStream generateServiceTest(String arbitraryJson,
+                                                             String endpointRules,
+                                                             String endpointRulesTests,
+                                                             String languageBinding,
+                                                             String serviceName,
+                                                             String namespace,
+                                                             String licenseText) throws Exception {
+        MainGenerator generator = new MainGenerator();
+        DirectFromC2jGenerator directFromC2jGenerator = new DirectFromC2jGenerator(generator);
+
+        ByteArrayOutputStream outputStream = directFromC2jGenerator.generateServiceTestSourceFromModels(
+                arbitraryJson,
+                endpointRules,
+                endpointRulesTests,
+                languageBinding,
+                serviceName,
+                namespace,
+                licenseText);
+        return outputStream;
+    }
+
     private static ByteArrayOutputStream generateDefaults(String arbitraryJson, String languageBinding, String serviceName,
                                          String namespace, String licenseText,
-                                         boolean generateStandalonePakckage, boolean enableVirtualOperations) throws Exception {
+                                         boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
         MainGenerator generator = new MainGenerator();
         DirectFromC2jGenerator defaultsGenerator = new DirectFromC2jGenerator(generator);
 
@@ -172,7 +228,23 @@ public class main {
                 serviceName,
                 namespace,
                 licenseText,
-                generateStandalonePakckage,
+                generateStandalonePackage,
+                enableVirtualOperations);
+        return outputStream;
+    }
+
+    private static ByteArrayOutputStream generatePartitions(String arbitraryJson, String languageBinding, String serviceName,
+                                                           String namespace, String licenseText,
+                                                           boolean generateStandalonePackage, boolean enableVirtualOperations) throws Exception {
+        MainGenerator generator = new MainGenerator();
+        DirectFromC2jGenerator defaultsGenerator = new DirectFromC2jGenerator(generator);
+
+        ByteArrayOutputStream outputStream = defaultsGenerator.generatePartitionsSourceFromJson(arbitraryJson,
+                languageBinding,
+                serviceName,
+                namespace,
+                licenseText,
+                generateStandalonePackage,
                 enableVirtualOperations);
         return outputStream;
     }

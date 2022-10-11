@@ -52,10 +52,11 @@ namespace ${rootNamespace}
         void OverrideEndpoint(const Aws::String& endpoint);
     private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-#if($metadata.hasEndpointDiscoveryTrait)
+#if($metadata.hasEndpointDiscoveryTrait && !$serviceModel.endpointRules)
         void Load${metadata.classNamePrefix}SpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration);
 #end
 
+#if(!$serviceModel.endpointRules)
 #if($metadata.hasEndpointTrait)
         Aws::String m_baseUri;
         Aws::String m_scheme;
@@ -63,18 +64,21 @@ namespace ${rootNamespace}
 #else
         Aws::String m_uri;
 #end
+#end
 #if($metadata.hasEndpointDiscoveryTrait)
         mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
         bool m_enableEndpointDiscovery = false;
 #end
-#if($serviceModel.endpointRules)
-        std::shared_ptr<${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
-#end
+#if(!$serviceModel.endpointRules)
         Aws::String m_configScheme;
 #if($metadata.hasPreSignedUrl)
         bool m_useDualStack = false;
 #end
+#end
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+#if($serviceModel.endpointRules)
+        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
+#end
     };
   } // namespace ${metadata.namespace}
 } // namespace ${rootNamespace}

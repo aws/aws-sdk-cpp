@@ -51,6 +51,7 @@ namespace Aws
             UNKNOWN = 100,                // Unknown to the SDK
             CLIENT_SIGNING_FAILURE = 101, // Client failed to sign the request
             USER_CANCELLED = 102, // User cancelled the request
+            ENDPOINT_RESOLUTION_FAILURE = 103,
             SERVICE_EXTENSION_START_RANGE = 128,
             OK = -1 // No error set
         };

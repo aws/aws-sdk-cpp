@@ -25,6 +25,9 @@
 #set($credentialProviderArg = "")
 #end
 #set($clsWSpace = $className.replaceAll(".", " "))
+#if($serviceModel.endpointRules)
+#set($endpointsProviderDefaultCtorCall = "Aws::MakeShared<" + ${serviceNamespace} + "::Endpoint::" + ${metadata.classNamePrefix} + "EndpointProvider>(ALLOCATION_TAG)")
+#end
 #if($serviceModel.hasOnlyBearerAuth())
 #set($bearerAddCtorArgs = {})
 #foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
@@ -35,7 +38,7 @@
         */
         ${className}(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
 #if($serviceModel.endpointRules)
-        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
+        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider = ${endpointsProviderDefaultCtorCall},
 #end
         ${clsWSpace} const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()#if($bearerAddCtorArgs.isEmpty()));#else,#end
 
@@ -52,8 +55,12 @@
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ${className}(const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()#if($defCredsChainCtor.isEmpty()));#else,#end
+        ${className}(const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()#if($defCredsChainCtor.isEmpty() && !$serviceModel.endpointRules));#else,#end
 
+#if($serviceModel.endpointRules)
+        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider = ${endpointsProviderDefaultCtorCall}#if($defCredsChainCtor.isEmpty()));#else,#end
+
+#end
 #foreach($ctorArgument in $defCredsChainCtor)
         ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else);#end
 
@@ -69,7 +76,7 @@
         */
         ${className}(const Aws::Auth::AWSCredentials& credentials,
 #if($serviceModel.endpointRules)
-        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
+        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider = ${endpointsProviderDefaultCtorCall},
 #end
         ${clsWSpace} const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()#if($simpleCredsCtor.isEmpty()));#else,#end
 
@@ -88,7 +95,7 @@
         */
         ${className}(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
 #if($serviceModel.endpointRules)
-        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
+        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider = ${endpointsProviderDefaultCtorCall},
 #end
         ${clsWSpace} const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()#if($specCredsCtor.isEmpty()));#else,#end
 
@@ -109,7 +116,7 @@
         */
         ${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
 #if($serviceModel.endpointRules)
-        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider,
+        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider = ${endpointsProviderDefaultCtorCall},
 #end
         ${clsWSpace} const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()#if($standaloneCredsCtor.isEmpty()));#else,#end
 
@@ -118,5 +125,11 @@
 
 #end
 
+#end
+
+#if($serviceModel.endpointRules)
+        /* Legacy constructors due deprecation */
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderLegacyConstructors.vm")
+        /* End of legacy constructors due deprecation */
 #end
         virtual ~${className}();

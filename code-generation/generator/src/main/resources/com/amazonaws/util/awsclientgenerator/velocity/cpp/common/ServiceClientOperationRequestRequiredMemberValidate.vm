@@ -1,3 +1,6 @@
+#if($serviceModel.endpointRules)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+#end
 #foreach($memberEntry in $operation.request.shape.members.entrySet())
 #if($memberEntry.value.validationNeeded && !$memberEntry.value.streaming && !$memberEntry.value.usedForPayload && !($operation.arnEndpointAllowed && $memberEntry.value.shape.name.equals($operation.accountIdMemberName)))
 #set($memberKeyWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($memberEntry.key))

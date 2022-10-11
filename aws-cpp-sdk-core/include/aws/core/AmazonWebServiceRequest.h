@@ -15,6 +15,7 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/client/CoreErrors.h>
+#include <aws/core/endpoint/EndpointParameter.h>
 
 namespace Aws
 {
@@ -167,6 +168,9 @@ namespace Aws
         inline virtual Aws::String GetChecksumAlgorithmName() const { return {}; }
 
         virtual const char* GetServiceRequestName() const = 0;
+
+        using EndpointParameters = Aws::Vector<Aws::Endpoint::EndpointParameter>;
+        virtual EndpointParameters GetEndpointContextParams() const;
 
     protected:
         /**

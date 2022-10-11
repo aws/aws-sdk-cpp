@@ -86,6 +86,7 @@ file(GLOB HTTP_STANDARD_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/standard
 file(GLOB CONFIG_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/config/*.cpp")
 file(GLOB CONFIG_DEFAULTS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/config/defaults/*.cpp")
 file(GLOB ENDPOINT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/endpoint/*.cpp")
+file(GLOB ENDPOINT_INTERNAL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/endpoint/internal/*.cpp")
 file(GLOB MONITORING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/monitoring/*.cpp")
 file(GLOB UTILS_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/*.cpp")
 file(GLOB UTILS_EVENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/event/*.cpp")
@@ -229,6 +230,8 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${HTTP_CLIENT_SOURCE}
     ${CONFIG_SOURCE}
     ${CONFIG_DEFAULTS_SOURCE}
+    ${ENDPOINT_SOURCE}
+    ${ENDPOINT_INTERNAL_SOURCE}
     ${UTILS_BASE64_SOURCE}
     ${UTILS_THREADING_SOURCE}
     ${UTILS_RETRY_SOURCE}
@@ -419,6 +422,7 @@ if(MSVC)
     source_group("Source Files\\config" FILES ${CONFIG_SOURCE})
     source_group("Source Files\\config\\defaults" FILES ${CONFIG_DEFAULTS_SOURCE})
     source_group("Source Files\\endpoint" FILES ${ENDPOINT_SOURCE})
+    source_group("Source Files\\endpoint\\internal" FILES ${ENDPOINT_INTERNAL_SOURCE})
     source_group("Source Files\\monitoring" FILES ${MONITORING_SOURCE})
     source_group("Source Files\\platform\\windows" FILES ${PLATFORM_WINDOWS_SOURCE})
     source_group("Source Files\\utils" FILES ${UTILS_SOURCE})

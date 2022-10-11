@@ -15,6 +15,9 @@
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
 \#include <aws/core/utils/threading/Executor.h>
 \#include <aws/core/utils/logging/LogMacros.h>
+#if($serviceModel.endpointRules)
+\#include <aws/core/utils/logging/ErrorMacros.h>
+#end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
 
 using namespace Aws;
@@ -24,6 +27,9 @@ using namespace Aws::${metadata.namespace};
 using namespace Aws::${metadata.namespace}::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+#if($serviceModel.endpointRules)
+using ResolveEndpointOutcome = Aws::${serviceNamespace}::Endpoint::${serviceNamespace}EndpointProvider::${metadata.classNamePrefix}ResolveEndpointOutcome;
+#end
 
 
 const char* ${className}::SERVICE_NAME = "${metadata.signingName}";
@@ -35,6 +41,11 @@ const char* ${className}::ALLOCATION_TAG = "${className}";
 ${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
 {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+#if($serviceModel.endpointRules)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
+  return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+#else##-#if($serviceModel.endpointRules)
 #if($operation.name != "Predict")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
@@ -42,6 +53,7 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #else
   return ${operation.name}Outcome(MakeRequest(request.GetPredictEndpoint(), request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #end
+#end##-#if($serviceModel.endpointRules)
 }
 
 ${operation.name}OutcomeCallable ${className}::${operation.name}Callable(const ${operation.request.shape.name}& request) const

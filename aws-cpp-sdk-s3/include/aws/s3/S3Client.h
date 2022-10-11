@@ -93,6 +93,7 @@ namespace Aws
                  bool useVirtualAddressing = true,
                  Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
 
+
         virtual ~S3Client();
 
         /**

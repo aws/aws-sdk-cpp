@@ -57,10 +57,11 @@
 #end
   ${template.currentSpaces}}
 #elseif($template.currentShape.list)
+#if($serviceModel.endpointRules)#set($AwsArray = "Aws::Utils::Array")#else#set($AwsArray = "Array")#end
 #if($template.recursionDepth > 1 || $memberIsWholePayload)
-  ${template.currentSpaces}Array<JsonView> ${template.lowerCaseVarName}JsonList = ${template.jsonValue}.AsArray();
+  ${template.currentSpaces}${AwsArray}<JsonView> ${template.lowerCaseVarName}JsonList = ${template.jsonValue}.AsArray();
 #else
-  ${template.currentSpaces}Array<JsonView> ${template.lowerCaseVarName}JsonList = ${template.jsonValue}.GetArray("${template.memberKey}");
+  ${template.currentSpaces}${AwsArray}<JsonView> ${template.lowerCaseVarName}JsonList = ${template.jsonValue}.GetArray("${template.memberKey}");
 #end
 #if($template.recursionDepth > 1)
 #set($template.containerVar = ${template.lowerCaseVarName} + "List")

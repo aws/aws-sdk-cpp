@@ -608,6 +608,50 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
     return StreamOutcome(std::move(httpResponseOutcome));
 }
 
+#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
+StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::AmazonWebServiceRequest& request,
+                                                         const Aws::Endpoint::AWSEndpoint& endpoint,
+                                                         Http::HttpMethod method,
+                                                         const char* signerName,
+                                                         const char* signerRegionOverride,
+                                                         const char* signerServiceNameOverride) const
+{
+    Aws::Http::URI uri = endpoint.GetURL();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+
+    return MakeRequestWithUnparsedResponse(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
+}
+
+XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::AmazonWebServiceRequest& request,
+                                                    const Aws::Endpoint::AWSEndpoint& endpoint,
+                                                    Http::HttpMethod method,
+                                                    const char* signerName,
+                                                    const char* signerRegionOverride,
+                                                    const char* signerServiceNameOverride) const
+{
+    Aws::Http::URI uri = endpoint.GetURL();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+
+    return MakeRequestWithEventStream(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
+}
+#endif
+
 XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
     Http::HttpMethod method,
@@ -971,6 +1015,45 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
     return {};
 }
 
+#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& endpoint,
+                                            Aws::Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
+                                            const Aws::Http::HeaderValueCollection& customizedHeaders /* = {} */,
+                                            uint64_t expirationInSeconds /* = 0 */,
+                                            const char* signerName /* = Aws::Auth::SIGV4_SIGNER */,
+                                            const char* signerRegionOverride /* = nullptr */,
+                                            const char* signerServiceNameOverride /* = nullptr */)
+{
+    Aws::Http::URI uri = endpoint.GetURL();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+
+    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    for (const auto& it : endpoint.GetHeaders())
+    {
+        request->SetHeaderValue(it.first, it.second);
+    }
+    for (const auto& it: customizedHeaders)
+    {
+        request->SetHeaderValue(it.first, it.second);
+    }
+    auto signer = GetSignerByName(signerName);
+    if (signer->PresignRequest(*request, signerRegionOverride, signerServiceNameOverride, expirationInSeconds))
+    {
+        return request->GetURIString();
+    }
+
+    return {};
+}
+#endif
+
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
 {
@@ -1091,6 +1174,27 @@ AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configurati
 {
 }
 
+#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
+JsonOutcome AWSJsonClient::MakeRequest(const Aws::AmazonWebServiceRequest& request,
+                                       const Aws::Endpoint::AWSEndpoint& endpoint,
+                                       Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
+                                       const char* signerName /* = Aws::Auth::NULL_SIGNER */,
+                                       const char* signerRegionOverride /* = nullptr */,
+                                       const char* signerServiceNameOverride /* = nullptr */) const
+{
+    Aws::Http::URI uri = endpoint.GetURL();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+    return MakeRequest(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
+}
+#endif
 
 JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
@@ -1224,6 +1328,48 @@ AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration
     BASECLASS(configuration, signerProvider, errorMarshaller)
 {
 }
+
+#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
+XmlOutcome AWSXMLClient::MakeRequest(const Aws::AmazonWebServiceRequest& request,
+                                     const Aws::Endpoint::AWSEndpoint& endpoint,
+                                     Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
+                                     const char* signerName /* = Aws::Auth::NULL_SIGNER */,
+                                     const char* signerRegionOverride /* = nullptr */,
+                                     const char* signerServiceNameOverride /* = nullptr */) const
+{
+    Aws::Http::URI uri = endpoint.GetURL();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+    return MakeRequest(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
+}
+
+XmlOutcome AWSXMLClient::MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
+                                     const char* requestName /* = "" */,
+                                     Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
+                                     const char* signerName /* = Aws::Auth::NULL_SIGNER */,
+                                     const char* signerRegionOverride /* = nullptr */,
+                                     const char* signerServiceNameOverride /* = nullptr */) const
+{
+    Aws::Http::URI uri = endpoint.GetURL();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+    return MakeRequest(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride);
+}
+#endif
 
 XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,

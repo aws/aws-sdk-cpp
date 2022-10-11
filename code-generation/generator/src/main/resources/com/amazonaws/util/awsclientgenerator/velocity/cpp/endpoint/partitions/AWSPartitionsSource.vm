@@ -1,0 +1,11 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+\#include <aws/core/endpoint/AWSPartitions.h>
+
+namespace Aws
+{
+namespace Endpoint
+{
+constexpr AWSPartitions::PartitionsBlobT AWSPartitions::PartitionsBlob;
+} // namespace Endpoint
+} // namespace Aws
