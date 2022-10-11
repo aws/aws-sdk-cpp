@@ -19,6 +19,7 @@ namespace ${rootNamespace}
 {
 namespace ${metadata.namespace}
 {
+#if(!$serviceModel.endpointRules)
     // Get endpoint, signer region and signer service name after computing the endpoint.
     struct ComputeEndpointResult
     {
@@ -30,6 +31,7 @@ namespace ${metadata.namespace}
       Aws::String signerServiceName;
     };
     typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<${metadata.classNamePrefix}Errors>> ComputeEndpointOutcome;
+#end
 
 #if($serviceModel.documentation)
     /**
@@ -55,6 +57,7 @@ namespace ${metadata.namespace}
     private:
         void init(const Client::ClientConfiguration& clientConfiguration);
         void Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile);
+#if(!$serviceModel.endpointRules)
         /**
          * For operations without account ID or ARN as parameters, e.g. CreateBucket, ListRegionalBuckets. Possible endpoints:
          * - s3-control[.dualstack].{region}.amazonaws.com
@@ -76,16 +79,19 @@ namespace ${metadata.namespace}
         Aws::String m_scheme;
         bool m_enableHostPrefixInjection = false;
         Aws::String m_configScheme;
+#end##-#if(!$serviceModel.endpointRules)
         std::shared_ptr<Utils::Threading::Executor> m_executor;
+#if(!$serviceModel.endpointRules)
         bool m_useDualStack = false;
         bool m_useArnRegion = false;
         bool m_useCustomEndpoint = false;
+#end
 #if($metadata.hasEndpointDiscoveryTrait)
         mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
         bool m_enableEndpointDiscovery = false;
 #end
 #if($serviceModel.endpointRules)
-        std::shared_ptr<${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
+        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
 #end
     };
 

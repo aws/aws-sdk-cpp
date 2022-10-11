@@ -18,3 +18,9 @@ AmazonWebServiceRequest::AmazonWebServiceRequest() :
 {
 }
 
+AmazonWebServiceRequest::EndpointParameters AmazonWebServiceRequest::GetEndpointContextParams() const
+{
+    static const AmazonWebServiceRequest::EndpointParameters EMPTY_CONTEXT;
+    return EMPTY_CONTEXT;
+}
+

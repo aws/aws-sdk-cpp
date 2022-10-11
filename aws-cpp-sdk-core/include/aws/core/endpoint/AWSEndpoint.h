@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 
+#include <aws/core/endpoint/internal/AWSEndpointAttribute.h>
+
 namespace Aws
 {
     namespace Endpoint
@@ -19,14 +21,10 @@ namespace Aws
         class AWS_CORE_API AWSEndpoint
         {
         public:
-            class AWS_CORE_API AWSEndpointAttribute
-            {
-            public:
-                virtual ~AWSEndpointAttribute();
-            };
+            using EndpointAttributes = Internal::Endpoint::EndpointAttributes;
 
-
-            virtual ~AWSEndpoint();
+            virtual ~AWSEndpoint()
+            {};
 
             const Aws::String& GetURL() const
             {
@@ -37,11 +35,16 @@ namespace Aws
                 m_url = std::move(url);
             }
 
-            const Aws::UnorderedMap<Aws::String, Aws::UniquePtr<AWSEndpointAttribute> >& GetAttributes() const
+            const Crt::Optional <EndpointAttributes>& GetAttributes() const
             {
                 return m_attributes;
             }
-            void SetAttributes(Aws::UnorderedMap<Aws::String, Aws::UniquePtr<AWSEndpointAttribute> > attributes)
+            Crt::Optional<EndpointAttributes>& AccessAttributes()
+            {
+                return m_attributes;
+            }
+
+            void SetAttributes(EndpointAttributes&& attributes)
             {
                 m_attributes = std::move(attributes);
             }
@@ -60,7 +63,7 @@ namespace Aws
             Aws::String m_url;
 
             // A grab bag property map of endpoint attributes. The values here are considered unstable.
-            Aws::UnorderedMap<Aws::String, Aws::UniquePtr<AWSEndpointAttribute> > m_attributes;
+            Crt::Optional<EndpointAttributes> m_attributes;
 
             // A map of additional headers to be set when calling the endpoint.
             // Note: the values in these maps are Lists to support multi-value headers.

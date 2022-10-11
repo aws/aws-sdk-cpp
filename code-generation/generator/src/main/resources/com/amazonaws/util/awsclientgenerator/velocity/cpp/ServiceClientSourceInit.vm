@@ -22,13 +22,20 @@
 #set($doubleEncodeValue = "")
 #end
 #if($virtualAddressingSupported)
+#if($serviceModel.endpointRules)
+#set($addArgDummy = $additionalCtorArgs.put("useVirtualAddressing", "bool /*useVirtualAddressing = true*/"))
+#else
 #set($addArgDummy = $additionalCtorArgs.put("useVirtualAddressing", "bool useVirtualAddressing /*= true*/"))
 #set($addArgDummy = $ctorMemberInitList.add("m_useVirtualAddressing(useVirtualAddressing)"))
 #set($virtualAddressing = ", bool useVirtualAddressing")
 #set($virtualAddressingInit = ", m_useVirtualAddressing(useVirtualAddressing)")
+#end
 #else
 #set($virtualAddressing = "")
 #set($virtualAddressingInit = "")
+#end
+#if($serviceModel.endpointRules)
+#set($addArgDummy = $ctorMemberInitList.add("m_endpointProvider(std::move(endpointProvider))"))
 #end
 #if(!$USEast1RegionalEndpointArgString)
 #set($USEast1RegionalEndpointArgString = "")
@@ -43,7 +50,7 @@
 #if(!$ForRegionExtraArgsString)
 #set($ForRegionExtraArgsString = "")##single place in m_baseUri assignment-init
 #end
-#if($metadata.hasEndpointDiscoveryTrait)
+#if($metadata.hasEndpointDiscoveryTrait && !$serviceModel.endpointRules)
 #set($AdditionalServiceSpecificConfigLoadString = "Load${metadata.classNamePrefix}SpecificConfig(config);")
 #end
 #set($clientConfigurationNamespace = "Client")
@@ -94,8 +101,12 @@
 #foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
 #if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $defCredsChainCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
 #end
-${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration#if($defCredsChainCtor.isEmpty())) :#else,#end
+${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration#if($defCredsChainCtor.isEmpty() && !$serviceModel.endpointRules)) :#else,#end
 
+#if($serviceModel.endpointRules)
+${clsWSpace}  ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider#if($defCredsChainCtor.isEmpty())) :#else,#end
+
+#end
 #foreach($ctorArgument in $defCredsChainCtor)
 ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 
@@ -221,6 +232,11 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 }
 
 #end
+#if($serviceModel.endpointRules)
+    /* Legacy constructors due deprecation */
+  #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceLegacyConstructors.vm")
+    /* End of legacy constructors due deprecation */
+#end
 ${className}::~${className}()
 {
 }
@@ -228,6 +244,12 @@ ${className}::~${className}()
 void ${className}::init(const ${clientConfigurationNamespace}::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("${metadata.serviceId}");
+#if($serviceModel.endpointRules)
+  AWS_UNREFERENCED_PARAM(config);
+#if($AdditionalServiceSpecificConfigLoadString)
+  ${AdditionalServiceSpecificConfigLoadString}
+#end##if($AdditionalServiceSpecificConfigLoadString)
+#else##-#if($serviceModel.endpointRules)
 #if($AdditionalServiceSpecificConfigLoadString)
   ${AdditionalServiceSpecificConfigLoadString}
 #end##if($AdditionalServiceSpecificConfigLoadString)
@@ -246,13 +268,6 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
       m_useCustomEndpoint = false;
 #end##if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_baseUri = ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack${ForRegionExtraArgsString});
-#if($serviceModel.endpointRules)
-      m_crtEndpointRuleEngineCtx = []()
-      {
-          std::cout << "Here we would call CRT's rule engine Init with " << ${metadata.classNamePrefix}EndpointRules::GetRulesAsString().substr(0, 20) << "...\n";
-          return nullptr;
-      }();
-#end##if($serviceModel.endpointRules)
   }
   else
   {
@@ -269,11 +284,6 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
       m_useCustomEndpoint = false;
 #end##if($customEndpointUsed)
 #if($serviceModel.endpointRules)
-      m_crtEndpointRuleEngineCtx = []()
-      {
-          std::cout << "Here we would call CRT's rule engine Init with " << ${metadata.classNamePrefix}EndpointRules::GetRulesAsString().substr(0, 20) << "...\n";
-          return nullptr;
-      }();
 #end##if($serviceModel.endpointRules)
   }
 ##if (config.endpointOverride.empty())
@@ -288,6 +298,7 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
 #if($metadata.hasEndpointTrait)
   m_enableHostPrefixInjection = config.enableHostPrefixInjection;
 #end##if($metadata.hasEndpointTrait)
+#end##-#if($serviceModel.endpointRules)
 }
 #if($metadata.hasEndpointDiscoveryTrait)
 
@@ -335,6 +346,10 @@ void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::Clie
 
 void ${className}::OverrideEndpoint(const Aws::String& endpoint)
 {
+#if($serviceModel.endpointRules)
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
+#else##-#if($serviceModel.endpointRules)
 #if($virtualAddressingSupported || $arnEndpointSupported || $metadata.hasEndpointTrait)
   if (endpoint.compare(0, 7, "http://") == 0)
   {
@@ -364,4 +379,5 @@ void ${className}::OverrideEndpoint(const Aws::String& endpoint)
 #if($metadata.hasEndpointDiscoveryTrait)
   m_enableEndpointDiscovery = false;
 #end
+#end##-#if($serviceModel.endpointRules)
 }

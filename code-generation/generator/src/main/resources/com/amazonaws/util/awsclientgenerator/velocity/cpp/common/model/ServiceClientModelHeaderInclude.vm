@@ -7,11 +7,14 @@
 #pragma once
 
 /* Generic header includes */
-\#include <aws/$metadata.projectName/${metadata.classNamePrefix}Errors.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
 \#include <aws/core/client/AWSError.h>
 \#include <aws/core/utils/memory/stl/AWSString.h>
 \#include <aws/core/client/AsyncCallerContext.h>
 \#include <aws/core/http/HttpTypes.h>
+#if($serviceModel.endpointRules)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}EndpointProvider.h>
+#end
 #if($metadata.hasEndpointDiscoveryTrait)
 \#include <aws/core/utils/ConcurrentCache.h>
 #end
