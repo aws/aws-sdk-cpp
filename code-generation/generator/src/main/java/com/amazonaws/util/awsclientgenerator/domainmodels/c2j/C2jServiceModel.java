@@ -5,6 +5,7 @@
 
 package com.amazonaws.util.awsclientgenerator.domainmodels.c2j;
 
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ClientContextParams;
 import com.amazonaws.util.awsclientgenerator.domainmodels.endpoints.EndpointTests;
 import lombok.Data;
 
@@ -20,4 +21,5 @@ public class C2jServiceModel {
     String serviceName;
     String endpointRules;
     EndpointTests endpointTests;
+    ClientContextParams clientContextParams;
 }

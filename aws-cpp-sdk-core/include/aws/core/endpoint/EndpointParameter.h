@@ -24,14 +24,39 @@ namespace Aws
             {
                 STATIC_CONTEXT,
                 OPERATION_CONTEXT,
-                CLIENT_CONTEXT
+                CLIENT_CONTEXT,
+                NOT_SET = -1
             };
+
+            EndpointParameter(Aws::String name, bool initialValue, ParameterOrigin parameterOrigin = ParameterOrigin::NOT_SET)
+                    : m_storedType(ParameterType::BOOLEAN),
+                      m_parameterOrigin(parameterOrigin),
+                      m_name(std::move(name)),
+                      m_boolValue(initialValue)
+            {}
+
+            EndpointParameter(Aws::String name, Aws::String initialValue, ParameterOrigin parameterOrigin = ParameterOrigin::NOT_SET)
+                    : m_storedType(ParameterType::STRING),
+                      m_parameterOrigin(parameterOrigin),
+                      m_name(std::move(name)),
+                      m_stringValue(std::move(initialValue))
+            {}
+
+            EndpointParameter(Aws::String name, const char* initialValue, ParameterOrigin parameterOrigin = ParameterOrigin::NOT_SET)
+                    : m_storedType(ParameterType::STRING),
+                      m_parameterOrigin(parameterOrigin),
+                      m_name(std::move(name)),
+                      m_stringValue(initialValue)
+            {}
 
             EndpointParameter(ParameterType storedType, ParameterOrigin parameterOrigin, Aws::String name)
               : m_storedType(storedType),
                 m_parameterOrigin(parameterOrigin),
                 m_name(std::move(name))
             {}
+
+            EndpointParameter(const EndpointParameter&) = default;
+            EndpointParameter(EndpointParameter&&) = default;
 
             inline ParameterType GetStoredType() const
             {
@@ -85,6 +110,15 @@ namespace Aws
                     return GetSetResult::ERROR_WRONG_TYPE;
                 m_stringValue = std::move(iValue);
                 return GetSetResult::SUCCESS;
+            }
+
+            bool GetBoolValueNoCheck() const
+            {
+                return m_boolValue;
+            }
+            const Aws::String& GetStrValueNoCheck() const
+            {
+                return m_stringValue;
             }
 
         protected:

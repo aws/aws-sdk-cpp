@@ -29,6 +29,8 @@ namespace ${rootNamespace}
     {
     public:
     typedef Aws::Client::AWSXMLClient BASECLASS;
+    static const char* SERVICE_NAME;
+    static const char* ALLOCATION_TAG;
 
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 
@@ -66,7 +68,7 @@ namespace ${rootNamespace}
         bool m_enableEndpointDiscovery = false;
 #end
 #if($serviceModel.endpointRules)
-        std::shared_ptr<${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
+        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
 #end
         Aws::String m_configScheme;
 #if($metadata.hasPreSignedUrl)

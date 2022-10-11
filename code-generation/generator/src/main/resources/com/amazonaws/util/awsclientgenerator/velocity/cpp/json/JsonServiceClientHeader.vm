@@ -28,6 +28,8 @@ namespace ${serviceNamespace}
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 
@@ -51,7 +53,7 @@ namespace ${serviceNamespace}
       bool m_useCustomEndpoint = false;
 #end
 #if($serviceModel.endpointRules)
-      std::shared_ptr<${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
+      std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
 #end
 #if($metadata.hasEndpointDiscoveryTrait)
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;

@@ -137,7 +137,7 @@ namespace Model
   public:
 #end
 #if($serviceModel.endpointRules && $operation.request.shape.hasContextParam())
-    Aws::UnorderedMap<Aws::String, Aws::String> GetRequestContextEndpointRulesParam() const
+    Aws::UnorderedMap<Aws::String, Aws::String> GetEndpointContextParams() const
     {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamBody.vm")
     }

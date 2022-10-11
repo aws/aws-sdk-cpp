@@ -13,6 +13,11 @@
 #set($signerRegionOverride = "")
 #set($signerServiceNameOverride = "")
 #end
+#if($serviceModel.endpointRules)
+#set($signerName = ", signerName")
+#set($signerRegionOverride = ", signerRegion")
+#set($signerServiceNameOverride = ", signerServiceName")
+#end
 #if($operation.result.shape.hasEventStreamMembers())
 #set($constText = "")
 #set($refText = "&")

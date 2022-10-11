@@ -30,6 +30,9 @@
 #set($virtualAddressing = "")
 #set($virtualAddressingInit = "")
 #end
+#if($serviceModel.endpointRules)
+#set($addArgDummy = $ctorMemberInitList.add("m_endpointProvider(std::move(endpointProvider))"))
+#end
 #if(!$USEast1RegionalEndpointArgString)
 #set($USEast1RegionalEndpointArgString = "")
 #else
@@ -94,8 +97,12 @@
 #foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
 #if($additionalCtorArgs.containsKey($ctorKey))#set($addArgDummy = $defCredsChainCtor.put($ctorKey, $additionalCtorArgs.get($ctorKey)))#end
 #end
-${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration#if($defCredsChainCtor.isEmpty())) :#else,#end
+${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration#if($defCredsChainCtor.isEmpty() && !$serviceModel.endpointRules)) :#else,#end
 
+#if($serviceModel.endpointRules)
+${clsWSpace}  ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> endpointProvider#if($defCredsChainCtor.isEmpty()) :#else,#end
+
+#end
 #foreach($ctorArgument in $defCredsChainCtor)
 ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 
@@ -221,6 +228,11 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 }
 
 #end
+#if($serviceModel.endpointRules)
+    /* Legacy constructors due deprecation */
+  #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceLegacyConstructors.vm")
+    /* End of legacy constructors due deprecation */
+#end
 ${className}::~${className}()
 {
 }
@@ -247,11 +259,6 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
 #end##if($arnEndpointSupported || $vpcEndpointSupported || $customEndpointUsed)
       m_baseUri = ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack${ForRegionExtraArgsString});
 #if($serviceModel.endpointRules)
-      m_crtEndpointRuleEngineCtx = []()
-      {
-          std::cout << "Here we would call CRT's rule engine Init with " << ${metadata.classNamePrefix}EndpointRules::GetRulesAsString().substr(0, 20) << "...\n";
-          return nullptr;
-      }();
 #end##if($serviceModel.endpointRules)
   }
   else
@@ -269,11 +276,6 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
       m_useCustomEndpoint = false;
 #end##if($customEndpointUsed)
 #if($serviceModel.endpointRules)
-      m_crtEndpointRuleEngineCtx = []()
-      {
-          std::cout << "Here we would call CRT's rule engine Init with " << ${metadata.classNamePrefix}EndpointRules::GetRulesAsString().substr(0, 20) << "...\n";
-          return nullptr;
-      }();
 #end##if($serviceModel.endpointRules)
   }
 ##if (config.endpointOverride.empty())
