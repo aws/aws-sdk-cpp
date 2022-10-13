@@ -15,8 +15,8 @@ namespace Aws
 namespace Translate
 {
   /**
-   * <p>Provides translation between one source language and another of the same set
-   * of languages.</p>
+   * <p>Provides language translation for input text in the source language to the
+   * specified target language.</p>
    */
   class AWS_TRANSLATE_API TranslateClient : public Aws::Client::AWSJsonClient
   {
@@ -218,6 +218,26 @@ namespace Translate
         virtual void ListParallelDataAsync(const Model::ListParallelDataRequest& request, const ListParallelDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all tags associated with a given Amazon Translate resource. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+         * your resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides a list of custom terminologies associated with your
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTerminologies">AWS
@@ -254,10 +274,14 @@ namespace Translate
         virtual void ListTextTranslationJobsAsync(const Model::ListTextTranslationJobsRequest& request, const ListTextTranslationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts an asynchronous batch translation job. Batch translation jobs can be
-         * used to translate large volumes of text across multiple documents at once. For
-         * more information, see <a>async</a>.</p> <p>Batch translation jobs can be
-         * described with the <a>DescribeTextTranslationJob</a> operation, listed with the
+         * <p>Starts an asynchronous batch translation job. Use batch translation jobs to
+         * translate large volumes of text across multiple documents at once. For batch
+         * translation, the input documents must share the same source language. You can
+         * specify one or more target languages. Batch translation translates each input
+         * document into each of the target languages. For more information, see <a
+         * href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous
+         * batch processing</a> </p> <p>Batch translation jobs can be described with the
+         * <a>DescribeTextTranslationJob</a> operation, listed with the
          * <a>ListTextTranslationJobs</a> operation, and stopped with the
          * <a>StopTextTranslationJob</a> operation.</p>  <p>Amazon Translate does not
          * support batch translation of multiple source languages at once.</p>
@@ -304,9 +328,30 @@ namespace Translate
         virtual void StopTextTranslationJobAsync(const Model::StopTextTranslationJobRequest& request, const StopTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Associates a specific tag with a resource. A tag is a key-value pair that
+         * adds as a metadata to a resource. For more information, see <a
+         * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+         * your resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Translates input text from the source language to the target language. For a
-         * list of available languages and language codes, see
-         * <a>what-is-languages</a>.</p><p><h3>See Also:</h3>   <a
+         * list of available languages and language codes, see <a
+         * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+         * languages</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText">AWS
          * API Reference</a></p>
          */
@@ -321,6 +366,26 @@ namespace Translate
          * An Async wrapper for TranslateText that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TranslateTextAsync(const Model::TranslateTextRequest& request, const TranslateTextResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a specific tag associated with an Amazon Translate resource. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging
+         * your resources</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a previously created parallel data resource by importing a new input

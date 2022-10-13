@@ -18,7 +18,8 @@ using namespace Aws::Http;
 #pragma warning(disable : 4592)
 #endif
 
-static Aws::UniquePtr<Aws::Map<Aws::String, AWSError<CoreErrors> > > s_CoreErrorsMapper(nullptr);
+using ErrorsMapperContainer = Aws::Map<Aws::String, AWSError<CoreErrors> >;
+static Aws::UniquePtrSafeDeleted<ErrorsMapperContainer> s_CoreErrorsMapper(nullptr);
 
 #ifdef _MSC_VER
 #pragma warning(pop)
@@ -30,7 +31,7 @@ void CoreErrorsMapper::InitCoreErrorsMapper()
     {
       return;
     }
-    s_CoreErrorsMapper = Aws::MakeUnique<Aws::Map<Aws::String, AWSError<CoreErrors> > >("InitCoreErrorsMapper");
+    s_CoreErrorsMapper = Aws::MakeUniqueSafeDeleted<ErrorsMapperContainer>("InitCoreErrorsMapper");
 
     s_CoreErrorsMapper->emplace("IncompleteSignature", AWSError<CoreErrors>(CoreErrors::INCOMPLETE_SIGNATURE, false));
     s_CoreErrorsMapper->emplace("IncompleteSignatureException", AWSError<CoreErrors>(CoreErrors::INCOMPLETE_SIGNATURE, false));

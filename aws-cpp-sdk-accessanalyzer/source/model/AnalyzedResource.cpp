@@ -19,59 +19,56 @@ namespace Model
 {
 
 AnalyzedResource::AnalyzedResource() : 
-    m_actionsHasBeenSet(false),
-    m_analyzedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_isPublic(false),
-    m_isPublicHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
-    m_resourceOwnerAccountHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_analyzedAtHasBeenSet(false),
+    m_updatedAtHasBeenSet(false),
+    m_isPublic(false),
+    m_isPublicHasBeenSet(false),
+    m_actionsHasBeenSet(false),
     m_sharedViaHasBeenSet(false),
     m_status(FindingStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_resourceOwnerAccountHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
 AnalyzedResource::AnalyzedResource(JsonView jsonValue) : 
-    m_actionsHasBeenSet(false),
-    m_analyzedAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_isPublic(false),
-    m_isPublicHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
-    m_resourceOwnerAccountHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_analyzedAtHasBeenSet(false),
+    m_updatedAtHasBeenSet(false),
+    m_isPublic(false),
+    m_isPublicHasBeenSet(false),
+    m_actionsHasBeenSet(false),
     m_sharedViaHasBeenSet(false),
     m_status(FindingStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_resourceOwnerAccountHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 AnalyzedResource& AnalyzedResource::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("actions"))
+  if(jsonValue.ValueExists("resourceArn"))
   {
-    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
-    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
-    {
-      m_actions.push_back(actionsJsonList[actionsIndex].AsString());
-    }
-    m_actionsHasBeenSet = true;
+    m_resourceArn = jsonValue.GetString("resourceArn");
+
+    m_resourceArnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("analyzedAt"))
+  if(jsonValue.ValueExists("resourceType"))
   {
-    m_analyzedAt = jsonValue.GetString("analyzedAt");
+    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
 
-    m_analyzedAtHasBeenSet = true;
+    m_resourceTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -81,11 +78,18 @@ AnalyzedResource& AnalyzedResource::operator =(JsonView jsonValue)
     m_createdAtHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("error"))
+  if(jsonValue.ValueExists("analyzedAt"))
   {
-    m_error = jsonValue.GetString("error");
+    m_analyzedAt = jsonValue.GetString("analyzedAt");
 
-    m_errorHasBeenSet = true;
+    m_analyzedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+
+    m_updatedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("isPublic"))
@@ -95,25 +99,14 @@ AnalyzedResource& AnalyzedResource::operator =(JsonView jsonValue)
     m_isPublicHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("resourceArn"))
+  if(jsonValue.ValueExists("actions"))
   {
-    m_resourceArn = jsonValue.GetString("resourceArn");
-
-    m_resourceArnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("resourceOwnerAccount"))
-  {
-    m_resourceOwnerAccount = jsonValue.GetString("resourceOwnerAccount");
-
-    m_resourceOwnerAccountHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("resourceType"))
-  {
-    m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
-    m_resourceTypeHasBeenSet = true;
+    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
+    for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
+    {
+      m_actions.push_back(actionsJsonList[actionsIndex].AsString());
+    }
+    m_actionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sharedVia"))
@@ -133,11 +126,18 @@ AnalyzedResource& AnalyzedResource::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("updatedAt"))
+  if(jsonValue.ValueExists("resourceOwnerAccount"))
   {
-    m_updatedAt = jsonValue.GetString("updatedAt");
+    m_resourceOwnerAccount = jsonValue.GetString("resourceOwnerAccount");
 
-    m_updatedAtHasBeenSet = true;
+    m_resourceOwnerAccountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("error"))
+  {
+    m_error = jsonValue.GetString("error");
+
+    m_errorHasBeenSet = true;
   }
 
   return *this;
@@ -146,6 +146,38 @@ AnalyzedResource& AnalyzedResource::operator =(JsonView jsonValue)
 JsonValue AnalyzedResource::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("resourceArn", m_resourceArn);
+
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_analyzedAtHasBeenSet)
+  {
+   payload.WithString("analyzedAt", m_analyzedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_isPublicHasBeenSet)
+  {
+   payload.WithBool("isPublic", m_isPublic);
+
+  }
 
   if(m_actionsHasBeenSet)
   {
@@ -156,45 +188,6 @@ JsonValue AnalyzedResource::Jsonize() const
    }
    payload.WithArray("actions", std::move(actionsJsonList));
 
-  }
-
-  if(m_analyzedAtHasBeenSet)
-  {
-   payload.WithString("analyzedAt", m_analyzedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_errorHasBeenSet)
-  {
-   payload.WithString("error", m_error);
-
-  }
-
-  if(m_isPublicHasBeenSet)
-  {
-   payload.WithBool("isPublic", m_isPublic);
-
-  }
-
-  if(m_resourceArnHasBeenSet)
-  {
-   payload.WithString("resourceArn", m_resourceArn);
-
-  }
-
-  if(m_resourceOwnerAccountHasBeenSet)
-  {
-   payload.WithString("resourceOwnerAccount", m_resourceOwnerAccount);
-
-  }
-
-  if(m_resourceTypeHasBeenSet)
-  {
-   payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
   if(m_sharedViaHasBeenSet)
@@ -213,9 +206,16 @@ JsonValue AnalyzedResource::Jsonize() const
    payload.WithString("status", FindingStatusMapper::GetNameForFindingStatus(m_status));
   }
 
-  if(m_updatedAtHasBeenSet)
+  if(m_resourceOwnerAccountHasBeenSet)
   {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+   payload.WithString("resourceOwnerAccount", m_resourceOwnerAccount);
+
+  }
+
+  if(m_errorHasBeenSet)
+  {
+   payload.WithString("error", m_error);
+
   }
 
   return payload;

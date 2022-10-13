@@ -26,7 +26,9 @@ ListTrainingJobsRequest::ListTrainingJobsRequest() :
     m_sortBy(SortBy::NOT_SET),
     m_sortByHasBeenSet(false),
     m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
+    m_sortOrderHasBeenSet(false),
+    m_warmPoolStatusEquals(WarmPoolResourceStatus::NOT_SET),
+    m_warmPoolStatusEqualsHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,11 @@ Aws::String ListTrainingJobsRequest::SerializePayload() const
   if(m_sortOrderHasBeenSet)
   {
    payload.WithString("SortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+  }
+
+  if(m_warmPoolStatusEqualsHasBeenSet)
+  {
+   payload.WithString("WarmPoolStatusEquals", WarmPoolResourceStatusMapper::GetNameForWarmPoolResourceStatus(m_warmPoolStatusEquals));
   }
 
   return payload.View().WriteReadable();

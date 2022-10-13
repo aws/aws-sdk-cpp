@@ -38,7 +38,6 @@
 #include <aws/wisdom/model/ListKnowledgeBasesResult.h>
 #include <aws/wisdom/model/ListTagsForResourceResult.h>
 #include <aws/wisdom/model/NotifyRecommendationsReceivedResult.h>
-#include <aws/wisdom/model/PutFeedbackResult.h>
 #include <aws/wisdom/model/QueryAssistantResult.h>
 #include <aws/wisdom/model/RemoveKnowledgeBaseTemplateUriResult.h>
 #include <aws/wisdom/model/SearchContentResult.h>
@@ -106,7 +105,6 @@ namespace Aws
       class ListKnowledgeBasesRequest;
       class ListTagsForResourceRequest;
       class NotifyRecommendationsReceivedRequest;
-      class PutFeedbackRequest;
       class QueryAssistantRequest;
       class RemoveKnowledgeBaseTemplateUriRequest;
       class SearchContentRequest;
@@ -141,7 +139,6 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListKnowledgeBasesResult, ConnectWisdomServiceError> ListKnowledgeBasesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, ConnectWisdomServiceError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<NotifyRecommendationsReceivedResult, ConnectWisdomServiceError> NotifyRecommendationsReceivedOutcome;
-      typedef Aws::Utils::Outcome<PutFeedbackResult, ConnectWisdomServiceError> PutFeedbackOutcome;
       typedef Aws::Utils::Outcome<QueryAssistantResult, ConnectWisdomServiceError> QueryAssistantOutcome;
       typedef Aws::Utils::Outcome<RemoveKnowledgeBaseTemplateUriResult, ConnectWisdomServiceError> RemoveKnowledgeBaseTemplateUriOutcome;
       typedef Aws::Utils::Outcome<SearchContentResult, ConnectWisdomServiceError> SearchContentOutcome;
@@ -176,7 +173,6 @@ namespace Aws
       typedef std::future<ListKnowledgeBasesOutcome> ListKnowledgeBasesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<NotifyRecommendationsReceivedOutcome> NotifyRecommendationsReceivedOutcomeCallable;
-      typedef std::future<PutFeedbackOutcome> PutFeedbackOutcomeCallable;
       typedef std::future<QueryAssistantOutcome> QueryAssistantOutcomeCallable;
       typedef std::future<RemoveKnowledgeBaseTemplateUriOutcome> RemoveKnowledgeBaseTemplateUriOutcomeCallable;
       typedef std::future<SearchContentOutcome> SearchContentOutcomeCallable;
@@ -214,7 +210,6 @@ namespace Aws
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::ListKnowledgeBasesRequest&, const Model::ListKnowledgeBasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListKnowledgeBasesResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::NotifyRecommendationsReceivedRequest&, const Model::NotifyRecommendationsReceivedOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > NotifyRecommendationsReceivedResponseReceivedHandler;
-    typedef std::function<void(const ConnectWisdomServiceClient*, const Model::PutFeedbackRequest&, const Model::PutFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFeedbackResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::QueryAssistantRequest&, const Model::QueryAssistantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > QueryAssistantResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::RemoveKnowledgeBaseTemplateUriRequest&, const Model::RemoveKnowledgeBaseTemplateUriOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveKnowledgeBaseTemplateUriResponseReceivedHandler;
     typedef std::function<void(const ConnectWisdomServiceClient*, const Model::SearchContentRequest&, const Model::SearchContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchContentResponseReceivedHandler;

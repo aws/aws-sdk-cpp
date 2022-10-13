@@ -21,14 +21,18 @@ namespace Model
 UserIdentityInfo::UserIdentityInfo() : 
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
-    m_emailHasBeenSet(false)
+    m_emailHasBeenSet(false),
+    m_secondaryEmailHasBeenSet(false),
+    m_mobileHasBeenSet(false)
 {
 }
 
 UserIdentityInfo::UserIdentityInfo(JsonView jsonValue) : 
     m_firstNameHasBeenSet(false),
     m_lastNameHasBeenSet(false),
-    m_emailHasBeenSet(false)
+    m_emailHasBeenSet(false),
+    m_secondaryEmailHasBeenSet(false),
+    m_mobileHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,20 @@ UserIdentityInfo& UserIdentityInfo::operator =(JsonView jsonValue)
     m_emailHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecondaryEmail"))
+  {
+    m_secondaryEmail = jsonValue.GetString("SecondaryEmail");
+
+    m_secondaryEmailHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Mobile"))
+  {
+    m_mobile = jsonValue.GetString("Mobile");
+
+    m_mobileHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +96,18 @@ JsonValue UserIdentityInfo::Jsonize() const
   if(m_emailHasBeenSet)
   {
    payload.WithString("Email", m_email);
+
+  }
+
+  if(m_secondaryEmailHasBeenSet)
+  {
+   payload.WithString("SecondaryEmail", m_secondaryEmail);
+
+  }
+
+  if(m_mobileHasBeenSet)
+  {
+   payload.WithString("Mobile", m_mobile);
 
   }
 

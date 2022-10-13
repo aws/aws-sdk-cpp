@@ -36,43 +36,43 @@ namespace Model
 
     /**
      * <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the
-     * specified Amazon WorkMail organization.</p>
+     * specified WorkMail organization.</p>
      */
     inline const Aws::Vector<AvailabilityConfiguration>& GetAvailabilityConfigurations() const{ return m_availabilityConfigurations; }
 
     /**
      * <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the
-     * specified Amazon WorkMail organization.</p>
+     * specified WorkMail organization.</p>
      */
     inline void SetAvailabilityConfigurations(const Aws::Vector<AvailabilityConfiguration>& value) { m_availabilityConfigurations = value; }
 
     /**
      * <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the
-     * specified Amazon WorkMail organization.</p>
+     * specified WorkMail organization.</p>
      */
     inline void SetAvailabilityConfigurations(Aws::Vector<AvailabilityConfiguration>&& value) { m_availabilityConfigurations = std::move(value); }
 
     /**
      * <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the
-     * specified Amazon WorkMail organization.</p>
+     * specified WorkMail organization.</p>
      */
     inline ListAvailabilityConfigurationsResult& WithAvailabilityConfigurations(const Aws::Vector<AvailabilityConfiguration>& value) { SetAvailabilityConfigurations(value); return *this;}
 
     /**
      * <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the
-     * specified Amazon WorkMail organization.</p>
+     * specified WorkMail organization.</p>
      */
     inline ListAvailabilityConfigurationsResult& WithAvailabilityConfigurations(Aws::Vector<AvailabilityConfiguration>&& value) { SetAvailabilityConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the
-     * specified Amazon WorkMail organization.</p>
+     * specified WorkMail organization.</p>
      */
     inline ListAvailabilityConfigurationsResult& AddAvailabilityConfigurations(const AvailabilityConfiguration& value) { m_availabilityConfigurations.push_back(value); return *this; }
 
     /**
      * <p>The list of <code>AvailabilityConfiguration</code>'s that exist for the
-     * specified Amazon WorkMail organization.</p>
+     * specified WorkMail organization.</p>
      */
     inline ListAvailabilityConfigurationsResult& AddAvailabilityConfigurations(AvailabilityConfiguration&& value) { m_availabilityConfigurations.push_back(std::move(value)); return *this; }
 

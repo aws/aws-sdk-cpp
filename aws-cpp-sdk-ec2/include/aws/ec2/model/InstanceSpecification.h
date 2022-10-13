@@ -103,31 +103,76 @@ namespace Model
     inline InstanceSpecification& WithExcludeBootVolume(bool value) { SetExcludeBootVolume(value); return *this;}
 
 
-    
+    /**
+     * <p>The IDs of the data (non-root) volumes to exclude from the multi-volume
+     * snapshot set. If you specify the ID of the root volume, the request fails. To
+     * exclude the root volume, use <b>ExcludeBootVolume</b>.</p> <p>You can specify up
+     * to 40 volume IDs per request.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetExcludeDataVolumeIds() const{ return m_excludeDataVolumeIds; }
 
-    
+    /**
+     * <p>The IDs of the data (non-root) volumes to exclude from the multi-volume
+     * snapshot set. If you specify the ID of the root volume, the request fails. To
+     * exclude the root volume, use <b>ExcludeBootVolume</b>.</p> <p>You can specify up
+     * to 40 volume IDs per request.</p>
+     */
     inline bool ExcludeDataVolumeIdsHasBeenSet() const { return m_excludeDataVolumeIdsHasBeenSet; }
 
-    
+    /**
+     * <p>The IDs of the data (non-root) volumes to exclude from the multi-volume
+     * snapshot set. If you specify the ID of the root volume, the request fails. To
+     * exclude the root volume, use <b>ExcludeBootVolume</b>.</p> <p>You can specify up
+     * to 40 volume IDs per request.</p>
+     */
     inline void SetExcludeDataVolumeIds(const Aws::Vector<Aws::String>& value) { m_excludeDataVolumeIdsHasBeenSet = true; m_excludeDataVolumeIds = value; }
 
-    
+    /**
+     * <p>The IDs of the data (non-root) volumes to exclude from the multi-volume
+     * snapshot set. If you specify the ID of the root volume, the request fails. To
+     * exclude the root volume, use <b>ExcludeBootVolume</b>.</p> <p>You can specify up
+     * to 40 volume IDs per request.</p>
+     */
     inline void SetExcludeDataVolumeIds(Aws::Vector<Aws::String>&& value) { m_excludeDataVolumeIdsHasBeenSet = true; m_excludeDataVolumeIds = std::move(value); }
 
-    
+    /**
+     * <p>The IDs of the data (non-root) volumes to exclude from the multi-volume
+     * snapshot set. If you specify the ID of the root volume, the request fails. To
+     * exclude the root volume, use <b>ExcludeBootVolume</b>.</p> <p>You can specify up
+     * to 40 volume IDs per request.</p>
+     */
     inline InstanceSpecification& WithExcludeDataVolumeIds(const Aws::Vector<Aws::String>& value) { SetExcludeDataVolumeIds(value); return *this;}
 
-    
+    /**
+     * <p>The IDs of the data (non-root) volumes to exclude from the multi-volume
+     * snapshot set. If you specify the ID of the root volume, the request fails. To
+     * exclude the root volume, use <b>ExcludeBootVolume</b>.</p> <p>You can specify up
+     * to 40 volume IDs per request.</p>
+     */
     inline InstanceSpecification& WithExcludeDataVolumeIds(Aws::Vector<Aws::String>&& value) { SetExcludeDataVolumeIds(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The IDs of the data (non-root) volumes to exclude from the multi-volume
+     * snapshot set. If you specify the ID of the root volume, the request fails. To
+     * exclude the root volume, use <b>ExcludeBootVolume</b>.</p> <p>You can specify up
+     * to 40 volume IDs per request.</p>
+     */
     inline InstanceSpecification& AddExcludeDataVolumeIds(const Aws::String& value) { m_excludeDataVolumeIdsHasBeenSet = true; m_excludeDataVolumeIds.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The IDs of the data (non-root) volumes to exclude from the multi-volume
+     * snapshot set. If you specify the ID of the root volume, the request fails. To
+     * exclude the root volume, use <b>ExcludeBootVolume</b>.</p> <p>You can specify up
+     * to 40 volume IDs per request.</p>
+     */
     inline InstanceSpecification& AddExcludeDataVolumeIds(Aws::String&& value) { m_excludeDataVolumeIdsHasBeenSet = true; m_excludeDataVolumeIds.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The IDs of the data (non-root) volumes to exclude from the multi-volume
+     * snapshot set. If you specify the ID of the root volume, the request fails. To
+     * exclude the root volume, use <b>ExcludeBootVolume</b>.</p> <p>You can specify up
+     * to 40 volume IDs per request.</p>
+     */
     inline InstanceSpecification& AddExcludeDataVolumeIds(const char* value) { m_excludeDataVolumeIdsHasBeenSet = true; m_excludeDataVolumeIds.push_back(value); return *this; }
 
   private:

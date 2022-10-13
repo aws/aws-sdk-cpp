@@ -144,50 +144,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Outposts.</p>  <p>This is required by Amazon S3 on
-     * Outposts buckets.</p> 
+     * <p>The ID of the Outposts resource.</p>  <p>This ID is required by Amazon
+     * S3 on Outposts buckets.</p> 
      */
     inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
 
     /**
-     * <p>The ID of the Outposts.</p>  <p>This is required by Amazon S3 on
-     * Outposts buckets.</p> 
+     * <p>The ID of the Outposts resource.</p>  <p>This ID is required by Amazon
+     * S3 on Outposts buckets.</p> 
      */
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Outposts.</p>  <p>This is required by Amazon S3 on
-     * Outposts buckets.</p> 
+     * <p>The ID of the Outposts resource.</p>  <p>This ID is required by Amazon
+     * S3 on Outposts buckets.</p> 
      */
     inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
 
     /**
-     * <p>The ID of the Outposts.</p>  <p>This is required by Amazon S3 on
-     * Outposts buckets.</p> 
+     * <p>The ID of the Outposts resource.</p>  <p>This ID is required by Amazon
+     * S3 on Outposts buckets.</p> 
      */
     inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
 
     /**
-     * <p>The ID of the Outposts.</p>  <p>This is required by Amazon S3 on
-     * Outposts buckets.</p> 
+     * <p>The ID of the Outposts resource.</p>  <p>This ID is required by Amazon
+     * S3 on Outposts buckets.</p> 
      */
     inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
 
     /**
-     * <p>The ID of the Outposts.</p>  <p>This is required by Amazon S3 on
-     * Outposts buckets.</p> 
+     * <p>The ID of the Outposts resource.</p>  <p>This ID is required by Amazon
+     * S3 on Outposts buckets.</p> 
      */
     inline ListRegionalBucketsRequest& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
 
     /**
-     * <p>The ID of the Outposts.</p>  <p>This is required by Amazon S3 on
-     * Outposts buckets.</p> 
+     * <p>The ID of the Outposts resource.</p>  <p>This ID is required by Amazon
+     * S3 on Outposts buckets.</p> 
      */
     inline ListRegionalBucketsRequest& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Outposts.</p>  <p>This is required by Amazon S3 on
-     * Outposts buckets.</p> 
+     * <p>The ID of the Outposts resource.</p>  <p>This ID is required by Amazon
+     * S3 on Outposts buckets.</p> 
      */
     inline ListRegionalBucketsRequest& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
 

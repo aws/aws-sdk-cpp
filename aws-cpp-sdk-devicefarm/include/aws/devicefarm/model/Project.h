@@ -7,6 +7,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/devicefarm/model/VpcConfig.h>
 #include <utility>
 
 namespace Aws
@@ -176,6 +177,37 @@ namespace Model
      */
     inline Project& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline Project& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline Project& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -189,6 +221,9 @@ namespace Model
 
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet = false;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -116,37 +116,37 @@ namespace Model
 
     /**
      * <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains
-     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
      */
     inline const RedactedEwsAvailabilityProvider& GetEwsProvider() const{ return m_ewsProvider; }
 
     /**
      * <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains
-     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
      */
     inline bool EwsProviderHasBeenSet() const { return m_ewsProviderHasBeenSet; }
 
     /**
      * <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains
-     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
      */
     inline void SetEwsProvider(const RedactedEwsAvailabilityProvider& value) { m_ewsProviderHasBeenSet = true; m_ewsProvider = value; }
 
     /**
      * <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains
-     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
      */
     inline void SetEwsProvider(RedactedEwsAvailabilityProvider&& value) { m_ewsProviderHasBeenSet = true; m_ewsProvider = std::move(value); }
 
     /**
      * <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains
-     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
      */
     inline AvailabilityConfiguration& WithEwsProvider(const RedactedEwsAvailabilityProvider& value) { SetEwsProvider(value); return *this;}
 
     /**
      * <p>If <code>ProviderType</code> is <code>EWS</code>, then this field contains
-     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.</p>
+     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.</p>
      */
     inline AvailabilityConfiguration& WithEwsProvider(RedactedEwsAvailabilityProvider&& value) { SetEwsProvider(std::move(value)); return *this;}
 

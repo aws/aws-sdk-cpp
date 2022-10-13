@@ -154,49 +154,49 @@ namespace Model
 
 
     /**
-     * <p>Information about the groups of EC2 instance tags that an instance must be
-     * identified by in order for it to be included in the replacement environment for
-     * a blue/green deployment. Cannot be used in the same call as
+     * <p>Information about the groups of Amazon EC2 instance tags that an instance
+     * must be identified by in order for it to be included in the replacement
+     * environment for a blue/green deployment. Cannot be used in the same call as
      * <code>tagFilters</code>.</p>
      */
     inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
 
     /**
-     * <p>Information about the groups of EC2 instance tags that an instance must be
-     * identified by in order for it to be included in the replacement environment for
-     * a blue/green deployment. Cannot be used in the same call as
+     * <p>Information about the groups of Amazon EC2 instance tags that an instance
+     * must be identified by in order for it to be included in the replacement
+     * environment for a blue/green deployment. Cannot be used in the same call as
      * <code>tagFilters</code>.</p>
      */
     inline bool Ec2TagSetHasBeenSet() const { return m_ec2TagSetHasBeenSet; }
 
     /**
-     * <p>Information about the groups of EC2 instance tags that an instance must be
-     * identified by in order for it to be included in the replacement environment for
-     * a blue/green deployment. Cannot be used in the same call as
+     * <p>Information about the groups of Amazon EC2 instance tags that an instance
+     * must be identified by in order for it to be included in the replacement
+     * environment for a blue/green deployment. Cannot be used in the same call as
      * <code>tagFilters</code>.</p>
      */
     inline void SetEc2TagSet(const EC2TagSet& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = value; }
 
     /**
-     * <p>Information about the groups of EC2 instance tags that an instance must be
-     * identified by in order for it to be included in the replacement environment for
-     * a blue/green deployment. Cannot be used in the same call as
+     * <p>Information about the groups of Amazon EC2 instance tags that an instance
+     * must be identified by in order for it to be included in the replacement
+     * environment for a blue/green deployment. Cannot be used in the same call as
      * <code>tagFilters</code>.</p>
      */
     inline void SetEc2TagSet(EC2TagSet&& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = std::move(value); }
 
     /**
-     * <p>Information about the groups of EC2 instance tags that an instance must be
-     * identified by in order for it to be included in the replacement environment for
-     * a blue/green deployment. Cannot be used in the same call as
+     * <p>Information about the groups of Amazon EC2 instance tags that an instance
+     * must be identified by in order for it to be included in the replacement
+     * environment for a blue/green deployment. Cannot be used in the same call as
      * <code>tagFilters</code>.</p>
      */
     inline TargetInstances& WithEc2TagSet(const EC2TagSet& value) { SetEc2TagSet(value); return *this;}
 
     /**
-     * <p>Information about the groups of EC2 instance tags that an instance must be
-     * identified by in order for it to be included in the replacement environment for
-     * a blue/green deployment. Cannot be used in the same call as
+     * <p>Information about the groups of Amazon EC2 instance tags that an instance
+     * must be identified by in order for it to be included in the replacement
+     * environment for a blue/green deployment. Cannot be used in the same call as
      * <code>tagFilters</code>.</p>
      */
     inline TargetInstances& WithEc2TagSet(EC2TagSet&& value) { SetEc2TagSet(std::move(value)); return *this;}

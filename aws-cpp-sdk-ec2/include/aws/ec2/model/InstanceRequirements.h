@@ -1304,7 +1304,7 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
      * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
      * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
      * Any accelerator</p>
@@ -1321,7 +1321,7 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
      * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
      * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
      * Any accelerator</p>
@@ -1338,7 +1338,7 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
      * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
      * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
      * Any accelerator</p>
@@ -1355,7 +1355,7 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
      * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
      * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
      * Any accelerator</p>
@@ -1372,7 +1372,7 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
      * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
      * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
      * Any accelerator</p>
@@ -1389,7 +1389,7 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
      * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
      * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
      * Any accelerator</p>
@@ -1406,7 +1406,7 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
      * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
      * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
      * Any accelerator</p>
@@ -1423,7 +1423,7 @@ namespace Model
      * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
      * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
      * <p>For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia GPUs,
+     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
      * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
      * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
      * Any accelerator</p>

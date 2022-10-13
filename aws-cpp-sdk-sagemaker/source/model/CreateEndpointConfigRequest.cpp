@@ -18,7 +18,8 @@ CreateEndpointConfigRequest::CreateEndpointConfigRequest() :
     m_dataCaptureConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_asyncInferenceConfigHasBeenSet(false)
+    m_asyncInferenceConfigHasBeenSet(false),
+    m_explainerConfigHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,12 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
   if(m_asyncInferenceConfigHasBeenSet)
   {
    payload.WithObject("AsyncInferenceConfig", m_asyncInferenceConfig.Jsonize());
+
+  }
+
+  if(m_explainerConfigHasBeenSet)
+  {
+   payload.WithObject("ExplainerConfig", m_explainerConfig.Jsonize());
 
   }
 

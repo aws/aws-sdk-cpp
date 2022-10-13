@@ -12,6 +12,7 @@
 #include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 #include <aws/ssm/model/AssociationComplianceSeverity.h>
 #include <aws/ssm/model/AssociationSyncCompliance.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/TargetLocation.h>
 #include <aws/ssm/model/Tag.h>
@@ -1445,6 +1446,25 @@ namespace Model
      */
     inline CreateAssociationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    
+    inline CreateAssociationRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    
+    inline CreateAssociationRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1503,6 +1523,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,8 +28,10 @@ namespace Model
 
   /**
    * <p>The input properties for training a document classifier. </p> <p>For more
-   * information on how the input file is formatted, see <a>prep-classifier-data</a>.
-   * </p><p><h3>See Also:</h3>   <a
+   * information on how the input file is formatted, see <a
+   * href="https://docs.aws.amazon.com/comprehend/latest/dg/prep-classifier-data.html">Preparing
+   * training data</a> in the Comprehend Developer Guide. </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierInputDataConfig">AWS
    * API Reference</a></p>
    */
@@ -231,66 +233,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
-     * same AWS Region as the API endpoint that you are calling. The URI can point to a
-     * single input file or it can provide the prefix for a collection of input files.
-     * </p>
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling. </p>
      */
     inline const Aws::String& GetTestS3Uri() const{ return m_testS3Uri; }
 
     /**
-     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
-     * same AWS Region as the API endpoint that you are calling. The URI can point to a
-     * single input file or it can provide the prefix for a collection of input files.
-     * </p>
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling. </p>
      */
     inline bool TestS3UriHasBeenSet() const { return m_testS3UriHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
-     * same AWS Region as the API endpoint that you are calling. The URI can point to a
-     * single input file or it can provide the prefix for a collection of input files.
-     * </p>
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling. </p>
      */
     inline void SetTestS3Uri(const Aws::String& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = value; }
 
     /**
-     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
-     * same AWS Region as the API endpoint that you are calling. The URI can point to a
-     * single input file or it can provide the prefix for a collection of input files.
-     * </p>
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling. </p>
      */
     inline void SetTestS3Uri(Aws::String&& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = std::move(value); }
 
     /**
-     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
-     * same AWS Region as the API endpoint that you are calling. The URI can point to a
-     * single input file or it can provide the prefix for a collection of input files.
-     * </p>
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling. </p>
      */
     inline void SetTestS3Uri(const char* value) { m_testS3UriHasBeenSet = true; m_testS3Uri.assign(value); }
 
     /**
-     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
-     * same AWS Region as the API endpoint that you are calling. The URI can point to a
-     * single input file or it can provide the prefix for a collection of input files.
-     * </p>
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling. </p>
      */
     inline DocumentClassifierInputDataConfig& WithTestS3Uri(const Aws::String& value) { SetTestS3Uri(value); return *this;}
 
     /**
-     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
-     * same AWS Region as the API endpoint that you are calling. The URI can point to a
-     * single input file or it can provide the prefix for a collection of input files.
-     * </p>
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling. </p>
      */
     inline DocumentClassifierInputDataConfig& WithTestS3Uri(Aws::String&& value) { SetTestS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 URI for the input data. The Amazon S3 bucket must be in the
-     * same AWS Region as the API endpoint that you are calling. The URI can point to a
-     * single input file or it can provide the prefix for a collection of input files.
-     * </p>
+     * <p>This specifies the Amazon S3 location where the test annotations for an
+     * entity recognizer are located. The URI must be in the same AWS Region as the API
+     * endpoint that you are calling. </p>
      */
     inline DocumentClassifierInputDataConfig& WithTestS3Uri(const char* value) { SetTestS3Uri(value); return *this;}
 

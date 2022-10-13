@@ -26,13 +26,15 @@ namespace Model
 
   /**
    * <p>The configuration for an Amazon S3 data repository linked to an Amazon FSx
-   * Lustre file system with a data repository association. The configuration
-   * consists of an <code>AutoImportPolicy</code> that defines file events on the
-   * data repository are automatically imported to the file system and an
+   * for Lustre file system with a data repository association. The configuration
+   * consists of an <code>AutoImportPolicy</code> that defines which file events on
+   * the data repository are automatically imported to the file system and an
    * <code>AutoExportPolicy</code> that defines which file events on the file system
    * are automatically exported to the data repository. File events are when files or
    * directories are added, changed, or deleted on the file system or the data
-   * repository.</p><p><h3>See Also:</h3>   <a
+   * repository.</p>  <p>Data repository associations on Amazon File Cache
+   * don't use <code>S3DataRepositoryConfiguration</code> because they don't support
+   * automatic import or automatic export.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/S3DataRepositoryConfiguration">AWS
    * API Reference</a></p>
    */

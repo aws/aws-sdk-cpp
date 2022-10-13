@@ -37,6 +37,7 @@
 #include <aws/s3control/model/GetBucketLifecycleConfigurationResult.h>
 #include <aws/s3control/model/GetBucketPolicyResult.h>
 #include <aws/s3control/model/GetBucketTaggingResult.h>
+#include <aws/s3control/model/GetBucketVersioningResult.h>
 #include <aws/s3control/model/GetJobTaggingResult.h>
 #include <aws/s3control/model/GetMultiRegionAccessPointResult.h>
 #include <aws/s3control/model/GetMultiRegionAccessPointPolicyResult.h>
@@ -123,6 +124,7 @@ namespace Aws
       class GetBucketLifecycleConfigurationRequest;
       class GetBucketPolicyRequest;
       class GetBucketTaggingRequest;
+      class GetBucketVersioningRequest;
       class GetJobTaggingRequest;
       class GetMultiRegionAccessPointRequest;
       class GetMultiRegionAccessPointPolicyRequest;
@@ -142,6 +144,7 @@ namespace Aws
       class PutBucketLifecycleConfigurationRequest;
       class PutBucketPolicyRequest;
       class PutBucketTaggingRequest;
+      class PutBucketVersioningRequest;
       class PutJobTaggingRequest;
       class PutMultiRegionAccessPointPolicyRequest;
       class PutPublicAccessBlockRequest;
@@ -183,6 +186,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetBucketLifecycleConfigurationResult, S3ControlError> GetBucketLifecycleConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetBucketPolicyResult, S3ControlError> GetBucketPolicyOutcome;
       typedef Aws::Utils::Outcome<GetBucketTaggingResult, S3ControlError> GetBucketTaggingOutcome;
+      typedef Aws::Utils::Outcome<GetBucketVersioningResult, S3ControlError> GetBucketVersioningOutcome;
       typedef Aws::Utils::Outcome<GetJobTaggingResult, S3ControlError> GetJobTaggingOutcome;
       typedef Aws::Utils::Outcome<GetMultiRegionAccessPointResult, S3ControlError> GetMultiRegionAccessPointOutcome;
       typedef Aws::Utils::Outcome<GetMultiRegionAccessPointPolicyResult, S3ControlError> GetMultiRegionAccessPointPolicyOutcome;
@@ -202,6 +206,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutBucketLifecycleConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutBucketPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutBucketTaggingOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutBucketVersioningOutcome;
       typedef Aws::Utils::Outcome<PutJobTaggingResult, S3ControlError> PutJobTaggingOutcome;
       typedef Aws::Utils::Outcome<PutMultiRegionAccessPointPolicyResult, S3ControlError> PutMultiRegionAccessPointPolicyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, S3ControlError> PutPublicAccessBlockOutcome;
@@ -243,6 +248,7 @@ namespace Aws
       typedef std::future<GetBucketLifecycleConfigurationOutcome> GetBucketLifecycleConfigurationOutcomeCallable;
       typedef std::future<GetBucketPolicyOutcome> GetBucketPolicyOutcomeCallable;
       typedef std::future<GetBucketTaggingOutcome> GetBucketTaggingOutcomeCallable;
+      typedef std::future<GetBucketVersioningOutcome> GetBucketVersioningOutcomeCallable;
       typedef std::future<GetJobTaggingOutcome> GetJobTaggingOutcomeCallable;
       typedef std::future<GetMultiRegionAccessPointOutcome> GetMultiRegionAccessPointOutcomeCallable;
       typedef std::future<GetMultiRegionAccessPointPolicyOutcome> GetMultiRegionAccessPointPolicyOutcomeCallable;
@@ -262,6 +268,7 @@ namespace Aws
       typedef std::future<PutBucketLifecycleConfigurationOutcome> PutBucketLifecycleConfigurationOutcomeCallable;
       typedef std::future<PutBucketPolicyOutcome> PutBucketPolicyOutcomeCallable;
       typedef std::future<PutBucketTaggingOutcome> PutBucketTaggingOutcomeCallable;
+      typedef std::future<PutBucketVersioningOutcome> PutBucketVersioningOutcomeCallable;
       typedef std::future<PutJobTaggingOutcome> PutJobTaggingOutcomeCallable;
       typedef std::future<PutMultiRegionAccessPointPolicyOutcome> PutMultiRegionAccessPointPolicyOutcomeCallable;
       typedef std::future<PutPublicAccessBlockOutcome> PutPublicAccessBlockOutcomeCallable;
@@ -306,6 +313,7 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::GetBucketLifecycleConfigurationRequest&, const Model::GetBucketLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetBucketPolicyRequest&, const Model::GetBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetBucketTaggingRequest&, const Model::GetBucketTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketTaggingResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::GetBucketVersioningRequest&, const Model::GetBucketVersioningOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketVersioningResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetJobTaggingRequest&, const Model::GetJobTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobTaggingResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetMultiRegionAccessPointRequest&, const Model::GetMultiRegionAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMultiRegionAccessPointResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetMultiRegionAccessPointPolicyRequest&, const Model::GetMultiRegionAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMultiRegionAccessPointPolicyResponseReceivedHandler;
@@ -325,6 +333,7 @@ namespace Aws
     typedef std::function<void(const S3ControlClient*, const Model::PutBucketLifecycleConfigurationRequest&, const Model::PutBucketLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutBucketPolicyRequest&, const Model::PutBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutBucketTaggingRequest&, const Model::PutBucketTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketTaggingResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::PutBucketVersioningRequest&, const Model::PutBucketVersioningOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketVersioningResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutJobTaggingRequest&, const Model::PutJobTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutJobTaggingResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutMultiRegionAccessPointPolicyRequest&, const Model::PutMultiRegionAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMultiRegionAccessPointPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutPublicAccessBlockRequest&, const Model::PutPublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPublicAccessBlockResponseReceivedHandler;

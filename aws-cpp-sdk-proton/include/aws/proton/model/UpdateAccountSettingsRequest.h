@@ -36,44 +36,97 @@ namespace Model
 
 
     /**
-     * <p>A repository for pipeline provisioning. Specify it if you have environments
-     * configured for self-managed provisioning with services that include
-     * pipelines.</p>
+     * <p>Set to <code>true</code> to remove a configured pipeline repository from the
+     * account settings. Don't set this field if you are updating the configured
+     * pipeline repository.</p>
+     */
+    inline bool GetDeletePipelineProvisioningRepository() const{ return m_deletePipelineProvisioningRepository; }
+
+    /**
+     * <p>Set to <code>true</code> to remove a configured pipeline repository from the
+     * account settings. Don't set this field if you are updating the configured
+     * pipeline repository.</p>
+     */
+    inline bool DeletePipelineProvisioningRepositoryHasBeenSet() const { return m_deletePipelineProvisioningRepositoryHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> to remove a configured pipeline repository from the
+     * account settings. Don't set this field if you are updating the configured
+     * pipeline repository.</p>
+     */
+    inline void SetDeletePipelineProvisioningRepository(bool value) { m_deletePipelineProvisioningRepositoryHasBeenSet = true; m_deletePipelineProvisioningRepository = value; }
+
+    /**
+     * <p>Set to <code>true</code> to remove a configured pipeline repository from the
+     * account settings. Don't set this field if you are updating the configured
+     * pipeline repository.</p>
+     */
+    inline UpdateAccountSettingsRequest& WithDeletePipelineProvisioningRepository(bool value) { SetDeletePipelineProvisioningRepository(value); return *this;}
+
+
+    /**
+     * <p>A linked repository for pipeline provisioning. Specify it if you have
+     * environments configured for self-managed provisioning with services that include
+     * pipelines. A linked repository is a repository that has been registered with
+     * Proton. For more information, see <a>CreateRepository</a>.</p> <p>To remove a
+     * previously configured repository, set
+     * <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and
+     * don't set <code>pipelineProvisioningRepository</code>.</p>
      */
     inline const RepositoryBranchInput& GetPipelineProvisioningRepository() const{ return m_pipelineProvisioningRepository; }
 
     /**
-     * <p>A repository for pipeline provisioning. Specify it if you have environments
-     * configured for self-managed provisioning with services that include
-     * pipelines.</p>
+     * <p>A linked repository for pipeline provisioning. Specify it if you have
+     * environments configured for self-managed provisioning with services that include
+     * pipelines. A linked repository is a repository that has been registered with
+     * Proton. For more information, see <a>CreateRepository</a>.</p> <p>To remove a
+     * previously configured repository, set
+     * <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and
+     * don't set <code>pipelineProvisioningRepository</code>.</p>
      */
     inline bool PipelineProvisioningRepositoryHasBeenSet() const { return m_pipelineProvisioningRepositoryHasBeenSet; }
 
     /**
-     * <p>A repository for pipeline provisioning. Specify it if you have environments
-     * configured for self-managed provisioning with services that include
-     * pipelines.</p>
+     * <p>A linked repository for pipeline provisioning. Specify it if you have
+     * environments configured for self-managed provisioning with services that include
+     * pipelines. A linked repository is a repository that has been registered with
+     * Proton. For more information, see <a>CreateRepository</a>.</p> <p>To remove a
+     * previously configured repository, set
+     * <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and
+     * don't set <code>pipelineProvisioningRepository</code>.</p>
      */
     inline void SetPipelineProvisioningRepository(const RepositoryBranchInput& value) { m_pipelineProvisioningRepositoryHasBeenSet = true; m_pipelineProvisioningRepository = value; }
 
     /**
-     * <p>A repository for pipeline provisioning. Specify it if you have environments
-     * configured for self-managed provisioning with services that include
-     * pipelines.</p>
+     * <p>A linked repository for pipeline provisioning. Specify it if you have
+     * environments configured for self-managed provisioning with services that include
+     * pipelines. A linked repository is a repository that has been registered with
+     * Proton. For more information, see <a>CreateRepository</a>.</p> <p>To remove a
+     * previously configured repository, set
+     * <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and
+     * don't set <code>pipelineProvisioningRepository</code>.</p>
      */
     inline void SetPipelineProvisioningRepository(RepositoryBranchInput&& value) { m_pipelineProvisioningRepositoryHasBeenSet = true; m_pipelineProvisioningRepository = std::move(value); }
 
     /**
-     * <p>A repository for pipeline provisioning. Specify it if you have environments
-     * configured for self-managed provisioning with services that include
-     * pipelines.</p>
+     * <p>A linked repository for pipeline provisioning. Specify it if you have
+     * environments configured for self-managed provisioning with services that include
+     * pipelines. A linked repository is a repository that has been registered with
+     * Proton. For more information, see <a>CreateRepository</a>.</p> <p>To remove a
+     * previously configured repository, set
+     * <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and
+     * don't set <code>pipelineProvisioningRepository</code>.</p>
      */
     inline UpdateAccountSettingsRequest& WithPipelineProvisioningRepository(const RepositoryBranchInput& value) { SetPipelineProvisioningRepository(value); return *this;}
 
     /**
-     * <p>A repository for pipeline provisioning. Specify it if you have environments
-     * configured for self-managed provisioning with services that include
-     * pipelines.</p>
+     * <p>A linked repository for pipeline provisioning. Specify it if you have
+     * environments configured for self-managed provisioning with services that include
+     * pipelines. A linked repository is a repository that has been registered with
+     * Proton. For more information, see <a>CreateRepository</a>.</p> <p>To remove a
+     * previously configured repository, set
+     * <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and
+     * don't set <code>pipelineProvisioningRepository</code>.</p>
      */
     inline UpdateAccountSettingsRequest& WithPipelineProvisioningRepository(RepositoryBranchInput&& value) { SetPipelineProvisioningRepository(std::move(value)); return *this;}
 
@@ -82,7 +135,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service role you want to use for
      * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
      * provisioning, and by customer-owned automation for self-managed
-     * provisioning.</p>
+     * provisioning.</p> <p>To remove a previously configured ARN, specify an empty
+     * string.</p>
      */
     inline const Aws::String& GetPipelineServiceRoleArn() const{ return m_pipelineServiceRoleArn; }
 
@@ -90,7 +144,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service role you want to use for
      * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
      * provisioning, and by customer-owned automation for self-managed
-     * provisioning.</p>
+     * provisioning.</p> <p>To remove a previously configured ARN, specify an empty
+     * string.</p>
      */
     inline bool PipelineServiceRoleArnHasBeenSet() const { return m_pipelineServiceRoleArnHasBeenSet; }
 
@@ -98,7 +153,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service role you want to use for
      * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
      * provisioning, and by customer-owned automation for self-managed
-     * provisioning.</p>
+     * provisioning.</p> <p>To remove a previously configured ARN, specify an empty
+     * string.</p>
      */
     inline void SetPipelineServiceRoleArn(const Aws::String& value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn = value; }
 
@@ -106,7 +162,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service role you want to use for
      * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
      * provisioning, and by customer-owned automation for self-managed
-     * provisioning.</p>
+     * provisioning.</p> <p>To remove a previously configured ARN, specify an empty
+     * string.</p>
      */
     inline void SetPipelineServiceRoleArn(Aws::String&& value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn = std::move(value); }
 
@@ -114,7 +171,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service role you want to use for
      * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
      * provisioning, and by customer-owned automation for self-managed
-     * provisioning.</p>
+     * provisioning.</p> <p>To remove a previously configured ARN, specify an empty
+     * string.</p>
      */
     inline void SetPipelineServiceRoleArn(const char* value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn.assign(value); }
 
@@ -122,7 +180,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service role you want to use for
      * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
      * provisioning, and by customer-owned automation for self-managed
-     * provisioning.</p>
+     * provisioning.</p> <p>To remove a previously configured ARN, specify an empty
+     * string.</p>
      */
     inline UpdateAccountSettingsRequest& WithPipelineServiceRoleArn(const Aws::String& value) { SetPipelineServiceRoleArn(value); return *this;}
 
@@ -130,7 +189,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service role you want to use for
      * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
      * provisioning, and by customer-owned automation for self-managed
-     * provisioning.</p>
+     * provisioning.</p> <p>To remove a previously configured ARN, specify an empty
+     * string.</p>
      */
     inline UpdateAccountSettingsRequest& WithPipelineServiceRoleArn(Aws::String&& value) { SetPipelineServiceRoleArn(std::move(value)); return *this;}
 
@@ -138,11 +198,15 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service role you want to use for
      * provisioning pipelines. Assumed by Proton for Amazon Web Services-managed
      * provisioning, and by customer-owned automation for self-managed
-     * provisioning.</p>
+     * provisioning.</p> <p>To remove a previously configured ARN, specify an empty
+     * string.</p>
      */
     inline UpdateAccountSettingsRequest& WithPipelineServiceRoleArn(const char* value) { SetPipelineServiceRoleArn(value); return *this;}
 
   private:
+
+    bool m_deletePipelineProvisioningRepository;
+    bool m_deletePipelineProvisioningRepositoryHasBeenSet = false;
 
     RepositoryBranchInput m_pipelineProvisioningRepository;
     bool m_pipelineProvisioningRepositoryHasBeenSet = false;

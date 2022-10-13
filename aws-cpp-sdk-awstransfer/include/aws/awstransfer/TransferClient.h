@@ -104,8 +104,10 @@ namespace Transfer
 
         /**
          * <p>Creates the connector, which captures the parameters for an outbound
-         * connection for the AS2 protocol. The connector is required for sending files
-         * from a customer's non Amazon Web Services server. </p><p><h3>See Also:</h3>   <a
+         * connection for the AS2 protocol. The connector is required for sending files to
+         * an externally hosted AS2 server. For more details about connectors, see <a
+         * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+         * AS2 connectors</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector">AWS
          * API Reference</a></p>
          */
@@ -122,8 +124,8 @@ namespace Transfer
         virtual void CreateConnectorAsync(const Model::CreateConnectorRequest& request, const CreateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates the profile for the AS2 process. The agreement is between the partner
-         * and the AS2 process.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates the local or partner profile to use for AS2 transfers.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile">AWS
          * API Reference</a></p>
          */
@@ -612,7 +614,7 @@ namespace Transfer
         virtual void ImportCertificateAsync(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a host key to the server specified by the <code>ServerId</code>
+         * <p>Adds a host key to the server that's specified by the <code>ServerId</code>
          * parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportHostKey">AWS
          * API Reference</a></p>
@@ -749,8 +751,8 @@ namespace Transfer
         virtual void ListExecutionsAsync(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of host keys for the server specified by the
-         * <code>ServerId</code> paramter.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of host keys for the server that's specified by the
+         * <code>ServerId</code> parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListHostKeys">AWS
          * API Reference</a></p>
          */
@@ -899,8 +901,9 @@ namespace Transfer
         virtual void SendWorkflowStepStateAsync(const Model::SendWorkflowStepStateRequest& request, const SendWorkflowStepStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Begins an outbound file transfer. You specify the <code>ConnectorId</code>
-         * and the file paths for where to send the files. </p><p><h3>See Also:</h3>   <a
+         * <p>Begins an outbound file transfer to a remote AS2 server. You specify the
+         * <code>ConnectorId</code> and the file paths for where to send the files.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartFileTransfer">AWS
          * API Reference</a></p>
          */
@@ -1120,7 +1123,7 @@ namespace Transfer
         virtual void UpdateConnectorAsync(const Model::UpdateConnectorRequest& request, const UpdateConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the description for the host key specified by the specified by the
+         * <p>Updates the description for the host key that's specified by the
          * <code>ServerId</code> and <code>HostKeyId</code> parameters.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateHostKey">AWS

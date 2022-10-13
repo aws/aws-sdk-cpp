@@ -41,38 +41,38 @@ namespace Model
 
 
     /**
-     * <p>Describes whether any AWS CloudTrail management event logs are enabled as
-     * data sources.</p>
+     * <p>Describes whether any Amazon Web Services CloudTrail management event logs
+     * are enabled as data sources.</p>
      */
     inline const DataSourceFreeTrial& GetCloudTrail() const{ return m_cloudTrail; }
 
     /**
-     * <p>Describes whether any AWS CloudTrail management event logs are enabled as
-     * data sources.</p>
+     * <p>Describes whether any Amazon Web Services CloudTrail management event logs
+     * are enabled as data sources.</p>
      */
     inline bool CloudTrailHasBeenSet() const { return m_cloudTrailHasBeenSet; }
 
     /**
-     * <p>Describes whether any AWS CloudTrail management event logs are enabled as
-     * data sources.</p>
+     * <p>Describes whether any Amazon Web Services CloudTrail management event logs
+     * are enabled as data sources.</p>
      */
     inline void SetCloudTrail(const DataSourceFreeTrial& value) { m_cloudTrailHasBeenSet = true; m_cloudTrail = value; }
 
     /**
-     * <p>Describes whether any AWS CloudTrail management event logs are enabled as
-     * data sources.</p>
+     * <p>Describes whether any Amazon Web Services CloudTrail management event logs
+     * are enabled as data sources.</p>
      */
     inline void SetCloudTrail(DataSourceFreeTrial&& value) { m_cloudTrailHasBeenSet = true; m_cloudTrail = std::move(value); }
 
     /**
-     * <p>Describes whether any AWS CloudTrail management event logs are enabled as
-     * data sources.</p>
+     * <p>Describes whether any Amazon Web Services CloudTrail management event logs
+     * are enabled as data sources.</p>
      */
     inline DataSourcesFreeTrial& WithCloudTrail(const DataSourceFreeTrial& value) { SetCloudTrail(value); return *this;}
 
     /**
-     * <p>Describes whether any AWS CloudTrail management event logs are enabled as
-     * data sources.</p>
+     * <p>Describes whether any Amazon Web Services CloudTrail management event logs
+     * are enabled as data sources.</p>
      */
     inline DataSourcesFreeTrial& WithCloudTrail(DataSourceFreeTrial&& value) { SetCloudTrail(std::move(value)); return *this;}
 

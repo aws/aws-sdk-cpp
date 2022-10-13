@@ -29,6 +29,7 @@ namespace Aws
         static const int STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM_HASH = HashingUtils::HashString("STORAGE_VIRTUAL_MACHINES_PER_FILE_SYSTEM");
         static const int VOLUMES_PER_FILE_SYSTEM_HASH = HashingUtils::HashString("VOLUMES_PER_FILE_SYSTEM");
         static const int TOTAL_SSD_IOPS_HASH = HashingUtils::HashString("TOTAL_SSD_IOPS");
+        static const int FILE_CACHE_COUNT_HASH = HashingUtils::HashString("FILE_CACHE_COUNT");
 
 
         ServiceLimit GetServiceLimitForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return ServiceLimit::TOTAL_SSD_IOPS;
           }
+          else if (hashCode == FILE_CACHE_COUNT_HASH)
+          {
+            return ServiceLimit::FILE_CACHE_COUNT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +107,8 @@ namespace Aws
             return "VOLUMES_PER_FILE_SYSTEM";
           case ServiceLimit::TOTAL_SSD_IOPS:
             return "TOTAL_SSD_IOPS";
+          case ServiceLimit::FILE_CACHE_COUNT:
+            return "FILE_CACHE_COUNT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

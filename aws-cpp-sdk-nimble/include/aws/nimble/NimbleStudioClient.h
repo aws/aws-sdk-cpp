@@ -745,15 +745,14 @@ namespace NimbleStudio
         virtual void StartStreamingSessionAsync(const Model::StartStreamingSessionRequest& request, const StartStreamingSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Repairs the Amazon Web Services SSO configuration for a given studio.</p>
-         * <p>If the studio has a valid Amazon Web Services SSO configuration currently
-         * associated with it, this operation will fail with a validation error.</p> <p>If
-         * the studio does not have a valid Amazon Web Services SSO configuration currently
-         * associated with it, then a new Amazon Web Services SSO application is created
-         * for the studio and the studio is changed to the READY state.</p> <p>After the
-         * Amazon Web Services SSO application is repaired, you must use the Amazon Nimble
-         * Studio console to add administrators and users to your studio.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Repairs the IAM Identity Center configuration for a given studio.</p> <p>If
+         * the studio has a valid IAM Identity Center configuration currently associated
+         * with it, this operation will fail with a validation error.</p> <p>If the studio
+         * does not have a valid IAM Identity Center configuration currently associated
+         * with it, then a new IAM Identity Center application is created for the studio
+         * and the studio is changed to the READY state.</p> <p>After the IAM Identity
+         * Center application is repaired, you must use the Amazon Nimble Studio console to
+         * add administrators and users to your studio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStudioSSOConfigurationRepair">AWS
          * API Reference</a></p>
          */

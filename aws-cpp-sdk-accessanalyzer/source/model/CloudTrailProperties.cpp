@@ -19,36 +19,22 @@ namespace Model
 {
 
 CloudTrailProperties::CloudTrailProperties() : 
-    m_endTimeHasBeenSet(false),
+    m_trailPropertiesHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_trailPropertiesHasBeenSet(false)
+    m_endTimeHasBeenSet(false)
 {
 }
 
 CloudTrailProperties::CloudTrailProperties(JsonView jsonValue) : 
-    m_endTimeHasBeenSet(false),
+    m_trailPropertiesHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_trailPropertiesHasBeenSet(false)
+    m_endTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 CloudTrailProperties& CloudTrailProperties::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("endTime"))
-  {
-    m_endTime = jsonValue.GetString("endTime");
-
-    m_endTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("startTime"))
-  {
-    m_startTime = jsonValue.GetString("startTime");
-
-    m_startTimeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("trailProperties"))
   {
     Array<JsonView> trailPropertiesJsonList = jsonValue.GetArray("trailProperties");
@@ -59,22 +45,26 @@ CloudTrailProperties& CloudTrailProperties::operator =(JsonView jsonValue)
     m_trailPropertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetString("startTime");
+
+    m_startTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endTime"))
+  {
+    m_endTime = jsonValue.GetString("endTime");
+
+    m_endTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue CloudTrailProperties::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_endTimeHasBeenSet)
-  {
-   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_startTimeHasBeenSet)
-  {
-   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
 
   if(m_trailPropertiesHasBeenSet)
   {
@@ -85,6 +75,16 @@ JsonValue CloudTrailProperties::Jsonize() const
    }
    payload.WithArray("trailProperties", std::move(trailPropertiesJsonList));
 
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_endTimeHasBeenSet)
+  {
+   payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

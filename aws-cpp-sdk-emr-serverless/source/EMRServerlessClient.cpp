@@ -24,6 +24,7 @@
 #include <aws/emr-serverless/model/CreateApplicationRequest.h>
 #include <aws/emr-serverless/model/DeleteApplicationRequest.h>
 #include <aws/emr-serverless/model/GetApplicationRequest.h>
+#include <aws/emr-serverless/model/GetDashboardForJobRunRequest.h>
 #include <aws/emr-serverless/model/GetJobRunRequest.h>
 #include <aws/emr-serverless/model/ListApplicationsRequest.h>
 #include <aws/emr-serverless/model/ListJobRunsRequest.h>
@@ -228,6 +229,43 @@ void EMRServerlessClient::GetApplicationAsync(const GetApplicationRequest& reque
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetApplication(request), context);
+    } );
+}
+
+GetDashboardForJobRunOutcome EMRServerlessClient::GetDashboardForJobRun(const GetDashboardForJobRunRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDashboardForJobRun", "Required field: ApplicationId, is not set");
+    return GetDashboardForJobRunOutcome(Aws::Client::AWSError<EMRServerlessErrors>(EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JobRunIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDashboardForJobRun", "Required field: JobRunId, is not set");
+    return GetDashboardForJobRunOutcome(Aws::Client::AWSError<EMRServerlessErrors>(EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobRunId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/jobruns/");
+  uri.AddPathSegment(request.GetJobRunId());
+  uri.AddPathSegments("/dashboard");
+  return GetDashboardForJobRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDashboardForJobRunOutcomeCallable EMRServerlessClient::GetDashboardForJobRunCallable(const GetDashboardForJobRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDashboardForJobRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDashboardForJobRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRServerlessClient::GetDashboardForJobRunAsync(const GetDashboardForJobRunRequest& request, const GetDashboardForJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDashboardForJobRun(request), context);
     } );
 }
 

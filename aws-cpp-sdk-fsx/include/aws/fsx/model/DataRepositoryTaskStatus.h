@@ -152,6 +152,31 @@ namespace Model
      */
     inline DataRepositoryTaskStatus& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The total amount of data, in GiB, released by an Amazon File Cache
+     * AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+     */
+    inline long long GetReleasedCapacity() const{ return m_releasedCapacity; }
+
+    /**
+     * <p>The total amount of data, in GiB, released by an Amazon File Cache
+     * AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+     */
+    inline bool ReleasedCapacityHasBeenSet() const { return m_releasedCapacityHasBeenSet; }
+
+    /**
+     * <p>The total amount of data, in GiB, released by an Amazon File Cache
+     * AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+     */
+    inline void SetReleasedCapacity(long long value) { m_releasedCapacityHasBeenSet = true; m_releasedCapacity = value; }
+
+    /**
+     * <p>The total amount of data, in GiB, released by an Amazon File Cache
+     * AUTO_RELEASE_DATA task that automatically releases files from the cache.</p>
+     */
+    inline DataRepositoryTaskStatus& WithReleasedCapacity(long long value) { SetReleasedCapacity(value); return *this;}
+
   private:
 
     long long m_totalCount;
@@ -165,6 +190,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet = false;
+
+    long long m_releasedCapacity;
+    bool m_releasedCapacityHasBeenSet = false;
   };
 
 } // namespace Model

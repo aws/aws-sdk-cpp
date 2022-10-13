@@ -19,12 +19,14 @@ namespace Model
 {
 
 WorkflowDetails::WorkflowDetails() : 
-    m_onUploadHasBeenSet(false)
+    m_onUploadHasBeenSet(false),
+    m_onPartialUploadHasBeenSet(false)
 {
 }
 
 WorkflowDetails::WorkflowDetails(JsonView jsonValue) : 
-    m_onUploadHasBeenSet(false)
+    m_onUploadHasBeenSet(false),
+    m_onPartialUploadHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +41,16 @@ WorkflowDetails& WorkflowDetails::operator =(JsonView jsonValue)
       m_onUpload.push_back(onUploadJsonList[onUploadIndex].AsObject());
     }
     m_onUploadHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OnPartialUpload"))
+  {
+    Array<JsonView> onPartialUploadJsonList = jsonValue.GetArray("OnPartialUpload");
+    for(unsigned onPartialUploadIndex = 0; onPartialUploadIndex < onPartialUploadJsonList.GetLength(); ++onPartialUploadIndex)
+    {
+      m_onPartialUpload.push_back(onPartialUploadJsonList[onPartialUploadIndex].AsObject());
+    }
+    m_onPartialUploadHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +68,17 @@ JsonValue WorkflowDetails::Jsonize() const
      onUploadJsonList[onUploadIndex].AsObject(m_onUpload[onUploadIndex].Jsonize());
    }
    payload.WithArray("OnUpload", std::move(onUploadJsonList));
+
+  }
+
+  if(m_onPartialUploadHasBeenSet)
+  {
+   Array<JsonValue> onPartialUploadJsonList(m_onPartialUpload.size());
+   for(unsigned onPartialUploadIndex = 0; onPartialUploadIndex < onPartialUploadJsonList.GetLength(); ++onPartialUploadIndex)
+   {
+     onPartialUploadJsonList[onPartialUploadIndex].AsObject(m_onPartialUpload[onPartialUploadIndex].Jsonize());
+   }
+   payload.WithArray("OnPartialUpload", std::move(onPartialUploadJsonList));
 
   }
 

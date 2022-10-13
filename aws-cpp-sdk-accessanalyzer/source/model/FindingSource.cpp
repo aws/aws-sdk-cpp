@@ -19,34 +19,34 @@ namespace Model
 {
 
 FindingSource::FindingSource() : 
-    m_detailHasBeenSet(false),
     m_type(FindingSourceType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_detailHasBeenSet(false)
 {
 }
 
 FindingSource::FindingSource(JsonView jsonValue) : 
-    m_detailHasBeenSet(false),
     m_type(FindingSourceType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_detailHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 FindingSource& FindingSource::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("detail"))
-  {
-    m_detail = jsonValue.GetObject("detail");
-
-    m_detailHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = FindingSourceTypeMapper::GetFindingSourceTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("detail"))
+  {
+    m_detail = jsonValue.GetObject("detail");
+
+    m_detailHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +56,15 @@ JsonValue FindingSource::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", FindingSourceTypeMapper::GetNameForFindingSourceType(m_type));
+  }
+
   if(m_detailHasBeenSet)
   {
    payload.WithObject("detail", m_detail.Jsonize());
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", FindingSourceTypeMapper::GetNameForFindingSourceType(m_type));
   }
 
   return payload;

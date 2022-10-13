@@ -29,8 +29,8 @@ namespace Model
 {
 
   /**
-   * <p> Information about the target AWS Lambda function during an AWS Lambda
-   * deployment. </p><p><h3>See Also:</h3>   <a
+   * <p> Information about the target Lambda function during an Lambda deployment.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/LambdaTarget">AWS
    * API Reference</a></p>
    */
@@ -175,32 +175,32 @@ namespace Model
 
 
     /**
-     * <p> The status an AWS Lambda deployment's target Lambda function. </p>
+     * <p> The status an Lambda deployment's target Lambda function. </p>
      */
     inline const TargetStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p> The status an AWS Lambda deployment's target Lambda function. </p>
+     * <p> The status an Lambda deployment's target Lambda function. </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p> The status an AWS Lambda deployment's target Lambda function. </p>
+     * <p> The status an Lambda deployment's target Lambda function. </p>
      */
     inline void SetStatus(const TargetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p> The status an AWS Lambda deployment's target Lambda function. </p>
+     * <p> The status an Lambda deployment's target Lambda function. </p>
      */
     inline void SetStatus(TargetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p> The status an AWS Lambda deployment's target Lambda function. </p>
+     * <p> The status an Lambda deployment's target Lambda function. </p>
      */
     inline LambdaTarget& WithStatus(const TargetStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p> The status an AWS Lambda deployment's target Lambda function. </p>
+     * <p> The status an Lambda deployment's target Lambda function. </p>
      */
     inline LambdaTarget& WithStatus(TargetStatus&& value) { SetStatus(std::move(value)); return *this;}
 

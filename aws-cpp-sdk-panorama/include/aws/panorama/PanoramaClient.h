@@ -67,7 +67,8 @@ namespace Panorama
         virtual void CreateApplicationInstanceAsync(const Model::CreateApplicationInstanceRequest& request, const CreateApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a job to run on one or more devices.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a job to run on one or more devices. A job can update a device's
+         * software or reboot it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/CreateJobForDevices">AWS
          * API Reference</a></p>
          */
@@ -570,6 +571,23 @@ namespace Panorama
          * An Async wrapper for RemoveApplicationInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RemoveApplicationInstanceAsync(const Model::RemoveApplicationInstanceRequest& request, const RemoveApplicationInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Signal camera nodes to stop or resume.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/panorama-2019-07-24/SignalApplicationInstanceNodeInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SignalApplicationInstanceNodeInstancesOutcome SignalApplicationInstanceNodeInstances(const Model::SignalApplicationInstanceNodeInstancesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SignalApplicationInstanceNodeInstances that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SignalApplicationInstanceNodeInstancesOutcomeCallable SignalApplicationInstanceNodeInstancesCallable(const Model::SignalApplicationInstanceNodeInstancesRequest& request) const;
+
+        /**
+         * An Async wrapper for SignalApplicationInstanceNodeInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SignalApplicationInstanceNodeInstancesAsync(const Model::SignalApplicationInstanceNodeInstancesRequest& request, const SignalApplicationInstanceNodeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Tags a resource.</p><p><h3>See Also:</h3>   <a

@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/ExecutionMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/TargetLocation.h>
 #include <aws/ssm/model/Tag.h>
@@ -855,6 +856,37 @@ namespace Model
      */
     inline StartAutomationExecutionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your automation.</p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your automation.</p>
+     */
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your automation.</p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your automation.</p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your automation.</p>
+     */
+    inline StartAutomationExecutionRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your automation.</p>
+     */
+    inline StartAutomationExecutionRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_documentName;
@@ -892,6 +924,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

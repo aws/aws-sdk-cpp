@@ -14,11 +14,11 @@ using namespace Aws::Utils;
 
 ListAnalyzedResourcesRequest::ListAnalyzedResourcesRequest() : 
     m_analyzerArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -32,10 +32,9 @@ Aws::String ListAnalyzedResourcesRequest::SerializePayload() const
 
   }
 
-  if(m_maxResultsHasBeenSet)
+  if(m_resourceTypeHasBeenSet)
   {
-   payload.WithInteger("maxResults", m_maxResults);
-
+   payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
   if(m_nextTokenHasBeenSet)
@@ -44,9 +43,10 @@ Aws::String ListAnalyzedResourcesRequest::SerializePayload() const
 
   }
 
-  if(m_resourceTypeHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-   payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+   payload.WithInteger("maxResults", m_maxResults);
+
   }
 
   return payload.View().WriteReadable();

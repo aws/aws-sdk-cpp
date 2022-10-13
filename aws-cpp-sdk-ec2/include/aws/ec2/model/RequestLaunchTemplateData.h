@@ -339,7 +339,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
@@ -348,7 +348,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -357,7 +357,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
@@ -366,7 +366,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
@@ -375,7 +375,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
@@ -384,7 +384,7 @@ namespace Model
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>If you
-     * specify <code>InstanceTypes</code>, you can't specify
+     * specify <code>InstanceType</code>, you can't specify
      * <code>InstanceRequirements</code>.</p>
      */
     inline RequestLaunchTemplateData& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}

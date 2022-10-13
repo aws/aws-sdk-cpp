@@ -122,6 +122,12 @@ UpdateMaintenanceWindowTaskResult& UpdateMaintenanceWindowTaskResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("AlarmConfiguration"))
+  {
+    m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
+
+  }
+
 
 
   return *this;

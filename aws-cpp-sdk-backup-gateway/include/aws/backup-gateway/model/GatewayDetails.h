@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/backup-gateway/model/GatewayType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/backup-gateway/model/MaintenanceStartTime.h>
 #include <utility>
 
 namespace Aws
@@ -247,6 +248,49 @@ namespace Model
 
 
     /**
+     * <p>Returns your gateway's weekly maintenance start time including the day and
+     * time of the week. Note that values are in terms of the gateway's time zone. Can
+     * be weekly or monthly.</p>
+     */
+    inline const MaintenanceStartTime& GetMaintenanceStartTime() const{ return m_maintenanceStartTime; }
+
+    /**
+     * <p>Returns your gateway's weekly maintenance start time including the day and
+     * time of the week. Note that values are in terms of the gateway's time zone. Can
+     * be weekly or monthly.</p>
+     */
+    inline bool MaintenanceStartTimeHasBeenSet() const { return m_maintenanceStartTimeHasBeenSet; }
+
+    /**
+     * <p>Returns your gateway's weekly maintenance start time including the day and
+     * time of the week. Note that values are in terms of the gateway's time zone. Can
+     * be weekly or monthly.</p>
+     */
+    inline void SetMaintenanceStartTime(const MaintenanceStartTime& value) { m_maintenanceStartTimeHasBeenSet = true; m_maintenanceStartTime = value; }
+
+    /**
+     * <p>Returns your gateway's weekly maintenance start time including the day and
+     * time of the week. Note that values are in terms of the gateway's time zone. Can
+     * be weekly or monthly.</p>
+     */
+    inline void SetMaintenanceStartTime(MaintenanceStartTime&& value) { m_maintenanceStartTimeHasBeenSet = true; m_maintenanceStartTime = std::move(value); }
+
+    /**
+     * <p>Returns your gateway's weekly maintenance start time including the day and
+     * time of the week. Note that values are in terms of the gateway's time zone. Can
+     * be weekly or monthly.</p>
+     */
+    inline GatewayDetails& WithMaintenanceStartTime(const MaintenanceStartTime& value) { SetMaintenanceStartTime(value); return *this;}
+
+    /**
+     * <p>Returns your gateway's weekly maintenance start time including the day and
+     * time of the week. Note that values are in terms of the gateway's time zone. Can
+     * be weekly or monthly.</p>
+     */
+    inline GatewayDetails& WithMaintenanceStartTime(MaintenanceStartTime&& value) { SetMaintenanceStartTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details showing the next update availability time of the gateway.</p>
      */
     inline const Aws::Utils::DateTime& GetNextUpdateAvailabilityTime() const{ return m_nextUpdateAvailabilityTime; }
@@ -341,6 +385,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastSeenTime;
     bool m_lastSeenTimeHasBeenSet = false;
+
+    MaintenanceStartTime m_maintenanceStartTime;
+    bool m_maintenanceStartTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_nextUpdateAvailabilityTime;
     bool m_nextUpdateAvailabilityTimeHasBeenSet = false;

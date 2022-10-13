@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/accessanalyzer/model/NetworkOriginConfiguration.h>
 #include <aws/accessanalyzer/model/S3PublicAccessBlockConfiguration.h>
+#include <aws/accessanalyzer/model/NetworkOriginConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -33,7 +33,7 @@ namespace Model
    * configuration in place of the existing access points. To propose an access point
    * without a policy, you can provide an empty string as the access point policy.
    * For more information, see <a
-   * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating
    * access points</a>. For more information about access point policy limits, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html">Access
    * points restrictions and limitations</a>.</p><p><h3>See Also:</h3>   <a
@@ -88,6 +88,43 @@ namespace Model
      * <p>The access point or multi-region access point policy.</p>
      */
     inline S3AccessPointConfiguration& WithAccessPointPolicy(const char* value) { SetAccessPointPolicy(value); return *this;}
+
+
+    /**
+     * <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this
+     * Amazon S3 access point or multi-region access point.</p>
+     */
+    inline const S3PublicAccessBlockConfiguration& GetPublicAccessBlock() const{ return m_publicAccessBlock; }
+
+    /**
+     * <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this
+     * Amazon S3 access point or multi-region access point.</p>
+     */
+    inline bool PublicAccessBlockHasBeenSet() const { return m_publicAccessBlockHasBeenSet; }
+
+    /**
+     * <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this
+     * Amazon S3 access point or multi-region access point.</p>
+     */
+    inline void SetPublicAccessBlock(const S3PublicAccessBlockConfiguration& value) { m_publicAccessBlockHasBeenSet = true; m_publicAccessBlock = value; }
+
+    /**
+     * <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this
+     * Amazon S3 access point or multi-region access point.</p>
+     */
+    inline void SetPublicAccessBlock(S3PublicAccessBlockConfiguration&& value) { m_publicAccessBlockHasBeenSet = true; m_publicAccessBlock = std::move(value); }
+
+    /**
+     * <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this
+     * Amazon S3 access point or multi-region access point.</p>
+     */
+    inline S3AccessPointConfiguration& WithPublicAccessBlock(const S3PublicAccessBlockConfiguration& value) { SetPublicAccessBlock(value); return *this;}
+
+    /**
+     * <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this
+     * Amazon S3 access point or multi-region access point.</p>
+     */
+    inline S3AccessPointConfiguration& WithPublicAccessBlock(S3PublicAccessBlockConfiguration&& value) { SetPublicAccessBlock(std::move(value)); return *this;}
 
 
     /**
@@ -150,53 +187,16 @@ namespace Model
      */
     inline S3AccessPointConfiguration& WithNetworkOrigin(NetworkOriginConfiguration&& value) { SetNetworkOrigin(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this
-     * Amazon S3 access point or multi-region access point.</p>
-     */
-    inline const S3PublicAccessBlockConfiguration& GetPublicAccessBlock() const{ return m_publicAccessBlock; }
-
-    /**
-     * <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this
-     * Amazon S3 access point or multi-region access point.</p>
-     */
-    inline bool PublicAccessBlockHasBeenSet() const { return m_publicAccessBlockHasBeenSet; }
-
-    /**
-     * <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this
-     * Amazon S3 access point or multi-region access point.</p>
-     */
-    inline void SetPublicAccessBlock(const S3PublicAccessBlockConfiguration& value) { m_publicAccessBlockHasBeenSet = true; m_publicAccessBlock = value; }
-
-    /**
-     * <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this
-     * Amazon S3 access point or multi-region access point.</p>
-     */
-    inline void SetPublicAccessBlock(S3PublicAccessBlockConfiguration&& value) { m_publicAccessBlockHasBeenSet = true; m_publicAccessBlock = std::move(value); }
-
-    /**
-     * <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this
-     * Amazon S3 access point or multi-region access point.</p>
-     */
-    inline S3AccessPointConfiguration& WithPublicAccessBlock(const S3PublicAccessBlockConfiguration& value) { SetPublicAccessBlock(value); return *this;}
-
-    /**
-     * <p>The proposed <code>S3PublicAccessBlock</code> configuration to apply to this
-     * Amazon S3 access point or multi-region access point.</p>
-     */
-    inline S3AccessPointConfiguration& WithPublicAccessBlock(S3PublicAccessBlockConfiguration&& value) { SetPublicAccessBlock(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_accessPointPolicy;
     bool m_accessPointPolicyHasBeenSet = false;
 
-    NetworkOriginConfiguration m_networkOrigin;
-    bool m_networkOriginHasBeenSet = false;
-
     S3PublicAccessBlockConfiguration m_publicAccessBlock;
     bool m_publicAccessBlockHasBeenSet = false;
+
+    NetworkOriginConfiguration m_networkOrigin;
+    bool m_networkOriginHasBeenSet = false;
   };
 
 } // namespace Model

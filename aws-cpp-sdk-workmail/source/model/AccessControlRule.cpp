@@ -30,7 +30,9 @@ AccessControlRule::AccessControlRule() :
     m_userIdsHasBeenSet(false),
     m_notUserIdsHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
-    m_dateModifiedHasBeenSet(false)
+    m_dateModifiedHasBeenSet(false),
+    m_impersonationRoleIdsHasBeenSet(false),
+    m_notImpersonationRoleIdsHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ AccessControlRule::AccessControlRule(JsonView jsonValue) :
     m_userIdsHasBeenSet(false),
     m_notUserIdsHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
-    m_dateModifiedHasBeenSet(false)
+    m_dateModifiedHasBeenSet(false),
+    m_impersonationRoleIdsHasBeenSet(false),
+    m_notImpersonationRoleIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -148,6 +152,26 @@ AccessControlRule& AccessControlRule::operator =(JsonView jsonValue)
     m_dateModifiedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ImpersonationRoleIds"))
+  {
+    Array<JsonView> impersonationRoleIdsJsonList = jsonValue.GetArray("ImpersonationRoleIds");
+    for(unsigned impersonationRoleIdsIndex = 0; impersonationRoleIdsIndex < impersonationRoleIdsJsonList.GetLength(); ++impersonationRoleIdsIndex)
+    {
+      m_impersonationRoleIds.push_back(impersonationRoleIdsJsonList[impersonationRoleIdsIndex].AsString());
+    }
+    m_impersonationRoleIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NotImpersonationRoleIds"))
+  {
+    Array<JsonView> notImpersonationRoleIdsJsonList = jsonValue.GetArray("NotImpersonationRoleIds");
+    for(unsigned notImpersonationRoleIdsIndex = 0; notImpersonationRoleIdsIndex < notImpersonationRoleIdsJsonList.GetLength(); ++notImpersonationRoleIdsIndex)
+    {
+      m_notImpersonationRoleIds.push_back(notImpersonationRoleIdsJsonList[notImpersonationRoleIdsIndex].AsString());
+    }
+    m_notImpersonationRoleIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -246,6 +270,28 @@ JsonValue AccessControlRule::Jsonize() const
   if(m_dateModifiedHasBeenSet)
   {
    payload.WithDouble("DateModified", m_dateModified.SecondsWithMSPrecision());
+  }
+
+  if(m_impersonationRoleIdsHasBeenSet)
+  {
+   Array<JsonValue> impersonationRoleIdsJsonList(m_impersonationRoleIds.size());
+   for(unsigned impersonationRoleIdsIndex = 0; impersonationRoleIdsIndex < impersonationRoleIdsJsonList.GetLength(); ++impersonationRoleIdsIndex)
+   {
+     impersonationRoleIdsJsonList[impersonationRoleIdsIndex].AsString(m_impersonationRoleIds[impersonationRoleIdsIndex]);
+   }
+   payload.WithArray("ImpersonationRoleIds", std::move(impersonationRoleIdsJsonList));
+
+  }
+
+  if(m_notImpersonationRoleIdsHasBeenSet)
+  {
+   Array<JsonValue> notImpersonationRoleIdsJsonList(m_notImpersonationRoleIds.size());
+   for(unsigned notImpersonationRoleIdsIndex = 0; notImpersonationRoleIdsIndex < notImpersonationRoleIdsJsonList.GetLength(); ++notImpersonationRoleIdsIndex)
+   {
+     notImpersonationRoleIdsJsonList[notImpersonationRoleIdsIndex].AsString(m_notImpersonationRoleIds[notImpersonationRoleIdsIndex]);
+   }
+   payload.WithArray("NotImpersonationRoleIds", std::move(notImpersonationRoleIdsJsonList));
+
   }
 
   return payload;

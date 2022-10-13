@@ -33,37 +33,44 @@ namespace Model
 
 
     /**
-     * <p>An opaque token to access AWS SSO resources assigned to a user.</p>
+     * <p>An opaque token to access IAM Identity Center resources assigned to a
+     * user.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p>An opaque token to access AWS SSO resources assigned to a user.</p>
+     * <p>An opaque token to access IAM Identity Center resources assigned to a
+     * user.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessToken = value; }
 
     /**
-     * <p>An opaque token to access AWS SSO resources assigned to a user.</p>
+     * <p>An opaque token to access IAM Identity Center resources assigned to a
+     * user.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessToken = std::move(value); }
 
     /**
-     * <p>An opaque token to access AWS SSO resources assigned to a user.</p>
+     * <p>An opaque token to access IAM Identity Center resources assigned to a
+     * user.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessToken.assign(value); }
 
     /**
-     * <p>An opaque token to access AWS SSO resources assigned to a user.</p>
+     * <p>An opaque token to access IAM Identity Center resources assigned to a
+     * user.</p>
      */
     inline CreateTokenResult& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p>An opaque token to access AWS SSO resources assigned to a user.</p>
+     * <p>An opaque token to access IAM Identity Center resources assigned to a
+     * user.</p>
      */
     inline CreateTokenResult& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
-     * <p>An opaque token to access AWS SSO resources assigned to a user.</p>
+     * <p>An opaque token to access IAM Identity Center resources assigned to a
+     * user.</p>
      */
     inline CreateTokenResult& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 
@@ -128,87 +135,157 @@ namespace Model
 
 
     /**
-     * <p>A token that, if present, can be used to refresh a previously issued access
-     * token that might have expired.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>A token that, if present, can be
+     * used to refresh a previously issued access token that might have expired.</p>
      */
     inline const Aws::String& GetRefreshToken() const{ return m_refreshToken; }
 
     /**
-     * <p>A token that, if present, can be used to refresh a previously issued access
-     * token that might have expired.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>A token that, if present, can be
+     * used to refresh a previously issued access token that might have expired.</p>
      */
     inline void SetRefreshToken(const Aws::String& value) { m_refreshToken = value; }
 
     /**
-     * <p>A token that, if present, can be used to refresh a previously issued access
-     * token that might have expired.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>A token that, if present, can be
+     * used to refresh a previously issued access token that might have expired.</p>
      */
     inline void SetRefreshToken(Aws::String&& value) { m_refreshToken = std::move(value); }
 
     /**
-     * <p>A token that, if present, can be used to refresh a previously issued access
-     * token that might have expired.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>A token that, if present, can be
+     * used to refresh a previously issued access token that might have expired.</p>
      */
     inline void SetRefreshToken(const char* value) { m_refreshToken.assign(value); }
 
     /**
-     * <p>A token that, if present, can be used to refresh a previously issued access
-     * token that might have expired.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>A token that, if present, can be
+     * used to refresh a previously issued access token that might have expired.</p>
      */
     inline CreateTokenResult& WithRefreshToken(const Aws::String& value) { SetRefreshToken(value); return *this;}
 
     /**
-     * <p>A token that, if present, can be used to refresh a previously issued access
-     * token that might have expired.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>A token that, if present, can be
+     * used to refresh a previously issued access token that might have expired.</p>
      */
     inline CreateTokenResult& WithRefreshToken(Aws::String&& value) { SetRefreshToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token that, if present, can be used to refresh a previously issued access
-     * token that might have expired.</p>
+     * <p>Currently, <code>refreshToken</code> is not yet implemented and is not
+     * supported. For more information about the features and limitations of the
+     * current IAM Identity Center OIDC implementation, see <i>Considerations for Using
+     * this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>A token that, if present, can be
+     * used to refresh a previously issued access token that might have expired.</p>
      */
     inline CreateTokenResult& WithRefreshToken(const char* value) { SetRefreshToken(value); return *this;}
 
 
     /**
-     * <p>The identifier of the user that associated with the access token, if
-     * present.</p>
+     * <p>Currently, <code>idToken</code> is not yet implemented and is not supported.
+     * For more information about the features and limitations of the current IAM
+     * Identity Center OIDC implementation, see <i>Considerations for Using this
+     * Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The identifier of the user that
+     * associated with the access token, if present.</p>
      */
     inline const Aws::String& GetIdToken() const{ return m_idToken; }
 
     /**
-     * <p>The identifier of the user that associated with the access token, if
-     * present.</p>
+     * <p>Currently, <code>idToken</code> is not yet implemented and is not supported.
+     * For more information about the features and limitations of the current IAM
+     * Identity Center OIDC implementation, see <i>Considerations for Using this
+     * Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The identifier of the user that
+     * associated with the access token, if present.</p>
      */
     inline void SetIdToken(const Aws::String& value) { m_idToken = value; }
 
     /**
-     * <p>The identifier of the user that associated with the access token, if
-     * present.</p>
+     * <p>Currently, <code>idToken</code> is not yet implemented and is not supported.
+     * For more information about the features and limitations of the current IAM
+     * Identity Center OIDC implementation, see <i>Considerations for Using this
+     * Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The identifier of the user that
+     * associated with the access token, if present.</p>
      */
     inline void SetIdToken(Aws::String&& value) { m_idToken = std::move(value); }
 
     /**
-     * <p>The identifier of the user that associated with the access token, if
-     * present.</p>
+     * <p>Currently, <code>idToken</code> is not yet implemented and is not supported.
+     * For more information about the features and limitations of the current IAM
+     * Identity Center OIDC implementation, see <i>Considerations for Using this
+     * Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The identifier of the user that
+     * associated with the access token, if present.</p>
      */
     inline void SetIdToken(const char* value) { m_idToken.assign(value); }
 
     /**
-     * <p>The identifier of the user that associated with the access token, if
-     * present.</p>
+     * <p>Currently, <code>idToken</code> is not yet implemented and is not supported.
+     * For more information about the features and limitations of the current IAM
+     * Identity Center OIDC implementation, see <i>Considerations for Using this
+     * Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The identifier of the user that
+     * associated with the access token, if present.</p>
      */
     inline CreateTokenResult& WithIdToken(const Aws::String& value) { SetIdToken(value); return *this;}
 
     /**
-     * <p>The identifier of the user that associated with the access token, if
-     * present.</p>
+     * <p>Currently, <code>idToken</code> is not yet implemented and is not supported.
+     * For more information about the features and limitations of the current IAM
+     * Identity Center OIDC implementation, see <i>Considerations for Using this
+     * Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The identifier of the user that
+     * associated with the access token, if present.</p>
      */
     inline CreateTokenResult& WithIdToken(Aws::String&& value) { SetIdToken(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the user that associated with the access token, if
-     * present.</p>
+     * <p>Currently, <code>idToken</code> is not yet implemented and is not supported.
+     * For more information about the features and limitations of the current IAM
+     * Identity Center OIDC implementation, see <i>Considerations for Using this
+     * Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+     * Identity Center OIDC API Reference</a>.</p> <p>The identifier of the user that
+     * associated with the access token, if present.</p>
      */
     inline CreateTokenResult& WithIdToken(const char* value) { SetIdToken(value); return *this;}
 

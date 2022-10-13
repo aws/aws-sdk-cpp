@@ -20,7 +20,8 @@ ListAssetsRequest::ListAssetsRequest() :
     m_hostIdFilterHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_statusFilterHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ void ListAssetsRequest::AddQueryStringParameters(URI& uri) const
       ss << m_nextToken;
       uri.AddQueryStringParameter("NextToken", ss.str());
       ss.str("");
+    }
+
+    if(m_statusFilterHasBeenSet)
+    {
+      for(const auto& item : m_statusFilter)
+      {
+        ss << AssetStateMapper::GetNameForAssetState(item);
+        uri.AddQueryStringParameter("StatusFilter", ss.str());
+        ss.str("");
+      }
     }
 
 }

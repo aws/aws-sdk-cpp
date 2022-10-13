@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/accessanalyzer/model/Criterion.h>
 #include <utility>
 
@@ -41,34 +41,44 @@ namespace Model
 
 
     /**
-     * <p>The time at which the archive rule was created.</p>
+     * <p>The name of the archive rule.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
 
     /**
-     * <p>The time at which the archive rule was created.</p>
+     * <p>The name of the archive rule.</p>
      */
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
 
     /**
-     * <p>The time at which the archive rule was created.</p>
+     * <p>The name of the archive rule.</p>
      */
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
-     * <p>The time at which the archive rule was created.</p>
+     * <p>The name of the archive rule.</p>
      */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
 
     /**
-     * <p>The time at which the archive rule was created.</p>
+     * <p>The name of the archive rule.</p>
      */
-    inline ArchiveRuleSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
 
     /**
-     * <p>The time at which the archive rule was created.</p>
+     * <p>The name of the archive rule.</p>
      */
-    inline ArchiveRuleSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline ArchiveRuleSummary& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
+
+    /**
+     * <p>The name of the archive rule.</p>
+     */
+    inline ArchiveRuleSummary& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the archive rule.</p>
+     */
+    inline ArchiveRuleSummary& WithRuleName(const char* value) { SetRuleName(value); return *this;}
 
 
     /**
@@ -133,44 +143,34 @@ namespace Model
 
 
     /**
-     * <p>The name of the archive rule.</p>
+     * <p>The time at which the archive rule was created.</p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The name of the archive rule.</p>
+     * <p>The time at which the archive rule was created.</p>
      */
-    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The name of the archive rule.</p>
+     * <p>The time at which the archive rule was created.</p>
      */
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The name of the archive rule.</p>
+     * <p>The time at which the archive rule was created.</p>
      */
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The name of the archive rule.</p>
+     * <p>The time at which the archive rule was created.</p>
      */
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
+    inline ArchiveRuleSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The name of the archive rule.</p>
+     * <p>The time at which the archive rule was created.</p>
      */
-    inline ArchiveRuleSummary& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-
-    /**
-     * <p>The name of the archive rule.</p>
-     */
-    inline ArchiveRuleSummary& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the archive rule.</p>
-     */
-    inline ArchiveRuleSummary& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    inline ArchiveRuleSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
@@ -205,14 +205,14 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet = false;
+    Aws::String m_ruleName;
+    bool m_ruleNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Criterion> m_filter;
     bool m_filterHasBeenSet = false;
 
-    Aws::String m_ruleName;
-    bool m_ruleNameHasBeenSet = false;
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;

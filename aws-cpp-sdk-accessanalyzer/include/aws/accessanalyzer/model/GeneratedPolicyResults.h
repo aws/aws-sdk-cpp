@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/accessanalyzer/model/GeneratedPolicyProperties.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/accessanalyzer/model/GeneratedPolicy.h>
 #include <utility>
 
@@ -38,6 +38,43 @@ namespace Model
     GeneratedPolicyResults(Aws::Utils::Json::JsonView jsonValue);
     GeneratedPolicyResults& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A <code>GeneratedPolicyProperties</code> object that contains properties of
+     * the generated policy.</p>
+     */
+    inline const GeneratedPolicyProperties& GetProperties() const{ return m_properties; }
+
+    /**
+     * <p>A <code>GeneratedPolicyProperties</code> object that contains properties of
+     * the generated policy.</p>
+     */
+    inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
+
+    /**
+     * <p>A <code>GeneratedPolicyProperties</code> object that contains properties of
+     * the generated policy.</p>
+     */
+    inline void SetProperties(const GeneratedPolicyProperties& value) { m_propertiesHasBeenSet = true; m_properties = value; }
+
+    /**
+     * <p>A <code>GeneratedPolicyProperties</code> object that contains properties of
+     * the generated policy.</p>
+     */
+    inline void SetProperties(GeneratedPolicyProperties&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
+
+    /**
+     * <p>A <code>GeneratedPolicyProperties</code> object that contains properties of
+     * the generated policy.</p>
+     */
+    inline GeneratedPolicyResults& WithProperties(const GeneratedPolicyProperties& value) { SetProperties(value); return *this;}
+
+    /**
+     * <p>A <code>GeneratedPolicyProperties</code> object that contains properties of
+     * the generated policy.</p>
+     */
+    inline GeneratedPolicyResults& WithProperties(GeneratedPolicyProperties&& value) { SetProperties(std::move(value)); return *this;}
 
 
     /**
@@ -104,50 +141,13 @@ namespace Model
      */
     inline GeneratedPolicyResults& AddGeneratedPolicies(GeneratedPolicy&& value) { m_generatedPoliciesHasBeenSet = true; m_generatedPolicies.push_back(std::move(value)); return *this; }
 
-
-    /**
-     * <p>A <code>GeneratedPolicyProperties</code> object that contains properties of
-     * the generated policy.</p>
-     */
-    inline const GeneratedPolicyProperties& GetProperties() const{ return m_properties; }
-
-    /**
-     * <p>A <code>GeneratedPolicyProperties</code> object that contains properties of
-     * the generated policy.</p>
-     */
-    inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-
-    /**
-     * <p>A <code>GeneratedPolicyProperties</code> object that contains properties of
-     * the generated policy.</p>
-     */
-    inline void SetProperties(const GeneratedPolicyProperties& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-
-    /**
-     * <p>A <code>GeneratedPolicyProperties</code> object that contains properties of
-     * the generated policy.</p>
-     */
-    inline void SetProperties(GeneratedPolicyProperties&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-
-    /**
-     * <p>A <code>GeneratedPolicyProperties</code> object that contains properties of
-     * the generated policy.</p>
-     */
-    inline GeneratedPolicyResults& WithProperties(const GeneratedPolicyProperties& value) { SetProperties(value); return *this;}
-
-    /**
-     * <p>A <code>GeneratedPolicyProperties</code> object that contains properties of
-     * the generated policy.</p>
-     */
-    inline GeneratedPolicyResults& WithProperties(GeneratedPolicyProperties&& value) { SetProperties(std::move(value)); return *this;}
-
   private:
-
-    Aws::Vector<GeneratedPolicy> m_generatedPolicies;
-    bool m_generatedPoliciesHasBeenSet = false;
 
     GeneratedPolicyProperties m_properties;
     bool m_propertiesHasBeenSet = false;
+
+    Aws::Vector<GeneratedPolicy> m_generatedPolicies;
+    bool m_generatedPoliciesHasBeenSet = false;
   };
 
 } // namespace Model

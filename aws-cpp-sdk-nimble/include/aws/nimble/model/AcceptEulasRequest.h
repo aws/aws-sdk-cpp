@@ -140,42 +140,42 @@ namespace Model
 
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline const Aws::String& GetStudioId() const{ return m_studioId; }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline bool StudioIdHasBeenSet() const { return m_studioIdHasBeenSet; }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline void SetStudioId(const Aws::String& value) { m_studioIdHasBeenSet = true; m_studioId = value; }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline void SetStudioId(Aws::String&& value) { m_studioIdHasBeenSet = true; m_studioId = std::move(value); }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline void SetStudioId(const char* value) { m_studioIdHasBeenSet = true; m_studioId.assign(value); }
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline AcceptEulasRequest& WithStudioId(const Aws::String& value) { SetStudioId(value); return *this;}
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline AcceptEulasRequest& WithStudioId(Aws::String&& value) { SetStudioId(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of EULA IDs.</p>
+     * <p>The studio ID.</p>
      */
     inline AcceptEulasRequest& WithStudioId(const char* value) { SetStudioId(value); return *this;}
 

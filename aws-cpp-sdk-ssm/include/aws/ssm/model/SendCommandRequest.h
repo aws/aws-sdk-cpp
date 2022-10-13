@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/NotificationConfig.h>
 #include <aws/ssm/model/CloudWatchOutputConfig.h>
+#include <aws/ssm/model/AlarmConfiguration.h>
 #include <aws/ssm/model/Target.h>
 #include <utility>
 
@@ -1217,6 +1218,37 @@ namespace Model
      */
     inline SendCommandRequest& WithCloudWatchOutputConfig(CloudWatchOutputConfig&& value) { SetCloudWatchOutputConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your command.</p>
+     */
+    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your command.</p>
+     */
+    inline bool AlarmConfigurationHasBeenSet() const { return m_alarmConfigurationHasBeenSet; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your command.</p>
+     */
+    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = value; }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your command.</p>
+     */
+    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::move(value); }
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your command.</p>
+     */
+    inline SendCommandRequest& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
+
+    /**
+     * <p>The CloudWatch alarm you want to apply to your command.</p>
+     */
+    inline SendCommandRequest& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_instanceIds;
@@ -1269,6 +1301,9 @@ namespace Model
 
     CloudWatchOutputConfig m_cloudWatchOutputConfig;
     bool m_cloudWatchOutputConfigHasBeenSet = false;
+
+    AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

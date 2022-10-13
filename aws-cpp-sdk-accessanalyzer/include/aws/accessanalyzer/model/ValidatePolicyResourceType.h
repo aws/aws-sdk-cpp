@@ -19,7 +19,8 @@ namespace Model
     AWS_S3_Bucket,
     AWS_S3_AccessPoint,
     AWS_S3_MultiRegionAccessPoint,
-    AWS_S3ObjectLambda_AccessPoint
+    AWS_S3ObjectLambda_AccessPoint,
+    AWS_IAM_AssumeRolePolicyDocument
   };
 
 namespace ValidatePolicyResourceTypeMapper

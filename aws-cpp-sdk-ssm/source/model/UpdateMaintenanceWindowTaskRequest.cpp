@@ -30,7 +30,8 @@ UpdateMaintenanceWindowTaskRequest::UpdateMaintenanceWindowTaskRequest() :
     m_replace(false),
     m_replaceHasBeenSet(false),
     m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET),
-    m_cutoffBehaviorHasBeenSet(false)
+    m_cutoffBehaviorHasBeenSet(false),
+    m_alarmConfigurationHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,12 @@ Aws::String UpdateMaintenanceWindowTaskRequest::SerializePayload() const
   if(m_cutoffBehaviorHasBeenSet)
   {
    payload.WithString("CutoffBehavior", MaintenanceWindowTaskCutoffBehaviorMapper::GetNameForMaintenanceWindowTaskCutoffBehavior(m_cutoffBehavior));
+  }
+
+  if(m_alarmConfigurationHasBeenSet)
+  {
+   payload.WithObject("AlarmConfiguration", m_alarmConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

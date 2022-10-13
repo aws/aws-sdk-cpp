@@ -619,7 +619,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information on how Device Farm modifies your uploads
-     * during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you
+     * during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you
      * modify my app?</a> </p>
      */
     inline bool GetSkipAppResign() const{ return m_skipAppResign; }
@@ -628,7 +628,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information on how Device Farm modifies your uploads
-     * during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you
+     * during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you
      * modify my app?</a> </p>
      */
     inline bool SkipAppResignHasBeenSet() const { return m_skipAppResignHasBeenSet; }
@@ -637,7 +637,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information on how Device Farm modifies your uploads
-     * during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you
+     * during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you
      * modify my app?</a> </p>
      */
     inline void SetSkipAppResign(bool value) { m_skipAppResignHasBeenSet = true; m_skipAppResign = value; }
@@ -646,7 +646,7 @@ namespace Model
      * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
      * your app again. For public devices, Device Farm always signs your apps
      * again.</p> <p>For more information on how Device Farm modifies your uploads
-     * during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you
+     * during tests, see <a href="http://aws.amazon.com/device-farm/faqs/">Do you
      * modify my app?</a> </p>
      */
     inline CreateRemoteAccessSessionRequest& WithSkipAppResign(bool value) { SetSkipAppResign(value); return *this;}

@@ -94,8 +94,8 @@ namespace Model
      * <p>The S3 object key for a build artifacts .zip file that contains .jar or
      * .class files. This is required for a code review with security analysis. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create
-     * code reviews with security analysis</a> in the <i>Amazon CodeGuru Reviewer User
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
+     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetBuildArtifactsObjectKey() const{ return m_buildArtifactsObjectKey; }
@@ -104,8 +104,8 @@ namespace Model
      * <p>The S3 object key for a build artifacts .zip file that contains .jar or
      * .class files. This is required for a code review with security analysis. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create
-     * code reviews with security analysis</a> in the <i>Amazon CodeGuru Reviewer User
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
+     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
      * Guide</i>.</p>
      */
     inline bool BuildArtifactsObjectKeyHasBeenSet() const { return m_buildArtifactsObjectKeyHasBeenSet; }
@@ -114,8 +114,8 @@ namespace Model
      * <p>The S3 object key for a build artifacts .zip file that contains .jar or
      * .class files. This is required for a code review with security analysis. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create
-     * code reviews with security analysis</a> in the <i>Amazon CodeGuru Reviewer User
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
+     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
      * Guide</i>.</p>
      */
     inline void SetBuildArtifactsObjectKey(const Aws::String& value) { m_buildArtifactsObjectKeyHasBeenSet = true; m_buildArtifactsObjectKey = value; }
@@ -124,8 +124,8 @@ namespace Model
      * <p>The S3 object key for a build artifacts .zip file that contains .jar or
      * .class files. This is required for a code review with security analysis. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create
-     * code reviews with security analysis</a> in the <i>Amazon CodeGuru Reviewer User
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
+     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
      * Guide</i>.</p>
      */
     inline void SetBuildArtifactsObjectKey(Aws::String&& value) { m_buildArtifactsObjectKeyHasBeenSet = true; m_buildArtifactsObjectKey = std::move(value); }
@@ -134,8 +134,8 @@ namespace Model
      * <p>The S3 object key for a build artifacts .zip file that contains .jar or
      * .class files. This is required for a code review with security analysis. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create
-     * code reviews with security analysis</a> in the <i>Amazon CodeGuru Reviewer User
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
+     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
      * Guide</i>.</p>
      */
     inline void SetBuildArtifactsObjectKey(const char* value) { m_buildArtifactsObjectKeyHasBeenSet = true; m_buildArtifactsObjectKey.assign(value); }
@@ -144,8 +144,8 @@ namespace Model
      * <p>The S3 object key for a build artifacts .zip file that contains .jar or
      * .class files. This is required for a code review with security analysis. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create
-     * code reviews with security analysis</a> in the <i>Amazon CodeGuru Reviewer User
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
+     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
      * Guide</i>.</p>
      */
     inline CodeArtifacts& WithBuildArtifactsObjectKey(const Aws::String& value) { SetBuildArtifactsObjectKey(value); return *this;}
@@ -154,8 +154,8 @@ namespace Model
      * <p>The S3 object key for a build artifacts .zip file that contains .jar or
      * .class files. This is required for a code review with security analysis. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create
-     * code reviews with security analysis</a> in the <i>Amazon CodeGuru Reviewer User
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
+     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
      * Guide</i>.</p>
      */
     inline CodeArtifacts& WithBuildArtifactsObjectKey(Aws::String&& value) { SetBuildArtifactsObjectKey(std::move(value)); return *this;}
@@ -164,8 +164,8 @@ namespace Model
      * <p>The S3 object key for a build artifacts .zip file that contains .jar or
      * .class files. This is required for a code review with security analysis. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/code-review-security.html">Create
-     * code reviews with security analysis</a> in the <i>Amazon CodeGuru Reviewer User
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
+     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
      * Guide</i>.</p>
      */
     inline CodeArtifacts& WithBuildArtifactsObjectKey(const char* value) { SetBuildArtifactsObjectKey(value); return *this;}

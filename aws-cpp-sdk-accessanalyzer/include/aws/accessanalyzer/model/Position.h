@@ -36,27 +36,6 @@ namespace Model
 
 
     /**
-     * <p>The column of the position, starting from 0.</p>
-     */
-    inline int GetColumn() const{ return m_column; }
-
-    /**
-     * <p>The column of the position, starting from 0.</p>
-     */
-    inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-
-    /**
-     * <p>The column of the position, starting from 0.</p>
-     */
-    inline void SetColumn(int value) { m_columnHasBeenSet = true; m_column = value; }
-
-    /**
-     * <p>The column of the position, starting from 0.</p>
-     */
-    inline Position& WithColumn(int value) { SetColumn(value); return *this;}
-
-
-    /**
      * <p>The line of the position, starting from 1.</p>
      */
     inline int GetLine() const{ return m_line; }
@@ -75,6 +54,27 @@ namespace Model
      * <p>The line of the position, starting from 1.</p>
      */
     inline Position& WithLine(int value) { SetLine(value); return *this;}
+
+
+    /**
+     * <p>The column of the position, starting from 0.</p>
+     */
+    inline int GetColumn() const{ return m_column; }
+
+    /**
+     * <p>The column of the position, starting from 0.</p>
+     */
+    inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
+
+    /**
+     * <p>The column of the position, starting from 0.</p>
+     */
+    inline void SetColumn(int value) { m_columnHasBeenSet = true; m_column = value; }
+
+    /**
+     * <p>The column of the position, starting from 0.</p>
+     */
+    inline Position& WithColumn(int value) { SetColumn(value); return *this;}
 
 
     /**
@@ -103,11 +103,11 @@ namespace Model
 
   private:
 
-    int m_column;
-    bool m_columnHasBeenSet = false;
-
     int m_line;
     bool m_lineHasBeenSet = false;
+
+    int m_column;
+    bool m_columnHasBeenSet = false;
 
     int m_offset;
     bool m_offsetHasBeenSet = false;

@@ -40,7 +40,9 @@ namespace Model
      * </p> <p>If your request uses a custom entity recognition model, Amazon
      * Comprehend detects the entities that the model is trained to recognize.
      * Otherwise, it detects the default entity types. For a list of default entity
-     * types, see <a>how-entities</a>.</p>
+     * types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline const Aws::Vector<Entity>& GetEntities() const{ return m_entities; }
 
@@ -51,7 +53,9 @@ namespace Model
      * </p> <p>If your request uses a custom entity recognition model, Amazon
      * Comprehend detects the entities that the model is trained to recognize.
      * Otherwise, it detects the default entity types. For a list of default entity
-     * types, see <a>how-entities</a>.</p>
+     * types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline void SetEntities(const Aws::Vector<Entity>& value) { m_entities = value; }
 
@@ -62,7 +66,9 @@ namespace Model
      * </p> <p>If your request uses a custom entity recognition model, Amazon
      * Comprehend detects the entities that the model is trained to recognize.
      * Otherwise, it detects the default entity types. For a list of default entity
-     * types, see <a>how-entities</a>.</p>
+     * types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline void SetEntities(Aws::Vector<Entity>&& value) { m_entities = std::move(value); }
 
@@ -73,7 +79,9 @@ namespace Model
      * </p> <p>If your request uses a custom entity recognition model, Amazon
      * Comprehend detects the entities that the model is trained to recognize.
      * Otherwise, it detects the default entity types. For a list of default entity
-     * types, see <a>how-entities</a>.</p>
+     * types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline DetectEntitiesResult& WithEntities(const Aws::Vector<Entity>& value) { SetEntities(value); return *this;}
 
@@ -84,7 +92,9 @@ namespace Model
      * </p> <p>If your request uses a custom entity recognition model, Amazon
      * Comprehend detects the entities that the model is trained to recognize.
      * Otherwise, it detects the default entity types. For a list of default entity
-     * types, see <a>how-entities</a>.</p>
+     * types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline DetectEntitiesResult& WithEntities(Aws::Vector<Entity>&& value) { SetEntities(std::move(value)); return *this;}
 
@@ -95,7 +105,9 @@ namespace Model
      * </p> <p>If your request uses a custom entity recognition model, Amazon
      * Comprehend detects the entities that the model is trained to recognize.
      * Otherwise, it detects the default entity types. For a list of default entity
-     * types, see <a>how-entities</a>.</p>
+     * types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline DetectEntitiesResult& AddEntities(const Entity& value) { m_entities.push_back(value); return *this; }
 
@@ -106,7 +118,9 @@ namespace Model
      * </p> <p>If your request uses a custom entity recognition model, Amazon
      * Comprehend detects the entities that the model is trained to recognize.
      * Otherwise, it detects the default entity types. For a list of default entity
-     * types, see <a>how-entities</a>.</p>
+     * types, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/how-entities.html">Entities</a>
+     * in the Comprehend Developer Guide. </p>
      */
     inline DetectEntitiesResult& AddEntities(Entity&& value) { m_entities.push_back(std::move(value)); return *this; }
 

@@ -33,7 +33,10 @@ DataRepositoryTask::DataRepositoryTask() :
     m_pathsHasBeenSet(false),
     m_failureDetailsHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_reportHasBeenSet(false)
+    m_reportHasBeenSet(false),
+    m_capacityToRelease(0),
+    m_capacityToReleaseHasBeenSet(false),
+    m_fileCacheIdHasBeenSet(false)
 {
 }
 
@@ -52,7 +55,10 @@ DataRepositoryTask::DataRepositoryTask(JsonView jsonValue) :
     m_pathsHasBeenSet(false),
     m_failureDetailsHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_reportHasBeenSet(false)
+    m_reportHasBeenSet(false),
+    m_capacityToRelease(0),
+    m_capacityToReleaseHasBeenSet(false),
+    m_fileCacheIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -156,6 +162,20 @@ DataRepositoryTask& DataRepositoryTask::operator =(JsonView jsonValue)
     m_reportHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CapacityToRelease"))
+  {
+    m_capacityToRelease = jsonValue.GetInt64("CapacityToRelease");
+
+    m_capacityToReleaseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FileCacheId"))
+  {
+    m_fileCacheId = jsonValue.GetString("FileCacheId");
+
+    m_fileCacheIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -243,6 +263,18 @@ JsonValue DataRepositoryTask::Jsonize() const
   if(m_reportHasBeenSet)
   {
    payload.WithObject("Report", m_report.Jsonize());
+
+  }
+
+  if(m_capacityToReleaseHasBeenSet)
+  {
+   payload.WithInt64("CapacityToRelease", m_capacityToRelease);
+
+  }
+
+  if(m_fileCacheIdHasBeenSet)
+  {
+   payload.WithString("FileCacheId", m_fileCacheId);
 
   }
 

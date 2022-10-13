@@ -119,42 +119,42 @@ namespace Model
 
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline const Aws::Vector<EntityConfiguration>& GetEntityList() const{ return m_entityList; }
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline bool EntityListHasBeenSet() const { return m_entityListHasBeenSet; }
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline void SetEntityList(const Aws::Vector<EntityConfiguration>& value) { m_entityListHasBeenSet = true; m_entityList = value; }
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline void SetEntityList(Aws::Vector<EntityConfiguration>&& value) { m_entityListHasBeenSet = true; m_entityList = std::move(value); }
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline DisassociateEntitiesFromExperienceRequest& WithEntityList(const Aws::Vector<EntityConfiguration>& value) { SetEntityList(value); return *this;}
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline DisassociateEntitiesFromExperienceRequest& WithEntityList(Aws::Vector<EntityConfiguration>&& value) { SetEntityList(std::move(value)); return *this;}
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline DisassociateEntitiesFromExperienceRequest& AddEntityList(const EntityConfiguration& value) { m_entityListHasBeenSet = true; m_entityList.push_back(value); return *this; }
 
     /**
-     * <p>Lists users or groups in your Amazon Web Services SSO identity source.</p>
+     * <p>Lists users or groups in your IAM Identity Center identity source.</p>
      */
     inline DisassociateEntitiesFromExperienceRequest& AddEntityList(EntityConfiguration&& value) { m_entityListHasBeenSet = true; m_entityList.push_back(std::move(value)); return *this; }
 

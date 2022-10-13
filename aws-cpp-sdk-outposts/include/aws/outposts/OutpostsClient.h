@@ -52,7 +52,7 @@ namespace Outposts
 
 
         /**
-         * <p> Cancels an order for an Outpost. </p><p><h3>See Also:</h3>   <a
+         * <p>Cancels the specified order for an Outpost.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CancelOrder">AWS
          * API Reference</a></p>
          */
@@ -86,8 +86,8 @@ namespace Outposts
         virtual void CreateOrderAsync(const Model::CreateOrderRequest& request, const CreateOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Outpost.</p> <p>You can specify <code>AvailabilityZone</code> or
-         * <code>AvailabilityZoneId</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an Outpost.</p> <p>You can specify either an Availability one or an
+         * AZ ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOutpost">AWS
          * API Reference</a></p>
          */
@@ -121,7 +121,7 @@ namespace Outposts
         virtual void CreateSiteAsync(const Model::CreateSiteRequest& request, const CreateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the Outpost.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified Outpost.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost">AWS
          * API Reference</a></p>
          */
@@ -138,7 +138,7 @@ namespace Outposts
         virtual void DeleteOutpostAsync(const Model::DeleteOutpostRequest& request, const DeleteOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the site.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified site.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite">AWS
          * API Reference</a></p>
          */
@@ -155,7 +155,8 @@ namespace Outposts
         virtual void DeleteSiteAsync(const Model::DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a catalog item.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified catalog item.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetCatalogItem">AWS
          * API Reference</a></p>
          */
@@ -173,7 +174,7 @@ namespace Outposts
 
         /**
          *  <p> Amazon Web Services uses this action to install Outpost servers.</p>
-         *  <p> Gets information about a specified connection. </p> <p> Use
+         *  <p> Gets information about the specified connection. </p> <p> Use
          * CloudTrail to monitor this action or Amazon Web Services managed policy for
          * Amazon Web Services Outposts to secure it. For more information, see <a
          * href="https://docs.aws.amazon.com/outposts/latest/userguide/security-iam-awsmanpol.html">
@@ -198,7 +199,7 @@ namespace Outposts
         virtual void GetConnectionAsync(const Model::GetConnectionRequest& request, const GetConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets an order.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the specified order.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOrder">AWS
          * API Reference</a></p>
          */
@@ -250,7 +251,7 @@ namespace Outposts
         virtual void GetOutpostInstanceTypesAsync(const Model::GetOutpostInstanceTypesRequest& request, const GetOutpostInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets information about the specified Outpost site. </p><p><h3>See Also:</h3>
+         * <p>Gets information about the specified Outpost site.</p><p><h3>See Also:</h3>  
          * <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetSite">AWS
          * API Reference</a></p>
          */
@@ -267,7 +268,7 @@ namespace Outposts
         virtual void GetSiteAsync(const Model::GetSiteRequest& request, const GetSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets the site address. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets the site address of the specified site. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetSiteAddress">AWS
          * API Reference</a></p>
          */
@@ -284,10 +285,11 @@ namespace Outposts
         virtual void GetSiteAddressAsync(const Model::GetSiteAddressRequest& request, const GetSiteAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Lists the hardware assets in an Outpost. If you are using Dedicated Hosts on
-         * Amazon Web Services Outposts, you can filter your request by host ID to return a
-         * list of hardware assets that allocate resources for Dedicated Hosts.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the hardware assets for the specified Outpost.</p> <p>Use filters to
+         * return specific results. If you specify multiple filters, the results include
+         * only the resources that match all of the specified filters. For a filter where
+         * you can specify multiple values, the results include items that match any of the
+         * values that you specify for the filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListAssets">AWS
          * API Reference</a></p>
          */
@@ -304,11 +306,11 @@ namespace Outposts
         virtual void ListAssetsAsync(const Model::ListAssetsRequest& request, const ListAssetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the items in the catalog. Add filters to your request to return a more
-         * specific list of results. Use filters to match an item class, storage option, or
-         * EC2 family. </p> <p>If you specify multiple filters, the filters are joined with
-         * an <code>AND</code>, and the request returns only results that match all of the
-         * specified filters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the items in the catalog.</p> <p>Use filters to return specific
+         * results. If you specify multiple filters, the results include only the resources
+         * that match all of the specified filters. For a filter where you can specify
+         * multiple values, the results include items that match any of the values that you
+         * specify for the filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCatalogItems">AWS
          * API Reference</a></p>
          */
@@ -325,9 +327,8 @@ namespace Outposts
         virtual void ListCatalogItemsAsync(const Model::ListCatalogItemsRequest& request, const ListCatalogItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Outpost orders for your Amazon Web Services account. You can filter
-         * your request by Outpost to return a more specific list of results.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Outpost orders for your Amazon Web Services account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOrders">AWS
          * API Reference</a></p>
          */
@@ -344,12 +345,11 @@ namespace Outposts
         virtual void ListOrdersAsync(const Model::ListOrdersRequest& request, const ListOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Outposts for your Amazon Web Services account. Add filters to your
-         * request to return a more specific list of results. Use filters to match an
-         * Outpost lifecycle status, Availability Zone (<code>us-east-1a</code>), and AZ ID
-         * (<code>use1-az1</code>). </p> <p>If you specify multiple filters, the filters
-         * are joined with an <code>AND</code>, and the request returns only results that
-         * match all of the specified filters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Outposts for your Amazon Web Services account.</p> <p>Use filters
+         * to return specific results. If you specify multiple filters, the results include
+         * only the resources that match all of the specified filters. For a filter where
+         * you can specify multiple values, the results include items that match any of the
+         * values that you specify for the filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListOutposts">AWS
          * API Reference</a></p>
          */
@@ -366,12 +366,12 @@ namespace Outposts
         virtual void ListOutpostsAsync(const Model::ListOutpostsRequest& request, const ListOutpostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Outpost sites for your Amazon Web Services account. Add operating
-         * address filters to your request to return a more specific list of results. Use
-         * filters to match site city, country code, or state/region of the operating
-         * address. </p> <p>If you specify multiple filters, the filters are joined with an
-         * <code>AND</code>, and the request returns only results that match all of the
-         * specified filters.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Outpost sites for your Amazon Web Services account. Use filters to
+         * return specific results.</p> <p>Use filters to return specific results. If you
+         * specify multiple filters, the results include only the resources that match all
+         * of the specified filters. For a filter where you can specify multiple values,
+         * the results include items that match any of the values that you specify for the
+         * filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListSites">AWS
          * API Reference</a></p>
          */
@@ -482,7 +482,7 @@ namespace Outposts
         virtual void UpdateOutpostAsync(const Model::UpdateOutpostRequest& request, const UpdateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates the site. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the specified site.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateSite">AWS
          * API Reference</a></p>
          */
@@ -499,11 +499,11 @@ namespace Outposts
         virtual void UpdateSiteAsync(const Model::UpdateSiteRequest& request, const UpdateSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates the site address. </p> <p> To update a site address with an order
-         * <code>IN_PROGRESS</code>, you must wait for the order to complete or cancel the
-         * order. </p> <p>You can update the operating address before you place an order at
-         * the site, or after all Outposts that belong to the site have been deactivated.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Updates the address of the specified site.</p> <p>You can't update a site
+         * address if there is an order in progress. You must wait for the order to
+         * complete or cancel the order.</p> <p>You can update the operating address before
+         * you place an order at the site, or after all Outposts that belong to the site
+         * have been deactivated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/UpdateSiteAddress">AWS
          * API Reference</a></p>
          */
