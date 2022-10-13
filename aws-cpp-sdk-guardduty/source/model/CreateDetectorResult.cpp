@@ -34,6 +34,12 @@ CreateDetectorResult& CreateDetectorResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("unprocessedDataSources"))
+  {
+    m_unprocessedDataSources = jsonValue.GetObject("unprocessedDataSources");
+
+  }
+
 
 
   return *this;

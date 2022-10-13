@@ -35,6 +35,7 @@ namespace Aws
         static const int CONCAT_FORMAT_HASH = HashingUtils::HashString("CONCAT_FORMAT");
         static const int SUBFIELD_CATEGORY_MAP_HASH = HashingUtils::HashString("SUBFIELD_CATEGORY_MAP");
         static const int EXCLUDE_SOURCE_FIELDS_LIST_HASH = HashingUtils::HashString("EXCLUDE_SOURCE_FIELDS_LIST");
+        static const int INCLUDE_NEW_FIELDS_HASH = HashingUtils::HashString("INCLUDE_NEW_FIELDS");
 
 
         OperatorPropertiesKeys GetOperatorPropertiesKeysForName(const Aws::String& name)
@@ -100,6 +101,10 @@ namespace Aws
           {
             return OperatorPropertiesKeys::EXCLUDE_SOURCE_FIELDS_LIST;
           }
+          else if (hashCode == INCLUDE_NEW_FIELDS_HASH)
+          {
+            return OperatorPropertiesKeys::INCLUDE_NEW_FIELDS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -144,6 +149,8 @@ namespace Aws
             return "SUBFIELD_CATEGORY_MAP";
           case OperatorPropertiesKeys::EXCLUDE_SOURCE_FIELDS_LIST:
             return "EXCLUDE_SOURCE_FIELDS_LIST";
+          case OperatorPropertiesKeys::INCLUDE_NEW_FIELDS:
+            return "INCLUDE_NEW_FIELDS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

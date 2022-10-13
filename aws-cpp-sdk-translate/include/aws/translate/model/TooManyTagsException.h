@@ -23,6 +23,12 @@ namespace Translate
 namespace Model
 {
 
+  /**
+   * <p>You have added too many tags to this resource. The maximum is 50
+   * tags.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TooManyTagsException">AWS
+   * API Reference</a></p>
+   */
   class AWS_TRANSLATE_API TooManyTagsException
   {
   public:

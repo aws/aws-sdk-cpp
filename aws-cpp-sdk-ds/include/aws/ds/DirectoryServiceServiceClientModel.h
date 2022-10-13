@@ -49,6 +49,7 @@
 #include <aws/ds/model/DescribeSharedDirectoriesResult.h>
 #include <aws/ds/model/DescribeSnapshotsResult.h>
 #include <aws/ds/model/DescribeTrustsResult.h>
+#include <aws/ds/model/DescribeUpdateDirectoryResult.h>
 #include <aws/ds/model/DisableClientAuthenticationResult.h>
 #include <aws/ds/model/DisableLDAPSResult.h>
 #include <aws/ds/model/DisableRadiusResult.h>
@@ -76,6 +77,7 @@
 #include <aws/ds/model/StartSchemaExtensionResult.h>
 #include <aws/ds/model/UnshareDirectoryResult.h>
 #include <aws/ds/model/UpdateConditionalForwarderResult.h>
+#include <aws/ds/model/UpdateDirectorySetupResult.h>
 #include <aws/ds/model/UpdateNumberOfDomainControllersResult.h>
 #include <aws/ds/model/UpdateRadiusResult.h>
 #include <aws/ds/model/UpdateSettingsResult.h>
@@ -150,6 +152,7 @@ namespace Aws
       class DescribeSharedDirectoriesRequest;
       class DescribeSnapshotsRequest;
       class DescribeTrustsRequest;
+      class DescribeUpdateDirectoryRequest;
       class DisableClientAuthenticationRequest;
       class DisableLDAPSRequest;
       class DisableRadiusRequest;
@@ -177,6 +180,7 @@ namespace Aws
       class StartSchemaExtensionRequest;
       class UnshareDirectoryRequest;
       class UpdateConditionalForwarderRequest;
+      class UpdateDirectorySetupRequest;
       class UpdateNumberOfDomainControllersRequest;
       class UpdateRadiusRequest;
       class UpdateSettingsRequest;
@@ -218,6 +222,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeSharedDirectoriesResult, DirectoryServiceError> DescribeSharedDirectoriesOutcome;
       typedef Aws::Utils::Outcome<DescribeSnapshotsResult, DirectoryServiceError> DescribeSnapshotsOutcome;
       typedef Aws::Utils::Outcome<DescribeTrustsResult, DirectoryServiceError> DescribeTrustsOutcome;
+      typedef Aws::Utils::Outcome<DescribeUpdateDirectoryResult, DirectoryServiceError> DescribeUpdateDirectoryOutcome;
       typedef Aws::Utils::Outcome<DisableClientAuthenticationResult, DirectoryServiceError> DisableClientAuthenticationOutcome;
       typedef Aws::Utils::Outcome<DisableLDAPSResult, DirectoryServiceError> DisableLDAPSOutcome;
       typedef Aws::Utils::Outcome<DisableRadiusResult, DirectoryServiceError> DisableRadiusOutcome;
@@ -245,6 +250,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<StartSchemaExtensionResult, DirectoryServiceError> StartSchemaExtensionOutcome;
       typedef Aws::Utils::Outcome<UnshareDirectoryResult, DirectoryServiceError> UnshareDirectoryOutcome;
       typedef Aws::Utils::Outcome<UpdateConditionalForwarderResult, DirectoryServiceError> UpdateConditionalForwarderOutcome;
+      typedef Aws::Utils::Outcome<UpdateDirectorySetupResult, DirectoryServiceError> UpdateDirectorySetupOutcome;
       typedef Aws::Utils::Outcome<UpdateNumberOfDomainControllersResult, DirectoryServiceError> UpdateNumberOfDomainControllersOutcome;
       typedef Aws::Utils::Outcome<UpdateRadiusResult, DirectoryServiceError> UpdateRadiusOutcome;
       typedef Aws::Utils::Outcome<UpdateSettingsResult, DirectoryServiceError> UpdateSettingsOutcome;
@@ -286,6 +292,7 @@ namespace Aws
       typedef std::future<DescribeSharedDirectoriesOutcome> DescribeSharedDirectoriesOutcomeCallable;
       typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
       typedef std::future<DescribeTrustsOutcome> DescribeTrustsOutcomeCallable;
+      typedef std::future<DescribeUpdateDirectoryOutcome> DescribeUpdateDirectoryOutcomeCallable;
       typedef std::future<DisableClientAuthenticationOutcome> DisableClientAuthenticationOutcomeCallable;
       typedef std::future<DisableLDAPSOutcome> DisableLDAPSOutcomeCallable;
       typedef std::future<DisableRadiusOutcome> DisableRadiusOutcomeCallable;
@@ -313,6 +320,7 @@ namespace Aws
       typedef std::future<StartSchemaExtensionOutcome> StartSchemaExtensionOutcomeCallable;
       typedef std::future<UnshareDirectoryOutcome> UnshareDirectoryOutcomeCallable;
       typedef std::future<UpdateConditionalForwarderOutcome> UpdateConditionalForwarderOutcomeCallable;
+      typedef std::future<UpdateDirectorySetupOutcome> UpdateDirectorySetupOutcomeCallable;
       typedef std::future<UpdateNumberOfDomainControllersOutcome> UpdateNumberOfDomainControllersOutcomeCallable;
       typedef std::future<UpdateRadiusOutcome> UpdateRadiusOutcomeCallable;
       typedef std::future<UpdateSettingsOutcome> UpdateSettingsOutcomeCallable;
@@ -357,6 +365,7 @@ namespace Aws
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeSharedDirectoriesRequest&, const Model::DescribeSharedDirectoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSharedDirectoriesResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotsResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeTrustsRequest&, const Model::DescribeTrustsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustsResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::DescribeUpdateDirectoryRequest&, const Model::DescribeUpdateDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUpdateDirectoryResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DisableClientAuthenticationRequest&, const Model::DisableClientAuthenticationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableClientAuthenticationResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DisableLDAPSRequest&, const Model::DisableLDAPSOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableLDAPSResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::DisableRadiusRequest&, const Model::DisableRadiusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableRadiusResponseReceivedHandler;
@@ -384,6 +393,7 @@ namespace Aws
     typedef std::function<void(const DirectoryServiceClient*, const Model::StartSchemaExtensionRequest&, const Model::StartSchemaExtensionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSchemaExtensionResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UnshareDirectoryRequest&, const Model::UnshareDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnshareDirectoryResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateConditionalForwarderRequest&, const Model::UpdateConditionalForwarderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConditionalForwarderResponseReceivedHandler;
+    typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateDirectorySetupRequest&, const Model::UpdateDirectorySetupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDirectorySetupResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateNumberOfDomainControllersRequest&, const Model::UpdateNumberOfDomainControllersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNumberOfDomainControllersResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateRadiusRequest&, const Model::UpdateRadiusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRadiusResponseReceivedHandler;
     typedef std::function<void(const DirectoryServiceClient*, const Model::UpdateSettingsRequest&, const Model::UpdateSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSettingsResponseReceivedHandler;

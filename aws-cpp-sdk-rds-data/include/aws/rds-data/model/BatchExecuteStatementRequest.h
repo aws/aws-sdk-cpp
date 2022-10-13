@@ -243,42 +243,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline BatchExecuteStatementRequest& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline BatchExecuteStatementRequest& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database schema.</p>
+     * <p>The name of the database schema.</p>  <p>Currently, the
+     * <code>schema</code> parameter isn't supported.</p> 
      */
     inline BatchExecuteStatementRequest& WithSchema(const char* value) { SetSchema(value); return *this;}
 

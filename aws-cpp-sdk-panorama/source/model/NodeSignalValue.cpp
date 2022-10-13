@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/TargetType.h>
+#include <aws/panorama/model/NodeSignalValue.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,46 +13,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace ConnectWisdomService
+  namespace Panorama
   {
     namespace Model
     {
-      namespace TargetTypeMapper
+      namespace NodeSignalValueMapper
       {
 
-        static const int RECOMMENDATION_HASH = HashingUtils::HashString("RECOMMENDATION");
-        static const int RESULT_HASH = HashingUtils::HashString("RESULT");
+        static const int PAUSE_HASH = HashingUtils::HashString("PAUSE");
+        static const int RESUME_HASH = HashingUtils::HashString("RESUME");
 
 
-        TargetType GetTargetTypeForName(const Aws::String& name)
+        NodeSignalValue GetNodeSignalValueForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == RECOMMENDATION_HASH)
+          if (hashCode == PAUSE_HASH)
           {
-            return TargetType::RECOMMENDATION;
+            return NodeSignalValue::PAUSE;
           }
-          else if (hashCode == RESULT_HASH)
+          else if (hashCode == RESUME_HASH)
           {
-            return TargetType::RESULT;
+            return NodeSignalValue::RESUME;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<TargetType>(hashCode);
+            return static_cast<NodeSignalValue>(hashCode);
           }
 
-          return TargetType::NOT_SET;
+          return NodeSignalValue::NOT_SET;
         }
 
-        Aws::String GetNameForTargetType(TargetType enumValue)
+        Aws::String GetNameForNodeSignalValue(NodeSignalValue enumValue)
         {
           switch(enumValue)
           {
-          case TargetType::RECOMMENDATION:
-            return "RECOMMENDATION";
-          case TargetType::RESULT:
-            return "RESULT";
+          case NodeSignalValue::PAUSE:
+            return "PAUSE";
+          case NodeSignalValue::RESUME:
+            return "RESUME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace TargetTypeMapper
+      } // namespace NodeSignalValueMapper
     } // namespace Model
-  } // namespace ConnectWisdomService
+  } // namespace Panorama
 } // namespace Aws

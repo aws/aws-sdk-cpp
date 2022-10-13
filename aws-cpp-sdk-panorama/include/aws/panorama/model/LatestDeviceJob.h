@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/model/JobType.h>
 #include <aws/panorama/model/UpdateProgress.h>
 #include <utility>
 
@@ -81,6 +82,37 @@ namespace Model
 
 
     /**
+     * <p>The job's type.</p>
+     */
+    inline const JobType& GetJobType() const{ return m_jobType; }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline LatestDeviceJob& WithJobType(const JobType& value) { SetJobType(value); return *this;}
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline LatestDeviceJob& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+
+
+    /**
      * <p>Status of the latest device job.</p>
      */
     inline const UpdateProgress& GetStatus() const{ return m_status; }
@@ -114,6 +146,9 @@ namespace Model
 
     Aws::String m_imageVersion;
     bool m_imageVersionHasBeenSet = false;
+
+    JobType m_jobType;
+    bool m_jobTypeHasBeenSet = false;
 
     UpdateProgress m_status;
     bool m_statusHasBeenSet = false;

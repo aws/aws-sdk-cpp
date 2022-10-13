@@ -184,6 +184,31 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether to render the field as an array. This property is ignored
+     * if the <code>dataSourceType</code> for the form is a Data Store.</p>
+     */
+    inline bool GetIsArray() const{ return m_isArray; }
+
+    /**
+     * <p>Specifies whether to render the field as an array. This property is ignored
+     * if the <code>dataSourceType</code> for the form is a Data Store.</p>
+     */
+    inline bool IsArrayHasBeenSet() const { return m_isArrayHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to render the field as an array. This property is ignored
+     * if the <code>dataSourceType</code> for the form is a Data Store.</p>
+     */
+    inline void SetIsArray(bool value) { m_isArrayHasBeenSet = true; m_isArray = value; }
+
+    /**
+     * <p>Specifies whether to render the field as an array. This property is ignored
+     * if the <code>dataSourceType</code> for the form is a Data Store.</p>
+     */
+    inline FieldInputConfig& WithIsArray(bool value) { SetIsArray(value); return *this;}
+
+
+    /**
      * <p>The maximum value to display for the field.</p>
      */
     inline double GetMaxValue() const{ return m_maxValue; }
@@ -501,6 +526,9 @@ namespace Model
 
     Aws::String m_descriptiveText;
     bool m_descriptiveTextHasBeenSet = false;
+
+    bool m_isArray;
+    bool m_isArrayHasBeenSet = false;
 
     double m_maxValue;
     bool m_maxValueHasBeenSet = false;

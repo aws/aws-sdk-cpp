@@ -7,6 +7,7 @@
 #include <aws/panorama/Panorama_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/panorama/model/JobType.h>
 #include <utility>
 
 namespace Aws
@@ -191,6 +192,37 @@ namespace Model
      */
     inline DeviceJob& WithJobId(const char* value) { SetJobId(value); return *this;}
 
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline const JobType& GetJobType() const{ return m_jobType; }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline DeviceJob& WithJobType(const JobType& value) { SetJobType(value); return *this;}
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline DeviceJob& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_createdTime;
@@ -204,6 +236,9 @@ namespace Model
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
+
+    JobType m_jobType;
+    bool m_jobTypeHasBeenSet = false;
   };
 
 } // namespace Model

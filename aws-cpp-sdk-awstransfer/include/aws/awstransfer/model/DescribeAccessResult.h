@@ -77,27 +77,27 @@ namespace Model
 
 
     /**
-     * <p>The external ID of the server that the access is attached to.</p>
+     * <p>The external identifier of the server that the access is attached to.</p>
      */
     inline const DescribedAccess& GetAccess() const{ return m_access; }
 
     /**
-     * <p>The external ID of the server that the access is attached to.</p>
+     * <p>The external identifier of the server that the access is attached to.</p>
      */
     inline void SetAccess(const DescribedAccess& value) { m_access = value; }
 
     /**
-     * <p>The external ID of the server that the access is attached to.</p>
+     * <p>The external identifier of the server that the access is attached to.</p>
      */
     inline void SetAccess(DescribedAccess&& value) { m_access = std::move(value); }
 
     /**
-     * <p>The external ID of the server that the access is attached to.</p>
+     * <p>The external identifier of the server that the access is attached to.</p>
      */
     inline DescribeAccessResult& WithAccess(const DescribedAccess& value) { SetAccess(value); return *this;}
 
     /**
-     * <p>The external ID of the server that the access is attached to.</p>
+     * <p>The external identifier of the server that the access is attached to.</p>
      */
     inline DescribeAccessResult& WithAccess(DescribedAccess&& value) { SetAccess(std::move(value)); return *this;}
 

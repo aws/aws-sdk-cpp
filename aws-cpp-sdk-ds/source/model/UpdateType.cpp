@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/wisdom/model/Relevance.h>
+#include <aws/ds/model/UpdateType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,46 +13,39 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace ConnectWisdomService
+  namespace DirectoryService
   {
     namespace Model
     {
-      namespace RelevanceMapper
+      namespace UpdateTypeMapper
       {
 
-        static const int HELPFUL_HASH = HashingUtils::HashString("HELPFUL");
-        static const int NOT_HELPFUL_HASH = HashingUtils::HashString("NOT_HELPFUL");
+        static const int OS_HASH = HashingUtils::HashString("OS");
 
 
-        Relevance GetRelevanceForName(const Aws::String& name)
+        UpdateType GetUpdateTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == HELPFUL_HASH)
+          if (hashCode == OS_HASH)
           {
-            return Relevance::HELPFUL;
-          }
-          else if (hashCode == NOT_HELPFUL_HASH)
-          {
-            return Relevance::NOT_HELPFUL;
+            return UpdateType::OS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<Relevance>(hashCode);
+            return static_cast<UpdateType>(hashCode);
           }
 
-          return Relevance::NOT_SET;
+          return UpdateType::NOT_SET;
         }
 
-        Aws::String GetNameForRelevance(Relevance enumValue)
+        Aws::String GetNameForUpdateType(UpdateType enumValue)
         {
           switch(enumValue)
           {
-          case Relevance::HELPFUL:
-            return "HELPFUL";
-          case Relevance::NOT_HELPFUL:
-            return "NOT_HELPFUL";
+          case UpdateType::OS:
+            return "OS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -64,7 +57,7 @@ namespace Aws
           }
         }
 
-      } // namespace RelevanceMapper
+      } // namespace UpdateTypeMapper
     } // namespace Model
-  } // namespace ConnectWisdomService
+  } // namespace DirectoryService
 } // namespace Aws

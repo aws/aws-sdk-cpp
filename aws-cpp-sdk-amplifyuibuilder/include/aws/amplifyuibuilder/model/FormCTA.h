@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the call to action button configuration for the
-   * form..</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the call to action button configuration for the form.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/FormCTA">AWS
    * API Reference</a></p>
    */
