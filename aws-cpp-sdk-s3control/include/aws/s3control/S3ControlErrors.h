@@ -42,13 +42,13 @@ enum class S3ControlErrors
   SIGNATURE_DOES_NOT_MATCH = 22,
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
+  BAD_REQUEST = 25,
   NETWORK_CONNECTION = 99,
 
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  BUCKET_ALREADY_EXISTS,
+  BUCKET_ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   BUCKET_ALREADY_OWNED_BY_YOU,
   IDEMPOTENCY,
   INTERNAL_SERVICE,
