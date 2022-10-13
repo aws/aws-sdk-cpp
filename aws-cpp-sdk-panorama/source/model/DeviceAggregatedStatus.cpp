@@ -29,6 +29,7 @@ namespace Aws
         static const int OFFLINE_HASH = HashingUtils::HashString("OFFLINE");
         static const int LEASE_EXPIRED_HASH = HashingUtils::HashString("LEASE_EXPIRED");
         static const int UPDATE_NEEDED_HASH = HashingUtils::HashString("UPDATE_NEEDED");
+        static const int REBOOTING_HASH = HashingUtils::HashString("REBOOTING");
 
 
         DeviceAggregatedStatus GetDeviceAggregatedStatusForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return DeviceAggregatedStatus::UPDATE_NEEDED;
           }
+          else if (hashCode == REBOOTING_HASH)
+          {
+            return DeviceAggregatedStatus::REBOOTING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +107,8 @@ namespace Aws
             return "LEASE_EXPIRED";
           case DeviceAggregatedStatus::UPDATE_NEEDED:
             return "UPDATE_NEEDED";
+          case DeviceAggregatedStatus::REBOOTING:
+            return "REBOOTING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

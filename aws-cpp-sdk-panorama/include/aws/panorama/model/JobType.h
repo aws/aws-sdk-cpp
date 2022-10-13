@@ -16,7 +16,8 @@ namespace Model
   enum class JobType
   {
     NOT_SET,
-    OTA
+    OTA,
+    REBOOT
   };
 
 namespace JobTypeMapper

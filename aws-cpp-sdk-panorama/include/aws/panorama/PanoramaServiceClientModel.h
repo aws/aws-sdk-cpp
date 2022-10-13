@@ -46,6 +46,7 @@
 #include <aws/panorama/model/ProvisionDeviceResult.h>
 #include <aws/panorama/model/RegisterPackageVersionResult.h>
 #include <aws/panorama/model/RemoveApplicationInstanceResult.h>
+#include <aws/panorama/model/SignalApplicationInstanceNodeInstancesResult.h>
 #include <aws/panorama/model/TagResourceResult.h>
 #include <aws/panorama/model/UntagResourceResult.h>
 #include <aws/panorama/model/UpdateDeviceMetadataResult.h>
@@ -115,6 +116,7 @@ namespace Aws
       class ProvisionDeviceRequest;
       class RegisterPackageVersionRequest;
       class RemoveApplicationInstanceRequest;
+      class SignalApplicationInstanceNodeInstancesRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateDeviceMetadataRequest;
@@ -151,6 +153,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ProvisionDeviceResult, PanoramaError> ProvisionDeviceOutcome;
       typedef Aws::Utils::Outcome<RegisterPackageVersionResult, PanoramaError> RegisterPackageVersionOutcome;
       typedef Aws::Utils::Outcome<RemoveApplicationInstanceResult, PanoramaError> RemoveApplicationInstanceOutcome;
+      typedef Aws::Utils::Outcome<SignalApplicationInstanceNodeInstancesResult, PanoramaError> SignalApplicationInstanceNodeInstancesOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, PanoramaError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, PanoramaError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateDeviceMetadataResult, PanoramaError> UpdateDeviceMetadataOutcome;
@@ -187,6 +190,7 @@ namespace Aws
       typedef std::future<ProvisionDeviceOutcome> ProvisionDeviceOutcomeCallable;
       typedef std::future<RegisterPackageVersionOutcome> RegisterPackageVersionOutcomeCallable;
       typedef std::future<RemoveApplicationInstanceOutcome> RemoveApplicationInstanceOutcomeCallable;
+      typedef std::future<SignalApplicationInstanceNodeInstancesOutcome> SignalApplicationInstanceNodeInstancesOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateDeviceMetadataOutcome> UpdateDeviceMetadataOutcomeCallable;
@@ -226,6 +230,7 @@ namespace Aws
     typedef std::function<void(const PanoramaClient*, const Model::ProvisionDeviceRequest&, const Model::ProvisionDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionDeviceResponseReceivedHandler;
     typedef std::function<void(const PanoramaClient*, const Model::RegisterPackageVersionRequest&, const Model::RegisterPackageVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterPackageVersionResponseReceivedHandler;
     typedef std::function<void(const PanoramaClient*, const Model::RemoveApplicationInstanceRequest&, const Model::RemoveApplicationInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveApplicationInstanceResponseReceivedHandler;
+    typedef std::function<void(const PanoramaClient*, const Model::SignalApplicationInstanceNodeInstancesRequest&, const Model::SignalApplicationInstanceNodeInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SignalApplicationInstanceNodeInstancesResponseReceivedHandler;
     typedef std::function<void(const PanoramaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const PanoramaClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const PanoramaClient*, const Model::UpdateDeviceMetadataRequest&, const Model::UpdateDeviceMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceMetadataResponseReceivedHandler;

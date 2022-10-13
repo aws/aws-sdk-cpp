@@ -50,6 +50,7 @@
 #include <aws/panorama/model/ProvisionDeviceRequest.h>
 #include <aws/panorama/model/RegisterPackageVersionRequest.h>
 #include <aws/panorama/model/RemoveApplicationInstanceRequest.h>
+#include <aws/panorama/model/SignalApplicationInstanceNodeInstancesRequest.h>
 #include <aws/panorama/model/TagResourceRequest.h>
 #include <aws/panorama/model/UntagResourceRequest.h>
 #include <aws/panorama/model/UpdateDeviceMetadataRequest.h>
@@ -960,6 +961,36 @@ void PanoramaClient::RemoveApplicationInstanceAsync(const RemoveApplicationInsta
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, RemoveApplicationInstance(request), context);
+    } );
+}
+
+SignalApplicationInstanceNodeInstancesOutcome PanoramaClient::SignalApplicationInstanceNodeInstances(const SignalApplicationInstanceNodeInstancesRequest& request) const
+{
+  if (!request.ApplicationInstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SignalApplicationInstanceNodeInstances", "Required field: ApplicationInstanceId, is not set");
+    return SignalApplicationInstanceNodeInstancesOutcome(Aws::Client::AWSError<PanoramaErrors>(PanoramaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationInstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/application-instances/");
+  uri.AddPathSegment(request.GetApplicationInstanceId());
+  uri.AddPathSegments("/node-signals");
+  return SignalApplicationInstanceNodeInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+SignalApplicationInstanceNodeInstancesOutcomeCallable PanoramaClient::SignalApplicationInstanceNodeInstancesCallable(const SignalApplicationInstanceNodeInstancesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SignalApplicationInstanceNodeInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SignalApplicationInstanceNodeInstances(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PanoramaClient::SignalApplicationInstanceNodeInstancesAsync(const SignalApplicationInstanceNodeInstancesRequest& request, const SignalApplicationInstanceNodeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, SignalApplicationInstanceNodeInstances(request), context);
     } );
 }
 

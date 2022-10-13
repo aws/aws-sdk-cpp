@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/panorama/model/DeviceType.h>
+#include <aws/panorama/model/JobType.h>
 #include <aws/panorama/model/UpdateProgress.h>
 #include <utility>
 
@@ -268,6 +269,32 @@ namespace Model
 
 
     /**
+     * <p>The job's type.</p>
+     */
+    inline const JobType& GetJobType() const{ return m_jobType; }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline void SetJobType(const JobType& value) { m_jobType = value; }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline void SetJobType(JobType&& value) { m_jobType = std::move(value); }
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline DescribeDeviceJobResult& WithJobType(const JobType& value) { SetJobType(value); return *this;}
+
+    /**
+     * <p>The job's type.</p>
+     */
+    inline DescribeDeviceJobResult& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The job's status.</p>
      */
     inline const UpdateProgress& GetStatus() const{ return m_status; }
@@ -307,6 +334,8 @@ namespace Model
     Aws::String m_imageVersion;
 
     Aws::String m_jobId;
+
+    JobType m_jobType;
 
     UpdateProgress m_status;
   };

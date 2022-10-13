@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the certificate object that you are deleting.</p>
+     * <p>The identifier of the certificate object that you are deleting.</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
 
     /**
-     * <p>The ID of the certificate object that you are deleting.</p>
+     * <p>The identifier of the certificate object that you are deleting.</p>
      */
     inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
 
     /**
-     * <p>The ID of the certificate object that you are deleting.</p>
+     * <p>The identifier of the certificate object that you are deleting.</p>
      */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**
-     * <p>The ID of the certificate object that you are deleting.</p>
+     * <p>The identifier of the certificate object that you are deleting.</p>
      */
     inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
 
     /**
-     * <p>The ID of the certificate object that you are deleting.</p>
+     * <p>The identifier of the certificate object that you are deleting.</p>
      */
     inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
 
     /**
-     * <p>The ID of the certificate object that you are deleting.</p>
+     * <p>The identifier of the certificate object that you are deleting.</p>
      */
     inline DeleteCertificateRequest& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
 
     /**
-     * <p>The ID of the certificate object that you are deleting.</p>
+     * <p>The identifier of the certificate object that you are deleting.</p>
      */
     inline DeleteCertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the certificate object that you are deleting.</p>
+     * <p>The identifier of the certificate object that you are deleting.</p>
      */
     inline DeleteCertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
 

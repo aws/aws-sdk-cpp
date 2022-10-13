@@ -26,7 +26,10 @@ namespace Model
 
   /**
    * <p>Represents a condition that when matched will be added to the response of the
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * operation. Irrespective of using any filter criteria, an administrator account
+   * can view the scan entries for all of its member accounts. However, each member
+   * account can view the scan entries only for their own account.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/FilterCriterion">AWS
    * API Reference</a></p>
    */

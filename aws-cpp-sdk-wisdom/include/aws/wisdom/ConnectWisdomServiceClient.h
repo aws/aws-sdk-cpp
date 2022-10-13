@@ -471,29 +471,6 @@ namespace ConnectWisdomService
         virtual void NotifyRecommendationsReceivedAsync(const Model::NotifyRecommendationsReceivedRequest& request, const NotifyRecommendationsReceivedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Submits feedback to Wisdom. The feedback is used to improve future
-         * recommendations from <a
-         * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>
-         * or results from <a
-         * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.
-         * Feedback can be resubmitted up to 6 hours after submission. </p><p><h3>See
-         * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/PutFeedback">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::PutFeedbackOutcome PutFeedback(const Model::PutFeedbackRequest& request) const;
-
-        /**
-         * A Callable wrapper for PutFeedback that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::PutFeedbackOutcomeCallable PutFeedbackCallable(const Model::PutFeedbackRequest& request) const;
-
-        /**
-         * An Async wrapper for PutFeedback that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void PutFeedbackAsync(const Model::PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Performs a manual search against the specified assistant. To retrieve
          * recommendations for an assistant, use <a
          * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>.

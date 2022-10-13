@@ -78,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p>Returns the server ID that contains the listed host keys.</p>
+     * <p>Returns the server identifier that contains the listed host keys.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>Returns the server ID that contains the listed host keys.</p>
+     * <p>Returns the server identifier that contains the listed host keys.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverId = value; }
 
     /**
-     * <p>Returns the server ID that contains the listed host keys.</p>
+     * <p>Returns the server identifier that contains the listed host keys.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverId = std::move(value); }
 
     /**
-     * <p>Returns the server ID that contains the listed host keys.</p>
+     * <p>Returns the server identifier that contains the listed host keys.</p>
      */
     inline void SetServerId(const char* value) { m_serverId.assign(value); }
 
     /**
-     * <p>Returns the server ID that contains the listed host keys.</p>
+     * <p>Returns the server identifier that contains the listed host keys.</p>
      */
     inline ListHostKeysResult& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>Returns the server ID that contains the listed host keys.</p>
+     * <p>Returns the server identifier that contains the listed host keys.</p>
      */
     inline ListHostKeysResult& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the server ID that contains the listed host keys.</p>
+     * <p>Returns the server identifier that contains the listed host keys.</p>
      */
     inline ListHostKeysResult& WithServerId(const char* value) { SetServerId(value); return *this;}
 

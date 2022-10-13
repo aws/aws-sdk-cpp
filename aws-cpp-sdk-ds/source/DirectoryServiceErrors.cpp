@@ -18,6 +18,7 @@
 #include <aws/ds/model/AuthenticationFailedException.h>
 #include <aws/ds/model/InsufficientPermissionsException.h>
 #include <aws/ds/model/InvalidNextTokenException.h>
+#include <aws/ds/model/DirectoryInDesiredStateException.h>
 #include <aws/ds/model/InvalidParameterException.h>
 #include <aws/ds/model/TagLimitExceededException.h>
 #include <aws/ds/model/InvalidCertificateException.h>
@@ -122,6 +123,12 @@ template<> AWS_DIRECTORYSERVICE_API InvalidNextTokenException DirectoryServiceEr
 {
   assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_NEXT_TOKEN);
   return InvalidNextTokenException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API DirectoryInDesiredStateException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_IN_DESIRED_STATE);
+  return DirectoryInDesiredStateException(this->GetJsonPayload().View());
 }
 
 template<> AWS_DIRECTORYSERVICE_API InvalidParameterException DirectoryServiceError::GetModeledError()
@@ -283,6 +290,7 @@ static const int ENTITY_DOES_NOT_EXIST_HASH = HashingUtils::HashString("EntityDo
 static const int AUTHENTICATION_FAILED_HASH = HashingUtils::HashString("AuthenticationFailedException");
 static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("InsufficientPermissionsException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
+static const int DIRECTORY_IN_DESIRED_STATE_HASH = HashingUtils::HashString("DirectoryInDesiredStateException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagLimitExceededException");
 static const int INVALID_CERTIFICATE_HASH = HashingUtils::HashString("InvalidCertificateException");
@@ -359,6 +367,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_NEXT_TOKEN), false);
+  }
+  else if (hashCode == DIRECTORY_IN_DESIRED_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_IN_DESIRED_STATE), false);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {

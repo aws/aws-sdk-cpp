@@ -77,32 +77,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+     * <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
      */
     inline const EfsFileLocation& GetEfsFileLocation() const{ return m_efsFileLocation; }
 
     /**
-     * <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+     * <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
      */
     inline bool EfsFileLocationHasBeenSet() const { return m_efsFileLocationHasBeenSet; }
 
     /**
-     * <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+     * <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
      */
     inline void SetEfsFileLocation(const EfsFileLocation& value) { m_efsFileLocationHasBeenSet = true; m_efsFileLocation = value; }
 
     /**
-     * <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+     * <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
      */
     inline void SetEfsFileLocation(EfsFileLocation&& value) { m_efsFileLocationHasBeenSet = true; m_efsFileLocation = std::move(value); }
 
     /**
-     * <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+     * <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
      */
     inline FileLocation& WithEfsFileLocation(const EfsFileLocation& value) { SetEfsFileLocation(value); return *this;}
 
     /**
-     * <p>Specifies the Amazon EFS ID and the path for the file being used.</p>
+     * <p>Specifies the Amazon EFS identifier and the path for the file being used.</p>
      */
     inline FileLocation& WithEfsFileLocation(EfsFileLocation&& value) { SetEfsFileLocation(std::move(value)); return *this;}
 

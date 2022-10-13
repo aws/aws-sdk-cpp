@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     RUNNING,
     ERROR_,
-    NOT_AVAILABLE
+    NOT_AVAILABLE,
+    PAUSED
   };
 
 namespace NodeInstanceStatusMapper

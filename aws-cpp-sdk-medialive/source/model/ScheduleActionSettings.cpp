@@ -26,6 +26,7 @@ ScheduleActionSettings::ScheduleActionSettings() :
     m_motionGraphicsImageActivateSettingsHasBeenSet(false),
     m_motionGraphicsImageDeactivateSettingsHasBeenSet(false),
     m_pauseStateSettingsHasBeenSet(false),
+    m_scte35InputSettingsHasBeenSet(false),
     m_scte35ReturnToNetworkSettingsHasBeenSet(false),
     m_scte35SpliceInsertSettingsHasBeenSet(false),
     m_scte35TimeSignalSettingsHasBeenSet(false),
@@ -42,6 +43,7 @@ ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue) :
     m_motionGraphicsImageActivateSettingsHasBeenSet(false),
     m_motionGraphicsImageDeactivateSettingsHasBeenSet(false),
     m_pauseStateSettingsHasBeenSet(false),
+    m_scte35InputSettingsHasBeenSet(false),
     m_scte35ReturnToNetworkSettingsHasBeenSet(false),
     m_scte35SpliceInsertSettingsHasBeenSet(false),
     m_scte35TimeSignalSettingsHasBeenSet(false),
@@ -100,6 +102,13 @@ ScheduleActionSettings& ScheduleActionSettings::operator =(JsonView jsonValue)
     m_pauseStateSettings = jsonValue.GetObject("pauseStateSettings");
 
     m_pauseStateSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("scte35InputSettings"))
+  {
+    m_scte35InputSettings = jsonValue.GetObject("scte35InputSettings");
+
+    m_scte35InputSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scte35ReturnToNetworkSettings"))
@@ -183,6 +192,12 @@ JsonValue ScheduleActionSettings::Jsonize() const
   if(m_pauseStateSettingsHasBeenSet)
   {
    payload.WithObject("pauseStateSettings", m_pauseStateSettings.Jsonize());
+
+  }
+
+  if(m_scte35InputSettingsHasBeenSet)
+  {
+   payload.WithObject("scte35InputSettings", m_scte35InputSettings.Jsonize());
 
   }
 

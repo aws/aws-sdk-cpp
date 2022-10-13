@@ -22,7 +22,9 @@ DeviceJob::DeviceJob() :
     m_createdTimeHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
+    m_jobIdHasBeenSet(false),
+    m_jobType(JobType::NOT_SET),
+    m_jobTypeHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ DeviceJob::DeviceJob(JsonView jsonValue) :
     m_createdTimeHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
+    m_jobIdHasBeenSet(false),
+    m_jobType(JobType::NOT_SET),
+    m_jobTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,13 @@ DeviceJob& DeviceJob::operator =(JsonView jsonValue)
     m_jobIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JobType"))
+  {
+    m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("JobType"));
+
+    m_jobTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +104,11 @@ JsonValue DeviceJob::Jsonize() const
   {
    payload.WithString("JobId", m_jobId);
 
+  }
+
+  if(m_jobTypeHasBeenSet)
+  {
+   payload.WithString("JobType", JobTypeMapper::GetNameForJobType(m_jobType));
   }
 
   return payload;

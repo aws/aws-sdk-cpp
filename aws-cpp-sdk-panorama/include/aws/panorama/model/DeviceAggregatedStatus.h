@@ -24,7 +24,8 @@ namespace Model
     ONLINE,
     OFFLINE,
     LEASE_EXPIRED,
-    UPDATE_NEEDED
+    UPDATE_NEEDED,
+    REBOOTING
   };
 
 namespace DeviceAggregatedStatusMapper

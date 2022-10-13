@@ -37,49 +37,49 @@ namespace Model
 
 
     /**
-     * <p>Provide the ID of the server that contains the host key that you are
+     * <p>The identifier of the server that contains the host key that you are
      * importing.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>Provide the ID of the server that contains the host key that you are
+     * <p>The identifier of the server that contains the host key that you are
      * importing.</p>
      */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
-     * <p>Provide the ID of the server that contains the host key that you are
+     * <p>The identifier of the server that contains the host key that you are
      * importing.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
-     * <p>Provide the ID of the server that contains the host key that you are
+     * <p>The identifier of the server that contains the host key that you are
      * importing.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
 
     /**
-     * <p>Provide the ID of the server that contains the host key that you are
+     * <p>The identifier of the server that contains the host key that you are
      * importing.</p>
      */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
 
     /**
-     * <p>Provide the ID of the server that contains the host key that you are
+     * <p>The identifier of the server that contains the host key that you are
      * importing.</p>
      */
     inline ImportHostKeyRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>Provide the ID of the server that contains the host key that you are
+     * <p>The identifier of the server that contains the host key that you are
      * importing.</p>
      */
     inline ImportHostKeyRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>Provide the ID of the server that contains the host key that you are
+     * <p>The identifier of the server that contains the host key that you are
      * importing.</p>
      */
     inline ImportHostKeyRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
@@ -135,42 +135,42 @@ namespace Model
 
 
     /**
-     * <p>Enter a text description to identify this host key.</p>
+     * <p>The text description that identifies this host key.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Enter a text description to identify this host key.</p>
+     * <p>The text description that identifies this host key.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>Enter a text description to identify this host key.</p>
+     * <p>The text description that identifies this host key.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Enter a text description to identify this host key.</p>
+     * <p>The text description that identifies this host key.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Enter a text description to identify this host key.</p>
+     * <p>The text description that identifies this host key.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Enter a text description to identify this host key.</p>
+     * <p>The text description that identifies this host key.</p>
      */
     inline ImportHostKeyRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Enter a text description to identify this host key.</p>
+     * <p>The text description that identifies this host key.</p>
      */
     inline ImportHostKeyRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Enter a text description to identify this host key.</p>
+     * <p>The text description that identifies this host key.</p>
      */
     inline ImportHostKeyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

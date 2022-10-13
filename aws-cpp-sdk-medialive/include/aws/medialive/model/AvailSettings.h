@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/Esam.h>
 #include <aws/medialive/model/Scte35SpliceInsert.h>
 #include <aws/medialive/model/Scte35TimeSignalApos.h>
 #include <utility>
@@ -36,6 +37,25 @@ namespace Model
     AvailSettings(Aws::Utils::Json::JsonView jsonValue);
     AvailSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    
+    inline const Esam& GetEsam() const{ return m_esam; }
+
+    
+    inline bool EsamHasBeenSet() const { return m_esamHasBeenSet; }
+
+    
+    inline void SetEsam(const Esam& value) { m_esamHasBeenSet = true; m_esam = value; }
+
+    
+    inline void SetEsam(Esam&& value) { m_esamHasBeenSet = true; m_esam = std::move(value); }
+
+    
+    inline AvailSettings& WithEsam(const Esam& value) { SetEsam(value); return *this;}
+
+    
+    inline AvailSettings& WithEsam(Esam&& value) { SetEsam(std::move(value)); return *this;}
 
 
     
@@ -76,6 +96,9 @@ namespace Model
     inline AvailSettings& WithScte35TimeSignalApos(Scte35TimeSignalApos&& value) { SetScte35TimeSignalApos(std::move(value)); return *this;}
 
   private:
+
+    Esam m_esam;
+    bool m_esamHasBeenSet = false;
 
     Scte35SpliceInsert m_scte35SpliceInsert;
     bool m_scte35SpliceInsertHasBeenSet = false;

@@ -729,6 +729,24 @@ namespace DirectoryService
         virtual void DescribeTrustsAsync(const Model::DescribeTrustsRequest& request, const DescribeTrustsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Describes the updates of a directory for a particular update type.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeUpdateDirectory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeUpdateDirectoryOutcome DescribeUpdateDirectory(const Model::DescribeUpdateDirectoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeUpdateDirectory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeUpdateDirectoryOutcomeCallable DescribeUpdateDirectoryCallable(const Model::DescribeUpdateDirectoryRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeUpdateDirectory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeUpdateDirectoryAsync(const Model::DescribeUpdateDirectoryRequest& request, const DescribeUpdateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disables alternative client authentication methods for the specified
          * directory. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication">AWS
@@ -1249,6 +1267,24 @@ namespace DirectoryService
          * An Async wrapper for UpdateConditionalForwarder that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateConditionalForwarderAsync(const Model::UpdateConditionalForwarderRequest& request, const UpdateConditionalForwarderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Updates the directory for a particular update type. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateDirectorySetup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDirectorySetupOutcome UpdateDirectorySetup(const Model::UpdateDirectorySetupRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateDirectorySetup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDirectorySetupOutcomeCallable UpdateDirectorySetupCallable(const Model::UpdateDirectorySetupRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateDirectorySetup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDirectorySetupAsync(const Model::UpdateDirectorySetupRequest& request, const UpdateDirectorySetupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or removes domain controllers to or from the directory. Based on the

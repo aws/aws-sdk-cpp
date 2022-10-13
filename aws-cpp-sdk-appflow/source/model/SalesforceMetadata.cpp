@@ -19,12 +19,14 @@ namespace Model
 {
 
 SalesforceMetadata::SalesforceMetadata() : 
-    m_oAuthScopesHasBeenSet(false)
+    m_oAuthScopesHasBeenSet(false),
+    m_dataTransferApisHasBeenSet(false)
 {
 }
 
 SalesforceMetadata::SalesforceMetadata(JsonView jsonValue) : 
-    m_oAuthScopesHasBeenSet(false)
+    m_oAuthScopesHasBeenSet(false),
+    m_dataTransferApisHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +41,16 @@ SalesforceMetadata& SalesforceMetadata::operator =(JsonView jsonValue)
       m_oAuthScopes.push_back(oAuthScopesJsonList[oAuthScopesIndex].AsString());
     }
     m_oAuthScopesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dataTransferApis"))
+  {
+    Array<JsonView> dataTransferApisJsonList = jsonValue.GetArray("dataTransferApis");
+    for(unsigned dataTransferApisIndex = 0; dataTransferApisIndex < dataTransferApisJsonList.GetLength(); ++dataTransferApisIndex)
+    {
+      m_dataTransferApis.push_back(SalesforceDataTransferApiMapper::GetSalesforceDataTransferApiForName(dataTransferApisJsonList[dataTransferApisIndex].AsString()));
+    }
+    m_dataTransferApisHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +68,17 @@ JsonValue SalesforceMetadata::Jsonize() const
      oAuthScopesJsonList[oAuthScopesIndex].AsString(m_oAuthScopes[oAuthScopesIndex]);
    }
    payload.WithArray("oAuthScopes", std::move(oAuthScopesJsonList));
+
+  }
+
+  if(m_dataTransferApisHasBeenSet)
+  {
+   Array<JsonValue> dataTransferApisJsonList(m_dataTransferApis.size());
+   for(unsigned dataTransferApisIndex = 0; dataTransferApisIndex < dataTransferApisJsonList.GetLength(); ++dataTransferApisIndex)
+   {
+     dataTransferApisJsonList[dataTransferApisIndex].AsString(SalesforceDataTransferApiMapper::GetNameForSalesforceDataTransferApi(m_dataTransferApis[dataTransferApisIndex]));
+   }
+   payload.WithArray("dataTransferApis", std::move(dataTransferApisJsonList));
 
   }
 

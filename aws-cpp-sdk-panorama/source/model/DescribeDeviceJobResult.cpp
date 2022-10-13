@@ -18,12 +18,14 @@ using namespace Aws;
 
 DescribeDeviceJobResult::DescribeDeviceJobResult() : 
     m_deviceType(DeviceType::NOT_SET),
+    m_jobType(JobType::NOT_SET),
     m_status(UpdateProgress::NOT_SET)
 {
 }
 
 DescribeDeviceJobResult::DescribeDeviceJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_deviceType(DeviceType::NOT_SET),
+    m_jobType(JobType::NOT_SET),
     m_status(UpdateProgress::NOT_SET)
 {
   *this = result;
@@ -71,6 +73,12 @@ DescribeDeviceJobResult& DescribeDeviceJobResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
+
+  }
+
+  if(jsonValue.ValueExists("JobType"))
+  {
+    m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("JobType"));
 
   }
 

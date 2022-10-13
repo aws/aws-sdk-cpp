@@ -19,12 +19,14 @@ namespace Model
 {
 
 AvailSettings::AvailSettings() : 
+    m_esamHasBeenSet(false),
     m_scte35SpliceInsertHasBeenSet(false),
     m_scte35TimeSignalAposHasBeenSet(false)
 {
 }
 
 AvailSettings::AvailSettings(JsonView jsonValue) : 
+    m_esamHasBeenSet(false),
     m_scte35SpliceInsertHasBeenSet(false),
     m_scte35TimeSignalAposHasBeenSet(false)
 {
@@ -33,6 +35,13 @@ AvailSettings::AvailSettings(JsonView jsonValue) :
 
 AvailSettings& AvailSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("esam"))
+  {
+    m_esam = jsonValue.GetObject("esam");
+
+    m_esamHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("scte35SpliceInsert"))
   {
     m_scte35SpliceInsert = jsonValue.GetObject("scte35SpliceInsert");
@@ -53,6 +62,12 @@ AvailSettings& AvailSettings::operator =(JsonView jsonValue)
 JsonValue AvailSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_esamHasBeenSet)
+  {
+   payload.WithObject("esam", m_esam.Jsonize());
+
+  }
 
   if(m_scte35SpliceInsertHasBeenSet)
   {

@@ -20,6 +20,8 @@ namespace Model
 
 LatestDeviceJob::LatestDeviceJob() : 
     m_imageVersionHasBeenSet(false),
+    m_jobType(JobType::NOT_SET),
+    m_jobTypeHasBeenSet(false),
     m_status(UpdateProgress::NOT_SET),
     m_statusHasBeenSet(false)
 {
@@ -27,6 +29,8 @@ LatestDeviceJob::LatestDeviceJob() :
 
 LatestDeviceJob::LatestDeviceJob(JsonView jsonValue) : 
     m_imageVersionHasBeenSet(false),
+    m_jobType(JobType::NOT_SET),
+    m_jobTypeHasBeenSet(false),
     m_status(UpdateProgress::NOT_SET),
     m_statusHasBeenSet(false)
 {
@@ -40,6 +44,13 @@ LatestDeviceJob& LatestDeviceJob::operator =(JsonView jsonValue)
     m_imageVersion = jsonValue.GetString("ImageVersion");
 
     m_imageVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobType"))
+  {
+    m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("JobType"));
+
+    m_jobTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -60,6 +71,11 @@ JsonValue LatestDeviceJob::Jsonize() const
   {
    payload.WithString("ImageVersion", m_imageVersion);
 
+  }
+
+  if(m_jobTypeHasBeenSet)
+  {
+   payload.WithString("JobType", JobTypeMapper::GetNameForJobType(m_jobType));
   }
 
   if(m_statusHasBeenSet)

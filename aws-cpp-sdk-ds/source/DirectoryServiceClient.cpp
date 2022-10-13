@@ -53,6 +53,7 @@
 #include <aws/ds/model/DescribeSharedDirectoriesRequest.h>
 #include <aws/ds/model/DescribeSnapshotsRequest.h>
 #include <aws/ds/model/DescribeTrustsRequest.h>
+#include <aws/ds/model/DescribeUpdateDirectoryRequest.h>
 #include <aws/ds/model/DisableClientAuthenticationRequest.h>
 #include <aws/ds/model/DisableLDAPSRequest.h>
 #include <aws/ds/model/DisableRadiusRequest.h>
@@ -80,6 +81,7 @@
 #include <aws/ds/model/StartSchemaExtensionRequest.h>
 #include <aws/ds/model/UnshareDirectoryRequest.h>
 #include <aws/ds/model/UpdateConditionalForwarderRequest.h>
+#include <aws/ds/model/UpdateDirectorySetupRequest.h>
 #include <aws/ds/model/UpdateNumberOfDomainControllersRequest.h>
 #include <aws/ds/model/UpdateRadiusRequest.h>
 #include <aws/ds/model/UpdateSettingsRequest.h>
@@ -891,6 +893,28 @@ void DirectoryServiceClient::DescribeTrustsAsync(const DescribeTrustsRequest& re
     } );
 }
 
+DescribeUpdateDirectoryOutcome DirectoryServiceClient::DescribeUpdateDirectory(const DescribeUpdateDirectoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeUpdateDirectoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeUpdateDirectoryOutcomeCallable DirectoryServiceClient::DescribeUpdateDirectoryCallable(const DescribeUpdateDirectoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeUpdateDirectoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUpdateDirectory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::DescribeUpdateDirectoryAsync(const DescribeUpdateDirectoryRequest& request, const DescribeUpdateDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeUpdateDirectory(request), context);
+    } );
+}
+
 DisableClientAuthenticationOutcome DirectoryServiceClient::DisableClientAuthentication(const DisableClientAuthenticationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1482,6 +1506,28 @@ void DirectoryServiceClient::UpdateConditionalForwarderAsync(const UpdateConditi
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateConditionalForwarder(request), context);
+    } );
+}
+
+UpdateDirectorySetupOutcome DirectoryServiceClient::UpdateDirectorySetup(const UpdateDirectorySetupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateDirectorySetupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDirectorySetupOutcomeCallable DirectoryServiceClient::UpdateDirectorySetupCallable(const UpdateDirectorySetupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDirectorySetupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDirectorySetup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DirectoryServiceClient::UpdateDirectorySetupAsync(const UpdateDirectorySetupRequest& request, const UpdateDirectorySetupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateDirectorySetup(request), context);
     } );
 }
 

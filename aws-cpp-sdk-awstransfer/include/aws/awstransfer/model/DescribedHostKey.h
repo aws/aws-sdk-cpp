@@ -213,66 +213,82 @@ namespace Model
 
 
     /**
-     * <p>The encryption algorithm used for the host key. The <code>Type</code> is one
-     * of the following values:</p> <ul> <li> <p>ssh-rsa</p> </li> <li>
-     * <p>ssh-ed25519</p> </li> <li> <p>ecdsa-sha2-nistp256 </p> </li> <li>
-     * <p>ecdsa-sha2-nistp384</p> </li> <li> <p>ecdsa-sha2-nistp521</p> </li> </ul>
+     * <p>The encryption algorithm that is used for the host key. The <code>Type</code>
+     * parameter is specified by using one of the following values:</p> <ul> <li> <p>
+     * <code>ssh-rsa</code> </p> </li> <li> <p> <code>ssh-ed25519</code> </p> </li>
+     * <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp384</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp521</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The encryption algorithm used for the host key. The <code>Type</code> is one
-     * of the following values:</p> <ul> <li> <p>ssh-rsa</p> </li> <li>
-     * <p>ssh-ed25519</p> </li> <li> <p>ecdsa-sha2-nistp256 </p> </li> <li>
-     * <p>ecdsa-sha2-nistp384</p> </li> <li> <p>ecdsa-sha2-nistp521</p> </li> </ul>
+     * <p>The encryption algorithm that is used for the host key. The <code>Type</code>
+     * parameter is specified by using one of the following values:</p> <ul> <li> <p>
+     * <code>ssh-rsa</code> </p> </li> <li> <p> <code>ssh-ed25519</code> </p> </li>
+     * <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp384</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp521</code> </p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The encryption algorithm used for the host key. The <code>Type</code> is one
-     * of the following values:</p> <ul> <li> <p>ssh-rsa</p> </li> <li>
-     * <p>ssh-ed25519</p> </li> <li> <p>ecdsa-sha2-nistp256 </p> </li> <li>
-     * <p>ecdsa-sha2-nistp384</p> </li> <li> <p>ecdsa-sha2-nistp521</p> </li> </ul>
+     * <p>The encryption algorithm that is used for the host key. The <code>Type</code>
+     * parameter is specified by using one of the following values:</p> <ul> <li> <p>
+     * <code>ssh-rsa</code> </p> </li> <li> <p> <code>ssh-ed25519</code> </p> </li>
+     * <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp384</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp521</code> </p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The encryption algorithm used for the host key. The <code>Type</code> is one
-     * of the following values:</p> <ul> <li> <p>ssh-rsa</p> </li> <li>
-     * <p>ssh-ed25519</p> </li> <li> <p>ecdsa-sha2-nistp256 </p> </li> <li>
-     * <p>ecdsa-sha2-nistp384</p> </li> <li> <p>ecdsa-sha2-nistp521</p> </li> </ul>
+     * <p>The encryption algorithm that is used for the host key. The <code>Type</code>
+     * parameter is specified by using one of the following values:</p> <ul> <li> <p>
+     * <code>ssh-rsa</code> </p> </li> <li> <p> <code>ssh-ed25519</code> </p> </li>
+     * <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp384</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp521</code> </p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The encryption algorithm used for the host key. The <code>Type</code> is one
-     * of the following values:</p> <ul> <li> <p>ssh-rsa</p> </li> <li>
-     * <p>ssh-ed25519</p> </li> <li> <p>ecdsa-sha2-nistp256 </p> </li> <li>
-     * <p>ecdsa-sha2-nistp384</p> </li> <li> <p>ecdsa-sha2-nistp521</p> </li> </ul>
+     * <p>The encryption algorithm that is used for the host key. The <code>Type</code>
+     * parameter is specified by using one of the following values:</p> <ul> <li> <p>
+     * <code>ssh-rsa</code> </p> </li> <li> <p> <code>ssh-ed25519</code> </p> </li>
+     * <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp384</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp521</code> </p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The encryption algorithm used for the host key. The <code>Type</code> is one
-     * of the following values:</p> <ul> <li> <p>ssh-rsa</p> </li> <li>
-     * <p>ssh-ed25519</p> </li> <li> <p>ecdsa-sha2-nistp256 </p> </li> <li>
-     * <p>ecdsa-sha2-nistp384</p> </li> <li> <p>ecdsa-sha2-nistp521</p> </li> </ul>
+     * <p>The encryption algorithm that is used for the host key. The <code>Type</code>
+     * parameter is specified by using one of the following values:</p> <ul> <li> <p>
+     * <code>ssh-rsa</code> </p> </li> <li> <p> <code>ssh-ed25519</code> </p> </li>
+     * <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp384</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp521</code> </p> </li> </ul>
      */
     inline DescribedHostKey& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The encryption algorithm used for the host key. The <code>Type</code> is one
-     * of the following values:</p> <ul> <li> <p>ssh-rsa</p> </li> <li>
-     * <p>ssh-ed25519</p> </li> <li> <p>ecdsa-sha2-nistp256 </p> </li> <li>
-     * <p>ecdsa-sha2-nistp384</p> </li> <li> <p>ecdsa-sha2-nistp521</p> </li> </ul>
+     * <p>The encryption algorithm that is used for the host key. The <code>Type</code>
+     * parameter is specified by using one of the following values:</p> <ul> <li> <p>
+     * <code>ssh-rsa</code> </p> </li> <li> <p> <code>ssh-ed25519</code> </p> </li>
+     * <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp384</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp521</code> </p> </li> </ul>
      */
     inline DescribedHostKey& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The encryption algorithm used for the host key. The <code>Type</code> is one
-     * of the following values:</p> <ul> <li> <p>ssh-rsa</p> </li> <li>
-     * <p>ssh-ed25519</p> </li> <li> <p>ecdsa-sha2-nistp256 </p> </li> <li>
-     * <p>ecdsa-sha2-nistp384</p> </li> <li> <p>ecdsa-sha2-nistp521</p> </li> </ul>
+     * <p>The encryption algorithm that is used for the host key. The <code>Type</code>
+     * parameter is specified by using one of the following values:</p> <ul> <li> <p>
+     * <code>ssh-rsa</code> </p> </li> <li> <p> <code>ssh-ed25519</code> </p> </li>
+     * <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp384</code> </p> </li> <li> <p>
+     * <code>ecdsa-sha2-nistp521</code> </p> </li> </ul>
      */
     inline DescribedHostKey& WithType(const char* value) { SetType(value); return *this;}
 

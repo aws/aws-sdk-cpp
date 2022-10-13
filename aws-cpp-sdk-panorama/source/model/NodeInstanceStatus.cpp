@@ -23,6 +23,7 @@ namespace Aws
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
         static const int NOT_AVAILABLE_HASH = HashingUtils::HashString("NOT_AVAILABLE");
+        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
 
 
         NodeInstanceStatus GetNodeInstanceStatusForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == NOT_AVAILABLE_HASH)
           {
             return NodeInstanceStatus::NOT_AVAILABLE;
+          }
+          else if (hashCode == PAUSED_HASH)
+          {
+            return NodeInstanceStatus::PAUSED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "ERROR";
           case NodeInstanceStatus::NOT_AVAILABLE:
             return "NOT_AVAILABLE";
+          case NodeInstanceStatus::PAUSED:
+            return "PAUSED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

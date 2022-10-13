@@ -24,6 +24,8 @@ FieldInputConfig::FieldInputConfig() :
     m_defaultCountryCodeHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
     m_descriptiveTextHasBeenSet(false),
+    m_isArray(false),
+    m_isArrayHasBeenSet(false),
     m_maxValue(0.0),
     m_maxValueHasBeenSet(false),
     m_minValue(0.0),
@@ -48,6 +50,8 @@ FieldInputConfig::FieldInputConfig(JsonView jsonValue) :
     m_defaultCountryCodeHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
     m_descriptiveTextHasBeenSet(false),
+    m_isArray(false),
+    m_isArrayHasBeenSet(false),
     m_maxValue(0.0),
     m_maxValueHasBeenSet(false),
     m_minValue(0.0),
@@ -95,6 +99,13 @@ FieldInputConfig& FieldInputConfig::operator =(JsonView jsonValue)
     m_descriptiveText = jsonValue.GetString("descriptiveText");
 
     m_descriptiveTextHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("isArray"))
+  {
+    m_isArray = jsonValue.GetBool("isArray");
+
+    m_isArrayHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("maxValue"))
@@ -195,6 +206,12 @@ JsonValue FieldInputConfig::Jsonize() const
   if(m_descriptiveTextHasBeenSet)
   {
    payload.WithString("descriptiveText", m_descriptiveText);
+
+  }
+
+  if(m_isArrayHasBeenSet)
+  {
+   payload.WithBool("isArray", m_isArray);
 
   }
 

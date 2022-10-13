@@ -23,7 +23,8 @@ namespace Model
     ATTACHMENT,
     OTHER,
     AUTOMATION,
-    INVOLVED_RESOURCE
+    INVOLVED_RESOURCE,
+    TASK
   };
 
 namespace ItemTypeMapper

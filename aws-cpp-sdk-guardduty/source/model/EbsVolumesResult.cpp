@@ -20,13 +20,15 @@ namespace Model
 
 EbsVolumesResult::EbsVolumesResult() : 
     m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
 }
 
 EbsVolumesResult::EbsVolumesResult(JsonView jsonValue) : 
     m_status(DataSourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_reasonHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +42,13 @@ EbsVolumesResult& EbsVolumesResult::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("reason"))
+  {
+    m_reason = jsonValue.GetString("reason");
+
+    m_reasonHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +59,12 @@ JsonValue EbsVolumesResult::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", DataSourceStatusMapper::GetNameForDataSourceStatus(m_status));
+  }
+
+  if(m_reasonHasBeenSet)
+  {
+   payload.WithString("reason", m_reason);
+
   }
 
   return payload;

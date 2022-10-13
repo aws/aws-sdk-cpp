@@ -12,6 +12,7 @@
 #include <aws/medialive/model/MotionGraphicsActivateScheduleActionSettings.h>
 #include <aws/medialive/model/MotionGraphicsDeactivateScheduleActionSettings.h>
 #include <aws/medialive/model/PauseStateScheduleActionSettings.h>
+#include <aws/medialive/model/Scte35InputScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35ReturnToNetworkScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35SpliceInsertScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35TimeSignalScheduleActionSettings.h>
@@ -266,6 +267,37 @@ namespace Model
 
 
     /**
+     * Action to specify scte35 input
+     */
+    inline const Scte35InputScheduleActionSettings& GetScte35InputSettings() const{ return m_scte35InputSettings; }
+
+    /**
+     * Action to specify scte35 input
+     */
+    inline bool Scte35InputSettingsHasBeenSet() const { return m_scte35InputSettingsHasBeenSet; }
+
+    /**
+     * Action to specify scte35 input
+     */
+    inline void SetScte35InputSettings(const Scte35InputScheduleActionSettings& value) { m_scte35InputSettingsHasBeenSet = true; m_scte35InputSettings = value; }
+
+    /**
+     * Action to specify scte35 input
+     */
+    inline void SetScte35InputSettings(Scte35InputScheduleActionSettings&& value) { m_scte35InputSettingsHasBeenSet = true; m_scte35InputSettings = std::move(value); }
+
+    /**
+     * Action to specify scte35 input
+     */
+    inline ScheduleActionSettings& WithScte35InputSettings(const Scte35InputScheduleActionSettings& value) { SetScte35InputSettings(value); return *this;}
+
+    /**
+     * Action to specify scte35 input
+     */
+    inline ScheduleActionSettings& WithScte35InputSettings(Scte35InputScheduleActionSettings&& value) { SetScte35InputSettings(std::move(value)); return *this;}
+
+
+    /**
      * Action to insert SCTE-35 return_to_network message
      */
     inline const Scte35ReturnToNetworkScheduleActionSettings& GetScte35ReturnToNetworkSettings() const{ return m_scte35ReturnToNetworkSettings; }
@@ -441,6 +473,9 @@ namespace Model
 
     PauseStateScheduleActionSettings m_pauseStateSettings;
     bool m_pauseStateSettingsHasBeenSet = false;
+
+    Scte35InputScheduleActionSettings m_scte35InputSettings;
+    bool m_scte35InputSettingsHasBeenSet = false;
 
     Scte35ReturnToNetworkScheduleActionSettings m_scte35ReturnToNetworkSettings;
     bool m_scte35ReturnToNetworkSettingsHasBeenSet = false;

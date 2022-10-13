@@ -601,55 +601,91 @@ namespace Model
 
     /**
      * <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
-     * <p>Default: An empty array</p>
+     * <p>Enrich the data with specified vehicle attributes. For example, add
+     * <code>make</code> and <code>model</code> to the campaign, and Amazon Web
+     * Services IoT FleetWise will associate the data with those attributes as
+     * dimensions in Amazon Timestream. You can then query the data against
+     * <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>
      */
     inline const Aws::Vector<Aws::String>& GetDataExtraDimensions() const{ return m_dataExtraDimensions; }
 
     /**
      * <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
-     * <p>Default: An empty array</p>
+     * <p>Enrich the data with specified vehicle attributes. For example, add
+     * <code>make</code> and <code>model</code> to the campaign, and Amazon Web
+     * Services IoT FleetWise will associate the data with those attributes as
+     * dimensions in Amazon Timestream. You can then query the data against
+     * <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>
      */
     inline bool DataExtraDimensionsHasBeenSet() const { return m_dataExtraDimensionsHasBeenSet; }
 
     /**
      * <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
-     * <p>Default: An empty array</p>
+     * <p>Enrich the data with specified vehicle attributes. For example, add
+     * <code>make</code> and <code>model</code> to the campaign, and Amazon Web
+     * Services IoT FleetWise will associate the data with those attributes as
+     * dimensions in Amazon Timestream. You can then query the data against
+     * <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>
      */
     inline void SetDataExtraDimensions(const Aws::Vector<Aws::String>& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions = value; }
 
     /**
      * <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
-     * <p>Default: An empty array</p>
+     * <p>Enrich the data with specified vehicle attributes. For example, add
+     * <code>make</code> and <code>model</code> to the campaign, and Amazon Web
+     * Services IoT FleetWise will associate the data with those attributes as
+     * dimensions in Amazon Timestream. You can then query the data against
+     * <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>
      */
     inline void SetDataExtraDimensions(Aws::Vector<Aws::String>&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions = std::move(value); }
 
     /**
      * <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
-     * <p>Default: An empty array</p>
+     * <p>Enrich the data with specified vehicle attributes. For example, add
+     * <code>make</code> and <code>model</code> to the campaign, and Amazon Web
+     * Services IoT FleetWise will associate the data with those attributes as
+     * dimensions in Amazon Timestream. You can then query the data against
+     * <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>
      */
     inline CreateCampaignRequest& WithDataExtraDimensions(const Aws::Vector<Aws::String>& value) { SetDataExtraDimensions(value); return *this;}
 
     /**
      * <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
-     * <p>Default: An empty array</p>
+     * <p>Enrich the data with specified vehicle attributes. For example, add
+     * <code>make</code> and <code>model</code> to the campaign, and Amazon Web
+     * Services IoT FleetWise will associate the data with those attributes as
+     * dimensions in Amazon Timestream. You can then query the data against
+     * <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>
      */
     inline CreateCampaignRequest& WithDataExtraDimensions(Aws::Vector<Aws::String>&& value) { SetDataExtraDimensions(std::move(value)); return *this;}
 
     /**
      * <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
-     * <p>Default: An empty array</p>
+     * <p>Enrich the data with specified vehicle attributes. For example, add
+     * <code>make</code> and <code>model</code> to the campaign, and Amazon Web
+     * Services IoT FleetWise will associate the data with those attributes as
+     * dimensions in Amazon Timestream. You can then query the data against
+     * <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>
      */
     inline CreateCampaignRequest& AddDataExtraDimensions(const Aws::String& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions.push_back(value); return *this; }
 
     /**
      * <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
-     * <p>Default: An empty array</p>
+     * <p>Enrich the data with specified vehicle attributes. For example, add
+     * <code>make</code> and <code>model</code> to the campaign, and Amazon Web
+     * Services IoT FleetWise will associate the data with those attributes as
+     * dimensions in Amazon Timestream. You can then query the data against
+     * <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>
      */
     inline CreateCampaignRequest& AddDataExtraDimensions(Aws::String&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions.push_back(std::move(value)); return *this; }
 
     /**
      * <p> (Optional) A list of vehicle attributes to associate with a campaign. </p>
-     * <p>Default: An empty array</p>
+     * <p>Enrich the data with specified vehicle attributes. For example, add
+     * <code>make</code> and <code>model</code> to the campaign, and Amazon Web
+     * Services IoT FleetWise will associate the data with those attributes as
+     * dimensions in Amazon Timestream. You can then query the data against
+     * <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>
      */
     inline CreateCampaignRequest& AddDataExtraDimensions(const char* value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions.push_back(value); return *this; }
 
