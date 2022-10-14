@@ -43,6 +43,8 @@ Mpeg2Settings::Mpeg2Settings() :
     m_gopSizeHasBeenSet(false),
     m_gopSizeUnits(Mpeg2GopSizeUnits::NOT_SET),
     m_gopSizeUnitsHasBeenSet(false),
+    m_hrdBufferFinalFillPercentage(0),
+    m_hrdBufferFinalFillPercentageHasBeenSet(false),
     m_hrdBufferInitialFillPercentage(0),
     m_hrdBufferInitialFillPercentageHasBeenSet(false),
     m_hrdBufferSize(0),
@@ -111,6 +113,8 @@ Mpeg2Settings::Mpeg2Settings(JsonView jsonValue) :
     m_gopSizeHasBeenSet(false),
     m_gopSizeUnits(Mpeg2GopSizeUnits::NOT_SET),
     m_gopSizeUnitsHasBeenSet(false),
+    m_hrdBufferFinalFillPercentage(0),
+    m_hrdBufferFinalFillPercentageHasBeenSet(false),
     m_hrdBufferInitialFillPercentage(0),
     m_hrdBufferInitialFillPercentageHasBeenSet(false),
     m_hrdBufferSize(0),
@@ -239,6 +243,13 @@ Mpeg2Settings& Mpeg2Settings::operator =(JsonView jsonValue)
     m_gopSizeUnits = Mpeg2GopSizeUnitsMapper::GetMpeg2GopSizeUnitsForName(jsonValue.GetString("gopSizeUnits"));
 
     m_gopSizeUnitsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hrdBufferFinalFillPercentage"))
+  {
+    m_hrdBufferFinalFillPercentage = jsonValue.GetInteger("hrdBufferFinalFillPercentage");
+
+    m_hrdBufferFinalFillPercentageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hrdBufferInitialFillPercentage"))
@@ -451,6 +462,12 @@ JsonValue Mpeg2Settings::Jsonize() const
   if(m_gopSizeUnitsHasBeenSet)
   {
    payload.WithString("gopSizeUnits", Mpeg2GopSizeUnitsMapper::GetNameForMpeg2GopSizeUnits(m_gopSizeUnits));
+  }
+
+  if(m_hrdBufferFinalFillPercentageHasBeenSet)
+  {
+   payload.WithInteger("hrdBufferFinalFillPercentage", m_hrdBufferFinalFillPercentage);
+
   }
 
   if(m_hrdBufferInitialFillPercentageHasBeenSet)
