@@ -209,7 +209,7 @@ namespace Aws
             }
 
             // A static list containing all service exception names classified as throttled.
-            const Aws::UnorderedSet<Aws::String> THROTTLING_EXCEPTIONS {
+            static const Aws::UnorderedSet<Aws::String> THROTTLING_EXCEPTIONS {
                     "Throttling", "ThrottlingException", "ThrottledException", "RequestThrottledException",
                     "TooManyRequestsException", "ProvisionedThroughputExceededException", "TransactionInProgressException",
                     "RequestLimitExceeded", "BandwidthLimitExceeded", "LimitExceededException", "RequestThrottled",

@@ -183,9 +183,10 @@ AWSCredentials ProfileConfigFileAWSCredentialsProvider::GetAWSCredentials()
 {
     RefreshIfExpired();
     ReaderLockGuard guard(m_reloadLock);
-    auto credsFileProfileIter = m_credentialsFileLoader.GetProfiles().find(m_profileToUse);
+    const Aws::Map<Aws::String, Aws::Config::Profile>& profiles = m_credentialsFileLoader.GetProfiles();
+    auto credsFileProfileIter = profiles.find(m_profileToUse);
 
-    if(credsFileProfileIter != m_credentialsFileLoader.GetProfiles().end())
+    if(credsFileProfileIter != profiles.end())
     {
         return credsFileProfileIter->second.GetCredentials();
     }
@@ -239,11 +240,18 @@ AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
 {
     RefreshIfExpired();
     ReaderLockGuard guard(m_reloadLock);
-    auto profileIter = m_ec2MetadataConfigLoader->GetProfiles().find(Aws::Config::INSTANCE_PROFILE_KEY);
-
-    if(profileIter != m_ec2MetadataConfigLoader->GetProfiles().end())
+    if (m_ec2MetadataConfigLoader)
     {
-        return profileIter->second.GetCredentials();
+        const Aws::Map<Aws::String, Aws::Config::Profile> &profiles = m_ec2MetadataConfigLoader->GetProfiles();
+        auto profileIter = profiles.find(Aws::Config::INSTANCE_PROFILE_KEY);
+
+        if (profileIter != profiles.end()) {
+            return profileIter->second.GetCredentials();
+        }
+    }
+    else
+    {
+        AWS_LOGSTREAM_ERROR(INSTANCE_LOG_TAG, "EC2 Metadata config loader is a nullptr");
     }
 
     return AWSCredentials();
@@ -266,8 +274,12 @@ bool InstanceProfileCredentialsProvider::ExpiresSoon() const
 void InstanceProfileCredentialsProvider::Reload()
 {
     AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Credentials have expired attempting to re-pull from EC2 Metadata Service.");
-    m_ec2MetadataConfigLoader->Load();
-    AWSCredentialsProvider::Reload();
+    if (m_ec2MetadataConfigLoader) {
+        m_ec2MetadataConfigLoader->Load();
+        AWSCredentialsProvider::Reload();
+    } else {
+        AWS_LOGSTREAM_ERROR(INSTANCE_LOG_TAG, "EC2 Metadata config loader is a nullptr");
+    }
 }
 
 void InstanceProfileCredentialsProvider::RefreshIfExpired()
@@ -335,6 +347,11 @@ bool TaskRoleCredentialsProvider::ExpiresSoon() const
 void TaskRoleCredentialsProvider::Reload()
 {
     AWS_LOGSTREAM_INFO(TASK_ROLE_LOG_TAG, "Credentials have expired or will expire, attempting to re-pull from ECS IAM Service.");
+    if (!m_ecsCredentialsClient)
+    {
+        AWS_LOGSTREAM_ERROR(INSTANCE_LOG_TAG, "ECS Credentials client is a nullptr");
+        return;
+    }
 
     auto credentialsStr = m_ecsCredentialsClient->GetECSCredentials();
     if (credentialsStr.empty()) return;
