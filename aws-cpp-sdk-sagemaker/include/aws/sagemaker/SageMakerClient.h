@@ -718,8 +718,16 @@ namespace SageMaker
          * best version of a model by running many training jobs on your dataset using the
          * algorithm you choose and values for hyperparameters within ranges that you
          * specify. It then chooses the hyperparameter values that result in a model that
-         * performs the best, as measured by an objective metric that you
-         * choose.</p><p><h3>See Also:</h3>   <a
+         * performs the best, as measured by an objective metric that you choose.</p> <p>A
+         * hyperparameter tuning job automatically creates Amazon SageMaker experiments,
+         * trials, and trial components for each training job that it runs. You can view
+         * these entities in Amazon SageMaker Studio. For more information, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/experiments-view-compare.html#experiments-view">View
+         * Experiments, Trials, and Trial Components</a>.</p>  <p>Do not include
+         * any security-sensitive information including account access IDs, secrets or
+         * tokens in any hyperparameter field. If the use of security-sensitive credentials
+         * are detected, SageMaker will reject your training job request and return an
+         * exception error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">AWS
          * API Reference</a></p>
          */
@@ -1233,17 +1241,17 @@ namespace SageMaker
          * learning process. For a list of hyperparameters for each training algorithm
          * provided by SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
-         * </p>  <p>You must not include any security-sensitive information,
-         * such as account access IDs, secrets, and tokens, in the dictionary for
-         * configuring hyperparameters. SageMaker rejects the training job request and
-         * returns an exception error for detected credentials, if such user input is
-         * found.</p>  </li> <li> <p> <code>InputDataConfig</code> - Describes
-         * the training dataset and the Amazon S3, EFS, or FSx location where it is
-         * stored.</p> </li> <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon
-         * S3 bucket where you want SageMaker to save the results of model training. </p>
-         * </li> <li> <p> <code>ResourceConfig</code> - Identifies the resources, ML
-         * compute instances, and ML storage volumes to deploy for model training. In
-         * distributed training, you specify more than one instance. </p> </li> <li> <p>
+         * </p>  <p>Do not include any security-sensitive information including
+         * account access IDs, secrets or tokens in any hyperparameter field. If the use of
+         * security-sensitive credentials are detected, SageMaker will reject your training
+         * job request and return an exception error.</p>  </li> <li> <p>
+         * <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3,
+         * EFS, or FSx location where it is stored.</p> </li> <li> <p>
+         * <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want
+         * SageMaker to save the results of model training. </p> </li> <li> <p>
+         * <code>ResourceConfig</code> - Identifies the resources, ML compute instances,
+         * and ML storage volumes to deploy for model training. In distributed training,
+         * you specify more than one instance. </p> </li> <li> <p>
          * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine
          * learning models by up to 80% by using Amazon EC2 Spot instances. For more
          * information, see <a
