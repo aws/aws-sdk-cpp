@@ -67,7 +67,8 @@ static Aws::UniquePtr<Aws::Http::HttpResponse> BuildHttpResponse(const Aws::Stri
         response->AddHeader(ERROR_TYPE_HEADER, exception);
     }
 
-    if (!queryErrorCode.empty()) {
+    if (!queryErrorCode.empty())
+    {
         response->AddHeader(QUERY_ERROR_HEADER, queryErrorCode);
     }
 
