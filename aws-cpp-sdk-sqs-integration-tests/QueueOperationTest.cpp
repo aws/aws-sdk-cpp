@@ -550,3 +550,16 @@ TEST_F(QueueOperationTest, TagQueueTest)
     ASSERT_EQ(foundExpectedTagIt->second, expectedTag.second);
   }
 }
+
+TEST_F(QueueOperationTest, ErrorCode)
+{
+    SendMessageRequest sendMessageRequest;
+    sendMessageRequest.SetMessageBody("message body");
+    sendMessageRequest.SetQueueUrl("https://queue.amazonaws.com/539743340619/non-existing-queue");
+
+    SendMessageOutcome sendMessageOutcome = sqsClient->SendMessage(sendMessageRequest);
+
+    ASSERT_FALSE(sendMessageOutcome.IsSuccess());
+    EXPECT_EQ(SQSErrors::QUEUE_DOES_NOT_EXIST, sendMessageOutcome.GetError().GetErrorType());
+    EXPECT_EQ("AWS.SimpleQueueService.NonExistentQueue", sendMessageOutcome.GetError().GetExceptionName());
+}
