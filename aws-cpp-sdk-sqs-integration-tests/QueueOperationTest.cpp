@@ -16,6 +16,7 @@
 #include <aws/sqs/model/CreateQueueRequest.h>
 #include <aws/sqs/model/ListQueuesRequest.h>
 #include <aws/sqs/model/DeleteQueueRequest.h>
+#include <aws/sqs/model/GetQueueUrlRequest.h>
 #include <aws/sqs/model/SendMessageRequest.h>
 #include <aws/sqs/model/ReceiveMessageRequest.h>
 #include <aws/sqs/model/DeleteMessageRequest.h>
@@ -61,6 +62,7 @@ static const char BASE_DEAD_LETTER_QUEUE_NAME[]                     = TEST_QUEUE
 static const char BASE_DEAD_LETTER_SOURCE_QUEUE_NAME[]              = TEST_QUEUE_PREFIX "DeadLetterSource";
 static const char BASE_CHANGE_MESSAGE_VISIBILITY_BATCH_QUEUE_NAME[] = TEST_QUEUE_PREFIX "ChangeMsgVisBatch";
 static const char BASE_TAG_QUEUE_NAME[]                             = TEST_QUEUE_PREFIX "SimpleForTagging";
+static const char BASE_NON_EXISTING_QUEUE_NAME[]                    = TEST_QUEUE_PREFIX "NonExisting";
 static const char ALLOCATION_TAG[]                                  = "QueueOperationTest";
 
 class QueueOperationTest : public ::testing::Test
@@ -553,13 +555,12 @@ TEST_F(QueueOperationTest, TagQueueTest)
 
 TEST_F(QueueOperationTest, ErrorCode)
 {
-    SendMessageRequest sendMessageRequest;
-    sendMessageRequest.SetMessageBody("message body");
-    sendMessageRequest.SetQueueUrl("https://queue.amazonaws.com/539743340619/non-existing-queue");
+    GetQueueUrlRequest getQueueUrlRequest;
+    getQueueUrlRequest.SetQueueName(BASE_NON_EXISTING_QUEUE_NAME);
 
-    SendMessageOutcome sendMessageOutcome = sqsClient->SendMessage(sendMessageRequest);
+    auto getQueueUrlOutcome = sqsClient->GetQueueUrl(getQueueUrlRequest);
 
-    ASSERT_FALSE(sendMessageOutcome.IsSuccess());
-    EXPECT_EQ(SQSErrors::QUEUE_DOES_NOT_EXIST, sendMessageOutcome.GetError().GetErrorType());
-    EXPECT_EQ("AWS.SimpleQueueService.NonExistentQueue", sendMessageOutcome.GetError().GetExceptionName());
+    ASSERT_FALSE(getQueueUrlOutcome.IsSuccess());
+    EXPECT_EQ(SQSErrors::QUEUE_DOES_NOT_EXIST, getQueueUrlOutcome.GetError().GetErrorType());
+    EXPECT_EQ("AWS.SimpleQueueService.NonExistentQueue", getQueueUrlOutcome.GetError().GetExceptionName());
 }
