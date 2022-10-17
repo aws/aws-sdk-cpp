@@ -269,7 +269,7 @@ namespace
 
         auto createDBClusterOutcome = m_rdsClient.CreateDBCluster(createDBClusterRequest);
         ASSERT_FALSE(createDBClusterOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::INVALID_PARAMETER_VALUE, createDBClusterOutcome.GetError().GetErrorType());
+        ASSERT_EQ(RDSErrors::INVALID_PARAMETER_COMBINATION, createDBClusterOutcome.GetError().GetErrorType());
         Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
         QueryStringParameterCollection parameters(URI(preSignedUrl).GetQueryStringParameters());
         ASSERT_NE(parameters.end(), parameters.find("Action"));
@@ -298,7 +298,7 @@ namespace
         createDBClusterRequest.SetPreSignedUrl(TESTING_PRESIGNED_URL);
         createDBClusterOutcome = m_rdsClient.CreateDBCluster(createDBClusterRequest);
         ASSERT_FALSE(createDBClusterOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::INVALID_PARAMETER_VALUE, createDBClusterOutcome.GetError().GetErrorType());
+        ASSERT_EQ(RDSErrors::INVALID_PARAMETER_COMBINATION, createDBClusterOutcome.GetError().GetErrorType());
         preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
         ASSERT_STREQ(TESTING_PRESIGNED_URL, preSignedUrl.c_str());
     }
