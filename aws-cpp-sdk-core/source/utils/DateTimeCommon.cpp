@@ -842,7 +842,9 @@ public:
 
                     break;
                 case 6:
-                    if ((c == 'Z' || c == '+' || c == '-' ) && (index - stateStartIndex == 3))
+                    if ((c == 'Z' || c == '+' || c == '-' ) &&
+                        (index - stateStartIndex >= 3) &&
+                        (index - stateStartIndex <= 9))
                     {
                         m_tz[0] = c;
                         m_state = 7;
