@@ -118,32 +118,38 @@ namespace Model
 
 
     /**
-     * <p>The new status.</p>
+     * <p>The new status.</p> <p>The only supported values are <code>ACTIVE</code> and
+     * <code>INACTIVE</code> </p>
      */
     inline const DetectorVersionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The new status.</p>
+     * <p>The new status.</p> <p>The only supported values are <code>ACTIVE</code> and
+     * <code>INACTIVE</code> </p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The new status.</p>
+     * <p>The new status.</p> <p>The only supported values are <code>ACTIVE</code> and
+     * <code>INACTIVE</code> </p>
      */
     inline void SetStatus(const DetectorVersionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The new status.</p>
+     * <p>The new status.</p> <p>The only supported values are <code>ACTIVE</code> and
+     * <code>INACTIVE</code> </p>
      */
     inline void SetStatus(DetectorVersionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The new status.</p>
+     * <p>The new status.</p> <p>The only supported values are <code>ACTIVE</code> and
+     * <code>INACTIVE</code> </p>
      */
     inline UpdateDetectorVersionStatusRequest& WithStatus(const DetectorVersionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The new status.</p>
+     * <p>The new status.</p> <p>The only supported values are <code>ACTIVE</code> and
+     * <code>INACTIVE</code> </p>
      */
     inline UpdateDetectorVersionStatusRequest& WithStatus(DetectorVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

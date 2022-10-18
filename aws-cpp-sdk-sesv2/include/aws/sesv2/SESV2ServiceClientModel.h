@@ -45,6 +45,7 @@
 #include <aws/sesv2/model/GetContactListResult.h>
 #include <aws/sesv2/model/GetCustomVerificationEmailTemplateResult.h>
 #include <aws/sesv2/model/GetDedicatedIpResult.h>
+#include <aws/sesv2/model/GetDedicatedIpPoolResult.h>
 #include <aws/sesv2/model/GetDedicatedIpsResult.h>
 #include <aws/sesv2/model/GetDeliverabilityDashboardOptionsResult.h>
 #include <aws/sesv2/model/GetDeliverabilityTestReportResult.h>
@@ -162,6 +163,7 @@ namespace Aws
       class GetContactListRequest;
       class GetCustomVerificationEmailTemplateRequest;
       class GetDedicatedIpRequest;
+      class GetDedicatedIpPoolRequest;
       class GetDedicatedIpsRequest;
       class GetDeliverabilityDashboardOptionsRequest;
       class GetDeliverabilityTestReportRequest;
@@ -246,6 +248,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetContactListResult, SESV2Error> GetContactListOutcome;
       typedef Aws::Utils::Outcome<GetCustomVerificationEmailTemplateResult, SESV2Error> GetCustomVerificationEmailTemplateOutcome;
       typedef Aws::Utils::Outcome<GetDedicatedIpResult, SESV2Error> GetDedicatedIpOutcome;
+      typedef Aws::Utils::Outcome<GetDedicatedIpPoolResult, SESV2Error> GetDedicatedIpPoolOutcome;
       typedef Aws::Utils::Outcome<GetDedicatedIpsResult, SESV2Error> GetDedicatedIpsOutcome;
       typedef Aws::Utils::Outcome<GetDeliverabilityDashboardOptionsResult, SESV2Error> GetDeliverabilityDashboardOptionsOutcome;
       typedef Aws::Utils::Outcome<GetDeliverabilityTestReportResult, SESV2Error> GetDeliverabilityTestReportOutcome;
@@ -330,6 +333,7 @@ namespace Aws
       typedef std::future<GetContactListOutcome> GetContactListOutcomeCallable;
       typedef std::future<GetCustomVerificationEmailTemplateOutcome> GetCustomVerificationEmailTemplateOutcomeCallable;
       typedef std::future<GetDedicatedIpOutcome> GetDedicatedIpOutcomeCallable;
+      typedef std::future<GetDedicatedIpPoolOutcome> GetDedicatedIpPoolOutcomeCallable;
       typedef std::future<GetDedicatedIpsOutcome> GetDedicatedIpsOutcomeCallable;
       typedef std::future<GetDeliverabilityDashboardOptionsOutcome> GetDeliverabilityDashboardOptionsOutcomeCallable;
       typedef std::future<GetDeliverabilityTestReportOutcome> GetDeliverabilityTestReportOutcomeCallable;
@@ -417,6 +421,7 @@ namespace Aws
     typedef std::function<void(const SESV2Client*, const Model::GetContactListRequest&, const Model::GetContactListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactListResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetCustomVerificationEmailTemplateRequest&, const Model::GetCustomVerificationEmailTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCustomVerificationEmailTemplateResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetDedicatedIpRequest&, const Model::GetDedicatedIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDedicatedIpResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::GetDedicatedIpPoolRequest&, const Model::GetDedicatedIpPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDedicatedIpPoolResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetDedicatedIpsRequest&, const Model::GetDedicatedIpsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDedicatedIpsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetDeliverabilityDashboardOptionsRequest&, const Model::GetDeliverabilityDashboardOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeliverabilityDashboardOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetDeliverabilityTestReportRequest&, const Model::GetDeliverabilityTestReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeliverabilityTestReportResponseReceivedHandler;

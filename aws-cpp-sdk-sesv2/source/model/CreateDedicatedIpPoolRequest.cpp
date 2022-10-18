@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 CreateDedicatedIpPoolRequest::CreateDedicatedIpPoolRequest() : 
     m_poolNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_scalingMode(ScalingMode::NOT_SET),
+    m_scalingModeHasBeenSet(false)
 {
 }
 
@@ -37,6 +39,11 @@ Aws::String CreateDedicatedIpPoolRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_scalingModeHasBeenSet)
+  {
+   payload.WithString("ScalingMode", ScalingModeMapper::GetNameForScalingMode(m_scalingMode));
   }
 
   return payload.View().WriteReadable();
