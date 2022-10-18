@@ -159,14 +159,13 @@ namespace Aws
 
         Aws::Config::CleanupConfigAndCredentialsCacheManager();
 
-        if(options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
+        Aws::Client::CoreErrorsMapper::CleanupCoreErrorsMapper();
+        Aws::CleanupCrt();
+        if (options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
             Aws::Utils::Logging::ShutdownCRTLogging();
             Aws::Utils::Logging::ShutdownAWSLogging();
         }
-
-        Aws::Client::CoreErrorsMapper::CleanupCoreErrorsMapper();
-        Aws::CleanupCrt();
 #ifdef USE_AWS_MEMORY_MANAGEMENT
         if(options.memoryManagementOptions.memoryManager)
         {
