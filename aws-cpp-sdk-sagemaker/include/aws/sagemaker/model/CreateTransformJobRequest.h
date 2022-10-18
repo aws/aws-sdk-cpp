@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/TransformInput.h>
 #include <aws/sagemaker/model/TransformOutput.h>
+#include <aws/sagemaker/model/BatchDataCaptureConfig.h>
 #include <aws/sagemaker/model/TransformResources.h>
 #include <aws/sagemaker/model/DataProcessing.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -542,6 +543,37 @@ namespace Model
 
 
     /**
+     * <p>Configuration to control how SageMaker captures inference data.</p>
+     */
+    inline const BatchDataCaptureConfig& GetDataCaptureConfig() const{ return m_dataCaptureConfig; }
+
+    /**
+     * <p>Configuration to control how SageMaker captures inference data.</p>
+     */
+    inline bool DataCaptureConfigHasBeenSet() const { return m_dataCaptureConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration to control how SageMaker captures inference data.</p>
+     */
+    inline void SetDataCaptureConfig(const BatchDataCaptureConfig& value) { m_dataCaptureConfigHasBeenSet = true; m_dataCaptureConfig = value; }
+
+    /**
+     * <p>Configuration to control how SageMaker captures inference data.</p>
+     */
+    inline void SetDataCaptureConfig(BatchDataCaptureConfig&& value) { m_dataCaptureConfigHasBeenSet = true; m_dataCaptureConfig = std::move(value); }
+
+    /**
+     * <p>Configuration to control how SageMaker captures inference data.</p>
+     */
+    inline CreateTransformJobRequest& WithDataCaptureConfig(const BatchDataCaptureConfig& value) { SetDataCaptureConfig(value); return *this;}
+
+    /**
+     * <p>Configuration to control how SageMaker captures inference data.</p>
+     */
+    inline CreateTransformJobRequest& WithDataCaptureConfig(BatchDataCaptureConfig&& value) { SetDataCaptureConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Describes the resources, including ML instance types and ML instance count,
      * to use for the transform job.</p>
      */
@@ -762,6 +794,9 @@ namespace Model
 
     TransformOutput m_transformOutput;
     bool m_transformOutputHasBeenSet = false;
+
+    BatchDataCaptureConfig m_dataCaptureConfig;
+    bool m_dataCaptureConfigHasBeenSet = false;
 
     TransformResources m_transformResources;
     bool m_transformResourcesHasBeenSet = false;

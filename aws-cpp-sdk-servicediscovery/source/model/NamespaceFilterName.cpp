@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int TYPE_HASH = HashingUtils::HashString("TYPE");
+        static const int NAME_HASH = HashingUtils::HashString("NAME");
+        static const int HTTP_NAME_HASH = HashingUtils::HashString("HTTP_NAME");
 
 
         NamespaceFilterName GetNamespaceFilterNameForName(const Aws::String& name)
@@ -29,6 +31,14 @@ namespace Aws
           if (hashCode == TYPE_HASH)
           {
             return NamespaceFilterName::TYPE;
+          }
+          else if (hashCode == NAME_HASH)
+          {
+            return NamespaceFilterName::NAME;
+          }
+          else if (hashCode == HTTP_NAME_HASH)
+          {
+            return NamespaceFilterName::HTTP_NAME;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +56,10 @@ namespace Aws
           {
           case NamespaceFilterName::TYPE:
             return "TYPE";
+          case NamespaceFilterName::NAME:
+            return "NAME";
+          case NamespaceFilterName::HTTP_NAME:
+            return "HTTP_NAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

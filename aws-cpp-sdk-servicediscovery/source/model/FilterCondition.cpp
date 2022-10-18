@@ -23,6 +23,7 @@ namespace Aws
         static const int EQ_HASH = HashingUtils::HashString("EQ");
         static const int IN_HASH = HashingUtils::HashString("IN");
         static const int BETWEEN_HASH = HashingUtils::HashString("BETWEEN");
+        static const int BEGINS_WITH_HASH = HashingUtils::HashString("BEGINS_WITH");
 
 
         FilterCondition GetFilterConditionForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == BETWEEN_HASH)
           {
             return FilterCondition::BETWEEN;
+          }
+          else if (hashCode == BEGINS_WITH_HASH)
+          {
+            return FilterCondition::BEGINS_WITH;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "IN";
           case FilterCondition::BETWEEN:
             return "BETWEEN";
+          case FilterCondition::BEGINS_WITH:
+            return "BEGINS_WITH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -19,12 +19,14 @@ namespace Model
 {
 
 ModelExplainabilityJobInput::ModelExplainabilityJobInput() : 
-    m_endpointInputHasBeenSet(false)
+    m_endpointInputHasBeenSet(false),
+    m_batchTransformInputHasBeenSet(false)
 {
 }
 
 ModelExplainabilityJobInput::ModelExplainabilityJobInput(JsonView jsonValue) : 
-    m_endpointInputHasBeenSet(false)
+    m_endpointInputHasBeenSet(false),
+    m_batchTransformInputHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ ModelExplainabilityJobInput& ModelExplainabilityJobInput::operator =(JsonView js
     m_endpointInputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BatchTransformInput"))
+  {
+    m_batchTransformInput = jsonValue.GetObject("BatchTransformInput");
+
+    m_batchTransformInputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue ModelExplainabilityJobInput::Jsonize() const
   if(m_endpointInputHasBeenSet)
   {
    payload.WithObject("EndpointInput", m_endpointInput.Jsonize());
+
+  }
+
+  if(m_batchTransformInputHasBeenSet)
+  {
+   payload.WithObject("BatchTransformInput", m_batchTransformInput.Jsonize());
 
   }
 

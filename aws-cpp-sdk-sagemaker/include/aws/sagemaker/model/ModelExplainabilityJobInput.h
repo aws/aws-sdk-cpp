@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/EndpointInput.h>
+#include <aws/sagemaker/model/BatchTransformInput.h>
 #include <utility>
 
 namespace Aws
@@ -55,10 +56,44 @@ namespace Model
     
     inline ModelExplainabilityJobInput& WithEndpointInput(EndpointInput&& value) { SetEndpointInput(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline const BatchTransformInput& GetBatchTransformInput() const{ return m_batchTransformInput; }
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline bool BatchTransformInputHasBeenSet() const { return m_batchTransformInputHasBeenSet; }
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline void SetBatchTransformInput(const BatchTransformInput& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = value; }
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline void SetBatchTransformInput(BatchTransformInput&& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = std::move(value); }
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline ModelExplainabilityJobInput& WithBatchTransformInput(const BatchTransformInput& value) { SetBatchTransformInput(value); return *this;}
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline ModelExplainabilityJobInput& WithBatchTransformInput(BatchTransformInput&& value) { SetBatchTransformInput(std::move(value)); return *this;}
+
   private:
 
     EndpointInput m_endpointInput;
     bool m_endpointInputHasBeenSet = false;
+
+    BatchTransformInput m_batchTransformInput;
+    bool m_batchTransformInputHasBeenSet = false;
   };
 
 } // namespace Model

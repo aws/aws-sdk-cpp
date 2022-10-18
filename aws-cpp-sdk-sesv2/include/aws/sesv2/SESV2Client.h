@@ -135,8 +135,8 @@ namespace SESV2
         /**
          * <p>Creates a new custom verification email template.</p> <p>For more information
          * about custom verification email templates, see <a
-         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-         * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+         * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+         * custom verification email templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateCustomVerificationEmailTemplate">AWS
@@ -389,8 +389,8 @@ namespace SESV2
         /**
          * <p>Deletes an existing custom verification email template.</p> <p>For more
          * information about custom verification email templates, see <a
-         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-         * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+         * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+         * custom verification email templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteCustomVerificationEmailTemplate">AWS
@@ -627,8 +627,8 @@ namespace SESV2
          * <p>Returns the custom email verification template for the template name you
          * specify.</p> <p>For more information about custom verification email templates,
          * see <a
-         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-         * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+         * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+         * custom verification email templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetCustomVerificationEmailTemplate">AWS
@@ -664,6 +664,23 @@ namespace SESV2
          * An Async wrapper for GetDedicatedIp that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDedicatedIpAsync(const Model::GetDedicatedIpRequest& request, const GetDedicatedIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieve information about the dedicated pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDedicatedIpPool">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDedicatedIpPoolOutcome GetDedicatedIpPool(const Model::GetDedicatedIpPoolRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDedicatedIpPool that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDedicatedIpPoolOutcomeCallable GetDedicatedIpPoolCallable(const Model::GetDedicatedIpPoolRequest& request) const;
+
+        /**
+         * An Async wrapper for GetDedicatedIpPool that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDedicatedIpPoolAsync(const Model::GetDedicatedIpPoolRequest& request, const GetDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>List the dedicated IP addresses that are associated with your Amazon Web
@@ -925,8 +942,8 @@ namespace SESV2
          * <p>Lists the existing custom verification email templates for your account in
          * the current Amazon Web Services Region.</p> <p>For more information about custom
          * verification email templates, see <a
-         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-         * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+         * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+         * custom verification email templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListCustomVerificationEmailTemplates">AWS
@@ -1475,8 +1492,8 @@ namespace SESV2
          * specified address.</p> <p>To use this operation, you must first create a custom
          * verification email template. For more information about creating and using
          * custom verification email templates, see <a
-         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-         * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+         * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+         * custom verification email templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendCustomVerificationEmail">AWS
@@ -1646,8 +1663,8 @@ namespace SESV2
         /**
          * <p>Updates an existing custom verification email template.</p> <p>For more
          * information about custom verification email templates, see <a
-         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using
-         * Custom Verification Email Templates</a> in the <i>Amazon SES Developer
+         * href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom">Using
+         * custom verification email templates</a> in the <i>Amazon SES Developer
          * Guide</i>.</p> <p>You can execute this operation no more than once per
          * second.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateCustomVerificationEmailTemplate">AWS

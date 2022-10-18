@@ -39,29 +39,29 @@ namespace Model
 
     /**
      * <p>The maximum number of emails that you can send in the current Amazon Web
-     * Services Region over a 24-hour period. This value is also called your <i>sending
-     * quota</i>.</p>
+     * Services Region over a 24-hour period. A value of -1 signifies an unlimited
+     * quota. (This value is also referred to as your <i>sending quota</i>.)</p>
      */
     inline double GetMax24HourSend() const{ return m_max24HourSend; }
 
     /**
      * <p>The maximum number of emails that you can send in the current Amazon Web
-     * Services Region over a 24-hour period. This value is also called your <i>sending
-     * quota</i>.</p>
+     * Services Region over a 24-hour period. A value of -1 signifies an unlimited
+     * quota. (This value is also referred to as your <i>sending quota</i>.)</p>
      */
     inline bool Max24HourSendHasBeenSet() const { return m_max24HourSendHasBeenSet; }
 
     /**
      * <p>The maximum number of emails that you can send in the current Amazon Web
-     * Services Region over a 24-hour period. This value is also called your <i>sending
-     * quota</i>.</p>
+     * Services Region over a 24-hour period. A value of -1 signifies an unlimited
+     * quota. (This value is also referred to as your <i>sending quota</i>.)</p>
      */
     inline void SetMax24HourSend(double value) { m_max24HourSendHasBeenSet = true; m_max24HourSend = value; }
 
     /**
      * <p>The maximum number of emails that you can send in the current Amazon Web
-     * Services Region over a 24-hour period. This value is also called your <i>sending
-     * quota</i>.</p>
+     * Services Region over a 24-hour period. A value of -1 signifies an unlimited
+     * quota. (This value is also referred to as your <i>sending quota</i>.)</p>
      */
     inline SendQuota& WithMax24HourSend(double value) { SetMax24HourSend(value); return *this;}
 

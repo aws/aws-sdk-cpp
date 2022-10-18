@@ -221,38 +221,32 @@ namespace Model
 
 
     /**
-     * <p>The date and time when the predictive inbox placement test was created, in
-     * Unix time format.</p>
+     * <p>The date and time when the predictive inbox placement test was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
 
     /**
-     * <p>The date and time when the predictive inbox placement test was created, in
-     * Unix time format.</p>
+     * <p>The date and time when the predictive inbox placement test was created.</p>
      */
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
 
     /**
-     * <p>The date and time when the predictive inbox placement test was created, in
-     * Unix time format.</p>
+     * <p>The date and time when the predictive inbox placement test was created.</p>
      */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
-     * <p>The date and time when the predictive inbox placement test was created, in
-     * Unix time format.</p>
+     * <p>The date and time when the predictive inbox placement test was created.</p>
      */
     inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
 
     /**
-     * <p>The date and time when the predictive inbox placement test was created, in
-     * Unix time format.</p>
+     * <p>The date and time when the predictive inbox placement test was created.</p>
      */
     inline DeliverabilityTestReport& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
 
     /**
-     * <p>The date and time when the predictive inbox placement test was created, in
-     * Unix time format.</p>
+     * <p>The date and time when the predictive inbox placement test was created.</p>
      */
     inline DeliverabilityTestReport& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
 

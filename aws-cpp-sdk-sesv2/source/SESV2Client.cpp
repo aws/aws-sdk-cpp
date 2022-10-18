@@ -49,6 +49,7 @@
 #include <aws/sesv2/model/GetContactListRequest.h>
 #include <aws/sesv2/model/GetCustomVerificationEmailTemplateRequest.h>
 #include <aws/sesv2/model/GetDedicatedIpRequest.h>
+#include <aws/sesv2/model/GetDedicatedIpPoolRequest.h>
 #include <aws/sesv2/model/GetDedicatedIpsRequest.h>
 #include <aws/sesv2/model/GetDeliverabilityDashboardOptionsRequest.h>
 #include <aws/sesv2/model/GetDeliverabilityTestReportRequest.h>
@@ -1002,6 +1003,35 @@ void SESV2Client::GetDedicatedIpAsync(const GetDedicatedIpRequest& request, cons
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetDedicatedIp(request), context);
+    } );
+}
+
+GetDedicatedIpPoolOutcome SESV2Client::GetDedicatedIpPool(const GetDedicatedIpPoolRequest& request) const
+{
+  if (!request.PoolNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDedicatedIpPool", "Required field: PoolName, is not set");
+    return GetDedicatedIpPoolOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PoolName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v2/email/dedicated-ip-pools/");
+  uri.AddPathSegment(request.GetPoolName());
+  return GetDedicatedIpPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDedicatedIpPoolOutcomeCallable SESV2Client::GetDedicatedIpPoolCallable(const GetDedicatedIpPoolRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDedicatedIpPoolOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDedicatedIpPool(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::GetDedicatedIpPoolAsync(const GetDedicatedIpPoolRequest& request, const GetDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetDedicatedIpPool(request), context);
     } );
 }
 

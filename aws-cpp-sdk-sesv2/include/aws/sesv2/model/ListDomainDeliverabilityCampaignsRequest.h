@@ -46,81 +46,75 @@ namespace Model
 
 
     /**
-     * <p>The first day, in Unix time format, that you want to obtain deliverability
-     * data for.</p>
+     * <p>The first day that you want to obtain deliverability data for.</p>
      */
     inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
 
     /**
-     * <p>The first day, in Unix time format, that you want to obtain deliverability
-     * data for.</p>
+     * <p>The first day that you want to obtain deliverability data for.</p>
      */
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
 
     /**
-     * <p>The first day, in Unix time format, that you want to obtain deliverability
-     * data for.</p>
+     * <p>The first day that you want to obtain deliverability data for.</p>
      */
     inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
-     * <p>The first day, in Unix time format, that you want to obtain deliverability
-     * data for.</p>
+     * <p>The first day that you want to obtain deliverability data for.</p>
      */
     inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
 
     /**
-     * <p>The first day, in Unix time format, that you want to obtain deliverability
-     * data for.</p>
+     * <p>The first day that you want to obtain deliverability data for.</p>
      */
     inline ListDomainDeliverabilityCampaignsRequest& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
 
     /**
-     * <p>The first day, in Unix time format, that you want to obtain deliverability
-     * data for.</p>
+     * <p>The first day that you want to obtain deliverability data for.</p>
      */
     inline ListDomainDeliverabilityCampaignsRequest& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The last day, in Unix time format, that you want to obtain deliverability
-     * data for. This value has to be less than or equal to 30 days after the value of
-     * the <code>StartDate</code> parameter.</p>
+     * <p>The last day that you want to obtain deliverability data for. This value has
+     * to be less than or equal to 30 days after the value of the
+     * <code>StartDate</code> parameter.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
 
     /**
-     * <p>The last day, in Unix time format, that you want to obtain deliverability
-     * data for. This value has to be less than or equal to 30 days after the value of
-     * the <code>StartDate</code> parameter.</p>
+     * <p>The last day that you want to obtain deliverability data for. This value has
+     * to be less than or equal to 30 days after the value of the
+     * <code>StartDate</code> parameter.</p>
      */
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
 
     /**
-     * <p>The last day, in Unix time format, that you want to obtain deliverability
-     * data for. This value has to be less than or equal to 30 days after the value of
-     * the <code>StartDate</code> parameter.</p>
+     * <p>The last day that you want to obtain deliverability data for. This value has
+     * to be less than or equal to 30 days after the value of the
+     * <code>StartDate</code> parameter.</p>
      */
     inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
-     * <p>The last day, in Unix time format, that you want to obtain deliverability
-     * data for. This value has to be less than or equal to 30 days after the value of
-     * the <code>StartDate</code> parameter.</p>
+     * <p>The last day that you want to obtain deliverability data for. This value has
+     * to be less than or equal to 30 days after the value of the
+     * <code>StartDate</code> parameter.</p>
      */
     inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
 
     /**
-     * <p>The last day, in Unix time format, that you want to obtain deliverability
-     * data for. This value has to be less than or equal to 30 days after the value of
-     * the <code>StartDate</code> parameter.</p>
+     * <p>The last day that you want to obtain deliverability data for. This value has
+     * to be less than or equal to 30 days after the value of the
+     * <code>StartDate</code> parameter.</p>
      */
     inline ListDomainDeliverabilityCampaignsRequest& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
 
     /**
-     * <p>The last day, in Unix time format, that you want to obtain deliverability
-     * data for. This value has to be less than or equal to 30 days after the value of
-     * the <code>StartDate</code> parameter.</p>
+     * <p>The last day that you want to obtain deliverability data for. This value has
+     * to be less than or equal to 30 days after the value of the
+     * <code>StartDate</code> parameter.</p>
      */
     inline ListDomainDeliverabilityCampaignsRequest& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
 

@@ -42,9 +42,11 @@ namespace Model
 
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
-     * to create an <code>SRV</code> record when you register an instance and you're
-     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * <p>The name that you want to assign to the service.</p>  <p>Do not include
+     * sensitive information in the name if the namespace is discoverable by public DNS
+     * queries.</p>  <p>If you want Cloud Map to create an <code>SRV</code>
+     * record when you register an instance and you're using a system that requires a
+     * specific <code>SRV</code> format, such as <a
      * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
@@ -61,9 +63,11 @@ namespace Model
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
-     * to create an <code>SRV</code> record when you register an instance and you're
-     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * <p>The name that you want to assign to the service.</p>  <p>Do not include
+     * sensitive information in the name if the namespace is discoverable by public DNS
+     * queries.</p>  <p>If you want Cloud Map to create an <code>SRV</code>
+     * record when you register an instance and you're using a system that requires a
+     * specific <code>SRV</code> format, such as <a
      * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
@@ -80,9 +84,11 @@ namespace Model
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
-     * to create an <code>SRV</code> record when you register an instance and you're
-     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * <p>The name that you want to assign to the service.</p>  <p>Do not include
+     * sensitive information in the name if the namespace is discoverable by public DNS
+     * queries.</p>  <p>If you want Cloud Map to create an <code>SRV</code>
+     * record when you register an instance and you're using a system that requires a
+     * specific <code>SRV</code> format, such as <a
      * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
@@ -99,9 +105,11 @@ namespace Model
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
-     * to create an <code>SRV</code> record when you register an instance and you're
-     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * <p>The name that you want to assign to the service.</p>  <p>Do not include
+     * sensitive information in the name if the namespace is discoverable by public DNS
+     * queries.</p>  <p>If you want Cloud Map to create an <code>SRV</code>
+     * record when you register an instance and you're using a system that requires a
+     * specific <code>SRV</code> format, such as <a
      * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
@@ -118,9 +126,11 @@ namespace Model
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
-     * to create an <code>SRV</code> record when you register an instance and you're
-     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * <p>The name that you want to assign to the service.</p>  <p>Do not include
+     * sensitive information in the name if the namespace is discoverable by public DNS
+     * queries.</p>  <p>If you want Cloud Map to create an <code>SRV</code>
+     * record when you register an instance and you're using a system that requires a
+     * specific <code>SRV</code> format, such as <a
      * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
@@ -137,9 +147,11 @@ namespace Model
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
-     * to create an <code>SRV</code> record when you register an instance and you're
-     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * <p>The name that you want to assign to the service.</p>  <p>Do not include
+     * sensitive information in the name if the namespace is discoverable by public DNS
+     * queries.</p>  <p>If you want Cloud Map to create an <code>SRV</code>
+     * record when you register an instance and you're using a system that requires a
+     * specific <code>SRV</code> format, such as <a
      * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
@@ -156,9 +168,11 @@ namespace Model
     inline CreateServiceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
-     * to create an <code>SRV</code> record when you register an instance and you're
-     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * <p>The name that you want to assign to the service.</p>  <p>Do not include
+     * sensitive information in the name if the namespace is discoverable by public DNS
+     * queries.</p>  <p>If you want Cloud Map to create an <code>SRV</code>
+     * record when you register an instance and you're using a system that requires a
+     * specific <code>SRV</code> format, such as <a
      * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
@@ -175,9 +189,11 @@ namespace Model
     inline CreateServiceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
-     * to create an <code>SRV</code> record when you register an instance and you're
-     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * <p>The name that you want to assign to the service.</p>  <p>Do not include
+     * sensitive information in the name if the namespace is discoverable by public DNS
+     * queries.</p>  <p>If you want Cloud Map to create an <code>SRV</code>
+     * record when you register an instance and you're using a system that requires a
+     * specific <code>SRV</code> format, such as <a
      * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
@@ -358,37 +374,37 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains information about the Amazon Route 53 records
+     * <p>A complex type that contains information about the Amazon Route 53 records
      * that you want Cloud Map to create when you register an instance. </p>
      */
     inline const DnsConfig& GetDnsConfig() const{ return m_dnsConfig; }
 
     /**
-     * <p>A complex type that contains information about the Amazon Route 53 records
+     * <p>A complex type that contains information about the Amazon Route 53 records
      * that you want Cloud Map to create when you register an instance. </p>
      */
     inline bool DnsConfigHasBeenSet() const { return m_dnsConfigHasBeenSet; }
 
     /**
-     * <p>A complex type that contains information about the Amazon Route 53 records
+     * <p>A complex type that contains information about the Amazon Route 53 records
      * that you want Cloud Map to create when you register an instance. </p>
      */
     inline void SetDnsConfig(const DnsConfig& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
-     * <p>A complex type that contains information about the Amazon Route 53 records
+     * <p>A complex type that contains information about the Amazon Route 53 records
      * that you want Cloud Map to create when you register an instance. </p>
      */
     inline void SetDnsConfig(DnsConfig&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
     /**
-     * <p>A complex type that contains information about the Amazon Route 53 records
+     * <p>A complex type that contains information about the Amazon Route 53 records
      * that you want Cloud Map to create when you register an instance. </p>
      */
     inline CreateServiceRequest& WithDnsConfig(const DnsConfig& value) { SetDnsConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the Amazon Route 53 records
+     * <p>A complex type that contains information about the Amazon Route 53 records
      * that you want Cloud Map to create when you register an instance. </p>
      */
     inline CreateServiceRequest& WithDnsConfig(DnsConfig&& value) { SetDnsConfig(std::move(value)); return *this;}
@@ -396,8 +412,8 @@ namespace Model
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
-     * settings for an optional Route 53 health check. If you specify settings for a
-     * health check, Cloud Map associates the health check with all the Route 53 DNS
+     * settings for an optional Route 53 health check. If you specify settings for a
+     * health check, Cloud Map associates the health check with all the Route 53 DNS
      * records that you specify in <code>DnsConfig</code>.</p>  <p>If you
      * specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
@@ -409,8 +425,8 @@ namespace Model
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
-     * settings for an optional Route 53 health check. If you specify settings for a
-     * health check, Cloud Map associates the health check with all the Route 53 DNS
+     * settings for an optional Route 53 health check. If you specify settings for a
+     * health check, Cloud Map associates the health check with all the Route 53 DNS
      * records that you specify in <code>DnsConfig</code>.</p>  <p>If you
      * specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
@@ -422,8 +438,8 @@ namespace Model
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
-     * settings for an optional Route 53 health check. If you specify settings for a
-     * health check, Cloud Map associates the health check with all the Route 53 DNS
+     * settings for an optional Route 53 health check. If you specify settings for a
+     * health check, Cloud Map associates the health check with all the Route 53 DNS
      * records that you specify in <code>DnsConfig</code>.</p>  <p>If you
      * specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
@@ -435,8 +451,8 @@ namespace Model
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
-     * settings for an optional Route 53 health check. If you specify settings for a
-     * health check, Cloud Map associates the health check with all the Route 53 DNS
+     * settings for an optional Route 53 health check. If you specify settings for a
+     * health check, Cloud Map associates the health check with all the Route 53 DNS
      * records that you specify in <code>DnsConfig</code>.</p>  <p>If you
      * specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
@@ -448,8 +464,8 @@ namespace Model
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
-     * settings for an optional Route 53 health check. If you specify settings for a
-     * health check, Cloud Map associates the health check with all the Route 53 DNS
+     * settings for an optional Route 53 health check. If you specify settings for a
+     * health check, Cloud Map associates the health check with all the Route 53 DNS
      * records that you specify in <code>DnsConfig</code>.</p>  <p>If you
      * specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
@@ -461,8 +477,8 @@ namespace Model
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
-     * settings for an optional Route 53 health check. If you specify settings for a
-     * health check, Cloud Map associates the health check with all the Route 53 DNS
+     * settings for an optional Route 53 health check. If you specify settings for a
+     * health check, Cloud Map associates the health check with all the Route 53 DNS
      * records that you specify in <code>DnsConfig</code>.</p>  <p>If you
      * specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not

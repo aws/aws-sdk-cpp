@@ -133,6 +133,52 @@ namespace Model
      */
     inline ImportJobSummary& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The current number of records processed.</p>
+     */
+    inline int GetProcessedRecordsCount() const{ return m_processedRecordsCount; }
+
+    /**
+     * <p>The current number of records processed.</p>
+     */
+    inline bool ProcessedRecordsCountHasBeenSet() const { return m_processedRecordsCountHasBeenSet; }
+
+    /**
+     * <p>The current number of records processed.</p>
+     */
+    inline void SetProcessedRecordsCount(int value) { m_processedRecordsCountHasBeenSet = true; m_processedRecordsCount = value; }
+
+    /**
+     * <p>The current number of records processed.</p>
+     */
+    inline ImportJobSummary& WithProcessedRecordsCount(int value) { SetProcessedRecordsCount(value); return *this;}
+
+
+    /**
+     * <p>The number of records that failed processing because of invalid input or
+     * other reasons.</p>
+     */
+    inline int GetFailedRecordsCount() const{ return m_failedRecordsCount; }
+
+    /**
+     * <p>The number of records that failed processing because of invalid input or
+     * other reasons.</p>
+     */
+    inline bool FailedRecordsCountHasBeenSet() const { return m_failedRecordsCountHasBeenSet; }
+
+    /**
+     * <p>The number of records that failed processing because of invalid input or
+     * other reasons.</p>
+     */
+    inline void SetFailedRecordsCount(int value) { m_failedRecordsCountHasBeenSet = true; m_failedRecordsCount = value; }
+
+    /**
+     * <p>The number of records that failed processing because of invalid input or
+     * other reasons.</p>
+     */
+    inline ImportJobSummary& WithFailedRecordsCount(int value) { SetFailedRecordsCount(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -146,6 +192,12 @@ namespace Model
 
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet = false;
+
+    int m_processedRecordsCount;
+    bool m_processedRecordsCountHasBeenSet = false;
+
+    int m_failedRecordsCount;
+    bool m_failedRecordsCountHasBeenSet = false;
   };
 
 } // namespace Model

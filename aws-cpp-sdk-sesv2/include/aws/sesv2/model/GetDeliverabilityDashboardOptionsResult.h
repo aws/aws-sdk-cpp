@@ -61,47 +61,42 @@ namespace Model
 
 
     /**
-     * <p>The date, in Unix time format, when your current subscription to the
-     * Deliverability dashboard is scheduled to expire, if your subscription is
-     * scheduled to expire at the end of the current calendar month. This value is null
-     * if you have an active subscription that isn’t due to expire at the end of the
-     * month.</p>
+     * <p>The date when your current subscription to the Deliverability dashboard is
+     * scheduled to expire, if your subscription is scheduled to expire at the end of
+     * the current calendar month. This value is null if you have an active
+     * subscription that isn’t due to expire at the end of the month.</p>
      */
     inline const Aws::Utils::DateTime& GetSubscriptionExpiryDate() const{ return m_subscriptionExpiryDate; }
 
     /**
-     * <p>The date, in Unix time format, when your current subscription to the
-     * Deliverability dashboard is scheduled to expire, if your subscription is
-     * scheduled to expire at the end of the current calendar month. This value is null
-     * if you have an active subscription that isn’t due to expire at the end of the
-     * month.</p>
+     * <p>The date when your current subscription to the Deliverability dashboard is
+     * scheduled to expire, if your subscription is scheduled to expire at the end of
+     * the current calendar month. This value is null if you have an active
+     * subscription that isn’t due to expire at the end of the month.</p>
      */
     inline void SetSubscriptionExpiryDate(const Aws::Utils::DateTime& value) { m_subscriptionExpiryDate = value; }
 
     /**
-     * <p>The date, in Unix time format, when your current subscription to the
-     * Deliverability dashboard is scheduled to expire, if your subscription is
-     * scheduled to expire at the end of the current calendar month. This value is null
-     * if you have an active subscription that isn’t due to expire at the end of the
-     * month.</p>
+     * <p>The date when your current subscription to the Deliverability dashboard is
+     * scheduled to expire, if your subscription is scheduled to expire at the end of
+     * the current calendar month. This value is null if you have an active
+     * subscription that isn’t due to expire at the end of the month.</p>
      */
     inline void SetSubscriptionExpiryDate(Aws::Utils::DateTime&& value) { m_subscriptionExpiryDate = std::move(value); }
 
     /**
-     * <p>The date, in Unix time format, when your current subscription to the
-     * Deliverability dashboard is scheduled to expire, if your subscription is
-     * scheduled to expire at the end of the current calendar month. This value is null
-     * if you have an active subscription that isn’t due to expire at the end of the
-     * month.</p>
+     * <p>The date when your current subscription to the Deliverability dashboard is
+     * scheduled to expire, if your subscription is scheduled to expire at the end of
+     * the current calendar month. This value is null if you have an active
+     * subscription that isn’t due to expire at the end of the month.</p>
      */
     inline GetDeliverabilityDashboardOptionsResult& WithSubscriptionExpiryDate(const Aws::Utils::DateTime& value) { SetSubscriptionExpiryDate(value); return *this;}
 
     /**
-     * <p>The date, in Unix time format, when your current subscription to the
-     * Deliverability dashboard is scheduled to expire, if your subscription is
-     * scheduled to expire at the end of the current calendar month. This value is null
-     * if you have an active subscription that isn’t due to expire at the end of the
-     * month.</p>
+     * <p>The date when your current subscription to the Deliverability dashboard is
+     * scheduled to expire, if your subscription is scheduled to expire at the end of
+     * the current calendar month. This value is null if you have an active
+     * subscription that isn’t due to expire at the end of the month.</p>
      */
     inline GetDeliverabilityDashboardOptionsResult& WithSubscriptionExpiryDate(Aws::Utils::DateTime&& value) { SetSubscriptionExpiryDate(std::move(value)); return *this;}
 

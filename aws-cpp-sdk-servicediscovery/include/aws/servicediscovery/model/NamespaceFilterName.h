@@ -16,7 +16,9 @@ namespace Model
   enum class NamespaceFilterName
   {
     NOT_SET,
-    TYPE
+    TYPE,
+    NAME,
+    HTTP_NAME
   };
 
 namespace NamespaceFilterNameMapper

@@ -23,7 +23,9 @@ IdentityInfo::IdentityInfo() :
     m_identityTypeHasBeenSet(false),
     m_identityNameHasBeenSet(false),
     m_sendingEnabled(false),
-    m_sendingEnabledHasBeenSet(false)
+    m_sendingEnabledHasBeenSet(false),
+    m_verificationStatus(VerificationStatus::NOT_SET),
+    m_verificationStatusHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ IdentityInfo::IdentityInfo(JsonView jsonValue) :
     m_identityTypeHasBeenSet(false),
     m_identityNameHasBeenSet(false),
     m_sendingEnabled(false),
-    m_sendingEnabledHasBeenSet(false)
+    m_sendingEnabledHasBeenSet(false),
+    m_verificationStatus(VerificationStatus::NOT_SET),
+    m_verificationStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +64,13 @@ IdentityInfo& IdentityInfo::operator =(JsonView jsonValue)
     m_sendingEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VerificationStatus"))
+  {
+    m_verificationStatus = VerificationStatusMapper::GetVerificationStatusForName(jsonValue.GetString("VerificationStatus"));
+
+    m_verificationStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -82,6 +93,11 @@ JsonValue IdentityInfo::Jsonize() const
   {
    payload.WithBool("SendingEnabled", m_sendingEnabled);
 
+  }
+
+  if(m_verificationStatusHasBeenSet)
+  {
+   payload.WithString("VerificationStatus", VerificationStatusMapper::GetNameForVerificationStatus(m_verificationStatus));
   }
 
   return payload;

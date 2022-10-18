@@ -40,37 +40,37 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
+     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
      * Map creates when you create a namespace.</p>
      */
     inline const DnsProperties& GetDnsProperties() const{ return m_dnsProperties; }
 
     /**
-     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
+     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
      * Map creates when you create a namespace.</p>
      */
     inline bool DnsPropertiesHasBeenSet() const { return m_dnsPropertiesHasBeenSet; }
 
     /**
-     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
+     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
      * Map creates when you create a namespace.</p>
      */
     inline void SetDnsProperties(const DnsProperties& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = value; }
 
     /**
-     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
+     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
      * Map creates when you create a namespace.</p>
      */
     inline void SetDnsProperties(DnsProperties&& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = std::move(value); }
 
     /**
-     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
+     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
      * Map creates when you create a namespace.</p>
      */
     inline NamespaceProperties& WithDnsProperties(const DnsProperties& value) { SetDnsProperties(value); return *this;}
 
     /**
-     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
+     * <p>A complex type that contains the ID for the Route 53 hosted zone that Cloud
      * Map creates when you create a namespace.</p>
      */
     inline NamespaceProperties& WithDnsProperties(DnsProperties&& value) { SetDnsProperties(std::move(value)); return *this;}

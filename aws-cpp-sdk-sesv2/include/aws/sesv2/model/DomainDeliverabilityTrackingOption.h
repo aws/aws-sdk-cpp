@@ -93,38 +93,32 @@ namespace Model
 
 
     /**
-     * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
-     * for the domain.</p>
+     * <p>The date when you enabled the Deliverability dashboard for the domain.</p>
      */
     inline const Aws::Utils::DateTime& GetSubscriptionStartDate() const{ return m_subscriptionStartDate; }
 
     /**
-     * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
-     * for the domain.</p>
+     * <p>The date when you enabled the Deliverability dashboard for the domain.</p>
      */
     inline bool SubscriptionStartDateHasBeenSet() const { return m_subscriptionStartDateHasBeenSet; }
 
     /**
-     * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
-     * for the domain.</p>
+     * <p>The date when you enabled the Deliverability dashboard for the domain.</p>
      */
     inline void SetSubscriptionStartDate(const Aws::Utils::DateTime& value) { m_subscriptionStartDateHasBeenSet = true; m_subscriptionStartDate = value; }
 
     /**
-     * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
-     * for the domain.</p>
+     * <p>The date when you enabled the Deliverability dashboard for the domain.</p>
      */
     inline void SetSubscriptionStartDate(Aws::Utils::DateTime&& value) { m_subscriptionStartDateHasBeenSet = true; m_subscriptionStartDate = std::move(value); }
 
     /**
-     * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
-     * for the domain.</p>
+     * <p>The date when you enabled the Deliverability dashboard for the domain.</p>
      */
     inline DomainDeliverabilityTrackingOption& WithSubscriptionStartDate(const Aws::Utils::DateTime& value) { SetSubscriptionStartDate(value); return *this;}
 
     /**
-     * <p>The date, in Unix time format, when you enabled the Deliverability dashboard
-     * for the domain.</p>
+     * <p>The date when you enabled the Deliverability dashboard for the domain.</p>
      */
     inline DomainDeliverabilityTrackingOption& WithSubscriptionStartDate(Aws::Utils::DateTime&& value) { SetSubscriptionStartDate(std::move(value)); return *this;}
 

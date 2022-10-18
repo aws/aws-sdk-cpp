@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/EndpointInput.h>
+#include <aws/sagemaker/model/BatchTransformInput.h>
 #include <aws/sagemaker/model/MonitoringGroundTruthS3Input.h>
 #include <utility>
 
@@ -58,6 +59,37 @@ namespace Model
 
 
     /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline const BatchTransformInput& GetBatchTransformInput() const{ return m_batchTransformInput; }
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline bool BatchTransformInputHasBeenSet() const { return m_batchTransformInputHasBeenSet; }
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline void SetBatchTransformInput(const BatchTransformInput& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = value; }
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline void SetBatchTransformInput(BatchTransformInput&& value) { m_batchTransformInputHasBeenSet = true; m_batchTransformInput = std::move(value); }
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline ModelBiasJobInput& WithBatchTransformInput(const BatchTransformInput& value) { SetBatchTransformInput(value); return *this;}
+
+    /**
+     * <p>Input object for the batch transform job.</p>
+     */
+    inline ModelBiasJobInput& WithBatchTransformInput(BatchTransformInput&& value) { SetBatchTransformInput(std::move(value)); return *this;}
+
+
+    /**
      * <p>Location of ground truth labels to use in model bias job.</p>
      */
     inline const MonitoringGroundTruthS3Input& GetGroundTruthS3Input() const{ return m_groundTruthS3Input; }
@@ -91,6 +123,9 @@ namespace Model
 
     EndpointInput m_endpointInput;
     bool m_endpointInputHasBeenSet = false;
+
+    BatchTransformInput m_batchTransformInput;
+    bool m_batchTransformInputHasBeenSet = false;
 
     MonitoringGroundTruthS3Input m_groundTruthS3Input;
     bool m_groundTruthS3InputHasBeenSet = false;

@@ -283,42 +283,74 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM role to use for this job request.</p>
+     * <p>The ARN of the IAM role to use for this job request.</p> <p>The IAM Role must
+     * have read permissions to your input S3 bucket and write permissions to your
+     * output S3 bucket. For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User
+     * policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
-     * <p>The ARN of the IAM role to use for this job request.</p>
+     * <p>The ARN of the IAM role to use for this job request.</p> <p>The IAM Role must
+     * have read permissions to your input S3 bucket and write permissions to your
+     * output S3 bucket. For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User
+     * policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM role to use for this job request.</p>
+     * <p>The ARN of the IAM role to use for this job request.</p> <p>The IAM Role must
+     * have read permissions to your input S3 bucket and write permissions to your
+     * output S3 bucket. For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User
+     * policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
-     * <p>The ARN of the IAM role to use for this job request.</p>
+     * <p>The ARN of the IAM role to use for this job request.</p> <p>The IAM Role must
+     * have read permissions to your input S3 bucket and write permissions to your
+     * output S3 bucket. For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User
+     * policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role to use for this job request.</p>
+     * <p>The ARN of the IAM role to use for this job request.</p> <p>The IAM Role must
+     * have read permissions to your input S3 bucket and write permissions to your
+     * output S3 bucket. For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User
+     * policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role to use for this job request.</p>
+     * <p>The ARN of the IAM role to use for this job request.</p> <p>The IAM Role must
+     * have read permissions to your input S3 bucket and write permissions to your
+     * output S3 bucket. For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User
+     * policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CreateBatchPredictionJobRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role to use for this job request.</p>
+     * <p>The ARN of the IAM role to use for this job request.</p> <p>The IAM Role must
+     * have read permissions to your input S3 bucket and write permissions to your
+     * output S3 bucket. For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User
+     * policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CreateBatchPredictionJobRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role to use for this job request.</p>
+     * <p>The ARN of the IAM role to use for this job request.</p> <p>The IAM Role must
+     * have read permissions to your input S3 bucket and write permissions to your
+     * output S3 bucket. For more information about bucket permissions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html">User
+     * policy examples</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CreateBatchPredictionJobRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 

@@ -20,12 +20,14 @@ namespace Model
 
 ModelBiasJobInput::ModelBiasJobInput() : 
     m_endpointInputHasBeenSet(false),
+    m_batchTransformInputHasBeenSet(false),
     m_groundTruthS3InputHasBeenSet(false)
 {
 }
 
 ModelBiasJobInput::ModelBiasJobInput(JsonView jsonValue) : 
     m_endpointInputHasBeenSet(false),
+    m_batchTransformInputHasBeenSet(false),
     m_groundTruthS3InputHasBeenSet(false)
 {
   *this = jsonValue;
@@ -38,6 +40,13 @@ ModelBiasJobInput& ModelBiasJobInput::operator =(JsonView jsonValue)
     m_endpointInput = jsonValue.GetObject("EndpointInput");
 
     m_endpointInputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BatchTransformInput"))
+  {
+    m_batchTransformInput = jsonValue.GetObject("BatchTransformInput");
+
+    m_batchTransformInputHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("GroundTruthS3Input"))
@@ -57,6 +66,12 @@ JsonValue ModelBiasJobInput::Jsonize() const
   if(m_endpointInputHasBeenSet)
   {
    payload.WithObject("EndpointInput", m_endpointInput.Jsonize());
+
+  }
+
+  if(m_batchTransformInputHasBeenSet)
+  {
+   payload.WithObject("BatchTransformInput", m_batchTransformInput.Jsonize());
 
   }
 

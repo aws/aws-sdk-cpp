@@ -55,7 +55,8 @@ namespace ServiceDiscovery
          * <p>Creates an HTTP namespace. Service instances registered using an HTTP
          * namespace can be discovered using a <code>DiscoverInstances</code> request but
          * can't be discovered using DNS.</p> <p>For the current quota on the number of
-         * namespaces that you can create using the same account, see <a
+         * namespaces that you can create using the same Amazon Web Services account, see
+         * <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
          * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
          * <a
@@ -82,7 +83,8 @@ namespace ServiceDiscovery
          * <code>backend.example.com</code>. Service instances that are registered using a
          * private DNS namespace can be discovered using either a
          * <code>DiscoverInstances</code> request or using DNS. For the current quota on
-         * the number of namespaces that you can create using the same account, see <a
+         * the number of namespaces that you can create using the same Amazon Web Services
+         * account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
          * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
          * <a
@@ -108,10 +110,12 @@ namespace ServiceDiscovery
          * the resulting DNS name for the service is <code>backend.example.com</code>. You
          * can discover instances that were registered with a public DNS namespace by using
          * either a <code>DiscoverInstances</code> request or using DNS. For the current
-         * quota on the number of namespaces that you can create using the same account,
-         * see <a
+         * quota on the number of namespaces that you can create using the same Amazon Web
+         * Services account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
-         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p><p><h3>See Also:</h3>
+         * Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>  <p>The
+         * <code>CreatePublicDnsNamespace</code> API operation is not supported in the
+         * Amazon Web Services GovCloud (US) Regions.</p> <p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePublicDnsNamespace">AWS
          * API Reference</a></p>
@@ -131,7 +135,7 @@ namespace ServiceDiscovery
         /**
          * <p>Creates a service. This action defines the configuration for the following
          * entities:</p> <ul> <li> <p>For public and private DNS namespaces, one of the
-         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>
+         * following combinations of DNS records in Amazon Route 53:</p> <ul> <li> <p>
          * <code>A</code> </p> </li> <li> <p> <code>AAAA</code> </p> </li> <li> <p>
          * <code>A</code> and <code>AAAA</code> </p> </li> <li> <p> <code>SRV</code> </p>
          * </li> <li> <p> <code>CNAME</code> </p> </li> </ul> </li> <li> <p>Optionally, a
@@ -196,7 +200,7 @@ namespace ServiceDiscovery
         virtual void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud
+         * <p>Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud
          * Map created for the specified instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeregisterInstance">AWS
          * API Reference</a></p>
@@ -346,7 +350,7 @@ namespace ServiceDiscovery
 
         /**
          * <p>Lists summary information about the namespaces that were created by the
-         * current account.</p><p><h3>See Also:</h3>   <a
+         * current Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListNamespaces">AWS
          * API Reference</a></p>
          */
@@ -514,7 +518,7 @@ namespace ServiceDiscovery
          * <code>UpdateInstanceCustomHealthStatus</code> to change the status only for
          * custom health checks, which you define using
          * <code>HealthCheckCustomConfig</code> when you create a service. You can't use it
-         * to change the status for Route 53 health checks, which you define using
+         * to change the status for Route 53 health checks, which you define using
          * <code>HealthCheckConfig</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_HealthCheckCustomConfig.html">HealthCheckCustomConfig</a>.</p><p><h3>See
          * Also:</h3>   <a

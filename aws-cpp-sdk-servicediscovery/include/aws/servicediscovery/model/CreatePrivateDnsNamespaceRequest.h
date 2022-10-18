@@ -40,56 +40,56 @@ namespace Model
 
     /**
      * <p>The name that you want to assign to this namespace. When you create a private
-     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
+     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
      * zone that has the same name as the namespace.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name that you want to assign to this namespace. When you create a private
-     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
+     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
      * zone that has the same name as the namespace.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name that you want to assign to this namespace. When you create a private
-     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
+     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
      * zone that has the same name as the namespace.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name that you want to assign to this namespace. When you create a private
-     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
+     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
      * zone that has the same name as the namespace.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name that you want to assign to this namespace. When you create a private
-     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
+     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
      * zone that has the same name as the namespace.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name that you want to assign to this namespace. When you create a private
-     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
+     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
      * zone that has the same name as the namespace.</p>
      */
     inline CreatePrivateDnsNamespaceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name that you want to assign to this namespace. When you create a private
-     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
+     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
      * zone that has the same name as the namespace.</p>
      */
     inline CreatePrivateDnsNamespaceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name that you want to assign to this namespace. When you create a private
-     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
+     * DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted
      * zone that has the same name as the namespace.</p>
      */
     inline CreatePrivateDnsNamespaceRequest& WithName(const char* value) { SetName(value); return *this;}
