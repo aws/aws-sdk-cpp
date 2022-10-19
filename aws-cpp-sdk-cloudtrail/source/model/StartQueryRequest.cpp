@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartQueryRequest::StartQueryRequest() : 
-    m_queryStatementHasBeenSet(false)
+    m_queryStatementHasBeenSet(false),
+    m_deliveryS3UriHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,12 @@ Aws::String StartQueryRequest::SerializePayload() const
   if(m_queryStatementHasBeenSet)
   {
    payload.WithString("QueryStatement", m_queryStatement);
+
+  }
+
+  if(m_deliveryS3UriHasBeenSet)
+  {
+   payload.WithString("DeliveryS3Uri", m_deliveryS3Uri);
 
   }
 

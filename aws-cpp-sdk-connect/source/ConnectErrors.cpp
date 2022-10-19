@@ -48,6 +48,7 @@ namespace ConnectErrorMapper
 {
 
 static const int IDEMPOTENCY_HASH = HashingUtils::HashString("IdempotencyException");
+static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
 static const int PROPERTY_VALIDATION_HASH = HashingUtils::HashString("PropertyValidationException");
 static const int INVALID_CONTACT_FLOW_HASH = HashingUtils::HashString("InvalidContactFlowException");
 static const int USER_NOT_FOUND_HASH = HashingUtils::HashString("UserNotFoundException");
@@ -73,6 +74,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == IDEMPOTENCY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::IDEMPOTENCY), false);
+  }
+  else if (hashCode == RESOURCE_NOT_READY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConnectErrors::RESOURCE_NOT_READY), false);
   }
   else if (hashCode == PROPERTY_VALIDATION_HASH)
   {

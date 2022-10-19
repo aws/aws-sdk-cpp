@@ -74,10 +74,54 @@ namespace Model
      */
     inline StartQueryRequest& WithQueryStatement(const char* value) { SetQueryStatement(value); return *this;}
 
+
+    /**
+     * <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
+     */
+    inline const Aws::String& GetDeliveryS3Uri() const{ return m_deliveryS3Uri; }
+
+    /**
+     * <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
+     */
+    inline bool DeliveryS3UriHasBeenSet() const { return m_deliveryS3UriHasBeenSet; }
+
+    /**
+     * <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
+     */
+    inline void SetDeliveryS3Uri(const Aws::String& value) { m_deliveryS3UriHasBeenSet = true; m_deliveryS3Uri = value; }
+
+    /**
+     * <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
+     */
+    inline void SetDeliveryS3Uri(Aws::String&& value) { m_deliveryS3UriHasBeenSet = true; m_deliveryS3Uri = std::move(value); }
+
+    /**
+     * <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
+     */
+    inline void SetDeliveryS3Uri(const char* value) { m_deliveryS3UriHasBeenSet = true; m_deliveryS3Uri.assign(value); }
+
+    /**
+     * <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
+     */
+    inline StartQueryRequest& WithDeliveryS3Uri(const Aws::String& value) { SetDeliveryS3Uri(value); return *this;}
+
+    /**
+     * <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
+     */
+    inline StartQueryRequest& WithDeliveryS3Uri(Aws::String&& value) { SetDeliveryS3Uri(std::move(value)); return *this;}
+
+    /**
+     * <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
+     */
+    inline StartQueryRequest& WithDeliveryS3Uri(const char* value) { SetDeliveryS3Uri(value); return *this;}
+
   private:
 
     Aws::String m_queryStatement;
     bool m_queryStatementHasBeenSet = false;
+
+    Aws::String m_deliveryS3Uri;
+    bool m_deliveryS3UriHasBeenSet = false;
   };
 
 } // namespace Model

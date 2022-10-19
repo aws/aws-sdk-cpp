@@ -20,16 +20,20 @@
 #include <aws/managedblockchain/ManagedBlockchainClient.h>
 #include <aws/managedblockchain/ManagedBlockchainEndpoint.h>
 #include <aws/managedblockchain/ManagedBlockchainErrorMarshaller.h>
+#include <aws/managedblockchain/model/CreateAccessorRequest.h>
 #include <aws/managedblockchain/model/CreateMemberRequest.h>
 #include <aws/managedblockchain/model/CreateNetworkRequest.h>
 #include <aws/managedblockchain/model/CreateNodeRequest.h>
 #include <aws/managedblockchain/model/CreateProposalRequest.h>
+#include <aws/managedblockchain/model/DeleteAccessorRequest.h>
 #include <aws/managedblockchain/model/DeleteMemberRequest.h>
 #include <aws/managedblockchain/model/DeleteNodeRequest.h>
+#include <aws/managedblockchain/model/GetAccessorRequest.h>
 #include <aws/managedblockchain/model/GetMemberRequest.h>
 #include <aws/managedblockchain/model/GetNetworkRequest.h>
 #include <aws/managedblockchain/model/GetNodeRequest.h>
 #include <aws/managedblockchain/model/GetProposalRequest.h>
+#include <aws/managedblockchain/model/ListAccessorsRequest.h>
 #include <aws/managedblockchain/model/ListInvitationsRequest.h>
 #include <aws/managedblockchain/model/ListMembersRequest.h>
 #include <aws/managedblockchain/model/ListNetworksRequest.h>
@@ -121,6 +125,29 @@ void ManagedBlockchainClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+CreateAccessorOutcome ManagedBlockchainClient::CreateAccessor(const CreateAccessorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accessors");
+  return CreateAccessorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAccessorOutcomeCallable ManagedBlockchainClient::CreateAccessorCallable(const CreateAccessorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAccessorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAccessor(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ManagedBlockchainClient::CreateAccessorAsync(const CreateAccessorRequest& request, const CreateAccessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateAccessor(request), context);
+    } );
 }
 
 CreateMemberOutcome ManagedBlockchainClient::CreateMember(const CreateMemberRequest& request) const
@@ -236,6 +263,35 @@ void ManagedBlockchainClient::CreateProposalAsync(const CreateProposalRequest& r
     } );
 }
 
+DeleteAccessorOutcome ManagedBlockchainClient::DeleteAccessor(const DeleteAccessorRequest& request) const
+{
+  if (!request.AccessorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAccessor", "Required field: AccessorId, is not set");
+    return DeleteAccessorOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccessorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accessors/");
+  uri.AddPathSegment(request.GetAccessorId());
+  return DeleteAccessorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAccessorOutcomeCallable ManagedBlockchainClient::DeleteAccessorCallable(const DeleteAccessorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessor(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ManagedBlockchainClient::DeleteAccessorAsync(const DeleteAccessorRequest& request, const DeleteAccessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteAccessor(request), context);
+    } );
+}
+
 DeleteMemberOutcome ManagedBlockchainClient::DeleteMember(const DeleteMemberRequest& request) const
 {
   if (!request.NetworkIdHasBeenSet())
@@ -305,6 +361,35 @@ void ManagedBlockchainClient::DeleteNodeAsync(const DeleteNodeRequest& request, 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteNode(request), context);
+    } );
+}
+
+GetAccessorOutcome ManagedBlockchainClient::GetAccessor(const GetAccessorRequest& request) const
+{
+  if (!request.AccessorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAccessor", "Required field: AccessorId, is not set");
+    return GetAccessorOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccessorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accessors/");
+  uri.AddPathSegment(request.GetAccessorId());
+  return GetAccessorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAccessorOutcomeCallable ManagedBlockchainClient::GetAccessorCallable(const GetAccessorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAccessorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessor(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ManagedBlockchainClient::GetAccessorAsync(const GetAccessorRequest& request, const GetAccessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetAccessor(request), context);
     } );
 }
 
@@ -442,6 +527,29 @@ void ManagedBlockchainClient::GetProposalAsync(const GetProposalRequest& request
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetProposal(request), context);
+    } );
+}
+
+ListAccessorsOutcome ManagedBlockchainClient::ListAccessors(const ListAccessorsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accessors");
+  return ListAccessorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAccessorsOutcomeCallable ManagedBlockchainClient::ListAccessorsCallable(const ListAccessorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAccessorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ManagedBlockchainClient::ListAccessorsAsync(const ListAccessorsRequest& request, const ListAccessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAccessors(request), context);
     } );
 }
 

@@ -74,68 +74,68 @@ namespace Model
 
 
     /**
-     * <p> The source S3 bucket. </p>
+     * <p> The source S3 bucket for the import. </p>
      */
     inline const ImportSource& GetImportSource() const{ return m_importSource; }
 
     /**
-     * <p> The source S3 bucket. </p>
+     * <p> The source S3 bucket for the import. </p>
      */
     inline void SetImportSource(const ImportSource& value) { m_importSource = value; }
 
     /**
-     * <p> The source S3 bucket. </p>
+     * <p> The source S3 bucket for the import. </p>
      */
     inline void SetImportSource(ImportSource&& value) { m_importSource = std::move(value); }
 
     /**
-     * <p> The source S3 bucket. </p>
+     * <p> The source S3 bucket for the import. </p>
      */
     inline StopImportResult& WithImportSource(const ImportSource& value) { SetImportSource(value); return *this;}
 
     /**
-     * <p> The source S3 bucket. </p>
+     * <p> The source S3 bucket for the import. </p>
      */
     inline StopImportResult& WithImportSource(ImportSource&& value) { SetImportSource(std::move(value)); return *this;}
 
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline const Aws::Vector<Aws::String>& GetDestinations() const{ return m_destinations; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline void SetDestinations(const Aws::Vector<Aws::String>& value) { m_destinations = value; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline void SetDestinations(Aws::Vector<Aws::String>&& value) { m_destinations = std::move(value); }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline StopImportResult& WithDestinations(const Aws::Vector<Aws::String>& value) { SetDestinations(value); return *this;}
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline StopImportResult& WithDestinations(Aws::Vector<Aws::String>&& value) { SetDestinations(std::move(value)); return *this;}
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline StopImportResult& AddDestinations(const Aws::String& value) { m_destinations.push_back(value); return *this; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline StopImportResult& AddDestinations(Aws::String&& value) { m_destinations.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline StopImportResult& AddDestinations(const char* value) { m_destinations.push_back(value); return *this; }
 

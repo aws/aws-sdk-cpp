@@ -542,121 +542,137 @@ namespace Model
 
     /**
      * <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail.
-     * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
-     * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
-     * <p>CloudTrail also supports KMS multi-Region keys. For more information about
-     * multi-Region keys, see <a
+     * The value can be an alias name prefixed by <code>alias/</code>, a fully
+     * specified ARN to an alias, a fully specified ARN to a key, or a globally unique
+     * identifier.</p> <p>CloudTrail also supports KMS multi-Region keys. For more
+     * information about multi-Region keys, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
      * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail.
-     * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
-     * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
-     * <p>CloudTrail also supports KMS multi-Region keys. For more information about
-     * multi-Region keys, see <a
+     * The value can be an alias name prefixed by <code>alias/</code>, a fully
+     * specified ARN to an alias, a fully specified ARN to a key, or a globally unique
+     * identifier.</p> <p>CloudTrail also supports KMS multi-Region keys. For more
+     * information about multi-Region keys, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
      * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail.
-     * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
-     * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
-     * <p>CloudTrail also supports KMS multi-Region keys. For more information about
-     * multi-Region keys, see <a
+     * The value can be an alias name prefixed by <code>alias/</code>, a fully
+     * specified ARN to an alias, a fully specified ARN to a key, or a globally unique
+     * identifier.</p> <p>CloudTrail also supports KMS multi-Region keys. For more
+     * information about multi-Region keys, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
      * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail.
-     * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
-     * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
-     * <p>CloudTrail also supports KMS multi-Region keys. For more information about
-     * multi-Region keys, see <a
+     * The value can be an alias name prefixed by <code>alias/</code>, a fully
+     * specified ARN to an alias, a fully specified ARN to a key, or a globally unique
+     * identifier.</p> <p>CloudTrail also supports KMS multi-Region keys. For more
+     * information about multi-Region keys, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
      * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail.
-     * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
-     * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
-     * <p>CloudTrail also supports KMS multi-Region keys. For more information about
-     * multi-Region keys, see <a
+     * The value can be an alias name prefixed by <code>alias/</code>, a fully
+     * specified ARN to an alias, a fully specified ARN to a key, or a globally unique
+     * identifier.</p> <p>CloudTrail also supports KMS multi-Region keys. For more
+     * information about multi-Region keys, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
      * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail.
-     * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
-     * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
-     * <p>CloudTrail also supports KMS multi-Region keys. For more information about
-     * multi-Region keys, see <a
+     * The value can be an alias name prefixed by <code>alias/</code>, a fully
+     * specified ARN to an alias, a fully specified ARN to a key, or a globally unique
+     * identifier.</p> <p>CloudTrail also supports KMS multi-Region keys. For more
+     * information about multi-Region keys, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
      * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
      */
     inline CreateTrailRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail.
-     * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
-     * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
-     * <p>CloudTrail also supports KMS multi-Region keys. For more information about
-     * multi-Region keys, see <a
+     * The value can be an alias name prefixed by <code>alias/</code>, a fully
+     * specified ARN to an alias, a fully specified ARN to a key, or a globally unique
+     * identifier.</p> <p>CloudTrail also supports KMS multi-Region keys. For more
+     * information about multi-Region keys, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
      * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
      */
     inline CreateTrailRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail.
-     * The value can be an alias name prefixed by "alias/", a fully specified ARN to an
-     * alias, a fully specified ARN to a key, or a globally unique identifier.</p>
-     * <p>CloudTrail also supports KMS multi-Region keys. For more information about
-     * multi-Region keys, see <a
+     * The value can be an alias name prefixed by <code>alias/</code>, a fully
+     * specified ARN to an alias, a fully specified ARN to a key, or a globally unique
+     * identifier.</p> <p>CloudTrail also supports KMS multi-Region keys. For more
+     * information about multi-Region keys, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
      * multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-     * <p>Examples:</p> <ul> <li> <p>alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> <li>
-     * <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>
-     * </li> <li> <p>12345678-1234-1234-1234-123456789012</p> </li> </ul>
+     * <p>Examples:</p> <ul> <li> <p> <code>alias/MyAliasName</code> </p> </li> <li>
+     * <p> <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p> <code>12345678-1234-1234-1234-123456789012</code> </p> </li>
+     * </ul>
      */
     inline CreateTrailRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

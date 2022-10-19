@@ -92,22 +92,30 @@ namespace Model
 
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>  <p>When
+     * returned by a <code>SearchUsers</code> call,
+     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> 
      */
     inline int GetAfterContactWorkTimeLimit() const{ return m_afterContactWorkTimeLimit; }
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>  <p>When
+     * returned by a <code>SearchUsers</code> call,
+     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> 
      */
     inline bool AfterContactWorkTimeLimitHasBeenSet() const { return m_afterContactWorkTimeLimitHasBeenSet; }
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>  <p>When
+     * returned by a <code>SearchUsers</code> call,
+     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> 
      */
     inline void SetAfterContactWorkTimeLimit(int value) { m_afterContactWorkTimeLimitHasBeenSet = true; m_afterContactWorkTimeLimit = value; }
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>
+     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>  <p>When
+     * returned by a <code>SearchUsers</code> call,
+     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> 
      */
     inline UserPhoneConfig& WithAfterContactWorkTimeLimit(int value) { SetAfterContactWorkTimeLimit(value); return *this;}
 

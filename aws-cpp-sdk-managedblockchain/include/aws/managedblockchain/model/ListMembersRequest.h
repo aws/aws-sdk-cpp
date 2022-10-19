@@ -160,29 +160,33 @@ namespace Model
 
     /**
      * <p>An optional Boolean value. If provided, the request is limited either to
-     * members that the current AWS account owns (<code>true</code>) or that other AWS
-     * accounts own (<code>false</code>). If omitted, all members are listed.</p>
+     * members that the current Amazon Web Services account owns (<code>true</code>) or
+     * that other Amazon Web Services accountsn own (<code>false</code>). If omitted,
+     * all members are listed.</p>
      */
     inline bool GetIsOwned() const{ return m_isOwned; }
 
     /**
      * <p>An optional Boolean value. If provided, the request is limited either to
-     * members that the current AWS account owns (<code>true</code>) or that other AWS
-     * accounts own (<code>false</code>). If omitted, all members are listed.</p>
+     * members that the current Amazon Web Services account owns (<code>true</code>) or
+     * that other Amazon Web Services accountsn own (<code>false</code>). If omitted,
+     * all members are listed.</p>
      */
     inline bool IsOwnedHasBeenSet() const { return m_isOwnedHasBeenSet; }
 
     /**
      * <p>An optional Boolean value. If provided, the request is limited either to
-     * members that the current AWS account owns (<code>true</code>) or that other AWS
-     * accounts own (<code>false</code>). If omitted, all members are listed.</p>
+     * members that the current Amazon Web Services account owns (<code>true</code>) or
+     * that other Amazon Web Services accountsn own (<code>false</code>). If omitted,
+     * all members are listed.</p>
      */
     inline void SetIsOwned(bool value) { m_isOwnedHasBeenSet = true; m_isOwned = value; }
 
     /**
      * <p>An optional Boolean value. If provided, the request is limited either to
-     * members that the current AWS account owns (<code>true</code>) or that other AWS
-     * accounts own (<code>false</code>). If omitted, all members are listed.</p>
+     * members that the current Amazon Web Services account owns (<code>true</code>) or
+     * that other Amazon Web Services accountsn own (<code>false</code>). If omitted,
+     * all members are listed.</p>
      */
     inline ListMembersRequest& WithIsOwned(bool value) { SetIsOwned(value); return *this;}
 

@@ -181,7 +181,16 @@ namespace Connect
 
         /**
          * <p>Associates a flow with a phone number claimed to your Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * instance.</p>  <p>If the number is claimed to a traffic distribution
+         * group, and you are calling this API using an instance in the Amazon Web Services
+         * Region where the traffic distribution group was created, you can use either a
+         * full phone number ARN or UUID value for the <code>PhoneNumberId</code> URI
+         * request parameter. However, if the number is claimed to a traffic distribution
+         * group and you are calling this API using an instance in the alternate Amazon Web
+         * Services Region associated with the traffic distribution group, you must provide
+         * a full phone number ARN. If a UUID is provided in this scenario, you will
+         * receive a <code>ResourceNotFoundException</code>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/AssociatePhoneNumberContactFlow">AWS
          * API Reference</a></p>
          */
@@ -254,8 +263,14 @@ namespace Connect
         virtual void AssociateSecurityKeyAsync(const Model::AssociateSecurityKeyRequest& request, const AssociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Claims an available phone number to your Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Claims an available phone number to your Amazon Connect instance or traffic
+         * distribution group. You can call this API only in the same Amazon Web Services
+         * Region where the Amazon Connect instance or traffic distribution group was
+         * created.</p>  <p>You can call the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+         * API to verify the status of a previous <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
+         * operation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ClaimPhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -393,7 +408,18 @@ namespace Connect
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Creates a new queue for the specified Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * instance.</p>  <p>If the number being used in the input is claimed to
+         * a traffic distribution group, and you are calling this API using an instance in
+         * the Amazon Web Services Region where the traffic distribution group was created,
+         * you can use either a full phone number ARN or UUID value for the
+         * <code>OutboundCallerIdNumberId</code> value of the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+         * request body parameter. However, if the number is claimed to a traffic
+         * distribution group and you are calling this API using an instance in the
+         * alternate Amazon Web Services Region associated with the traffic distribution
+         * group, you must provide a full phone number ARN. If a UUID is provided in this
+         * scenario, you will receive a <code>ResourceNotFoundException</code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQueue">AWS
          * API Reference</a></p>
          */
@@ -479,6 +505,28 @@ namespace Connect
          * An Async wrapper for CreateTaskTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateTaskTemplateAsync(const Model::CreateTaskTemplateRequest& request, const CreateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a traffic distribution group given an Amazon Connect instance that
+         * has been replicated. </p> <p>For more information about creating traffic
+         * distribution groups, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set
+         * up traffic distribution groups</a> in the <i>Amazon Connect Administrator
+         * Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTrafficDistributionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTrafficDistributionGroupOutcome CreateTrafficDistributionGroup(const Model::CreateTrafficDistributionGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTrafficDistributionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTrafficDistributionGroupOutcomeCallable CreateTrafficDistributionGroupCallable(const Model::CreateTrafficDistributionGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateTrafficDistributionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTrafficDistributionGroupAsync(const Model::CreateTrafficDistributionGroupRequest& request, const CreateTrafficDistributionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a use case for an integration association.</p><p><h3>See Also:</h3>  
@@ -704,6 +752,28 @@ namespace Connect
          * An Async wrapper for DeleteTaskTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTaskTemplateAsync(const Model::DeleteTaskTemplateRequest& request, const DeleteTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a traffic distribution group. This API can be called only in the
+         * Region where the traffic distribution group is created.</p> <p>For more
+         * information about deleting traffic distribution groups, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete
+         * traffic distribution groups</a> in the <i>Amazon Connect Administrator
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTrafficDistributionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTrafficDistributionGroupOutcome DeleteTrafficDistributionGroup(const Model::DeleteTrafficDistributionGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTrafficDistributionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTrafficDistributionGroupOutcomeCallable DeleteTrafficDistributionGroupCallable(const Model::DeleteTrafficDistributionGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteTrafficDistributionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTrafficDistributionGroupAsync(const Model::DeleteTrafficDistributionGroupRequest& request, const DeleteTrafficDistributionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a use case from an integration association.</p><p><h3>See Also:</h3> 
@@ -938,7 +1008,16 @@ namespace Connect
 
         /**
          * <p>Gets details and status of a phone number that’s claimed to your Amazon
-         * Connect instance</p><p><h3>See Also:</h3>   <a
+         * Connect instance or traffic distribution group.</p>  <p>If the number
+         * is claimed to a traffic distribution group, and you are calling in the Amazon
+         * Web Services Region where the traffic distribution group was created, you can
+         * use either a phone number ARN or UUID value for the <code>PhoneNumberId</code>
+         * URI request parameter. However, if the number is claimed to a traffic
+         * distribution group and you are calling this API in the alternate Amazon Web
+         * Services Region associated with the traffic distribution group, you must provide
+         * a full phone number ARN. If a UUID is provided in this scenario, you will
+         * receive a <code>ResourceNotFoundException</code>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -1024,6 +1103,24 @@ namespace Connect
          * An Async wrapper for DescribeSecurityProfile that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeSecurityProfileAsync(const Model::DescribeSecurityProfileRequest& request, const DescribeSecurityProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets details and status of a traffic distribution group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTrafficDistributionGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTrafficDistributionGroupOutcome DescribeTrafficDistributionGroup(const Model::DescribeTrafficDistributionGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTrafficDistributionGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTrafficDistributionGroupOutcomeCallable DescribeTrafficDistributionGroupCallable(const Model::DescribeTrafficDistributionGroupRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeTrafficDistributionGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTrafficDistributionGroupAsync(const Model::DescribeTrafficDistributionGroupRequest& request, const DescribeTrafficDistributionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified user account. You can find the instance ID in the
@@ -1194,7 +1291,17 @@ namespace Connect
 
         /**
          * <p>Removes the flow association from a phone number claimed to your Amazon
-         * Connect instance, if a flow association exists.</p><p><h3>See Also:</h3>   <a
+         * Connect instance.</p>  <p>If the number is claimed to a traffic
+         * distribution group, and you are calling this API using an instance in the Amazon
+         * Web Services Region where the traffic distribution group was created, you can
+         * use either a full phone number ARN or UUID value for the
+         * <code>PhoneNumberId</code> URI request parameter. However, if the number is
+         * claimed to a traffic distribution group and you are calling this API using an
+         * instance in the alternate Amazon Web Services Region associated with the traffic
+         * distribution group, you must provide a full phone number ARN. If a UUID is
+         * provided in this scenario, you will receive a
+         * <code>ResourceNotFoundException</code>.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DisassociatePhoneNumberContactFlow">AWS
          * API Reference</a></p>
          */
@@ -1381,6 +1488,24 @@ namespace Connect
          * An Async wrapper for GetTaskTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetTaskTemplateAsync(const Model::GetTaskTemplateRequest& request, const GetTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the current traffic distribution for a given traffic distribution
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTrafficDistribution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTrafficDistributionOutcome GetTrafficDistribution(const Model::GetTrafficDistributionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetTrafficDistribution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTrafficDistributionOutcomeCallable GetTrafficDistributionCallable(const Model::GetTrafficDistributionRequest& request) const;
+
+        /**
+         * An Async wrapper for GetTrafficDistribution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTrafficDistributionAsync(const Model::GetTrafficDistributionRequest& request, const GetTrafficDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
@@ -1661,7 +1786,14 @@ namespace Connect
          * instance. </p> <p>For more information about phone numbers, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
          * Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect
-         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Administrator Guide</i>.</p>  <p>The phone number <code>Arn</code>
+         * value that is returned from each of the items in the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a>
+         * cannot be used to tag phone number resources. It will fail with a
+         * <code>ResourceNotFoundException</code>. Instead, use the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+         * API. It returns the new phone number ARN that can be used to tag phone number
+         * resources.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListPhoneNumbers">AWS
          * API Reference</a></p>
          */
@@ -1678,8 +1810,11 @@ namespace Connect
         virtual void ListPhoneNumbersAsync(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists phone numbers claimed to your Amazon Connect instance. </p> <p>For more
-         * information about phone numbers, see <a
+         * <p>Lists phone numbers claimed to your Amazon Connect instance or traffic
+         * distribution group. If the provided <code>TargetArn</code> is a traffic
+         * distribution group, you can call this API in both Amazon Web Services Regions
+         * associated with traffic distribution group.</p> <p>For more information about
+         * phone numbers, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set
          * Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect
          * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1920,6 +2055,23 @@ namespace Connect
         virtual void ListTaskTemplatesAsync(const Model::ListTaskTemplatesRequest& request, const ListTaskTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists traffic distribution groups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTrafficDistributionGroupsOutcome ListTrafficDistributionGroups(const Model::ListTrafficDistributionGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTrafficDistributionGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTrafficDistributionGroupsOutcomeCallable ListTrafficDistributionGroupsCallable(const Model::ListTrafficDistributionGroupsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListTrafficDistributionGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTrafficDistributionGroupsAsync(const Model::ListTrafficDistributionGroupsRequest& request, const ListTrafficDistributionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the use cases for the integration association. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">AWS
@@ -2002,8 +2154,15 @@ namespace Connect
         virtual void PutUserStatusAsync(const Model::PutUserStatusRequest& request, const PutUserStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Releases a phone number previously claimed to an Amazon Connect
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Releases a phone number previously claimed to an Amazon Connect instance or
+         * traffic distribution group. You can call this API only in the Amazon Web
+         * Services Region where the number was claimed.</p>  <p>To release
+         * phone numbers from a traffic distribution group, use the
+         * <code>ReleasePhoneNumber</code> API, not the Amazon Connect console.</p>
+         * <p>After releasing a phone number, the phone number enters into a cooldown
+         * period of 30 days. It cannot be searched for or claimed again until the period
+         * has ended. If you accidentally release a phone number, contact Amazon Web
+         * Services Support.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReleasePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -2018,6 +2177,28 @@ namespace Connect
          * An Async wrapper for ReleasePhoneNumber that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ReleasePhoneNumberAsync(const Model::ReleasePhoneNumberRequest& request, const ReleasePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Replicates an Amazon Connect instance in the specified Amazon Web Services
+         * Region.</p> <p>For more information about replicating an Amazon Connect
+         * instance, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create
+         * a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect
+         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReplicateInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReplicateInstanceOutcome ReplicateInstance(const Model::ReplicateInstanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for ReplicateInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ReplicateInstanceOutcomeCallable ReplicateInstanceCallable(const Model::ReplicateInstanceRequest& request) const;
+
+        /**
+         * An Async wrapper for ReplicateInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ReplicateInstanceAsync(const Model::ReplicateInstanceRequest& request, const ReplicateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>When a contact is being recorded, and the recording has been suspended using
@@ -2040,7 +2221,10 @@ namespace Connect
 
         /**
          * <p>Searches for available phone numbers that you can claim to your Amazon
-         * Connect instance.</p><p><h3>See Also:</h3>   <a
+         * Connect instance or traffic distribution group. If the provided
+         * <code>TargetArn</code> is a traffic distribution group, you can call this API in
+         * both Amazon Web Services Regions associated with the traffic distribution
+         * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchAvailablePhoneNumbers">AWS
          * API Reference</a></p>
          */
@@ -2114,8 +2298,9 @@ namespace Connect
         virtual void SearchSecurityProfilesAsync(const Model::SearchSecurityProfilesRequest& request, const SearchSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Searches users in an Amazon Connect instance, with optional
-         * filtering.</p><p><h3>See Also:</h3>   <a
+         * <p>Searches users in an Amazon Connect instance, with optional filtering.</p>
+         *  <p> <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchUsers">AWS
          * API Reference</a></p>
          */
@@ -2681,9 +2866,14 @@ namespace Connect
         virtual void UpdateInstanceStorageConfigAsync(const Model::UpdateInstanceStorageConfigRequest& request, const UpdateInstanceStorageConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates your claimed phone number from its current Amazon Connect instance to
-         * another Amazon Connect instance in the same Region.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates your claimed phone number from its current Amazon Connect instance or
+         * traffic distribution group to another Amazon Connect instance or traffic
+         * distribution group in the same Amazon Web Services Region.</p> 
+         * <p>You can call <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
+         * API to verify the status of a previous <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+         * operation.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -2760,7 +2950,18 @@ namespace Connect
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Updates the outbound caller ID name, number, and outbound whisper
-         * flow for a specified queue.</p><p><h3>See Also:</h3>   <a
+         * flow for a specified queue.</p>  <p>If the number being used in the
+         * input is claimed to a traffic distribution group, and you are calling this API
+         * using an instance in the Amazon Web Services Region where the traffic
+         * distribution group was created, you can use either a full phone number ARN or
+         * UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+         * request body parameter. However, if the number is claimed to a traffic
+         * distribution group and you are calling this API using an instance in the
+         * alternate Amazon Web Services Region associated with the traffic distribution
+         * group, you must provide a full phone number ARN. If a UUID is provided in this
+         * scenario, you will receive a <code>ResourceNotFoundException</code>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQueueOutboundCallerConfig">AWS
          * API Reference</a></p>
          */
@@ -2940,6 +3141,27 @@ namespace Connect
          * An Async wrapper for UpdateTaskTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateTaskTemplateAsync(const Model::UpdateTaskTemplateRequest& request, const UpdateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the traffic distribution for a given traffic distribution group. For
+         * more information about updating a traffic distribution group see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
+         * telephony traffic distribution across Amazon Web Services Regions </a> in the
+         * <i>Amazon Connect Administrator Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTrafficDistribution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTrafficDistributionOutcome UpdateTrafficDistribution(const Model::UpdateTrafficDistributionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateTrafficDistribution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTrafficDistributionOutcomeCallable UpdateTrafficDistributionCallable(const Model::UpdateTrafficDistributionRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateTrafficDistribution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTrafficDistributionAsync(const Model::UpdateTrafficDistributionRequest& request, const UpdateTrafficDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns the specified hierarchy group to the specified user.</p><p><h3>See

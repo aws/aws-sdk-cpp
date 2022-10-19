@@ -42,6 +42,7 @@
 #include <aws/connect/model/CreateRoutingProfileRequest.h>
 #include <aws/connect/model/CreateSecurityProfileRequest.h>
 #include <aws/connect/model/CreateTaskTemplateRequest.h>
+#include <aws/connect/model/CreateTrafficDistributionGroupRequest.h>
 #include <aws/connect/model/CreateUseCaseRequest.h>
 #include <aws/connect/model/CreateUserRequest.h>
 #include <aws/connect/model/CreateUserHierarchyGroupRequest.h>
@@ -54,6 +55,7 @@
 #include <aws/connect/model/DeleteQuickConnectRequest.h>
 #include <aws/connect/model/DeleteSecurityProfileRequest.h>
 #include <aws/connect/model/DeleteTaskTemplateRequest.h>
+#include <aws/connect/model/DeleteTrafficDistributionGroupRequest.h>
 #include <aws/connect/model/DeleteUseCaseRequest.h>
 #include <aws/connect/model/DeleteUserRequest.h>
 #include <aws/connect/model/DeleteUserHierarchyGroupRequest.h>
@@ -71,6 +73,7 @@
 #include <aws/connect/model/DescribeQuickConnectRequest.h>
 #include <aws/connect/model/DescribeRoutingProfileRequest.h>
 #include <aws/connect/model/DescribeSecurityProfileRequest.h>
+#include <aws/connect/model/DescribeTrafficDistributionGroupRequest.h>
 #include <aws/connect/model/DescribeUserRequest.h>
 #include <aws/connect/model/DescribeUserHierarchyGroupRequest.h>
 #include <aws/connect/model/DescribeUserHierarchyStructureRequest.h>
@@ -90,6 +93,7 @@
 #include <aws/connect/model/GetFederationTokenRequest.h>
 #include <aws/connect/model/GetMetricDataRequest.h>
 #include <aws/connect/model/GetTaskTemplateRequest.h>
+#include <aws/connect/model/GetTrafficDistributionRequest.h>
 #include <aws/connect/model/ListAgentStatusesRequest.h>
 #include <aws/connect/model/ListApprovedOriginsRequest.h>
 #include <aws/connect/model/ListBotsRequest.h>
@@ -117,11 +121,13 @@
 #include <aws/connect/model/ListSecurityProfilesRequest.h>
 #include <aws/connect/model/ListTagsForResourceRequest.h>
 #include <aws/connect/model/ListTaskTemplatesRequest.h>
+#include <aws/connect/model/ListTrafficDistributionGroupsRequest.h>
 #include <aws/connect/model/ListUseCasesRequest.h>
 #include <aws/connect/model/ListUserHierarchyGroupsRequest.h>
 #include <aws/connect/model/ListUsersRequest.h>
 #include <aws/connect/model/PutUserStatusRequest.h>
 #include <aws/connect/model/ReleasePhoneNumberRequest.h>
+#include <aws/connect/model/ReplicateInstanceRequest.h>
 #include <aws/connect/model/ResumeContactRecordingRequest.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersRequest.h>
 #include <aws/connect/model/SearchQueuesRequest.h>
@@ -167,6 +173,7 @@
 #include <aws/connect/model/UpdateRoutingProfileQueuesRequest.h>
 #include <aws/connect/model/UpdateSecurityProfileRequest.h>
 #include <aws/connect/model/UpdateTaskTemplateRequest.h>
+#include <aws/connect/model/UpdateTrafficDistributionRequest.h>
 #include <aws/connect/model/UpdateUserHierarchyRequest.h>
 #include <aws/connect/model/UpdateUserHierarchyGroupNameRequest.h>
 #include <aws/connect/model/UpdateUserHierarchyStructureRequest.h>
@@ -909,6 +916,29 @@ void ConnectClient::CreateTaskTemplateAsync(const CreateTaskTemplateRequest& req
     } );
 }
 
+CreateTrafficDistributionGroupOutcome ConnectClient::CreateTrafficDistributionGroup(const CreateTrafficDistributionGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/traffic-distribution-group");
+  return CreateTrafficDistributionGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateTrafficDistributionGroupOutcomeCallable ConnectClient::CreateTrafficDistributionGroupCallable(const CreateTrafficDistributionGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTrafficDistributionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTrafficDistributionGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::CreateTrafficDistributionGroupAsync(const CreateTrafficDistributionGroupRequest& request, const CreateTrafficDistributionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateTrafficDistributionGroup(request), context);
+    } );
+}
+
 CreateUseCaseOutcome ConnectClient::CreateUseCase(const CreateUseCaseRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -1306,6 +1336,35 @@ void ConnectClient::DeleteTaskTemplateAsync(const DeleteTaskTemplateRequest& req
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteTaskTemplate(request), context);
+    } );
+}
+
+DeleteTrafficDistributionGroupOutcome ConnectClient::DeleteTrafficDistributionGroup(const DeleteTrafficDistributionGroupRequest& request) const
+{
+  if (!request.TrafficDistributionGroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTrafficDistributionGroup", "Required field: TrafficDistributionGroupId, is not set");
+    return DeleteTrafficDistributionGroupOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrafficDistributionGroupId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/traffic-distribution-group/");
+  uri.AddPathSegment(request.GetTrafficDistributionGroupId());
+  return DeleteTrafficDistributionGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteTrafficDistributionGroupOutcomeCallable ConnectClient::DeleteTrafficDistributionGroupCallable(const DeleteTrafficDistributionGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTrafficDistributionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTrafficDistributionGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DeleteTrafficDistributionGroupAsync(const DeleteTrafficDistributionGroupRequest& request, const DeleteTrafficDistributionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteTrafficDistributionGroup(request), context);
     } );
 }
 
@@ -1904,6 +1963,35 @@ void ConnectClient::DescribeSecurityProfileAsync(const DescribeSecurityProfileRe
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeSecurityProfile(request), context);
+    } );
+}
+
+DescribeTrafficDistributionGroupOutcome ConnectClient::DescribeTrafficDistributionGroup(const DescribeTrafficDistributionGroupRequest& request) const
+{
+  if (!request.TrafficDistributionGroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeTrafficDistributionGroup", "Required field: TrafficDistributionGroupId, is not set");
+    return DescribeTrafficDistributionGroupOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrafficDistributionGroupId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/traffic-distribution-group/");
+  uri.AddPathSegment(request.GetTrafficDistributionGroupId());
+  return DescribeTrafficDistributionGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeTrafficDistributionGroupOutcomeCallable ConnectClient::DescribeTrafficDistributionGroupCallable(const DescribeTrafficDistributionGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTrafficDistributionGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTrafficDistributionGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DescribeTrafficDistributionGroupAsync(const DescribeTrafficDistributionGroupRequest& request, const DescribeTrafficDistributionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeTrafficDistributionGroup(request), context);
     } );
 }
 
@@ -2549,6 +2637,35 @@ void ConnectClient::GetTaskTemplateAsync(const GetTaskTemplateRequest& request, 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, GetTaskTemplate(request), context);
+    } );
+}
+
+GetTrafficDistributionOutcome ConnectClient::GetTrafficDistribution(const GetTrafficDistributionRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTrafficDistribution", "Required field: Id, is not set");
+    return GetTrafficDistributionOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/traffic-distribution/");
+  uri.AddPathSegment(request.GetId());
+  return GetTrafficDistributionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetTrafficDistributionOutcomeCallable ConnectClient::GetTrafficDistributionCallable(const GetTrafficDistributionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTrafficDistributionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTrafficDistribution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::GetTrafficDistributionAsync(const GetTrafficDistributionRequest& request, const GetTrafficDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetTrafficDistribution(request), context);
     } );
 }
 
@@ -3373,6 +3490,29 @@ void ConnectClient::ListTaskTemplatesAsync(const ListTaskTemplatesRequest& reque
     } );
 }
 
+ListTrafficDistributionGroupsOutcome ConnectClient::ListTrafficDistributionGroups(const ListTrafficDistributionGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/traffic-distribution-groups");
+  return ListTrafficDistributionGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListTrafficDistributionGroupsOutcomeCallable ConnectClient::ListTrafficDistributionGroupsCallable(const ListTrafficDistributionGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTrafficDistributionGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTrafficDistributionGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::ListTrafficDistributionGroupsAsync(const ListTrafficDistributionGroupsRequest& request, const ListTrafficDistributionGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListTrafficDistributionGroups(request), context);
+    } );
+}
+
 ListUseCasesOutcome ConnectClient::ListUseCases(const ListUseCasesRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -3530,6 +3670,36 @@ void ConnectClient::ReleasePhoneNumberAsync(const ReleasePhoneNumberRequest& req
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ReleasePhoneNumber(request), context);
+    } );
+}
+
+ReplicateInstanceOutcome ConnectClient::ReplicateInstance(const ReplicateInstanceRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ReplicateInstance", "Required field: InstanceId, is not set");
+    return ReplicateInstanceOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/replicate");
+  return ReplicateInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ReplicateInstanceOutcomeCallable ConnectClient::ReplicateInstanceCallable(const ReplicateInstanceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ReplicateInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ReplicateInstance(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::ReplicateInstanceAsync(const ReplicateInstanceRequest& request, const ReplicateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ReplicateInstance(request), context);
     } );
 }
 
@@ -4894,6 +5064,35 @@ void ConnectClient::UpdateTaskTemplateAsync(const UpdateTaskTemplateRequest& req
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateTaskTemplate(request), context);
+    } );
+}
+
+UpdateTrafficDistributionOutcome ConnectClient::UpdateTrafficDistribution(const UpdateTrafficDistributionRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateTrafficDistribution", "Required field: Id, is not set");
+    return UpdateTrafficDistributionOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/traffic-distribution/");
+  uri.AddPathSegment(request.GetId());
+  return UpdateTrafficDistributionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateTrafficDistributionOutcomeCallable ConnectClient::UpdateTrafficDistributionCallable(const UpdateTrafficDistributionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTrafficDistributionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTrafficDistribution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::UpdateTrafficDistributionAsync(const UpdateTrafficDistributionRequest& request, const UpdateTrafficDistributionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateTrafficDistribution(request), context);
     } );
 }
 

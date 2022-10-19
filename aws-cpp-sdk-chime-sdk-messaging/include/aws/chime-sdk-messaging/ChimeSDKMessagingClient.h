@@ -888,10 +888,9 @@ namespace ChimeSDKMessaging
         virtual void RedactChannelMessageAsync(const Model::RedactChannelMessageRequest& request, const RedactChannelMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Allows an <code>AppInstanceUser</code> to search the channels that they
-         * belong to. The <code>AppInstanceUser</code> can search by membership or external
-         * ID. An <code>AppInstanceAdmin</code> can search across all channels within the
-         * <code>AppInstance</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Allows <code>ChimeBearer</code> to search channels by channel members.
+         * AppInstanceUsers can search across the channels that they belong to.
+         * AppInstanceAdmins can search across all channels.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/SearchChannels">AWS
          * API Reference</a></p>
          */

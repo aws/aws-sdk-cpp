@@ -159,7 +159,27 @@ namespace Model
     AWS_GlobalAccelerator_Listener,
     AWS_EC2_TransitGatewayAttachment,
     AWS_EC2_TransitGatewayRouteTable,
-    AWS_DMS_Certificate
+    AWS_DMS_Certificate,
+    AWS_AppConfig_Application,
+    AWS_AppSync_GraphQLApi,
+    AWS_DataSync_LocationSMB,
+    AWS_DataSync_LocationFSxLustre,
+    AWS_DataSync_LocationS3,
+    AWS_DataSync_LocationEFS,
+    AWS_DataSync_Task,
+    AWS_DataSync_LocationNFS,
+    AWS_EC2_NetworkInsightsAccessScopeAnalysis,
+    AWS_EKS_FargateProfile,
+    AWS_Glue_Job,
+    AWS_GuardDuty_ThreatIntelSet,
+    AWS_GuardDuty_IPSet,
+    AWS_SageMaker_Workteam,
+    AWS_SageMaker_NotebookInstanceLifecycleConfig,
+    AWS_ServiceDiscovery_Service,
+    AWS_ServiceDiscovery_PublicDnsNamespace,
+    AWS_SES_ContactList,
+    AWS_SES_ConfigurationSet,
+    AWS_Route53_HostedZone
   };
 
 namespace ResourceTypeMapper

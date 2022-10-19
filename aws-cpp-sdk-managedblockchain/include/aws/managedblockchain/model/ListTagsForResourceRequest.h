@@ -36,7 +36,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
@@ -44,7 +45,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
@@ -52,7 +54,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
@@ -60,7 +63,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
@@ -68,7 +72,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
@@ -76,7 +81,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline ListTagsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
@@ -84,7 +90,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
@@ -92,7 +99,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

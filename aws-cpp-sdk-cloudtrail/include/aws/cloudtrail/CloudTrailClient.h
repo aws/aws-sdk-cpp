@@ -233,9 +233,12 @@ namespace CloudTrail
         virtual void DescribeTrailsAsync(const Model::DescribeTrailsRequest& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns the specified CloudTrail service-linked channel. Amazon Web Services
-         * services create service-linked channels to view CloudTrail events.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Returns information about a specific channel. Amazon Web Services services
+         * create service-linked channels to get information about CloudTrail events on
+         * your behalf. For more information about service-linked channels, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+         * service-linked channels for CloudTrail by using the CLI.</a>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetChannel">AWS
          * API Reference</a></p>
          */
@@ -299,7 +302,7 @@ namespace CloudTrail
         virtual void GetEventSelectorsAsync(const Model::GetEventSelectorsRequest& request, const GetEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns information for the specified import. </p><p><h3>See Also:</h3>   <a
+         * <p> Returns information about a specific import. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetImport">AWS
          * API Reference</a></p>
          */
@@ -399,7 +402,13 @@ namespace CloudTrail
         virtual void GetTrailStatusAsync(const Model::GetTrailStatusRequest& request, const GetTrailStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns all CloudTrail channels. </p><p><h3>See Also:</h3>   <a
+         * <p> Lists the channels in the current account, and their source names. Amazon
+         * Web Services services create service-linked channels get information about
+         * CloudTrail events on your behalf. For more information about service-linked
+         * channels, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+         * service-linked channels for CloudTrail by using the CLI</a>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListChannels">AWS
          * API Reference</a></p>
          */
@@ -701,10 +710,18 @@ namespace CloudTrail
 
         /**
          * <p> Starts an import of logged trail events from a source S3 bucket to a
-         * destination event data store. </p> <p> When you start a new import, the
-         * <code>Destinations</code> and <code>ImportSource</code> parameters are required.
-         * Before starting a new import, disable any access control lists (ACLs) attached
-         * to the source S3 bucket. For more information about disabling ACLs, see <a
+         * destination event data store. By default, CloudTrail only imports events
+         * contained in the S3 bucket's <code>CloudTrail</code> prefix and the prefixes
+         * inside the <code>CloudTrail</code> prefix, and does not check prefixes for other
+         * Amazon Web Services services. If you want to import CloudTrail events contained
+         * in another prefix, you must include the prefix in the
+         * <code>S3LocationUri</code>. For more considerations about importing trail
+         * events, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-copy-trail-to-lake.html#cloudtrail-trail-copy-considerations">Considerations</a>.
+         * </p> <p> When you start a new import, the <code>Destinations</code> and
+         * <code>ImportSource</code> parameters are required. Before starting a new import,
+         * disable any access control lists (ACLs) attached to the source S3 bucket. For
+         * more information about disabling ACLs, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
          * ownership of objects and disabling ACLs for your bucket</a>. </p> <p> When you
          * retry an import, the <code>ImportID</code> parameter is required. </p><p><h3>See
@@ -747,8 +764,9 @@ namespace CloudTrail
 
         /**
          * <p>Starts a CloudTrail Lake query. The required <code>QueryStatement</code>
-         * parameter provides your SQL query, enclosed in single quotation
-         * marks.</p><p><h3>See Also:</h3>   <a
+         * parameter provides your SQL query, enclosed in single quotation marks. Use the
+         * optional <code>DeliveryS3Uri</code> parameter to deliver the query results to an
+         * S3 bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartQuery">AWS
          * API Reference</a></p>
          */
