@@ -261,7 +261,7 @@ namespace
 
         CreateDBClusterRequest createDBClusterRequest;
         createDBClusterRequest.SetDBClusterIdentifier(TESTING_DB_CLUSTER_IDENTIFIER);
-        createDBClusterRequest.SetEngine("aurora");
+        createDBClusterRequest.SetEngine("aurora-mysql");
         createDBClusterRequest.SetStorageEncrypted(true);
         createDBClusterRequest.SetReplicationSourceIdentifier(TESTING_REPLICATION_SOURCE_IDENTIFIER);
         createDBClusterRequest.SetKmsKeyId(TESTING_KMS_KEY_ID);
@@ -269,7 +269,7 @@ namespace
 
         auto createDBClusterOutcome = m_rdsClient.CreateDBCluster(createDBClusterRequest);
         ASSERT_FALSE(createDBClusterOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::INVALID_PARAMETER_COMBINATION, createDBClusterOutcome.GetError().GetErrorType());
+        ASSERT_EQ(RDSErrors::INVALID_PARAMETER_VALUE, createDBClusterOutcome.GetError().GetErrorType());
         Aws::String preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
         QueryStringParameterCollection parameters(URI(preSignedUrl).GetQueryStringParameters());
         ASSERT_NE(parameters.end(), parameters.find("Action"));
@@ -281,7 +281,7 @@ namespace
         ASSERT_NE(parameters.end(), parameters.find("DBClusterIdentifier"));
         ASSERT_STREQ(TESTING_DB_CLUSTER_IDENTIFIER, parameters.find("DBClusterIdentifier")->second.c_str());
         ASSERT_NE(parameters.end(), parameters.find("Engine"));
-        ASSERT_STREQ("aurora", parameters.find("Engine")->second.c_str());
+        ASSERT_STREQ("aurora-mysql", parameters.find("Engine")->second.c_str());
         ASSERT_NE(parameters.end(), parameters.find("StorageEncrypted"));
         ASSERT_STREQ("true", parameters.find("StorageEncrypted")->second.c_str());
         ASSERT_NE(parameters.end(), parameters.find("ReplicationSourceIdentifier"));
@@ -292,13 +292,13 @@ namespace
 
         // Verify signature with fixed credentials and fixed timestamp.
         URI sourceUri("https://" + URI(preSignedUrl).GetAuthority());
-        VerifySignature(createDBClusterRequest, sourceUri, createDBClusterRequest.GetSourceRegion().c_str(), "1f654a3049149ef925f2ad58d4fd71fdf94791eb65848f866a6f451f9be655f7");
+        VerifySignature(createDBClusterRequest, sourceUri, createDBClusterRequest.GetSourceRegion().c_str(), "8c2fe7e0c15a0ca30b9ebbee3ca59760241130160ec14e3b76bddb3ceb0d1a56");
 
         // Ignore SourceRegion if preSignedUrl is specified.
         createDBClusterRequest.SetPreSignedUrl(TESTING_PRESIGNED_URL);
         createDBClusterOutcome = m_rdsClient.CreateDBCluster(createDBClusterRequest);
         ASSERT_FALSE(createDBClusterOutcome.IsSuccess());
-        ASSERT_EQ(RDSErrors::INVALID_PARAMETER_COMBINATION, createDBClusterOutcome.GetError().GetErrorType());
+        ASSERT_EQ(RDSErrors::INVALID_PARAMETER_VALUE, createDBClusterOutcome.GetError().GetErrorType());
         preSignedUrl = ExtractPreSignedUrlFromPayload(TestingMonitoringMetrics::s_lastPayload.c_str());
         ASSERT_STREQ(TESTING_PRESIGNED_URL, preSignedUrl.c_str());
     }
