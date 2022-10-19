@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A requested resource does not exist. It may have been deleted or referenced
-   * inaccurately.</p><p><h3>See Also:</h3>   <a
+   * <p>A requested resource doesn't exist. It may have been deleted or referenced
+   * incorrectly.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
@@ -64,49 +64,49 @@ namespace Model
 
 
     /**
-     * <p>A requested resource does not exist. It may have been deleted or referenced
+     * <p>A requested resource doesn't exist. It may have been deleted or referenced
      * inaccurately.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
     /**
-     * <p>A requested resource does not exist. It may have been deleted or referenced
+     * <p>A requested resource doesn't exist. It may have been deleted or referenced
      * inaccurately.</p>
      */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
     /**
-     * <p>A requested resource does not exist. It may have been deleted or referenced
+     * <p>A requested resource doesn't exist. It may have been deleted or referenced
      * inaccurately.</p>
      */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p>A requested resource does not exist. It may have been deleted or referenced
+     * <p>A requested resource doesn't exist. It may have been deleted or referenced
      * inaccurately.</p>
      */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
-     * <p>A requested resource does not exist. It may have been deleted or referenced
+     * <p>A requested resource doesn't exist. It may have been deleted or referenced
      * inaccurately.</p>
      */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /**
-     * <p>A requested resource does not exist. It may have been deleted or referenced
+     * <p>A requested resource doesn't exist. It may have been deleted or referenced
      * inaccurately.</p>
      */
     inline ResourceNotFoundException& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p>A requested resource does not exist. It may have been deleted or referenced
+     * <p>A requested resource doesn't exist. It may have been deleted or referenced
      * inaccurately.</p>
      */
     inline ResourceNotFoundException& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
-     * <p>A requested resource does not exist. It may have been deleted or referenced
+     * <p>A requested resource doesn't exist. It may have been deleted or referenced
      * inaccurately.</p>
      */
     inline ResourceNotFoundException& WithResourceName(const char* value) { SetResourceName(value); return *this;}

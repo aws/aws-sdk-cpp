@@ -114,47 +114,47 @@ namespace Model
 
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline const Aws::Vector<Aws::String>& GetDestinations() const{ return m_destinations; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline void SetDestinations(const Aws::Vector<Aws::String>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline void SetDestinations(Aws::Vector<Aws::String>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline ImportsListItem& WithDestinations(const Aws::Vector<Aws::String>& value) { SetDestinations(value); return *this;}
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline ImportsListItem& WithDestinations(Aws::Vector<Aws::String>&& value) { SetDestinations(std::move(value)); return *this;}
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline ImportsListItem& AddDestinations(const Aws::String& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline ImportsListItem& AddDestinations(Aws::String&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline ImportsListItem& AddDestinations(const char* value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
 

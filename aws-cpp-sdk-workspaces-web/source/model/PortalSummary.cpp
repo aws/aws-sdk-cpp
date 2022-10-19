@@ -32,6 +32,7 @@ PortalSummary::PortalSummary() :
     m_rendererType(RendererType::NOT_SET),
     m_rendererTypeHasBeenSet(false),
     m_trustStoreArnHasBeenSet(false),
+    m_userAccessLoggingSettingsArnHasBeenSet(false),
     m_userSettingsArnHasBeenSet(false)
 {
 }
@@ -50,6 +51,7 @@ PortalSummary::PortalSummary(JsonView jsonValue) :
     m_rendererType(RendererType::NOT_SET),
     m_rendererTypeHasBeenSet(false),
     m_trustStoreArnHasBeenSet(false),
+    m_userAccessLoggingSettingsArnHasBeenSet(false),
     m_userSettingsArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -127,6 +129,13 @@ PortalSummary& PortalSummary::operator =(JsonView jsonValue)
     m_trustStoreArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("userAccessLoggingSettingsArn"))
+  {
+    m_userAccessLoggingSettingsArn = jsonValue.GetString("userAccessLoggingSettingsArn");
+
+    m_userAccessLoggingSettingsArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("userSettingsArn"))
   {
     m_userSettingsArn = jsonValue.GetString("userSettingsArn");
@@ -194,6 +203,12 @@ JsonValue PortalSummary::Jsonize() const
   if(m_trustStoreArnHasBeenSet)
   {
    payload.WithString("trustStoreArn", m_trustStoreArn);
+
+  }
+
+  if(m_userAccessLoggingSettingsArnHasBeenSet)
+  {
+   payload.WithString("userAccessLoggingSettingsArn", m_userAccessLoggingSettingsArn);
 
   }
 

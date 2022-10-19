@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a user account for a Amazon Connect
+   * <p>Contains information about a user account for an Amazon Connect
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/User">AWS API
    * Reference</a></p>

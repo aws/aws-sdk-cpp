@@ -79,43 +79,43 @@ namespace Model
 
     /**
      * <p>Information about phone numbers that have been claimed to your Amazon Connect
-     * instances.</p>
+     * instances or traffic distribution groups.</p>
      */
     inline const Aws::Vector<ListPhoneNumbersSummary>& GetListPhoneNumbersSummaryList() const{ return m_listPhoneNumbersSummaryList; }
 
     /**
      * <p>Information about phone numbers that have been claimed to your Amazon Connect
-     * instances.</p>
+     * instances or traffic distribution groups.</p>
      */
     inline void SetListPhoneNumbersSummaryList(const Aws::Vector<ListPhoneNumbersSummary>& value) { m_listPhoneNumbersSummaryList = value; }
 
     /**
      * <p>Information about phone numbers that have been claimed to your Amazon Connect
-     * instances.</p>
+     * instances or traffic distribution groups.</p>
      */
     inline void SetListPhoneNumbersSummaryList(Aws::Vector<ListPhoneNumbersSummary>&& value) { m_listPhoneNumbersSummaryList = std::move(value); }
 
     /**
      * <p>Information about phone numbers that have been claimed to your Amazon Connect
-     * instances.</p>
+     * instances or traffic distribution groups.</p>
      */
     inline ListPhoneNumbersV2Result& WithListPhoneNumbersSummaryList(const Aws::Vector<ListPhoneNumbersSummary>& value) { SetListPhoneNumbersSummaryList(value); return *this;}
 
     /**
      * <p>Information about phone numbers that have been claimed to your Amazon Connect
-     * instances.</p>
+     * instances or traffic distribution groups.</p>
      */
     inline ListPhoneNumbersV2Result& WithListPhoneNumbersSummaryList(Aws::Vector<ListPhoneNumbersSummary>&& value) { SetListPhoneNumbersSummaryList(std::move(value)); return *this;}
 
     /**
      * <p>Information about phone numbers that have been claimed to your Amazon Connect
-     * instances.</p>
+     * instances or traffic distribution groups.</p>
      */
     inline ListPhoneNumbersV2Result& AddListPhoneNumbersSummaryList(const ListPhoneNumbersSummary& value) { m_listPhoneNumbersSummaryList.push_back(value); return *this; }
 
     /**
      * <p>Information about phone numbers that have been claimed to your Amazon Connect
-     * instances.</p>
+     * instances or traffic distribution groups.</p>
      */
     inline ListPhoneNumbersV2Result& AddListPhoneNumbersSummaryList(ListPhoneNumbersSummary&& value) { m_listPhoneNumbersSummaryList.push_back(std::move(value)); return *this; }
 

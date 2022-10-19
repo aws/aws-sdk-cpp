@@ -28,6 +28,7 @@
 #include <aws/support-app/model/ListSlackChannelConfigurationsRequest.h>
 #include <aws/support-app/model/ListSlackWorkspaceConfigurationsRequest.h>
 #include <aws/support-app/model/PutAccountAliasRequest.h>
+#include <aws/support-app/model/RegisterSlackWorkspaceForOrganizationRequest.h>
 #include <aws/support-app/model/UpdateSlackChannelConfigurationRequest.h>
 
 using namespace Aws;
@@ -290,6 +291,29 @@ void SupportAppClient::PutAccountAliasAsync(const PutAccountAliasRequest& reques
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutAccountAlias(request), context);
+    } );
+}
+
+RegisterSlackWorkspaceForOrganizationOutcome SupportAppClient::RegisterSlackWorkspaceForOrganization(const RegisterSlackWorkspaceForOrganizationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/control/register-slack-workspace-for-organization");
+  return RegisterSlackWorkspaceForOrganizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RegisterSlackWorkspaceForOrganizationOutcomeCallable SupportAppClient::RegisterSlackWorkspaceForOrganizationCallable(const RegisterSlackWorkspaceForOrganizationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterSlackWorkspaceForOrganizationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterSlackWorkspaceForOrganization(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SupportAppClient::RegisterSlackWorkspaceForOrganizationAsync(const RegisterSlackWorkspaceForOrganizationRequest& request, const RegisterSlackWorkspaceForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RegisterSlackWorkspaceForOrganization(request), context);
     } );
 }
 

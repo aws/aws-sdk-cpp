@@ -23,22 +23,26 @@
 #include <aws/workspaces-web/model/AssociateBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateTrustStoreRequest.h>
+#include <aws/workspaces-web/model/AssociateUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateUserSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateIdentityProviderRequest.h>
 #include <aws/workspaces-web/model/CreateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/CreatePortalRequest.h>
 #include <aws/workspaces-web/model/CreateTrustStoreRequest.h>
+#include <aws/workspaces-web/model/CreateUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateUserSettingsRequest.h>
 #include <aws/workspaces-web/model/DeleteBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/DeleteIdentityProviderRequest.h>
 #include <aws/workspaces-web/model/DeleteNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/DeletePortalRequest.h>
 #include <aws/workspaces-web/model/DeleteTrustStoreRequest.h>
+#include <aws/workspaces-web/model/DeleteUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/DeleteUserSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateTrustStoreRequest.h>
+#include <aws/workspaces-web/model/DisassociateUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateUserSettingsRequest.h>
 #include <aws/workspaces-web/model/GetBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/GetIdentityProviderRequest.h>
@@ -47,6 +51,7 @@
 #include <aws/workspaces-web/model/GetPortalServiceProviderMetadataRequest.h>
 #include <aws/workspaces-web/model/GetTrustStoreRequest.h>
 #include <aws/workspaces-web/model/GetTrustStoreCertificateRequest.h>
+#include <aws/workspaces-web/model/GetUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/GetUserSettingsRequest.h>
 #include <aws/workspaces-web/model/ListBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/ListIdentityProvidersRequest.h>
@@ -55,6 +60,7 @@
 #include <aws/workspaces-web/model/ListTagsForResourceRequest.h>
 #include <aws/workspaces-web/model/ListTrustStoreCertificatesRequest.h>
 #include <aws/workspaces-web/model/ListTrustStoresRequest.h>
+#include <aws/workspaces-web/model/ListUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/ListUserSettingsRequest.h>
 #include <aws/workspaces-web/model/TagResourceRequest.h>
 #include <aws/workspaces-web/model/UntagResourceRequest.h>
@@ -63,6 +69,7 @@
 #include <aws/workspaces-web/model/UpdateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/UpdatePortalRequest.h>
 #include <aws/workspaces-web/model/UpdateTrustStoreRequest.h>
+#include <aws/workspaces-web/model/UpdateUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/UpdateUserSettingsRequest.h>
 
 using namespace Aws;
@@ -249,6 +256,41 @@ void WorkSpacesWebClient::AssociateTrustStoreAsync(const AssociateTrustStoreRequ
     } );
 }
 
+AssociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::AssociateUserAccessLoggingSettings(const AssociateUserAccessLoggingSettingsRequest& request) const
+{
+  if (!request.PortalArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateUserAccessLoggingSettings", "Required field: PortalArn, is not set");
+    return AssociateUserAccessLoggingSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalArn]", false));
+  }
+  if (!request.UserAccessLoggingSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateUserAccessLoggingSettings", "Required field: UserAccessLoggingSettingsArn, is not set");
+    return AssociateUserAccessLoggingSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserAccessLoggingSettingsArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/portals/");
+  uri.AddPathSegments(request.GetPortalArn());
+  uri.AddPathSegments("/userAccessLoggingSettings");
+  return AssociateUserAccessLoggingSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::AssociateUserAccessLoggingSettingsCallable(const AssociateUserAccessLoggingSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateUserAccessLoggingSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesWebClient::AssociateUserAccessLoggingSettingsAsync(const AssociateUserAccessLoggingSettingsRequest& request, const AssociateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AssociateUserAccessLoggingSettings(request), context);
+    } );
+}
+
 AssociateUserSettingsOutcome WorkSpacesWebClient::AssociateUserSettings(const AssociateUserSettingsRequest& request) const
 {
   if (!request.PortalArnHasBeenSet())
@@ -396,6 +438,29 @@ void WorkSpacesWebClient::CreateTrustStoreAsync(const CreateTrustStoreRequest& r
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreateTrustStore(request), context);
+    } );
+}
+
+CreateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::CreateUserAccessLoggingSettings(const CreateUserAccessLoggingSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/userAccessLoggingSettings");
+  return CreateUserAccessLoggingSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::CreateUserAccessLoggingSettingsCallable(const CreateUserAccessLoggingSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUserAccessLoggingSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesWebClient::CreateUserAccessLoggingSettingsAsync(const CreateUserAccessLoggingSettingsRequest& request, const CreateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateUserAccessLoggingSettings(request), context);
     } );
 }
 
@@ -567,6 +632,35 @@ void WorkSpacesWebClient::DeleteTrustStoreAsync(const DeleteTrustStoreRequest& r
     } );
 }
 
+DeleteUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DeleteUserAccessLoggingSettings(const DeleteUserAccessLoggingSettingsRequest& request) const
+{
+  if (!request.UserAccessLoggingSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUserAccessLoggingSettings", "Required field: UserAccessLoggingSettingsArn, is not set");
+    return DeleteUserAccessLoggingSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserAccessLoggingSettingsArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/userAccessLoggingSettings/");
+  uri.AddPathSegments(request.GetUserAccessLoggingSettingsArn());
+  return DeleteUserAccessLoggingSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::DeleteUserAccessLoggingSettingsCallable(const DeleteUserAccessLoggingSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserAccessLoggingSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesWebClient::DeleteUserAccessLoggingSettingsAsync(const DeleteUserAccessLoggingSettingsRequest& request, const DeleteUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteUserAccessLoggingSettings(request), context);
+    } );
+}
+
 DeleteUserSettingsOutcome WorkSpacesWebClient::DeleteUserSettings(const DeleteUserSettingsRequest& request) const
 {
   if (!request.UserSettingsArnHasBeenSet())
@@ -683,6 +777,36 @@ void WorkSpacesWebClient::DisassociateTrustStoreAsync(const DisassociateTrustSto
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DisassociateTrustStore(request), context);
+    } );
+}
+
+DisassociateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::DisassociateUserAccessLoggingSettings(const DisassociateUserAccessLoggingSettingsRequest& request) const
+{
+  if (!request.PortalArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateUserAccessLoggingSettings", "Required field: PortalArn, is not set");
+    return DisassociateUserAccessLoggingSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/portals/");
+  uri.AddPathSegments(request.GetPortalArn());
+  uri.AddPathSegments("/userAccessLoggingSettings");
+  return DisassociateUserAccessLoggingSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::DisassociateUserAccessLoggingSettingsCallable(const DisassociateUserAccessLoggingSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateUserAccessLoggingSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesWebClient::DisassociateUserAccessLoggingSettingsAsync(const DisassociateUserAccessLoggingSettingsRequest& request, const DisassociateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisassociateUserAccessLoggingSettings(request), context);
     } );
 }
 
@@ -925,6 +1049,35 @@ void WorkSpacesWebClient::GetTrustStoreCertificateAsync(const GetTrustStoreCerti
     } );
 }
 
+GetUserAccessLoggingSettingsOutcome WorkSpacesWebClient::GetUserAccessLoggingSettings(const GetUserAccessLoggingSettingsRequest& request) const
+{
+  if (!request.UserAccessLoggingSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetUserAccessLoggingSettings", "Required field: UserAccessLoggingSettingsArn, is not set");
+    return GetUserAccessLoggingSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserAccessLoggingSettingsArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/userAccessLoggingSettings/");
+  uri.AddPathSegments(request.GetUserAccessLoggingSettingsArn());
+  return GetUserAccessLoggingSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::GetUserAccessLoggingSettingsCallable(const GetUserAccessLoggingSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetUserAccessLoggingSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesWebClient::GetUserAccessLoggingSettingsAsync(const GetUserAccessLoggingSettingsRequest& request, const GetUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, GetUserAccessLoggingSettings(request), context);
+    } );
+}
+
 GetUserSettingsOutcome WorkSpacesWebClient::GetUserSettings(const GetUserSettingsRequest& request) const
 {
   if (!request.UserSettingsArnHasBeenSet())
@@ -1132,6 +1285,29 @@ void WorkSpacesWebClient::ListTrustStoresAsync(const ListTrustStoresRequest& req
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListTrustStores(request), context);
+    } );
+}
+
+ListUserAccessLoggingSettingsOutcome WorkSpacesWebClient::ListUserAccessLoggingSettings(const ListUserAccessLoggingSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/userAccessLoggingSettings");
+  return ListUserAccessLoggingSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::ListUserAccessLoggingSettingsCallable(const ListUserAccessLoggingSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUserAccessLoggingSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesWebClient::ListUserAccessLoggingSettingsAsync(const ListUserAccessLoggingSettingsRequest& request, const ListUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListUserAccessLoggingSettings(request), context);
     } );
 }
 
@@ -1363,6 +1539,35 @@ void WorkSpacesWebClient::UpdateTrustStoreAsync(const UpdateTrustStoreRequest& r
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateTrustStore(request), context);
+    } );
+}
+
+UpdateUserAccessLoggingSettingsOutcome WorkSpacesWebClient::UpdateUserAccessLoggingSettings(const UpdateUserAccessLoggingSettingsRequest& request) const
+{
+  if (!request.UserAccessLoggingSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateUserAccessLoggingSettings", "Required field: UserAccessLoggingSettingsArn, is not set");
+    return UpdateUserAccessLoggingSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserAccessLoggingSettingsArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/userAccessLoggingSettings/");
+  uri.AddPathSegments(request.GetUserAccessLoggingSettingsArn());
+  return UpdateUserAccessLoggingSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateUserAccessLoggingSettingsOutcomeCallable WorkSpacesWebClient::UpdateUserAccessLoggingSettingsCallable(const UpdateUserAccessLoggingSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateUserAccessLoggingSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateUserAccessLoggingSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesWebClient::UpdateUserAccessLoggingSettingsAsync(const UpdateUserAccessLoggingSettingsRequest& request, const UpdateUserAccessLoggingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateUserAccessLoggingSettings(request), context);
     } );
 }
 

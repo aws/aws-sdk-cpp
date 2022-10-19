@@ -76,49 +76,85 @@ namespace Model
 
     /**
      * <p>Determines the order in which conformance pack compliance scores are sorted.
-     * Either in ascending or descending order.</p> <p>Conformance packs with a
-     * compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     * ascending order and last when sorting by descending order.</p>
+     * Either in ascending or descending order.</p> <p>By default, conformance pack
+     * compliance scores are sorted in alphabetical order by name of the conformance
+     * pack. Conformance pack compliance scores are sorted in reverse alphabetical
+     * order if you enter <code>DESCENDING</code>.</p> <p>You can sort conformance pack
+     * compliance scores by the numerical value of the compliance score by entering
+     * <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are
+     * sorted by <code>SCORE</code>, conformance packs with a compliance score of
+     * <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and
+     * first when sorting by descending order.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
      * <p>Determines the order in which conformance pack compliance scores are sorted.
-     * Either in ascending or descending order.</p> <p>Conformance packs with a
-     * compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     * ascending order and last when sorting by descending order.</p>
+     * Either in ascending or descending order.</p> <p>By default, conformance pack
+     * compliance scores are sorted in alphabetical order by name of the conformance
+     * pack. Conformance pack compliance scores are sorted in reverse alphabetical
+     * order if you enter <code>DESCENDING</code>.</p> <p>You can sort conformance pack
+     * compliance scores by the numerical value of the compliance score by entering
+     * <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are
+     * sorted by <code>SCORE</code>, conformance packs with a compliance score of
+     * <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and
+     * first when sorting by descending order.</p>
      */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
      * <p>Determines the order in which conformance pack compliance scores are sorted.
-     * Either in ascending or descending order.</p> <p>Conformance packs with a
-     * compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     * ascending order and last when sorting by descending order.</p>
+     * Either in ascending or descending order.</p> <p>By default, conformance pack
+     * compliance scores are sorted in alphabetical order by name of the conformance
+     * pack. Conformance pack compliance scores are sorted in reverse alphabetical
+     * order if you enter <code>DESCENDING</code>.</p> <p>You can sort conformance pack
+     * compliance scores by the numerical value of the compliance score by entering
+     * <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are
+     * sorted by <code>SCORE</code>, conformance packs with a compliance score of
+     * <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and
+     * first when sorting by descending order.</p>
      */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
      * <p>Determines the order in which conformance pack compliance scores are sorted.
-     * Either in ascending or descending order.</p> <p>Conformance packs with a
-     * compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     * ascending order and last when sorting by descending order.</p>
+     * Either in ascending or descending order.</p> <p>By default, conformance pack
+     * compliance scores are sorted in alphabetical order by name of the conformance
+     * pack. Conformance pack compliance scores are sorted in reverse alphabetical
+     * order if you enter <code>DESCENDING</code>.</p> <p>You can sort conformance pack
+     * compliance scores by the numerical value of the compliance score by entering
+     * <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are
+     * sorted by <code>SCORE</code>, conformance packs with a compliance score of
+     * <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and
+     * first when sorting by descending order.</p>
      */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
      * <p>Determines the order in which conformance pack compliance scores are sorted.
-     * Either in ascending or descending order.</p> <p>Conformance packs with a
-     * compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     * ascending order and last when sorting by descending order.</p>
+     * Either in ascending or descending order.</p> <p>By default, conformance pack
+     * compliance scores are sorted in alphabetical order by name of the conformance
+     * pack. Conformance pack compliance scores are sorted in reverse alphabetical
+     * order if you enter <code>DESCENDING</code>.</p> <p>You can sort conformance pack
+     * compliance scores by the numerical value of the compliance score by entering
+     * <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are
+     * sorted by <code>SCORE</code>, conformance packs with a compliance score of
+     * <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and
+     * first when sorting by descending order.</p>
      */
     inline ListConformancePackComplianceScoresRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
      * <p>Determines the order in which conformance pack compliance scores are sorted.
-     * Either in ascending or descending order.</p> <p>Conformance packs with a
-     * compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     * ascending order and last when sorting by descending order.</p>
+     * Either in ascending or descending order.</p> <p>By default, conformance pack
+     * compliance scores are sorted in alphabetical order by name of the conformance
+     * pack. Conformance pack compliance scores are sorted in reverse alphabetical
+     * order if you enter <code>DESCENDING</code>.</p> <p>You can sort conformance pack
+     * compliance scores by the numerical value of the compliance score by entering
+     * <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are
+     * sorted by <code>SCORE</code>, conformance packs with a compliance score of
+     * <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and
+     * first when sorting by descending order.</p>
      */
     inline ListConformancePackComplianceScoresRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 
@@ -126,54 +162,54 @@ namespace Model
     /**
      * <p>Sorts your conformance pack compliance scores in either ascending or
      * descending order, depending on <code>SortOrder</code>.</p> <p>By default,
-     * conformance pack compliance scores are sorted in ascending order by compliance
-     * score and alphabetically by name of the conformance pack if there is more than
-     * one conformance pack with the same compliance score.</p>
+     * conformance pack compliance scores are sorted in alphabetical order by name of
+     * the conformance pack. Enter <code>SCORE</code>, to sort conformance pack
+     * compliance scores by the numerical value of the compliance score.</p>
      */
     inline const SortBy& GetSortBy() const{ return m_sortBy; }
 
     /**
      * <p>Sorts your conformance pack compliance scores in either ascending or
      * descending order, depending on <code>SortOrder</code>.</p> <p>By default,
-     * conformance pack compliance scores are sorted in ascending order by compliance
-     * score and alphabetically by name of the conformance pack if there is more than
-     * one conformance pack with the same compliance score.</p>
+     * conformance pack compliance scores are sorted in alphabetical order by name of
+     * the conformance pack. Enter <code>SCORE</code>, to sort conformance pack
+     * compliance scores by the numerical value of the compliance score.</p>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
      * <p>Sorts your conformance pack compliance scores in either ascending or
      * descending order, depending on <code>SortOrder</code>.</p> <p>By default,
-     * conformance pack compliance scores are sorted in ascending order by compliance
-     * score and alphabetically by name of the conformance pack if there is more than
-     * one conformance pack with the same compliance score.</p>
+     * conformance pack compliance scores are sorted in alphabetical order by name of
+     * the conformance pack. Enter <code>SCORE</code>, to sort conformance pack
+     * compliance scores by the numerical value of the compliance score.</p>
      */
     inline void SetSortBy(const SortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
      * <p>Sorts your conformance pack compliance scores in either ascending or
      * descending order, depending on <code>SortOrder</code>.</p> <p>By default,
-     * conformance pack compliance scores are sorted in ascending order by compliance
-     * score and alphabetically by name of the conformance pack if there is more than
-     * one conformance pack with the same compliance score.</p>
+     * conformance pack compliance scores are sorted in alphabetical order by name of
+     * the conformance pack. Enter <code>SCORE</code>, to sort conformance pack
+     * compliance scores by the numerical value of the compliance score.</p>
      */
     inline void SetSortBy(SortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
      * <p>Sorts your conformance pack compliance scores in either ascending or
      * descending order, depending on <code>SortOrder</code>.</p> <p>By default,
-     * conformance pack compliance scores are sorted in ascending order by compliance
-     * score and alphabetically by name of the conformance pack if there is more than
-     * one conformance pack with the same compliance score.</p>
+     * conformance pack compliance scores are sorted in alphabetical order by name of
+     * the conformance pack. Enter <code>SCORE</code>, to sort conformance pack
+     * compliance scores by the numerical value of the compliance score.</p>
      */
     inline ListConformancePackComplianceScoresRequest& WithSortBy(const SortBy& value) { SetSortBy(value); return *this;}
 
     /**
      * <p>Sorts your conformance pack compliance scores in either ascending or
      * descending order, depending on <code>SortOrder</code>.</p> <p>By default,
-     * conformance pack compliance scores are sorted in ascending order by compliance
-     * score and alphabetically by name of the conformance pack if there is more than
-     * one conformance pack with the same compliance score.</p>
+     * conformance pack compliance scores are sorted in alphabetical order by name of
+     * the conformance pack. Enter <code>SCORE</code>, to sort conformance pack
+     * compliance scores by the numerical value of the compliance score.</p>
      */
     inline ListConformancePackComplianceScoresRequest& WithSortBy(SortBy&& value) { SetSortBy(std::move(value)); return *this;}
 

@@ -38,47 +38,56 @@ namespace Model
 
 
     /**
-     * <p> The destination event data store. Use this parameter for a new import. </p>
+     * <p> The ARN of the destination event data store. Use this parameter for a new
+     * import. </p>
      */
     inline const Aws::Vector<Aws::String>& GetDestinations() const{ return m_destinations; }
 
     /**
-     * <p> The destination event data store. Use this parameter for a new import. </p>
+     * <p> The ARN of the destination event data store. Use this parameter for a new
+     * import. </p>
      */
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
 
     /**
-     * <p> The destination event data store. Use this parameter for a new import. </p>
+     * <p> The ARN of the destination event data store. Use this parameter for a new
+     * import. </p>
      */
     inline void SetDestinations(const Aws::Vector<Aws::String>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
 
     /**
-     * <p> The destination event data store. Use this parameter for a new import. </p>
+     * <p> The ARN of the destination event data store. Use this parameter for a new
+     * import. </p>
      */
     inline void SetDestinations(Aws::Vector<Aws::String>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
 
     /**
-     * <p> The destination event data store. Use this parameter for a new import. </p>
+     * <p> The ARN of the destination event data store. Use this parameter for a new
+     * import. </p>
      */
     inline StartImportRequest& WithDestinations(const Aws::Vector<Aws::String>& value) { SetDestinations(value); return *this;}
 
     /**
-     * <p> The destination event data store. Use this parameter for a new import. </p>
+     * <p> The ARN of the destination event data store. Use this parameter for a new
+     * import. </p>
      */
     inline StartImportRequest& WithDestinations(Aws::Vector<Aws::String>&& value) { SetDestinations(std::move(value)); return *this;}
 
     /**
-     * <p> The destination event data store. Use this parameter for a new import. </p>
+     * <p> The ARN of the destination event data store. Use this parameter for a new
+     * import. </p>
      */
     inline StartImportRequest& AddDestinations(const Aws::String& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
 
     /**
-     * <p> The destination event data store. Use this parameter for a new import. </p>
+     * <p> The ARN of the destination event data store. Use this parameter for a new
+     * import. </p>
      */
     inline StartImportRequest& AddDestinations(Aws::String&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The destination event data store. Use this parameter for a new import. </p>
+     * <p> The ARN of the destination event data store. Use this parameter for a new
+     * import. </p>
      */
     inline StartImportRequest& AddDestinations(const char* value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
 
@@ -123,42 +132,60 @@ namespace Model
     /**
      * <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code>
      * request, and limit imported trail events to only those events logged within a
-     * specified time period. </p>
+     * specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the
+     * specified <code>StartEventTime</code> and <code>EndEventTime</code> before
+     * attempting to import events. </p>
      */
     inline const Aws::Utils::DateTime& GetStartEventTime() const{ return m_startEventTime; }
 
     /**
      * <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code>
      * request, and limit imported trail events to only those events logged within a
-     * specified time period. </p>
+     * specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the
+     * specified <code>StartEventTime</code> and <code>EndEventTime</code> before
+     * attempting to import events. </p>
      */
     inline bool StartEventTimeHasBeenSet() const { return m_startEventTimeHasBeenSet; }
 
     /**
      * <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code>
      * request, and limit imported trail events to only those events logged within a
-     * specified time period. </p>
+     * specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the
+     * specified <code>StartEventTime</code> and <code>EndEventTime</code> before
+     * attempting to import events. </p>
      */
     inline void SetStartEventTime(const Aws::Utils::DateTime& value) { m_startEventTimeHasBeenSet = true; m_startEventTime = value; }
 
     /**
      * <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code>
      * request, and limit imported trail events to only those events logged within a
-     * specified time period. </p>
+     * specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the
+     * specified <code>StartEventTime</code> and <code>EndEventTime</code> before
+     * attempting to import events. </p>
      */
     inline void SetStartEventTime(Aws::Utils::DateTime&& value) { m_startEventTimeHasBeenSet = true; m_startEventTime = std::move(value); }
 
     /**
      * <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code>
      * request, and limit imported trail events to only those events logged within a
-     * specified time period. </p>
+     * specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the
+     * specified <code>StartEventTime</code> and <code>EndEventTime</code> before
+     * attempting to import events. </p>
      */
     inline StartImportRequest& WithStartEventTime(const Aws::Utils::DateTime& value) { SetStartEventTime(value); return *this;}
 
     /**
      * <p> Use with <code>EndEventTime</code> to bound a <code>StartImport</code>
      * request, and limit imported trail events to only those events logged within a
-     * specified time period. </p>
+     * specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the
+     * specified <code>StartEventTime</code> and <code>EndEventTime</code> before
+     * attempting to import events. </p>
      */
     inline StartImportRequest& WithStartEventTime(Aws::Utils::DateTime&& value) { SetStartEventTime(std::move(value)); return *this;}
 
@@ -166,42 +193,60 @@ namespace Model
     /**
      * <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code>
      * request, and limit imported trail events to only those events logged within a
-     * specified time period. </p>
+     * specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the
+     * specified <code>StartEventTime</code> and <code>EndEventTime</code> before
+     * attempting to import events. </p>
      */
     inline const Aws::Utils::DateTime& GetEndEventTime() const{ return m_endEventTime; }
 
     /**
      * <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code>
      * request, and limit imported trail events to only those events logged within a
-     * specified time period. </p>
+     * specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the
+     * specified <code>StartEventTime</code> and <code>EndEventTime</code> before
+     * attempting to import events. </p>
      */
     inline bool EndEventTimeHasBeenSet() const { return m_endEventTimeHasBeenSet; }
 
     /**
      * <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code>
      * request, and limit imported trail events to only those events logged within a
-     * specified time period. </p>
+     * specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the
+     * specified <code>StartEventTime</code> and <code>EndEventTime</code> before
+     * attempting to import events. </p>
      */
     inline void SetEndEventTime(const Aws::Utils::DateTime& value) { m_endEventTimeHasBeenSet = true; m_endEventTime = value; }
 
     /**
      * <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code>
      * request, and limit imported trail events to only those events logged within a
-     * specified time period. </p>
+     * specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the
+     * specified <code>StartEventTime</code> and <code>EndEventTime</code> before
+     * attempting to import events. </p>
      */
     inline void SetEndEventTime(Aws::Utils::DateTime&& value) { m_endEventTimeHasBeenSet = true; m_endEventTime = std::move(value); }
 
     /**
      * <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code>
      * request, and limit imported trail events to only those events logged within a
-     * specified time period. </p>
+     * specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the
+     * specified <code>StartEventTime</code> and <code>EndEventTime</code> before
+     * attempting to import events. </p>
      */
     inline StartImportRequest& WithEndEventTime(const Aws::Utils::DateTime& value) { SetEndEventTime(value); return *this;}
 
     /**
      * <p> Use with <code>StartEventTime</code> to bound a <code>StartImport</code>
      * request, and limit imported trail events to only those events logged within a
-     * specified time period. </p>
+     * specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the
+     * specified <code>StartEventTime</code> and <code>EndEventTime</code> before
+     * attempting to import events. </p>
      */
     inline StartImportRequest& WithEndEventTime(Aws::Utils::DateTime&& value) { SetEndEventTime(std::move(value)); return *this;}
 

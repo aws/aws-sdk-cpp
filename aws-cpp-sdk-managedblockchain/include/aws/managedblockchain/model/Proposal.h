@@ -293,12 +293,12 @@ namespace Model
      * proposal actions are carried out.</p> </li> <li> <p> <code>REJECTED</code> - The
      * proposal was rejected with insufficient <code>YES</code> votes among members
      * according to the <code>VotingPolicy</code> specified for the
-     * <code>Network</code>. The specified <code>ProposalActions</code> are not carried
-     * out.</p> </li> <li> <p> <code>EXPIRED</code> - Members did not cast the number
-     * of votes required to determine the proposal outcome before the proposal expired.
-     * The specified <code>ProposalActions</code> are not carried out.</p> </li> <li>
+     * <code>Network</code>. The specified <code>ProposalActions</code> aren't carried
+     * out.</p> </li> <li> <p> <code>EXPIRED</code> - Members didn't cast the number of
+     * votes required to determine the proposal outcome before the proposal expired.
+     * The specified <code>ProposalActions</code> aren't carried out.</p> </li> <li>
      * <p> <code>ACTION_FAILED</code> - One or more of the specified
-     * <code>ProposalActions</code> in a proposal that was approved could not be
+     * <code>ProposalActions</code> in a proposal that was approved couldn't be
      * completed because of an error. The <code>ACTION_FAILED</code> status occurs even
      * if only one ProposalAction fails and other actions are successful.</p> </li>
      * </ul>
@@ -314,12 +314,12 @@ namespace Model
      * proposal actions are carried out.</p> </li> <li> <p> <code>REJECTED</code> - The
      * proposal was rejected with insufficient <code>YES</code> votes among members
      * according to the <code>VotingPolicy</code> specified for the
-     * <code>Network</code>. The specified <code>ProposalActions</code> are not carried
-     * out.</p> </li> <li> <p> <code>EXPIRED</code> - Members did not cast the number
-     * of votes required to determine the proposal outcome before the proposal expired.
-     * The specified <code>ProposalActions</code> are not carried out.</p> </li> <li>
+     * <code>Network</code>. The specified <code>ProposalActions</code> aren't carried
+     * out.</p> </li> <li> <p> <code>EXPIRED</code> - Members didn't cast the number of
+     * votes required to determine the proposal outcome before the proposal expired.
+     * The specified <code>ProposalActions</code> aren't carried out.</p> </li> <li>
      * <p> <code>ACTION_FAILED</code> - One or more of the specified
-     * <code>ProposalActions</code> in a proposal that was approved could not be
+     * <code>ProposalActions</code> in a proposal that was approved couldn't be
      * completed because of an error. The <code>ACTION_FAILED</code> status occurs even
      * if only one ProposalAction fails and other actions are successful.</p> </li>
      * </ul>
@@ -335,12 +335,12 @@ namespace Model
      * proposal actions are carried out.</p> </li> <li> <p> <code>REJECTED</code> - The
      * proposal was rejected with insufficient <code>YES</code> votes among members
      * according to the <code>VotingPolicy</code> specified for the
-     * <code>Network</code>. The specified <code>ProposalActions</code> are not carried
-     * out.</p> </li> <li> <p> <code>EXPIRED</code> - Members did not cast the number
-     * of votes required to determine the proposal outcome before the proposal expired.
-     * The specified <code>ProposalActions</code> are not carried out.</p> </li> <li>
+     * <code>Network</code>. The specified <code>ProposalActions</code> aren't carried
+     * out.</p> </li> <li> <p> <code>EXPIRED</code> - Members didn't cast the number of
+     * votes required to determine the proposal outcome before the proposal expired.
+     * The specified <code>ProposalActions</code> aren't carried out.</p> </li> <li>
      * <p> <code>ACTION_FAILED</code> - One or more of the specified
-     * <code>ProposalActions</code> in a proposal that was approved could not be
+     * <code>ProposalActions</code> in a proposal that was approved couldn't be
      * completed because of an error. The <code>ACTION_FAILED</code> status occurs even
      * if only one ProposalAction fails and other actions are successful.</p> </li>
      * </ul>
@@ -356,12 +356,12 @@ namespace Model
      * proposal actions are carried out.</p> </li> <li> <p> <code>REJECTED</code> - The
      * proposal was rejected with insufficient <code>YES</code> votes among members
      * according to the <code>VotingPolicy</code> specified for the
-     * <code>Network</code>. The specified <code>ProposalActions</code> are not carried
-     * out.</p> </li> <li> <p> <code>EXPIRED</code> - Members did not cast the number
-     * of votes required to determine the proposal outcome before the proposal expired.
-     * The specified <code>ProposalActions</code> are not carried out.</p> </li> <li>
+     * <code>Network</code>. The specified <code>ProposalActions</code> aren't carried
+     * out.</p> </li> <li> <p> <code>EXPIRED</code> - Members didn't cast the number of
+     * votes required to determine the proposal outcome before the proposal expired.
+     * The specified <code>ProposalActions</code> aren't carried out.</p> </li> <li>
      * <p> <code>ACTION_FAILED</code> - One or more of the specified
-     * <code>ProposalActions</code> in a proposal that was approved could not be
+     * <code>ProposalActions</code> in a proposal that was approved couldn't be
      * completed because of an error. The <code>ACTION_FAILED</code> status occurs even
      * if only one ProposalAction fails and other actions are successful.</p> </li>
      * </ul>
@@ -377,12 +377,12 @@ namespace Model
      * proposal actions are carried out.</p> </li> <li> <p> <code>REJECTED</code> - The
      * proposal was rejected with insufficient <code>YES</code> votes among members
      * according to the <code>VotingPolicy</code> specified for the
-     * <code>Network</code>. The specified <code>ProposalActions</code> are not carried
-     * out.</p> </li> <li> <p> <code>EXPIRED</code> - Members did not cast the number
-     * of votes required to determine the proposal outcome before the proposal expired.
-     * The specified <code>ProposalActions</code> are not carried out.</p> </li> <li>
+     * <code>Network</code>. The specified <code>ProposalActions</code> aren't carried
+     * out.</p> </li> <li> <p> <code>EXPIRED</code> - Members didn't cast the number of
+     * votes required to determine the proposal outcome before the proposal expired.
+     * The specified <code>ProposalActions</code> aren't carried out.</p> </li> <li>
      * <p> <code>ACTION_FAILED</code> - One or more of the specified
-     * <code>ProposalActions</code> in a proposal that was approved could not be
+     * <code>ProposalActions</code> in a proposal that was approved couldn't be
      * completed because of an error. The <code>ACTION_FAILED</code> status occurs even
      * if only one ProposalAction fails and other actions are successful.</p> </li>
      * </ul>
@@ -398,12 +398,12 @@ namespace Model
      * proposal actions are carried out.</p> </li> <li> <p> <code>REJECTED</code> - The
      * proposal was rejected with insufficient <code>YES</code> votes among members
      * according to the <code>VotingPolicy</code> specified for the
-     * <code>Network</code>. The specified <code>ProposalActions</code> are not carried
-     * out.</p> </li> <li> <p> <code>EXPIRED</code> - Members did not cast the number
-     * of votes required to determine the proposal outcome before the proposal expired.
-     * The specified <code>ProposalActions</code> are not carried out.</p> </li> <li>
+     * <code>Network</code>. The specified <code>ProposalActions</code> aren't carried
+     * out.</p> </li> <li> <p> <code>EXPIRED</code> - Members didn't cast the number of
+     * votes required to determine the proposal outcome before the proposal expired.
+     * The specified <code>ProposalActions</code> aren't carried out.</p> </li> <li>
      * <p> <code>ACTION_FAILED</code> - One or more of the specified
-     * <code>ProposalActions</code> in a proposal that was approved could not be
+     * <code>ProposalActions</code> in a proposal that was approved couldn't be
      * completed because of an error. The <code>ACTION_FAILED</code> status occurs even
      * if only one ProposalAction fails and other actions are successful.</p> </li>
      * </ul>
@@ -446,9 +446,9 @@ namespace Model
      * <p> The date and time that the proposal expires. This is the
      * <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is
      * specified in the <code>ProposalThresholdPolicy</code>. After this date and time,
-     * if members have not cast enough votes to determine the outcome according to the
-     * voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are
-     * not carried out. </p>
+     * if members haven't cast enough votes to determine the outcome according to the
+     * voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code>
+     * aren't carried out. </p>
      */
     inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
 
@@ -456,9 +456,9 @@ namespace Model
      * <p> The date and time that the proposal expires. This is the
      * <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is
      * specified in the <code>ProposalThresholdPolicy</code>. After this date and time,
-     * if members have not cast enough votes to determine the outcome according to the
-     * voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are
-     * not carried out. </p>
+     * if members haven't cast enough votes to determine the outcome according to the
+     * voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code>
+     * aren't carried out. </p>
      */
     inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
 
@@ -466,9 +466,9 @@ namespace Model
      * <p> The date and time that the proposal expires. This is the
      * <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is
      * specified in the <code>ProposalThresholdPolicy</code>. After this date and time,
-     * if members have not cast enough votes to determine the outcome according to the
-     * voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are
-     * not carried out. </p>
+     * if members haven't cast enough votes to determine the outcome according to the
+     * voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code>
+     * aren't carried out. </p>
      */
     inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDateHasBeenSet = true; m_expirationDate = value; }
 
@@ -476,9 +476,9 @@ namespace Model
      * <p> The date and time that the proposal expires. This is the
      * <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is
      * specified in the <code>ProposalThresholdPolicy</code>. After this date and time,
-     * if members have not cast enough votes to determine the outcome according to the
-     * voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are
-     * not carried out. </p>
+     * if members haven't cast enough votes to determine the outcome according to the
+     * voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code>
+     * aren't carried out. </p>
      */
     inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::move(value); }
 
@@ -486,9 +486,9 @@ namespace Model
      * <p> The date and time that the proposal expires. This is the
      * <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is
      * specified in the <code>ProposalThresholdPolicy</code>. After this date and time,
-     * if members have not cast enough votes to determine the outcome according to the
-     * voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are
-     * not carried out. </p>
+     * if members haven't cast enough votes to determine the outcome according to the
+     * voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code>
+     * aren't carried out. </p>
      */
     inline Proposal& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
 
@@ -496,9 +496,9 @@ namespace Model
      * <p> The date and time that the proposal expires. This is the
      * <code>CreationDate</code> plus the <code>ProposalDurationInHours</code> that is
      * specified in the <code>ProposalThresholdPolicy</code>. After this date and time,
-     * if members have not cast enough votes to determine the outcome according to the
-     * voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code> are
-     * not carried out. </p>
+     * if members haven't cast enough votes to determine the outcome according to the
+     * voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code>
+     * aren't carried out. </p>
      */
     inline Proposal& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 
@@ -743,7 +743,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -751,7 +752,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
@@ -759,7 +761,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
@@ -767,7 +770,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
@@ -775,7 +779,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
@@ -783,7 +788,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline Proposal& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
@@ -791,7 +797,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline Proposal& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
@@ -799,7 +806,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the proposal. For more information about
      * ARNs and their format, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i>.</p>
      */
     inline Proposal& WithArn(const char* value) { SetArn(value); return *this;}
 

@@ -24,7 +24,7 @@ namespace ManagedBlockchain
    * frameworks, some API actions or data types may only apply in the context of one
    * framework and not the other. For example, actions related to Hyperledger Fabric
    * network members such as <code>CreateMember</code> and <code>DeleteMember</code>
-   * do not apply to Ethereum.</p> <p>The description for each action indicates the
+   * don't apply to Ethereum.</p> <p>The description for each action indicates the
    * framework or frameworks to which it applies. Data types and properties that
    * apply only in the context of a particular framework are similarly indicated.</p>
    */
@@ -55,6 +55,28 @@ namespace ManagedBlockchain
 
         virtual ~ManagedBlockchainClient();
 
+
+        /**
+         *  <p>The token based access feature is in preview release for Ethereum
+         * on Amazon Managed Blockchain and is subject to change. We recommend that you use
+         * this feature only with test scenarios, and not in production environments.</p>
+         *  <p>Creates a new accessor for use with Managed Blockchain Ethereum
+         * nodes. An accessor object is a container that has the information required for
+         * token based access to your Ethereum nodes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateAccessor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAccessorOutcome CreateAccessor(const Model::CreateAccessorRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAccessor that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAccessorOutcomeCallable CreateAccessorCallable(const Model::CreateAccessorRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateAccessor that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAccessorAsync(const Model::CreateAccessorRequest& request, const CreateAccessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a member within a Managed Blockchain network.</p> <p>Applies only to
@@ -131,14 +153,43 @@ namespace ManagedBlockchain
         virtual void CreateProposalAsync(const Model::CreateProposalRequest& request, const CreateProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         *  <p>The token based access feature is in preview release for Ethereum
+         * on Amazon Managed Blockchain and is subject to change. We recommend that you use
+         * this feature only with test scenarios, and not in production environments.</p>
+         *  <p>Deletes an accessor that your Amazon Web Services account owns.
+         * An accessor object is a container that has the information required for token
+         * based access to your Ethereum nodes including, the <code>BILLING_TOKEN</code>.
+         * After an accessor is deleted, the status of the accessor changes from
+         * <code>AVAILABLE</code> to <code>PENDING_DELETION</code>. An accessor in the
+         * <code>PENDING_DELETION</code> state can’t be used for new WebSocket requests or
+         * HTTP requests. However, WebSocket connections that are initiated while the
+         * accessor was in the <code>AVAILABLE</code> state remain open until they expire
+         * (up to 2 hours).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteAccessor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccessorOutcome DeleteAccessor(const Model::DeleteAccessorRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteAccessor that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAccessorOutcomeCallable DeleteAccessorCallable(const Model::DeleteAccessorRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteAccessor that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAccessorAsync(const Model::DeleteAccessorRequest& request, const DeleteAccessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a member. Deleting a member removes the member and all associated
          * resources from the network. <code>DeleteMember</code> can only be called for a
          * specified <code>MemberId</code> if the principal performing the action is
-         * associated with the AWS account that owns the member. In all other cases, the
-         * <code>DeleteMember</code> action is carried out as the result of an approved
-         * proposal to remove a member. If <code>MemberId</code> is the last member in a
-         * network specified by the last AWS account, the network is deleted also.</p>
-         * <p>Applies only to Hyperledger Fabric.</p><p><h3>See Also:</h3>   <a
+         * associated with the Amazon Web Services account that owns the member. In all
+         * other cases, the <code>DeleteMember</code> action is carried out as the result
+         * of an approved proposal to remove a member. If <code>MemberId</code> is the last
+         * member in a network specified by the last Amazon Web Services account, the
+         * network is deleted also.</p> <p>Applies only to Hyperledger
+         * Fabric.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteMember">AWS
          * API Reference</a></p>
          */
@@ -155,8 +206,8 @@ namespace ManagedBlockchain
         virtual void DeleteMemberAsync(const Model::DeleteMemberRequest& request, const DeleteMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a node that your AWS account owns. All data on the node is lost and
-         * cannot be recovered.</p> <p>Applies to Hyperledger Fabric and
+         * <p>Deletes a node that your Amazon Web Services account owns. All data on the
+         * node is lost and cannot be recovered.</p> <p>Applies to Hyperledger Fabric and
          * Ethereum.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/DeleteNode">AWS
          * API Reference</a></p>
@@ -172,6 +223,28 @@ namespace ManagedBlockchain
          * An Async wrapper for DeleteNode that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteNodeAsync(const Model::DeleteNodeRequest& request, const DeleteNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         *  <p>The token based access feature is in preview release for Ethereum
+         * on Amazon Managed Blockchain and is subject to change. We recommend that you use
+         * this feature only with test scenarios, and not in production environments.</p>
+         *  <p>Returns detailed information about an accessor. An accessor
+         * object is a container that has the information required for token based access
+         * to your Ethereum nodes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/GetAccessor">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccessorOutcome GetAccessor(const Model::GetAccessorRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAccessor that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccessorOutcomeCallable GetAccessorCallable(const Model::GetAccessorRequest& request) const;
+
+        /**
+         * An Async wrapper for GetAccessor that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccessorAsync(const Model::GetAccessorRequest& request, const GetAccessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns detailed information about a member.</p> <p>Applies only to
@@ -246,8 +319,31 @@ namespace ManagedBlockchain
         virtual void GetProposalAsync(const Model::GetProposalRequest& request, const GetProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of all invitations for the current AWS account.</p> <p>Applies
-         * only to Hyperledger Fabric.</p><p><h3>See Also:</h3>   <a
+         *  <p>The token based access feature is in preview release for Ethereum
+         * on Amazon Managed Blockchain and is subject to change. We recommend that you use
+         * this feature only with test scenarios, and not in production environments.</p>
+         *  <p>Returns a list of the accessors and their properties. Accessor
+         * objects are containers that have the information required for token based access
+         * to your Ethereum nodes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListAccessors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAccessorsOutcome ListAccessors(const Model::ListAccessorsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAccessors that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAccessorsOutcomeCallable ListAccessorsCallable(const Model::ListAccessorsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListAccessors that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAccessorsAsync(const Model::ListAccessorsRequest& request, const ListAccessorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of all invitations for the current Amazon Web Services
+         * account.</p> <p>Applies only to Hyperledger Fabric.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListInvitations">AWS
          * API Reference</a></p>
          */
@@ -283,9 +379,9 @@ namespace ManagedBlockchain
         virtual void ListMembersAsync(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the networks in which the current AWS account
-         * participates.</p> <p>Applies to Hyperledger Fabric and Ethereum.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about the networks in which the current Amazon Web
+         * Services account participates.</p> <p>Applies to Hyperledger Fabric and
+         * Ethereum.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListNetworks">AWS
          * API Reference</a></p>
          */
@@ -382,9 +478,9 @@ namespace ManagedBlockchain
 
         /**
          * <p>Rejects an invitation to join a network. This action can be called by a
-         * principal in an AWS account that has received an invitation to create a member
-         * and join a network.</p> <p>Applies only to Hyperledger Fabric.</p><p><h3>See
-         * Also:</h3>   <a
+         * principal in an Amazon Web Services account that has received an invitation to
+         * create a member and join a network.</p> <p>Applies only to Hyperledger
+         * Fabric.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/RejectInvitation">AWS
          * API Reference</a></p>
          */
@@ -492,8 +588,8 @@ namespace ManagedBlockchain
         /**
          * <p>Casts a vote for a specified <code>ProposalId</code> on behalf of a member.
          * The member to vote as, specified by <code>VoterMemberId</code>, must be in the
-         * same AWS account as the principal that calls the action.</p> <p>Applies only to
-         * Hyperledger Fabric.</p><p><h3>See Also:</h3>   <a
+         * same Amazon Web Services account as the principal that calls the action.</p>
+         * <p>Applies only to Hyperledger Fabric.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/VoteOnProposal">AWS
          * API Reference</a></p>
          */

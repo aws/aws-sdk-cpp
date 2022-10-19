@@ -36,66 +36,74 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to. If <code>TargetArn</code> input is not provided, this
-     * API lists numbers claimed to all the Amazon Connect instances belonging to your
-     * account.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
+     * input is not provided, this API lists numbers claimed to all the Amazon Connect
+     * instances belonging to your account in the same Amazon Web Services Region as
+     * the request.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to. If <code>TargetArn</code> input is not provided, this
-     * API lists numbers claimed to all the Amazon Connect instances belonging to your
-     * account.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
+     * input is not provided, this API lists numbers claimed to all the Amazon Connect
+     * instances belonging to your account in the same Amazon Web Services Region as
+     * the request.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to. If <code>TargetArn</code> input is not provided, this
-     * API lists numbers claimed to all the Amazon Connect instances belonging to your
-     * account.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
+     * input is not provided, this API lists numbers claimed to all the Amazon Connect
+     * instances belonging to your account in the same Amazon Web Services Region as
+     * the request.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to. If <code>TargetArn</code> input is not provided, this
-     * API lists numbers claimed to all the Amazon Connect instances belonging to your
-     * account.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
+     * input is not provided, this API lists numbers claimed to all the Amazon Connect
+     * instances belonging to your account in the same Amazon Web Services Region as
+     * the request.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to. If <code>TargetArn</code> input is not provided, this
-     * API lists numbers claimed to all the Amazon Connect instances belonging to your
-     * account.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
+     * input is not provided, this API lists numbers claimed to all the Amazon Connect
+     * instances belonging to your account in the same Amazon Web Services Region as
+     * the request.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to. If <code>TargetArn</code> input is not provided, this
-     * API lists numbers claimed to all the Amazon Connect instances belonging to your
-     * account.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
+     * input is not provided, this API lists numbers claimed to all the Amazon Connect
+     * instances belonging to your account in the same Amazon Web Services Region as
+     * the request.</p>
      */
     inline ListPhoneNumbersV2Request& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to. If <code>TargetArn</code> input is not provided, this
-     * API lists numbers claimed to all the Amazon Connect instances belonging to your
-     * account.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
+     * input is not provided, this API lists numbers claimed to all the Amazon Connect
+     * instances belonging to your account in the same Amazon Web Services Region as
+     * the request.</p>
      */
     inline ListPhoneNumbersV2Request& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances that phone
-     * numbers are claimed to. If <code>TargetArn</code> input is not provided, this
-     * API lists numbers claimed to all the Amazon Connect instances belonging to your
-     * account.</p>
+     * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
+     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
+     * input is not provided, this API lists numbers claimed to all the Amazon Connect
+     * instances belonging to your account in the same Amazon Web Services Region as
+     * the request.</p>
      */
     inline ListPhoneNumbersV2Request& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for a Slack channel that you added to an Amazon Web
+   * <p>The configuration for a Slack channel that you added for your Amazon Web
    * Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/SlackChannelConfiguration">AWS
    * API Reference</a></p>
@@ -90,49 +90,49 @@ namespace Model
 
     /**
      * <p>The name of the Slack channel that you configured with the Amazon Web
-     * Services Support App.</p>
+     * Services Support App for your Amazon Web Services account.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
 
     /**
      * <p>The name of the Slack channel that you configured with the Amazon Web
-     * Services Support App.</p>
+     * Services Support App for your Amazon Web Services account.</p>
      */
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
 
     /**
      * <p>The name of the Slack channel that you configured with the Amazon Web
-     * Services Support App.</p>
+     * Services Support App for your Amazon Web Services account.</p>
      */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
 
     /**
      * <p>The name of the Slack channel that you configured with the Amazon Web
-     * Services Support App.</p>
+     * Services Support App for your Amazon Web Services account.</p>
      */
     inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
 
     /**
      * <p>The name of the Slack channel that you configured with the Amazon Web
-     * Services Support App.</p>
+     * Services Support App for your Amazon Web Services account.</p>
      */
     inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
 
     /**
      * <p>The name of the Slack channel that you configured with the Amazon Web
-     * Services Support App.</p>
+     * Services Support App for your Amazon Web Services account.</p>
      */
     inline SlackChannelConfiguration& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
 
     /**
      * <p>The name of the Slack channel that you configured with the Amazon Web
-     * Services Support App.</p>
+     * Services Support App for your Amazon Web Services account.</p>
      */
     inline SlackChannelConfiguration& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the Slack channel that you configured with the Amazon Web
-     * Services Support App.</p>
+     * Services Support App for your Amazon Web Services account.</p>
      */
     inline SlackChannelConfiguration& WithChannelName(const char* value) { SetChannelName(value); return *this;}
 
@@ -319,42 +319,50 @@ namespace Model
 
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline const Aws::String& GetTeamId() const{ return m_teamId; }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline bool TeamIdHasBeenSet() const { return m_teamIdHasBeenSet; }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline void SetTeamId(const Aws::String& value) { m_teamIdHasBeenSet = true; m_teamId = value; }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline void SetTeamId(Aws::String&& value) { m_teamIdHasBeenSet = true; m_teamId = std::move(value); }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline void SetTeamId(const char* value) { m_teamIdHasBeenSet = true; m_teamId.assign(value); }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline SlackChannelConfiguration& WithTeamId(const Aws::String& value) { SetTeamId(value); return *this;}
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline SlackChannelConfiguration& WithTeamId(Aws::String&& value) { SetTeamId(std::move(value)); return *this;}
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline SlackChannelConfiguration& WithTeamId(const char* value) { SetTeamId(value); return *this;}
 

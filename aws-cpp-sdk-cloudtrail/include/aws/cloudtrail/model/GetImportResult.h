@@ -74,42 +74,42 @@ namespace Model
 
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline const Aws::Vector<Aws::String>& GetDestinations() const{ return m_destinations; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline void SetDestinations(const Aws::Vector<Aws::String>& value) { m_destinations = value; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline void SetDestinations(Aws::Vector<Aws::String>&& value) { m_destinations = std::move(value); }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline GetImportResult& WithDestinations(const Aws::Vector<Aws::String>& value) { SetDestinations(value); return *this;}
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline GetImportResult& WithDestinations(Aws::Vector<Aws::String>&& value) { SetDestinations(std::move(value)); return *this;}
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline GetImportResult& AddDestinations(const Aws::String& value) { m_destinations.push_back(value); return *this; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline GetImportResult& AddDestinations(Aws::String&& value) { m_destinations.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The destination event data store. </p>
+     * <p> The ARN of the destination event data store. </p>
      */
     inline GetImportResult& AddDestinations(const char* value) { m_destinations.push_back(value); return *this; }
 
@@ -291,27 +291,42 @@ namespace Model
 
 
     /**
-     * <p> Provides statistics for the import. </p>
+     * <p> Provides statistics for the import. CloudTrail does not update import
+     * statistics in real-time. Returned values for parameters such as
+     * <code>EventsCompleted</code> may be lower than the actual value, because
+     * CloudTrail updates statistics incrementally over the course of the import. </p>
      */
     inline const ImportStatistics& GetImportStatistics() const{ return m_importStatistics; }
 
     /**
-     * <p> Provides statistics for the import. </p>
+     * <p> Provides statistics for the import. CloudTrail does not update import
+     * statistics in real-time. Returned values for parameters such as
+     * <code>EventsCompleted</code> may be lower than the actual value, because
+     * CloudTrail updates statistics incrementally over the course of the import. </p>
      */
     inline void SetImportStatistics(const ImportStatistics& value) { m_importStatistics = value; }
 
     /**
-     * <p> Provides statistics for the import. </p>
+     * <p> Provides statistics for the import. CloudTrail does not update import
+     * statistics in real-time. Returned values for parameters such as
+     * <code>EventsCompleted</code> may be lower than the actual value, because
+     * CloudTrail updates statistics incrementally over the course of the import. </p>
      */
     inline void SetImportStatistics(ImportStatistics&& value) { m_importStatistics = std::move(value); }
 
     /**
-     * <p> Provides statistics for the import. </p>
+     * <p> Provides statistics for the import. CloudTrail does not update import
+     * statistics in real-time. Returned values for parameters such as
+     * <code>EventsCompleted</code> may be lower than the actual value, because
+     * CloudTrail updates statistics incrementally over the course of the import. </p>
      */
     inline GetImportResult& WithImportStatistics(const ImportStatistics& value) { SetImportStatistics(value); return *this;}
 
     /**
-     * <p> Provides statistics for the import. </p>
+     * <p> Provides statistics for the import. CloudTrail does not update import
+     * statistics in real-time. Returned values for parameters such as
+     * <code>EventsCompleted</code> may be lower than the actual value, because
+     * CloudTrail updates statistics incrementally over the course of the import. </p>
      */
     inline GetImportResult& WithImportStatistics(ImportStatistics&& value) { SetImportStatistics(std::move(value)); return *this;}
 

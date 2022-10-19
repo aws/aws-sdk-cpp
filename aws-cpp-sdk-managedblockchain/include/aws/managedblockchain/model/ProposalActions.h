@@ -42,49 +42,49 @@ namespace Model
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline const Aws::Vector<InviteAction>& GetInvitations() const{ return m_invitations; }
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline bool InvitationsHasBeenSet() const { return m_invitationsHasBeenSet; }
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline void SetInvitations(const Aws::Vector<InviteAction>& value) { m_invitationsHasBeenSet = true; m_invitations = value; }
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline void SetInvitations(Aws::Vector<InviteAction>&& value) { m_invitationsHasBeenSet = true; m_invitations = std::move(value); }
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline ProposalActions& WithInvitations(const Aws::Vector<InviteAction>& value) { SetInvitations(value); return *this;}
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline ProposalActions& WithInvitations(Aws::Vector<InviteAction>&& value) { SetInvitations(std::move(value)); return *this;}
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline ProposalActions& AddInvitations(const InviteAction& value) { m_invitationsHasBeenSet = true; m_invitations.push_back(value); return *this; }
 
     /**
      * <p> The actions to perform for an <code>APPROVED</code> proposal to invite an
-     * AWS account to create a member and join the network. </p>
+     * Amazon Web Services account to create a member and join the network. </p>
      */
     inline ProposalActions& AddInvitations(InviteAction&& value) { m_invitationsHasBeenSet = true; m_invitations.push_back(std::move(value)); return *this; }
 

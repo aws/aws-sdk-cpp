@@ -17,12 +17,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeQueryResult::DescribeQueryResult() : 
-    m_queryStatus(QueryStatus::NOT_SET)
+    m_queryStatus(QueryStatus::NOT_SET),
+    m_deliveryStatus(DeliveryStatus::NOT_SET)
 {
 }
 
 DescribeQueryResult::DescribeQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_queryStatus(QueryStatus::NOT_SET)
+    m_queryStatus(QueryStatus::NOT_SET),
+    m_deliveryStatus(DeliveryStatus::NOT_SET)
 {
   *this = result;
 }
@@ -57,6 +59,18 @@ DescribeQueryResult& DescribeQueryResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
+
+  }
+
+  if(jsonValue.ValueExists("DeliveryS3Uri"))
+  {
+    m_deliveryS3Uri = jsonValue.GetString("DeliveryS3Uri");
+
+  }
+
+  if(jsonValue.ValueExists("DeliveryStatus"))
+  {
+    m_deliveryStatus = DeliveryStatusMapper::GetDeliveryStatusForName(jsonValue.GetString("DeliveryStatus"));
 
   }
 

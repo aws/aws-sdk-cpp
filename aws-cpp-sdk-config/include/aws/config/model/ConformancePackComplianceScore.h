@@ -28,8 +28,8 @@ namespace Model
    * <p>A compliance score is the percentage of the number of compliant rule-resource
    * combinations in a conformance pack compared to the number of total possible
    * rule-resource combinations in the conformance pack. This metric provides you
-   * with a high-level view of the compliance state of your conformance packs, and
-   * can be used to identify, investigate, and understand the level of compliance in
+   * with a high-level view of the compliance state of your conformance packs. You
+   * can use it to identify, investigate, and understand the level of compliance in
    * your conformance packs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackComplianceScore">AWS
    * API Reference</a></p>

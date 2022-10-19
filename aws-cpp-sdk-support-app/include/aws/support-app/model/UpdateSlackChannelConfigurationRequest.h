@@ -223,139 +223,103 @@ namespace Model
 
     /**
      * <p>The case severity for a support case that you want to receive
-     * notifications.</p> <pre><code> &lt;p&gt;If you specify
-     * &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, at least one of
-     * the following parameters must be &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
-     * &lt;ul&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-     * &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-     * &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-     * &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, any of the following
-     * parameters that you specify in your request must be
-     * &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-     * &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-     * &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-     * &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, the
-     * Amazon Web Services Support App uses the current values by default.&lt;/p&gt;
-     * &lt;/note&gt; </code></pre>
+     * notifications.</p> <p>If you specify <code>high</code> or <code>all</code>, at
+     * least one of the following parameters must be <code>true</code>:</p> <ul> <li>
+     * <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> <li> <p>
+     * <code>notifyOnCreateOrReopenCase</code> </p> </li> <li> <p>
+     * <code>notifyOnResolveCase</code> </p> </li> </ul> <p>If you specify
+     * <code>none</code>, any of the following parameters that you specify in your
+     * request must be <code>false</code>:</p> <ul> <li> <p>
+     * <code>notifyOnAddCorrespondenceToCase</code> </p> </li> <li> <p>
+     * <code>notifyOnCreateOrReopenCase</code> </p> </li> <li> <p>
+     * <code>notifyOnResolveCase</code> </p> </li> </ul>  <p>If you don't specify
+     * these parameters in your request, the Amazon Web Services Support App uses the
+     * current values by default.</p> 
      */
     inline const NotificationSeverityLevel& GetNotifyOnCaseSeverity() const{ return m_notifyOnCaseSeverity; }
 
     /**
      * <p>The case severity for a support case that you want to receive
-     * notifications.</p> <pre><code> &lt;p&gt;If you specify
-     * &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, at least one of
-     * the following parameters must be &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
-     * &lt;ul&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-     * &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-     * &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-     * &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, any of the following
-     * parameters that you specify in your request must be
-     * &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-     * &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-     * &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-     * &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, the
-     * Amazon Web Services Support App uses the current values by default.&lt;/p&gt;
-     * &lt;/note&gt; </code></pre>
+     * notifications.</p> <p>If you specify <code>high</code> or <code>all</code>, at
+     * least one of the following parameters must be <code>true</code>:</p> <ul> <li>
+     * <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> <li> <p>
+     * <code>notifyOnCreateOrReopenCase</code> </p> </li> <li> <p>
+     * <code>notifyOnResolveCase</code> </p> </li> </ul> <p>If you specify
+     * <code>none</code>, any of the following parameters that you specify in your
+     * request must be <code>false</code>:</p> <ul> <li> <p>
+     * <code>notifyOnAddCorrespondenceToCase</code> </p> </li> <li> <p>
+     * <code>notifyOnCreateOrReopenCase</code> </p> </li> <li> <p>
+     * <code>notifyOnResolveCase</code> </p> </li> </ul>  <p>If you don't specify
+     * these parameters in your request, the Amazon Web Services Support App uses the
+     * current values by default.</p> 
      */
     inline bool NotifyOnCaseSeverityHasBeenSet() const { return m_notifyOnCaseSeverityHasBeenSet; }
 
     /**
      * <p>The case severity for a support case that you want to receive
-     * notifications.</p> <pre><code> &lt;p&gt;If you specify
-     * &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, at least one of
-     * the following parameters must be &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
-     * &lt;ul&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-     * &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-     * &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-     * &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, any of the following
-     * parameters that you specify in your request must be
-     * &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-     * &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-     * &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-     * &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, the
-     * Amazon Web Services Support App uses the current values by default.&lt;/p&gt;
-     * &lt;/note&gt; </code></pre>
+     * notifications.</p> <p>If you specify <code>high</code> or <code>all</code>, at
+     * least one of the following parameters must be <code>true</code>:</p> <ul> <li>
+     * <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> <li> <p>
+     * <code>notifyOnCreateOrReopenCase</code> </p> </li> <li> <p>
+     * <code>notifyOnResolveCase</code> </p> </li> </ul> <p>If you specify
+     * <code>none</code>, any of the following parameters that you specify in your
+     * request must be <code>false</code>:</p> <ul> <li> <p>
+     * <code>notifyOnAddCorrespondenceToCase</code> </p> </li> <li> <p>
+     * <code>notifyOnCreateOrReopenCase</code> </p> </li> <li> <p>
+     * <code>notifyOnResolveCase</code> </p> </li> </ul>  <p>If you don't specify
+     * these parameters in your request, the Amazon Web Services Support App uses the
+     * current values by default.</p> 
      */
     inline void SetNotifyOnCaseSeverity(const NotificationSeverityLevel& value) { m_notifyOnCaseSeverityHasBeenSet = true; m_notifyOnCaseSeverity = value; }
 
     /**
      * <p>The case severity for a support case that you want to receive
-     * notifications.</p> <pre><code> &lt;p&gt;If you specify
-     * &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, at least one of
-     * the following parameters must be &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
-     * &lt;ul&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-     * &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-     * &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-     * &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, any of the following
-     * parameters that you specify in your request must be
-     * &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-     * &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-     * &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-     * &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, the
-     * Amazon Web Services Support App uses the current values by default.&lt;/p&gt;
-     * &lt;/note&gt; </code></pre>
+     * notifications.</p> <p>If you specify <code>high</code> or <code>all</code>, at
+     * least one of the following parameters must be <code>true</code>:</p> <ul> <li>
+     * <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> <li> <p>
+     * <code>notifyOnCreateOrReopenCase</code> </p> </li> <li> <p>
+     * <code>notifyOnResolveCase</code> </p> </li> </ul> <p>If you specify
+     * <code>none</code>, any of the following parameters that you specify in your
+     * request must be <code>false</code>:</p> <ul> <li> <p>
+     * <code>notifyOnAddCorrespondenceToCase</code> </p> </li> <li> <p>
+     * <code>notifyOnCreateOrReopenCase</code> </p> </li> <li> <p>
+     * <code>notifyOnResolveCase</code> </p> </li> </ul>  <p>If you don't specify
+     * these parameters in your request, the Amazon Web Services Support App uses the
+     * current values by default.</p> 
      */
     inline void SetNotifyOnCaseSeverity(NotificationSeverityLevel&& value) { m_notifyOnCaseSeverityHasBeenSet = true; m_notifyOnCaseSeverity = std::move(value); }
 
     /**
      * <p>The case severity for a support case that you want to receive
-     * notifications.</p> <pre><code> &lt;p&gt;If you specify
-     * &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, at least one of
-     * the following parameters must be &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
-     * &lt;ul&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-     * &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-     * &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-     * &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, any of the following
-     * parameters that you specify in your request must be
-     * &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-     * &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-     * &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-     * &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, the
-     * Amazon Web Services Support App uses the current values by default.&lt;/p&gt;
-     * &lt;/note&gt; </code></pre>
+     * notifications.</p> <p>If you specify <code>high</code> or <code>all</code>, at
+     * least one of the following parameters must be <code>true</code>:</p> <ul> <li>
+     * <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> <li> <p>
+     * <code>notifyOnCreateOrReopenCase</code> </p> </li> <li> <p>
+     * <code>notifyOnResolveCase</code> </p> </li> </ul> <p>If you specify
+     * <code>none</code>, any of the following parameters that you specify in your
+     * request must be <code>false</code>:</p> <ul> <li> <p>
+     * <code>notifyOnAddCorrespondenceToCase</code> </p> </li> <li> <p>
+     * <code>notifyOnCreateOrReopenCase</code> </p> </li> <li> <p>
+     * <code>notifyOnResolveCase</code> </p> </li> </ul>  <p>If you don't specify
+     * these parameters in your request, the Amazon Web Services Support App uses the
+     * current values by default.</p> 
      */
     inline UpdateSlackChannelConfigurationRequest& WithNotifyOnCaseSeverity(const NotificationSeverityLevel& value) { SetNotifyOnCaseSeverity(value); return *this;}
 
     /**
      * <p>The case severity for a support case that you want to receive
-     * notifications.</p> <pre><code> &lt;p&gt;If you specify
-     * &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, at least one of
-     * the following parameters must be &lt;code&gt;true&lt;/code&gt;:&lt;/p&gt;
-     * &lt;ul&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-     * &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-     * &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-     * &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, any of the following
-     * parameters that you specify in your request must be
-     * &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
-     * &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt;
-     * &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;
-     * &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-     * &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, the
-     * Amazon Web Services Support App uses the current values by default.&lt;/p&gt;
-     * &lt;/note&gt; </code></pre>
+     * notifications.</p> <p>If you specify <code>high</code> or <code>all</code>, at
+     * least one of the following parameters must be <code>true</code>:</p> <ul> <li>
+     * <p> <code>notifyOnAddCorrespondenceToCase</code> </p> </li> <li> <p>
+     * <code>notifyOnCreateOrReopenCase</code> </p> </li> <li> <p>
+     * <code>notifyOnResolveCase</code> </p> </li> </ul> <p>If you specify
+     * <code>none</code>, any of the following parameters that you specify in your
+     * request must be <code>false</code>:</p> <ul> <li> <p>
+     * <code>notifyOnAddCorrespondenceToCase</code> </p> </li> <li> <p>
+     * <code>notifyOnCreateOrReopenCase</code> </p> </li> <li> <p>
+     * <code>notifyOnResolveCase</code> </p> </li> </ul>  <p>If you don't specify
+     * these parameters in your request, the Amazon Web Services Support App uses the
+     * current values by default.</p> 
      */
     inline UpdateSlackChannelConfigurationRequest& WithNotifyOnCaseSeverity(NotificationSeverityLevel&& value) { SetNotifyOnCaseSeverity(std::move(value)); return *this;}
 
@@ -407,42 +371,50 @@ namespace Model
 
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline const Aws::String& GetTeamId() const{ return m_teamId; }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline bool TeamIdHasBeenSet() const { return m_teamIdHasBeenSet; }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline void SetTeamId(const Aws::String& value) { m_teamIdHasBeenSet = true; m_teamId = value; }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline void SetTeamId(Aws::String&& value) { m_teamIdHasBeenSet = true; m_teamId = std::move(value); }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline void SetTeamId(const char* value) { m_teamIdHasBeenSet = true; m_teamId.assign(value); }
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline UpdateSlackChannelConfigurationRequest& WithTeamId(const Aws::String& value) { SetTeamId(value); return *this;}
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline UpdateSlackChannelConfigurationRequest& WithTeamId(Aws::String&& value) { SetTeamId(std::move(value)); return *this;}
 
     /**
-     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace.</p>
+     * <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as
+     * <code>T012ABCDEFG</code>.</p>
      */
     inline UpdateSlackChannelConfigurationRequest& WithTeamId(const char* value) { SetTeamId(value); return *this;}
 

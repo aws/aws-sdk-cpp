@@ -154,32 +154,44 @@ namespace Model
 
 
     /**
-     * <p>The search criteria to be used to return security profiles.</p>
+     * <p>The search criteria to be used to return security profiles. </p> 
+     * <p>The currently supported value for <code>FieldName</code>: <code>name</code>
+     * </p> 
      */
     inline const SecurityProfileSearchCriteria& GetSearchCriteria() const{ return m_searchCriteria; }
 
     /**
-     * <p>The search criteria to be used to return security profiles.</p>
+     * <p>The search criteria to be used to return security profiles. </p> 
+     * <p>The currently supported value for <code>FieldName</code>: <code>name</code>
+     * </p> 
      */
     inline bool SearchCriteriaHasBeenSet() const { return m_searchCriteriaHasBeenSet; }
 
     /**
-     * <p>The search criteria to be used to return security profiles.</p>
+     * <p>The search criteria to be used to return security profiles. </p> 
+     * <p>The currently supported value for <code>FieldName</code>: <code>name</code>
+     * </p> 
      */
     inline void SetSearchCriteria(const SecurityProfileSearchCriteria& value) { m_searchCriteriaHasBeenSet = true; m_searchCriteria = value; }
 
     /**
-     * <p>The search criteria to be used to return security profiles.</p>
+     * <p>The search criteria to be used to return security profiles. </p> 
+     * <p>The currently supported value for <code>FieldName</code>: <code>name</code>
+     * </p> 
      */
     inline void SetSearchCriteria(SecurityProfileSearchCriteria&& value) { m_searchCriteriaHasBeenSet = true; m_searchCriteria = std::move(value); }
 
     /**
-     * <p>The search criteria to be used to return security profiles.</p>
+     * <p>The search criteria to be used to return security profiles. </p> 
+     * <p>The currently supported value for <code>FieldName</code>: <code>name</code>
+     * </p> 
      */
     inline SearchSecurityProfilesRequest& WithSearchCriteria(const SecurityProfileSearchCriteria& value) { SetSearchCriteria(value); return *this;}
 
     /**
-     * <p>The search criteria to be used to return security profiles.</p>
+     * <p>The search criteria to be used to return security profiles. </p> 
+     * <p>The currently supported value for <code>FieldName</code>: <code>name</code>
+     * </p> 
      */
     inline SearchSecurityProfilesRequest& WithSearchCriteria(SecurityProfileSearchCriteria&& value) { SetSearchCriteria(std::move(value)); return *this;}
 

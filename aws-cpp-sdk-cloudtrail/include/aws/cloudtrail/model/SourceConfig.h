@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p> Contains configuration information about the service-linked channel.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> Contains configuration information about the channel. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/SourceConfig">AWS
    * API Reference</a></p>
    */
@@ -40,67 +40,67 @@ namespace Model
 
 
     /**
-     * <p> Specifies whether the service-linked channel applies to one region or all
-     * regions. </p>
+     * <p> Specifies whether the channel applies to a single region or to all
+     * regions.</p>
      */
     inline bool GetApplyToAllRegions() const{ return m_applyToAllRegions; }
 
     /**
-     * <p> Specifies whether the service-linked channel applies to one region or all
-     * regions. </p>
+     * <p> Specifies whether the channel applies to a single region or to all
+     * regions.</p>
      */
     inline bool ApplyToAllRegionsHasBeenSet() const { return m_applyToAllRegionsHasBeenSet; }
 
     /**
-     * <p> Specifies whether the service-linked channel applies to one region or all
-     * regions. </p>
+     * <p> Specifies whether the channel applies to a single region or to all
+     * regions.</p>
      */
     inline void SetApplyToAllRegions(bool value) { m_applyToAllRegionsHasBeenSet = true; m_applyToAllRegions = value; }
 
     /**
-     * <p> Specifies whether the service-linked channel applies to one region or all
-     * regions. </p>
+     * <p> Specifies whether the channel applies to a single region or to all
+     * regions.</p>
      */
     inline SourceConfig& WithApplyToAllRegions(bool value) { SetApplyToAllRegions(value); return *this;}
 
 
     /**
-     * <p> The advanced event selectors configured for the service-linked channel. </p>
+     * <p> The advanced event selectors that are configured for the channel.</p>
      */
     inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const{ return m_advancedEventSelectors; }
 
     /**
-     * <p> The advanced event selectors configured for the service-linked channel. </p>
+     * <p> The advanced event selectors that are configured for the channel.</p>
      */
     inline bool AdvancedEventSelectorsHasBeenSet() const { return m_advancedEventSelectorsHasBeenSet; }
 
     /**
-     * <p> The advanced event selectors configured for the service-linked channel. </p>
+     * <p> The advanced event selectors that are configured for the channel.</p>
      */
     inline void SetAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = value; }
 
     /**
-     * <p> The advanced event selectors configured for the service-linked channel. </p>
+     * <p> The advanced event selectors that are configured for the channel.</p>
      */
     inline void SetAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::move(value); }
 
     /**
-     * <p> The advanced event selectors configured for the service-linked channel. </p>
+     * <p> The advanced event selectors that are configured for the channel.</p>
      */
     inline SourceConfig& WithAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { SetAdvancedEventSelectors(value); return *this;}
 
     /**
-     * <p> The advanced event selectors configured for the service-linked channel. </p>
+     * <p> The advanced event selectors that are configured for the channel.</p>
      */
     inline SourceConfig& WithAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { SetAdvancedEventSelectors(std::move(value)); return *this;}
 
     /**
-     * <p> The advanced event selectors configured for the service-linked channel. </p>
+     * <p> The advanced event selectors that are configured for the channel.</p>
      */
     inline SourceConfig& AddAdvancedEventSelectors(const AdvancedEventSelector& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(value); return *this; }
 
     /**
-     * <p> The advanced event selectors configured for the service-linked channel. </p>
+     * <p> The advanced event selectors that are configured for the channel.</p>
      */
     inline SourceConfig& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(std::move(value)); return *this; }
 

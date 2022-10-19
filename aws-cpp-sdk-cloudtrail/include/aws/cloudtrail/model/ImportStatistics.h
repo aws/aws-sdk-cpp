@@ -22,8 +22,11 @@ namespace Model
 {
 
   /**
-   * <p> Provides statistics for the specified <code>ImportID</code>. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> Provides statistics for the specified <code>ImportID</code>. CloudTrail does
+   * not update import statistics in real-time. Returned values for parameters such
+   * as <code>EventsCompleted</code> may be lower than the actual value, because
+   * CloudTrail updates statistics incrementally over the course of the import.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ImportStatistics">AWS
    * API Reference</a></p>
    */
@@ -79,43 +82,43 @@ namespace Model
 
 
     /**
-     * <p>The number of files that completed import.</p>
+     * <p>The number of log files that completed import.</p>
      */
     inline long long GetFilesCompleted() const{ return m_filesCompleted; }
 
     /**
-     * <p>The number of files that completed import.</p>
+     * <p>The number of log files that completed import.</p>
      */
     inline bool FilesCompletedHasBeenSet() const { return m_filesCompletedHasBeenSet; }
 
     /**
-     * <p>The number of files that completed import.</p>
+     * <p>The number of log files that completed import.</p>
      */
     inline void SetFilesCompleted(long long value) { m_filesCompletedHasBeenSet = true; m_filesCompleted = value; }
 
     /**
-     * <p>The number of files that completed import.</p>
+     * <p>The number of log files that completed import.</p>
      */
     inline ImportStatistics& WithFilesCompleted(long long value) { SetFilesCompleted(value); return *this;}
 
 
     /**
-     * <p> The number of trail events imported. </p>
+     * <p> The number of trail events imported into the event data store. </p>
      */
     inline long long GetEventsCompleted() const{ return m_eventsCompleted; }
 
     /**
-     * <p> The number of trail events imported. </p>
+     * <p> The number of trail events imported into the event data store. </p>
      */
     inline bool EventsCompletedHasBeenSet() const { return m_eventsCompletedHasBeenSet; }
 
     /**
-     * <p> The number of trail events imported. </p>
+     * <p> The number of trail events imported into the event data store. </p>
      */
     inline void SetEventsCompleted(long long value) { m_eventsCompletedHasBeenSet = true; m_eventsCompleted = value; }
 
     /**
-     * <p> The number of trail events imported. </p>
+     * <p> The number of trail events imported into the event data store. </p>
      */
     inline ImportStatistics& WithEventsCompleted(long long value) { SetEventsCompleted(value); return *this;}
 

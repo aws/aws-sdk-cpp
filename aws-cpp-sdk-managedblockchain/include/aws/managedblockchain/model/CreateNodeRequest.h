@@ -39,8 +39,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -48,8 +48,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
@@ -57,8 +57,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -66,8 +66,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -75,8 +75,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -84,8 +84,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline CreateNodeRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -93,8 +93,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline CreateNodeRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -102,8 +102,8 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the operation. An idempotent operation completes no more than one
      * time. This identifier is required only if you make a service request directly
-     * using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     * AWS CLI.</p>
+     * using an HTTP client. It is generated automatically if you use an Amazon Web
+     * Services SDK or the CLI.</p>
      */
     inline CreateNodeRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

@@ -80,7 +80,7 @@ namespace Model
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
-     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * types are also available through <i>advanced</i> event selectors. Basic event
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
@@ -100,7 +100,7 @@ namespace Model
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
-     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * types are also available through <i>advanced</i> event selectors. Basic event
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
@@ -120,7 +120,7 @@ namespace Model
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
-     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * types are also available through <i>advanced</i> event selectors. Basic event
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
@@ -140,7 +140,7 @@ namespace Model
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
-     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * types are also available through <i>advanced</i> event selectors. Basic event
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
@@ -160,7 +160,7 @@ namespace Model
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
-     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * types are also available through <i>advanced</i> event selectors. Basic event
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
@@ -180,7 +180,7 @@ namespace Model
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
-     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * types are also available through <i>advanced</i> event selectors. Basic event
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
@@ -200,7 +200,7 @@ namespace Model
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
-     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * types are also available through <i>advanced</i> event selectors. Basic event
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>
@@ -220,7 +220,7 @@ namespace Model
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Table</code> </p> </li> </ul> <p>The following resource
-     * types are also availble through <i>advanced</i> event selectors. Basic event
+     * types are also available through <i>advanced</i> event selectors. Basic event
      * selector resource types are valid in advanced event selectors, but advanced
      * event selector resource types are not valid in basic event selectors. For more
      * information, see <a>AdvancedFieldSelector$Field</a>.</p> <ul> <li> <p>

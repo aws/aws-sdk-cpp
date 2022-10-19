@@ -164,6 +164,26 @@ namespace Aws
         static const int AWS_EC2_TransitGatewayAttachment_HASH = HashingUtils::HashString("AWS::EC2::TransitGatewayAttachment");
         static const int AWS_EC2_TransitGatewayRouteTable_HASH = HashingUtils::HashString("AWS::EC2::TransitGatewayRouteTable");
         static const int AWS_DMS_Certificate_HASH = HashingUtils::HashString("AWS::DMS::Certificate");
+        static const int AWS_AppConfig_Application_HASH = HashingUtils::HashString("AWS::AppConfig::Application");
+        static const int AWS_AppSync_GraphQLApi_HASH = HashingUtils::HashString("AWS::AppSync::GraphQLApi");
+        static const int AWS_DataSync_LocationSMB_HASH = HashingUtils::HashString("AWS::DataSync::LocationSMB");
+        static const int AWS_DataSync_LocationFSxLustre_HASH = HashingUtils::HashString("AWS::DataSync::LocationFSxLustre");
+        static const int AWS_DataSync_LocationS3_HASH = HashingUtils::HashString("AWS::DataSync::LocationS3");
+        static const int AWS_DataSync_LocationEFS_HASH = HashingUtils::HashString("AWS::DataSync::LocationEFS");
+        static const int AWS_DataSync_Task_HASH = HashingUtils::HashString("AWS::DataSync::Task");
+        static const int AWS_DataSync_LocationNFS_HASH = HashingUtils::HashString("AWS::DataSync::LocationNFS");
+        static const int AWS_EC2_NetworkInsightsAccessScopeAnalysis_HASH = HashingUtils::HashString("AWS::EC2::NetworkInsightsAccessScopeAnalysis");
+        static const int AWS_EKS_FargateProfile_HASH = HashingUtils::HashString("AWS::EKS::FargateProfile");
+        static const int AWS_Glue_Job_HASH = HashingUtils::HashString("AWS::Glue::Job");
+        static const int AWS_GuardDuty_ThreatIntelSet_HASH = HashingUtils::HashString("AWS::GuardDuty::ThreatIntelSet");
+        static const int AWS_GuardDuty_IPSet_HASH = HashingUtils::HashString("AWS::GuardDuty::IPSet");
+        static const int AWS_SageMaker_Workteam_HASH = HashingUtils::HashString("AWS::SageMaker::Workteam");
+        static const int AWS_SageMaker_NotebookInstanceLifecycleConfig_HASH = HashingUtils::HashString("AWS::SageMaker::NotebookInstanceLifecycleConfig");
+        static const int AWS_ServiceDiscovery_Service_HASH = HashingUtils::HashString("AWS::ServiceDiscovery::Service");
+        static const int AWS_ServiceDiscovery_PublicDnsNamespace_HASH = HashingUtils::HashString("AWS::ServiceDiscovery::PublicDnsNamespace");
+        static const int AWS_SES_ContactList_HASH = HashingUtils::HashString("AWS::SES::ContactList");
+        static const int AWS_SES_ConfigurationSet_HASH = HashingUtils::HashString("AWS::SES::ConfigurationSet");
+        static const int AWS_Route53_HostedZone_HASH = HashingUtils::HashString("AWS::Route53::HostedZone");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -896,6 +916,106 @@ namespace Aws
             enumValue = ResourceType::AWS_DMS_Certificate;
             return true;
           }
+          else if (hashCode == AWS_AppConfig_Application_HASH)
+          {
+            enumValue = ResourceType::AWS_AppConfig_Application;
+            return true;
+          }
+          else if (hashCode == AWS_AppSync_GraphQLApi_HASH)
+          {
+            enumValue = ResourceType::AWS_AppSync_GraphQLApi;
+            return true;
+          }
+          else if (hashCode == AWS_DataSync_LocationSMB_HASH)
+          {
+            enumValue = ResourceType::AWS_DataSync_LocationSMB;
+            return true;
+          }
+          else if (hashCode == AWS_DataSync_LocationFSxLustre_HASH)
+          {
+            enumValue = ResourceType::AWS_DataSync_LocationFSxLustre;
+            return true;
+          }
+          else if (hashCode == AWS_DataSync_LocationS3_HASH)
+          {
+            enumValue = ResourceType::AWS_DataSync_LocationS3;
+            return true;
+          }
+          else if (hashCode == AWS_DataSync_LocationEFS_HASH)
+          {
+            enumValue = ResourceType::AWS_DataSync_LocationEFS;
+            return true;
+          }
+          else if (hashCode == AWS_DataSync_Task_HASH)
+          {
+            enumValue = ResourceType::AWS_DataSync_Task;
+            return true;
+          }
+          else if (hashCode == AWS_DataSync_LocationNFS_HASH)
+          {
+            enumValue = ResourceType::AWS_DataSync_LocationNFS;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_NetworkInsightsAccessScopeAnalysis_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_NetworkInsightsAccessScopeAnalysis;
+            return true;
+          }
+          else if (hashCode == AWS_EKS_FargateProfile_HASH)
+          {
+            enumValue = ResourceType::AWS_EKS_FargateProfile;
+            return true;
+          }
+          else if (hashCode == AWS_Glue_Job_HASH)
+          {
+            enumValue = ResourceType::AWS_Glue_Job;
+            return true;
+          }
+          else if (hashCode == AWS_GuardDuty_ThreatIntelSet_HASH)
+          {
+            enumValue = ResourceType::AWS_GuardDuty_ThreatIntelSet;
+            return true;
+          }
+          else if (hashCode == AWS_GuardDuty_IPSet_HASH)
+          {
+            enumValue = ResourceType::AWS_GuardDuty_IPSet;
+            return true;
+          }
+          else if (hashCode == AWS_SageMaker_Workteam_HASH)
+          {
+            enumValue = ResourceType::AWS_SageMaker_Workteam;
+            return true;
+          }
+          else if (hashCode == AWS_SageMaker_NotebookInstanceLifecycleConfig_HASH)
+          {
+            enumValue = ResourceType::AWS_SageMaker_NotebookInstanceLifecycleConfig;
+            return true;
+          }
+          else if (hashCode == AWS_ServiceDiscovery_Service_HASH)
+          {
+            enumValue = ResourceType::AWS_ServiceDiscovery_Service;
+            return true;
+          }
+          else if (hashCode == AWS_ServiceDiscovery_PublicDnsNamespace_HASH)
+          {
+            enumValue = ResourceType::AWS_ServiceDiscovery_PublicDnsNamespace;
+            return true;
+          }
+          else if (hashCode == AWS_SES_ContactList_HASH)
+          {
+            enumValue = ResourceType::AWS_SES_ContactList;
+            return true;
+          }
+          else if (hashCode == AWS_SES_ConfigurationSet_HASH)
+          {
+            enumValue = ResourceType::AWS_SES_ConfigurationSet;
+            return true;
+          }
+          else if (hashCode == AWS_Route53_HostedZone_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53_HostedZone;
+            return true;
+          }
           return false;
         }
 
@@ -1342,6 +1462,66 @@ namespace Aws
             return true;
           case ResourceType::AWS_DMS_Certificate:
             value = "AWS::DMS::Certificate";
+            return true;
+          case ResourceType::AWS_AppConfig_Application:
+            value = "AWS::AppConfig::Application";
+            return true;
+          case ResourceType::AWS_AppSync_GraphQLApi:
+            value = "AWS::AppSync::GraphQLApi";
+            return true;
+          case ResourceType::AWS_DataSync_LocationSMB:
+            value = "AWS::DataSync::LocationSMB";
+            return true;
+          case ResourceType::AWS_DataSync_LocationFSxLustre:
+            value = "AWS::DataSync::LocationFSxLustre";
+            return true;
+          case ResourceType::AWS_DataSync_LocationS3:
+            value = "AWS::DataSync::LocationS3";
+            return true;
+          case ResourceType::AWS_DataSync_LocationEFS:
+            value = "AWS::DataSync::LocationEFS";
+            return true;
+          case ResourceType::AWS_DataSync_Task:
+            value = "AWS::DataSync::Task";
+            return true;
+          case ResourceType::AWS_DataSync_LocationNFS:
+            value = "AWS::DataSync::LocationNFS";
+            return true;
+          case ResourceType::AWS_EC2_NetworkInsightsAccessScopeAnalysis:
+            value = "AWS::EC2::NetworkInsightsAccessScopeAnalysis";
+            return true;
+          case ResourceType::AWS_EKS_FargateProfile:
+            value = "AWS::EKS::FargateProfile";
+            return true;
+          case ResourceType::AWS_Glue_Job:
+            value = "AWS::Glue::Job";
+            return true;
+          case ResourceType::AWS_GuardDuty_ThreatIntelSet:
+            value = "AWS::GuardDuty::ThreatIntelSet";
+            return true;
+          case ResourceType::AWS_GuardDuty_IPSet:
+            value = "AWS::GuardDuty::IPSet";
+            return true;
+          case ResourceType::AWS_SageMaker_Workteam:
+            value = "AWS::SageMaker::Workteam";
+            return true;
+          case ResourceType::AWS_SageMaker_NotebookInstanceLifecycleConfig:
+            value = "AWS::SageMaker::NotebookInstanceLifecycleConfig";
+            return true;
+          case ResourceType::AWS_ServiceDiscovery_Service:
+            value = "AWS::ServiceDiscovery::Service";
+            return true;
+          case ResourceType::AWS_ServiceDiscovery_PublicDnsNamespace:
+            value = "AWS::ServiceDiscovery::PublicDnsNamespace";
+            return true;
+          case ResourceType::AWS_SES_ContactList:
+            value = "AWS::SES::ContactList";
+            return true;
+          case ResourceType::AWS_SES_ConfigurationSet:
+            value = "AWS::SES::ConfigurationSet";
+            return true;
+          case ResourceType::AWS_Route53_HostedZone:
+            value = "AWS::Route53::HostedZone";
             return true;
           default:
             return false;
