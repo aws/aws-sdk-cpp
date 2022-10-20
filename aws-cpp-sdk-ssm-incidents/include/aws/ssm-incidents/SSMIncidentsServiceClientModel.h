@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/ssm-incidents/SSMIncidentsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -78,6 +79,10 @@ namespace Aws
 
   namespace SSMIncidents
   {
+    namespace Endpoint
+    {
+      class SSMIncidentsEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in SSMIncidentsClient header */

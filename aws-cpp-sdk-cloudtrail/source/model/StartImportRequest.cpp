@@ -27,7 +27,7 @@ Aws::String StartImportRequest::SerializePayload() const
 
   if(m_destinationsHasBeenSet)
   {
-   Array<JsonValue> destinationsJsonList(m_destinations.size());
+   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
    {
      destinationsJsonList[destinationsIndex].AsString(m_destinations[destinationsIndex]);

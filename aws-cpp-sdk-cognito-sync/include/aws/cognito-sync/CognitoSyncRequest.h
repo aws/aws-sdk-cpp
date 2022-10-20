@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
+#include <aws/cognito-sync/CognitoSyncEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

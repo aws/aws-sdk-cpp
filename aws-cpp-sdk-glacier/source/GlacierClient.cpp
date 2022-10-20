@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/glacier/GlacierClient.h>
 #include <aws/glacier/GlacierEndpoint.h>
 #include <aws/glacier/GlacierErrorMarshaller.h>
+#include <aws/glacier/GlacierEndpointProvider.h>
 #include <aws/glacier/model/AbortMultipartUploadRequest.h>
 #include <aws/glacier/model/AbortVaultLockRequest.h>
 #include <aws/glacier/model/AddTagsToVaultRequest.h>
@@ -61,19 +63,66 @@ using namespace Aws::Glacier;
 using namespace Aws::Glacier::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Glacier::Endpoint::GlacierEndpointProvider::GlacierResolveEndpointOutcome;
 
 
 const char* GlacierClient::SERVICE_NAME = "glacier";
 const char* GlacierClient::ALLOCATION_TAG = "GlacierClient";
 
-GlacierClient::GlacierClient(const Client::ClientConfiguration& clientConfiguration) :
+GlacierClient::GlacierClient(const Client::ClientConfiguration& clientConfiguration,
+                             std::shared_ptr<Endpoint::GlacierEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GlacierErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+GlacierClient::GlacierClient(const AWSCredentials& credentials,
+                             std::shared_ptr<Endpoint::GlacierEndpointProvider> endpointProvider,
+                             const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<GlacierErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+GlacierClient::GlacierClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                             std::shared_ptr<Endpoint::GlacierEndpointProvider> endpointProvider,
+                             const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<GlacierErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  GlacierClient::GlacierClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<GlacierErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<Glacier::Endpoint::GlacierEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -86,7 +135,8 @@ GlacierClient::GlacierClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GlacierErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<Glacier::Endpoint::GlacierEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -99,11 +149,13 @@ GlacierClient::GlacierClient(const std::shared_ptr<AWSCredentialsProvider>& cred
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GlacierErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<Glacier::Endpoint::GlacierEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 GlacierClient::~GlacierClient()
 {
 }
@@ -111,31 +163,18 @@ GlacierClient::~GlacierClient()
 void GlacierClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Glacier");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + GlacierEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void GlacierClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 AbortMultipartUploadOutcome GlacierClient::AbortMultipartUpload(const AbortMultipartUploadRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AbortMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AbortMultipartUpload", "Required field: AccountId, is not set");
@@ -151,13 +190,9 @@ AbortMultipartUploadOutcome GlacierClient::AbortMultipartUpload(const AbortMulti
     AWS_LOGSTREAM_ERROR("AbortMultipartUpload", "Required field: UploadId, is not set");
     return AbortMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/multipart-uploads/");
-  uri.AddPathSegment(request.GetUploadId());
-  return AbortMultipartUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AbortMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AbortMultipartUploadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 AbortMultipartUploadOutcomeCallable GlacierClient::AbortMultipartUploadCallable(const AbortMultipartUploadRequest& request) const
@@ -178,6 +213,7 @@ void GlacierClient::AbortMultipartUploadAsync(const AbortMultipartUploadRequest&
 
 AbortVaultLockOutcome GlacierClient::AbortVaultLock(const AbortVaultLockRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AbortVaultLock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AbortVaultLock", "Required field: AccountId, is not set");
@@ -188,12 +224,9 @@ AbortVaultLockOutcome GlacierClient::AbortVaultLock(const AbortVaultLockRequest&
     AWS_LOGSTREAM_ERROR("AbortVaultLock", "Required field: VaultName, is not set");
     return AbortVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/lock-policy");
-  return AbortVaultLockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AbortVaultLock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AbortVaultLockOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 AbortVaultLockOutcomeCallable GlacierClient::AbortVaultLockCallable(const AbortVaultLockRequest& request) const
@@ -214,6 +247,7 @@ void GlacierClient::AbortVaultLockAsync(const AbortVaultLockRequest& request, co
 
 AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddTagsToVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AddTagsToVault", "Required field: AccountId, is not set");
@@ -224,15 +258,9 @@ AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest&
     AWS_LOGSTREAM_ERROR("AddTagsToVault", "Required field: VaultName, is not set");
     return AddTagsToVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/tags");
-  ss.str("?operation=add");
-  uri.SetQueryString(ss.str());
-  return AddTagsToVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddTagsToVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AddTagsToVaultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AddTagsToVaultOutcomeCallable GlacierClient::AddTagsToVaultCallable(const AddTagsToVaultRequest& request) const
@@ -253,6 +281,7 @@ void GlacierClient::AddTagsToVaultAsync(const AddTagsToVaultRequest& request, co
 
 CompleteMultipartUploadOutcome GlacierClient::CompleteMultipartUpload(const CompleteMultipartUploadRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CompleteMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CompleteMultipartUpload", "Required field: AccountId, is not set");
@@ -268,13 +297,9 @@ CompleteMultipartUploadOutcome GlacierClient::CompleteMultipartUpload(const Comp
     AWS_LOGSTREAM_ERROR("CompleteMultipartUpload", "Required field: UploadId, is not set");
     return CompleteMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/multipart-uploads/");
-  uri.AddPathSegment(request.GetUploadId());
-  return CompleteMultipartUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CompleteMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CompleteMultipartUploadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CompleteMultipartUploadOutcomeCallable GlacierClient::CompleteMultipartUploadCallable(const CompleteMultipartUploadRequest& request) const
@@ -295,6 +320,7 @@ void GlacierClient::CompleteMultipartUploadAsync(const CompleteMultipartUploadRe
 
 CompleteVaultLockOutcome GlacierClient::CompleteVaultLock(const CompleteVaultLockRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CompleteVaultLock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CompleteVaultLock", "Required field: AccountId, is not set");
@@ -310,13 +336,9 @@ CompleteVaultLockOutcome GlacierClient::CompleteVaultLock(const CompleteVaultLoc
     AWS_LOGSTREAM_ERROR("CompleteVaultLock", "Required field: LockId, is not set");
     return CompleteVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LockId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/lock-policy/");
-  uri.AddPathSegment(request.GetLockId());
-  return CompleteVaultLockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CompleteVaultLock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CompleteVaultLockOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CompleteVaultLockOutcomeCallable GlacierClient::CompleteVaultLockCallable(const CompleteVaultLockRequest& request) const
@@ -337,6 +359,7 @@ void GlacierClient::CompleteVaultLockAsync(const CompleteVaultLockRequest& reque
 
 CreateVaultOutcome GlacierClient::CreateVault(const CreateVaultRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateVault", "Required field: AccountId, is not set");
@@ -347,11 +370,9 @@ CreateVaultOutcome GlacierClient::CreateVault(const CreateVaultRequest& request)
     AWS_LOGSTREAM_ERROR("CreateVault", "Required field: VaultName, is not set");
     return CreateVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  return CreateVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateVaultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateVaultOutcomeCallable GlacierClient::CreateVaultCallable(const CreateVaultRequest& request) const
@@ -372,6 +393,7 @@ void GlacierClient::CreateVaultAsync(const CreateVaultRequest& request, const Cr
 
 DeleteArchiveOutcome GlacierClient::DeleteArchive(const DeleteArchiveRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteArchive, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteArchive", "Required field: AccountId, is not set");
@@ -387,13 +409,9 @@ DeleteArchiveOutcome GlacierClient::DeleteArchive(const DeleteArchiveRequest& re
     AWS_LOGSTREAM_ERROR("DeleteArchive", "Required field: ArchiveId, is not set");
     return DeleteArchiveOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ArchiveId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/archives/");
-  uri.AddPathSegment(request.GetArchiveId());
-  return DeleteArchiveOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteArchive, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteArchiveOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteArchiveOutcomeCallable GlacierClient::DeleteArchiveCallable(const DeleteArchiveRequest& request) const
@@ -414,6 +432,7 @@ void GlacierClient::DeleteArchiveAsync(const DeleteArchiveRequest& request, cons
 
 DeleteVaultOutcome GlacierClient::DeleteVault(const DeleteVaultRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteVault", "Required field: AccountId, is not set");
@@ -424,11 +443,9 @@ DeleteVaultOutcome GlacierClient::DeleteVault(const DeleteVaultRequest& request)
     AWS_LOGSTREAM_ERROR("DeleteVault", "Required field: VaultName, is not set");
     return DeleteVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  return DeleteVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteVaultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteVaultOutcomeCallable GlacierClient::DeleteVaultCallable(const DeleteVaultRequest& request) const
@@ -449,6 +466,7 @@ void GlacierClient::DeleteVaultAsync(const DeleteVaultRequest& request, const De
 
 DeleteVaultAccessPolicyOutcome GlacierClient::DeleteVaultAccessPolicy(const DeleteVaultAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVaultAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteVaultAccessPolicy", "Required field: AccountId, is not set");
@@ -459,12 +477,9 @@ DeleteVaultAccessPolicyOutcome GlacierClient::DeleteVaultAccessPolicy(const Dele
     AWS_LOGSTREAM_ERROR("DeleteVaultAccessPolicy", "Required field: VaultName, is not set");
     return DeleteVaultAccessPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/access-policy");
-  return DeleteVaultAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteVaultAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteVaultAccessPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteVaultAccessPolicyOutcomeCallable GlacierClient::DeleteVaultAccessPolicyCallable(const DeleteVaultAccessPolicyRequest& request) const
@@ -485,6 +500,7 @@ void GlacierClient::DeleteVaultAccessPolicyAsync(const DeleteVaultAccessPolicyRe
 
 DeleteVaultNotificationsOutcome GlacierClient::DeleteVaultNotifications(const DeleteVaultNotificationsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVaultNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteVaultNotifications", "Required field: AccountId, is not set");
@@ -495,12 +511,9 @@ DeleteVaultNotificationsOutcome GlacierClient::DeleteVaultNotifications(const De
     AWS_LOGSTREAM_ERROR("DeleteVaultNotifications", "Required field: VaultName, is not set");
     return DeleteVaultNotificationsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/notification-configuration");
-  return DeleteVaultNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteVaultNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteVaultNotificationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteVaultNotificationsOutcomeCallable GlacierClient::DeleteVaultNotificationsCallable(const DeleteVaultNotificationsRequest& request) const
@@ -521,6 +534,7 @@ void GlacierClient::DeleteVaultNotificationsAsync(const DeleteVaultNotifications
 
 DescribeJobOutcome GlacierClient::DescribeJob(const DescribeJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeJob", "Required field: AccountId, is not set");
@@ -536,13 +550,9 @@ DescribeJobOutcome GlacierClient::DescribeJob(const DescribeJobRequest& request)
     AWS_LOGSTREAM_ERROR("DescribeJob", "Required field: JobId, is not set");
     return DescribeJobOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/jobs/");
-  uri.AddPathSegment(request.GetJobId());
-  return DescribeJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeJobOutcomeCallable GlacierClient::DescribeJobCallable(const DescribeJobRequest& request) const
@@ -563,6 +573,7 @@ void GlacierClient::DescribeJobAsync(const DescribeJobRequest& request, const De
 
 DescribeVaultOutcome GlacierClient::DescribeVault(const DescribeVaultRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeVault", "Required field: AccountId, is not set");
@@ -573,11 +584,9 @@ DescribeVaultOutcome GlacierClient::DescribeVault(const DescribeVaultRequest& re
     AWS_LOGSTREAM_ERROR("DescribeVault", "Required field: VaultName, is not set");
     return DescribeVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  return DescribeVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeVaultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeVaultOutcomeCallable GlacierClient::DescribeVaultCallable(const DescribeVaultRequest& request) const
@@ -598,15 +607,15 @@ void GlacierClient::DescribeVaultAsync(const DescribeVaultRequest& request, cons
 
 GetDataRetrievalPolicyOutcome GlacierClient::GetDataRetrievalPolicy(const GetDataRetrievalPolicyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataRetrievalPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDataRetrievalPolicy", "Required field: AccountId, is not set");
     return GetDataRetrievalPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/policies/data-retrieval");
-  return GetDataRetrievalPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataRetrievalPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDataRetrievalPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDataRetrievalPolicyOutcomeCallable GlacierClient::GetDataRetrievalPolicyCallable(const GetDataRetrievalPolicyRequest& request) const
@@ -627,6 +636,7 @@ void GlacierClient::GetDataRetrievalPolicyAsync(const GetDataRetrievalPolicyRequ
 
 GetJobOutputOutcome GlacierClient::GetJobOutput(const GetJobOutputRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJobOutput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetJobOutput", "Required field: AccountId, is not set");
@@ -642,14 +652,9 @@ GetJobOutputOutcome GlacierClient::GetJobOutput(const GetJobOutputRequest& reque
     AWS_LOGSTREAM_ERROR("GetJobOutput", "Required field: JobId, is not set");
     return GetJobOutputOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/jobs/");
-  uri.AddPathSegment(request.GetJobId());
-  uri.AddPathSegments("/output");
-  return GetJobOutputOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetJobOutput, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetJobOutputOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetJobOutputOutcomeCallable GlacierClient::GetJobOutputCallable(const GetJobOutputRequest& request) const
@@ -670,6 +675,7 @@ void GlacierClient::GetJobOutputAsync(const GetJobOutputRequest& request, const 
 
 GetVaultAccessPolicyOutcome GlacierClient::GetVaultAccessPolicy(const GetVaultAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVaultAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetVaultAccessPolicy", "Required field: AccountId, is not set");
@@ -680,12 +686,9 @@ GetVaultAccessPolicyOutcome GlacierClient::GetVaultAccessPolicy(const GetVaultAc
     AWS_LOGSTREAM_ERROR("GetVaultAccessPolicy", "Required field: VaultName, is not set");
     return GetVaultAccessPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/access-policy");
-  return GetVaultAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetVaultAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetVaultAccessPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetVaultAccessPolicyOutcomeCallable GlacierClient::GetVaultAccessPolicyCallable(const GetVaultAccessPolicyRequest& request) const
@@ -706,6 +709,7 @@ void GlacierClient::GetVaultAccessPolicyAsync(const GetVaultAccessPolicyRequest&
 
 GetVaultLockOutcome GlacierClient::GetVaultLock(const GetVaultLockRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVaultLock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetVaultLock", "Required field: AccountId, is not set");
@@ -716,12 +720,9 @@ GetVaultLockOutcome GlacierClient::GetVaultLock(const GetVaultLockRequest& reque
     AWS_LOGSTREAM_ERROR("GetVaultLock", "Required field: VaultName, is not set");
     return GetVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/lock-policy");
-  return GetVaultLockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetVaultLock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetVaultLockOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetVaultLockOutcomeCallable GlacierClient::GetVaultLockCallable(const GetVaultLockRequest& request) const
@@ -742,6 +743,7 @@ void GlacierClient::GetVaultLockAsync(const GetVaultLockRequest& request, const 
 
 GetVaultNotificationsOutcome GlacierClient::GetVaultNotifications(const GetVaultNotificationsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVaultNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetVaultNotifications", "Required field: AccountId, is not set");
@@ -752,12 +754,9 @@ GetVaultNotificationsOutcome GlacierClient::GetVaultNotifications(const GetVault
     AWS_LOGSTREAM_ERROR("GetVaultNotifications", "Required field: VaultName, is not set");
     return GetVaultNotificationsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/notification-configuration");
-  return GetVaultNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetVaultNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetVaultNotificationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetVaultNotificationsOutcomeCallable GlacierClient::GetVaultNotificationsCallable(const GetVaultNotificationsRequest& request) const
@@ -778,6 +777,7 @@ void GlacierClient::GetVaultNotificationsAsync(const GetVaultNotificationsReques
 
 InitiateJobOutcome GlacierClient::InitiateJob(const InitiateJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, InitiateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("InitiateJob", "Required field: AccountId, is not set");
@@ -788,12 +788,9 @@ InitiateJobOutcome GlacierClient::InitiateJob(const InitiateJobRequest& request)
     AWS_LOGSTREAM_ERROR("InitiateJob", "Required field: VaultName, is not set");
     return InitiateJobOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/jobs");
-  return InitiateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InitiateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return InitiateJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 InitiateJobOutcomeCallable GlacierClient::InitiateJobCallable(const InitiateJobRequest& request) const
@@ -814,6 +811,7 @@ void GlacierClient::InitiateJobAsync(const InitiateJobRequest& request, const In
 
 InitiateMultipartUploadOutcome GlacierClient::InitiateMultipartUpload(const InitiateMultipartUploadRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, InitiateMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("InitiateMultipartUpload", "Required field: AccountId, is not set");
@@ -824,12 +822,9 @@ InitiateMultipartUploadOutcome GlacierClient::InitiateMultipartUpload(const Init
     AWS_LOGSTREAM_ERROR("InitiateMultipartUpload", "Required field: VaultName, is not set");
     return InitiateMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/multipart-uploads");
-  return InitiateMultipartUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InitiateMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return InitiateMultipartUploadOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 InitiateMultipartUploadOutcomeCallable GlacierClient::InitiateMultipartUploadCallable(const InitiateMultipartUploadRequest& request) const
@@ -850,6 +845,7 @@ void GlacierClient::InitiateMultipartUploadAsync(const InitiateMultipartUploadRe
 
 InitiateVaultLockOutcome GlacierClient::InitiateVaultLock(const InitiateVaultLockRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, InitiateVaultLock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("InitiateVaultLock", "Required field: AccountId, is not set");
@@ -860,12 +856,9 @@ InitiateVaultLockOutcome GlacierClient::InitiateVaultLock(const InitiateVaultLoc
     AWS_LOGSTREAM_ERROR("InitiateVaultLock", "Required field: VaultName, is not set");
     return InitiateVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/lock-policy");
-  return InitiateVaultLockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InitiateVaultLock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return InitiateVaultLockOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 InitiateVaultLockOutcomeCallable GlacierClient::InitiateVaultLockCallable(const InitiateVaultLockRequest& request) const
@@ -886,6 +879,7 @@ void GlacierClient::InitiateVaultLockAsync(const InitiateVaultLockRequest& reque
 
 ListJobsOutcome GlacierClient::ListJobs(const ListJobsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListJobs", "Required field: AccountId, is not set");
@@ -896,12 +890,9 @@ ListJobsOutcome GlacierClient::ListJobs(const ListJobsRequest& request) const
     AWS_LOGSTREAM_ERROR("ListJobs", "Required field: VaultName, is not set");
     return ListJobsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/jobs");
-  return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListJobsOutcomeCallable GlacierClient::ListJobsCallable(const ListJobsRequest& request) const
@@ -922,6 +913,7 @@ void GlacierClient::ListJobsAsync(const ListJobsRequest& request, const ListJobs
 
 ListMultipartUploadsOutcome GlacierClient::ListMultipartUploads(const ListMultipartUploadsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMultipartUploads, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListMultipartUploads", "Required field: AccountId, is not set");
@@ -932,12 +924,9 @@ ListMultipartUploadsOutcome GlacierClient::ListMultipartUploads(const ListMultip
     AWS_LOGSTREAM_ERROR("ListMultipartUploads", "Required field: VaultName, is not set");
     return ListMultipartUploadsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/multipart-uploads");
-  return ListMultipartUploadsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMultipartUploads, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListMultipartUploadsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListMultipartUploadsOutcomeCallable GlacierClient::ListMultipartUploadsCallable(const ListMultipartUploadsRequest& request) const
@@ -958,6 +947,7 @@ void GlacierClient::ListMultipartUploadsAsync(const ListMultipartUploadsRequest&
 
 ListPartsOutcome GlacierClient::ListParts(const ListPartsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListParts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListParts", "Required field: AccountId, is not set");
@@ -973,13 +963,9 @@ ListPartsOutcome GlacierClient::ListParts(const ListPartsRequest& request) const
     AWS_LOGSTREAM_ERROR("ListParts", "Required field: UploadId, is not set");
     return ListPartsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/multipart-uploads/");
-  uri.AddPathSegment(request.GetUploadId());
-  return ListPartsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListParts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListPartsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPartsOutcomeCallable GlacierClient::ListPartsCallable(const ListPartsRequest& request) const
@@ -1000,15 +986,15 @@ void GlacierClient::ListPartsAsync(const ListPartsRequest& request, const ListPa
 
 ListProvisionedCapacityOutcome GlacierClient::ListProvisionedCapacity(const ListProvisionedCapacityRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProvisionedCapacity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListProvisionedCapacity", "Required field: AccountId, is not set");
     return ListProvisionedCapacityOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/provisioned-capacity");
-  return ListProvisionedCapacityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProvisionedCapacity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListProvisionedCapacityOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListProvisionedCapacityOutcomeCallable GlacierClient::ListProvisionedCapacityCallable(const ListProvisionedCapacityRequest& request) const
@@ -1029,6 +1015,7 @@ void GlacierClient::ListProvisionedCapacityAsync(const ListProvisionedCapacityRe
 
 ListTagsForVaultOutcome GlacierClient::ListTagsForVault(const ListTagsForVaultRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTagsForVault", "Required field: AccountId, is not set");
@@ -1039,12 +1026,9 @@ ListTagsForVaultOutcome GlacierClient::ListTagsForVault(const ListTagsForVaultRe
     AWS_LOGSTREAM_ERROR("ListTagsForVault", "Required field: VaultName, is not set");
     return ListTagsForVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/tags");
-  return ListTagsForVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTagsForVaultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForVaultOutcomeCallable GlacierClient::ListTagsForVaultCallable(const ListTagsForVaultRequest& request) const
@@ -1065,15 +1049,15 @@ void GlacierClient::ListTagsForVaultAsync(const ListTagsForVaultRequest& request
 
 ListVaultsOutcome GlacierClient::ListVaults(const ListVaultsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVaults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListVaults", "Required field: AccountId, is not set");
     return ListVaultsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults");
-  return ListVaultsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVaults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListVaultsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListVaultsOutcomeCallable GlacierClient::ListVaultsCallable(const ListVaultsRequest& request) const
@@ -1094,15 +1078,15 @@ void GlacierClient::ListVaultsAsync(const ListVaultsRequest& request, const List
 
 PurchaseProvisionedCapacityOutcome GlacierClient::PurchaseProvisionedCapacity(const PurchaseProvisionedCapacityRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PurchaseProvisionedCapacity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PurchaseProvisionedCapacity", "Required field: AccountId, is not set");
     return PurchaseProvisionedCapacityOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/provisioned-capacity");
-  return PurchaseProvisionedCapacityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PurchaseProvisionedCapacity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PurchaseProvisionedCapacityOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PurchaseProvisionedCapacityOutcomeCallable GlacierClient::PurchaseProvisionedCapacityCallable(const PurchaseProvisionedCapacityRequest& request) const
@@ -1123,6 +1107,7 @@ void GlacierClient::PurchaseProvisionedCapacityAsync(const PurchaseProvisionedCa
 
 RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFromVaultRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveTagsFromVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("RemoveTagsFromVault", "Required field: AccountId, is not set");
@@ -1133,15 +1118,9 @@ RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFr
     AWS_LOGSTREAM_ERROR("RemoveTagsFromVault", "Required field: VaultName, is not set");
     return RemoveTagsFromVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/tags");
-  ss.str("?operation=remove");
-  uri.SetQueryString(ss.str());
-  return RemoveTagsFromVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveTagsFromVault, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return RemoveTagsFromVaultOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveTagsFromVaultOutcomeCallable GlacierClient::RemoveTagsFromVaultCallable(const RemoveTagsFromVaultRequest& request) const
@@ -1162,15 +1141,15 @@ void GlacierClient::RemoveTagsFromVaultAsync(const RemoveTagsFromVaultRequest& r
 
 SetDataRetrievalPolicyOutcome GlacierClient::SetDataRetrievalPolicy(const SetDataRetrievalPolicyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetDataRetrievalPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("SetDataRetrievalPolicy", "Required field: AccountId, is not set");
     return SetDataRetrievalPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/policies/data-retrieval");
-  return SetDataRetrievalPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetDataRetrievalPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return SetDataRetrievalPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetDataRetrievalPolicyOutcomeCallable GlacierClient::SetDataRetrievalPolicyCallable(const SetDataRetrievalPolicyRequest& request) const
@@ -1191,6 +1170,7 @@ void GlacierClient::SetDataRetrievalPolicyAsync(const SetDataRetrievalPolicyRequ
 
 SetVaultAccessPolicyOutcome GlacierClient::SetVaultAccessPolicy(const SetVaultAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetVaultAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("SetVaultAccessPolicy", "Required field: AccountId, is not set");
@@ -1201,12 +1181,9 @@ SetVaultAccessPolicyOutcome GlacierClient::SetVaultAccessPolicy(const SetVaultAc
     AWS_LOGSTREAM_ERROR("SetVaultAccessPolicy", "Required field: VaultName, is not set");
     return SetVaultAccessPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/access-policy");
-  return SetVaultAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetVaultAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return SetVaultAccessPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetVaultAccessPolicyOutcomeCallable GlacierClient::SetVaultAccessPolicyCallable(const SetVaultAccessPolicyRequest& request) const
@@ -1227,6 +1204,7 @@ void GlacierClient::SetVaultAccessPolicyAsync(const SetVaultAccessPolicyRequest&
 
 SetVaultNotificationsOutcome GlacierClient::SetVaultNotifications(const SetVaultNotificationsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetVaultNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("SetVaultNotifications", "Required field: AccountId, is not set");
@@ -1237,12 +1215,9 @@ SetVaultNotificationsOutcome GlacierClient::SetVaultNotifications(const SetVault
     AWS_LOGSTREAM_ERROR("SetVaultNotifications", "Required field: VaultName, is not set");
     return SetVaultNotificationsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/notification-configuration");
-  return SetVaultNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetVaultNotifications, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return SetVaultNotificationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetVaultNotificationsOutcomeCallable GlacierClient::SetVaultNotificationsCallable(const SetVaultNotificationsRequest& request) const
@@ -1263,6 +1238,7 @@ void GlacierClient::SetVaultNotificationsAsync(const SetVaultNotificationsReques
 
 UploadArchiveOutcome GlacierClient::UploadArchive(const UploadArchiveRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UploadArchive, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VaultNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UploadArchive", "Required field: VaultName, is not set");
@@ -1273,12 +1249,9 @@ UploadArchiveOutcome GlacierClient::UploadArchive(const UploadArchiveRequest& re
     AWS_LOGSTREAM_ERROR("UploadArchive", "Required field: AccountId, is not set");
     return UploadArchiveOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/archives");
-  return UploadArchiveOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UploadArchive, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UploadArchiveOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UploadArchiveOutcomeCallable GlacierClient::UploadArchiveCallable(const UploadArchiveRequest& request) const
@@ -1299,6 +1272,7 @@ void GlacierClient::UploadArchiveAsync(const UploadArchiveRequest& request, cons
 
 UploadMultipartPartOutcome GlacierClient::UploadMultipartPart(const UploadMultipartPartRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UploadMultipartPart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccountIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UploadMultipartPart", "Required field: AccountId, is not set");
@@ -1314,13 +1288,9 @@ UploadMultipartPartOutcome GlacierClient::UploadMultipartPart(const UploadMultip
     AWS_LOGSTREAM_ERROR("UploadMultipartPart", "Required field: UploadId, is not set");
     return UploadMultipartPartOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegment(request.GetAccountId());
-  uri.AddPathSegments("/vaults/");
-  uri.AddPathSegment(request.GetVaultName());
-  uri.AddPathSegments("/multipart-uploads/");
-  uri.AddPathSegment(request.GetUploadId());
-  return UploadMultipartPartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UploadMultipartPart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UploadMultipartPartOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UploadMultipartPartOutcomeCallable GlacierClient::UploadMultipartPartCallable(const UploadMultipartPartRequest& request) const

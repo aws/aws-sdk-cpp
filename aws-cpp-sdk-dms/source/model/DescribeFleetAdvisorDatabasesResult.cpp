@@ -30,7 +30,7 @@ DescribeFleetAdvisorDatabasesResult& DescribeFleetAdvisorDatabasesResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Databases"))
   {
-    Array<JsonView> databasesJsonList = jsonValue.GetArray("Databases");
+    Aws::Utils::Array<JsonView> databasesJsonList = jsonValue.GetArray("Databases");
     for(unsigned databasesIndex = 0; databasesIndex < databasesJsonList.GetLength(); ++databasesIndex)
     {
       m_databases.push_back(databasesJsonList[databasesIndex].AsObject());

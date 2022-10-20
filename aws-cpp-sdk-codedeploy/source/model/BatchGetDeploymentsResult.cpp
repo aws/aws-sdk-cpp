@@ -30,7 +30,7 @@ BatchGetDeploymentsResult& BatchGetDeploymentsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deploymentsInfo"))
   {
-    Array<JsonView> deploymentsInfoJsonList = jsonValue.GetArray("deploymentsInfo");
+    Aws::Utils::Array<JsonView> deploymentsInfoJsonList = jsonValue.GetArray("deploymentsInfo");
     for(unsigned deploymentsInfoIndex = 0; deploymentsInfoIndex < deploymentsInfoJsonList.GetLength(); ++deploymentsInfoIndex)
     {
       m_deploymentsInfo.push_back(deploymentsInfoJsonList[deploymentsInfoIndex].AsObject());

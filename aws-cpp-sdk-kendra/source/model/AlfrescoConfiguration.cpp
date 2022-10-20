@@ -103,7 +103,7 @@ AlfrescoConfiguration& AlfrescoConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EntityFilter"))
   {
-    Array<JsonView> entityFilterJsonList = jsonValue.GetArray("EntityFilter");
+    Aws::Utils::Array<JsonView> entityFilterJsonList = jsonValue.GetArray("EntityFilter");
     for(unsigned entityFilterIndex = 0; entityFilterIndex < entityFilterJsonList.GetLength(); ++entityFilterIndex)
     {
       m_entityFilter.push_back(AlfrescoEntityMapper::GetAlfrescoEntityForName(entityFilterJsonList[entityFilterIndex].AsString()));
@@ -113,7 +113,7 @@ AlfrescoConfiguration& AlfrescoConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DocumentLibraryFieldMappings"))
   {
-    Array<JsonView> documentLibraryFieldMappingsJsonList = jsonValue.GetArray("DocumentLibraryFieldMappings");
+    Aws::Utils::Array<JsonView> documentLibraryFieldMappingsJsonList = jsonValue.GetArray("DocumentLibraryFieldMappings");
     for(unsigned documentLibraryFieldMappingsIndex = 0; documentLibraryFieldMappingsIndex < documentLibraryFieldMappingsJsonList.GetLength(); ++documentLibraryFieldMappingsIndex)
     {
       m_documentLibraryFieldMappings.push_back(documentLibraryFieldMappingsJsonList[documentLibraryFieldMappingsIndex].AsObject());
@@ -123,7 +123,7 @@ AlfrescoConfiguration& AlfrescoConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("BlogFieldMappings"))
   {
-    Array<JsonView> blogFieldMappingsJsonList = jsonValue.GetArray("BlogFieldMappings");
+    Aws::Utils::Array<JsonView> blogFieldMappingsJsonList = jsonValue.GetArray("BlogFieldMappings");
     for(unsigned blogFieldMappingsIndex = 0; blogFieldMappingsIndex < blogFieldMappingsJsonList.GetLength(); ++blogFieldMappingsIndex)
     {
       m_blogFieldMappings.push_back(blogFieldMappingsJsonList[blogFieldMappingsIndex].AsObject());
@@ -133,7 +133,7 @@ AlfrescoConfiguration& AlfrescoConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("WikiFieldMappings"))
   {
-    Array<JsonView> wikiFieldMappingsJsonList = jsonValue.GetArray("WikiFieldMappings");
+    Aws::Utils::Array<JsonView> wikiFieldMappingsJsonList = jsonValue.GetArray("WikiFieldMappings");
     for(unsigned wikiFieldMappingsIndex = 0; wikiFieldMappingsIndex < wikiFieldMappingsJsonList.GetLength(); ++wikiFieldMappingsIndex)
     {
       m_wikiFieldMappings.push_back(wikiFieldMappingsJsonList[wikiFieldMappingsIndex].AsObject());
@@ -143,7 +143,7 @@ AlfrescoConfiguration& AlfrescoConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
-    Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
+    Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
     for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
     {
       m_inclusionPatterns.push_back(inclusionPatternsJsonList[inclusionPatternsIndex].AsString());
@@ -153,7 +153,7 @@ AlfrescoConfiguration& AlfrescoConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
-    Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
+    Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
     for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
     {
       m_exclusionPatterns.push_back(exclusionPatternsJsonList[exclusionPatternsIndex].AsString());
@@ -213,7 +213,7 @@ JsonValue AlfrescoConfiguration::Jsonize() const
 
   if(m_entityFilterHasBeenSet)
   {
-   Array<JsonValue> entityFilterJsonList(m_entityFilter.size());
+   Aws::Utils::Array<JsonValue> entityFilterJsonList(m_entityFilter.size());
    for(unsigned entityFilterIndex = 0; entityFilterIndex < entityFilterJsonList.GetLength(); ++entityFilterIndex)
    {
      entityFilterJsonList[entityFilterIndex].AsString(AlfrescoEntityMapper::GetNameForAlfrescoEntity(m_entityFilter[entityFilterIndex]));
@@ -224,7 +224,7 @@ JsonValue AlfrescoConfiguration::Jsonize() const
 
   if(m_documentLibraryFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> documentLibraryFieldMappingsJsonList(m_documentLibraryFieldMappings.size());
+   Aws::Utils::Array<JsonValue> documentLibraryFieldMappingsJsonList(m_documentLibraryFieldMappings.size());
    for(unsigned documentLibraryFieldMappingsIndex = 0; documentLibraryFieldMappingsIndex < documentLibraryFieldMappingsJsonList.GetLength(); ++documentLibraryFieldMappingsIndex)
    {
      documentLibraryFieldMappingsJsonList[documentLibraryFieldMappingsIndex].AsObject(m_documentLibraryFieldMappings[documentLibraryFieldMappingsIndex].Jsonize());
@@ -235,7 +235,7 @@ JsonValue AlfrescoConfiguration::Jsonize() const
 
   if(m_blogFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> blogFieldMappingsJsonList(m_blogFieldMappings.size());
+   Aws::Utils::Array<JsonValue> blogFieldMappingsJsonList(m_blogFieldMappings.size());
    for(unsigned blogFieldMappingsIndex = 0; blogFieldMappingsIndex < blogFieldMappingsJsonList.GetLength(); ++blogFieldMappingsIndex)
    {
      blogFieldMappingsJsonList[blogFieldMappingsIndex].AsObject(m_blogFieldMappings[blogFieldMappingsIndex].Jsonize());
@@ -246,7 +246,7 @@ JsonValue AlfrescoConfiguration::Jsonize() const
 
   if(m_wikiFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> wikiFieldMappingsJsonList(m_wikiFieldMappings.size());
+   Aws::Utils::Array<JsonValue> wikiFieldMappingsJsonList(m_wikiFieldMappings.size());
    for(unsigned wikiFieldMappingsIndex = 0; wikiFieldMappingsIndex < wikiFieldMappingsJsonList.GetLength(); ++wikiFieldMappingsIndex)
    {
      wikiFieldMappingsJsonList[wikiFieldMappingsIndex].AsObject(m_wikiFieldMappings[wikiFieldMappingsIndex].Jsonize());
@@ -257,7 +257,7 @@ JsonValue AlfrescoConfiguration::Jsonize() const
 
   if(m_inclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
    for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
    {
      inclusionPatternsJsonList[inclusionPatternsIndex].AsString(m_inclusionPatterns[inclusionPatternsIndex]);
@@ -268,7 +268,7 @@ JsonValue AlfrescoConfiguration::Jsonize() const
 
   if(m_exclusionPatternsHasBeenSet)
   {
-   Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
+   Aws::Utils::Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
    for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
    {
      exclusionPatternsJsonList[exclusionPatternsIndex].AsString(m_exclusionPatterns[exclusionPatternsIndex]);

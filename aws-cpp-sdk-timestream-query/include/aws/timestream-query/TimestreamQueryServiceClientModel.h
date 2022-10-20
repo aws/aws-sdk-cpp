@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/timestream-query/TimestreamQueryEndpointProvider.h>
 #include <aws/core/utils/ConcurrentCache.h>
 #include <future>
 #include <functional>
@@ -61,6 +62,10 @@ namespace Aws
 
   namespace TimestreamQuery
   {
+    namespace Endpoint
+    {
+      class TimestreamQueryEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in TimestreamQueryClient header */

@@ -56,7 +56,7 @@ GetBotResult& GetBotResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   if(jsonValue.ValueExists("intents"))
   {
-    Array<JsonView> intentsJsonList = jsonValue.GetArray("intents");
+    Aws::Utils::Array<JsonView> intentsJsonList = jsonValue.GetArray("intents");
     for(unsigned intentsIndex = 0; intentsIndex < intentsJsonList.GetLength(); ++intentsIndex)
     {
       m_intents.push_back(intentsJsonList[intentsIndex].AsObject());

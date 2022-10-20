@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/KafkaEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

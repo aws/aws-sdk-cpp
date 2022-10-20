@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/logs/CloudWatchLogsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -74,6 +75,10 @@ namespace Aws
 
   namespace CloudWatchLogs
   {
+    namespace Endpoint
+    {
+      class CloudWatchLogsEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in CloudWatchLogsClient header */

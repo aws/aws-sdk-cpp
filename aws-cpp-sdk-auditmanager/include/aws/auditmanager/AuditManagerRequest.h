@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/auditmanager/AuditManager_EXPORTS.h>
+#include <aws/auditmanager/AuditManagerEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

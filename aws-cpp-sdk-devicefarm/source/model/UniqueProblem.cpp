@@ -42,7 +42,7 @@ UniqueProblem& UniqueProblem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("problems"))
   {
-    Array<JsonView> problemsJsonList = jsonValue.GetArray("problems");
+    Aws::Utils::Array<JsonView> problemsJsonList = jsonValue.GetArray("problems");
     for(unsigned problemsIndex = 0; problemsIndex < problemsJsonList.GetLength(); ++problemsIndex)
     {
       m_problems.push_back(problemsJsonList[problemsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue UniqueProblem::Jsonize() const
 
   if(m_problemsHasBeenSet)
   {
-   Array<JsonValue> problemsJsonList(m_problems.size());
+   Aws::Utils::Array<JsonValue> problemsJsonList(m_problems.size());
    for(unsigned problemsIndex = 0; problemsIndex < problemsJsonList.GetLength(); ++problemsIndex)
    {
      problemsJsonList[problemsIndex].AsObject(m_problems[problemsIndex].Jsonize());

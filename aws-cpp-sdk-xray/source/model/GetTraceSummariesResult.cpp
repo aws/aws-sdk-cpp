@@ -32,7 +32,7 @@ GetTraceSummariesResult& GetTraceSummariesResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TraceSummaries"))
   {
-    Array<JsonView> traceSummariesJsonList = jsonValue.GetArray("TraceSummaries");
+    Aws::Utils::Array<JsonView> traceSummariesJsonList = jsonValue.GetArray("TraceSummaries");
     for(unsigned traceSummariesIndex = 0; traceSummariesIndex < traceSummariesJsonList.GetLength(); ++traceSummariesIndex)
     {
       m_traceSummaries.push_back(traceSummariesJsonList[traceSummariesIndex].AsObject());

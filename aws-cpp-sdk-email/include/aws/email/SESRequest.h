@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/email/SES_EXPORTS.h>
+#include <aws/email/SESEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

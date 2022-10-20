@@ -32,7 +32,7 @@ Aws::String CreateContactListRequest::SerializePayload() const
 
   if(m_topicsHasBeenSet)
   {
-   Array<JsonValue> topicsJsonList(m_topics.size());
+   Aws::Utils::Array<JsonValue> topicsJsonList(m_topics.size());
    for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
    {
      topicsJsonList[topicsIndex].AsObject(m_topics[topicsIndex].Jsonize());
@@ -49,7 +49,7 @@ Aws::String CreateContactListRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

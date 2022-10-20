@@ -30,7 +30,7 @@ ListResourceRequestsResult& ListResourceRequestsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceRequestStatusSummaries"))
   {
-    Array<JsonView> resourceRequestStatusSummariesJsonList = jsonValue.GetArray("ResourceRequestStatusSummaries");
+    Aws::Utils::Array<JsonView> resourceRequestStatusSummariesJsonList = jsonValue.GetArray("ResourceRequestStatusSummaries");
     for(unsigned resourceRequestStatusSummariesIndex = 0; resourceRequestStatusSummariesIndex < resourceRequestStatusSummariesJsonList.GetLength(); ++resourceRequestStatusSummariesIndex)
     {
       m_resourceRequestStatusSummaries.push_back(resourceRequestStatusSummariesJsonList[resourceRequestStatusSummariesIndex].AsObject());

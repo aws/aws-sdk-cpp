@@ -42,7 +42,7 @@ FailedRemediationBatch& FailedRemediationBatch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FailedItems"))
   {
-    Array<JsonView> failedItemsJsonList = jsonValue.GetArray("FailedItems");
+    Aws::Utils::Array<JsonView> failedItemsJsonList = jsonValue.GetArray("FailedItems");
     for(unsigned failedItemsIndex = 0; failedItemsIndex < failedItemsJsonList.GetLength(); ++failedItemsIndex)
     {
       m_failedItems.push_back(failedItemsJsonList[failedItemsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue FailedRemediationBatch::Jsonize() const
 
   if(m_failedItemsHasBeenSet)
   {
-   Array<JsonValue> failedItemsJsonList(m_failedItems.size());
+   Aws::Utils::Array<JsonValue> failedItemsJsonList(m_failedItems.size());
    for(unsigned failedItemsIndex = 0; failedItemsIndex < failedItemsJsonList.GetLength(); ++failedItemsIndex)
    {
      failedItemsJsonList[failedItemsIndex].AsObject(m_failedItems[failedItemsIndex].Jsonize());

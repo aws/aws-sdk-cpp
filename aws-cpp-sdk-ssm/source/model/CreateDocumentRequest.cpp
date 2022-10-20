@@ -40,7 +40,7 @@ Aws::String CreateDocumentRequest::SerializePayload() const
 
   if(m_requiresHasBeenSet)
   {
-   Array<JsonValue> requiresJsonList(m_requires.size());
+   Aws::Utils::Array<JsonValue> requiresJsonList(m_requires.size());
    for(unsigned requiresIndex = 0; requiresIndex < requiresJsonList.GetLength(); ++requiresIndex)
    {
      requiresJsonList[requiresIndex].AsObject(m_requires[requiresIndex].Jsonize());
@@ -51,7 +51,7 @@ Aws::String CreateDocumentRequest::SerializePayload() const
 
   if(m_attachmentsHasBeenSet)
   {
-   Array<JsonValue> attachmentsJsonList(m_attachments.size());
+   Aws::Utils::Array<JsonValue> attachmentsJsonList(m_attachments.size());
    for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
    {
      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
@@ -96,7 +96,7 @@ Aws::String CreateDocumentRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

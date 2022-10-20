@@ -32,7 +32,7 @@ ListFolderMembersResult& ListFolderMembersResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FolderMemberList"))
   {
-    Array<JsonView> folderMemberListJsonList = jsonValue.GetArray("FolderMemberList");
+    Aws::Utils::Array<JsonView> folderMemberListJsonList = jsonValue.GetArray("FolderMemberList");
     for(unsigned folderMemberListIndex = 0; folderMemberListIndex < folderMemberListJsonList.GetLength(); ++folderMemberListIndex)
     {
       m_folderMemberList.push_back(folderMemberListJsonList[folderMemberListIndex].AsObject());

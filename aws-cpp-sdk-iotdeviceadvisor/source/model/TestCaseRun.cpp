@@ -116,7 +116,7 @@ TestCaseRun& TestCaseRun::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("testScenarios"))
   {
-    Array<JsonView> testScenariosJsonList = jsonValue.GetArray("testScenarios");
+    Aws::Utils::Array<JsonView> testScenariosJsonList = jsonValue.GetArray("testScenarios");
     for(unsigned testScenariosIndex = 0; testScenariosIndex < testScenariosJsonList.GetLength(); ++testScenariosIndex)
     {
       m_testScenarios.push_back(testScenariosJsonList[testScenariosIndex].AsObject());
@@ -184,7 +184,7 @@ JsonValue TestCaseRun::Jsonize() const
 
   if(m_testScenariosHasBeenSet)
   {
-   Array<JsonValue> testScenariosJsonList(m_testScenarios.size());
+   Aws::Utils::Array<JsonValue> testScenariosJsonList(m_testScenarios.size());
    for(unsigned testScenariosIndex = 0; testScenariosIndex < testScenariosJsonList.GetLength(); ++testScenariosIndex)
    {
      testScenariosJsonList[testScenariosIndex].AsObject(m_testScenarios[testScenariosIndex].Jsonize());

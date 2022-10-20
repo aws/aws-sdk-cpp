@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/states/SFNClient.h>
 #include <aws/states/SFNEndpoint.h>
 #include <aws/states/SFNErrorMarshaller.h>
+#include <aws/states/SFNEndpointProvider.h>
 #include <aws/states/model/CreateActivityRequest.h>
 #include <aws/states/model/CreateStateMachineRequest.h>
 #include <aws/states/model/DeleteActivityRequest.h>
@@ -51,19 +53,66 @@ using namespace Aws::SFN;
 using namespace Aws::SFN::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::SFN::Endpoint::SFNEndpointProvider::SFNResolveEndpointOutcome;
 
 
 const char* SFNClient::SERVICE_NAME = "states";
 const char* SFNClient::ALLOCATION_TAG = "SFNClient";
 
-SFNClient::SFNClient(const Client::ClientConfiguration& clientConfiguration) :
+SFNClient::SFNClient(const Client::ClientConfiguration& clientConfiguration,
+                     std::shared_ptr<Endpoint::SFNEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SFNErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+SFNClient::SFNClient(const AWSCredentials& credentials,
+                     std::shared_ptr<Endpoint::SFNEndpointProvider> endpointProvider,
+                     const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<SFNErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+SFNClient::SFNClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                     std::shared_ptr<Endpoint::SFNEndpointProvider> endpointProvider,
+                     const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<SFNErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  SFNClient::SFNClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<SFNErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<SFN::Endpoint::SFNEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -76,7 +125,8 @@ SFNClient::SFNClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SFNErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<SFN::Endpoint::SFNEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -89,11 +139,13 @@ SFNClient::SFNClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SFNErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<SFN::Endpoint::SFNEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 SFNClient::~SFNClient()
 {
 }
@@ -101,42 +153,21 @@ SFNClient::~SFNClient()
 void SFNClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("SFN");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  m_scheme = m_configScheme;
-  if (config.endpointOverride.empty())
-  {
-      m_baseUri = SFNEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
-  m_enableHostPrefixInjection = config.enableHostPrefixInjection;
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void SFNClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0)
-  {
-      m_scheme = "http";
-      m_baseUri = endpoint.substr(7);
-  }
-  else if (endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_scheme = "https";
-      m_baseUri = endpoint.substr(8);
-  }
-  else
-  {
-      m_scheme = m_configScheme;
-      m_baseUri = endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 CreateActivityOutcome SFNClient::CreateActivity(const CreateActivityRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return CreateActivityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateActivity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateActivity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateActivityOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateActivityOutcomeCallable SFNClient::CreateActivityCallable(const CreateActivityRequest& request) const
@@ -157,8 +188,10 @@ void SFNClient::CreateActivityAsync(const CreateActivityRequest& request, const 
 
 CreateStateMachineOutcome SFNClient::CreateStateMachine(const CreateStateMachineRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return CreateStateMachineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStateMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStateMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateStateMachineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateStateMachineOutcomeCallable SFNClient::CreateStateMachineCallable(const CreateStateMachineRequest& request) const
@@ -179,8 +212,10 @@ void SFNClient::CreateStateMachineAsync(const CreateStateMachineRequest& request
 
 DeleteActivityOutcome SFNClient::DeleteActivity(const DeleteActivityRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return DeleteActivityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteActivity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteActivity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteActivityOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteActivityOutcomeCallable SFNClient::DeleteActivityCallable(const DeleteActivityRequest& request) const
@@ -201,8 +236,10 @@ void SFNClient::DeleteActivityAsync(const DeleteActivityRequest& request, const 
 
 DeleteStateMachineOutcome SFNClient::DeleteStateMachine(const DeleteStateMachineRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return DeleteStateMachineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStateMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStateMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteStateMachineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteStateMachineOutcomeCallable SFNClient::DeleteStateMachineCallable(const DeleteStateMachineRequest& request) const
@@ -223,8 +260,10 @@ void SFNClient::DeleteStateMachineAsync(const DeleteStateMachineRequest& request
 
 DescribeActivityOutcome SFNClient::DescribeActivity(const DescribeActivityRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return DescribeActivityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeActivity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeActivity, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeActivityOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeActivityOutcomeCallable SFNClient::DescribeActivityCallable(const DescribeActivityRequest& request) const
@@ -245,8 +284,10 @@ void SFNClient::DescribeActivityAsync(const DescribeActivityRequest& request, co
 
 DescribeExecutionOutcome SFNClient::DescribeExecution(const DescribeExecutionRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return DescribeExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeExecutionOutcomeCallable SFNClient::DescribeExecutionCallable(const DescribeExecutionRequest& request) const
@@ -267,8 +308,10 @@ void SFNClient::DescribeExecutionAsync(const DescribeExecutionRequest& request, 
 
 DescribeStateMachineOutcome SFNClient::DescribeStateMachine(const DescribeStateMachineRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return DescribeStateMachineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStateMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStateMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeStateMachineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeStateMachineOutcomeCallable SFNClient::DescribeStateMachineCallable(const DescribeStateMachineRequest& request) const
@@ -289,8 +332,10 @@ void SFNClient::DescribeStateMachineAsync(const DescribeStateMachineRequest& req
 
 DescribeStateMachineForExecutionOutcome SFNClient::DescribeStateMachineForExecution(const DescribeStateMachineForExecutionRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return DescribeStateMachineForExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStateMachineForExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStateMachineForExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeStateMachineForExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeStateMachineForExecutionOutcomeCallable SFNClient::DescribeStateMachineForExecutionCallable(const DescribeStateMachineForExecutionRequest& request) const
@@ -311,8 +356,10 @@ void SFNClient::DescribeStateMachineForExecutionAsync(const DescribeStateMachine
 
 GetActivityTaskOutcome SFNClient::GetActivityTask(const GetActivityTaskRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return GetActivityTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetActivityTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetActivityTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetActivityTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetActivityTaskOutcomeCallable SFNClient::GetActivityTaskCallable(const GetActivityTaskRequest& request) const
@@ -333,8 +380,10 @@ void SFNClient::GetActivityTaskAsync(const GetActivityTaskRequest& request, cons
 
 GetExecutionHistoryOutcome SFNClient::GetExecutionHistory(const GetExecutionHistoryRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return GetExecutionHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExecutionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetExecutionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetExecutionHistoryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetExecutionHistoryOutcomeCallable SFNClient::GetExecutionHistoryCallable(const GetExecutionHistoryRequest& request) const
@@ -355,8 +404,10 @@ void SFNClient::GetExecutionHistoryAsync(const GetExecutionHistoryRequest& reque
 
 ListActivitiesOutcome SFNClient::ListActivities(const ListActivitiesRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return ListActivitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListActivities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListActivities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListActivitiesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListActivitiesOutcomeCallable SFNClient::ListActivitiesCallable(const ListActivitiesRequest& request) const
@@ -377,8 +428,10 @@ void SFNClient::ListActivitiesAsync(const ListActivitiesRequest& request, const 
 
 ListExecutionsOutcome SFNClient::ListExecutions(const ListExecutionsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return ListExecutionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListExecutionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListExecutionsOutcomeCallable SFNClient::ListExecutionsCallable(const ListExecutionsRequest& request) const
@@ -399,8 +452,10 @@ void SFNClient::ListExecutionsAsync(const ListExecutionsRequest& request, const 
 
 ListStateMachinesOutcome SFNClient::ListStateMachines(const ListStateMachinesRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return ListStateMachinesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStateMachines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStateMachines, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListStateMachinesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListStateMachinesOutcomeCallable SFNClient::ListStateMachinesCallable(const ListStateMachinesRequest& request) const
@@ -421,8 +476,10 @@ void SFNClient::ListStateMachinesAsync(const ListStateMachinesRequest& request, 
 
 ListTagsForResourceOutcome SFNClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable SFNClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -443,8 +500,10 @@ void SFNClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& reque
 
 SendTaskFailureOutcome SFNClient::SendTaskFailure(const SendTaskFailureRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return SendTaskFailureOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendTaskFailure, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendTaskFailure, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return SendTaskFailureOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SendTaskFailureOutcomeCallable SFNClient::SendTaskFailureCallable(const SendTaskFailureRequest& request) const
@@ -465,8 +524,10 @@ void SFNClient::SendTaskFailureAsync(const SendTaskFailureRequest& request, cons
 
 SendTaskHeartbeatOutcome SFNClient::SendTaskHeartbeat(const SendTaskHeartbeatRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return SendTaskHeartbeatOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendTaskHeartbeat, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendTaskHeartbeat, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return SendTaskHeartbeatOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SendTaskHeartbeatOutcomeCallable SFNClient::SendTaskHeartbeatCallable(const SendTaskHeartbeatRequest& request) const
@@ -487,8 +548,10 @@ void SFNClient::SendTaskHeartbeatAsync(const SendTaskHeartbeatRequest& request, 
 
 SendTaskSuccessOutcome SFNClient::SendTaskSuccess(const SendTaskSuccessRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return SendTaskSuccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendTaskSuccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendTaskSuccess, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return SendTaskSuccessOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SendTaskSuccessOutcomeCallable SFNClient::SendTaskSuccessCallable(const SendTaskSuccessRequest& request) const
@@ -509,8 +572,10 @@ void SFNClient::SendTaskSuccessAsync(const SendTaskSuccessRequest& request, cons
 
 StartExecutionOutcome SFNClient::StartExecution(const StartExecutionRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return StartExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartExecutionOutcomeCallable SFNClient::StartExecutionCallable(const StartExecutionRequest& request) const
@@ -531,17 +596,10 @@ void SFNClient::StartExecutionAsync(const StartExecutionRequest& request, const 
 
 StartSyncExecutionOutcome SFNClient::StartSyncExecution(const StartSyncExecutionRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("sync-" + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("StartSyncExecution", "Invalid DNS host: " << uri.GetAuthority());
-      return StartSyncExecutionOutcome(Aws::Client::AWSError<SFNErrors>(SFNErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  return StartSyncExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSyncExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSyncExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartSyncExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartSyncExecutionOutcomeCallable SFNClient::StartSyncExecutionCallable(const StartSyncExecutionRequest& request) const
@@ -562,8 +620,10 @@ void SFNClient::StartSyncExecutionAsync(const StartSyncExecutionRequest& request
 
 StopExecutionOutcome SFNClient::StopExecution(const StopExecutionRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return StopExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StopExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopExecutionOutcomeCallable SFNClient::StopExecutionCallable(const StopExecutionRequest& request) const
@@ -584,8 +644,10 @@ void SFNClient::StopExecutionAsync(const StopExecutionRequest& request, const St
 
 TagResourceOutcome SFNClient::TagResource(const TagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable SFNClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -606,8 +668,10 @@ void SFNClient::TagResourceAsync(const TagResourceRequest& request, const TagRes
 
 UntagResourceOutcome SFNClient::UntagResource(const UntagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable SFNClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -628,8 +692,10 @@ void SFNClient::UntagResourceAsync(const UntagResourceRequest& request, const Un
 
 UpdateStateMachineOutcome SFNClient::UpdateStateMachine(const UpdateStateMachineRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return UpdateStateMachineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStateMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStateMachine, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateStateMachineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateStateMachineOutcomeCallable SFNClient::UpdateStateMachineCallable(const UpdateStateMachineRequest& request) const

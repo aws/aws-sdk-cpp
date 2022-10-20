@@ -30,7 +30,7 @@ GetRelationalDatabaseParametersResult& GetRelationalDatabaseParametersResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("parameters"))
   {
-    Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
+    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
     for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());

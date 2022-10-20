@@ -30,7 +30,7 @@ ListApplicationSnapshotsResult& ListApplicationSnapshotsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SnapshotSummaries"))
   {
-    Array<JsonView> snapshotSummariesJsonList = jsonValue.GetArray("SnapshotSummaries");
+    Aws::Utils::Array<JsonView> snapshotSummariesJsonList = jsonValue.GetArray("SnapshotSummaries");
     for(unsigned snapshotSummariesIndex = 0; snapshotSummariesIndex < snapshotSummariesJsonList.GetLength(); ++snapshotSummariesIndex)
     {
       m_snapshotSummaries.push_back(snapshotSummariesJsonList[snapshotSummariesIndex].AsObject());

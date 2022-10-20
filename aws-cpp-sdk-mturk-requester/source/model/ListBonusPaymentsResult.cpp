@@ -44,7 +44,7 @@ ListBonusPaymentsResult& ListBonusPaymentsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("BonusPayments"))
   {
-    Array<JsonView> bonusPaymentsJsonList = jsonValue.GetArray("BonusPayments");
+    Aws::Utils::Array<JsonView> bonusPaymentsJsonList = jsonValue.GetArray("BonusPayments");
     for(unsigned bonusPaymentsIndex = 0; bonusPaymentsIndex < bonusPaymentsJsonList.GetLength(); ++bonusPaymentsIndex)
     {
       m_bonusPayments.push_back(bonusPaymentsJsonList[bonusPaymentsIndex].AsObject());

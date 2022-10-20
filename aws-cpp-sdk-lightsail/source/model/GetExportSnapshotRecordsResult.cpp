@@ -30,7 +30,7 @@ GetExportSnapshotRecordsResult& GetExportSnapshotRecordsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("exportSnapshotRecords"))
   {
-    Array<JsonView> exportSnapshotRecordsJsonList = jsonValue.GetArray("exportSnapshotRecords");
+    Aws::Utils::Array<JsonView> exportSnapshotRecordsJsonList = jsonValue.GetArray("exportSnapshotRecords");
     for(unsigned exportSnapshotRecordsIndex = 0; exportSnapshotRecordsIndex < exportSnapshotRecordsJsonList.GetLength(); ++exportSnapshotRecordsIndex)
     {
       m_exportSnapshotRecords.push_back(exportSnapshotRecordsJsonList[exportSnapshotRecordsIndex].AsObject());

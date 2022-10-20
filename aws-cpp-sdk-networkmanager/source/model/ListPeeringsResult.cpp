@@ -30,7 +30,7 @@ ListPeeringsResult& ListPeeringsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Peerings"))
   {
-    Array<JsonView> peeringsJsonList = jsonValue.GetArray("Peerings");
+    Aws::Utils::Array<JsonView> peeringsJsonList = jsonValue.GetArray("Peerings");
     for(unsigned peeringsIndex = 0; peeringsIndex < peeringsJsonList.GetLength(); ++peeringsIndex)
     {
       m_peerings.push_back(peeringsJsonList[peeringsIndex].AsObject());

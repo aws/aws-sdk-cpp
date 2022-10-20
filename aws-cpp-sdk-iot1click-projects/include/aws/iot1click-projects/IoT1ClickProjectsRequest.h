@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/iot1click-projects/IoT1ClickProjects_EXPORTS.h>
+#include <aws/iot1click-projects/IoT1ClickProjectsEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

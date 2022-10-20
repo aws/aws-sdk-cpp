@@ -30,7 +30,7 @@ Aws::String ListOrdersRequest::SerializePayload() const
    JsonValue filtersJsonMap;
    for(auto& filtersItem : m_filters)
    {
-     Array<JsonValue> orderFilterValuesJsonList(filtersItem.second.size());
+     Aws::Utils::Array<JsonValue> orderFilterValuesJsonList(filtersItem.second.size());
      for(unsigned orderFilterValuesIndex = 0; orderFilterValuesIndex < orderFilterValuesJsonList.GetLength(); ++orderFilterValuesIndex)
      {
        orderFilterValuesJsonList[orderFilterValuesIndex].AsString(filtersItem.second[orderFilterValuesIndex]);

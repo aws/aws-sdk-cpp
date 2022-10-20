@@ -44,7 +44,7 @@ ListAssignmentsForHITResult& ListAssignmentsForHITResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("Assignments"))
   {
-    Array<JsonView> assignmentsJsonList = jsonValue.GetArray("Assignments");
+    Aws::Utils::Array<JsonView> assignmentsJsonList = jsonValue.GetArray("Assignments");
     for(unsigned assignmentsIndex = 0; assignmentsIndex < assignmentsJsonList.GetLength(); ++assignmentsIndex)
     {
       m_assignments.push_back(assignmentsJsonList[assignmentsIndex].AsObject());

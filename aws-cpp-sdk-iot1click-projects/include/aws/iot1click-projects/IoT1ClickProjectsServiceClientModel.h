@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/iot1click-projects/IoT1ClickProjectsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -65,6 +66,10 @@ namespace Aws
 
   namespace IoT1ClickProjects
   {
+    namespace Endpoint
+    {
+      class IoT1ClickProjectsEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in IoT1ClickProjectsClient header */

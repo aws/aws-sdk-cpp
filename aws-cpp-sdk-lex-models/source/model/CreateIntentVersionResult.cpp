@@ -42,7 +42,7 @@ CreateIntentVersionResult& CreateIntentVersionResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("slots"))
   {
-    Array<JsonView> slotsJsonList = jsonValue.GetArray("slots");
+    Aws::Utils::Array<JsonView> slotsJsonList = jsonValue.GetArray("slots");
     for(unsigned slotsIndex = 0; slotsIndex < slotsJsonList.GetLength(); ++slotsIndex)
     {
       m_slots.push_back(slotsJsonList[slotsIndex].AsObject());
@@ -51,7 +51,7 @@ CreateIntentVersionResult& CreateIntentVersionResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("sampleUtterances"))
   {
-    Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
+    Aws::Utils::Array<JsonView> sampleUtterancesJsonList = jsonValue.GetArray("sampleUtterances");
     for(unsigned sampleUtterancesIndex = 0; sampleUtterancesIndex < sampleUtterancesJsonList.GetLength(); ++sampleUtterancesIndex)
     {
       m_sampleUtterances.push_back(sampleUtterancesJsonList[sampleUtterancesIndex].AsString());
@@ -132,7 +132,7 @@ CreateIntentVersionResult& CreateIntentVersionResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("inputContexts"))
   {
-    Array<JsonView> inputContextsJsonList = jsonValue.GetArray("inputContexts");
+    Aws::Utils::Array<JsonView> inputContextsJsonList = jsonValue.GetArray("inputContexts");
     for(unsigned inputContextsIndex = 0; inputContextsIndex < inputContextsJsonList.GetLength(); ++inputContextsIndex)
     {
       m_inputContexts.push_back(inputContextsJsonList[inputContextsIndex].AsObject());
@@ -141,7 +141,7 @@ CreateIntentVersionResult& CreateIntentVersionResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("outputContexts"))
   {
-    Array<JsonView> outputContextsJsonList = jsonValue.GetArray("outputContexts");
+    Aws::Utils::Array<JsonView> outputContextsJsonList = jsonValue.GetArray("outputContexts");
     for(unsigned outputContextsIndex = 0; outputContextsIndex < outputContextsJsonList.GetLength(); ++outputContextsIndex)
     {
       m_outputContexts.push_back(outputContextsJsonList[outputContextsIndex].AsObject());

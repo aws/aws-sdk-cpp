@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/connectcampaigns/ConnectCampaignsClient.h>
 #include <aws/connectcampaigns/ConnectCampaignsEndpoint.h>
 #include <aws/connectcampaigns/ConnectCampaignsErrorMarshaller.h>
+#include <aws/connectcampaigns/ConnectCampaignsEndpointProvider.h>
 #include <aws/connectcampaigns/model/CreateCampaignRequest.h>
 #include <aws/connectcampaigns/model/DeleteCampaignRequest.h>
 #include <aws/connectcampaigns/model/DeleteConnectInstanceConfigRequest.h>
@@ -50,19 +52,66 @@ using namespace Aws::ConnectCampaigns;
 using namespace Aws::ConnectCampaigns::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::ConnectCampaigns::Endpoint::ConnectCampaignsEndpointProvider::ConnectCampaignsResolveEndpointOutcome;
 
 
 const char* ConnectCampaignsClient::SERVICE_NAME = "connect-campaigns";
 const char* ConnectCampaignsClient::ALLOCATION_TAG = "ConnectCampaignsClient";
 
-ConnectCampaignsClient::ConnectCampaignsClient(const Client::ClientConfiguration& clientConfiguration) :
+ConnectCampaignsClient::ConnectCampaignsClient(const Client::ClientConfiguration& clientConfiguration,
+                                               std::shared_ptr<Endpoint::ConnectCampaignsEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ConnectCampaignsErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+ConnectCampaignsClient::ConnectCampaignsClient(const AWSCredentials& credentials,
+                                               std::shared_ptr<Endpoint::ConnectCampaignsEndpointProvider> endpointProvider,
+                                               const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ConnectCampaignsErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+ConnectCampaignsClient::ConnectCampaignsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                               std::shared_ptr<Endpoint::ConnectCampaignsEndpointProvider> endpointProvider,
+                                               const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ConnectCampaignsErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  ConnectCampaignsClient::ConnectCampaignsClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ConnectCampaignsErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<ConnectCampaigns::Endpoint::ConnectCampaignsEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -75,7 +124,8 @@ ConnectCampaignsClient::ConnectCampaignsClient(const AWSCredentials& credentials
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ConnectCampaignsErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<ConnectCampaigns::Endpoint::ConnectCampaignsEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -88,11 +138,13 @@ ConnectCampaignsClient::ConnectCampaignsClient(const std::shared_ptr<AWSCredenti
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ConnectCampaignsErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<ConnectCampaigns::Endpoint::ConnectCampaignsEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 ConnectCampaignsClient::~ConnectCampaignsClient()
 {
 }
@@ -100,34 +152,21 @@ ConnectCampaignsClient::~ConnectCampaignsClient()
 void ConnectCampaignsClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("ConnectCampaigns");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + ConnectCampaignsEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void ConnectCampaignsClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 CreateCampaignOutcome ConnectCampaignsClient::CreateCampaign(const CreateCampaignRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns");
-  return CreateCampaignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateCampaignOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCampaignOutcomeCallable ConnectCampaignsClient::CreateCampaignCallable(const CreateCampaignRequest& request) const
@@ -148,15 +187,15 @@ void ConnectCampaignsClient::CreateCampaignAsync(const CreateCampaignRequest& re
 
 DeleteCampaignOutcome ConnectCampaignsClient::DeleteCampaign(const DeleteCampaignRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteCampaign", "Required field: Id, is not set");
     return DeleteCampaignOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns/");
-  uri.AddPathSegment(request.GetId());
-  return DeleteCampaignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteCampaignOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteCampaignOutcomeCallable ConnectCampaignsClient::DeleteCampaignCallable(const DeleteCampaignRequest& request) const
@@ -177,16 +216,15 @@ void ConnectCampaignsClient::DeleteCampaignAsync(const DeleteCampaignRequest& re
 
 DeleteConnectInstanceConfigOutcome ConnectCampaignsClient::DeleteConnectInstanceConfig(const DeleteConnectInstanceConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteConnectInstanceConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectInstanceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteConnectInstanceConfig", "Required field: ConnectInstanceId, is not set");
     return DeleteConnectInstanceConfigOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectInstanceId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/connect-instance/");
-  uri.AddPathSegment(request.GetConnectInstanceId());
-  uri.AddPathSegments("/config");
-  return DeleteConnectInstanceConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteConnectInstanceConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteConnectInstanceConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteConnectInstanceConfigOutcomeCallable ConnectCampaignsClient::DeleteConnectInstanceConfigCallable(const DeleteConnectInstanceConfigRequest& request) const
@@ -207,16 +245,15 @@ void ConnectCampaignsClient::DeleteConnectInstanceConfigAsync(const DeleteConnec
 
 DeleteInstanceOnboardingJobOutcome ConnectCampaignsClient::DeleteInstanceOnboardingJob(const DeleteInstanceOnboardingJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteInstanceOnboardingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectInstanceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteInstanceOnboardingJob", "Required field: ConnectInstanceId, is not set");
     return DeleteInstanceOnboardingJobOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectInstanceId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/connect-instance/");
-  uri.AddPathSegment(request.GetConnectInstanceId());
-  uri.AddPathSegments("/onboarding");
-  return DeleteInstanceOnboardingJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteInstanceOnboardingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteInstanceOnboardingJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteInstanceOnboardingJobOutcomeCallable ConnectCampaignsClient::DeleteInstanceOnboardingJobCallable(const DeleteInstanceOnboardingJobRequest& request) const
@@ -237,15 +274,15 @@ void ConnectCampaignsClient::DeleteInstanceOnboardingJobAsync(const DeleteInstan
 
 DescribeCampaignOutcome ConnectCampaignsClient::DescribeCampaign(const DescribeCampaignRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeCampaign", "Required field: Id, is not set");
     return DescribeCampaignOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns/");
-  uri.AddPathSegment(request.GetId());
-  return DescribeCampaignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeCampaignOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeCampaignOutcomeCallable ConnectCampaignsClient::DescribeCampaignCallable(const DescribeCampaignRequest& request) const
@@ -266,16 +303,15 @@ void ConnectCampaignsClient::DescribeCampaignAsync(const DescribeCampaignRequest
 
 GetCampaignStateOutcome ConnectCampaignsClient::GetCampaignState(const GetCampaignStateRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCampaignState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetCampaignState", "Required field: Id, is not set");
     return GetCampaignStateOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns/");
-  uri.AddPathSegment(request.GetId());
-  uri.AddPathSegments("/state");
-  return GetCampaignStateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCampaignState, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetCampaignStateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCampaignStateOutcomeCallable ConnectCampaignsClient::GetCampaignStateCallable(const GetCampaignStateRequest& request) const
@@ -296,9 +332,10 @@ void ConnectCampaignsClient::GetCampaignStateAsync(const GetCampaignStateRequest
 
 GetCampaignStateBatchOutcome ConnectCampaignsClient::GetCampaignStateBatch(const GetCampaignStateBatchRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns-state");
-  return GetCampaignStateBatchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCampaignStateBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCampaignStateBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetCampaignStateBatchOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCampaignStateBatchOutcomeCallable ConnectCampaignsClient::GetCampaignStateBatchCallable(const GetCampaignStateBatchRequest& request) const
@@ -319,16 +356,15 @@ void ConnectCampaignsClient::GetCampaignStateBatchAsync(const GetCampaignStateBa
 
 GetConnectInstanceConfigOutcome ConnectCampaignsClient::GetConnectInstanceConfig(const GetConnectInstanceConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConnectInstanceConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectInstanceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetConnectInstanceConfig", "Required field: ConnectInstanceId, is not set");
     return GetConnectInstanceConfigOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectInstanceId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/connect-instance/");
-  uri.AddPathSegment(request.GetConnectInstanceId());
-  uri.AddPathSegments("/config");
-  return GetConnectInstanceConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetConnectInstanceConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetConnectInstanceConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetConnectInstanceConfigOutcomeCallable ConnectCampaignsClient::GetConnectInstanceConfigCallable(const GetConnectInstanceConfigRequest& request) const
@@ -349,16 +385,15 @@ void ConnectCampaignsClient::GetConnectInstanceConfigAsync(const GetConnectInsta
 
 GetInstanceOnboardingJobStatusOutcome ConnectCampaignsClient::GetInstanceOnboardingJobStatus(const GetInstanceOnboardingJobStatusRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInstanceOnboardingJobStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectInstanceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetInstanceOnboardingJobStatus", "Required field: ConnectInstanceId, is not set");
     return GetInstanceOnboardingJobStatusOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectInstanceId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/connect-instance/");
-  uri.AddPathSegment(request.GetConnectInstanceId());
-  uri.AddPathSegments("/onboarding");
-  return GetInstanceOnboardingJobStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInstanceOnboardingJobStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetInstanceOnboardingJobStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetInstanceOnboardingJobStatusOutcomeCallable ConnectCampaignsClient::GetInstanceOnboardingJobStatusCallable(const GetInstanceOnboardingJobStatusRequest& request) const
@@ -379,9 +414,10 @@ void ConnectCampaignsClient::GetInstanceOnboardingJobStatusAsync(const GetInstan
 
 ListCampaignsOutcome ConnectCampaignsClient::ListCampaigns(const ListCampaignsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns-summary");
-  return ListCampaignsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCampaigns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCampaigns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListCampaignsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListCampaignsOutcomeCallable ConnectCampaignsClient::ListCampaignsCallable(const ListCampaignsRequest& request) const
@@ -402,15 +438,15 @@ void ConnectCampaignsClient::ListCampaignsAsync(const ListCampaignsRequest& requ
 
 ListTagsForResourceOutcome ConnectCampaignsClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: Arn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetArn());
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable ConnectCampaignsClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -431,16 +467,15 @@ void ConnectCampaignsClient::ListTagsForResourceAsync(const ListTagsForResourceR
 
 PauseCampaignOutcome ConnectCampaignsClient::PauseCampaign(const PauseCampaignRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PauseCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PauseCampaign", "Required field: Id, is not set");
     return PauseCampaignOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns/");
-  uri.AddPathSegment(request.GetId());
-  uri.AddPathSegments("/pause");
-  return PauseCampaignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PauseCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PauseCampaignOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PauseCampaignOutcomeCallable ConnectCampaignsClient::PauseCampaignCallable(const PauseCampaignRequest& request) const
@@ -461,16 +496,15 @@ void ConnectCampaignsClient::PauseCampaignAsync(const PauseCampaignRequest& requ
 
 PutDialRequestBatchOutcome ConnectCampaignsClient::PutDialRequestBatch(const PutDialRequestBatchRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDialRequestBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutDialRequestBatch", "Required field: Id, is not set");
     return PutDialRequestBatchOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns/");
-  uri.AddPathSegment(request.GetId());
-  uri.AddPathSegments("/dial-requests");
-  return PutDialRequestBatchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutDialRequestBatch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutDialRequestBatchOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutDialRequestBatchOutcomeCallable ConnectCampaignsClient::PutDialRequestBatchCallable(const PutDialRequestBatchRequest& request) const
@@ -491,16 +525,15 @@ void ConnectCampaignsClient::PutDialRequestBatchAsync(const PutDialRequestBatchR
 
 ResumeCampaignOutcome ConnectCampaignsClient::ResumeCampaign(const ResumeCampaignRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ResumeCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ResumeCampaign", "Required field: Id, is not set");
     return ResumeCampaignOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns/");
-  uri.AddPathSegment(request.GetId());
-  uri.AddPathSegments("/resume");
-  return ResumeCampaignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ResumeCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ResumeCampaignOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ResumeCampaignOutcomeCallable ConnectCampaignsClient::ResumeCampaignCallable(const ResumeCampaignRequest& request) const
@@ -521,16 +554,15 @@ void ConnectCampaignsClient::ResumeCampaignAsync(const ResumeCampaignRequest& re
 
 StartCampaignOutcome ConnectCampaignsClient::StartCampaign(const StartCampaignRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartCampaign", "Required field: Id, is not set");
     return StartCampaignOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns/");
-  uri.AddPathSegment(request.GetId());
-  uri.AddPathSegments("/start");
-  return StartCampaignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartCampaignOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartCampaignOutcomeCallable ConnectCampaignsClient::StartCampaignCallable(const StartCampaignRequest& request) const
@@ -551,16 +583,15 @@ void ConnectCampaignsClient::StartCampaignAsync(const StartCampaignRequest& requ
 
 StartInstanceOnboardingJobOutcome ConnectCampaignsClient::StartInstanceOnboardingJob(const StartInstanceOnboardingJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartInstanceOnboardingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConnectInstanceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartInstanceOnboardingJob", "Required field: ConnectInstanceId, is not set");
     return StartInstanceOnboardingJobOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectInstanceId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/connect-instance/");
-  uri.AddPathSegment(request.GetConnectInstanceId());
-  uri.AddPathSegments("/onboarding");
-  return StartInstanceOnboardingJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartInstanceOnboardingJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartInstanceOnboardingJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartInstanceOnboardingJobOutcomeCallable ConnectCampaignsClient::StartInstanceOnboardingJobCallable(const StartInstanceOnboardingJobRequest& request) const
@@ -581,16 +612,15 @@ void ConnectCampaignsClient::StartInstanceOnboardingJobAsync(const StartInstance
 
 StopCampaignOutcome ConnectCampaignsClient::StopCampaign(const StopCampaignRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StopCampaign", "Required field: Id, is not set");
     return StopCampaignOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns/");
-  uri.AddPathSegment(request.GetId());
-  uri.AddPathSegments("/stop");
-  return StopCampaignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopCampaign, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StopCampaignOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopCampaignOutcomeCallable ConnectCampaignsClient::StopCampaignCallable(const StopCampaignRequest& request) const
@@ -611,15 +641,15 @@ void ConnectCampaignsClient::StopCampaignAsync(const StopCampaignRequest& reques
 
 TagResourceOutcome ConnectCampaignsClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: Arn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetArn());
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable ConnectCampaignsClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -640,6 +670,7 @@ void ConnectCampaignsClient::TagResourceAsync(const TagResourceRequest& request,
 
 UntagResourceOutcome ConnectCampaignsClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: Arn, is not set");
@@ -650,10 +681,9 @@ UntagResourceOutcome ConnectCampaignsClient::UntagResource(const UntagResourceRe
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetArn());
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable ConnectCampaignsClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -674,16 +704,15 @@ void ConnectCampaignsClient::UntagResourceAsync(const UntagResourceRequest& requ
 
 UpdateCampaignDialerConfigOutcome ConnectCampaignsClient::UpdateCampaignDialerConfig(const UpdateCampaignDialerConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCampaignDialerConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateCampaignDialerConfig", "Required field: Id, is not set");
     return UpdateCampaignDialerConfigOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns/");
-  uri.AddPathSegment(request.GetId());
-  uri.AddPathSegments("/dialer-config");
-  return UpdateCampaignDialerConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateCampaignDialerConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateCampaignDialerConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateCampaignDialerConfigOutcomeCallable ConnectCampaignsClient::UpdateCampaignDialerConfigCallable(const UpdateCampaignDialerConfigRequest& request) const
@@ -704,16 +733,15 @@ void ConnectCampaignsClient::UpdateCampaignDialerConfigAsync(const UpdateCampaig
 
 UpdateCampaignNameOutcome ConnectCampaignsClient::UpdateCampaignName(const UpdateCampaignNameRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCampaignName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateCampaignName", "Required field: Id, is not set");
     return UpdateCampaignNameOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns/");
-  uri.AddPathSegment(request.GetId());
-  uri.AddPathSegments("/name");
-  return UpdateCampaignNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateCampaignName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateCampaignNameOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateCampaignNameOutcomeCallable ConnectCampaignsClient::UpdateCampaignNameCallable(const UpdateCampaignNameRequest& request) const
@@ -734,16 +762,15 @@ void ConnectCampaignsClient::UpdateCampaignNameAsync(const UpdateCampaignNameReq
 
 UpdateCampaignOutboundCallConfigOutcome ConnectCampaignsClient::UpdateCampaignOutboundCallConfig(const UpdateCampaignOutboundCallConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCampaignOutboundCallConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateCampaignOutboundCallConfig", "Required field: Id, is not set");
     return UpdateCampaignOutboundCallConfigOutcome(Aws::Client::AWSError<ConnectCampaignsErrors>(ConnectCampaignsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/campaigns/");
-  uri.AddPathSegment(request.GetId());
-  uri.AddPathSegments("/outbound-call-config");
-  return UpdateCampaignOutboundCallConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateCampaignOutboundCallConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateCampaignOutboundCallConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateCampaignOutboundCallConfigOutcomeCallable ConnectCampaignsClient::UpdateCampaignOutboundCallConfigCallable(const UpdateCampaignOutboundCallConfigRequest& request) const

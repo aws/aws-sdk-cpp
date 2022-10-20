@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/appconfigdata/AppConfigDataClient.h>
 #include <aws/appconfigdata/AppConfigDataEndpoint.h>
 #include <aws/appconfigdata/AppConfigDataErrorMarshaller.h>
+#include <aws/appconfigdata/AppConfigDataEndpointProvider.h>
 #include <aws/appconfigdata/model/GetLatestConfigurationRequest.h>
 #include <aws/appconfigdata/model/StartConfigurationSessionRequest.h>
 
@@ -30,19 +32,66 @@ using namespace Aws::AppConfigData;
 using namespace Aws::AppConfigData::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::AppConfigData::Endpoint::AppConfigDataEndpointProvider::AppConfigDataResolveEndpointOutcome;
 
 
 const char* AppConfigDataClient::SERVICE_NAME = "appconfig";
 const char* AppConfigDataClient::ALLOCATION_TAG = "AppConfigDataClient";
 
-AppConfigDataClient::AppConfigDataClient(const Client::ClientConfiguration& clientConfiguration) :
+AppConfigDataClient::AppConfigDataClient(const Client::ClientConfiguration& clientConfiguration,
+                                         std::shared_ptr<Endpoint::AppConfigDataEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppConfigDataErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+AppConfigDataClient::AppConfigDataClient(const AWSCredentials& credentials,
+                                         std::shared_ptr<Endpoint::AppConfigDataEndpointProvider> endpointProvider,
+                                         const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AppConfigDataErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+AppConfigDataClient::AppConfigDataClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                         std::shared_ptr<Endpoint::AppConfigDataEndpointProvider> endpointProvider,
+                                         const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AppConfigDataErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  AppConfigDataClient::AppConfigDataClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AppConfigDataErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<AppConfigData::Endpoint::AppConfigDataEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -55,7 +104,8 @@ AppConfigDataClient::AppConfigDataClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppConfigDataErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<AppConfigData::Endpoint::AppConfigDataEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -68,11 +118,13 @@ AppConfigDataClient::AppConfigDataClient(const std::shared_ptr<AWSCredentialsPro
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppConfigDataErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<AppConfigData::Endpoint::AppConfigDataEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 AppConfigDataClient::~AppConfigDataClient()
 {
 }
@@ -80,39 +132,26 @@ AppConfigDataClient::~AppConfigDataClient()
 void AppConfigDataClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("AppConfigData");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + AppConfigDataEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void AppConfigDataClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 GetLatestConfigurationOutcome AppConfigDataClient::GetLatestConfiguration(const GetLatestConfigurationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLatestConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConfigurationTokenHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetLatestConfiguration", "Required field: ConfigurationToken, is not set");
     return GetLatestConfigurationOutcome(Aws::Client::AWSError<AppConfigDataErrors>(AppConfigDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationToken]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/configuration");
-  return GetLatestConfigurationOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLatestConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetLatestConfigurationOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetLatestConfigurationOutcomeCallable AppConfigDataClient::GetLatestConfigurationCallable(const GetLatestConfigurationRequest& request) const
@@ -133,9 +172,10 @@ void AppConfigDataClient::GetLatestConfigurationAsync(const GetLatestConfigurati
 
 StartConfigurationSessionOutcome AppConfigDataClient::StartConfigurationSession(const StartConfigurationSessionRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/configurationsessions");
-  return StartConfigurationSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartConfigurationSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartConfigurationSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartConfigurationSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartConfigurationSessionOutcomeCallable AppConfigDataClient::StartConfigurationSessionCallable(const StartConfigurationSessionRequest& request) const

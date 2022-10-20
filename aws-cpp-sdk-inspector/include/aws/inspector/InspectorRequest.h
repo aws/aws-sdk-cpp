@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/inspector/Inspector_EXPORTS.h>
+#include <aws/inspector/InspectorEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
+#include <aws/iotanalytics/IoTAnalyticsEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

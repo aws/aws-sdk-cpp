@@ -84,7 +84,7 @@ ResourceChange& ResourceChange::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Scope"))
   {
-    Array<JsonView> scopeJsonList = jsonValue.GetArray("Scope");
+    Aws::Utils::Array<JsonView> scopeJsonList = jsonValue.GetArray("Scope");
     for(unsigned scopeIndex = 0; scopeIndex < scopeJsonList.GetLength(); ++scopeIndex)
     {
       m_scope.push_back(ResourceAttributeMapper::GetResourceAttributeForName(scopeJsonList[scopeIndex].AsString()));
@@ -94,7 +94,7 @@ ResourceChange& ResourceChange::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Details"))
   {
-    Array<JsonView> detailsJsonList = jsonValue.GetArray("Details");
+    Aws::Utils::Array<JsonView> detailsJsonList = jsonValue.GetArray("Details");
     for(unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex)
     {
       m_details.push_back(detailsJsonList[detailsIndex].AsObject());
@@ -139,7 +139,7 @@ JsonValue ResourceChange::Jsonize() const
 
   if(m_scopeHasBeenSet)
   {
-   Array<JsonValue> scopeJsonList(m_scope.size());
+   Aws::Utils::Array<JsonValue> scopeJsonList(m_scope.size());
    for(unsigned scopeIndex = 0; scopeIndex < scopeJsonList.GetLength(); ++scopeIndex)
    {
      scopeJsonList[scopeIndex].AsString(ResourceAttributeMapper::GetNameForResourceAttribute(m_scope[scopeIndex]));
@@ -150,7 +150,7 @@ JsonValue ResourceChange::Jsonize() const
 
   if(m_detailsHasBeenSet)
   {
-   Array<JsonValue> detailsJsonList(m_details.size());
+   Aws::Utils::Array<JsonValue> detailsJsonList(m_details.size());
    for(unsigned detailsIndex = 0; detailsIndex < detailsJsonList.GetLength(); ++detailsIndex)
    {
      detailsJsonList[detailsIndex].AsObject(m_details[detailsIndex].Jsonize());

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
+#include <aws/license-manager/LicenseManagerEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

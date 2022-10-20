@@ -30,7 +30,7 @@ ListExtensionVersionsResult& ListExtensionVersionsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ExtensionVersions"))
   {
-    Array<JsonView> extensionVersionsJsonList = jsonValue.GetArray("ExtensionVersions");
+    Aws::Utils::Array<JsonView> extensionVersionsJsonList = jsonValue.GetArray("ExtensionVersions");
     for(unsigned extensionVersionsIndex = 0; extensionVersionsIndex < extensionVersionsJsonList.GetLength(); ++extensionVersionsIndex)
     {
       m_extensionVersions.push_back(extensionVersionsJsonList[extensionVersionsIndex].AsObject());

@@ -16,11 +16,13 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/platform/Environment.h>
 
 #include <aws/timestream-query/TimestreamQueryClient.h>
 #include <aws/timestream-query/TimestreamQueryEndpoint.h>
 #include <aws/timestream-query/TimestreamQueryErrorMarshaller.h>
+#include <aws/timestream-query/TimestreamQueryEndpointProvider.h>
 #include <aws/timestream-query/model/CancelQueryRequest.h>
 #include <aws/timestream-query/model/CreateScheduledQueryRequest.h>
 #include <aws/timestream-query/model/DeleteScheduledQueryRequest.h>
@@ -42,19 +44,66 @@ using namespace Aws::TimestreamQuery;
 using namespace Aws::TimestreamQuery::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::TimestreamQuery::Endpoint::TimestreamQueryEndpointProvider::TimestreamQueryResolveEndpointOutcome;
 
 
 const char* TimestreamQueryClient::SERVICE_NAME = "timestream";
 const char* TimestreamQueryClient::ALLOCATION_TAG = "TimestreamQueryClient";
 
-TimestreamQueryClient::TimestreamQueryClient(const Client::ClientConfiguration& clientConfiguration) :
+TimestreamQueryClient::TimestreamQueryClient(const Client::ClientConfiguration& clientConfiguration,
+                                             std::shared_ptr<Endpoint::TimestreamQueryEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TimestreamQueryErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+TimestreamQueryClient::TimestreamQueryClient(const AWSCredentials& credentials,
+                                             std::shared_ptr<Endpoint::TimestreamQueryEndpointProvider> endpointProvider,
+                                             const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<TimestreamQueryErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+TimestreamQueryClient::TimestreamQueryClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                             std::shared_ptr<Endpoint::TimestreamQueryEndpointProvider> endpointProvider,
+                                             const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<TimestreamQueryErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  TimestreamQueryClient::TimestreamQueryClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<TimestreamQueryErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<TimestreamQuery::Endpoint::TimestreamQueryEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -67,7 +116,8 @@ TimestreamQueryClient::TimestreamQueryClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TimestreamQueryErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<TimestreamQuery::Endpoint::TimestreamQueryEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -80,11 +130,13 @@ TimestreamQueryClient::TimestreamQueryClient(const std::shared_ptr<AWSCredential
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TimestreamQueryErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<TimestreamQuery::Endpoint::TimestreamQueryEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 TimestreamQueryClient::~TimestreamQueryClient()
 {
 }
@@ -92,16 +144,7 @@ TimestreamQueryClient::~TimestreamQueryClient()
 void TimestreamQueryClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Timestream Query");
-  LoadTimestreamQuerySpecificConfig(config);
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + TimestreamQueryEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void TimestreamQueryClient::LoadTimestreamQuerySpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration)
@@ -143,57 +186,16 @@ void TimestreamQueryClient::LoadTimestreamQuerySpecificConfig(const Aws::Client:
 
 void TimestreamQueryClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
-  m_enableEndpointDiscovery = false;
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
-  {
-    Aws::String endpointKey = "Shared";
-    Aws::String endpoint;
-    if (m_endpointsCache.Get(endpointKey, endpoint))
-    {
-      AWS_LOGSTREAM_TRACE("CancelQuery", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
-    }
-    else
-    {
-      AWS_LOGSTREAM_TRACE("CancelQuery", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
-      DescribeEndpointsRequest endpointRequest;
-      auto endpointOutcome = DescribeEndpoints(endpointRequest);
-      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
-      {
-        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
-        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
-        AWS_LOGSTREAM_TRACE("CancelQuery", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
-      }
-      else
-      {
-        AWS_LOGSTREAM_ERROR("CancelQuery", "Failed to discover endpoints " << endpointOutcome.GetError());
-        return CancelQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
-      }
-    }
-  }
-  else
-  {
-    Aws::String errorMessage = R"(Unable to perform "CancelQuery" without endpoint discovery. )"
-      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
-      R"(your config file's variable "endpoint_discovery_enabled" and )"
-      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
-    return CancelQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
-  }
-  return CancelQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CancelQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelQueryOutcomeCallable TimestreamQueryClient::CancelQueryCallable(const CancelQueryRequest& request) const
@@ -214,44 +216,10 @@ void TimestreamQueryClient::CancelQueryAsync(const CancelQueryRequest& request, 
 
 CreateScheduledQueryOutcome TimestreamQueryClient::CreateScheduledQuery(const CreateScheduledQueryRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
-  {
-    Aws::String endpointKey = "Shared";
-    Aws::String endpoint;
-    if (m_endpointsCache.Get(endpointKey, endpoint))
-    {
-      AWS_LOGSTREAM_TRACE("CreateScheduledQuery", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
-    }
-    else
-    {
-      AWS_LOGSTREAM_TRACE("CreateScheduledQuery", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
-      DescribeEndpointsRequest endpointRequest;
-      auto endpointOutcome = DescribeEndpoints(endpointRequest);
-      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
-      {
-        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
-        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
-        AWS_LOGSTREAM_TRACE("CreateScheduledQuery", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
-      }
-      else
-      {
-        AWS_LOGSTREAM_ERROR("CreateScheduledQuery", "Failed to discover endpoints " << endpointOutcome.GetError());
-        return CreateScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
-      }
-    }
-  }
-  else
-  {
-    Aws::String errorMessage = R"(Unable to perform "CreateScheduledQuery" without endpoint discovery. )"
-      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
-      R"(your config file's variable "endpoint_discovery_enabled" and )"
-      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
-    return CreateScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
-  }
-  return CreateScheduledQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateScheduledQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateScheduledQueryOutcomeCallable TimestreamQueryClient::CreateScheduledQueryCallable(const CreateScheduledQueryRequest& request) const
@@ -272,44 +240,10 @@ void TimestreamQueryClient::CreateScheduledQueryAsync(const CreateScheduledQuery
 
 DeleteScheduledQueryOutcome TimestreamQueryClient::DeleteScheduledQuery(const DeleteScheduledQueryRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
-  {
-    Aws::String endpointKey = "Shared";
-    Aws::String endpoint;
-    if (m_endpointsCache.Get(endpointKey, endpoint))
-    {
-      AWS_LOGSTREAM_TRACE("DeleteScheduledQuery", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
-    }
-    else
-    {
-      AWS_LOGSTREAM_TRACE("DeleteScheduledQuery", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
-      DescribeEndpointsRequest endpointRequest;
-      auto endpointOutcome = DescribeEndpoints(endpointRequest);
-      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
-      {
-        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
-        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
-        AWS_LOGSTREAM_TRACE("DeleteScheduledQuery", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
-      }
-      else
-      {
-        AWS_LOGSTREAM_ERROR("DeleteScheduledQuery", "Failed to discover endpoints " << endpointOutcome.GetError());
-        return DeleteScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
-      }
-    }
-  }
-  else
-  {
-    Aws::String errorMessage = R"(Unable to perform "DeleteScheduledQuery" without endpoint discovery. )"
-      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
-      R"(your config file's variable "endpoint_discovery_enabled" and )"
-      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
-    return DeleteScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
-  }
-  return DeleteScheduledQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteScheduledQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteScheduledQueryOutcomeCallable TimestreamQueryClient::DeleteScheduledQueryCallable(const DeleteScheduledQueryRequest& request) const
@@ -330,8 +264,10 @@ void TimestreamQueryClient::DeleteScheduledQueryAsync(const DeleteScheduledQuery
 
 DescribeEndpointsOutcome TimestreamQueryClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return DescribeEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeEndpointsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEndpointsOutcomeCallable TimestreamQueryClient::DescribeEndpointsCallable(const DescribeEndpointsRequest& request) const
@@ -352,44 +288,10 @@ void TimestreamQueryClient::DescribeEndpointsAsync(const DescribeEndpointsReques
 
 DescribeScheduledQueryOutcome TimestreamQueryClient::DescribeScheduledQuery(const DescribeScheduledQueryRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
-  {
-    Aws::String endpointKey = "Shared";
-    Aws::String endpoint;
-    if (m_endpointsCache.Get(endpointKey, endpoint))
-    {
-      AWS_LOGSTREAM_TRACE("DescribeScheduledQuery", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
-    }
-    else
-    {
-      AWS_LOGSTREAM_TRACE("DescribeScheduledQuery", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
-      DescribeEndpointsRequest endpointRequest;
-      auto endpointOutcome = DescribeEndpoints(endpointRequest);
-      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
-      {
-        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
-        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
-        AWS_LOGSTREAM_TRACE("DescribeScheduledQuery", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
-      }
-      else
-      {
-        AWS_LOGSTREAM_ERROR("DescribeScheduledQuery", "Failed to discover endpoints " << endpointOutcome.GetError());
-        return DescribeScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
-      }
-    }
-  }
-  else
-  {
-    Aws::String errorMessage = R"(Unable to perform "DescribeScheduledQuery" without endpoint discovery. )"
-      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
-      R"(your config file's variable "endpoint_discovery_enabled" and )"
-      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
-    return DescribeScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
-  }
-  return DescribeScheduledQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeScheduledQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeScheduledQueryOutcomeCallable TimestreamQueryClient::DescribeScheduledQueryCallable(const DescribeScheduledQueryRequest& request) const
@@ -410,44 +312,10 @@ void TimestreamQueryClient::DescribeScheduledQueryAsync(const DescribeScheduledQ
 
 ExecuteScheduledQueryOutcome TimestreamQueryClient::ExecuteScheduledQuery(const ExecuteScheduledQueryRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
-  {
-    Aws::String endpointKey = "Shared";
-    Aws::String endpoint;
-    if (m_endpointsCache.Get(endpointKey, endpoint))
-    {
-      AWS_LOGSTREAM_TRACE("ExecuteScheduledQuery", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
-    }
-    else
-    {
-      AWS_LOGSTREAM_TRACE("ExecuteScheduledQuery", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
-      DescribeEndpointsRequest endpointRequest;
-      auto endpointOutcome = DescribeEndpoints(endpointRequest);
-      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
-      {
-        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
-        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
-        AWS_LOGSTREAM_TRACE("ExecuteScheduledQuery", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
-      }
-      else
-      {
-        AWS_LOGSTREAM_ERROR("ExecuteScheduledQuery", "Failed to discover endpoints " << endpointOutcome.GetError());
-        return ExecuteScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
-      }
-    }
-  }
-  else
-  {
-    Aws::String errorMessage = R"(Unable to perform "ExecuteScheduledQuery" without endpoint discovery. )"
-      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
-      R"(your config file's variable "endpoint_discovery_enabled" and )"
-      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
-    return ExecuteScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
-  }
-  return ExecuteScheduledQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExecuteScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ExecuteScheduledQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExecuteScheduledQueryOutcomeCallable TimestreamQueryClient::ExecuteScheduledQueryCallable(const ExecuteScheduledQueryRequest& request) const
@@ -468,44 +336,10 @@ void TimestreamQueryClient::ExecuteScheduledQueryAsync(const ExecuteScheduledQue
 
 ListScheduledQueriesOutcome TimestreamQueryClient::ListScheduledQueries(const ListScheduledQueriesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
-  {
-    Aws::String endpointKey = "Shared";
-    Aws::String endpoint;
-    if (m_endpointsCache.Get(endpointKey, endpoint))
-    {
-      AWS_LOGSTREAM_TRACE("ListScheduledQueries", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
-    }
-    else
-    {
-      AWS_LOGSTREAM_TRACE("ListScheduledQueries", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
-      DescribeEndpointsRequest endpointRequest;
-      auto endpointOutcome = DescribeEndpoints(endpointRequest);
-      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
-      {
-        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
-        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
-        AWS_LOGSTREAM_TRACE("ListScheduledQueries", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
-      }
-      else
-      {
-        AWS_LOGSTREAM_ERROR("ListScheduledQueries", "Failed to discover endpoints " << endpointOutcome.GetError());
-        return ListScheduledQueriesOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
-      }
-    }
-  }
-  else
-  {
-    Aws::String errorMessage = R"(Unable to perform "ListScheduledQueries" without endpoint discovery. )"
-      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
-      R"(your config file's variable "endpoint_discovery_enabled" and )"
-      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
-    return ListScheduledQueriesOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
-  }
-  return ListScheduledQueriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListScheduledQueries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListScheduledQueries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListScheduledQueriesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListScheduledQueriesOutcomeCallable TimestreamQueryClient::ListScheduledQueriesCallable(const ListScheduledQueriesRequest& request) const
@@ -526,44 +360,10 @@ void TimestreamQueryClient::ListScheduledQueriesAsync(const ListScheduledQueries
 
 ListTagsForResourceOutcome TimestreamQueryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
-  {
-    Aws::String endpointKey = "Shared";
-    Aws::String endpoint;
-    if (m_endpointsCache.Get(endpointKey, endpoint))
-    {
-      AWS_LOGSTREAM_TRACE("ListTagsForResource", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
-    }
-    else
-    {
-      AWS_LOGSTREAM_TRACE("ListTagsForResource", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
-      DescribeEndpointsRequest endpointRequest;
-      auto endpointOutcome = DescribeEndpoints(endpointRequest);
-      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
-      {
-        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
-        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
-        AWS_LOGSTREAM_TRACE("ListTagsForResource", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
-      }
-      else
-      {
-        AWS_LOGSTREAM_ERROR("ListTagsForResource", "Failed to discover endpoints " << endpointOutcome.GetError());
-        return ListTagsForResourceOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
-      }
-    }
-  }
-  else
-  {
-    Aws::String errorMessage = R"(Unable to perform "ListTagsForResource" without endpoint discovery. )"
-      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
-      R"(your config file's variable "endpoint_discovery_enabled" and )"
-      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
-    return ListTagsForResourceOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
-  }
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable TimestreamQueryClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -584,44 +384,10 @@ void TimestreamQueryClient::ListTagsForResourceAsync(const ListTagsForResourceRe
 
 PrepareQueryOutcome TimestreamQueryClient::PrepareQuery(const PrepareQueryRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
-  {
-    Aws::String endpointKey = "Shared";
-    Aws::String endpoint;
-    if (m_endpointsCache.Get(endpointKey, endpoint))
-    {
-      AWS_LOGSTREAM_TRACE("PrepareQuery", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
-    }
-    else
-    {
-      AWS_LOGSTREAM_TRACE("PrepareQuery", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
-      DescribeEndpointsRequest endpointRequest;
-      auto endpointOutcome = DescribeEndpoints(endpointRequest);
-      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
-      {
-        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
-        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
-        AWS_LOGSTREAM_TRACE("PrepareQuery", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
-      }
-      else
-      {
-        AWS_LOGSTREAM_ERROR("PrepareQuery", "Failed to discover endpoints " << endpointOutcome.GetError());
-        return PrepareQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
-      }
-    }
-  }
-  else
-  {
-    Aws::String errorMessage = R"(Unable to perform "PrepareQuery" without endpoint discovery. )"
-      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
-      R"(your config file's variable "endpoint_discovery_enabled" and )"
-      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
-    return PrepareQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
-  }
-  return PrepareQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PrepareQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PrepareQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PrepareQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PrepareQueryOutcomeCallable TimestreamQueryClient::PrepareQueryCallable(const PrepareQueryRequest& request) const
@@ -642,44 +408,10 @@ void TimestreamQueryClient::PrepareQueryAsync(const PrepareQueryRequest& request
 
 QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
-  {
-    Aws::String endpointKey = "Shared";
-    Aws::String endpoint;
-    if (m_endpointsCache.Get(endpointKey, endpoint))
-    {
-      AWS_LOGSTREAM_TRACE("Query", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
-    }
-    else
-    {
-      AWS_LOGSTREAM_TRACE("Query", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
-      DescribeEndpointsRequest endpointRequest;
-      auto endpointOutcome = DescribeEndpoints(endpointRequest);
-      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
-      {
-        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
-        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
-        AWS_LOGSTREAM_TRACE("Query", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
-      }
-      else
-      {
-        AWS_LOGSTREAM_ERROR("Query", "Failed to discover endpoints " << endpointOutcome.GetError());
-        return QueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
-      }
-    }
-  }
-  else
-  {
-    Aws::String errorMessage = R"(Unable to perform "Query" without endpoint discovery. )"
-      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
-      R"(your config file's variable "endpoint_discovery_enabled" and )"
-      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
-    return QueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
-  }
-  return QueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, Query, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Query, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return QueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 QueryOutcomeCallable TimestreamQueryClient::QueryCallable(const QueryRequest& request) const
@@ -700,44 +432,10 @@ void TimestreamQueryClient::QueryAsync(const QueryRequest& request, const QueryR
 
 TagResourceOutcome TimestreamQueryClient::TagResource(const TagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
-  {
-    Aws::String endpointKey = "Shared";
-    Aws::String endpoint;
-    if (m_endpointsCache.Get(endpointKey, endpoint))
-    {
-      AWS_LOGSTREAM_TRACE("TagResource", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
-    }
-    else
-    {
-      AWS_LOGSTREAM_TRACE("TagResource", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
-      DescribeEndpointsRequest endpointRequest;
-      auto endpointOutcome = DescribeEndpoints(endpointRequest);
-      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
-      {
-        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
-        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
-        AWS_LOGSTREAM_TRACE("TagResource", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
-      }
-      else
-      {
-        AWS_LOGSTREAM_ERROR("TagResource", "Failed to discover endpoints " << endpointOutcome.GetError());
-        return TagResourceOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
-      }
-    }
-  }
-  else
-  {
-    Aws::String errorMessage = R"(Unable to perform "TagResource" without endpoint discovery. )"
-      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
-      R"(your config file's variable "endpoint_discovery_enabled" and )"
-      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
-    return TagResourceOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
-  }
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable TimestreamQueryClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -758,44 +456,10 @@ void TimestreamQueryClient::TagResourceAsync(const TagResourceRequest& request, 
 
 UntagResourceOutcome TimestreamQueryClient::UntagResource(const UntagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
-  {
-    Aws::String endpointKey = "Shared";
-    Aws::String endpoint;
-    if (m_endpointsCache.Get(endpointKey, endpoint))
-    {
-      AWS_LOGSTREAM_TRACE("UntagResource", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
-    }
-    else
-    {
-      AWS_LOGSTREAM_TRACE("UntagResource", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
-      DescribeEndpointsRequest endpointRequest;
-      auto endpointOutcome = DescribeEndpoints(endpointRequest);
-      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
-      {
-        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
-        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
-        AWS_LOGSTREAM_TRACE("UntagResource", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
-      }
-      else
-      {
-        AWS_LOGSTREAM_ERROR("UntagResource", "Failed to discover endpoints " << endpointOutcome.GetError());
-        return UntagResourceOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
-      }
-    }
-  }
-  else
-  {
-    Aws::String errorMessage = R"(Unable to perform "UntagResource" without endpoint discovery. )"
-      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
-      R"(your config file's variable "endpoint_discovery_enabled" and )"
-      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
-    return UntagResourceOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
-  }
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable TimestreamQueryClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -816,44 +480,10 @@ void TimestreamQueryClient::UntagResourceAsync(const UntagResourceRequest& reque
 
 UpdateScheduledQueryOutcome TimestreamQueryClient::UpdateScheduledQuery(const UpdateScheduledQueryRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
-  {
-    Aws::String endpointKey = "Shared";
-    Aws::String endpoint;
-    if (m_endpointsCache.Get(endpointKey, endpoint))
-    {
-      AWS_LOGSTREAM_TRACE("UpdateScheduledQuery", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
-    }
-    else
-    {
-      AWS_LOGSTREAM_TRACE("UpdateScheduledQuery", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
-      DescribeEndpointsRequest endpointRequest;
-      auto endpointOutcome = DescribeEndpoints(endpointRequest);
-      if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
-      {
-        const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
-        m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
-        AWS_LOGSTREAM_TRACE("UpdateScheduledQuery", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
-      }
-      else
-      {
-        AWS_LOGSTREAM_ERROR("UpdateScheduledQuery", "Failed to discover endpoints " << endpointOutcome.GetError());
-        return UpdateScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
-      }
-    }
-  }
-  else
-  {
-    Aws::String errorMessage = R"(Unable to perform "UpdateScheduledQuery" without endpoint discovery. )"
-      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
-      R"(your config file's variable "endpoint_discovery_enabled" and )"
-      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
-    return UpdateScheduledQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
-  }
-  return UpdateScheduledQueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateScheduledQuery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateScheduledQueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateScheduledQueryOutcomeCallable TimestreamQueryClient::UpdateScheduledQueryCallable(const UpdateScheduledQueryRequest& request) const

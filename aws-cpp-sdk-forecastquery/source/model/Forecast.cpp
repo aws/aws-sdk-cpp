@@ -36,7 +36,7 @@ Forecast& Forecast::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> predictionsJsonMap = jsonValue.GetObject("Predictions").GetAllObjects();
     for(auto& predictionsItem : predictionsJsonMap)
     {
-      Array<JsonView> timeSeriesJsonList = predictionsItem.second.AsArray();
+      Aws::Utils::Array<JsonView> timeSeriesJsonList = predictionsItem.second.AsArray();
       Aws::Vector<DataPoint> timeSeriesList;
       timeSeriesList.reserve((size_t)timeSeriesJsonList.GetLength());
       for(unsigned timeSeriesIndex = 0; timeSeriesIndex < timeSeriesJsonList.GetLength(); ++timeSeriesIndex)
@@ -60,7 +60,7 @@ JsonValue Forecast::Jsonize() const
    JsonValue predictionsJsonMap;
    for(auto& predictionsItem : m_predictions)
    {
-     Array<JsonValue> timeSeriesJsonList(predictionsItem.second.size());
+     Aws::Utils::Array<JsonValue> timeSeriesJsonList(predictionsItem.second.size());
      for(unsigned timeSeriesIndex = 0; timeSeriesIndex < timeSeriesJsonList.GetLength(); ++timeSeriesIndex)
      {
        timeSeriesJsonList[timeSeriesIndex].AsObject(predictionsItem.second[timeSeriesIndex].Jsonize());

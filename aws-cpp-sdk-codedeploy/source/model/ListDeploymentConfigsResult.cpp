@@ -30,7 +30,7 @@ ListDeploymentConfigsResult& ListDeploymentConfigsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("deploymentConfigsList"))
   {
-    Array<JsonView> deploymentConfigsListJsonList = jsonValue.GetArray("deploymentConfigsList");
+    Aws::Utils::Array<JsonView> deploymentConfigsListJsonList = jsonValue.GetArray("deploymentConfigsList");
     for(unsigned deploymentConfigsListIndex = 0; deploymentConfigsListIndex < deploymentConfigsListJsonList.GetLength(); ++deploymentConfigsListIndex)
     {
       m_deploymentConfigsList.push_back(deploymentConfigsListJsonList[deploymentConfigsListIndex].AsString());

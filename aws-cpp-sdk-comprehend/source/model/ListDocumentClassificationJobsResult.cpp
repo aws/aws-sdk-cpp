@@ -30,7 +30,7 @@ ListDocumentClassificationJobsResult& ListDocumentClassificationJobsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DocumentClassificationJobPropertiesList"))
   {
-    Array<JsonView> documentClassificationJobPropertiesListJsonList = jsonValue.GetArray("DocumentClassificationJobPropertiesList");
+    Aws::Utils::Array<JsonView> documentClassificationJobPropertiesListJsonList = jsonValue.GetArray("DocumentClassificationJobPropertiesList");
     for(unsigned documentClassificationJobPropertiesListIndex = 0; documentClassificationJobPropertiesListIndex < documentClassificationJobPropertiesListJsonList.GetLength(); ++documentClassificationJobPropertiesListIndex)
     {
       m_documentClassificationJobPropertiesList.push_back(documentClassificationJobPropertiesListJsonList[documentClassificationJobPropertiesListIndex].AsObject());

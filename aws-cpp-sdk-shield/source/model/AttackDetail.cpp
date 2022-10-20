@@ -61,7 +61,7 @@ AttackDetail& AttackDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubResources"))
   {
-    Array<JsonView> subResourcesJsonList = jsonValue.GetArray("SubResources");
+    Aws::Utils::Array<JsonView> subResourcesJsonList = jsonValue.GetArray("SubResources");
     for(unsigned subResourcesIndex = 0; subResourcesIndex < subResourcesJsonList.GetLength(); ++subResourcesIndex)
     {
       m_subResources.push_back(subResourcesJsonList[subResourcesIndex].AsObject());
@@ -85,7 +85,7 @@ AttackDetail& AttackDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AttackCounters"))
   {
-    Array<JsonView> attackCountersJsonList = jsonValue.GetArray("AttackCounters");
+    Aws::Utils::Array<JsonView> attackCountersJsonList = jsonValue.GetArray("AttackCounters");
     for(unsigned attackCountersIndex = 0; attackCountersIndex < attackCountersJsonList.GetLength(); ++attackCountersIndex)
     {
       m_attackCounters.push_back(attackCountersJsonList[attackCountersIndex].AsObject());
@@ -95,7 +95,7 @@ AttackDetail& AttackDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AttackProperties"))
   {
-    Array<JsonView> attackPropertiesJsonList = jsonValue.GetArray("AttackProperties");
+    Aws::Utils::Array<JsonView> attackPropertiesJsonList = jsonValue.GetArray("AttackProperties");
     for(unsigned attackPropertiesIndex = 0; attackPropertiesIndex < attackPropertiesJsonList.GetLength(); ++attackPropertiesIndex)
     {
       m_attackProperties.push_back(attackPropertiesJsonList[attackPropertiesIndex].AsObject());
@@ -105,7 +105,7 @@ AttackDetail& AttackDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Mitigations"))
   {
-    Array<JsonView> mitigationsJsonList = jsonValue.GetArray("Mitigations");
+    Aws::Utils::Array<JsonView> mitigationsJsonList = jsonValue.GetArray("Mitigations");
     for(unsigned mitigationsIndex = 0; mitigationsIndex < mitigationsJsonList.GetLength(); ++mitigationsIndex)
     {
       m_mitigations.push_back(mitigationsJsonList[mitigationsIndex].AsObject());
@@ -134,7 +134,7 @@ JsonValue AttackDetail::Jsonize() const
 
   if(m_subResourcesHasBeenSet)
   {
-   Array<JsonValue> subResourcesJsonList(m_subResources.size());
+   Aws::Utils::Array<JsonValue> subResourcesJsonList(m_subResources.size());
    for(unsigned subResourcesIndex = 0; subResourcesIndex < subResourcesJsonList.GetLength(); ++subResourcesIndex)
    {
      subResourcesJsonList[subResourcesIndex].AsObject(m_subResources[subResourcesIndex].Jsonize());
@@ -155,7 +155,7 @@ JsonValue AttackDetail::Jsonize() const
 
   if(m_attackCountersHasBeenSet)
   {
-   Array<JsonValue> attackCountersJsonList(m_attackCounters.size());
+   Aws::Utils::Array<JsonValue> attackCountersJsonList(m_attackCounters.size());
    for(unsigned attackCountersIndex = 0; attackCountersIndex < attackCountersJsonList.GetLength(); ++attackCountersIndex)
    {
      attackCountersJsonList[attackCountersIndex].AsObject(m_attackCounters[attackCountersIndex].Jsonize());
@@ -166,7 +166,7 @@ JsonValue AttackDetail::Jsonize() const
 
   if(m_attackPropertiesHasBeenSet)
   {
-   Array<JsonValue> attackPropertiesJsonList(m_attackProperties.size());
+   Aws::Utils::Array<JsonValue> attackPropertiesJsonList(m_attackProperties.size());
    for(unsigned attackPropertiesIndex = 0; attackPropertiesIndex < attackPropertiesJsonList.GetLength(); ++attackPropertiesIndex)
    {
      attackPropertiesJsonList[attackPropertiesIndex].AsObject(m_attackProperties[attackPropertiesIndex].Jsonize());
@@ -177,7 +177,7 @@ JsonValue AttackDetail::Jsonize() const
 
   if(m_mitigationsHasBeenSet)
   {
-   Array<JsonValue> mitigationsJsonList(m_mitigations.size());
+   Aws::Utils::Array<JsonValue> mitigationsJsonList(m_mitigations.size());
    for(unsigned mitigationsIndex = 0; mitigationsIndex < mitigationsJsonList.GetLength(); ++mitigationsIndex)
    {
      mitigationsJsonList[mitigationsIndex].AsObject(m_mitigations[mitigationsIndex].Jsonize());

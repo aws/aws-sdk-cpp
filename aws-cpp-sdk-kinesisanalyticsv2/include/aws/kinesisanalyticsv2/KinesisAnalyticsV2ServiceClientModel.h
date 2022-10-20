@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -80,6 +81,10 @@ namespace Aws
 
   namespace KinesisAnalyticsV2
   {
+    namespace Endpoint
+    {
+      class KinesisAnalyticsV2EndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in KinesisAnalyticsV2Client header */

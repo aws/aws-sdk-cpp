@@ -36,7 +36,7 @@ ListStageDeploymentsResult& ListStageDeploymentsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("StageDeployments"))
   {
-    Array<JsonView> stageDeploymentsJsonList = jsonValue.GetArray("StageDeployments");
+    Aws::Utils::Array<JsonView> stageDeploymentsJsonList = jsonValue.GetArray("StageDeployments");
     for(unsigned stageDeploymentsIndex = 0; stageDeploymentsIndex < stageDeploymentsJsonList.GetLength(); ++stageDeploymentsIndex)
     {
       m_stageDeployments.push_back(stageDeploymentsJsonList[stageDeploymentsIndex].AsObject());

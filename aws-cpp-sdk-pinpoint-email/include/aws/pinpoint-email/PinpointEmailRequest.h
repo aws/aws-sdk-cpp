@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
+#include <aws/pinpoint-email/PinpointEmailEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

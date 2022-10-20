@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/datasync/DataSyncEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -93,6 +94,10 @@ namespace Aws
 
   namespace DataSync
   {
+    namespace Endpoint
+    {
+      class DataSyncEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in DataSyncClient header */

@@ -78,6 +78,15 @@ namespace Model
     inline SelectObjectContentRequest& WithEventStreamHandler(const SelectObjectContentHandler& value) { SetEventStreamHandler(value); return *this; }
 
 
+    EndpointParameters GetEndpointContextParams() const override
+    {
+        EndpointParameters parameters;
+        parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+
+        return parameters;
+    }
+
+
     /**
      * <p>The S3 bucket.</p>
      */

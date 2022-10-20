@@ -51,7 +51,7 @@ Aws::String UpdateLocationHdfsRequest::SerializePayload() const
 
   if(m_nameNodesHasBeenSet)
   {
-   Array<JsonValue> nameNodesJsonList(m_nameNodes.size());
+   Aws::Utils::Array<JsonValue> nameNodesJsonList(m_nameNodes.size());
    for(unsigned nameNodesIndex = 0; nameNodesIndex < nameNodesJsonList.GetLength(); ++nameNodesIndex)
    {
      nameNodesJsonList[nameNodesIndex].AsObject(m_nameNodes[nameNodesIndex].Jsonize());
@@ -113,7 +113,7 @@ Aws::String UpdateLocationHdfsRequest::SerializePayload() const
 
   if(m_agentArnsHasBeenSet)
   {
-   Array<JsonValue> agentArnsJsonList(m_agentArns.size());
+   Aws::Utils::Array<JsonValue> agentArnsJsonList(m_agentArns.size());
    for(unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex)
    {
      agentArnsJsonList[agentArnsIndex].AsString(m_agentArns[agentArnsIndex]);

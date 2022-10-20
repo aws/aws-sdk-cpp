@@ -41,7 +41,7 @@ KmsGrantConfiguration& KmsGrantConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("operations"))
   {
-    Array<JsonView> operationsJsonList = jsonValue.GetArray("operations");
+    Aws::Utils::Array<JsonView> operationsJsonList = jsonValue.GetArray("operations");
     for(unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex)
     {
       m_operations.push_back(KmsGrantOperationMapper::GetKmsGrantOperationForName(operationsJsonList[operationsIndex].AsString()));
@@ -86,7 +86,7 @@ JsonValue KmsGrantConfiguration::Jsonize() const
 
   if(m_operationsHasBeenSet)
   {
-   Array<JsonValue> operationsJsonList(m_operations.size());
+   Aws::Utils::Array<JsonValue> operationsJsonList(m_operations.size());
    for(unsigned operationsIndex = 0; operationsIndex < operationsJsonList.GetLength(); ++operationsIndex)
    {
      operationsJsonList[operationsIndex].AsString(KmsGrantOperationMapper::GetNameForKmsGrantOperation(m_operations[operationsIndex]));

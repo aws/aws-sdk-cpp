@@ -30,7 +30,7 @@ ListAppMonitorsResult& ListAppMonitorsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AppMonitorSummaries"))
   {
-    Array<JsonView> appMonitorSummariesJsonList = jsonValue.GetArray("AppMonitorSummaries");
+    Aws::Utils::Array<JsonView> appMonitorSummariesJsonList = jsonValue.GetArray("AppMonitorSummaries");
     for(unsigned appMonitorSummariesIndex = 0; appMonitorSummariesIndex < appMonitorSummariesJsonList.GetLength(); ++appMonitorSummariesIndex)
     {
       m_appMonitorSummaries.push_back(appMonitorSummariesJsonList[appMonitorSummariesIndex].AsObject());

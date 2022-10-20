@@ -36,7 +36,7 @@ ListFirewallsResult& ListFirewallsResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("Firewalls"))
   {
-    Array<JsonView> firewallsJsonList = jsonValue.GetArray("Firewalls");
+    Aws::Utils::Array<JsonView> firewallsJsonList = jsonValue.GetArray("Firewalls");
     for(unsigned firewallsIndex = 0; firewallsIndex < firewallsJsonList.GetLength(); ++firewallsIndex)
     {
       m_firewalls.push_back(firewallsJsonList[firewallsIndex].AsObject());

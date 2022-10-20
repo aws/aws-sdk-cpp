@@ -53,7 +53,7 @@ ProxyConfiguration& ProxyConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("properties"))
   {
-    Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
+    Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
     for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
     {
       m_properties.push_back(propertiesJsonList[propertiesIndex].AsObject());
@@ -81,7 +81,7 @@ JsonValue ProxyConfiguration::Jsonize() const
 
   if(m_propertiesHasBeenSet)
   {
-   Array<JsonValue> propertiesJsonList(m_properties.size());
+   Aws::Utils::Array<JsonValue> propertiesJsonList(m_properties.size());
    for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
    {
      propertiesJsonList[propertiesIndex].AsObject(m_properties[propertiesIndex].Jsonize());

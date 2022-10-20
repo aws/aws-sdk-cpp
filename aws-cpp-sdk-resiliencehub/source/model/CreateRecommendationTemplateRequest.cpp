@@ -61,7 +61,7 @@ Aws::String CreateRecommendationTemplateRequest::SerializePayload() const
 
   if(m_recommendationIdsHasBeenSet)
   {
-   Array<JsonValue> recommendationIdsJsonList(m_recommendationIds.size());
+   Aws::Utils::Array<JsonValue> recommendationIdsJsonList(m_recommendationIds.size());
    for(unsigned recommendationIdsIndex = 0; recommendationIdsIndex < recommendationIdsJsonList.GetLength(); ++recommendationIdsIndex)
    {
      recommendationIdsJsonList[recommendationIdsIndex].AsString(m_recommendationIds[recommendationIdsIndex]);
@@ -72,7 +72,7 @@ Aws::String CreateRecommendationTemplateRequest::SerializePayload() const
 
   if(m_recommendationTypesHasBeenSet)
   {
-   Array<JsonValue> recommendationTypesJsonList(m_recommendationTypes.size());
+   Aws::Utils::Array<JsonValue> recommendationTypesJsonList(m_recommendationTypes.size());
    for(unsigned recommendationTypesIndex = 0; recommendationTypesIndex < recommendationTypesJsonList.GetLength(); ++recommendationTypesIndex)
    {
      recommendationTypesJsonList[recommendationTypesIndex].AsString(RenderRecommendationTypeMapper::GetNameForRenderRecommendationType(m_recommendationTypes[recommendationTypesIndex]));

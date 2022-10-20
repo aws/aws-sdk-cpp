@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannels_EXPORTS.h>
+#include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -32,7 +32,7 @@ ListServerNeighborsResult& ListServerNeighborsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("neighbors"))
   {
-    Array<JsonView> neighborsJsonList = jsonValue.GetArray("neighbors");
+    Aws::Utils::Array<JsonView> neighborsJsonList = jsonValue.GetArray("neighbors");
     for(unsigned neighborsIndex = 0; neighborsIndex < neighborsJsonList.GetLength(); ++neighborsIndex)
     {
       m_neighbors.push_back(neighborsJsonList[neighborsIndex].AsObject());

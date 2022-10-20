@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/polly/Polly_EXPORTS.h>
+#include <aws/polly/PollyEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

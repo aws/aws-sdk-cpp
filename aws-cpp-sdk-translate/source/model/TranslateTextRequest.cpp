@@ -33,7 +33,7 @@ Aws::String TranslateTextRequest::SerializePayload() const
 
   if(m_terminologyNamesHasBeenSet)
   {
-   Array<JsonValue> terminologyNamesJsonList(m_terminologyNames.size());
+   Aws::Utils::Array<JsonValue> terminologyNamesJsonList(m_terminologyNames.size());
    for(unsigned terminologyNamesIndex = 0; terminologyNamesIndex < terminologyNamesJsonList.GetLength(); ++terminologyNamesIndex)
    {
      terminologyNamesJsonList[terminologyNamesIndex].AsString(m_terminologyNames[terminologyNamesIndex]);

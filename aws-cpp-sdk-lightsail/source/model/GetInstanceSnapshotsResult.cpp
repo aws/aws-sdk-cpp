@@ -30,7 +30,7 @@ GetInstanceSnapshotsResult& GetInstanceSnapshotsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("instanceSnapshots"))
   {
-    Array<JsonView> instanceSnapshotsJsonList = jsonValue.GetArray("instanceSnapshots");
+    Aws::Utils::Array<JsonView> instanceSnapshotsJsonList = jsonValue.GetArray("instanceSnapshots");
     for(unsigned instanceSnapshotsIndex = 0; instanceSnapshotsIndex < instanceSnapshotsJsonList.GetLength(); ++instanceSnapshotsIndex)
     {
       m_instanceSnapshots.push_back(instanceSnapshotsJsonList[instanceSnapshotsIndex].AsObject());

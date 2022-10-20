@@ -46,7 +46,7 @@ Aws::String GenerateEmbedUrlForRegisteredUserRequest::SerializePayload() const
 
   if(m_allowedDomainsHasBeenSet)
   {
-   Array<JsonValue> allowedDomainsJsonList(m_allowedDomains.size());
+   Aws::Utils::Array<JsonValue> allowedDomainsJsonList(m_allowedDomains.size());
    for(unsigned allowedDomainsIndex = 0; allowedDomainsIndex < allowedDomainsJsonList.GetLength(); ++allowedDomainsIndex)
    {
      allowedDomainsJsonList[allowedDomainsIndex].AsString(m_allowedDomains[allowedDomainsIndex]);

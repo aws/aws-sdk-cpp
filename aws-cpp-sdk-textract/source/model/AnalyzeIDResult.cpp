@@ -30,7 +30,7 @@ AnalyzeIDResult& AnalyzeIDResult::operator =(const Aws::AmazonWebServiceResult<J
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityDocuments"))
   {
-    Array<JsonView> identityDocumentsJsonList = jsonValue.GetArray("IdentityDocuments");
+    Aws::Utils::Array<JsonView> identityDocumentsJsonList = jsonValue.GetArray("IdentityDocuments");
     for(unsigned identityDocumentsIndex = 0; identityDocumentsIndex < identityDocumentsJsonList.GetLength(); ++identityDocumentsIndex)
     {
       m_identityDocuments.push_back(identityDocumentsJsonList[identityDocumentsIndex].AsObject());

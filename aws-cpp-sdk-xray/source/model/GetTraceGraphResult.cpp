@@ -30,7 +30,7 @@ GetTraceGraphResult& GetTraceGraphResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Services"))
   {
-    Array<JsonView> servicesJsonList = jsonValue.GetArray("Services");
+    Aws::Utils::Array<JsonView> servicesJsonList = jsonValue.GetArray("Services");
     for(unsigned servicesIndex = 0; servicesIndex < servicesJsonList.GetLength(); ++servicesIndex)
     {
       m_services.push_back(servicesJsonList[servicesIndex].AsObject());

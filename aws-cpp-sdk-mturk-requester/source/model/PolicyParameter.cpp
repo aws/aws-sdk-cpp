@@ -44,7 +44,7 @@ PolicyParameter& PolicyParameter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
+    Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsString());
@@ -54,7 +54,7 @@ PolicyParameter& PolicyParameter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MapEntries"))
   {
-    Array<JsonView> mapEntriesJsonList = jsonValue.GetArray("MapEntries");
+    Aws::Utils::Array<JsonView> mapEntriesJsonList = jsonValue.GetArray("MapEntries");
     for(unsigned mapEntriesIndex = 0; mapEntriesIndex < mapEntriesJsonList.GetLength(); ++mapEntriesIndex)
     {
       m_mapEntries.push_back(mapEntriesJsonList[mapEntriesIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue PolicyParameter::Jsonize() const
 
   if(m_valuesHasBeenSet)
   {
-   Array<JsonValue> valuesJsonList(m_values.size());
+   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
    {
      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
@@ -88,7 +88,7 @@ JsonValue PolicyParameter::Jsonize() const
 
   if(m_mapEntriesHasBeenSet)
   {
-   Array<JsonValue> mapEntriesJsonList(m_mapEntries.size());
+   Aws::Utils::Array<JsonValue> mapEntriesJsonList(m_mapEntries.size());
    for(unsigned mapEntriesIndex = 0; mapEntriesIndex < mapEntriesJsonList.GetLength(); ++mapEntriesIndex)
    {
      mapEntriesJsonList[mapEntriesIndex].AsObject(m_mapEntries[mapEntriesIndex].Jsonize());

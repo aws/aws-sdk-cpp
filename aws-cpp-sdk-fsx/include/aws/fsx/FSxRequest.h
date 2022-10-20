@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
+#include <aws/fsx/FSxEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

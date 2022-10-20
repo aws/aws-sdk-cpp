@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
+#include <aws/devicefarm/DeviceFarmEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

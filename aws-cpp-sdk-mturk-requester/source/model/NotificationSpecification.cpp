@@ -62,7 +62,7 @@ NotificationSpecification& NotificationSpecification::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("EventTypes"))
   {
-    Array<JsonView> eventTypesJsonList = jsonValue.GetArray("EventTypes");
+    Aws::Utils::Array<JsonView> eventTypesJsonList = jsonValue.GetArray("EventTypes");
     for(unsigned eventTypesIndex = 0; eventTypesIndex < eventTypesJsonList.GetLength(); ++eventTypesIndex)
     {
       m_eventTypes.push_back(EventTypeMapper::GetEventTypeForName(eventTypesJsonList[eventTypesIndex].AsString()));
@@ -96,7 +96,7 @@ JsonValue NotificationSpecification::Jsonize() const
 
   if(m_eventTypesHasBeenSet)
   {
-   Array<JsonValue> eventTypesJsonList(m_eventTypes.size());
+   Aws::Utils::Array<JsonValue> eventTypesJsonList(m_eventTypes.size());
    for(unsigned eventTypesIndex = 0; eventTypesIndex < eventTypesJsonList.GetLength(); ++eventTypesIndex)
    {
      eventTypesJsonList[eventTypesIndex].AsString(EventTypeMapper::GetNameForEventType(m_eventTypes[eventTypesIndex]));

@@ -139,7 +139,7 @@ DataRepositoryAssociation& DataRepositoryAssociation::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -170,7 +170,7 @@ DataRepositoryAssociation& DataRepositoryAssociation::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("DataRepositorySubdirectories"))
   {
-    Array<JsonView> dataRepositorySubdirectoriesJsonList = jsonValue.GetArray("DataRepositorySubdirectories");
+    Aws::Utils::Array<JsonView> dataRepositorySubdirectoriesJsonList = jsonValue.GetArray("DataRepositorySubdirectories");
     for(unsigned dataRepositorySubdirectoriesIndex = 0; dataRepositorySubdirectoriesIndex < dataRepositorySubdirectoriesJsonList.GetLength(); ++dataRepositorySubdirectoriesIndex)
     {
       m_dataRepositorySubdirectories.push_back(dataRepositorySubdirectoriesJsonList[dataRepositorySubdirectoriesIndex].AsString());
@@ -253,7 +253,7 @@ JsonValue DataRepositoryAssociation::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -281,7 +281,7 @@ JsonValue DataRepositoryAssociation::Jsonize() const
 
   if(m_dataRepositorySubdirectoriesHasBeenSet)
   {
-   Array<JsonValue> dataRepositorySubdirectoriesJsonList(m_dataRepositorySubdirectories.size());
+   Aws::Utils::Array<JsonValue> dataRepositorySubdirectoriesJsonList(m_dataRepositorySubdirectories.size());
    for(unsigned dataRepositorySubdirectoriesIndex = 0; dataRepositorySubdirectoriesIndex < dataRepositorySubdirectoriesJsonList.GetLength(); ++dataRepositorySubdirectoriesIndex)
    {
      dataRepositorySubdirectoriesJsonList[dataRepositorySubdirectoriesIndex].AsString(m_dataRepositorySubdirectories[dataRepositorySubdirectoriesIndex]);

@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/lambda/LambdaClient.h>
 #include <aws/lambda/LambdaEndpoint.h>
 #include <aws/lambda/LambdaErrorMarshaller.h>
+#include <aws/lambda/LambdaEndpointProvider.h>
 #include <aws/lambda/model/AddLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/AddPermissionRequest.h>
 #include <aws/lambda/model/CreateAliasRequest.h>
@@ -90,19 +92,66 @@ using namespace Aws::Lambda;
 using namespace Aws::Lambda::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Lambda::Endpoint::LambdaEndpointProvider::LambdaResolveEndpointOutcome;
 
 
 const char* LambdaClient::SERVICE_NAME = "lambda";
 const char* LambdaClient::ALLOCATION_TAG = "LambdaClient";
 
-LambdaClient::LambdaClient(const Client::ClientConfiguration& clientConfiguration) :
+LambdaClient::LambdaClient(const Client::ClientConfiguration& clientConfiguration,
+                           std::shared_ptr<Endpoint::LambdaEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+LambdaClient::LambdaClient(const AWSCredentials& credentials,
+                           std::shared_ptr<Endpoint::LambdaEndpointProvider> endpointProvider,
+                           const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+LambdaClient::LambdaClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                           std::shared_ptr<Endpoint::LambdaEndpointProvider> endpointProvider,
+                           const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  LambdaClient::LambdaClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<Lambda::Endpoint::LambdaEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -115,7 +164,8 @@ LambdaClient::LambdaClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<Lambda::Endpoint::LambdaEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -128,11 +178,13 @@ LambdaClient::LambdaClient(const std::shared_ptr<AWSCredentialsProvider>& creden
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<Lambda::Endpoint::LambdaEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 LambdaClient::~LambdaClient()
 {
 }
@@ -140,31 +192,18 @@ LambdaClient::~LambdaClient()
 void LambdaClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Lambda");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + LambdaEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void LambdaClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 AddLayerVersionPermissionOutcome LambdaClient::AddLayerVersionPermission(const AddLayerVersionPermissionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddLayerVersionPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AddLayerVersionPermission", "Required field: LayerName, is not set");
@@ -175,13 +214,9 @@ AddLayerVersionPermissionOutcome LambdaClient::AddLayerVersionPermission(const A
     AWS_LOGSTREAM_ERROR("AddLayerVersionPermission", "Required field: VersionNumber, is not set");
     return AddLayerVersionPermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2018-10-31/layers/");
-  uri.AddPathSegment(request.GetLayerName());
-  uri.AddPathSegments("/versions/");
-  uri.AddPathSegment(request.GetVersionNumber());
-  uri.AddPathSegments("/policy");
-  return AddLayerVersionPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddLayerVersionPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AddLayerVersionPermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AddLayerVersionPermissionOutcomeCallable LambdaClient::AddLayerVersionPermissionCallable(const AddLayerVersionPermissionRequest& request) const
@@ -202,16 +237,15 @@ void LambdaClient::AddLayerVersionPermissionAsync(const AddLayerVersionPermissio
 
 AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AddPermission", "Required field: FunctionName, is not set");
     return AddPermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/policy");
-  return AddPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AddPermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AddPermissionOutcomeCallable LambdaClient::AddPermissionCallable(const AddPermissionRequest& request) const
@@ -232,16 +266,15 @@ void LambdaClient::AddPermissionAsync(const AddPermissionRequest& request, const
 
 CreateAliasOutcome LambdaClient::CreateAlias(const CreateAliasRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateAlias", "Required field: FunctionName, is not set");
     return CreateAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/aliases");
-  return CreateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateAliasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAliasOutcomeCallable LambdaClient::CreateAliasCallable(const CreateAliasRequest& request) const
@@ -262,9 +295,10 @@ void LambdaClient::CreateAliasAsync(const CreateAliasRequest& request, const Cre
 
 CreateCodeSigningConfigOutcome LambdaClient::CreateCodeSigningConfig(const CreateCodeSigningConfigRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-04-22/code-signing-configs/");
-  return CreateCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateCodeSigningConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateCodeSigningConfigOutcomeCallable LambdaClient::CreateCodeSigningConfigCallable(const CreateCodeSigningConfigRequest& request) const
@@ -285,9 +319,10 @@ void LambdaClient::CreateCodeSigningConfigAsync(const CreateCodeSigningConfigReq
 
 CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const CreateEventSourceMappingRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/event-source-mappings/");
-  return CreateEventSourceMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateEventSourceMappingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateEventSourceMappingOutcomeCallable LambdaClient::CreateEventSourceMappingCallable(const CreateEventSourceMappingRequest& request) const
@@ -308,9 +343,10 @@ void LambdaClient::CreateEventSourceMappingAsync(const CreateEventSourceMappingR
 
 CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions");
-  return CreateFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateFunctionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateFunctionOutcomeCallable LambdaClient::CreateFunctionCallable(const CreateFunctionRequest& request) const
@@ -331,16 +367,15 @@ void LambdaClient::CreateFunctionAsync(const CreateFunctionRequest& request, con
 
 CreateFunctionUrlConfigOutcome LambdaClient::CreateFunctionUrlConfig(const CreateFunctionUrlConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFunctionUrlConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateFunctionUrlConfig", "Required field: FunctionName, is not set");
     return CreateFunctionUrlConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2021-10-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/url");
-  return CreateFunctionUrlConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFunctionUrlConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateFunctionUrlConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateFunctionUrlConfigOutcomeCallable LambdaClient::CreateFunctionUrlConfigCallable(const CreateFunctionUrlConfigRequest& request) const
@@ -361,6 +396,7 @@ void LambdaClient::CreateFunctionUrlConfigAsync(const CreateFunctionUrlConfigReq
 
 DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAlias", "Required field: FunctionName, is not set");
@@ -371,12 +407,9 @@ DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) 
     AWS_LOGSTREAM_ERROR("DeleteAlias", "Required field: Name, is not set");
     return DeleteAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/aliases/");
-  uri.AddPathSegment(request.GetName());
-  return DeleteAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteAliasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAliasOutcomeCallable LambdaClient::DeleteAliasCallable(const DeleteAliasRequest& request) const
@@ -397,15 +430,15 @@ void LambdaClient::DeleteAliasAsync(const DeleteAliasRequest& request, const Del
 
 DeleteCodeSigningConfigOutcome LambdaClient::DeleteCodeSigningConfig(const DeleteCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CodeSigningConfigArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteCodeSigningConfig", "Required field: CodeSigningConfigArn, is not set");
     return DeleteCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeSigningConfigArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-04-22/code-signing-configs/");
-  uri.AddPathSegment(request.GetCodeSigningConfigArn());
-  return DeleteCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteCodeSigningConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteCodeSigningConfigOutcomeCallable LambdaClient::DeleteCodeSigningConfigCallable(const DeleteCodeSigningConfigRequest& request) const
@@ -426,15 +459,15 @@ void LambdaClient::DeleteCodeSigningConfigAsync(const DeleteCodeSigningConfigReq
 
 DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const DeleteEventSourceMappingRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UUIDHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteEventSourceMapping", "Required field: UUID, is not set");
     return DeleteEventSourceMappingOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UUID]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/event-source-mappings/");
-  uri.AddPathSegment(request.GetUUID());
-  return DeleteEventSourceMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteEventSourceMappingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteEventSourceMappingOutcomeCallable LambdaClient::DeleteEventSourceMappingCallable(const DeleteEventSourceMappingRequest& request) const
@@ -455,15 +488,15 @@ void LambdaClient::DeleteEventSourceMappingAsync(const DeleteEventSourceMappingR
 
 DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteFunction", "Required field: FunctionName, is not set");
     return DeleteFunctionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  return DeleteFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteFunctionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFunctionOutcomeCallable LambdaClient::DeleteFunctionCallable(const DeleteFunctionRequest& request) const
@@ -484,16 +517,15 @@ void LambdaClient::DeleteFunctionAsync(const DeleteFunctionRequest& request, con
 
 DeleteFunctionCodeSigningConfigOutcome LambdaClient::DeleteFunctionCodeSigningConfig(const DeleteFunctionCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFunctionCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteFunctionCodeSigningConfig", "Required field: FunctionName, is not set");
     return DeleteFunctionCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-06-30/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/code-signing-config");
-  return DeleteFunctionCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteFunctionCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteFunctionCodeSigningConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFunctionCodeSigningConfigOutcomeCallable LambdaClient::DeleteFunctionCodeSigningConfigCallable(const DeleteFunctionCodeSigningConfigRequest& request) const
@@ -514,16 +546,15 @@ void LambdaClient::DeleteFunctionCodeSigningConfigAsync(const DeleteFunctionCode
 
 DeleteFunctionConcurrencyOutcome LambdaClient::DeleteFunctionConcurrency(const DeleteFunctionConcurrencyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFunctionConcurrency, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteFunctionConcurrency", "Required field: FunctionName, is not set");
     return DeleteFunctionConcurrencyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2017-10-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/concurrency");
-  return DeleteFunctionConcurrencyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteFunctionConcurrency, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteFunctionConcurrencyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFunctionConcurrencyOutcomeCallable LambdaClient::DeleteFunctionConcurrencyCallable(const DeleteFunctionConcurrencyRequest& request) const
@@ -544,16 +575,15 @@ void LambdaClient::DeleteFunctionConcurrencyAsync(const DeleteFunctionConcurrenc
 
 DeleteFunctionEventInvokeConfigOutcome LambdaClient::DeleteFunctionEventInvokeConfig(const DeleteFunctionEventInvokeConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFunctionEventInvokeConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteFunctionEventInvokeConfig", "Required field: FunctionName, is not set");
     return DeleteFunctionEventInvokeConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2019-09-25/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/event-invoke-config");
-  return DeleteFunctionEventInvokeConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteFunctionEventInvokeConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteFunctionEventInvokeConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFunctionEventInvokeConfigOutcomeCallable LambdaClient::DeleteFunctionEventInvokeConfigCallable(const DeleteFunctionEventInvokeConfigRequest& request) const
@@ -574,16 +604,15 @@ void LambdaClient::DeleteFunctionEventInvokeConfigAsync(const DeleteFunctionEven
 
 DeleteFunctionUrlConfigOutcome LambdaClient::DeleteFunctionUrlConfig(const DeleteFunctionUrlConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFunctionUrlConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteFunctionUrlConfig", "Required field: FunctionName, is not set");
     return DeleteFunctionUrlConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2021-10-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/url");
-  return DeleteFunctionUrlConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteFunctionUrlConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteFunctionUrlConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFunctionUrlConfigOutcomeCallable LambdaClient::DeleteFunctionUrlConfigCallable(const DeleteFunctionUrlConfigRequest& request) const
@@ -604,6 +633,7 @@ void LambdaClient::DeleteFunctionUrlConfigAsync(const DeleteFunctionUrlConfigReq
 
 DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVersionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLayerVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteLayerVersion", "Required field: LayerName, is not set");
@@ -614,12 +644,9 @@ DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVers
     AWS_LOGSTREAM_ERROR("DeleteLayerVersion", "Required field: VersionNumber, is not set");
     return DeleteLayerVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2018-10-31/layers/");
-  uri.AddPathSegment(request.GetLayerName());
-  uri.AddPathSegments("/versions/");
-  uri.AddPathSegment(request.GetVersionNumber());
-  return DeleteLayerVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLayerVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteLayerVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteLayerVersionOutcomeCallable LambdaClient::DeleteLayerVersionCallable(const DeleteLayerVersionRequest& request) const
@@ -640,6 +667,7 @@ void LambdaClient::DeleteLayerVersionAsync(const DeleteLayerVersionRequest& requ
 
 DeleteProvisionedConcurrencyConfigOutcome LambdaClient::DeleteProvisionedConcurrencyConfig(const DeleteProvisionedConcurrencyConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProvisionedConcurrencyConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteProvisionedConcurrencyConfig", "Required field: FunctionName, is not set");
@@ -650,11 +678,9 @@ DeleteProvisionedConcurrencyConfigOutcome LambdaClient::DeleteProvisionedConcurr
     AWS_LOGSTREAM_ERROR("DeleteProvisionedConcurrencyConfig", "Required field: Qualifier, is not set");
     return DeleteProvisionedConcurrencyConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Qualifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2019-09-30/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/provisioned-concurrency");
-  return DeleteProvisionedConcurrencyConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteProvisionedConcurrencyConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteProvisionedConcurrencyConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteProvisionedConcurrencyConfigOutcomeCallable LambdaClient::DeleteProvisionedConcurrencyConfigCallable(const DeleteProvisionedConcurrencyConfigRequest& request) const
@@ -675,9 +701,10 @@ void LambdaClient::DeleteProvisionedConcurrencyConfigAsync(const DeleteProvision
 
 GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2016-08-19/account-settings/");
-  return GetAccountSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetAccountSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAccountSettingsOutcomeCallable LambdaClient::GetAccountSettingsCallable(const GetAccountSettingsRequest& request) const
@@ -698,6 +725,7 @@ void LambdaClient::GetAccountSettingsAsync(const GetAccountSettingsRequest& requ
 
 GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetAlias", "Required field: FunctionName, is not set");
@@ -708,12 +736,9 @@ GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const
     AWS_LOGSTREAM_ERROR("GetAlias", "Required field: Name, is not set");
     return GetAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/aliases/");
-  uri.AddPathSegment(request.GetName());
-  return GetAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetAliasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAliasOutcomeCallable LambdaClient::GetAliasCallable(const GetAliasRequest& request) const
@@ -734,15 +759,15 @@ void LambdaClient::GetAliasAsync(const GetAliasRequest& request, const GetAliasR
 
 GetCodeSigningConfigOutcome LambdaClient::GetCodeSigningConfig(const GetCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CodeSigningConfigArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetCodeSigningConfig", "Required field: CodeSigningConfigArn, is not set");
     return GetCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeSigningConfigArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-04-22/code-signing-configs/");
-  uri.AddPathSegment(request.GetCodeSigningConfigArn());
-  return GetCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetCodeSigningConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCodeSigningConfigOutcomeCallable LambdaClient::GetCodeSigningConfigCallable(const GetCodeSigningConfigRequest& request) const
@@ -763,15 +788,15 @@ void LambdaClient::GetCodeSigningConfigAsync(const GetCodeSigningConfigRequest& 
 
 GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventSourceMappingRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UUIDHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetEventSourceMapping", "Required field: UUID, is not set");
     return GetEventSourceMappingOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UUID]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/event-source-mappings/");
-  uri.AddPathSegment(request.GetUUID());
-  return GetEventSourceMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetEventSourceMappingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetEventSourceMappingOutcomeCallable LambdaClient::GetEventSourceMappingCallable(const GetEventSourceMappingRequest& request) const
@@ -792,15 +817,15 @@ void LambdaClient::GetEventSourceMappingAsync(const GetEventSourceMappingRequest
 
 GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetFunction", "Required field: FunctionName, is not set");
     return GetFunctionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  return GetFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetFunctionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFunctionOutcomeCallable LambdaClient::GetFunctionCallable(const GetFunctionRequest& request) const
@@ -821,16 +846,15 @@ void LambdaClient::GetFunctionAsync(const GetFunctionRequest& request, const Get
 
 GetFunctionCodeSigningConfigOutcome LambdaClient::GetFunctionCodeSigningConfig(const GetFunctionCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunctionCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetFunctionCodeSigningConfig", "Required field: FunctionName, is not set");
     return GetFunctionCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-06-30/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/code-signing-config");
-  return GetFunctionCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFunctionCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetFunctionCodeSigningConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFunctionCodeSigningConfigOutcomeCallable LambdaClient::GetFunctionCodeSigningConfigCallable(const GetFunctionCodeSigningConfigRequest& request) const
@@ -851,16 +875,15 @@ void LambdaClient::GetFunctionCodeSigningConfigAsync(const GetFunctionCodeSignin
 
 GetFunctionConcurrencyOutcome LambdaClient::GetFunctionConcurrency(const GetFunctionConcurrencyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunctionConcurrency, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetFunctionConcurrency", "Required field: FunctionName, is not set");
     return GetFunctionConcurrencyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2019-09-30/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/concurrency");
-  return GetFunctionConcurrencyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFunctionConcurrency, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetFunctionConcurrencyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFunctionConcurrencyOutcomeCallable LambdaClient::GetFunctionConcurrencyCallable(const GetFunctionConcurrencyRequest& request) const
@@ -881,16 +904,15 @@ void LambdaClient::GetFunctionConcurrencyAsync(const GetFunctionConcurrencyReque
 
 GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const GetFunctionConfigurationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunctionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetFunctionConfiguration", "Required field: FunctionName, is not set");
     return GetFunctionConfigurationOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/configuration");
-  return GetFunctionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFunctionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetFunctionConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFunctionConfigurationOutcomeCallable LambdaClient::GetFunctionConfigurationCallable(const GetFunctionConfigurationRequest& request) const
@@ -911,16 +933,15 @@ void LambdaClient::GetFunctionConfigurationAsync(const GetFunctionConfigurationR
 
 GetFunctionEventInvokeConfigOutcome LambdaClient::GetFunctionEventInvokeConfig(const GetFunctionEventInvokeConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunctionEventInvokeConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetFunctionEventInvokeConfig", "Required field: FunctionName, is not set");
     return GetFunctionEventInvokeConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2019-09-25/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/event-invoke-config");
-  return GetFunctionEventInvokeConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFunctionEventInvokeConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetFunctionEventInvokeConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFunctionEventInvokeConfigOutcomeCallable LambdaClient::GetFunctionEventInvokeConfigCallable(const GetFunctionEventInvokeConfigRequest& request) const
@@ -941,16 +962,15 @@ void LambdaClient::GetFunctionEventInvokeConfigAsync(const GetFunctionEventInvok
 
 GetFunctionUrlConfigOutcome LambdaClient::GetFunctionUrlConfig(const GetFunctionUrlConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunctionUrlConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetFunctionUrlConfig", "Required field: FunctionName, is not set");
     return GetFunctionUrlConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2021-10-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/url");
-  return GetFunctionUrlConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFunctionUrlConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetFunctionUrlConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFunctionUrlConfigOutcomeCallable LambdaClient::GetFunctionUrlConfigCallable(const GetFunctionUrlConfigRequest& request) const
@@ -971,6 +991,7 @@ void LambdaClient::GetFunctionUrlConfigAsync(const GetFunctionUrlConfigRequest& 
 
 GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLayerVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetLayerVersion", "Required field: LayerName, is not set");
@@ -981,12 +1002,9 @@ GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionReques
     AWS_LOGSTREAM_ERROR("GetLayerVersion", "Required field: VersionNumber, is not set");
     return GetLayerVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2018-10-31/layers/");
-  uri.AddPathSegment(request.GetLayerName());
-  uri.AddPathSegments("/versions/");
-  uri.AddPathSegment(request.GetVersionNumber());
-  return GetLayerVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLayerVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetLayerVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLayerVersionOutcomeCallable LambdaClient::GetLayerVersionCallable(const GetLayerVersionRequest& request) const
@@ -1007,17 +1025,15 @@ void LambdaClient::GetLayerVersionAsync(const GetLayerVersionRequest& request, c
 
 GetLayerVersionByArnOutcome LambdaClient::GetLayerVersionByArn(const GetLayerVersionByArnRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLayerVersionByArn, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetLayerVersionByArn", "Required field: Arn, is not set");
     return GetLayerVersionByArnOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  uri.AddPathSegments("/2018-10-31/layers");
-  ss.str("?find=LayerVersion");
-  uri.SetQueryString(ss.str());
-  return GetLayerVersionByArnOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLayerVersionByArn, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetLayerVersionByArnOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLayerVersionByArnOutcomeCallable LambdaClient::GetLayerVersionByArnCallable(const GetLayerVersionByArnRequest& request) const
@@ -1038,6 +1054,7 @@ void LambdaClient::GetLayerVersionByArnAsync(const GetLayerVersionByArnRequest& 
 
 GetLayerVersionPolicyOutcome LambdaClient::GetLayerVersionPolicy(const GetLayerVersionPolicyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLayerVersionPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetLayerVersionPolicy", "Required field: LayerName, is not set");
@@ -1048,13 +1065,9 @@ GetLayerVersionPolicyOutcome LambdaClient::GetLayerVersionPolicy(const GetLayerV
     AWS_LOGSTREAM_ERROR("GetLayerVersionPolicy", "Required field: VersionNumber, is not set");
     return GetLayerVersionPolicyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2018-10-31/layers/");
-  uri.AddPathSegment(request.GetLayerName());
-  uri.AddPathSegments("/versions/");
-  uri.AddPathSegment(request.GetVersionNumber());
-  uri.AddPathSegments("/policy");
-  return GetLayerVersionPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLayerVersionPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetLayerVersionPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLayerVersionPolicyOutcomeCallable LambdaClient::GetLayerVersionPolicyCallable(const GetLayerVersionPolicyRequest& request) const
@@ -1075,16 +1088,15 @@ void LambdaClient::GetLayerVersionPolicyAsync(const GetLayerVersionPolicyRequest
 
 GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetPolicy", "Required field: FunctionName, is not set");
     return GetPolicyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/policy");
-  return GetPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetPolicyOutcomeCallable LambdaClient::GetPolicyCallable(const GetPolicyRequest& request) const
@@ -1105,6 +1117,7 @@ void LambdaClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPoli
 
 GetProvisionedConcurrencyConfigOutcome LambdaClient::GetProvisionedConcurrencyConfig(const GetProvisionedConcurrencyConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProvisionedConcurrencyConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetProvisionedConcurrencyConfig", "Required field: FunctionName, is not set");
@@ -1115,11 +1128,9 @@ GetProvisionedConcurrencyConfigOutcome LambdaClient::GetProvisionedConcurrencyCo
     AWS_LOGSTREAM_ERROR("GetProvisionedConcurrencyConfig", "Required field: Qualifier, is not set");
     return GetProvisionedConcurrencyConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Qualifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2019-09-30/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/provisioned-concurrency");
-  return GetProvisionedConcurrencyConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetProvisionedConcurrencyConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetProvisionedConcurrencyConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetProvisionedConcurrencyConfigOutcomeCallable LambdaClient::GetProvisionedConcurrencyConfigCallable(const GetProvisionedConcurrencyConfigRequest& request) const
@@ -1140,16 +1151,15 @@ void LambdaClient::GetProvisionedConcurrencyConfigAsync(const GetProvisionedConc
 
 InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, Invoke, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("Invoke", "Required field: FunctionName, is not set");
     return InvokeOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/invocations");
-  return InvokeOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Invoke, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return InvokeOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 InvokeOutcomeCallable LambdaClient::InvokeCallable(const InvokeRequest& request) const
@@ -1170,16 +1180,15 @@ void LambdaClient::InvokeAsync(const InvokeRequest& request, const InvokeRespons
 
 ListAliasesOutcome LambdaClient::ListAliases(const ListAliasesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListAliases", "Required field: FunctionName, is not set");
     return ListAliasesOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/aliases");
-  return ListAliasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListAliasesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAliasesOutcomeCallable LambdaClient::ListAliasesCallable(const ListAliasesRequest& request) const
@@ -1200,9 +1209,10 @@ void LambdaClient::ListAliasesAsync(const ListAliasesRequest& request, const Lis
 
 ListCodeSigningConfigsOutcome LambdaClient::ListCodeSigningConfigs(const ListCodeSigningConfigsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-04-22/code-signing-configs/");
-  return ListCodeSigningConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCodeSigningConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCodeSigningConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListCodeSigningConfigsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListCodeSigningConfigsOutcomeCallable LambdaClient::ListCodeSigningConfigsCallable(const ListCodeSigningConfigsRequest& request) const
@@ -1223,9 +1233,10 @@ void LambdaClient::ListCodeSigningConfigsAsync(const ListCodeSigningConfigsReque
 
 ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListEventSourceMappingsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/event-source-mappings/");
-  return ListEventSourceMappingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEventSourceMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEventSourceMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListEventSourceMappingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEventSourceMappingsOutcomeCallable LambdaClient::ListEventSourceMappingsCallable(const ListEventSourceMappingsRequest& request) const
@@ -1246,16 +1257,15 @@ void LambdaClient::ListEventSourceMappingsAsync(const ListEventSourceMappingsReq
 
 ListFunctionEventInvokeConfigsOutcome LambdaClient::ListFunctionEventInvokeConfigs(const ListFunctionEventInvokeConfigsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFunctionEventInvokeConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListFunctionEventInvokeConfigs", "Required field: FunctionName, is not set");
     return ListFunctionEventInvokeConfigsOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2019-09-25/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/event-invoke-config/list");
-  return ListFunctionEventInvokeConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFunctionEventInvokeConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListFunctionEventInvokeConfigsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFunctionEventInvokeConfigsOutcomeCallable LambdaClient::ListFunctionEventInvokeConfigsCallable(const ListFunctionEventInvokeConfigsRequest& request) const
@@ -1276,16 +1286,15 @@ void LambdaClient::ListFunctionEventInvokeConfigsAsync(const ListFunctionEventIn
 
 ListFunctionUrlConfigsOutcome LambdaClient::ListFunctionUrlConfigs(const ListFunctionUrlConfigsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFunctionUrlConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListFunctionUrlConfigs", "Required field: FunctionName, is not set");
     return ListFunctionUrlConfigsOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2021-10-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/urls");
-  return ListFunctionUrlConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFunctionUrlConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListFunctionUrlConfigsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFunctionUrlConfigsOutcomeCallable LambdaClient::ListFunctionUrlConfigsCallable(const ListFunctionUrlConfigsRequest& request) const
@@ -1306,9 +1315,10 @@ void LambdaClient::ListFunctionUrlConfigsAsync(const ListFunctionUrlConfigsReque
 
 ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  return ListFunctionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFunctions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFunctions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListFunctionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFunctionsOutcomeCallable LambdaClient::ListFunctionsCallable(const ListFunctionsRequest& request) const
@@ -1329,16 +1339,15 @@ void LambdaClient::ListFunctionsAsync(const ListFunctionsRequest& request, const
 
 ListFunctionsByCodeSigningConfigOutcome LambdaClient::ListFunctionsByCodeSigningConfig(const ListFunctionsByCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFunctionsByCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CodeSigningConfigArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListFunctionsByCodeSigningConfig", "Required field: CodeSigningConfigArn, is not set");
     return ListFunctionsByCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeSigningConfigArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-04-22/code-signing-configs/");
-  uri.AddPathSegment(request.GetCodeSigningConfigArn());
-  uri.AddPathSegments("/functions");
-  return ListFunctionsByCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFunctionsByCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListFunctionsByCodeSigningConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFunctionsByCodeSigningConfigOutcomeCallable LambdaClient::ListFunctionsByCodeSigningConfigCallable(const ListFunctionsByCodeSigningConfigRequest& request) const
@@ -1359,16 +1368,15 @@ void LambdaClient::ListFunctionsByCodeSigningConfigAsync(const ListFunctionsByCo
 
 ListLayerVersionsOutcome LambdaClient::ListLayerVersions(const ListLayerVersionsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLayerVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListLayerVersions", "Required field: LayerName, is not set");
     return ListLayerVersionsOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LayerName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2018-10-31/layers/");
-  uri.AddPathSegment(request.GetLayerName());
-  uri.AddPathSegments("/versions");
-  return ListLayerVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLayerVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListLayerVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListLayerVersionsOutcomeCallable LambdaClient::ListLayerVersionsCallable(const ListLayerVersionsRequest& request) const
@@ -1389,9 +1397,10 @@ void LambdaClient::ListLayerVersionsAsync(const ListLayerVersionsRequest& reques
 
 ListLayersOutcome LambdaClient::ListLayers(const ListLayersRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2018-10-31/layers");
-  return ListLayersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLayers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLayers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListLayersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListLayersOutcomeCallable LambdaClient::ListLayersCallable(const ListLayersRequest& request) const
@@ -1412,19 +1421,15 @@ void LambdaClient::ListLayersAsync(const ListLayersRequest& request, const ListL
 
 ListProvisionedConcurrencyConfigsOutcome LambdaClient::ListProvisionedConcurrencyConfigs(const ListProvisionedConcurrencyConfigsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProvisionedConcurrencyConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListProvisionedConcurrencyConfigs", "Required field: FunctionName, is not set");
     return ListProvisionedConcurrencyConfigsOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  uri.AddPathSegments("/2019-09-30/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/provisioned-concurrency");
-  ss.str("?List=ALL");
-  uri.SetQueryString(ss.str());
-  return ListProvisionedConcurrencyConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProvisionedConcurrencyConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListProvisionedConcurrencyConfigsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListProvisionedConcurrencyConfigsOutcomeCallable LambdaClient::ListProvisionedConcurrencyConfigsCallable(const ListProvisionedConcurrencyConfigsRequest& request) const
@@ -1445,15 +1450,15 @@ void LambdaClient::ListProvisionedConcurrencyConfigsAsync(const ListProvisionedC
 
 ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTags", "Required field: Resource, is not set");
     return ListTagsOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2017-03-31/tags/");
-  uri.AddPathSegment(request.GetResource());
-  return ListTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTagsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsOutcomeCallable LambdaClient::ListTagsCallable(const ListTagsRequest& request) const
@@ -1474,16 +1479,15 @@ void LambdaClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsR
 
 ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVersionsByFunctionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVersionsByFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListVersionsByFunction", "Required field: FunctionName, is not set");
     return ListVersionsByFunctionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/versions");
-  return ListVersionsByFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListVersionsByFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListVersionsByFunctionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListVersionsByFunctionOutcomeCallable LambdaClient::ListVersionsByFunctionCallable(const ListVersionsByFunctionRequest& request) const
@@ -1504,16 +1508,15 @@ void LambdaClient::ListVersionsByFunctionAsync(const ListVersionsByFunctionReque
 
 PublishLayerVersionOutcome LambdaClient::PublishLayerVersion(const PublishLayerVersionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PublishLayerVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PublishLayerVersion", "Required field: LayerName, is not set");
     return PublishLayerVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LayerName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2018-10-31/layers/");
-  uri.AddPathSegment(request.GetLayerName());
-  uri.AddPathSegments("/versions");
-  return PublishLayerVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PublishLayerVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PublishLayerVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PublishLayerVersionOutcomeCallable LambdaClient::PublishLayerVersionCallable(const PublishLayerVersionRequest& request) const
@@ -1534,16 +1537,15 @@ void LambdaClient::PublishLayerVersionAsync(const PublishLayerVersionRequest& re
 
 PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PublishVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PublishVersion", "Required field: FunctionName, is not set");
     return PublishVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/versions");
-  return PublishVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PublishVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PublishVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PublishVersionOutcomeCallable LambdaClient::PublishVersionCallable(const PublishVersionRequest& request) const
@@ -1564,16 +1566,15 @@ void LambdaClient::PublishVersionAsync(const PublishVersionRequest& request, con
 
 PutFunctionCodeSigningConfigOutcome LambdaClient::PutFunctionCodeSigningConfig(const PutFunctionCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutFunctionCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutFunctionCodeSigningConfig", "Required field: FunctionName, is not set");
     return PutFunctionCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-06-30/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/code-signing-config");
-  return PutFunctionCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutFunctionCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutFunctionCodeSigningConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutFunctionCodeSigningConfigOutcomeCallable LambdaClient::PutFunctionCodeSigningConfigCallable(const PutFunctionCodeSigningConfigRequest& request) const
@@ -1594,16 +1595,15 @@ void LambdaClient::PutFunctionCodeSigningConfigAsync(const PutFunctionCodeSignin
 
 PutFunctionConcurrencyOutcome LambdaClient::PutFunctionConcurrency(const PutFunctionConcurrencyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutFunctionConcurrency, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutFunctionConcurrency", "Required field: FunctionName, is not set");
     return PutFunctionConcurrencyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2017-10-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/concurrency");
-  return PutFunctionConcurrencyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutFunctionConcurrency, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutFunctionConcurrencyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutFunctionConcurrencyOutcomeCallable LambdaClient::PutFunctionConcurrencyCallable(const PutFunctionConcurrencyRequest& request) const
@@ -1624,16 +1624,15 @@ void LambdaClient::PutFunctionConcurrencyAsync(const PutFunctionConcurrencyReque
 
 PutFunctionEventInvokeConfigOutcome LambdaClient::PutFunctionEventInvokeConfig(const PutFunctionEventInvokeConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutFunctionEventInvokeConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutFunctionEventInvokeConfig", "Required field: FunctionName, is not set");
     return PutFunctionEventInvokeConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2019-09-25/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/event-invoke-config");
-  return PutFunctionEventInvokeConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutFunctionEventInvokeConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutFunctionEventInvokeConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutFunctionEventInvokeConfigOutcomeCallable LambdaClient::PutFunctionEventInvokeConfigCallable(const PutFunctionEventInvokeConfigRequest& request) const
@@ -1654,6 +1653,7 @@ void LambdaClient::PutFunctionEventInvokeConfigAsync(const PutFunctionEventInvok
 
 PutProvisionedConcurrencyConfigOutcome LambdaClient::PutProvisionedConcurrencyConfig(const PutProvisionedConcurrencyConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutProvisionedConcurrencyConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutProvisionedConcurrencyConfig", "Required field: FunctionName, is not set");
@@ -1664,11 +1664,9 @@ PutProvisionedConcurrencyConfigOutcome LambdaClient::PutProvisionedConcurrencyCo
     AWS_LOGSTREAM_ERROR("PutProvisionedConcurrencyConfig", "Required field: Qualifier, is not set");
     return PutProvisionedConcurrencyConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Qualifier]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2019-09-30/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/provisioned-concurrency");
-  return PutProvisionedConcurrencyConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutProvisionedConcurrencyConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutProvisionedConcurrencyConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutProvisionedConcurrencyConfigOutcomeCallable LambdaClient::PutProvisionedConcurrencyConfigCallable(const PutProvisionedConcurrencyConfigRequest& request) const
@@ -1689,6 +1687,7 @@ void LambdaClient::PutProvisionedConcurrencyConfigAsync(const PutProvisionedConc
 
 RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(const RemoveLayerVersionPermissionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveLayerVersionPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("RemoveLayerVersionPermission", "Required field: LayerName, is not set");
@@ -1704,14 +1703,9 @@ RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(c
     AWS_LOGSTREAM_ERROR("RemoveLayerVersionPermission", "Required field: StatementId, is not set");
     return RemoveLayerVersionPermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatementId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2018-10-31/layers/");
-  uri.AddPathSegment(request.GetLayerName());
-  uri.AddPathSegments("/versions/");
-  uri.AddPathSegment(request.GetVersionNumber());
-  uri.AddPathSegments("/policy/");
-  uri.AddPathSegment(request.GetStatementId());
-  return RemoveLayerVersionPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveLayerVersionPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return RemoveLayerVersionPermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemoveLayerVersionPermissionOutcomeCallable LambdaClient::RemoveLayerVersionPermissionCallable(const RemoveLayerVersionPermissionRequest& request) const
@@ -1732,6 +1726,7 @@ void LambdaClient::RemoveLayerVersionPermissionAsync(const RemoveLayerVersionPer
 
 RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemovePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("RemovePermission", "Required field: FunctionName, is not set");
@@ -1742,12 +1737,9 @@ RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionReq
     AWS_LOGSTREAM_ERROR("RemovePermission", "Required field: StatementId, is not set");
     return RemovePermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatementId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/policy/");
-  uri.AddPathSegment(request.GetStatementId());
-  return RemovePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemovePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return RemovePermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 RemovePermissionOutcomeCallable LambdaClient::RemovePermissionCallable(const RemovePermissionRequest& request) const
@@ -1768,15 +1760,15 @@ void LambdaClient::RemovePermissionAsync(const RemovePermissionRequest& request,
 
 TagResourceOutcome LambdaClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: Resource, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2017-03-31/tags/");
-  uri.AddPathSegment(request.GetResource());
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable LambdaClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1797,6 +1789,7 @@ void LambdaClient::TagResourceAsync(const TagResourceRequest& request, const Tag
 
 UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: Resource, is not set");
@@ -1807,10 +1800,9 @@ UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& req
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2017-03-31/tags/");
-  uri.AddPathSegment(request.GetResource());
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable LambdaClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1831,6 +1823,7 @@ void LambdaClient::UntagResourceAsync(const UntagResourceRequest& request, const
 
 UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateAlias", "Required field: FunctionName, is not set");
@@ -1841,12 +1834,9 @@ UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) 
     AWS_LOGSTREAM_ERROR("UpdateAlias", "Required field: Name, is not set");
     return UpdateAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/aliases/");
-  uri.AddPathSegment(request.GetName());
-  return UpdateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateAliasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAliasOutcomeCallable LambdaClient::UpdateAliasCallable(const UpdateAliasRequest& request) const
@@ -1867,15 +1857,15 @@ void LambdaClient::UpdateAliasAsync(const UpdateAliasRequest& request, const Upd
 
 UpdateCodeSigningConfigOutcome LambdaClient::UpdateCodeSigningConfig(const UpdateCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CodeSigningConfigArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateCodeSigningConfig", "Required field: CodeSigningConfigArn, is not set");
     return UpdateCodeSigningConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeSigningConfigArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-04-22/code-signing-configs/");
-  uri.AddPathSegment(request.GetCodeSigningConfigArn());
-  return UpdateCodeSigningConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateCodeSigningConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateCodeSigningConfigOutcomeCallable LambdaClient::UpdateCodeSigningConfigCallable(const UpdateCodeSigningConfigRequest& request) const
@@ -1896,15 +1886,15 @@ void LambdaClient::UpdateCodeSigningConfigAsync(const UpdateCodeSigningConfigReq
 
 UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const UpdateEventSourceMappingRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UUIDHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateEventSourceMapping", "Required field: UUID, is not set");
     return UpdateEventSourceMappingOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UUID]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/event-source-mappings/");
-  uri.AddPathSegment(request.GetUUID());
-  return UpdateEventSourceMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateEventSourceMappingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateEventSourceMappingOutcomeCallable LambdaClient::UpdateEventSourceMappingCallable(const UpdateEventSourceMappingRequest& request) const
@@ -1925,16 +1915,15 @@ void LambdaClient::UpdateEventSourceMappingAsync(const UpdateEventSourceMappingR
 
 UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionCodeRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFunctionCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateFunctionCode", "Required field: FunctionName, is not set");
     return UpdateFunctionCodeOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/code");
-  return UpdateFunctionCodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFunctionCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateFunctionCodeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFunctionCodeOutcomeCallable LambdaClient::UpdateFunctionCodeCallable(const UpdateFunctionCodeRequest& request) const
@@ -1955,16 +1944,15 @@ void LambdaClient::UpdateFunctionCodeAsync(const UpdateFunctionCodeRequest& requ
 
 UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(const UpdateFunctionConfigurationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFunctionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateFunctionConfiguration", "Required field: FunctionName, is not set");
     return UpdateFunctionConfigurationOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2015-03-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/configuration");
-  return UpdateFunctionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFunctionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateFunctionConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFunctionConfigurationOutcomeCallable LambdaClient::UpdateFunctionConfigurationCallable(const UpdateFunctionConfigurationRequest& request) const
@@ -1985,16 +1973,15 @@ void LambdaClient::UpdateFunctionConfigurationAsync(const UpdateFunctionConfigur
 
 UpdateFunctionEventInvokeConfigOutcome LambdaClient::UpdateFunctionEventInvokeConfig(const UpdateFunctionEventInvokeConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFunctionEventInvokeConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateFunctionEventInvokeConfig", "Required field: FunctionName, is not set");
     return UpdateFunctionEventInvokeConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2019-09-25/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/event-invoke-config");
-  return UpdateFunctionEventInvokeConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFunctionEventInvokeConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateFunctionEventInvokeConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFunctionEventInvokeConfigOutcomeCallable LambdaClient::UpdateFunctionEventInvokeConfigCallable(const UpdateFunctionEventInvokeConfigRequest& request) const
@@ -2015,16 +2002,15 @@ void LambdaClient::UpdateFunctionEventInvokeConfigAsync(const UpdateFunctionEven
 
 UpdateFunctionUrlConfigOutcome LambdaClient::UpdateFunctionUrlConfig(const UpdateFunctionUrlConfigRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFunctionUrlConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateFunctionUrlConfig", "Required field: FunctionName, is not set");
     return UpdateFunctionUrlConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2021-10-31/functions/");
-  uri.AddPathSegment(request.GetFunctionName());
-  uri.AddPathSegments("/url");
-  return UpdateFunctionUrlConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFunctionUrlConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateFunctionUrlConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFunctionUrlConfigOutcomeCallable LambdaClient::UpdateFunctionUrlConfigCallable(const UpdateFunctionUrlConfigRequest& request) const

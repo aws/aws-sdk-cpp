@@ -30,7 +30,7 @@ ListDomainConfigurationsResult& ListDomainConfigurationsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("domainConfigurations"))
   {
-    Array<JsonView> domainConfigurationsJsonList = jsonValue.GetArray("domainConfigurations");
+    Aws::Utils::Array<JsonView> domainConfigurationsJsonList = jsonValue.GetArray("domainConfigurations");
     for(unsigned domainConfigurationsIndex = 0; domainConfigurationsIndex < domainConfigurationsJsonList.GetLength(); ++domainConfigurationsIndex)
     {
       m_domainConfigurations.push_back(domainConfigurationsJsonList[domainConfigurationsIndex].AsObject());

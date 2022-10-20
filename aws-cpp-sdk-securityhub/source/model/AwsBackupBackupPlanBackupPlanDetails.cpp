@@ -44,7 +44,7 @@ AwsBackupBackupPlanBackupPlanDetails& AwsBackupBackupPlanBackupPlanDetails::oper
 
   if(jsonValue.ValueExists("AdvancedBackupSettings"))
   {
-    Array<JsonView> advancedBackupSettingsJsonList = jsonValue.GetArray("AdvancedBackupSettings");
+    Aws::Utils::Array<JsonView> advancedBackupSettingsJsonList = jsonValue.GetArray("AdvancedBackupSettings");
     for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
     {
       m_advancedBackupSettings.push_back(advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject());
@@ -54,7 +54,7 @@ AwsBackupBackupPlanBackupPlanDetails& AwsBackupBackupPlanBackupPlanDetails::oper
 
   if(jsonValue.ValueExists("BackupPlanRule"))
   {
-    Array<JsonView> backupPlanRuleJsonList = jsonValue.GetArray("BackupPlanRule");
+    Aws::Utils::Array<JsonView> backupPlanRuleJsonList = jsonValue.GetArray("BackupPlanRule");
     for(unsigned backupPlanRuleIndex = 0; backupPlanRuleIndex < backupPlanRuleJsonList.GetLength(); ++backupPlanRuleIndex)
     {
       m_backupPlanRule.push_back(backupPlanRuleJsonList[backupPlanRuleIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue AwsBackupBackupPlanBackupPlanDetails::Jsonize() const
 
   if(m_advancedBackupSettingsHasBeenSet)
   {
-   Array<JsonValue> advancedBackupSettingsJsonList(m_advancedBackupSettings.size());
+   Aws::Utils::Array<JsonValue> advancedBackupSettingsJsonList(m_advancedBackupSettings.size());
    for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
    {
      advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject(m_advancedBackupSettings[advancedBackupSettingsIndex].Jsonize());
@@ -88,7 +88,7 @@ JsonValue AwsBackupBackupPlanBackupPlanDetails::Jsonize() const
 
   if(m_backupPlanRuleHasBeenSet)
   {
-   Array<JsonValue> backupPlanRuleJsonList(m_backupPlanRule.size());
+   Aws::Utils::Array<JsonValue> backupPlanRuleJsonList(m_backupPlanRule.size());
    for(unsigned backupPlanRuleIndex = 0; backupPlanRuleIndex < backupPlanRuleJsonList.GetLength(); ++backupPlanRuleIndex)
    {
      backupPlanRuleJsonList[backupPlanRuleIndex].AsObject(m_backupPlanRule[backupPlanRuleIndex].Jsonize());

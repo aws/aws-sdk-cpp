@@ -42,7 +42,7 @@ DescribeLocationFsxLustreResult& DescribeLocationFsxLustreResult::operator =(con
 
   if(jsonValue.ValueExists("SecurityGroupArns"))
   {
-    Array<JsonView> securityGroupArnsJsonList = jsonValue.GetArray("SecurityGroupArns");
+    Aws::Utils::Array<JsonView> securityGroupArnsJsonList = jsonValue.GetArray("SecurityGroupArns");
     for(unsigned securityGroupArnsIndex = 0; securityGroupArnsIndex < securityGroupArnsJsonList.GetLength(); ++securityGroupArnsIndex)
     {
       m_securityGroupArns.push_back(securityGroupArnsJsonList[securityGroupArnsIndex].AsString());

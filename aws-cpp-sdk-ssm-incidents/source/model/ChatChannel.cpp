@@ -35,7 +35,7 @@ ChatChannel& ChatChannel::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("chatbotSns"))
   {
-    Array<JsonView> chatbotSnsJsonList = jsonValue.GetArray("chatbotSns");
+    Aws::Utils::Array<JsonView> chatbotSnsJsonList = jsonValue.GetArray("chatbotSns");
     for(unsigned chatbotSnsIndex = 0; chatbotSnsIndex < chatbotSnsJsonList.GetLength(); ++chatbotSnsIndex)
     {
       m_chatbotSns.push_back(chatbotSnsJsonList[chatbotSnsIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue ChatChannel::Jsonize() const
 
   if(m_chatbotSnsHasBeenSet)
   {
-   Array<JsonValue> chatbotSnsJsonList(m_chatbotSns.size());
+   Aws::Utils::Array<JsonValue> chatbotSnsJsonList(m_chatbotSns.size());
    for(unsigned chatbotSnsIndex = 0; chatbotSnsIndex < chatbotSnsJsonList.GetLength(); ++chatbotSnsIndex)
    {
      chatbotSnsJsonList[chatbotSnsIndex].AsString(m_chatbotSns[chatbotSnsIndex]);

@@ -30,7 +30,7 @@ ListProvisioningArtifactsForServiceActionResult& ListProvisioningArtifactsForSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisioningArtifactViews"))
   {
-    Array<JsonView> provisioningArtifactViewsJsonList = jsonValue.GetArray("ProvisioningArtifactViews");
+    Aws::Utils::Array<JsonView> provisioningArtifactViewsJsonList = jsonValue.GetArray("ProvisioningArtifactViews");
     for(unsigned provisioningArtifactViewsIndex = 0; provisioningArtifactViewsIndex < provisioningArtifactViewsJsonList.GetLength(); ++provisioningArtifactViewsIndex)
     {
       m_provisioningArtifactViews.push_back(provisioningArtifactViewsJsonList[provisioningArtifactViewsIndex].AsObject());

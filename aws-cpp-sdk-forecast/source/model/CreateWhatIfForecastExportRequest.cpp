@@ -33,7 +33,7 @@ Aws::String CreateWhatIfForecastExportRequest::SerializePayload() const
 
   if(m_whatIfForecastArnsHasBeenSet)
   {
-   Array<JsonValue> whatIfForecastArnsJsonList(m_whatIfForecastArns.size());
+   Aws::Utils::Array<JsonValue> whatIfForecastArnsJsonList(m_whatIfForecastArns.size());
    for(unsigned whatIfForecastArnsIndex = 0; whatIfForecastArnsIndex < whatIfForecastArnsJsonList.GetLength(); ++whatIfForecastArnsIndex)
    {
      whatIfForecastArnsJsonList[whatIfForecastArnsIndex].AsString(m_whatIfForecastArns[whatIfForecastArnsIndex]);
@@ -50,7 +50,7 @@ Aws::String CreateWhatIfForecastExportRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

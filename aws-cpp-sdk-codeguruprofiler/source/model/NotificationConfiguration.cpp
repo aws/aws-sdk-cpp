@@ -33,7 +33,7 @@ NotificationConfiguration& NotificationConfiguration::operator =(JsonView jsonVa
 {
   if(jsonValue.ValueExists("channels"))
   {
-    Array<JsonView> channelsJsonList = jsonValue.GetArray("channels");
+    Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("channels");
     for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
     {
       m_channels.push_back(channelsJsonList[channelsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue NotificationConfiguration::Jsonize() const
 
   if(m_channelsHasBeenSet)
   {
-   Array<JsonValue> channelsJsonList(m_channels.size());
+   Aws::Utils::Array<JsonValue> channelsJsonList(m_channels.size());
    for(unsigned channelsIndex = 0; channelsIndex < channelsJsonList.GetLength(); ++channelsIndex)
    {
      channelsJsonList[channelsIndex].AsObject(m_channels[channelsIndex].Jsonize());

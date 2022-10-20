@@ -31,7 +31,7 @@ Aws::String BatchDeleteDocumentRequest::SerializePayload() const
 
   if(m_documentIdListHasBeenSet)
   {
-   Array<JsonValue> documentIdListJsonList(m_documentIdList.size());
+   Aws::Utils::Array<JsonValue> documentIdListJsonList(m_documentIdList.size());
    for(unsigned documentIdListIndex = 0; documentIdListIndex < documentIdListJsonList.GetLength(); ++documentIdListIndex)
    {
      documentIdListJsonList[documentIdListIndex].AsString(m_documentIdList[documentIdListIndex]);

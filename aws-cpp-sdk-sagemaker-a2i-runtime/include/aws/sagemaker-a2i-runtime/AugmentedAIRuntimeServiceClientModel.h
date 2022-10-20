@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -54,6 +55,10 @@ namespace Aws
 
   namespace AugmentedAIRuntime
   {
+    namespace Endpoint
+    {
+      class AugmentedAIRuntimeEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in AugmentedAIRuntimeClient header */

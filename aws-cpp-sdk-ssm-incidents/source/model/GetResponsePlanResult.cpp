@@ -30,7 +30,7 @@ GetResponsePlanResult& GetResponsePlanResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("actions"))
   {
-    Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
+    Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
     for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
@@ -57,7 +57,7 @@ GetResponsePlanResult& GetResponsePlanResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("engagements"))
   {
-    Array<JsonView> engagementsJsonList = jsonValue.GetArray("engagements");
+    Aws::Utils::Array<JsonView> engagementsJsonList = jsonValue.GetArray("engagements");
     for(unsigned engagementsIndex = 0; engagementsIndex < engagementsJsonList.GetLength(); ++engagementsIndex)
     {
       m_engagements.push_back(engagementsJsonList[engagementsIndex].AsString());

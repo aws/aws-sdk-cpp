@@ -36,7 +36,7 @@ ListVocabularyFiltersResult& ListVocabularyFiltersResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("VocabularyFilters"))
   {
-    Array<JsonView> vocabularyFiltersJsonList = jsonValue.GetArray("VocabularyFilters");
+    Aws::Utils::Array<JsonView> vocabularyFiltersJsonList = jsonValue.GetArray("VocabularyFilters");
     for(unsigned vocabularyFiltersIndex = 0; vocabularyFiltersIndex < vocabularyFiltersJsonList.GetLength(); ++vocabularyFiltersIndex)
     {
       m_vocabularyFilters.push_back(vocabularyFiltersJsonList[vocabularyFiltersIndex].AsObject());

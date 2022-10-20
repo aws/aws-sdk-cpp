@@ -30,7 +30,7 @@ Aws::String UntagResourceRequest::SerializePayload() const
 
   if(m_tagsToRemoveHasBeenSet)
   {
-   Array<JsonValue> tagsToRemoveJsonList(m_tagsToRemove.size());
+   Aws::Utils::Array<JsonValue> tagsToRemoveJsonList(m_tagsToRemove.size());
    for(unsigned tagsToRemoveIndex = 0; tagsToRemoveIndex < tagsToRemoveJsonList.GetLength(); ++tagsToRemoveIndex)
    {
      tagsToRemoveJsonList[tagsToRemoveIndex].AsString(m_tagsToRemove[tagsToRemoveIndex]);

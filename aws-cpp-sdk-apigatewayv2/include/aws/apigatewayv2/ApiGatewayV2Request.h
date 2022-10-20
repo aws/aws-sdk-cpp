@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
+#include <aws/apigatewayv2/ApiGatewayV2EndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

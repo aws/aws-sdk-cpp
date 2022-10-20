@@ -24,7 +24,7 @@ Aws::String AddInstanceGroupsRequest::SerializePayload() const
 
   if(m_instanceGroupsHasBeenSet)
   {
-   Array<JsonValue> instanceGroupsJsonList(m_instanceGroups.size());
+   Aws::Utils::Array<JsonValue> instanceGroupsJsonList(m_instanceGroups.size());
    for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
    {
      instanceGroupsJsonList[instanceGroupsIndex].AsObject(m_instanceGroups[instanceGroupsIndex].Jsonize());

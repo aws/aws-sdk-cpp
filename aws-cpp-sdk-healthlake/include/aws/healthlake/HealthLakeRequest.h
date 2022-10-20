@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/healthlake/HealthLake_EXPORTS.h>
+#include <aws/healthlake/HealthLakeEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

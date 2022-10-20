@@ -30,7 +30,7 @@ ListSNOMEDCTInferenceJobsResult& ListSNOMEDCTInferenceJobsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ComprehendMedicalAsyncJobPropertiesList"))
   {
-    Array<JsonView> comprehendMedicalAsyncJobPropertiesListJsonList = jsonValue.GetArray("ComprehendMedicalAsyncJobPropertiesList");
+    Aws::Utils::Array<JsonView> comprehendMedicalAsyncJobPropertiesListJsonList = jsonValue.GetArray("ComprehendMedicalAsyncJobPropertiesList");
     for(unsigned comprehendMedicalAsyncJobPropertiesListIndex = 0; comprehendMedicalAsyncJobPropertiesListIndex < comprehendMedicalAsyncJobPropertiesListJsonList.GetLength(); ++comprehendMedicalAsyncJobPropertiesListIndex)
     {
       m_comprehendMedicalAsyncJobPropertiesList.push_back(comprehendMedicalAsyncJobPropertiesListJsonList[comprehendMedicalAsyncJobPropertiesListIndex].AsObject());

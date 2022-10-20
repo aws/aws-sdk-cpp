@@ -33,7 +33,7 @@ AndStatement& AndStatement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Statements"))
   {
-    Array<JsonView> statementsJsonList = jsonValue.GetArray("Statements");
+    Aws::Utils::Array<JsonView> statementsJsonList = jsonValue.GetArray("Statements");
     for(unsigned statementsIndex = 0; statementsIndex < statementsJsonList.GetLength(); ++statementsIndex)
     {
       m_statements.push_back(statementsJsonList[statementsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue AndStatement::Jsonize() const
 
   if(m_statementsHasBeenSet)
   {
-   Array<JsonValue> statementsJsonList(m_statements.size());
+   Aws::Utils::Array<JsonValue> statementsJsonList(m_statements.size());
    for(unsigned statementsIndex = 0; statementsIndex < statementsJsonList.GetLength(); ++statementsIndex)
    {
      statementsJsonList[statementsIndex].AsObject(m_statements[statementsIndex].Jsonize());

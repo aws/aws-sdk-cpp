@@ -57,7 +57,7 @@ RemediationExecutionStatus& RemediationExecutionStatus::operator =(JsonView json
 
   if(jsonValue.ValueExists("StepDetails"))
   {
-    Array<JsonView> stepDetailsJsonList = jsonValue.GetArray("StepDetails");
+    Aws::Utils::Array<JsonView> stepDetailsJsonList = jsonValue.GetArray("StepDetails");
     for(unsigned stepDetailsIndex = 0; stepDetailsIndex < stepDetailsJsonList.GetLength(); ++stepDetailsIndex)
     {
       m_stepDetails.push_back(stepDetailsJsonList[stepDetailsIndex].AsObject());
@@ -99,7 +99,7 @@ JsonValue RemediationExecutionStatus::Jsonize() const
 
   if(m_stepDetailsHasBeenSet)
   {
-   Array<JsonValue> stepDetailsJsonList(m_stepDetails.size());
+   Aws::Utils::Array<JsonValue> stepDetailsJsonList(m_stepDetails.size());
    for(unsigned stepDetailsIndex = 0; stepDetailsIndex < stepDetailsJsonList.GetLength(); ++stepDetailsIndex)
    {
      stepDetailsJsonList[stepDetailsIndex].AsObject(m_stepDetails[stepDetailsIndex].Jsonize());

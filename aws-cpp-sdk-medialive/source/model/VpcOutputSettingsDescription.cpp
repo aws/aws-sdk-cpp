@@ -39,7 +39,7 @@ VpcOutputSettingsDescription& VpcOutputSettingsDescription::operator =(JsonView 
 {
   if(jsonValue.ValueExists("availabilityZones"))
   {
-    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
+    Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
@@ -49,7 +49,7 @@ VpcOutputSettingsDescription& VpcOutputSettingsDescription::operator =(JsonView 
 
   if(jsonValue.ValueExists("networkInterfaceIds"))
   {
-    Array<JsonView> networkInterfaceIdsJsonList = jsonValue.GetArray("networkInterfaceIds");
+    Aws::Utils::Array<JsonView> networkInterfaceIdsJsonList = jsonValue.GetArray("networkInterfaceIds");
     for(unsigned networkInterfaceIdsIndex = 0; networkInterfaceIdsIndex < networkInterfaceIdsJsonList.GetLength(); ++networkInterfaceIdsIndex)
     {
       m_networkInterfaceIds.push_back(networkInterfaceIdsJsonList[networkInterfaceIdsIndex].AsString());
@@ -59,7 +59,7 @@ VpcOutputSettingsDescription& VpcOutputSettingsDescription::operator =(JsonView 
 
   if(jsonValue.ValueExists("securityGroupIds"))
   {
-    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -69,7 +69,7 @@ VpcOutputSettingsDescription& VpcOutputSettingsDescription::operator =(JsonView 
 
   if(jsonValue.ValueExists("subnetIds"))
   {
-    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -86,7 +86,7 @@ JsonValue VpcOutputSettingsDescription::Jsonize() const
 
   if(m_availabilityZonesHasBeenSet)
   {
-   Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
    {
      availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
@@ -97,7 +97,7 @@ JsonValue VpcOutputSettingsDescription::Jsonize() const
 
   if(m_networkInterfaceIdsHasBeenSet)
   {
-   Array<JsonValue> networkInterfaceIdsJsonList(m_networkInterfaceIds.size());
+   Aws::Utils::Array<JsonValue> networkInterfaceIdsJsonList(m_networkInterfaceIds.size());
    for(unsigned networkInterfaceIdsIndex = 0; networkInterfaceIdsIndex < networkInterfaceIdsJsonList.GetLength(); ++networkInterfaceIdsIndex)
    {
      networkInterfaceIdsJsonList[networkInterfaceIdsIndex].AsString(m_networkInterfaceIds[networkInterfaceIdsIndex]);
@@ -108,7 +108,7 @@ JsonValue VpcOutputSettingsDescription::Jsonize() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
@@ -119,7 +119,7 @@ JsonValue VpcOutputSettingsDescription::Jsonize() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);

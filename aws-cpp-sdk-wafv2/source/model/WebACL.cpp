@@ -98,7 +98,7 @@ WebACL& WebACL::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Rules"))
   {
-    Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
@@ -122,7 +122,7 @@ WebACL& WebACL::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PreProcessFirewallManagerRuleGroups"))
   {
-    Array<JsonView> preProcessFirewallManagerRuleGroupsJsonList = jsonValue.GetArray("PreProcessFirewallManagerRuleGroups");
+    Aws::Utils::Array<JsonView> preProcessFirewallManagerRuleGroupsJsonList = jsonValue.GetArray("PreProcessFirewallManagerRuleGroups");
     for(unsigned preProcessFirewallManagerRuleGroupsIndex = 0; preProcessFirewallManagerRuleGroupsIndex < preProcessFirewallManagerRuleGroupsJsonList.GetLength(); ++preProcessFirewallManagerRuleGroupsIndex)
     {
       m_preProcessFirewallManagerRuleGroups.push_back(preProcessFirewallManagerRuleGroupsJsonList[preProcessFirewallManagerRuleGroupsIndex].AsObject());
@@ -132,7 +132,7 @@ WebACL& WebACL::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PostProcessFirewallManagerRuleGroups"))
   {
-    Array<JsonView> postProcessFirewallManagerRuleGroupsJsonList = jsonValue.GetArray("PostProcessFirewallManagerRuleGroups");
+    Aws::Utils::Array<JsonView> postProcessFirewallManagerRuleGroupsJsonList = jsonValue.GetArray("PostProcessFirewallManagerRuleGroups");
     for(unsigned postProcessFirewallManagerRuleGroupsIndex = 0; postProcessFirewallManagerRuleGroupsIndex < postProcessFirewallManagerRuleGroupsJsonList.GetLength(); ++postProcessFirewallManagerRuleGroupsIndex)
     {
       m_postProcessFirewallManagerRuleGroups.push_back(postProcessFirewallManagerRuleGroupsJsonList[postProcessFirewallManagerRuleGroupsIndex].AsObject());
@@ -210,7 +210,7 @@ JsonValue WebACL::Jsonize() const
 
   if(m_rulesHasBeenSet)
   {
-   Array<JsonValue> rulesJsonList(m_rules.size());
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
@@ -233,7 +233,7 @@ JsonValue WebACL::Jsonize() const
 
   if(m_preProcessFirewallManagerRuleGroupsHasBeenSet)
   {
-   Array<JsonValue> preProcessFirewallManagerRuleGroupsJsonList(m_preProcessFirewallManagerRuleGroups.size());
+   Aws::Utils::Array<JsonValue> preProcessFirewallManagerRuleGroupsJsonList(m_preProcessFirewallManagerRuleGroups.size());
    for(unsigned preProcessFirewallManagerRuleGroupsIndex = 0; preProcessFirewallManagerRuleGroupsIndex < preProcessFirewallManagerRuleGroupsJsonList.GetLength(); ++preProcessFirewallManagerRuleGroupsIndex)
    {
      preProcessFirewallManagerRuleGroupsJsonList[preProcessFirewallManagerRuleGroupsIndex].AsObject(m_preProcessFirewallManagerRuleGroups[preProcessFirewallManagerRuleGroupsIndex].Jsonize());
@@ -244,7 +244,7 @@ JsonValue WebACL::Jsonize() const
 
   if(m_postProcessFirewallManagerRuleGroupsHasBeenSet)
   {
-   Array<JsonValue> postProcessFirewallManagerRuleGroupsJsonList(m_postProcessFirewallManagerRuleGroups.size());
+   Aws::Utils::Array<JsonValue> postProcessFirewallManagerRuleGroupsJsonList(m_postProcessFirewallManagerRuleGroups.size());
    for(unsigned postProcessFirewallManagerRuleGroupsIndex = 0; postProcessFirewallManagerRuleGroupsIndex < postProcessFirewallManagerRuleGroupsJsonList.GetLength(); ++postProcessFirewallManagerRuleGroupsIndex)
    {
      postProcessFirewallManagerRuleGroupsJsonList[postProcessFirewallManagerRuleGroupsIndex].AsObject(m_postProcessFirewallManagerRuleGroups[postProcessFirewallManagerRuleGroupsIndex].Jsonize());

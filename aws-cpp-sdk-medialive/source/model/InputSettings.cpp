@@ -67,7 +67,7 @@ InputSettings& InputSettings::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("audioSelectors"))
   {
-    Array<JsonView> audioSelectorsJsonList = jsonValue.GetArray("audioSelectors");
+    Aws::Utils::Array<JsonView> audioSelectorsJsonList = jsonValue.GetArray("audioSelectors");
     for(unsigned audioSelectorsIndex = 0; audioSelectorsIndex < audioSelectorsJsonList.GetLength(); ++audioSelectorsIndex)
     {
       m_audioSelectors.push_back(audioSelectorsJsonList[audioSelectorsIndex].AsObject());
@@ -77,7 +77,7 @@ InputSettings& InputSettings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("captionSelectors"))
   {
-    Array<JsonView> captionSelectorsJsonList = jsonValue.GetArray("captionSelectors");
+    Aws::Utils::Array<JsonView> captionSelectorsJsonList = jsonValue.GetArray("captionSelectors");
     for(unsigned captionSelectorsIndex = 0; captionSelectorsIndex < captionSelectorsJsonList.GetLength(); ++captionSelectorsIndex)
     {
       m_captionSelectors.push_back(captionSelectorsJsonList[captionSelectorsIndex].AsObject());
@@ -157,7 +157,7 @@ JsonValue InputSettings::Jsonize() const
 
   if(m_audioSelectorsHasBeenSet)
   {
-   Array<JsonValue> audioSelectorsJsonList(m_audioSelectors.size());
+   Aws::Utils::Array<JsonValue> audioSelectorsJsonList(m_audioSelectors.size());
    for(unsigned audioSelectorsIndex = 0; audioSelectorsIndex < audioSelectorsJsonList.GetLength(); ++audioSelectorsIndex)
    {
      audioSelectorsJsonList[audioSelectorsIndex].AsObject(m_audioSelectors[audioSelectorsIndex].Jsonize());
@@ -168,7 +168,7 @@ JsonValue InputSettings::Jsonize() const
 
   if(m_captionSelectorsHasBeenSet)
   {
-   Array<JsonValue> captionSelectorsJsonList(m_captionSelectors.size());
+   Aws::Utils::Array<JsonValue> captionSelectorsJsonList(m_captionSelectors.size());
    for(unsigned captionSelectorsIndex = 0; captionSelectorsIndex < captionSelectorsJsonList.GetLength(); ++captionSelectorsIndex)
    {
      captionSelectorsJsonList[captionSelectorsIndex].AsObject(m_captionSelectors[captionSelectorsIndex].Jsonize());

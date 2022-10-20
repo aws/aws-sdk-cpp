@@ -44,7 +44,7 @@ ListResolverEndpointsResult& ListResolverEndpointsResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("ResolverEndpoints"))
   {
-    Array<JsonView> resolverEndpointsJsonList = jsonValue.GetArray("ResolverEndpoints");
+    Aws::Utils::Array<JsonView> resolverEndpointsJsonList = jsonValue.GetArray("ResolverEndpoints");
     for(unsigned resolverEndpointsIndex = 0; resolverEndpointsIndex < resolverEndpointsJsonList.GetLength(); ++resolverEndpointsIndex)
     {
       m_resolverEndpoints.push_back(resolverEndpointsJsonList[resolverEndpointsIndex].AsObject());

@@ -44,7 +44,7 @@ DescribeWhatIfForecastExportResult& DescribeWhatIfForecastExportResult::operator
 
   if(jsonValue.ValueExists("WhatIfForecastArns"))
   {
-    Array<JsonView> whatIfForecastArnsJsonList = jsonValue.GetArray("WhatIfForecastArns");
+    Aws::Utils::Array<JsonView> whatIfForecastArnsJsonList = jsonValue.GetArray("WhatIfForecastArns");
     for(unsigned whatIfForecastArnsIndex = 0; whatIfForecastArnsIndex < whatIfForecastArnsJsonList.GetLength(); ++whatIfForecastArnsIndex)
     {
       m_whatIfForecastArns.push_back(whatIfForecastArnsJsonList[whatIfForecastArnsIndex].AsString());

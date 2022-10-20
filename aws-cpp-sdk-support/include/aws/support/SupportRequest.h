@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/support/Support_EXPORTS.h>
+#include <aws/support/SupportEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/honeycode/Honeycode_EXPORTS.h>
+#include <aws/honeycode/HoneycodeEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

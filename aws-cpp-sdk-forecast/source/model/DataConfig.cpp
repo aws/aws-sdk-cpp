@@ -44,7 +44,7 @@ DataConfig& DataConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AttributeConfigs"))
   {
-    Array<JsonView> attributeConfigsJsonList = jsonValue.GetArray("AttributeConfigs");
+    Aws::Utils::Array<JsonView> attributeConfigsJsonList = jsonValue.GetArray("AttributeConfigs");
     for(unsigned attributeConfigsIndex = 0; attributeConfigsIndex < attributeConfigsJsonList.GetLength(); ++attributeConfigsIndex)
     {
       m_attributeConfigs.push_back(attributeConfigsJsonList[attributeConfigsIndex].AsObject());
@@ -54,7 +54,7 @@ DataConfig& DataConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdditionalDatasets"))
   {
-    Array<JsonView> additionalDatasetsJsonList = jsonValue.GetArray("AdditionalDatasets");
+    Aws::Utils::Array<JsonView> additionalDatasetsJsonList = jsonValue.GetArray("AdditionalDatasets");
     for(unsigned additionalDatasetsIndex = 0; additionalDatasetsIndex < additionalDatasetsJsonList.GetLength(); ++additionalDatasetsIndex)
     {
       m_additionalDatasets.push_back(additionalDatasetsJsonList[additionalDatasetsIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue DataConfig::Jsonize() const
 
   if(m_attributeConfigsHasBeenSet)
   {
-   Array<JsonValue> attributeConfigsJsonList(m_attributeConfigs.size());
+   Aws::Utils::Array<JsonValue> attributeConfigsJsonList(m_attributeConfigs.size());
    for(unsigned attributeConfigsIndex = 0; attributeConfigsIndex < attributeConfigsJsonList.GetLength(); ++attributeConfigsIndex)
    {
      attributeConfigsJsonList[attributeConfigsIndex].AsObject(m_attributeConfigs[attributeConfigsIndex].Jsonize());
@@ -88,7 +88,7 @@ JsonValue DataConfig::Jsonize() const
 
   if(m_additionalDatasetsHasBeenSet)
   {
-   Array<JsonValue> additionalDatasetsJsonList(m_additionalDatasets.size());
+   Aws::Utils::Array<JsonValue> additionalDatasetsJsonList(m_additionalDatasets.size());
    for(unsigned additionalDatasetsIndex = 0; additionalDatasetsIndex < additionalDatasetsJsonList.GetLength(); ++additionalDatasetsIndex)
    {
      additionalDatasetsJsonList[additionalDatasetsIndex].AsObject(m_additionalDatasets[additionalDatasetsIndex].Jsonize());

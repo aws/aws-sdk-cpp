@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/s3-crt/S3CrtEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -107,6 +108,10 @@ namespace Aws
 
   namespace S3Crt
   {
+    namespace Endpoint
+    {
+      class S3CrtEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in S3CrtClient header */

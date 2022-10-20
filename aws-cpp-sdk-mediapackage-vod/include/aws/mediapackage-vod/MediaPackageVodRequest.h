@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
+#include <aws/mediapackage-vod/MediaPackageVodEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

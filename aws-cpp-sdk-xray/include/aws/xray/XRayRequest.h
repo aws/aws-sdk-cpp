@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/xray/XRay_EXPORTS.h>
+#include <aws/xray/XRayEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

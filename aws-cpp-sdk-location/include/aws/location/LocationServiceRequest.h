@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
+#include <aws/location/LocationServiceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

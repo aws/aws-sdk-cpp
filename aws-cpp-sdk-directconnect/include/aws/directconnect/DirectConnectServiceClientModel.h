@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/directconnect/DirectConnectEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -108,6 +109,10 @@ namespace Aws
 
   namespace DirectConnect
   {
+    namespace Endpoint
+    {
+      class DirectConnectEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in DirectConnectClient header */

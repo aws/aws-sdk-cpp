@@ -63,7 +63,7 @@ VirtualInterfaceTestHistory& VirtualInterfaceTestHistory::operator =(JsonView js
 
   if(jsonValue.ValueExists("bgpPeers"))
   {
-    Array<JsonView> bgpPeersJsonList = jsonValue.GetArray("bgpPeers");
+    Aws::Utils::Array<JsonView> bgpPeersJsonList = jsonValue.GetArray("bgpPeers");
     for(unsigned bgpPeersIndex = 0; bgpPeersIndex < bgpPeersJsonList.GetLength(); ++bgpPeersIndex)
     {
       m_bgpPeers.push_back(bgpPeersJsonList[bgpPeersIndex].AsString());
@@ -127,7 +127,7 @@ JsonValue VirtualInterfaceTestHistory::Jsonize() const
 
   if(m_bgpPeersHasBeenSet)
   {
-   Array<JsonValue> bgpPeersJsonList(m_bgpPeers.size());
+   Aws::Utils::Array<JsonValue> bgpPeersJsonList(m_bgpPeers.size());
    for(unsigned bgpPeersIndex = 0; bgpPeersIndex < bgpPeersJsonList.GetLength(); ++bgpPeersIndex)
    {
      bgpPeersJsonList[bgpPeersIndex].AsString(m_bgpPeers[bgpPeersIndex]);

@@ -30,7 +30,7 @@ ListImpersonationRolesResult& ListImpersonationRolesResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Roles"))
   {
-    Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");
+    Aws::Utils::Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");
     for(unsigned rolesIndex = 0; rolesIndex < rolesJsonList.GetLength(); ++rolesIndex)
     {
       m_roles.push_back(rolesJsonList[rolesIndex].AsObject());

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/budgets/Budgets_EXPORTS.h>
+#include <aws/budgets/BudgetsEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

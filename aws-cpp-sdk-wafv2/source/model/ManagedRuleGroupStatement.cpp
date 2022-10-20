@@ -72,7 +72,7 @@ ManagedRuleGroupStatement& ManagedRuleGroupStatement::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ExcludedRules"))
   {
-    Array<JsonView> excludedRulesJsonList = jsonValue.GetArray("ExcludedRules");
+    Aws::Utils::Array<JsonView> excludedRulesJsonList = jsonValue.GetArray("ExcludedRules");
     for(unsigned excludedRulesIndex = 0; excludedRulesIndex < excludedRulesJsonList.GetLength(); ++excludedRulesIndex)
     {
       m_excludedRules.push_back(excludedRulesJsonList[excludedRulesIndex].AsObject());
@@ -89,7 +89,7 @@ ManagedRuleGroupStatement& ManagedRuleGroupStatement::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ManagedRuleGroupConfigs"))
   {
-    Array<JsonView> managedRuleGroupConfigsJsonList = jsonValue.GetArray("ManagedRuleGroupConfigs");
+    Aws::Utils::Array<JsonView> managedRuleGroupConfigsJsonList = jsonValue.GetArray("ManagedRuleGroupConfigs");
     for(unsigned managedRuleGroupConfigsIndex = 0; managedRuleGroupConfigsIndex < managedRuleGroupConfigsJsonList.GetLength(); ++managedRuleGroupConfigsIndex)
     {
       m_managedRuleGroupConfigs.push_back(managedRuleGroupConfigsJsonList[managedRuleGroupConfigsIndex].AsObject());
@@ -124,7 +124,7 @@ JsonValue ManagedRuleGroupStatement::Jsonize() const
 
   if(m_excludedRulesHasBeenSet)
   {
-   Array<JsonValue> excludedRulesJsonList(m_excludedRules.size());
+   Aws::Utils::Array<JsonValue> excludedRulesJsonList(m_excludedRules.size());
    for(unsigned excludedRulesIndex = 0; excludedRulesIndex < excludedRulesJsonList.GetLength(); ++excludedRulesIndex)
    {
      excludedRulesJsonList[excludedRulesIndex].AsObject(m_excludedRules[excludedRulesIndex].Jsonize());
@@ -141,7 +141,7 @@ JsonValue ManagedRuleGroupStatement::Jsonize() const
 
   if(m_managedRuleGroupConfigsHasBeenSet)
   {
-   Array<JsonValue> managedRuleGroupConfigsJsonList(m_managedRuleGroupConfigs.size());
+   Aws::Utils::Array<JsonValue> managedRuleGroupConfigsJsonList(m_managedRuleGroupConfigs.size());
    for(unsigned managedRuleGroupConfigsIndex = 0; managedRuleGroupConfigsIndex < managedRuleGroupConfigsJsonList.GetLength(); ++managedRuleGroupConfigsIndex)
    {
      managedRuleGroupConfigsJsonList[managedRuleGroupConfigsIndex].AsObject(m_managedRuleGroupConfigs[managedRuleGroupConfigsIndex].Jsonize());

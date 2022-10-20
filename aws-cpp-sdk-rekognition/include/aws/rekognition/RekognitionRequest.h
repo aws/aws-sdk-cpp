@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
+#include <aws/rekognition/RekognitionEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -39,7 +39,7 @@ Aws::String CopyPackageVersionsRequest::SerializePayload() const
 
   if(m_versionsHasBeenSet)
   {
-   Array<JsonValue> versionsJsonList(m_versions.size());
+   Aws::Utils::Array<JsonValue> versionsJsonList(m_versions.size());
    for(unsigned versionsIndex = 0; versionsIndex < versionsJsonList.GetLength(); ++versionsIndex)
    {
      versionsJsonList[versionsIndex].AsString(m_versions[versionsIndex]);

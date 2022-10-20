@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/iotsecuretunneling/IoTSecureTunnelingEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -57,6 +58,10 @@ namespace Aws
 
   namespace IoTSecureTunneling
   {
+    namespace Endpoint
+    {
+      class IoTSecureTunnelingEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in IoTSecureTunnelingClient header */

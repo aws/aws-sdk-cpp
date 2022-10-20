@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
+#include <aws/storagegateway/StorageGatewayEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

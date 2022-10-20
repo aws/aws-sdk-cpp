@@ -35,7 +35,7 @@ DataValidationMetrics& DataValidationMetrics::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("fileLevelMessages"))
   {
-    Array<JsonView> fileLevelMessagesJsonList = jsonValue.GetArray("fileLevelMessages");
+    Aws::Utils::Array<JsonView> fileLevelMessagesJsonList = jsonValue.GetArray("fileLevelMessages");
     for(unsigned fileLevelMessagesIndex = 0; fileLevelMessagesIndex < fileLevelMessagesJsonList.GetLength(); ++fileLevelMessagesIndex)
     {
       m_fileLevelMessages.push_back(fileLevelMessagesJsonList[fileLevelMessagesIndex].AsObject());
@@ -45,7 +45,7 @@ DataValidationMetrics& DataValidationMetrics::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("fieldLevelMessages"))
   {
-    Array<JsonView> fieldLevelMessagesJsonList = jsonValue.GetArray("fieldLevelMessages");
+    Aws::Utils::Array<JsonView> fieldLevelMessagesJsonList = jsonValue.GetArray("fieldLevelMessages");
     for(unsigned fieldLevelMessagesIndex = 0; fieldLevelMessagesIndex < fieldLevelMessagesJsonList.GetLength(); ++fieldLevelMessagesIndex)
     {
       m_fieldLevelMessages.push_back(fieldLevelMessagesJsonList[fieldLevelMessagesIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue DataValidationMetrics::Jsonize() const
 
   if(m_fileLevelMessagesHasBeenSet)
   {
-   Array<JsonValue> fileLevelMessagesJsonList(m_fileLevelMessages.size());
+   Aws::Utils::Array<JsonValue> fileLevelMessagesJsonList(m_fileLevelMessages.size());
    for(unsigned fileLevelMessagesIndex = 0; fileLevelMessagesIndex < fileLevelMessagesJsonList.GetLength(); ++fileLevelMessagesIndex)
    {
      fileLevelMessagesJsonList[fileLevelMessagesIndex].AsObject(m_fileLevelMessages[fileLevelMessagesIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue DataValidationMetrics::Jsonize() const
 
   if(m_fieldLevelMessagesHasBeenSet)
   {
-   Array<JsonValue> fieldLevelMessagesJsonList(m_fieldLevelMessages.size());
+   Aws::Utils::Array<JsonValue> fieldLevelMessagesJsonList(m_fieldLevelMessages.size());
    for(unsigned fieldLevelMessagesIndex = 0; fieldLevelMessagesIndex < fieldLevelMessagesJsonList.GetLength(); ++fieldLevelMessagesIndex)
    {
      fieldLevelMessagesJsonList[fieldLevelMessagesIndex].AsObject(m_fieldLevelMessages[fieldLevelMessagesIndex].Jsonize());

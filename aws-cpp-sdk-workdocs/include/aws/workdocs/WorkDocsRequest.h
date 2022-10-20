@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/workdocs/WorkDocs_EXPORTS.h>
+#include <aws/workdocs/WorkDocsEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
+#include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

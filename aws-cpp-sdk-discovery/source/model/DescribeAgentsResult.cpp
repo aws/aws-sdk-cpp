@@ -30,7 +30,7 @@ DescribeAgentsResult& DescribeAgentsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("agentsInfo"))
   {
-    Array<JsonView> agentsInfoJsonList = jsonValue.GetArray("agentsInfo");
+    Aws::Utils::Array<JsonView> agentsInfoJsonList = jsonValue.GetArray("agentsInfo");
     for(unsigned agentsInfoIndex = 0; agentsInfoIndex < agentsInfoJsonList.GetLength(); ++agentsInfoIndex)
     {
       m_agentsInfo.push_back(agentsInfoJsonList[agentsInfoIndex].AsObject());

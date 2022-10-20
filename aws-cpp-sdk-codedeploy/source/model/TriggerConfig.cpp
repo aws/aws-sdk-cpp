@@ -51,7 +51,7 @@ TriggerConfig& TriggerConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("triggerEvents"))
   {
-    Array<JsonView> triggerEventsJsonList = jsonValue.GetArray("triggerEvents");
+    Aws::Utils::Array<JsonView> triggerEventsJsonList = jsonValue.GetArray("triggerEvents");
     for(unsigned triggerEventsIndex = 0; triggerEventsIndex < triggerEventsJsonList.GetLength(); ++triggerEventsIndex)
     {
       m_triggerEvents.push_back(TriggerEventTypeMapper::GetTriggerEventTypeForName(triggerEventsJsonList[triggerEventsIndex].AsString()));
@@ -80,7 +80,7 @@ JsonValue TriggerConfig::Jsonize() const
 
   if(m_triggerEventsHasBeenSet)
   {
-   Array<JsonValue> triggerEventsJsonList(m_triggerEvents.size());
+   Aws::Utils::Array<JsonValue> triggerEventsJsonList(m_triggerEvents.size());
    for(unsigned triggerEventsIndex = 0; triggerEventsIndex < triggerEventsJsonList.GetLength(); ++triggerEventsIndex)
    {
      triggerEventsJsonList[triggerEventsIndex].AsString(TriggerEventTypeMapper::GetNameForTriggerEventType(m_triggerEvents[triggerEventsIndex]));

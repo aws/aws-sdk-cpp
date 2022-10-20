@@ -55,7 +55,7 @@ SubResourceSummary& SubResourceSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AttackVectors"))
   {
-    Array<JsonView> attackVectorsJsonList = jsonValue.GetArray("AttackVectors");
+    Aws::Utils::Array<JsonView> attackVectorsJsonList = jsonValue.GetArray("AttackVectors");
     for(unsigned attackVectorsIndex = 0; attackVectorsIndex < attackVectorsJsonList.GetLength(); ++attackVectorsIndex)
     {
       m_attackVectors.push_back(attackVectorsJsonList[attackVectorsIndex].AsObject());
@@ -65,7 +65,7 @@ SubResourceSummary& SubResourceSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Counters"))
   {
-    Array<JsonView> countersJsonList = jsonValue.GetArray("Counters");
+    Aws::Utils::Array<JsonView> countersJsonList = jsonValue.GetArray("Counters");
     for(unsigned countersIndex = 0; countersIndex < countersJsonList.GetLength(); ++countersIndex)
     {
       m_counters.push_back(countersJsonList[countersIndex].AsObject());
@@ -93,7 +93,7 @@ JsonValue SubResourceSummary::Jsonize() const
 
   if(m_attackVectorsHasBeenSet)
   {
-   Array<JsonValue> attackVectorsJsonList(m_attackVectors.size());
+   Aws::Utils::Array<JsonValue> attackVectorsJsonList(m_attackVectors.size());
    for(unsigned attackVectorsIndex = 0; attackVectorsIndex < attackVectorsJsonList.GetLength(); ++attackVectorsIndex)
    {
      attackVectorsJsonList[attackVectorsIndex].AsObject(m_attackVectors[attackVectorsIndex].Jsonize());
@@ -104,7 +104,7 @@ JsonValue SubResourceSummary::Jsonize() const
 
   if(m_countersHasBeenSet)
   {
-   Array<JsonValue> countersJsonList(m_counters.size());
+   Aws::Utils::Array<JsonValue> countersJsonList(m_counters.size());
    for(unsigned countersIndex = 0; countersIndex < countersJsonList.GetLength(); ++countersIndex)
    {
      countersJsonList[countersIndex].AsObject(m_counters[countersIndex].Jsonize());

@@ -34,7 +34,7 @@ Aws::String DescribeKeywordsRequest::SerializePayload() const
 
   if(m_keywordsHasBeenSet)
   {
-   Array<JsonValue> keywordsJsonList(m_keywords.size());
+   Aws::Utils::Array<JsonValue> keywordsJsonList(m_keywords.size());
    for(unsigned keywordsIndex = 0; keywordsIndex < keywordsJsonList.GetLength(); ++keywordsIndex)
    {
      keywordsJsonList[keywordsIndex].AsString(m_keywords[keywordsIndex]);
@@ -45,7 +45,7 @@ Aws::String DescribeKeywordsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

@@ -70,7 +70,7 @@ DistributionConfiguration& DistributionConfiguration::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("distributions"))
   {
-    Array<JsonView> distributionsJsonList = jsonValue.GetArray("distributions");
+    Aws::Utils::Array<JsonView> distributionsJsonList = jsonValue.GetArray("distributions");
     for(unsigned distributionsIndex = 0; distributionsIndex < distributionsJsonList.GetLength(); ++distributionsIndex)
     {
       m_distributions.push_back(distributionsJsonList[distributionsIndex].AsObject());
@@ -136,7 +136,7 @@ JsonValue DistributionConfiguration::Jsonize() const
 
   if(m_distributionsHasBeenSet)
   {
-   Array<JsonValue> distributionsJsonList(m_distributions.size());
+   Aws::Utils::Array<JsonValue> distributionsJsonList(m_distributions.size());
    for(unsigned distributionsIndex = 0; distributionsIndex < distributionsJsonList.GetLength(); ++distributionsIndex)
    {
      distributionsJsonList[distributionsIndex].AsObject(m_distributions[distributionsIndex].Jsonize());

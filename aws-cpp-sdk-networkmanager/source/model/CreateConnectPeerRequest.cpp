@@ -54,7 +54,7 @@ Aws::String CreateConnectPeerRequest::SerializePayload() const
 
   if(m_insideCidrBlocksHasBeenSet)
   {
-   Array<JsonValue> insideCidrBlocksJsonList(m_insideCidrBlocks.size());
+   Aws::Utils::Array<JsonValue> insideCidrBlocksJsonList(m_insideCidrBlocks.size());
    for(unsigned insideCidrBlocksIndex = 0; insideCidrBlocksIndex < insideCidrBlocksJsonList.GetLength(); ++insideCidrBlocksIndex)
    {
      insideCidrBlocksJsonList[insideCidrBlocksIndex].AsString(m_insideCidrBlocks[insideCidrBlocksIndex]);
@@ -65,7 +65,7 @@ Aws::String CreateConnectPeerRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

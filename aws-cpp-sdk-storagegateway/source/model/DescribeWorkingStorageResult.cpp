@@ -40,7 +40,7 @@ DescribeWorkingStorageResult& DescribeWorkingStorageResult::operator =(const Aws
 
   if(jsonValue.ValueExists("DiskIds"))
   {
-    Array<JsonView> diskIdsJsonList = jsonValue.GetArray("DiskIds");
+    Aws::Utils::Array<JsonView> diskIdsJsonList = jsonValue.GetArray("DiskIds");
     for(unsigned diskIdsIndex = 0; diskIdsIndex < diskIdsJsonList.GetLength(); ++diskIdsIndex)
     {
       m_diskIds.push_back(diskIdsJsonList[diskIdsIndex].AsString());

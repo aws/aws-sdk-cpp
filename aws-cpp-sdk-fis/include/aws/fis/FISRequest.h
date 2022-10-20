@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/fis/FIS_EXPORTS.h>
+#include <aws/fis/FISEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

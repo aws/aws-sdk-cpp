@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/iotsitewise/IoTSiteWiseClient.h>
 #include <aws/iotsitewise/IoTSiteWiseEndpoint.h>
 #include <aws/iotsitewise/IoTSiteWiseErrorMarshaller.h>
+#include <aws/iotsitewise/IoTSiteWiseEndpointProvider.h>
 #include <aws/iotsitewise/model/AssociateAssetsRequest.h>
 #include <aws/iotsitewise/model/AssociateTimeSeriesToAssetPropertyRequest.h>
 #include <aws/iotsitewise/model/BatchAssociateProjectAssetsRequest.h>
@@ -99,19 +101,66 @@ using namespace Aws::IoTSiteWise;
 using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::IoTSiteWise::Endpoint::IoTSiteWiseEndpointProvider::IoTSiteWiseResolveEndpointOutcome;
 
 
 const char* IoTSiteWiseClient::SERVICE_NAME = "iotsitewise";
 const char* IoTSiteWiseClient::ALLOCATION_TAG = "IoTSiteWiseClient";
 
-IoTSiteWiseClient::IoTSiteWiseClient(const Client::ClientConfiguration& clientConfiguration) :
+IoTSiteWiseClient::IoTSiteWiseClient(const Client::ClientConfiguration& clientConfiguration,
+                                     std::shared_ptr<Endpoint::IoTSiteWiseEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTSiteWiseErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+IoTSiteWiseClient::IoTSiteWiseClient(const AWSCredentials& credentials,
+                                     std::shared_ptr<Endpoint::IoTSiteWiseEndpointProvider> endpointProvider,
+                                     const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTSiteWiseErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+IoTSiteWiseClient::IoTSiteWiseClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                     std::shared_ptr<Endpoint::IoTSiteWiseEndpointProvider> endpointProvider,
+                                     const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTSiteWiseErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  IoTSiteWiseClient::IoTSiteWiseClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<IoTSiteWiseErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<IoTSiteWise::Endpoint::IoTSiteWiseEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -124,7 +173,8 @@ IoTSiteWiseClient::IoTSiteWiseClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTSiteWiseErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<IoTSiteWise::Endpoint::IoTSiteWiseEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -137,11 +187,13 @@ IoTSiteWiseClient::IoTSiteWiseClient(const std::shared_ptr<AWSCredentialsProvide
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTSiteWiseErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<IoTSiteWise::Endpoint::IoTSiteWiseEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 IoTSiteWiseClient::~IoTSiteWiseClient()
 {
 }
@@ -149,59 +201,26 @@ IoTSiteWiseClient::~IoTSiteWiseClient()
 void IoTSiteWiseClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("IoTSiteWise");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  m_scheme = m_configScheme;
-  if (config.endpointOverride.empty())
-  {
-      m_baseUri = IoTSiteWiseEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
-  m_enableHostPrefixInjection = config.enableHostPrefixInjection;
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void IoTSiteWiseClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0)
-  {
-      m_scheme = "http";
-      m_baseUri = endpoint.substr(7);
-  }
-  else if (endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_scheme = "https";
-      m_baseUri = endpoint.substr(8);
-  }
-  else
-  {
-      m_scheme = m_configScheme;
-      m_baseUri = endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 AssociateAssetsOutcome IoTSiteWiseClient::AssociateAssets(const AssociateAssetsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AssociateAssets", "Required field: AssetId, is not set");
     return AssociateAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("AssociateAssets", "Invalid DNS host: " << uri.GetAuthority());
-      return AssociateAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/assets/");
-  uri.AddPathSegment(request.GetAssetId());
-  uri.AddPathSegments("/associate");
-  return AssociateAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AssociateAssetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateAssetsOutcomeCallable IoTSiteWiseClient::AssociateAssetsCallable(const AssociateAssetsRequest& request) const
@@ -222,6 +241,7 @@ void IoTSiteWiseClient::AssociateAssetsAsync(const AssociateAssetsRequest& reque
 
 AssociateTimeSeriesToAssetPropertyOutcome IoTSiteWiseClient::AssociateTimeSeriesToAssetProperty(const AssociateTimeSeriesToAssetPropertyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateTimeSeriesToAssetProperty, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AliasHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AssociateTimeSeriesToAssetProperty", "Required field: Alias, is not set");
@@ -237,18 +257,9 @@ AssociateTimeSeriesToAssetPropertyOutcome IoTSiteWiseClient::AssociateTimeSeries
     AWS_LOGSTREAM_ERROR("AssociateTimeSeriesToAssetProperty", "Required field: PropertyId, is not set");
     return AssociateTimeSeriesToAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PropertyId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("AssociateTimeSeriesToAssetProperty", "Invalid DNS host: " << uri.GetAuthority());
-      return AssociateTimeSeriesToAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/timeseries/associate/");
-  return AssociateTimeSeriesToAssetPropertyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateTimeSeriesToAssetProperty, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AssociateTimeSeriesToAssetPropertyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateTimeSeriesToAssetPropertyOutcomeCallable IoTSiteWiseClient::AssociateTimeSeriesToAssetPropertyCallable(const AssociateTimeSeriesToAssetPropertyRequest& request) const
@@ -269,25 +280,15 @@ void IoTSiteWiseClient::AssociateTimeSeriesToAssetPropertyAsync(const AssociateT
 
 BatchAssociateProjectAssetsOutcome IoTSiteWiseClient::BatchAssociateProjectAssets(const BatchAssociateProjectAssetsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchAssociateProjectAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchAssociateProjectAssets", "Required field: ProjectId, is not set");
     return BatchAssociateProjectAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("BatchAssociateProjectAssets", "Invalid DNS host: " << uri.GetAuthority());
-      return BatchAssociateProjectAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectId());
-  uri.AddPathSegments("/assets/associate");
-  return BatchAssociateProjectAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchAssociateProjectAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchAssociateProjectAssetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchAssociateProjectAssetsOutcomeCallable IoTSiteWiseClient::BatchAssociateProjectAssetsCallable(const BatchAssociateProjectAssetsRequest& request) const
@@ -308,25 +309,15 @@ void IoTSiteWiseClient::BatchAssociateProjectAssetsAsync(const BatchAssociatePro
 
 BatchDisassociateProjectAssetsOutcome IoTSiteWiseClient::BatchDisassociateProjectAssets(const BatchDisassociateProjectAssetsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDisassociateProjectAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchDisassociateProjectAssets", "Required field: ProjectId, is not set");
     return BatchDisassociateProjectAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("BatchDisassociateProjectAssets", "Invalid DNS host: " << uri.GetAuthority());
-      return BatchDisassociateProjectAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectId());
-  uri.AddPathSegments("/assets/disassociate");
-  return BatchDisassociateProjectAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDisassociateProjectAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchDisassociateProjectAssetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchDisassociateProjectAssetsOutcomeCallable IoTSiteWiseClient::BatchDisassociateProjectAssetsCallable(const BatchDisassociateProjectAssetsRequest& request) const
@@ -347,18 +338,10 @@ void IoTSiteWiseClient::BatchDisassociateProjectAssetsAsync(const BatchDisassoci
 
 BatchGetAssetPropertyAggregatesOutcome IoTSiteWiseClient::BatchGetAssetPropertyAggregates(const BatchGetAssetPropertyAggregatesRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("data." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("BatchGetAssetPropertyAggregates", "Invalid DNS host: " << uri.GetAuthority());
-      return BatchGetAssetPropertyAggregatesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/properties/batch/aggregates");
-  return BatchGetAssetPropertyAggregatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetAssetPropertyAggregates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetAssetPropertyAggregates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchGetAssetPropertyAggregatesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchGetAssetPropertyAggregatesOutcomeCallable IoTSiteWiseClient::BatchGetAssetPropertyAggregatesCallable(const BatchGetAssetPropertyAggregatesRequest& request) const
@@ -379,18 +362,10 @@ void IoTSiteWiseClient::BatchGetAssetPropertyAggregatesAsync(const BatchGetAsset
 
 BatchGetAssetPropertyValueOutcome IoTSiteWiseClient::BatchGetAssetPropertyValue(const BatchGetAssetPropertyValueRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("data." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("BatchGetAssetPropertyValue", "Invalid DNS host: " << uri.GetAuthority());
-      return BatchGetAssetPropertyValueOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/properties/batch/latest");
-  return BatchGetAssetPropertyValueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetAssetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetAssetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchGetAssetPropertyValueOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchGetAssetPropertyValueOutcomeCallable IoTSiteWiseClient::BatchGetAssetPropertyValueCallable(const BatchGetAssetPropertyValueRequest& request) const
@@ -411,18 +386,10 @@ void IoTSiteWiseClient::BatchGetAssetPropertyValueAsync(const BatchGetAssetPrope
 
 BatchGetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::BatchGetAssetPropertyValueHistory(const BatchGetAssetPropertyValueHistoryRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("data." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("BatchGetAssetPropertyValueHistory", "Invalid DNS host: " << uri.GetAuthority());
-      return BatchGetAssetPropertyValueHistoryOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/properties/batch/history");
-  return BatchGetAssetPropertyValueHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetAssetPropertyValueHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetAssetPropertyValueHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchGetAssetPropertyValueHistoryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchGetAssetPropertyValueHistoryOutcomeCallable IoTSiteWiseClient::BatchGetAssetPropertyValueHistoryCallable(const BatchGetAssetPropertyValueHistoryRequest& request) const
@@ -443,18 +410,10 @@ void IoTSiteWiseClient::BatchGetAssetPropertyValueHistoryAsync(const BatchGetAss
 
 BatchPutAssetPropertyValueOutcome IoTSiteWiseClient::BatchPutAssetPropertyValue(const BatchPutAssetPropertyValueRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("data." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("BatchPutAssetPropertyValue", "Invalid DNS host: " << uri.GetAuthority());
-      return BatchPutAssetPropertyValueOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/properties");
-  return BatchPutAssetPropertyValueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchPutAssetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchPutAssetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchPutAssetPropertyValueOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchPutAssetPropertyValueOutcomeCallable IoTSiteWiseClient::BatchPutAssetPropertyValueCallable(const BatchPutAssetPropertyValueRequest& request) const
@@ -475,18 +434,10 @@ void IoTSiteWiseClient::BatchPutAssetPropertyValueAsync(const BatchPutAssetPrope
 
 CreateAccessPolicyOutcome IoTSiteWiseClient::CreateAccessPolicy(const CreateAccessPolicyRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreateAccessPolicy", "Invalid DNS host: " << uri.GetAuthority());
-      return CreateAccessPolicyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/access-policies");
-  return CreateAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateAccessPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAccessPolicyOutcomeCallable IoTSiteWiseClient::CreateAccessPolicyCallable(const CreateAccessPolicyRequest& request) const
@@ -507,18 +458,10 @@ void IoTSiteWiseClient::CreateAccessPolicyAsync(const CreateAccessPolicyRequest&
 
 CreateAssetOutcome IoTSiteWiseClient::CreateAsset(const CreateAssetRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreateAsset", "Invalid DNS host: " << uri.GetAuthority());
-      return CreateAssetOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/assets");
-  return CreateAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateAssetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAssetOutcomeCallable IoTSiteWiseClient::CreateAssetCallable(const CreateAssetRequest& request) const
@@ -539,18 +482,10 @@ void IoTSiteWiseClient::CreateAssetAsync(const CreateAssetRequest& request, cons
 
 CreateAssetModelOutcome IoTSiteWiseClient::CreateAssetModel(const CreateAssetModelRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreateAssetModel", "Invalid DNS host: " << uri.GetAuthority());
-      return CreateAssetModelOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/asset-models");
-  return CreateAssetModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAssetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAssetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateAssetModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAssetModelOutcomeCallable IoTSiteWiseClient::CreateAssetModelCallable(const CreateAssetModelRequest& request) const
@@ -571,18 +506,10 @@ void IoTSiteWiseClient::CreateAssetModelAsync(const CreateAssetModelRequest& req
 
 CreateBulkImportJobOutcome IoTSiteWiseClient::CreateBulkImportJob(const CreateBulkImportJobRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("data." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreateBulkImportJob", "Invalid DNS host: " << uri.GetAuthority());
-      return CreateBulkImportJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/jobs");
-  return CreateBulkImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBulkImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBulkImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateBulkImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBulkImportJobOutcomeCallable IoTSiteWiseClient::CreateBulkImportJobCallable(const CreateBulkImportJobRequest& request) const
@@ -603,18 +530,10 @@ void IoTSiteWiseClient::CreateBulkImportJobAsync(const CreateBulkImportJobReques
 
 CreateDashboardOutcome IoTSiteWiseClient::CreateDashboard(const CreateDashboardRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreateDashboard", "Invalid DNS host: " << uri.GetAuthority());
-      return CreateDashboardOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/dashboards");
-  return CreateDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateDashboardOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDashboardOutcomeCallable IoTSiteWiseClient::CreateDashboardCallable(const CreateDashboardRequest& request) const
@@ -635,18 +554,10 @@ void IoTSiteWiseClient::CreateDashboardAsync(const CreateDashboardRequest& reque
 
 CreateGatewayOutcome IoTSiteWiseClient::CreateGateway(const CreateGatewayRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreateGateway", "Invalid DNS host: " << uri.GetAuthority());
-      return CreateGatewayOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/20200301/gateways");
-  return CreateGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateGatewayOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateGatewayOutcomeCallable IoTSiteWiseClient::CreateGatewayCallable(const CreateGatewayRequest& request) const
@@ -667,18 +578,10 @@ void IoTSiteWiseClient::CreateGatewayAsync(const CreateGatewayRequest& request, 
 
 CreatePortalOutcome IoTSiteWiseClient::CreatePortal(const CreatePortalRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreatePortal", "Invalid DNS host: " << uri.GetAuthority());
-      return CreatePortalOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/portals");
-  return CreatePortalOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreatePortalOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePortalOutcomeCallable IoTSiteWiseClient::CreatePortalCallable(const CreatePortalRequest& request) const
@@ -699,18 +602,10 @@ void IoTSiteWiseClient::CreatePortalAsync(const CreatePortalRequest& request, co
 
 CreateProjectOutcome IoTSiteWiseClient::CreateProject(const CreateProjectRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreateProject", "Invalid DNS host: " << uri.GetAuthority());
-      return CreateProjectOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/projects");
-  return CreateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateProjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateProjectOutcomeCallable IoTSiteWiseClient::CreateProjectCallable(const CreateProjectRequest& request) const
@@ -731,24 +626,15 @@ void IoTSiteWiseClient::CreateProjectAsync(const CreateProjectRequest& request, 
 
 DeleteAccessPolicyOutcome IoTSiteWiseClient::DeleteAccessPolicy(const DeleteAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessPolicyIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAccessPolicy", "Required field: AccessPolicyId, is not set");
     return DeleteAccessPolicyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccessPolicyId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DeleteAccessPolicy", "Invalid DNS host: " << uri.GetAuthority());
-      return DeleteAccessPolicyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/access-policies/");
-  uri.AddPathSegment(request.GetAccessPolicyId());
-  return DeleteAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteAccessPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAccessPolicyOutcomeCallable IoTSiteWiseClient::DeleteAccessPolicyCallable(const DeleteAccessPolicyRequest& request) const
@@ -769,24 +655,15 @@ void IoTSiteWiseClient::DeleteAccessPolicyAsync(const DeleteAccessPolicyRequest&
 
 DeleteAssetOutcome IoTSiteWiseClient::DeleteAsset(const DeleteAssetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAsset", "Required field: AssetId, is not set");
     return DeleteAssetOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DeleteAsset", "Invalid DNS host: " << uri.GetAuthority());
-      return DeleteAssetOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/assets/");
-  uri.AddPathSegment(request.GetAssetId());
-  return DeleteAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteAssetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAssetOutcomeCallable IoTSiteWiseClient::DeleteAssetCallable(const DeleteAssetRequest& request) const
@@ -807,24 +684,15 @@ void IoTSiteWiseClient::DeleteAssetAsync(const DeleteAssetRequest& request, cons
 
 DeleteAssetModelOutcome IoTSiteWiseClient::DeleteAssetModel(const DeleteAssetModelRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAssetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetModelIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAssetModel", "Required field: AssetModelId, is not set");
     return DeleteAssetModelOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetModelId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DeleteAssetModel", "Invalid DNS host: " << uri.GetAuthority());
-      return DeleteAssetModelOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/asset-models/");
-  uri.AddPathSegment(request.GetAssetModelId());
-  return DeleteAssetModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAssetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteAssetModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAssetModelOutcomeCallable IoTSiteWiseClient::DeleteAssetModelCallable(const DeleteAssetModelRequest& request) const
@@ -845,24 +713,15 @@ void IoTSiteWiseClient::DeleteAssetModelAsync(const DeleteAssetModelRequest& req
 
 DeleteDashboardOutcome IoTSiteWiseClient::DeleteDashboard(const DeleteDashboardRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DashboardIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteDashboard", "Required field: DashboardId, is not set");
     return DeleteDashboardOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DeleteDashboard", "Invalid DNS host: " << uri.GetAuthority());
-      return DeleteDashboardOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/dashboards/");
-  uri.AddPathSegment(request.GetDashboardId());
-  return DeleteDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteDashboardOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDashboardOutcomeCallable IoTSiteWiseClient::DeleteDashboardCallable(const DeleteDashboardRequest& request) const
@@ -883,24 +742,15 @@ void IoTSiteWiseClient::DeleteDashboardAsync(const DeleteDashboardRequest& reque
 
 DeleteGatewayOutcome IoTSiteWiseClient::DeleteGateway(const DeleteGatewayRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteGateway", "Required field: GatewayId, is not set");
     return DeleteGatewayOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DeleteGateway", "Invalid DNS host: " << uri.GetAuthority());
-      return DeleteGatewayOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/20200301/gateways/");
-  uri.AddPathSegment(request.GetGatewayId());
-  return DeleteGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteGatewayOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGatewayOutcomeCallable IoTSiteWiseClient::DeleteGatewayCallable(const DeleteGatewayRequest& request) const
@@ -921,24 +771,15 @@ void IoTSiteWiseClient::DeleteGatewayAsync(const DeleteGatewayRequest& request, 
 
 DeletePortalOutcome IoTSiteWiseClient::DeletePortal(const DeletePortalRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeletePortal", "Required field: PortalId, is not set");
     return DeletePortalOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DeletePortal", "Invalid DNS host: " << uri.GetAuthority());
-      return DeletePortalOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/portals/");
-  uri.AddPathSegment(request.GetPortalId());
-  return DeletePortalOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeletePortalOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePortalOutcomeCallable IoTSiteWiseClient::DeletePortalCallable(const DeletePortalRequest& request) const
@@ -959,24 +800,15 @@ void IoTSiteWiseClient::DeletePortalAsync(const DeletePortalRequest& request, co
 
 DeleteProjectOutcome IoTSiteWiseClient::DeleteProject(const DeleteProjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteProject", "Required field: ProjectId, is not set");
     return DeleteProjectOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DeleteProject", "Invalid DNS host: " << uri.GetAuthority());
-      return DeleteProjectOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectId());
-  return DeleteProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteProjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteProjectOutcomeCallable IoTSiteWiseClient::DeleteProjectCallable(const DeleteProjectRequest& request) const
@@ -997,18 +829,10 @@ void IoTSiteWiseClient::DeleteProjectAsync(const DeleteProjectRequest& request, 
 
 DeleteTimeSeriesOutcome IoTSiteWiseClient::DeleteTimeSeries(const DeleteTimeSeriesRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DeleteTimeSeries", "Invalid DNS host: " << uri.GetAuthority());
-      return DeleteTimeSeriesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/timeseries/delete/");
-  return DeleteTimeSeriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTimeSeries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTimeSeries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteTimeSeriesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTimeSeriesOutcomeCallable IoTSiteWiseClient::DeleteTimeSeriesCallable(const DeleteTimeSeriesRequest& request) const
@@ -1029,24 +853,15 @@ void IoTSiteWiseClient::DeleteTimeSeriesAsync(const DeleteTimeSeriesRequest& req
 
 DescribeAccessPolicyOutcome IoTSiteWiseClient::DescribeAccessPolicy(const DescribeAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessPolicyIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeAccessPolicy", "Required field: AccessPolicyId, is not set");
     return DescribeAccessPolicyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccessPolicyId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeAccessPolicy", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeAccessPolicyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/access-policies/");
-  uri.AddPathSegment(request.GetAccessPolicyId());
-  return DescribeAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeAccessPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAccessPolicyOutcomeCallable IoTSiteWiseClient::DescribeAccessPolicyCallable(const DescribeAccessPolicyRequest& request) const
@@ -1067,24 +882,15 @@ void IoTSiteWiseClient::DescribeAccessPolicyAsync(const DescribeAccessPolicyRequ
 
 DescribeAssetOutcome IoTSiteWiseClient::DescribeAsset(const DescribeAssetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeAsset", "Required field: AssetId, is not set");
     return DescribeAssetOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeAsset", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeAssetOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/assets/");
-  uri.AddPathSegment(request.GetAssetId());
-  return DescribeAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeAssetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAssetOutcomeCallable IoTSiteWiseClient::DescribeAssetCallable(const DescribeAssetRequest& request) const
@@ -1105,24 +911,15 @@ void IoTSiteWiseClient::DescribeAssetAsync(const DescribeAssetRequest& request, 
 
 DescribeAssetModelOutcome IoTSiteWiseClient::DescribeAssetModel(const DescribeAssetModelRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAssetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetModelIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeAssetModel", "Required field: AssetModelId, is not set");
     return DescribeAssetModelOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetModelId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeAssetModel", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeAssetModelOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/asset-models/");
-  uri.AddPathSegment(request.GetAssetModelId());
-  return DescribeAssetModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAssetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeAssetModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAssetModelOutcomeCallable IoTSiteWiseClient::DescribeAssetModelCallable(const DescribeAssetModelRequest& request) const
@@ -1143,6 +940,7 @@ void IoTSiteWiseClient::DescribeAssetModelAsync(const DescribeAssetModelRequest&
 
 DescribeAssetPropertyOutcome IoTSiteWiseClient::DescribeAssetProperty(const DescribeAssetPropertyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeAssetProperty, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeAssetProperty", "Required field: AssetId, is not set");
@@ -1153,21 +951,9 @@ DescribeAssetPropertyOutcome IoTSiteWiseClient::DescribeAssetProperty(const Desc
     AWS_LOGSTREAM_ERROR("DescribeAssetProperty", "Required field: PropertyId, is not set");
     return DescribeAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PropertyId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeAssetProperty", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/assets/");
-  uri.AddPathSegment(request.GetAssetId());
-  uri.AddPathSegments("/properties/");
-  uri.AddPathSegment(request.GetPropertyId());
-  return DescribeAssetPropertyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeAssetProperty, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeAssetPropertyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAssetPropertyOutcomeCallable IoTSiteWiseClient::DescribeAssetPropertyCallable(const DescribeAssetPropertyRequest& request) const
@@ -1188,24 +974,15 @@ void IoTSiteWiseClient::DescribeAssetPropertyAsync(const DescribeAssetPropertyRe
 
 DescribeBulkImportJobOutcome IoTSiteWiseClient::DescribeBulkImportJob(const DescribeBulkImportJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBulkImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeBulkImportJob", "Required field: JobId, is not set");
     return DescribeBulkImportJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("data." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeBulkImportJob", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeBulkImportJobOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/jobs/");
-  uri.AddPathSegment(request.GetJobId());
-  return DescribeBulkImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBulkImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeBulkImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeBulkImportJobOutcomeCallable IoTSiteWiseClient::DescribeBulkImportJobCallable(const DescribeBulkImportJobRequest& request) const
@@ -1226,24 +1003,15 @@ void IoTSiteWiseClient::DescribeBulkImportJobAsync(const DescribeBulkImportJobRe
 
 DescribeDashboardOutcome IoTSiteWiseClient::DescribeDashboard(const DescribeDashboardRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DashboardIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeDashboard", "Required field: DashboardId, is not set");
     return DescribeDashboardOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeDashboard", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeDashboardOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/dashboards/");
-  uri.AddPathSegment(request.GetDashboardId());
-  return DescribeDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeDashboardOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDashboardOutcomeCallable IoTSiteWiseClient::DescribeDashboardCallable(const DescribeDashboardRequest& request) const
@@ -1264,18 +1032,10 @@ void IoTSiteWiseClient::DescribeDashboardAsync(const DescribeDashboardRequest& r
 
 DescribeDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::DescribeDefaultEncryptionConfiguration(const DescribeDefaultEncryptionConfigurationRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeDefaultEncryptionConfiguration", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeDefaultEncryptionConfigurationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/configuration/account/encryption");
-  return DescribeDefaultEncryptionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDefaultEncryptionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDefaultEncryptionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeDefaultEncryptionConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDefaultEncryptionConfigurationOutcomeCallable IoTSiteWiseClient::DescribeDefaultEncryptionConfigurationCallable(const DescribeDefaultEncryptionConfigurationRequest& request) const
@@ -1296,24 +1056,15 @@ void IoTSiteWiseClient::DescribeDefaultEncryptionConfigurationAsync(const Descri
 
 DescribeGatewayOutcome IoTSiteWiseClient::DescribeGateway(const DescribeGatewayRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeGateway", "Required field: GatewayId, is not set");
     return DescribeGatewayOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeGateway", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeGatewayOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/20200301/gateways/");
-  uri.AddPathSegment(request.GetGatewayId());
-  return DescribeGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeGatewayOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeGatewayOutcomeCallable IoTSiteWiseClient::DescribeGatewayCallable(const DescribeGatewayRequest& request) const
@@ -1334,6 +1085,7 @@ void IoTSiteWiseClient::DescribeGatewayAsync(const DescribeGatewayRequest& reque
 
 DescribeGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::DescribeGatewayCapabilityConfiguration(const DescribeGatewayCapabilityConfigurationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGatewayCapabilityConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeGatewayCapabilityConfiguration", "Required field: GatewayId, is not set");
@@ -1344,21 +1096,9 @@ DescribeGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::DescribeGateway
     AWS_LOGSTREAM_ERROR("DescribeGatewayCapabilityConfiguration", "Required field: CapabilityNamespace, is not set");
     return DescribeGatewayCapabilityConfigurationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CapabilityNamespace]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeGatewayCapabilityConfiguration", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeGatewayCapabilityConfigurationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/20200301/gateways/");
-  uri.AddPathSegment(request.GetGatewayId());
-  uri.AddPathSegments("/capability/");
-  uri.AddPathSegment(request.GetCapabilityNamespace());
-  return DescribeGatewayCapabilityConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeGatewayCapabilityConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeGatewayCapabilityConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeGatewayCapabilityConfigurationOutcomeCallable IoTSiteWiseClient::DescribeGatewayCapabilityConfigurationCallable(const DescribeGatewayCapabilityConfigurationRequest& request) const
@@ -1379,18 +1119,10 @@ void IoTSiteWiseClient::DescribeGatewayCapabilityConfigurationAsync(const Descri
 
 DescribeLoggingOptionsOutcome IoTSiteWiseClient::DescribeLoggingOptions(const DescribeLoggingOptionsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeLoggingOptions", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeLoggingOptionsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/logging");
-  return DescribeLoggingOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeLoggingOptionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeLoggingOptionsOutcomeCallable IoTSiteWiseClient::DescribeLoggingOptionsCallable(const DescribeLoggingOptionsRequest& request) const
@@ -1411,24 +1143,15 @@ void IoTSiteWiseClient::DescribeLoggingOptionsAsync(const DescribeLoggingOptions
 
 DescribePortalOutcome IoTSiteWiseClient::DescribePortal(const DescribePortalRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribePortal", "Required field: PortalId, is not set");
     return DescribePortalOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribePortal", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribePortalOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/portals/");
-  uri.AddPathSegment(request.GetPortalId());
-  return DescribePortalOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribePortalOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePortalOutcomeCallable IoTSiteWiseClient::DescribePortalCallable(const DescribePortalRequest& request) const
@@ -1449,24 +1172,15 @@ void IoTSiteWiseClient::DescribePortalAsync(const DescribePortalRequest& request
 
 DescribeProjectOutcome IoTSiteWiseClient::DescribeProject(const DescribeProjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeProject", "Required field: ProjectId, is not set");
     return DescribeProjectOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeProject", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeProjectOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectId());
-  return DescribeProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeProjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeProjectOutcomeCallable IoTSiteWiseClient::DescribeProjectCallable(const DescribeProjectRequest& request) const
@@ -1487,18 +1201,10 @@ void IoTSiteWiseClient::DescribeProjectAsync(const DescribeProjectRequest& reque
 
 DescribeStorageConfigurationOutcome IoTSiteWiseClient::DescribeStorageConfiguration(const DescribeStorageConfigurationRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeStorageConfiguration", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeStorageConfigurationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/configuration/account/storage");
-  return DescribeStorageConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeStorageConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeStorageConfigurationOutcomeCallable IoTSiteWiseClient::DescribeStorageConfigurationCallable(const DescribeStorageConfigurationRequest& request) const
@@ -1519,18 +1225,10 @@ void IoTSiteWiseClient::DescribeStorageConfigurationAsync(const DescribeStorageC
 
 DescribeTimeSeriesOutcome IoTSiteWiseClient::DescribeTimeSeries(const DescribeTimeSeriesRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeTimeSeries", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeTimeSeriesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/timeseries/describe/");
-  return DescribeTimeSeriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTimeSeries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTimeSeries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeTimeSeriesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTimeSeriesOutcomeCallable IoTSiteWiseClient::DescribeTimeSeriesCallable(const DescribeTimeSeriesRequest& request) const
@@ -1551,25 +1249,15 @@ void IoTSiteWiseClient::DescribeTimeSeriesAsync(const DescribeTimeSeriesRequest&
 
 DisassociateAssetsOutcome IoTSiteWiseClient::DisassociateAssets(const DisassociateAssetsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DisassociateAssets", "Required field: AssetId, is not set");
     return DisassociateAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DisassociateAssets", "Invalid DNS host: " << uri.GetAuthority());
-      return DisassociateAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/assets/");
-  uri.AddPathSegment(request.GetAssetId());
-  uri.AddPathSegments("/disassociate");
-  return DisassociateAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DisassociateAssetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateAssetsOutcomeCallable IoTSiteWiseClient::DisassociateAssetsCallable(const DisassociateAssetsRequest& request) const
@@ -1590,6 +1278,7 @@ void IoTSiteWiseClient::DisassociateAssetsAsync(const DisassociateAssetsRequest&
 
 DisassociateTimeSeriesFromAssetPropertyOutcome IoTSiteWiseClient::DisassociateTimeSeriesFromAssetProperty(const DisassociateTimeSeriesFromAssetPropertyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateTimeSeriesFromAssetProperty, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AliasHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DisassociateTimeSeriesFromAssetProperty", "Required field: Alias, is not set");
@@ -1605,18 +1294,9 @@ DisassociateTimeSeriesFromAssetPropertyOutcome IoTSiteWiseClient::DisassociateTi
     AWS_LOGSTREAM_ERROR("DisassociateTimeSeriesFromAssetProperty", "Required field: PropertyId, is not set");
     return DisassociateTimeSeriesFromAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PropertyId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DisassociateTimeSeriesFromAssetProperty", "Invalid DNS host: " << uri.GetAuthority());
-      return DisassociateTimeSeriesFromAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/timeseries/disassociate/");
-  return DisassociateTimeSeriesFromAssetPropertyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateTimeSeriesFromAssetProperty, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DisassociateTimeSeriesFromAssetPropertyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateTimeSeriesFromAssetPropertyOutcomeCallable IoTSiteWiseClient::DisassociateTimeSeriesFromAssetPropertyCallable(const DisassociateTimeSeriesFromAssetPropertyRequest& request) const
@@ -1637,6 +1317,7 @@ void IoTSiteWiseClient::DisassociateTimeSeriesFromAssetPropertyAsync(const Disas
 
 GetAssetPropertyAggregatesOutcome IoTSiteWiseClient::GetAssetPropertyAggregates(const GetAssetPropertyAggregatesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAssetPropertyAggregates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AggregateTypesHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetAssetPropertyAggregates", "Required field: AggregateTypes, is not set");
@@ -1657,18 +1338,9 @@ GetAssetPropertyAggregatesOutcome IoTSiteWiseClient::GetAssetPropertyAggregates(
     AWS_LOGSTREAM_ERROR("GetAssetPropertyAggregates", "Required field: EndDate, is not set");
     return GetAssetPropertyAggregatesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndDate]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("data." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("GetAssetPropertyAggregates", "Invalid DNS host: " << uri.GetAuthority());
-      return GetAssetPropertyAggregatesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/properties/aggregates");
-  return GetAssetPropertyAggregatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAssetPropertyAggregates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetAssetPropertyAggregatesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAssetPropertyAggregatesOutcomeCallable IoTSiteWiseClient::GetAssetPropertyAggregatesCallable(const GetAssetPropertyAggregatesRequest& request) const
@@ -1689,18 +1361,10 @@ void IoTSiteWiseClient::GetAssetPropertyAggregatesAsync(const GetAssetPropertyAg
 
 GetAssetPropertyValueOutcome IoTSiteWiseClient::GetAssetPropertyValue(const GetAssetPropertyValueRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("data." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("GetAssetPropertyValue", "Invalid DNS host: " << uri.GetAuthority());
-      return GetAssetPropertyValueOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/properties/latest");
-  return GetAssetPropertyValueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAssetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAssetPropertyValue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetAssetPropertyValueOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAssetPropertyValueOutcomeCallable IoTSiteWiseClient::GetAssetPropertyValueCallable(const GetAssetPropertyValueRequest& request) const
@@ -1721,18 +1385,10 @@ void IoTSiteWiseClient::GetAssetPropertyValueAsync(const GetAssetPropertyValueRe
 
 GetAssetPropertyValueHistoryOutcome IoTSiteWiseClient::GetAssetPropertyValueHistory(const GetAssetPropertyValueHistoryRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("data." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("GetAssetPropertyValueHistory", "Invalid DNS host: " << uri.GetAuthority());
-      return GetAssetPropertyValueHistoryOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/properties/history");
-  return GetAssetPropertyValueHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAssetPropertyValueHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAssetPropertyValueHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetAssetPropertyValueHistoryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAssetPropertyValueHistoryOutcomeCallable IoTSiteWiseClient::GetAssetPropertyValueHistoryCallable(const GetAssetPropertyValueHistoryRequest& request) const
@@ -1753,6 +1409,7 @@ void IoTSiteWiseClient::GetAssetPropertyValueHistoryAsync(const GetAssetProperty
 
 GetInterpolatedAssetPropertyValuesOutcome IoTSiteWiseClient::GetInterpolatedAssetPropertyValues(const GetInterpolatedAssetPropertyValuesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInterpolatedAssetPropertyValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StartTimeInSecondsHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetInterpolatedAssetPropertyValues", "Required field: StartTimeInSeconds, is not set");
@@ -1778,18 +1435,9 @@ GetInterpolatedAssetPropertyValuesOutcome IoTSiteWiseClient::GetInterpolatedAsse
     AWS_LOGSTREAM_ERROR("GetInterpolatedAssetPropertyValues", "Required field: Type, is not set");
     return GetInterpolatedAssetPropertyValuesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("data." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("GetInterpolatedAssetPropertyValues", "Invalid DNS host: " << uri.GetAuthority());
-      return GetInterpolatedAssetPropertyValuesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/properties/interpolated");
-  return GetInterpolatedAssetPropertyValuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInterpolatedAssetPropertyValues, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetInterpolatedAssetPropertyValuesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetInterpolatedAssetPropertyValuesOutcomeCallable IoTSiteWiseClient::GetInterpolatedAssetPropertyValuesCallable(const GetInterpolatedAssetPropertyValuesRequest& request) const
@@ -1810,18 +1458,10 @@ void IoTSiteWiseClient::GetInterpolatedAssetPropertyValuesAsync(const GetInterpo
 
 ListAccessPoliciesOutcome IoTSiteWiseClient::ListAccessPolicies(const ListAccessPoliciesRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListAccessPolicies", "Invalid DNS host: " << uri.GetAuthority());
-      return ListAccessPoliciesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/access-policies");
-  return ListAccessPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAccessPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAccessPolicies, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListAccessPoliciesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAccessPoliciesOutcomeCallable IoTSiteWiseClient::ListAccessPoliciesCallable(const ListAccessPoliciesRequest& request) const
@@ -1842,18 +1482,10 @@ void IoTSiteWiseClient::ListAccessPoliciesAsync(const ListAccessPoliciesRequest&
 
 ListAssetModelsOutcome IoTSiteWiseClient::ListAssetModels(const ListAssetModelsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListAssetModels", "Invalid DNS host: " << uri.GetAuthority());
-      return ListAssetModelsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/asset-models");
-  return ListAssetModelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssetModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssetModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListAssetModelsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAssetModelsOutcomeCallable IoTSiteWiseClient::ListAssetModelsCallable(const ListAssetModelsRequest& request) const
@@ -1874,6 +1506,7 @@ void IoTSiteWiseClient::ListAssetModelsAsync(const ListAssetModelsRequest& reque
 
 ListAssetRelationshipsOutcome IoTSiteWiseClient::ListAssetRelationships(const ListAssetRelationshipsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssetRelationships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListAssetRelationships", "Required field: AssetId, is not set");
@@ -1884,20 +1517,9 @@ ListAssetRelationshipsOutcome IoTSiteWiseClient::ListAssetRelationships(const Li
     AWS_LOGSTREAM_ERROR("ListAssetRelationships", "Required field: TraversalType, is not set");
     return ListAssetRelationshipsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TraversalType]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListAssetRelationships", "Invalid DNS host: " << uri.GetAuthority());
-      return ListAssetRelationshipsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/assets/");
-  uri.AddPathSegment(request.GetAssetId());
-  uri.AddPathSegments("/assetRelationships");
-  return ListAssetRelationshipsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssetRelationships, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListAssetRelationshipsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAssetRelationshipsOutcomeCallable IoTSiteWiseClient::ListAssetRelationshipsCallable(const ListAssetRelationshipsRequest& request) const
@@ -1918,18 +1540,10 @@ void IoTSiteWiseClient::ListAssetRelationshipsAsync(const ListAssetRelationships
 
 ListAssetsOutcome IoTSiteWiseClient::ListAssets(const ListAssetsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListAssets", "Invalid DNS host: " << uri.GetAuthority());
-      return ListAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/assets");
-  return ListAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListAssetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAssetsOutcomeCallable IoTSiteWiseClient::ListAssetsCallable(const ListAssetsRequest& request) const
@@ -1950,25 +1564,15 @@ void IoTSiteWiseClient::ListAssetsAsync(const ListAssetsRequest& request, const 
 
 ListAssociatedAssetsOutcome IoTSiteWiseClient::ListAssociatedAssets(const ListAssociatedAssetsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAssociatedAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListAssociatedAssets", "Required field: AssetId, is not set");
     return ListAssociatedAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListAssociatedAssets", "Invalid DNS host: " << uri.GetAuthority());
-      return ListAssociatedAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/assets/");
-  uri.AddPathSegment(request.GetAssetId());
-  uri.AddPathSegments("/hierarchies");
-  return ListAssociatedAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssociatedAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListAssociatedAssetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAssociatedAssetsOutcomeCallable IoTSiteWiseClient::ListAssociatedAssetsCallable(const ListAssociatedAssetsRequest& request) const
@@ -1989,18 +1593,10 @@ void IoTSiteWiseClient::ListAssociatedAssetsAsync(const ListAssociatedAssetsRequ
 
 ListBulkImportJobsOutcome IoTSiteWiseClient::ListBulkImportJobs(const ListBulkImportJobsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("data." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListBulkImportJobs", "Invalid DNS host: " << uri.GetAuthority());
-      return ListBulkImportJobsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/jobs");
-  return ListBulkImportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBulkImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBulkImportJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListBulkImportJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListBulkImportJobsOutcomeCallable IoTSiteWiseClient::ListBulkImportJobsCallable(const ListBulkImportJobsRequest& request) const
@@ -2021,23 +1617,15 @@ void IoTSiteWiseClient::ListBulkImportJobsAsync(const ListBulkImportJobsRequest&
 
 ListDashboardsOutcome IoTSiteWiseClient::ListDashboards(const ListDashboardsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDashboards, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListDashboards", "Required field: ProjectId, is not set");
     return ListDashboardsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListDashboards", "Invalid DNS host: " << uri.GetAuthority());
-      return ListDashboardsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/dashboards");
-  return ListDashboardsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDashboards, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListDashboardsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDashboardsOutcomeCallable IoTSiteWiseClient::ListDashboardsCallable(const ListDashboardsRequest& request) const
@@ -2058,18 +1646,10 @@ void IoTSiteWiseClient::ListDashboardsAsync(const ListDashboardsRequest& request
 
 ListGatewaysOutcome IoTSiteWiseClient::ListGateways(const ListGatewaysRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListGateways", "Invalid DNS host: " << uri.GetAuthority());
-      return ListGatewaysOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/20200301/gateways");
-  return ListGatewaysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGateways, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGateways, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListGatewaysOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGatewaysOutcomeCallable IoTSiteWiseClient::ListGatewaysCallable(const ListGatewaysRequest& request) const
@@ -2090,18 +1670,10 @@ void IoTSiteWiseClient::ListGatewaysAsync(const ListGatewaysRequest& request, co
 
 ListPortalsOutcome IoTSiteWiseClient::ListPortals(const ListPortalsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListPortals", "Invalid DNS host: " << uri.GetAuthority());
-      return ListPortalsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/portals");
-  return ListPortalsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPortals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPortals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListPortalsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPortalsOutcomeCallable IoTSiteWiseClient::ListPortalsCallable(const ListPortalsRequest& request) const
@@ -2122,25 +1694,15 @@ void IoTSiteWiseClient::ListPortalsAsync(const ListPortalsRequest& request, cons
 
 ListProjectAssetsOutcome IoTSiteWiseClient::ListProjectAssets(const ListProjectAssetsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProjectAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListProjectAssets", "Required field: ProjectId, is not set");
     return ListProjectAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListProjectAssets", "Invalid DNS host: " << uri.GetAuthority());
-      return ListProjectAssetsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectId());
-  uri.AddPathSegments("/assets");
-  return ListProjectAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProjectAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListProjectAssetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListProjectAssetsOutcomeCallable IoTSiteWiseClient::ListProjectAssetsCallable(const ListProjectAssetsRequest& request) const
@@ -2161,23 +1723,15 @@ void IoTSiteWiseClient::ListProjectAssetsAsync(const ListProjectAssetsRequest& r
 
 ListProjectsOutcome IoTSiteWiseClient::ListProjects(const ListProjectsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListProjects", "Required field: PortalId, is not set");
     return ListProjectsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListProjects", "Invalid DNS host: " << uri.GetAuthority());
-      return ListProjectsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/projects");
-  return ListProjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListProjectsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListProjectsOutcomeCallable IoTSiteWiseClient::ListProjectsCallable(const ListProjectsRequest& request) const
@@ -2198,23 +1752,15 @@ void IoTSiteWiseClient::ListProjectsAsync(const ListProjectsRequest& request, co
 
 ListTagsForResourceOutcome IoTSiteWiseClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListTagsForResource", "Invalid DNS host: " << uri.GetAuthority());
-      return ListTagsForResourceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tags");
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable IoTSiteWiseClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -2235,18 +1781,10 @@ void IoTSiteWiseClient::ListTagsForResourceAsync(const ListTagsForResourceReques
 
 ListTimeSeriesOutcome IoTSiteWiseClient::ListTimeSeries(const ListTimeSeriesRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListTimeSeries", "Invalid DNS host: " << uri.GetAuthority());
-      return ListTimeSeriesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/timeseries/");
-  return ListTimeSeriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTimeSeries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTimeSeries, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTimeSeriesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTimeSeriesOutcomeCallable IoTSiteWiseClient::ListTimeSeriesCallable(const ListTimeSeriesRequest& request) const
@@ -2267,18 +1805,10 @@ void IoTSiteWiseClient::ListTimeSeriesAsync(const ListTimeSeriesRequest& request
 
 PutDefaultEncryptionConfigurationOutcome IoTSiteWiseClient::PutDefaultEncryptionConfiguration(const PutDefaultEncryptionConfigurationRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("PutDefaultEncryptionConfiguration", "Invalid DNS host: " << uri.GetAuthority());
-      return PutDefaultEncryptionConfigurationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/configuration/account/encryption");
-  return PutDefaultEncryptionConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDefaultEncryptionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutDefaultEncryptionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutDefaultEncryptionConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutDefaultEncryptionConfigurationOutcomeCallable IoTSiteWiseClient::PutDefaultEncryptionConfigurationCallable(const PutDefaultEncryptionConfigurationRequest& request) const
@@ -2299,18 +1829,10 @@ void IoTSiteWiseClient::PutDefaultEncryptionConfigurationAsync(const PutDefaultE
 
 PutLoggingOptionsOutcome IoTSiteWiseClient::PutLoggingOptions(const PutLoggingOptionsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("PutLoggingOptions", "Invalid DNS host: " << uri.GetAuthority());
-      return PutLoggingOptionsOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/logging");
-  return PutLoggingOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutLoggingOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutLoggingOptionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutLoggingOptionsOutcomeCallable IoTSiteWiseClient::PutLoggingOptionsCallable(const PutLoggingOptionsRequest& request) const
@@ -2331,18 +1853,10 @@ void IoTSiteWiseClient::PutLoggingOptionsAsync(const PutLoggingOptionsRequest& r
 
 PutStorageConfigurationOutcome IoTSiteWiseClient::PutStorageConfiguration(const PutStorageConfigurationRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("PutStorageConfiguration", "Invalid DNS host: " << uri.GetAuthority());
-      return PutStorageConfigurationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/configuration/account/storage");
-  return PutStorageConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutStorageConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutStorageConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutStorageConfigurationOutcomeCallable IoTSiteWiseClient::PutStorageConfigurationCallable(const PutStorageConfigurationRequest& request) const
@@ -2363,23 +1877,15 @@ void IoTSiteWiseClient::PutStorageConfigurationAsync(const PutStorageConfigurati
 
 TagResourceOutcome IoTSiteWiseClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("TagResource", "Invalid DNS host: " << uri.GetAuthority());
-      return TagResourceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tags");
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable IoTSiteWiseClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -2400,6 +1906,7 @@ void IoTSiteWiseClient::TagResourceAsync(const TagResourceRequest& request, cons
 
 UntagResourceOutcome IoTSiteWiseClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
@@ -2410,18 +1917,9 @@ UntagResourceOutcome IoTSiteWiseClient::UntagResource(const UntagResourceRequest
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UntagResource", "Invalid DNS host: " << uri.GetAuthority());
-      return UntagResourceOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tags");
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable IoTSiteWiseClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -2442,24 +1940,15 @@ void IoTSiteWiseClient::UntagResourceAsync(const UntagResourceRequest& request, 
 
 UpdateAccessPolicyOutcome IoTSiteWiseClient::UpdateAccessPolicy(const UpdateAccessPolicyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AccessPolicyIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateAccessPolicy", "Required field: AccessPolicyId, is not set");
     return UpdateAccessPolicyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccessPolicyId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdateAccessPolicy", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdateAccessPolicyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/access-policies/");
-  uri.AddPathSegment(request.GetAccessPolicyId());
-  return UpdateAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAccessPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateAccessPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAccessPolicyOutcomeCallable IoTSiteWiseClient::UpdateAccessPolicyCallable(const UpdateAccessPolicyRequest& request) const
@@ -2480,24 +1969,15 @@ void IoTSiteWiseClient::UpdateAccessPolicyAsync(const UpdateAccessPolicyRequest&
 
 UpdateAssetOutcome IoTSiteWiseClient::UpdateAsset(const UpdateAssetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateAsset", "Required field: AssetId, is not set");
     return UpdateAssetOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdateAsset", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdateAssetOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/assets/");
-  uri.AddPathSegment(request.GetAssetId());
-  return UpdateAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateAssetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAssetOutcomeCallable IoTSiteWiseClient::UpdateAssetCallable(const UpdateAssetRequest& request) const
@@ -2518,24 +1998,15 @@ void IoTSiteWiseClient::UpdateAssetAsync(const UpdateAssetRequest& request, cons
 
 UpdateAssetModelOutcome IoTSiteWiseClient::UpdateAssetModel(const UpdateAssetModelRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAssetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetModelIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateAssetModel", "Required field: AssetModelId, is not set");
     return UpdateAssetModelOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetModelId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdateAssetModel", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdateAssetModelOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/asset-models/");
-  uri.AddPathSegment(request.GetAssetModelId());
-  return UpdateAssetModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAssetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateAssetModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAssetModelOutcomeCallable IoTSiteWiseClient::UpdateAssetModelCallable(const UpdateAssetModelRequest& request) const
@@ -2556,6 +2027,7 @@ void IoTSiteWiseClient::UpdateAssetModelAsync(const UpdateAssetModelRequest& req
 
 UpdateAssetPropertyOutcome IoTSiteWiseClient::UpdateAssetProperty(const UpdateAssetPropertyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAssetProperty, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateAssetProperty", "Required field: AssetId, is not set");
@@ -2566,21 +2038,9 @@ UpdateAssetPropertyOutcome IoTSiteWiseClient::UpdateAssetProperty(const UpdateAs
     AWS_LOGSTREAM_ERROR("UpdateAssetProperty", "Required field: PropertyId, is not set");
     return UpdateAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PropertyId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdateAssetProperty", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdateAssetPropertyOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/assets/");
-  uri.AddPathSegment(request.GetAssetId());
-  uri.AddPathSegments("/properties/");
-  uri.AddPathSegment(request.GetPropertyId());
-  return UpdateAssetPropertyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAssetProperty, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateAssetPropertyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAssetPropertyOutcomeCallable IoTSiteWiseClient::UpdateAssetPropertyCallable(const UpdateAssetPropertyRequest& request) const
@@ -2601,24 +2061,15 @@ void IoTSiteWiseClient::UpdateAssetPropertyAsync(const UpdateAssetPropertyReques
 
 UpdateDashboardOutcome IoTSiteWiseClient::UpdateDashboard(const UpdateDashboardRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DashboardIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateDashboard", "Required field: DashboardId, is not set");
     return UpdateDashboardOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DashboardId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdateDashboard", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdateDashboardOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/dashboards/");
-  uri.AddPathSegment(request.GetDashboardId());
-  return UpdateDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDashboard, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateDashboardOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDashboardOutcomeCallable IoTSiteWiseClient::UpdateDashboardCallable(const UpdateDashboardRequest& request) const
@@ -2639,24 +2090,15 @@ void IoTSiteWiseClient::UpdateDashboardAsync(const UpdateDashboardRequest& reque
 
 UpdateGatewayOutcome IoTSiteWiseClient::UpdateGateway(const UpdateGatewayRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateGateway", "Required field: GatewayId, is not set");
     return UpdateGatewayOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdateGateway", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdateGatewayOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/20200301/gateways/");
-  uri.AddPathSegment(request.GetGatewayId());
-  return UpdateGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateGatewayOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGatewayOutcomeCallable IoTSiteWiseClient::UpdateGatewayCallable(const UpdateGatewayRequest& request) const
@@ -2677,25 +2119,15 @@ void IoTSiteWiseClient::UpdateGatewayAsync(const UpdateGatewayRequest& request, 
 
 UpdateGatewayCapabilityConfigurationOutcome IoTSiteWiseClient::UpdateGatewayCapabilityConfiguration(const UpdateGatewayCapabilityConfigurationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGatewayCapabilityConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GatewayIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateGatewayCapabilityConfiguration", "Required field: GatewayId, is not set");
     return UpdateGatewayCapabilityConfigurationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdateGatewayCapabilityConfiguration", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdateGatewayCapabilityConfigurationOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/20200301/gateways/");
-  uri.AddPathSegment(request.GetGatewayId());
-  uri.AddPathSegments("/capability");
-  return UpdateGatewayCapabilityConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGatewayCapabilityConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateGatewayCapabilityConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGatewayCapabilityConfigurationOutcomeCallable IoTSiteWiseClient::UpdateGatewayCapabilityConfigurationCallable(const UpdateGatewayCapabilityConfigurationRequest& request) const
@@ -2716,24 +2148,15 @@ void IoTSiteWiseClient::UpdateGatewayCapabilityConfigurationAsync(const UpdateGa
 
 UpdatePortalOutcome IoTSiteWiseClient::UpdatePortal(const UpdatePortalRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PortalIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdatePortal", "Required field: PortalId, is not set");
     return UpdatePortalOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdatePortal", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdatePortalOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/portals/");
-  uri.AddPathSegment(request.GetPortalId());
-  return UpdatePortalOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePortal, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdatePortalOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdatePortalOutcomeCallable IoTSiteWiseClient::UpdatePortalCallable(const UpdatePortalRequest& request) const
@@ -2754,24 +2177,15 @@ void IoTSiteWiseClient::UpdatePortalAsync(const UpdatePortalRequest& request, co
 
 UpdateProjectOutcome IoTSiteWiseClient::UpdateProject(const UpdateProjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateProject", "Required field: ProjectId, is not set");
     return UpdateProjectOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("monitor." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdateProject", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdateProjectOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProjectId());
-  return UpdateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateProjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateProjectOutcomeCallable IoTSiteWiseClient::UpdateProjectCallable(const UpdateProjectRequest& request) const

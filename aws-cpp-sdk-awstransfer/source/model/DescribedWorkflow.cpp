@@ -57,7 +57,7 @@ DescribedWorkflow& DescribedWorkflow::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Steps"))
   {
-    Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
+    Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
     for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
     {
       m_steps.push_back(stepsJsonList[stepsIndex].AsObject());
@@ -67,7 +67,7 @@ DescribedWorkflow& DescribedWorkflow::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OnExceptionSteps"))
   {
-    Array<JsonView> onExceptionStepsJsonList = jsonValue.GetArray("OnExceptionSteps");
+    Aws::Utils::Array<JsonView> onExceptionStepsJsonList = jsonValue.GetArray("OnExceptionSteps");
     for(unsigned onExceptionStepsIndex = 0; onExceptionStepsIndex < onExceptionStepsJsonList.GetLength(); ++onExceptionStepsIndex)
     {
       m_onExceptionSteps.push_back(onExceptionStepsJsonList[onExceptionStepsIndex].AsObject());
@@ -84,7 +84,7 @@ DescribedWorkflow& DescribedWorkflow::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -113,7 +113,7 @@ JsonValue DescribedWorkflow::Jsonize() const
 
   if(m_stepsHasBeenSet)
   {
-   Array<JsonValue> stepsJsonList(m_steps.size());
+   Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
    for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
    {
      stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
@@ -124,7 +124,7 @@ JsonValue DescribedWorkflow::Jsonize() const
 
   if(m_onExceptionStepsHasBeenSet)
   {
-   Array<JsonValue> onExceptionStepsJsonList(m_onExceptionSteps.size());
+   Aws::Utils::Array<JsonValue> onExceptionStepsJsonList(m_onExceptionSteps.size());
    for(unsigned onExceptionStepsIndex = 0; onExceptionStepsIndex < onExceptionStepsJsonList.GetLength(); ++onExceptionStepsIndex)
    {
      onExceptionStepsJsonList[onExceptionStepsIndex].AsObject(m_onExceptionSteps[onExceptionStepsIndex].Jsonize());
@@ -141,7 +141,7 @@ JsonValue DescribedWorkflow::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

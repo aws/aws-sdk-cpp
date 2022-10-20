@@ -75,7 +75,7 @@ AutoScalingSettingsDescription& AutoScalingSettingsDescription::operator =(JsonV
 
   if(jsonValue.ValueExists("ScalingPolicies"))
   {
-    Array<JsonView> scalingPoliciesJsonList = jsonValue.GetArray("ScalingPolicies");
+    Aws::Utils::Array<JsonView> scalingPoliciesJsonList = jsonValue.GetArray("ScalingPolicies");
     for(unsigned scalingPoliciesIndex = 0; scalingPoliciesIndex < scalingPoliciesJsonList.GetLength(); ++scalingPoliciesIndex)
     {
       m_scalingPolicies.push_back(scalingPoliciesJsonList[scalingPoliciesIndex].AsObject());
@@ -116,7 +116,7 @@ JsonValue AutoScalingSettingsDescription::Jsonize() const
 
   if(m_scalingPoliciesHasBeenSet)
   {
-   Array<JsonValue> scalingPoliciesJsonList(m_scalingPolicies.size());
+   Aws::Utils::Array<JsonValue> scalingPoliciesJsonList(m_scalingPolicies.size());
    for(unsigned scalingPoliciesIndex = 0; scalingPoliciesIndex < scalingPoliciesJsonList.GetLength(); ++scalingPoliciesIndex)
    {
      scalingPoliciesJsonList[scalingPoliciesIndex].AsObject(m_scalingPolicies[scalingPoliciesIndex].Jsonize());

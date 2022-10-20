@@ -30,7 +30,7 @@ ListEdgeDeploymentPlansResult& ListEdgeDeploymentPlansResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EdgeDeploymentPlanSummaries"))
   {
-    Array<JsonView> edgeDeploymentPlanSummariesJsonList = jsonValue.GetArray("EdgeDeploymentPlanSummaries");
+    Aws::Utils::Array<JsonView> edgeDeploymentPlanSummariesJsonList = jsonValue.GetArray("EdgeDeploymentPlanSummaries");
     for(unsigned edgeDeploymentPlanSummariesIndex = 0; edgeDeploymentPlanSummariesIndex < edgeDeploymentPlanSummariesJsonList.GetLength(); ++edgeDeploymentPlanSummariesIndex)
     {
       m_edgeDeploymentPlanSummaries.push_back(edgeDeploymentPlanSummariesJsonList[edgeDeploymentPlanSummariesIndex].AsObject());

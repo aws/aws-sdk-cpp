@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/wisdom/ConnectWisdomService_EXPORTS.h>
+#include <aws/wisdom/ConnectWisdomServiceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

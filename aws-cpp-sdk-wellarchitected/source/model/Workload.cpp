@@ -125,7 +125,7 @@ Workload& Workload::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AccountIds"))
   {
-    Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
+    Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
     for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
     {
       m_accountIds.push_back(accountIdsJsonList[accountIdsIndex].AsString());
@@ -135,7 +135,7 @@ Workload& Workload::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AwsRegions"))
   {
-    Array<JsonView> awsRegionsJsonList = jsonValue.GetArray("AwsRegions");
+    Aws::Utils::Array<JsonView> awsRegionsJsonList = jsonValue.GetArray("AwsRegions");
     for(unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex)
     {
       m_awsRegions.push_back(awsRegionsJsonList[awsRegionsIndex].AsString());
@@ -145,7 +145,7 @@ Workload& Workload::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NonAwsRegions"))
   {
-    Array<JsonView> nonAwsRegionsJsonList = jsonValue.GetArray("NonAwsRegions");
+    Aws::Utils::Array<JsonView> nonAwsRegionsJsonList = jsonValue.GetArray("NonAwsRegions");
     for(unsigned nonAwsRegionsIndex = 0; nonAwsRegionsIndex < nonAwsRegionsJsonList.GetLength(); ++nonAwsRegionsIndex)
     {
       m_nonAwsRegions.push_back(nonAwsRegionsJsonList[nonAwsRegionsIndex].AsString());
@@ -221,7 +221,7 @@ Workload& Workload::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PillarPriorities"))
   {
-    Array<JsonView> pillarPrioritiesJsonList = jsonValue.GetArray("PillarPriorities");
+    Aws::Utils::Array<JsonView> pillarPrioritiesJsonList = jsonValue.GetArray("PillarPriorities");
     for(unsigned pillarPrioritiesIndex = 0; pillarPrioritiesIndex < pillarPrioritiesJsonList.GetLength(); ++pillarPrioritiesIndex)
     {
       m_pillarPriorities.push_back(pillarPrioritiesJsonList[pillarPrioritiesIndex].AsString());
@@ -231,7 +231,7 @@ Workload& Workload::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Lenses"))
   {
-    Array<JsonView> lensesJsonList = jsonValue.GetArray("Lenses");
+    Aws::Utils::Array<JsonView> lensesJsonList = jsonValue.GetArray("Lenses");
     for(unsigned lensesIndex = 0; lensesIndex < lensesJsonList.GetLength(); ++lensesIndex)
     {
       m_lenses.push_back(lensesJsonList[lensesIndex].AsString());
@@ -306,7 +306,7 @@ JsonValue Workload::Jsonize() const
 
   if(m_accountIdsHasBeenSet)
   {
-   Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
    for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
    {
      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
@@ -317,7 +317,7 @@ JsonValue Workload::Jsonize() const
 
   if(m_awsRegionsHasBeenSet)
   {
-   Array<JsonValue> awsRegionsJsonList(m_awsRegions.size());
+   Aws::Utils::Array<JsonValue> awsRegionsJsonList(m_awsRegions.size());
    for(unsigned awsRegionsIndex = 0; awsRegionsIndex < awsRegionsJsonList.GetLength(); ++awsRegionsIndex)
    {
      awsRegionsJsonList[awsRegionsIndex].AsString(m_awsRegions[awsRegionsIndex]);
@@ -328,7 +328,7 @@ JsonValue Workload::Jsonize() const
 
   if(m_nonAwsRegionsHasBeenSet)
   {
-   Array<JsonValue> nonAwsRegionsJsonList(m_nonAwsRegions.size());
+   Aws::Utils::Array<JsonValue> nonAwsRegionsJsonList(m_nonAwsRegions.size());
    for(unsigned nonAwsRegionsIndex = 0; nonAwsRegionsIndex < nonAwsRegionsJsonList.GetLength(); ++nonAwsRegionsIndex)
    {
      nonAwsRegionsJsonList[nonAwsRegionsIndex].AsString(m_nonAwsRegions[nonAwsRegionsIndex]);
@@ -396,7 +396,7 @@ JsonValue Workload::Jsonize() const
 
   if(m_pillarPrioritiesHasBeenSet)
   {
-   Array<JsonValue> pillarPrioritiesJsonList(m_pillarPriorities.size());
+   Aws::Utils::Array<JsonValue> pillarPrioritiesJsonList(m_pillarPriorities.size());
    for(unsigned pillarPrioritiesIndex = 0; pillarPrioritiesIndex < pillarPrioritiesJsonList.GetLength(); ++pillarPrioritiesIndex)
    {
      pillarPrioritiesJsonList[pillarPrioritiesIndex].AsString(m_pillarPriorities[pillarPrioritiesIndex]);
@@ -407,7 +407,7 @@ JsonValue Workload::Jsonize() const
 
   if(m_lensesHasBeenSet)
   {
-   Array<JsonValue> lensesJsonList(m_lenses.size());
+   Aws::Utils::Array<JsonValue> lensesJsonList(m_lenses.size());
    for(unsigned lensesIndex = 0; lensesIndex < lensesJsonList.GetLength(); ++lensesIndex)
    {
      lensesJsonList[lensesIndex].AsString(m_lenses[lensesIndex]);

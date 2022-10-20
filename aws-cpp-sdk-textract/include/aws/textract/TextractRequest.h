@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/textract/Textract_EXPORTS.h>
+#include <aws/textract/TextractEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

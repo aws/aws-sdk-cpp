@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/timestream-write/TimestreamWriteEndpointProvider.h>
 #include <aws/core/utils/ConcurrentCache.h>
 #include <future>
 #include <functional>
@@ -64,6 +65,10 @@ namespace Aws
 
   namespace TimestreamWrite
   {
+    namespace Endpoint
+    {
+      class TimestreamWriteEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in TimestreamWriteClient header */

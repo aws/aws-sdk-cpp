@@ -32,7 +32,7 @@ GetTimeSeriesServiceStatisticsResult& GetTimeSeriesServiceStatisticsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TimeSeriesServiceStatistics"))
   {
-    Array<JsonView> timeSeriesServiceStatisticsJsonList = jsonValue.GetArray("TimeSeriesServiceStatistics");
+    Aws::Utils::Array<JsonView> timeSeriesServiceStatisticsJsonList = jsonValue.GetArray("TimeSeriesServiceStatistics");
     for(unsigned timeSeriesServiceStatisticsIndex = 0; timeSeriesServiceStatisticsIndex < timeSeriesServiceStatisticsJsonList.GetLength(); ++timeSeriesServiceStatisticsIndex)
     {
       m_timeSeriesServiceStatistics.push_back(timeSeriesServiceStatisticsJsonList[timeSeriesServiceStatisticsIndex].AsObject());

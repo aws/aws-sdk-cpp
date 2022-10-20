@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -51,6 +52,10 @@ namespace Aws
 
   namespace MarketplaceCommerceAnalytics
   {
+    namespace Endpoint
+    {
+      class MarketplaceCommerceAnalyticsEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in MarketplaceCommerceAnalyticsClient header */

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
+#include <aws/waf-regional/WAFRegionalEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -26,7 +26,7 @@ Aws::String GetInsightsRequest::SerializePayload() const
 
   if(m_insightArnsHasBeenSet)
   {
-   Array<JsonValue> insightArnsJsonList(m_insightArns.size());
+   Aws::Utils::Array<JsonValue> insightArnsJsonList(m_insightArns.size());
    for(unsigned insightArnsIndex = 0; insightArnsIndex < insightArnsJsonList.GetLength(); ++insightArnsIndex)
    {
      insightArnsJsonList[insightArnsIndex].AsString(m_insightArns[insightArnsIndex]);

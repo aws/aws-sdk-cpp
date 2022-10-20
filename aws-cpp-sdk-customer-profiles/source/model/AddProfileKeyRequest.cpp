@@ -38,7 +38,7 @@ Aws::String AddProfileKeyRequest::SerializePayload() const
 
   if(m_valuesHasBeenSet)
   {
-   Array<JsonValue> valuesJsonList(m_values.size());
+   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
    {
      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);

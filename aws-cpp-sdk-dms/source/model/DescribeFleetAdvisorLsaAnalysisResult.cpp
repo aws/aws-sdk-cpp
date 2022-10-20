@@ -30,7 +30,7 @@ DescribeFleetAdvisorLsaAnalysisResult& DescribeFleetAdvisorLsaAnalysisResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Analysis"))
   {
-    Array<JsonView> analysisJsonList = jsonValue.GetArray("Analysis");
+    Aws::Utils::Array<JsonView> analysisJsonList = jsonValue.GetArray("Analysis");
     for(unsigned analysisIndex = 0; analysisIndex < analysisJsonList.GetLength(); ++analysisIndex)
     {
       m_analysis.push_back(analysisJsonList[analysisIndex].AsObject());

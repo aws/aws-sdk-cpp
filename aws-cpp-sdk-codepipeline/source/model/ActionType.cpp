@@ -55,7 +55,7 @@ ActionType& ActionType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("actionConfigurationProperties"))
   {
-    Array<JsonView> actionConfigurationPropertiesJsonList = jsonValue.GetArray("actionConfigurationProperties");
+    Aws::Utils::Array<JsonView> actionConfigurationPropertiesJsonList = jsonValue.GetArray("actionConfigurationProperties");
     for(unsigned actionConfigurationPropertiesIndex = 0; actionConfigurationPropertiesIndex < actionConfigurationPropertiesJsonList.GetLength(); ++actionConfigurationPropertiesIndex)
     {
       m_actionConfigurationProperties.push_back(actionConfigurationPropertiesJsonList[actionConfigurationPropertiesIndex].AsObject());
@@ -98,7 +98,7 @@ JsonValue ActionType::Jsonize() const
 
   if(m_actionConfigurationPropertiesHasBeenSet)
   {
-   Array<JsonValue> actionConfigurationPropertiesJsonList(m_actionConfigurationProperties.size());
+   Aws::Utils::Array<JsonValue> actionConfigurationPropertiesJsonList(m_actionConfigurationProperties.size());
    for(unsigned actionConfigurationPropertiesIndex = 0; actionConfigurationPropertiesIndex < actionConfigurationPropertiesJsonList.GetLength(); ++actionConfigurationPropertiesIndex)
    {
      actionConfigurationPropertiesJsonList[actionConfigurationPropertiesIndex].AsObject(m_actionConfigurationProperties[actionConfigurationPropertiesIndex].Jsonize());

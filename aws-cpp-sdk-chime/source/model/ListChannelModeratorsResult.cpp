@@ -42,7 +42,7 @@ ListChannelModeratorsResult& ListChannelModeratorsResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("ChannelModerators"))
   {
-    Array<JsonView> channelModeratorsJsonList = jsonValue.GetArray("ChannelModerators");
+    Aws::Utils::Array<JsonView> channelModeratorsJsonList = jsonValue.GetArray("ChannelModerators");
     for(unsigned channelModeratorsIndex = 0; channelModeratorsIndex < channelModeratorsJsonList.GetLength(); ++channelModeratorsIndex)
     {
       m_channelModerators.push_back(channelModeratorsJsonList[channelModeratorsIndex].AsObject());

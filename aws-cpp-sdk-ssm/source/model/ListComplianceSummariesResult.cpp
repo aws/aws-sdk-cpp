@@ -30,7 +30,7 @@ ListComplianceSummariesResult& ListComplianceSummariesResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ComplianceSummaryItems"))
   {
-    Array<JsonView> complianceSummaryItemsJsonList = jsonValue.GetArray("ComplianceSummaryItems");
+    Aws::Utils::Array<JsonView> complianceSummaryItemsJsonList = jsonValue.GetArray("ComplianceSummaryItems");
     for(unsigned complianceSummaryItemsIndex = 0; complianceSummaryItemsIndex < complianceSummaryItemsJsonList.GetLength(); ++complianceSummaryItemsIndex)
     {
       m_complianceSummaryItems.push_back(complianceSummaryItemsJsonList[complianceSummaryItemsIndex].AsObject());

@@ -24,7 +24,7 @@ Aws::String TerminateTargetInstancesRequest::SerializePayload() const
 
   if(m_sourceServerIDsHasBeenSet)
   {
-   Array<JsonValue> sourceServerIDsJsonList(m_sourceServerIDs.size());
+   Aws::Utils::Array<JsonValue> sourceServerIDsJsonList(m_sourceServerIDs.size());
    for(unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex)
    {
      sourceServerIDsJsonList[sourceServerIDsIndex].AsString(m_sourceServerIDs[sourceServerIDsIndex]);

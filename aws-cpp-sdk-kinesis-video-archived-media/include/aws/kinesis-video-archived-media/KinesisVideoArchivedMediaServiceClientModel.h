@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -55,6 +56,10 @@ namespace Aws
 
   namespace KinesisVideoArchivedMedia
   {
+    namespace Endpoint
+    {
+      class KinesisVideoArchivedMediaEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in KinesisVideoArchivedMediaClient header */

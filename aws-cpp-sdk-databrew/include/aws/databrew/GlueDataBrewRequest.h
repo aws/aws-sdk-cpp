@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/databrew/GlueDataBrew_EXPORTS.h>
+#include <aws/databrew/GlueDataBrewEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

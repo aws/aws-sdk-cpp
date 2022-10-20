@@ -30,7 +30,7 @@ ListBundlesResult& ListBundlesResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("bundleList"))
   {
-    Array<JsonView> bundleListJsonList = jsonValue.GetArray("bundleList");
+    Aws::Utils::Array<JsonView> bundleListJsonList = jsonValue.GetArray("bundleList");
     for(unsigned bundleListIndex = 0; bundleListIndex < bundleListJsonList.GetLength(); ++bundleListIndex)
     {
       m_bundleList.push_back(bundleListJsonList[bundleListIndex].AsObject());

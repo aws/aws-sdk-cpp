@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/connect/ConnectEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -157,6 +158,10 @@ namespace Aws
 
   namespace Connect
   {
+    namespace Endpoint
+    {
+      class ConnectEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in ConnectClient header */

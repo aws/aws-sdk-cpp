@@ -36,7 +36,7 @@ ListServiceQuotasResult& ListServiceQuotasResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("Quotas"))
   {
-    Array<JsonView> quotasJsonList = jsonValue.GetArray("Quotas");
+    Aws::Utils::Array<JsonView> quotasJsonList = jsonValue.GetArray("Quotas");
     for(unsigned quotasIndex = 0; quotasIndex < quotasJsonList.GetLength(); ++quotasIndex)
     {
       m_quotas.push_back(quotasJsonList[quotasIndex].AsObject());

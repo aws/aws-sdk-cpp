@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/route53-recovery-control-config/Route53RecoveryControlConfig_EXPORTS.h>
+#include <aws/route53-recovery-control-config/Route53RecoveryControlConfigEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

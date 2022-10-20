@@ -30,7 +30,7 @@ BatchCreateVehicleResult& BatchCreateVehicleResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("vehicles"))
   {
-    Array<JsonView> vehiclesJsonList = jsonValue.GetArray("vehicles");
+    Aws::Utils::Array<JsonView> vehiclesJsonList = jsonValue.GetArray("vehicles");
     for(unsigned vehiclesIndex = 0; vehiclesIndex < vehiclesJsonList.GetLength(); ++vehiclesIndex)
     {
       m_vehicles.push_back(vehiclesJsonList[vehiclesIndex].AsObject());
@@ -39,7 +39,7 @@ BatchCreateVehicleResult& BatchCreateVehicleResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

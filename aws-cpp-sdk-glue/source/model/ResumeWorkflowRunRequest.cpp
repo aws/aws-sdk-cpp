@@ -37,7 +37,7 @@ Aws::String ResumeWorkflowRunRequest::SerializePayload() const
 
   if(m_nodeIdsHasBeenSet)
   {
-   Array<JsonValue> nodeIdsJsonList(m_nodeIds.size());
+   Aws::Utils::Array<JsonValue> nodeIdsJsonList(m_nodeIds.size());
    for(unsigned nodeIdsIndex = 0; nodeIdsIndex < nodeIdsJsonList.GetLength(); ++nodeIdsIndex)
    {
      nodeIdsJsonList[nodeIdsIndex].AsString(m_nodeIds[nodeIdsIndex]);

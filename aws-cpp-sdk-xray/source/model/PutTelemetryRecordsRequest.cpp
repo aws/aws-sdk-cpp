@@ -26,7 +26,7 @@ Aws::String PutTelemetryRecordsRequest::SerializePayload() const
 
   if(m_telemetryRecordsHasBeenSet)
   {
-   Array<JsonValue> telemetryRecordsJsonList(m_telemetryRecords.size());
+   Aws::Utils::Array<JsonValue> telemetryRecordsJsonList(m_telemetryRecords.size());
    for(unsigned telemetryRecordsIndex = 0; telemetryRecordsIndex < telemetryRecordsJsonList.GetLength(); ++telemetryRecordsIndex)
    {
      telemetryRecordsJsonList[telemetryRecordsIndex].AsObject(m_telemetryRecords[telemetryRecordsIndex].Jsonize());

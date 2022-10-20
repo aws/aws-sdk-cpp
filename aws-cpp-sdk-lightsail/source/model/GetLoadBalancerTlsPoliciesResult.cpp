@@ -30,7 +30,7 @@ GetLoadBalancerTlsPoliciesResult& GetLoadBalancerTlsPoliciesResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("tlsPolicies"))
   {
-    Array<JsonView> tlsPoliciesJsonList = jsonValue.GetArray("tlsPolicies");
+    Aws::Utils::Array<JsonView> tlsPoliciesJsonList = jsonValue.GetArray("tlsPolicies");
     for(unsigned tlsPoliciesIndex = 0; tlsPoliciesIndex < tlsPoliciesJsonList.GetLength(); ++tlsPoliciesIndex)
     {
       m_tlsPolicies.push_back(tlsPoliciesJsonList[tlsPoliciesIndex].AsObject());

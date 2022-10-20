@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
+#include <aws/service-quotas/ServiceQuotasEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

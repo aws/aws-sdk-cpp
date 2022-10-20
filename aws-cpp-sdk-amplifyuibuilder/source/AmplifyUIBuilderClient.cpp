@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/amplifyuibuilder/AmplifyUIBuilderClient.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderEndpoint.h>
 #include <aws/amplifyuibuilder/AmplifyUIBuilderErrorMarshaller.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilderEndpointProvider.h>
 #include <aws/amplifyuibuilder/model/CreateComponentRequest.h>
 #include <aws/amplifyuibuilder/model/CreateFormRequest.h>
 #include <aws/amplifyuibuilder/model/CreateThemeRequest.h>
@@ -50,19 +52,66 @@ using namespace Aws::AmplifyUIBuilder;
 using namespace Aws::AmplifyUIBuilder::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::AmplifyUIBuilder::Endpoint::AmplifyUIBuilderEndpointProvider::AmplifyUIBuilderResolveEndpointOutcome;
 
 
 const char* AmplifyUIBuilderClient::SERVICE_NAME = "amplifyuibuilder";
 const char* AmplifyUIBuilderClient::ALLOCATION_TAG = "AmplifyUIBuilderClient";
 
-AmplifyUIBuilderClient::AmplifyUIBuilderClient(const Client::ClientConfiguration& clientConfiguration) :
+AmplifyUIBuilderClient::AmplifyUIBuilderClient(const Client::ClientConfiguration& clientConfiguration,
+                                               std::shared_ptr<Endpoint::AmplifyUIBuilderEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+AmplifyUIBuilderClient::AmplifyUIBuilderClient(const AWSCredentials& credentials,
+                                               std::shared_ptr<Endpoint::AmplifyUIBuilderEndpointProvider> endpointProvider,
+                                               const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+AmplifyUIBuilderClient::AmplifyUIBuilderClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                               std::shared_ptr<Endpoint::AmplifyUIBuilderEndpointProvider> endpointProvider,
+                                               const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  AmplifyUIBuilderClient::AmplifyUIBuilderClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<AmplifyUIBuilder::Endpoint::AmplifyUIBuilderEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -75,7 +124,8 @@ AmplifyUIBuilderClient::AmplifyUIBuilderClient(const AWSCredentials& credentials
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<AmplifyUIBuilder::Endpoint::AmplifyUIBuilderEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -88,11 +138,13 @@ AmplifyUIBuilderClient::AmplifyUIBuilderClient(const std::shared_ptr<AWSCredenti
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AmplifyUIBuilderErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<AmplifyUIBuilder::Endpoint::AmplifyUIBuilderEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 AmplifyUIBuilderClient::~AmplifyUIBuilderClient()
 {
 }
@@ -100,31 +152,18 @@ AmplifyUIBuilderClient::~AmplifyUIBuilderClient()
 void AmplifyUIBuilderClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("AmplifyUIBuilder");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + AmplifyUIBuilderEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void AmplifyUIBuilderClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 CreateComponentOutcome AmplifyUIBuilderClient::CreateComponent(const CreateComponentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateComponent", "Required field: AppId, is not set");
@@ -135,13 +174,9 @@ CreateComponentOutcome AmplifyUIBuilderClient::CreateComponent(const CreateCompo
     AWS_LOGSTREAM_ERROR("CreateComponent", "Required field: EnvironmentName, is not set");
     return CreateComponentOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/components");
-  return CreateComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateComponentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateComponentOutcomeCallable AmplifyUIBuilderClient::CreateComponentCallable(const CreateComponentRequest& request) const
@@ -162,6 +197,7 @@ void AmplifyUIBuilderClient::CreateComponentAsync(const CreateComponentRequest& 
 
 CreateFormOutcome AmplifyUIBuilderClient::CreateForm(const CreateFormRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateForm", "Required field: AppId, is not set");
@@ -172,13 +208,9 @@ CreateFormOutcome AmplifyUIBuilderClient::CreateForm(const CreateFormRequest& re
     AWS_LOGSTREAM_ERROR("CreateForm", "Required field: EnvironmentName, is not set");
     return CreateFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/forms");
-  return CreateFormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateFormOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateFormOutcomeCallable AmplifyUIBuilderClient::CreateFormCallable(const CreateFormRequest& request) const
@@ -199,6 +231,7 @@ void AmplifyUIBuilderClient::CreateFormAsync(const CreateFormRequest& request, c
 
 CreateThemeOutcome AmplifyUIBuilderClient::CreateTheme(const CreateThemeRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateTheme", "Required field: AppId, is not set");
@@ -209,13 +242,9 @@ CreateThemeOutcome AmplifyUIBuilderClient::CreateTheme(const CreateThemeRequest&
     AWS_LOGSTREAM_ERROR("CreateTheme", "Required field: EnvironmentName, is not set");
     return CreateThemeOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/themes");
-  return CreateThemeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateThemeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateThemeOutcomeCallable AmplifyUIBuilderClient::CreateThemeCallable(const CreateThemeRequest& request) const
@@ -236,6 +265,7 @@ void AmplifyUIBuilderClient::CreateThemeAsync(const CreateThemeRequest& request,
 
 DeleteComponentOutcome AmplifyUIBuilderClient::DeleteComponent(const DeleteComponentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteComponent", "Required field: AppId, is not set");
@@ -251,14 +281,9 @@ DeleteComponentOutcome AmplifyUIBuilderClient::DeleteComponent(const DeleteCompo
     AWS_LOGSTREAM_ERROR("DeleteComponent", "Required field: Id, is not set");
     return DeleteComponentOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/components/");
-  uri.AddPathSegment(request.GetId());
-  return DeleteComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteComponentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteComponentOutcomeCallable AmplifyUIBuilderClient::DeleteComponentCallable(const DeleteComponentRequest& request) const
@@ -279,6 +304,7 @@ void AmplifyUIBuilderClient::DeleteComponentAsync(const DeleteComponentRequest& 
 
 DeleteFormOutcome AmplifyUIBuilderClient::DeleteForm(const DeleteFormRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteForm", "Required field: AppId, is not set");
@@ -294,14 +320,9 @@ DeleteFormOutcome AmplifyUIBuilderClient::DeleteForm(const DeleteFormRequest& re
     AWS_LOGSTREAM_ERROR("DeleteForm", "Required field: Id, is not set");
     return DeleteFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/forms/");
-  uri.AddPathSegment(request.GetId());
-  return DeleteFormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteFormOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFormOutcomeCallable AmplifyUIBuilderClient::DeleteFormCallable(const DeleteFormRequest& request) const
@@ -322,6 +343,7 @@ void AmplifyUIBuilderClient::DeleteFormAsync(const DeleteFormRequest& request, c
 
 DeleteThemeOutcome AmplifyUIBuilderClient::DeleteTheme(const DeleteThemeRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteTheme", "Required field: AppId, is not set");
@@ -337,14 +359,9 @@ DeleteThemeOutcome AmplifyUIBuilderClient::DeleteTheme(const DeleteThemeRequest&
     AWS_LOGSTREAM_ERROR("DeleteTheme", "Required field: Id, is not set");
     return DeleteThemeOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/themes/");
-  uri.AddPathSegment(request.GetId());
-  return DeleteThemeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteThemeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteThemeOutcomeCallable AmplifyUIBuilderClient::DeleteThemeCallable(const DeleteThemeRequest& request) const
@@ -365,15 +382,15 @@ void AmplifyUIBuilderClient::DeleteThemeAsync(const DeleteThemeRequest& request,
 
 ExchangeCodeForTokenOutcome AmplifyUIBuilderClient::ExchangeCodeForToken(const ExchangeCodeForTokenRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExchangeCodeForToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProviderHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ExchangeCodeForToken", "Required field: Provider, is not set");
     return ExchangeCodeForTokenOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Provider]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tokens/");
-  uri.AddPathSegment(TokenProvidersMapper::GetNameForTokenProviders(request.GetProvider()));
-  return ExchangeCodeForTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExchangeCodeForToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ExchangeCodeForTokenOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExchangeCodeForTokenOutcomeCallable AmplifyUIBuilderClient::ExchangeCodeForTokenCallable(const ExchangeCodeForTokenRequest& request) const
@@ -394,6 +411,7 @@ void AmplifyUIBuilderClient::ExchangeCodeForTokenAsync(const ExchangeCodeForToke
 
 ExportComponentsOutcome AmplifyUIBuilderClient::ExportComponents(const ExportComponentsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ExportComponents", "Required field: AppId, is not set");
@@ -404,13 +422,9 @@ ExportComponentsOutcome AmplifyUIBuilderClient::ExportComponents(const ExportCom
     AWS_LOGSTREAM_ERROR("ExportComponents", "Required field: EnvironmentName, is not set");
     return ExportComponentsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/export/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/components");
-  return ExportComponentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExportComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ExportComponentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExportComponentsOutcomeCallable AmplifyUIBuilderClient::ExportComponentsCallable(const ExportComponentsRequest& request) const
@@ -431,6 +445,7 @@ void AmplifyUIBuilderClient::ExportComponentsAsync(const ExportComponentsRequest
 
 ExportFormsOutcome AmplifyUIBuilderClient::ExportForms(const ExportFormsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportForms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ExportForms", "Required field: AppId, is not set");
@@ -441,13 +456,9 @@ ExportFormsOutcome AmplifyUIBuilderClient::ExportForms(const ExportFormsRequest&
     AWS_LOGSTREAM_ERROR("ExportForms", "Required field: EnvironmentName, is not set");
     return ExportFormsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/export/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/forms");
-  return ExportFormsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExportForms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ExportFormsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExportFormsOutcomeCallable AmplifyUIBuilderClient::ExportFormsCallable(const ExportFormsRequest& request) const
@@ -468,6 +479,7 @@ void AmplifyUIBuilderClient::ExportFormsAsync(const ExportFormsRequest& request,
 
 ExportThemesOutcome AmplifyUIBuilderClient::ExportThemes(const ExportThemesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportThemes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ExportThemes", "Required field: AppId, is not set");
@@ -478,13 +490,9 @@ ExportThemesOutcome AmplifyUIBuilderClient::ExportThemes(const ExportThemesReque
     AWS_LOGSTREAM_ERROR("ExportThemes", "Required field: EnvironmentName, is not set");
     return ExportThemesOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/export/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/themes");
-  return ExportThemesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExportThemes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ExportThemesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExportThemesOutcomeCallable AmplifyUIBuilderClient::ExportThemesCallable(const ExportThemesRequest& request) const
@@ -505,6 +513,7 @@ void AmplifyUIBuilderClient::ExportThemesAsync(const ExportThemesRequest& reques
 
 GetComponentOutcome AmplifyUIBuilderClient::GetComponent(const GetComponentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetComponent", "Required field: AppId, is not set");
@@ -520,14 +529,9 @@ GetComponentOutcome AmplifyUIBuilderClient::GetComponent(const GetComponentReque
     AWS_LOGSTREAM_ERROR("GetComponent", "Required field: Id, is not set");
     return GetComponentOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/components/");
-  uri.AddPathSegment(request.GetId());
-  return GetComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetComponentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetComponentOutcomeCallable AmplifyUIBuilderClient::GetComponentCallable(const GetComponentRequest& request) const
@@ -548,6 +552,7 @@ void AmplifyUIBuilderClient::GetComponentAsync(const GetComponentRequest& reques
 
 GetFormOutcome AmplifyUIBuilderClient::GetForm(const GetFormRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetForm", "Required field: AppId, is not set");
@@ -563,14 +568,9 @@ GetFormOutcome AmplifyUIBuilderClient::GetForm(const GetFormRequest& request) co
     AWS_LOGSTREAM_ERROR("GetForm", "Required field: Id, is not set");
     return GetFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/forms/");
-  uri.AddPathSegment(request.GetId());
-  return GetFormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetFormOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFormOutcomeCallable AmplifyUIBuilderClient::GetFormCallable(const GetFormRequest& request) const
@@ -591,6 +591,7 @@ void AmplifyUIBuilderClient::GetFormAsync(const GetFormRequest& request, const G
 
 GetMetadataOutcome AmplifyUIBuilderClient::GetMetadata(const GetMetadataRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetMetadata", "Required field: AppId, is not set");
@@ -601,13 +602,9 @@ GetMetadataOutcome AmplifyUIBuilderClient::GetMetadata(const GetMetadataRequest&
     AWS_LOGSTREAM_ERROR("GetMetadata", "Required field: EnvironmentName, is not set");
     return GetMetadataOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/metadata");
-  return GetMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMetadata, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetMetadataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetMetadataOutcomeCallable AmplifyUIBuilderClient::GetMetadataCallable(const GetMetadataRequest& request) const
@@ -628,6 +625,7 @@ void AmplifyUIBuilderClient::GetMetadataAsync(const GetMetadataRequest& request,
 
 GetThemeOutcome AmplifyUIBuilderClient::GetTheme(const GetThemeRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetTheme", "Required field: AppId, is not set");
@@ -643,14 +641,9 @@ GetThemeOutcome AmplifyUIBuilderClient::GetTheme(const GetThemeRequest& request)
     AWS_LOGSTREAM_ERROR("GetTheme", "Required field: Id, is not set");
     return GetThemeOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/themes/");
-  uri.AddPathSegment(request.GetId());
-  return GetThemeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetThemeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetThemeOutcomeCallable AmplifyUIBuilderClient::GetThemeCallable(const GetThemeRequest& request) const
@@ -671,6 +664,7 @@ void AmplifyUIBuilderClient::GetThemeAsync(const GetThemeRequest& request, const
 
 ListComponentsOutcome AmplifyUIBuilderClient::ListComponents(const ListComponentsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListComponents", "Required field: AppId, is not set");
@@ -681,13 +675,9 @@ ListComponentsOutcome AmplifyUIBuilderClient::ListComponents(const ListComponent
     AWS_LOGSTREAM_ERROR("ListComponents", "Required field: EnvironmentName, is not set");
     return ListComponentsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/components");
-  return ListComponentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListComponentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListComponentsOutcomeCallable AmplifyUIBuilderClient::ListComponentsCallable(const ListComponentsRequest& request) const
@@ -708,6 +698,7 @@ void AmplifyUIBuilderClient::ListComponentsAsync(const ListComponentsRequest& re
 
 ListFormsOutcome AmplifyUIBuilderClient::ListForms(const ListFormsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListForms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListForms", "Required field: AppId, is not set");
@@ -718,13 +709,9 @@ ListFormsOutcome AmplifyUIBuilderClient::ListForms(const ListFormsRequest& reque
     AWS_LOGSTREAM_ERROR("ListForms", "Required field: EnvironmentName, is not set");
     return ListFormsOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/forms");
-  return ListFormsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListForms, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListFormsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFormsOutcomeCallable AmplifyUIBuilderClient::ListFormsCallable(const ListFormsRequest& request) const
@@ -745,6 +732,7 @@ void AmplifyUIBuilderClient::ListFormsAsync(const ListFormsRequest& request, con
 
 ListThemesOutcome AmplifyUIBuilderClient::ListThemes(const ListThemesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListThemes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListThemes", "Required field: AppId, is not set");
@@ -755,13 +743,9 @@ ListThemesOutcome AmplifyUIBuilderClient::ListThemes(const ListThemesRequest& re
     AWS_LOGSTREAM_ERROR("ListThemes", "Required field: EnvironmentName, is not set");
     return ListThemesOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/themes");
-  return ListThemesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListThemes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListThemesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListThemesOutcomeCallable AmplifyUIBuilderClient::ListThemesCallable(const ListThemesRequest& request) const
@@ -782,6 +766,7 @@ void AmplifyUIBuilderClient::ListThemesAsync(const ListThemesRequest& request, c
 
 PutMetadataFlagOutcome AmplifyUIBuilderClient::PutMetadataFlag(const PutMetadataFlagRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutMetadataFlag, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutMetadataFlag", "Required field: AppId, is not set");
@@ -797,14 +782,9 @@ PutMetadataFlagOutcome AmplifyUIBuilderClient::PutMetadataFlag(const PutMetadata
     AWS_LOGSTREAM_ERROR("PutMetadataFlag", "Required field: FeatureName, is not set");
     return PutMetadataFlagOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FeatureName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/metadata/features/");
-  uri.AddPathSegment(request.GetFeatureName());
-  return PutMetadataFlagOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutMetadataFlag, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutMetadataFlagOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutMetadataFlagOutcomeCallable AmplifyUIBuilderClient::PutMetadataFlagCallable(const PutMetadataFlagRequest& request) const
@@ -825,16 +805,15 @@ void AmplifyUIBuilderClient::PutMetadataFlagAsync(const PutMetadataFlagRequest& 
 
 RefreshTokenOutcome AmplifyUIBuilderClient::RefreshToken(const RefreshTokenRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RefreshToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProviderHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("RefreshToken", "Required field: Provider, is not set");
     return RefreshTokenOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Provider]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tokens/");
-  uri.AddPathSegment(TokenProvidersMapper::GetNameForTokenProviders(request.GetProvider()));
-  uri.AddPathSegments("/refresh");
-  return RefreshTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RefreshToken, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return RefreshTokenOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RefreshTokenOutcomeCallable AmplifyUIBuilderClient::RefreshTokenCallable(const RefreshTokenRequest& request) const
@@ -855,6 +834,7 @@ void AmplifyUIBuilderClient::RefreshTokenAsync(const RefreshTokenRequest& reques
 
 UpdateComponentOutcome AmplifyUIBuilderClient::UpdateComponent(const UpdateComponentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateComponent", "Required field: AppId, is not set");
@@ -870,14 +850,9 @@ UpdateComponentOutcome AmplifyUIBuilderClient::UpdateComponent(const UpdateCompo
     AWS_LOGSTREAM_ERROR("UpdateComponent", "Required field: Id, is not set");
     return UpdateComponentOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/components/");
-  uri.AddPathSegment(request.GetId());
-  return UpdateComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateComponentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateComponentOutcomeCallable AmplifyUIBuilderClient::UpdateComponentCallable(const UpdateComponentRequest& request) const
@@ -898,6 +873,7 @@ void AmplifyUIBuilderClient::UpdateComponentAsync(const UpdateComponentRequest& 
 
 UpdateFormOutcome AmplifyUIBuilderClient::UpdateForm(const UpdateFormRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateForm", "Required field: AppId, is not set");
@@ -913,14 +889,9 @@ UpdateFormOutcome AmplifyUIBuilderClient::UpdateForm(const UpdateFormRequest& re
     AWS_LOGSTREAM_ERROR("UpdateForm", "Required field: Id, is not set");
     return UpdateFormOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/forms/");
-  uri.AddPathSegment(request.GetId());
-  return UpdateFormOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateForm, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateFormOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFormOutcomeCallable AmplifyUIBuilderClient::UpdateFormCallable(const UpdateFormRequest& request) const
@@ -941,6 +912,7 @@ void AmplifyUIBuilderClient::UpdateFormAsync(const UpdateFormRequest& request, c
 
 UpdateThemeOutcome AmplifyUIBuilderClient::UpdateTheme(const UpdateThemeRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AppIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateTheme", "Required field: AppId, is not set");
@@ -956,14 +928,9 @@ UpdateThemeOutcome AmplifyUIBuilderClient::UpdateTheme(const UpdateThemeRequest&
     AWS_LOGSTREAM_ERROR("UpdateTheme", "Required field: Id, is not set");
     return UpdateThemeOutcome(Aws::Client::AWSError<AmplifyUIBuilderErrors>(AmplifyUIBuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/app/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/environment/");
-  uri.AddPathSegment(request.GetEnvironmentName());
-  uri.AddPathSegments("/themes/");
-  uri.AddPathSegment(request.GetId());
-  return UpdateThemeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTheme, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateThemeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateThemeOutcomeCallable AmplifyUIBuilderClient::UpdateThemeCallable(const UpdateThemeRequest& request) const

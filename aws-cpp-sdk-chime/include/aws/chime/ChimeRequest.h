@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/chime/Chime_EXPORTS.h>
+#include <aws/chime/ChimeEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

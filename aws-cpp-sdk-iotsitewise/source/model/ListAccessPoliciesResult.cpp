@@ -30,7 +30,7 @@ ListAccessPoliciesResult& ListAccessPoliciesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("accessPolicySummaries"))
   {
-    Array<JsonView> accessPolicySummariesJsonList = jsonValue.GetArray("accessPolicySummaries");
+    Aws::Utils::Array<JsonView> accessPolicySummariesJsonList = jsonValue.GetArray("accessPolicySummaries");
     for(unsigned accessPolicySummariesIndex = 0; accessPolicySummariesIndex < accessPolicySummariesJsonList.GetLength(); ++accessPolicySummariesIndex)
     {
       m_accessPolicySummaries.push_back(accessPolicySummariesJsonList[accessPolicySummariesIndex].AsObject());

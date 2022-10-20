@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/GlueEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

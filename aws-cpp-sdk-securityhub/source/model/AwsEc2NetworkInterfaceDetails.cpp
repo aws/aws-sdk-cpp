@@ -63,7 +63,7 @@ AwsEc2NetworkInterfaceDetails& AwsEc2NetworkInterfaceDetails::operator =(JsonVie
 
   if(jsonValue.ValueExists("SecurityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsObject());
@@ -80,7 +80,7 @@ AwsEc2NetworkInterfaceDetails& AwsEc2NetworkInterfaceDetails::operator =(JsonVie
 
   if(jsonValue.ValueExists("IpV6Addresses"))
   {
-    Array<JsonView> ipV6AddressesJsonList = jsonValue.GetArray("IpV6Addresses");
+    Aws::Utils::Array<JsonView> ipV6AddressesJsonList = jsonValue.GetArray("IpV6Addresses");
     for(unsigned ipV6AddressesIndex = 0; ipV6AddressesIndex < ipV6AddressesJsonList.GetLength(); ++ipV6AddressesIndex)
     {
       m_ipV6Addresses.push_back(ipV6AddressesJsonList[ipV6AddressesIndex].AsObject());
@@ -90,7 +90,7 @@ AwsEc2NetworkInterfaceDetails& AwsEc2NetworkInterfaceDetails::operator =(JsonVie
 
   if(jsonValue.ValueExists("PrivateIpAddresses"))
   {
-    Array<JsonView> privateIpAddressesJsonList = jsonValue.GetArray("PrivateIpAddresses");
+    Aws::Utils::Array<JsonView> privateIpAddressesJsonList = jsonValue.GetArray("PrivateIpAddresses");
     for(unsigned privateIpAddressesIndex = 0; privateIpAddressesIndex < privateIpAddressesJsonList.GetLength(); ++privateIpAddressesIndex)
     {
       m_privateIpAddresses.push_back(privateIpAddressesJsonList[privateIpAddressesIndex].AsObject());
@@ -133,7 +133,7 @@ JsonValue AwsEc2NetworkInterfaceDetails::Jsonize() const
 
   if(m_securityGroupsHasBeenSet)
   {
-   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
    {
      securityGroupsJsonList[securityGroupsIndex].AsObject(m_securityGroups[securityGroupsIndex].Jsonize());
@@ -150,7 +150,7 @@ JsonValue AwsEc2NetworkInterfaceDetails::Jsonize() const
 
   if(m_ipV6AddressesHasBeenSet)
   {
-   Array<JsonValue> ipV6AddressesJsonList(m_ipV6Addresses.size());
+   Aws::Utils::Array<JsonValue> ipV6AddressesJsonList(m_ipV6Addresses.size());
    for(unsigned ipV6AddressesIndex = 0; ipV6AddressesIndex < ipV6AddressesJsonList.GetLength(); ++ipV6AddressesIndex)
    {
      ipV6AddressesJsonList[ipV6AddressesIndex].AsObject(m_ipV6Addresses[ipV6AddressesIndex].Jsonize());
@@ -161,7 +161,7 @@ JsonValue AwsEc2NetworkInterfaceDetails::Jsonize() const
 
   if(m_privateIpAddressesHasBeenSet)
   {
-   Array<JsonValue> privateIpAddressesJsonList(m_privateIpAddresses.size());
+   Aws::Utils::Array<JsonValue> privateIpAddressesJsonList(m_privateIpAddresses.size());
    for(unsigned privateIpAddressesIndex = 0; privateIpAddressesIndex < privateIpAddressesJsonList.GetLength(); ++privateIpAddressesIndex)
    {
      privateIpAddressesJsonList[privateIpAddressesIndex].AsObject(m_privateIpAddresses[privateIpAddressesIndex].Jsonize());

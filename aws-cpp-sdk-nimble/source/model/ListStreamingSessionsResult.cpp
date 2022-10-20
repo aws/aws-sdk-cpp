@@ -36,7 +36,7 @@ ListStreamingSessionsResult& ListStreamingSessionsResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("sessions"))
   {
-    Array<JsonView> sessionsJsonList = jsonValue.GetArray("sessions");
+    Aws::Utils::Array<JsonView> sessionsJsonList = jsonValue.GetArray("sessions");
     for(unsigned sessionsIndex = 0; sessionsIndex < sessionsJsonList.GetLength(); ++sessionsIndex)
     {
       m_sessions.push_back(sessionsJsonList[sessionsIndex].AsObject());

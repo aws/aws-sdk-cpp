@@ -65,7 +65,7 @@ Aws::String UpdateProjectRequest::SerializePayload() const
 
   if(m_secondarySourcesHasBeenSet)
   {
-   Array<JsonValue> secondarySourcesJsonList(m_secondarySources.size());
+   Aws::Utils::Array<JsonValue> secondarySourcesJsonList(m_secondarySources.size());
    for(unsigned secondarySourcesIndex = 0; secondarySourcesIndex < secondarySourcesJsonList.GetLength(); ++secondarySourcesIndex)
    {
      secondarySourcesJsonList[secondarySourcesIndex].AsObject(m_secondarySources[secondarySourcesIndex].Jsonize());
@@ -82,7 +82,7 @@ Aws::String UpdateProjectRequest::SerializePayload() const
 
   if(m_secondarySourceVersionsHasBeenSet)
   {
-   Array<JsonValue> secondarySourceVersionsJsonList(m_secondarySourceVersions.size());
+   Aws::Utils::Array<JsonValue> secondarySourceVersionsJsonList(m_secondarySourceVersions.size());
    for(unsigned secondarySourceVersionsIndex = 0; secondarySourceVersionsIndex < secondarySourceVersionsJsonList.GetLength(); ++secondarySourceVersionsIndex)
    {
      secondarySourceVersionsJsonList[secondarySourceVersionsIndex].AsObject(m_secondarySourceVersions[secondarySourceVersionsIndex].Jsonize());
@@ -99,7 +99,7 @@ Aws::String UpdateProjectRequest::SerializePayload() const
 
   if(m_secondaryArtifactsHasBeenSet)
   {
-   Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
+   Aws::Utils::Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
    for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
    {
      secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject(m_secondaryArtifacts[secondaryArtifactsIndex].Jsonize());
@@ -146,7 +146,7 @@ Aws::String UpdateProjectRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -175,7 +175,7 @@ Aws::String UpdateProjectRequest::SerializePayload() const
 
   if(m_fileSystemLocationsHasBeenSet)
   {
-   Array<JsonValue> fileSystemLocationsJsonList(m_fileSystemLocations.size());
+   Aws::Utils::Array<JsonValue> fileSystemLocationsJsonList(m_fileSystemLocations.size());
    for(unsigned fileSystemLocationsIndex = 0; fileSystemLocationsIndex < fileSystemLocationsJsonList.GetLength(); ++fileSystemLocationsIndex)
    {
      fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject(m_fileSystemLocations[fileSystemLocationsIndex].Jsonize());

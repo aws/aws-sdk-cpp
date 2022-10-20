@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/s3outposts/S3Outposts_EXPORTS.h>
+#include <aws/s3outposts/S3OutpostsEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
+#include <aws/comprehendmedical/ComprehendMedicalEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

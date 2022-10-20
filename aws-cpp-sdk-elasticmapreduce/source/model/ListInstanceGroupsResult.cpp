@@ -30,7 +30,7 @@ ListInstanceGroupsResult& ListInstanceGroupsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InstanceGroups"))
   {
-    Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
+    Aws::Utils::Array<JsonView> instanceGroupsJsonList = jsonValue.GetArray("InstanceGroups");
     for(unsigned instanceGroupsIndex = 0; instanceGroupsIndex < instanceGroupsJsonList.GetLength(); ++instanceGroupsIndex)
     {
       m_instanceGroups.push_back(instanceGroupsJsonList[instanceGroupsIndex].AsObject());

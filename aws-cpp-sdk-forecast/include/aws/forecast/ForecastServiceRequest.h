@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
+#include <aws/forecast/ForecastServiceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

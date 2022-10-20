@@ -30,7 +30,7 @@ ListStagingAccountsResult& ListStagingAccountsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("accounts"))
   {
-    Array<JsonView> accountsJsonList = jsonValue.GetArray("accounts");
+    Aws::Utils::Array<JsonView> accountsJsonList = jsonValue.GetArray("accounts");
     for(unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex)
     {
       m_accounts.push_back(accountsJsonList[accountsIndex].AsObject());

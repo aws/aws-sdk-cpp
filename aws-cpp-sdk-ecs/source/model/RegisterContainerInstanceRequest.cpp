@@ -49,7 +49,7 @@ Aws::String RegisterContainerInstanceRequest::SerializePayload() const
 
   if(m_totalResourcesHasBeenSet)
   {
-   Array<JsonValue> totalResourcesJsonList(m_totalResources.size());
+   Aws::Utils::Array<JsonValue> totalResourcesJsonList(m_totalResources.size());
    for(unsigned totalResourcesIndex = 0; totalResourcesIndex < totalResourcesJsonList.GetLength(); ++totalResourcesIndex)
    {
      totalResourcesJsonList[totalResourcesIndex].AsObject(m_totalResources[totalResourcesIndex].Jsonize());
@@ -72,7 +72,7 @@ Aws::String RegisterContainerInstanceRequest::SerializePayload() const
 
   if(m_attributesHasBeenSet)
   {
-   Array<JsonValue> attributesJsonList(m_attributes.size());
+   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
    {
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
@@ -83,7 +83,7 @@ Aws::String RegisterContainerInstanceRequest::SerializePayload() const
 
   if(m_platformDevicesHasBeenSet)
   {
-   Array<JsonValue> platformDevicesJsonList(m_platformDevices.size());
+   Aws::Utils::Array<JsonValue> platformDevicesJsonList(m_platformDevices.size());
    for(unsigned platformDevicesIndex = 0; platformDevicesIndex < platformDevicesJsonList.GetLength(); ++platformDevicesIndex)
    {
      platformDevicesJsonList[platformDevicesIndex].AsObject(m_platformDevices[platformDevicesIndex].Jsonize());
@@ -94,7 +94,7 @@ Aws::String RegisterContainerInstanceRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -48,7 +48,7 @@ PartitionIndexDescriptor& PartitionIndexDescriptor::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("Keys"))
   {
-    Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
+    Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
     for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
     {
       m_keys.push_back(keysJsonList[keysIndex].AsObject());
@@ -65,7 +65,7 @@ PartitionIndexDescriptor& PartitionIndexDescriptor::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("BackfillErrors"))
   {
-    Array<JsonView> backfillErrorsJsonList = jsonValue.GetArray("BackfillErrors");
+    Aws::Utils::Array<JsonView> backfillErrorsJsonList = jsonValue.GetArray("BackfillErrors");
     for(unsigned backfillErrorsIndex = 0; backfillErrorsIndex < backfillErrorsJsonList.GetLength(); ++backfillErrorsIndex)
     {
       m_backfillErrors.push_back(backfillErrorsJsonList[backfillErrorsIndex].AsObject());
@@ -88,7 +88,7 @@ JsonValue PartitionIndexDescriptor::Jsonize() const
 
   if(m_keysHasBeenSet)
   {
-   Array<JsonValue> keysJsonList(m_keys.size());
+   Aws::Utils::Array<JsonValue> keysJsonList(m_keys.size());
    for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
    {
      keysJsonList[keysIndex].AsObject(m_keys[keysIndex].Jsonize());
@@ -104,7 +104,7 @@ JsonValue PartitionIndexDescriptor::Jsonize() const
 
   if(m_backfillErrorsHasBeenSet)
   {
-   Array<JsonValue> backfillErrorsJsonList(m_backfillErrors.size());
+   Aws::Utils::Array<JsonValue> backfillErrorsJsonList(m_backfillErrors.size());
    for(unsigned backfillErrorsIndex = 0; backfillErrorsIndex < backfillErrorsJsonList.GetLength(); ++backfillErrorsIndex)
    {
      backfillErrorsJsonList[backfillErrorsIndex].AsObject(m_backfillErrors[backfillErrorsIndex].Jsonize());

@@ -62,7 +62,7 @@ TaskTemplateField& TaskTemplateField::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SingleSelectOptions"))
   {
-    Array<JsonView> singleSelectOptionsJsonList = jsonValue.GetArray("SingleSelectOptions");
+    Aws::Utils::Array<JsonView> singleSelectOptionsJsonList = jsonValue.GetArray("SingleSelectOptions");
     for(unsigned singleSelectOptionsIndex = 0; singleSelectOptionsIndex < singleSelectOptionsJsonList.GetLength(); ++singleSelectOptionsIndex)
     {
       m_singleSelectOptions.push_back(singleSelectOptionsJsonList[singleSelectOptionsIndex].AsString());
@@ -96,7 +96,7 @@ JsonValue TaskTemplateField::Jsonize() const
 
   if(m_singleSelectOptionsHasBeenSet)
   {
-   Array<JsonValue> singleSelectOptionsJsonList(m_singleSelectOptions.size());
+   Aws::Utils::Array<JsonValue> singleSelectOptionsJsonList(m_singleSelectOptions.size());
    for(unsigned singleSelectOptionsIndex = 0; singleSelectOptionsIndex < singleSelectOptionsJsonList.GetLength(); ++singleSelectOptionsIndex)
    {
      singleSelectOptionsJsonList[singleSelectOptionsIndex].AsString(m_singleSelectOptions[singleSelectOptionsIndex]);

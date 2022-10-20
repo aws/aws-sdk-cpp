@@ -91,7 +91,7 @@ UserDefinedFunction& UserDefinedFunction::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResourceUris"))
   {
-    Array<JsonView> resourceUrisJsonList = jsonValue.GetArray("ResourceUris");
+    Aws::Utils::Array<JsonView> resourceUrisJsonList = jsonValue.GetArray("ResourceUris");
     for(unsigned resourceUrisIndex = 0; resourceUrisIndex < resourceUrisJsonList.GetLength(); ++resourceUrisIndex)
     {
       m_resourceUris.push_back(resourceUrisJsonList[resourceUrisIndex].AsObject());
@@ -149,7 +149,7 @@ JsonValue UserDefinedFunction::Jsonize() const
 
   if(m_resourceUrisHasBeenSet)
   {
-   Array<JsonValue> resourceUrisJsonList(m_resourceUris.size());
+   Aws::Utils::Array<JsonValue> resourceUrisJsonList(m_resourceUris.size());
    for(unsigned resourceUrisIndex = 0; resourceUrisIndex < resourceUrisJsonList.GetLength(); ++resourceUrisIndex)
    {
      resourceUrisJsonList[resourceUrisIndex].AsObject(m_resourceUris[resourceUrisIndex].Jsonize());

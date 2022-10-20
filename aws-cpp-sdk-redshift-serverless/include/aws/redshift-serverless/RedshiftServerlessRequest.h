@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
+#include <aws/redshift-serverless/RedshiftServerlessEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

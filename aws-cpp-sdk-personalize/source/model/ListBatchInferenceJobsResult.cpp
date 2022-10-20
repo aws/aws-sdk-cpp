@@ -30,7 +30,7 @@ ListBatchInferenceJobsResult& ListBatchInferenceJobsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("batchInferenceJobs"))
   {
-    Array<JsonView> batchInferenceJobsJsonList = jsonValue.GetArray("batchInferenceJobs");
+    Aws::Utils::Array<JsonView> batchInferenceJobsJsonList = jsonValue.GetArray("batchInferenceJobs");
     for(unsigned batchInferenceJobsIndex = 0; batchInferenceJobsIndex < batchInferenceJobsJsonList.GetLength(); ++batchInferenceJobsIndex)
     {
       m_batchInferenceJobs.push_back(batchInferenceJobsJsonList[batchInferenceJobsIndex].AsObject());

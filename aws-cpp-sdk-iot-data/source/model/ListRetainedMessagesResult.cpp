@@ -30,7 +30,7 @@ ListRetainedMessagesResult& ListRetainedMessagesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("retainedTopics"))
   {
-    Array<JsonView> retainedTopicsJsonList = jsonValue.GetArray("retainedTopics");
+    Aws::Utils::Array<JsonView> retainedTopicsJsonList = jsonValue.GetArray("retainedTopics");
     for(unsigned retainedTopicsIndex = 0; retainedTopicsIndex < retainedTopicsJsonList.GetLength(); ++retainedTopicsIndex)
     {
       m_retainedTopics.push_back(retainedTopicsJsonList[retainedTopicsIndex].AsObject());

@@ -42,7 +42,7 @@ DimensionContribution& DimensionContribution::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DimensionValueContributionList"))
   {
-    Array<JsonView> dimensionValueContributionListJsonList = jsonValue.GetArray("DimensionValueContributionList");
+    Aws::Utils::Array<JsonView> dimensionValueContributionListJsonList = jsonValue.GetArray("DimensionValueContributionList");
     for(unsigned dimensionValueContributionListIndex = 0; dimensionValueContributionListIndex < dimensionValueContributionListJsonList.GetLength(); ++dimensionValueContributionListIndex)
     {
       m_dimensionValueContributionList.push_back(dimensionValueContributionListJsonList[dimensionValueContributionListIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue DimensionContribution::Jsonize() const
 
   if(m_dimensionValueContributionListHasBeenSet)
   {
-   Array<JsonValue> dimensionValueContributionListJsonList(m_dimensionValueContributionList.size());
+   Aws::Utils::Array<JsonValue> dimensionValueContributionListJsonList(m_dimensionValueContributionList.size());
    for(unsigned dimensionValueContributionListIndex = 0; dimensionValueContributionListIndex < dimensionValueContributionListJsonList.GetLength(); ++dimensionValueContributionListIndex)
    {
      dimensionValueContributionListJsonList[dimensionValueContributionListIndex].AsObject(m_dimensionValueContributionList[dimensionValueContributionListIndex].Jsonize());

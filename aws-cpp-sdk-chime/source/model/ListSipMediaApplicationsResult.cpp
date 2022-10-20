@@ -30,7 +30,7 @@ ListSipMediaApplicationsResult& ListSipMediaApplicationsResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SipMediaApplications"))
   {
-    Array<JsonView> sipMediaApplicationsJsonList = jsonValue.GetArray("SipMediaApplications");
+    Aws::Utils::Array<JsonView> sipMediaApplicationsJsonList = jsonValue.GetArray("SipMediaApplications");
     for(unsigned sipMediaApplicationsIndex = 0; sipMediaApplicationsIndex < sipMediaApplicationsJsonList.GetLength(); ++sipMediaApplicationsIndex)
     {
       m_sipMediaApplications.push_back(sipMediaApplicationsJsonList[sipMediaApplicationsIndex].AsObject());

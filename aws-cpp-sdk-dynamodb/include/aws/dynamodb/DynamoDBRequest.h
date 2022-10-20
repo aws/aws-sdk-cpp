@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
+#include <aws/dynamodb/DynamoDBEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

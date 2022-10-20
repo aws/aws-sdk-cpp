@@ -147,7 +147,7 @@ ReactiveAnomaly& ReactiveAnomaly::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AnomalyResources"))
   {
-    Array<JsonView> anomalyResourcesJsonList = jsonValue.GetArray("AnomalyResources");
+    Aws::Utils::Array<JsonView> anomalyResourcesJsonList = jsonValue.GetArray("AnomalyResources");
     for(unsigned anomalyResourcesIndex = 0; anomalyResourcesIndex < anomalyResourcesJsonList.GetLength(); ++anomalyResourcesIndex)
     {
       m_anomalyResources.push_back(anomalyResourcesJsonList[anomalyResourcesIndex].AsObject());
@@ -233,7 +233,7 @@ JsonValue ReactiveAnomaly::Jsonize() const
 
   if(m_anomalyResourcesHasBeenSet)
   {
-   Array<JsonValue> anomalyResourcesJsonList(m_anomalyResources.size());
+   Aws::Utils::Array<JsonValue> anomalyResourcesJsonList(m_anomalyResources.size());
    for(unsigned anomalyResourcesIndex = 0; anomalyResourcesIndex < anomalyResourcesJsonList.GetLength(); ++anomalyResourcesIndex)
    {
      anomalyResourcesJsonList[anomalyResourcesIndex].AsObject(m_anomalyResources[anomalyResourcesIndex].Jsonize());

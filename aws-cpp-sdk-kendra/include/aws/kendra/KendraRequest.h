@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
+#include <aws/kendra/KendraEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

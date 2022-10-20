@@ -39,7 +39,7 @@ LaunchPermissionConfiguration& LaunchPermissionConfiguration::operator =(JsonVie
 {
   if(jsonValue.ValueExists("userIds"))
   {
-    Array<JsonView> userIdsJsonList = jsonValue.GetArray("userIds");
+    Aws::Utils::Array<JsonView> userIdsJsonList = jsonValue.GetArray("userIds");
     for(unsigned userIdsIndex = 0; userIdsIndex < userIdsJsonList.GetLength(); ++userIdsIndex)
     {
       m_userIds.push_back(userIdsJsonList[userIdsIndex].AsString());
@@ -49,7 +49,7 @@ LaunchPermissionConfiguration& LaunchPermissionConfiguration::operator =(JsonVie
 
   if(jsonValue.ValueExists("userGroups"))
   {
-    Array<JsonView> userGroupsJsonList = jsonValue.GetArray("userGroups");
+    Aws::Utils::Array<JsonView> userGroupsJsonList = jsonValue.GetArray("userGroups");
     for(unsigned userGroupsIndex = 0; userGroupsIndex < userGroupsJsonList.GetLength(); ++userGroupsIndex)
     {
       m_userGroups.push_back(userGroupsJsonList[userGroupsIndex].AsString());
@@ -59,7 +59,7 @@ LaunchPermissionConfiguration& LaunchPermissionConfiguration::operator =(JsonVie
 
   if(jsonValue.ValueExists("organizationArns"))
   {
-    Array<JsonView> organizationArnsJsonList = jsonValue.GetArray("organizationArns");
+    Aws::Utils::Array<JsonView> organizationArnsJsonList = jsonValue.GetArray("organizationArns");
     for(unsigned organizationArnsIndex = 0; organizationArnsIndex < organizationArnsJsonList.GetLength(); ++organizationArnsIndex)
     {
       m_organizationArns.push_back(organizationArnsJsonList[organizationArnsIndex].AsString());
@@ -69,7 +69,7 @@ LaunchPermissionConfiguration& LaunchPermissionConfiguration::operator =(JsonVie
 
   if(jsonValue.ValueExists("organizationalUnitArns"))
   {
-    Array<JsonView> organizationalUnitArnsJsonList = jsonValue.GetArray("organizationalUnitArns");
+    Aws::Utils::Array<JsonView> organizationalUnitArnsJsonList = jsonValue.GetArray("organizationalUnitArns");
     for(unsigned organizationalUnitArnsIndex = 0; organizationalUnitArnsIndex < organizationalUnitArnsJsonList.GetLength(); ++organizationalUnitArnsIndex)
     {
       m_organizationalUnitArns.push_back(organizationalUnitArnsJsonList[organizationalUnitArnsIndex].AsString());
@@ -86,7 +86,7 @@ JsonValue LaunchPermissionConfiguration::Jsonize() const
 
   if(m_userIdsHasBeenSet)
   {
-   Array<JsonValue> userIdsJsonList(m_userIds.size());
+   Aws::Utils::Array<JsonValue> userIdsJsonList(m_userIds.size());
    for(unsigned userIdsIndex = 0; userIdsIndex < userIdsJsonList.GetLength(); ++userIdsIndex)
    {
      userIdsJsonList[userIdsIndex].AsString(m_userIds[userIdsIndex]);
@@ -97,7 +97,7 @@ JsonValue LaunchPermissionConfiguration::Jsonize() const
 
   if(m_userGroupsHasBeenSet)
   {
-   Array<JsonValue> userGroupsJsonList(m_userGroups.size());
+   Aws::Utils::Array<JsonValue> userGroupsJsonList(m_userGroups.size());
    for(unsigned userGroupsIndex = 0; userGroupsIndex < userGroupsJsonList.GetLength(); ++userGroupsIndex)
    {
      userGroupsJsonList[userGroupsIndex].AsString(m_userGroups[userGroupsIndex]);
@@ -108,7 +108,7 @@ JsonValue LaunchPermissionConfiguration::Jsonize() const
 
   if(m_organizationArnsHasBeenSet)
   {
-   Array<JsonValue> organizationArnsJsonList(m_organizationArns.size());
+   Aws::Utils::Array<JsonValue> organizationArnsJsonList(m_organizationArns.size());
    for(unsigned organizationArnsIndex = 0; organizationArnsIndex < organizationArnsJsonList.GetLength(); ++organizationArnsIndex)
    {
      organizationArnsJsonList[organizationArnsIndex].AsString(m_organizationArns[organizationArnsIndex]);
@@ -119,7 +119,7 @@ JsonValue LaunchPermissionConfiguration::Jsonize() const
 
   if(m_organizationalUnitArnsHasBeenSet)
   {
-   Array<JsonValue> organizationalUnitArnsJsonList(m_organizationalUnitArns.size());
+   Aws::Utils::Array<JsonValue> organizationalUnitArnsJsonList(m_organizationalUnitArns.size());
    for(unsigned organizationalUnitArnsIndex = 0; organizationalUnitArnsIndex < organizationalUnitArnsJsonList.GetLength(); ++organizationalUnitArnsIndex)
    {
      organizationalUnitArnsJsonList[organizationalUnitArnsIndex].AsString(m_organizationalUnitArns[organizationalUnitArnsIndex]);

@@ -55,7 +55,7 @@ PipelineDescription& PipelineDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("fields"))
   {
-    Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
+    Aws::Utils::Array<JsonView> fieldsJsonList = jsonValue.GetArray("fields");
     for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
     {
       m_fields.push_back(fieldsJsonList[fieldsIndex].AsObject());
@@ -72,7 +72,7 @@ PipelineDescription& PipelineDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -101,7 +101,7 @@ JsonValue PipelineDescription::Jsonize() const
 
   if(m_fieldsHasBeenSet)
   {
-   Array<JsonValue> fieldsJsonList(m_fields.size());
+   Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
    for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
    {
      fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
@@ -118,7 +118,7 @@ JsonValue PipelineDescription::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

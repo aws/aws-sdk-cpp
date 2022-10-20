@@ -36,7 +36,7 @@ ListProductSubscriptionsResult& ListProductSubscriptionsResult::operator =(const
 
   if(jsonValue.ValueExists("ProductUserSummaries"))
   {
-    Array<JsonView> productUserSummariesJsonList = jsonValue.GetArray("ProductUserSummaries");
+    Aws::Utils::Array<JsonView> productUserSummariesJsonList = jsonValue.GetArray("ProductUserSummaries");
     for(unsigned productUserSummariesIndex = 0; productUserSummariesIndex < productUserSummariesJsonList.GetLength(); ++productUserSummariesIndex)
     {
       m_productUserSummaries.push_back(productUserSummariesJsonList[productUserSummariesIndex].AsObject());

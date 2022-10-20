@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mq/MQ_EXPORTS.h>
+#include <aws/mq/MQEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

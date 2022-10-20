@@ -30,7 +30,7 @@ ListOpsMetadataResult& ListOpsMetadataResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OpsMetadataList"))
   {
-    Array<JsonView> opsMetadataListJsonList = jsonValue.GetArray("OpsMetadataList");
+    Aws::Utils::Array<JsonView> opsMetadataListJsonList = jsonValue.GetArray("OpsMetadataList");
     for(unsigned opsMetadataListIndex = 0; opsMetadataListIndex < opsMetadataListJsonList.GetLength(); ++opsMetadataListIndex)
     {
       m_opsMetadataList.push_back(opsMetadataListJsonList[opsMetadataListIndex].AsObject());

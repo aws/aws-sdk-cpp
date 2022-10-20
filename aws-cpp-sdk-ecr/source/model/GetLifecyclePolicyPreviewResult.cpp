@@ -62,7 +62,7 @@ GetLifecyclePolicyPreviewResult& GetLifecyclePolicyPreviewResult::operator =(con
 
   if(jsonValue.ValueExists("previewResults"))
   {
-    Array<JsonView> previewResultsJsonList = jsonValue.GetArray("previewResults");
+    Aws::Utils::Array<JsonView> previewResultsJsonList = jsonValue.GetArray("previewResults");
     for(unsigned previewResultsIndex = 0; previewResultsIndex < previewResultsJsonList.GetLength(); ++previewResultsIndex)
     {
       m_previewResults.push_back(previewResultsJsonList[previewResultsIndex].AsObject());

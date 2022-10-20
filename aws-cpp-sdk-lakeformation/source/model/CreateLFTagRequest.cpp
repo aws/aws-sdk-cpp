@@ -37,7 +37,7 @@ Aws::String CreateLFTagRequest::SerializePayload() const
 
   if(m_tagValuesHasBeenSet)
   {
-   Array<JsonValue> tagValuesJsonList(m_tagValues.size());
+   Aws::Utils::Array<JsonValue> tagValuesJsonList(m_tagValues.size());
    for(unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex)
    {
      tagValuesJsonList[tagValuesIndex].AsString(m_tagValues[tagValuesIndex]);

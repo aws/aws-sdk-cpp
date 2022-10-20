@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/dataexchange/DataExchangeClient.h>
 #include <aws/dataexchange/DataExchangeEndpoint.h>
 #include <aws/dataexchange/DataExchangeErrorMarshaller.h>
+#include <aws/dataexchange/DataExchangeEndpointProvider.h>
 #include <aws/dataexchange/model/CancelJobRequest.h>
 #include <aws/dataexchange/model/CreateDataSetRequest.h>
 #include <aws/dataexchange/model/CreateEventActionRequest.h>
@@ -57,19 +59,66 @@ using namespace Aws::DataExchange;
 using namespace Aws::DataExchange::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::DataExchange::Endpoint::DataExchangeEndpointProvider::DataExchangeResolveEndpointOutcome;
 
 
 const char* DataExchangeClient::SERVICE_NAME = "dataexchange";
 const char* DataExchangeClient::ALLOCATION_TAG = "DataExchangeClient";
 
-DataExchangeClient::DataExchangeClient(const Client::ClientConfiguration& clientConfiguration) :
+DataExchangeClient::DataExchangeClient(const Client::ClientConfiguration& clientConfiguration,
+                                       std::shared_ptr<Endpoint::DataExchangeEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+DataExchangeClient::DataExchangeClient(const AWSCredentials& credentials,
+                                       std::shared_ptr<Endpoint::DataExchangeEndpointProvider> endpointProvider,
+                                       const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+DataExchangeClient::DataExchangeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                       std::shared_ptr<Endpoint::DataExchangeEndpointProvider> endpointProvider,
+                                       const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  DataExchangeClient::DataExchangeClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<DataExchange::Endpoint::DataExchangeEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -82,7 +131,8 @@ DataExchangeClient::DataExchangeClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<DataExchange::Endpoint::DataExchangeEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -95,11 +145,13 @@ DataExchangeClient::DataExchangeClient(const std::shared_ptr<AWSCredentialsProvi
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<DataExchange::Endpoint::DataExchangeEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 DataExchangeClient::~DataExchangeClient()
 {
 }
@@ -107,49 +159,26 @@ DataExchangeClient::~DataExchangeClient()
 void DataExchangeClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("DataExchange");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  m_scheme = m_configScheme;
-  if (config.endpointOverride.empty())
-  {
-      m_baseUri = DataExchangeEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
-  m_enableHostPrefixInjection = config.enableHostPrefixInjection;
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void DataExchangeClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0)
-  {
-      m_scheme = "http";
-      m_baseUri = endpoint.substr(7);
-  }
-  else if (endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_scheme = "https";
-      m_baseUri = endpoint.substr(8);
-  }
-  else
-  {
-      m_scheme = m_configScheme;
-      m_baseUri = endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 CancelJobOutcome DataExchangeClient::CancelJob(const CancelJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CancelJob", "Required field: JobId, is not set");
     return CancelJobOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/jobs/");
-  uri.AddPathSegment(request.GetJobId());
-  return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CancelJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelJobOutcomeCallable DataExchangeClient::CancelJobCallable(const CancelJobRequest& request) const
@@ -170,9 +199,10 @@ void DataExchangeClient::CancelJobAsync(const CancelJobRequest& request, const C
 
 CreateDataSetOutcome DataExchangeClient::CreateDataSet(const CreateDataSetRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets");
-  return CreateDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateDataSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDataSetOutcomeCallable DataExchangeClient::CreateDataSetCallable(const CreateDataSetRequest& request) const
@@ -193,9 +223,10 @@ void DataExchangeClient::CreateDataSetAsync(const CreateDataSetRequest& request,
 
 CreateEventActionOutcome DataExchangeClient::CreateEventAction(const CreateEventActionRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/event-actions");
-  return CreateEventActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEventAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEventAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateEventActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateEventActionOutcomeCallable DataExchangeClient::CreateEventActionCallable(const CreateEventActionRequest& request) const
@@ -216,9 +247,10 @@ void DataExchangeClient::CreateEventActionAsync(const CreateEventActionRequest& 
 
 CreateJobOutcome DataExchangeClient::CreateJob(const CreateJobRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/jobs");
-  return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateJobOutcomeCallable DataExchangeClient::CreateJobCallable(const CreateJobRequest& request) const
@@ -239,16 +271,15 @@ void DataExchangeClient::CreateJobAsync(const CreateJobRequest& request, const C
 
 CreateRevisionOutcome DataExchangeClient::CreateRevision(const CreateRevisionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateRevision", "Required field: DataSetId, is not set");
     return CreateRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets/");
-  uri.AddPathSegment(request.GetDataSetId());
-  uri.AddPathSegments("/revisions");
-  return CreateRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateRevisionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRevisionOutcomeCallable DataExchangeClient::CreateRevisionCallable(const CreateRevisionRequest& request) const
@@ -269,6 +300,7 @@ void DataExchangeClient::CreateRevisionAsync(const CreateRevisionRequest& reques
 
 DeleteAssetOutcome DataExchangeClient::DeleteAsset(const DeleteAssetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAsset", "Required field: AssetId, is not set");
@@ -284,14 +316,9 @@ DeleteAssetOutcome DataExchangeClient::DeleteAsset(const DeleteAssetRequest& req
     AWS_LOGSTREAM_ERROR("DeleteAsset", "Required field: RevisionId, is not set");
     return DeleteAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets/");
-  uri.AddPathSegment(request.GetDataSetId());
-  uri.AddPathSegments("/revisions/");
-  uri.AddPathSegment(request.GetRevisionId());
-  uri.AddPathSegments("/assets/");
-  uri.AddPathSegment(request.GetAssetId());
-  return DeleteAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteAssetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAssetOutcomeCallable DataExchangeClient::DeleteAssetCallable(const DeleteAssetRequest& request) const
@@ -312,15 +339,15 @@ void DataExchangeClient::DeleteAssetAsync(const DeleteAssetRequest& request, con
 
 DeleteDataSetOutcome DataExchangeClient::DeleteDataSet(const DeleteDataSetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteDataSet", "Required field: DataSetId, is not set");
     return DeleteDataSetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets/");
-  uri.AddPathSegment(request.GetDataSetId());
-  return DeleteDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteDataSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDataSetOutcomeCallable DataExchangeClient::DeleteDataSetCallable(const DeleteDataSetRequest& request) const
@@ -341,15 +368,15 @@ void DataExchangeClient::DeleteDataSetAsync(const DeleteDataSetRequest& request,
 
 DeleteEventActionOutcome DataExchangeClient::DeleteEventAction(const DeleteEventActionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEventAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EventActionIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteEventAction", "Required field: EventActionId, is not set");
     return DeleteEventActionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventActionId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/event-actions/");
-  uri.AddPathSegment(request.GetEventActionId());
-  return DeleteEventActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteEventAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteEventActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteEventActionOutcomeCallable DataExchangeClient::DeleteEventActionCallable(const DeleteEventActionRequest& request) const
@@ -370,6 +397,7 @@ void DataExchangeClient::DeleteEventActionAsync(const DeleteEventActionRequest& 
 
 DeleteRevisionOutcome DataExchangeClient::DeleteRevision(const DeleteRevisionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteRevision", "Required field: DataSetId, is not set");
@@ -380,12 +408,9 @@ DeleteRevisionOutcome DataExchangeClient::DeleteRevision(const DeleteRevisionReq
     AWS_LOGSTREAM_ERROR("DeleteRevision", "Required field: RevisionId, is not set");
     return DeleteRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets/");
-  uri.AddPathSegment(request.GetDataSetId());
-  uri.AddPathSegments("/revisions/");
-  uri.AddPathSegment(request.GetRevisionId());
-  return DeleteRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteRevisionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRevisionOutcomeCallable DataExchangeClient::DeleteRevisionCallable(const DeleteRevisionRequest& request) const
@@ -406,6 +431,7 @@ void DataExchangeClient::DeleteRevisionAsync(const DeleteRevisionRequest& reques
 
 GetAssetOutcome DataExchangeClient::GetAsset(const GetAssetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetAsset", "Required field: AssetId, is not set");
@@ -421,14 +447,9 @@ GetAssetOutcome DataExchangeClient::GetAsset(const GetAssetRequest& request) con
     AWS_LOGSTREAM_ERROR("GetAsset", "Required field: RevisionId, is not set");
     return GetAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets/");
-  uri.AddPathSegment(request.GetDataSetId());
-  uri.AddPathSegments("/revisions/");
-  uri.AddPathSegment(request.GetRevisionId());
-  uri.AddPathSegments("/assets/");
-  uri.AddPathSegment(request.GetAssetId());
-  return GetAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetAssetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAssetOutcomeCallable DataExchangeClient::GetAssetCallable(const GetAssetRequest& request) const
@@ -449,15 +470,15 @@ void DataExchangeClient::GetAssetAsync(const GetAssetRequest& request, const Get
 
 GetDataSetOutcome DataExchangeClient::GetDataSet(const GetDataSetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDataSet", "Required field: DataSetId, is not set");
     return GetDataSetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets/");
-  uri.AddPathSegment(request.GetDataSetId());
-  return GetDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDataSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDataSetOutcomeCallable DataExchangeClient::GetDataSetCallable(const GetDataSetRequest& request) const
@@ -478,15 +499,15 @@ void DataExchangeClient::GetDataSetAsync(const GetDataSetRequest& request, const
 
 GetEventActionOutcome DataExchangeClient::GetEventAction(const GetEventActionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEventAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EventActionIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetEventAction", "Required field: EventActionId, is not set");
     return GetEventActionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventActionId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/event-actions/");
-  uri.AddPathSegment(request.GetEventActionId());
-  return GetEventActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEventAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetEventActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetEventActionOutcomeCallable DataExchangeClient::GetEventActionCallable(const GetEventActionRequest& request) const
@@ -507,15 +528,15 @@ void DataExchangeClient::GetEventActionAsync(const GetEventActionRequest& reques
 
 GetJobOutcome DataExchangeClient::GetJob(const GetJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetJob", "Required field: JobId, is not set");
     return GetJobOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/jobs/");
-  uri.AddPathSegment(request.GetJobId());
-  return GetJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetJobOutcomeCallable DataExchangeClient::GetJobCallable(const GetJobRequest& request) const
@@ -536,6 +557,7 @@ void DataExchangeClient::GetJobAsync(const GetJobRequest& request, const GetJobR
 
 GetRevisionOutcome DataExchangeClient::GetRevision(const GetRevisionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetRevision", "Required field: DataSetId, is not set");
@@ -546,12 +568,9 @@ GetRevisionOutcome DataExchangeClient::GetRevision(const GetRevisionRequest& req
     AWS_LOGSTREAM_ERROR("GetRevision", "Required field: RevisionId, is not set");
     return GetRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets/");
-  uri.AddPathSegment(request.GetDataSetId());
-  uri.AddPathSegments("/revisions/");
-  uri.AddPathSegment(request.GetRevisionId());
-  return GetRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetRevisionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRevisionOutcomeCallable DataExchangeClient::GetRevisionCallable(const GetRevisionRequest& request) const
@@ -572,16 +591,15 @@ void DataExchangeClient::GetRevisionAsync(const GetRevisionRequest& request, con
 
 ListDataSetRevisionsOutcome DataExchangeClient::ListDataSetRevisions(const ListDataSetRevisionsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataSetRevisions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListDataSetRevisions", "Required field: DataSetId, is not set");
     return ListDataSetRevisionsOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets/");
-  uri.AddPathSegment(request.GetDataSetId());
-  uri.AddPathSegments("/revisions");
-  return ListDataSetRevisionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataSetRevisions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListDataSetRevisionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDataSetRevisionsOutcomeCallable DataExchangeClient::ListDataSetRevisionsCallable(const ListDataSetRevisionsRequest& request) const
@@ -602,9 +620,10 @@ void DataExchangeClient::ListDataSetRevisionsAsync(const ListDataSetRevisionsReq
 
 ListDataSetsOutcome DataExchangeClient::ListDataSets(const ListDataSetsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets");
-  return ListDataSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDataSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDataSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListDataSetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDataSetsOutcomeCallable DataExchangeClient::ListDataSetsCallable(const ListDataSetsRequest& request) const
@@ -625,9 +644,10 @@ void DataExchangeClient::ListDataSetsAsync(const ListDataSetsRequest& request, c
 
 ListEventActionsOutcome DataExchangeClient::ListEventActions(const ListEventActionsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/event-actions");
-  return ListEventActionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEventActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEventActions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListEventActionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEventActionsOutcomeCallable DataExchangeClient::ListEventActionsCallable(const ListEventActionsRequest& request) const
@@ -648,9 +668,10 @@ void DataExchangeClient::ListEventActionsAsync(const ListEventActionsRequest& re
 
 ListJobsOutcome DataExchangeClient::ListJobs(const ListJobsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/jobs");
-  return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListJobsOutcomeCallable DataExchangeClient::ListJobsCallable(const ListJobsRequest& request) const
@@ -671,6 +692,7 @@ void DataExchangeClient::ListJobsAsync(const ListJobsRequest& request, const Lis
 
 ListRevisionAssetsOutcome DataExchangeClient::ListRevisionAssets(const ListRevisionAssetsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRevisionAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListRevisionAssets", "Required field: DataSetId, is not set");
@@ -681,13 +703,9 @@ ListRevisionAssetsOutcome DataExchangeClient::ListRevisionAssets(const ListRevis
     AWS_LOGSTREAM_ERROR("ListRevisionAssets", "Required field: RevisionId, is not set");
     return ListRevisionAssetsOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets/");
-  uri.AddPathSegment(request.GetDataSetId());
-  uri.AddPathSegments("/revisions/");
-  uri.AddPathSegment(request.GetRevisionId());
-  uri.AddPathSegments("/assets");
-  return ListRevisionAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRevisionAssets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListRevisionAssetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRevisionAssetsOutcomeCallable DataExchangeClient::ListRevisionAssetsCallable(const ListRevisionAssetsRequest& request) const
@@ -708,15 +726,15 @@ void DataExchangeClient::ListRevisionAssetsAsync(const ListRevisionAssetsRequest
 
 ListTagsForResourceOutcome DataExchangeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable DataExchangeClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -737,6 +755,7 @@ void DataExchangeClient::ListTagsForResourceAsync(const ListTagsForResourceReque
 
 RevokeRevisionOutcome DataExchangeClient::RevokeRevision(const RevokeRevisionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RevokeRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("RevokeRevision", "Required field: DataSetId, is not set");
@@ -747,13 +766,9 @@ RevokeRevisionOutcome DataExchangeClient::RevokeRevision(const RevokeRevisionReq
     AWS_LOGSTREAM_ERROR("RevokeRevision", "Required field: RevisionId, is not set");
     return RevokeRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets/");
-  uri.AddPathSegment(request.GetDataSetId());
-  uri.AddPathSegments("/revisions/");
-  uri.AddPathSegment(request.GetRevisionId());
-  uri.AddPathSegments("/revoke");
-  return RevokeRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RevokeRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return RevokeRevisionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RevokeRevisionOutcomeCallable DataExchangeClient::RevokeRevisionCallable(const RevokeRevisionRequest& request) const
@@ -774,6 +789,7 @@ void DataExchangeClient::RevokeRevisionAsync(const RevokeRevisionRequest& reques
 
 SendApiAssetOutcome DataExchangeClient::SendApiAsset(const SendApiAssetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendApiAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("SendApiAsset", "Required field: AssetId, is not set");
@@ -789,18 +805,9 @@ SendApiAssetOutcome DataExchangeClient::SendApiAsset(const SendApiAssetRequest& 
     AWS_LOGSTREAM_ERROR("SendApiAsset", "Required field: RevisionId, is not set");
     return SendApiAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("api-fulfill." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("SendApiAsset", "Invalid DNS host: " << uri.GetAuthority());
-      return SendApiAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/v1");
-  return SendApiAssetOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendApiAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return SendApiAssetOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 SendApiAssetOutcomeCallable DataExchangeClient::SendApiAssetCallable(const SendApiAssetRequest& request) const
@@ -821,15 +828,15 @@ void DataExchangeClient::SendApiAssetAsync(const SendApiAssetRequest& request, c
 
 StartJobOutcome DataExchangeClient::StartJob(const StartJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.JobIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartJob", "Required field: JobId, is not set");
     return StartJobOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/jobs/");
-  uri.AddPathSegment(request.GetJobId());
-  return StartJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartJobOutcomeCallable DataExchangeClient::StartJobCallable(const StartJobRequest& request) const
@@ -850,15 +857,15 @@ void DataExchangeClient::StartJobAsync(const StartJobRequest& request, const Sta
 
 TagResourceOutcome DataExchangeClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable DataExchangeClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -879,6 +886,7 @@ void DataExchangeClient::TagResourceAsync(const TagResourceRequest& request, con
 
 UntagResourceOutcome DataExchangeClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
@@ -889,10 +897,9 @@ UntagResourceOutcome DataExchangeClient::UntagResource(const UntagResourceReques
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable DataExchangeClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -913,6 +920,7 @@ void DataExchangeClient::UntagResourceAsync(const UntagResourceRequest& request,
 
 UpdateAssetOutcome DataExchangeClient::UpdateAsset(const UpdateAssetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.AssetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateAsset", "Required field: AssetId, is not set");
@@ -928,14 +936,9 @@ UpdateAssetOutcome DataExchangeClient::UpdateAsset(const UpdateAssetRequest& req
     AWS_LOGSTREAM_ERROR("UpdateAsset", "Required field: RevisionId, is not set");
     return UpdateAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets/");
-  uri.AddPathSegment(request.GetDataSetId());
-  uri.AddPathSegments("/revisions/");
-  uri.AddPathSegment(request.GetRevisionId());
-  uri.AddPathSegments("/assets/");
-  uri.AddPathSegment(request.GetAssetId());
-  return UpdateAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAsset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateAssetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAssetOutcomeCallable DataExchangeClient::UpdateAssetCallable(const UpdateAssetRequest& request) const
@@ -956,15 +959,15 @@ void DataExchangeClient::UpdateAssetAsync(const UpdateAssetRequest& request, con
 
 UpdateDataSetOutcome DataExchangeClient::UpdateDataSet(const UpdateDataSetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateDataSet", "Required field: DataSetId, is not set");
     return UpdateDataSetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets/");
-  uri.AddPathSegment(request.GetDataSetId());
-  return UpdateDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDataSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateDataSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDataSetOutcomeCallable DataExchangeClient::UpdateDataSetCallable(const UpdateDataSetRequest& request) const
@@ -985,15 +988,15 @@ void DataExchangeClient::UpdateDataSetAsync(const UpdateDataSetRequest& request,
 
 UpdateEventActionOutcome DataExchangeClient::UpdateEventAction(const UpdateEventActionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEventAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EventActionIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateEventAction", "Required field: EventActionId, is not set");
     return UpdateEventActionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventActionId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/event-actions/");
-  uri.AddPathSegment(request.GetEventActionId());
-  return UpdateEventActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateEventAction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateEventActionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateEventActionOutcomeCallable DataExchangeClient::UpdateEventActionCallable(const UpdateEventActionRequest& request) const
@@ -1014,6 +1017,7 @@ void DataExchangeClient::UpdateEventActionAsync(const UpdateEventActionRequest& 
 
 UpdateRevisionOutcome DataExchangeClient::UpdateRevision(const UpdateRevisionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DataSetIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateRevision", "Required field: DataSetId, is not set");
@@ -1024,12 +1028,9 @@ UpdateRevisionOutcome DataExchangeClient::UpdateRevision(const UpdateRevisionReq
     AWS_LOGSTREAM_ERROR("UpdateRevision", "Required field: RevisionId, is not set");
     return UpdateRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/v1/data-sets/");
-  uri.AddPathSegment(request.GetDataSetId());
-  uri.AddPathSegments("/revisions/");
-  uri.AddPathSegment(request.GetRevisionId());
-  return UpdateRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRevision, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateRevisionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRevisionOutcomeCallable DataExchangeClient::UpdateRevisionCallable(const UpdateRevisionRequest& request) const

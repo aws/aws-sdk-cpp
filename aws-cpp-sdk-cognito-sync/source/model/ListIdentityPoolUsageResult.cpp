@@ -34,7 +34,7 @@ ListIdentityPoolUsageResult& ListIdentityPoolUsageResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityPoolUsages"))
   {
-    Array<JsonView> identityPoolUsagesJsonList = jsonValue.GetArray("IdentityPoolUsages");
+    Aws::Utils::Array<JsonView> identityPoolUsagesJsonList = jsonValue.GetArray("IdentityPoolUsages");
     for(unsigned identityPoolUsagesIndex = 0; identityPoolUsagesIndex < identityPoolUsagesJsonList.GetLength(); ++identityPoolUsagesIndex)
     {
       m_identityPoolUsages.push_back(identityPoolUsagesJsonList[identityPoolUsagesIndex].AsObject());

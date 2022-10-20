@@ -24,7 +24,7 @@ Aws::String BatchEvaluateFeatureRequest::SerializePayload() const
 
   if(m_requestsHasBeenSet)
   {
-   Array<JsonValue> requestsJsonList(m_requests.size());
+   Aws::Utils::Array<JsonValue> requestsJsonList(m_requests.size());
    for(unsigned requestsIndex = 0; requestsIndex < requestsJsonList.GetLength(); ++requestsIndex)
    {
      requestsJsonList[requestsIndex].AsObject(m_requests[requestsIndex].Jsonize());

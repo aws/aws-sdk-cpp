@@ -30,7 +30,7 @@ GetComplianceDetailsByConfigRuleResult& GetComplianceDetailsByConfigRuleResult::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EvaluationResults"))
   {
-    Array<JsonView> evaluationResultsJsonList = jsonValue.GetArray("EvaluationResults");
+    Aws::Utils::Array<JsonView> evaluationResultsJsonList = jsonValue.GetArray("EvaluationResults");
     for(unsigned evaluationResultsIndex = 0; evaluationResultsIndex < evaluationResultsJsonList.GetLength(); ++evaluationResultsIndex)
     {
       m_evaluationResults.push_back(evaluationResultsJsonList[evaluationResultsIndex].AsObject());

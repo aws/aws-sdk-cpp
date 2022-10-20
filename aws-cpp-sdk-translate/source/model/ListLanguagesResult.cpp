@@ -32,7 +32,7 @@ ListLanguagesResult& ListLanguagesResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Languages"))
   {
-    Array<JsonView> languagesJsonList = jsonValue.GetArray("Languages");
+    Aws::Utils::Array<JsonView> languagesJsonList = jsonValue.GetArray("Languages");
     for(unsigned languagesIndex = 0; languagesIndex < languagesJsonList.GetLength(); ++languagesIndex)
     {
       m_languages.push_back(languagesJsonList[languagesIndex].AsObject());

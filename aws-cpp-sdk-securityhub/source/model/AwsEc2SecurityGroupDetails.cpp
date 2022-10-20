@@ -71,7 +71,7 @@ AwsEc2SecurityGroupDetails& AwsEc2SecurityGroupDetails::operator =(JsonView json
 
   if(jsonValue.ValueExists("IpPermissions"))
   {
-    Array<JsonView> ipPermissionsJsonList = jsonValue.GetArray("IpPermissions");
+    Aws::Utils::Array<JsonView> ipPermissionsJsonList = jsonValue.GetArray("IpPermissions");
     for(unsigned ipPermissionsIndex = 0; ipPermissionsIndex < ipPermissionsJsonList.GetLength(); ++ipPermissionsIndex)
     {
       m_ipPermissions.push_back(ipPermissionsJsonList[ipPermissionsIndex].AsObject());
@@ -81,7 +81,7 @@ AwsEc2SecurityGroupDetails& AwsEc2SecurityGroupDetails::operator =(JsonView json
 
   if(jsonValue.ValueExists("IpPermissionsEgress"))
   {
-    Array<JsonView> ipPermissionsEgressJsonList = jsonValue.GetArray("IpPermissionsEgress");
+    Aws::Utils::Array<JsonView> ipPermissionsEgressJsonList = jsonValue.GetArray("IpPermissionsEgress");
     for(unsigned ipPermissionsEgressIndex = 0; ipPermissionsEgressIndex < ipPermissionsEgressJsonList.GetLength(); ++ipPermissionsEgressIndex)
     {
       m_ipPermissionsEgress.push_back(ipPermissionsEgressJsonList[ipPermissionsEgressIndex].AsObject());
@@ -122,7 +122,7 @@ JsonValue AwsEc2SecurityGroupDetails::Jsonize() const
 
   if(m_ipPermissionsHasBeenSet)
   {
-   Array<JsonValue> ipPermissionsJsonList(m_ipPermissions.size());
+   Aws::Utils::Array<JsonValue> ipPermissionsJsonList(m_ipPermissions.size());
    for(unsigned ipPermissionsIndex = 0; ipPermissionsIndex < ipPermissionsJsonList.GetLength(); ++ipPermissionsIndex)
    {
      ipPermissionsJsonList[ipPermissionsIndex].AsObject(m_ipPermissions[ipPermissionsIndex].Jsonize());
@@ -133,7 +133,7 @@ JsonValue AwsEc2SecurityGroupDetails::Jsonize() const
 
   if(m_ipPermissionsEgressHasBeenSet)
   {
-   Array<JsonValue> ipPermissionsEgressJsonList(m_ipPermissionsEgress.size());
+   Aws::Utils::Array<JsonValue> ipPermissionsEgressJsonList(m_ipPermissionsEgress.size());
    for(unsigned ipPermissionsEgressIndex = 0; ipPermissionsEgressIndex < ipPermissionsEgressJsonList.GetLength(); ++ipPermissionsEgressIndex)
    {
      ipPermissionsEgressJsonList[ipPermissionsEgressIndex].AsObject(m_ipPermissionsEgress[ipPermissionsEgressIndex].Jsonize());

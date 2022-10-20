@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/sso-admin/SSOAdminEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -86,6 +87,10 @@ namespace Aws
 
   namespace SSOAdmin
   {
+    namespace Endpoint
+    {
+      class SSOAdminEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in SSOAdminClient header */

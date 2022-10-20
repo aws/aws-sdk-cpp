@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
+#include <aws/cloudhsmv2/CloudHSMV2EndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

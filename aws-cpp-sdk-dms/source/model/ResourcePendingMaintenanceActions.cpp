@@ -42,7 +42,7 @@ ResourcePendingMaintenanceActions& ResourcePendingMaintenanceActions::operator =
 
   if(jsonValue.ValueExists("PendingMaintenanceActionDetails"))
   {
-    Array<JsonView> pendingMaintenanceActionDetailsJsonList = jsonValue.GetArray("PendingMaintenanceActionDetails");
+    Aws::Utils::Array<JsonView> pendingMaintenanceActionDetailsJsonList = jsonValue.GetArray("PendingMaintenanceActionDetails");
     for(unsigned pendingMaintenanceActionDetailsIndex = 0; pendingMaintenanceActionDetailsIndex < pendingMaintenanceActionDetailsJsonList.GetLength(); ++pendingMaintenanceActionDetailsIndex)
     {
       m_pendingMaintenanceActionDetails.push_back(pendingMaintenanceActionDetailsJsonList[pendingMaintenanceActionDetailsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue ResourcePendingMaintenanceActions::Jsonize() const
 
   if(m_pendingMaintenanceActionDetailsHasBeenSet)
   {
-   Array<JsonValue> pendingMaintenanceActionDetailsJsonList(m_pendingMaintenanceActionDetails.size());
+   Aws::Utils::Array<JsonValue> pendingMaintenanceActionDetailsJsonList(m_pendingMaintenanceActionDetails.size());
    for(unsigned pendingMaintenanceActionDetailsIndex = 0; pendingMaintenanceActionDetailsIndex < pendingMaintenanceActionDetailsJsonList.GetLength(); ++pendingMaintenanceActionDetailsIndex)
    {
      pendingMaintenanceActionDetailsJsonList[pendingMaintenanceActionDetailsIndex].AsObject(m_pendingMaintenanceActionDetails[pendingMaintenanceActionDetailsIndex].Jsonize());

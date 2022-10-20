@@ -30,7 +30,7 @@ BatchGetReportGroupsResult& BatchGetReportGroupsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("reportGroups"))
   {
-    Array<JsonView> reportGroupsJsonList = jsonValue.GetArray("reportGroups");
+    Aws::Utils::Array<JsonView> reportGroupsJsonList = jsonValue.GetArray("reportGroups");
     for(unsigned reportGroupsIndex = 0; reportGroupsIndex < reportGroupsJsonList.GetLength(); ++reportGroupsIndex)
     {
       m_reportGroups.push_back(reportGroupsJsonList[reportGroupsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetReportGroupsResult& BatchGetReportGroupsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("reportGroupsNotFound"))
   {
-    Array<JsonView> reportGroupsNotFoundJsonList = jsonValue.GetArray("reportGroupsNotFound");
+    Aws::Utils::Array<JsonView> reportGroupsNotFoundJsonList = jsonValue.GetArray("reportGroupsNotFound");
     for(unsigned reportGroupsNotFoundIndex = 0; reportGroupsNotFoundIndex < reportGroupsNotFoundJsonList.GetLength(); ++reportGroupsNotFoundIndex)
     {
       m_reportGroupsNotFound.push_back(reportGroupsNotFoundJsonList[reportGroupsNotFoundIndex].AsString());

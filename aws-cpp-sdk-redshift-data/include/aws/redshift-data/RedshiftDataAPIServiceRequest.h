@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
+#include <aws/redshift-data/RedshiftDataAPIServiceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -75,7 +75,7 @@ Folder& Folder::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FolderPath"))
   {
-    Array<JsonView> folderPathJsonList = jsonValue.GetArray("FolderPath");
+    Aws::Utils::Array<JsonView> folderPathJsonList = jsonValue.GetArray("FolderPath");
     for(unsigned folderPathIndex = 0; folderPathIndex < folderPathJsonList.GetLength(); ++folderPathIndex)
     {
       m_folderPath.push_back(folderPathJsonList[folderPathIndex].AsString());
@@ -129,7 +129,7 @@ JsonValue Folder::Jsonize() const
 
   if(m_folderPathHasBeenSet)
   {
-   Array<JsonValue> folderPathJsonList(m_folderPath.size());
+   Aws::Utils::Array<JsonValue> folderPathJsonList(m_folderPath.size());
    for(unsigned folderPathIndex = 0; folderPathIndex < folderPathJsonList.GetLength(); ++folderPathIndex)
    {
      folderPathJsonList[folderPathIndex].AsString(m_folderPath[folderPathIndex]);

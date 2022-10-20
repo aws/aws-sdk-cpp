@@ -30,7 +30,7 @@ GetDedicatedIpsResult& GetDedicatedIpsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DedicatedIps"))
   {
-    Array<JsonView> dedicatedIpsJsonList = jsonValue.GetArray("DedicatedIps");
+    Aws::Utils::Array<JsonView> dedicatedIpsJsonList = jsonValue.GetArray("DedicatedIps");
     for(unsigned dedicatedIpsIndex = 0; dedicatedIpsIndex < dedicatedIpsJsonList.GetLength(); ++dedicatedIpsIndex)
     {
       m_dedicatedIps.push_back(dedicatedIpsJsonList[dedicatedIpsIndex].AsObject());

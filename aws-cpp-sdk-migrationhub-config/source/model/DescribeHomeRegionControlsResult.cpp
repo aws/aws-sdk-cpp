@@ -30,7 +30,7 @@ DescribeHomeRegionControlsResult& DescribeHomeRegionControlsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HomeRegionControls"))
   {
-    Array<JsonView> homeRegionControlsJsonList = jsonValue.GetArray("HomeRegionControls");
+    Aws::Utils::Array<JsonView> homeRegionControlsJsonList = jsonValue.GetArray("HomeRegionControls");
     for(unsigned homeRegionControlsIndex = 0; homeRegionControlsIndex < homeRegionControlsJsonList.GetLength(); ++homeRegionControlsIndex)
     {
       m_homeRegionControls.push_back(homeRegionControlsJsonList[homeRegionControlsIndex].AsObject());

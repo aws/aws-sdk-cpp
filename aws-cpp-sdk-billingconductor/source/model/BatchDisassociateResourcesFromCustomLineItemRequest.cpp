@@ -31,7 +31,7 @@ Aws::String BatchDisassociateResourcesFromCustomLineItemRequest::SerializePayloa
 
   if(m_resourceArnsHasBeenSet)
   {
-   Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
+   Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
    for(unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex)
    {
      resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);

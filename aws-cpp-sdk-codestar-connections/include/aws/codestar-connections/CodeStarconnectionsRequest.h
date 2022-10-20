@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
+#include <aws/codestar-connections/CodeStarconnectionsEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

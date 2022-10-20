@@ -84,7 +84,7 @@ Aws::String UpdateNotebookInstanceRequest::SerializePayload() const
 
   if(m_additionalCodeRepositoriesHasBeenSet)
   {
-   Array<JsonValue> additionalCodeRepositoriesJsonList(m_additionalCodeRepositories.size());
+   Aws::Utils::Array<JsonValue> additionalCodeRepositoriesJsonList(m_additionalCodeRepositories.size());
    for(unsigned additionalCodeRepositoriesIndex = 0; additionalCodeRepositoriesIndex < additionalCodeRepositoriesJsonList.GetLength(); ++additionalCodeRepositoriesIndex)
    {
      additionalCodeRepositoriesJsonList[additionalCodeRepositoriesIndex].AsString(m_additionalCodeRepositories[additionalCodeRepositoriesIndex]);
@@ -95,7 +95,7 @@ Aws::String UpdateNotebookInstanceRequest::SerializePayload() const
 
   if(m_acceleratorTypesHasBeenSet)
   {
-   Array<JsonValue> acceleratorTypesJsonList(m_acceleratorTypes.size());
+   Aws::Utils::Array<JsonValue> acceleratorTypesJsonList(m_acceleratorTypes.size());
    for(unsigned acceleratorTypesIndex = 0; acceleratorTypesIndex < acceleratorTypesJsonList.GetLength(); ++acceleratorTypesIndex)
    {
      acceleratorTypesJsonList[acceleratorTypesIndex].AsString(NotebookInstanceAcceleratorTypeMapper::GetNameForNotebookInstanceAcceleratorType(m_acceleratorTypes[acceleratorTypesIndex]));

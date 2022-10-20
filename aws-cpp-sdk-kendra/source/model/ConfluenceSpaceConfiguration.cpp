@@ -59,7 +59,7 @@ ConfluenceSpaceConfiguration& ConfluenceSpaceConfiguration::operator =(JsonView 
 
   if(jsonValue.ValueExists("IncludeSpaces"))
   {
-    Array<JsonView> includeSpacesJsonList = jsonValue.GetArray("IncludeSpaces");
+    Aws::Utils::Array<JsonView> includeSpacesJsonList = jsonValue.GetArray("IncludeSpaces");
     for(unsigned includeSpacesIndex = 0; includeSpacesIndex < includeSpacesJsonList.GetLength(); ++includeSpacesIndex)
     {
       m_includeSpaces.push_back(includeSpacesJsonList[includeSpacesIndex].AsString());
@@ -69,7 +69,7 @@ ConfluenceSpaceConfiguration& ConfluenceSpaceConfiguration::operator =(JsonView 
 
   if(jsonValue.ValueExists("ExcludeSpaces"))
   {
-    Array<JsonView> excludeSpacesJsonList = jsonValue.GetArray("ExcludeSpaces");
+    Aws::Utils::Array<JsonView> excludeSpacesJsonList = jsonValue.GetArray("ExcludeSpaces");
     for(unsigned excludeSpacesIndex = 0; excludeSpacesIndex < excludeSpacesJsonList.GetLength(); ++excludeSpacesIndex)
     {
       m_excludeSpaces.push_back(excludeSpacesJsonList[excludeSpacesIndex].AsString());
@@ -79,7 +79,7 @@ ConfluenceSpaceConfiguration& ConfluenceSpaceConfiguration::operator =(JsonView 
 
   if(jsonValue.ValueExists("SpaceFieldMappings"))
   {
-    Array<JsonView> spaceFieldMappingsJsonList = jsonValue.GetArray("SpaceFieldMappings");
+    Aws::Utils::Array<JsonView> spaceFieldMappingsJsonList = jsonValue.GetArray("SpaceFieldMappings");
     for(unsigned spaceFieldMappingsIndex = 0; spaceFieldMappingsIndex < spaceFieldMappingsJsonList.GetLength(); ++spaceFieldMappingsIndex)
     {
       m_spaceFieldMappings.push_back(spaceFieldMappingsJsonList[spaceFieldMappingsIndex].AsObject());
@@ -108,7 +108,7 @@ JsonValue ConfluenceSpaceConfiguration::Jsonize() const
 
   if(m_includeSpacesHasBeenSet)
   {
-   Array<JsonValue> includeSpacesJsonList(m_includeSpaces.size());
+   Aws::Utils::Array<JsonValue> includeSpacesJsonList(m_includeSpaces.size());
    for(unsigned includeSpacesIndex = 0; includeSpacesIndex < includeSpacesJsonList.GetLength(); ++includeSpacesIndex)
    {
      includeSpacesJsonList[includeSpacesIndex].AsString(m_includeSpaces[includeSpacesIndex]);
@@ -119,7 +119,7 @@ JsonValue ConfluenceSpaceConfiguration::Jsonize() const
 
   if(m_excludeSpacesHasBeenSet)
   {
-   Array<JsonValue> excludeSpacesJsonList(m_excludeSpaces.size());
+   Aws::Utils::Array<JsonValue> excludeSpacesJsonList(m_excludeSpaces.size());
    for(unsigned excludeSpacesIndex = 0; excludeSpacesIndex < excludeSpacesJsonList.GetLength(); ++excludeSpacesIndex)
    {
      excludeSpacesJsonList[excludeSpacesIndex].AsString(m_excludeSpaces[excludeSpacesIndex]);
@@ -130,7 +130,7 @@ JsonValue ConfluenceSpaceConfiguration::Jsonize() const
 
   if(m_spaceFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> spaceFieldMappingsJsonList(m_spaceFieldMappings.size());
+   Aws::Utils::Array<JsonValue> spaceFieldMappingsJsonList(m_spaceFieldMappings.size());
    for(unsigned spaceFieldMappingsIndex = 0; spaceFieldMappingsIndex < spaceFieldMappingsJsonList.GetLength(); ++spaceFieldMappingsIndex)
    {
      spaceFieldMappingsJsonList[spaceFieldMappingsIndex].AsObject(m_spaceFieldMappings[spaceFieldMappingsIndex].Jsonize());

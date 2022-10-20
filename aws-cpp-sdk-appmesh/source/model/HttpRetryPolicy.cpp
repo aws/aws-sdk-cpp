@@ -41,7 +41,7 @@ HttpRetryPolicy& HttpRetryPolicy::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("httpRetryEvents"))
   {
-    Array<JsonView> httpRetryEventsJsonList = jsonValue.GetArray("httpRetryEvents");
+    Aws::Utils::Array<JsonView> httpRetryEventsJsonList = jsonValue.GetArray("httpRetryEvents");
     for(unsigned httpRetryEventsIndex = 0; httpRetryEventsIndex < httpRetryEventsJsonList.GetLength(); ++httpRetryEventsIndex)
     {
       m_httpRetryEvents.push_back(httpRetryEventsJsonList[httpRetryEventsIndex].AsString());
@@ -65,7 +65,7 @@ HttpRetryPolicy& HttpRetryPolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tcpRetryEvents"))
   {
-    Array<JsonView> tcpRetryEventsJsonList = jsonValue.GetArray("tcpRetryEvents");
+    Aws::Utils::Array<JsonView> tcpRetryEventsJsonList = jsonValue.GetArray("tcpRetryEvents");
     for(unsigned tcpRetryEventsIndex = 0; tcpRetryEventsIndex < tcpRetryEventsJsonList.GetLength(); ++tcpRetryEventsIndex)
     {
       m_tcpRetryEvents.push_back(TcpRetryPolicyEventMapper::GetTcpRetryPolicyEventForName(tcpRetryEventsJsonList[tcpRetryEventsIndex].AsString()));
@@ -82,7 +82,7 @@ JsonValue HttpRetryPolicy::Jsonize() const
 
   if(m_httpRetryEventsHasBeenSet)
   {
-   Array<JsonValue> httpRetryEventsJsonList(m_httpRetryEvents.size());
+   Aws::Utils::Array<JsonValue> httpRetryEventsJsonList(m_httpRetryEvents.size());
    for(unsigned httpRetryEventsIndex = 0; httpRetryEventsIndex < httpRetryEventsJsonList.GetLength(); ++httpRetryEventsIndex)
    {
      httpRetryEventsJsonList[httpRetryEventsIndex].AsString(m_httpRetryEvents[httpRetryEventsIndex]);
@@ -105,7 +105,7 @@ JsonValue HttpRetryPolicy::Jsonize() const
 
   if(m_tcpRetryEventsHasBeenSet)
   {
-   Array<JsonValue> tcpRetryEventsJsonList(m_tcpRetryEvents.size());
+   Aws::Utils::Array<JsonValue> tcpRetryEventsJsonList(m_tcpRetryEvents.size());
    for(unsigned tcpRetryEventsIndex = 0; tcpRetryEventsIndex < tcpRetryEventsJsonList.GetLength(); ++tcpRetryEventsIndex)
    {
      tcpRetryEventsJsonList[tcpRetryEventsIndex].AsString(TcpRetryPolicyEventMapper::GetNameForTcpRetryPolicyEvent(m_tcpRetryEvents[tcpRetryEventsIndex]));

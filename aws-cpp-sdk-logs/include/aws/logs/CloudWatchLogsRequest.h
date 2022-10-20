@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
+#include <aws/logs/CloudWatchLogsEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

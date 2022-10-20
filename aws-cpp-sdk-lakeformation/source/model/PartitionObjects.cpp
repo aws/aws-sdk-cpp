@@ -35,7 +35,7 @@ PartitionObjects& PartitionObjects::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PartitionValues"))
   {
-    Array<JsonView> partitionValuesJsonList = jsonValue.GetArray("PartitionValues");
+    Aws::Utils::Array<JsonView> partitionValuesJsonList = jsonValue.GetArray("PartitionValues");
     for(unsigned partitionValuesIndex = 0; partitionValuesIndex < partitionValuesJsonList.GetLength(); ++partitionValuesIndex)
     {
       m_partitionValues.push_back(partitionValuesJsonList[partitionValuesIndex].AsString());
@@ -45,7 +45,7 @@ PartitionObjects& PartitionObjects::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Objects"))
   {
-    Array<JsonView> objectsJsonList = jsonValue.GetArray("Objects");
+    Aws::Utils::Array<JsonView> objectsJsonList = jsonValue.GetArray("Objects");
     for(unsigned objectsIndex = 0; objectsIndex < objectsJsonList.GetLength(); ++objectsIndex)
     {
       m_objects.push_back(objectsJsonList[objectsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue PartitionObjects::Jsonize() const
 
   if(m_partitionValuesHasBeenSet)
   {
-   Array<JsonValue> partitionValuesJsonList(m_partitionValues.size());
+   Aws::Utils::Array<JsonValue> partitionValuesJsonList(m_partitionValues.size());
    for(unsigned partitionValuesIndex = 0; partitionValuesIndex < partitionValuesJsonList.GetLength(); ++partitionValuesIndex)
    {
      partitionValuesJsonList[partitionValuesIndex].AsString(m_partitionValues[partitionValuesIndex]);
@@ -73,7 +73,7 @@ JsonValue PartitionObjects::Jsonize() const
 
   if(m_objectsHasBeenSet)
   {
-   Array<JsonValue> objectsJsonList(m_objects.size());
+   Aws::Utils::Array<JsonValue> objectsJsonList(m_objects.size());
    for(unsigned objectsIndex = 0; objectsIndex < objectsJsonList.GetLength(); ++objectsIndex)
    {
      objectsJsonList[objectsIndex].AsObject(m_objects[objectsIndex].Jsonize());

@@ -103,7 +103,7 @@ Aws::String CreateCampaignRequest::SerializePayload() const
 
   if(m_signalsToCollectHasBeenSet)
   {
-   Array<JsonValue> signalsToCollectJsonList(m_signalsToCollect.size());
+   Aws::Utils::Array<JsonValue> signalsToCollectJsonList(m_signalsToCollect.size());
    for(unsigned signalsToCollectIndex = 0; signalsToCollectIndex < signalsToCollectJsonList.GetLength(); ++signalsToCollectIndex)
    {
      signalsToCollectJsonList[signalsToCollectIndex].AsObject(m_signalsToCollect[signalsToCollectIndex].Jsonize());
@@ -120,7 +120,7 @@ Aws::String CreateCampaignRequest::SerializePayload() const
 
   if(m_dataExtraDimensionsHasBeenSet)
   {
-   Array<JsonValue> dataExtraDimensionsJsonList(m_dataExtraDimensions.size());
+   Aws::Utils::Array<JsonValue> dataExtraDimensionsJsonList(m_dataExtraDimensions.size());
    for(unsigned dataExtraDimensionsIndex = 0; dataExtraDimensionsIndex < dataExtraDimensionsJsonList.GetLength(); ++dataExtraDimensionsIndex)
    {
      dataExtraDimensionsJsonList[dataExtraDimensionsIndex].AsString(m_dataExtraDimensions[dataExtraDimensionsIndex]);
@@ -131,7 +131,7 @@ Aws::String CreateCampaignRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

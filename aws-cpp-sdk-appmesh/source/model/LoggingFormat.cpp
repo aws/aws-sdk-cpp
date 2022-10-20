@@ -35,7 +35,7 @@ LoggingFormat& LoggingFormat::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("json"))
   {
-    Array<JsonView> jsonJsonList = jsonValue.GetArray("json");
+    Aws::Utils::Array<JsonView> jsonJsonList = jsonValue.GetArray("json");
     for(unsigned jsonIndex = 0; jsonIndex < jsonJsonList.GetLength(); ++jsonIndex)
     {
       m_json.push_back(jsonJsonList[jsonIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue LoggingFormat::Jsonize() const
 
   if(m_jsonHasBeenSet)
   {
-   Array<JsonValue> jsonJsonList(m_json.size());
+   Aws::Utils::Array<JsonValue> jsonJsonList(m_json.size());
    for(unsigned jsonIndex = 0; jsonIndex < jsonJsonList.GetLength(); ++jsonIndex)
    {
      jsonJsonList[jsonIndex].AsObject(m_json[jsonIndex].Jsonize());

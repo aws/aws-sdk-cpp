@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/workmailmessageflow/WorkMailMessageFlowClient.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowEndpoint.h>
 #include <aws/workmailmessageflow/WorkMailMessageFlowErrorMarshaller.h>
+#include <aws/workmailmessageflow/WorkMailMessageFlowEndpointProvider.h>
 #include <aws/workmailmessageflow/model/GetRawMessageContentRequest.h>
 #include <aws/workmailmessageflow/model/PutRawMessageContentRequest.h>
 
@@ -30,19 +32,66 @@ using namespace Aws::WorkMailMessageFlow;
 using namespace Aws::WorkMailMessageFlow::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::WorkMailMessageFlow::Endpoint::WorkMailMessageFlowEndpointProvider::WorkMailMessageFlowResolveEndpointOutcome;
 
 
 const char* WorkMailMessageFlowClient::SERVICE_NAME = "workmailmessageflow";
 const char* WorkMailMessageFlowClient::ALLOCATION_TAG = "WorkMailMessageFlowClient";
 
-WorkMailMessageFlowClient::WorkMailMessageFlowClient(const Client::ClientConfiguration& clientConfiguration) :
+WorkMailMessageFlowClient::WorkMailMessageFlowClient(const Client::ClientConfiguration& clientConfiguration,
+                                                     std::shared_ptr<Endpoint::WorkMailMessageFlowEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<WorkMailMessageFlowErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+WorkMailMessageFlowClient::WorkMailMessageFlowClient(const AWSCredentials& credentials,
+                                                     std::shared_ptr<Endpoint::WorkMailMessageFlowEndpointProvider> endpointProvider,
+                                                     const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<WorkMailMessageFlowErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+WorkMailMessageFlowClient::WorkMailMessageFlowClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                                     std::shared_ptr<Endpoint::WorkMailMessageFlowEndpointProvider> endpointProvider,
+                                                     const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<WorkMailMessageFlowErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  WorkMailMessageFlowClient::WorkMailMessageFlowClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<WorkMailMessageFlowErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<WorkMailMessageFlow::Endpoint::WorkMailMessageFlowEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -55,7 +104,8 @@ WorkMailMessageFlowClient::WorkMailMessageFlowClient(const AWSCredentials& crede
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<WorkMailMessageFlowErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<WorkMailMessageFlow::Endpoint::WorkMailMessageFlowEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -68,11 +118,13 @@ WorkMailMessageFlowClient::WorkMailMessageFlowClient(const std::shared_ptr<AWSCr
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<WorkMailMessageFlowErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<WorkMailMessageFlow::Endpoint::WorkMailMessageFlowEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 WorkMailMessageFlowClient::~WorkMailMessageFlowClient()
 {
 }
@@ -80,40 +132,26 @@ WorkMailMessageFlowClient::~WorkMailMessageFlowClient()
 void WorkMailMessageFlowClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("WorkMailMessageFlow");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + WorkMailMessageFlowEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void WorkMailMessageFlowClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 GetRawMessageContentOutcome WorkMailMessageFlowClient::GetRawMessageContent(const GetRawMessageContentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRawMessageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MessageIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetRawMessageContent", "Required field: MessageId, is not set");
     return GetRawMessageContentOutcome(Aws::Client::AWSError<WorkMailMessageFlowErrors>(WorkMailMessageFlowErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/messages/");
-  uri.AddPathSegment(request.GetMessageId());
-  return GetRawMessageContentOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRawMessageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetRawMessageContentOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetRawMessageContentOutcomeCallable WorkMailMessageFlowClient::GetRawMessageContentCallable(const GetRawMessageContentRequest& request) const
@@ -134,15 +172,15 @@ void WorkMailMessageFlowClient::GetRawMessageContentAsync(const GetRawMessageCon
 
 PutRawMessageContentOutcome WorkMailMessageFlowClient::PutRawMessageContent(const PutRawMessageContentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRawMessageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MessageIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutRawMessageContent", "Required field: MessageId, is not set");
     return PutRawMessageContentOutcome(Aws::Client::AWSError<WorkMailMessageFlowErrors>(WorkMailMessageFlowErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/messages/");
-  uri.AddPathSegment(request.GetMessageId());
-  return PutRawMessageContentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutRawMessageContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutRawMessageContentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutRawMessageContentOutcomeCallable WorkMailMessageFlowClient::PutRawMessageContentCallable(const PutRawMessageContentRequest& request) const

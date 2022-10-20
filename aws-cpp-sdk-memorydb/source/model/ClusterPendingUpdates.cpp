@@ -51,7 +51,7 @@ ClusterPendingUpdates& ClusterPendingUpdates::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ServiceUpdates"))
   {
-    Array<JsonView> serviceUpdatesJsonList = jsonValue.GetArray("ServiceUpdates");
+    Aws::Utils::Array<JsonView> serviceUpdatesJsonList = jsonValue.GetArray("ServiceUpdates");
     for(unsigned serviceUpdatesIndex = 0; serviceUpdatesIndex < serviceUpdatesJsonList.GetLength(); ++serviceUpdatesIndex)
     {
       m_serviceUpdates.push_back(serviceUpdatesJsonList[serviceUpdatesIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue ClusterPendingUpdates::Jsonize() const
 
   if(m_serviceUpdatesHasBeenSet)
   {
-   Array<JsonValue> serviceUpdatesJsonList(m_serviceUpdates.size());
+   Aws::Utils::Array<JsonValue> serviceUpdatesJsonList(m_serviceUpdates.size());
    for(unsigned serviceUpdatesIndex = 0; serviceUpdatesIndex < serviceUpdatesJsonList.GetLength(); ++serviceUpdatesIndex)
    {
      serviceUpdatesJsonList[serviceUpdatesIndex].AsObject(m_serviceUpdates[serviceUpdatesIndex].Jsonize());

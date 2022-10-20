@@ -67,7 +67,7 @@ DetectAnomalyResult& DetectAnomalyResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Anomalies"))
   {
-    Array<JsonView> anomaliesJsonList = jsonValue.GetArray("Anomalies");
+    Aws::Utils::Array<JsonView> anomaliesJsonList = jsonValue.GetArray("Anomalies");
     for(unsigned anomaliesIndex = 0; anomaliesIndex < anomaliesJsonList.GetLength(); ++anomaliesIndex)
     {
       m_anomalies.push_back(anomaliesJsonList[anomaliesIndex].AsObject());
@@ -108,7 +108,7 @@ JsonValue DetectAnomalyResult::Jsonize() const
 
   if(m_anomaliesHasBeenSet)
   {
-   Array<JsonValue> anomaliesJsonList(m_anomalies.size());
+   Aws::Utils::Array<JsonValue> anomaliesJsonList(m_anomalies.size());
    for(unsigned anomaliesIndex = 0; anomaliesIndex < anomaliesJsonList.GetLength(); ++anomaliesIndex)
    {
      anomaliesJsonList[anomaliesIndex].AsObject(m_anomalies[anomaliesIndex].Jsonize());

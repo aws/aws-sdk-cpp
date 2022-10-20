@@ -30,7 +30,7 @@ BatchGetStreamKeyResult& BatchGetStreamKeyResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetStreamKeyResult& BatchGetStreamKeyResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("streamKeys"))
   {
-    Array<JsonView> streamKeysJsonList = jsonValue.GetArray("streamKeys");
+    Aws::Utils::Array<JsonView> streamKeysJsonList = jsonValue.GetArray("streamKeys");
     for(unsigned streamKeysIndex = 0; streamKeysIndex < streamKeysJsonList.GetLength(); ++streamKeysIndex)
     {
       m_streamKeys.push_back(streamKeysJsonList[streamKeysIndex].AsObject());

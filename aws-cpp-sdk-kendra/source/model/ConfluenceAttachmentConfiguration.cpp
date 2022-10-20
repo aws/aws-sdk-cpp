@@ -44,7 +44,7 @@ ConfluenceAttachmentConfiguration& ConfluenceAttachmentConfiguration::operator =
 
   if(jsonValue.ValueExists("AttachmentFieldMappings"))
   {
-    Array<JsonView> attachmentFieldMappingsJsonList = jsonValue.GetArray("AttachmentFieldMappings");
+    Aws::Utils::Array<JsonView> attachmentFieldMappingsJsonList = jsonValue.GetArray("AttachmentFieldMappings");
     for(unsigned attachmentFieldMappingsIndex = 0; attachmentFieldMappingsIndex < attachmentFieldMappingsJsonList.GetLength(); ++attachmentFieldMappingsIndex)
     {
       m_attachmentFieldMappings.push_back(attachmentFieldMappingsJsonList[attachmentFieldMappingsIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue ConfluenceAttachmentConfiguration::Jsonize() const
 
   if(m_attachmentFieldMappingsHasBeenSet)
   {
-   Array<JsonValue> attachmentFieldMappingsJsonList(m_attachmentFieldMappings.size());
+   Aws::Utils::Array<JsonValue> attachmentFieldMappingsJsonList(m_attachmentFieldMappings.size());
    for(unsigned attachmentFieldMappingsIndex = 0; attachmentFieldMappingsIndex < attachmentFieldMappingsJsonList.GetLength(); ++attachmentFieldMappingsIndex)
    {
      attachmentFieldMappingsJsonList[attachmentFieldMappingsIndex].AsObject(m_attachmentFieldMappings[attachmentFieldMappingsIndex].Jsonize());

@@ -37,7 +37,7 @@ HttpParameters& HttpParameters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PathParameterValues"))
   {
-    Array<JsonView> pathParameterValuesJsonList = jsonValue.GetArray("PathParameterValues");
+    Aws::Utils::Array<JsonView> pathParameterValuesJsonList = jsonValue.GetArray("PathParameterValues");
     for(unsigned pathParameterValuesIndex = 0; pathParameterValuesIndex < pathParameterValuesJsonList.GetLength(); ++pathParameterValuesIndex)
     {
       m_pathParameterValues.push_back(pathParameterValuesJsonList[pathParameterValuesIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue HttpParameters::Jsonize() const
 
   if(m_pathParameterValuesHasBeenSet)
   {
-   Array<JsonValue> pathParameterValuesJsonList(m_pathParameterValues.size());
+   Aws::Utils::Array<JsonValue> pathParameterValuesJsonList(m_pathParameterValues.size());
    for(unsigned pathParameterValuesIndex = 0; pathParameterValuesIndex < pathParameterValuesJsonList.GetLength(); ++pathParameterValuesIndex)
    {
      pathParameterValuesJsonList[pathParameterValuesIndex].AsString(m_pathParameterValues[pathParameterValuesIndex]);

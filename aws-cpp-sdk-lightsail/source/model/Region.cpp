@@ -73,7 +73,7 @@ Region& Region::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("availabilityZones"))
   {
-    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
+    Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsObject());
@@ -83,7 +83,7 @@ Region& Region::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("relationalDatabaseAvailabilityZones"))
   {
-    Array<JsonView> relationalDatabaseAvailabilityZonesJsonList = jsonValue.GetArray("relationalDatabaseAvailabilityZones");
+    Aws::Utils::Array<JsonView> relationalDatabaseAvailabilityZonesJsonList = jsonValue.GetArray("relationalDatabaseAvailabilityZones");
     for(unsigned relationalDatabaseAvailabilityZonesIndex = 0; relationalDatabaseAvailabilityZonesIndex < relationalDatabaseAvailabilityZonesJsonList.GetLength(); ++relationalDatabaseAvailabilityZonesIndex)
     {
       m_relationalDatabaseAvailabilityZones.push_back(relationalDatabaseAvailabilityZonesJsonList[relationalDatabaseAvailabilityZonesIndex].AsObject());
@@ -123,7 +123,7 @@ JsonValue Region::Jsonize() const
 
   if(m_availabilityZonesHasBeenSet)
   {
-   Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
    {
      availabilityZonesJsonList[availabilityZonesIndex].AsObject(m_availabilityZones[availabilityZonesIndex].Jsonize());
@@ -134,7 +134,7 @@ JsonValue Region::Jsonize() const
 
   if(m_relationalDatabaseAvailabilityZonesHasBeenSet)
   {
-   Array<JsonValue> relationalDatabaseAvailabilityZonesJsonList(m_relationalDatabaseAvailabilityZones.size());
+   Aws::Utils::Array<JsonValue> relationalDatabaseAvailabilityZonesJsonList(m_relationalDatabaseAvailabilityZones.size());
    for(unsigned relationalDatabaseAvailabilityZonesIndex = 0; relationalDatabaseAvailabilityZonesIndex < relationalDatabaseAvailabilityZonesJsonList.GetLength(); ++relationalDatabaseAvailabilityZonesIndex)
    {
      relationalDatabaseAvailabilityZonesJsonList[relationalDatabaseAvailabilityZonesIndex].AsObject(m_relationalDatabaseAvailabilityZones[relationalDatabaseAvailabilityZonesIndex].Jsonize());

@@ -42,7 +42,7 @@ Aws::String ListInstancesRequest::SerializePayload() const
 
   if(m_instanceGroupTypesHasBeenSet)
   {
-   Array<JsonValue> instanceGroupTypesJsonList(m_instanceGroupTypes.size());
+   Aws::Utils::Array<JsonValue> instanceGroupTypesJsonList(m_instanceGroupTypes.size());
    for(unsigned instanceGroupTypesIndex = 0; instanceGroupTypesIndex < instanceGroupTypesJsonList.GetLength(); ++instanceGroupTypesIndex)
    {
      instanceGroupTypesJsonList[instanceGroupTypesIndex].AsString(InstanceGroupTypeMapper::GetNameForInstanceGroupType(m_instanceGroupTypes[instanceGroupTypesIndex]));
@@ -64,7 +64,7 @@ Aws::String ListInstancesRequest::SerializePayload() const
 
   if(m_instanceStatesHasBeenSet)
   {
-   Array<JsonValue> instanceStatesJsonList(m_instanceStates.size());
+   Aws::Utils::Array<JsonValue> instanceStatesJsonList(m_instanceStates.size());
    for(unsigned instanceStatesIndex = 0; instanceStatesIndex < instanceStatesJsonList.GetLength(); ++instanceStatesIndex)
    {
      instanceStatesJsonList[instanceStatesIndex].AsString(InstanceStateMapper::GetNameForInstanceState(m_instanceStates[instanceStatesIndex]));

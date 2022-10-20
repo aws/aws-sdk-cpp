@@ -30,7 +30,7 @@ ListProjectPoliciesResult& ListProjectPoliciesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProjectPolicies"))
   {
-    Array<JsonView> projectPoliciesJsonList = jsonValue.GetArray("ProjectPolicies");
+    Aws::Utils::Array<JsonView> projectPoliciesJsonList = jsonValue.GetArray("ProjectPolicies");
     for(unsigned projectPoliciesIndex = 0; projectPoliciesIndex < projectPoliciesJsonList.GetLength(); ++projectPoliciesIndex)
     {
       m_projectPolicies.push_back(projectPoliciesJsonList[projectPoliciesIndex].AsObject());

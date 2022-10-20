@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
+#include <aws/dms/DatabaseMigrationServiceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

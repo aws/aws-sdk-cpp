@@ -40,7 +40,7 @@ Aws::String CreateAutoMLJobRequest::SerializePayload() const
 
   if(m_inputDataConfigHasBeenSet)
   {
-   Array<JsonValue> inputDataConfigJsonList(m_inputDataConfig.size());
+   Aws::Utils::Array<JsonValue> inputDataConfigJsonList(m_inputDataConfig.size());
    for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
    {
      inputDataConfigJsonList[inputDataConfigIndex].AsObject(m_inputDataConfig[inputDataConfigIndex].Jsonize());
@@ -86,7 +86,7 @@ Aws::String CreateAutoMLJobRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

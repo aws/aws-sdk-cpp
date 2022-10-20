@@ -30,7 +30,7 @@ ListEventSubscriptionsResult& ListEventSubscriptionsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("subscriptions"))
   {
-    Array<JsonView> subscriptionsJsonList = jsonValue.GetArray("subscriptions");
+    Aws::Utils::Array<JsonView> subscriptionsJsonList = jsonValue.GetArray("subscriptions");
     for(unsigned subscriptionsIndex = 0; subscriptionsIndex < subscriptionsJsonList.GetLength(); ++subscriptionsIndex)
     {
       m_subscriptions.push_back(subscriptionsJsonList[subscriptionsIndex].AsObject());

@@ -40,7 +40,7 @@ Aws::String DescribeComplianceByResourceRequest::SerializePayload() const
 
   if(m_complianceTypesHasBeenSet)
   {
-   Array<JsonValue> complianceTypesJsonList(m_complianceTypes.size());
+   Aws::Utils::Array<JsonValue> complianceTypesJsonList(m_complianceTypes.size());
    for(unsigned complianceTypesIndex = 0; complianceTypesIndex < complianceTypesJsonList.GetLength(); ++complianceTypesIndex)
    {
      complianceTypesJsonList[complianceTypesIndex].AsString(ComplianceTypeMapper::GetNameForComplianceType(m_complianceTypes[complianceTypesIndex]));

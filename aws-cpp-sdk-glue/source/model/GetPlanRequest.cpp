@@ -29,7 +29,7 @@ Aws::String GetPlanRequest::SerializePayload() const
 
   if(m_mappingHasBeenSet)
   {
-   Array<JsonValue> mappingJsonList(m_mapping.size());
+   Aws::Utils::Array<JsonValue> mappingJsonList(m_mapping.size());
    for(unsigned mappingIndex = 0; mappingIndex < mappingJsonList.GetLength(); ++mappingIndex)
    {
      mappingJsonList[mappingIndex].AsObject(m_mapping[mappingIndex].Jsonize());
@@ -46,7 +46,7 @@ Aws::String GetPlanRequest::SerializePayload() const
 
   if(m_sinksHasBeenSet)
   {
-   Array<JsonValue> sinksJsonList(m_sinks.size());
+   Aws::Utils::Array<JsonValue> sinksJsonList(m_sinks.size());
    for(unsigned sinksIndex = 0; sinksIndex < sinksJsonList.GetLength(); ++sinksIndex)
    {
      sinksJsonList[sinksIndex].AsObject(m_sinks[sinksIndex].Jsonize());

@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/mq/MQEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -70,6 +71,10 @@ namespace Aws
 
   namespace MQ
   {
+    namespace Endpoint
+    {
+      class MQEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in MQClient header */

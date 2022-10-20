@@ -44,7 +44,7 @@ GetRecoveryGroupReadinessSummaryResult& GetRecoveryGroupReadinessSummaryResult::
 
   if(jsonValue.ValueExists("readinessChecks"))
   {
-    Array<JsonView> readinessChecksJsonList = jsonValue.GetArray("readinessChecks");
+    Aws::Utils::Array<JsonView> readinessChecksJsonList = jsonValue.GetArray("readinessChecks");
     for(unsigned readinessChecksIndex = 0; readinessChecksIndex < readinessChecksJsonList.GetLength(); ++readinessChecksIndex)
     {
       m_readinessChecks.push_back(readinessChecksJsonList[readinessChecksIndex].AsObject());

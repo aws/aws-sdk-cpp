@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
+#include <aws/rds-data/RDSDataServiceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -27,7 +27,7 @@ Aws::String DescribeAffectedEntitiesForOrganizationRequest::SerializePayload() c
 
   if(m_organizationEntityFiltersHasBeenSet)
   {
-   Array<JsonValue> organizationEntityFiltersJsonList(m_organizationEntityFilters.size());
+   Aws::Utils::Array<JsonValue> organizationEntityFiltersJsonList(m_organizationEntityFilters.size());
    for(unsigned organizationEntityFiltersIndex = 0; organizationEntityFiltersIndex < organizationEntityFiltersJsonList.GetLength(); ++organizationEntityFiltersIndex)
    {
      organizationEntityFiltersJsonList[organizationEntityFiltersIndex].AsObject(m_organizationEntityFilters[organizationEntityFiltersIndex].Jsonize());

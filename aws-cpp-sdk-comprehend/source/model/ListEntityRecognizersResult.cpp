@@ -30,7 +30,7 @@ ListEntityRecognizersResult& ListEntityRecognizersResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EntityRecognizerPropertiesList"))
   {
-    Array<JsonView> entityRecognizerPropertiesListJsonList = jsonValue.GetArray("EntityRecognizerPropertiesList");
+    Aws::Utils::Array<JsonView> entityRecognizerPropertiesListJsonList = jsonValue.GetArray("EntityRecognizerPropertiesList");
     for(unsigned entityRecognizerPropertiesListIndex = 0; entityRecognizerPropertiesListIndex < entityRecognizerPropertiesListJsonList.GetLength(); ++entityRecognizerPropertiesListIndex)
     {
       m_entityRecognizerPropertiesList.push_back(entityRecognizerPropertiesListJsonList[entityRecognizerPropertiesListIndex].AsObject());

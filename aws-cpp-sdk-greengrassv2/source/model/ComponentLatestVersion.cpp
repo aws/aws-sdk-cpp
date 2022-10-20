@@ -78,7 +78,7 @@ ComponentLatestVersion& ComponentLatestVersion::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("platforms"))
   {
-    Array<JsonView> platformsJsonList = jsonValue.GetArray("platforms");
+    Aws::Utils::Array<JsonView> platformsJsonList = jsonValue.GetArray("platforms");
     for(unsigned platformsIndex = 0; platformsIndex < platformsJsonList.GetLength(); ++platformsIndex)
     {
       m_platforms.push_back(platformsJsonList[platformsIndex].AsObject());
@@ -124,7 +124,7 @@ JsonValue ComponentLatestVersion::Jsonize() const
 
   if(m_platformsHasBeenSet)
   {
-   Array<JsonValue> platformsJsonList(m_platforms.size());
+   Aws::Utils::Array<JsonValue> platformsJsonList(m_platforms.size());
    for(unsigned platformsIndex = 0; platformsIndex < platformsJsonList.GetLength(); ++platformsIndex)
    {
      platformsJsonList[platformsIndex].AsObject(m_platforms[platformsIndex].Jsonize());

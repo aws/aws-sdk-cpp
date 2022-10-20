@@ -30,7 +30,7 @@ ListProtocolsListsResult& ListProtocolsListsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProtocolsLists"))
   {
-    Array<JsonView> protocolsListsJsonList = jsonValue.GetArray("ProtocolsLists");
+    Aws::Utils::Array<JsonView> protocolsListsJsonList = jsonValue.GetArray("ProtocolsLists");
     for(unsigned protocolsListsIndex = 0; protocolsListsIndex < protocolsListsJsonList.GetLength(); ++protocolsListsIndex)
     {
       m_protocolsLists.push_back(protocolsListsJsonList[protocolsListsIndex].AsObject());

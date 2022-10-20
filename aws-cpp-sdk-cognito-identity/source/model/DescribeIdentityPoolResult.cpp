@@ -73,7 +73,7 @@ DescribeIdentityPoolResult& DescribeIdentityPoolResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("OpenIdConnectProviderARNs"))
   {
-    Array<JsonView> openIdConnectProviderARNsJsonList = jsonValue.GetArray("OpenIdConnectProviderARNs");
+    Aws::Utils::Array<JsonView> openIdConnectProviderARNsJsonList = jsonValue.GetArray("OpenIdConnectProviderARNs");
     for(unsigned openIdConnectProviderARNsIndex = 0; openIdConnectProviderARNsIndex < openIdConnectProviderARNsJsonList.GetLength(); ++openIdConnectProviderARNsIndex)
     {
       m_openIdConnectProviderARNs.push_back(openIdConnectProviderARNsJsonList[openIdConnectProviderARNsIndex].AsString());
@@ -82,7 +82,7 @@ DescribeIdentityPoolResult& DescribeIdentityPoolResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("CognitoIdentityProviders"))
   {
-    Array<JsonView> cognitoIdentityProvidersJsonList = jsonValue.GetArray("CognitoIdentityProviders");
+    Aws::Utils::Array<JsonView> cognitoIdentityProvidersJsonList = jsonValue.GetArray("CognitoIdentityProviders");
     for(unsigned cognitoIdentityProvidersIndex = 0; cognitoIdentityProvidersIndex < cognitoIdentityProvidersJsonList.GetLength(); ++cognitoIdentityProvidersIndex)
     {
       m_cognitoIdentityProviders.push_back(cognitoIdentityProvidersJsonList[cognitoIdentityProvidersIndex].AsObject());
@@ -91,7 +91,7 @@ DescribeIdentityPoolResult& DescribeIdentityPoolResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("SamlProviderARNs"))
   {
-    Array<JsonView> samlProviderARNsJsonList = jsonValue.GetArray("SamlProviderARNs");
+    Aws::Utils::Array<JsonView> samlProviderARNsJsonList = jsonValue.GetArray("SamlProviderARNs");
     for(unsigned samlProviderARNsIndex = 0; samlProviderARNsIndex < samlProviderARNsJsonList.GetLength(); ++samlProviderARNsIndex)
     {
       m_samlProviderARNs.push_back(samlProviderARNsJsonList[samlProviderARNsIndex].AsString());

@@ -173,7 +173,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("links"))
   {
-    Array<JsonView> linksJsonList = jsonValue.GetArray("links");
+    Aws::Utils::Array<JsonView> linksJsonList = jsonValue.GetArray("links");
     for(unsigned linksIndex = 0; linksIndex < linksJsonList.GetLength(); ++linksIndex)
     {
       m_links.push_back(linksJsonList[linksIndex].AsString());
@@ -183,7 +183,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("portMappings"))
   {
-    Array<JsonView> portMappingsJsonList = jsonValue.GetArray("portMappings");
+    Aws::Utils::Array<JsonView> portMappingsJsonList = jsonValue.GetArray("portMappings");
     for(unsigned portMappingsIndex = 0; portMappingsIndex < portMappingsJsonList.GetLength(); ++portMappingsIndex)
     {
       m_portMappings.push_back(portMappingsJsonList[portMappingsIndex].AsObject());
@@ -200,7 +200,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("entryPoint"))
   {
-    Array<JsonView> entryPointJsonList = jsonValue.GetArray("entryPoint");
+    Aws::Utils::Array<JsonView> entryPointJsonList = jsonValue.GetArray("entryPoint");
     for(unsigned entryPointIndex = 0; entryPointIndex < entryPointJsonList.GetLength(); ++entryPointIndex)
     {
       m_entryPoint.push_back(entryPointJsonList[entryPointIndex].AsString());
@@ -210,7 +210,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("command"))
   {
-    Array<JsonView> commandJsonList = jsonValue.GetArray("command");
+    Aws::Utils::Array<JsonView> commandJsonList = jsonValue.GetArray("command");
     for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
     {
       m_command.push_back(commandJsonList[commandIndex].AsString());
@@ -220,7 +220,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("environment"))
   {
-    Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
+    Aws::Utils::Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
     for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
     {
       m_environment.push_back(environmentJsonList[environmentIndex].AsObject());
@@ -230,7 +230,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("environmentFiles"))
   {
-    Array<JsonView> environmentFilesJsonList = jsonValue.GetArray("environmentFiles");
+    Aws::Utils::Array<JsonView> environmentFilesJsonList = jsonValue.GetArray("environmentFiles");
     for(unsigned environmentFilesIndex = 0; environmentFilesIndex < environmentFilesJsonList.GetLength(); ++environmentFilesIndex)
     {
       m_environmentFiles.push_back(environmentFilesJsonList[environmentFilesIndex].AsObject());
@@ -240,7 +240,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("mountPoints"))
   {
-    Array<JsonView> mountPointsJsonList = jsonValue.GetArray("mountPoints");
+    Aws::Utils::Array<JsonView> mountPointsJsonList = jsonValue.GetArray("mountPoints");
     for(unsigned mountPointsIndex = 0; mountPointsIndex < mountPointsJsonList.GetLength(); ++mountPointsIndex)
     {
       m_mountPoints.push_back(mountPointsJsonList[mountPointsIndex].AsObject());
@@ -250,7 +250,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("volumesFrom"))
   {
-    Array<JsonView> volumesFromJsonList = jsonValue.GetArray("volumesFrom");
+    Aws::Utils::Array<JsonView> volumesFromJsonList = jsonValue.GetArray("volumesFrom");
     for(unsigned volumesFromIndex = 0; volumesFromIndex < volumesFromJsonList.GetLength(); ++volumesFromIndex)
     {
       m_volumesFrom.push_back(volumesFromJsonList[volumesFromIndex].AsObject());
@@ -267,7 +267,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("secrets"))
   {
-    Array<JsonView> secretsJsonList = jsonValue.GetArray("secrets");
+    Aws::Utils::Array<JsonView> secretsJsonList = jsonValue.GetArray("secrets");
     for(unsigned secretsIndex = 0; secretsIndex < secretsJsonList.GetLength(); ++secretsIndex)
     {
       m_secrets.push_back(secretsJsonList[secretsIndex].AsObject());
@@ -277,7 +277,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("dependsOn"))
   {
-    Array<JsonView> dependsOnJsonList = jsonValue.GetArray("dependsOn");
+    Aws::Utils::Array<JsonView> dependsOnJsonList = jsonValue.GetArray("dependsOn");
     for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
     {
       m_dependsOn.push_back(dependsOnJsonList[dependsOnIndex].AsObject());
@@ -343,7 +343,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("dnsServers"))
   {
-    Array<JsonView> dnsServersJsonList = jsonValue.GetArray("dnsServers");
+    Aws::Utils::Array<JsonView> dnsServersJsonList = jsonValue.GetArray("dnsServers");
     for(unsigned dnsServersIndex = 0; dnsServersIndex < dnsServersJsonList.GetLength(); ++dnsServersIndex)
     {
       m_dnsServers.push_back(dnsServersJsonList[dnsServersIndex].AsString());
@@ -353,7 +353,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("dnsSearchDomains"))
   {
-    Array<JsonView> dnsSearchDomainsJsonList = jsonValue.GetArray("dnsSearchDomains");
+    Aws::Utils::Array<JsonView> dnsSearchDomainsJsonList = jsonValue.GetArray("dnsSearchDomains");
     for(unsigned dnsSearchDomainsIndex = 0; dnsSearchDomainsIndex < dnsSearchDomainsJsonList.GetLength(); ++dnsSearchDomainsIndex)
     {
       m_dnsSearchDomains.push_back(dnsSearchDomainsJsonList[dnsSearchDomainsIndex].AsString());
@@ -363,7 +363,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("extraHosts"))
   {
-    Array<JsonView> extraHostsJsonList = jsonValue.GetArray("extraHosts");
+    Aws::Utils::Array<JsonView> extraHostsJsonList = jsonValue.GetArray("extraHosts");
     for(unsigned extraHostsIndex = 0; extraHostsIndex < extraHostsJsonList.GetLength(); ++extraHostsIndex)
     {
       m_extraHosts.push_back(extraHostsJsonList[extraHostsIndex].AsObject());
@@ -373,7 +373,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("dockerSecurityOptions"))
   {
-    Array<JsonView> dockerSecurityOptionsJsonList = jsonValue.GetArray("dockerSecurityOptions");
+    Aws::Utils::Array<JsonView> dockerSecurityOptionsJsonList = jsonValue.GetArray("dockerSecurityOptions");
     for(unsigned dockerSecurityOptionsIndex = 0; dockerSecurityOptionsIndex < dockerSecurityOptionsJsonList.GetLength(); ++dockerSecurityOptionsIndex)
     {
       m_dockerSecurityOptions.push_back(dockerSecurityOptionsJsonList[dockerSecurityOptionsIndex].AsString());
@@ -407,7 +407,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ulimits"))
   {
-    Array<JsonView> ulimitsJsonList = jsonValue.GetArray("ulimits");
+    Aws::Utils::Array<JsonView> ulimitsJsonList = jsonValue.GetArray("ulimits");
     for(unsigned ulimitsIndex = 0; ulimitsIndex < ulimitsJsonList.GetLength(); ++ulimitsIndex)
     {
       m_ulimits.push_back(ulimitsJsonList[ulimitsIndex].AsObject());
@@ -431,7 +431,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("systemControls"))
   {
-    Array<JsonView> systemControlsJsonList = jsonValue.GetArray("systemControls");
+    Aws::Utils::Array<JsonView> systemControlsJsonList = jsonValue.GetArray("systemControls");
     for(unsigned systemControlsIndex = 0; systemControlsIndex < systemControlsJsonList.GetLength(); ++systemControlsIndex)
     {
       m_systemControls.push_back(systemControlsJsonList[systemControlsIndex].AsObject());
@@ -441,7 +441,7 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resourceRequirements"))
   {
-    Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
+    Aws::Utils::Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
     for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
     {
       m_resourceRequirements.push_back(resourceRequirementsJsonList[resourceRequirementsIndex].AsObject());
@@ -501,7 +501,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_linksHasBeenSet)
   {
-   Array<JsonValue> linksJsonList(m_links.size());
+   Aws::Utils::Array<JsonValue> linksJsonList(m_links.size());
    for(unsigned linksIndex = 0; linksIndex < linksJsonList.GetLength(); ++linksIndex)
    {
      linksJsonList[linksIndex].AsString(m_links[linksIndex]);
@@ -512,7 +512,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_portMappingsHasBeenSet)
   {
-   Array<JsonValue> portMappingsJsonList(m_portMappings.size());
+   Aws::Utils::Array<JsonValue> portMappingsJsonList(m_portMappings.size());
    for(unsigned portMappingsIndex = 0; portMappingsIndex < portMappingsJsonList.GetLength(); ++portMappingsIndex)
    {
      portMappingsJsonList[portMappingsIndex].AsObject(m_portMappings[portMappingsIndex].Jsonize());
@@ -529,7 +529,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_entryPointHasBeenSet)
   {
-   Array<JsonValue> entryPointJsonList(m_entryPoint.size());
+   Aws::Utils::Array<JsonValue> entryPointJsonList(m_entryPoint.size());
    for(unsigned entryPointIndex = 0; entryPointIndex < entryPointJsonList.GetLength(); ++entryPointIndex)
    {
      entryPointJsonList[entryPointIndex].AsString(m_entryPoint[entryPointIndex]);
@@ -540,7 +540,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_commandHasBeenSet)
   {
-   Array<JsonValue> commandJsonList(m_command.size());
+   Aws::Utils::Array<JsonValue> commandJsonList(m_command.size());
    for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
    {
      commandJsonList[commandIndex].AsString(m_command[commandIndex]);
@@ -551,7 +551,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_environmentHasBeenSet)
   {
-   Array<JsonValue> environmentJsonList(m_environment.size());
+   Aws::Utils::Array<JsonValue> environmentJsonList(m_environment.size());
    for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
    {
      environmentJsonList[environmentIndex].AsObject(m_environment[environmentIndex].Jsonize());
@@ -562,7 +562,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_environmentFilesHasBeenSet)
   {
-   Array<JsonValue> environmentFilesJsonList(m_environmentFiles.size());
+   Aws::Utils::Array<JsonValue> environmentFilesJsonList(m_environmentFiles.size());
    for(unsigned environmentFilesIndex = 0; environmentFilesIndex < environmentFilesJsonList.GetLength(); ++environmentFilesIndex)
    {
      environmentFilesJsonList[environmentFilesIndex].AsObject(m_environmentFiles[environmentFilesIndex].Jsonize());
@@ -573,7 +573,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_mountPointsHasBeenSet)
   {
-   Array<JsonValue> mountPointsJsonList(m_mountPoints.size());
+   Aws::Utils::Array<JsonValue> mountPointsJsonList(m_mountPoints.size());
    for(unsigned mountPointsIndex = 0; mountPointsIndex < mountPointsJsonList.GetLength(); ++mountPointsIndex)
    {
      mountPointsJsonList[mountPointsIndex].AsObject(m_mountPoints[mountPointsIndex].Jsonize());
@@ -584,7 +584,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_volumesFromHasBeenSet)
   {
-   Array<JsonValue> volumesFromJsonList(m_volumesFrom.size());
+   Aws::Utils::Array<JsonValue> volumesFromJsonList(m_volumesFrom.size());
    for(unsigned volumesFromIndex = 0; volumesFromIndex < volumesFromJsonList.GetLength(); ++volumesFromIndex)
    {
      volumesFromJsonList[volumesFromIndex].AsObject(m_volumesFrom[volumesFromIndex].Jsonize());
@@ -601,7 +601,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_secretsHasBeenSet)
   {
-   Array<JsonValue> secretsJsonList(m_secrets.size());
+   Aws::Utils::Array<JsonValue> secretsJsonList(m_secrets.size());
    for(unsigned secretsIndex = 0; secretsIndex < secretsJsonList.GetLength(); ++secretsIndex)
    {
      secretsJsonList[secretsIndex].AsObject(m_secrets[secretsIndex].Jsonize());
@@ -612,7 +612,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_dependsOnHasBeenSet)
   {
-   Array<JsonValue> dependsOnJsonList(m_dependsOn.size());
+   Aws::Utils::Array<JsonValue> dependsOnJsonList(m_dependsOn.size());
    for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
    {
      dependsOnJsonList[dependsOnIndex].AsObject(m_dependsOn[dependsOnIndex].Jsonize());
@@ -671,7 +671,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_dnsServersHasBeenSet)
   {
-   Array<JsonValue> dnsServersJsonList(m_dnsServers.size());
+   Aws::Utils::Array<JsonValue> dnsServersJsonList(m_dnsServers.size());
    for(unsigned dnsServersIndex = 0; dnsServersIndex < dnsServersJsonList.GetLength(); ++dnsServersIndex)
    {
      dnsServersJsonList[dnsServersIndex].AsString(m_dnsServers[dnsServersIndex]);
@@ -682,7 +682,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_dnsSearchDomainsHasBeenSet)
   {
-   Array<JsonValue> dnsSearchDomainsJsonList(m_dnsSearchDomains.size());
+   Aws::Utils::Array<JsonValue> dnsSearchDomainsJsonList(m_dnsSearchDomains.size());
    for(unsigned dnsSearchDomainsIndex = 0; dnsSearchDomainsIndex < dnsSearchDomainsJsonList.GetLength(); ++dnsSearchDomainsIndex)
    {
      dnsSearchDomainsJsonList[dnsSearchDomainsIndex].AsString(m_dnsSearchDomains[dnsSearchDomainsIndex]);
@@ -693,7 +693,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_extraHostsHasBeenSet)
   {
-   Array<JsonValue> extraHostsJsonList(m_extraHosts.size());
+   Aws::Utils::Array<JsonValue> extraHostsJsonList(m_extraHosts.size());
    for(unsigned extraHostsIndex = 0; extraHostsIndex < extraHostsJsonList.GetLength(); ++extraHostsIndex)
    {
      extraHostsJsonList[extraHostsIndex].AsObject(m_extraHosts[extraHostsIndex].Jsonize());
@@ -704,7 +704,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_dockerSecurityOptionsHasBeenSet)
   {
-   Array<JsonValue> dockerSecurityOptionsJsonList(m_dockerSecurityOptions.size());
+   Aws::Utils::Array<JsonValue> dockerSecurityOptionsJsonList(m_dockerSecurityOptions.size());
    for(unsigned dockerSecurityOptionsIndex = 0; dockerSecurityOptionsIndex < dockerSecurityOptionsJsonList.GetLength(); ++dockerSecurityOptionsIndex)
    {
      dockerSecurityOptionsJsonList[dockerSecurityOptionsIndex].AsString(m_dockerSecurityOptions[dockerSecurityOptionsIndex]);
@@ -738,7 +738,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_ulimitsHasBeenSet)
   {
-   Array<JsonValue> ulimitsJsonList(m_ulimits.size());
+   Aws::Utils::Array<JsonValue> ulimitsJsonList(m_ulimits.size());
    for(unsigned ulimitsIndex = 0; ulimitsIndex < ulimitsJsonList.GetLength(); ++ulimitsIndex)
    {
      ulimitsJsonList[ulimitsIndex].AsObject(m_ulimits[ulimitsIndex].Jsonize());
@@ -761,7 +761,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_systemControlsHasBeenSet)
   {
-   Array<JsonValue> systemControlsJsonList(m_systemControls.size());
+   Aws::Utils::Array<JsonValue> systemControlsJsonList(m_systemControls.size());
    for(unsigned systemControlsIndex = 0; systemControlsIndex < systemControlsJsonList.GetLength(); ++systemControlsIndex)
    {
      systemControlsJsonList[systemControlsIndex].AsObject(m_systemControls[systemControlsIndex].Jsonize());
@@ -772,7 +772,7 @@ JsonValue ContainerDefinition::Jsonize() const
 
   if(m_resourceRequirementsHasBeenSet)
   {
-   Array<JsonValue> resourceRequirementsJsonList(m_resourceRequirements.size());
+   Aws::Utils::Array<JsonValue> resourceRequirementsJsonList(m_resourceRequirements.size());
    for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
    {
      resourceRequirementsJsonList[resourceRequirementsIndex].AsObject(m_resourceRequirements[resourceRequirementsIndex].Jsonize());

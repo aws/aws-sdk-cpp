@@ -46,7 +46,7 @@ UpdateVpcLinkResult& UpdateVpcLinkResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("securityGroupIds"))
   {
-    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -55,7 +55,7 @@ UpdateVpcLinkResult& UpdateVpcLinkResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("subnetIds"))
   {
-    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());

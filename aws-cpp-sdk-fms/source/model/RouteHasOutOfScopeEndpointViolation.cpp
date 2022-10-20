@@ -76,7 +76,7 @@ RouteHasOutOfScopeEndpointViolation& RouteHasOutOfScopeEndpointViolation::operat
 
   if(jsonValue.ValueExists("ViolatingRoutes"))
   {
-    Array<JsonView> violatingRoutesJsonList = jsonValue.GetArray("ViolatingRoutes");
+    Aws::Utils::Array<JsonView> violatingRoutesJsonList = jsonValue.GetArray("ViolatingRoutes");
     for(unsigned violatingRoutesIndex = 0; violatingRoutesIndex < violatingRoutesJsonList.GetLength(); ++violatingRoutesIndex)
     {
       m_violatingRoutes.push_back(violatingRoutesJsonList[violatingRoutesIndex].AsObject());
@@ -114,7 +114,7 @@ RouteHasOutOfScopeEndpointViolation& RouteHasOutOfScopeEndpointViolation::operat
 
   if(jsonValue.ValueExists("FirewallSubnetRoutes"))
   {
-    Array<JsonView> firewallSubnetRoutesJsonList = jsonValue.GetArray("FirewallSubnetRoutes");
+    Aws::Utils::Array<JsonView> firewallSubnetRoutesJsonList = jsonValue.GetArray("FirewallSubnetRoutes");
     for(unsigned firewallSubnetRoutesIndex = 0; firewallSubnetRoutesIndex < firewallSubnetRoutesJsonList.GetLength(); ++firewallSubnetRoutesIndex)
     {
       m_firewallSubnetRoutes.push_back(firewallSubnetRoutesJsonList[firewallSubnetRoutesIndex].AsObject());
@@ -138,7 +138,7 @@ RouteHasOutOfScopeEndpointViolation& RouteHasOutOfScopeEndpointViolation::operat
 
   if(jsonValue.ValueExists("InternetGatewayRoutes"))
   {
-    Array<JsonView> internetGatewayRoutesJsonList = jsonValue.GetArray("InternetGatewayRoutes");
+    Aws::Utils::Array<JsonView> internetGatewayRoutesJsonList = jsonValue.GetArray("InternetGatewayRoutes");
     for(unsigned internetGatewayRoutesIndex = 0; internetGatewayRoutesIndex < internetGatewayRoutesJsonList.GetLength(); ++internetGatewayRoutesIndex)
     {
       m_internetGatewayRoutes.push_back(internetGatewayRoutesJsonList[internetGatewayRoutesIndex].AsObject());
@@ -173,7 +173,7 @@ JsonValue RouteHasOutOfScopeEndpointViolation::Jsonize() const
 
   if(m_violatingRoutesHasBeenSet)
   {
-   Array<JsonValue> violatingRoutesJsonList(m_violatingRoutes.size());
+   Aws::Utils::Array<JsonValue> violatingRoutesJsonList(m_violatingRoutes.size());
    for(unsigned violatingRoutesIndex = 0; violatingRoutesIndex < violatingRoutesJsonList.GetLength(); ++violatingRoutesIndex)
    {
      violatingRoutesJsonList[violatingRoutesIndex].AsObject(m_violatingRoutes[violatingRoutesIndex].Jsonize());
@@ -208,7 +208,7 @@ JsonValue RouteHasOutOfScopeEndpointViolation::Jsonize() const
 
   if(m_firewallSubnetRoutesHasBeenSet)
   {
-   Array<JsonValue> firewallSubnetRoutesJsonList(m_firewallSubnetRoutes.size());
+   Aws::Utils::Array<JsonValue> firewallSubnetRoutesJsonList(m_firewallSubnetRoutes.size());
    for(unsigned firewallSubnetRoutesIndex = 0; firewallSubnetRoutesIndex < firewallSubnetRoutesJsonList.GetLength(); ++firewallSubnetRoutesIndex)
    {
      firewallSubnetRoutesJsonList[firewallSubnetRoutesIndex].AsObject(m_firewallSubnetRoutes[firewallSubnetRoutesIndex].Jsonize());
@@ -231,7 +231,7 @@ JsonValue RouteHasOutOfScopeEndpointViolation::Jsonize() const
 
   if(m_internetGatewayRoutesHasBeenSet)
   {
-   Array<JsonValue> internetGatewayRoutesJsonList(m_internetGatewayRoutes.size());
+   Aws::Utils::Array<JsonValue> internetGatewayRoutesJsonList(m_internetGatewayRoutes.size());
    for(unsigned internetGatewayRoutesIndex = 0; internetGatewayRoutesIndex < internetGatewayRoutesJsonList.GetLength(); ++internetGatewayRoutesIndex)
    {
      internetGatewayRoutesJsonList[internetGatewayRoutesIndex].AsObject(m_internetGatewayRoutes[internetGatewayRoutesIndex].Jsonize());

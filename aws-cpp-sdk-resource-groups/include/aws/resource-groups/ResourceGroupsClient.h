@@ -51,13 +51,15 @@ namespace ResourceGroups
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ResourceGroupsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ResourceGroupsClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration(),
+                             std::shared_ptr<Endpoint::ResourceGroupsEndpointProvider> endpointProvider = Aws::MakeShared<ResourceGroups::Endpoint::ResourceGroupsEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ResourceGroupsClient(const Aws::Auth::AWSCredentials& credentials,
+                             std::shared_ptr<Endpoint::ResourceGroupsEndpointProvider> endpointProvider = Aws::MakeShared<ResourceGroups::Endpoint::ResourceGroupsEndpointProvider>(ALLOCATION_TAG),
                              const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
        /**
@@ -65,9 +67,32 @@ namespace ResourceGroups
         * the default http client factory will be used
         */
         ResourceGroupsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                             std::shared_ptr<Endpoint::ResourceGroupsEndpointProvider> endpointProvider = Aws::MakeShared<ResourceGroups::Endpoint::ResourceGroupsEndpointProvider>(ALLOCATION_TAG),
                              const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
 
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ResourceGroupsClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ResourceGroupsClient(const Aws::Auth::AWSCredentials& credentials,
+                             const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ResourceGroupsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                             const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ResourceGroupsClient();
 
 
@@ -430,9 +455,8 @@ namespace ResourceGroups
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<Endpoint::ResourceGroupsEndpointProvider> m_endpointProvider;
   };
 
 } // namespace ResourceGroups

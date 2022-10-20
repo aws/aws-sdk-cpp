@@ -30,7 +30,7 @@ GetMigrationsResult& GetMigrationsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("migrationSummaries"))
   {
-    Array<JsonView> migrationSummariesJsonList = jsonValue.GetArray("migrationSummaries");
+    Aws::Utils::Array<JsonView> migrationSummariesJsonList = jsonValue.GetArray("migrationSummaries");
     for(unsigned migrationSummariesIndex = 0; migrationSummariesIndex < migrationSummariesJsonList.GetLength(); ++migrationSummariesIndex)
     {
       m_migrationSummaries.push_back(migrationSummariesJsonList[migrationSummariesIndex].AsObject());

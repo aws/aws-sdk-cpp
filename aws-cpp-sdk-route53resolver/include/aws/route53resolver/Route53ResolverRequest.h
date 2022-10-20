@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
+#include <aws/route53resolver/Route53ResolverEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

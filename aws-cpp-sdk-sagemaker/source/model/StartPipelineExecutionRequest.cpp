@@ -41,7 +41,7 @@ Aws::String StartPipelineExecutionRequest::SerializePayload() const
 
   if(m_pipelineParametersHasBeenSet)
   {
-   Array<JsonValue> pipelineParametersJsonList(m_pipelineParameters.size());
+   Aws::Utils::Array<JsonValue> pipelineParametersJsonList(m_pipelineParameters.size());
    for(unsigned pipelineParametersIndex = 0; pipelineParametersIndex < pipelineParametersJsonList.GetLength(); ++pipelineParametersIndex)
    {
      pipelineParametersJsonList[pipelineParametersIndex].AsObject(m_pipelineParameters[pipelineParametersIndex].Jsonize());

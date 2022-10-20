@@ -43,7 +43,7 @@ Aws::String UpdateDevEndpointRequest::SerializePayload() const
 
   if(m_addPublicKeysHasBeenSet)
   {
-   Array<JsonValue> addPublicKeysJsonList(m_addPublicKeys.size());
+   Aws::Utils::Array<JsonValue> addPublicKeysJsonList(m_addPublicKeys.size());
    for(unsigned addPublicKeysIndex = 0; addPublicKeysIndex < addPublicKeysJsonList.GetLength(); ++addPublicKeysIndex)
    {
      addPublicKeysJsonList[addPublicKeysIndex].AsString(m_addPublicKeys[addPublicKeysIndex]);
@@ -54,7 +54,7 @@ Aws::String UpdateDevEndpointRequest::SerializePayload() const
 
   if(m_deletePublicKeysHasBeenSet)
   {
-   Array<JsonValue> deletePublicKeysJsonList(m_deletePublicKeys.size());
+   Aws::Utils::Array<JsonValue> deletePublicKeysJsonList(m_deletePublicKeys.size());
    for(unsigned deletePublicKeysIndex = 0; deletePublicKeysIndex < deletePublicKeysJsonList.GetLength(); ++deletePublicKeysIndex)
    {
      deletePublicKeysJsonList[deletePublicKeysIndex].AsString(m_deletePublicKeys[deletePublicKeysIndex]);
@@ -77,7 +77,7 @@ Aws::String UpdateDevEndpointRequest::SerializePayload() const
 
   if(m_deleteArgumentsHasBeenSet)
   {
-   Array<JsonValue> deleteArgumentsJsonList(m_deleteArguments.size());
+   Aws::Utils::Array<JsonValue> deleteArgumentsJsonList(m_deleteArguments.size());
    for(unsigned deleteArgumentsIndex = 0; deleteArgumentsIndex < deleteArgumentsJsonList.GetLength(); ++deleteArgumentsIndex)
    {
      deleteArgumentsJsonList[deleteArgumentsIndex].AsString(m_deleteArguments[deleteArgumentsIndex]);

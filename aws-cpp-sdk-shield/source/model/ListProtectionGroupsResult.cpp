@@ -30,7 +30,7 @@ ListProtectionGroupsResult& ListProtectionGroupsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProtectionGroups"))
   {
-    Array<JsonView> protectionGroupsJsonList = jsonValue.GetArray("ProtectionGroups");
+    Aws::Utils::Array<JsonView> protectionGroupsJsonList = jsonValue.GetArray("ProtectionGroups");
     for(unsigned protectionGroupsIndex = 0; protectionGroupsIndex < protectionGroupsJsonList.GetLength(); ++protectionGroupsIndex)
     {
       m_protectionGroups.push_back(protectionGroupsJsonList[protectionGroupsIndex].AsObject());

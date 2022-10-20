@@ -30,7 +30,7 @@ TestRepositoryTriggersResult& TestRepositoryTriggersResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("successfulExecutions"))
   {
-    Array<JsonView> successfulExecutionsJsonList = jsonValue.GetArray("successfulExecutions");
+    Aws::Utils::Array<JsonView> successfulExecutionsJsonList = jsonValue.GetArray("successfulExecutions");
     for(unsigned successfulExecutionsIndex = 0; successfulExecutionsIndex < successfulExecutionsJsonList.GetLength(); ++successfulExecutionsIndex)
     {
       m_successfulExecutions.push_back(successfulExecutionsJsonList[successfulExecutionsIndex].AsString());
@@ -39,7 +39,7 @@ TestRepositoryTriggersResult& TestRepositoryTriggersResult::operator =(const Aws
 
   if(jsonValue.ValueExists("failedExecutions"))
   {
-    Array<JsonView> failedExecutionsJsonList = jsonValue.GetArray("failedExecutions");
+    Aws::Utils::Array<JsonView> failedExecutionsJsonList = jsonValue.GetArray("failedExecutions");
     for(unsigned failedExecutionsIndex = 0; failedExecutionsIndex < failedExecutionsJsonList.GetLength(); ++failedExecutionsIndex)
     {
       m_failedExecutions.push_back(failedExecutionsJsonList[failedExecutionsIndex].AsObject());

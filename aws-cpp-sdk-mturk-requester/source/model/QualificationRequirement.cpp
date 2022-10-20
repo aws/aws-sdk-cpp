@@ -59,7 +59,7 @@ QualificationRequirement& QualificationRequirement::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("IntegerValues"))
   {
-    Array<JsonView> integerValuesJsonList = jsonValue.GetArray("IntegerValues");
+    Aws::Utils::Array<JsonView> integerValuesJsonList = jsonValue.GetArray("IntegerValues");
     for(unsigned integerValuesIndex = 0; integerValuesIndex < integerValuesJsonList.GetLength(); ++integerValuesIndex)
     {
       m_integerValues.push_back(integerValuesJsonList[integerValuesIndex].AsInteger());
@@ -69,7 +69,7 @@ QualificationRequirement& QualificationRequirement::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("LocaleValues"))
   {
-    Array<JsonView> localeValuesJsonList = jsonValue.GetArray("LocaleValues");
+    Aws::Utils::Array<JsonView> localeValuesJsonList = jsonValue.GetArray("LocaleValues");
     for(unsigned localeValuesIndex = 0; localeValuesIndex < localeValuesJsonList.GetLength(); ++localeValuesIndex)
     {
       m_localeValues.push_back(localeValuesJsonList[localeValuesIndex].AsObject());
@@ -104,7 +104,7 @@ JsonValue QualificationRequirement::Jsonize() const
 
   if(m_integerValuesHasBeenSet)
   {
-   Array<JsonValue> integerValuesJsonList(m_integerValues.size());
+   Aws::Utils::Array<JsonValue> integerValuesJsonList(m_integerValues.size());
    for(unsigned integerValuesIndex = 0; integerValuesIndex < integerValuesJsonList.GetLength(); ++integerValuesIndex)
    {
      integerValuesJsonList[integerValuesIndex].AsInteger(m_integerValues[integerValuesIndex]);
@@ -115,7 +115,7 @@ JsonValue QualificationRequirement::Jsonize() const
 
   if(m_localeValuesHasBeenSet)
   {
-   Array<JsonValue> localeValuesJsonList(m_localeValues.size());
+   Aws::Utils::Array<JsonValue> localeValuesJsonList(m_localeValues.size());
    for(unsigned localeValuesIndex = 0; localeValuesIndex < localeValuesJsonList.GetLength(); ++localeValuesIndex)
    {
      localeValuesJsonList[localeValuesIndex].AsObject(m_localeValues[localeValuesIndex].Jsonize());

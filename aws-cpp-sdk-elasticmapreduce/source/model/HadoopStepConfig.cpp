@@ -63,7 +63,7 @@ HadoopStepConfig& HadoopStepConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Args"))
   {
-    Array<JsonView> argsJsonList = jsonValue.GetArray("Args");
+    Aws::Utils::Array<JsonView> argsJsonList = jsonValue.GetArray("Args");
     for(unsigned argsIndex = 0; argsIndex < argsJsonList.GetLength(); ++argsIndex)
     {
       m_args.push_back(argsJsonList[argsIndex].AsString());
@@ -103,7 +103,7 @@ JsonValue HadoopStepConfig::Jsonize() const
 
   if(m_argsHasBeenSet)
   {
-   Array<JsonValue> argsJsonList(m_args.size());
+   Aws::Utils::Array<JsonValue> argsJsonList(m_args.size());
    for(unsigned argsIndex = 0; argsIndex < argsJsonList.GetLength(); ++argsIndex)
    {
      argsJsonList[argsIndex].AsString(m_args[argsIndex]);

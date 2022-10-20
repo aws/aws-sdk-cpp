@@ -42,7 +42,7 @@ BuiltinIntentMetadata& BuiltinIntentMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("supportedLocales"))
   {
-    Array<JsonView> supportedLocalesJsonList = jsonValue.GetArray("supportedLocales");
+    Aws::Utils::Array<JsonView> supportedLocalesJsonList = jsonValue.GetArray("supportedLocales");
     for(unsigned supportedLocalesIndex = 0; supportedLocalesIndex < supportedLocalesJsonList.GetLength(); ++supportedLocalesIndex)
     {
       m_supportedLocales.push_back(LocaleMapper::GetLocaleForName(supportedLocalesJsonList[supportedLocalesIndex].AsString()));
@@ -65,7 +65,7 @@ JsonValue BuiltinIntentMetadata::Jsonize() const
 
   if(m_supportedLocalesHasBeenSet)
   {
-   Array<JsonValue> supportedLocalesJsonList(m_supportedLocales.size());
+   Aws::Utils::Array<JsonValue> supportedLocalesJsonList(m_supportedLocales.size());
    for(unsigned supportedLocalesIndex = 0; supportedLocalesIndex < supportedLocalesJsonList.GetLength(); ++supportedLocalesIndex)
    {
      supportedLocalesJsonList[supportedLocalesIndex].AsString(LocaleMapper::GetNameForLocale(m_supportedLocales[supportedLocalesIndex]));

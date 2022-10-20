@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
+#include <aws/elasticache/ElastiCacheEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

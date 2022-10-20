@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/apigateway/APIGatewayClient.h>
 #include <aws/apigateway/APIGatewayEndpoint.h>
 #include <aws/apigateway/APIGatewayErrorMarshaller.h>
+#include <aws/apigateway/APIGatewayEndpointProvider.h>
 #include <aws/apigateway/model/CreateApiKeyRequest.h>
 #include <aws/apigateway/model/CreateAuthorizerRequest.h>
 #include <aws/apigateway/model/CreateBasePathMappingRequest.h>
@@ -148,19 +150,66 @@ using namespace Aws::APIGateway;
 using namespace Aws::APIGateway::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::APIGateway::Endpoint::APIGatewayEndpointProvider::APIGatewayResolveEndpointOutcome;
 
 
 const char* APIGatewayClient::SERVICE_NAME = "apigateway";
 const char* APIGatewayClient::ALLOCATION_TAG = "APIGatewayClient";
 
-APIGatewayClient::APIGatewayClient(const Client::ClientConfiguration& clientConfiguration) :
+APIGatewayClient::APIGatewayClient(const Client::ClientConfiguration& clientConfiguration,
+                                   std::shared_ptr<Endpoint::APIGatewayEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<APIGatewayErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+APIGatewayClient::APIGatewayClient(const AWSCredentials& credentials,
+                                   std::shared_ptr<Endpoint::APIGatewayEndpointProvider> endpointProvider,
+                                   const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<APIGatewayErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+APIGatewayClient::APIGatewayClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                   std::shared_ptr<Endpoint::APIGatewayEndpointProvider> endpointProvider,
+                                   const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<APIGatewayErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  APIGatewayClient::APIGatewayClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<APIGatewayErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<APIGateway::Endpoint::APIGatewayEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -173,7 +222,8 @@ APIGatewayClient::APIGatewayClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<APIGatewayErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<APIGateway::Endpoint::APIGatewayEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -186,11 +236,13 @@ APIGatewayClient::APIGatewayClient(const std::shared_ptr<AWSCredentialsProvider>
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<APIGatewayErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<APIGateway::Endpoint::APIGatewayEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 APIGatewayClient::~APIGatewayClient()
 {
 }
@@ -198,34 +250,21 @@ APIGatewayClient::~APIGatewayClient()
 void APIGatewayClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("API Gateway");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + APIGatewayEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void APIGatewayClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 CreateApiKeyOutcome APIGatewayClient::CreateApiKey(const CreateApiKeyRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/apikeys");
-  return CreateApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateApiKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateApiKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateApiKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateApiKeyOutcomeCallable APIGatewayClient::CreateApiKeyCallable(const CreateApiKeyRequest& request) const
@@ -246,16 +285,15 @@ void APIGatewayClient::CreateApiKeyAsync(const CreateApiKeyRequest& request, con
 
 CreateAuthorizerOutcome APIGatewayClient::CreateAuthorizer(const CreateAuthorizerRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateAuthorizer", "Required field: RestApiId, is not set");
     return CreateAuthorizerOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/authorizers");
-  return CreateAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateAuthorizerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAuthorizerOutcomeCallable APIGatewayClient::CreateAuthorizerCallable(const CreateAuthorizerRequest& request) const
@@ -276,16 +314,15 @@ void APIGatewayClient::CreateAuthorizerAsync(const CreateAuthorizerRequest& requ
 
 CreateBasePathMappingOutcome APIGatewayClient::CreateBasePathMapping(const CreateBasePathMappingRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBasePathMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateBasePathMapping", "Required field: DomainName, is not set");
     return CreateBasePathMappingOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/domainnames/");
-  uri.AddPathSegment(request.GetDomainName());
-  uri.AddPathSegments("/basepathmappings");
-  return CreateBasePathMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBasePathMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateBasePathMappingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBasePathMappingOutcomeCallable APIGatewayClient::CreateBasePathMappingCallable(const CreateBasePathMappingRequest& request) const
@@ -306,16 +343,15 @@ void APIGatewayClient::CreateBasePathMappingAsync(const CreateBasePathMappingReq
 
 CreateDeploymentOutcome APIGatewayClient::CreateDeployment(const CreateDeploymentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateDeployment", "Required field: RestApiId, is not set");
     return CreateDeploymentOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/deployments");
-  return CreateDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDeploymentOutcomeCallable APIGatewayClient::CreateDeploymentCallable(const CreateDeploymentRequest& request) const
@@ -336,16 +372,15 @@ void APIGatewayClient::CreateDeploymentAsync(const CreateDeploymentRequest& requ
 
 CreateDocumentationPartOutcome APIGatewayClient::CreateDocumentationPart(const CreateDocumentationPartRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDocumentationPart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateDocumentationPart", "Required field: RestApiId, is not set");
     return CreateDocumentationPartOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/documentation/parts");
-  return CreateDocumentationPartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDocumentationPart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateDocumentationPartOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDocumentationPartOutcomeCallable APIGatewayClient::CreateDocumentationPartCallable(const CreateDocumentationPartRequest& request) const
@@ -366,16 +401,15 @@ void APIGatewayClient::CreateDocumentationPartAsync(const CreateDocumentationPar
 
 CreateDocumentationVersionOutcome APIGatewayClient::CreateDocumentationVersion(const CreateDocumentationVersionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDocumentationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateDocumentationVersion", "Required field: RestApiId, is not set");
     return CreateDocumentationVersionOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/documentation/versions");
-  return CreateDocumentationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDocumentationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateDocumentationVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDocumentationVersionOutcomeCallable APIGatewayClient::CreateDocumentationVersionCallable(const CreateDocumentationVersionRequest& request) const
@@ -396,9 +430,10 @@ void APIGatewayClient::CreateDocumentationVersionAsync(const CreateDocumentation
 
 CreateDomainNameOutcome APIGatewayClient::CreateDomainName(const CreateDomainNameRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/domainnames");
-  return CreateDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateDomainNameOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDomainNameOutcomeCallable APIGatewayClient::CreateDomainNameCallable(const CreateDomainNameRequest& request) const
@@ -419,16 +454,15 @@ void APIGatewayClient::CreateDomainNameAsync(const CreateDomainNameRequest& requ
 
 CreateModelOutcome APIGatewayClient::CreateModel(const CreateModelRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateModel", "Required field: RestApiId, is not set");
     return CreateModelOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/models");
-  return CreateModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateModelOutcomeCallable APIGatewayClient::CreateModelCallable(const CreateModelRequest& request) const
@@ -449,16 +483,15 @@ void APIGatewayClient::CreateModelAsync(const CreateModelRequest& request, const
 
 CreateRequestValidatorOutcome APIGatewayClient::CreateRequestValidator(const CreateRequestValidatorRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRequestValidator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateRequestValidator", "Required field: RestApiId, is not set");
     return CreateRequestValidatorOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/requestvalidators");
-  return CreateRequestValidatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRequestValidator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateRequestValidatorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRequestValidatorOutcomeCallable APIGatewayClient::CreateRequestValidatorCallable(const CreateRequestValidatorRequest& request) const
@@ -479,6 +512,7 @@ void APIGatewayClient::CreateRequestValidatorAsync(const CreateRequestValidatorR
 
 CreateResourceOutcome APIGatewayClient::CreateResource(const CreateResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateResource", "Required field: RestApiId, is not set");
@@ -489,12 +523,9 @@ CreateResourceOutcome APIGatewayClient::CreateResource(const CreateResourceReque
     AWS_LOGSTREAM_ERROR("CreateResource", "Required field: ParentId, is not set");
     return CreateResourceOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ParentId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetParentId());
-  return CreateResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateResourceOutcomeCallable APIGatewayClient::CreateResourceCallable(const CreateResourceRequest& request) const
@@ -515,9 +546,10 @@ void APIGatewayClient::CreateResourceAsync(const CreateResourceRequest& request,
 
 CreateRestApiOutcome APIGatewayClient::CreateRestApi(const CreateRestApiRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis");
-  return CreateRestApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRestApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRestApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateRestApiOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRestApiOutcomeCallable APIGatewayClient::CreateRestApiCallable(const CreateRestApiRequest& request) const
@@ -538,16 +570,15 @@ void APIGatewayClient::CreateRestApiAsync(const CreateRestApiRequest& request, c
 
 CreateStageOutcome APIGatewayClient::CreateStage(const CreateStageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateStage", "Required field: RestApiId, is not set");
     return CreateStageOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/stages");
-  return CreateStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateStageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateStageOutcomeCallable APIGatewayClient::CreateStageCallable(const CreateStageRequest& request) const
@@ -568,9 +599,10 @@ void APIGatewayClient::CreateStageAsync(const CreateStageRequest& request, const
 
 CreateUsagePlanOutcome APIGatewayClient::CreateUsagePlan(const CreateUsagePlanRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/usageplans");
-  return CreateUsagePlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUsagePlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateUsagePlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateUsagePlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUsagePlanOutcomeCallable APIGatewayClient::CreateUsagePlanCallable(const CreateUsagePlanRequest& request) const
@@ -591,16 +623,15 @@ void APIGatewayClient::CreateUsagePlanAsync(const CreateUsagePlanRequest& reques
 
 CreateUsagePlanKeyOutcome APIGatewayClient::CreateUsagePlanKey(const CreateUsagePlanKeyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateUsagePlanKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UsagePlanIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateUsagePlanKey", "Required field: UsagePlanId, is not set");
     return CreateUsagePlanKeyOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UsagePlanId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/usageplans/");
-  uri.AddPathSegment(request.GetUsagePlanId());
-  uri.AddPathSegments("/keys");
-  return CreateUsagePlanKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateUsagePlanKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateUsagePlanKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateUsagePlanKeyOutcomeCallable APIGatewayClient::CreateUsagePlanKeyCallable(const CreateUsagePlanKeyRequest& request) const
@@ -621,9 +652,10 @@ void APIGatewayClient::CreateUsagePlanKeyAsync(const CreateUsagePlanKeyRequest& 
 
 CreateVpcLinkOutcome APIGatewayClient::CreateVpcLink(const CreateVpcLinkRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/vpclinks");
-  return CreateVpcLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateVpcLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateVpcLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateVpcLinkOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateVpcLinkOutcomeCallable APIGatewayClient::CreateVpcLinkCallable(const CreateVpcLinkRequest& request) const
@@ -644,15 +676,15 @@ void APIGatewayClient::CreateVpcLinkAsync(const CreateVpcLinkRequest& request, c
 
 DeleteApiKeyOutcome APIGatewayClient::DeleteApiKey(const DeleteApiKeyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteApiKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiKeyHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteApiKey", "Required field: ApiKey, is not set");
     return DeleteApiKeyOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiKey]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/apikeys/");
-  uri.AddPathSegment(request.GetApiKey());
-  return DeleteApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteApiKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteApiKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteApiKeyOutcomeCallable APIGatewayClient::DeleteApiKeyCallable(const DeleteApiKeyRequest& request) const
@@ -673,6 +705,7 @@ void APIGatewayClient::DeleteApiKeyAsync(const DeleteApiKeyRequest& request, con
 
 DeleteAuthorizerOutcome APIGatewayClient::DeleteAuthorizer(const DeleteAuthorizerRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteAuthorizer", "Required field: RestApiId, is not set");
@@ -683,12 +716,9 @@ DeleteAuthorizerOutcome APIGatewayClient::DeleteAuthorizer(const DeleteAuthorize
     AWS_LOGSTREAM_ERROR("DeleteAuthorizer", "Required field: AuthorizerId, is not set");
     return DeleteAuthorizerOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/authorizers/");
-  uri.AddPathSegment(request.GetAuthorizerId());
-  return DeleteAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteAuthorizerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAuthorizerOutcomeCallable APIGatewayClient::DeleteAuthorizerCallable(const DeleteAuthorizerRequest& request) const
@@ -709,6 +739,7 @@ void APIGatewayClient::DeleteAuthorizerAsync(const DeleteAuthorizerRequest& requ
 
 DeleteBasePathMappingOutcome APIGatewayClient::DeleteBasePathMapping(const DeleteBasePathMappingRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBasePathMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteBasePathMapping", "Required field: DomainName, is not set");
@@ -719,12 +750,9 @@ DeleteBasePathMappingOutcome APIGatewayClient::DeleteBasePathMapping(const Delet
     AWS_LOGSTREAM_ERROR("DeleteBasePathMapping", "Required field: BasePath, is not set");
     return DeleteBasePathMappingOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BasePath]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/domainnames/");
-  uri.AddPathSegment(request.GetDomainName());
-  uri.AddPathSegments("/basepathmappings/");
-  uri.AddPathSegment(request.GetBasePath());
-  return DeleteBasePathMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBasePathMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteBasePathMappingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBasePathMappingOutcomeCallable APIGatewayClient::DeleteBasePathMappingCallable(const DeleteBasePathMappingRequest& request) const
@@ -745,15 +773,15 @@ void APIGatewayClient::DeleteBasePathMappingAsync(const DeleteBasePathMappingReq
 
 DeleteClientCertificateOutcome APIGatewayClient::DeleteClientCertificate(const DeleteClientCertificateRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteClientCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClientCertificateIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteClientCertificate", "Required field: ClientCertificateId, is not set");
     return DeleteClientCertificateOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientCertificateId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/clientcertificates/");
-  uri.AddPathSegment(request.GetClientCertificateId());
-  return DeleteClientCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteClientCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteClientCertificateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteClientCertificateOutcomeCallable APIGatewayClient::DeleteClientCertificateCallable(const DeleteClientCertificateRequest& request) const
@@ -774,6 +802,7 @@ void APIGatewayClient::DeleteClientCertificateAsync(const DeleteClientCertificat
 
 DeleteDeploymentOutcome APIGatewayClient::DeleteDeployment(const DeleteDeploymentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteDeployment", "Required field: RestApiId, is not set");
@@ -784,12 +813,9 @@ DeleteDeploymentOutcome APIGatewayClient::DeleteDeployment(const DeleteDeploymen
     AWS_LOGSTREAM_ERROR("DeleteDeployment", "Required field: DeploymentId, is not set");
     return DeleteDeploymentOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/deployments/");
-  uri.AddPathSegment(request.GetDeploymentId());
-  return DeleteDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDeploymentOutcomeCallable APIGatewayClient::DeleteDeploymentCallable(const DeleteDeploymentRequest& request) const
@@ -810,6 +836,7 @@ void APIGatewayClient::DeleteDeploymentAsync(const DeleteDeploymentRequest& requ
 
 DeleteDocumentationPartOutcome APIGatewayClient::DeleteDocumentationPart(const DeleteDocumentationPartRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDocumentationPart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteDocumentationPart", "Required field: RestApiId, is not set");
@@ -820,12 +847,9 @@ DeleteDocumentationPartOutcome APIGatewayClient::DeleteDocumentationPart(const D
     AWS_LOGSTREAM_ERROR("DeleteDocumentationPart", "Required field: DocumentationPartId, is not set");
     return DeleteDocumentationPartOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentationPartId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/documentation/parts/");
-  uri.AddPathSegment(request.GetDocumentationPartId());
-  return DeleteDocumentationPartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDocumentationPart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteDocumentationPartOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDocumentationPartOutcomeCallable APIGatewayClient::DeleteDocumentationPartCallable(const DeleteDocumentationPartRequest& request) const
@@ -846,6 +870,7 @@ void APIGatewayClient::DeleteDocumentationPartAsync(const DeleteDocumentationPar
 
 DeleteDocumentationVersionOutcome APIGatewayClient::DeleteDocumentationVersion(const DeleteDocumentationVersionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDocumentationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteDocumentationVersion", "Required field: RestApiId, is not set");
@@ -856,12 +881,9 @@ DeleteDocumentationVersionOutcome APIGatewayClient::DeleteDocumentationVersion(c
     AWS_LOGSTREAM_ERROR("DeleteDocumentationVersion", "Required field: DocumentationVersion, is not set");
     return DeleteDocumentationVersionOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentationVersion]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/documentation/versions/");
-  uri.AddPathSegment(request.GetDocumentationVersion());
-  return DeleteDocumentationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDocumentationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteDocumentationVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDocumentationVersionOutcomeCallable APIGatewayClient::DeleteDocumentationVersionCallable(const DeleteDocumentationVersionRequest& request) const
@@ -882,15 +904,15 @@ void APIGatewayClient::DeleteDocumentationVersionAsync(const DeleteDocumentation
 
 DeleteDomainNameOutcome APIGatewayClient::DeleteDomainName(const DeleteDomainNameRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteDomainName", "Required field: DomainName, is not set");
     return DeleteDomainNameOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/domainnames/");
-  uri.AddPathSegment(request.GetDomainName());
-  return DeleteDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteDomainNameOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDomainNameOutcomeCallable APIGatewayClient::DeleteDomainNameCallable(const DeleteDomainNameRequest& request) const
@@ -911,6 +933,7 @@ void APIGatewayClient::DeleteDomainNameAsync(const DeleteDomainNameRequest& requ
 
 DeleteGatewayResponseOutcome APIGatewayClient::DeleteGatewayResponse(const DeleteGatewayResponseRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGatewayResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteGatewayResponse", "Required field: RestApiId, is not set");
@@ -921,12 +944,9 @@ DeleteGatewayResponseOutcome APIGatewayClient::DeleteGatewayResponse(const Delet
     AWS_LOGSTREAM_ERROR("DeleteGatewayResponse", "Required field: ResponseType, is not set");
     return DeleteGatewayResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResponseType]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/gatewayresponses/");
-  uri.AddPathSegment(GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType()));
-  return DeleteGatewayResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteGatewayResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteGatewayResponseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGatewayResponseOutcomeCallable APIGatewayClient::DeleteGatewayResponseCallable(const DeleteGatewayResponseRequest& request) const
@@ -947,6 +967,7 @@ void APIGatewayClient::DeleteGatewayResponseAsync(const DeleteGatewayResponseReq
 
 DeleteIntegrationOutcome APIGatewayClient::DeleteIntegration(const DeleteIntegrationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteIntegration", "Required field: RestApiId, is not set");
@@ -962,15 +983,9 @@ DeleteIntegrationOutcome APIGatewayClient::DeleteIntegration(const DeleteIntegra
     AWS_LOGSTREAM_ERROR("DeleteIntegration", "Required field: HttpMethod, is not set");
     return DeleteIntegrationOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  uri.AddPathSegments("/integration");
-  return DeleteIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteIntegrationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteIntegrationOutcomeCallable APIGatewayClient::DeleteIntegrationCallable(const DeleteIntegrationRequest& request) const
@@ -991,6 +1006,7 @@ void APIGatewayClient::DeleteIntegrationAsync(const DeleteIntegrationRequest& re
 
 DeleteIntegrationResponseOutcome APIGatewayClient::DeleteIntegrationResponse(const DeleteIntegrationResponseRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIntegrationResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteIntegrationResponse", "Required field: RestApiId, is not set");
@@ -1011,16 +1027,9 @@ DeleteIntegrationResponseOutcome APIGatewayClient::DeleteIntegrationResponse(con
     AWS_LOGSTREAM_ERROR("DeleteIntegrationResponse", "Required field: StatusCode, is not set");
     return DeleteIntegrationResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  uri.AddPathSegments("/integration/responses/");
-  uri.AddPathSegment(request.GetStatusCode());
-  return DeleteIntegrationResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteIntegrationResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteIntegrationResponseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteIntegrationResponseOutcomeCallable APIGatewayClient::DeleteIntegrationResponseCallable(const DeleteIntegrationResponseRequest& request) const
@@ -1041,6 +1050,7 @@ void APIGatewayClient::DeleteIntegrationResponseAsync(const DeleteIntegrationRes
 
 DeleteMethodOutcome APIGatewayClient::DeleteMethod(const DeleteMethodRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMethod, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteMethod", "Required field: RestApiId, is not set");
@@ -1056,14 +1066,9 @@ DeleteMethodOutcome APIGatewayClient::DeleteMethod(const DeleteMethodRequest& re
     AWS_LOGSTREAM_ERROR("DeleteMethod", "Required field: HttpMethod, is not set");
     return DeleteMethodOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  return DeleteMethodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMethod, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteMethodOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMethodOutcomeCallable APIGatewayClient::DeleteMethodCallable(const DeleteMethodRequest& request) const
@@ -1084,6 +1089,7 @@ void APIGatewayClient::DeleteMethodAsync(const DeleteMethodRequest& request, con
 
 DeleteMethodResponseOutcome APIGatewayClient::DeleteMethodResponse(const DeleteMethodResponseRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMethodResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteMethodResponse", "Required field: RestApiId, is not set");
@@ -1104,16 +1110,9 @@ DeleteMethodResponseOutcome APIGatewayClient::DeleteMethodResponse(const DeleteM
     AWS_LOGSTREAM_ERROR("DeleteMethodResponse", "Required field: StatusCode, is not set");
     return DeleteMethodResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  uri.AddPathSegments("/responses/");
-  uri.AddPathSegment(request.GetStatusCode());
-  return DeleteMethodResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMethodResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteMethodResponseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMethodResponseOutcomeCallable APIGatewayClient::DeleteMethodResponseCallable(const DeleteMethodResponseRequest& request) const
@@ -1134,6 +1133,7 @@ void APIGatewayClient::DeleteMethodResponseAsync(const DeleteMethodResponseReque
 
 DeleteModelOutcome APIGatewayClient::DeleteModel(const DeleteModelRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteModel", "Required field: RestApiId, is not set");
@@ -1144,12 +1144,9 @@ DeleteModelOutcome APIGatewayClient::DeleteModel(const DeleteModelRequest& reque
     AWS_LOGSTREAM_ERROR("DeleteModel", "Required field: ModelName, is not set");
     return DeleteModelOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/models/");
-  uri.AddPathSegment(request.GetModelName());
-  return DeleteModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteModelOutcomeCallable APIGatewayClient::DeleteModelCallable(const DeleteModelRequest& request) const
@@ -1170,6 +1167,7 @@ void APIGatewayClient::DeleteModelAsync(const DeleteModelRequest& request, const
 
 DeleteRequestValidatorOutcome APIGatewayClient::DeleteRequestValidator(const DeleteRequestValidatorRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRequestValidator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteRequestValidator", "Required field: RestApiId, is not set");
@@ -1180,12 +1178,9 @@ DeleteRequestValidatorOutcome APIGatewayClient::DeleteRequestValidator(const Del
     AWS_LOGSTREAM_ERROR("DeleteRequestValidator", "Required field: RequestValidatorId, is not set");
     return DeleteRequestValidatorOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestValidatorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/requestvalidators/");
-  uri.AddPathSegment(request.GetRequestValidatorId());
-  return DeleteRequestValidatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRequestValidator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteRequestValidatorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRequestValidatorOutcomeCallable APIGatewayClient::DeleteRequestValidatorCallable(const DeleteRequestValidatorRequest& request) const
@@ -1206,6 +1201,7 @@ void APIGatewayClient::DeleteRequestValidatorAsync(const DeleteRequestValidatorR
 
 DeleteResourceOutcome APIGatewayClient::DeleteResource(const DeleteResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteResource", "Required field: RestApiId, is not set");
@@ -1216,12 +1212,9 @@ DeleteResourceOutcome APIGatewayClient::DeleteResource(const DeleteResourceReque
     AWS_LOGSTREAM_ERROR("DeleteResource", "Required field: ResourceId, is not set");
     return DeleteResourceOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  return DeleteResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteResourceOutcomeCallable APIGatewayClient::DeleteResourceCallable(const DeleteResourceRequest& request) const
@@ -1242,15 +1235,15 @@ void APIGatewayClient::DeleteResourceAsync(const DeleteResourceRequest& request,
 
 DeleteRestApiOutcome APIGatewayClient::DeleteRestApi(const DeleteRestApiRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRestApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteRestApi", "Required field: RestApiId, is not set");
     return DeleteRestApiOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  return DeleteRestApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRestApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteRestApiOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRestApiOutcomeCallable APIGatewayClient::DeleteRestApiCallable(const DeleteRestApiRequest& request) const
@@ -1271,6 +1264,7 @@ void APIGatewayClient::DeleteRestApiAsync(const DeleteRestApiRequest& request, c
 
 DeleteStageOutcome APIGatewayClient::DeleteStage(const DeleteStageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteStage", "Required field: RestApiId, is not set");
@@ -1281,12 +1275,9 @@ DeleteStageOutcome APIGatewayClient::DeleteStage(const DeleteStageRequest& reque
     AWS_LOGSTREAM_ERROR("DeleteStage", "Required field: StageName, is not set");
     return DeleteStageOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/stages/");
-  uri.AddPathSegment(request.GetStageName());
-  return DeleteStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteStageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteStageOutcomeCallable APIGatewayClient::DeleteStageCallable(const DeleteStageRequest& request) const
@@ -1307,15 +1298,15 @@ void APIGatewayClient::DeleteStageAsync(const DeleteStageRequest& request, const
 
 DeleteUsagePlanOutcome APIGatewayClient::DeleteUsagePlan(const DeleteUsagePlanRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUsagePlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UsagePlanIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteUsagePlan", "Required field: UsagePlanId, is not set");
     return DeleteUsagePlanOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UsagePlanId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/usageplans/");
-  uri.AddPathSegment(request.GetUsagePlanId());
-  return DeleteUsagePlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteUsagePlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteUsagePlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUsagePlanOutcomeCallable APIGatewayClient::DeleteUsagePlanCallable(const DeleteUsagePlanRequest& request) const
@@ -1336,6 +1327,7 @@ void APIGatewayClient::DeleteUsagePlanAsync(const DeleteUsagePlanRequest& reques
 
 DeleteUsagePlanKeyOutcome APIGatewayClient::DeleteUsagePlanKey(const DeleteUsagePlanKeyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteUsagePlanKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UsagePlanIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteUsagePlanKey", "Required field: UsagePlanId, is not set");
@@ -1346,12 +1338,9 @@ DeleteUsagePlanKeyOutcome APIGatewayClient::DeleteUsagePlanKey(const DeleteUsage
     AWS_LOGSTREAM_ERROR("DeleteUsagePlanKey", "Required field: KeyId, is not set");
     return DeleteUsagePlanKeyOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KeyId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/usageplans/");
-  uri.AddPathSegment(request.GetUsagePlanId());
-  uri.AddPathSegments("/keys/");
-  uri.AddPathSegment(request.GetKeyId());
-  return DeleteUsagePlanKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteUsagePlanKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteUsagePlanKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUsagePlanKeyOutcomeCallable APIGatewayClient::DeleteUsagePlanKeyCallable(const DeleteUsagePlanKeyRequest& request) const
@@ -1372,15 +1361,15 @@ void APIGatewayClient::DeleteUsagePlanKeyAsync(const DeleteUsagePlanKeyRequest& 
 
 DeleteVpcLinkOutcome APIGatewayClient::DeleteVpcLink(const DeleteVpcLinkRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteVpcLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VpcLinkIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteVpcLink", "Required field: VpcLinkId, is not set");
     return DeleteVpcLinkOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcLinkId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/vpclinks/");
-  uri.AddPathSegment(request.GetVpcLinkId());
-  return DeleteVpcLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteVpcLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteVpcLinkOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteVpcLinkOutcomeCallable APIGatewayClient::DeleteVpcLinkCallable(const DeleteVpcLinkRequest& request) const
@@ -1401,6 +1390,7 @@ void APIGatewayClient::DeleteVpcLinkAsync(const DeleteVpcLinkRequest& request, c
 
 FlushStageAuthorizersCacheOutcome APIGatewayClient::FlushStageAuthorizersCache(const FlushStageAuthorizersCacheRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, FlushStageAuthorizersCache, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("FlushStageAuthorizersCache", "Required field: RestApiId, is not set");
@@ -1411,13 +1401,9 @@ FlushStageAuthorizersCacheOutcome APIGatewayClient::FlushStageAuthorizersCache(c
     AWS_LOGSTREAM_ERROR("FlushStageAuthorizersCache", "Required field: StageName, is not set");
     return FlushStageAuthorizersCacheOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/stages/");
-  uri.AddPathSegment(request.GetStageName());
-  uri.AddPathSegments("/cache/authorizers");
-  return FlushStageAuthorizersCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, FlushStageAuthorizersCache, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return FlushStageAuthorizersCacheOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 FlushStageAuthorizersCacheOutcomeCallable APIGatewayClient::FlushStageAuthorizersCacheCallable(const FlushStageAuthorizersCacheRequest& request) const
@@ -1438,6 +1424,7 @@ void APIGatewayClient::FlushStageAuthorizersCacheAsync(const FlushStageAuthorize
 
 FlushStageCacheOutcome APIGatewayClient::FlushStageCache(const FlushStageCacheRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, FlushStageCache, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("FlushStageCache", "Required field: RestApiId, is not set");
@@ -1448,13 +1435,9 @@ FlushStageCacheOutcome APIGatewayClient::FlushStageCache(const FlushStageCacheRe
     AWS_LOGSTREAM_ERROR("FlushStageCache", "Required field: StageName, is not set");
     return FlushStageCacheOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/stages/");
-  uri.AddPathSegment(request.GetStageName());
-  uri.AddPathSegments("/cache/data");
-  return FlushStageCacheOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, FlushStageCache, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return FlushStageCacheOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 FlushStageCacheOutcomeCallable APIGatewayClient::FlushStageCacheCallable(const FlushStageCacheRequest& request) const
@@ -1475,9 +1458,10 @@ void APIGatewayClient::FlushStageCacheAsync(const FlushStageCacheRequest& reques
 
 GenerateClientCertificateOutcome APIGatewayClient::GenerateClientCertificate(const GenerateClientCertificateRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/clientcertificates");
-  return GenerateClientCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GenerateClientCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GenerateClientCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GenerateClientCertificateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GenerateClientCertificateOutcomeCallable APIGatewayClient::GenerateClientCertificateCallable(const GenerateClientCertificateRequest& request) const
@@ -1498,9 +1482,10 @@ void APIGatewayClient::GenerateClientCertificateAsync(const GenerateClientCertif
 
 GetAccountOutcome APIGatewayClient::GetAccount(const GetAccountRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/account");
-  return GetAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetAccountOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAccountOutcomeCallable APIGatewayClient::GetAccountCallable(const GetAccountRequest& request) const
@@ -1521,15 +1506,15 @@ void APIGatewayClient::GetAccountAsync(const GetAccountRequest& request, const G
 
 GetApiKeyOutcome APIGatewayClient::GetApiKey(const GetApiKeyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApiKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiKeyHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetApiKey", "Required field: ApiKey, is not set");
     return GetApiKeyOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiKey]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/apikeys/");
-  uri.AddPathSegment(request.GetApiKey());
-  return GetApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetApiKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetApiKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApiKeyOutcomeCallable APIGatewayClient::GetApiKeyCallable(const GetApiKeyRequest& request) const
@@ -1550,9 +1535,10 @@ void APIGatewayClient::GetApiKeyAsync(const GetApiKeyRequest& request, const Get
 
 GetApiKeysOutcome APIGatewayClient::GetApiKeys(const GetApiKeysRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/apikeys");
-  return GetApiKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetApiKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetApiKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetApiKeysOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetApiKeysOutcomeCallable APIGatewayClient::GetApiKeysCallable(const GetApiKeysRequest& request) const
@@ -1573,6 +1559,7 @@ void APIGatewayClient::GetApiKeysAsync(const GetApiKeysRequest& request, const G
 
 GetAuthorizerOutcome APIGatewayClient::GetAuthorizer(const GetAuthorizerRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetAuthorizer", "Required field: RestApiId, is not set");
@@ -1583,12 +1570,9 @@ GetAuthorizerOutcome APIGatewayClient::GetAuthorizer(const GetAuthorizerRequest&
     AWS_LOGSTREAM_ERROR("GetAuthorizer", "Required field: AuthorizerId, is not set");
     return GetAuthorizerOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/authorizers/");
-  uri.AddPathSegment(request.GetAuthorizerId());
-  return GetAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetAuthorizerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAuthorizerOutcomeCallable APIGatewayClient::GetAuthorizerCallable(const GetAuthorizerRequest& request) const
@@ -1609,16 +1593,15 @@ void APIGatewayClient::GetAuthorizerAsync(const GetAuthorizerRequest& request, c
 
 GetAuthorizersOutcome APIGatewayClient::GetAuthorizers(const GetAuthorizersRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAuthorizers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetAuthorizers", "Required field: RestApiId, is not set");
     return GetAuthorizersOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/authorizers");
-  return GetAuthorizersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAuthorizers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetAuthorizersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAuthorizersOutcomeCallable APIGatewayClient::GetAuthorizersCallable(const GetAuthorizersRequest& request) const
@@ -1639,6 +1622,7 @@ void APIGatewayClient::GetAuthorizersAsync(const GetAuthorizersRequest& request,
 
 GetBasePathMappingOutcome APIGatewayClient::GetBasePathMapping(const GetBasePathMappingRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBasePathMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetBasePathMapping", "Required field: DomainName, is not set");
@@ -1649,12 +1633,9 @@ GetBasePathMappingOutcome APIGatewayClient::GetBasePathMapping(const GetBasePath
     AWS_LOGSTREAM_ERROR("GetBasePathMapping", "Required field: BasePath, is not set");
     return GetBasePathMappingOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BasePath]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/domainnames/");
-  uri.AddPathSegment(request.GetDomainName());
-  uri.AddPathSegments("/basepathmappings/");
-  uri.AddPathSegment(request.GetBasePath());
-  return GetBasePathMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBasePathMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetBasePathMappingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBasePathMappingOutcomeCallable APIGatewayClient::GetBasePathMappingCallable(const GetBasePathMappingRequest& request) const
@@ -1675,16 +1656,15 @@ void APIGatewayClient::GetBasePathMappingAsync(const GetBasePathMappingRequest& 
 
 GetBasePathMappingsOutcome APIGatewayClient::GetBasePathMappings(const GetBasePathMappingsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBasePathMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetBasePathMappings", "Required field: DomainName, is not set");
     return GetBasePathMappingsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/domainnames/");
-  uri.AddPathSegment(request.GetDomainName());
-  uri.AddPathSegments("/basepathmappings");
-  return GetBasePathMappingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBasePathMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetBasePathMappingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBasePathMappingsOutcomeCallable APIGatewayClient::GetBasePathMappingsCallable(const GetBasePathMappingsRequest& request) const
@@ -1705,15 +1685,15 @@ void APIGatewayClient::GetBasePathMappingsAsync(const GetBasePathMappingsRequest
 
 GetClientCertificateOutcome APIGatewayClient::GetClientCertificate(const GetClientCertificateRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetClientCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClientCertificateIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetClientCertificate", "Required field: ClientCertificateId, is not set");
     return GetClientCertificateOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientCertificateId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/clientcertificates/");
-  uri.AddPathSegment(request.GetClientCertificateId());
-  return GetClientCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetClientCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetClientCertificateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetClientCertificateOutcomeCallable APIGatewayClient::GetClientCertificateCallable(const GetClientCertificateRequest& request) const
@@ -1734,9 +1714,10 @@ void APIGatewayClient::GetClientCertificateAsync(const GetClientCertificateReque
 
 GetClientCertificatesOutcome APIGatewayClient::GetClientCertificates(const GetClientCertificatesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/clientcertificates");
-  return GetClientCertificatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetClientCertificates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetClientCertificates, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetClientCertificatesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetClientCertificatesOutcomeCallable APIGatewayClient::GetClientCertificatesCallable(const GetClientCertificatesRequest& request) const
@@ -1757,6 +1738,7 @@ void APIGatewayClient::GetClientCertificatesAsync(const GetClientCertificatesReq
 
 GetDeploymentOutcome APIGatewayClient::GetDeployment(const GetDeploymentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDeployment", "Required field: RestApiId, is not set");
@@ -1767,12 +1749,9 @@ GetDeploymentOutcome APIGatewayClient::GetDeployment(const GetDeploymentRequest&
     AWS_LOGSTREAM_ERROR("GetDeployment", "Required field: DeploymentId, is not set");
     return GetDeploymentOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/deployments/");
-  uri.AddPathSegment(request.GetDeploymentId());
-  return GetDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDeploymentOutcomeCallable APIGatewayClient::GetDeploymentCallable(const GetDeploymentRequest& request) const
@@ -1793,16 +1772,15 @@ void APIGatewayClient::GetDeploymentAsync(const GetDeploymentRequest& request, c
 
 GetDeploymentsOutcome APIGatewayClient::GetDeployments(const GetDeploymentsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDeployments", "Required field: RestApiId, is not set");
     return GetDeploymentsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/deployments");
-  return GetDeploymentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDeploymentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDeploymentsOutcomeCallable APIGatewayClient::GetDeploymentsCallable(const GetDeploymentsRequest& request) const
@@ -1823,6 +1801,7 @@ void APIGatewayClient::GetDeploymentsAsync(const GetDeploymentsRequest& request,
 
 GetDocumentationPartOutcome APIGatewayClient::GetDocumentationPart(const GetDocumentationPartRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDocumentationPart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDocumentationPart", "Required field: RestApiId, is not set");
@@ -1833,12 +1812,9 @@ GetDocumentationPartOutcome APIGatewayClient::GetDocumentationPart(const GetDocu
     AWS_LOGSTREAM_ERROR("GetDocumentationPart", "Required field: DocumentationPartId, is not set");
     return GetDocumentationPartOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentationPartId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/documentation/parts/");
-  uri.AddPathSegment(request.GetDocumentationPartId());
-  return GetDocumentationPartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDocumentationPart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDocumentationPartOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDocumentationPartOutcomeCallable APIGatewayClient::GetDocumentationPartCallable(const GetDocumentationPartRequest& request) const
@@ -1859,16 +1835,15 @@ void APIGatewayClient::GetDocumentationPartAsync(const GetDocumentationPartReque
 
 GetDocumentationPartsOutcome APIGatewayClient::GetDocumentationParts(const GetDocumentationPartsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDocumentationParts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDocumentationParts", "Required field: RestApiId, is not set");
     return GetDocumentationPartsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/documentation/parts");
-  return GetDocumentationPartsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDocumentationParts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDocumentationPartsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDocumentationPartsOutcomeCallable APIGatewayClient::GetDocumentationPartsCallable(const GetDocumentationPartsRequest& request) const
@@ -1889,6 +1864,7 @@ void APIGatewayClient::GetDocumentationPartsAsync(const GetDocumentationPartsReq
 
 GetDocumentationVersionOutcome APIGatewayClient::GetDocumentationVersion(const GetDocumentationVersionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDocumentationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDocumentationVersion", "Required field: RestApiId, is not set");
@@ -1899,12 +1875,9 @@ GetDocumentationVersionOutcome APIGatewayClient::GetDocumentationVersion(const G
     AWS_LOGSTREAM_ERROR("GetDocumentationVersion", "Required field: DocumentationVersion, is not set");
     return GetDocumentationVersionOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentationVersion]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/documentation/versions/");
-  uri.AddPathSegment(request.GetDocumentationVersion());
-  return GetDocumentationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDocumentationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDocumentationVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDocumentationVersionOutcomeCallable APIGatewayClient::GetDocumentationVersionCallable(const GetDocumentationVersionRequest& request) const
@@ -1925,16 +1898,15 @@ void APIGatewayClient::GetDocumentationVersionAsync(const GetDocumentationVersio
 
 GetDocumentationVersionsOutcome APIGatewayClient::GetDocumentationVersions(const GetDocumentationVersionsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDocumentationVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDocumentationVersions", "Required field: RestApiId, is not set");
     return GetDocumentationVersionsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/documentation/versions");
-  return GetDocumentationVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDocumentationVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDocumentationVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDocumentationVersionsOutcomeCallable APIGatewayClient::GetDocumentationVersionsCallable(const GetDocumentationVersionsRequest& request) const
@@ -1955,15 +1927,15 @@ void APIGatewayClient::GetDocumentationVersionsAsync(const GetDocumentationVersi
 
 GetDomainNameOutcome APIGatewayClient::GetDomainName(const GetDomainNameRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDomainName", "Required field: DomainName, is not set");
     return GetDomainNameOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/domainnames/");
-  uri.AddPathSegment(request.GetDomainName());
-  return GetDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDomainNameOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDomainNameOutcomeCallable APIGatewayClient::GetDomainNameCallable(const GetDomainNameRequest& request) const
@@ -1984,9 +1956,10 @@ void APIGatewayClient::GetDomainNameAsync(const GetDomainNameRequest& request, c
 
 GetDomainNamesOutcome APIGatewayClient::GetDomainNames(const GetDomainNamesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/domainnames");
-  return GetDomainNamesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDomainNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDomainNames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDomainNamesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDomainNamesOutcomeCallable APIGatewayClient::GetDomainNamesCallable(const GetDomainNamesRequest& request) const
@@ -2007,6 +1980,7 @@ void APIGatewayClient::GetDomainNamesAsync(const GetDomainNamesRequest& request,
 
 GetExportOutcome APIGatewayClient::GetExport(const GetExportRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetExport", "Required field: RestApiId, is not set");
@@ -2022,14 +1996,9 @@ GetExportOutcome APIGatewayClient::GetExport(const GetExportRequest& request) co
     AWS_LOGSTREAM_ERROR("GetExport", "Required field: ExportType, is not set");
     return GetExportOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExportType]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/stages/");
-  uri.AddPathSegment(request.GetStageName());
-  uri.AddPathSegments("/exports/");
-  uri.AddPathSegment(request.GetExportType());
-  return GetExportOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetExportOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetExportOutcomeCallable APIGatewayClient::GetExportCallable(const GetExportRequest& request) const
@@ -2050,6 +2019,7 @@ void APIGatewayClient::GetExportAsync(const GetExportRequest& request, const Get
 
 GetGatewayResponseOutcome APIGatewayClient::GetGatewayResponse(const GetGatewayResponseRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGatewayResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetGatewayResponse", "Required field: RestApiId, is not set");
@@ -2060,12 +2030,9 @@ GetGatewayResponseOutcome APIGatewayClient::GetGatewayResponse(const GetGatewayR
     AWS_LOGSTREAM_ERROR("GetGatewayResponse", "Required field: ResponseType, is not set");
     return GetGatewayResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResponseType]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/gatewayresponses/");
-  uri.AddPathSegment(GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType()));
-  return GetGatewayResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGatewayResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetGatewayResponseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGatewayResponseOutcomeCallable APIGatewayClient::GetGatewayResponseCallable(const GetGatewayResponseRequest& request) const
@@ -2086,16 +2053,15 @@ void APIGatewayClient::GetGatewayResponseAsync(const GetGatewayResponseRequest& 
 
 GetGatewayResponsesOutcome APIGatewayClient::GetGatewayResponses(const GetGatewayResponsesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGatewayResponses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetGatewayResponses", "Required field: RestApiId, is not set");
     return GetGatewayResponsesOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/gatewayresponses");
-  return GetGatewayResponsesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGatewayResponses, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetGatewayResponsesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGatewayResponsesOutcomeCallable APIGatewayClient::GetGatewayResponsesCallable(const GetGatewayResponsesRequest& request) const
@@ -2116,6 +2082,7 @@ void APIGatewayClient::GetGatewayResponsesAsync(const GetGatewayResponsesRequest
 
 GetIntegrationOutcome APIGatewayClient::GetIntegration(const GetIntegrationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetIntegration", "Required field: RestApiId, is not set");
@@ -2131,15 +2098,9 @@ GetIntegrationOutcome APIGatewayClient::GetIntegration(const GetIntegrationReque
     AWS_LOGSTREAM_ERROR("GetIntegration", "Required field: HttpMethod, is not set");
     return GetIntegrationOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  uri.AddPathSegments("/integration");
-  return GetIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetIntegrationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetIntegrationOutcomeCallable APIGatewayClient::GetIntegrationCallable(const GetIntegrationRequest& request) const
@@ -2160,6 +2121,7 @@ void APIGatewayClient::GetIntegrationAsync(const GetIntegrationRequest& request,
 
 GetIntegrationResponseOutcome APIGatewayClient::GetIntegrationResponse(const GetIntegrationResponseRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIntegrationResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetIntegrationResponse", "Required field: RestApiId, is not set");
@@ -2180,16 +2142,9 @@ GetIntegrationResponseOutcome APIGatewayClient::GetIntegrationResponse(const Get
     AWS_LOGSTREAM_ERROR("GetIntegrationResponse", "Required field: StatusCode, is not set");
     return GetIntegrationResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  uri.AddPathSegments("/integration/responses/");
-  uri.AddPathSegment(request.GetStatusCode());
-  return GetIntegrationResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIntegrationResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetIntegrationResponseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetIntegrationResponseOutcomeCallable APIGatewayClient::GetIntegrationResponseCallable(const GetIntegrationResponseRequest& request) const
@@ -2210,6 +2165,7 @@ void APIGatewayClient::GetIntegrationResponseAsync(const GetIntegrationResponseR
 
 GetMethodOutcome APIGatewayClient::GetMethod(const GetMethodRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMethod, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetMethod", "Required field: RestApiId, is not set");
@@ -2225,14 +2181,9 @@ GetMethodOutcome APIGatewayClient::GetMethod(const GetMethodRequest& request) co
     AWS_LOGSTREAM_ERROR("GetMethod", "Required field: HttpMethod, is not set");
     return GetMethodOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  return GetMethodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMethod, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetMethodOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetMethodOutcomeCallable APIGatewayClient::GetMethodCallable(const GetMethodRequest& request) const
@@ -2253,6 +2204,7 @@ void APIGatewayClient::GetMethodAsync(const GetMethodRequest& request, const Get
 
 GetMethodResponseOutcome APIGatewayClient::GetMethodResponse(const GetMethodResponseRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMethodResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetMethodResponse", "Required field: RestApiId, is not set");
@@ -2273,16 +2225,9 @@ GetMethodResponseOutcome APIGatewayClient::GetMethodResponse(const GetMethodResp
     AWS_LOGSTREAM_ERROR("GetMethodResponse", "Required field: StatusCode, is not set");
     return GetMethodResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  uri.AddPathSegments("/responses/");
-  uri.AddPathSegment(request.GetStatusCode());
-  return GetMethodResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMethodResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetMethodResponseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetMethodResponseOutcomeCallable APIGatewayClient::GetMethodResponseCallable(const GetMethodResponseRequest& request) const
@@ -2303,6 +2248,7 @@ void APIGatewayClient::GetMethodResponseAsync(const GetMethodResponseRequest& re
 
 GetModelOutcome APIGatewayClient::GetModel(const GetModelRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetModel", "Required field: RestApiId, is not set");
@@ -2313,12 +2259,9 @@ GetModelOutcome APIGatewayClient::GetModel(const GetModelRequest& request) const
     AWS_LOGSTREAM_ERROR("GetModel", "Required field: ModelName, is not set");
     return GetModelOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/models/");
-  uri.AddPathSegment(request.GetModelName());
-  return GetModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetModelOutcomeCallable APIGatewayClient::GetModelCallable(const GetModelRequest& request) const
@@ -2339,6 +2282,7 @@ void APIGatewayClient::GetModelAsync(const GetModelRequest& request, const GetMo
 
 GetModelTemplateOutcome APIGatewayClient::GetModelTemplate(const GetModelTemplateRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetModelTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetModelTemplate", "Required field: RestApiId, is not set");
@@ -2349,13 +2293,9 @@ GetModelTemplateOutcome APIGatewayClient::GetModelTemplate(const GetModelTemplat
     AWS_LOGSTREAM_ERROR("GetModelTemplate", "Required field: ModelName, is not set");
     return GetModelTemplateOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/models/");
-  uri.AddPathSegment(request.GetModelName());
-  uri.AddPathSegments("/default_template");
-  return GetModelTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetModelTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetModelTemplateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetModelTemplateOutcomeCallable APIGatewayClient::GetModelTemplateCallable(const GetModelTemplateRequest& request) const
@@ -2376,16 +2316,15 @@ void APIGatewayClient::GetModelTemplateAsync(const GetModelTemplateRequest& requ
 
 GetModelsOutcome APIGatewayClient::GetModels(const GetModelsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetModels", "Required field: RestApiId, is not set");
     return GetModelsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/models");
-  return GetModelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetModels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetModelsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetModelsOutcomeCallable APIGatewayClient::GetModelsCallable(const GetModelsRequest& request) const
@@ -2406,6 +2345,7 @@ void APIGatewayClient::GetModelsAsync(const GetModelsRequest& request, const Get
 
 GetRequestValidatorOutcome APIGatewayClient::GetRequestValidator(const GetRequestValidatorRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRequestValidator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetRequestValidator", "Required field: RestApiId, is not set");
@@ -2416,12 +2356,9 @@ GetRequestValidatorOutcome APIGatewayClient::GetRequestValidator(const GetReques
     AWS_LOGSTREAM_ERROR("GetRequestValidator", "Required field: RequestValidatorId, is not set");
     return GetRequestValidatorOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestValidatorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/requestvalidators/");
-  uri.AddPathSegment(request.GetRequestValidatorId());
-  return GetRequestValidatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRequestValidator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetRequestValidatorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRequestValidatorOutcomeCallable APIGatewayClient::GetRequestValidatorCallable(const GetRequestValidatorRequest& request) const
@@ -2442,16 +2379,15 @@ void APIGatewayClient::GetRequestValidatorAsync(const GetRequestValidatorRequest
 
 GetRequestValidatorsOutcome APIGatewayClient::GetRequestValidators(const GetRequestValidatorsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRequestValidators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetRequestValidators", "Required field: RestApiId, is not set");
     return GetRequestValidatorsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/requestvalidators");
-  return GetRequestValidatorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRequestValidators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetRequestValidatorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRequestValidatorsOutcomeCallable APIGatewayClient::GetRequestValidatorsCallable(const GetRequestValidatorsRequest& request) const
@@ -2472,6 +2408,7 @@ void APIGatewayClient::GetRequestValidatorsAsync(const GetRequestValidatorsReque
 
 GetResourceOutcome APIGatewayClient::GetResource(const GetResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetResource", "Required field: RestApiId, is not set");
@@ -2482,12 +2419,9 @@ GetResourceOutcome APIGatewayClient::GetResource(const GetResourceRequest& reque
     AWS_LOGSTREAM_ERROR("GetResource", "Required field: ResourceId, is not set");
     return GetResourceOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  return GetResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetResourceOutcomeCallable APIGatewayClient::GetResourceCallable(const GetResourceRequest& request) const
@@ -2508,16 +2442,15 @@ void APIGatewayClient::GetResourceAsync(const GetResourceRequest& request, const
 
 GetResourcesOutcome APIGatewayClient::GetResources(const GetResourcesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetResources", "Required field: RestApiId, is not set");
     return GetResourcesOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources");
-  return GetResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetResourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetResourcesOutcomeCallable APIGatewayClient::GetResourcesCallable(const GetResourcesRequest& request) const
@@ -2538,15 +2471,15 @@ void APIGatewayClient::GetResourcesAsync(const GetResourcesRequest& request, con
 
 GetRestApiOutcome APIGatewayClient::GetRestApi(const GetRestApiRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRestApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetRestApi", "Required field: RestApiId, is not set");
     return GetRestApiOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  return GetRestApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRestApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetRestApiOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRestApiOutcomeCallable APIGatewayClient::GetRestApiCallable(const GetRestApiRequest& request) const
@@ -2567,9 +2500,10 @@ void APIGatewayClient::GetRestApiAsync(const GetRestApiRequest& request, const G
 
 GetRestApisOutcome APIGatewayClient::GetRestApis(const GetRestApisRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis");
-  return GetRestApisOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRestApis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetRestApis, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetRestApisOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRestApisOutcomeCallable APIGatewayClient::GetRestApisCallable(const GetRestApisRequest& request) const
@@ -2590,6 +2524,7 @@ void APIGatewayClient::GetRestApisAsync(const GetRestApisRequest& request, const
 
 GetSdkOutcome APIGatewayClient::GetSdk(const GetSdkRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSdk, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetSdk", "Required field: RestApiId, is not set");
@@ -2605,14 +2540,9 @@ GetSdkOutcome APIGatewayClient::GetSdk(const GetSdkRequest& request) const
     AWS_LOGSTREAM_ERROR("GetSdk", "Required field: SdkType, is not set");
     return GetSdkOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SdkType]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/stages/");
-  uri.AddPathSegment(request.GetStageName());
-  uri.AddPathSegments("/sdks/");
-  uri.AddPathSegment(request.GetSdkType());
-  return GetSdkOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSdk, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetSdkOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetSdkOutcomeCallable APIGatewayClient::GetSdkCallable(const GetSdkRequest& request) const
@@ -2633,15 +2563,15 @@ void APIGatewayClient::GetSdkAsync(const GetSdkRequest& request, const GetSdkRes
 
 GetSdkTypeOutcome APIGatewayClient::GetSdkType(const GetSdkTypeRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSdkType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetSdkType", "Required field: Id, is not set");
     return GetSdkTypeOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/sdktypes/");
-  uri.AddPathSegment(request.GetId());
-  return GetSdkTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSdkType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetSdkTypeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSdkTypeOutcomeCallable APIGatewayClient::GetSdkTypeCallable(const GetSdkTypeRequest& request) const
@@ -2662,9 +2592,10 @@ void APIGatewayClient::GetSdkTypeAsync(const GetSdkTypeRequest& request, const G
 
 GetSdkTypesOutcome APIGatewayClient::GetSdkTypes(const GetSdkTypesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/sdktypes");
-  return GetSdkTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSdkTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSdkTypes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetSdkTypesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSdkTypesOutcomeCallable APIGatewayClient::GetSdkTypesCallable(const GetSdkTypesRequest& request) const
@@ -2685,6 +2616,7 @@ void APIGatewayClient::GetSdkTypesAsync(const GetSdkTypesRequest& request, const
 
 GetStageOutcome APIGatewayClient::GetStage(const GetStageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetStage", "Required field: RestApiId, is not set");
@@ -2695,12 +2627,9 @@ GetStageOutcome APIGatewayClient::GetStage(const GetStageRequest& request) const
     AWS_LOGSTREAM_ERROR("GetStage", "Required field: StageName, is not set");
     return GetStageOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/stages/");
-  uri.AddPathSegment(request.GetStageName());
-  return GetStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetStageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStageOutcomeCallable APIGatewayClient::GetStageCallable(const GetStageRequest& request) const
@@ -2721,16 +2650,15 @@ void APIGatewayClient::GetStageAsync(const GetStageRequest& request, const GetSt
 
 GetStagesOutcome APIGatewayClient::GetStages(const GetStagesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetStages", "Required field: RestApiId, is not set");
     return GetStagesOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/stages");
-  return GetStagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetStagesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStagesOutcomeCallable APIGatewayClient::GetStagesCallable(const GetStagesRequest& request) const
@@ -2751,15 +2679,15 @@ void APIGatewayClient::GetStagesAsync(const GetStagesRequest& request, const Get
 
 GetTagsOutcome APIGatewayClient::GetTags(const GetTagsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetTags", "Required field: ResourceArn, is not set");
     return GetTagsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return GetTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetTagsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetTagsOutcomeCallable APIGatewayClient::GetTagsCallable(const GetTagsRequest& request) const
@@ -2780,6 +2708,7 @@ void APIGatewayClient::GetTagsAsync(const GetTagsRequest& request, const GetTags
 
 GetUsageOutcome APIGatewayClient::GetUsage(const GetUsageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UsagePlanIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetUsage", "Required field: UsagePlanId, is not set");
@@ -2795,11 +2724,9 @@ GetUsageOutcome APIGatewayClient::GetUsage(const GetUsageRequest& request) const
     AWS_LOGSTREAM_ERROR("GetUsage", "Required field: EndDate, is not set");
     return GetUsageOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndDate]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/usageplans/");
-  uri.AddPathSegment(request.GetUsagePlanId());
-  uri.AddPathSegments("/usage");
-  return GetUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetUsageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUsageOutcomeCallable APIGatewayClient::GetUsageCallable(const GetUsageRequest& request) const
@@ -2820,15 +2747,15 @@ void APIGatewayClient::GetUsageAsync(const GetUsageRequest& request, const GetUs
 
 GetUsagePlanOutcome APIGatewayClient::GetUsagePlan(const GetUsagePlanRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUsagePlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UsagePlanIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetUsagePlan", "Required field: UsagePlanId, is not set");
     return GetUsagePlanOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UsagePlanId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/usageplans/");
-  uri.AddPathSegment(request.GetUsagePlanId());
-  return GetUsagePlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetUsagePlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetUsagePlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUsagePlanOutcomeCallable APIGatewayClient::GetUsagePlanCallable(const GetUsagePlanRequest& request) const
@@ -2849,6 +2776,7 @@ void APIGatewayClient::GetUsagePlanAsync(const GetUsagePlanRequest& request, con
 
 GetUsagePlanKeyOutcome APIGatewayClient::GetUsagePlanKey(const GetUsagePlanKeyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUsagePlanKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UsagePlanIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetUsagePlanKey", "Required field: UsagePlanId, is not set");
@@ -2859,12 +2787,9 @@ GetUsagePlanKeyOutcome APIGatewayClient::GetUsagePlanKey(const GetUsagePlanKeyRe
     AWS_LOGSTREAM_ERROR("GetUsagePlanKey", "Required field: KeyId, is not set");
     return GetUsagePlanKeyOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KeyId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/usageplans/");
-  uri.AddPathSegment(request.GetUsagePlanId());
-  uri.AddPathSegments("/keys/");
-  uri.AddPathSegment(request.GetKeyId());
-  return GetUsagePlanKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetUsagePlanKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetUsagePlanKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUsagePlanKeyOutcomeCallable APIGatewayClient::GetUsagePlanKeyCallable(const GetUsagePlanKeyRequest& request) const
@@ -2885,16 +2810,15 @@ void APIGatewayClient::GetUsagePlanKeyAsync(const GetUsagePlanKeyRequest& reques
 
 GetUsagePlanKeysOutcome APIGatewayClient::GetUsagePlanKeys(const GetUsagePlanKeysRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUsagePlanKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UsagePlanIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetUsagePlanKeys", "Required field: UsagePlanId, is not set");
     return GetUsagePlanKeysOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UsagePlanId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/usageplans/");
-  uri.AddPathSegment(request.GetUsagePlanId());
-  uri.AddPathSegments("/keys");
-  return GetUsagePlanKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetUsagePlanKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetUsagePlanKeysOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUsagePlanKeysOutcomeCallable APIGatewayClient::GetUsagePlanKeysCallable(const GetUsagePlanKeysRequest& request) const
@@ -2915,9 +2839,10 @@ void APIGatewayClient::GetUsagePlanKeysAsync(const GetUsagePlanKeysRequest& requ
 
 GetUsagePlansOutcome APIGatewayClient::GetUsagePlans(const GetUsagePlansRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/usageplans");
-  return GetUsagePlansOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetUsagePlans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetUsagePlans, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetUsagePlansOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetUsagePlansOutcomeCallable APIGatewayClient::GetUsagePlansCallable(const GetUsagePlansRequest& request) const
@@ -2938,15 +2863,15 @@ void APIGatewayClient::GetUsagePlansAsync(const GetUsagePlansRequest& request, c
 
 GetVpcLinkOutcome APIGatewayClient::GetVpcLink(const GetVpcLinkRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVpcLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VpcLinkIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetVpcLink", "Required field: VpcLinkId, is not set");
     return GetVpcLinkOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcLinkId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/vpclinks/");
-  uri.AddPathSegment(request.GetVpcLinkId());
-  return GetVpcLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetVpcLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetVpcLinkOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetVpcLinkOutcomeCallable APIGatewayClient::GetVpcLinkCallable(const GetVpcLinkRequest& request) const
@@ -2967,9 +2892,10 @@ void APIGatewayClient::GetVpcLinkAsync(const GetVpcLinkRequest& request, const G
 
 GetVpcLinksOutcome APIGatewayClient::GetVpcLinks(const GetVpcLinksRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/vpclinks");
-  return GetVpcLinksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetVpcLinks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetVpcLinks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetVpcLinksOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetVpcLinksOutcomeCallable APIGatewayClient::GetVpcLinksCallable(const GetVpcLinksRequest& request) const
@@ -2990,17 +2916,15 @@ void APIGatewayClient::GetVpcLinksAsync(const GetVpcLinksRequest& request, const
 
 ImportApiKeysOutcome APIGatewayClient::ImportApiKeys(const ImportApiKeysRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportApiKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FormatHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ImportApiKeys", "Required field: Format, is not set");
     return ImportApiKeysOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Format]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  uri.AddPathSegments("/apikeys");
-  ss.str("?mode=import");
-  uri.SetQueryString(ss.str());
-  return ImportApiKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportApiKeys, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ImportApiKeysOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportApiKeysOutcomeCallable APIGatewayClient::ImportApiKeysCallable(const ImportApiKeysRequest& request) const
@@ -3021,16 +2945,15 @@ void APIGatewayClient::ImportApiKeysAsync(const ImportApiKeysRequest& request, c
 
 ImportDocumentationPartsOutcome APIGatewayClient::ImportDocumentationParts(const ImportDocumentationPartsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportDocumentationParts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ImportDocumentationParts", "Required field: RestApiId, is not set");
     return ImportDocumentationPartsOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/documentation/parts");
-  return ImportDocumentationPartsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportDocumentationParts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ImportDocumentationPartsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportDocumentationPartsOutcomeCallable APIGatewayClient::ImportDocumentationPartsCallable(const ImportDocumentationPartsRequest& request) const
@@ -3051,12 +2974,10 @@ void APIGatewayClient::ImportDocumentationPartsAsync(const ImportDocumentationPa
 
 ImportRestApiOutcome APIGatewayClient::ImportRestApi(const ImportRestApiRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  uri.AddPathSegments("/restapis");
-  ss.str("?mode=import");
-  uri.SetQueryString(ss.str());
-  return ImportRestApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportRestApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportRestApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ImportRestApiOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportRestApiOutcomeCallable APIGatewayClient::ImportRestApiCallable(const ImportRestApiRequest& request) const
@@ -3077,6 +2998,7 @@ void APIGatewayClient::ImportRestApiAsync(const ImportRestApiRequest& request, c
 
 PutGatewayResponseOutcome APIGatewayClient::PutGatewayResponse(const PutGatewayResponseRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutGatewayResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutGatewayResponse", "Required field: RestApiId, is not set");
@@ -3087,12 +3009,9 @@ PutGatewayResponseOutcome APIGatewayClient::PutGatewayResponse(const PutGatewayR
     AWS_LOGSTREAM_ERROR("PutGatewayResponse", "Required field: ResponseType, is not set");
     return PutGatewayResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResponseType]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/gatewayresponses/");
-  uri.AddPathSegment(GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType()));
-  return PutGatewayResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutGatewayResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutGatewayResponseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutGatewayResponseOutcomeCallable APIGatewayClient::PutGatewayResponseCallable(const PutGatewayResponseRequest& request) const
@@ -3113,6 +3032,7 @@ void APIGatewayClient::PutGatewayResponseAsync(const PutGatewayResponseRequest& 
 
 PutIntegrationOutcome APIGatewayClient::PutIntegration(const PutIntegrationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutIntegration", "Required field: RestApiId, is not set");
@@ -3128,15 +3048,9 @@ PutIntegrationOutcome APIGatewayClient::PutIntegration(const PutIntegrationReque
     AWS_LOGSTREAM_ERROR("PutIntegration", "Required field: HttpMethod, is not set");
     return PutIntegrationOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  uri.AddPathSegments("/integration");
-  return PutIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutIntegrationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutIntegrationOutcomeCallable APIGatewayClient::PutIntegrationCallable(const PutIntegrationRequest& request) const
@@ -3157,6 +3071,7 @@ void APIGatewayClient::PutIntegrationAsync(const PutIntegrationRequest& request,
 
 PutIntegrationResponseOutcome APIGatewayClient::PutIntegrationResponse(const PutIntegrationResponseRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutIntegrationResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutIntegrationResponse", "Required field: RestApiId, is not set");
@@ -3177,16 +3092,9 @@ PutIntegrationResponseOutcome APIGatewayClient::PutIntegrationResponse(const Put
     AWS_LOGSTREAM_ERROR("PutIntegrationResponse", "Required field: StatusCode, is not set");
     return PutIntegrationResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  uri.AddPathSegments("/integration/responses/");
-  uri.AddPathSegment(request.GetStatusCode());
-  return PutIntegrationResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutIntegrationResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutIntegrationResponseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutIntegrationResponseOutcomeCallable APIGatewayClient::PutIntegrationResponseCallable(const PutIntegrationResponseRequest& request) const
@@ -3207,6 +3115,7 @@ void APIGatewayClient::PutIntegrationResponseAsync(const PutIntegrationResponseR
 
 PutMethodOutcome APIGatewayClient::PutMethod(const PutMethodRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutMethod, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutMethod", "Required field: RestApiId, is not set");
@@ -3222,14 +3131,9 @@ PutMethodOutcome APIGatewayClient::PutMethod(const PutMethodRequest& request) co
     AWS_LOGSTREAM_ERROR("PutMethod", "Required field: HttpMethod, is not set");
     return PutMethodOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  return PutMethodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutMethod, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutMethodOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutMethodOutcomeCallable APIGatewayClient::PutMethodCallable(const PutMethodRequest& request) const
@@ -3250,6 +3154,7 @@ void APIGatewayClient::PutMethodAsync(const PutMethodRequest& request, const Put
 
 PutMethodResponseOutcome APIGatewayClient::PutMethodResponse(const PutMethodResponseRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutMethodResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutMethodResponse", "Required field: RestApiId, is not set");
@@ -3270,16 +3175,9 @@ PutMethodResponseOutcome APIGatewayClient::PutMethodResponse(const PutMethodResp
     AWS_LOGSTREAM_ERROR("PutMethodResponse", "Required field: StatusCode, is not set");
     return PutMethodResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  uri.AddPathSegments("/responses/");
-  uri.AddPathSegment(request.GetStatusCode());
-  return PutMethodResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutMethodResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutMethodResponseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutMethodResponseOutcomeCallable APIGatewayClient::PutMethodResponseCallable(const PutMethodResponseRequest& request) const
@@ -3300,15 +3198,15 @@ void APIGatewayClient::PutMethodResponseAsync(const PutMethodResponseRequest& re
 
 PutRestApiOutcome APIGatewayClient::PutRestApi(const PutRestApiRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRestApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutRestApi", "Required field: RestApiId, is not set");
     return PutRestApiOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  return PutRestApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutRestApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutRestApiOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutRestApiOutcomeCallable APIGatewayClient::PutRestApiCallable(const PutRestApiRequest& request) const
@@ -3329,15 +3227,15 @@ void APIGatewayClient::PutRestApiAsync(const PutRestApiRequest& request, const P
 
 TagResourceOutcome APIGatewayClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable APIGatewayClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -3358,6 +3256,7 @@ void APIGatewayClient::TagResourceAsync(const TagResourceRequest& request, const
 
 TestInvokeAuthorizerOutcome APIGatewayClient::TestInvokeAuthorizer(const TestInvokeAuthorizerRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestInvokeAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TestInvokeAuthorizer", "Required field: RestApiId, is not set");
@@ -3368,12 +3267,9 @@ TestInvokeAuthorizerOutcome APIGatewayClient::TestInvokeAuthorizer(const TestInv
     AWS_LOGSTREAM_ERROR("TestInvokeAuthorizer", "Required field: AuthorizerId, is not set");
     return TestInvokeAuthorizerOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/authorizers/");
-  uri.AddPathSegment(request.GetAuthorizerId());
-  return TestInvokeAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TestInvokeAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TestInvokeAuthorizerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TestInvokeAuthorizerOutcomeCallable APIGatewayClient::TestInvokeAuthorizerCallable(const TestInvokeAuthorizerRequest& request) const
@@ -3394,6 +3290,7 @@ void APIGatewayClient::TestInvokeAuthorizerAsync(const TestInvokeAuthorizerReque
 
 TestInvokeMethodOutcome APIGatewayClient::TestInvokeMethod(const TestInvokeMethodRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestInvokeMethod, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TestInvokeMethod", "Required field: RestApiId, is not set");
@@ -3409,14 +3306,9 @@ TestInvokeMethodOutcome APIGatewayClient::TestInvokeMethod(const TestInvokeMetho
     AWS_LOGSTREAM_ERROR("TestInvokeMethod", "Required field: HttpMethod, is not set");
     return TestInvokeMethodOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  return TestInvokeMethodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TestInvokeMethod, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TestInvokeMethodOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TestInvokeMethodOutcomeCallable APIGatewayClient::TestInvokeMethodCallable(const TestInvokeMethodRequest& request) const
@@ -3437,6 +3329,7 @@ void APIGatewayClient::TestInvokeMethodAsync(const TestInvokeMethodRequest& requ
 
 UntagResourceOutcome APIGatewayClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
@@ -3447,10 +3340,9 @@ UntagResourceOutcome APIGatewayClient::UntagResource(const UntagResourceRequest&
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable APIGatewayClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -3471,9 +3363,10 @@ void APIGatewayClient::UntagResourceAsync(const UntagResourceRequest& request, c
 
 UpdateAccountOutcome APIGatewayClient::UpdateAccount(const UpdateAccountRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/account");
-  return UpdateAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAccount, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateAccountOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAccountOutcomeCallable APIGatewayClient::UpdateAccountCallable(const UpdateAccountRequest& request) const
@@ -3494,15 +3387,15 @@ void APIGatewayClient::UpdateAccountAsync(const UpdateAccountRequest& request, c
 
 UpdateApiKeyOutcome APIGatewayClient::UpdateApiKey(const UpdateApiKeyRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateApiKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ApiKeyHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateApiKey", "Required field: ApiKey, is not set");
     return UpdateApiKeyOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiKey]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/apikeys/");
-  uri.AddPathSegment(request.GetApiKey());
-  return UpdateApiKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateApiKey, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateApiKeyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateApiKeyOutcomeCallable APIGatewayClient::UpdateApiKeyCallable(const UpdateApiKeyRequest& request) const
@@ -3523,6 +3416,7 @@ void APIGatewayClient::UpdateApiKeyAsync(const UpdateApiKeyRequest& request, con
 
 UpdateAuthorizerOutcome APIGatewayClient::UpdateAuthorizer(const UpdateAuthorizerRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateAuthorizer", "Required field: RestApiId, is not set");
@@ -3533,12 +3427,9 @@ UpdateAuthorizerOutcome APIGatewayClient::UpdateAuthorizer(const UpdateAuthorize
     AWS_LOGSTREAM_ERROR("UpdateAuthorizer", "Required field: AuthorizerId, is not set");
     return UpdateAuthorizerOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/authorizers/");
-  uri.AddPathSegment(request.GetAuthorizerId());
-  return UpdateAuthorizerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAuthorizer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateAuthorizerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAuthorizerOutcomeCallable APIGatewayClient::UpdateAuthorizerCallable(const UpdateAuthorizerRequest& request) const
@@ -3559,6 +3450,7 @@ void APIGatewayClient::UpdateAuthorizerAsync(const UpdateAuthorizerRequest& requ
 
 UpdateBasePathMappingOutcome APIGatewayClient::UpdateBasePathMapping(const UpdateBasePathMappingRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateBasePathMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateBasePathMapping", "Required field: DomainName, is not set");
@@ -3569,12 +3461,9 @@ UpdateBasePathMappingOutcome APIGatewayClient::UpdateBasePathMapping(const Updat
     AWS_LOGSTREAM_ERROR("UpdateBasePathMapping", "Required field: BasePath, is not set");
     return UpdateBasePathMappingOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BasePath]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/domainnames/");
-  uri.AddPathSegment(request.GetDomainName());
-  uri.AddPathSegments("/basepathmappings/");
-  uri.AddPathSegment(request.GetBasePath());
-  return UpdateBasePathMappingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateBasePathMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateBasePathMappingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateBasePathMappingOutcomeCallable APIGatewayClient::UpdateBasePathMappingCallable(const UpdateBasePathMappingRequest& request) const
@@ -3595,15 +3484,15 @@ void APIGatewayClient::UpdateBasePathMappingAsync(const UpdateBasePathMappingReq
 
 UpdateClientCertificateOutcome APIGatewayClient::UpdateClientCertificate(const UpdateClientCertificateRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateClientCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ClientCertificateIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateClientCertificate", "Required field: ClientCertificateId, is not set");
     return UpdateClientCertificateOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientCertificateId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/clientcertificates/");
-  uri.AddPathSegment(request.GetClientCertificateId());
-  return UpdateClientCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateClientCertificate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateClientCertificateOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateClientCertificateOutcomeCallable APIGatewayClient::UpdateClientCertificateCallable(const UpdateClientCertificateRequest& request) const
@@ -3624,6 +3513,7 @@ void APIGatewayClient::UpdateClientCertificateAsync(const UpdateClientCertificat
 
 UpdateDeploymentOutcome APIGatewayClient::UpdateDeployment(const UpdateDeploymentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateDeployment", "Required field: RestApiId, is not set");
@@ -3634,12 +3524,9 @@ UpdateDeploymentOutcome APIGatewayClient::UpdateDeployment(const UpdateDeploymen
     AWS_LOGSTREAM_ERROR("UpdateDeployment", "Required field: DeploymentId, is not set");
     return UpdateDeploymentOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/deployments/");
-  uri.AddPathSegment(request.GetDeploymentId());
-  return UpdateDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDeploymentOutcomeCallable APIGatewayClient::UpdateDeploymentCallable(const UpdateDeploymentRequest& request) const
@@ -3660,6 +3547,7 @@ void APIGatewayClient::UpdateDeploymentAsync(const UpdateDeploymentRequest& requ
 
 UpdateDocumentationPartOutcome APIGatewayClient::UpdateDocumentationPart(const UpdateDocumentationPartRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDocumentationPart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateDocumentationPart", "Required field: RestApiId, is not set");
@@ -3670,12 +3558,9 @@ UpdateDocumentationPartOutcome APIGatewayClient::UpdateDocumentationPart(const U
     AWS_LOGSTREAM_ERROR("UpdateDocumentationPart", "Required field: DocumentationPartId, is not set");
     return UpdateDocumentationPartOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentationPartId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/documentation/parts/");
-  uri.AddPathSegment(request.GetDocumentationPartId());
-  return UpdateDocumentationPartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDocumentationPart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateDocumentationPartOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDocumentationPartOutcomeCallable APIGatewayClient::UpdateDocumentationPartCallable(const UpdateDocumentationPartRequest& request) const
@@ -3696,6 +3581,7 @@ void APIGatewayClient::UpdateDocumentationPartAsync(const UpdateDocumentationPar
 
 UpdateDocumentationVersionOutcome APIGatewayClient::UpdateDocumentationVersion(const UpdateDocumentationVersionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDocumentationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateDocumentationVersion", "Required field: RestApiId, is not set");
@@ -3706,12 +3592,9 @@ UpdateDocumentationVersionOutcome APIGatewayClient::UpdateDocumentationVersion(c
     AWS_LOGSTREAM_ERROR("UpdateDocumentationVersion", "Required field: DocumentationVersion, is not set");
     return UpdateDocumentationVersionOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentationVersion]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/documentation/versions/");
-  uri.AddPathSegment(request.GetDocumentationVersion());
-  return UpdateDocumentationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDocumentationVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateDocumentationVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDocumentationVersionOutcomeCallable APIGatewayClient::UpdateDocumentationVersionCallable(const UpdateDocumentationVersionRequest& request) const
@@ -3732,15 +3615,15 @@ void APIGatewayClient::UpdateDocumentationVersionAsync(const UpdateDocumentation
 
 UpdateDomainNameOutcome APIGatewayClient::UpdateDomainName(const UpdateDomainNameRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DomainNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateDomainName", "Required field: DomainName, is not set");
     return UpdateDomainNameOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/domainnames/");
-  uri.AddPathSegment(request.GetDomainName());
-  return UpdateDomainNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDomainName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateDomainNameOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDomainNameOutcomeCallable APIGatewayClient::UpdateDomainNameCallable(const UpdateDomainNameRequest& request) const
@@ -3761,6 +3644,7 @@ void APIGatewayClient::UpdateDomainNameAsync(const UpdateDomainNameRequest& requ
 
 UpdateGatewayResponseOutcome APIGatewayClient::UpdateGatewayResponse(const UpdateGatewayResponseRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGatewayResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateGatewayResponse", "Required field: RestApiId, is not set");
@@ -3771,12 +3655,9 @@ UpdateGatewayResponseOutcome APIGatewayClient::UpdateGatewayResponse(const Updat
     AWS_LOGSTREAM_ERROR("UpdateGatewayResponse", "Required field: ResponseType, is not set");
     return UpdateGatewayResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResponseType]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/gatewayresponses/");
-  uri.AddPathSegment(GatewayResponseTypeMapper::GetNameForGatewayResponseType(request.GetResponseType()));
-  return UpdateGatewayResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGatewayResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateGatewayResponseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGatewayResponseOutcomeCallable APIGatewayClient::UpdateGatewayResponseCallable(const UpdateGatewayResponseRequest& request) const
@@ -3797,6 +3678,7 @@ void APIGatewayClient::UpdateGatewayResponseAsync(const UpdateGatewayResponseReq
 
 UpdateIntegrationOutcome APIGatewayClient::UpdateIntegration(const UpdateIntegrationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateIntegration", "Required field: RestApiId, is not set");
@@ -3812,15 +3694,9 @@ UpdateIntegrationOutcome APIGatewayClient::UpdateIntegration(const UpdateIntegra
     AWS_LOGSTREAM_ERROR("UpdateIntegration", "Required field: HttpMethod, is not set");
     return UpdateIntegrationOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  uri.AddPathSegments("/integration");
-  return UpdateIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateIntegration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateIntegrationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateIntegrationOutcomeCallable APIGatewayClient::UpdateIntegrationCallable(const UpdateIntegrationRequest& request) const
@@ -3841,6 +3717,7 @@ void APIGatewayClient::UpdateIntegrationAsync(const UpdateIntegrationRequest& re
 
 UpdateIntegrationResponseOutcome APIGatewayClient::UpdateIntegrationResponse(const UpdateIntegrationResponseRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIntegrationResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateIntegrationResponse", "Required field: RestApiId, is not set");
@@ -3861,16 +3738,9 @@ UpdateIntegrationResponseOutcome APIGatewayClient::UpdateIntegrationResponse(con
     AWS_LOGSTREAM_ERROR("UpdateIntegrationResponse", "Required field: StatusCode, is not set");
     return UpdateIntegrationResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  uri.AddPathSegments("/integration/responses/");
-  uri.AddPathSegment(request.GetStatusCode());
-  return UpdateIntegrationResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateIntegrationResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateIntegrationResponseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateIntegrationResponseOutcomeCallable APIGatewayClient::UpdateIntegrationResponseCallable(const UpdateIntegrationResponseRequest& request) const
@@ -3891,6 +3761,7 @@ void APIGatewayClient::UpdateIntegrationResponseAsync(const UpdateIntegrationRes
 
 UpdateMethodOutcome APIGatewayClient::UpdateMethod(const UpdateMethodRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMethod, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateMethod", "Required field: RestApiId, is not set");
@@ -3906,14 +3777,9 @@ UpdateMethodOutcome APIGatewayClient::UpdateMethod(const UpdateMethodRequest& re
     AWS_LOGSTREAM_ERROR("UpdateMethod", "Required field: HttpMethod, is not set");
     return UpdateMethodOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HttpMethod]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  return UpdateMethodOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMethod, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateMethodOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMethodOutcomeCallable APIGatewayClient::UpdateMethodCallable(const UpdateMethodRequest& request) const
@@ -3934,6 +3800,7 @@ void APIGatewayClient::UpdateMethodAsync(const UpdateMethodRequest& request, con
 
 UpdateMethodResponseOutcome APIGatewayClient::UpdateMethodResponse(const UpdateMethodResponseRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMethodResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateMethodResponse", "Required field: RestApiId, is not set");
@@ -3954,16 +3821,9 @@ UpdateMethodResponseOutcome APIGatewayClient::UpdateMethodResponse(const UpdateM
     AWS_LOGSTREAM_ERROR("UpdateMethodResponse", "Required field: StatusCode, is not set");
     return UpdateMethodResponseOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatusCode]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  uri.AddPathSegments("/methods/");
-  uri.AddPathSegment(request.GetHttpMethod());
-  uri.AddPathSegments("/responses/");
-  uri.AddPathSegment(request.GetStatusCode());
-  return UpdateMethodResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMethodResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateMethodResponseOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMethodResponseOutcomeCallable APIGatewayClient::UpdateMethodResponseCallable(const UpdateMethodResponseRequest& request) const
@@ -3984,6 +3844,7 @@ void APIGatewayClient::UpdateMethodResponseAsync(const UpdateMethodResponseReque
 
 UpdateModelOutcome APIGatewayClient::UpdateModel(const UpdateModelRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateModel", "Required field: RestApiId, is not set");
@@ -3994,12 +3855,9 @@ UpdateModelOutcome APIGatewayClient::UpdateModel(const UpdateModelRequest& reque
     AWS_LOGSTREAM_ERROR("UpdateModel", "Required field: ModelName, is not set");
     return UpdateModelOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/models/");
-  uri.AddPathSegment(request.GetModelName());
-  return UpdateModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateModelOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateModelOutcomeCallable APIGatewayClient::UpdateModelCallable(const UpdateModelRequest& request) const
@@ -4020,6 +3878,7 @@ void APIGatewayClient::UpdateModelAsync(const UpdateModelRequest& request, const
 
 UpdateRequestValidatorOutcome APIGatewayClient::UpdateRequestValidator(const UpdateRequestValidatorRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRequestValidator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateRequestValidator", "Required field: RestApiId, is not set");
@@ -4030,12 +3889,9 @@ UpdateRequestValidatorOutcome APIGatewayClient::UpdateRequestValidator(const Upd
     AWS_LOGSTREAM_ERROR("UpdateRequestValidator", "Required field: RequestValidatorId, is not set");
     return UpdateRequestValidatorOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestValidatorId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/requestvalidators/");
-  uri.AddPathSegment(request.GetRequestValidatorId());
-  return UpdateRequestValidatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRequestValidator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateRequestValidatorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRequestValidatorOutcomeCallable APIGatewayClient::UpdateRequestValidatorCallable(const UpdateRequestValidatorRequest& request) const
@@ -4056,6 +3912,7 @@ void APIGatewayClient::UpdateRequestValidatorAsync(const UpdateRequestValidatorR
 
 UpdateResourceOutcome APIGatewayClient::UpdateResource(const UpdateResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateResource", "Required field: RestApiId, is not set");
@@ -4066,12 +3923,9 @@ UpdateResourceOutcome APIGatewayClient::UpdateResource(const UpdateResourceReque
     AWS_LOGSTREAM_ERROR("UpdateResource", "Required field: ResourceId, is not set");
     return UpdateResourceOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/resources/");
-  uri.AddPathSegment(request.GetResourceId());
-  return UpdateResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateResourceOutcomeCallable APIGatewayClient::UpdateResourceCallable(const UpdateResourceRequest& request) const
@@ -4092,15 +3946,15 @@ void APIGatewayClient::UpdateResourceAsync(const UpdateResourceRequest& request,
 
 UpdateRestApiOutcome APIGatewayClient::UpdateRestApi(const UpdateRestApiRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRestApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateRestApi", "Required field: RestApiId, is not set");
     return UpdateRestApiOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestApiId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  return UpdateRestApiOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRestApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateRestApiOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRestApiOutcomeCallable APIGatewayClient::UpdateRestApiCallable(const UpdateRestApiRequest& request) const
@@ -4121,6 +3975,7 @@ void APIGatewayClient::UpdateRestApiAsync(const UpdateRestApiRequest& request, c
 
 UpdateStageOutcome APIGatewayClient::UpdateStage(const UpdateStageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RestApiIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateStage", "Required field: RestApiId, is not set");
@@ -4131,12 +3986,9 @@ UpdateStageOutcome APIGatewayClient::UpdateStage(const UpdateStageRequest& reque
     AWS_LOGSTREAM_ERROR("UpdateStage", "Required field: StageName, is not set");
     return UpdateStageOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/restapis/");
-  uri.AddPathSegment(request.GetRestApiId());
-  uri.AddPathSegments("/stages/");
-  uri.AddPathSegment(request.GetStageName());
-  return UpdateStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateStageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateStageOutcomeCallable APIGatewayClient::UpdateStageCallable(const UpdateStageRequest& request) const
@@ -4157,6 +4009,7 @@ void APIGatewayClient::UpdateStageAsync(const UpdateStageRequest& request, const
 
 UpdateUsageOutcome APIGatewayClient::UpdateUsage(const UpdateUsageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UsagePlanIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateUsage", "Required field: UsagePlanId, is not set");
@@ -4167,13 +4020,9 @@ UpdateUsageOutcome APIGatewayClient::UpdateUsage(const UpdateUsageRequest& reque
     AWS_LOGSTREAM_ERROR("UpdateUsage", "Required field: KeyId, is not set");
     return UpdateUsageOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KeyId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/usageplans/");
-  uri.AddPathSegment(request.GetUsagePlanId());
-  uri.AddPathSegments("/keys/");
-  uri.AddPathSegment(request.GetKeyId());
-  uri.AddPathSegments("/usage");
-  return UpdateUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateUsageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUsageOutcomeCallable APIGatewayClient::UpdateUsageCallable(const UpdateUsageRequest& request) const
@@ -4194,15 +4043,15 @@ void APIGatewayClient::UpdateUsageAsync(const UpdateUsageRequest& request, const
 
 UpdateUsagePlanOutcome APIGatewayClient::UpdateUsagePlan(const UpdateUsagePlanRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateUsagePlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UsagePlanIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateUsagePlan", "Required field: UsagePlanId, is not set");
     return UpdateUsagePlanOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UsagePlanId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/usageplans/");
-  uri.AddPathSegment(request.GetUsagePlanId());
-  return UpdateUsagePlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateUsagePlan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateUsagePlanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUsagePlanOutcomeCallable APIGatewayClient::UpdateUsagePlanCallable(const UpdateUsagePlanRequest& request) const
@@ -4223,15 +4072,15 @@ void APIGatewayClient::UpdateUsagePlanAsync(const UpdateUsagePlanRequest& reques
 
 UpdateVpcLinkOutcome APIGatewayClient::UpdateVpcLink(const UpdateVpcLinkRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateVpcLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.VpcLinkIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateVpcLink", "Required field: VpcLinkId, is not set");
     return UpdateVpcLinkOutcome(Aws::Client::AWSError<APIGatewayErrors>(APIGatewayErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcLinkId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/vpclinks/");
-  uri.AddPathSegment(request.GetVpcLinkId());
-  return UpdateVpcLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateVpcLink, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateVpcLinkOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateVpcLinkOutcomeCallable APIGatewayClient::UpdateVpcLinkCallable(const UpdateVpcLinkRequest& request) const

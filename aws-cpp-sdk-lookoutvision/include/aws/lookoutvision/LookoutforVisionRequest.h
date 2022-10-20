@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/lookoutvision/LookoutforVision_EXPORTS.h>
+#include <aws/lookoutvision/LookoutforVisionEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

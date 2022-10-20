@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/mediastore-data/MediaStoreDataClient.h>
 #include <aws/mediastore-data/MediaStoreDataEndpoint.h>
 #include <aws/mediastore-data/MediaStoreDataErrorMarshaller.h>
+#include <aws/mediastore-data/MediaStoreDataEndpointProvider.h>
 #include <aws/mediastore-data/model/DeleteObjectRequest.h>
 #include <aws/mediastore-data/model/DescribeObjectRequest.h>
 #include <aws/mediastore-data/model/GetObjectRequest.h>
@@ -33,19 +35,66 @@ using namespace Aws::MediaStoreData;
 using namespace Aws::MediaStoreData::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::MediaStoreData::Endpoint::MediaStoreDataEndpointProvider::MediaStoreDataResolveEndpointOutcome;
 
 
 const char* MediaStoreDataClient::SERVICE_NAME = "mediastore";
 const char* MediaStoreDataClient::ALLOCATION_TAG = "MediaStoreDataClient";
 
-MediaStoreDataClient::MediaStoreDataClient(const Client::ClientConfiguration& clientConfiguration) :
+MediaStoreDataClient::MediaStoreDataClient(const Client::ClientConfiguration& clientConfiguration,
+                                           std::shared_ptr<Endpoint::MediaStoreDataEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+MediaStoreDataClient::MediaStoreDataClient(const AWSCredentials& credentials,
+                                           std::shared_ptr<Endpoint::MediaStoreDataEndpointProvider> endpointProvider,
+                                           const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+MediaStoreDataClient::MediaStoreDataClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                           std::shared_ptr<Endpoint::MediaStoreDataEndpointProvider> endpointProvider,
+                                           const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  MediaStoreDataClient::MediaStoreDataClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<MediaStoreData::Endpoint::MediaStoreDataEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -58,7 +107,8 @@ MediaStoreDataClient::MediaStoreDataClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<MediaStoreData::Endpoint::MediaStoreDataEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -71,11 +121,13 @@ MediaStoreDataClient::MediaStoreDataClient(const std::shared_ptr<AWSCredentialsP
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<MediaStoreData::Endpoint::MediaStoreDataEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 MediaStoreDataClient::~MediaStoreDataClient()
 {
 }
@@ -83,39 +135,26 @@ MediaStoreDataClient::~MediaStoreDataClient()
 void MediaStoreDataClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("MediaStore Data");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + MediaStoreDataEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void MediaStoreDataClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 DeleteObjectOutcome MediaStoreDataClient::DeleteObject(const DeleteObjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PathHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteObject", "Required field: Path, is not set");
     return DeleteObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments(request.GetPath());
-  return DeleteObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteObjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteObjectOutcomeCallable MediaStoreDataClient::DeleteObjectCallable(const DeleteObjectRequest& request) const
@@ -136,14 +175,15 @@ void MediaStoreDataClient::DeleteObjectAsync(const DeleteObjectRequest& request,
 
 DescribeObjectOutcome MediaStoreDataClient::DescribeObject(const DescribeObjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PathHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeObject", "Required field: Path, is not set");
     return DescribeObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments(request.GetPath());
-  return DescribeObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_HEAD, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeObjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_HEAD, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeObjectOutcomeCallable MediaStoreDataClient::DescribeObjectCallable(const DescribeObjectRequest& request) const
@@ -164,14 +204,15 @@ void MediaStoreDataClient::DescribeObjectAsync(const DescribeObjectRequest& requ
 
 GetObjectOutcome MediaStoreDataClient::GetObject(const GetObjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PathHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetObject", "Required field: Path, is not set");
     return GetObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments(request.GetPath());
-  return GetObjectOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetObjectOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetObjectOutcomeCallable MediaStoreDataClient::GetObjectCallable(const GetObjectRequest& request) const
@@ -192,8 +233,10 @@ void MediaStoreDataClient::GetObjectAsync(const GetObjectRequest& request, const
 
 ListItemsOutcome MediaStoreDataClient::ListItems(const ListItemsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return ListItemsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListItemsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListItemsOutcomeCallable MediaStoreDataClient::ListItemsCallable(const ListItemsRequest& request) const
@@ -214,14 +257,15 @@ void MediaStoreDataClient::ListItemsAsync(const ListItemsRequest& request, const
 
 PutObjectOutcome MediaStoreDataClient::PutObject(const PutObjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PathHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutObject", "Required field: Path, is not set");
     return PutObjectOutcome(Aws::Client::AWSError<MediaStoreDataErrors>(MediaStoreDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Path]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments(request.GetPath());
-  return PutObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutObjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutObjectOutcomeCallable MediaStoreDataClient::PutObjectCallable(const PutObjectRequest& request) const

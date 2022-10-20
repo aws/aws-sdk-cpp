@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
+#include <aws/keyspaces/KeyspacesEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

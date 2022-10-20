@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/shield/Shield_EXPORTS.h>
+#include <aws/shield/ShieldEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

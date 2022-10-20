@@ -37,7 +37,7 @@ ParameterRanges& ParameterRanges::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("IntegerParameterRanges"))
   {
-    Array<JsonView> integerParameterRangesJsonList = jsonValue.GetArray("IntegerParameterRanges");
+    Aws::Utils::Array<JsonView> integerParameterRangesJsonList = jsonValue.GetArray("IntegerParameterRanges");
     for(unsigned integerParameterRangesIndex = 0; integerParameterRangesIndex < integerParameterRangesJsonList.GetLength(); ++integerParameterRangesIndex)
     {
       m_integerParameterRanges.push_back(integerParameterRangesJsonList[integerParameterRangesIndex].AsObject());
@@ -47,7 +47,7 @@ ParameterRanges& ParameterRanges::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ContinuousParameterRanges"))
   {
-    Array<JsonView> continuousParameterRangesJsonList = jsonValue.GetArray("ContinuousParameterRanges");
+    Aws::Utils::Array<JsonView> continuousParameterRangesJsonList = jsonValue.GetArray("ContinuousParameterRanges");
     for(unsigned continuousParameterRangesIndex = 0; continuousParameterRangesIndex < continuousParameterRangesJsonList.GetLength(); ++continuousParameterRangesIndex)
     {
       m_continuousParameterRanges.push_back(continuousParameterRangesJsonList[continuousParameterRangesIndex].AsObject());
@@ -57,7 +57,7 @@ ParameterRanges& ParameterRanges::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CategoricalParameterRanges"))
   {
-    Array<JsonView> categoricalParameterRangesJsonList = jsonValue.GetArray("CategoricalParameterRanges");
+    Aws::Utils::Array<JsonView> categoricalParameterRangesJsonList = jsonValue.GetArray("CategoricalParameterRanges");
     for(unsigned categoricalParameterRangesIndex = 0; categoricalParameterRangesIndex < categoricalParameterRangesJsonList.GetLength(); ++categoricalParameterRangesIndex)
     {
       m_categoricalParameterRanges.push_back(categoricalParameterRangesJsonList[categoricalParameterRangesIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue ParameterRanges::Jsonize() const
 
   if(m_integerParameterRangesHasBeenSet)
   {
-   Array<JsonValue> integerParameterRangesJsonList(m_integerParameterRanges.size());
+   Aws::Utils::Array<JsonValue> integerParameterRangesJsonList(m_integerParameterRanges.size());
    for(unsigned integerParameterRangesIndex = 0; integerParameterRangesIndex < integerParameterRangesJsonList.GetLength(); ++integerParameterRangesIndex)
    {
      integerParameterRangesJsonList[integerParameterRangesIndex].AsObject(m_integerParameterRanges[integerParameterRangesIndex].Jsonize());
@@ -85,7 +85,7 @@ JsonValue ParameterRanges::Jsonize() const
 
   if(m_continuousParameterRangesHasBeenSet)
   {
-   Array<JsonValue> continuousParameterRangesJsonList(m_continuousParameterRanges.size());
+   Aws::Utils::Array<JsonValue> continuousParameterRangesJsonList(m_continuousParameterRanges.size());
    for(unsigned continuousParameterRangesIndex = 0; continuousParameterRangesIndex < continuousParameterRangesJsonList.GetLength(); ++continuousParameterRangesIndex)
    {
      continuousParameterRangesJsonList[continuousParameterRangesIndex].AsObject(m_continuousParameterRanges[continuousParameterRangesIndex].Jsonize());
@@ -96,7 +96,7 @@ JsonValue ParameterRanges::Jsonize() const
 
   if(m_categoricalParameterRangesHasBeenSet)
   {
-   Array<JsonValue> categoricalParameterRangesJsonList(m_categoricalParameterRanges.size());
+   Aws::Utils::Array<JsonValue> categoricalParameterRangesJsonList(m_categoricalParameterRanges.size());
    for(unsigned categoricalParameterRangesIndex = 0; categoricalParameterRangesIndex < categoricalParameterRangesJsonList.GetLength(); ++categoricalParameterRangesIndex)
    {
      categoricalParameterRangesJsonList[categoricalParameterRangesIndex].AsObject(m_categoricalParameterRanges[categoricalParameterRangesIndex].Jsonize());

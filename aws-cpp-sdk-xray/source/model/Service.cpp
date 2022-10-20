@@ -75,7 +75,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Names"))
   {
-    Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
+    Aws::Utils::Array<JsonView> namesJsonList = jsonValue.GetArray("Names");
     for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
     {
       m_names.push_back(namesJsonList[namesIndex].AsString());
@@ -127,7 +127,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Edges"))
   {
-    Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
+    Aws::Utils::Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
     for(unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex)
     {
       m_edges.push_back(edgesJsonList[edgesIndex].AsObject());
@@ -144,7 +144,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DurationHistogram"))
   {
-    Array<JsonView> durationHistogramJsonList = jsonValue.GetArray("DurationHistogram");
+    Aws::Utils::Array<JsonView> durationHistogramJsonList = jsonValue.GetArray("DurationHistogram");
     for(unsigned durationHistogramIndex = 0; durationHistogramIndex < durationHistogramJsonList.GetLength(); ++durationHistogramIndex)
     {
       m_durationHistogram.push_back(durationHistogramJsonList[durationHistogramIndex].AsObject());
@@ -154,7 +154,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResponseTimeHistogram"))
   {
-    Array<JsonView> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
+    Aws::Utils::Array<JsonView> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
     for(unsigned responseTimeHistogramIndex = 0; responseTimeHistogramIndex < responseTimeHistogramJsonList.GetLength(); ++responseTimeHistogramIndex)
     {
       m_responseTimeHistogram.push_back(responseTimeHistogramJsonList[responseTimeHistogramIndex].AsObject());
@@ -183,7 +183,7 @@ JsonValue Service::Jsonize() const
 
   if(m_namesHasBeenSet)
   {
-   Array<JsonValue> namesJsonList(m_names.size());
+   Aws::Utils::Array<JsonValue> namesJsonList(m_names.size());
    for(unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex)
    {
      namesJsonList[namesIndex].AsString(m_names[namesIndex]);
@@ -228,7 +228,7 @@ JsonValue Service::Jsonize() const
 
   if(m_edgesHasBeenSet)
   {
-   Array<JsonValue> edgesJsonList(m_edges.size());
+   Aws::Utils::Array<JsonValue> edgesJsonList(m_edges.size());
    for(unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex)
    {
      edgesJsonList[edgesIndex].AsObject(m_edges[edgesIndex].Jsonize());
@@ -245,7 +245,7 @@ JsonValue Service::Jsonize() const
 
   if(m_durationHistogramHasBeenSet)
   {
-   Array<JsonValue> durationHistogramJsonList(m_durationHistogram.size());
+   Aws::Utils::Array<JsonValue> durationHistogramJsonList(m_durationHistogram.size());
    for(unsigned durationHistogramIndex = 0; durationHistogramIndex < durationHistogramJsonList.GetLength(); ++durationHistogramIndex)
    {
      durationHistogramJsonList[durationHistogramIndex].AsObject(m_durationHistogram[durationHistogramIndex].Jsonize());
@@ -256,7 +256,7 @@ JsonValue Service::Jsonize() const
 
   if(m_responseTimeHistogramHasBeenSet)
   {
-   Array<JsonValue> responseTimeHistogramJsonList(m_responseTimeHistogram.size());
+   Aws::Utils::Array<JsonValue> responseTimeHistogramJsonList(m_responseTimeHistogram.size());
    for(unsigned responseTimeHistogramIndex = 0; responseTimeHistogramIndex < responseTimeHistogramJsonList.GetLength(); ++responseTimeHistogramIndex)
    {
      responseTimeHistogramJsonList[responseTimeHistogramIndex].AsObject(m_responseTimeHistogram[responseTimeHistogramIndex].Jsonize());

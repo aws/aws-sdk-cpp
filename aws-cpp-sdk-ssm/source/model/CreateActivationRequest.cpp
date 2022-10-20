@@ -59,7 +59,7 @@ Aws::String CreateActivationRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -70,7 +70,7 @@ Aws::String CreateActivationRequest::SerializePayload() const
 
   if(m_registrationMetadataHasBeenSet)
   {
-   Array<JsonValue> registrationMetadataJsonList(m_registrationMetadata.size());
+   Aws::Utils::Array<JsonValue> registrationMetadataJsonList(m_registrationMetadata.size());
    for(unsigned registrationMetadataIndex = 0; registrationMetadataIndex < registrationMetadataJsonList.GetLength(); ++registrationMetadataIndex)
    {
      registrationMetadataJsonList[registrationMetadataIndex].AsObject(m_registrationMetadata[registrationMetadataIndex].Jsonize());

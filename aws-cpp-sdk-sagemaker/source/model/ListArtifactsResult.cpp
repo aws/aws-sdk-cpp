@@ -30,7 +30,7 @@ ListArtifactsResult& ListArtifactsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ArtifactSummaries"))
   {
-    Array<JsonView> artifactSummariesJsonList = jsonValue.GetArray("ArtifactSummaries");
+    Aws::Utils::Array<JsonView> artifactSummariesJsonList = jsonValue.GetArray("ArtifactSummaries");
     for(unsigned artifactSummariesIndex = 0; artifactSummariesIndex < artifactSummariesJsonList.GetLength(); ++artifactSummariesIndex)
     {
       m_artifactSummaries.push_back(artifactSummariesJsonList[artifactSummariesIndex].AsObject());

@@ -68,7 +68,7 @@ CreateApplicationResult& CreateApplicationResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("labels"))
   {
-    Array<JsonView> labelsJsonList = jsonValue.GetArray("labels");
+    Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("labels");
     for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
     {
       m_labels.push_back(labelsJsonList[labelsIndex].AsString());

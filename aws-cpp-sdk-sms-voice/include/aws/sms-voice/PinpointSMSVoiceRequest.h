@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/sms-voice/PinpointSMSVoice_EXPORTS.h>
+#include <aws/sms-voice/PinpointSMSVoiceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

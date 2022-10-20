@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/wafv2/WAFV2EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -97,6 +98,10 @@ namespace Aws
 
   namespace WAFV2
   {
+    namespace Endpoint
+    {
+      class WAFV2EndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in WAFV2Client header */

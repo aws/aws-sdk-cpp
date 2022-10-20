@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
+#include <aws/dataexchange/DataExchangeEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

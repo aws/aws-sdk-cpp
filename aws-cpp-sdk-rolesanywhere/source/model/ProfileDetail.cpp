@@ -89,7 +89,7 @@ ProfileDetail& ProfileDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("managedPolicyArns"))
   {
-    Array<JsonView> managedPolicyArnsJsonList = jsonValue.GetArray("managedPolicyArns");
+    Aws::Utils::Array<JsonView> managedPolicyArnsJsonList = jsonValue.GetArray("managedPolicyArns");
     for(unsigned managedPolicyArnsIndex = 0; managedPolicyArnsIndex < managedPolicyArnsJsonList.GetLength(); ++managedPolicyArnsIndex)
     {
       m_managedPolicyArns.push_back(managedPolicyArnsJsonList[managedPolicyArnsIndex].AsString());
@@ -127,7 +127,7 @@ ProfileDetail& ProfileDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("roleArns"))
   {
-    Array<JsonView> roleArnsJsonList = jsonValue.GetArray("roleArns");
+    Aws::Utils::Array<JsonView> roleArnsJsonList = jsonValue.GetArray("roleArns");
     for(unsigned roleArnsIndex = 0; roleArnsIndex < roleArnsJsonList.GetLength(); ++roleArnsIndex)
     {
       m_roleArns.push_back(roleArnsJsonList[roleArnsIndex].AsString());
@@ -181,7 +181,7 @@ JsonValue ProfileDetail::Jsonize() const
 
   if(m_managedPolicyArnsHasBeenSet)
   {
-   Array<JsonValue> managedPolicyArnsJsonList(m_managedPolicyArns.size());
+   Aws::Utils::Array<JsonValue> managedPolicyArnsJsonList(m_managedPolicyArns.size());
    for(unsigned managedPolicyArnsIndex = 0; managedPolicyArnsIndex < managedPolicyArnsJsonList.GetLength(); ++managedPolicyArnsIndex)
    {
      managedPolicyArnsJsonList[managedPolicyArnsIndex].AsString(m_managedPolicyArns[managedPolicyArnsIndex]);
@@ -216,7 +216,7 @@ JsonValue ProfileDetail::Jsonize() const
 
   if(m_roleArnsHasBeenSet)
   {
-   Array<JsonValue> roleArnsJsonList(m_roleArns.size());
+   Aws::Utils::Array<JsonValue> roleArnsJsonList(m_roleArns.size());
    for(unsigned roleArnsIndex = 0; roleArnsIndex < roleArnsJsonList.GetLength(); ++roleArnsIndex)
    {
      roleArnsJsonList[roleArnsIndex].AsString(m_roleArns[roleArnsIndex]);

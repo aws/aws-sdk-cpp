@@ -30,7 +30,7 @@ GetSignalingChannelEndpointResult& GetSignalingChannelEndpointResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceEndpointList"))
   {
-    Array<JsonView> resourceEndpointListJsonList = jsonValue.GetArray("ResourceEndpointList");
+    Aws::Utils::Array<JsonView> resourceEndpointListJsonList = jsonValue.GetArray("ResourceEndpointList");
     for(unsigned resourceEndpointListIndex = 0; resourceEndpointListIndex < resourceEndpointListJsonList.GetLength(); ++resourceEndpointListIndex)
     {
       m_resourceEndpointList.push_back(resourceEndpointListJsonList[resourceEndpointListIndex].AsObject());

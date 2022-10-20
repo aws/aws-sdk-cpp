@@ -30,7 +30,7 @@ GetDevicePoolCompatibilityResult& GetDevicePoolCompatibilityResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("compatibleDevices"))
   {
-    Array<JsonView> compatibleDevicesJsonList = jsonValue.GetArray("compatibleDevices");
+    Aws::Utils::Array<JsonView> compatibleDevicesJsonList = jsonValue.GetArray("compatibleDevices");
     for(unsigned compatibleDevicesIndex = 0; compatibleDevicesIndex < compatibleDevicesJsonList.GetLength(); ++compatibleDevicesIndex)
     {
       m_compatibleDevices.push_back(compatibleDevicesJsonList[compatibleDevicesIndex].AsObject());
@@ -39,7 +39,7 @@ GetDevicePoolCompatibilityResult& GetDevicePoolCompatibilityResult::operator =(c
 
   if(jsonValue.ValueExists("incompatibleDevices"))
   {
-    Array<JsonView> incompatibleDevicesJsonList = jsonValue.GetArray("incompatibleDevices");
+    Aws::Utils::Array<JsonView> incompatibleDevicesJsonList = jsonValue.GetArray("incompatibleDevices");
     for(unsigned incompatibleDevicesIndex = 0; incompatibleDevicesIndex < incompatibleDevicesJsonList.GetLength(); ++incompatibleDevicesIndex)
     {
       m_incompatibleDevices.push_back(incompatibleDevicesJsonList[incompatibleDevicesIndex].AsObject());

@@ -53,7 +53,7 @@ RulesSource& RulesSource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StatefulRules"))
   {
-    Array<JsonView> statefulRulesJsonList = jsonValue.GetArray("StatefulRules");
+    Aws::Utils::Array<JsonView> statefulRulesJsonList = jsonValue.GetArray("StatefulRules");
     for(unsigned statefulRulesIndex = 0; statefulRulesIndex < statefulRulesJsonList.GetLength(); ++statefulRulesIndex)
     {
       m_statefulRules.push_back(statefulRulesJsonList[statefulRulesIndex].AsObject());
@@ -89,7 +89,7 @@ JsonValue RulesSource::Jsonize() const
 
   if(m_statefulRulesHasBeenSet)
   {
-   Array<JsonValue> statefulRulesJsonList(m_statefulRules.size());
+   Aws::Utils::Array<JsonValue> statefulRulesJsonList(m_statefulRules.size());
    for(unsigned statefulRulesIndex = 0; statefulRulesIndex < statefulRulesJsonList.GetLength(); ++statefulRulesIndex)
    {
      statefulRulesJsonList[statefulRulesIndex].AsObject(m_statefulRules[statefulRulesIndex].Jsonize());

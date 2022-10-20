@@ -30,7 +30,7 @@ ListPiiEntitiesDetectionJobsResult& ListPiiEntitiesDetectionJobsResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PiiEntitiesDetectionJobPropertiesList"))
   {
-    Array<JsonView> piiEntitiesDetectionJobPropertiesListJsonList = jsonValue.GetArray("PiiEntitiesDetectionJobPropertiesList");
+    Aws::Utils::Array<JsonView> piiEntitiesDetectionJobPropertiesListJsonList = jsonValue.GetArray("PiiEntitiesDetectionJobPropertiesList");
     for(unsigned piiEntitiesDetectionJobPropertiesListIndex = 0; piiEntitiesDetectionJobPropertiesListIndex < piiEntitiesDetectionJobPropertiesListJsonList.GetLength(); ++piiEntitiesDetectionJobPropertiesListIndex)
     {
       m_piiEntitiesDetectionJobPropertiesList.push_back(piiEntitiesDetectionJobPropertiesListJsonList[piiEntitiesDetectionJobPropertiesListIndex].AsObject());

@@ -30,7 +30,7 @@ ListVoiceConnectorsResult& ListVoiceConnectorsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("VoiceConnectors"))
   {
-    Array<JsonView> voiceConnectorsJsonList = jsonValue.GetArray("VoiceConnectors");
+    Aws::Utils::Array<JsonView> voiceConnectorsJsonList = jsonValue.GetArray("VoiceConnectors");
     for(unsigned voiceConnectorsIndex = 0; voiceConnectorsIndex < voiceConnectorsJsonList.GetLength(); ++voiceConnectorsIndex)
     {
       m_voiceConnectors.push_back(voiceConnectorsJsonList[voiceConnectorsIndex].AsObject());

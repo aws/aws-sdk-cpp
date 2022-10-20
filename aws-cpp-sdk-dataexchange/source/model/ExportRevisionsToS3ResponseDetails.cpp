@@ -53,7 +53,7 @@ ExportRevisionsToS3ResponseDetails& ExportRevisionsToS3ResponseDetails::operator
 
   if(jsonValue.ValueExists("RevisionDestinations"))
   {
-    Array<JsonView> revisionDestinationsJsonList = jsonValue.GetArray("RevisionDestinations");
+    Aws::Utils::Array<JsonView> revisionDestinationsJsonList = jsonValue.GetArray("RevisionDestinations");
     for(unsigned revisionDestinationsIndex = 0; revisionDestinationsIndex < revisionDestinationsJsonList.GetLength(); ++revisionDestinationsIndex)
     {
       m_revisionDestinations.push_back(revisionDestinationsJsonList[revisionDestinationsIndex].AsObject());
@@ -89,7 +89,7 @@ JsonValue ExportRevisionsToS3ResponseDetails::Jsonize() const
 
   if(m_revisionDestinationsHasBeenSet)
   {
-   Array<JsonValue> revisionDestinationsJsonList(m_revisionDestinations.size());
+   Aws::Utils::Array<JsonValue> revisionDestinationsJsonList(m_revisionDestinations.size());
    for(unsigned revisionDestinationsIndex = 0; revisionDestinationsIndex < revisionDestinationsJsonList.GetLength(); ++revisionDestinationsIndex)
    {
      revisionDestinationsJsonList[revisionDestinationsIndex].AsObject(m_revisionDestinations[revisionDestinationsIndex].Jsonize());

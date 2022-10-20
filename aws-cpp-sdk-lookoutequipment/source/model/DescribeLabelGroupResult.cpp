@@ -42,7 +42,7 @@ DescribeLabelGroupResult& DescribeLabelGroupResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("FaultCodes"))
   {
-    Array<JsonView> faultCodesJsonList = jsonValue.GetArray("FaultCodes");
+    Aws::Utils::Array<JsonView> faultCodesJsonList = jsonValue.GetArray("FaultCodes");
     for(unsigned faultCodesIndex = 0; faultCodesIndex < faultCodesJsonList.GetLength(); ++faultCodesIndex)
     {
       m_faultCodes.push_back(faultCodesJsonList[faultCodesIndex].AsString());

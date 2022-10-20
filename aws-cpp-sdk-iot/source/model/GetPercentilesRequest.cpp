@@ -51,7 +51,7 @@ Aws::String GetPercentilesRequest::SerializePayload() const
 
   if(m_percentsHasBeenSet)
   {
-   Array<JsonValue> percentsJsonList(m_percents.size());
+   Aws::Utils::Array<JsonValue> percentsJsonList(m_percents.size());
    for(unsigned percentsIndex = 0; percentsIndex < percentsJsonList.GetLength(); ++percentsIndex)
    {
      percentsJsonList[percentsIndex].AsDouble(m_percents[percentsIndex]);

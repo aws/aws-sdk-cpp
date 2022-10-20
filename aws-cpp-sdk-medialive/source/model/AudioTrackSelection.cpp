@@ -33,7 +33,7 @@ AudioTrackSelection& AudioTrackSelection::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("tracks"))
   {
-    Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
+    Aws::Utils::Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
     for(unsigned tracksIndex = 0; tracksIndex < tracksJsonList.GetLength(); ++tracksIndex)
     {
       m_tracks.push_back(tracksJsonList[tracksIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue AudioTrackSelection::Jsonize() const
 
   if(m_tracksHasBeenSet)
   {
-   Array<JsonValue> tracksJsonList(m_tracks.size());
+   Aws::Utils::Array<JsonValue> tracksJsonList(m_tracks.size());
    for(unsigned tracksIndex = 0; tracksIndex < tracksJsonList.GetLength(); ++tracksIndex)
    {
      tracksJsonList[tracksIndex].AsObject(m_tracks[tracksIndex].Jsonize());

@@ -44,7 +44,7 @@ MetricPolicy& MetricPolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MetricPolicyRules"))
   {
-    Array<JsonView> metricPolicyRulesJsonList = jsonValue.GetArray("MetricPolicyRules");
+    Aws::Utils::Array<JsonView> metricPolicyRulesJsonList = jsonValue.GetArray("MetricPolicyRules");
     for(unsigned metricPolicyRulesIndex = 0; metricPolicyRulesIndex < metricPolicyRulesJsonList.GetLength(); ++metricPolicyRulesIndex)
     {
       m_metricPolicyRules.push_back(metricPolicyRulesJsonList[metricPolicyRulesIndex].AsObject());
@@ -66,7 +66,7 @@ JsonValue MetricPolicy::Jsonize() const
 
   if(m_metricPolicyRulesHasBeenSet)
   {
-   Array<JsonValue> metricPolicyRulesJsonList(m_metricPolicyRules.size());
+   Aws::Utils::Array<JsonValue> metricPolicyRulesJsonList(m_metricPolicyRules.size());
    for(unsigned metricPolicyRulesIndex = 0; metricPolicyRulesIndex < metricPolicyRulesJsonList.GetLength(); ++metricPolicyRulesIndex)
    {
      metricPolicyRulesJsonList[metricPolicyRulesIndex].AsObject(m_metricPolicyRules[metricPolicyRulesIndex].Jsonize());

@@ -30,7 +30,7 @@ ListOrdersResult& ListOrdersResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Orders"))
   {
-    Array<JsonView> ordersJsonList = jsonValue.GetArray("Orders");
+    Aws::Utils::Array<JsonView> ordersJsonList = jsonValue.GetArray("Orders");
     for(unsigned ordersIndex = 0; ordersIndex < ordersJsonList.GetLength(); ++ordersIndex)
     {
       m_orders.push_back(ordersJsonList[ordersIndex].AsObject());

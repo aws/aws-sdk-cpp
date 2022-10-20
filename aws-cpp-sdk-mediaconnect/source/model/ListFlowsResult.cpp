@@ -30,7 +30,7 @@ ListFlowsResult& ListFlowsResult::operator =(const Aws::AmazonWebServiceResult<J
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("flows"))
   {
-    Array<JsonView> flowsJsonList = jsonValue.GetArray("flows");
+    Aws::Utils::Array<JsonView> flowsJsonList = jsonValue.GetArray("flows");
     for(unsigned flowsIndex = 0; flowsIndex < flowsJsonList.GetLength(); ++flowsIndex)
     {
       m_flows.push_back(flowsJsonList[flowsIndex].AsObject());

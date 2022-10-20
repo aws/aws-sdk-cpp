@@ -35,7 +35,7 @@ TrainingDataSchema& TrainingDataSchema::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("modelVariables"))
   {
-    Array<JsonView> modelVariablesJsonList = jsonValue.GetArray("modelVariables");
+    Aws::Utils::Array<JsonView> modelVariablesJsonList = jsonValue.GetArray("modelVariables");
     for(unsigned modelVariablesIndex = 0; modelVariablesIndex < modelVariablesJsonList.GetLength(); ++modelVariablesIndex)
     {
       m_modelVariables.push_back(modelVariablesJsonList[modelVariablesIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue TrainingDataSchema::Jsonize() const
 
   if(m_modelVariablesHasBeenSet)
   {
-   Array<JsonValue> modelVariablesJsonList(m_modelVariables.size());
+   Aws::Utils::Array<JsonValue> modelVariablesJsonList(m_modelVariables.size());
    for(unsigned modelVariablesIndex = 0; modelVariablesIndex < modelVariablesJsonList.GetLength(); ++modelVariablesIndex)
    {
      modelVariablesJsonList[modelVariablesIndex].AsString(m_modelVariables[modelVariablesIndex]);

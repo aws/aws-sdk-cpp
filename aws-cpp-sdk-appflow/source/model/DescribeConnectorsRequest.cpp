@@ -26,7 +26,7 @@ Aws::String DescribeConnectorsRequest::SerializePayload() const
 
   if(m_connectorTypesHasBeenSet)
   {
-   Array<JsonValue> connectorTypesJsonList(m_connectorTypes.size());
+   Aws::Utils::Array<JsonValue> connectorTypesJsonList(m_connectorTypes.size());
    for(unsigned connectorTypesIndex = 0; connectorTypesIndex < connectorTypesJsonList.GetLength(); ++connectorTypesIndex)
    {
      connectorTypesJsonList[connectorTypesIndex].AsString(ConnectorTypeMapper::GetNameForConnectorType(m_connectorTypes[connectorTypesIndex]));

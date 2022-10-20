@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
+#include <aws/route53domains/Route53DomainsEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

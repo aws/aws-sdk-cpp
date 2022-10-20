@@ -59,10 +59,10 @@ Aws::String BatchExecuteStatementRequest::SerializePayload() const
 
   if(m_parameterSetsHasBeenSet)
   {
-   Array<JsonValue> parameterSetsJsonList(m_parameterSets.size());
+   Aws::Utils::Array<JsonValue> parameterSetsJsonList(m_parameterSets.size());
    for(unsigned parameterSetsIndex = 0; parameterSetsIndex < parameterSetsJsonList.GetLength(); ++parameterSetsIndex)
    {
-     Array<JsonValue> sqlParametersListJsonList(m_parameterSets[parameterSetsIndex].size());
+     Aws::Utils::Array<JsonValue> sqlParametersListJsonList(m_parameterSets[parameterSetsIndex].size());
      for(unsigned sqlParametersListIndex = 0; sqlParametersListIndex < sqlParametersListJsonList.GetLength(); ++sqlParametersListIndex)
      {
        sqlParametersListJsonList[sqlParametersListIndex].AsObject(m_parameterSets[parameterSetsIndex][sqlParametersListIndex].Jsonize());

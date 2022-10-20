@@ -58,7 +58,7 @@ Aws::String UpdateFleetAttributesRequest::SerializePayload() const
 
   if(m_metricGroupsHasBeenSet)
   {
-   Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
+   Aws::Utils::Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
    for(unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex)
    {
      metricGroupsJsonList[metricGroupsIndex].AsString(m_metricGroups[metricGroupsIndex]);

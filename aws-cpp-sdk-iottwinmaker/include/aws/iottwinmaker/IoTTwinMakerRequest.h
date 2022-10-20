@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
+#include <aws/iottwinmaker/IoTTwinMakerEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

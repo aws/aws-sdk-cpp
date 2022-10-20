@@ -30,7 +30,7 @@ ListS3BucketsResult& ListS3BucketsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("buckets"))
   {
-    Array<JsonView> bucketsJsonList = jsonValue.GetArray("buckets");
+    Aws::Utils::Array<JsonView> bucketsJsonList = jsonValue.GetArray("buckets");
     for(unsigned bucketsIndex = 0; bucketsIndex < bucketsJsonList.GetLength(); ++bucketsIndex)
     {
       m_buckets.push_back(bucketsJsonList[bucketsIndex].AsObject());

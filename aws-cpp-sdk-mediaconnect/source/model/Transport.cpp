@@ -73,7 +73,7 @@ Transport& Transport::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("cidrAllowList"))
   {
-    Array<JsonView> cidrAllowListJsonList = jsonValue.GetArray("cidrAllowList");
+    Aws::Utils::Array<JsonView> cidrAllowListJsonList = jsonValue.GetArray("cidrAllowList");
     for(unsigned cidrAllowListIndex = 0; cidrAllowListIndex < cidrAllowListJsonList.GetLength(); ++cidrAllowListIndex)
     {
       m_cidrAllowList.push_back(cidrAllowListJsonList[cidrAllowListIndex].AsString());
@@ -174,7 +174,7 @@ JsonValue Transport::Jsonize() const
 
   if(m_cidrAllowListHasBeenSet)
   {
-   Array<JsonValue> cidrAllowListJsonList(m_cidrAllowList.size());
+   Aws::Utils::Array<JsonValue> cidrAllowListJsonList(m_cidrAllowList.size());
    for(unsigned cidrAllowListIndex = 0; cidrAllowListIndex < cidrAllowListJsonList.GetLength(); ++cidrAllowListIndex)
    {
      cidrAllowListJsonList[cidrAllowListIndex].AsString(m_cidrAllowList[cidrAllowListIndex]);

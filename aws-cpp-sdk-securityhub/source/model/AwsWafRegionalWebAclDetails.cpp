@@ -62,7 +62,7 @@ AwsWafRegionalWebAclDetails& AwsWafRegionalWebAclDetails::operator =(JsonView js
 
   if(jsonValue.ValueExists("RulesList"))
   {
-    Array<JsonView> rulesListJsonList = jsonValue.GetArray("RulesList");
+    Aws::Utils::Array<JsonView> rulesListJsonList = jsonValue.GetArray("RulesList");
     for(unsigned rulesListIndex = 0; rulesListIndex < rulesListJsonList.GetLength(); ++rulesListIndex)
     {
       m_rulesList.push_back(rulesListJsonList[rulesListIndex].AsObject());
@@ -104,7 +104,7 @@ JsonValue AwsWafRegionalWebAclDetails::Jsonize() const
 
   if(m_rulesListHasBeenSet)
   {
-   Array<JsonValue> rulesListJsonList(m_rulesList.size());
+   Aws::Utils::Array<JsonValue> rulesListJsonList(m_rulesList.size());
    for(unsigned rulesListIndex = 0; rulesListIndex < rulesListJsonList.GetLength(); ++rulesListIndex)
    {
      rulesListJsonList[rulesListIndex].AsObject(m_rulesList[rulesListIndex].Jsonize());

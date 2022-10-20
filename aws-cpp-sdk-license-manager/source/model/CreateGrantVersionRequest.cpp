@@ -48,7 +48,7 @@ Aws::String CreateGrantVersionRequest::SerializePayload() const
 
   if(m_allowedOperationsHasBeenSet)
   {
-   Array<JsonValue> allowedOperationsJsonList(m_allowedOperations.size());
+   Aws::Utils::Array<JsonValue> allowedOperationsJsonList(m_allowedOperations.size());
    for(unsigned allowedOperationsIndex = 0; allowedOperationsIndex < allowedOperationsJsonList.GetLength(); ++allowedOperationsIndex)
    {
      allowedOperationsJsonList[allowedOperationsIndex].AsString(AllowedOperationMapper::GetNameForAllowedOperation(m_allowedOperations[allowedOperationsIndex]));

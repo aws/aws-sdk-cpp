@@ -30,7 +30,7 @@ GetReplicationJobsResult& GetReplicationJobsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("replicationJobList"))
   {
-    Array<JsonView> replicationJobListJsonList = jsonValue.GetArray("replicationJobList");
+    Aws::Utils::Array<JsonView> replicationJobListJsonList = jsonValue.GetArray("replicationJobList");
     for(unsigned replicationJobListIndex = 0; replicationJobListIndex < replicationJobListJsonList.GetLength(); ++replicationJobListIndex)
     {
       m_replicationJobList.push_back(replicationJobListJsonList[replicationJobListIndex].AsObject());

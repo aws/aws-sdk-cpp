@@ -48,7 +48,7 @@ CreateUsagePlanResult& CreateUsagePlanResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("apiStages"))
   {
-    Array<JsonView> apiStagesJsonList = jsonValue.GetArray("apiStages");
+    Aws::Utils::Array<JsonView> apiStagesJsonList = jsonValue.GetArray("apiStages");
     for(unsigned apiStagesIndex = 0; apiStagesIndex < apiStagesJsonList.GetLength(); ++apiStagesIndex)
     {
       m_apiStages.push_back(apiStagesJsonList[apiStagesIndex].AsObject());

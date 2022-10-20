@@ -44,7 +44,7 @@ DeleteConfigurationSetResult& DeleteConfigurationSetResult::operator =(const Aws
 
   if(jsonValue.ValueExists("EventDestinations"))
   {
-    Array<JsonView> eventDestinationsJsonList = jsonValue.GetArray("EventDestinations");
+    Aws::Utils::Array<JsonView> eventDestinationsJsonList = jsonValue.GetArray("EventDestinations");
     for(unsigned eventDestinationsIndex = 0; eventDestinationsIndex < eventDestinationsJsonList.GetLength(); ++eventDestinationsIndex)
     {
       m_eventDestinations.push_back(eventDestinationsJsonList[eventDestinationsIndex].AsObject());

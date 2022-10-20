@@ -46,7 +46,7 @@ MssPackage& MssPackage::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("mssManifests"))
   {
-    Array<JsonView> mssManifestsJsonList = jsonValue.GetArray("mssManifests");
+    Aws::Utils::Array<JsonView> mssManifestsJsonList = jsonValue.GetArray("mssManifests");
     for(unsigned mssManifestsIndex = 0; mssManifestsIndex < mssManifestsJsonList.GetLength(); ++mssManifestsIndex)
     {
       m_mssManifests.push_back(mssManifestsJsonList[mssManifestsIndex].AsObject());
@@ -76,7 +76,7 @@ JsonValue MssPackage::Jsonize() const
 
   if(m_mssManifestsHasBeenSet)
   {
-   Array<JsonValue> mssManifestsJsonList(m_mssManifests.size());
+   Aws::Utils::Array<JsonValue> mssManifestsJsonList(m_mssManifests.size());
    for(unsigned mssManifestsIndex = 0; mssManifestsIndex < mssManifestsJsonList.GetLength(); ++mssManifestsIndex)
    {
      mssManifestsJsonList[mssManifestsIndex].AsObject(m_mssManifests[mssManifestsIndex].Jsonize());

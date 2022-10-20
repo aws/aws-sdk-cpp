@@ -33,7 +33,7 @@ MessageAttributeValue& MessageAttributeValue::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StringValues"))
   {
-    Array<JsonView> stringValuesJsonList = jsonValue.GetArray("StringValues");
+    Aws::Utils::Array<JsonView> stringValuesJsonList = jsonValue.GetArray("StringValues");
     for(unsigned stringValuesIndex = 0; stringValuesIndex < stringValuesJsonList.GetLength(); ++stringValuesIndex)
     {
       m_stringValues.push_back(stringValuesJsonList[stringValuesIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue MessageAttributeValue::Jsonize() const
 
   if(m_stringValuesHasBeenSet)
   {
-   Array<JsonValue> stringValuesJsonList(m_stringValues.size());
+   Aws::Utils::Array<JsonValue> stringValuesJsonList(m_stringValues.size());
    for(unsigned stringValuesIndex = 0; stringValuesIndex < stringValuesJsonList.GetLength(); ++stringValuesIndex)
    {
      stringValuesJsonList[stringValuesIndex].AsString(m_stringValues[stringValuesIndex]);

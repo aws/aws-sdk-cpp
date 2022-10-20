@@ -30,7 +30,7 @@ ListTargetsForPolicyResult& ListTargetsForPolicyResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("targets"))
   {
-    Array<JsonView> targetsJsonList = jsonValue.GetArray("targets");
+    Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("targets");
     for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
     {
       m_targets.push_back(targetsJsonList[targetsIndex].AsString());

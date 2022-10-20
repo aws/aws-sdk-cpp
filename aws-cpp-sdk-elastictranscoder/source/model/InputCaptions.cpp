@@ -42,7 +42,7 @@ InputCaptions& InputCaptions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CaptionSources"))
   {
-    Array<JsonView> captionSourcesJsonList = jsonValue.GetArray("CaptionSources");
+    Aws::Utils::Array<JsonView> captionSourcesJsonList = jsonValue.GetArray("CaptionSources");
     for(unsigned captionSourcesIndex = 0; captionSourcesIndex < captionSourcesJsonList.GetLength(); ++captionSourcesIndex)
     {
       m_captionSources.push_back(captionSourcesJsonList[captionSourcesIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue InputCaptions::Jsonize() const
 
   if(m_captionSourcesHasBeenSet)
   {
-   Array<JsonValue> captionSourcesJsonList(m_captionSources.size());
+   Aws::Utils::Array<JsonValue> captionSourcesJsonList(m_captionSources.size());
    for(unsigned captionSourcesIndex = 0; captionSourcesIndex < captionSourcesJsonList.GetLength(); ++captionSourcesIndex)
    {
      captionSourcesJsonList[captionSourcesIndex].AsObject(m_captionSources[captionSourcesIndex].Jsonize());

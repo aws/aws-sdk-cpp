@@ -64,7 +64,7 @@ Trace& Trace::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Segments"))
   {
-    Array<JsonView> segmentsJsonList = jsonValue.GetArray("Segments");
+    Aws::Utils::Array<JsonView> segmentsJsonList = jsonValue.GetArray("Segments");
     for(unsigned segmentsIndex = 0; segmentsIndex < segmentsJsonList.GetLength(); ++segmentsIndex)
     {
       m_segments.push_back(segmentsJsonList[segmentsIndex].AsObject());
@@ -99,7 +99,7 @@ JsonValue Trace::Jsonize() const
 
   if(m_segmentsHasBeenSet)
   {
-   Array<JsonValue> segmentsJsonList(m_segments.size());
+   Aws::Utils::Array<JsonValue> segmentsJsonList(m_segments.size());
    for(unsigned segmentsIndex = 0; segmentsIndex < segmentsJsonList.GetLength(); ++segmentsIndex)
    {
      segmentsJsonList[segmentsIndex].AsObject(m_segments[segmentsIndex].Jsonize());

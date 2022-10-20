@@ -58,7 +58,7 @@ LaunchProfileInitialization& LaunchProfileInitialization::operator =(JsonView js
 
   if(jsonValue.ValueExists("ec2SecurityGroupIds"))
   {
-    Array<JsonView> ec2SecurityGroupIdsJsonList = jsonValue.GetArray("ec2SecurityGroupIds");
+    Aws::Utils::Array<JsonView> ec2SecurityGroupIdsJsonList = jsonValue.GetArray("ec2SecurityGroupIds");
     for(unsigned ec2SecurityGroupIdsIndex = 0; ec2SecurityGroupIdsIndex < ec2SecurityGroupIdsJsonList.GetLength(); ++ec2SecurityGroupIdsIndex)
     {
       m_ec2SecurityGroupIds.push_back(ec2SecurityGroupIdsJsonList[ec2SecurityGroupIdsIndex].AsString());
@@ -103,7 +103,7 @@ LaunchProfileInitialization& LaunchProfileInitialization::operator =(JsonView js
 
   if(jsonValue.ValueExists("systemInitializationScripts"))
   {
-    Array<JsonView> systemInitializationScriptsJsonList = jsonValue.GetArray("systemInitializationScripts");
+    Aws::Utils::Array<JsonView> systemInitializationScriptsJsonList = jsonValue.GetArray("systemInitializationScripts");
     for(unsigned systemInitializationScriptsIndex = 0; systemInitializationScriptsIndex < systemInitializationScriptsJsonList.GetLength(); ++systemInitializationScriptsIndex)
     {
       m_systemInitializationScripts.push_back(systemInitializationScriptsJsonList[systemInitializationScriptsIndex].AsObject());
@@ -113,7 +113,7 @@ LaunchProfileInitialization& LaunchProfileInitialization::operator =(JsonView js
 
   if(jsonValue.ValueExists("userInitializationScripts"))
   {
-    Array<JsonView> userInitializationScriptsJsonList = jsonValue.GetArray("userInitializationScripts");
+    Aws::Utils::Array<JsonView> userInitializationScriptsJsonList = jsonValue.GetArray("userInitializationScripts");
     for(unsigned userInitializationScriptsIndex = 0; userInitializationScriptsIndex < userInitializationScriptsJsonList.GetLength(); ++userInitializationScriptsIndex)
     {
       m_userInitializationScripts.push_back(userInitializationScriptsJsonList[userInitializationScriptsIndex].AsObject());
@@ -136,7 +136,7 @@ JsonValue LaunchProfileInitialization::Jsonize() const
 
   if(m_ec2SecurityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> ec2SecurityGroupIdsJsonList(m_ec2SecurityGroupIds.size());
+   Aws::Utils::Array<JsonValue> ec2SecurityGroupIdsJsonList(m_ec2SecurityGroupIds.size());
    for(unsigned ec2SecurityGroupIdsIndex = 0; ec2SecurityGroupIdsIndex < ec2SecurityGroupIdsJsonList.GetLength(); ++ec2SecurityGroupIdsIndex)
    {
      ec2SecurityGroupIdsJsonList[ec2SecurityGroupIdsIndex].AsString(m_ec2SecurityGroupIds[ec2SecurityGroupIdsIndex]);
@@ -176,7 +176,7 @@ JsonValue LaunchProfileInitialization::Jsonize() const
 
   if(m_systemInitializationScriptsHasBeenSet)
   {
-   Array<JsonValue> systemInitializationScriptsJsonList(m_systemInitializationScripts.size());
+   Aws::Utils::Array<JsonValue> systemInitializationScriptsJsonList(m_systemInitializationScripts.size());
    for(unsigned systemInitializationScriptsIndex = 0; systemInitializationScriptsIndex < systemInitializationScriptsJsonList.GetLength(); ++systemInitializationScriptsIndex)
    {
      systemInitializationScriptsJsonList[systemInitializationScriptsIndex].AsObject(m_systemInitializationScripts[systemInitializationScriptsIndex].Jsonize());
@@ -187,7 +187,7 @@ JsonValue LaunchProfileInitialization::Jsonize() const
 
   if(m_userInitializationScriptsHasBeenSet)
   {
-   Array<JsonValue> userInitializationScriptsJsonList(m_userInitializationScripts.size());
+   Aws::Utils::Array<JsonValue> userInitializationScriptsJsonList(m_userInitializationScripts.size());
    for(unsigned userInitializationScriptsIndex = 0; userInitializationScriptsIndex < userInitializationScriptsJsonList.GetLength(); ++userInitializationScriptsIndex)
    {
      userInitializationScriptsJsonList[userInitializationScriptsIndex].AsObject(m_userInitializationScripts[userInitializationScriptsIndex].Jsonize());

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/docdb/DocDB_EXPORTS.h>
+#include <aws/docdb/DocDBEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -140,7 +140,7 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("attempts"))
   {
-    Array<JsonView> attemptsJsonList = jsonValue.GetArray("attempts");
+    Aws::Utils::Array<JsonView> attemptsJsonList = jsonValue.GetArray("attempts");
     for(unsigned attemptsIndex = 0; attemptsIndex < attemptsJsonList.GetLength(); ++attemptsIndex)
     {
       m_attempts.push_back(attemptsJsonList[attemptsIndex].AsObject());
@@ -185,7 +185,7 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("dependsOn"))
   {
-    Array<JsonView> dependsOnJsonList = jsonValue.GetArray("dependsOn");
+    Aws::Utils::Array<JsonView> dependsOnJsonList = jsonValue.GetArray("dependsOn");
     for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
     {
       m_dependsOn.push_back(dependsOnJsonList[dependsOnIndex].AsObject());
@@ -264,7 +264,7 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("platformCapabilities"))
   {
-    Array<JsonView> platformCapabilitiesJsonList = jsonValue.GetArray("platformCapabilities");
+    Aws::Utils::Array<JsonView> platformCapabilitiesJsonList = jsonValue.GetArray("platformCapabilities");
     for(unsigned platformCapabilitiesIndex = 0; platformCapabilitiesIndex < platformCapabilitiesJsonList.GetLength(); ++platformCapabilitiesIndex)
     {
       m_platformCapabilities.push_back(PlatformCapabilityMapper::GetPlatformCapabilityForName(platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString()));
@@ -322,7 +322,7 @@ JsonValue JobDetail::Jsonize() const
 
   if(m_attemptsHasBeenSet)
   {
-   Array<JsonValue> attemptsJsonList(m_attempts.size());
+   Aws::Utils::Array<JsonValue> attemptsJsonList(m_attempts.size());
    for(unsigned attemptsIndex = 0; attemptsIndex < attemptsJsonList.GetLength(); ++attemptsIndex)
    {
      attemptsJsonList[attemptsIndex].AsObject(m_attempts[attemptsIndex].Jsonize());
@@ -363,7 +363,7 @@ JsonValue JobDetail::Jsonize() const
 
   if(m_dependsOnHasBeenSet)
   {
-   Array<JsonValue> dependsOnJsonList(m_dependsOn.size());
+   Aws::Utils::Array<JsonValue> dependsOnJsonList(m_dependsOn.size());
    for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
    {
      dependsOnJsonList[dependsOnIndex].AsObject(m_dependsOn[dependsOnIndex].Jsonize());
@@ -438,7 +438,7 @@ JsonValue JobDetail::Jsonize() const
 
   if(m_platformCapabilitiesHasBeenSet)
   {
-   Array<JsonValue> platformCapabilitiesJsonList(m_platformCapabilities.size());
+   Aws::Utils::Array<JsonValue> platformCapabilitiesJsonList(m_platformCapabilities.size());
    for(unsigned platformCapabilitiesIndex = 0; platformCapabilitiesIndex < platformCapabilitiesJsonList.GetLength(); ++platformCapabilitiesIndex)
    {
      platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString(PlatformCapabilityMapper::GetNameForPlatformCapability(m_platformCapabilities[platformCapabilitiesIndex]));

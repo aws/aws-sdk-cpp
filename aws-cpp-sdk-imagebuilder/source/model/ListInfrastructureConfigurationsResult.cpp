@@ -36,7 +36,7 @@ ListInfrastructureConfigurationsResult& ListInfrastructureConfigurationsResult::
 
   if(jsonValue.ValueExists("infrastructureConfigurationSummaryList"))
   {
-    Array<JsonView> infrastructureConfigurationSummaryListJsonList = jsonValue.GetArray("infrastructureConfigurationSummaryList");
+    Aws::Utils::Array<JsonView> infrastructureConfigurationSummaryListJsonList = jsonValue.GetArray("infrastructureConfigurationSummaryList");
     for(unsigned infrastructureConfigurationSummaryListIndex = 0; infrastructureConfigurationSummaryListIndex < infrastructureConfigurationSummaryListJsonList.GetLength(); ++infrastructureConfigurationSummaryListIndex)
     {
       m_infrastructureConfigurationSummaryList.push_back(infrastructureConfigurationSummaryListJsonList[infrastructureConfigurationSummaryListIndex].AsObject());

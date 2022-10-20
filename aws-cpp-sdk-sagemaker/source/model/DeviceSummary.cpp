@@ -98,7 +98,7 @@ DeviceSummary& DeviceSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Models"))
   {
-    Array<JsonView> modelsJsonList = jsonValue.GetArray("Models");
+    Aws::Utils::Array<JsonView> modelsJsonList = jsonValue.GetArray("Models");
     for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
     {
       m_models.push_back(modelsJsonList[modelsIndex].AsObject());
@@ -162,7 +162,7 @@ JsonValue DeviceSummary::Jsonize() const
 
   if(m_modelsHasBeenSet)
   {
-   Array<JsonValue> modelsJsonList(m_models.size());
+   Aws::Utils::Array<JsonValue> modelsJsonList(m_models.size());
    for(unsigned modelsIndex = 0; modelsIndex < modelsJsonList.GetLength(); ++modelsIndex)
    {
      modelsJsonList[modelsIndex].AsObject(m_models[modelsIndex].Jsonize());

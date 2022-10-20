@@ -87,7 +87,7 @@ Accelerator& Accelerator::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IpSets"))
   {
-    Array<JsonView> ipSetsJsonList = jsonValue.GetArray("IpSets");
+    Aws::Utils::Array<JsonView> ipSetsJsonList = jsonValue.GetArray("IpSets");
     for(unsigned ipSetsIndex = 0; ipSetsIndex < ipSetsJsonList.GetLength(); ++ipSetsIndex)
     {
       m_ipSets.push_back(ipSetsJsonList[ipSetsIndex].AsObject());
@@ -132,7 +132,7 @@ Accelerator& Accelerator::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Events"))
   {
-    Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
+    Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
@@ -172,7 +172,7 @@ JsonValue Accelerator::Jsonize() const
 
   if(m_ipSetsHasBeenSet)
   {
-   Array<JsonValue> ipSetsJsonList(m_ipSets.size());
+   Aws::Utils::Array<JsonValue> ipSetsJsonList(m_ipSets.size());
    for(unsigned ipSetsIndex = 0; ipSetsIndex < ipSetsJsonList.GetLength(); ++ipSetsIndex)
    {
      ipSetsJsonList[ipSetsIndex].AsObject(m_ipSets[ipSetsIndex].Jsonize());
@@ -210,7 +210,7 @@ JsonValue Accelerator::Jsonize() const
 
   if(m_eventsHasBeenSet)
   {
-   Array<JsonValue> eventsJsonList(m_events.size());
+   Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
    for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
    {
      eventsJsonList[eventsIndex].AsObject(m_events[eventsIndex].Jsonize());

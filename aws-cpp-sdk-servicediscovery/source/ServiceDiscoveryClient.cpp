@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/servicediscovery/ServiceDiscoveryClient.h>
 #include <aws/servicediscovery/ServiceDiscoveryEndpoint.h>
 #include <aws/servicediscovery/ServiceDiscoveryErrorMarshaller.h>
+#include <aws/servicediscovery/ServiceDiscoveryEndpointProvider.h>
 #include <aws/servicediscovery/model/CreateHttpNamespaceRequest.h>
 #include <aws/servicediscovery/model/CreatePrivateDnsNamespaceRequest.h>
 #include <aws/servicediscovery/model/CreatePublicDnsNamespaceRequest.h>
@@ -54,19 +56,66 @@ using namespace Aws::ServiceDiscovery;
 using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::ServiceDiscovery::Endpoint::ServiceDiscoveryEndpointProvider::ServiceDiscoveryResolveEndpointOutcome;
 
 
 const char* ServiceDiscoveryClient::SERVICE_NAME = "servicediscovery";
 const char* ServiceDiscoveryClient::ALLOCATION_TAG = "ServiceDiscoveryClient";
 
-ServiceDiscoveryClient::ServiceDiscoveryClient(const Client::ClientConfiguration& clientConfiguration) :
+ServiceDiscoveryClient::ServiceDiscoveryClient(const Client::ClientConfiguration& clientConfiguration,
+                                               std::shared_ptr<Endpoint::ServiceDiscoveryEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ServiceDiscoveryErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+ServiceDiscoveryClient::ServiceDiscoveryClient(const AWSCredentials& credentials,
+                                               std::shared_ptr<Endpoint::ServiceDiscoveryEndpointProvider> endpointProvider,
+                                               const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ServiceDiscoveryErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+ServiceDiscoveryClient::ServiceDiscoveryClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                               std::shared_ptr<Endpoint::ServiceDiscoveryEndpointProvider> endpointProvider,
+                                               const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ServiceDiscoveryErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  ServiceDiscoveryClient::ServiceDiscoveryClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<ServiceDiscoveryErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<ServiceDiscovery::Endpoint::ServiceDiscoveryEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -79,7 +128,8 @@ ServiceDiscoveryClient::ServiceDiscoveryClient(const AWSCredentials& credentials
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ServiceDiscoveryErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<ServiceDiscovery::Endpoint::ServiceDiscoveryEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -92,11 +142,13 @@ ServiceDiscoveryClient::ServiceDiscoveryClient(const std::shared_ptr<AWSCredenti
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ServiceDiscoveryErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<ServiceDiscovery::Endpoint::ServiceDiscoveryEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 ServiceDiscoveryClient::~ServiceDiscoveryClient()
 {
 }
@@ -104,42 +156,21 @@ ServiceDiscoveryClient::~ServiceDiscoveryClient()
 void ServiceDiscoveryClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("ServiceDiscovery");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  m_scheme = m_configScheme;
-  if (config.endpointOverride.empty())
-  {
-      m_baseUri = ServiceDiscoveryEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
-  m_enableHostPrefixInjection = config.enableHostPrefixInjection;
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void ServiceDiscoveryClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0)
-  {
-      m_scheme = "http";
-      m_baseUri = endpoint.substr(7);
-  }
-  else if (endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_scheme = "https";
-      m_baseUri = endpoint.substr(8);
-  }
-  else
-  {
-      m_scheme = m_configScheme;
-      m_baseUri = endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 CreateHttpNamespaceOutcome ServiceDiscoveryClient::CreateHttpNamespace(const CreateHttpNamespaceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return CreateHttpNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHttpNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHttpNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateHttpNamespaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateHttpNamespaceOutcomeCallable ServiceDiscoveryClient::CreateHttpNamespaceCallable(const CreateHttpNamespaceRequest& request) const
@@ -160,8 +191,10 @@ void ServiceDiscoveryClient::CreateHttpNamespaceAsync(const CreateHttpNamespaceR
 
 CreatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::CreatePrivateDnsNamespace(const CreatePrivateDnsNamespaceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return CreatePrivateDnsNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePrivateDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePrivateDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreatePrivateDnsNamespaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePrivateDnsNamespaceOutcomeCallable ServiceDiscoveryClient::CreatePrivateDnsNamespaceCallable(const CreatePrivateDnsNamespaceRequest& request) const
@@ -182,8 +215,10 @@ void ServiceDiscoveryClient::CreatePrivateDnsNamespaceAsync(const CreatePrivateD
 
 CreatePublicDnsNamespaceOutcome ServiceDiscoveryClient::CreatePublicDnsNamespace(const CreatePublicDnsNamespaceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return CreatePublicDnsNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePublicDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePublicDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreatePublicDnsNamespaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePublicDnsNamespaceOutcomeCallable ServiceDiscoveryClient::CreatePublicDnsNamespaceCallable(const CreatePublicDnsNamespaceRequest& request) const
@@ -204,8 +239,10 @@ void ServiceDiscoveryClient::CreatePublicDnsNamespaceAsync(const CreatePublicDns
 
 CreateServiceOutcome ServiceDiscoveryClient::CreateService(const CreateServiceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return CreateServiceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateServiceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateServiceOutcomeCallable ServiceDiscoveryClient::CreateServiceCallable(const CreateServiceRequest& request) const
@@ -226,8 +263,10 @@ void ServiceDiscoveryClient::CreateServiceAsync(const CreateServiceRequest& requ
 
 DeleteNamespaceOutcome ServiceDiscoveryClient::DeleteNamespace(const DeleteNamespaceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return DeleteNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteNamespaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteNamespaceOutcomeCallable ServiceDiscoveryClient::DeleteNamespaceCallable(const DeleteNamespaceRequest& request) const
@@ -248,8 +287,10 @@ void ServiceDiscoveryClient::DeleteNamespaceAsync(const DeleteNamespaceRequest& 
 
 DeleteServiceOutcome ServiceDiscoveryClient::DeleteService(const DeleteServiceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return DeleteServiceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteServiceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteServiceOutcomeCallable ServiceDiscoveryClient::DeleteServiceCallable(const DeleteServiceRequest& request) const
@@ -270,8 +311,10 @@ void ServiceDiscoveryClient::DeleteServiceAsync(const DeleteServiceRequest& requ
 
 DeregisterInstanceOutcome ServiceDiscoveryClient::DeregisterInstance(const DeregisterInstanceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return DeregisterInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeregisterInstanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeregisterInstanceOutcomeCallable ServiceDiscoveryClient::DeregisterInstanceCallable(const DeregisterInstanceRequest& request) const
@@ -292,17 +335,10 @@ void ServiceDiscoveryClient::DeregisterInstanceAsync(const DeregisterInstanceReq
 
 DiscoverInstancesOutcome ServiceDiscoveryClient::DiscoverInstances(const DiscoverInstancesRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("data-" + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DiscoverInstances", "Invalid DNS host: " << uri.GetAuthority());
-      return DiscoverInstancesOutcome(Aws::Client::AWSError<ServiceDiscoveryErrors>(ServiceDiscoveryErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  return DiscoverInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DiscoverInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DiscoverInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DiscoverInstancesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DiscoverInstancesOutcomeCallable ServiceDiscoveryClient::DiscoverInstancesCallable(const DiscoverInstancesRequest& request) const
@@ -323,8 +359,10 @@ void ServiceDiscoveryClient::DiscoverInstancesAsync(const DiscoverInstancesReque
 
 GetInstanceOutcome ServiceDiscoveryClient::GetInstance(const GetInstanceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return GetInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetInstanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetInstanceOutcomeCallable ServiceDiscoveryClient::GetInstanceCallable(const GetInstanceRequest& request) const
@@ -345,8 +383,10 @@ void ServiceDiscoveryClient::GetInstanceAsync(const GetInstanceRequest& request,
 
 GetInstancesHealthStatusOutcome ServiceDiscoveryClient::GetInstancesHealthStatus(const GetInstancesHealthStatusRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return GetInstancesHealthStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetInstancesHealthStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetInstancesHealthStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetInstancesHealthStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetInstancesHealthStatusOutcomeCallable ServiceDiscoveryClient::GetInstancesHealthStatusCallable(const GetInstancesHealthStatusRequest& request) const
@@ -367,8 +407,10 @@ void ServiceDiscoveryClient::GetInstancesHealthStatusAsync(const GetInstancesHea
 
 GetNamespaceOutcome ServiceDiscoveryClient::GetNamespace(const GetNamespaceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return GetNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetNamespaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetNamespaceOutcomeCallable ServiceDiscoveryClient::GetNamespaceCallable(const GetNamespaceRequest& request) const
@@ -389,8 +431,10 @@ void ServiceDiscoveryClient::GetNamespaceAsync(const GetNamespaceRequest& reques
 
 GetOperationOutcome ServiceDiscoveryClient::GetOperation(const GetOperationRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return GetOperationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOperation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetOperationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetOperationOutcomeCallable ServiceDiscoveryClient::GetOperationCallable(const GetOperationRequest& request) const
@@ -411,8 +455,10 @@ void ServiceDiscoveryClient::GetOperationAsync(const GetOperationRequest& reques
 
 GetServiceOutcome ServiceDiscoveryClient::GetService(const GetServiceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return GetServiceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetServiceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetServiceOutcomeCallable ServiceDiscoveryClient::GetServiceCallable(const GetServiceRequest& request) const
@@ -433,8 +479,10 @@ void ServiceDiscoveryClient::GetServiceAsync(const GetServiceRequest& request, c
 
 ListInstancesOutcome ServiceDiscoveryClient::ListInstances(const ListInstancesRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return ListInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListInstances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListInstancesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListInstancesOutcomeCallable ServiceDiscoveryClient::ListInstancesCallable(const ListInstancesRequest& request) const
@@ -455,8 +503,10 @@ void ServiceDiscoveryClient::ListInstancesAsync(const ListInstancesRequest& requ
 
 ListNamespacesOutcome ServiceDiscoveryClient::ListNamespaces(const ListNamespacesRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return ListNamespacesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListNamespaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListNamespaces, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListNamespacesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListNamespacesOutcomeCallable ServiceDiscoveryClient::ListNamespacesCallable(const ListNamespacesRequest& request) const
@@ -477,8 +527,10 @@ void ServiceDiscoveryClient::ListNamespacesAsync(const ListNamespacesRequest& re
 
 ListOperationsOutcome ServiceDiscoveryClient::ListOperations(const ListOperationsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return ListOperationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListOperations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListOperationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListOperationsOutcomeCallable ServiceDiscoveryClient::ListOperationsCallable(const ListOperationsRequest& request) const
@@ -499,8 +551,10 @@ void ServiceDiscoveryClient::ListOperationsAsync(const ListOperationsRequest& re
 
 ListServicesOutcome ServiceDiscoveryClient::ListServices(const ListServicesRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return ListServicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListServicesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListServicesOutcomeCallable ServiceDiscoveryClient::ListServicesCallable(const ListServicesRequest& request) const
@@ -521,8 +575,10 @@ void ServiceDiscoveryClient::ListServicesAsync(const ListServicesRequest& reques
 
 ListTagsForResourceOutcome ServiceDiscoveryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable ServiceDiscoveryClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -543,8 +599,10 @@ void ServiceDiscoveryClient::ListTagsForResourceAsync(const ListTagsForResourceR
 
 RegisterInstanceOutcome ServiceDiscoveryClient::RegisterInstance(const RegisterInstanceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return RegisterInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return RegisterInstanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterInstanceOutcomeCallable ServiceDiscoveryClient::RegisterInstanceCallable(const RegisterInstanceRequest& request) const
@@ -565,8 +623,10 @@ void ServiceDiscoveryClient::RegisterInstanceAsync(const RegisterInstanceRequest
 
 TagResourceOutcome ServiceDiscoveryClient::TagResource(const TagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable ServiceDiscoveryClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -587,8 +647,10 @@ void ServiceDiscoveryClient::TagResourceAsync(const TagResourceRequest& request,
 
 UntagResourceOutcome ServiceDiscoveryClient::UntagResource(const UntagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable ServiceDiscoveryClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -609,8 +671,10 @@ void ServiceDiscoveryClient::UntagResourceAsync(const UntagResourceRequest& requ
 
 UpdateHttpNamespaceOutcome ServiceDiscoveryClient::UpdateHttpNamespace(const UpdateHttpNamespaceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return UpdateHttpNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateHttpNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateHttpNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateHttpNamespaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateHttpNamespaceOutcomeCallable ServiceDiscoveryClient::UpdateHttpNamespaceCallable(const UpdateHttpNamespaceRequest& request) const
@@ -631,8 +695,10 @@ void ServiceDiscoveryClient::UpdateHttpNamespaceAsync(const UpdateHttpNamespaceR
 
 UpdateInstanceCustomHealthStatusOutcome ServiceDiscoveryClient::UpdateInstanceCustomHealthStatus(const UpdateInstanceCustomHealthStatusRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return UpdateInstanceCustomHealthStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateInstanceCustomHealthStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateInstanceCustomHealthStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateInstanceCustomHealthStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateInstanceCustomHealthStatusOutcomeCallable ServiceDiscoveryClient::UpdateInstanceCustomHealthStatusCallable(const UpdateInstanceCustomHealthStatusRequest& request) const
@@ -653,8 +719,10 @@ void ServiceDiscoveryClient::UpdateInstanceCustomHealthStatusAsync(const UpdateI
 
 UpdatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePrivateDnsNamespace(const UpdatePrivateDnsNamespaceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return UpdatePrivateDnsNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePrivateDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePrivateDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdatePrivateDnsNamespaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdatePrivateDnsNamespaceOutcomeCallable ServiceDiscoveryClient::UpdatePrivateDnsNamespaceCallable(const UpdatePrivateDnsNamespaceRequest& request) const
@@ -675,8 +743,10 @@ void ServiceDiscoveryClient::UpdatePrivateDnsNamespaceAsync(const UpdatePrivateD
 
 UpdatePublicDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePublicDnsNamespace(const UpdatePublicDnsNamespaceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return UpdatePublicDnsNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePublicDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePublicDnsNamespace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdatePublicDnsNamespaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdatePublicDnsNamespaceOutcomeCallable ServiceDiscoveryClient::UpdatePublicDnsNamespaceCallable(const UpdatePublicDnsNamespaceRequest& request) const
@@ -697,8 +767,10 @@ void ServiceDiscoveryClient::UpdatePublicDnsNamespaceAsync(const UpdatePublicDns
 
 UpdateServiceOutcome ServiceDiscoveryClient::UpdateService(const UpdateServiceRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  return UpdateServiceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateServiceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateServiceOutcomeCallable ServiceDiscoveryClient::UpdateServiceCallable(const UpdateServiceRequest& request) const

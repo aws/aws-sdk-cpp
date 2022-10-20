@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/macie2/Macie2_EXPORTS.h>
+#include <aws/macie2/Macie2EndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -78,7 +78,7 @@ BaselineOverride& BaselineOverride::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ApprovedPatches"))
   {
-    Array<JsonView> approvedPatchesJsonList = jsonValue.GetArray("ApprovedPatches");
+    Aws::Utils::Array<JsonView> approvedPatchesJsonList = jsonValue.GetArray("ApprovedPatches");
     for(unsigned approvedPatchesIndex = 0; approvedPatchesIndex < approvedPatchesJsonList.GetLength(); ++approvedPatchesIndex)
     {
       m_approvedPatches.push_back(approvedPatchesJsonList[approvedPatchesIndex].AsString());
@@ -95,7 +95,7 @@ BaselineOverride& BaselineOverride::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RejectedPatches"))
   {
-    Array<JsonView> rejectedPatchesJsonList = jsonValue.GetArray("RejectedPatches");
+    Aws::Utils::Array<JsonView> rejectedPatchesJsonList = jsonValue.GetArray("RejectedPatches");
     for(unsigned rejectedPatchesIndex = 0; rejectedPatchesIndex < rejectedPatchesJsonList.GetLength(); ++rejectedPatchesIndex)
     {
       m_rejectedPatches.push_back(rejectedPatchesJsonList[rejectedPatchesIndex].AsString());
@@ -119,7 +119,7 @@ BaselineOverride& BaselineOverride::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Sources"))
   {
-    Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
     for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
@@ -153,7 +153,7 @@ JsonValue BaselineOverride::Jsonize() const
 
   if(m_approvedPatchesHasBeenSet)
   {
-   Array<JsonValue> approvedPatchesJsonList(m_approvedPatches.size());
+   Aws::Utils::Array<JsonValue> approvedPatchesJsonList(m_approvedPatches.size());
    for(unsigned approvedPatchesIndex = 0; approvedPatchesIndex < approvedPatchesJsonList.GetLength(); ++approvedPatchesIndex)
    {
      approvedPatchesJsonList[approvedPatchesIndex].AsString(m_approvedPatches[approvedPatchesIndex]);
@@ -169,7 +169,7 @@ JsonValue BaselineOverride::Jsonize() const
 
   if(m_rejectedPatchesHasBeenSet)
   {
-   Array<JsonValue> rejectedPatchesJsonList(m_rejectedPatches.size());
+   Aws::Utils::Array<JsonValue> rejectedPatchesJsonList(m_rejectedPatches.size());
    for(unsigned rejectedPatchesIndex = 0; rejectedPatchesIndex < rejectedPatchesJsonList.GetLength(); ++rejectedPatchesIndex)
    {
      rejectedPatchesJsonList[rejectedPatchesIndex].AsString(m_rejectedPatches[rejectedPatchesIndex]);
@@ -191,7 +191,7 @@ JsonValue BaselineOverride::Jsonize() const
 
   if(m_sourcesHasBeenSet)
   {
-   Array<JsonValue> sourcesJsonList(m_sources.size());
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());

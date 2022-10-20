@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/qldb-session/QLDBSession_EXPORTS.h>
+#include <aws/qldb-session/QLDBSessionEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

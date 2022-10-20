@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/voice-id/VoiceID_EXPORTS.h>
+#include <aws/voice-id/VoiceIDEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

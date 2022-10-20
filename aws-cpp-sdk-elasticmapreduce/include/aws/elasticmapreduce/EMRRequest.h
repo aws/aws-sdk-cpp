@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
+#include <aws/elasticmapreduce/EMREndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

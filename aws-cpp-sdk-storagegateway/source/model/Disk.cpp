@@ -98,7 +98,7 @@ Disk& Disk::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DiskAttributeList"))
   {
-    Array<JsonView> diskAttributeListJsonList = jsonValue.GetArray("DiskAttributeList");
+    Aws::Utils::Array<JsonView> diskAttributeListJsonList = jsonValue.GetArray("DiskAttributeList");
     for(unsigned diskAttributeListIndex = 0; diskAttributeListIndex < diskAttributeListJsonList.GetLength(); ++diskAttributeListIndex)
     {
       m_diskAttributeList.push_back(diskAttributeListJsonList[diskAttributeListIndex].AsString());
@@ -157,7 +157,7 @@ JsonValue Disk::Jsonize() const
 
   if(m_diskAttributeListHasBeenSet)
   {
-   Array<JsonValue> diskAttributeListJsonList(m_diskAttributeList.size());
+   Aws::Utils::Array<JsonValue> diskAttributeListJsonList(m_diskAttributeList.size());
    for(unsigned diskAttributeListIndex = 0; diskAttributeListIndex < diskAttributeListJsonList.GetLength(); ++diskAttributeListIndex)
    {
      diskAttributeListJsonList[diskAttributeListIndex].AsString(m_diskAttributeList[diskAttributeListIndex]);

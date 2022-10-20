@@ -37,7 +37,7 @@ Aws::String GetConfigRequest::SerializePayload() const
 
   if(m_hapgListHasBeenSet)
   {
-   Array<JsonValue> hapgListJsonList(m_hapgList.size());
+   Aws::Utils::Array<JsonValue> hapgListJsonList(m_hapgList.size());
    for(unsigned hapgListIndex = 0; hapgListIndex < hapgListJsonList.GetLength(); ++hapgListIndex)
    {
      hapgListJsonList[hapgListIndex].AsString(m_hapgList[hapgListIndex]);

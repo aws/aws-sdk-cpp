@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
+#include <aws/sso-oidc/SSOOIDCEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -27,7 +27,7 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
 
   if(m_snapshotIdsHasBeenSet)
   {
-   Array<JsonValue> snapshotIdsJsonList(m_snapshotIds.size());
+   Aws::Utils::Array<JsonValue> snapshotIdsJsonList(m_snapshotIds.size());
    for(unsigned snapshotIdsIndex = 0; snapshotIdsIndex < snapshotIdsJsonList.GetLength(); ++snapshotIdsIndex)
    {
      snapshotIdsJsonList[snapshotIdsIndex].AsString(m_snapshotIds[snapshotIdsIndex]);
@@ -38,7 +38,7 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/states/SFNEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -72,6 +73,10 @@ namespace Aws
 
   namespace SFN
   {
+    namespace Endpoint
+    {
+      class SFNEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in SFNClient header */

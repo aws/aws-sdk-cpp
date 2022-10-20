@@ -36,7 +36,7 @@ DescribeSettingsResult& DescribeSettingsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("SettingEntries"))
   {
-    Array<JsonView> settingEntriesJsonList = jsonValue.GetArray("SettingEntries");
+    Aws::Utils::Array<JsonView> settingEntriesJsonList = jsonValue.GetArray("SettingEntries");
     for(unsigned settingEntriesIndex = 0; settingEntriesIndex < settingEntriesJsonList.GetLength(); ++settingEntriesIndex)
     {
       m_settingEntries.push_back(settingEntriesJsonList[settingEntriesIndex].AsObject());

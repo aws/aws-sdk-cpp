@@ -41,6 +41,15 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    EndpointParameters GetEndpointContextParams() const override
+    {
+        EndpointParameters parameters;
+        parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+
+        return parameters;
+    }
+
+
     /**
      * <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code>
      * configuration you want to retrieve. </p>

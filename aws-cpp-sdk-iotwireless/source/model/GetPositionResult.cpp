@@ -34,7 +34,7 @@ GetPositionResult& GetPositionResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Position"))
   {
-    Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
+    Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
     for(unsigned positionIndex = 0; positionIndex < positionJsonList.GetLength(); ++positionIndex)
     {
       m_position.push_back(positionJsonList[positionIndex].AsDouble());

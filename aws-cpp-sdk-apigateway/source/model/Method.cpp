@@ -134,7 +134,7 @@ Method& Method::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("authorizationScopes"))
   {
-    Array<JsonView> authorizationScopesJsonList = jsonValue.GetArray("authorizationScopes");
+    Aws::Utils::Array<JsonView> authorizationScopesJsonList = jsonValue.GetArray("authorizationScopes");
     for(unsigned authorizationScopesIndex = 0; authorizationScopesIndex < authorizationScopesJsonList.GetLength(); ++authorizationScopesIndex)
     {
       m_authorizationScopes.push_back(authorizationScopesJsonList[authorizationScopesIndex].AsString());
@@ -226,7 +226,7 @@ JsonValue Method::Jsonize() const
 
   if(m_authorizationScopesHasBeenSet)
   {
-   Array<JsonValue> authorizationScopesJsonList(m_authorizationScopes.size());
+   Aws::Utils::Array<JsonValue> authorizationScopesJsonList(m_authorizationScopes.size());
    for(unsigned authorizationScopesIndex = 0; authorizationScopesIndex < authorizationScopesJsonList.GetLength(); ++authorizationScopesIndex)
    {
      authorizationScopesJsonList[authorizationScopesIndex].AsString(m_authorizationScopes[authorizationScopesIndex]);

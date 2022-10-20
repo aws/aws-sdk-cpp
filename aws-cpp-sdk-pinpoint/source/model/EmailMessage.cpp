@@ -73,7 +73,7 @@ EmailMessage& EmailMessage::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReplyToAddresses"))
   {
-    Array<JsonView> replyToAddressesJsonList = jsonValue.GetArray("ReplyToAddresses");
+    Aws::Utils::Array<JsonView> replyToAddressesJsonList = jsonValue.GetArray("ReplyToAddresses");
     for(unsigned replyToAddressesIndex = 0; replyToAddressesIndex < replyToAddressesJsonList.GetLength(); ++replyToAddressesIndex)
     {
       m_replyToAddresses.push_back(replyToAddressesJsonList[replyToAddressesIndex].AsString());
@@ -93,7 +93,7 @@ EmailMessage& EmailMessage::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
     for(auto& substitutionsItem : substitutionsJsonMap)
     {
-      Array<JsonView> listOf__stringJsonList = substitutionsItem.second.AsArray();
+      Aws::Utils::Array<JsonView> listOf__stringJsonList = substitutionsItem.second.AsArray();
       Aws::Vector<Aws::String> listOf__stringList;
       listOf__stringList.reserve((size_t)listOf__stringJsonList.GetLength());
       for(unsigned listOf__stringIndex = 0; listOf__stringIndex < listOf__stringJsonList.GetLength(); ++listOf__stringIndex)
@@ -138,7 +138,7 @@ JsonValue EmailMessage::Jsonize() const
 
   if(m_replyToAddressesHasBeenSet)
   {
-   Array<JsonValue> replyToAddressesJsonList(m_replyToAddresses.size());
+   Aws::Utils::Array<JsonValue> replyToAddressesJsonList(m_replyToAddresses.size());
    for(unsigned replyToAddressesIndex = 0; replyToAddressesIndex < replyToAddressesJsonList.GetLength(); ++replyToAddressesIndex)
    {
      replyToAddressesJsonList[replyToAddressesIndex].AsString(m_replyToAddresses[replyToAddressesIndex]);
@@ -158,7 +158,7 @@ JsonValue EmailMessage::Jsonize() const
    JsonValue substitutionsJsonMap;
    for(auto& substitutionsItem : m_substitutions)
    {
-     Array<JsonValue> listOf__stringJsonList(substitutionsItem.second.size());
+     Aws::Utils::Array<JsonValue> listOf__stringJsonList(substitutionsItem.second.size());
      for(unsigned listOf__stringIndex = 0; listOf__stringIndex < listOf__stringJsonList.GetLength(); ++listOf__stringIndex)
      {
        listOf__stringJsonList[listOf__stringIndex].AsString(substitutionsItem.second[listOf__stringIndex]);

@@ -30,7 +30,7 @@ DescribeEntityAggregatesResult& DescribeEntityAggregatesResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("entityAggregates"))
   {
-    Array<JsonView> entityAggregatesJsonList = jsonValue.GetArray("entityAggregates");
+    Aws::Utils::Array<JsonView> entityAggregatesJsonList = jsonValue.GetArray("entityAggregates");
     for(unsigned entityAggregatesIndex = 0; entityAggregatesIndex < entityAggregatesJsonList.GetLength(); ++entityAggregatesIndex)
     {
       m_entityAggregates.push_back(entityAggregatesJsonList[entityAggregatesIndex].AsObject());

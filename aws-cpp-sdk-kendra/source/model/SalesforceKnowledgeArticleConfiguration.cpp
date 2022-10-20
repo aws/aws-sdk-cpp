@@ -37,7 +37,7 @@ SalesforceKnowledgeArticleConfiguration& SalesforceKnowledgeArticleConfiguration
 {
   if(jsonValue.ValueExists("IncludedStates"))
   {
-    Array<JsonView> includedStatesJsonList = jsonValue.GetArray("IncludedStates");
+    Aws::Utils::Array<JsonView> includedStatesJsonList = jsonValue.GetArray("IncludedStates");
     for(unsigned includedStatesIndex = 0; includedStatesIndex < includedStatesJsonList.GetLength(); ++includedStatesIndex)
     {
       m_includedStates.push_back(SalesforceKnowledgeArticleStateMapper::GetSalesforceKnowledgeArticleStateForName(includedStatesJsonList[includedStatesIndex].AsString()));
@@ -54,7 +54,7 @@ SalesforceKnowledgeArticleConfiguration& SalesforceKnowledgeArticleConfiguration
 
   if(jsonValue.ValueExists("CustomKnowledgeArticleTypeConfigurations"))
   {
-    Array<JsonView> customKnowledgeArticleTypeConfigurationsJsonList = jsonValue.GetArray("CustomKnowledgeArticleTypeConfigurations");
+    Aws::Utils::Array<JsonView> customKnowledgeArticleTypeConfigurationsJsonList = jsonValue.GetArray("CustomKnowledgeArticleTypeConfigurations");
     for(unsigned customKnowledgeArticleTypeConfigurationsIndex = 0; customKnowledgeArticleTypeConfigurationsIndex < customKnowledgeArticleTypeConfigurationsJsonList.GetLength(); ++customKnowledgeArticleTypeConfigurationsIndex)
     {
       m_customKnowledgeArticleTypeConfigurations.push_back(customKnowledgeArticleTypeConfigurationsJsonList[customKnowledgeArticleTypeConfigurationsIndex].AsObject());
@@ -71,7 +71,7 @@ JsonValue SalesforceKnowledgeArticleConfiguration::Jsonize() const
 
   if(m_includedStatesHasBeenSet)
   {
-   Array<JsonValue> includedStatesJsonList(m_includedStates.size());
+   Aws::Utils::Array<JsonValue> includedStatesJsonList(m_includedStates.size());
    for(unsigned includedStatesIndex = 0; includedStatesIndex < includedStatesJsonList.GetLength(); ++includedStatesIndex)
    {
      includedStatesJsonList[includedStatesIndex].AsString(SalesforceKnowledgeArticleStateMapper::GetNameForSalesforceKnowledgeArticleState(m_includedStates[includedStatesIndex]));
@@ -88,7 +88,7 @@ JsonValue SalesforceKnowledgeArticleConfiguration::Jsonize() const
 
   if(m_customKnowledgeArticleTypeConfigurationsHasBeenSet)
   {
-   Array<JsonValue> customKnowledgeArticleTypeConfigurationsJsonList(m_customKnowledgeArticleTypeConfigurations.size());
+   Aws::Utils::Array<JsonValue> customKnowledgeArticleTypeConfigurationsJsonList(m_customKnowledgeArticleTypeConfigurations.size());
    for(unsigned customKnowledgeArticleTypeConfigurationsIndex = 0; customKnowledgeArticleTypeConfigurationsIndex < customKnowledgeArticleTypeConfigurationsJsonList.GetLength(); ++customKnowledgeArticleTypeConfigurationsIndex)
    {
      customKnowledgeArticleTypeConfigurationsJsonList[customKnowledgeArticleTypeConfigurationsIndex].AsObject(m_customKnowledgeArticleTypeConfigurations[customKnowledgeArticleTypeConfigurationsIndex].Jsonize());

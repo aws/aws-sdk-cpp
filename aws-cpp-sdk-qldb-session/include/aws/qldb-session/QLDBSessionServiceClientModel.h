@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/qldb-session/QLDBSessionEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -50,6 +51,10 @@ namespace Aws
 
   namespace QLDBSession
   {
+    namespace Endpoint
+    {
+      class QLDBSessionEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in QLDBSessionClient header */

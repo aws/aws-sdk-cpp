@@ -30,7 +30,7 @@ ListAccessorsResult& ListAccessorsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Accessors"))
   {
-    Array<JsonView> accessorsJsonList = jsonValue.GetArray("Accessors");
+    Aws::Utils::Array<JsonView> accessorsJsonList = jsonValue.GetArray("Accessors");
     for(unsigned accessorsIndex = 0; accessorsIndex < accessorsJsonList.GetLength(); ++accessorsIndex)
     {
       m_accessors.push_back(accessorsJsonList[accessorsIndex].AsObject());

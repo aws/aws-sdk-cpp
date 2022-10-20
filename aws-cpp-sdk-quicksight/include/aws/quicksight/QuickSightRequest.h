@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/QuickSightEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

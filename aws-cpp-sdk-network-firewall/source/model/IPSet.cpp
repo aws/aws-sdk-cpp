@@ -33,7 +33,7 @@ IPSet& IPSet::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Definition"))
   {
-    Array<JsonView> definitionJsonList = jsonValue.GetArray("Definition");
+    Aws::Utils::Array<JsonView> definitionJsonList = jsonValue.GetArray("Definition");
     for(unsigned definitionIndex = 0; definitionIndex < definitionJsonList.GetLength(); ++definitionIndex)
     {
       m_definition.push_back(definitionJsonList[definitionIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue IPSet::Jsonize() const
 
   if(m_definitionHasBeenSet)
   {
-   Array<JsonValue> definitionJsonList(m_definition.size());
+   Aws::Utils::Array<JsonValue> definitionJsonList(m_definition.size());
    for(unsigned definitionIndex = 0; definitionIndex < definitionJsonList.GetLength(); ++definitionIndex)
    {
      definitionJsonList[definitionIndex].AsString(m_definition[definitionIndex]);

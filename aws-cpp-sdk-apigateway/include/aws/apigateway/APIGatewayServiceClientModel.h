@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/apigateway/APIGatewayEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -145,6 +146,10 @@ namespace Aws
 
   namespace APIGateway
   {
+    namespace Endpoint
+    {
+      class APIGatewayEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in APIGatewayClient header */

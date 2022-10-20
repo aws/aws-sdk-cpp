@@ -37,7 +37,7 @@ DetectMitigationActionsTaskTarget& DetectMitigationActionsTaskTarget::operator =
 {
   if(jsonValue.ValueExists("violationIds"))
   {
-    Array<JsonView> violationIdsJsonList = jsonValue.GetArray("violationIds");
+    Aws::Utils::Array<JsonView> violationIdsJsonList = jsonValue.GetArray("violationIds");
     for(unsigned violationIdsIndex = 0; violationIdsIndex < violationIdsJsonList.GetLength(); ++violationIdsIndex)
     {
       m_violationIds.push_back(violationIdsJsonList[violationIdsIndex].AsString());
@@ -68,7 +68,7 @@ JsonValue DetectMitigationActionsTaskTarget::Jsonize() const
 
   if(m_violationIdsHasBeenSet)
   {
-   Array<JsonValue> violationIdsJsonList(m_violationIds.size());
+   Aws::Utils::Array<JsonValue> violationIdsJsonList(m_violationIds.size());
    for(unsigned violationIdsIndex = 0; violationIdsIndex < violationIdsJsonList.GetLength(); ++violationIdsIndex)
    {
      violationIdsJsonList[violationIdsIndex].AsString(m_violationIds[violationIdsIndex]);

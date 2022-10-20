@@ -46,7 +46,7 @@ AwsLambdaLayerVersionDetails& AwsLambdaLayerVersionDetails::operator =(JsonView 
 
   if(jsonValue.ValueExists("CompatibleRuntimes"))
   {
-    Array<JsonView> compatibleRuntimesJsonList = jsonValue.GetArray("CompatibleRuntimes");
+    Aws::Utils::Array<JsonView> compatibleRuntimesJsonList = jsonValue.GetArray("CompatibleRuntimes");
     for(unsigned compatibleRuntimesIndex = 0; compatibleRuntimesIndex < compatibleRuntimesJsonList.GetLength(); ++compatibleRuntimesIndex)
     {
       m_compatibleRuntimes.push_back(compatibleRuntimesJsonList[compatibleRuntimesIndex].AsString());
@@ -76,7 +76,7 @@ JsonValue AwsLambdaLayerVersionDetails::Jsonize() const
 
   if(m_compatibleRuntimesHasBeenSet)
   {
-   Array<JsonValue> compatibleRuntimesJsonList(m_compatibleRuntimes.size());
+   Aws::Utils::Array<JsonValue> compatibleRuntimesJsonList(m_compatibleRuntimes.size());
    for(unsigned compatibleRuntimesIndex = 0; compatibleRuntimesIndex < compatibleRuntimesJsonList.GetLength(); ++compatibleRuntimesIndex)
    {
      compatibleRuntimesJsonList[compatibleRuntimesIndex].AsString(m_compatibleRuntimes[compatibleRuntimesIndex]);

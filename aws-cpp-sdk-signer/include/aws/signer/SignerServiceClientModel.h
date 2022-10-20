@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/signer/SignerEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -64,6 +65,10 @@ namespace Aws
 
   namespace signer
   {
+    namespace Endpoint
+    {
+      class SignerEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in SignerClient header */

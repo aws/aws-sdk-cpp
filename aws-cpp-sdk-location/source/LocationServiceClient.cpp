@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/location/LocationServiceClient.h>
 #include <aws/location/LocationServiceEndpoint.h>
 #include <aws/location/LocationServiceErrorMarshaller.h>
+#include <aws/location/LocationServiceEndpointProvider.h>
 #include <aws/location/model/AssociateTrackerConsumerRequest.h>
 #include <aws/location/model/BatchDeleteDevicePositionHistoryRequest.h>
 #include <aws/location/model/BatchDeleteGeofenceRequest.h>
@@ -81,19 +83,66 @@ using namespace Aws::LocationService;
 using namespace Aws::LocationService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::LocationService::Endpoint::LocationServiceEndpointProvider::LocationServiceResolveEndpointOutcome;
 
 
 const char* LocationServiceClient::SERVICE_NAME = "geo";
 const char* LocationServiceClient::ALLOCATION_TAG = "LocationServiceClient";
 
-LocationServiceClient::LocationServiceClient(const Client::ClientConfiguration& clientConfiguration) :
+LocationServiceClient::LocationServiceClient(const Client::ClientConfiguration& clientConfiguration,
+                                             std::shared_ptr<Endpoint::LocationServiceEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+LocationServiceClient::LocationServiceClient(const AWSCredentials& credentials,
+                                             std::shared_ptr<Endpoint::LocationServiceEndpointProvider> endpointProvider,
+                                             const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+LocationServiceClient::LocationServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                             std::shared_ptr<Endpoint::LocationServiceEndpointProvider> endpointProvider,
+                                             const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  LocationServiceClient::LocationServiceClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<LocationService::Endpoint::LocationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -106,7 +155,8 @@ LocationServiceClient::LocationServiceClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<LocationService::Endpoint::LocationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -119,11 +169,13 @@ LocationServiceClient::LocationServiceClient(const std::shared_ptr<AWSCredential
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LocationServiceErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<LocationService::Endpoint::LocationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 LocationServiceClient::~LocationServiceClient()
 {
 }
@@ -131,59 +183,26 @@ LocationServiceClient::~LocationServiceClient()
 void LocationServiceClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Location");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  m_scheme = m_configScheme;
-  if (config.endpointOverride.empty())
-  {
-      m_baseUri = LocationServiceEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
-  m_enableHostPrefixInjection = config.enableHostPrefixInjection;
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void LocationServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0)
-  {
-      m_scheme = "http";
-      m_baseUri = endpoint.substr(7);
-  }
-  else if (endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_scheme = "https";
-      m_baseUri = endpoint.substr(8);
-  }
-  else
-  {
-      m_scheme = m_configScheme;
-      m_baseUri = endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 AssociateTrackerConsumerOutcome LocationServiceClient::AssociateTrackerConsumer(const AssociateTrackerConsumerRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateTrackerConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AssociateTrackerConsumer", "Required field: TrackerName, is not set");
     return AssociateTrackerConsumerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("AssociateTrackerConsumer", "Invalid DNS host: " << uri.GetAuthority());
-      return AssociateTrackerConsumerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/trackers/");
-  uri.AddPathSegment(request.GetTrackerName());
-  uri.AddPathSegments("/consumers");
-  return AssociateTrackerConsumerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateTrackerConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return AssociateTrackerConsumerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AssociateTrackerConsumerOutcomeCallable LocationServiceClient::AssociateTrackerConsumerCallable(const AssociateTrackerConsumerRequest& request) const
@@ -204,25 +223,15 @@ void LocationServiceClient::AssociateTrackerConsumerAsync(const AssociateTracker
 
 BatchDeleteDevicePositionHistoryOutcome LocationServiceClient::BatchDeleteDevicePositionHistory(const BatchDeleteDevicePositionHistoryRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteDevicePositionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchDeleteDevicePositionHistory", "Required field: TrackerName, is not set");
     return BatchDeleteDevicePositionHistoryOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("BatchDeleteDevicePositionHistory", "Invalid DNS host: " << uri.GetAuthority());
-      return BatchDeleteDevicePositionHistoryOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/trackers/");
-  uri.AddPathSegment(request.GetTrackerName());
-  uri.AddPathSegments("/delete-positions");
-  return BatchDeleteDevicePositionHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeleteDevicePositionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchDeleteDevicePositionHistoryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchDeleteDevicePositionHistoryOutcomeCallable LocationServiceClient::BatchDeleteDevicePositionHistoryCallable(const BatchDeleteDevicePositionHistoryRequest& request) const
@@ -243,25 +252,15 @@ void LocationServiceClient::BatchDeleteDevicePositionHistoryAsync(const BatchDel
 
 BatchDeleteGeofenceOutcome LocationServiceClient::BatchDeleteGeofence(const BatchDeleteGeofenceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteGeofence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchDeleteGeofence", "Required field: CollectionName, is not set");
     return BatchDeleteGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollectionName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("geofencing." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("BatchDeleteGeofence", "Invalid DNS host: " << uri.GetAuthority());
-      return BatchDeleteGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/geofencing/v0/collections/");
-  uri.AddPathSegment(request.GetCollectionName());
-  uri.AddPathSegments("/delete-geofences");
-  return BatchDeleteGeofenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeleteGeofence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchDeleteGeofenceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchDeleteGeofenceOutcomeCallable LocationServiceClient::BatchDeleteGeofenceCallable(const BatchDeleteGeofenceRequest& request) const
@@ -282,25 +281,15 @@ void LocationServiceClient::BatchDeleteGeofenceAsync(const BatchDeleteGeofenceRe
 
 BatchEvaluateGeofencesOutcome LocationServiceClient::BatchEvaluateGeofences(const BatchEvaluateGeofencesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchEvaluateGeofences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchEvaluateGeofences", "Required field: CollectionName, is not set");
     return BatchEvaluateGeofencesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollectionName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("geofencing." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("BatchEvaluateGeofences", "Invalid DNS host: " << uri.GetAuthority());
-      return BatchEvaluateGeofencesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/geofencing/v0/collections/");
-  uri.AddPathSegment(request.GetCollectionName());
-  uri.AddPathSegments("/positions");
-  return BatchEvaluateGeofencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchEvaluateGeofences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchEvaluateGeofencesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchEvaluateGeofencesOutcomeCallable LocationServiceClient::BatchEvaluateGeofencesCallable(const BatchEvaluateGeofencesRequest& request) const
@@ -321,25 +310,15 @@ void LocationServiceClient::BatchEvaluateGeofencesAsync(const BatchEvaluateGeofe
 
 BatchGetDevicePositionOutcome LocationServiceClient::BatchGetDevicePosition(const BatchGetDevicePositionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetDevicePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchGetDevicePosition", "Required field: TrackerName, is not set");
     return BatchGetDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("BatchGetDevicePosition", "Invalid DNS host: " << uri.GetAuthority());
-      return BatchGetDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/trackers/");
-  uri.AddPathSegment(request.GetTrackerName());
-  uri.AddPathSegments("/get-positions");
-  return BatchGetDevicePositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetDevicePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchGetDevicePositionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchGetDevicePositionOutcomeCallable LocationServiceClient::BatchGetDevicePositionCallable(const BatchGetDevicePositionRequest& request) const
@@ -360,25 +339,15 @@ void LocationServiceClient::BatchGetDevicePositionAsync(const BatchGetDevicePosi
 
 BatchPutGeofenceOutcome LocationServiceClient::BatchPutGeofence(const BatchPutGeofenceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchPutGeofence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchPutGeofence", "Required field: CollectionName, is not set");
     return BatchPutGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollectionName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("geofencing." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("BatchPutGeofence", "Invalid DNS host: " << uri.GetAuthority());
-      return BatchPutGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/geofencing/v0/collections/");
-  uri.AddPathSegment(request.GetCollectionName());
-  uri.AddPathSegments("/put-geofences");
-  return BatchPutGeofenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchPutGeofence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchPutGeofenceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchPutGeofenceOutcomeCallable LocationServiceClient::BatchPutGeofenceCallable(const BatchPutGeofenceRequest& request) const
@@ -399,25 +368,15 @@ void LocationServiceClient::BatchPutGeofenceAsync(const BatchPutGeofenceRequest&
 
 BatchUpdateDevicePositionOutcome LocationServiceClient::BatchUpdateDevicePosition(const BatchUpdateDevicePositionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateDevicePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchUpdateDevicePosition", "Required field: TrackerName, is not set");
     return BatchUpdateDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("BatchUpdateDevicePosition", "Invalid DNS host: " << uri.GetAuthority());
-      return BatchUpdateDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/trackers/");
-  uri.AddPathSegment(request.GetTrackerName());
-  uri.AddPathSegments("/positions");
-  return BatchUpdateDevicePositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdateDevicePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchUpdateDevicePositionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchUpdateDevicePositionOutcomeCallable LocationServiceClient::BatchUpdateDevicePositionCallable(const BatchUpdateDevicePositionRequest& request) const
@@ -438,25 +397,15 @@ void LocationServiceClient::BatchUpdateDevicePositionAsync(const BatchUpdateDevi
 
 CalculateRouteOutcome LocationServiceClient::CalculateRoute(const CalculateRouteRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CalculateRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CalculatorNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CalculateRoute", "Required field: CalculatorName, is not set");
     return CalculateRouteOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CalculatorName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("routes." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CalculateRoute", "Invalid DNS host: " << uri.GetAuthority());
-      return CalculateRouteOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/routes/v0/calculators/");
-  uri.AddPathSegment(request.GetCalculatorName());
-  uri.AddPathSegments("/calculate/route");
-  return CalculateRouteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CalculateRoute, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CalculateRouteOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CalculateRouteOutcomeCallable LocationServiceClient::CalculateRouteCallable(const CalculateRouteRequest& request) const
@@ -477,25 +426,15 @@ void LocationServiceClient::CalculateRouteAsync(const CalculateRouteRequest& req
 
 CalculateRouteMatrixOutcome LocationServiceClient::CalculateRouteMatrix(const CalculateRouteMatrixRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CalculateRouteMatrix, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CalculatorNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CalculateRouteMatrix", "Required field: CalculatorName, is not set");
     return CalculateRouteMatrixOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CalculatorName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("routes." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CalculateRouteMatrix", "Invalid DNS host: " << uri.GetAuthority());
-      return CalculateRouteMatrixOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/routes/v0/calculators/");
-  uri.AddPathSegment(request.GetCalculatorName());
-  uri.AddPathSegments("/calculate/route-matrix");
-  return CalculateRouteMatrixOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CalculateRouteMatrix, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CalculateRouteMatrixOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CalculateRouteMatrixOutcomeCallable LocationServiceClient::CalculateRouteMatrixCallable(const CalculateRouteMatrixRequest& request) const
@@ -516,18 +455,10 @@ void LocationServiceClient::CalculateRouteMatrixAsync(const CalculateRouteMatrix
 
 CreateGeofenceCollectionOutcome LocationServiceClient::CreateGeofenceCollection(const CreateGeofenceCollectionRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("geofencing." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreateGeofenceCollection", "Invalid DNS host: " << uri.GetAuthority());
-      return CreateGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/geofencing/v0/collections");
-  return CreateGeofenceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateGeofenceCollectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateGeofenceCollectionOutcomeCallable LocationServiceClient::CreateGeofenceCollectionCallable(const CreateGeofenceCollectionRequest& request) const
@@ -548,18 +479,10 @@ void LocationServiceClient::CreateGeofenceCollectionAsync(const CreateGeofenceCo
 
 CreateMapOutcome LocationServiceClient::CreateMap(const CreateMapRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("maps." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreateMap", "Invalid DNS host: " << uri.GetAuthority());
-      return CreateMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/maps/v0/maps");
-  return CreateMapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateMapOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateMapOutcomeCallable LocationServiceClient::CreateMapCallable(const CreateMapRequest& request) const
@@ -580,18 +503,10 @@ void LocationServiceClient::CreateMapAsync(const CreateMapRequest& request, cons
 
 CreatePlaceIndexOutcome LocationServiceClient::CreatePlaceIndex(const CreatePlaceIndexRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("places." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreatePlaceIndex", "Invalid DNS host: " << uri.GetAuthority());
-      return CreatePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/places/v0/indexes");
-  return CreatePlaceIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreatePlaceIndexOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreatePlaceIndexOutcomeCallable LocationServiceClient::CreatePlaceIndexCallable(const CreatePlaceIndexRequest& request) const
@@ -612,18 +527,10 @@ void LocationServiceClient::CreatePlaceIndexAsync(const CreatePlaceIndexRequest&
 
 CreateRouteCalculatorOutcome LocationServiceClient::CreateRouteCalculator(const CreateRouteCalculatorRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("routes." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreateRouteCalculator", "Invalid DNS host: " << uri.GetAuthority());
-      return CreateRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/routes/v0/calculators");
-  return CreateRouteCalculatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateRouteCalculatorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRouteCalculatorOutcomeCallable LocationServiceClient::CreateRouteCalculatorCallable(const CreateRouteCalculatorRequest& request) const
@@ -644,18 +551,10 @@ void LocationServiceClient::CreateRouteCalculatorAsync(const CreateRouteCalculat
 
 CreateTrackerOutcome LocationServiceClient::CreateTracker(const CreateTrackerRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("CreateTracker", "Invalid DNS host: " << uri.GetAuthority());
-      return CreateTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/trackers");
-  return CreateTrackerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateTrackerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateTrackerOutcomeCallable LocationServiceClient::CreateTrackerCallable(const CreateTrackerRequest& request) const
@@ -676,24 +575,15 @@ void LocationServiceClient::CreateTrackerAsync(const CreateTrackerRequest& reque
 
 DeleteGeofenceCollectionOutcome LocationServiceClient::DeleteGeofenceCollection(const DeleteGeofenceCollectionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteGeofenceCollection", "Required field: CollectionName, is not set");
     return DeleteGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollectionName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("geofencing." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DeleteGeofenceCollection", "Invalid DNS host: " << uri.GetAuthority());
-      return DeleteGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/geofencing/v0/collections/");
-  uri.AddPathSegment(request.GetCollectionName());
-  return DeleteGeofenceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteGeofenceCollectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGeofenceCollectionOutcomeCallable LocationServiceClient::DeleteGeofenceCollectionCallable(const DeleteGeofenceCollectionRequest& request) const
@@ -714,24 +604,15 @@ void LocationServiceClient::DeleteGeofenceCollectionAsync(const DeleteGeofenceCo
 
 DeleteMapOutcome LocationServiceClient::DeleteMap(const DeleteMapRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MapNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteMap", "Required field: MapName, is not set");
     return DeleteMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MapName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("maps." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DeleteMap", "Invalid DNS host: " << uri.GetAuthority());
-      return DeleteMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/maps/v0/maps/");
-  uri.AddPathSegment(request.GetMapName());
-  return DeleteMapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteMapOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMapOutcomeCallable LocationServiceClient::DeleteMapCallable(const DeleteMapRequest& request) const
@@ -752,24 +633,15 @@ void LocationServiceClient::DeleteMapAsync(const DeleteMapRequest& request, cons
 
 DeletePlaceIndexOutcome LocationServiceClient::DeletePlaceIndex(const DeletePlaceIndexRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeletePlaceIndex", "Required field: IndexName, is not set");
     return DeletePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("places." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DeletePlaceIndex", "Invalid DNS host: " << uri.GetAuthority());
-      return DeletePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/places/v0/indexes/");
-  uri.AddPathSegment(request.GetIndexName());
-  return DeletePlaceIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeletePlaceIndexOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeletePlaceIndexOutcomeCallable LocationServiceClient::DeletePlaceIndexCallable(const DeletePlaceIndexRequest& request) const
@@ -790,24 +662,15 @@ void LocationServiceClient::DeletePlaceIndexAsync(const DeletePlaceIndexRequest&
 
 DeleteRouteCalculatorOutcome LocationServiceClient::DeleteRouteCalculator(const DeleteRouteCalculatorRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CalculatorNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteRouteCalculator", "Required field: CalculatorName, is not set");
     return DeleteRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CalculatorName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("routes." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DeleteRouteCalculator", "Invalid DNS host: " << uri.GetAuthority());
-      return DeleteRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/routes/v0/calculators/");
-  uri.AddPathSegment(request.GetCalculatorName());
-  return DeleteRouteCalculatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteRouteCalculatorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRouteCalculatorOutcomeCallable LocationServiceClient::DeleteRouteCalculatorCallable(const DeleteRouteCalculatorRequest& request) const
@@ -828,24 +691,15 @@ void LocationServiceClient::DeleteRouteCalculatorAsync(const DeleteRouteCalculat
 
 DeleteTrackerOutcome LocationServiceClient::DeleteTracker(const DeleteTrackerRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteTracker", "Required field: TrackerName, is not set");
     return DeleteTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DeleteTracker", "Invalid DNS host: " << uri.GetAuthority());
-      return DeleteTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/trackers/");
-  uri.AddPathSegment(request.GetTrackerName());
-  return DeleteTrackerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteTrackerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTrackerOutcomeCallable LocationServiceClient::DeleteTrackerCallable(const DeleteTrackerRequest& request) const
@@ -866,24 +720,15 @@ void LocationServiceClient::DeleteTrackerAsync(const DeleteTrackerRequest& reque
 
 DescribeGeofenceCollectionOutcome LocationServiceClient::DescribeGeofenceCollection(const DescribeGeofenceCollectionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeGeofenceCollection", "Required field: CollectionName, is not set");
     return DescribeGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollectionName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("geofencing." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeGeofenceCollection", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/geofencing/v0/collections/");
-  uri.AddPathSegment(request.GetCollectionName());
-  return DescribeGeofenceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeGeofenceCollectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeGeofenceCollectionOutcomeCallable LocationServiceClient::DescribeGeofenceCollectionCallable(const DescribeGeofenceCollectionRequest& request) const
@@ -904,24 +749,15 @@ void LocationServiceClient::DescribeGeofenceCollectionAsync(const DescribeGeofen
 
 DescribeMapOutcome LocationServiceClient::DescribeMap(const DescribeMapRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MapNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeMap", "Required field: MapName, is not set");
     return DescribeMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MapName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("maps." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeMap", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/maps/v0/maps/");
-  uri.AddPathSegment(request.GetMapName());
-  return DescribeMapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeMapOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeMapOutcomeCallable LocationServiceClient::DescribeMapCallable(const DescribeMapRequest& request) const
@@ -942,24 +778,15 @@ void LocationServiceClient::DescribeMapAsync(const DescribeMapRequest& request, 
 
 DescribePlaceIndexOutcome LocationServiceClient::DescribePlaceIndex(const DescribePlaceIndexRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribePlaceIndex", "Required field: IndexName, is not set");
     return DescribePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("places." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribePlaceIndex", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/places/v0/indexes/");
-  uri.AddPathSegment(request.GetIndexName());
-  return DescribePlaceIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribePlaceIndexOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribePlaceIndexOutcomeCallable LocationServiceClient::DescribePlaceIndexCallable(const DescribePlaceIndexRequest& request) const
@@ -980,24 +807,15 @@ void LocationServiceClient::DescribePlaceIndexAsync(const DescribePlaceIndexRequ
 
 DescribeRouteCalculatorOutcome LocationServiceClient::DescribeRouteCalculator(const DescribeRouteCalculatorRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CalculatorNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeRouteCalculator", "Required field: CalculatorName, is not set");
     return DescribeRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CalculatorName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("routes." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeRouteCalculator", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/routes/v0/calculators/");
-  uri.AddPathSegment(request.GetCalculatorName());
-  return DescribeRouteCalculatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeRouteCalculatorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeRouteCalculatorOutcomeCallable LocationServiceClient::DescribeRouteCalculatorCallable(const DescribeRouteCalculatorRequest& request) const
@@ -1018,24 +836,15 @@ void LocationServiceClient::DescribeRouteCalculatorAsync(const DescribeRouteCalc
 
 DescribeTrackerOutcome LocationServiceClient::DescribeTracker(const DescribeTrackerRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeTracker", "Required field: TrackerName, is not set");
     return DescribeTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DescribeTracker", "Invalid DNS host: " << uri.GetAuthority());
-      return DescribeTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/trackers/");
-  uri.AddPathSegment(request.GetTrackerName());
-  return DescribeTrackerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeTrackerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTrackerOutcomeCallable LocationServiceClient::DescribeTrackerCallable(const DescribeTrackerRequest& request) const
@@ -1056,6 +865,7 @@ void LocationServiceClient::DescribeTrackerAsync(const DescribeTrackerRequest& r
 
 DisassociateTrackerConsumerOutcome LocationServiceClient::DisassociateTrackerConsumer(const DisassociateTrackerConsumerRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateTrackerConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ConsumerArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DisassociateTrackerConsumer", "Required field: ConsumerArn, is not set");
@@ -1066,21 +876,9 @@ DisassociateTrackerConsumerOutcome LocationServiceClient::DisassociateTrackerCon
     AWS_LOGSTREAM_ERROR("DisassociateTrackerConsumer", "Required field: TrackerName, is not set");
     return DisassociateTrackerConsumerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("DisassociateTrackerConsumer", "Invalid DNS host: " << uri.GetAuthority());
-      return DisassociateTrackerConsumerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/trackers/");
-  uri.AddPathSegment(request.GetTrackerName());
-  uri.AddPathSegments("/consumers/");
-  uri.AddPathSegment(request.GetConsumerArn());
-  return DisassociateTrackerConsumerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateTrackerConsumer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DisassociateTrackerConsumerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateTrackerConsumerOutcomeCallable LocationServiceClient::DisassociateTrackerConsumerCallable(const DisassociateTrackerConsumerRequest& request) const
@@ -1101,6 +899,7 @@ void LocationServiceClient::DisassociateTrackerConsumerAsync(const DisassociateT
 
 GetDevicePositionOutcome LocationServiceClient::GetDevicePosition(const GetDevicePositionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDevicePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDevicePosition", "Required field: DeviceId, is not set");
@@ -1111,22 +910,9 @@ GetDevicePositionOutcome LocationServiceClient::GetDevicePosition(const GetDevic
     AWS_LOGSTREAM_ERROR("GetDevicePosition", "Required field: TrackerName, is not set");
     return GetDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("GetDevicePosition", "Invalid DNS host: " << uri.GetAuthority());
-      return GetDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/trackers/");
-  uri.AddPathSegment(request.GetTrackerName());
-  uri.AddPathSegments("/devices/");
-  uri.AddPathSegment(request.GetDeviceId());
-  uri.AddPathSegments("/positions/latest");
-  return GetDevicePositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDevicePosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDevicePositionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDevicePositionOutcomeCallable LocationServiceClient::GetDevicePositionCallable(const GetDevicePositionRequest& request) const
@@ -1147,6 +933,7 @@ void LocationServiceClient::GetDevicePositionAsync(const GetDevicePositionReques
 
 GetDevicePositionHistoryOutcome LocationServiceClient::GetDevicePositionHistory(const GetDevicePositionHistoryRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDevicePositionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.DeviceIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetDevicePositionHistory", "Required field: DeviceId, is not set");
@@ -1157,22 +944,9 @@ GetDevicePositionHistoryOutcome LocationServiceClient::GetDevicePositionHistory(
     AWS_LOGSTREAM_ERROR("GetDevicePositionHistory", "Required field: TrackerName, is not set");
     return GetDevicePositionHistoryOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("GetDevicePositionHistory", "Invalid DNS host: " << uri.GetAuthority());
-      return GetDevicePositionHistoryOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/trackers/");
-  uri.AddPathSegment(request.GetTrackerName());
-  uri.AddPathSegments("/devices/");
-  uri.AddPathSegment(request.GetDeviceId());
-  uri.AddPathSegments("/list-positions");
-  return GetDevicePositionHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetDevicePositionHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetDevicePositionHistoryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDevicePositionHistoryOutcomeCallable LocationServiceClient::GetDevicePositionHistoryCallable(const GetDevicePositionHistoryRequest& request) const
@@ -1193,6 +967,7 @@ void LocationServiceClient::GetDevicePositionHistoryAsync(const GetDevicePositio
 
 GetGeofenceOutcome LocationServiceClient::GetGeofence(const GetGeofenceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGeofence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetGeofence", "Required field: CollectionName, is not set");
@@ -1203,21 +978,9 @@ GetGeofenceOutcome LocationServiceClient::GetGeofence(const GetGeofenceRequest& 
     AWS_LOGSTREAM_ERROR("GetGeofence", "Required field: GeofenceId, is not set");
     return GetGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GeofenceId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("geofencing." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("GetGeofence", "Invalid DNS host: " << uri.GetAuthority());
-      return GetGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/geofencing/v0/collections/");
-  uri.AddPathSegment(request.GetCollectionName());
-  uri.AddPathSegments("/geofences/");
-  uri.AddPathSegment(request.GetGeofenceId());
-  return GetGeofenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGeofence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetGeofenceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGeofenceOutcomeCallable LocationServiceClient::GetGeofenceCallable(const GetGeofenceRequest& request) const
@@ -1238,6 +1001,7 @@ void LocationServiceClient::GetGeofenceAsync(const GetGeofenceRequest& request, 
 
 GetMapGlyphsOutcome LocationServiceClient::GetMapGlyphs(const GetMapGlyphsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMapGlyphs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FontStackHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetMapGlyphs", "Required field: FontStack, is not set");
@@ -1253,22 +1017,9 @@ GetMapGlyphsOutcome LocationServiceClient::GetMapGlyphs(const GetMapGlyphsReques
     AWS_LOGSTREAM_ERROR("GetMapGlyphs", "Required field: MapName, is not set");
     return GetMapGlyphsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MapName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("maps." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("GetMapGlyphs", "Invalid DNS host: " << uri.GetAuthority());
-      return GetMapGlyphsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/maps/v0/maps/");
-  uri.AddPathSegment(request.GetMapName());
-  uri.AddPathSegments("/glyphs/");
-  uri.AddPathSegment(request.GetFontStack());
-  uri.AddPathSegment(request.GetFontUnicodeRange());
-  return GetMapGlyphsOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMapGlyphs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetMapGlyphsOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetMapGlyphsOutcomeCallable LocationServiceClient::GetMapGlyphsCallable(const GetMapGlyphsRequest& request) const
@@ -1289,6 +1040,7 @@ void LocationServiceClient::GetMapGlyphsAsync(const GetMapGlyphsRequest& request
 
 GetMapSpritesOutcome LocationServiceClient::GetMapSprites(const GetMapSpritesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMapSprites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FileNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetMapSprites", "Required field: FileName, is not set");
@@ -1299,21 +1051,9 @@ GetMapSpritesOutcome LocationServiceClient::GetMapSprites(const GetMapSpritesReq
     AWS_LOGSTREAM_ERROR("GetMapSprites", "Required field: MapName, is not set");
     return GetMapSpritesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MapName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("maps." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("GetMapSprites", "Invalid DNS host: " << uri.GetAuthority());
-      return GetMapSpritesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/maps/v0/maps/");
-  uri.AddPathSegment(request.GetMapName());
-  uri.AddPathSegments("/sprites/");
-  uri.AddPathSegment(request.GetFileName());
-  return GetMapSpritesOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMapSprites, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetMapSpritesOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetMapSpritesOutcomeCallable LocationServiceClient::GetMapSpritesCallable(const GetMapSpritesRequest& request) const
@@ -1334,25 +1074,15 @@ void LocationServiceClient::GetMapSpritesAsync(const GetMapSpritesRequest& reque
 
 GetMapStyleDescriptorOutcome LocationServiceClient::GetMapStyleDescriptor(const GetMapStyleDescriptorRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMapStyleDescriptor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MapNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetMapStyleDescriptor", "Required field: MapName, is not set");
     return GetMapStyleDescriptorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MapName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("maps." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("GetMapStyleDescriptor", "Invalid DNS host: " << uri.GetAuthority());
-      return GetMapStyleDescriptorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/maps/v0/maps/");
-  uri.AddPathSegment(request.GetMapName());
-  uri.AddPathSegments("/style-descriptor");
-  return GetMapStyleDescriptorOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMapStyleDescriptor, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetMapStyleDescriptorOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetMapStyleDescriptorOutcomeCallable LocationServiceClient::GetMapStyleDescriptorCallable(const GetMapStyleDescriptorRequest& request) const
@@ -1373,6 +1103,7 @@ void LocationServiceClient::GetMapStyleDescriptorAsync(const GetMapStyleDescript
 
 GetMapTileOutcome LocationServiceClient::GetMapTile(const GetMapTileRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetMapTile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MapNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetMapTile", "Required field: MapName, is not set");
@@ -1393,23 +1124,9 @@ GetMapTileOutcome LocationServiceClient::GetMapTile(const GetMapTileRequest& req
     AWS_LOGSTREAM_ERROR("GetMapTile", "Required field: Z, is not set");
     return GetMapTileOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Z]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("maps." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("GetMapTile", "Invalid DNS host: " << uri.GetAuthority());
-      return GetMapTileOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/maps/v0/maps/");
-  uri.AddPathSegment(request.GetMapName());
-  uri.AddPathSegments("/tiles/");
-  uri.AddPathSegment(request.GetZ());
-  uri.AddPathSegment(request.GetX());
-  uri.AddPathSegment(request.GetY());
-  return GetMapTileOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMapTile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetMapTileOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetMapTileOutcomeCallable LocationServiceClient::GetMapTileCallable(const GetMapTileRequest& request) const
@@ -1430,6 +1147,7 @@ void LocationServiceClient::GetMapTileAsync(const GetMapTileRequest& request, co
 
 GetPlaceOutcome LocationServiceClient::GetPlace(const GetPlaceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPlace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetPlace", "Required field: IndexName, is not set");
@@ -1440,21 +1158,9 @@ GetPlaceOutcome LocationServiceClient::GetPlace(const GetPlaceRequest& request) 
     AWS_LOGSTREAM_ERROR("GetPlace", "Required field: PlaceId, is not set");
     return GetPlaceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PlaceId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("places." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("GetPlace", "Invalid DNS host: " << uri.GetAuthority());
-      return GetPlaceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/places/v0/indexes/");
-  uri.AddPathSegment(request.GetIndexName());
-  uri.AddPathSegments("/places/");
-  uri.AddPathSegment(request.GetPlaceId());
-  return GetPlaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPlace, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetPlaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetPlaceOutcomeCallable LocationServiceClient::GetPlaceCallable(const GetPlaceRequest& request) const
@@ -1475,25 +1181,15 @@ void LocationServiceClient::GetPlaceAsync(const GetPlaceRequest& request, const 
 
 ListDevicePositionsOutcome LocationServiceClient::ListDevicePositions(const ListDevicePositionsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevicePositions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListDevicePositions", "Required field: TrackerName, is not set");
     return ListDevicePositionsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListDevicePositions", "Invalid DNS host: " << uri.GetAuthority());
-      return ListDevicePositionsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/trackers/");
-  uri.AddPathSegment(request.GetTrackerName());
-  uri.AddPathSegments("/list-positions");
-  return ListDevicePositionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDevicePositions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListDevicePositionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDevicePositionsOutcomeCallable LocationServiceClient::ListDevicePositionsCallable(const ListDevicePositionsRequest& request) const
@@ -1514,18 +1210,10 @@ void LocationServiceClient::ListDevicePositionsAsync(const ListDevicePositionsRe
 
 ListGeofenceCollectionsOutcome LocationServiceClient::ListGeofenceCollections(const ListGeofenceCollectionsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("geofencing." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListGeofenceCollections", "Invalid DNS host: " << uri.GetAuthority());
-      return ListGeofenceCollectionsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/geofencing/v0/list-collections");
-  return ListGeofenceCollectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGeofenceCollections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGeofenceCollections, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListGeofenceCollectionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGeofenceCollectionsOutcomeCallable LocationServiceClient::ListGeofenceCollectionsCallable(const ListGeofenceCollectionsRequest& request) const
@@ -1546,25 +1234,15 @@ void LocationServiceClient::ListGeofenceCollectionsAsync(const ListGeofenceColle
 
 ListGeofencesOutcome LocationServiceClient::ListGeofences(const ListGeofencesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGeofences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListGeofences", "Required field: CollectionName, is not set");
     return ListGeofencesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollectionName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("geofencing." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListGeofences", "Invalid DNS host: " << uri.GetAuthority());
-      return ListGeofencesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/geofencing/v0/collections/");
-  uri.AddPathSegment(request.GetCollectionName());
-  uri.AddPathSegments("/list-geofences");
-  return ListGeofencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGeofences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListGeofencesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGeofencesOutcomeCallable LocationServiceClient::ListGeofencesCallable(const ListGeofencesRequest& request) const
@@ -1585,18 +1263,10 @@ void LocationServiceClient::ListGeofencesAsync(const ListGeofencesRequest& reque
 
 ListMapsOutcome LocationServiceClient::ListMaps(const ListMapsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("maps." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListMaps", "Invalid DNS host: " << uri.GetAuthority());
-      return ListMapsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/maps/v0/list-maps");
-  return ListMapsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMaps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListMaps, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListMapsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListMapsOutcomeCallable LocationServiceClient::ListMapsCallable(const ListMapsRequest& request) const
@@ -1617,18 +1287,10 @@ void LocationServiceClient::ListMapsAsync(const ListMapsRequest& request, const 
 
 ListPlaceIndexesOutcome LocationServiceClient::ListPlaceIndexes(const ListPlaceIndexesRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("places." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListPlaceIndexes", "Invalid DNS host: " << uri.GetAuthority());
-      return ListPlaceIndexesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/places/v0/list-indexes");
-  return ListPlaceIndexesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPlaceIndexes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPlaceIndexes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListPlaceIndexesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListPlaceIndexesOutcomeCallable LocationServiceClient::ListPlaceIndexesCallable(const ListPlaceIndexesRequest& request) const
@@ -1649,18 +1311,10 @@ void LocationServiceClient::ListPlaceIndexesAsync(const ListPlaceIndexesRequest&
 
 ListRouteCalculatorsOutcome LocationServiceClient::ListRouteCalculators(const ListRouteCalculatorsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("routes." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListRouteCalculators", "Invalid DNS host: " << uri.GetAuthority());
-      return ListRouteCalculatorsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/routes/v0/list-calculators");
-  return ListRouteCalculatorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRouteCalculators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRouteCalculators, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListRouteCalculatorsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRouteCalculatorsOutcomeCallable LocationServiceClient::ListRouteCalculatorsCallable(const ListRouteCalculatorsRequest& request) const
@@ -1681,24 +1335,15 @@ void LocationServiceClient::ListRouteCalculatorsAsync(const ListRouteCalculators
 
 ListTagsForResourceOutcome LocationServiceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("metadata." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListTagsForResource", "Invalid DNS host: " << uri.GetAuthority());
-      return ListTagsForResourceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable LocationServiceClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1719,25 +1364,15 @@ void LocationServiceClient::ListTagsForResourceAsync(const ListTagsForResourceRe
 
 ListTrackerConsumersOutcome LocationServiceClient::ListTrackerConsumers(const ListTrackerConsumersRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrackerConsumers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTrackerConsumers", "Required field: TrackerName, is not set");
     return ListTrackerConsumersOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListTrackerConsumers", "Invalid DNS host: " << uri.GetAuthority());
-      return ListTrackerConsumersOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/trackers/");
-  uri.AddPathSegment(request.GetTrackerName());
-  uri.AddPathSegments("/list-consumers");
-  return ListTrackerConsumersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrackerConsumers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTrackerConsumersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTrackerConsumersOutcomeCallable LocationServiceClient::ListTrackerConsumersCallable(const ListTrackerConsumersRequest& request) const
@@ -1758,18 +1393,10 @@ void LocationServiceClient::ListTrackerConsumersAsync(const ListTrackerConsumers
 
 ListTrackersOutcome LocationServiceClient::ListTrackers(const ListTrackersRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("ListTrackers", "Invalid DNS host: " << uri.GetAuthority());
-      return ListTrackersOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/list-trackers");
-  return ListTrackersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTrackers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTrackers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTrackersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTrackersOutcomeCallable LocationServiceClient::ListTrackersCallable(const ListTrackersRequest& request) const
@@ -1790,6 +1417,7 @@ void LocationServiceClient::ListTrackersAsync(const ListTrackersRequest& request
 
 PutGeofenceOutcome LocationServiceClient::PutGeofence(const PutGeofenceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutGeofence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutGeofence", "Required field: CollectionName, is not set");
@@ -1800,21 +1428,9 @@ PutGeofenceOutcome LocationServiceClient::PutGeofence(const PutGeofenceRequest& 
     AWS_LOGSTREAM_ERROR("PutGeofence", "Required field: GeofenceId, is not set");
     return PutGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GeofenceId]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("geofencing." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("PutGeofence", "Invalid DNS host: " << uri.GetAuthority());
-      return PutGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/geofencing/v0/collections/");
-  uri.AddPathSegment(request.GetCollectionName());
-  uri.AddPathSegments("/geofences/");
-  uri.AddPathSegment(request.GetGeofenceId());
-  return PutGeofenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutGeofence, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutGeofenceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutGeofenceOutcomeCallable LocationServiceClient::PutGeofenceCallable(const PutGeofenceRequest& request) const
@@ -1835,25 +1451,15 @@ void LocationServiceClient::PutGeofenceAsync(const PutGeofenceRequest& request, 
 
 SearchPlaceIndexForPositionOutcome LocationServiceClient::SearchPlaceIndexForPosition(const SearchPlaceIndexForPositionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchPlaceIndexForPosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("SearchPlaceIndexForPosition", "Required field: IndexName, is not set");
     return SearchPlaceIndexForPositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("places." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("SearchPlaceIndexForPosition", "Invalid DNS host: " << uri.GetAuthority());
-      return SearchPlaceIndexForPositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/places/v0/indexes/");
-  uri.AddPathSegment(request.GetIndexName());
-  uri.AddPathSegments("/search/position");
-  return SearchPlaceIndexForPositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchPlaceIndexForPosition, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return SearchPlaceIndexForPositionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SearchPlaceIndexForPositionOutcomeCallable LocationServiceClient::SearchPlaceIndexForPositionCallable(const SearchPlaceIndexForPositionRequest& request) const
@@ -1874,25 +1480,15 @@ void LocationServiceClient::SearchPlaceIndexForPositionAsync(const SearchPlaceIn
 
 SearchPlaceIndexForSuggestionsOutcome LocationServiceClient::SearchPlaceIndexForSuggestions(const SearchPlaceIndexForSuggestionsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchPlaceIndexForSuggestions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("SearchPlaceIndexForSuggestions", "Required field: IndexName, is not set");
     return SearchPlaceIndexForSuggestionsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("places." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("SearchPlaceIndexForSuggestions", "Invalid DNS host: " << uri.GetAuthority());
-      return SearchPlaceIndexForSuggestionsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/places/v0/indexes/");
-  uri.AddPathSegment(request.GetIndexName());
-  uri.AddPathSegments("/search/suggestions");
-  return SearchPlaceIndexForSuggestionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchPlaceIndexForSuggestions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return SearchPlaceIndexForSuggestionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SearchPlaceIndexForSuggestionsOutcomeCallable LocationServiceClient::SearchPlaceIndexForSuggestionsCallable(const SearchPlaceIndexForSuggestionsRequest& request) const
@@ -1913,25 +1509,15 @@ void LocationServiceClient::SearchPlaceIndexForSuggestionsAsync(const SearchPlac
 
 SearchPlaceIndexForTextOutcome LocationServiceClient::SearchPlaceIndexForText(const SearchPlaceIndexForTextRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchPlaceIndexForText, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("SearchPlaceIndexForText", "Required field: IndexName, is not set");
     return SearchPlaceIndexForTextOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("places." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("SearchPlaceIndexForText", "Invalid DNS host: " << uri.GetAuthority());
-      return SearchPlaceIndexForTextOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/places/v0/indexes/");
-  uri.AddPathSegment(request.GetIndexName());
-  uri.AddPathSegments("/search/text");
-  return SearchPlaceIndexForTextOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchPlaceIndexForText, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return SearchPlaceIndexForTextOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SearchPlaceIndexForTextOutcomeCallable LocationServiceClient::SearchPlaceIndexForTextCallable(const SearchPlaceIndexForTextRequest& request) const
@@ -1952,24 +1538,15 @@ void LocationServiceClient::SearchPlaceIndexForTextAsync(const SearchPlaceIndexF
 
 TagResourceOutcome LocationServiceClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("metadata." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("TagResource", "Invalid DNS host: " << uri.GetAuthority());
-      return TagResourceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable LocationServiceClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1990,6 +1567,7 @@ void LocationServiceClient::TagResourceAsync(const TagResourceRequest& request, 
 
 UntagResourceOutcome LocationServiceClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
@@ -2000,19 +1578,9 @@ UntagResourceOutcome LocationServiceClient::UntagResource(const UntagResourceReq
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("metadata." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UntagResource", "Invalid DNS host: " << uri.GetAuthority());
-      return UntagResourceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable LocationServiceClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -2033,24 +1601,15 @@ void LocationServiceClient::UntagResourceAsync(const UntagResourceRequest& reque
 
 UpdateGeofenceCollectionOutcome LocationServiceClient::UpdateGeofenceCollection(const UpdateGeofenceCollectionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CollectionNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateGeofenceCollection", "Required field: CollectionName, is not set");
     return UpdateGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CollectionName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("geofencing." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdateGeofenceCollection", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdateGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/geofencing/v0/collections/");
-  uri.AddPathSegment(request.GetCollectionName());
-  return UpdateGeofenceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGeofenceCollection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateGeofenceCollectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGeofenceCollectionOutcomeCallable LocationServiceClient::UpdateGeofenceCollectionCallable(const UpdateGeofenceCollectionRequest& request) const
@@ -2071,24 +1630,15 @@ void LocationServiceClient::UpdateGeofenceCollectionAsync(const UpdateGeofenceCo
 
 UpdateMapOutcome LocationServiceClient::UpdateMap(const UpdateMapRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MapNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateMap", "Required field: MapName, is not set");
     return UpdateMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MapName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("maps." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdateMap", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdateMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/maps/v0/maps/");
-  uri.AddPathSegment(request.GetMapName());
-  return UpdateMapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateMap, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateMapOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateMapOutcomeCallable LocationServiceClient::UpdateMapCallable(const UpdateMapRequest& request) const
@@ -2109,24 +1659,15 @@ void LocationServiceClient::UpdateMapAsync(const UpdateMapRequest& request, cons
 
 UpdatePlaceIndexOutcome LocationServiceClient::UpdatePlaceIndex(const UpdatePlaceIndexRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IndexNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdatePlaceIndex", "Required field: IndexName, is not set");
     return UpdatePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("places." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdatePlaceIndex", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdatePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/places/v0/indexes/");
-  uri.AddPathSegment(request.GetIndexName());
-  return UpdatePlaceIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePlaceIndex, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdatePlaceIndexOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdatePlaceIndexOutcomeCallable LocationServiceClient::UpdatePlaceIndexCallable(const UpdatePlaceIndexRequest& request) const
@@ -2147,24 +1688,15 @@ void LocationServiceClient::UpdatePlaceIndexAsync(const UpdatePlaceIndexRequest&
 
 UpdateRouteCalculatorOutcome LocationServiceClient::UpdateRouteCalculator(const UpdateRouteCalculatorRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CalculatorNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateRouteCalculator", "Required field: CalculatorName, is not set");
     return UpdateRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CalculatorName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("routes." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdateRouteCalculator", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdateRouteCalculatorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/routes/v0/calculators/");
-  uri.AddPathSegment(request.GetCalculatorName());
-  return UpdateRouteCalculatorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRouteCalculator, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateRouteCalculatorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRouteCalculatorOutcomeCallable LocationServiceClient::UpdateRouteCalculatorCallable(const UpdateRouteCalculatorRequest& request) const
@@ -2185,24 +1717,15 @@ void LocationServiceClient::UpdateRouteCalculatorAsync(const UpdateRouteCalculat
 
 UpdateTrackerOutcome LocationServiceClient::UpdateTracker(const UpdateTrackerRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.TrackerNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateTracker", "Required field: TrackerName, is not set");
     return UpdateTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TrackerName]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("tracking." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("UpdateTracker", "Invalid DNS host: " << uri.GetAuthority());
-      return UpdateTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/tracking/v0/trackers/");
-  uri.AddPathSegment(request.GetTrackerName());
-  return UpdateTrackerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTracker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateTrackerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTrackerOutcomeCallable LocationServiceClient::UpdateTrackerCallable(const UpdateTrackerRequest& request) const

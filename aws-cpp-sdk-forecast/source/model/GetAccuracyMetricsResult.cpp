@@ -36,7 +36,7 @@ GetAccuracyMetricsResult& GetAccuracyMetricsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PredictorEvaluationResults"))
   {
-    Array<JsonView> predictorEvaluationResultsJsonList = jsonValue.GetArray("PredictorEvaluationResults");
+    Aws::Utils::Array<JsonView> predictorEvaluationResultsJsonList = jsonValue.GetArray("PredictorEvaluationResults");
     for(unsigned predictorEvaluationResultsIndex = 0; predictorEvaluationResultsIndex < predictorEvaluationResultsJsonList.GetLength(); ++predictorEvaluationResultsIndex)
     {
       m_predictorEvaluationResults.push_back(predictorEvaluationResultsJsonList[predictorEvaluationResultsIndex].AsObject());

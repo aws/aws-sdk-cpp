@@ -30,7 +30,7 @@ ListKeyPhrasesDetectionJobsResult& ListKeyPhrasesDetectionJobsResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("KeyPhrasesDetectionJobPropertiesList"))
   {
-    Array<JsonView> keyPhrasesDetectionJobPropertiesListJsonList = jsonValue.GetArray("KeyPhrasesDetectionJobPropertiesList");
+    Aws::Utils::Array<JsonView> keyPhrasesDetectionJobPropertiesListJsonList = jsonValue.GetArray("KeyPhrasesDetectionJobPropertiesList");
     for(unsigned keyPhrasesDetectionJobPropertiesListIndex = 0; keyPhrasesDetectionJobPropertiesListIndex < keyPhrasesDetectionJobPropertiesListJsonList.GetLength(); ++keyPhrasesDetectionJobPropertiesListIndex)
     {
       m_keyPhrasesDetectionJobPropertiesList.push_back(keyPhrasesDetectionJobPropertiesListJsonList[keyPhrasesDetectionJobPropertiesListIndex].AsObject());

@@ -30,7 +30,7 @@ DescribeChapCredentialsResult& DescribeChapCredentialsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ChapCredentials"))
   {
-    Array<JsonView> chapCredentialsJsonList = jsonValue.GetArray("ChapCredentials");
+    Aws::Utils::Array<JsonView> chapCredentialsJsonList = jsonValue.GetArray("ChapCredentials");
     for(unsigned chapCredentialsIndex = 0; chapCredentialsIndex < chapCredentialsJsonList.GetLength(); ++chapCredentialsIndex)
     {
       m_chapCredentials.push_back(chapCredentialsJsonList[chapCredentialsIndex].AsObject());

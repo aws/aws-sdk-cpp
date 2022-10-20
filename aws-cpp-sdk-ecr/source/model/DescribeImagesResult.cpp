@@ -30,7 +30,7 @@ DescribeImagesResult& DescribeImagesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("imageDetails"))
   {
-    Array<JsonView> imageDetailsJsonList = jsonValue.GetArray("imageDetails");
+    Aws::Utils::Array<JsonView> imageDetailsJsonList = jsonValue.GetArray("imageDetails");
     for(unsigned imageDetailsIndex = 0; imageDetailsIndex < imageDetailsJsonList.GetLength(); ++imageDetailsIndex)
     {
       m_imageDetails.push_back(imageDetailsJsonList[imageDetailsIndex].AsObject());

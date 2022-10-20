@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
+#include <aws/marketplace-catalog/MarketplaceCatalogEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

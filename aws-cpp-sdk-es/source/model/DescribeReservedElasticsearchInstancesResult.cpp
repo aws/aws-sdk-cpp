@@ -36,7 +36,7 @@ DescribeReservedElasticsearchInstancesResult& DescribeReservedElasticsearchInsta
 
   if(jsonValue.ValueExists("ReservedElasticsearchInstances"))
   {
-    Array<JsonView> reservedElasticsearchInstancesJsonList = jsonValue.GetArray("ReservedElasticsearchInstances");
+    Aws::Utils::Array<JsonView> reservedElasticsearchInstancesJsonList = jsonValue.GetArray("ReservedElasticsearchInstances");
     for(unsigned reservedElasticsearchInstancesIndex = 0; reservedElasticsearchInstancesIndex < reservedElasticsearchInstancesJsonList.GetLength(); ++reservedElasticsearchInstancesIndex)
     {
       m_reservedElasticsearchInstances.push_back(reservedElasticsearchInstancesJsonList[reservedElasticsearchInstancesIndex].AsObject());

@@ -93,7 +93,7 @@ Aws::String CreateConnectorRequest::SerializePayload() const
 
   if(m_pluginsHasBeenSet)
   {
-   Array<JsonValue> pluginsJsonList(m_plugins.size());
+   Aws::Utils::Array<JsonValue> pluginsJsonList(m_plugins.size());
    for(unsigned pluginsIndex = 0; pluginsIndex < pluginsJsonList.GetLength(); ++pluginsIndex)
    {
      pluginsJsonList[pluginsIndex].AsObject(m_plugins[pluginsIndex].Jsonize());

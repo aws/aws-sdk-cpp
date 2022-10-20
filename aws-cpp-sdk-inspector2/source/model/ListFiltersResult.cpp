@@ -30,7 +30,7 @@ ListFiltersResult& ListFiltersResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("filters"))
   {
-    Array<JsonView> filtersJsonList = jsonValue.GetArray("filters");
+    Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("filters");
     for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
     {
       m_filters.push_back(filtersJsonList[filtersIndex].AsObject());

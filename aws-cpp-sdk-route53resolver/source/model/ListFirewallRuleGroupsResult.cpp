@@ -36,7 +36,7 @@ ListFirewallRuleGroupsResult& ListFirewallRuleGroupsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("FirewallRuleGroups"))
   {
-    Array<JsonView> firewallRuleGroupsJsonList = jsonValue.GetArray("FirewallRuleGroups");
+    Aws::Utils::Array<JsonView> firewallRuleGroupsJsonList = jsonValue.GetArray("FirewallRuleGroups");
     for(unsigned firewallRuleGroupsIndex = 0; firewallRuleGroupsIndex < firewallRuleGroupsJsonList.GetLength(); ++firewallRuleGroupsIndex)
     {
       m_firewallRuleGroups.push_back(firewallRuleGroupsJsonList[firewallRuleGroupsIndex].AsObject());

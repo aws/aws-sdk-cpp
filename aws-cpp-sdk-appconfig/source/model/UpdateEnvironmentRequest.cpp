@@ -39,7 +39,7 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const
 
   if(m_monitorsHasBeenSet)
   {
-   Array<JsonValue> monitorsJsonList(m_monitors.size());
+   Aws::Utils::Array<JsonValue> monitorsJsonList(m_monitors.size());
    for(unsigned monitorsIndex = 0; monitorsIndex < monitorsJsonList.GetLength(); ++monitorsIndex)
    {
      monitorsJsonList[monitorsIndex].AsObject(m_monitors[monitorsIndex].Jsonize());

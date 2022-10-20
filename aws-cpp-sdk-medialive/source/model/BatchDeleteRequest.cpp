@@ -26,7 +26,7 @@ Aws::String BatchDeleteRequest::SerializePayload() const
 
   if(m_channelIdsHasBeenSet)
   {
-   Array<JsonValue> channelIdsJsonList(m_channelIds.size());
+   Aws::Utils::Array<JsonValue> channelIdsJsonList(m_channelIds.size());
    for(unsigned channelIdsIndex = 0; channelIdsIndex < channelIdsJsonList.GetLength(); ++channelIdsIndex)
    {
      channelIdsJsonList[channelIdsIndex].AsString(m_channelIds[channelIdsIndex]);
@@ -37,7 +37,7 @@ Aws::String BatchDeleteRequest::SerializePayload() const
 
   if(m_inputIdsHasBeenSet)
   {
-   Array<JsonValue> inputIdsJsonList(m_inputIds.size());
+   Aws::Utils::Array<JsonValue> inputIdsJsonList(m_inputIds.size());
    for(unsigned inputIdsIndex = 0; inputIdsIndex < inputIdsJsonList.GetLength(); ++inputIdsIndex)
    {
      inputIdsJsonList[inputIdsIndex].AsString(m_inputIds[inputIdsIndex]);
@@ -48,7 +48,7 @@ Aws::String BatchDeleteRequest::SerializePayload() const
 
   if(m_inputSecurityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> inputSecurityGroupIdsJsonList(m_inputSecurityGroupIds.size());
+   Aws::Utils::Array<JsonValue> inputSecurityGroupIdsJsonList(m_inputSecurityGroupIds.size());
    for(unsigned inputSecurityGroupIdsIndex = 0; inputSecurityGroupIdsIndex < inputSecurityGroupIdsJsonList.GetLength(); ++inputSecurityGroupIdsIndex)
    {
      inputSecurityGroupIdsJsonList[inputSecurityGroupIdsIndex].AsString(m_inputSecurityGroupIds[inputSecurityGroupIdsIndex]);
@@ -59,7 +59,7 @@ Aws::String BatchDeleteRequest::SerializePayload() const
 
   if(m_multiplexIdsHasBeenSet)
   {
-   Array<JsonValue> multiplexIdsJsonList(m_multiplexIds.size());
+   Aws::Utils::Array<JsonValue> multiplexIdsJsonList(m_multiplexIds.size());
    for(unsigned multiplexIdsIndex = 0; multiplexIdsIndex < multiplexIdsJsonList.GetLength(); ++multiplexIdsIndex)
    {
      multiplexIdsJsonList[multiplexIdsIndex].AsString(m_multiplexIds[multiplexIdsIndex]);

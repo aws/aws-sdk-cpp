@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/panorama/Panorama_EXPORTS.h>
+#include <aws/panorama/PanoramaEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

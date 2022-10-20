@@ -30,7 +30,7 @@ DeleteMembersResult& DeleteMembersResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AccountIds"))
   {
-    Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
+    Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
     for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
     {
       m_accountIds.push_back(accountIdsJsonList[accountIdsIndex].AsString());
@@ -39,7 +39,7 @@ DeleteMembersResult& DeleteMembersResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("UnprocessedAccounts"))
   {
-    Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("UnprocessedAccounts");
+    Aws::Utils::Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("UnprocessedAccounts");
     for(unsigned unprocessedAccountsIndex = 0; unprocessedAccountsIndex < unprocessedAccountsJsonList.GetLength(); ++unprocessedAccountsIndex)
     {
       m_unprocessedAccounts.push_back(unprocessedAccountsJsonList[unprocessedAccountsIndex].AsObject());

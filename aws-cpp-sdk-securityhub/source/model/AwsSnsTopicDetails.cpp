@@ -60,7 +60,7 @@ AwsSnsTopicDetails& AwsSnsTopicDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Subscription"))
   {
-    Array<JsonView> subscriptionJsonList = jsonValue.GetArray("Subscription");
+    Aws::Utils::Array<JsonView> subscriptionJsonList = jsonValue.GetArray("Subscription");
     for(unsigned subscriptionIndex = 0; subscriptionIndex < subscriptionJsonList.GetLength(); ++subscriptionIndex)
     {
       m_subscription.push_back(subscriptionJsonList[subscriptionIndex].AsObject());
@@ -146,7 +146,7 @@ JsonValue AwsSnsTopicDetails::Jsonize() const
 
   if(m_subscriptionHasBeenSet)
   {
-   Array<JsonValue> subscriptionJsonList(m_subscription.size());
+   Aws::Utils::Array<JsonValue> subscriptionJsonList(m_subscription.size());
    for(unsigned subscriptionIndex = 0; subscriptionIndex < subscriptionJsonList.GetLength(); ++subscriptionIndex)
    {
      subscriptionJsonList[subscriptionIndex].AsObject(m_subscription[subscriptionIndex].Jsonize());

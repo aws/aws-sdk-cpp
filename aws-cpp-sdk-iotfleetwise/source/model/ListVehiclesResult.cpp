@@ -30,7 +30,7 @@ ListVehiclesResult& ListVehiclesResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("vehicleSummaries"))
   {
-    Array<JsonView> vehicleSummariesJsonList = jsonValue.GetArray("vehicleSummaries");
+    Aws::Utils::Array<JsonView> vehicleSummariesJsonList = jsonValue.GetArray("vehicleSummaries");
     for(unsigned vehicleSummariesIndex = 0; vehicleSummariesIndex < vehicleSummariesJsonList.GetLength(); ++vehicleSummariesIndex)
     {
       m_vehicleSummaries.push_back(vehicleSummariesJsonList[vehicleSummariesIndex].AsObject());

@@ -54,7 +54,7 @@ DescribeDomainConfigurationResult& DescribeDomainConfigurationResult::operator =
 
   if(jsonValue.ValueExists("serverCertificates"))
   {
-    Array<JsonView> serverCertificatesJsonList = jsonValue.GetArray("serverCertificates");
+    Aws::Utils::Array<JsonView> serverCertificatesJsonList = jsonValue.GetArray("serverCertificates");
     for(unsigned serverCertificatesIndex = 0; serverCertificatesIndex < serverCertificatesJsonList.GetLength(); ++serverCertificatesIndex)
     {
       m_serverCertificates.push_back(serverCertificatesJsonList[serverCertificatesIndex].AsObject());

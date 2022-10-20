@@ -33,7 +33,7 @@ ImageInserter& ImageInserter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("insertableImages"))
   {
-    Array<JsonView> insertableImagesJsonList = jsonValue.GetArray("insertableImages");
+    Aws::Utils::Array<JsonView> insertableImagesJsonList = jsonValue.GetArray("insertableImages");
     for(unsigned insertableImagesIndex = 0; insertableImagesIndex < insertableImagesJsonList.GetLength(); ++insertableImagesIndex)
     {
       m_insertableImages.push_back(insertableImagesJsonList[insertableImagesIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue ImageInserter::Jsonize() const
 
   if(m_insertableImagesHasBeenSet)
   {
-   Array<JsonValue> insertableImagesJsonList(m_insertableImages.size());
+   Aws::Utils::Array<JsonValue> insertableImagesJsonList(m_insertableImages.size());
    for(unsigned insertableImagesIndex = 0; insertableImagesIndex < insertableImagesJsonList.GetLength(); ++insertableImagesIndex)
    {
      insertableImagesJsonList[insertableImagesIndex].AsObject(m_insertableImages[insertableImagesIndex].Jsonize());

@@ -44,7 +44,7 @@ DocumentReviews& DocumentReviews::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Comment"))
   {
-    Array<JsonView> commentJsonList = jsonValue.GetArray("Comment");
+    Aws::Utils::Array<JsonView> commentJsonList = jsonValue.GetArray("Comment");
     for(unsigned commentIndex = 0; commentIndex < commentJsonList.GetLength(); ++commentIndex)
     {
       m_comment.push_back(commentJsonList[commentIndex].AsObject());
@@ -66,7 +66,7 @@ JsonValue DocumentReviews::Jsonize() const
 
   if(m_commentHasBeenSet)
   {
-   Array<JsonValue> commentJsonList(m_comment.size());
+   Aws::Utils::Array<JsonValue> commentJsonList(m_comment.size());
    for(unsigned commentIndex = 0; commentIndex < commentJsonList.GetLength(); ++commentIndex)
    {
      commentJsonList[commentIndex].AsObject(m_comment[commentIndex].Jsonize());

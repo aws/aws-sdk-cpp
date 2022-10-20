@@ -65,7 +65,7 @@ Aws::String UpdateDeploymentGroupRequest::SerializePayload() const
 
   if(m_ec2TagFiltersHasBeenSet)
   {
-   Array<JsonValue> ec2TagFiltersJsonList(m_ec2TagFilters.size());
+   Aws::Utils::Array<JsonValue> ec2TagFiltersJsonList(m_ec2TagFilters.size());
    for(unsigned ec2TagFiltersIndex = 0; ec2TagFiltersIndex < ec2TagFiltersJsonList.GetLength(); ++ec2TagFiltersIndex)
    {
      ec2TagFiltersJsonList[ec2TagFiltersIndex].AsObject(m_ec2TagFilters[ec2TagFiltersIndex].Jsonize());
@@ -76,7 +76,7 @@ Aws::String UpdateDeploymentGroupRequest::SerializePayload() const
 
   if(m_onPremisesInstanceTagFiltersHasBeenSet)
   {
-   Array<JsonValue> onPremisesInstanceTagFiltersJsonList(m_onPremisesInstanceTagFilters.size());
+   Aws::Utils::Array<JsonValue> onPremisesInstanceTagFiltersJsonList(m_onPremisesInstanceTagFilters.size());
    for(unsigned onPremisesInstanceTagFiltersIndex = 0; onPremisesInstanceTagFiltersIndex < onPremisesInstanceTagFiltersJsonList.GetLength(); ++onPremisesInstanceTagFiltersIndex)
    {
      onPremisesInstanceTagFiltersJsonList[onPremisesInstanceTagFiltersIndex].AsObject(m_onPremisesInstanceTagFilters[onPremisesInstanceTagFiltersIndex].Jsonize());
@@ -87,7 +87,7 @@ Aws::String UpdateDeploymentGroupRequest::SerializePayload() const
 
   if(m_autoScalingGroupsHasBeenSet)
   {
-   Array<JsonValue> autoScalingGroupsJsonList(m_autoScalingGroups.size());
+   Aws::Utils::Array<JsonValue> autoScalingGroupsJsonList(m_autoScalingGroups.size());
    for(unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex)
    {
      autoScalingGroupsJsonList[autoScalingGroupsIndex].AsString(m_autoScalingGroups[autoScalingGroupsIndex]);
@@ -104,7 +104,7 @@ Aws::String UpdateDeploymentGroupRequest::SerializePayload() const
 
   if(m_triggerConfigurationsHasBeenSet)
   {
-   Array<JsonValue> triggerConfigurationsJsonList(m_triggerConfigurations.size());
+   Aws::Utils::Array<JsonValue> triggerConfigurationsJsonList(m_triggerConfigurations.size());
    for(unsigned triggerConfigurationsIndex = 0; triggerConfigurationsIndex < triggerConfigurationsJsonList.GetLength(); ++triggerConfigurationsIndex)
    {
      triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject(m_triggerConfigurations[triggerConfigurationsIndex].Jsonize());
@@ -156,7 +156,7 @@ Aws::String UpdateDeploymentGroupRequest::SerializePayload() const
 
   if(m_ecsServicesHasBeenSet)
   {
-   Array<JsonValue> ecsServicesJsonList(m_ecsServices.size());
+   Aws::Utils::Array<JsonValue> ecsServicesJsonList(m_ecsServices.size());
    for(unsigned ecsServicesIndex = 0; ecsServicesIndex < ecsServicesJsonList.GetLength(); ++ecsServicesIndex)
    {
      ecsServicesJsonList[ecsServicesIndex].AsObject(m_ecsServices[ecsServicesIndex].Jsonize());

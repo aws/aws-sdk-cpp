@@ -43,7 +43,7 @@ Aws::String StartTaskRequest::SerializePayload() const
 
   if(m_containerInstancesHasBeenSet)
   {
-   Array<JsonValue> containerInstancesJsonList(m_containerInstances.size());
+   Aws::Utils::Array<JsonValue> containerInstancesJsonList(m_containerInstances.size());
    for(unsigned containerInstancesIndex = 0; containerInstancesIndex < containerInstancesJsonList.GetLength(); ++containerInstancesIndex)
    {
      containerInstancesJsonList[containerInstancesIndex].AsString(m_containerInstances[containerInstancesIndex]);
@@ -101,7 +101,7 @@ Aws::String StartTaskRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

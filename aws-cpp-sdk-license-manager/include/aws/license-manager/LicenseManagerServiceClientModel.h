@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/license-manager/LicenseManagerEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -97,6 +98,10 @@ namespace Aws
 
   namespace LicenseManager
   {
+    namespace Endpoint
+    {
+      class LicenseManagerEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in LicenseManagerClient header */

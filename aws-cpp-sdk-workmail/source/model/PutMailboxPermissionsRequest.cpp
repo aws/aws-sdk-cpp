@@ -44,7 +44,7 @@ Aws::String PutMailboxPermissionsRequest::SerializePayload() const
 
   if(m_permissionValuesHasBeenSet)
   {
-   Array<JsonValue> permissionValuesJsonList(m_permissionValues.size());
+   Aws::Utils::Array<JsonValue> permissionValuesJsonList(m_permissionValues.size());
    for(unsigned permissionValuesIndex = 0; permissionValuesIndex < permissionValuesJsonList.GetLength(); ++permissionValuesIndex)
    {
      permissionValuesJsonList[permissionValuesIndex].AsString(PermissionTypeMapper::GetNameForPermissionType(m_permissionValues[permissionValuesIndex]));

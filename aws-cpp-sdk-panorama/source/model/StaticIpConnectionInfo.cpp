@@ -46,7 +46,7 @@ StaticIpConnectionInfo& StaticIpConnectionInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Dns"))
   {
-    Array<JsonView> dnsJsonList = jsonValue.GetArray("Dns");
+    Aws::Utils::Array<JsonView> dnsJsonList = jsonValue.GetArray("Dns");
     for(unsigned dnsIndex = 0; dnsIndex < dnsJsonList.GetLength(); ++dnsIndex)
     {
       m_dns.push_back(dnsJsonList[dnsIndex].AsString());
@@ -83,7 +83,7 @@ JsonValue StaticIpConnectionInfo::Jsonize() const
 
   if(m_dnsHasBeenSet)
   {
-   Array<JsonValue> dnsJsonList(m_dns.size());
+   Aws::Utils::Array<JsonValue> dnsJsonList(m_dns.size());
    for(unsigned dnsIndex = 0; dnsIndex < dnsJsonList.GetLength(); ++dnsIndex)
    {
      dnsJsonList[dnsIndex].AsString(m_dns[dnsIndex]);

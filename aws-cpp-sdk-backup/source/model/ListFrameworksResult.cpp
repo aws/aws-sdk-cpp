@@ -30,7 +30,7 @@ ListFrameworksResult& ListFrameworksResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Frameworks"))
   {
-    Array<JsonView> frameworksJsonList = jsonValue.GetArray("Frameworks");
+    Aws::Utils::Array<JsonView> frameworksJsonList = jsonValue.GetArray("Frameworks");
     for(unsigned frameworksIndex = 0; frameworksIndex < frameworksJsonList.GetLength(); ++frameworksIndex)
     {
       m_frameworks.push_back(frameworksJsonList[frameworksIndex].AsObject());

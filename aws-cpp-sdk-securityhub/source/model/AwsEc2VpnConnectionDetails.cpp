@@ -102,7 +102,7 @@ AwsEc2VpnConnectionDetails& AwsEc2VpnConnectionDetails::operator =(JsonView json
 
   if(jsonValue.ValueExists("VgwTelemetry"))
   {
-    Array<JsonView> vgwTelemetryJsonList = jsonValue.GetArray("VgwTelemetry");
+    Aws::Utils::Array<JsonView> vgwTelemetryJsonList = jsonValue.GetArray("VgwTelemetry");
     for(unsigned vgwTelemetryIndex = 0; vgwTelemetryIndex < vgwTelemetryJsonList.GetLength(); ++vgwTelemetryIndex)
     {
       m_vgwTelemetry.push_back(vgwTelemetryJsonList[vgwTelemetryIndex].AsObject());
@@ -119,7 +119,7 @@ AwsEc2VpnConnectionDetails& AwsEc2VpnConnectionDetails::operator =(JsonView json
 
   if(jsonValue.ValueExists("Routes"))
   {
-    Array<JsonView> routesJsonList = jsonValue.GetArray("Routes");
+    Aws::Utils::Array<JsonView> routesJsonList = jsonValue.GetArray("Routes");
     for(unsigned routesIndex = 0; routesIndex < routesJsonList.GetLength(); ++routesIndex)
     {
       m_routes.push_back(routesJsonList[routesIndex].AsObject());
@@ -185,7 +185,7 @@ JsonValue AwsEc2VpnConnectionDetails::Jsonize() const
 
   if(m_vgwTelemetryHasBeenSet)
   {
-   Array<JsonValue> vgwTelemetryJsonList(m_vgwTelemetry.size());
+   Aws::Utils::Array<JsonValue> vgwTelemetryJsonList(m_vgwTelemetry.size());
    for(unsigned vgwTelemetryIndex = 0; vgwTelemetryIndex < vgwTelemetryJsonList.GetLength(); ++vgwTelemetryIndex)
    {
      vgwTelemetryJsonList[vgwTelemetryIndex].AsObject(m_vgwTelemetry[vgwTelemetryIndex].Jsonize());
@@ -202,7 +202,7 @@ JsonValue AwsEc2VpnConnectionDetails::Jsonize() const
 
   if(m_routesHasBeenSet)
   {
-   Array<JsonValue> routesJsonList(m_routes.size());
+   Aws::Utils::Array<JsonValue> routesJsonList(m_routes.size());
    for(unsigned routesIndex = 0; routesIndex < routesJsonList.GetLength(); ++routesIndex)
    {
      routesJsonList[routesIndex].AsObject(m_routes[routesIndex].Jsonize());

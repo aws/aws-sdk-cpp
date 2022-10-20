@@ -30,7 +30,7 @@ DescribeFleetCapacityResult& DescribeFleetCapacityResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FleetCapacity"))
   {
-    Array<JsonView> fleetCapacityJsonList = jsonValue.GetArray("FleetCapacity");
+    Aws::Utils::Array<JsonView> fleetCapacityJsonList = jsonValue.GetArray("FleetCapacity");
     for(unsigned fleetCapacityIndex = 0; fleetCapacityIndex < fleetCapacityJsonList.GetLength(); ++fleetCapacityIndex)
     {
       m_fleetCapacity.push_back(fleetCapacityJsonList[fleetCapacityIndex].AsObject());

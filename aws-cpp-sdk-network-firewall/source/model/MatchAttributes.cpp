@@ -43,7 +43,7 @@ MatchAttributes& MatchAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Sources"))
   {
-    Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
     for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
@@ -53,7 +53,7 @@ MatchAttributes& MatchAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Destinations"))
   {
-    Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
+    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
@@ -63,7 +63,7 @@ MatchAttributes& MatchAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SourcePorts"))
   {
-    Array<JsonView> sourcePortsJsonList = jsonValue.GetArray("SourcePorts");
+    Aws::Utils::Array<JsonView> sourcePortsJsonList = jsonValue.GetArray("SourcePorts");
     for(unsigned sourcePortsIndex = 0; sourcePortsIndex < sourcePortsJsonList.GetLength(); ++sourcePortsIndex)
     {
       m_sourcePorts.push_back(sourcePortsJsonList[sourcePortsIndex].AsObject());
@@ -73,7 +73,7 @@ MatchAttributes& MatchAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DestinationPorts"))
   {
-    Array<JsonView> destinationPortsJsonList = jsonValue.GetArray("DestinationPorts");
+    Aws::Utils::Array<JsonView> destinationPortsJsonList = jsonValue.GetArray("DestinationPorts");
     for(unsigned destinationPortsIndex = 0; destinationPortsIndex < destinationPortsJsonList.GetLength(); ++destinationPortsIndex)
     {
       m_destinationPorts.push_back(destinationPortsJsonList[destinationPortsIndex].AsObject());
@@ -83,7 +83,7 @@ MatchAttributes& MatchAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Protocols"))
   {
-    Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
+    Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
     for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
     {
       m_protocols.push_back(protocolsJsonList[protocolsIndex].AsInteger());
@@ -93,7 +93,7 @@ MatchAttributes& MatchAttributes::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TCPFlags"))
   {
-    Array<JsonView> tCPFlagsJsonList = jsonValue.GetArray("TCPFlags");
+    Aws::Utils::Array<JsonView> tCPFlagsJsonList = jsonValue.GetArray("TCPFlags");
     for(unsigned tCPFlagsIndex = 0; tCPFlagsIndex < tCPFlagsJsonList.GetLength(); ++tCPFlagsIndex)
     {
       m_tCPFlags.push_back(tCPFlagsJsonList[tCPFlagsIndex].AsObject());
@@ -110,7 +110,7 @@ JsonValue MatchAttributes::Jsonize() const
 
   if(m_sourcesHasBeenSet)
   {
-   Array<JsonValue> sourcesJsonList(m_sources.size());
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
@@ -121,7 +121,7 @@ JsonValue MatchAttributes::Jsonize() const
 
   if(m_destinationsHasBeenSet)
   {
-   Array<JsonValue> destinationsJsonList(m_destinations.size());
+   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
    {
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
@@ -132,7 +132,7 @@ JsonValue MatchAttributes::Jsonize() const
 
   if(m_sourcePortsHasBeenSet)
   {
-   Array<JsonValue> sourcePortsJsonList(m_sourcePorts.size());
+   Aws::Utils::Array<JsonValue> sourcePortsJsonList(m_sourcePorts.size());
    for(unsigned sourcePortsIndex = 0; sourcePortsIndex < sourcePortsJsonList.GetLength(); ++sourcePortsIndex)
    {
      sourcePortsJsonList[sourcePortsIndex].AsObject(m_sourcePorts[sourcePortsIndex].Jsonize());
@@ -143,7 +143,7 @@ JsonValue MatchAttributes::Jsonize() const
 
   if(m_destinationPortsHasBeenSet)
   {
-   Array<JsonValue> destinationPortsJsonList(m_destinationPorts.size());
+   Aws::Utils::Array<JsonValue> destinationPortsJsonList(m_destinationPorts.size());
    for(unsigned destinationPortsIndex = 0; destinationPortsIndex < destinationPortsJsonList.GetLength(); ++destinationPortsIndex)
    {
      destinationPortsJsonList[destinationPortsIndex].AsObject(m_destinationPorts[destinationPortsIndex].Jsonize());
@@ -154,7 +154,7 @@ JsonValue MatchAttributes::Jsonize() const
 
   if(m_protocolsHasBeenSet)
   {
-   Array<JsonValue> protocolsJsonList(m_protocols.size());
+   Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
    for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
    {
      protocolsJsonList[protocolsIndex].AsInteger(m_protocols[protocolsIndex]);
@@ -165,7 +165,7 @@ JsonValue MatchAttributes::Jsonize() const
 
   if(m_tCPFlagsHasBeenSet)
   {
-   Array<JsonValue> tCPFlagsJsonList(m_tCPFlags.size());
+   Aws::Utils::Array<JsonValue> tCPFlagsJsonList(m_tCPFlags.size());
    for(unsigned tCPFlagsIndex = 0; tCPFlagsIndex < tCPFlagsJsonList.GetLength(); ++tCPFlagsIndex)
    {
      tCPFlagsJsonList[tCPFlagsIndex].AsObject(m_tCPFlags[tCPFlagsIndex].Jsonize());

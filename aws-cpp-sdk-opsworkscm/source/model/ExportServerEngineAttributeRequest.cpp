@@ -37,7 +37,7 @@ Aws::String ExportServerEngineAttributeRequest::SerializePayload() const
 
   if(m_inputAttributesHasBeenSet)
   {
-   Array<JsonValue> inputAttributesJsonList(m_inputAttributes.size());
+   Aws::Utils::Array<JsonValue> inputAttributesJsonList(m_inputAttributes.size());
    for(unsigned inputAttributesIndex = 0; inputAttributesIndex < inputAttributesJsonList.GetLength(); ++inputAttributesIndex)
    {
      inputAttributesJsonList[inputAttributesIndex].AsObject(m_inputAttributes[inputAttributesIndex].Jsonize());

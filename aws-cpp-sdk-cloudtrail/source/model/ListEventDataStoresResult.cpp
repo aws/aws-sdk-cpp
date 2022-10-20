@@ -30,7 +30,7 @@ ListEventDataStoresResult& ListEventDataStoresResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EventDataStores"))
   {
-    Array<JsonView> eventDataStoresJsonList = jsonValue.GetArray("EventDataStores");
+    Aws::Utils::Array<JsonView> eventDataStoresJsonList = jsonValue.GetArray("EventDataStores");
     for(unsigned eventDataStoresIndex = 0; eventDataStoresIndex < eventDataStoresJsonList.GetLength(); ++eventDataStoresIndex)
     {
       m_eventDataStores.push_back(eventDataStoresJsonList[eventDataStoresIndex].AsObject());

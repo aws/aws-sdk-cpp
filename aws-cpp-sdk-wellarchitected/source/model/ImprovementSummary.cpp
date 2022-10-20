@@ -80,7 +80,7 @@ ImprovementSummary& ImprovementSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ImprovementPlans"))
   {
-    Array<JsonView> improvementPlansJsonList = jsonValue.GetArray("ImprovementPlans");
+    Aws::Utils::Array<JsonView> improvementPlansJsonList = jsonValue.GetArray("ImprovementPlans");
     for(unsigned improvementPlansIndex = 0; improvementPlansIndex < improvementPlansJsonList.GetLength(); ++improvementPlansIndex)
     {
       m_improvementPlans.push_back(improvementPlansJsonList[improvementPlansIndex].AsObject());
@@ -126,7 +126,7 @@ JsonValue ImprovementSummary::Jsonize() const
 
   if(m_improvementPlansHasBeenSet)
   {
-   Array<JsonValue> improvementPlansJsonList(m_improvementPlans.size());
+   Aws::Utils::Array<JsonValue> improvementPlansJsonList(m_improvementPlans.size());
    for(unsigned improvementPlansIndex = 0; improvementPlansIndex < improvementPlansJsonList.GetLength(); ++improvementPlansIndex)
    {
      improvementPlansJsonList[improvementPlansIndex].AsObject(m_improvementPlans[improvementPlansIndex].Jsonize());

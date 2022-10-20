@@ -61,7 +61,7 @@ Step& Step::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EndPosition"))
   {
-    Array<JsonView> endPositionJsonList = jsonValue.GetArray("EndPosition");
+    Aws::Utils::Array<JsonView> endPositionJsonList = jsonValue.GetArray("EndPosition");
     for(unsigned endPositionIndex = 0; endPositionIndex < endPositionJsonList.GetLength(); ++endPositionIndex)
     {
       m_endPosition.push_back(endPositionJsonList[endPositionIndex].AsDouble());
@@ -78,7 +78,7 @@ Step& Step::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StartPosition"))
   {
-    Array<JsonView> startPositionJsonList = jsonValue.GetArray("StartPosition");
+    Aws::Utils::Array<JsonView> startPositionJsonList = jsonValue.GetArray("StartPosition");
     for(unsigned startPositionIndex = 0; startPositionIndex < startPositionJsonList.GetLength(); ++startPositionIndex)
     {
       m_startPosition.push_back(startPositionJsonList[startPositionIndex].AsDouble());
@@ -107,7 +107,7 @@ JsonValue Step::Jsonize() const
 
   if(m_endPositionHasBeenSet)
   {
-   Array<JsonValue> endPositionJsonList(m_endPosition.size());
+   Aws::Utils::Array<JsonValue> endPositionJsonList(m_endPosition.size());
    for(unsigned endPositionIndex = 0; endPositionIndex < endPositionJsonList.GetLength(); ++endPositionIndex)
    {
      endPositionJsonList[endPositionIndex].AsDouble(m_endPosition[endPositionIndex]);
@@ -124,7 +124,7 @@ JsonValue Step::Jsonize() const
 
   if(m_startPositionHasBeenSet)
   {
-   Array<JsonValue> startPositionJsonList(m_startPosition.size());
+   Aws::Utils::Array<JsonValue> startPositionJsonList(m_startPosition.size());
    for(unsigned startPositionIndex = 0; startPositionIndex < startPositionJsonList.GetLength(); ++startPositionIndex)
    {
      startPositionJsonList[startPositionIndex].AsDouble(m_startPosition[startPositionIndex]);

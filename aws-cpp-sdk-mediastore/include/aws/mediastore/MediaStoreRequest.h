@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediastore/MediaStore_EXPORTS.h>
+#include <aws/mediastore/MediaStoreEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

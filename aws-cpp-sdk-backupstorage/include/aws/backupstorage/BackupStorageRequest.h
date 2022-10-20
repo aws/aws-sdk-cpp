@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/backupstorage/BackupStorage_EXPORTS.h>
+#include <aws/backupstorage/BackupStorageEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

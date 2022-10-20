@@ -50,7 +50,7 @@ DescribeExperienceResult& DescribeExperienceResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("Endpoints"))
   {
-    Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
+    Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
     for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
     {
       m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsObject());

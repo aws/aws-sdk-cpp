@@ -31,7 +31,7 @@ Aws::String RunPipelineActivityRequest::SerializePayload() const
 
   if(m_payloadsHasBeenSet)
   {
-   Array<JsonValue> payloadsJsonList(m_payloads.size());
+   Aws::Utils::Array<JsonValue> payloadsJsonList(m_payloads.size());
    for(unsigned payloadsIndex = 0; payloadsIndex < payloadsJsonList.GetLength(); ++payloadsIndex)
    {
      payloadsJsonList[payloadsIndex].AsString(HashingUtils::Base64Encode(m_payloads[payloadsIndex]));

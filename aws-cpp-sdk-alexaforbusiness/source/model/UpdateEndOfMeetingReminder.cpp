@@ -41,7 +41,7 @@ UpdateEndOfMeetingReminder& UpdateEndOfMeetingReminder::operator =(JsonView json
 {
   if(jsonValue.ValueExists("ReminderAtMinutes"))
   {
-    Array<JsonView> reminderAtMinutesJsonList = jsonValue.GetArray("ReminderAtMinutes");
+    Aws::Utils::Array<JsonView> reminderAtMinutesJsonList = jsonValue.GetArray("ReminderAtMinutes");
     for(unsigned reminderAtMinutesIndex = 0; reminderAtMinutesIndex < reminderAtMinutesJsonList.GetLength(); ++reminderAtMinutesIndex)
     {
       m_reminderAtMinutes.push_back(reminderAtMinutesJsonList[reminderAtMinutesIndex].AsInteger());
@@ -72,7 +72,7 @@ JsonValue UpdateEndOfMeetingReminder::Jsonize() const
 
   if(m_reminderAtMinutesHasBeenSet)
   {
-   Array<JsonValue> reminderAtMinutesJsonList(m_reminderAtMinutes.size());
+   Aws::Utils::Array<JsonValue> reminderAtMinutesJsonList(m_reminderAtMinutes.size());
    for(unsigned reminderAtMinutesIndex = 0; reminderAtMinutesIndex < reminderAtMinutesJsonList.GetLength(); ++reminderAtMinutesIndex)
    {
      reminderAtMinutesJsonList[reminderAtMinutesIndex].AsInteger(m_reminderAtMinutes[reminderAtMinutesIndex]);

@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/migrationhub-config/MigrationHubConfigClient.h>
 #include <aws/migrationhub-config/MigrationHubConfigEndpoint.h>
 #include <aws/migrationhub-config/MigrationHubConfigErrorMarshaller.h>
+#include <aws/migrationhub-config/MigrationHubConfigEndpointProvider.h>
 #include <aws/migrationhub-config/model/CreateHomeRegionControlRequest.h>
 #include <aws/migrationhub-config/model/DescribeHomeRegionControlsRequest.h>
 #include <aws/migrationhub-config/model/GetHomeRegionRequest.h>
@@ -31,19 +33,66 @@ using namespace Aws::MigrationHubConfig;
 using namespace Aws::MigrationHubConfig::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::MigrationHubConfig::Endpoint::MigrationHubConfigEndpointProvider::MigrationHubConfigResolveEndpointOutcome;
 
 
 const char* MigrationHubConfigClient::SERVICE_NAME = "mgh";
 const char* MigrationHubConfigClient::ALLOCATION_TAG = "MigrationHubConfigClient";
 
-MigrationHubConfigClient::MigrationHubConfigClient(const Client::ClientConfiguration& clientConfiguration) :
+MigrationHubConfigClient::MigrationHubConfigClient(const Client::ClientConfiguration& clientConfiguration,
+                                                   std::shared_ptr<Endpoint::MigrationHubConfigEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MigrationHubConfigErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+MigrationHubConfigClient::MigrationHubConfigClient(const AWSCredentials& credentials,
+                                                   std::shared_ptr<Endpoint::MigrationHubConfigEndpointProvider> endpointProvider,
+                                                   const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MigrationHubConfigErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+MigrationHubConfigClient::MigrationHubConfigClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                                   std::shared_ptr<Endpoint::MigrationHubConfigEndpointProvider> endpointProvider,
+                                                   const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MigrationHubConfigErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  MigrationHubConfigClient::MigrationHubConfigClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<MigrationHubConfigErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<MigrationHubConfig::Endpoint::MigrationHubConfigEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -56,7 +105,8 @@ MigrationHubConfigClient::MigrationHubConfigClient(const AWSCredentials& credent
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MigrationHubConfigErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<MigrationHubConfig::Endpoint::MigrationHubConfigEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -69,11 +119,13 @@ MigrationHubConfigClient::MigrationHubConfigClient(const std::shared_ptr<AWSCred
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MigrationHubConfigErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<MigrationHubConfig::Endpoint::MigrationHubConfigEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 MigrationHubConfigClient::~MigrationHubConfigClient()
 {
 }
@@ -81,33 +133,21 @@ MigrationHubConfigClient::~MigrationHubConfigClient()
 void MigrationHubConfigClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("MigrationHub Config");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + MigrationHubConfigEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void MigrationHubConfigClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 CreateHomeRegionControlOutcome MigrationHubConfigClient::CreateHomeRegionControl(const CreateHomeRegionControlRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return CreateHomeRegionControlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateHomeRegionControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateHomeRegionControl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateHomeRegionControlOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateHomeRegionControlOutcomeCallable MigrationHubConfigClient::CreateHomeRegionControlCallable(const CreateHomeRegionControlRequest& request) const
@@ -128,8 +168,10 @@ void MigrationHubConfigClient::CreateHomeRegionControlAsync(const CreateHomeRegi
 
 DescribeHomeRegionControlsOutcome MigrationHubConfigClient::DescribeHomeRegionControls(const DescribeHomeRegionControlsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return DescribeHomeRegionControlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeHomeRegionControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeHomeRegionControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeHomeRegionControlsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeHomeRegionControlsOutcomeCallable MigrationHubConfigClient::DescribeHomeRegionControlsCallable(const DescribeHomeRegionControlsRequest& request) const
@@ -150,8 +192,10 @@ void MigrationHubConfigClient::DescribeHomeRegionControlsAsync(const DescribeHom
 
 GetHomeRegionOutcome MigrationHubConfigClient::GetHomeRegion(const GetHomeRegionRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return GetHomeRegionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetHomeRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetHomeRegion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetHomeRegionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetHomeRegionOutcomeCallable MigrationHubConfigClient::GetHomeRegionCallable(const GetHomeRegionRequest& request) const

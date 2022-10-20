@@ -30,7 +30,7 @@ BatchGetRumMetricDefinitionsResult& BatchGetRumMetricDefinitionsResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MetricDefinitions"))
   {
-    Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");
+    Aws::Utils::Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");
     for(unsigned metricDefinitionsIndex = 0; metricDefinitionsIndex < metricDefinitionsJsonList.GetLength(); ++metricDefinitionsIndex)
     {
       m_metricDefinitions.push_back(metricDefinitionsJsonList[metricDefinitionsIndex].AsObject());

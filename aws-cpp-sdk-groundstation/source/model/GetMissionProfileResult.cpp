@@ -48,10 +48,10 @@ GetMissionProfileResult& GetMissionProfileResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("dataflowEdges"))
   {
-    Array<JsonView> dataflowEdgesJsonList = jsonValue.GetArray("dataflowEdges");
+    Aws::Utils::Array<JsonView> dataflowEdgesJsonList = jsonValue.GetArray("dataflowEdges");
     for(unsigned dataflowEdgesIndex = 0; dataflowEdgesIndex < dataflowEdgesJsonList.GetLength(); ++dataflowEdgesIndex)
     {
-      Array<JsonView> dataflowEdgeJsonList = dataflowEdgesJsonList[dataflowEdgesIndex].AsArray();
+      Aws::Utils::Array<JsonView> dataflowEdgeJsonList = dataflowEdgesJsonList[dataflowEdgesIndex].AsArray();
       Aws::Vector<Aws::String> dataflowEdgeList;
       dataflowEdgeList.reserve((size_t)dataflowEdgeJsonList.GetLength());
       for(unsigned dataflowEdgeIndex = 0; dataflowEdgeIndex < dataflowEdgeJsonList.GetLength(); ++dataflowEdgeIndex)

@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/gamesparks/GameSparksClient.h>
 #include <aws/gamesparks/GameSparksEndpoint.h>
 #include <aws/gamesparks/GameSparksErrorMarshaller.h>
+#include <aws/gamesparks/GameSparksEndpointProvider.h>
 #include <aws/gamesparks/model/CreateGameRequest.h>
 #include <aws/gamesparks/model/CreateSnapshotRequest.h>
 #include <aws/gamesparks/model/CreateStageRequest.h>
@@ -61,19 +63,66 @@ using namespace Aws::GameSparks;
 using namespace Aws::GameSparks::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::GameSparks::Endpoint::GameSparksEndpointProvider::GameSparksResolveEndpointOutcome;
 
 
 const char* GameSparksClient::SERVICE_NAME = "gamesparks";
 const char* GameSparksClient::ALLOCATION_TAG = "GameSparksClient";
 
-GameSparksClient::GameSparksClient(const Client::ClientConfiguration& clientConfiguration) :
+GameSparksClient::GameSparksClient(const Client::ClientConfiguration& clientConfiguration,
+                                   std::shared_ptr<Endpoint::GameSparksEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GameSparksErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+GameSparksClient::GameSparksClient(const AWSCredentials& credentials,
+                                   std::shared_ptr<Endpoint::GameSparksEndpointProvider> endpointProvider,
+                                   const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<GameSparksErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+GameSparksClient::GameSparksClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                   std::shared_ptr<Endpoint::GameSparksEndpointProvider> endpointProvider,
+                                   const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<GameSparksErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  GameSparksClient::GameSparksClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<GameSparksErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<GameSparks::Endpoint::GameSparksEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -86,7 +135,8 @@ GameSparksClient::GameSparksClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GameSparksErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<GameSparks::Endpoint::GameSparksEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -99,11 +149,13 @@ GameSparksClient::GameSparksClient(const std::shared_ptr<AWSCredentialsProvider>
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GameSparksErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<GameSparks::Endpoint::GameSparksEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 GameSparksClient::~GameSparksClient()
 {
 }
@@ -111,34 +163,21 @@ GameSparksClient::~GameSparksClient()
 void GameSparksClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("GameSparks");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + GameSparksEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void GameSparksClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 CreateGameOutcome GameSparksClient::CreateGame(const CreateGameRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game");
-  return CreateGameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGame, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGame, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateGameOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateGameOutcomeCallable GameSparksClient::CreateGameCallable(const CreateGameRequest& request) const
@@ -159,16 +198,15 @@ void GameSparksClient::CreateGameAsync(const CreateGameRequest& request, const C
 
 CreateSnapshotOutcome GameSparksClient::CreateSnapshot(const CreateSnapshotRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateSnapshot", "Required field: GameName, is not set");
     return CreateSnapshotOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GameName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/snapshot");
-  return CreateSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateSnapshotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSnapshotOutcomeCallable GameSparksClient::CreateSnapshotCallable(const CreateSnapshotRequest& request) const
@@ -189,16 +227,15 @@ void GameSparksClient::CreateSnapshotAsync(const CreateSnapshotRequest& request,
 
 CreateStageOutcome GameSparksClient::CreateStage(const CreateStageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateStage", "Required field: GameName, is not set");
     return CreateStageOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GameName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/stage");
-  return CreateStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateStageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateStageOutcomeCallable GameSparksClient::CreateStageCallable(const CreateStageRequest& request) const
@@ -219,15 +256,15 @@ void GameSparksClient::CreateStageAsync(const CreateStageRequest& request, const
 
 DeleteGameOutcome GameSparksClient::DeleteGame(const DeleteGameRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteGame, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteGame", "Required field: GameName, is not set");
     return DeleteGameOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GameName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  return DeleteGameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteGame, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteGameOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGameOutcomeCallable GameSparksClient::DeleteGameCallable(const DeleteGameRequest& request) const
@@ -248,6 +285,7 @@ void GameSparksClient::DeleteGameAsync(const DeleteGameRequest& request, const D
 
 DeleteStageOutcome GameSparksClient::DeleteStage(const DeleteStageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteStage", "Required field: GameName, is not set");
@@ -258,12 +296,9 @@ DeleteStageOutcome GameSparksClient::DeleteStage(const DeleteStageRequest& reque
     AWS_LOGSTREAM_ERROR("DeleteStage", "Required field: StageName, is not set");
     return DeleteStageOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/stage/");
-  uri.AddPathSegment(request.GetStageName());
-  return DeleteStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteStageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteStageOutcomeCallable GameSparksClient::DeleteStageCallable(const DeleteStageRequest& request) const
@@ -284,6 +319,7 @@ void GameSparksClient::DeleteStageAsync(const DeleteStageRequest& request, const
 
 DisconnectPlayerOutcome GameSparksClient::DisconnectPlayer(const DisconnectPlayerRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisconnectPlayer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DisconnectPlayer", "Required field: GameName, is not set");
@@ -299,15 +335,9 @@ DisconnectPlayerOutcome GameSparksClient::DisconnectPlayer(const DisconnectPlaye
     AWS_LOGSTREAM_ERROR("DisconnectPlayer", "Required field: StageName, is not set");
     return DisconnectPlayerOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/runtime/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/stage/");
-  uri.AddPathSegment(request.GetStageName());
-  uri.AddPathSegments("/player/");
-  uri.AddPathSegment(request.GetPlayerId());
-  uri.AddPathSegments("/disconnect");
-  return DisconnectPlayerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisconnectPlayer, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DisconnectPlayerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisconnectPlayerOutcomeCallable GameSparksClient::DisconnectPlayerCallable(const DisconnectPlayerRequest& request) const
@@ -328,6 +358,7 @@ void GameSparksClient::DisconnectPlayerAsync(const DisconnectPlayerRequest& requ
 
 ExportSnapshotOutcome GameSparksClient::ExportSnapshot(const ExportSnapshotRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ExportSnapshot", "Required field: GameName, is not set");
@@ -338,13 +369,9 @@ ExportSnapshotOutcome GameSparksClient::ExportSnapshot(const ExportSnapshotReque
     AWS_LOGSTREAM_ERROR("ExportSnapshot", "Required field: SnapshotId, is not set");
     return ExportSnapshotOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SnapshotId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/snapshot/");
-  uri.AddPathSegment(request.GetSnapshotId());
-  uri.AddPathSegments("/export");
-  return ExportSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExportSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ExportSnapshotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExportSnapshotOutcomeCallable GameSparksClient::ExportSnapshotCallable(const ExportSnapshotRequest& request) const
@@ -365,6 +392,7 @@ void GameSparksClient::ExportSnapshotAsync(const ExportSnapshotRequest& request,
 
 GetExtensionOutcome GameSparksClient::GetExtension(const GetExtensionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExtension, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetExtension", "Required field: Name, is not set");
@@ -375,11 +403,9 @@ GetExtensionOutcome GameSparksClient::GetExtension(const GetExtensionRequest& re
     AWS_LOGSTREAM_ERROR("GetExtension", "Required field: Namespace, is not set");
     return GetExtensionOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/extension/");
-  uri.AddPathSegment(request.GetNamespace());
-  uri.AddPathSegment(request.GetName());
-  return GetExtensionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetExtension, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetExtensionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetExtensionOutcomeCallable GameSparksClient::GetExtensionCallable(const GetExtensionRequest& request) const
@@ -400,6 +426,7 @@ void GameSparksClient::GetExtensionAsync(const GetExtensionRequest& request, con
 
 GetExtensionVersionOutcome GameSparksClient::GetExtensionVersion(const GetExtensionVersionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExtensionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExtensionVersionHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetExtensionVersion", "Required field: ExtensionVersion, is not set");
@@ -415,13 +442,9 @@ GetExtensionVersionOutcome GameSparksClient::GetExtensionVersion(const GetExtens
     AWS_LOGSTREAM_ERROR("GetExtensionVersion", "Required field: Namespace, is not set");
     return GetExtensionVersionOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/extension/");
-  uri.AddPathSegment(request.GetNamespace());
-  uri.AddPathSegment(request.GetName());
-  uri.AddPathSegments("/version/");
-  uri.AddPathSegment(request.GetExtensionVersion());
-  return GetExtensionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetExtensionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetExtensionVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetExtensionVersionOutcomeCallable GameSparksClient::GetExtensionVersionCallable(const GetExtensionVersionRequest& request) const
@@ -442,15 +465,15 @@ void GameSparksClient::GetExtensionVersionAsync(const GetExtensionVersionRequest
 
 GetGameOutcome GameSparksClient::GetGame(const GetGameRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGame, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetGame", "Required field: GameName, is not set");
     return GetGameOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GameName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  return GetGameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGame, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetGameOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGameOutcomeCallable GameSparksClient::GetGameCallable(const GetGameRequest& request) const
@@ -471,16 +494,15 @@ void GameSparksClient::GetGameAsync(const GetGameRequest& request, const GetGame
 
 GetGameConfigurationOutcome GameSparksClient::GetGameConfiguration(const GetGameConfigurationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGameConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetGameConfiguration", "Required field: GameName, is not set");
     return GetGameConfigurationOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GameName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/configuration");
-  return GetGameConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGameConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetGameConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGameConfigurationOutcomeCallable GameSparksClient::GetGameConfigurationCallable(const GetGameConfigurationRequest& request) const
@@ -501,6 +523,7 @@ void GameSparksClient::GetGameConfigurationAsync(const GetGameConfigurationReque
 
 GetGeneratedCodeJobOutcome GameSparksClient::GetGeneratedCodeJob(const GetGeneratedCodeJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetGeneratedCodeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetGeneratedCodeJob", "Required field: GameName, is not set");
@@ -516,14 +539,9 @@ GetGeneratedCodeJobOutcome GameSparksClient::GetGeneratedCodeJob(const GetGenera
     AWS_LOGSTREAM_ERROR("GetGeneratedCodeJob", "Required field: SnapshotId, is not set");
     return GetGeneratedCodeJobOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SnapshotId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/snapshot/");
-  uri.AddPathSegment(request.GetSnapshotId());
-  uri.AddPathSegments("/generated-sdk-code-job/");
-  uri.AddPathSegment(request.GetJobId());
-  return GetGeneratedCodeJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetGeneratedCodeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetGeneratedCodeJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetGeneratedCodeJobOutcomeCallable GameSparksClient::GetGeneratedCodeJobCallable(const GetGeneratedCodeJobRequest& request) const
@@ -544,6 +562,7 @@ void GameSparksClient::GetGeneratedCodeJobAsync(const GetGeneratedCodeJobRequest
 
 GetPlayerConnectionStatusOutcome GameSparksClient::GetPlayerConnectionStatus(const GetPlayerConnectionStatusRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPlayerConnectionStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetPlayerConnectionStatus", "Required field: GameName, is not set");
@@ -559,15 +578,9 @@ GetPlayerConnectionStatusOutcome GameSparksClient::GetPlayerConnectionStatus(con
     AWS_LOGSTREAM_ERROR("GetPlayerConnectionStatus", "Required field: StageName, is not set");
     return GetPlayerConnectionStatusOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/runtime/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/stage/");
-  uri.AddPathSegment(request.GetStageName());
-  uri.AddPathSegments("/player/");
-  uri.AddPathSegment(request.GetPlayerId());
-  uri.AddPathSegments("/connection");
-  return GetPlayerConnectionStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPlayerConnectionStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetPlayerConnectionStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetPlayerConnectionStatusOutcomeCallable GameSparksClient::GetPlayerConnectionStatusCallable(const GetPlayerConnectionStatusRequest& request) const
@@ -588,6 +601,7 @@ void GameSparksClient::GetPlayerConnectionStatusAsync(const GetPlayerConnectionS
 
 GetSnapshotOutcome GameSparksClient::GetSnapshot(const GetSnapshotRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetSnapshot", "Required field: GameName, is not set");
@@ -598,12 +612,9 @@ GetSnapshotOutcome GameSparksClient::GetSnapshot(const GetSnapshotRequest& reque
     AWS_LOGSTREAM_ERROR("GetSnapshot", "Required field: SnapshotId, is not set");
     return GetSnapshotOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SnapshotId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/snapshot/");
-  uri.AddPathSegment(request.GetSnapshotId());
-  return GetSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetSnapshotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSnapshotOutcomeCallable GameSparksClient::GetSnapshotCallable(const GetSnapshotRequest& request) const
@@ -624,6 +635,7 @@ void GameSparksClient::GetSnapshotAsync(const GetSnapshotRequest& request, const
 
 GetStageOutcome GameSparksClient::GetStage(const GetStageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetStage", "Required field: GameName, is not set");
@@ -634,12 +646,9 @@ GetStageOutcome GameSparksClient::GetStage(const GetStageRequest& request) const
     AWS_LOGSTREAM_ERROR("GetStage", "Required field: StageName, is not set");
     return GetStageOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/stage/");
-  uri.AddPathSegment(request.GetStageName());
-  return GetStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetStageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStageOutcomeCallable GameSparksClient::GetStageCallable(const GetStageRequest& request) const
@@ -660,6 +669,7 @@ void GameSparksClient::GetStageAsync(const GetStageRequest& request, const GetSt
 
 GetStageDeploymentOutcome GameSparksClient::GetStageDeployment(const GetStageDeploymentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStageDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetStageDeployment", "Required field: GameName, is not set");
@@ -670,13 +680,9 @@ GetStageDeploymentOutcome GameSparksClient::GetStageDeployment(const GetStageDep
     AWS_LOGSTREAM_ERROR("GetStageDeployment", "Required field: StageName, is not set");
     return GetStageDeploymentOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/stage/");
-  uri.AddPathSegment(request.GetStageName());
-  uri.AddPathSegments("/deployment");
-  return GetStageDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStageDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetStageDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStageDeploymentOutcomeCallable GameSparksClient::GetStageDeploymentCallable(const GetStageDeploymentRequest& request) const
@@ -697,16 +703,15 @@ void GameSparksClient::GetStageDeploymentAsync(const GetStageDeploymentRequest& 
 
 ImportGameConfigurationOutcome GameSparksClient::ImportGameConfiguration(const ImportGameConfigurationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportGameConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ImportGameConfiguration", "Required field: GameName, is not set");
     return ImportGameConfigurationOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GameName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/configuration");
-  return ImportGameConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportGameConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ImportGameConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportGameConfigurationOutcomeCallable GameSparksClient::ImportGameConfigurationCallable(const ImportGameConfigurationRequest& request) const
@@ -727,6 +732,7 @@ void GameSparksClient::ImportGameConfigurationAsync(const ImportGameConfiguratio
 
 ListExtensionVersionsOutcome GameSparksClient::ListExtensionVersions(const ListExtensionVersionsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExtensionVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.NameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListExtensionVersions", "Required field: Name, is not set");
@@ -737,12 +743,9 @@ ListExtensionVersionsOutcome GameSparksClient::ListExtensionVersions(const ListE
     AWS_LOGSTREAM_ERROR("ListExtensionVersions", "Required field: Namespace, is not set");
     return ListExtensionVersionsOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Namespace]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/extension/");
-  uri.AddPathSegment(request.GetNamespace());
-  uri.AddPathSegment(request.GetName());
-  uri.AddPathSegments("/version");
-  return ListExtensionVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExtensionVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListExtensionVersionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListExtensionVersionsOutcomeCallable GameSparksClient::ListExtensionVersionsCallable(const ListExtensionVersionsRequest& request) const
@@ -763,9 +766,10 @@ void GameSparksClient::ListExtensionVersionsAsync(const ListExtensionVersionsReq
 
 ListExtensionsOutcome GameSparksClient::ListExtensions(const ListExtensionsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/extension");
-  return ListExtensionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExtensions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExtensions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListExtensionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListExtensionsOutcomeCallable GameSparksClient::ListExtensionsCallable(const ListExtensionsRequest& request) const
@@ -786,9 +790,10 @@ void GameSparksClient::ListExtensionsAsync(const ListExtensionsRequest& request,
 
 ListGamesOutcome GameSparksClient::ListGames(const ListGamesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game");
-  return ListGamesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGames, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListGamesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGamesOutcomeCallable GameSparksClient::ListGamesCallable(const ListGamesRequest& request) const
@@ -809,6 +814,7 @@ void GameSparksClient::ListGamesAsync(const ListGamesRequest& request, const Lis
 
 ListGeneratedCodeJobsOutcome GameSparksClient::ListGeneratedCodeJobs(const ListGeneratedCodeJobsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGeneratedCodeJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListGeneratedCodeJobs", "Required field: GameName, is not set");
@@ -819,13 +825,9 @@ ListGeneratedCodeJobsOutcome GameSparksClient::ListGeneratedCodeJobs(const ListG
     AWS_LOGSTREAM_ERROR("ListGeneratedCodeJobs", "Required field: SnapshotId, is not set");
     return ListGeneratedCodeJobsOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SnapshotId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/snapshot/");
-  uri.AddPathSegment(request.GetSnapshotId());
-  uri.AddPathSegments("/generated-sdk-code-jobs");
-  return ListGeneratedCodeJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGeneratedCodeJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListGeneratedCodeJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGeneratedCodeJobsOutcomeCallable GameSparksClient::ListGeneratedCodeJobsCallable(const ListGeneratedCodeJobsRequest& request) const
@@ -846,16 +848,15 @@ void GameSparksClient::ListGeneratedCodeJobsAsync(const ListGeneratedCodeJobsReq
 
 ListSnapshotsOutcome GameSparksClient::ListSnapshots(const ListSnapshotsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSnapshots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListSnapshots", "Required field: GameName, is not set");
     return ListSnapshotsOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GameName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/snapshot");
-  return ListSnapshotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSnapshots, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListSnapshotsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSnapshotsOutcomeCallable GameSparksClient::ListSnapshotsCallable(const ListSnapshotsRequest& request) const
@@ -876,6 +877,7 @@ void GameSparksClient::ListSnapshotsAsync(const ListSnapshotsRequest& request, c
 
 ListStageDeploymentsOutcome GameSparksClient::ListStageDeployments(const ListStageDeploymentsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStageDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListStageDeployments", "Required field: GameName, is not set");
@@ -886,13 +888,9 @@ ListStageDeploymentsOutcome GameSparksClient::ListStageDeployments(const ListSta
     AWS_LOGSTREAM_ERROR("ListStageDeployments", "Required field: StageName, is not set");
     return ListStageDeploymentsOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/stage/");
-  uri.AddPathSegment(request.GetStageName());
-  uri.AddPathSegments("/deployments");
-  return ListStageDeploymentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStageDeployments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListStageDeploymentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListStageDeploymentsOutcomeCallable GameSparksClient::ListStageDeploymentsCallable(const ListStageDeploymentsRequest& request) const
@@ -913,16 +911,15 @@ void GameSparksClient::ListStageDeploymentsAsync(const ListStageDeploymentsReque
 
 ListStagesOutcome GameSparksClient::ListStages(const ListStagesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListStages", "Required field: GameName, is not set");
     return ListStagesOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GameName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/stage");
-  return ListStagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListStagesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListStagesOutcomeCallable GameSparksClient::ListStagesCallable(const ListStagesRequest& request) const
@@ -943,15 +940,15 @@ void GameSparksClient::ListStagesAsync(const ListStagesRequest& request, const L
 
 ListTagsForResourceOutcome GameSparksClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable GameSparksClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -972,6 +969,7 @@ void GameSparksClient::ListTagsForResourceAsync(const ListTagsForResourceRequest
 
 StartGeneratedCodeJobOutcome GameSparksClient::StartGeneratedCodeJob(const StartGeneratedCodeJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartGeneratedCodeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartGeneratedCodeJob", "Required field: GameName, is not set");
@@ -982,13 +980,9 @@ StartGeneratedCodeJobOutcome GameSparksClient::StartGeneratedCodeJob(const Start
     AWS_LOGSTREAM_ERROR("StartGeneratedCodeJob", "Required field: SnapshotId, is not set");
     return StartGeneratedCodeJobOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SnapshotId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/snapshot/");
-  uri.AddPathSegment(request.GetSnapshotId());
-  uri.AddPathSegments("/generated-sdk-code-job");
-  return StartGeneratedCodeJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartGeneratedCodeJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartGeneratedCodeJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartGeneratedCodeJobOutcomeCallable GameSparksClient::StartGeneratedCodeJobCallable(const StartGeneratedCodeJobRequest& request) const
@@ -1009,6 +1003,7 @@ void GameSparksClient::StartGeneratedCodeJobAsync(const StartGeneratedCodeJobReq
 
 StartStageDeploymentOutcome GameSparksClient::StartStageDeployment(const StartStageDeploymentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartStageDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartStageDeployment", "Required field: GameName, is not set");
@@ -1019,13 +1014,9 @@ StartStageDeploymentOutcome GameSparksClient::StartStageDeployment(const StartSt
     AWS_LOGSTREAM_ERROR("StartStageDeployment", "Required field: StageName, is not set");
     return StartStageDeploymentOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/stage/");
-  uri.AddPathSegment(request.GetStageName());
-  uri.AddPathSegments("/deployment");
-  return StartStageDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartStageDeployment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartStageDeploymentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartStageDeploymentOutcomeCallable GameSparksClient::StartStageDeploymentCallable(const StartStageDeploymentRequest& request) const
@@ -1046,15 +1037,15 @@ void GameSparksClient::StartStageDeploymentAsync(const StartStageDeploymentReque
 
 TagResourceOutcome GameSparksClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable GameSparksClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1075,6 +1066,7 @@ void GameSparksClient::TagResourceAsync(const TagResourceRequest& request, const
 
 UntagResourceOutcome GameSparksClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
@@ -1085,10 +1077,9 @@ UntagResourceOutcome GameSparksClient::UntagResource(const UntagResourceRequest&
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable GameSparksClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1109,15 +1100,15 @@ void GameSparksClient::UntagResourceAsync(const UntagResourceRequest& request, c
 
 UpdateGameOutcome GameSparksClient::UpdateGame(const UpdateGameRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGame, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateGame", "Required field: GameName, is not set");
     return UpdateGameOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GameName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  return UpdateGameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGame, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateGameOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGameOutcomeCallable GameSparksClient::UpdateGameCallable(const UpdateGameRequest& request) const
@@ -1138,16 +1129,15 @@ void GameSparksClient::UpdateGameAsync(const UpdateGameRequest& request, const U
 
 UpdateGameConfigurationOutcome GameSparksClient::UpdateGameConfiguration(const UpdateGameConfigurationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGameConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateGameConfiguration", "Required field: GameName, is not set");
     return UpdateGameConfigurationOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GameName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/configuration");
-  return UpdateGameConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGameConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateGameConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGameConfigurationOutcomeCallable GameSparksClient::UpdateGameConfigurationCallable(const UpdateGameConfigurationRequest& request) const
@@ -1168,6 +1158,7 @@ void GameSparksClient::UpdateGameConfigurationAsync(const UpdateGameConfiguratio
 
 UpdateSnapshotOutcome GameSparksClient::UpdateSnapshot(const UpdateSnapshotRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateSnapshot", "Required field: GameName, is not set");
@@ -1178,12 +1169,9 @@ UpdateSnapshotOutcome GameSparksClient::UpdateSnapshot(const UpdateSnapshotReque
     AWS_LOGSTREAM_ERROR("UpdateSnapshot", "Required field: SnapshotId, is not set");
     return UpdateSnapshotOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SnapshotId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/snapshot/");
-  uri.AddPathSegment(request.GetSnapshotId());
-  return UpdateSnapshotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateSnapshotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateSnapshotOutcomeCallable GameSparksClient::UpdateSnapshotCallable(const UpdateSnapshotRequest& request) const
@@ -1204,6 +1192,7 @@ void GameSparksClient::UpdateSnapshotAsync(const UpdateSnapshotRequest& request,
 
 UpdateStageOutcome GameSparksClient::UpdateStage(const UpdateStageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GameNameHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateStage", "Required field: GameName, is not set");
@@ -1214,12 +1203,9 @@ UpdateStageOutcome GameSparksClient::UpdateStage(const UpdateStageRequest& reque
     AWS_LOGSTREAM_ERROR("UpdateStage", "Required field: StageName, is not set");
     return UpdateStageOutcome(Aws::Client::AWSError<GameSparksErrors>(GameSparksErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/game/");
-  uri.AddPathSegment(request.GetGameName());
-  uri.AddPathSegments("/stage/");
-  uri.AddPathSegment(request.GetStageName());
-  return UpdateStageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateStageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateStageOutcomeCallable GameSparksClient::UpdateStageCallable(const UpdateStageRequest& request) const

@@ -98,7 +98,7 @@ Event& Event::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("impression"))
   {
-    Array<JsonView> impressionJsonList = jsonValue.GetArray("impression");
+    Aws::Utils::Array<JsonView> impressionJsonList = jsonValue.GetArray("impression");
     for(unsigned impressionIndex = 0; impressionIndex < impressionJsonList.GetLength(); ++impressionIndex)
     {
       m_impression.push_back(impressionJsonList[impressionIndex].AsString());
@@ -156,7 +156,7 @@ JsonValue Event::Jsonize() const
 
   if(m_impressionHasBeenSet)
   {
-   Array<JsonValue> impressionJsonList(m_impression.size());
+   Aws::Utils::Array<JsonValue> impressionJsonList(m_impression.size());
    for(unsigned impressionIndex = 0; impressionIndex < impressionJsonList.GetLength(); ++impressionIndex)
    {
      impressionJsonList[impressionIndex].AsString(m_impression[impressionIndex]);

@@ -36,7 +36,7 @@ ListRecordingConfigurationsResult& ListRecordingConfigurationsResult::operator =
 
   if(jsonValue.ValueExists("recordingConfigurations"))
   {
-    Array<JsonView> recordingConfigurationsJsonList = jsonValue.GetArray("recordingConfigurations");
+    Aws::Utils::Array<JsonView> recordingConfigurationsJsonList = jsonValue.GetArray("recordingConfigurations");
     for(unsigned recordingConfigurationsIndex = 0; recordingConfigurationsIndex < recordingConfigurationsJsonList.GetLength(); ++recordingConfigurationsIndex)
     {
       m_recordingConfigurations.push_back(recordingConfigurationsJsonList[recordingConfigurationsIndex].AsObject());

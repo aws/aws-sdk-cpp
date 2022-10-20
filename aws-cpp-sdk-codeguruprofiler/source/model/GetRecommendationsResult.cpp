@@ -30,7 +30,7 @@ GetRecommendationsResult& GetRecommendationsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("anomalies"))
   {
-    Array<JsonView> anomaliesJsonList = jsonValue.GetArray("anomalies");
+    Aws::Utils::Array<JsonView> anomaliesJsonList = jsonValue.GetArray("anomalies");
     for(unsigned anomaliesIndex = 0; anomaliesIndex < anomaliesJsonList.GetLength(); ++anomaliesIndex)
     {
       m_anomalies.push_back(anomaliesJsonList[anomaliesIndex].AsObject());
@@ -57,7 +57,7 @@ GetRecommendationsResult& GetRecommendationsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("recommendations"))
   {
-    Array<JsonView> recommendationsJsonList = jsonValue.GetArray("recommendations");
+    Aws::Utils::Array<JsonView> recommendationsJsonList = jsonValue.GetArray("recommendations");
     for(unsigned recommendationsIndex = 0; recommendationsIndex < recommendationsJsonList.GetLength(); ++recommendationsIndex)
     {
       m_recommendations.push_back(recommendationsJsonList[recommendationsIndex].AsObject());

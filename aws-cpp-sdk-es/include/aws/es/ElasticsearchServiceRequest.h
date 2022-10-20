@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
+#include <aws/es/ElasticsearchServiceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

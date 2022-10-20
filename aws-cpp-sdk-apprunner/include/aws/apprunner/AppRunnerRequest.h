@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/apprunner/AppRunner_EXPORTS.h>
+#include <aws/apprunner/AppRunnerEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

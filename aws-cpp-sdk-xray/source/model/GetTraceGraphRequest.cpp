@@ -24,7 +24,7 @@ Aws::String GetTraceGraphRequest::SerializePayload() const
 
   if(m_traceIdsHasBeenSet)
   {
-   Array<JsonValue> traceIdsJsonList(m_traceIds.size());
+   Aws::Utils::Array<JsonValue> traceIdsJsonList(m_traceIds.size());
    for(unsigned traceIdsIndex = 0; traceIdsIndex < traceIdsJsonList.GetLength(); ++traceIdsIndex)
    {
      traceIdsJsonList[traceIdsIndex].AsString(m_traceIds[traceIdsIndex]);

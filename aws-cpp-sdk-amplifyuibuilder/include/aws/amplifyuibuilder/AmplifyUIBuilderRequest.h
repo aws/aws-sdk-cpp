@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilderEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

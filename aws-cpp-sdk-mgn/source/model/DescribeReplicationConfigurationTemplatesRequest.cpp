@@ -38,7 +38,7 @@ Aws::String DescribeReplicationConfigurationTemplatesRequest::SerializePayload()
 
   if(m_replicationConfigurationTemplateIDsHasBeenSet)
   {
-   Array<JsonValue> replicationConfigurationTemplateIDsJsonList(m_replicationConfigurationTemplateIDs.size());
+   Aws::Utils::Array<JsonValue> replicationConfigurationTemplateIDsJsonList(m_replicationConfigurationTemplateIDs.size());
    for(unsigned replicationConfigurationTemplateIDsIndex = 0; replicationConfigurationTemplateIDsIndex < replicationConfigurationTemplateIDsJsonList.GetLength(); ++replicationConfigurationTemplateIDsIndex)
    {
      replicationConfigurationTemplateIDsJsonList[replicationConfigurationTemplateIDsIndex].AsString(m_replicationConfigurationTemplateIDs[replicationConfigurationTemplateIDsIndex]);

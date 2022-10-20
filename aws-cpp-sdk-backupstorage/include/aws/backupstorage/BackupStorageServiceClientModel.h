@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/backupstorage/BackupStorageEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -58,6 +59,10 @@ namespace Aws
 
   namespace BackupStorage
   {
+    namespace Endpoint
+    {
+      class BackupStorageEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in BackupStorageClient header */

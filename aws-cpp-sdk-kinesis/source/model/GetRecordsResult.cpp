@@ -32,7 +32,7 @@ GetRecordsResult& GetRecordsResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Records"))
   {
-    Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
+    Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
     for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
@@ -53,7 +53,7 @@ GetRecordsResult& GetRecordsResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("ChildShards"))
   {
-    Array<JsonView> childShardsJsonList = jsonValue.GetArray("ChildShards");
+    Aws::Utils::Array<JsonView> childShardsJsonList = jsonValue.GetArray("ChildShards");
     for(unsigned childShardsIndex = 0; childShardsIndex < childShardsJsonList.GetLength(); ++childShardsIndex)
     {
       m_childShards.push_back(childShardsJsonList[childShardsIndex].AsObject());

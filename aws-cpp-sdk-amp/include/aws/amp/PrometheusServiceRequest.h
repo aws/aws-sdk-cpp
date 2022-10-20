@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
+#include <aws/amp/PrometheusServiceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/elastic-inference/ElasticInference_EXPORTS.h>
+#include <aws/elastic-inference/ElasticInferenceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

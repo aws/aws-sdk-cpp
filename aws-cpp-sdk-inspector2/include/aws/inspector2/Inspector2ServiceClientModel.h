@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/inspector2/Inspector2EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -81,6 +82,10 @@ namespace Aws
 
   namespace Inspector2
   {
+    namespace Endpoint
+    {
+      class Inspector2EndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in Inspector2Client header */

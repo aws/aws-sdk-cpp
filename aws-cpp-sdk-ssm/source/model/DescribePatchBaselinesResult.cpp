@@ -30,7 +30,7 @@ DescribePatchBaselinesResult& DescribePatchBaselinesResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BaselineIdentities"))
   {
-    Array<JsonView> baselineIdentitiesJsonList = jsonValue.GetArray("BaselineIdentities");
+    Aws::Utils::Array<JsonView> baselineIdentitiesJsonList = jsonValue.GetArray("BaselineIdentities");
     for(unsigned baselineIdentitiesIndex = 0; baselineIdentitiesIndex < baselineIdentitiesJsonList.GetLength(); ++baselineIdentitiesIndex)
     {
       m_baselineIdentities.push_back(baselineIdentitiesJsonList[baselineIdentitiesIndex].AsObject());

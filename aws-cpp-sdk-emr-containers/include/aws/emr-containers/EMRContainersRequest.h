@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/emr-containers/EMRContainers_EXPORTS.h>
+#include <aws/emr-containers/EMRContainersEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

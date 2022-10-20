@@ -44,7 +44,7 @@ GetDomainDetailResult& GetDomainDetailResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("Nameservers"))
   {
-    Array<JsonView> nameserversJsonList = jsonValue.GetArray("Nameservers");
+    Aws::Utils::Array<JsonView> nameserversJsonList = jsonValue.GetArray("Nameservers");
     for(unsigned nameserversIndex = 0; nameserversIndex < nameserversJsonList.GetLength(); ++nameserversIndex)
     {
       m_nameservers.push_back(nameserversJsonList[nameserversIndex].AsObject());
@@ -161,7 +161,7 @@ GetDomainDetailResult& GetDomainDetailResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("StatusList"))
   {
-    Array<JsonView> statusListJsonList = jsonValue.GetArray("StatusList");
+    Aws::Utils::Array<JsonView> statusListJsonList = jsonValue.GetArray("StatusList");
     for(unsigned statusListIndex = 0; statusListIndex < statusListJsonList.GetLength(); ++statusListIndex)
     {
       m_statusList.push_back(statusListJsonList[statusListIndex].AsString());

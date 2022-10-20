@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
+#include <aws/cloudfront/CloudFrontEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

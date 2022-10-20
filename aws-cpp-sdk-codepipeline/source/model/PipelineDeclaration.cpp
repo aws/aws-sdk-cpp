@@ -76,7 +76,7 @@ PipelineDeclaration& PipelineDeclaration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("stages"))
   {
-    Array<JsonView> stagesJsonList = jsonValue.GetArray("stages");
+    Aws::Utils::Array<JsonView> stagesJsonList = jsonValue.GetArray("stages");
     for(unsigned stagesIndex = 0; stagesIndex < stagesJsonList.GetLength(); ++stagesIndex)
     {
       m_stages.push_back(stagesJsonList[stagesIndex].AsObject());
@@ -129,7 +129,7 @@ JsonValue PipelineDeclaration::Jsonize() const
 
   if(m_stagesHasBeenSet)
   {
-   Array<JsonValue> stagesJsonList(m_stages.size());
+   Aws::Utils::Array<JsonValue> stagesJsonList(m_stages.size());
    for(unsigned stagesIndex = 0; stagesIndex < stagesJsonList.GetLength(); ++stagesIndex)
    {
      stagesJsonList[stagesIndex].AsObject(m_stages[stagesIndex].Jsonize());

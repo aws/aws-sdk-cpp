@@ -108,7 +108,7 @@ CsvClassifier& CsvClassifier::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Header"))
   {
-    Array<JsonView> headerJsonList = jsonValue.GetArray("Header");
+    Aws::Utils::Array<JsonView> headerJsonList = jsonValue.GetArray("Header");
     for(unsigned headerIndex = 0; headerIndex < headerJsonList.GetLength(); ++headerIndex)
     {
       m_header.push_back(headerJsonList[headerIndex].AsString());
@@ -178,7 +178,7 @@ JsonValue CsvClassifier::Jsonize() const
 
   if(m_headerHasBeenSet)
   {
-   Array<JsonValue> headerJsonList(m_header.size());
+   Aws::Utils::Array<JsonValue> headerJsonList(m_header.size());
    for(unsigned headerIndex = 0; headerIndex < headerJsonList.GetLength(); ++headerIndex)
    {
      headerJsonList[headerIndex].AsString(m_header[headerIndex]);

@@ -154,7 +154,7 @@ DescribeHsmResult& DescribeHsmResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("Partitions"))
   {
-    Array<JsonView> partitionsJsonList = jsonValue.GetArray("Partitions");
+    Aws::Utils::Array<JsonView> partitionsJsonList = jsonValue.GetArray("Partitions");
     for(unsigned partitionsIndex = 0; partitionsIndex < partitionsJsonList.GetLength(); ++partitionsIndex)
     {
       m_partitions.push_back(partitionsJsonList[partitionsIndex].AsString());

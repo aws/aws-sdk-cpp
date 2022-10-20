@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
+#include <aws/opensearch/OpenSearchServiceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

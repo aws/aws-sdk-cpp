@@ -48,7 +48,7 @@ GetFolderResult& GetFolderResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("subFolders"))
   {
-    Array<JsonView> subFoldersJsonList = jsonValue.GetArray("subFolders");
+    Aws::Utils::Array<JsonView> subFoldersJsonList = jsonValue.GetArray("subFolders");
     for(unsigned subFoldersIndex = 0; subFoldersIndex < subFoldersJsonList.GetLength(); ++subFoldersIndex)
     {
       m_subFolders.push_back(subFoldersJsonList[subFoldersIndex].AsObject());
@@ -57,7 +57,7 @@ GetFolderResult& GetFolderResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("files"))
   {
-    Array<JsonView> filesJsonList = jsonValue.GetArray("files");
+    Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
     for(unsigned filesIndex = 0; filesIndex < filesJsonList.GetLength(); ++filesIndex)
     {
       m_files.push_back(filesJsonList[filesIndex].AsObject());
@@ -66,7 +66,7 @@ GetFolderResult& GetFolderResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("symbolicLinks"))
   {
-    Array<JsonView> symbolicLinksJsonList = jsonValue.GetArray("symbolicLinks");
+    Aws::Utils::Array<JsonView> symbolicLinksJsonList = jsonValue.GetArray("symbolicLinks");
     for(unsigned symbolicLinksIndex = 0; symbolicLinksIndex < symbolicLinksJsonList.GetLength(); ++symbolicLinksIndex)
     {
       m_symbolicLinks.push_back(symbolicLinksJsonList[symbolicLinksIndex].AsObject());
@@ -75,7 +75,7 @@ GetFolderResult& GetFolderResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("subModules"))
   {
-    Array<JsonView> subModulesJsonList = jsonValue.GetArray("subModules");
+    Aws::Utils::Array<JsonView> subModulesJsonList = jsonValue.GetArray("subModules");
     for(unsigned subModulesIndex = 0; subModulesIndex < subModulesJsonList.GetLength(); ++subModulesIndex)
     {
       m_subModules.push_back(subModulesJsonList[subModulesIndex].AsObject());

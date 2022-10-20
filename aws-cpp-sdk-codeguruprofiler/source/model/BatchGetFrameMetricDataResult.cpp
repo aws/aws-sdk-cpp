@@ -38,7 +38,7 @@ BatchGetFrameMetricDataResult& BatchGetFrameMetricDataResult::operator =(const A
 
   if(jsonValue.ValueExists("endTimes"))
   {
-    Array<JsonView> endTimesJsonList = jsonValue.GetArray("endTimes");
+    Aws::Utils::Array<JsonView> endTimesJsonList = jsonValue.GetArray("endTimes");
     for(unsigned endTimesIndex = 0; endTimesIndex < endTimesJsonList.GetLength(); ++endTimesIndex)
     {
       m_endTimes.push_back(endTimesJsonList[endTimesIndex].AsObject());
@@ -47,7 +47,7 @@ BatchGetFrameMetricDataResult& BatchGetFrameMetricDataResult::operator =(const A
 
   if(jsonValue.ValueExists("frameMetricData"))
   {
-    Array<JsonView> frameMetricDataJsonList = jsonValue.GetArray("frameMetricData");
+    Aws::Utils::Array<JsonView> frameMetricDataJsonList = jsonValue.GetArray("frameMetricData");
     for(unsigned frameMetricDataIndex = 0; frameMetricDataIndex < frameMetricDataJsonList.GetLength(); ++frameMetricDataIndex)
     {
       m_frameMetricData.push_back(frameMetricDataJsonList[frameMetricDataIndex].AsObject());
@@ -71,7 +71,7 @@ BatchGetFrameMetricDataResult& BatchGetFrameMetricDataResult::operator =(const A
     Aws::Map<Aws::String, JsonView> unprocessedEndTimesJsonMap = jsonValue.GetObject("unprocessedEndTimes").GetAllObjects();
     for(auto& unprocessedEndTimesItem : unprocessedEndTimesJsonMap)
     {
-      Array<JsonView> listOfTimestampsJsonList = unprocessedEndTimesItem.second.AsArray();
+      Aws::Utils::Array<JsonView> listOfTimestampsJsonList = unprocessedEndTimesItem.second.AsArray();
       Aws::Vector<TimestampStructure> listOfTimestampsList;
       listOfTimestampsList.reserve((size_t)listOfTimestampsJsonList.GetLength());
       for(unsigned listOfTimestampsIndex = 0; listOfTimestampsIndex < listOfTimestampsJsonList.GetLength(); ++listOfTimestampsIndex)

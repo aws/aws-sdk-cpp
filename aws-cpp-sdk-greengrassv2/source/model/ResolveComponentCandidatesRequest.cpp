@@ -30,7 +30,7 @@ Aws::String ResolveComponentCandidatesRequest::SerializePayload() const
 
   if(m_componentCandidatesHasBeenSet)
   {
-   Array<JsonValue> componentCandidatesJsonList(m_componentCandidates.size());
+   Aws::Utils::Array<JsonValue> componentCandidatesJsonList(m_componentCandidates.size());
    for(unsigned componentCandidatesIndex = 0; componentCandidatesIndex < componentCandidatesJsonList.GetLength(); ++componentCandidatesIndex)
    {
      componentCandidatesJsonList[componentCandidatesIndex].AsObject(m_componentCandidates[componentCandidatesIndex].Jsonize());

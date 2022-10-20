@@ -33,7 +33,7 @@ BatchGetItemResult& BatchGetItemResult::operator =(const Aws::AmazonWebServiceRe
     Aws::Map<Aws::String, JsonView> responsesJsonMap = jsonValue.GetObject("Responses").GetAllObjects();
     for(auto& responsesItem : responsesJsonMap)
     {
-      Array<JsonView> itemListJsonList = responsesItem.second.AsArray();
+      Aws::Utils::Array<JsonView> itemListJsonList = responsesItem.second.AsArray();
       Aws::Vector<Aws::Map<Aws::String, AttributeValue>> itemListList;
       itemListList.reserve((size_t)itemListJsonList.GetLength());
       for(unsigned itemListIndex = 0; itemListIndex < itemListJsonList.GetLength(); ++itemListIndex)
@@ -61,7 +61,7 @@ BatchGetItemResult& BatchGetItemResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("ConsumedCapacity"))
   {
-    Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
+    Aws::Utils::Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
     for(unsigned consumedCapacityIndex = 0; consumedCapacityIndex < consumedCapacityJsonList.GetLength(); ++consumedCapacityIndex)
     {
       m_consumedCapacity.push_back(consumedCapacityJsonList[consumedCapacityIndex].AsObject());

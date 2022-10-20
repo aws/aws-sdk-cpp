@@ -39,7 +39,7 @@ ComponentDataConfiguration& ComponentDataConfiguration::operator =(JsonView json
 {
   if(jsonValue.ValueExists("identifiers"))
   {
-    Array<JsonView> identifiersJsonList = jsonValue.GetArray("identifiers");
+    Aws::Utils::Array<JsonView> identifiersJsonList = jsonValue.GetArray("identifiers");
     for(unsigned identifiersIndex = 0; identifiersIndex < identifiersJsonList.GetLength(); ++identifiersIndex)
     {
       m_identifiers.push_back(identifiersJsonList[identifiersIndex].AsString());
@@ -63,7 +63,7 @@ ComponentDataConfiguration& ComponentDataConfiguration::operator =(JsonView json
 
   if(jsonValue.ValueExists("sort"))
   {
-    Array<JsonView> sortJsonList = jsonValue.GetArray("sort");
+    Aws::Utils::Array<JsonView> sortJsonList = jsonValue.GetArray("sort");
     for(unsigned sortIndex = 0; sortIndex < sortJsonList.GetLength(); ++sortIndex)
     {
       m_sort.push_back(sortJsonList[sortIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue ComponentDataConfiguration::Jsonize() const
 
   if(m_identifiersHasBeenSet)
   {
-   Array<JsonValue> identifiersJsonList(m_identifiers.size());
+   Aws::Utils::Array<JsonValue> identifiersJsonList(m_identifiers.size());
    for(unsigned identifiersIndex = 0; identifiersIndex < identifiersJsonList.GetLength(); ++identifiersIndex)
    {
      identifiersJsonList[identifiersIndex].AsString(m_identifiers[identifiersIndex]);
@@ -103,7 +103,7 @@ JsonValue ComponentDataConfiguration::Jsonize() const
 
   if(m_sortHasBeenSet)
   {
-   Array<JsonValue> sortJsonList(m_sort.size());
+   Aws::Utils::Array<JsonValue> sortJsonList(m_sort.size());
    for(unsigned sortIndex = 0; sortIndex < sortJsonList.GetLength(); ++sortIndex)
    {
      sortJsonList[sortIndex].AsObject(m_sort[sortIndex].Jsonize());

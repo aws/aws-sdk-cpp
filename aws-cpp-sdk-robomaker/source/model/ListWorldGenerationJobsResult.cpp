@@ -30,7 +30,7 @@ ListWorldGenerationJobsResult& ListWorldGenerationJobsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("worldGenerationJobSummaries"))
   {
-    Array<JsonView> worldGenerationJobSummariesJsonList = jsonValue.GetArray("worldGenerationJobSummaries");
+    Aws::Utils::Array<JsonView> worldGenerationJobSummariesJsonList = jsonValue.GetArray("worldGenerationJobSummaries");
     for(unsigned worldGenerationJobSummariesIndex = 0; worldGenerationJobSummariesIndex < worldGenerationJobSummariesJsonList.GetLength(); ++worldGenerationJobSummariesIndex)
     {
       m_worldGenerationJobSummaries.push_back(worldGenerationJobSummariesJsonList[worldGenerationJobSummariesIndex].AsObject());

@@ -51,7 +51,7 @@ InsightResults& InsightResults::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResultValues"))
   {
-    Array<JsonView> resultValuesJsonList = jsonValue.GetArray("ResultValues");
+    Aws::Utils::Array<JsonView> resultValuesJsonList = jsonValue.GetArray("ResultValues");
     for(unsigned resultValuesIndex = 0; resultValuesIndex < resultValuesJsonList.GetLength(); ++resultValuesIndex)
     {
       m_resultValues.push_back(resultValuesJsonList[resultValuesIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue InsightResults::Jsonize() const
 
   if(m_resultValuesHasBeenSet)
   {
-   Array<JsonValue> resultValuesJsonList(m_resultValues.size());
+   Aws::Utils::Array<JsonValue> resultValuesJsonList(m_resultValues.size());
    for(unsigned resultValuesIndex = 0; resultValuesIndex < resultValuesJsonList.GetLength(); ++resultValuesIndex)
    {
      resultValuesJsonList[resultValuesIndex].AsObject(m_resultValues[resultValuesIndex].Jsonize());

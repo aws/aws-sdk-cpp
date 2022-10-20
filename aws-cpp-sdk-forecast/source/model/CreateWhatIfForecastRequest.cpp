@@ -39,7 +39,7 @@ Aws::String CreateWhatIfForecastRequest::SerializePayload() const
 
   if(m_timeSeriesTransformationsHasBeenSet)
   {
-   Array<JsonValue> timeSeriesTransformationsJsonList(m_timeSeriesTransformations.size());
+   Aws::Utils::Array<JsonValue> timeSeriesTransformationsJsonList(m_timeSeriesTransformations.size());
    for(unsigned timeSeriesTransformationsIndex = 0; timeSeriesTransformationsIndex < timeSeriesTransformationsJsonList.GetLength(); ++timeSeriesTransformationsIndex)
    {
      timeSeriesTransformationsJsonList[timeSeriesTransformationsIndex].AsObject(m_timeSeriesTransformations[timeSeriesTransformationsIndex].Jsonize());
@@ -56,7 +56,7 @@ Aws::String CreateWhatIfForecastRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

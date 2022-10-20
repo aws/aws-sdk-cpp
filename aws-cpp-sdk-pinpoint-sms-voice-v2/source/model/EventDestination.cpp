@@ -59,7 +59,7 @@ EventDestination& EventDestination::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MatchingEventTypes"))
   {
-    Array<JsonView> matchingEventTypesJsonList = jsonValue.GetArray("MatchingEventTypes");
+    Aws::Utils::Array<JsonView> matchingEventTypesJsonList = jsonValue.GetArray("MatchingEventTypes");
     for(unsigned matchingEventTypesIndex = 0; matchingEventTypesIndex < matchingEventTypesJsonList.GetLength(); ++matchingEventTypesIndex)
     {
       m_matchingEventTypes.push_back(EventTypeMapper::GetEventTypeForName(matchingEventTypesJsonList[matchingEventTypesIndex].AsString()));
@@ -109,7 +109,7 @@ JsonValue EventDestination::Jsonize() const
 
   if(m_matchingEventTypesHasBeenSet)
   {
-   Array<JsonValue> matchingEventTypesJsonList(m_matchingEventTypes.size());
+   Aws::Utils::Array<JsonValue> matchingEventTypesJsonList(m_matchingEventTypes.size());
    for(unsigned matchingEventTypesIndex = 0; matchingEventTypesIndex < matchingEventTypesJsonList.GetLength(); ++matchingEventTypesIndex)
    {
      matchingEventTypesJsonList[matchingEventTypesIndex].AsString(EventTypeMapper::GetNameForEventType(m_matchingEventTypes[matchingEventTypesIndex]));

@@ -28,7 +28,7 @@ Aws::String DescribeJobDefinitionsRequest::SerializePayload() const
 
   if(m_jobDefinitionsHasBeenSet)
   {
-   Array<JsonValue> jobDefinitionsJsonList(m_jobDefinitions.size());
+   Aws::Utils::Array<JsonValue> jobDefinitionsJsonList(m_jobDefinitions.size());
    for(unsigned jobDefinitionsIndex = 0; jobDefinitionsIndex < jobDefinitionsJsonList.GetLength(); ++jobDefinitionsIndex)
    {
      jobDefinitionsJsonList[jobDefinitionsIndex].AsString(m_jobDefinitions[jobDefinitionsIndex]);

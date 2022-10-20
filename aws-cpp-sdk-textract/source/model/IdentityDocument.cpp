@@ -44,7 +44,7 @@ IdentityDocument& IdentityDocument::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IdentityDocumentFields"))
   {
-    Array<JsonView> identityDocumentFieldsJsonList = jsonValue.GetArray("IdentityDocumentFields");
+    Aws::Utils::Array<JsonView> identityDocumentFieldsJsonList = jsonValue.GetArray("IdentityDocumentFields");
     for(unsigned identityDocumentFieldsIndex = 0; identityDocumentFieldsIndex < identityDocumentFieldsJsonList.GetLength(); ++identityDocumentFieldsIndex)
     {
       m_identityDocumentFields.push_back(identityDocumentFieldsJsonList[identityDocumentFieldsIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue IdentityDocument::Jsonize() const
 
   if(m_identityDocumentFieldsHasBeenSet)
   {
-   Array<JsonValue> identityDocumentFieldsJsonList(m_identityDocumentFields.size());
+   Aws::Utils::Array<JsonValue> identityDocumentFieldsJsonList(m_identityDocumentFields.size());
    for(unsigned identityDocumentFieldsIndex = 0; identityDocumentFieldsIndex < identityDocumentFieldsJsonList.GetLength(); ++identityDocumentFieldsIndex)
    {
      identityDocumentFieldsJsonList[identityDocumentFieldsIndex].AsObject(m_identityDocumentFields[identityDocumentFieldsIndex].Jsonize());

@@ -46,6 +46,15 @@ namespace Model
     Aws::String GetChecksumAlgorithmName() const override;
 
 
+    EndpointParameters GetEndpointContextParams() const override
+    {
+        EndpointParameters parameters;
+        parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+
+        return parameters;
+    }
+
+
     /**
      * <p>The bucket name that contains the object you want to apply this Object
      * Retention configuration to. </p> <p>When using this action with an access point,

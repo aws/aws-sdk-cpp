@@ -36,7 +36,7 @@ ListReportGroupsResult& ListReportGroupsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("reportGroups"))
   {
-    Array<JsonView> reportGroupsJsonList = jsonValue.GetArray("reportGroups");
+    Aws::Utils::Array<JsonView> reportGroupsJsonList = jsonValue.GetArray("reportGroups");
     for(unsigned reportGroupsIndex = 0; reportGroupsIndex < reportGroupsJsonList.GetLength(); ++reportGroupsIndex)
     {
       m_reportGroups.push_back(reportGroupsJsonList[reportGroupsIndex].AsString());

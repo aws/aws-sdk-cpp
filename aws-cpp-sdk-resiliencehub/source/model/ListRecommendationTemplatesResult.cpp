@@ -36,7 +36,7 @@ ListRecommendationTemplatesResult& ListRecommendationTemplatesResult::operator =
 
   if(jsonValue.ValueExists("recommendationTemplates"))
   {
-    Array<JsonView> recommendationTemplatesJsonList = jsonValue.GetArray("recommendationTemplates");
+    Aws::Utils::Array<JsonView> recommendationTemplatesJsonList = jsonValue.GetArray("recommendationTemplates");
     for(unsigned recommendationTemplatesIndex = 0; recommendationTemplatesIndex < recommendationTemplatesJsonList.GetLength(); ++recommendationTemplatesIndex)
     {
       m_recommendationTemplates.push_back(recommendationTemplatesJsonList[recommendationTemplatesIndex].AsObject());

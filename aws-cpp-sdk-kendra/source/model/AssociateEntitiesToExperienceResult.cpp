@@ -30,7 +30,7 @@ AssociateEntitiesToExperienceResult& AssociateEntitiesToExperienceResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FailedEntityList"))
   {
-    Array<JsonView> failedEntityListJsonList = jsonValue.GetArray("FailedEntityList");
+    Aws::Utils::Array<JsonView> failedEntityListJsonList = jsonValue.GetArray("FailedEntityList");
     for(unsigned failedEntityListIndex = 0; failedEntityListIndex < failedEntityListJsonList.GetLength(); ++failedEntityListIndex)
     {
       m_failedEntityList.push_back(failedEntityListJsonList[failedEntityListIndex].AsObject());

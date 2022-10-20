@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/athena/Athena_EXPORTS.h>
+#include <aws/athena/AthenaEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

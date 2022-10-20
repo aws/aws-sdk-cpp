@@ -86,7 +86,7 @@ AwsApiGatewayRestApiDetails& AwsApiGatewayRestApiDetails::operator =(JsonView js
 
   if(jsonValue.ValueExists("BinaryMediaTypes"))
   {
-    Array<JsonView> binaryMediaTypesJsonList = jsonValue.GetArray("BinaryMediaTypes");
+    Aws::Utils::Array<JsonView> binaryMediaTypesJsonList = jsonValue.GetArray("BinaryMediaTypes");
     for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
     {
       m_binaryMediaTypes.push_back(binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString());
@@ -154,7 +154,7 @@ JsonValue AwsApiGatewayRestApiDetails::Jsonize() const
 
   if(m_binaryMediaTypesHasBeenSet)
   {
-   Array<JsonValue> binaryMediaTypesJsonList(m_binaryMediaTypes.size());
+   Aws::Utils::Array<JsonValue> binaryMediaTypesJsonList(m_binaryMediaTypes.size());
    for(unsigned binaryMediaTypesIndex = 0; binaryMediaTypesIndex < binaryMediaTypesJsonList.GetLength(); ++binaryMediaTypesIndex)
    {
      binaryMediaTypesJsonList[binaryMediaTypesIndex].AsString(m_binaryMediaTypes[binaryMediaTypesIndex]);

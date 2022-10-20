@@ -30,7 +30,7 @@ ListPipelineParametersForExecutionResult& ListPipelineParametersForExecutionResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PipelineParameters"))
   {
-    Array<JsonView> pipelineParametersJsonList = jsonValue.GetArray("PipelineParameters");
+    Aws::Utils::Array<JsonView> pipelineParametersJsonList = jsonValue.GetArray("PipelineParameters");
     for(unsigned pipelineParametersIndex = 0; pipelineParametersIndex < pipelineParametersJsonList.GetLength(); ++pipelineParametersIndex)
     {
       m_pipelineParameters.push_back(pipelineParametersJsonList[pipelineParametersIndex].AsObject());

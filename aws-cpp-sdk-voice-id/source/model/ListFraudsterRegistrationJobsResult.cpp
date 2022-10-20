@@ -30,7 +30,7 @@ ListFraudsterRegistrationJobsResult& ListFraudsterRegistrationJobsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JobSummaries"))
   {
-    Array<JsonView> jobSummariesJsonList = jsonValue.GetArray("JobSummaries");
+    Aws::Utils::Array<JsonView> jobSummariesJsonList = jsonValue.GetArray("JobSummaries");
     for(unsigned jobSummariesIndex = 0; jobSummariesIndex < jobSummariesJsonList.GetLength(); ++jobSummariesIndex)
     {
       m_jobSummaries.push_back(jobSummariesJsonList[jobSummariesIndex].AsObject());

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
+#include <aws/accessanalyzer/AccessAnalyzerEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/appintegrations/AppIntegrationsService_EXPORTS.h>
+#include <aws/appintegrations/AppIntegrationsServiceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -23,7 +23,7 @@ Aws::String BatchGetMembershipDatasourcesRequest::SerializePayload() const
 
   if(m_graphArnsHasBeenSet)
   {
-   Array<JsonValue> graphArnsJsonList(m_graphArns.size());
+   Aws::Utils::Array<JsonValue> graphArnsJsonList(m_graphArns.size());
    for(unsigned graphArnsIndex = 0; graphArnsIndex < graphArnsJsonList.GetLength(); ++graphArnsIndex)
    {
      graphArnsJsonList[graphArnsIndex].AsString(m_graphArns[graphArnsIndex]);

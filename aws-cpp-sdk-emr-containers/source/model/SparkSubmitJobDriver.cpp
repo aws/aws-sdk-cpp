@@ -44,7 +44,7 @@ SparkSubmitJobDriver& SparkSubmitJobDriver::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("entryPointArguments"))
   {
-    Array<JsonView> entryPointArgumentsJsonList = jsonValue.GetArray("entryPointArguments");
+    Aws::Utils::Array<JsonView> entryPointArgumentsJsonList = jsonValue.GetArray("entryPointArguments");
     for(unsigned entryPointArgumentsIndex = 0; entryPointArgumentsIndex < entryPointArgumentsJsonList.GetLength(); ++entryPointArgumentsIndex)
     {
       m_entryPointArguments.push_back(entryPointArgumentsJsonList[entryPointArgumentsIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue SparkSubmitJobDriver::Jsonize() const
 
   if(m_entryPointArgumentsHasBeenSet)
   {
-   Array<JsonValue> entryPointArgumentsJsonList(m_entryPointArguments.size());
+   Aws::Utils::Array<JsonValue> entryPointArgumentsJsonList(m_entryPointArguments.size());
    for(unsigned entryPointArgumentsIndex = 0; entryPointArgumentsIndex < entryPointArgumentsJsonList.GetLength(); ++entryPointArgumentsIndex)
    {
      entryPointArgumentsJsonList[entryPointArgumentsIndex].AsString(m_entryPointArguments[entryPointArgumentsIndex]);

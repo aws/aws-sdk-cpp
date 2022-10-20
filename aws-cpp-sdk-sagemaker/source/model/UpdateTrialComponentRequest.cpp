@@ -72,7 +72,7 @@ Aws::String UpdateTrialComponentRequest::SerializePayload() const
 
   if(m_parametersToRemoveHasBeenSet)
   {
-   Array<JsonValue> parametersToRemoveJsonList(m_parametersToRemove.size());
+   Aws::Utils::Array<JsonValue> parametersToRemoveJsonList(m_parametersToRemove.size());
    for(unsigned parametersToRemoveIndex = 0; parametersToRemoveIndex < parametersToRemoveJsonList.GetLength(); ++parametersToRemoveIndex)
    {
      parametersToRemoveJsonList[parametersToRemoveIndex].AsString(m_parametersToRemove[parametersToRemoveIndex]);
@@ -94,7 +94,7 @@ Aws::String UpdateTrialComponentRequest::SerializePayload() const
 
   if(m_inputArtifactsToRemoveHasBeenSet)
   {
-   Array<JsonValue> inputArtifactsToRemoveJsonList(m_inputArtifactsToRemove.size());
+   Aws::Utils::Array<JsonValue> inputArtifactsToRemoveJsonList(m_inputArtifactsToRemove.size());
    for(unsigned inputArtifactsToRemoveIndex = 0; inputArtifactsToRemoveIndex < inputArtifactsToRemoveJsonList.GetLength(); ++inputArtifactsToRemoveIndex)
    {
      inputArtifactsToRemoveJsonList[inputArtifactsToRemoveIndex].AsString(m_inputArtifactsToRemove[inputArtifactsToRemoveIndex]);
@@ -116,7 +116,7 @@ Aws::String UpdateTrialComponentRequest::SerializePayload() const
 
   if(m_outputArtifactsToRemoveHasBeenSet)
   {
-   Array<JsonValue> outputArtifactsToRemoveJsonList(m_outputArtifactsToRemove.size());
+   Aws::Utils::Array<JsonValue> outputArtifactsToRemoveJsonList(m_outputArtifactsToRemove.size());
    for(unsigned outputArtifactsToRemoveIndex = 0; outputArtifactsToRemoveIndex < outputArtifactsToRemoveJsonList.GetLength(); ++outputArtifactsToRemoveIndex)
    {
      outputArtifactsToRemoveJsonList[outputArtifactsToRemoveIndex].AsString(m_outputArtifactsToRemove[outputArtifactsToRemoveIndex]);

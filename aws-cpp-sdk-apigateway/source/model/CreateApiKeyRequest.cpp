@@ -62,7 +62,7 @@ Aws::String CreateApiKeyRequest::SerializePayload() const
 
   if(m_stageKeysHasBeenSet)
   {
-   Array<JsonValue> stageKeysJsonList(m_stageKeys.size());
+   Aws::Utils::Array<JsonValue> stageKeysJsonList(m_stageKeys.size());
    for(unsigned stageKeysIndex = 0; stageKeysIndex < stageKeysJsonList.GetLength(); ++stageKeysIndex)
    {
      stageKeysJsonList[stageKeysIndex].AsObject(m_stageKeys[stageKeysIndex].Jsonize());

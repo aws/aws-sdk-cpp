@@ -26,7 +26,7 @@ Aws::String DescribeJobQueuesRequest::SerializePayload() const
 
   if(m_jobQueuesHasBeenSet)
   {
-   Array<JsonValue> jobQueuesJsonList(m_jobQueues.size());
+   Aws::Utils::Array<JsonValue> jobQueuesJsonList(m_jobQueues.size());
    for(unsigned jobQueuesIndex = 0; jobQueuesIndex < jobQueuesJsonList.GetLength(); ++jobQueuesIndex)
    {
      jobQueuesJsonList[jobQueuesIndex].AsString(m_jobQueues[jobQueuesIndex]);

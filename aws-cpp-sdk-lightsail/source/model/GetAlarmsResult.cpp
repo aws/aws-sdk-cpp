@@ -30,7 +30,7 @@ GetAlarmsResult& GetAlarmsResult::operator =(const Aws::AmazonWebServiceResult<J
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("alarms"))
   {
-    Array<JsonView> alarmsJsonList = jsonValue.GetArray("alarms");
+    Aws::Utils::Array<JsonView> alarmsJsonList = jsonValue.GetArray("alarms");
     for(unsigned alarmsIndex = 0; alarmsIndex < alarmsJsonList.GetLength(); ++alarmsIndex)
     {
       m_alarms.push_back(alarmsJsonList[alarmsIndex].AsObject());

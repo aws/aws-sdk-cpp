@@ -36,7 +36,7 @@ ListRegexPatternSetsResult& ListRegexPatternSetsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("RegexPatternSets"))
   {
-    Array<JsonView> regexPatternSetsJsonList = jsonValue.GetArray("RegexPatternSets");
+    Aws::Utils::Array<JsonView> regexPatternSetsJsonList = jsonValue.GetArray("RegexPatternSets");
     for(unsigned regexPatternSetsIndex = 0; regexPatternSetsIndex < regexPatternSetsJsonList.GetLength(); ++regexPatternSetsIndex)
     {
       m_regexPatternSets.push_back(regexPatternSetsJsonList[regexPatternSetsIndex].AsObject());

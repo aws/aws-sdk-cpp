@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
+#include <aws/servicediscovery/ServiceDiscoveryEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

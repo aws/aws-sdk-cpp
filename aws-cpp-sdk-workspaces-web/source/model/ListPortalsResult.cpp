@@ -36,7 +36,7 @@ ListPortalsResult& ListPortalsResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("portals"))
   {
-    Array<JsonView> portalsJsonList = jsonValue.GetArray("portals");
+    Aws::Utils::Array<JsonView> portalsJsonList = jsonValue.GetArray("portals");
     for(unsigned portalsIndex = 0; portalsIndex < portalsJsonList.GetLength(); ++portalsIndex)
     {
       m_portals.push_back(portalsJsonList[portalsIndex].AsObject());

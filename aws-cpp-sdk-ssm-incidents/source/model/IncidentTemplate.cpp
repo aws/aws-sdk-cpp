@@ -69,7 +69,7 @@ IncidentTemplate& IncidentTemplate::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("notificationTargets"))
   {
-    Array<JsonView> notificationTargetsJsonList = jsonValue.GetArray("notificationTargets");
+    Aws::Utils::Array<JsonView> notificationTargetsJsonList = jsonValue.GetArray("notificationTargets");
     for(unsigned notificationTargetsIndex = 0; notificationTargetsIndex < notificationTargetsJsonList.GetLength(); ++notificationTargetsIndex)
     {
       m_notificationTargets.push_back(notificationTargetsJsonList[notificationTargetsIndex].AsObject());
@@ -123,7 +123,7 @@ JsonValue IncidentTemplate::Jsonize() const
 
   if(m_notificationTargetsHasBeenSet)
   {
-   Array<JsonValue> notificationTargetsJsonList(m_notificationTargets.size());
+   Aws::Utils::Array<JsonValue> notificationTargetsJsonList(m_notificationTargets.size());
    for(unsigned notificationTargetsIndex = 0; notificationTargetsIndex < notificationTargetsJsonList.GetLength(); ++notificationTargetsIndex)
    {
      notificationTargetsJsonList[notificationTargetsIndex].AsObject(m_notificationTargets[notificationTargetsIndex].Jsonize());

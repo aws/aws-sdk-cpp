@@ -36,7 +36,7 @@ DescribeGlobalTableSettingsResult& DescribeGlobalTableSettingsResult::operator =
 
   if(jsonValue.ValueExists("ReplicaSettings"))
   {
-    Array<JsonView> replicaSettingsJsonList = jsonValue.GetArray("ReplicaSettings");
+    Aws::Utils::Array<JsonView> replicaSettingsJsonList = jsonValue.GetArray("ReplicaSettings");
     for(unsigned replicaSettingsIndex = 0; replicaSettingsIndex < replicaSettingsJsonList.GetLength(); ++replicaSettingsIndex)
     {
       m_replicaSettings.push_back(replicaSettingsJsonList[replicaSettingsIndex].AsObject());

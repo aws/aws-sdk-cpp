@@ -48,7 +48,7 @@ GetBackupVaultNotificationsResult& GetBackupVaultNotificationsResult::operator =
 
   if(jsonValue.ValueExists("BackupVaultEvents"))
   {
-    Array<JsonView> backupVaultEventsJsonList = jsonValue.GetArray("BackupVaultEvents");
+    Aws::Utils::Array<JsonView> backupVaultEventsJsonList = jsonValue.GetArray("BackupVaultEvents");
     for(unsigned backupVaultEventsIndex = 0; backupVaultEventsIndex < backupVaultEventsJsonList.GetLength(); ++backupVaultEventsIndex)
     {
       m_backupVaultEvents.push_back(BackupVaultEventMapper::GetBackupVaultEventForName(backupVaultEventsJsonList[backupVaultEventsIndex].AsString()));

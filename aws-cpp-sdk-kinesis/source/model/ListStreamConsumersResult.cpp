@@ -30,7 +30,7 @@ ListStreamConsumersResult& ListStreamConsumersResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Consumers"))
   {
-    Array<JsonView> consumersJsonList = jsonValue.GetArray("Consumers");
+    Aws::Utils::Array<JsonView> consumersJsonList = jsonValue.GetArray("Consumers");
     for(unsigned consumersIndex = 0; consumersIndex < consumersJsonList.GetLength(); ++consumersIndex)
     {
       m_consumers.push_back(consumersJsonList[consumersIndex].AsObject());

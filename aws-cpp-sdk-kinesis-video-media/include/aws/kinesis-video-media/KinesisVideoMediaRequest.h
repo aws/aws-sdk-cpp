@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/kinesis-video-media/KinesisVideoMedia_EXPORTS.h>
+#include <aws/kinesis-video-media/KinesisVideoMediaEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

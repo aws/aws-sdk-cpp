@@ -80,7 +80,7 @@ CreateApiKeyResult& CreateApiKeyResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("stageKeys"))
   {
-    Array<JsonView> stageKeysJsonList = jsonValue.GetArray("stageKeys");
+    Aws::Utils::Array<JsonView> stageKeysJsonList = jsonValue.GetArray("stageKeys");
     for(unsigned stageKeysIndex = 0; stageKeysIndex < stageKeysJsonList.GetLength(); ++stageKeysIndex)
     {
       m_stageKeys.push_back(stageKeysJsonList[stageKeysIndex].AsString());

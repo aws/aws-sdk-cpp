@@ -23,7 +23,7 @@ Aws::String CreateWorkspacesRequest::SerializePayload() const
 
   if(m_workspacesHasBeenSet)
   {
-   Array<JsonValue> workspacesJsonList(m_workspaces.size());
+   Aws::Utils::Array<JsonValue> workspacesJsonList(m_workspaces.size());
    for(unsigned workspacesIndex = 0; workspacesIndex < workspacesJsonList.GetLength(); ++workspacesIndex)
    {
      workspacesJsonList[workspacesIndex].AsObject(m_workspaces[workspacesIndex].Jsonize());

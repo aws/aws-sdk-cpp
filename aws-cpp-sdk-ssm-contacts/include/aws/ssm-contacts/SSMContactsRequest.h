@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
+#include <aws/ssm-contacts/SSMContactsEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

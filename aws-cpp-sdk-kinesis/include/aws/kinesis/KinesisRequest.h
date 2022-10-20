@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/kinesis/Kinesis_EXPORTS.h>
+#include <aws/kinesis/KinesisEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

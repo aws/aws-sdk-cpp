@@ -30,7 +30,7 @@ DescribeSMBFileSharesResult& DescribeSMBFileSharesResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SMBFileShareInfoList"))
   {
-    Array<JsonView> sMBFileShareInfoListJsonList = jsonValue.GetArray("SMBFileShareInfoList");
+    Aws::Utils::Array<JsonView> sMBFileShareInfoListJsonList = jsonValue.GetArray("SMBFileShareInfoList");
     for(unsigned sMBFileShareInfoListIndex = 0; sMBFileShareInfoListIndex < sMBFileShareInfoListJsonList.GetLength(); ++sMBFileShareInfoListIndex)
     {
       m_sMBFileShareInfoList.push_back(sMBFileShareInfoListJsonList[sMBFileShareInfoListIndex].AsObject());

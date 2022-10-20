@@ -72,7 +72,7 @@ Aws::String CreateChannelRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -89,7 +89,7 @@ Aws::String CreateChannelRequest::SerializePayload() const
 
   if(m_memberArnsHasBeenSet)
   {
-   Array<JsonValue> memberArnsJsonList(m_memberArns.size());
+   Aws::Utils::Array<JsonValue> memberArnsJsonList(m_memberArns.size());
    for(unsigned memberArnsIndex = 0; memberArnsIndex < memberArnsJsonList.GetLength(); ++memberArnsIndex)
    {
      memberArnsJsonList[memberArnsIndex].AsString(m_memberArns[memberArnsIndex]);
@@ -100,7 +100,7 @@ Aws::String CreateChannelRequest::SerializePayload() const
 
   if(m_moderatorArnsHasBeenSet)
   {
-   Array<JsonValue> moderatorArnsJsonList(m_moderatorArns.size());
+   Aws::Utils::Array<JsonValue> moderatorArnsJsonList(m_moderatorArns.size());
    for(unsigned moderatorArnsIndex = 0; moderatorArnsIndex < moderatorArnsJsonList.GetLength(); ++moderatorArnsIndex)
    {
      moderatorArnsJsonList[moderatorArnsIndex].AsString(m_moderatorArns[moderatorArnsIndex]);

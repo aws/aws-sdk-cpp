@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/synthetics/Synthetics_EXPORTS.h>
+#include <aws/synthetics/SyntheticsEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

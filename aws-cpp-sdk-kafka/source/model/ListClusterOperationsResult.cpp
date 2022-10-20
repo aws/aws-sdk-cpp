@@ -30,7 +30,7 @@ ListClusterOperationsResult& ListClusterOperationsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("clusterOperationInfoList"))
   {
-    Array<JsonView> clusterOperationInfoListJsonList = jsonValue.GetArray("clusterOperationInfoList");
+    Aws::Utils::Array<JsonView> clusterOperationInfoListJsonList = jsonValue.GetArray("clusterOperationInfoList");
     for(unsigned clusterOperationInfoListIndex = 0; clusterOperationInfoListIndex < clusterOperationInfoListJsonList.GetLength(); ++clusterOperationInfoListIndex)
     {
       m_clusterOperationInfoList.push_back(clusterOperationInfoListJsonList[clusterOperationInfoListIndex].AsObject());

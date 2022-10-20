@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/marketplace-entitlement/MarketplaceEntitlementService_EXPORTS.h>
+#include <aws/marketplace-entitlement/MarketplaceEntitlementServiceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

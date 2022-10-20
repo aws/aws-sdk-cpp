@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
+#include <aws/memorydb/MemoryDBEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

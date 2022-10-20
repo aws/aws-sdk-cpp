@@ -42,7 +42,7 @@ CsvOptions& CsvOptions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("HeaderList"))
   {
-    Array<JsonView> headerListJsonList = jsonValue.GetArray("HeaderList");
+    Aws::Utils::Array<JsonView> headerListJsonList = jsonValue.GetArray("HeaderList");
     for(unsigned headerListIndex = 0; headerListIndex < headerListJsonList.GetLength(); ++headerListIndex)
     {
       m_headerList.push_back(headerListJsonList[headerListIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue CsvOptions::Jsonize() const
 
   if(m_headerListHasBeenSet)
   {
-   Array<JsonValue> headerListJsonList(m_headerList.size());
+   Aws::Utils::Array<JsonValue> headerListJsonList(m_headerList.size());
    for(unsigned headerListIndex = 0; headerListIndex < headerListJsonList.GetLength(); ++headerListIndex)
    {
      headerListJsonList[headerListIndex].AsString(m_headerList[headerListIndex]);

@@ -43,7 +43,7 @@ SamlConfiguration& SamlConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("allowedOrganizations"))
   {
-    Array<JsonView> allowedOrganizationsJsonList = jsonValue.GetArray("allowedOrganizations");
+    Aws::Utils::Array<JsonView> allowedOrganizationsJsonList = jsonValue.GetArray("allowedOrganizations");
     for(unsigned allowedOrganizationsIndex = 0; allowedOrganizationsIndex < allowedOrganizationsJsonList.GetLength(); ++allowedOrganizationsIndex)
     {
       m_allowedOrganizations.push_back(allowedOrganizationsJsonList[allowedOrganizationsIndex].AsString());
@@ -88,7 +88,7 @@ JsonValue SamlConfiguration::Jsonize() const
 
   if(m_allowedOrganizationsHasBeenSet)
   {
-   Array<JsonValue> allowedOrganizationsJsonList(m_allowedOrganizations.size());
+   Aws::Utils::Array<JsonValue> allowedOrganizationsJsonList(m_allowedOrganizations.size());
    for(unsigned allowedOrganizationsIndex = 0; allowedOrganizationsIndex < allowedOrganizationsJsonList.GetLength(); ++allowedOrganizationsIndex)
    {
      allowedOrganizationsJsonList[allowedOrganizationsIndex].AsString(m_allowedOrganizations[allowedOrganizationsIndex]);

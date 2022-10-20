@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/finspace-data/FinSpaceData_EXPORTS.h>
+#include <aws/finspace-data/FinSpaceDataEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

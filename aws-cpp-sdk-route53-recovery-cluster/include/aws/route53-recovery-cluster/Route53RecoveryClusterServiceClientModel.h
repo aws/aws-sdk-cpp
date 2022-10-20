@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/route53-recovery-cluster/Route53RecoveryClusterEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -53,6 +54,10 @@ namespace Aws
 
   namespace Route53RecoveryCluster
   {
+    namespace Endpoint
+    {
+      class Route53RecoveryClusterEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in Route53RecoveryClusterClient header */

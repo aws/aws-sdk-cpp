@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/iotfleethub/IoTFleetHub_EXPORTS.h>
+#include <aws/iotfleethub/IoTFleetHubEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

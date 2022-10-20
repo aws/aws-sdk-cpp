@@ -30,7 +30,7 @@ ListNamedQueriesResult& ListNamedQueriesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NamedQueryIds"))
   {
-    Array<JsonView> namedQueryIdsJsonList = jsonValue.GetArray("NamedQueryIds");
+    Aws::Utils::Array<JsonView> namedQueryIdsJsonList = jsonValue.GetArray("NamedQueryIds");
     for(unsigned namedQueryIdsIndex = 0; namedQueryIdsIndex < namedQueryIdsJsonList.GetLength(); ++namedQueryIdsIndex)
     {
       m_namedQueryIds.push_back(namedQueryIdsJsonList[namedQueryIdsIndex].AsString());

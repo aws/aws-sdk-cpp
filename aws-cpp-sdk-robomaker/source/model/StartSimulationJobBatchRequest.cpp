@@ -39,7 +39,7 @@ Aws::String StartSimulationJobBatchRequest::SerializePayload() const
 
   if(m_createSimulationJobRequestsHasBeenSet)
   {
-   Array<JsonValue> createSimulationJobRequestsJsonList(m_createSimulationJobRequests.size());
+   Aws::Utils::Array<JsonValue> createSimulationJobRequestsJsonList(m_createSimulationJobRequests.size());
    for(unsigned createSimulationJobRequestsIndex = 0; createSimulationJobRequestsIndex < createSimulationJobRequestsJsonList.GetLength(); ++createSimulationJobRequestsIndex)
    {
      createSimulationJobRequestsJsonList[createSimulationJobRequestsIndex].AsObject(m_createSimulationJobRequests[createSimulationJobRequestsIndex].Jsonize());

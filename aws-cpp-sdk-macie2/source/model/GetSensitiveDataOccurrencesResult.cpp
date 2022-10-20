@@ -41,7 +41,7 @@ GetSensitiveDataOccurrencesResult& GetSensitiveDataOccurrencesResult::operator =
     Aws::Map<Aws::String, JsonView> sensitiveDataOccurrencesJsonMap = jsonValue.GetObject("sensitiveDataOccurrences").GetAllObjects();
     for(auto& sensitiveDataOccurrencesItem : sensitiveDataOccurrencesJsonMap)
     {
-      Array<JsonView> __listOfDetectedDataDetailsJsonList = sensitiveDataOccurrencesItem.second.AsArray();
+      Aws::Utils::Array<JsonView> __listOfDetectedDataDetailsJsonList = sensitiveDataOccurrencesItem.second.AsArray();
       Aws::Vector<DetectedDataDetails> __listOfDetectedDataDetailsList;
       __listOfDetectedDataDetailsList.reserve((size_t)__listOfDetectedDataDetailsJsonList.GetLength());
       for(unsigned __listOfDetectedDataDetailsIndex = 0; __listOfDetectedDataDetailsIndex < __listOfDetectedDataDetailsJsonList.GetLength(); ++__listOfDetectedDataDetailsIndex)

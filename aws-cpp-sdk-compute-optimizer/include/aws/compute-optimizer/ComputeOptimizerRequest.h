@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
+#include <aws/compute-optimizer/ComputeOptimizerEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -36,7 +36,7 @@ ListThesauriResult& ListThesauriResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("ThesaurusSummaryItems"))
   {
-    Array<JsonView> thesaurusSummaryItemsJsonList = jsonValue.GetArray("ThesaurusSummaryItems");
+    Aws::Utils::Array<JsonView> thesaurusSummaryItemsJsonList = jsonValue.GetArray("ThesaurusSummaryItems");
     for(unsigned thesaurusSummaryItemsIndex = 0; thesaurusSummaryItemsIndex < thesaurusSummaryItemsJsonList.GetLength(); ++thesaurusSummaryItemsIndex)
     {
       m_thesaurusSummaryItems.push_back(thesaurusSummaryItemsJsonList[thesaurusSummaryItemsIndex].AsObject());

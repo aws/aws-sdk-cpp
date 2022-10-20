@@ -62,7 +62,7 @@ StageState& StageState::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("actionStates"))
   {
-    Array<JsonView> actionStatesJsonList = jsonValue.GetArray("actionStates");
+    Aws::Utils::Array<JsonView> actionStatesJsonList = jsonValue.GetArray("actionStates");
     for(unsigned actionStatesIndex = 0; actionStatesIndex < actionStatesJsonList.GetLength(); ++actionStatesIndex)
     {
       m_actionStates.push_back(actionStatesJsonList[actionStatesIndex].AsObject());
@@ -104,7 +104,7 @@ JsonValue StageState::Jsonize() const
 
   if(m_actionStatesHasBeenSet)
   {
-   Array<JsonValue> actionStatesJsonList(m_actionStates.size());
+   Aws::Utils::Array<JsonValue> actionStatesJsonList(m_actionStates.size());
    for(unsigned actionStatesIndex = 0; actionStatesIndex < actionStatesJsonList.GetLength(); ++actionStatesIndex)
    {
      actionStatesJsonList[actionStatesIndex].AsObject(m_actionStates[actionStatesIndex].Jsonize());

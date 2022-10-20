@@ -30,7 +30,7 @@ AddJobFlowStepsResult& AddJobFlowStepsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StepIds"))
   {
-    Array<JsonView> stepIdsJsonList = jsonValue.GetArray("StepIds");
+    Aws::Utils::Array<JsonView> stepIdsJsonList = jsonValue.GetArray("StepIds");
     for(unsigned stepIdsIndex = 0; stepIdsIndex < stepIdsJsonList.GetLength(); ++stepIdsIndex)
     {
       m_stepIds.push_back(stepIdsJsonList[stepIdsIndex].AsString());

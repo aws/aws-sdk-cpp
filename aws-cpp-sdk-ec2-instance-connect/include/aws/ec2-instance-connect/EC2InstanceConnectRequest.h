@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/ec2-instance-connect/EC2InstanceConnect_EXPORTS.h>
+#include <aws/ec2-instance-connect/EC2InstanceConnectEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

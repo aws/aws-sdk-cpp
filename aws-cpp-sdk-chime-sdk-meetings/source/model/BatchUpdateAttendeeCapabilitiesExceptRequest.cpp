@@ -25,7 +25,7 @@ Aws::String BatchUpdateAttendeeCapabilitiesExceptRequest::SerializePayload() con
 
   if(m_excludedAttendeeIdsHasBeenSet)
   {
-   Array<JsonValue> excludedAttendeeIdsJsonList(m_excludedAttendeeIds.size());
+   Aws::Utils::Array<JsonValue> excludedAttendeeIdsJsonList(m_excludedAttendeeIds.size());
    for(unsigned excludedAttendeeIdsIndex = 0; excludedAttendeeIdsIndex < excludedAttendeeIdsJsonList.GetLength(); ++excludedAttendeeIdsIndex)
    {
      excludedAttendeeIdsJsonList[excludedAttendeeIdsIndex].AsObject(m_excludedAttendeeIds[excludedAttendeeIdsIndex].Jsonize());

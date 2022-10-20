@@ -30,7 +30,7 @@ CalculateRouteResult& CalculateRouteResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Legs"))
   {
-    Array<JsonView> legsJsonList = jsonValue.GetArray("Legs");
+    Aws::Utils::Array<JsonView> legsJsonList = jsonValue.GetArray("Legs");
     for(unsigned legsIndex = 0; legsIndex < legsJsonList.GetLength(); ++legsIndex)
     {
       m_legs.push_back(legsJsonList[legsIndex].AsObject());

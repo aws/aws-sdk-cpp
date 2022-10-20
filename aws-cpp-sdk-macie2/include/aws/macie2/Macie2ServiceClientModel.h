@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/macie2/Macie2EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -115,6 +116,10 @@ namespace Aws
 
   namespace Macie2
   {
+    namespace Endpoint
+    {
+      class Macie2EndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in Macie2Client header */

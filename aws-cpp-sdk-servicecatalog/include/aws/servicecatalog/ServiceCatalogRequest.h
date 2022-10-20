@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
+#include <aws/servicecatalog/ServiceCatalogEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -113,7 +113,7 @@ DescribeConnectorResult& DescribeConnectorResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("plugins"))
   {
-    Array<JsonView> pluginsJsonList = jsonValue.GetArray("plugins");
+    Aws::Utils::Array<JsonView> pluginsJsonList = jsonValue.GetArray("plugins");
     for(unsigned pluginsIndex = 0; pluginsIndex < pluginsJsonList.GetLength(); ++pluginsIndex)
     {
       m_plugins.push_back(pluginsJsonList[pluginsIndex].AsObject());

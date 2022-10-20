@@ -16,10 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/honeycode/HoneycodeClient.h>
 #include <aws/honeycode/HoneycodeEndpoint.h>
 #include <aws/honeycode/HoneycodeErrorMarshaller.h>
+#include <aws/honeycode/HoneycodeEndpointProvider.h>
 #include <aws/honeycode/model/BatchCreateTableRowsRequest.h>
 #include <aws/honeycode/model/BatchDeleteTableRowsRequest.h>
 #include <aws/honeycode/model/BatchUpdateTableRowsRequest.h>
@@ -43,19 +45,66 @@ using namespace Aws::Honeycode;
 using namespace Aws::Honeycode::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Honeycode::Endpoint::HoneycodeEndpointProvider::HoneycodeResolveEndpointOutcome;
 
 
 const char* HoneycodeClient::SERVICE_NAME = "honeycode";
 const char* HoneycodeClient::ALLOCATION_TAG = "HoneycodeClient";
 
-HoneycodeClient::HoneycodeClient(const Client::ClientConfiguration& clientConfiguration) :
+HoneycodeClient::HoneycodeClient(const Client::ClientConfiguration& clientConfiguration,
+                                 std::shared_ptr<Endpoint::HoneycodeEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+HoneycodeClient::HoneycodeClient(const AWSCredentials& credentials,
+                                 std::shared_ptr<Endpoint::HoneycodeEndpointProvider> endpointProvider,
+                                 const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+HoneycodeClient::HoneycodeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                 std::shared_ptr<Endpoint::HoneycodeEndpointProvider> endpointProvider,
+                                 const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  HoneycodeClient::HoneycodeClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<Honeycode::Endpoint::HoneycodeEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -68,7 +117,8 @@ HoneycodeClient::HoneycodeClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<Honeycode::Endpoint::HoneycodeEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -81,11 +131,13 @@ HoneycodeClient::HoneycodeClient(const std::shared_ptr<AWSCredentialsProvider>& 
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<HoneycodeErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<Honeycode::Endpoint::HoneycodeEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 HoneycodeClient::~HoneycodeClient()
 {
 }
@@ -93,31 +145,18 @@ HoneycodeClient::~HoneycodeClient()
 void HoneycodeClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Honeycode");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + HoneycodeEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void HoneycodeClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 BatchCreateTableRowsOutcome HoneycodeClient::BatchCreateTableRows(const BatchCreateTableRowsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchCreateTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchCreateTableRows", "Required field: WorkbookId, is not set");
@@ -128,13 +167,9 @@ BatchCreateTableRowsOutcome HoneycodeClient::BatchCreateTableRows(const BatchCre
     AWS_LOGSTREAM_ERROR("BatchCreateTableRows", "Required field: TableId, is not set");
     return BatchCreateTableRowsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/workbooks/");
-  uri.AddPathSegment(request.GetWorkbookId());
-  uri.AddPathSegments("/tables/");
-  uri.AddPathSegment(request.GetTableId());
-  uri.AddPathSegments("/rows/batchcreate");
-  return BatchCreateTableRowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchCreateTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchCreateTableRowsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchCreateTableRowsOutcomeCallable HoneycodeClient::BatchCreateTableRowsCallable(const BatchCreateTableRowsRequest& request) const
@@ -155,6 +190,7 @@ void HoneycodeClient::BatchCreateTableRowsAsync(const BatchCreateTableRowsReques
 
 BatchDeleteTableRowsOutcome HoneycodeClient::BatchDeleteTableRows(const BatchDeleteTableRowsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchDeleteTableRows", "Required field: WorkbookId, is not set");
@@ -165,13 +201,9 @@ BatchDeleteTableRowsOutcome HoneycodeClient::BatchDeleteTableRows(const BatchDel
     AWS_LOGSTREAM_ERROR("BatchDeleteTableRows", "Required field: TableId, is not set");
     return BatchDeleteTableRowsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/workbooks/");
-  uri.AddPathSegment(request.GetWorkbookId());
-  uri.AddPathSegments("/tables/");
-  uri.AddPathSegment(request.GetTableId());
-  uri.AddPathSegments("/rows/batchdelete");
-  return BatchDeleteTableRowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeleteTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchDeleteTableRowsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchDeleteTableRowsOutcomeCallable HoneycodeClient::BatchDeleteTableRowsCallable(const BatchDeleteTableRowsRequest& request) const
@@ -192,6 +224,7 @@ void HoneycodeClient::BatchDeleteTableRowsAsync(const BatchDeleteTableRowsReques
 
 BatchUpdateTableRowsOutcome HoneycodeClient::BatchUpdateTableRows(const BatchUpdateTableRowsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpdateTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchUpdateTableRows", "Required field: WorkbookId, is not set");
@@ -202,13 +235,9 @@ BatchUpdateTableRowsOutcome HoneycodeClient::BatchUpdateTableRows(const BatchUpd
     AWS_LOGSTREAM_ERROR("BatchUpdateTableRows", "Required field: TableId, is not set");
     return BatchUpdateTableRowsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/workbooks/");
-  uri.AddPathSegment(request.GetWorkbookId());
-  uri.AddPathSegments("/tables/");
-  uri.AddPathSegment(request.GetTableId());
-  uri.AddPathSegments("/rows/batchupdate");
-  return BatchUpdateTableRowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpdateTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchUpdateTableRowsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchUpdateTableRowsOutcomeCallable HoneycodeClient::BatchUpdateTableRowsCallable(const BatchUpdateTableRowsRequest& request) const
@@ -229,6 +258,7 @@ void HoneycodeClient::BatchUpdateTableRowsAsync(const BatchUpdateTableRowsReques
 
 BatchUpsertTableRowsOutcome HoneycodeClient::BatchUpsertTableRows(const BatchUpsertTableRowsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchUpsertTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchUpsertTableRows", "Required field: WorkbookId, is not set");
@@ -239,13 +269,9 @@ BatchUpsertTableRowsOutcome HoneycodeClient::BatchUpsertTableRows(const BatchUps
     AWS_LOGSTREAM_ERROR("BatchUpsertTableRows", "Required field: TableId, is not set");
     return BatchUpsertTableRowsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/workbooks/");
-  uri.AddPathSegment(request.GetWorkbookId());
-  uri.AddPathSegments("/tables/");
-  uri.AddPathSegment(request.GetTableId());
-  uri.AddPathSegments("/rows/batchupsert");
-  return BatchUpsertTableRowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchUpsertTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchUpsertTableRowsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchUpsertTableRowsOutcomeCallable HoneycodeClient::BatchUpsertTableRowsCallable(const BatchUpsertTableRowsRequest& request) const
@@ -266,6 +292,7 @@ void HoneycodeClient::BatchUpsertTableRowsAsync(const BatchUpsertTableRowsReques
 
 DescribeTableDataImportJobOutcome HoneycodeClient::DescribeTableDataImportJob(const DescribeTableDataImportJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTableDataImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeTableDataImportJob", "Required field: WorkbookId, is not set");
@@ -281,14 +308,9 @@ DescribeTableDataImportJobOutcome HoneycodeClient::DescribeTableDataImportJob(co
     AWS_LOGSTREAM_ERROR("DescribeTableDataImportJob", "Required field: JobId, is not set");
     return DescribeTableDataImportJobOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/workbooks/");
-  uri.AddPathSegment(request.GetWorkbookId());
-  uri.AddPathSegments("/tables/");
-  uri.AddPathSegment(request.GetTableId());
-  uri.AddPathSegments("/import/");
-  uri.AddPathSegment(request.GetJobId());
-  return DescribeTableDataImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTableDataImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeTableDataImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTableDataImportJobOutcomeCallable HoneycodeClient::DescribeTableDataImportJobCallable(const DescribeTableDataImportJobRequest& request) const
@@ -309,9 +331,10 @@ void HoneycodeClient::DescribeTableDataImportJobAsync(const DescribeTableDataImp
 
 GetScreenDataOutcome HoneycodeClient::GetScreenData(const GetScreenDataRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/screendata");
-  return GetScreenDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetScreenData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetScreenData, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetScreenDataOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetScreenDataOutcomeCallable HoneycodeClient::GetScreenDataCallable(const GetScreenDataRequest& request) const
@@ -332,6 +355,7 @@ void HoneycodeClient::GetScreenDataAsync(const GetScreenDataRequest& request, co
 
 InvokeScreenAutomationOutcome HoneycodeClient::InvokeScreenAutomation(const InvokeScreenAutomationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeScreenAutomation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("InvokeScreenAutomation", "Required field: WorkbookId, is not set");
@@ -352,16 +376,9 @@ InvokeScreenAutomationOutcome HoneycodeClient::InvokeScreenAutomation(const Invo
     AWS_LOGSTREAM_ERROR("InvokeScreenAutomation", "Required field: ScreenAutomationId, is not set");
     return InvokeScreenAutomationOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ScreenAutomationId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/workbooks/");
-  uri.AddPathSegment(request.GetWorkbookId());
-  uri.AddPathSegments("/apps/");
-  uri.AddPathSegment(request.GetAppId());
-  uri.AddPathSegments("/screens/");
-  uri.AddPathSegment(request.GetScreenId());
-  uri.AddPathSegments("/automations/");
-  uri.AddPathSegment(request.GetScreenAutomationId());
-  return InvokeScreenAutomationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InvokeScreenAutomation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return InvokeScreenAutomationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 InvokeScreenAutomationOutcomeCallable HoneycodeClient::InvokeScreenAutomationCallable(const InvokeScreenAutomationRequest& request) const
@@ -382,6 +399,7 @@ void HoneycodeClient::InvokeScreenAutomationAsync(const InvokeScreenAutomationRe
 
 ListTableColumnsOutcome HoneycodeClient::ListTableColumns(const ListTableColumnsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTableColumns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTableColumns", "Required field: WorkbookId, is not set");
@@ -392,13 +410,9 @@ ListTableColumnsOutcome HoneycodeClient::ListTableColumns(const ListTableColumns
     AWS_LOGSTREAM_ERROR("ListTableColumns", "Required field: TableId, is not set");
     return ListTableColumnsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/workbooks/");
-  uri.AddPathSegment(request.GetWorkbookId());
-  uri.AddPathSegments("/tables/");
-  uri.AddPathSegment(request.GetTableId());
-  uri.AddPathSegments("/columns");
-  return ListTableColumnsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTableColumns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTableColumnsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTableColumnsOutcomeCallable HoneycodeClient::ListTableColumnsCallable(const ListTableColumnsRequest& request) const
@@ -419,6 +433,7 @@ void HoneycodeClient::ListTableColumnsAsync(const ListTableColumnsRequest& reque
 
 ListTableRowsOutcome HoneycodeClient::ListTableRows(const ListTableRowsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTableRows", "Required field: WorkbookId, is not set");
@@ -429,13 +444,9 @@ ListTableRowsOutcome HoneycodeClient::ListTableRows(const ListTableRowsRequest& 
     AWS_LOGSTREAM_ERROR("ListTableRows", "Required field: TableId, is not set");
     return ListTableRowsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/workbooks/");
-  uri.AddPathSegment(request.GetWorkbookId());
-  uri.AddPathSegments("/tables/");
-  uri.AddPathSegment(request.GetTableId());
-  uri.AddPathSegments("/rows/list");
-  return ListTableRowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTableRowsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTableRowsOutcomeCallable HoneycodeClient::ListTableRowsCallable(const ListTableRowsRequest& request) const
@@ -456,16 +467,15 @@ void HoneycodeClient::ListTableRowsAsync(const ListTableRowsRequest& request, co
 
 ListTablesOutcome HoneycodeClient::ListTables(const ListTablesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTables", "Required field: WorkbookId, is not set");
     return ListTablesOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkbookId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/workbooks/");
-  uri.AddPathSegment(request.GetWorkbookId());
-  uri.AddPathSegments("/tables");
-  return ListTablesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTablesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTablesOutcomeCallable HoneycodeClient::ListTablesCallable(const ListTablesRequest& request) const
@@ -486,15 +496,15 @@ void HoneycodeClient::ListTablesAsync(const ListTablesRequest& request, const Li
 
 ListTagsForResourceOutcome HoneycodeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable HoneycodeClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -515,6 +525,7 @@ void HoneycodeClient::ListTagsForResourceAsync(const ListTagsForResourceRequest&
 
 QueryTableRowsOutcome HoneycodeClient::QueryTableRows(const QueryTableRowsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, QueryTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("QueryTableRows", "Required field: WorkbookId, is not set");
@@ -525,13 +536,9 @@ QueryTableRowsOutcome HoneycodeClient::QueryTableRows(const QueryTableRowsReques
     AWS_LOGSTREAM_ERROR("QueryTableRows", "Required field: TableId, is not set");
     return QueryTableRowsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/workbooks/");
-  uri.AddPathSegment(request.GetWorkbookId());
-  uri.AddPathSegments("/tables/");
-  uri.AddPathSegment(request.GetTableId());
-  uri.AddPathSegments("/rows/query");
-  return QueryTableRowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, QueryTableRows, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return QueryTableRowsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 QueryTableRowsOutcomeCallable HoneycodeClient::QueryTableRowsCallable(const QueryTableRowsRequest& request) const
@@ -552,6 +559,7 @@ void HoneycodeClient::QueryTableRowsAsync(const QueryTableRowsRequest& request, 
 
 StartTableDataImportJobOutcome HoneycodeClient::StartTableDataImportJob(const StartTableDataImportJobRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartTableDataImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.WorkbookIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartTableDataImportJob", "Required field: WorkbookId, is not set");
@@ -562,13 +570,9 @@ StartTableDataImportJobOutcome HoneycodeClient::StartTableDataImportJob(const St
     AWS_LOGSTREAM_ERROR("StartTableDataImportJob", "Required field: DestinationTableId, is not set");
     return StartTableDataImportJobOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DestinationTableId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/workbooks/");
-  uri.AddPathSegment(request.GetWorkbookId());
-  uri.AddPathSegments("/tables/");
-  uri.AddPathSegment(request.GetDestinationTableId());
-  uri.AddPathSegments("/import");
-  return StartTableDataImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartTableDataImportJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return StartTableDataImportJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartTableDataImportJobOutcomeCallable HoneycodeClient::StartTableDataImportJobCallable(const StartTableDataImportJobRequest& request) const
@@ -589,15 +593,15 @@ void HoneycodeClient::StartTableDataImportJobAsync(const StartTableDataImportJob
 
 TagResourceOutcome HoneycodeClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable HoneycodeClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -618,6 +622,7 @@ void HoneycodeClient::TagResourceAsync(const TagResourceRequest& request, const 
 
 UntagResourceOutcome HoneycodeClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
@@ -628,10 +633,9 @@ UntagResourceOutcome HoneycodeClient::UntagResource(const UntagResourceRequest& 
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable HoneycodeClient::UntagResourceCallable(const UntagResourceRequest& request) const

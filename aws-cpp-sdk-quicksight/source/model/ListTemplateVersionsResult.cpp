@@ -32,7 +32,7 @@ ListTemplateVersionsResult& ListTemplateVersionsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TemplateVersionSummaryList"))
   {
-    Array<JsonView> templateVersionSummaryListJsonList = jsonValue.GetArray("TemplateVersionSummaryList");
+    Aws::Utils::Array<JsonView> templateVersionSummaryListJsonList = jsonValue.GetArray("TemplateVersionSummaryList");
     for(unsigned templateVersionSummaryListIndex = 0; templateVersionSummaryListIndex < templateVersionSummaryListJsonList.GetLength(); ++templateVersionSummaryListIndex)
     {
       m_templateVersionSummaryList.push_back(templateVersionSummaryListJsonList[templateVersionSummaryListIndex].AsObject());

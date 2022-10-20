@@ -60,7 +60,7 @@ SearchSchemaSummary& SearchSchemaSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SchemaVersions"))
   {
-    Array<JsonView> schemaVersionsJsonList = jsonValue.GetArray("SchemaVersions");
+    Aws::Utils::Array<JsonView> schemaVersionsJsonList = jsonValue.GetArray("SchemaVersions");
     for(unsigned schemaVersionsIndex = 0; schemaVersionsIndex < schemaVersionsJsonList.GetLength(); ++schemaVersionsIndex)
     {
       m_schemaVersions.push_back(schemaVersionsJsonList[schemaVersionsIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue SearchSchemaSummary::Jsonize() const
 
   if(m_schemaVersionsHasBeenSet)
   {
-   Array<JsonValue> schemaVersionsJsonList(m_schemaVersions.size());
+   Aws::Utils::Array<JsonValue> schemaVersionsJsonList(m_schemaVersions.size());
    for(unsigned schemaVersionsIndex = 0; schemaVersionsIndex < schemaVersionsJsonList.GetLength(); ++schemaVersionsIndex)
    {
      schemaVersionsJsonList[schemaVersionsIndex].AsObject(m_schemaVersions[schemaVersionsIndex].Jsonize());

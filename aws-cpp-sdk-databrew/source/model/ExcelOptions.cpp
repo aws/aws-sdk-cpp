@@ -39,7 +39,7 @@ ExcelOptions& ExcelOptions::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SheetNames"))
   {
-    Array<JsonView> sheetNamesJsonList = jsonValue.GetArray("SheetNames");
+    Aws::Utils::Array<JsonView> sheetNamesJsonList = jsonValue.GetArray("SheetNames");
     for(unsigned sheetNamesIndex = 0; sheetNamesIndex < sheetNamesJsonList.GetLength(); ++sheetNamesIndex)
     {
       m_sheetNames.push_back(sheetNamesJsonList[sheetNamesIndex].AsString());
@@ -49,7 +49,7 @@ ExcelOptions& ExcelOptions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SheetIndexes"))
   {
-    Array<JsonView> sheetIndexesJsonList = jsonValue.GetArray("SheetIndexes");
+    Aws::Utils::Array<JsonView> sheetIndexesJsonList = jsonValue.GetArray("SheetIndexes");
     for(unsigned sheetIndexesIndex = 0; sheetIndexesIndex < sheetIndexesJsonList.GetLength(); ++sheetIndexesIndex)
     {
       m_sheetIndexes.push_back(sheetIndexesJsonList[sheetIndexesIndex].AsInteger());
@@ -73,7 +73,7 @@ JsonValue ExcelOptions::Jsonize() const
 
   if(m_sheetNamesHasBeenSet)
   {
-   Array<JsonValue> sheetNamesJsonList(m_sheetNames.size());
+   Aws::Utils::Array<JsonValue> sheetNamesJsonList(m_sheetNames.size());
    for(unsigned sheetNamesIndex = 0; sheetNamesIndex < sheetNamesJsonList.GetLength(); ++sheetNamesIndex)
    {
      sheetNamesJsonList[sheetNamesIndex].AsString(m_sheetNames[sheetNamesIndex]);
@@ -84,7 +84,7 @@ JsonValue ExcelOptions::Jsonize() const
 
   if(m_sheetIndexesHasBeenSet)
   {
-   Array<JsonValue> sheetIndexesJsonList(m_sheetIndexes.size());
+   Aws::Utils::Array<JsonValue> sheetIndexesJsonList(m_sheetIndexes.size());
    for(unsigned sheetIndexesIndex = 0; sheetIndexesIndex < sheetIndexesJsonList.GetLength(); ++sheetIndexesIndex)
    {
      sheetIndexesJsonList[sheetIndexesIndex].AsInteger(m_sheetIndexes[sheetIndexesIndex]);

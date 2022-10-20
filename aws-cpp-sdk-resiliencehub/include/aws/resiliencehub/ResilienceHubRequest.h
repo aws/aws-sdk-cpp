@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
+#include <aws/resiliencehub/ResilienceHubEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -106,7 +106,7 @@ DescribeInferenceRecommendationsJobResult& DescribeInferenceRecommendationsJobRe
 
   if(jsonValue.ValueExists("InferenceRecommendations"))
   {
-    Array<JsonView> inferenceRecommendationsJsonList = jsonValue.GetArray("InferenceRecommendations");
+    Aws::Utils::Array<JsonView> inferenceRecommendationsJsonList = jsonValue.GetArray("InferenceRecommendations");
     for(unsigned inferenceRecommendationsIndex = 0; inferenceRecommendationsIndex < inferenceRecommendationsJsonList.GetLength(); ++inferenceRecommendationsIndex)
     {
       m_inferenceRecommendations.push_back(inferenceRecommendationsJsonList[inferenceRecommendationsIndex].AsObject());

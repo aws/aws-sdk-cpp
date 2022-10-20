@@ -27,7 +27,7 @@ Aws::String DescribeCapacityProvidersRequest::SerializePayload() const
 
   if(m_capacityProvidersHasBeenSet)
   {
-   Array<JsonValue> capacityProvidersJsonList(m_capacityProviders.size());
+   Aws::Utils::Array<JsonValue> capacityProvidersJsonList(m_capacityProviders.size());
    for(unsigned capacityProvidersIndex = 0; capacityProvidersIndex < capacityProvidersJsonList.GetLength(); ++capacityProvidersIndex)
    {
      capacityProvidersJsonList[capacityProvidersIndex].AsString(m_capacityProviders[capacityProvidersIndex]);
@@ -38,7 +38,7 @@ Aws::String DescribeCapacityProvidersRequest::SerializePayload() const
 
   if(m_includeHasBeenSet)
   {
-   Array<JsonValue> includeJsonList(m_include.size());
+   Aws::Utils::Array<JsonValue> includeJsonList(m_include.size());
    for(unsigned includeIndex = 0; includeIndex < includeJsonList.GetLength(); ++includeIndex)
    {
      includeJsonList[includeIndex].AsString(CapacityProviderFieldMapper::GetNameForCapacityProviderField(m_include[includeIndex]));

@@ -35,7 +35,7 @@ BatchListObjectAttributesResponse& BatchListObjectAttributesResponse::operator =
 {
   if(jsonValue.ValueExists("Attributes"))
   {
-    Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
+    Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
     for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
     {
       m_attributes.push_back(attributesJsonList[attributesIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue BatchListObjectAttributesResponse::Jsonize() const
 
   if(m_attributesHasBeenSet)
   {
-   Array<JsonValue> attributesJsonList(m_attributes.size());
+   Aws::Utils::Array<JsonValue> attributesJsonList(m_attributes.size());
    for(unsigned attributesIndex = 0; attributesIndex < attributesJsonList.GetLength(); ++attributesIndex)
    {
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());

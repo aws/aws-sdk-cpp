@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/rbin/RecycleBin_EXPORTS.h>
+#include <aws/rbin/RecycleBinEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

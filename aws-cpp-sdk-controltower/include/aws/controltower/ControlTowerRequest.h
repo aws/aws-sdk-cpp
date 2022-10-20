@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/controltower/ControlTower_EXPORTS.h>
+#include <aws/controltower/ControlTowerEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

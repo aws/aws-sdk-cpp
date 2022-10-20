@@ -44,7 +44,7 @@ DeleteVolumeOntapConfiguration& DeleteVolumeOntapConfiguration::operator =(JsonV
 
   if(jsonValue.ValueExists("FinalBackupTags"))
   {
-    Array<JsonView> finalBackupTagsJsonList = jsonValue.GetArray("FinalBackupTags");
+    Aws::Utils::Array<JsonView> finalBackupTagsJsonList = jsonValue.GetArray("FinalBackupTags");
     for(unsigned finalBackupTagsIndex = 0; finalBackupTagsIndex < finalBackupTagsJsonList.GetLength(); ++finalBackupTagsIndex)
     {
       m_finalBackupTags.push_back(finalBackupTagsJsonList[finalBackupTagsIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue DeleteVolumeOntapConfiguration::Jsonize() const
 
   if(m_finalBackupTagsHasBeenSet)
   {
-   Array<JsonValue> finalBackupTagsJsonList(m_finalBackupTags.size());
+   Aws::Utils::Array<JsonValue> finalBackupTagsJsonList(m_finalBackupTags.size());
    for(unsigned finalBackupTagsIndex = 0; finalBackupTagsIndex < finalBackupTagsJsonList.GetLength(); ++finalBackupTagsIndex)
    {
      finalBackupTagsJsonList[finalBackupTagsIndex].AsObject(m_finalBackupTags[finalBackupTagsIndex].Jsonize());

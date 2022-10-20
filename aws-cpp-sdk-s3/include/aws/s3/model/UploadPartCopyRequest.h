@@ -44,6 +44,15 @@ namespace Model
 
     bool HasEmbeddedError(IOStream &body, const Http::HeaderValueCollection &header) const override;
 
+    EndpointParameters GetEndpointContextParams() const override
+    {
+        EndpointParameters parameters;
+        parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+
+        return parameters;
+    }
+
+
     /**
      * <p>The bucket name.</p> <p>When using this action with an access point, you must
      * direct requests to the access point hostname. The access point hostname takes

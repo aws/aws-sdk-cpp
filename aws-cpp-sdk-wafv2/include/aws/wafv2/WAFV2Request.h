@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
+#include <aws/wafv2/WAFV2EndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

@@ -30,7 +30,7 @@ DescribeOrganizationConfigRuleStatusesResult& DescribeOrganizationConfigRuleStat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OrganizationConfigRuleStatuses"))
   {
-    Array<JsonView> organizationConfigRuleStatusesJsonList = jsonValue.GetArray("OrganizationConfigRuleStatuses");
+    Aws::Utils::Array<JsonView> organizationConfigRuleStatusesJsonList = jsonValue.GetArray("OrganizationConfigRuleStatuses");
     for(unsigned organizationConfigRuleStatusesIndex = 0; organizationConfigRuleStatusesIndex < organizationConfigRuleStatusesJsonList.GetLength(); ++organizationConfigRuleStatusesIndex)
     {
       m_organizationConfigRuleStatuses.push_back(organizationConfigRuleStatusesJsonList[organizationConfigRuleStatusesIndex].AsObject());

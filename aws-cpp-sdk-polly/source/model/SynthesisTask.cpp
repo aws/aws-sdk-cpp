@@ -131,7 +131,7 @@ SynthesisTask& SynthesisTask::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LexiconNames"))
   {
-    Array<JsonView> lexiconNamesJsonList = jsonValue.GetArray("LexiconNames");
+    Aws::Utils::Array<JsonView> lexiconNamesJsonList = jsonValue.GetArray("LexiconNames");
     for(unsigned lexiconNamesIndex = 0; lexiconNamesIndex < lexiconNamesJsonList.GetLength(); ++lexiconNamesIndex)
     {
       m_lexiconNames.push_back(lexiconNamesJsonList[lexiconNamesIndex].AsString());
@@ -155,7 +155,7 @@ SynthesisTask& SynthesisTask::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SpeechMarkTypes"))
   {
-    Array<JsonView> speechMarkTypesJsonList = jsonValue.GetArray("SpeechMarkTypes");
+    Aws::Utils::Array<JsonView> speechMarkTypesJsonList = jsonValue.GetArray("SpeechMarkTypes");
     for(unsigned speechMarkTypesIndex = 0; speechMarkTypesIndex < speechMarkTypesJsonList.GetLength(); ++speechMarkTypesIndex)
     {
       m_speechMarkTypes.push_back(SpeechMarkTypeMapper::GetSpeechMarkTypeForName(speechMarkTypesJsonList[speechMarkTypesIndex].AsString()));
@@ -238,7 +238,7 @@ JsonValue SynthesisTask::Jsonize() const
 
   if(m_lexiconNamesHasBeenSet)
   {
-   Array<JsonValue> lexiconNamesJsonList(m_lexiconNames.size());
+   Aws::Utils::Array<JsonValue> lexiconNamesJsonList(m_lexiconNames.size());
    for(unsigned lexiconNamesIndex = 0; lexiconNamesIndex < lexiconNamesJsonList.GetLength(); ++lexiconNamesIndex)
    {
      lexiconNamesJsonList[lexiconNamesIndex].AsString(m_lexiconNames[lexiconNamesIndex]);
@@ -260,7 +260,7 @@ JsonValue SynthesisTask::Jsonize() const
 
   if(m_speechMarkTypesHasBeenSet)
   {
-   Array<JsonValue> speechMarkTypesJsonList(m_speechMarkTypes.size());
+   Aws::Utils::Array<JsonValue> speechMarkTypesJsonList(m_speechMarkTypes.size());
    for(unsigned speechMarkTypesIndex = 0; speechMarkTypesIndex < speechMarkTypesJsonList.GetLength(); ++speechMarkTypesIndex)
    {
      speechMarkTypesJsonList[speechMarkTypesIndex].AsString(SpeechMarkTypeMapper::GetNameForSpeechMarkType(m_speechMarkTypes[speechMarkTypesIndex]));

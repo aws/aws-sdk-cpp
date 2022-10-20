@@ -16,11 +16,13 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/utils/event/EventStream.h>
 
 #include <aws/transcribestreaming/TranscribeStreamingServiceClient.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceEndpoint.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceErrorMarshaller.h>
+#include <aws/transcribestreaming/TranscribeStreamingServiceEndpointProvider.h>
 #include <aws/transcribestreaming/model/StartMedicalStreamTranscriptionRequest.h>
 #include <aws/transcribestreaming/model/StartStreamTranscriptionRequest.h>
 
@@ -31,19 +33,66 @@ using namespace Aws::TranscribeStreamingService;
 using namespace Aws::TranscribeStreamingService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::TranscribeStreamingService::Endpoint::TranscribeStreamingServiceEndpointProvider::TranscribeStreamingServiceResolveEndpointOutcome;
 
 
 const char* TranscribeStreamingServiceClient::SERVICE_NAME = "transcribe";
 const char* TranscribeStreamingServiceClient::ALLOCATION_TAG = "TranscribeStreamingServiceClient";
 
-TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const Client::ClientConfiguration& clientConfiguration) :
+TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const Client::ClientConfiguration& clientConfiguration,
+                                                                   std::shared_ptr<Endpoint::TranscribeStreamingServiceEndpointProvider> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TranscribeStreamingServiceErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const AWSCredentials& credentials,
+                                                                   std::shared_ptr<Endpoint::TranscribeStreamingServiceEndpointProvider> endpointProvider,
+                                                                   const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<TranscribeStreamingServiceErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                                                   std::shared_ptr<Endpoint::TranscribeStreamingServiceEndpointProvider> endpointProvider,
+                                                                   const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<TranscribeStreamingServiceErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<TranscribeStreamingServiceErrorMarshaller>(ALLOCATION_TAG)),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<TranscribeStreamingService::Endpoint::TranscribeStreamingServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -56,7 +105,8 @@ TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const AWSCred
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TranscribeStreamingServiceErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<TranscribeStreamingService::Endpoint::TranscribeStreamingServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
@@ -69,11 +119,13 @@ TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const std::sh
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TranscribeStreamingServiceErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<TranscribeStreamingService::Endpoint::TranscribeStreamingServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 TranscribeStreamingServiceClient::~TranscribeStreamingServiceClient()
 {
 }
@@ -81,27 +133,13 @@ TranscribeStreamingServiceClient::~TranscribeStreamingServiceClient()
 void TranscribeStreamingServiceClient::init(const Client::ClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Transcribe Streaming");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + TranscribeStreamingServiceEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_UNREFERENCED_PARAM(config);
 }
 
 void TranscribeStreamingServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_UNREFERENCED_PARAM(endpoint);
+  // TODO: support existing Override API
 }
 
 void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Model::StartMedicalStreamTranscriptionRequest& request,
@@ -109,7 +147,7 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
                 const StartMedicalStreamTranscriptionResponseReceivedHandler& responseHandler,
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
-  Aws::Http::URI uri = m_uri;
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMedicalStreamTranscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LanguageCodeHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartMedicalStreamTranscription", "Required field: LanguageCode, is not set");
@@ -140,7 +178,8 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
     responseHandler(this, request, StartMedicalStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false)), handlerContext);
     return;
   }
-  uri.AddPathSegments("/medical-stream-transcription");
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartMedicalStreamTranscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
@@ -172,7 +211,7 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
                 const StartStreamTranscriptionResponseReceivedHandler& responseHandler,
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
-  Aws::Http::URI uri = m_uri;
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartStreamTranscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.MediaSampleRateHertzHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartStreamTranscription", "Required field: MediaSampleRateHertz, is not set");
@@ -185,7 +224,8 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
     responseHandler(this, request, StartStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaEncoding]", false)), handlerContext);
     return;
   }
-  uri.AddPathSegments("/stream-transcription");
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartStreamTranscription, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );

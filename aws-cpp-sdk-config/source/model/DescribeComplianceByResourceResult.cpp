@@ -30,7 +30,7 @@ DescribeComplianceByResourceResult& DescribeComplianceByResourceResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ComplianceByResources"))
   {
-    Array<JsonView> complianceByResourcesJsonList = jsonValue.GetArray("ComplianceByResources");
+    Aws::Utils::Array<JsonView> complianceByResourcesJsonList = jsonValue.GetArray("ComplianceByResources");
     for(unsigned complianceByResourcesIndex = 0; complianceByResourcesIndex < complianceByResourcesJsonList.GetLength(); ++complianceByResourcesIndex)
     {
       m_complianceByResources.push_back(complianceByResourcesJsonList[complianceByResourcesIndex].AsObject());

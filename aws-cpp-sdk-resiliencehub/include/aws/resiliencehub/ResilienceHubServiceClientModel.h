@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/resiliencehub/ResilienceHubEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -88,6 +89,10 @@ namespace Aws
 
   namespace ResilienceHub
   {
+    namespace Endpoint
+    {
+      class ResilienceHubEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in ResilienceHubClient header */

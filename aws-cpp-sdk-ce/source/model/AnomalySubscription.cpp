@@ -63,7 +63,7 @@ AnomalySubscription& AnomalySubscription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("MonitorArnList"))
   {
-    Array<JsonView> monitorArnListJsonList = jsonValue.GetArray("MonitorArnList");
+    Aws::Utils::Array<JsonView> monitorArnListJsonList = jsonValue.GetArray("MonitorArnList");
     for(unsigned monitorArnListIndex = 0; monitorArnListIndex < monitorArnListJsonList.GetLength(); ++monitorArnListIndex)
     {
       m_monitorArnList.push_back(monitorArnListJsonList[monitorArnListIndex].AsString());
@@ -73,7 +73,7 @@ AnomalySubscription& AnomalySubscription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Subscribers"))
   {
-    Array<JsonView> subscribersJsonList = jsonValue.GetArray("Subscribers");
+    Aws::Utils::Array<JsonView> subscribersJsonList = jsonValue.GetArray("Subscribers");
     for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
     {
       m_subscribers.push_back(subscribersJsonList[subscribersIndex].AsObject());
@@ -123,7 +123,7 @@ JsonValue AnomalySubscription::Jsonize() const
 
   if(m_monitorArnListHasBeenSet)
   {
-   Array<JsonValue> monitorArnListJsonList(m_monitorArnList.size());
+   Aws::Utils::Array<JsonValue> monitorArnListJsonList(m_monitorArnList.size());
    for(unsigned monitorArnListIndex = 0; monitorArnListIndex < monitorArnListJsonList.GetLength(); ++monitorArnListIndex)
    {
      monitorArnListJsonList[monitorArnListIndex].AsString(m_monitorArnList[monitorArnListIndex]);
@@ -134,7 +134,7 @@ JsonValue AnomalySubscription::Jsonize() const
 
   if(m_subscribersHasBeenSet)
   {
-   Array<JsonValue> subscribersJsonList(m_subscribers.size());
+   Aws::Utils::Array<JsonValue> subscribersJsonList(m_subscribers.size());
    for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
    {
      subscribersJsonList[subscribersIndex].AsObject(m_subscribers[subscribersIndex].Jsonize());

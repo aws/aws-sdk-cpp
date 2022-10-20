@@ -36,7 +36,7 @@ ListChannelMembershipsResult& ListChannelMembershipsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("ChannelMemberships"))
   {
-    Array<JsonView> channelMembershipsJsonList = jsonValue.GetArray("ChannelMemberships");
+    Aws::Utils::Array<JsonView> channelMembershipsJsonList = jsonValue.GetArray("ChannelMemberships");
     for(unsigned channelMembershipsIndex = 0; channelMembershipsIndex < channelMembershipsJsonList.GetLength(); ++channelMembershipsIndex)
     {
       m_channelMemberships.push_back(channelMembershipsJsonList[channelMembershipsIndex].AsObject());

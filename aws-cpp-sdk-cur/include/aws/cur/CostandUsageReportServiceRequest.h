@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
+#include <aws/cur/CostandUsageReportServiceEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

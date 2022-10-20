@@ -95,7 +95,7 @@ ReportDefinition& ReportDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdditionalSchemaElements"))
   {
-    Array<JsonView> additionalSchemaElementsJsonList = jsonValue.GetArray("AdditionalSchemaElements");
+    Aws::Utils::Array<JsonView> additionalSchemaElementsJsonList = jsonValue.GetArray("AdditionalSchemaElements");
     for(unsigned additionalSchemaElementsIndex = 0; additionalSchemaElementsIndex < additionalSchemaElementsJsonList.GetLength(); ++additionalSchemaElementsIndex)
     {
       m_additionalSchemaElements.push_back(SchemaElementMapper::GetSchemaElementForName(additionalSchemaElementsJsonList[additionalSchemaElementsIndex].AsString()));
@@ -126,7 +126,7 @@ ReportDefinition& ReportDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdditionalArtifacts"))
   {
-    Array<JsonView> additionalArtifactsJsonList = jsonValue.GetArray("AdditionalArtifacts");
+    Aws::Utils::Array<JsonView> additionalArtifactsJsonList = jsonValue.GetArray("AdditionalArtifacts");
     for(unsigned additionalArtifactsIndex = 0; additionalArtifactsIndex < additionalArtifactsJsonList.GetLength(); ++additionalArtifactsIndex)
     {
       m_additionalArtifacts.push_back(AdditionalArtifactMapper::GetAdditionalArtifactForName(additionalArtifactsJsonList[additionalArtifactsIndex].AsString()));
@@ -185,7 +185,7 @@ JsonValue ReportDefinition::Jsonize() const
 
   if(m_additionalSchemaElementsHasBeenSet)
   {
-   Array<JsonValue> additionalSchemaElementsJsonList(m_additionalSchemaElements.size());
+   Aws::Utils::Array<JsonValue> additionalSchemaElementsJsonList(m_additionalSchemaElements.size());
    for(unsigned additionalSchemaElementsIndex = 0; additionalSchemaElementsIndex < additionalSchemaElementsJsonList.GetLength(); ++additionalSchemaElementsIndex)
    {
      additionalSchemaElementsJsonList[additionalSchemaElementsIndex].AsString(SchemaElementMapper::GetNameForSchemaElement(m_additionalSchemaElements[additionalSchemaElementsIndex]));
@@ -213,7 +213,7 @@ JsonValue ReportDefinition::Jsonize() const
 
   if(m_additionalArtifactsHasBeenSet)
   {
-   Array<JsonValue> additionalArtifactsJsonList(m_additionalArtifacts.size());
+   Aws::Utils::Array<JsonValue> additionalArtifactsJsonList(m_additionalArtifacts.size());
    for(unsigned additionalArtifactsIndex = 0; additionalArtifactsIndex < additionalArtifactsJsonList.GetLength(); ++additionalArtifactsIndex)
    {
      additionalArtifactsJsonList[additionalArtifactsIndex].AsString(AdditionalArtifactMapper::GetNameForAdditionalArtifact(m_additionalArtifacts[additionalArtifactsIndex]));

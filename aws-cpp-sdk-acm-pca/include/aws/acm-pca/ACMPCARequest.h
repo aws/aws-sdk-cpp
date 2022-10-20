@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
+#include <aws/acm-pca/ACMPCAEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

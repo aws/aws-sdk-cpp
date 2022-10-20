@@ -57,10 +57,10 @@ LoRaWANGateway& LoRaWANGateway::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("JoinEuiFilters"))
   {
-    Array<JsonView> joinEuiFiltersJsonList = jsonValue.GetArray("JoinEuiFilters");
+    Aws::Utils::Array<JsonView> joinEuiFiltersJsonList = jsonValue.GetArray("JoinEuiFilters");
     for(unsigned joinEuiFiltersIndex = 0; joinEuiFiltersIndex < joinEuiFiltersJsonList.GetLength(); ++joinEuiFiltersIndex)
     {
-      Array<JsonView> joinEuiRangeJsonList = joinEuiFiltersJsonList[joinEuiFiltersIndex].AsArray();
+      Aws::Utils::Array<JsonView> joinEuiRangeJsonList = joinEuiFiltersJsonList[joinEuiFiltersIndex].AsArray();
       Aws::Vector<Aws::String> joinEuiRangeList;
       joinEuiRangeList.reserve((size_t)joinEuiRangeJsonList.GetLength());
       for(unsigned joinEuiRangeIndex = 0; joinEuiRangeIndex < joinEuiRangeJsonList.GetLength(); ++joinEuiRangeIndex)
@@ -74,7 +74,7 @@ LoRaWANGateway& LoRaWANGateway::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NetIdFilters"))
   {
-    Array<JsonView> netIdFiltersJsonList = jsonValue.GetArray("NetIdFilters");
+    Aws::Utils::Array<JsonView> netIdFiltersJsonList = jsonValue.GetArray("NetIdFilters");
     for(unsigned netIdFiltersIndex = 0; netIdFiltersIndex < netIdFiltersJsonList.GetLength(); ++netIdFiltersIndex)
     {
       m_netIdFilters.push_back(netIdFiltersJsonList[netIdFiltersIndex].AsString());
@@ -84,7 +84,7 @@ LoRaWANGateway& LoRaWANGateway::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubBands"))
   {
-    Array<JsonView> subBandsJsonList = jsonValue.GetArray("SubBands");
+    Aws::Utils::Array<JsonView> subBandsJsonList = jsonValue.GetArray("SubBands");
     for(unsigned subBandsIndex = 0; subBandsIndex < subBandsJsonList.GetLength(); ++subBandsIndex)
     {
       m_subBands.push_back(subBandsJsonList[subBandsIndex].AsInteger());
@@ -120,10 +120,10 @@ JsonValue LoRaWANGateway::Jsonize() const
 
   if(m_joinEuiFiltersHasBeenSet)
   {
-   Array<JsonValue> joinEuiFiltersJsonList(m_joinEuiFilters.size());
+   Aws::Utils::Array<JsonValue> joinEuiFiltersJsonList(m_joinEuiFilters.size());
    for(unsigned joinEuiFiltersIndex = 0; joinEuiFiltersIndex < joinEuiFiltersJsonList.GetLength(); ++joinEuiFiltersIndex)
    {
-     Array<JsonValue> joinEuiRangeJsonList(m_joinEuiFilters[joinEuiFiltersIndex].size());
+     Aws::Utils::Array<JsonValue> joinEuiRangeJsonList(m_joinEuiFilters[joinEuiFiltersIndex].size());
      for(unsigned joinEuiRangeIndex = 0; joinEuiRangeIndex < joinEuiRangeJsonList.GetLength(); ++joinEuiRangeIndex)
      {
        joinEuiRangeJsonList[joinEuiRangeIndex].AsString(m_joinEuiFilters[joinEuiFiltersIndex][joinEuiRangeIndex]);
@@ -136,7 +136,7 @@ JsonValue LoRaWANGateway::Jsonize() const
 
   if(m_netIdFiltersHasBeenSet)
   {
-   Array<JsonValue> netIdFiltersJsonList(m_netIdFilters.size());
+   Aws::Utils::Array<JsonValue> netIdFiltersJsonList(m_netIdFilters.size());
    for(unsigned netIdFiltersIndex = 0; netIdFiltersIndex < netIdFiltersJsonList.GetLength(); ++netIdFiltersIndex)
    {
      netIdFiltersJsonList[netIdFiltersIndex].AsString(m_netIdFilters[netIdFiltersIndex]);
@@ -147,7 +147,7 @@ JsonValue LoRaWANGateway::Jsonize() const
 
   if(m_subBandsHasBeenSet)
   {
-   Array<JsonValue> subBandsJsonList(m_subBands.size());
+   Aws::Utils::Array<JsonValue> subBandsJsonList(m_subBands.size());
    for(unsigned subBandsIndex = 0; subBandsIndex < subBandsJsonList.GetLength(); ++subBandsIndex)
    {
      subBandsJsonList[subBandsIndex].AsInteger(m_subBands[subBandsIndex]);

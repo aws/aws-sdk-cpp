@@ -30,7 +30,7 @@ DescribeEffectiveInstanceAssociationsResult& DescribeEffectiveInstanceAssociatio
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Associations"))
   {
-    Array<JsonView> associationsJsonList = jsonValue.GetArray("Associations");
+    Aws::Utils::Array<JsonView> associationsJsonList = jsonValue.GetArray("Associations");
     for(unsigned associationsIndex = 0; associationsIndex < associationsJsonList.GetLength(); ++associationsIndex)
     {
       m_associations.push_back(associationsJsonList[associationsIndex].AsObject());

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
+#include <aws/eks/EKSEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

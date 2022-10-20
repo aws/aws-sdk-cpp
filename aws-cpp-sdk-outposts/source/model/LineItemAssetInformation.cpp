@@ -42,7 +42,7 @@ LineItemAssetInformation& LineItemAssetInformation::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("MacAddressList"))
   {
-    Array<JsonView> macAddressListJsonList = jsonValue.GetArray("MacAddressList");
+    Aws::Utils::Array<JsonView> macAddressListJsonList = jsonValue.GetArray("MacAddressList");
     for(unsigned macAddressListIndex = 0; macAddressListIndex < macAddressListJsonList.GetLength(); ++macAddressListIndex)
     {
       m_macAddressList.push_back(macAddressListJsonList[macAddressListIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue LineItemAssetInformation::Jsonize() const
 
   if(m_macAddressListHasBeenSet)
   {
-   Array<JsonValue> macAddressListJsonList(m_macAddressList.size());
+   Aws::Utils::Array<JsonValue> macAddressListJsonList(m_macAddressList.size());
    for(unsigned macAddressListIndex = 0; macAddressListIndex < macAddressListJsonList.GetLength(); ++macAddressListIndex)
    {
      macAddressListJsonList[macAddressListIndex].AsString(m_macAddressList[macAddressListIndex]);

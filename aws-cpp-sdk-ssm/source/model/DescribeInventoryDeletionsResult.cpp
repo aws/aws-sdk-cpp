@@ -30,7 +30,7 @@ DescribeInventoryDeletionsResult& DescribeInventoryDeletionsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InventoryDeletions"))
   {
-    Array<JsonView> inventoryDeletionsJsonList = jsonValue.GetArray("InventoryDeletions");
+    Aws::Utils::Array<JsonView> inventoryDeletionsJsonList = jsonValue.GetArray("InventoryDeletions");
     for(unsigned inventoryDeletionsIndex = 0; inventoryDeletionsIndex < inventoryDeletionsJsonList.GetLength(); ++inventoryDeletionsIndex)
     {
       m_inventoryDeletions.push_back(inventoryDeletionsJsonList[inventoryDeletionsIndex].AsObject());

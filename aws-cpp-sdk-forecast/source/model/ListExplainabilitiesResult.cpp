@@ -30,7 +30,7 @@ ListExplainabilitiesResult& ListExplainabilitiesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Explainabilities"))
   {
-    Array<JsonView> explainabilitiesJsonList = jsonValue.GetArray("Explainabilities");
+    Aws::Utils::Array<JsonView> explainabilitiesJsonList = jsonValue.GetArray("Explainabilities");
     for(unsigned explainabilitiesIndex = 0; explainabilitiesIndex < explainabilitiesJsonList.GetLength(); ++explainabilitiesIndex)
     {
       m_explainabilities.push_back(explainabilitiesJsonList[explainabilitiesIndex].AsObject());

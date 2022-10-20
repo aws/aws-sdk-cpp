@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
+#include <aws/firehose/FirehoseEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

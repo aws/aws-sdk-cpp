@@ -36,7 +36,7 @@ ListQueuedMessagesResult& ListQueuedMessagesResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("DownlinkQueueMessagesList"))
   {
-    Array<JsonView> downlinkQueueMessagesListJsonList = jsonValue.GetArray("DownlinkQueueMessagesList");
+    Aws::Utils::Array<JsonView> downlinkQueueMessagesListJsonList = jsonValue.GetArray("DownlinkQueueMessagesList");
     for(unsigned downlinkQueueMessagesListIndex = 0; downlinkQueueMessagesListIndex < downlinkQueueMessagesListJsonList.GetLength(); ++downlinkQueueMessagesListIndex)
     {
       m_downlinkQueueMessagesList.push_back(downlinkQueueMessagesListJsonList[downlinkQueueMessagesListIndex].AsObject());

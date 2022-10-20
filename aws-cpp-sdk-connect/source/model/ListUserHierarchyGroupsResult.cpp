@@ -30,7 +30,7 @@ ListUserHierarchyGroupsResult& ListUserHierarchyGroupsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserHierarchyGroupSummaryList"))
   {
-    Array<JsonView> userHierarchyGroupSummaryListJsonList = jsonValue.GetArray("UserHierarchyGroupSummaryList");
+    Aws::Utils::Array<JsonView> userHierarchyGroupSummaryListJsonList = jsonValue.GetArray("UserHierarchyGroupSummaryList");
     for(unsigned userHierarchyGroupSummaryListIndex = 0; userHierarchyGroupSummaryListIndex < userHierarchyGroupSummaryListJsonList.GetLength(); ++userHierarchyGroupSummaryListIndex)
     {
       m_userHierarchyGroupSummaryList.push_back(userHierarchyGroupSummaryListJsonList[userHierarchyGroupSummaryListIndex].AsObject());

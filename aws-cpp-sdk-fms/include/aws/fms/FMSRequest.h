@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/fms/FMS_EXPORTS.h>
+#include <aws/fms/FMSEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>

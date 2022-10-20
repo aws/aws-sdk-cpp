@@ -50,7 +50,7 @@ Contact& Contact::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TopicPreferences"))
   {
-    Array<JsonView> topicPreferencesJsonList = jsonValue.GetArray("TopicPreferences");
+    Aws::Utils::Array<JsonView> topicPreferencesJsonList = jsonValue.GetArray("TopicPreferences");
     for(unsigned topicPreferencesIndex = 0; topicPreferencesIndex < topicPreferencesJsonList.GetLength(); ++topicPreferencesIndex)
     {
       m_topicPreferences.push_back(topicPreferencesJsonList[topicPreferencesIndex].AsObject());
@@ -60,7 +60,7 @@ Contact& Contact::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TopicDefaultPreferences"))
   {
-    Array<JsonView> topicDefaultPreferencesJsonList = jsonValue.GetArray("TopicDefaultPreferences");
+    Aws::Utils::Array<JsonView> topicDefaultPreferencesJsonList = jsonValue.GetArray("TopicDefaultPreferences");
     for(unsigned topicDefaultPreferencesIndex = 0; topicDefaultPreferencesIndex < topicDefaultPreferencesJsonList.GetLength(); ++topicDefaultPreferencesIndex)
     {
       m_topicDefaultPreferences.push_back(topicDefaultPreferencesJsonList[topicDefaultPreferencesIndex].AsObject());
@@ -97,7 +97,7 @@ JsonValue Contact::Jsonize() const
 
   if(m_topicPreferencesHasBeenSet)
   {
-   Array<JsonValue> topicPreferencesJsonList(m_topicPreferences.size());
+   Aws::Utils::Array<JsonValue> topicPreferencesJsonList(m_topicPreferences.size());
    for(unsigned topicPreferencesIndex = 0; topicPreferencesIndex < topicPreferencesJsonList.GetLength(); ++topicPreferencesIndex)
    {
      topicPreferencesJsonList[topicPreferencesIndex].AsObject(m_topicPreferences[topicPreferencesIndex].Jsonize());
@@ -108,7 +108,7 @@ JsonValue Contact::Jsonize() const
 
   if(m_topicDefaultPreferencesHasBeenSet)
   {
-   Array<JsonValue> topicDefaultPreferencesJsonList(m_topicDefaultPreferences.size());
+   Aws::Utils::Array<JsonValue> topicDefaultPreferencesJsonList(m_topicDefaultPreferences.size());
    for(unsigned topicDefaultPreferencesIndex = 0; topicDefaultPreferencesIndex < topicDefaultPreferencesJsonList.GetLength(); ++topicDefaultPreferencesIndex)
    {
      topicDefaultPreferencesJsonList[topicDefaultPreferencesIndex].AsObject(m_topicDefaultPreferences[topicDefaultPreferencesIndex].Jsonize());

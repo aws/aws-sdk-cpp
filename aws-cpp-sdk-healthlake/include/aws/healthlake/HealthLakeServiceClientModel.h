@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/healthlake/HealthLakeEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -62,6 +63,10 @@ namespace Aws
 
   namespace HealthLake
   {
+    namespace Endpoint
+    {
+      class HealthLakeEndpointProvider;
+    } // namespace Endpoint
     namespace Model
     {
       /* Service model forward declarations required in HealthLakeClient header */

@@ -33,7 +33,7 @@ HlsIngest& HlsIngest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ingestEndpoints"))
   {
-    Array<JsonView> ingestEndpointsJsonList = jsonValue.GetArray("ingestEndpoints");
+    Aws::Utils::Array<JsonView> ingestEndpointsJsonList = jsonValue.GetArray("ingestEndpoints");
     for(unsigned ingestEndpointsIndex = 0; ingestEndpointsIndex < ingestEndpointsJsonList.GetLength(); ++ingestEndpointsIndex)
     {
       m_ingestEndpoints.push_back(ingestEndpointsJsonList[ingestEndpointsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue HlsIngest::Jsonize() const
 
   if(m_ingestEndpointsHasBeenSet)
   {
-   Array<JsonValue> ingestEndpointsJsonList(m_ingestEndpoints.size());
+   Aws::Utils::Array<JsonValue> ingestEndpointsJsonList(m_ingestEndpoints.size());
    for(unsigned ingestEndpointsIndex = 0; ingestEndpointsIndex < ingestEndpointsJsonList.GetLength(); ++ingestEndpointsIndex)
    {
      ingestEndpointsJsonList[ingestEndpointsIndex].AsObject(m_ingestEndpoints[ingestEndpointsIndex].Jsonize());

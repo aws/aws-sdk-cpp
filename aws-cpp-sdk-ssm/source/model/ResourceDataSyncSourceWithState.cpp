@@ -61,7 +61,7 @@ ResourceDataSyncSourceWithState& ResourceDataSyncSourceWithState::operator =(Jso
 
   if(jsonValue.ValueExists("SourceRegions"))
   {
-    Array<JsonView> sourceRegionsJsonList = jsonValue.GetArray("SourceRegions");
+    Aws::Utils::Array<JsonView> sourceRegionsJsonList = jsonValue.GetArray("SourceRegions");
     for(unsigned sourceRegionsIndex = 0; sourceRegionsIndex < sourceRegionsJsonList.GetLength(); ++sourceRegionsIndex)
     {
       m_sourceRegions.push_back(sourceRegionsJsonList[sourceRegionsIndex].AsString());
@@ -111,7 +111,7 @@ JsonValue ResourceDataSyncSourceWithState::Jsonize() const
 
   if(m_sourceRegionsHasBeenSet)
   {
-   Array<JsonValue> sourceRegionsJsonList(m_sourceRegions.size());
+   Aws::Utils::Array<JsonValue> sourceRegionsJsonList(m_sourceRegions.size());
    for(unsigned sourceRegionsIndex = 0; sourceRegionsIndex < sourceRegionsJsonList.GetLength(); ++sourceRegionsIndex)
    {
      sourceRegionsJsonList[sourceRegionsIndex].AsString(m_sourceRegions[sourceRegionsIndex]);

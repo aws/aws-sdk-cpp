@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
+#include <aws/mediatailor/MediaTailorEndpointProvider.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>
