@@ -38,8 +38,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "sts";
-static const char* ALLOCATION_TAG = "STSClient";
+const char* STSClient::SERVICE_NAME = "sts";
+const char* STSClient::ALLOCATION_TAG = "STSClient";
 
 STSClient::STSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

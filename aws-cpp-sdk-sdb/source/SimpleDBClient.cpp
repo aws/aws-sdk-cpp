@@ -40,8 +40,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "sdb";
-static const char* ALLOCATION_TAG = "SimpleDBClient";
+const char* SimpleDBClient::SERVICE_NAME = "sdb";
+const char* SimpleDBClient::ALLOCATION_TAG = "SimpleDBClient";
 
 SimpleDBClient::SimpleDBClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

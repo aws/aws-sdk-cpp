@@ -50,8 +50,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "sqs";
-static const char* ALLOCATION_TAG = "SQSClient";
+const char* SQSClient::SERVICE_NAME = "sqs";
+const char* SQSClient::ALLOCATION_TAG = "SQSClient";
 
 SQSClient::SQSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
@@ -123,7 +123,7 @@ void SQSClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AddPermissionOutcome SQSClient::AddPermission(const AddPermissionRequest& request) const
 {
-  return AddPermissionOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return AddPermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 AddPermissionOutcomeCallable SQSClient::AddPermissionCallable(const AddPermissionRequest& request) const
@@ -144,7 +144,7 @@ void SQSClient::AddPermissionAsync(const AddPermissionRequest& request, const Ad
 
 ChangeMessageVisibilityOutcome SQSClient::ChangeMessageVisibility(const ChangeMessageVisibilityRequest& request) const
 {
-  return ChangeMessageVisibilityOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return ChangeMessageVisibilityOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ChangeMessageVisibilityOutcomeCallable SQSClient::ChangeMessageVisibilityCallable(const ChangeMessageVisibilityRequest& request) const
@@ -165,7 +165,7 @@ void SQSClient::ChangeMessageVisibilityAsync(const ChangeMessageVisibilityReques
 
 ChangeMessageVisibilityBatchOutcome SQSClient::ChangeMessageVisibilityBatch(const ChangeMessageVisibilityBatchRequest& request) const
 {
-  return ChangeMessageVisibilityBatchOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return ChangeMessageVisibilityBatchOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ChangeMessageVisibilityBatchOutcomeCallable SQSClient::ChangeMessageVisibilityBatchCallable(const ChangeMessageVisibilityBatchRequest& request) const
@@ -187,7 +187,7 @@ void SQSClient::ChangeMessageVisibilityBatchAsync(const ChangeMessageVisibilityB
 CreateQueueOutcome SQSClient::CreateQueue(const CreateQueueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  return CreateQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+  return CreateQueueOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateQueueOutcomeCallable SQSClient::CreateQueueCallable(const CreateQueueRequest& request) const
@@ -208,7 +208,7 @@ void SQSClient::CreateQueueAsync(const CreateQueueRequest& request, const Create
 
 DeleteMessageOutcome SQSClient::DeleteMessage(const DeleteMessageRequest& request) const
 {
-  return DeleteMessageOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return DeleteMessageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DeleteMessageOutcomeCallable SQSClient::DeleteMessageCallable(const DeleteMessageRequest& request) const
@@ -229,7 +229,7 @@ void SQSClient::DeleteMessageAsync(const DeleteMessageRequest& request, const De
 
 DeleteMessageBatchOutcome SQSClient::DeleteMessageBatch(const DeleteMessageBatchRequest& request) const
 {
-  return DeleteMessageBatchOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return DeleteMessageBatchOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DeleteMessageBatchOutcomeCallable SQSClient::DeleteMessageBatchCallable(const DeleteMessageBatchRequest& request) const
@@ -250,7 +250,7 @@ void SQSClient::DeleteMessageBatchAsync(const DeleteMessageBatchRequest& request
 
 DeleteQueueOutcome SQSClient::DeleteQueue(const DeleteQueueRequest& request) const
 {
-  return DeleteQueueOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return DeleteQueueOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 DeleteQueueOutcomeCallable SQSClient::DeleteQueueCallable(const DeleteQueueRequest& request) const
@@ -271,7 +271,7 @@ void SQSClient::DeleteQueueAsync(const DeleteQueueRequest& request, const Delete
 
 GetQueueAttributesOutcome SQSClient::GetQueueAttributes(const GetQueueAttributesRequest& request) const
 {
-  return GetQueueAttributesOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return GetQueueAttributesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 GetQueueAttributesOutcomeCallable SQSClient::GetQueueAttributesCallable(const GetQueueAttributesRequest& request) const
@@ -293,7 +293,7 @@ void SQSClient::GetQueueAttributesAsync(const GetQueueAttributesRequest& request
 GetQueueUrlOutcome SQSClient::GetQueueUrl(const GetQueueUrlRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  return GetQueueUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+  return GetQueueUrlOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 GetQueueUrlOutcomeCallable SQSClient::GetQueueUrlCallable(const GetQueueUrlRequest& request) const
@@ -314,7 +314,7 @@ void SQSClient::GetQueueUrlAsync(const GetQueueUrlRequest& request, const GetQue
 
 ListDeadLetterSourceQueuesOutcome SQSClient::ListDeadLetterSourceQueues(const ListDeadLetterSourceQueuesRequest& request) const
 {
-  return ListDeadLetterSourceQueuesOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return ListDeadLetterSourceQueuesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ListDeadLetterSourceQueuesOutcomeCallable SQSClient::ListDeadLetterSourceQueuesCallable(const ListDeadLetterSourceQueuesRequest& request) const
@@ -335,7 +335,7 @@ void SQSClient::ListDeadLetterSourceQueuesAsync(const ListDeadLetterSourceQueues
 
 ListQueueTagsOutcome SQSClient::ListQueueTags(const ListQueueTagsRequest& request) const
 {
-  return ListQueueTagsOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return ListQueueTagsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ListQueueTagsOutcomeCallable SQSClient::ListQueueTagsCallable(const ListQueueTagsRequest& request) const
@@ -357,7 +357,7 @@ void SQSClient::ListQueueTagsAsync(const ListQueueTagsRequest& request, const Li
 ListQueuesOutcome SQSClient::ListQueues(const ListQueuesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  return ListQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+  return ListQueuesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ListQueuesOutcomeCallable SQSClient::ListQueuesCallable(const ListQueuesRequest& request) const
@@ -378,7 +378,7 @@ void SQSClient::ListQueuesAsync(const ListQueuesRequest& request, const ListQueu
 
 PurgeQueueOutcome SQSClient::PurgeQueue(const PurgeQueueRequest& request) const
 {
-  return PurgeQueueOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return PurgeQueueOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 PurgeQueueOutcomeCallable SQSClient::PurgeQueueCallable(const PurgeQueueRequest& request) const
@@ -399,7 +399,7 @@ void SQSClient::PurgeQueueAsync(const PurgeQueueRequest& request, const PurgeQue
 
 ReceiveMessageOutcome SQSClient::ReceiveMessage(const ReceiveMessageRequest& request) const
 {
-  return ReceiveMessageOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return ReceiveMessageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ReceiveMessageOutcomeCallable SQSClient::ReceiveMessageCallable(const ReceiveMessageRequest& request) const
@@ -420,7 +420,7 @@ void SQSClient::ReceiveMessageAsync(const ReceiveMessageRequest& request, const 
 
 RemovePermissionOutcome SQSClient::RemovePermission(const RemovePermissionRequest& request) const
 {
-  return RemovePermissionOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return RemovePermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 RemovePermissionOutcomeCallable SQSClient::RemovePermissionCallable(const RemovePermissionRequest& request) const
@@ -441,7 +441,7 @@ void SQSClient::RemovePermissionAsync(const RemovePermissionRequest& request, co
 
 SendMessageOutcome SQSClient::SendMessage(const SendMessageRequest& request) const
 {
-  return SendMessageOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return SendMessageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 SendMessageOutcomeCallable SQSClient::SendMessageCallable(const SendMessageRequest& request) const
@@ -462,7 +462,7 @@ void SQSClient::SendMessageAsync(const SendMessageRequest& request, const SendMe
 
 SendMessageBatchOutcome SQSClient::SendMessageBatch(const SendMessageBatchRequest& request) const
 {
-  return SendMessageBatchOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return SendMessageBatchOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 SendMessageBatchOutcomeCallable SQSClient::SendMessageBatchCallable(const SendMessageBatchRequest& request) const
@@ -483,7 +483,7 @@ void SQSClient::SendMessageBatchAsync(const SendMessageBatchRequest& request, co
 
 SetQueueAttributesOutcome SQSClient::SetQueueAttributes(const SetQueueAttributesRequest& request) const
 {
-  return SetQueueAttributesOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return SetQueueAttributesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 SetQueueAttributesOutcomeCallable SQSClient::SetQueueAttributesCallable(const SetQueueAttributesRequest& request) const
@@ -504,7 +504,7 @@ void SQSClient::SetQueueAttributesAsync(const SetQueueAttributesRequest& request
 
 TagQueueOutcome SQSClient::TagQueue(const TagQueueRequest& request) const
 {
-  return TagQueueOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return TagQueueOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 TagQueueOutcomeCallable SQSClient::TagQueueCallable(const TagQueueRequest& request) const
@@ -525,7 +525,7 @@ void SQSClient::TagQueueAsync(const TagQueueRequest& request, const TagQueueResp
 
 UntagQueueOutcome SQSClient::UntagQueue(const UntagQueueRequest& request) const
 {
-  return UntagQueueOutcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_POST));
+  return UntagQueueOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 UntagQueueOutcomeCallable SQSClient::UntagQueueCallable(const UntagQueueRequest& request) const

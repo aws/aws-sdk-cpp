@@ -23,6 +23,8 @@ namespace Route53
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -43,6 +45,7 @@ namespace Route53
         */
         Route53Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
                       const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+
 
         virtual ~Route53Client();
 

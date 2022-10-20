@@ -36,8 +36,9 @@ using namespace Aws::LexRuntimeV2::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "lex";
-static const char* ALLOCATION_TAG = "LexRuntimeV2Client";
+
+const char* LexRuntimeV2Client::SERVICE_NAME = "lex";
+const char* LexRuntimeV2Client::ALLOCATION_TAG = "LexRuntimeV2Client";
 
 LexRuntimeV2Client::LexRuntimeV2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
@@ -414,7 +415,7 @@ void LexRuntimeV2Client::StartConversationAsync(Model::StartConversationRequest&
   request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
 
   m_executor->Submit([this, uri, &request, responseHandler, handlerContext] () mutable {
-      JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+      JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
       if(outcome.IsSuccess())
       {
         responseHandler(this, request, StartConversationOutcome(NoResult()), handlerContext);

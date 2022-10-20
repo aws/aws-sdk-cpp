@@ -32,8 +32,9 @@ using namespace Aws::TranscribeStreamingService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "transcribe";
-static const char* ALLOCATION_TAG = "TranscribeStreamingServiceClient";
+
+const char* TranscribeStreamingServiceClient::SERVICE_NAME = "transcribe";
+const char* TranscribeStreamingServiceClient::ALLOCATION_TAG = "TranscribeStreamingServiceClient";
 
 TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
@@ -151,7 +152,7 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
   request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
 
   m_executor->Submit([this, uri, &request, responseHandler, handlerContext] () mutable {
-      JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+      JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
       if(outcome.IsSuccess())
       {
         responseHandler(this, request, StartMedicalStreamTranscriptionOutcome(NoResult()), handlerContext);
@@ -196,7 +197,7 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
   request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
 
   m_executor->Submit([this, uri, &request, responseHandler, handlerContext] () mutable {
-      JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+      JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
       if(outcome.IsSuccess())
       {
         responseHandler(this, request, StartStreamTranscriptionOutcome(NoResult()), handlerContext);

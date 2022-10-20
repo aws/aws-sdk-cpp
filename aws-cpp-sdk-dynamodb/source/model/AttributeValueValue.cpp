@@ -9,6 +9,7 @@
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
+using Aws::Utils::Array;
 
 //
 // Strings

@@ -29,6 +29,8 @@ namespace FMS
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
+      static const char* SERVICE_NAME;
+      static const char* ALLOCATION_TAG;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
@@ -49,6 +51,7 @@ namespace FMS
         */
         FMSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
                   const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+
 
         virtual ~FMSClient();
 

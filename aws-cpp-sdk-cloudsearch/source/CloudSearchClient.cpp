@@ -56,8 +56,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "cloudsearch";
-static const char* ALLOCATION_TAG = "CloudSearchClient";
+const char* CloudSearchClient::SERVICE_NAME = "cloudsearch";
+const char* CloudSearchClient::ALLOCATION_TAG = "CloudSearchClient";
 
 CloudSearchClient::CloudSearchClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

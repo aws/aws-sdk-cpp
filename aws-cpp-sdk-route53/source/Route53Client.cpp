@@ -100,8 +100,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "route53";
-static const char* ALLOCATION_TAG = "Route53Client";
+const char* Route53Client::SERVICE_NAME = "route53";
+const char* Route53Client::ALLOCATION_TAG = "Route53Client";
 
 Route53Client::Route53Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
