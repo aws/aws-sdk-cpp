@@ -56,6 +56,93 @@ namespace CloudWatchRUM
 
 
         /**
+         * <p>Specifies the extended metrics that you want a CloudWatch RUM app monitor to
+         * send to a destination. Valid destinations include CloudWatch and Evidently.</p>
+         * <p>By default, RUM app monitors send some metrics to CloudWatch. These default
+         * metrics are listed in <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html">CloudWatch
+         * metrics that you can collect with CloudWatch RUM</a>.</p> <p>If you also send
+         * extended metrics, you can send metrics to Evidently as well as CloudWatch, and
+         * you can also optionally send the metrics with additional dimensions. The valid
+         * dimension names for the additional dimensions are <code>BrowserName</code>,
+         * <code>CountryCode</code>, <code>DeviceType</code>, <code>FileType</code>,
+         * <code>OSName</code>, and <code>PageId</code>. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
+         * Extended metrics that you can send to CloudWatch and CloudWatch
+         * Evidently</a>.</p> <p>The maximum number of metric definitions that you can
+         * specify in one <code>BatchCreateRumMetricDefinitions</code> operation is
+         * 200.</p> <pre><code> &lt;p&gt;The maximum number of metric definitions that one
+         * destination can contain is 2000.&lt;/p&gt; &lt;p&gt;Extended metrics sent are
+         * charged as CloudWatch custom metrics. Each combination of additional dimension
+         * name and dimension value counts as a custom metric. For more information, see
+         * &lt;a href=&quot;https://aws.amazon.com/cloudwatch/pricing/&quot;&gt;Amazon
+         * CloudWatch Pricing&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;You must have already created a
+         * destination for the metrics before you send them. For more information, see
+         * &lt;a
+         * href=&quot;https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html&quot;&gt;PutRumMetricsDestination&lt;/a&gt;.&lt;/p&gt;
+         * &lt;p&gt;If some metric definitions specified in a
+         * &lt;code&gt;BatchCreateRumMetricDefinitions&lt;/code&gt; operations are not
+         * valid, those metric definitions fail and return errors, but all valid metric
+         * definitions in the same operation still succeed.&lt;/p&gt;
+         * </code></pre><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchCreateRumMetricDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchCreateRumMetricDefinitionsOutcome BatchCreateRumMetricDefinitions(const Model::BatchCreateRumMetricDefinitionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchCreateRumMetricDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchCreateRumMetricDefinitionsOutcomeCallable BatchCreateRumMetricDefinitionsCallable(const Model::BatchCreateRumMetricDefinitionsRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchCreateRumMetricDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchCreateRumMetricDefinitionsAsync(const Model::BatchCreateRumMetricDefinitionsRequest& request, const BatchCreateRumMetricDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the specified metrics from being sent to an extended metrics
+         * destination.</p> <p>If some metric definition IDs specified in a
+         * <code>BatchDeleteRumMetricDefinitions</code> operations are not valid, those
+         * metric definitions fail and return errors, but all valid metric definition IDs
+         * in the same operation are still deleted.</p> <p>The maximum number of metric
+         * definitions that you can specify in one
+         * <code>BatchDeleteRumMetricDefinitions</code> operation is 200.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchDeleteRumMetricDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteRumMetricDefinitionsOutcome BatchDeleteRumMetricDefinitions(const Model::BatchDeleteRumMetricDefinitionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDeleteRumMetricDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDeleteRumMetricDefinitionsOutcomeCallable BatchDeleteRumMetricDefinitionsCallable(const Model::BatchDeleteRumMetricDefinitionsRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchDeleteRumMetricDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDeleteRumMetricDefinitionsAsync(const Model::BatchDeleteRumMetricDefinitionsRequest& request, const BatchDeleteRumMetricDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the list of metrics and dimensions that a RUM app monitor is
+         * sending to a single destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchGetRumMetricDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetRumMetricDefinitionsOutcome BatchGetRumMetricDefinitions(const Model::BatchGetRumMetricDefinitionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetRumMetricDefinitions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetRumMetricDefinitionsOutcomeCallable BatchGetRumMetricDefinitionsCallable(const Model::BatchGetRumMetricDefinitionsRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchGetRumMetricDefinitions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetRumMetricDefinitionsAsync(const Model::BatchGetRumMetricDefinitionsRequest& request, const BatchGetRumMetricDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a Amazon CloudWatch RUM app monitor, which collects telemetry data
          * from your application and sends that data to RUM. The data includes performance
          * and reliability information such as page load time, client-side errors, and user
@@ -100,6 +187,25 @@ namespace CloudWatchRUM
          * An Async wrapper for DeleteAppMonitor that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAppMonitorAsync(const Model::DeleteAppMonitorRequest& request, const DeleteAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a destination for CloudWatch RUM extended metrics, so that the
+         * specified app monitor stops sending extended metrics to that
+         * destination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DeleteRumMetricsDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRumMetricsDestinationOutcome DeleteRumMetricsDestination(const Model::DeleteRumMetricsDestinationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRumMetricsDestination that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRumMetricsDestinationOutcomeCallable DeleteRumMetricsDestinationCallable(const Model::DeleteRumMetricsDestinationRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteRumMetricsDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRumMetricsDestinationAsync(const Model::DeleteRumMetricsDestinationRequest& request, const DeleteRumMetricsDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the complete configuration information for one app
@@ -157,6 +263,27 @@ namespace CloudWatchRUM
         virtual void ListAppMonitorsAsync(const Model::ListAppMonitorsRequest& request, const ListAppMonitorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of destinations that you have created to receive RUM extended
+         * metrics, for the specified app monitor.</p> <p>For more information about
+         * extended metrics, see <a
+         * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrcs.html">AddRumMetrics</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListRumMetricsDestinations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRumMetricsDestinationsOutcome ListRumMetricsDestinations(const Model::ListRumMetricsDestinationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRumMetricsDestinations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRumMetricsDestinationsOutcomeCallable ListRumMetricsDestinationsCallable(const Model::ListRumMetricsDestinationsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListRumMetricsDestinations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRumMetricsDestinationsAsync(const Model::ListRumMetricsDestinationsRequest& request, const ListRumMetricsDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Displays the tags associated with a CloudWatch RUM resource.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListTagsForResource">AWS
@@ -194,6 +321,27 @@ namespace CloudWatchRUM
          * An Async wrapper for PutRumEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutRumEventsAsync(const Model::PutRumEventsRequest& request, const PutRumEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates or updates a destination to receive extended metrics from CloudWatch
+         * RUM. You can send extended metrics to CloudWatch or to a CloudWatch Evidently
+         * experiment.</p> <p>For more information about extended metrics, see <a
+         * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrics.html">AddRumMetrics</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/PutRumMetricsDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutRumMetricsDestinationOutcome PutRumMetricsDestination(const Model::PutRumMetricsDestinationRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutRumMetricsDestination that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutRumMetricsDestinationOutcomeCallable PutRumMetricsDestinationCallable(const Model::PutRumMetricsDestinationRequest& request) const;
+
+        /**
+         * An Async wrapper for PutRumMetricsDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutRumMetricsDestinationAsync(const Model::PutRumMetricsDestinationRequest& request, const PutRumMetricsDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch RUM
@@ -272,6 +420,26 @@ namespace CloudWatchRUM
          * An Async wrapper for UpdateAppMonitor that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateAppMonitorAsync(const Model::UpdateAppMonitorRequest& request, const UpdateAppMonitorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies one existing metric definition for CloudWatch RUM extended metrics.
+         * For more information about extended metrics, see <a
+         * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UpdateRumMetricDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRumMetricDefinitionOutcome UpdateRumMetricDefinition(const Model::UpdateRumMetricDefinitionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRumMetricDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRumMetricDefinitionOutcomeCallable UpdateRumMetricDefinitionCallable(const Model::UpdateRumMetricDefinitionRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateRumMetricDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRumMetricDefinitionAsync(const Model::UpdateRumMetricDefinitionRequest& request, const UpdateRumMetricDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

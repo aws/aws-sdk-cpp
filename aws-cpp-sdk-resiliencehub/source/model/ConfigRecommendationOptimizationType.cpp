@@ -25,6 +25,7 @@ namespace Aws
         static const int BestAZRecovery_HASH = HashingUtils::HashString("BestAZRecovery");
         static const int LeastErrors_HASH = HashingUtils::HashString("LeastErrors");
         static const int BestAttainable_HASH = HashingUtils::HashString("BestAttainable");
+        static const int BestRegionRecovery_HASH = HashingUtils::HashString("BestRegionRecovery");
 
 
         ConfigRecommendationOptimizationType GetConfigRecommendationOptimizationTypeForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return ConfigRecommendationOptimizationType::BestAttainable;
           }
+          else if (hashCode == BestRegionRecovery_HASH)
+          {
+            return ConfigRecommendationOptimizationType::BestRegionRecovery;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "LeastErrors";
           case ConfigRecommendationOptimizationType::BestAttainable:
             return "BestAttainable";
+          case ConfigRecommendationOptimizationType::BestRegionRecovery:
+            return "BestRegionRecovery";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

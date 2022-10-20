@@ -17,6 +17,7 @@
 
 /* Service model headers required in GlobalAcceleratorClient header */
 #include <aws/globalaccelerator/model/AddCustomRoutingEndpointsResult.h>
+#include <aws/globalaccelerator/model/AddEndpointsResult.h>
 #include <aws/globalaccelerator/model/AdvertiseByoipCidrResult.h>
 #include <aws/globalaccelerator/model/CreateAcceleratorResult.h>
 #include <aws/globalaccelerator/model/CreateCustomRoutingAcceleratorResult.h>
@@ -92,6 +93,7 @@ namespace Aws
     {
       /* Service model forward declarations required in GlobalAcceleratorClient header */
       class AddCustomRoutingEndpointsRequest;
+      class AddEndpointsRequest;
       class AdvertiseByoipCidrRequest;
       class AllowCustomRoutingTrafficRequest;
       class CreateAcceleratorRequest;
@@ -128,6 +130,7 @@ namespace Aws
       class ListTagsForResourceRequest;
       class ProvisionByoipCidrRequest;
       class RemoveCustomRoutingEndpointsRequest;
+      class RemoveEndpointsRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateAcceleratorRequest;
@@ -142,6 +145,7 @@ namespace Aws
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<AddCustomRoutingEndpointsResult, GlobalAcceleratorError> AddCustomRoutingEndpointsOutcome;
+      typedef Aws::Utils::Outcome<AddEndpointsResult, GlobalAcceleratorError> AddEndpointsOutcome;
       typedef Aws::Utils::Outcome<AdvertiseByoipCidrResult, GlobalAcceleratorError> AdvertiseByoipCidrOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> AllowCustomRoutingTrafficOutcome;
       typedef Aws::Utils::Outcome<CreateAcceleratorResult, GlobalAcceleratorError> CreateAcceleratorOutcome;
@@ -178,6 +182,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, GlobalAcceleratorError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ProvisionByoipCidrResult, GlobalAcceleratorError> ProvisionByoipCidrOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> RemoveCustomRoutingEndpointsOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, GlobalAcceleratorError> RemoveEndpointsOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, GlobalAcceleratorError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, GlobalAcceleratorError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateAcceleratorResult, GlobalAcceleratorError> UpdateAcceleratorOutcome;
@@ -192,6 +197,7 @@ namespace Aws
 
       /* Service model Outcome callable definitions */
       typedef std::future<AddCustomRoutingEndpointsOutcome> AddCustomRoutingEndpointsOutcomeCallable;
+      typedef std::future<AddEndpointsOutcome> AddEndpointsOutcomeCallable;
       typedef std::future<AdvertiseByoipCidrOutcome> AdvertiseByoipCidrOutcomeCallable;
       typedef std::future<AllowCustomRoutingTrafficOutcome> AllowCustomRoutingTrafficOutcomeCallable;
       typedef std::future<CreateAcceleratorOutcome> CreateAcceleratorOutcomeCallable;
@@ -228,6 +234,7 @@ namespace Aws
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ProvisionByoipCidrOutcome> ProvisionByoipCidrOutcomeCallable;
       typedef std::future<RemoveCustomRoutingEndpointsOutcome> RemoveCustomRoutingEndpointsOutcomeCallable;
+      typedef std::future<RemoveEndpointsOutcome> RemoveEndpointsOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateAcceleratorOutcome> UpdateAcceleratorOutcomeCallable;
@@ -245,6 +252,7 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::AddCustomRoutingEndpointsRequest&, const Model::AddCustomRoutingEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddCustomRoutingEndpointsResponseReceivedHandler;
+    typedef std::function<void(const GlobalAcceleratorClient*, const Model::AddEndpointsRequest&, const Model::AddEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddEndpointsResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::AdvertiseByoipCidrRequest&, const Model::AdvertiseByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AdvertiseByoipCidrResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::AllowCustomRoutingTrafficRequest&, const Model::AllowCustomRoutingTrafficOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AllowCustomRoutingTrafficResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::CreateAcceleratorRequest&, const Model::CreateAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAcceleratorResponseReceivedHandler;
@@ -281,6 +289,7 @@ namespace Aws
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::ProvisionByoipCidrRequest&, const Model::ProvisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionByoipCidrResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::RemoveCustomRoutingEndpointsRequest&, const Model::RemoveCustomRoutingEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveCustomRoutingEndpointsResponseReceivedHandler;
+    typedef std::function<void(const GlobalAcceleratorClient*, const Model::RemoveEndpointsRequest&, const Model::RemoveEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveEndpointsResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const GlobalAcceleratorClient*, const Model::UpdateAcceleratorRequest&, const Model::UpdateAcceleratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAcceleratorResponseReceivedHandler;

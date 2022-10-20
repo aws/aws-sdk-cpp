@@ -187,56 +187,56 @@ namespace Model
 
 
     /**
-     * <p>A list of pages in the CloudWatch RUM console that are to be displayed with a
-     * "favorite" icon.</p>
+     * <p>A list of pages in your application that are to be displayed with a
+     * "favorite" icon in the CloudWatch RUM console.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFavoritePages() const{ return m_favoritePages; }
 
     /**
-     * <p>A list of pages in the CloudWatch RUM console that are to be displayed with a
-     * "favorite" icon.</p>
+     * <p>A list of pages in your application that are to be displayed with a
+     * "favorite" icon in the CloudWatch RUM console.</p>
      */
     inline bool FavoritePagesHasBeenSet() const { return m_favoritePagesHasBeenSet; }
 
     /**
-     * <p>A list of pages in the CloudWatch RUM console that are to be displayed with a
-     * "favorite" icon.</p>
+     * <p>A list of pages in your application that are to be displayed with a
+     * "favorite" icon in the CloudWatch RUM console.</p>
      */
     inline void SetFavoritePages(const Aws::Vector<Aws::String>& value) { m_favoritePagesHasBeenSet = true; m_favoritePages = value; }
 
     /**
-     * <p>A list of pages in the CloudWatch RUM console that are to be displayed with a
-     * "favorite" icon.</p>
+     * <p>A list of pages in your application that are to be displayed with a
+     * "favorite" icon in the CloudWatch RUM console.</p>
      */
     inline void SetFavoritePages(Aws::Vector<Aws::String>&& value) { m_favoritePagesHasBeenSet = true; m_favoritePages = std::move(value); }
 
     /**
-     * <p>A list of pages in the CloudWatch RUM console that are to be displayed with a
-     * "favorite" icon.</p>
+     * <p>A list of pages in your application that are to be displayed with a
+     * "favorite" icon in the CloudWatch RUM console.</p>
      */
     inline AppMonitorConfiguration& WithFavoritePages(const Aws::Vector<Aws::String>& value) { SetFavoritePages(value); return *this;}
 
     /**
-     * <p>A list of pages in the CloudWatch RUM console that are to be displayed with a
-     * "favorite" icon.</p>
+     * <p>A list of pages in your application that are to be displayed with a
+     * "favorite" icon in the CloudWatch RUM console.</p>
      */
     inline AppMonitorConfiguration& WithFavoritePages(Aws::Vector<Aws::String>&& value) { SetFavoritePages(std::move(value)); return *this;}
 
     /**
-     * <p>A list of pages in the CloudWatch RUM console that are to be displayed with a
-     * "favorite" icon.</p>
+     * <p>A list of pages in your application that are to be displayed with a
+     * "favorite" icon in the CloudWatch RUM console.</p>
      */
     inline AppMonitorConfiguration& AddFavoritePages(const Aws::String& value) { m_favoritePagesHasBeenSet = true; m_favoritePages.push_back(value); return *this; }
 
     /**
-     * <p>A list of pages in the CloudWatch RUM console that are to be displayed with a
-     * "favorite" icon.</p>
+     * <p>A list of pages in your application that are to be displayed with a
+     * "favorite" icon in the CloudWatch RUM console.</p>
      */
     inline AppMonitorConfiguration& AddFavoritePages(Aws::String&& value) { m_favoritePagesHasBeenSet = true; m_favoritePages.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of pages in the CloudWatch RUM console that are to be displayed with a
-     * "favorite" icon.</p>
+     * <p>A list of pages in your application that are to be displayed with a
+     * "favorite" icon in the CloudWatch RUM console.</p>
      */
     inline AppMonitorConfiguration& AddFavoritePages(const char* value) { m_favoritePagesHasBeenSet = true; m_favoritePages.push_back(value); return *this; }
 
@@ -422,34 +422,42 @@ namespace Model
 
 
     /**
-     * <p>Specifies the percentage of user sessions to use for RUM data collection.
-     * Choosing a higher percentage gives you more data but also incurs more costs.</p>
-     * <p>The number you specify is the percentage of user sessions that will be
-     * used.</p> <p>If you omit this parameter, the default of 10 is used.</p>
+     * <p>Specifies the portion of user sessions to use for RUM data collection.
+     * Choosing a higher portion gives you more data but also incurs more costs.</p>
+     * <p>The range for this value is 0 to 1 inclusive. Setting this to 1 means that
+     * 100% of user sessions are sampled, and setting it to 0.1 means that 10% of user
+     * sessions are sampled.</p> <p>If you omit this parameter, the default of 0.1 is
+     * used, and 10% of sessions will be sampled.</p>
      */
     inline double GetSessionSampleRate() const{ return m_sessionSampleRate; }
 
     /**
-     * <p>Specifies the percentage of user sessions to use for RUM data collection.
-     * Choosing a higher percentage gives you more data but also incurs more costs.</p>
-     * <p>The number you specify is the percentage of user sessions that will be
-     * used.</p> <p>If you omit this parameter, the default of 10 is used.</p>
+     * <p>Specifies the portion of user sessions to use for RUM data collection.
+     * Choosing a higher portion gives you more data but also incurs more costs.</p>
+     * <p>The range for this value is 0 to 1 inclusive. Setting this to 1 means that
+     * 100% of user sessions are sampled, and setting it to 0.1 means that 10% of user
+     * sessions are sampled.</p> <p>If you omit this parameter, the default of 0.1 is
+     * used, and 10% of sessions will be sampled.</p>
      */
     inline bool SessionSampleRateHasBeenSet() const { return m_sessionSampleRateHasBeenSet; }
 
     /**
-     * <p>Specifies the percentage of user sessions to use for RUM data collection.
-     * Choosing a higher percentage gives you more data but also incurs more costs.</p>
-     * <p>The number you specify is the percentage of user sessions that will be
-     * used.</p> <p>If you omit this parameter, the default of 10 is used.</p>
+     * <p>Specifies the portion of user sessions to use for RUM data collection.
+     * Choosing a higher portion gives you more data but also incurs more costs.</p>
+     * <p>The range for this value is 0 to 1 inclusive. Setting this to 1 means that
+     * 100% of user sessions are sampled, and setting it to 0.1 means that 10% of user
+     * sessions are sampled.</p> <p>If you omit this parameter, the default of 0.1 is
+     * used, and 10% of sessions will be sampled.</p>
      */
     inline void SetSessionSampleRate(double value) { m_sessionSampleRateHasBeenSet = true; m_sessionSampleRate = value; }
 
     /**
-     * <p>Specifies the percentage of user sessions to use for RUM data collection.
-     * Choosing a higher percentage gives you more data but also incurs more costs.</p>
-     * <p>The number you specify is the percentage of user sessions that will be
-     * used.</p> <p>If you omit this parameter, the default of 10 is used.</p>
+     * <p>Specifies the portion of user sessions to use for RUM data collection.
+     * Choosing a higher portion gives you more data but also incurs more costs.</p>
+     * <p>The range for this value is 0 to 1 inclusive. Setting this to 1 means that
+     * 100% of user sessions are sampled, and setting it to 0.1 means that 10% of user
+     * sessions are sampled.</p> <p>If you omit this parameter, the default of 0.1 is
+     * used, and 10% of sessions will be sampled.</p>
      */
     inline AppMonitorConfiguration& WithSessionSampleRate(double value) { SetSessionSampleRate(value); return *this;}
 

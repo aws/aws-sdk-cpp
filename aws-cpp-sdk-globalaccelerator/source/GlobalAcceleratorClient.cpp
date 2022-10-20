@@ -21,6 +21,7 @@
 #include <aws/globalaccelerator/GlobalAcceleratorEndpoint.h>
 #include <aws/globalaccelerator/GlobalAcceleratorErrorMarshaller.h>
 #include <aws/globalaccelerator/model/AddCustomRoutingEndpointsRequest.h>
+#include <aws/globalaccelerator/model/AddEndpointsRequest.h>
 #include <aws/globalaccelerator/model/AdvertiseByoipCidrRequest.h>
 #include <aws/globalaccelerator/model/AllowCustomRoutingTrafficRequest.h>
 #include <aws/globalaccelerator/model/CreateAcceleratorRequest.h>
@@ -57,6 +58,7 @@
 #include <aws/globalaccelerator/model/ListTagsForResourceRequest.h>
 #include <aws/globalaccelerator/model/ProvisionByoipCidrRequest.h>
 #include <aws/globalaccelerator/model/RemoveCustomRoutingEndpointsRequest.h>
+#include <aws/globalaccelerator/model/RemoveEndpointsRequest.h>
 #include <aws/globalaccelerator/model/TagResourceRequest.h>
 #include <aws/globalaccelerator/model/UntagResourceRequest.h>
 #include <aws/globalaccelerator/model/UpdateAcceleratorRequest.h>
@@ -166,6 +168,28 @@ void GlobalAcceleratorClient::AddCustomRoutingEndpointsAsync(const AddCustomRout
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, AddCustomRoutingEndpoints(request), context);
+    } );
+}
+
+AddEndpointsOutcome GlobalAcceleratorClient::AddEndpoints(const AddEndpointsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AddEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AddEndpointsOutcomeCallable GlobalAcceleratorClient::AddEndpointsCallable(const AddEndpointsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddEndpoints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlobalAcceleratorClient::AddEndpointsAsync(const AddEndpointsRequest& request, const AddEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AddEndpoints(request), context);
     } );
 }
 
@@ -958,6 +982,28 @@ void GlobalAcceleratorClient::RemoveCustomRoutingEndpointsAsync(const RemoveCust
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, RemoveCustomRoutingEndpoints(request), context);
+    } );
+}
+
+RemoveEndpointsOutcome GlobalAcceleratorClient::RemoveEndpoints(const RemoveEndpointsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RemoveEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RemoveEndpointsOutcomeCallable GlobalAcceleratorClient::RemoveEndpointsCallable(const RemoveEndpointsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveEndpointsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveEndpoints(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlobalAcceleratorClient::RemoveEndpointsAsync(const RemoveEndpointsRequest& request, const RemoveEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, RemoveEndpoints(request), context);
     } );
 }
 
