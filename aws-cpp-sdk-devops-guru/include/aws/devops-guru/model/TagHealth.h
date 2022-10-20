@@ -330,6 +330,31 @@ namespace Model
      */
     inline TagHealth& WithInsight(InsightHealth&& value) { SetInsight(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in your account that are
+     * specified by an Amazon Web Services tag. </p>
+     */
+    inline long long GetAnalyzedResourceCount() const{ return m_analyzedResourceCount; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in your account that are
+     * specified by an Amazon Web Services tag. </p>
+     */
+    inline bool AnalyzedResourceCountHasBeenSet() const { return m_analyzedResourceCountHasBeenSet; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in your account that are
+     * specified by an Amazon Web Services tag. </p>
+     */
+    inline void SetAnalyzedResourceCount(long long value) { m_analyzedResourceCountHasBeenSet = true; m_analyzedResourceCount = value; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in your account that are
+     * specified by an Amazon Web Services tag. </p>
+     */
+    inline TagHealth& WithAnalyzedResourceCount(long long value) { SetAnalyzedResourceCount(value); return *this;}
+
   private:
 
     Aws::String m_appBoundaryKey;
@@ -340,6 +365,9 @@ namespace Model
 
     InsightHealth m_insight;
     bool m_insightHasBeenSet = false;
+
+    long long m_analyzedResourceCount;
+    bool m_analyzedResourceCountHasBeenSet = false;
   };
 
 } // namespace Model

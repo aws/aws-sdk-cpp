@@ -20,16 +20,23 @@
 #include <aws/rum/CloudWatchRUMClient.h>
 #include <aws/rum/CloudWatchRUMEndpoint.h>
 #include <aws/rum/CloudWatchRUMErrorMarshaller.h>
+#include <aws/rum/model/BatchCreateRumMetricDefinitionsRequest.h>
+#include <aws/rum/model/BatchDeleteRumMetricDefinitionsRequest.h>
+#include <aws/rum/model/BatchGetRumMetricDefinitionsRequest.h>
 #include <aws/rum/model/CreateAppMonitorRequest.h>
 #include <aws/rum/model/DeleteAppMonitorRequest.h>
+#include <aws/rum/model/DeleteRumMetricsDestinationRequest.h>
 #include <aws/rum/model/GetAppMonitorRequest.h>
 #include <aws/rum/model/GetAppMonitorDataRequest.h>
 #include <aws/rum/model/ListAppMonitorsRequest.h>
+#include <aws/rum/model/ListRumMetricsDestinationsRequest.h>
 #include <aws/rum/model/ListTagsForResourceRequest.h>
 #include <aws/rum/model/PutRumEventsRequest.h>
+#include <aws/rum/model/PutRumMetricsDestinationRequest.h>
 #include <aws/rum/model/TagResourceRequest.h>
 #include <aws/rum/model/UntagResourceRequest.h>
 #include <aws/rum/model/UpdateAppMonitorRequest.h>
+#include <aws/rum/model/UpdateRumMetricDefinitionRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -119,6 +126,111 @@ void CloudWatchRUMClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+BatchCreateRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchCreateRumMetricDefinitions(const BatchCreateRumMetricDefinitionsRequest& request) const
+{
+  if (!request.AppMonitorNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchCreateRumMetricDefinitions", "Required field: AppMonitorName, is not set");
+    return BatchCreateRumMetricDefinitionsOutcome(Aws::Client::AWSError<CloudWatchRUMErrors>(CloudWatchRUMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppMonitorName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/rummetrics/");
+  uri.AddPathSegment(request.GetAppMonitorName());
+  uri.AddPathSegments("/metrics");
+  return BatchCreateRumMetricDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchCreateRumMetricDefinitionsOutcomeCallable CloudWatchRUMClient::BatchCreateRumMetricDefinitionsCallable(const BatchCreateRumMetricDefinitionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchCreateRumMetricDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchCreateRumMetricDefinitions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchRUMClient::BatchCreateRumMetricDefinitionsAsync(const BatchCreateRumMetricDefinitionsRequest& request, const BatchCreateRumMetricDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchCreateRumMetricDefinitions(request), context);
+    } );
+}
+
+BatchDeleteRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchDeleteRumMetricDefinitions(const BatchDeleteRumMetricDefinitionsRequest& request) const
+{
+  if (!request.AppMonitorNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchDeleteRumMetricDefinitions", "Required field: AppMonitorName, is not set");
+    return BatchDeleteRumMetricDefinitionsOutcome(Aws::Client::AWSError<CloudWatchRUMErrors>(CloudWatchRUMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppMonitorName]", false));
+  }
+  if (!request.DestinationHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchDeleteRumMetricDefinitions", "Required field: Destination, is not set");
+    return BatchDeleteRumMetricDefinitionsOutcome(Aws::Client::AWSError<CloudWatchRUMErrors>(CloudWatchRUMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Destination]", false));
+  }
+  if (!request.MetricDefinitionIdsHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchDeleteRumMetricDefinitions", "Required field: MetricDefinitionIds, is not set");
+    return BatchDeleteRumMetricDefinitionsOutcome(Aws::Client::AWSError<CloudWatchRUMErrors>(CloudWatchRUMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MetricDefinitionIds]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/rummetrics/");
+  uri.AddPathSegment(request.GetAppMonitorName());
+  uri.AddPathSegments("/metrics");
+  return BatchDeleteRumMetricDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchDeleteRumMetricDefinitionsOutcomeCallable CloudWatchRUMClient::BatchDeleteRumMetricDefinitionsCallable(const BatchDeleteRumMetricDefinitionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDeleteRumMetricDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDeleteRumMetricDefinitions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchRUMClient::BatchDeleteRumMetricDefinitionsAsync(const BatchDeleteRumMetricDefinitionsRequest& request, const BatchDeleteRumMetricDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchDeleteRumMetricDefinitions(request), context);
+    } );
+}
+
+BatchGetRumMetricDefinitionsOutcome CloudWatchRUMClient::BatchGetRumMetricDefinitions(const BatchGetRumMetricDefinitionsRequest& request) const
+{
+  if (!request.AppMonitorNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchGetRumMetricDefinitions", "Required field: AppMonitorName, is not set");
+    return BatchGetRumMetricDefinitionsOutcome(Aws::Client::AWSError<CloudWatchRUMErrors>(CloudWatchRUMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppMonitorName]", false));
+  }
+  if (!request.DestinationHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchGetRumMetricDefinitions", "Required field: Destination, is not set");
+    return BatchGetRumMetricDefinitionsOutcome(Aws::Client::AWSError<CloudWatchRUMErrors>(CloudWatchRUMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Destination]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/rummetrics/");
+  uri.AddPathSegment(request.GetAppMonitorName());
+  uri.AddPathSegments("/metrics");
+  return BatchGetRumMetricDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetRumMetricDefinitionsOutcomeCallable CloudWatchRUMClient::BatchGetRumMetricDefinitionsCallable(const BatchGetRumMetricDefinitionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetRumMetricDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetRumMetricDefinitions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchRUMClient::BatchGetRumMetricDefinitionsAsync(const BatchGetRumMetricDefinitionsRequest& request, const BatchGetRumMetricDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetRumMetricDefinitions(request), context);
+    } );
+}
+
 CreateAppMonitorOutcome CloudWatchRUMClient::CreateAppMonitor(const CreateAppMonitorRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
@@ -168,6 +280,41 @@ void CloudWatchRUMClient::DeleteAppMonitorAsync(const DeleteAppMonitorRequest& r
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DeleteAppMonitor(request), context);
+    } );
+}
+
+DeleteRumMetricsDestinationOutcome CloudWatchRUMClient::DeleteRumMetricsDestination(const DeleteRumMetricsDestinationRequest& request) const
+{
+  if (!request.AppMonitorNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRumMetricsDestination", "Required field: AppMonitorName, is not set");
+    return DeleteRumMetricsDestinationOutcome(Aws::Client::AWSError<CloudWatchRUMErrors>(CloudWatchRUMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppMonitorName]", false));
+  }
+  if (!request.DestinationHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRumMetricsDestination", "Required field: Destination, is not set");
+    return DeleteRumMetricsDestinationOutcome(Aws::Client::AWSError<CloudWatchRUMErrors>(CloudWatchRUMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Destination]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/rummetrics/");
+  uri.AddPathSegment(request.GetAppMonitorName());
+  uri.AddPathSegments("/metricsdestination");
+  return DeleteRumMetricsDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteRumMetricsDestinationOutcomeCallable CloudWatchRUMClient::DeleteRumMetricsDestinationCallable(const DeleteRumMetricsDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRumMetricsDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRumMetricsDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchRUMClient::DeleteRumMetricsDestinationAsync(const DeleteRumMetricsDestinationRequest& request, const DeleteRumMetricsDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteRumMetricsDestination(request), context);
     } );
 }
 
@@ -253,6 +400,36 @@ void CloudWatchRUMClient::ListAppMonitorsAsync(const ListAppMonitorsRequest& req
     } );
 }
 
+ListRumMetricsDestinationsOutcome CloudWatchRUMClient::ListRumMetricsDestinations(const ListRumMetricsDestinationsRequest& request) const
+{
+  if (!request.AppMonitorNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRumMetricsDestinations", "Required field: AppMonitorName, is not set");
+    return ListRumMetricsDestinationsOutcome(Aws::Client::AWSError<CloudWatchRUMErrors>(CloudWatchRUMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppMonitorName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/rummetrics/");
+  uri.AddPathSegment(request.GetAppMonitorName());
+  uri.AddPathSegments("/metricsdestination");
+  return ListRumMetricsDestinationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRumMetricsDestinationsOutcomeCallable CloudWatchRUMClient::ListRumMetricsDestinationsCallable(const ListRumMetricsDestinationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRumMetricsDestinationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRumMetricsDestinations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchRUMClient::ListRumMetricsDestinationsAsync(const ListRumMetricsDestinationsRequest& request, const ListRumMetricsDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRumMetricsDestinations(request), context);
+    } );
+}
+
 ListTagsForResourceOutcome CloudWatchRUMClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -317,6 +494,36 @@ void CloudWatchRUMClient::PutRumEventsAsync(const PutRumEventsRequest& request, 
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutRumEvents(request), context);
+    } );
+}
+
+PutRumMetricsDestinationOutcome CloudWatchRUMClient::PutRumMetricsDestination(const PutRumMetricsDestinationRequest& request) const
+{
+  if (!request.AppMonitorNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutRumMetricsDestination", "Required field: AppMonitorName, is not set");
+    return PutRumMetricsDestinationOutcome(Aws::Client::AWSError<CloudWatchRUMErrors>(CloudWatchRUMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppMonitorName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/rummetrics/");
+  uri.AddPathSegment(request.GetAppMonitorName());
+  uri.AddPathSegments("/metricsdestination");
+  return PutRumMetricsDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutRumMetricsDestinationOutcomeCallable CloudWatchRUMClient::PutRumMetricsDestinationCallable(const PutRumMetricsDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutRumMetricsDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRumMetricsDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchRUMClient::PutRumMetricsDestinationAsync(const PutRumMetricsDestinationRequest& request, const PutRumMetricsDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutRumMetricsDestination(request), context);
     } );
 }
 
@@ -409,6 +616,36 @@ void CloudWatchRUMClient::UpdateAppMonitorAsync(const UpdateAppMonitorRequest& r
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateAppMonitor(request), context);
+    } );
+}
+
+UpdateRumMetricDefinitionOutcome CloudWatchRUMClient::UpdateRumMetricDefinition(const UpdateRumMetricDefinitionRequest& request) const
+{
+  if (!request.AppMonitorNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRumMetricDefinition", "Required field: AppMonitorName, is not set");
+    return UpdateRumMetricDefinitionOutcome(Aws::Client::AWSError<CloudWatchRUMErrors>(CloudWatchRUMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppMonitorName]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/rummetrics/");
+  uri.AddPathSegment(request.GetAppMonitorName());
+  uri.AddPathSegments("/metrics");
+  return UpdateRumMetricDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateRumMetricDefinitionOutcomeCallable CloudWatchRUMClient::UpdateRumMetricDefinitionCallable(const UpdateRumMetricDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRumMetricDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRumMetricDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchRUMClient::UpdateRumMetricDefinitionAsync(const UpdateRumMetricDefinitionRequest& request, const UpdateRumMetricDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateRumMetricDefinition(request), context);
     } );
 }
 

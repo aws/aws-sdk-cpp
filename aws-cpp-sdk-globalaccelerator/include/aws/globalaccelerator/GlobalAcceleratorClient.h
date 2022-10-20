@@ -126,6 +126,34 @@ namespace GlobalAccelerator
         virtual void AddCustomRoutingEndpointsAsync(const Model::AddCustomRoutingEndpointsRequest& request, const AddCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Add endpoints to an endpoint group. The <code>AddEndpoints</code> API
+         * operation is the recommended option for adding endpoints. The alternative
+         * options are to add endpoints when you create an endpoint group (with the <a
+         * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html">CreateEndpointGroup</a>
+         * API) or when you update an endpoint group (with the <a
+         * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
+         * API). </p> <p>There are two advantages to using <code>AddEndpoints</code> to add
+         * endpoints:</p> <ul> <li> <p>It's faster, because Global Accelerator only has to
+         * resolve the new endpoints that you're adding.</p> </li> <li> <p>It's more
+         * convenient, because you don't need to specify all of the current endpoints that
+         * are already in the endpoint group in addition to the new endpoints that you want
+         * to add.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddEndpoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddEndpointsOutcome AddEndpoints(const Model::AddEndpointsRequest& request) const;
+
+        /**
+         * A Callable wrapper for AddEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddEndpointsOutcomeCallable AddEndpointsCallable(const Model::AddEndpointsRequest& request) const;
+
+        /**
+         * An Async wrapper for AddEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddEndpointsAsync(const Model::AddEndpointsRequest& request, const AddEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Advertises an IPv4 address range that is provisioned for use with your Amazon
          * Web Services resources through bring your own IP addresses (BYOIP). It can take
          * a few minutes before traffic to the specified addresses starts routing to Amazon
@@ -869,6 +897,36 @@ namespace GlobalAccelerator
          * An Async wrapper for RemoveCustomRoutingEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RemoveCustomRoutingEndpointsAsync(const Model::RemoveCustomRoutingEndpointsRequest& request, const RemoveCustomRoutingEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Remove endpoints from an endpoint group. </p> <p>The
+         * <code>RemoveEndpoints</code> API operation is the recommended option for
+         * removing endpoints. The alternative is to remove endpoints by updating an
+         * endpoint group by using the <a
+         * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
+         * API operation. There are two advantages to using <code>AddEndpoints</code> to
+         * remove endpoints instead:</p> <ul> <li> <p>It's more convenient, because you
+         * only need to specify the endpoints that you want to remove. With the
+         * <code>UpdateEndpointGroup</code> API operation, you must specify all of the
+         * endpoints in the endpoint group except the ones that you want to remove from the
+         * group.</p> </li> <li> <p>It's faster, because Global Accelerator doesn't need to
+         * resolve any endpoints. With the <code>UpdateEndpointGroup</code> API operation,
+         * Global Accelerator must resolve all of the endpoints that remain in the
+         * group.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveEndpoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveEndpointsOutcome RemoveEndpoints(const Model::RemoveEndpointsRequest& request) const;
+
+        /**
+         * A Callable wrapper for RemoveEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveEndpointsOutcomeCallable RemoveEndpointsCallable(const Model::RemoveEndpointsRequest& request) const;
+
+        /**
+         * An Async wrapper for RemoveEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveEndpointsAsync(const Model::RemoveEndpointsRequest& request, const RemoveEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Add tags to an accelerator resource. </p> <p>For more information, see <a

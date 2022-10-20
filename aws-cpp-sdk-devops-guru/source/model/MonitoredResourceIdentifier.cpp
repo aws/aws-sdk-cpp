@@ -22,7 +22,9 @@ MonitoredResourceIdentifier::MonitoredResourceIdentifier() :
     m_monitoredResourceNameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_resourcePermission(ResourcePermission::NOT_SET),
-    m_resourcePermissionHasBeenSet(false)
+    m_resourcePermissionHasBeenSet(false),
+    m_lastUpdatedHasBeenSet(false),
+    m_resourceCollectionHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ MonitoredResourceIdentifier::MonitoredResourceIdentifier(JsonView jsonValue) :
     m_monitoredResourceNameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_resourcePermission(ResourcePermission::NOT_SET),
-    m_resourcePermissionHasBeenSet(false)
+    m_resourcePermissionHasBeenSet(false),
+    m_lastUpdatedHasBeenSet(false),
+    m_resourceCollectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +62,20 @@ MonitoredResourceIdentifier& MonitoredResourceIdentifier::operator =(JsonView js
     m_resourcePermissionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastUpdated"))
+  {
+    m_lastUpdated = jsonValue.GetDouble("LastUpdated");
+
+    m_lastUpdatedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceCollection"))
+  {
+    m_resourceCollection = jsonValue.GetObject("ResourceCollection");
+
+    m_resourceCollectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +98,17 @@ JsonValue MonitoredResourceIdentifier::Jsonize() const
   if(m_resourcePermissionHasBeenSet)
   {
    payload.WithString("ResourcePermission", ResourcePermissionMapper::GetNameForResourcePermission(m_resourcePermission));
+  }
+
+  if(m_lastUpdatedHasBeenSet)
+  {
+   payload.WithDouble("LastUpdated", m_lastUpdated.SecondsWithMSPrecision());
+  }
+
+  if(m_resourceCollectionHasBeenSet)
+  {
+   payload.WithObject("ResourceCollection", m_resourceCollection.Jsonize());
+
   }
 
   return payload;

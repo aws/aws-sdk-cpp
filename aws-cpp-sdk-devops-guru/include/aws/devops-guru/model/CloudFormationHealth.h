@@ -129,6 +129,31 @@ namespace Model
      */
     inline CloudFormationHealth& WithInsight(InsightHealth&& value) { SetInsight(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in your account that are
+     * specified by an Amazon Web Services CloudFormation stack. </p>
+     */
+    inline long long GetAnalyzedResourceCount() const{ return m_analyzedResourceCount; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in your account that are
+     * specified by an Amazon Web Services CloudFormation stack. </p>
+     */
+    inline bool AnalyzedResourceCountHasBeenSet() const { return m_analyzedResourceCountHasBeenSet; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in your account that are
+     * specified by an Amazon Web Services CloudFormation stack. </p>
+     */
+    inline void SetAnalyzedResourceCount(long long value) { m_analyzedResourceCountHasBeenSet = true; m_analyzedResourceCount = value; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in your account that are
+     * specified by an Amazon Web Services CloudFormation stack. </p>
+     */
+    inline CloudFormationHealth& WithAnalyzedResourceCount(long long value) { SetAnalyzedResourceCount(value); return *this;}
+
   private:
 
     Aws::String m_stackName;
@@ -136,6 +161,9 @@ namespace Model
 
     InsightHealth m_insight;
     bool m_insightHasBeenSet = false;
+
+    long long m_analyzedResourceCount;
+    bool m_analyzedResourceCountHasBeenSet = false;
   };
 
 } // namespace Model

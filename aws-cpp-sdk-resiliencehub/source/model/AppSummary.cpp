@@ -28,7 +28,9 @@ AppSummary::AppSummary() :
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_resiliencyScore(0.0),
-    m_resiliencyScoreHasBeenSet(false)
+    m_resiliencyScoreHasBeenSet(false),
+    m_status(AppStatusType::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ AppSummary::AppSummary(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_resiliencyScore(0.0),
-    m_resiliencyScoreHasBeenSet(false)
+    m_resiliencyScoreHasBeenSet(false),
+    m_status(AppStatusType::NOT_SET),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +102,13 @@ AppSummary& AppSummary::operator =(JsonView jsonValue)
     m_resiliencyScoreHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = AppStatusTypeMapper::GetAppStatusTypeForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -142,6 +153,11 @@ JsonValue AppSummary::Jsonize() const
   {
    payload.WithDouble("resiliencyScore", m_resiliencyScore);
 
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", AppStatusTypeMapper::GetNameForAppStatusType(m_status));
   }
 
   return payload;

@@ -20,7 +20,8 @@ namespace Model
     LeastChange,
     BestAZRecovery,
     LeastErrors,
-    BestAttainable
+    BestAttainable,
+    BestRegionRecovery
   };
 
 namespace ConfigRecommendationOptimizationTypeMapper

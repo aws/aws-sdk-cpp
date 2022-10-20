@@ -8,8 +8,8 @@
 #include <aws/rum/CloudWatchRUMErrors.h>
 #include <aws/rum/model/ConflictException.h>
 #include <aws/rum/model/ThrottlingException.h>
-#include <aws/rum/model/InternalServerException.h>
 #include <aws/rum/model/ResourceNotFoundException.h>
+#include <aws/rum/model/InternalServerException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -32,16 +32,16 @@ template<> AWS_CLOUDWATCHRUM_API ThrottlingException CloudWatchRUMError::GetMode
   return ThrottlingException(this->GetJsonPayload().View());
 }
 
-template<> AWS_CLOUDWATCHRUM_API InternalServerException CloudWatchRUMError::GetModeledError()
-{
-  assert(this->GetErrorType() == CloudWatchRUMErrors::INTERNAL_SERVER);
-  return InternalServerException(this->GetJsonPayload().View());
-}
-
 template<> AWS_CLOUDWATCHRUM_API ResourceNotFoundException CloudWatchRUMError::GetModeledError()
 {
   assert(this->GetErrorType() == CloudWatchRUMErrors::RESOURCE_NOT_FOUND);
   return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CLOUDWATCHRUM_API InternalServerException CloudWatchRUMError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudWatchRUMErrors::INTERNAL_SERVER);
+  return InternalServerException(this->GetJsonPayload().View());
 }
 
 namespace CloudWatchRUMErrorMapper

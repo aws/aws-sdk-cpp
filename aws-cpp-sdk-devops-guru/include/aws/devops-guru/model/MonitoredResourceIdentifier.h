@@ -7,6 +7,8 @@
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-guru/model/ResourcePermission.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/devops-guru/model/ResourceCollection.h>
 #include <utility>
 
 namespace Aws
@@ -152,6 +154,56 @@ namespace Model
      */
     inline MonitoredResourceIdentifier& WithResourcePermission(ResourcePermission&& value) { SetResourcePermission(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The time at which DevOps Guru last updated this resource. </p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+
+    /**
+     * <p> The time at which DevOps Guru last updated this resource. </p>
+     */
+    inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
+
+    /**
+     * <p> The time at which DevOps Guru last updated this resource. </p>
+     */
+    inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
+
+    /**
+     * <p> The time at which DevOps Guru last updated this resource. </p>
+     */
+    inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
+
+    /**
+     * <p> The time at which DevOps Guru last updated this resource. </p>
+     */
+    inline MonitoredResourceIdentifier& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
+
+    /**
+     * <p> The time at which DevOps Guru last updated this resource. </p>
+     */
+    inline MonitoredResourceIdentifier& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
+
+
+    
+    inline const ResourceCollection& GetResourceCollection() const{ return m_resourceCollection; }
+
+    
+    inline bool ResourceCollectionHasBeenSet() const { return m_resourceCollectionHasBeenSet; }
+
+    
+    inline void SetResourceCollection(const ResourceCollection& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = value; }
+
+    
+    inline void SetResourceCollection(ResourceCollection&& value) { m_resourceCollectionHasBeenSet = true; m_resourceCollection = std::move(value); }
+
+    
+    inline MonitoredResourceIdentifier& WithResourceCollection(const ResourceCollection& value) { SetResourceCollection(value); return *this;}
+
+    
+    inline MonitoredResourceIdentifier& WithResourceCollection(ResourceCollection&& value) { SetResourceCollection(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_monitoredResourceName;
@@ -162,6 +214,12 @@ namespace Model
 
     ResourcePermission m_resourcePermission;
     bool m_resourcePermissionHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastUpdated;
+    bool m_lastUpdatedHasBeenSet = false;
+
+    ResourceCollection m_resourceCollection;
+    bool m_resourceCollectionHasBeenSet = false;
   };
 
 } // namespace Model

@@ -112,6 +112,31 @@ namespace Model
      */
     inline ServiceHealth& WithInsight(ServiceInsightHealth&& value) { SetInsight(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web
+     * Services service. </p>
+     */
+    inline long long GetAnalyzedResourceCount() const{ return m_analyzedResourceCount; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web
+     * Services service. </p>
+     */
+    inline bool AnalyzedResourceCountHasBeenSet() const { return m_analyzedResourceCountHasBeenSet; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web
+     * Services service. </p>
+     */
+    inline void SetAnalyzedResourceCount(long long value) { m_analyzedResourceCountHasBeenSet = true; m_analyzedResourceCount = value; }
+
+    /**
+     * <p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web
+     * Services service. </p>
+     */
+    inline ServiceHealth& WithAnalyzedResourceCount(long long value) { SetAnalyzedResourceCount(value); return *this;}
+
   private:
 
     ServiceName m_serviceName;
@@ -119,6 +144,9 @@ namespace Model
 
     ServiceInsightHealth m_insight;
     bool m_insightHasBeenSet = false;
+
+    long long m_analyzedResourceCount;
+    bool m_analyzedResourceCountHasBeenSet = false;
   };
 
 } // namespace Model

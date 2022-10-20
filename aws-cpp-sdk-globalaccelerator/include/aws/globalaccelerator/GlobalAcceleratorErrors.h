@@ -63,7 +63,8 @@ enum class GlobalAcceleratorErrors
   INVALID_NEXT_TOKEN,
   INVALID_PORT_RANGE,
   LIMIT_EXCEEDED,
-  LISTENER_NOT_FOUND
+  LISTENER_NOT_FOUND,
+  TRANSACTION_IN_PROGRESS
 };
 
 class AWS_GLOBALACCELERATOR_API GlobalAcceleratorError : public Aws::Client::AWSError<GlobalAcceleratorErrors>
