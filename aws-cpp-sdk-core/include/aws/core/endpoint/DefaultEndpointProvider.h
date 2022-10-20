@@ -10,6 +10,7 @@
 #include <aws/core/endpoint/EndpointProviderBase.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/endpoint/ClientContextParameters.h>
+#include <aws/core/endpoint/BuiltInParameters.h>
 #include <aws/core/utils/memory/stl/AWSArray.h>
 
 #include <aws/crt/endpoints/RuleEngine.h>
@@ -28,8 +29,10 @@ namespace Aws
           * Curiously Recurring Template Pattern is used:
           * https://en.cppreference.com/w/cpp/language/crtp
           */
-        template<typename DerivedT, typename EndpointParametersT, typename ClientContextParametersT = Aws::Endpoint::ClientContextParameters>
-        class AWS_CORE_API DefaultEndpointProvider : EndpointProviderBase<EndpointParametersT>
+        template<typename DerivedT,
+                 typename BuiltInParametersT = Aws::Endpoint::BuiltInParameters,
+                 typename ClientContextParametersT = Aws::Endpoint::ClientContextParameters>
+        class AWS_CORE_API DefaultEndpointProvider : public EndpointProviderBase
         {
         public:
             DefaultEndpointProvider(const Aws::Vector<char>& endpointRulesBLOB)
@@ -45,12 +48,12 @@ namespace Aws
             {
             }
 
-            using ResolveEndpointOutcome = typename EndpointProviderBase<EndpointParametersT>::ResolveEndpointOutcome;
+            using ResolveEndpointOutcome = typename EndpointProviderBase::ResolveEndpointOutcome;
 
             /**
              * The core of the endpoint provider interface. Implement ResolveEndpointImpl in Derived
              */
-            ResolveEndpointOutcome ResolveEndpoint(const EndpointParametersT& endpointParameters) const
+            ResolveEndpointOutcome ResolveEndpoint(const EndpointParameters& endpointParameters) const
             {
                 const DerivedT& derived = static_cast<const DerivedT&>(*this);
                 return derived.ResolveEndpointImpl(endpointParameters);
@@ -65,21 +68,37 @@ namespace Aws
                 return m_clientContextParameters;
             }
 
+            const BuiltInParametersT& GetBuiltInParameters() const
+            {
+                return m_clientContextParameters;
+            }
+            BuiltInParametersT& AccessBuiltInParameters()
+            {
+                return m_clientContextParameters;
+            }
+
         protected:
+            /* Crt RuleEngine evaluator built using the service's Rule engine */
             Aws::Crt::Endpoints::RuleEngine m_crtRuleEngine;
+
+            /* Also known as a configurable parameters defined by the AWS Service in their c2j/smithy model definition */
             ClientContextParametersT m_clientContextParameters;
+
+            /* Also known as parameters on the ClientConfiguration in this SDK */
+            BuiltInParametersT m_builtInParameters;
         };
 
 
-        // non-member function in case DerivedT::EndpointParametersT is not compatible with a default implementation
-        template<typename DerivedT, typename EndpointParametersT>
-        typename DefaultEndpointProvider<DerivedT, EndpointParametersT>::ResolveEndpointOutcome
+        template<typename DerivedT>
+        typename DefaultEndpointProvider<DerivedT>::ResolveEndpointOutcome
         ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
-                                   const EndpointParametersT& endpointParameters)
+                                   const EndpointProviderBase::EndpointParameters& builtInParameters,
+                                   const EndpointProviderBase::EndpointParameters& clientContextParameters,
+                                   const EndpointProviderBase::EndpointParameters& endpointParameters)
         {
             if(!ruleEngine) {
                 AWS_LOGSTREAM_FATAL(DEFAULT_ENDPOINT_PROVIDER_TAG, "Invalid CRT Rule Engine state");
-                return typename DefaultEndpointProvider<DerivedT, EndpointParametersT>::ResolveEndpointOutcome(
+                return typename DefaultEndpointProvider<DerivedT>::ResolveEndpointOutcome(
                         Aws::Client::AWSError<Aws::Client::CoreErrors>(
                                 Aws::Client::CoreErrors::INTERNAL_FAILURE,
                                 "",
@@ -88,24 +107,31 @@ namespace Aws
             }
 
             Aws::Crt::Endpoints::RequestContext crtRequestCtx;
-            for(const auto& parameter : endpointParameters)
+
+            const Aws::Vector<std::reference_wrapper<const EndpointProviderBase::EndpointParameters>> allParameters
+                    = {std::cref(builtInParameters), std::cref(clientContextParameters), std::cref(endpointParameters)};
+
+            for (const auto& parameterClass : allParameters)
             {
-                if(EndpointParameter::ParameterType::BOOLEAN == parameter.GetStoredType())
+                for(const auto& parameter : parameterClass.get())
                 {
-                    crtRequestCtx.AddBoolean(Aws::Crt::ByteCursorFromCString(parameter.GetName().c_str()), parameter.GetBoolValueNoCheck());
-                }
-                else if(EndpointParameter::ParameterType::STRING == parameter.GetStoredType())
-                {
-                    crtRequestCtx.AddString(Aws::Crt::ByteCursorFromCString(parameter.GetName().c_str()), Aws::Crt::ByteCursorFromCString(parameter.GetStrValueNoCheck().c_str()));
-                }
-                else
-                {
-                    return typename DefaultEndpointProvider<DerivedT, EndpointParametersT>::ResolveEndpointOutcome(
-                            Aws::Client::AWSError<Aws::Client::CoreErrors>(
-                                    Aws::Client::CoreErrors::INVALID_QUERY_PARAMETER,
-                                    "",
-                                    "Invalid endpoint parameter type for parameter " + parameter.GetName(),
-                                    false/*retryable*/));
+                    if(EndpointParameter::ParameterType::BOOLEAN == parameter.GetStoredType())
+                    {
+                        crtRequestCtx.AddBoolean(Aws::Crt::ByteCursorFromCString(parameter.GetName().c_str()), parameter.GetBoolValueNoCheck());
+                    }
+                    else if(EndpointParameter::ParameterType::STRING == parameter.GetStoredType())
+                    {
+                        crtRequestCtx.AddString(Aws::Crt::ByteCursorFromCString(parameter.GetName().c_str()), Aws::Crt::ByteCursorFromCString(parameter.GetStrValueNoCheck().c_str()));
+                    }
+                    else
+                    {
+                        return typename DefaultEndpointProvider<DerivedT>::ResolveEndpointOutcome(
+                                Aws::Client::AWSError<Aws::Client::CoreErrors>(
+                                        Aws::Client::CoreErrors::INVALID_QUERY_PARAMETER,
+                                        "",
+                                        "Invalid endpoint parameter type for parameter " + parameter.GetName(),
+                                        false/*retryable*/));
+                    }
                 }
             }
 
@@ -118,7 +144,7 @@ namespace Aws
                     auto crtError = resolved->getError();
                     Aws::String sdkCrtError = crtError ? Aws::String(crtError->begin(), crtError->end()) :
                             "CRT Rule engine resolution resulted in an unknown error";
-                    return typename DefaultEndpointProvider<DerivedT, EndpointParametersT>::ResolveEndpointOutcome(
+                    return typename DefaultEndpointProvider<DerivedT>::ResolveEndpointOutcome(
                             Aws::Client::AWSError<Aws::Client::CoreErrors>(
                                     Aws::Client::CoreErrors::INVALID_PARAMETER_COMBINATION,
                                     "",
@@ -166,11 +192,11 @@ namespace Aws
                         endpoint.SetHeaders(std::move(sdkHeaders));
                     }
 
-                    return typename DefaultEndpointProvider<DerivedT, EndpointParametersT>::ResolveEndpointOutcome(std::move(endpoint));
+                    return typename DefaultEndpointProvider<DerivedT>::ResolveEndpointOutcome(std::move(endpoint));
                 }
                 else
                 {
-                    return typename DefaultEndpointProvider<DerivedT, EndpointParametersT>::ResolveEndpointOutcome(
+                    return typename DefaultEndpointProvider<DerivedT>::ResolveEndpointOutcome(
                             Aws::Client::AWSError<Aws::Client::CoreErrors>(
                                     Aws::Client::CoreErrors::INVALID_QUERY_PARAMETER,
                                     "",
@@ -178,7 +204,7 @@ namespace Aws
                                     false/*retryable*/));
                 }
             }
-            return typename DefaultEndpointProvider<DerivedT, EndpointParametersT>::ResolveEndpointOutcome(
+            return typename DefaultEndpointProvider<DerivedT>::ResolveEndpointOutcome(
                     Aws::Client::AWSError<Aws::Client::CoreErrors>(
                             Aws::Client::CoreErrors::INVALID_QUERY_PARAMETER,
                             "",

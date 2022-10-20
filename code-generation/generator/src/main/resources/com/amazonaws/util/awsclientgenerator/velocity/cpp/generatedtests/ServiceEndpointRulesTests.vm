@@ -17,7 +17,7 @@
 
 static const char* ALLOCATION_TAG = "AWS${metadata.classNamePrefix}EndpointProviderTests";
 using ${metadata.classNamePrefix}EndpointProvider = Aws::${serviceNamespace}::Endpoint::${metadata.classNamePrefix}EndpointProvider;
-using ${metadata.classNamePrefix}EndpointParameters = Aws::${serviceNamespace}::Endpoint::${metadata.classNamePrefix}EndpointParameters;
+using EndpointParameters = Aws::Vector<Aws::Endpoint::EndpointParameter>;
 using ${metadata.classNamePrefix}ResolveEndpointOutcome = Aws::${serviceNamespace}::Endpoint::${metadata.classNamePrefix}EndpointProvider::${metadata.classNamePrefix}ResolveEndpointOutcome;
 
 using EpParam = Aws::Endpoint::EndpointParameter;
@@ -35,7 +35,7 @@ protected:
 
 struct ${metadata.classNamePrefix}EndpointProviderEndpointTestCase
 {
-    using OperationParamsFromTest = Aws::${serviceNamespace}::Endpoint::${metadata.classNamePrefix}EndpointParameters;
+    using OperationParamsFromTest = EndpointParameters;
 
     struct Expect
     {
@@ -144,7 +144,7 @@ TEST_P(${metadata.classNamePrefix}EndpointProviderTests, EndpointProviderTest)
     std::shared_ptr<${metadata.classNamePrefix}EndpointProvider> endpointProvider = Aws::MakeShared<${metadata.classNamePrefix}EndpointProvider>(ALLOCATION_TAG);
     ASSERT_TRUE(endpointProvider) << "Failed to allocate/initialize ${metadata.classNamePrefix}EndpointProvider";
 
-    ${metadata.classNamePrefix}EndpointParameters endpointParameters;
+    EndpointParameters endpointParameters;
     for(const auto& param : TEST_CASE.params)
     {
         endpointParameters.emplace(endpointParameters.end(), Aws::Endpoint::EndpointParameter(param));

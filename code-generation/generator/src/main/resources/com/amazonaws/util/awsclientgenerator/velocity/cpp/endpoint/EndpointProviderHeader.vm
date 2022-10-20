@@ -5,6 +5,7 @@
 #set($serviceNamespace = $metadata.namespace)
 #set($epProviderClassName = "${metadata.classNamePrefix}EndpointProvider")
 #set($epContextClassName = "${metadata.classNamePrefix}ClientContextParameters")
+#set($epBuiltInClassName = "${metadata.classNamePrefix}BuiltInParameters")
 #pragma once
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/core/client/ClientConfiguration.h>
@@ -24,8 +25,7 @@ namespace ${serviceNamespace}
 {
 namespace Endpoint
 {
-#set($endpointParametersType = "${metadata.classNamePrefix}EndpointParameters")
-using ${endpointParametersType} = Aws::List<Aws::Endpoint::EndpointParameter>;
+using EndpointParameters = Aws::Vector<Aws::Endpoint::EndpointParameter>;
 
 #if ($serviceModel.endpointRules)
 #if ($serviceModel.clientContextParams)
@@ -50,23 +50,32 @@ public:
 #end
 #end
 };
-#else
+#else##-#if ($serviceModel.clientContextParams)
 using ${epContextClassName} = Aws::Endpoint::ClientContextParameters;
 #end
+using ${epBuiltInClassName} = Aws::Endpoint::ClientContextParameters;
+class ${epProviderClassName};
+using DefaultEndpointProviderT = Aws::Endpoint::DefaultEndpointProvider<${epProviderClassName},
+                                                                        ${epBuiltInClassName},
+                                                                        ${epContextClassName}>;
 
-class ${epProviderClassName} : public Aws::Endpoint::DefaultEndpointProvider<${epProviderClassName}, ${endpointParametersType}, ${epContextClassName}>
+
+class ${epProviderClassName} : public DefaultEndpointProviderT
 {
 public:
-    using ${metadata.classNamePrefix}ResolveEndpointOutcome = typename Aws::Endpoint::DefaultEndpointProvider<${epProviderClassName}, ${endpointParametersType}, ${epContextClassName}>::ResolveEndpointOutcome;
+    using ${metadata.classNamePrefix}ResolveEndpointOutcome = typename DefaultEndpointProviderT::ResolveEndpointOutcome;
 
     ${epProviderClassName}(const Client::ClientConfiguration& config = Client::ClientConfiguration())
-      : Aws::Endpoint::DefaultEndpointProvider<${epProviderClassName}, ${endpointParametersType}, ${epContextClassName}>(${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}EndpointRules::Rules),
+      : DefaultEndpointProviderT(${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}EndpointRules::Rules),
         clientConfiguration(config)
     {}
 
-    ${metadata.classNamePrefix}ResolveEndpointOutcome ResolveEndpointImpl(const ${endpointParametersType}& epParams) const
+    ${metadata.classNamePrefix}ResolveEndpointOutcome ResolveEndpointImpl(const EndpointParameters& epParams) const
     {
-        return Aws::Endpoint::ResolveEndpointDefaultImpl<${epProviderClassName}, ${endpointParametersType}>(m_crtRuleEngine, epParams);
+        auto ResolveEndpointDefaultImpl =
+            Aws::Endpoint::ResolveEndpointDefaultImpl<${epProviderClassName}>;
+
+        return ResolveEndpointDefaultImpl(m_crtRuleEngine, m_builtInParameters.GetAllParameters(), m_clientContextParameters.GetAllParameters(), epParams);
     }
 
     ~${metadata.classNamePrefix}EndpointProvider()

@@ -25,6 +25,7 @@ namespace Aws
                 STATIC_CONTEXT,
                 OPERATION_CONTEXT,
                 CLIENT_CONTEXT,
+                BUILT_IN,
                 NOT_SET = -1
             };
 
@@ -57,6 +58,8 @@ namespace Aws
 
             EndpointParameter(const EndpointParameter&) = default;
             EndpointParameter(EndpointParameter&&) = default;
+            EndpointParameter& operator=(const EndpointParameter&) = default;
+            EndpointParameter& operator=(EndpointParameter&&) = default;
 
             inline ParameterType GetStoredType() const
             {
@@ -122,9 +125,9 @@ namespace Aws
             }
 
         protected:
-            const ParameterType m_storedType;
-            const ParameterOrigin m_parameterOrigin;
-            const Aws::String m_name;
+            ParameterType m_storedType;
+            ParameterOrigin m_parameterOrigin;
+            Aws::String m_name;
 
             bool m_boolValue = false;
             Aws::String m_stringValue;

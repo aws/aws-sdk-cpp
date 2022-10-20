@@ -17,8 +17,6 @@ namespace Aws
         class AWS_CORE_API BuiltInParameters
         {
         public:
-
-
             using EndpointParameter = Aws::Endpoint::EndpointParameter;
 
             virtual ~BuiltInParameters(){};

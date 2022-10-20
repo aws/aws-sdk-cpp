@@ -1,10 +1,6 @@
 #if($serviceModel.endpointRules)
-  Endpoint::${serviceNamespace}EndpointProvider::${serviceNamespace}ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AbortMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  Aws::Http::URI uri = endpointResolutionOutcome.GetResult().GetURL();
-  const char* signerName = endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetName().c_str();
-  const char* signerRegion = endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegion()->c_str();
-  const char* signerServiceName = endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningName()->c_str();
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
 #else##-#if($serviceModel.endpointRules)
 #if($operation.http.requestUri.contains("?"))
   Aws::StringStream ss;

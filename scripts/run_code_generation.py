@@ -365,13 +365,13 @@ def generate_single_client(service_name: str,
     if model_files.endpoint_rule_set and model_files.endpoint_tests:
         run_command.append("--generate-tests")
 
-    if tmp_dir:
-        output_filename = f"{tmp_dir}/{model_files.c2j_model.replace('.normal.json', '-generated-tests.zip')}"
-    else:
-        output_filename = "STDOUT"
-    output_zip_file = run_generator_once(service_name, run_command, output_filename)
-    dir_to_delete_before_extract = f"{output_dir}/aws-cpp-sdk-{service_name}-generated-tests"
-    extract_zip(output_zip_file, service_name, output_dir, dir_to_delete_before_extract)
+        if tmp_dir:
+            output_filename = f"{tmp_dir}/{model_files.c2j_model.replace('.normal.json', '-generated-tests.zip')}"
+        else:
+            output_filename = "STDOUT"
+        output_zip_file = run_generator_once(service_name, run_command, output_filename)
+        dir_to_delete_before_extract = f"{output_dir}/aws-cpp-sdk-{service_name}-generated-tests"
+        extract_zip(output_zip_file, f"{service_name}-generated-tests", output_dir, dir_to_delete_before_extract)
 
     return service_name, status
 
@@ -416,7 +416,11 @@ def parse_arguments() -> dict:
     args = vars(parser.parse_args())
     arg_map = {}
 
-    if args.get("api_definition_file", None):
+    if args.get("all", None):
+        arg_map["all"] = True
+        arg_map["defaults"] = True
+        arg_map["partitions"] = True
+    elif args.get("api_definition_file", None):
         arg_map["api_definition_file"] = args.get("api_definition_file")
     else:
         raw_client_list = args.get("client_list", None)
