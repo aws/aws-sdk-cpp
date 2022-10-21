@@ -117,22 +117,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of authentication events to return.</p>
+     * <p>The maximum number of authentication events to return. Returns 60 events if
+     * you set <code>MaxResults</code> to 0, or if you don't include a
+     * <code>MaxResults</code> parameter.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of authentication events to return.</p>
+     * <p>The maximum number of authentication events to return. Returns 60 events if
+     * you set <code>MaxResults</code> to 0, or if you don't include a
+     * <code>MaxResults</code> parameter.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of authentication events to return.</p>
+     * <p>The maximum number of authentication events to return. Returns 60 events if
+     * you set <code>MaxResults</code> to 0, or if you don't include a
+     * <code>MaxResults</code> parameter.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of authentication events to return.</p>
+     * <p>The maximum number of authentication events to return. Returns 60 events if
+     * you set <code>MaxResults</code> to 0, or if you don't include a
+     * <code>MaxResults</code> parameter.</p>
      */
     inline AdminListUserAuthEventsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

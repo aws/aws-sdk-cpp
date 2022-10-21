@@ -15,6 +15,8 @@ using namespace Aws::Utils;
 UpdateUserPoolRequest::UpdateUserPoolRequest() : 
     m_userPoolIdHasBeenSet(false),
     m_policiesHasBeenSet(false),
+    m_deletionProtection(DeletionProtectionType::NOT_SET),
+    m_deletionProtectionHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
     m_autoVerifiedAttributesHasBeenSet(false),
     m_smsVerificationMessageHasBeenSet(false),
@@ -49,6 +51,11 @@ Aws::String UpdateUserPoolRequest::SerializePayload() const
   {
    payload.WithObject("Policies", m_policies.Jsonize());
 
+  }
+
+  if(m_deletionProtectionHasBeenSet)
+  {
+   payload.WithString("DeletionProtection", DeletionProtectionTypeMapper::GetNameForDeletionProtectionType(m_deletionProtection));
   }
 
   if(m_lambdaConfigHasBeenSet)

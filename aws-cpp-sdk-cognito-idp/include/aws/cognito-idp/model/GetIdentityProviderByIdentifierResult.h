@@ -33,27 +33,27 @@ namespace Model
 
 
     /**
-     * <p>The IdP object.</p>
+     * <p>The identity provider details.</p>
      */
     inline const IdentityProviderType& GetIdentityProvider() const{ return m_identityProvider; }
 
     /**
-     * <p>The IdP object.</p>
+     * <p>The identity provider details.</p>
      */
     inline void SetIdentityProvider(const IdentityProviderType& value) { m_identityProvider = value; }
 
     /**
-     * <p>The IdP object.</p>
+     * <p>The identity provider details.</p>
      */
     inline void SetIdentityProvider(IdentityProviderType&& value) { m_identityProvider = std::move(value); }
 
     /**
-     * <p>The IdP object.</p>
+     * <p>The identity provider details.</p>
      */
     inline GetIdentityProviderByIdentifierResult& WithIdentityProvider(const IdentityProviderType& value) { SetIdentityProvider(value); return *this;}
 
     /**
-     * <p>The IdP object.</p>
+     * <p>The identity provider details.</p>
      */
     inline GetIdentityProviderByIdentifierResult& WithIdentityProvider(IdentityProviderType&& value) { SetIdentityProvider(std::move(value)); return *this;}
 

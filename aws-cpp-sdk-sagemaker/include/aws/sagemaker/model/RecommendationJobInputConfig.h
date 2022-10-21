@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/RecommendationJobContainerConfig.h>
 #include <aws/sagemaker/model/EndpointInputConfiguration.h>
+#include <aws/sagemaker/model/EndpointInfo.h>
 #include <utility>
 
 namespace Aws
@@ -443,6 +444,47 @@ namespace Model
      */
     inline RecommendationJobInputConfig& WithContainerConfig(RecommendationJobContainerConfig&& value) { SetContainerConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline const Aws::Vector<EndpointInfo>& GetEndpoints() const{ return m_endpoints; }
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline void SetEndpoints(const Aws::Vector<EndpointInfo>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline void SetEndpoints(Aws::Vector<EndpointInfo>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline RecommendationJobInputConfig& WithEndpoints(const Aws::Vector<EndpointInfo>& value) { SetEndpoints(value); return *this;}
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline RecommendationJobInputConfig& WithEndpoints(Aws::Vector<EndpointInfo>&& value) { SetEndpoints(std::move(value)); return *this;}
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline RecommendationJobInputConfig& AddEndpoints(const EndpointInfo& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
+
+    /**
+     * <p>Existing customer endpoints on which to run an Inference Recommender job.</p>
+     */
+    inline RecommendationJobInputConfig& AddEndpoints(EndpointInfo&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_modelPackageVersionArn;
@@ -465,6 +507,9 @@ namespace Model
 
     RecommendationJobContainerConfig m_containerConfig;
     bool m_containerConfigHasBeenSet = false;
+
+    Aws::Vector<EndpointInfo> m_endpoints;
+    bool m_endpointsHasBeenSet = false;
   };
 
 } // namespace Model

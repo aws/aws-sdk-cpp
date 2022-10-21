@@ -282,7 +282,9 @@ namespace Model
      * default time unit for <code>RefreshTokenValidity</code> in an API request is
      * days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon
      * Cognito overrides the value with the default value of 30 days. <i>Valid
-     * range</i> is displayed below in seconds.</p>
+     * range</i> is displayed below in seconds.</p> <p>If you don't specify otherwise
+     * in the configuration of your app client, your refresh tokens are valid for 30
+     * days.</p>
      */
     inline int GetRefreshTokenValidity() const{ return m_refreshTokenValidity; }
 
@@ -298,7 +300,9 @@ namespace Model
      * default time unit for <code>RefreshTokenValidity</code> in an API request is
      * days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon
      * Cognito overrides the value with the default value of 30 days. <i>Valid
-     * range</i> is displayed below in seconds.</p>
+     * range</i> is displayed below in seconds.</p> <p>If you don't specify otherwise
+     * in the configuration of your app client, your refresh tokens are valid for 30
+     * days.</p>
      */
     inline bool RefreshTokenValidityHasBeenSet() const { return m_refreshTokenValidityHasBeenSet; }
 
@@ -314,7 +318,9 @@ namespace Model
      * default time unit for <code>RefreshTokenValidity</code> in an API request is
      * days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon
      * Cognito overrides the value with the default value of 30 days. <i>Valid
-     * range</i> is displayed below in seconds.</p>
+     * range</i> is displayed below in seconds.</p> <p>If you don't specify otherwise
+     * in the configuration of your app client, your refresh tokens are valid for 30
+     * days.</p>
      */
     inline void SetRefreshTokenValidity(int value) { m_refreshTokenValidityHasBeenSet = true; m_refreshTokenValidity = value; }
 
@@ -330,7 +336,9 @@ namespace Model
      * default time unit for <code>RefreshTokenValidity</code> in an API request is
      * days. You can't set <code>RefreshTokenValidity</code> to 0. If you do, Amazon
      * Cognito overrides the value with the default value of 30 days. <i>Valid
-     * range</i> is displayed below in seconds.</p>
+     * range</i> is displayed below in seconds.</p> <p>If you don't specify otherwise
+     * in the configuration of your app client, your refresh tokens are valid for 30
+     * days.</p>
      */
     inline UserPoolClientType& WithRefreshTokenValidity(int value) { SetRefreshTokenValidity(value); return *this;}
 
@@ -345,7 +353,8 @@ namespace Model
      * <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize
      * access with their access token for 10 hours.</p> <p>The default time unit for
      * <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
-     * is displayed below in seconds.</p>
+     * is displayed below in seconds.</p> <p>If you don't specify otherwise in the
+     * configuration of your app client, your access tokens are valid for one hour.</p>
      */
     inline int GetAccessTokenValidity() const{ return m_accessTokenValidity; }
 
@@ -359,7 +368,8 @@ namespace Model
      * <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize
      * access with their access token for 10 hours.</p> <p>The default time unit for
      * <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
-     * is displayed below in seconds.</p>
+     * is displayed below in seconds.</p> <p>If you don't specify otherwise in the
+     * configuration of your app client, your access tokens are valid for one hour.</p>
      */
     inline bool AccessTokenValidityHasBeenSet() const { return m_accessTokenValidityHasBeenSet; }
 
@@ -373,7 +383,8 @@ namespace Model
      * <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize
      * access with their access token for 10 hours.</p> <p>The default time unit for
      * <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
-     * is displayed below in seconds.</p>
+     * is displayed below in seconds.</p> <p>If you don't specify otherwise in the
+     * configuration of your app client, your access tokens are valid for one hour.</p>
      */
     inline void SetAccessTokenValidity(int value) { m_accessTokenValidityHasBeenSet = true; m_accessTokenValidity = value; }
 
@@ -387,7 +398,8 @@ namespace Model
      * <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize
      * access with their access token for 10 hours.</p> <p>The default time unit for
      * <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
-     * is displayed below in seconds.</p>
+     * is displayed below in seconds.</p> <p>If you don't specify otherwise in the
+     * configuration of your app client, your access tokens are valid for one hour.</p>
      */
     inline UserPoolClientType& WithAccessTokenValidity(int value) { SetAccessTokenValidity(value); return *this;}
 
@@ -401,7 +413,9 @@ namespace Model
      * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
      * user can authenticate their session with their ID token for 10 hours.</p> <p>The
      * default time unit for <code>AccessTokenValidity</code> in an API request is
-     * hours. <i>Valid range</i> is displayed below in seconds.</p>
+     * hours. <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't
+     * specify otherwise in the configuration of your app client, your ID tokens are
+     * valid for one hour.</p>
      */
     inline int GetIdTokenValidity() const{ return m_idTokenValidity; }
 
@@ -414,7 +428,9 @@ namespace Model
      * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
      * user can authenticate their session with their ID token for 10 hours.</p> <p>The
      * default time unit for <code>AccessTokenValidity</code> in an API request is
-     * hours. <i>Valid range</i> is displayed below in seconds.</p>
+     * hours. <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't
+     * specify otherwise in the configuration of your app client, your ID tokens are
+     * valid for one hour.</p>
      */
     inline bool IdTokenValidityHasBeenSet() const { return m_idTokenValidityHasBeenSet; }
 
@@ -427,7 +443,9 @@ namespace Model
      * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
      * user can authenticate their session with their ID token for 10 hours.</p> <p>The
      * default time unit for <code>AccessTokenValidity</code> in an API request is
-     * hours. <i>Valid range</i> is displayed below in seconds.</p>
+     * hours. <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't
+     * specify otherwise in the configuration of your app client, your ID tokens are
+     * valid for one hour.</p>
      */
     inline void SetIdTokenValidity(int value) { m_idTokenValidityHasBeenSet = true; m_idTokenValidity = value; }
 
@@ -440,7 +458,9 @@ namespace Model
      * <code>10</code> and <code>TokenValidityUnits</code> as <code>hours</code>, your
      * user can authenticate their session with their ID token for 10 hours.</p> <p>The
      * default time unit for <code>AccessTokenValidity</code> in an API request is
-     * hours. <i>Valid range</i> is displayed below in seconds.</p>
+     * hours. <i>Valid range</i> is displayed below in seconds.</p> <p>If you don't
+     * specify otherwise in the configuration of your app client, your ID tokens are
+     * valid for one hour.</p>
      */
     inline UserPoolClientType& WithIdTokenValidity(int value) { SetIdTokenValidity(value); return *this;}
 
@@ -575,170 +595,242 @@ namespace Model
 
 
     /**
-     * <p>The authentication flows that are supported by the user pool clients. Flow
-     * names without the <code>ALLOW_</code> prefix are no longer supported in favor of
-     * new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix must be used only along with values including the
-     * <code>ALLOW_</code> prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-     * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-     * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-     * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+     * <p>The authentication flows that you want your user pool client to support. For
+     * each app client in your user pool, you can sign in your users with any
+     * combination of one or more flows, including with a user name and Secure Remote
+     * Password (SRP), a user name and password, or a custom authentication process
+     * that you define with Lambda functions.</p>  <p>If you don't specify a
+     * value for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and
+     * <code>ALLOW_CUSTOM_AUTH</code>.</p>  <p>Valid values include:</p> <ul>
+     * <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user
+     * password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting
+     * replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication
+     * flow, your app passes a user name and password to Amazon Cognito in the request,
+     * instead of using the Secure Remote Password (SRP) protocol to securely transmit
+     * the password.</p> </li> <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda
+     * trigger based authentication.</p> </li> <li> <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
      * authentication. In this flow, Amazon Cognito receives the password in the
      * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
      * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
      * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul>
+     * tokens.</p> </li> </ul> <p>In some environments, you will see the values
+     * <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or
+     * <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy
+     * <code>ExplicitAuthFlows</code> values to user pool clients at the same time as
+     * values that begin with <code>ALLOW_</code>, like
+     * <code>ALLOW_USER_SRP_AUTH</code>.</p>
      */
     inline const Aws::Vector<ExplicitAuthFlowsType>& GetExplicitAuthFlows() const{ return m_explicitAuthFlows; }
 
     /**
-     * <p>The authentication flows that are supported by the user pool clients. Flow
-     * names without the <code>ALLOW_</code> prefix are no longer supported in favor of
-     * new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix must be used only along with values including the
-     * <code>ALLOW_</code> prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-     * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-     * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-     * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+     * <p>The authentication flows that you want your user pool client to support. For
+     * each app client in your user pool, you can sign in your users with any
+     * combination of one or more flows, including with a user name and Secure Remote
+     * Password (SRP), a user name and password, or a custom authentication process
+     * that you define with Lambda functions.</p>  <p>If you don't specify a
+     * value for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and
+     * <code>ALLOW_CUSTOM_AUTH</code>.</p>  <p>Valid values include:</p> <ul>
+     * <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user
+     * password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting
+     * replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication
+     * flow, your app passes a user name and password to Amazon Cognito in the request,
+     * instead of using the Secure Remote Password (SRP) protocol to securely transmit
+     * the password.</p> </li> <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda
+     * trigger based authentication.</p> </li> <li> <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
      * authentication. In this flow, Amazon Cognito receives the password in the
      * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
      * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
      * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul>
+     * tokens.</p> </li> </ul> <p>In some environments, you will see the values
+     * <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or
+     * <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy
+     * <code>ExplicitAuthFlows</code> values to user pool clients at the same time as
+     * values that begin with <code>ALLOW_</code>, like
+     * <code>ALLOW_USER_SRP_AUTH</code>.</p>
      */
     inline bool ExplicitAuthFlowsHasBeenSet() const { return m_explicitAuthFlowsHasBeenSet; }
 
     /**
-     * <p>The authentication flows that are supported by the user pool clients. Flow
-     * names without the <code>ALLOW_</code> prefix are no longer supported in favor of
-     * new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix must be used only along with values including the
-     * <code>ALLOW_</code> prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-     * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-     * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-     * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+     * <p>The authentication flows that you want your user pool client to support. For
+     * each app client in your user pool, you can sign in your users with any
+     * combination of one or more flows, including with a user name and Secure Remote
+     * Password (SRP), a user name and password, or a custom authentication process
+     * that you define with Lambda functions.</p>  <p>If you don't specify a
+     * value for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and
+     * <code>ALLOW_CUSTOM_AUTH</code>.</p>  <p>Valid values include:</p> <ul>
+     * <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user
+     * password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting
+     * replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication
+     * flow, your app passes a user name and password to Amazon Cognito in the request,
+     * instead of using the Secure Remote Password (SRP) protocol to securely transmit
+     * the password.</p> </li> <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda
+     * trigger based authentication.</p> </li> <li> <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
      * authentication. In this flow, Amazon Cognito receives the password in the
      * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
      * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
      * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul>
+     * tokens.</p> </li> </ul> <p>In some environments, you will see the values
+     * <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or
+     * <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy
+     * <code>ExplicitAuthFlows</code> values to user pool clients at the same time as
+     * values that begin with <code>ALLOW_</code>, like
+     * <code>ALLOW_USER_SRP_AUTH</code>.</p>
      */
     inline void SetExplicitAuthFlows(const Aws::Vector<ExplicitAuthFlowsType>& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows = value; }
 
     /**
-     * <p>The authentication flows that are supported by the user pool clients. Flow
-     * names without the <code>ALLOW_</code> prefix are no longer supported in favor of
-     * new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix must be used only along with values including the
-     * <code>ALLOW_</code> prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-     * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-     * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-     * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+     * <p>The authentication flows that you want your user pool client to support. For
+     * each app client in your user pool, you can sign in your users with any
+     * combination of one or more flows, including with a user name and Secure Remote
+     * Password (SRP), a user name and password, or a custom authentication process
+     * that you define with Lambda functions.</p>  <p>If you don't specify a
+     * value for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and
+     * <code>ALLOW_CUSTOM_AUTH</code>.</p>  <p>Valid values include:</p> <ul>
+     * <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user
+     * password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting
+     * replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication
+     * flow, your app passes a user name and password to Amazon Cognito in the request,
+     * instead of using the Secure Remote Password (SRP) protocol to securely transmit
+     * the password.</p> </li> <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda
+     * trigger based authentication.</p> </li> <li> <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
      * authentication. In this flow, Amazon Cognito receives the password in the
      * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
      * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
      * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul>
+     * tokens.</p> </li> </ul> <p>In some environments, you will see the values
+     * <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or
+     * <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy
+     * <code>ExplicitAuthFlows</code> values to user pool clients at the same time as
+     * values that begin with <code>ALLOW_</code>, like
+     * <code>ALLOW_USER_SRP_AUTH</code>.</p>
      */
     inline void SetExplicitAuthFlows(Aws::Vector<ExplicitAuthFlowsType>&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows = std::move(value); }
 
     /**
-     * <p>The authentication flows that are supported by the user pool clients. Flow
-     * names without the <code>ALLOW_</code> prefix are no longer supported in favor of
-     * new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix must be used only along with values including the
-     * <code>ALLOW_</code> prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-     * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-     * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-     * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+     * <p>The authentication flows that you want your user pool client to support. For
+     * each app client in your user pool, you can sign in your users with any
+     * combination of one or more flows, including with a user name and Secure Remote
+     * Password (SRP), a user name and password, or a custom authentication process
+     * that you define with Lambda functions.</p>  <p>If you don't specify a
+     * value for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and
+     * <code>ALLOW_CUSTOM_AUTH</code>.</p>  <p>Valid values include:</p> <ul>
+     * <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user
+     * password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting
+     * replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication
+     * flow, your app passes a user name and password to Amazon Cognito in the request,
+     * instead of using the Secure Remote Password (SRP) protocol to securely transmit
+     * the password.</p> </li> <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda
+     * trigger based authentication.</p> </li> <li> <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
      * authentication. In this flow, Amazon Cognito receives the password in the
      * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
      * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
      * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul>
+     * tokens.</p> </li> </ul> <p>In some environments, you will see the values
+     * <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or
+     * <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy
+     * <code>ExplicitAuthFlows</code> values to user pool clients at the same time as
+     * values that begin with <code>ALLOW_</code>, like
+     * <code>ALLOW_USER_SRP_AUTH</code>.</p>
      */
     inline UserPoolClientType& WithExplicitAuthFlows(const Aws::Vector<ExplicitAuthFlowsType>& value) { SetExplicitAuthFlows(value); return *this;}
 
     /**
-     * <p>The authentication flows that are supported by the user pool clients. Flow
-     * names without the <code>ALLOW_</code> prefix are no longer supported in favor of
-     * new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix must be used only along with values including the
-     * <code>ALLOW_</code> prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-     * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-     * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-     * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+     * <p>The authentication flows that you want your user pool client to support. For
+     * each app client in your user pool, you can sign in your users with any
+     * combination of one or more flows, including with a user name and Secure Remote
+     * Password (SRP), a user name and password, or a custom authentication process
+     * that you define with Lambda functions.</p>  <p>If you don't specify a
+     * value for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and
+     * <code>ALLOW_CUSTOM_AUTH</code>.</p>  <p>Valid values include:</p> <ul>
+     * <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user
+     * password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting
+     * replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication
+     * flow, your app passes a user name and password to Amazon Cognito in the request,
+     * instead of using the Secure Remote Password (SRP) protocol to securely transmit
+     * the password.</p> </li> <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda
+     * trigger based authentication.</p> </li> <li> <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
      * authentication. In this flow, Amazon Cognito receives the password in the
      * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
      * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
      * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul>
+     * tokens.</p> </li> </ul> <p>In some environments, you will see the values
+     * <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or
+     * <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy
+     * <code>ExplicitAuthFlows</code> values to user pool clients at the same time as
+     * values that begin with <code>ALLOW_</code>, like
+     * <code>ALLOW_USER_SRP_AUTH</code>.</p>
      */
     inline UserPoolClientType& WithExplicitAuthFlows(Aws::Vector<ExplicitAuthFlowsType>&& value) { SetExplicitAuthFlows(std::move(value)); return *this;}
 
     /**
-     * <p>The authentication flows that are supported by the user pool clients. Flow
-     * names without the <code>ALLOW_</code> prefix are no longer supported in favor of
-     * new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix must be used only along with values including the
-     * <code>ALLOW_</code> prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-     * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-     * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-     * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+     * <p>The authentication flows that you want your user pool client to support. For
+     * each app client in your user pool, you can sign in your users with any
+     * combination of one or more flows, including with a user name and Secure Remote
+     * Password (SRP), a user name and password, or a custom authentication process
+     * that you define with Lambda functions.</p>  <p>If you don't specify a
+     * value for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and
+     * <code>ALLOW_CUSTOM_AUTH</code>.</p>  <p>Valid values include:</p> <ul>
+     * <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user
+     * password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting
+     * replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication
+     * flow, your app passes a user name and password to Amazon Cognito in the request,
+     * instead of using the Secure Remote Password (SRP) protocol to securely transmit
+     * the password.</p> </li> <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda
+     * trigger based authentication.</p> </li> <li> <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
      * authentication. In this flow, Amazon Cognito receives the password in the
      * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
      * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
      * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul>
+     * tokens.</p> </li> </ul> <p>In some environments, you will see the values
+     * <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or
+     * <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy
+     * <code>ExplicitAuthFlows</code> values to user pool clients at the same time as
+     * values that begin with <code>ALLOW_</code>, like
+     * <code>ALLOW_USER_SRP_AUTH</code>.</p>
      */
     inline UserPoolClientType& AddExplicitAuthFlows(const ExplicitAuthFlowsType& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows.push_back(value); return *this; }
 
     /**
-     * <p>The authentication flows that are supported by the user pool clients. Flow
-     * names without the <code>ALLOW_</code> prefix are no longer supported in favor of
-     * new names with the <code>ALLOW_</code> prefix. Note that values with
-     * <code>ALLOW_</code> prefix must be used only along with values including the
-     * <code>ALLOW_</code> prefix.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user password
-     * authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting replaces
-     * the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication flow,
-     * Amazon Cognito receives the password in the request instead of using the Secure
-     * Remote Password (SRP) protocol to verify passwords.</p> </li> <li> <p>
-     * <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda trigger based authentication.</p>
-     * </li> <li> <p> <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
+     * <p>The authentication flows that you want your user pool client to support. For
+     * each app client in your user pool, you can sign in your users with any
+     * combination of one or more flows, including with a user name and Secure Remote
+     * Password (SRP), a user name and password, or a custom authentication process
+     * that you define with Lambda functions.</p>  <p>If you don't specify a
+     * value for <code>ExplicitAuthFlows</code>, your user client supports
+     * <code>ALLOW_REFRESH_TOKEN_AUTH</code>, <code>ALLOW_USER_SRP_AUTH</code>, and
+     * <code>ALLOW_CUSTOM_AUTH</code>.</p>  <p>Valid values include:</p> <ul>
+     * <li> <p> <code>ALLOW_ADMIN_USER_PASSWORD_AUTH</code>: Enable admin based user
+     * password authentication flow <code>ADMIN_USER_PASSWORD_AUTH</code>. This setting
+     * replaces the <code>ADMIN_NO_SRP_AUTH</code> setting. With this authentication
+     * flow, your app passes a user name and password to Amazon Cognito in the request,
+     * instead of using the Secure Remote Password (SRP) protocol to securely transmit
+     * the password.</p> </li> <li> <p> <code>ALLOW_CUSTOM_AUTH</code>: Enable Lambda
+     * trigger based authentication.</p> </li> <li> <p>
+     * <code>ALLOW_USER_PASSWORD_AUTH</code>: Enable user password-based
      * authentication. In this flow, Amazon Cognito receives the password in the
      * request instead of using the SRP protocol to verify passwords.</p> </li> <li>
      * <p> <code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p> </li>
      * <li> <p> <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh
-     * tokens.</p> </li> </ul>
+     * tokens.</p> </li> </ul> <p>In some environments, you will see the values
+     * <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or
+     * <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy
+     * <code>ExplicitAuthFlows</code> values to user pool clients at the same time as
+     * values that begin with <code>ALLOW_</code>, like
+     * <code>ALLOW_USER_SRP_AUTH</code>.</p>
      */
     inline UserPoolClientType& AddExplicitAuthFlows(ExplicitAuthFlowsType&& value) { m_explicitAuthFlowsHasBeenSet = true; m_explicitAuthFlows.push_back(std::move(value)); return *this; }
 
