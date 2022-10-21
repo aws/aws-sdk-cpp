@@ -3780,21 +3780,19 @@ void S3Client::LoadS3SpecificConfig(const Aws::String& profile)
 }
 
 #include<aws/core/utils/HashingUtils.h>
-Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucket,
+                                           const Aws::String& key,
+                                           Aws::Http::HttpMethod method,
+                                           uint64_t expirationInSeconds)
 {
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
-        return {};
-    }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
-    uri.SetPath(uri.GetPath() + "/" + key);
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, {}, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucket,
+                                           const Aws::String& key,
+                                           Aws::Http::HttpMethod method,
+                                           const Http::HeaderValueCollection& customizedHeaders,
+                                           uint64_t expirationInSeconds)
 {
     ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
     if (!computeEndpointOutcome.IsSuccess())
@@ -3808,107 +3806,78 @@ Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucket, const Aws:
         computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket,
+                                                    const Aws::String& key,
+                                                    Aws::Http::HttpMethod method,
+                                                    uint64_t expirationInSeconds)
 {
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
-        return {};
-    }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
-    uri.SetPath(uri.GetPath() + "/" + key);
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), headers, expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket,
+                                                    const Aws::String& key,
+                                                    Aws::Http::HttpMethod method,
+                                                    Http::HeaderValueCollection customizedHeaders,
+                                                    uint64_t expirationInSeconds)
 {
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
-        return {};
-    }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
-    uri.SetPath(uri.GetPath() + "/" + key);
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), customizedHeaders, expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket,
+                                                     const Aws::String& key,
+                                                     Aws::Http::HttpMethod method,
+                                                     const Aws::String& kmsMasterKeyId,
+                                                     uint64_t expirationInSeconds)
 {
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
-        return {};
-    }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
-    uri.SetPath(uri.GetPath() + "/" + key);
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::aws_kms));
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), headers, expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket,
+                                                     const Aws::String& key,
+                                                     Aws::Http::HttpMethod method,
+                                                     Http::HeaderValueCollection customizedHeaders,
+                                                     const Aws::String& kmsMasterKeyId,
+                                                     uint64_t expirationInSeconds)
 {
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
-        return {};
-    }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
-    uri.SetPath(uri.GetPath() + "/" + key);
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::aws_kms));
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), customizedHeaders, expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket,
+                                                   const Aws::String& key,
+                                                   Aws::Http::HttpMethod method,
+                                                   const Aws::String& base64EncodedAES256Key,
+                                                   uint64_t expirationInSeconds)
 {
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
-        return {};
-    }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
-    uri.SetPath(uri.GetPath() + "/" + key);
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, base64EncodedAES256Key);
     Aws::Utils::ByteBuffer buffer = Aws::Utils::HashingUtils::Base64Decode(base64EncodedAES256Key);
     Aws::String strBuffer(reinterpret_cast<char*>(buffer.GetUnderlyingData()), buffer.GetLength());
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), headers, expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket,
+                                                   const Aws::String& key,
+                                                   Aws::Http::HttpMethod method,
+                                                   Http::HeaderValueCollection customizedHeaders,
+                                                   const Aws::String& base64EncodedAES256Key,
+                                                   uint64_t expirationInSeconds)
 {
-    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
-    if (!computeEndpointOutcome.IsSuccess())
-    {
-        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
-        return {};
-    }
-    URI uri(computeEndpointOutcome.GetResult().endpoint);
-    uri.SetPath(uri.GetPath() + "/" + key);
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, base64EncodedAES256Key);
     Aws::Utils::ByteBuffer buffer = Aws::Utils::HashingUtils::Base64Decode(base64EncodedAES256Key);
     Aws::String strBuffer(reinterpret_cast<char*>(buffer.GetUnderlyingData()), buffer.GetLength());
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
-        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), customizedHeaders, expirationInSeconds);
+    return GeneratePresignedUrl(bucket, key, method, customizedHeaders, expirationInSeconds);
 }
 
 ComputeEndpointOutcome S3Client::ComputeEndpointString(const Aws::String& bucketOrArn) const
