@@ -29,8 +29,8 @@ using namespace Aws::WorkLink::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "worklink";
-static const char* ALLOCATION_TAG = "WorkLinkClient";
+const char* WorkLinkClient::SERVICE_NAME = "worklink";
+const char* WorkLinkClient::ALLOCATION_TAG = "WorkLinkClient";
 
 WorkLinkClient::WorkLinkClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

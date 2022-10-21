@@ -77,8 +77,8 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "wafv2";
-static const char* ALLOCATION_TAG = "WAFV2Client";
+const char* WAFV2Client::SERVICE_NAME = "wafv2";
+const char* WAFV2Client::ALLOCATION_TAG = "WAFV2Client";
 
 WAFV2Client::WAFV2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

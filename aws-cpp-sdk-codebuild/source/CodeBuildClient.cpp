@@ -74,8 +74,8 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "codebuild";
-static const char* ALLOCATION_TAG = "CodeBuildClient";
+const char* CodeBuildClient::SERVICE_NAME = "codebuild";
+const char* CodeBuildClient::ALLOCATION_TAG = "CodeBuildClient";
 
 CodeBuildClient::CodeBuildClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

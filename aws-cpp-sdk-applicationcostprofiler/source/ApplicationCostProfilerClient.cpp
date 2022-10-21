@@ -35,8 +35,8 @@ using namespace Aws::ApplicationCostProfiler::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "application-cost-profiler";
-static const char* ALLOCATION_TAG = "ApplicationCostProfilerClient";
+const char* ApplicationCostProfilerClient::SERVICE_NAME = "application-cost-profiler";
+const char* ApplicationCostProfilerClient::ALLOCATION_TAG = "ApplicationCostProfilerClient";
 
 ApplicationCostProfilerClient::ApplicationCostProfilerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -116,8 +116,8 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "servicecatalog";
-static const char* ALLOCATION_TAG = "ServiceCatalogClient";
+const char* ServiceCatalogClient::SERVICE_NAME = "servicecatalog";
+const char* ServiceCatalogClient::ALLOCATION_TAG = "ServiceCatalogClient";
 
 ServiceCatalogClient::ServiceCatalogClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

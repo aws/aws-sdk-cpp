@@ -37,8 +37,8 @@ using namespace Aws::IoTSecureTunneling::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "IoTSecuredTunneling";
-static const char* ALLOCATION_TAG = "IoTSecureTunnelingClient";
+const char* IoTSecureTunnelingClient::SERVICE_NAME = "IoTSecuredTunneling";
+const char* IoTSecureTunnelingClient::ALLOCATION_TAG = "IoTSecureTunnelingClient";
 
 IoTSecureTunnelingClient::IoTSecureTunnelingClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

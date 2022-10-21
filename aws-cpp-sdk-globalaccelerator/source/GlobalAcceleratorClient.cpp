@@ -78,8 +78,8 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "globalaccelerator";
-static const char* ALLOCATION_TAG = "GlobalAcceleratorClient";
+const char* GlobalAcceleratorClient::SERVICE_NAME = "globalaccelerator";
+const char* GlobalAcceleratorClient::ALLOCATION_TAG = "GlobalAcceleratorClient";
 
 GlobalAcceleratorClient::GlobalAcceleratorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

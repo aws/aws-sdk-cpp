@@ -32,8 +32,8 @@ using namespace Aws::TranscribeStreamingService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "transcribe";
-static const char* ALLOCATION_TAG = "TranscribeStreamingServiceClient";
+const char* TranscribeStreamingServiceClient::SERVICE_NAME = "transcribe";
+const char* TranscribeStreamingServiceClient::ALLOCATION_TAG = "TranscribeStreamingServiceClient";
 
 TranscribeStreamingServiceClient::TranscribeStreamingServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

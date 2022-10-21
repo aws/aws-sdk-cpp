@@ -59,8 +59,8 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "lookoutmetrics";
-static const char* ALLOCATION_TAG = "LookoutMetricsClient";
+const char* LookoutMetricsClient::SERVICE_NAME = "lookoutmetrics";
+const char* LookoutMetricsClient::ALLOCATION_TAG = "LookoutMetricsClient";
 
 LookoutMetricsClient::LookoutMetricsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

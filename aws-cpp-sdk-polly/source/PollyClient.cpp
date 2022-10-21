@@ -38,8 +38,8 @@ using namespace Aws::Polly::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "polly";
-static const char* ALLOCATION_TAG = "PollyClient";
+const char* PollyClient::SERVICE_NAME = "polly";
+const char* PollyClient::ALLOCATION_TAG = "PollyClient";
 
 PollyClient::PollyClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -35,8 +35,8 @@ using namespace Aws::AutoScalingPlans::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "autoscaling-plans";
-static const char* ALLOCATION_TAG = "AutoScalingPlansClient";
+const char* AutoScalingPlansClient::SERVICE_NAME = "autoscaling-plans";
+const char* AutoScalingPlansClient::ALLOCATION_TAG = "AutoScalingPlansClient";
 
 AutoScalingPlansClient::AutoScalingPlansClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -149,8 +149,8 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "quicksight";
-static const char* ALLOCATION_TAG = "QuickSightClient";
+const char* QuickSightClient::SERVICE_NAME = "quicksight";
+const char* QuickSightClient::ALLOCATION_TAG = "QuickSightClient";
 
 QuickSightClient::QuickSightClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

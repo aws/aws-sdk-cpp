@@ -70,8 +70,8 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ecr";
-static const char* ALLOCATION_TAG = "ECRClient";
+const char* ECRClient::SERVICE_NAME = "ecr";
+const char* ECRClient::ALLOCATION_TAG = "ECRClient";
 
 ECRClient::ECRClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

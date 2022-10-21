@@ -56,8 +56,8 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "xray";
-static const char* ALLOCATION_TAG = "XRayClient";
+const char* XRayClient::SERVICE_NAME = "xray";
+const char* XRayClient::ALLOCATION_TAG = "XRayClient";
 
 XRayClient::XRayClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

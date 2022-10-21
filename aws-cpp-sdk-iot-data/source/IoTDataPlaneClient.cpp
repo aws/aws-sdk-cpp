@@ -36,8 +36,8 @@ using namespace Aws::IoTDataPlane::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "iotdata";
-static const char* ALLOCATION_TAG = "IoTDataPlaneClient";
+const char* IoTDataPlaneClient::SERVICE_NAME = "iotdata";
+const char* IoTDataPlaneClient::ALLOCATION_TAG = "IoTDataPlaneClient";
 
 IoTDataPlaneClient::IoTDataPlaneClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

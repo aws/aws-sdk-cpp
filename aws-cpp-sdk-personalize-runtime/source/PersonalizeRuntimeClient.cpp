@@ -31,8 +31,8 @@ using namespace Aws::PersonalizeRuntime::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "personalize";
-static const char* ALLOCATION_TAG = "PersonalizeRuntimeClient";
+const char* PersonalizeRuntimeClient::SERVICE_NAME = "personalize";
+const char* PersonalizeRuntimeClient::ALLOCATION_TAG = "PersonalizeRuntimeClient";
 
 PersonalizeRuntimeClient::PersonalizeRuntimeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

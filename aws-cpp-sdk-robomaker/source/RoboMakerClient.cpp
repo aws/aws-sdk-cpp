@@ -71,8 +71,8 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "robomaker";
-static const char* ALLOCATION_TAG = "RoboMakerClient";
+const char* RoboMakerClient::SERVICE_NAME = "robomaker";
+const char* RoboMakerClient::ALLOCATION_TAG = "RoboMakerClient";
 
 RoboMakerClient::RoboMakerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

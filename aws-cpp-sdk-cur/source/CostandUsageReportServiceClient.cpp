@@ -33,8 +33,8 @@ using namespace Aws::CostandUsageReportService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "cur";
-static const char* ALLOCATION_TAG = "CostandUsageReportServiceClient";
+const char* CostandUsageReportServiceClient::SERVICE_NAME = "cur";
+const char* CostandUsageReportServiceClient::ALLOCATION_TAG = "CostandUsageReportServiceClient";
 
 CostandUsageReportServiceClient::CostandUsageReportServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

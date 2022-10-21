@@ -58,8 +58,8 @@ using namespace Aws::GreengrassV2::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "greengrass";
-static const char* ALLOCATION_TAG = "GreengrassV2Client";
+const char* GreengrassV2Client::SERVICE_NAME = "greengrass";
+const char* GreengrassV2Client::ALLOCATION_TAG = "GreengrassV2Client";
 
 GreengrassV2Client::GreengrassV2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

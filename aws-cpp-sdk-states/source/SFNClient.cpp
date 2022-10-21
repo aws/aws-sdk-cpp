@@ -52,8 +52,8 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "states";
-static const char* ALLOCATION_TAG = "SFNClient";
+const char* SFNClient::SERVICE_NAME = "states";
+const char* SFNClient::ALLOCATION_TAG = "SFNClient";
 
 SFNClient::SFNClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

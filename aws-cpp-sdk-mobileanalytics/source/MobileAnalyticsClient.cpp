@@ -30,8 +30,8 @@ using namespace Aws::MobileAnalytics::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "mobileanalytics";
-static const char* ALLOCATION_TAG = "MobileAnalyticsClient";
+const char* MobileAnalyticsClient::SERVICE_NAME = "mobileanalytics";
+const char* MobileAnalyticsClient::ALLOCATION_TAG = "MobileAnalyticsClient";
 
 MobileAnalyticsClient::MobileAnalyticsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

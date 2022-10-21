@@ -54,8 +54,8 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ram";
-static const char* ALLOCATION_TAG = "RAMClient";
+const char* RAMClient::SERVICE_NAME = "ram";
+const char* RAMClient::ALLOCATION_TAG = "RAMClient";
 
 RAMClient::RAMClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

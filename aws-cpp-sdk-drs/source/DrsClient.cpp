@@ -61,8 +61,8 @@ using namespace Aws::drs::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "drs";
-static const char* ALLOCATION_TAG = "DrsClient";
+const char* DrsClient::SERVICE_NAME = "drs";
+const char* DrsClient::ALLOCATION_TAG = "DrsClient";
 
 DrsClient::DrsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

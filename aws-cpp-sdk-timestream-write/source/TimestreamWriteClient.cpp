@@ -45,8 +45,8 @@ using namespace Aws::TimestreamWrite::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "timestream";
-static const char* ALLOCATION_TAG = "TimestreamWriteClient";
+const char* TimestreamWriteClient::SERVICE_NAME = "timestream";
+const char* TimestreamWriteClient::ALLOCATION_TAG = "TimestreamWriteClient";
 
 TimestreamWriteClient::TimestreamWriteClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

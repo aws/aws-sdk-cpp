@@ -50,8 +50,8 @@ using namespace Aws::MediaStore::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "mediastore";
-static const char* ALLOCATION_TAG = "MediaStoreClient";
+const char* MediaStoreClient::SERVICE_NAME = "mediastore";
+const char* MediaStoreClient::ALLOCATION_TAG = "MediaStoreClient";
 
 MediaStoreClient::MediaStoreClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

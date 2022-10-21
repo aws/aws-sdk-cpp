@@ -89,8 +89,8 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "kendra";
-static const char* ALLOCATION_TAG = "KendraClient";
+const char* KendraClient::SERVICE_NAME = "kendra";
+const char* KendraClient::ALLOCATION_TAG = "KendraClient";
 
 KendraClient::KendraClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -124,8 +124,8 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "gamelift";
-static const char* ALLOCATION_TAG = "GameLiftClient";
+const char* GameLiftClient::SERVICE_NAME = "gamelift";
+const char* GameLiftClient::ALLOCATION_TAG = "GameLiftClient";
 
 GameLiftClient::GameLiftClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

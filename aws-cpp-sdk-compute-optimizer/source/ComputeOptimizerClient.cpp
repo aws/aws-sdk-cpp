@@ -47,8 +47,8 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "compute-optimizer";
-static const char* ALLOCATION_TAG = "ComputeOptimizerClient";
+const char* ComputeOptimizerClient::SERVICE_NAME = "compute-optimizer";
+const char* ComputeOptimizerClient::ALLOCATION_TAG = "ComputeOptimizerClient";
 
 ComputeOptimizerClient::ComputeOptimizerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

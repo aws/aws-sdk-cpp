@@ -82,8 +82,8 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "geo";
-static const char* ALLOCATION_TAG = "LocationServiceClient";
+const char* LocationServiceClient::SERVICE_NAME = "geo";
+const char* LocationServiceClient::ALLOCATION_TAG = "LocationServiceClient";
 
 LocationServiceClient::LocationServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

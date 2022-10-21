@@ -50,8 +50,8 @@ using namespace Aws::DAX::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "dax";
-static const char* ALLOCATION_TAG = "DAXClient";
+const char* DAXClient::SERVICE_NAME = "dax";
+const char* DAXClient::ALLOCATION_TAG = "DAXClient";
 
 DAXClient::DAXClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

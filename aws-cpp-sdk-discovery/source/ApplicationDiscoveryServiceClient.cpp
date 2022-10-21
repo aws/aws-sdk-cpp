@@ -52,8 +52,8 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "discovery";
-static const char* ALLOCATION_TAG = "ApplicationDiscoveryServiceClient";
+const char* ApplicationDiscoveryServiceClient::SERVICE_NAME = "discovery";
+const char* ApplicationDiscoveryServiceClient::ALLOCATION_TAG = "ApplicationDiscoveryServiceClient";
 
 ApplicationDiscoveryServiceClient::ApplicationDiscoveryServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

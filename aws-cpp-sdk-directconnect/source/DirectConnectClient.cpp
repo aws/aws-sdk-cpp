@@ -85,8 +85,8 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "directconnect";
-static const char* ALLOCATION_TAG = "DirectConnectClient";
+const char* DirectConnectClient::SERVICE_NAME = "directconnect";
+const char* DirectConnectClient::ALLOCATION_TAG = "DirectConnectClient";
 
 DirectConnectClient::DirectConnectClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

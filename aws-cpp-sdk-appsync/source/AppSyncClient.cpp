@@ -79,8 +79,8 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "appsync";
-static const char* ALLOCATION_TAG = "AppSyncClient";
+const char* AppSyncClient::SERVICE_NAME = "appsync";
+const char* AppSyncClient::ALLOCATION_TAG = "AppSyncClient";
 
 AppSyncClient::AppSyncClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -91,8 +91,8 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "guardduty";
-static const char* ALLOCATION_TAG = "GuardDutyClient";
+const char* GuardDutyClient::SERVICE_NAME = "guardduty";
+const char* GuardDutyClient::ALLOCATION_TAG = "GuardDutyClient";
 
 GuardDutyClient::GuardDutyClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

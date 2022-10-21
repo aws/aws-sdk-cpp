@@ -43,8 +43,8 @@ using namespace Aws::CodeGuruReviewer::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "codeguru-reviewer";
-static const char* ALLOCATION_TAG = "CodeGuruReviewerClient";
+const char* CodeGuruReviewerClient::SERVICE_NAME = "codeguru-reviewer";
+const char* CodeGuruReviewerClient::ALLOCATION_TAG = "CodeGuruReviewerClient";
 
 CodeGuruReviewerClient::CodeGuruReviewerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

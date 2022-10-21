@@ -218,8 +218,8 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "chime";
-static const char* ALLOCATION_TAG = "ChimeClient";
+const char* ChimeClient::SERVICE_NAME = "chime";
+const char* ChimeClient::ALLOCATION_TAG = "ChimeClient";
 
 ChimeClient::ChimeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

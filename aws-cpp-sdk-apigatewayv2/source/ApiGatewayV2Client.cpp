@@ -101,8 +101,8 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "apigateway";
-static const char* ALLOCATION_TAG = "ApiGatewayV2Client";
+const char* ApiGatewayV2Client::SERVICE_NAME = "apigateway";
+const char* ApiGatewayV2Client::ALLOCATION_TAG = "ApiGatewayV2Client";
 
 ApiGatewayV2Client::ApiGatewayV2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

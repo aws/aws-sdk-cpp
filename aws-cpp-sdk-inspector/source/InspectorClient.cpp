@@ -65,8 +65,8 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "inspector";
-static const char* ALLOCATION_TAG = "InspectorClient";
+const char* InspectorClient::SERVICE_NAME = "inspector";
+const char* InspectorClient::ALLOCATION_TAG = "InspectorClient";
 
 InspectorClient::InspectorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

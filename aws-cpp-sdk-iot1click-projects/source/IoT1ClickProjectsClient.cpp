@@ -45,8 +45,8 @@ using namespace Aws::IoT1ClickProjects::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "iot1click";
-static const char* ALLOCATION_TAG = "IoT1ClickProjectsClient";
+const char* IoT1ClickProjectsClient::SERVICE_NAME = "iot1click";
+const char* IoT1ClickProjectsClient::ALLOCATION_TAG = "IoT1ClickProjectsClient";
 
 IoT1ClickProjectsClient::IoT1ClickProjectsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

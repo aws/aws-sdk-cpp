@@ -36,8 +36,8 @@ using namespace Aws::Macie::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "macie";
-static const char* ALLOCATION_TAG = "MacieClient";
+const char* MacieClient::SERVICE_NAME = "macie";
+const char* MacieClient::ALLOCATION_TAG = "MacieClient";
 
 MacieClient::MacieClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

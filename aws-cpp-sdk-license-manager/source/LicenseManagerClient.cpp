@@ -77,8 +77,8 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "license-manager";
-static const char* ALLOCATION_TAG = "LicenseManagerClient";
+const char* LicenseManagerClient::SERVICE_NAME = "license-manager";
+const char* LicenseManagerClient::ALLOCATION_TAG = "LicenseManagerClient";
 
 LicenseManagerClient::LicenseManagerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -64,8 +64,8 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "shield";
-static const char* ALLOCATION_TAG = "ShieldClient";
+const char* ShieldClient::SERVICE_NAME = "shield";
+const char* ShieldClient::ALLOCATION_TAG = "ShieldClient";
 
 ShieldClient::ShieldClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -68,8 +68,8 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "transcribe";
-static const char* ALLOCATION_TAG = "TranscribeServiceClient";
+const char* TranscribeServiceClient::SERVICE_NAME = "transcribe";
+const char* TranscribeServiceClient::ALLOCATION_TAG = "TranscribeServiceClient";
 
 TranscribeServiceClient::TranscribeServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

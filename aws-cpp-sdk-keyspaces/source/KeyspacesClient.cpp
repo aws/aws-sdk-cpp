@@ -42,8 +42,8 @@ using namespace Aws::Keyspaces::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "cassandra";
-static const char* ALLOCATION_TAG = "KeyspacesClient";
+const char* KeyspacesClient::SERVICE_NAME = "cassandra";
+const char* KeyspacesClient::ALLOCATION_TAG = "KeyspacesClient";
 
 KeyspacesClient::KeyspacesClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

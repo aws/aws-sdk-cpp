@@ -58,8 +58,8 @@ using namespace Aws::SSMIncidents::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ssm-incidents";
-static const char* ALLOCATION_TAG = "SSMIncidentsClient";
+const char* SSMIncidentsClient::SERVICE_NAME = "ssm-incidents";
+const char* SSMIncidentsClient::ALLOCATION_TAG = "SSMIncidentsClient";
 
 SSMIncidentsClient::SSMIncidentsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

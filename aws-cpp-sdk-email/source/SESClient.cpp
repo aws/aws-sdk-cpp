@@ -101,8 +101,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "ses";
-static const char* ALLOCATION_TAG = "SESClient";
+const char* SESClient::SERVICE_NAME = "ses";
+const char* SESClient::ALLOCATION_TAG = "SESClient";
 
 SESClient::SESClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

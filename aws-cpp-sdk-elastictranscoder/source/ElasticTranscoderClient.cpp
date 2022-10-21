@@ -45,8 +45,8 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "elastictranscoder";
-static const char* ALLOCATION_TAG = "ElasticTranscoderClient";
+const char* ElasticTranscoderClient::SERVICE_NAME = "elastictranscoder";
+const char* ElasticTranscoderClient::ALLOCATION_TAG = "ElasticTranscoderClient";
 
 ElasticTranscoderClient::ElasticTranscoderClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -63,8 +63,8 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "panorama";
-static const char* ALLOCATION_TAG = "PanoramaClient";
+const char* PanoramaClient::SERVICE_NAME = "panorama";
+const char* PanoramaClient::ALLOCATION_TAG = "PanoramaClient";
 
 PanoramaClient::PanoramaClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

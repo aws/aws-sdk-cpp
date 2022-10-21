@@ -94,8 +94,8 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "appstream";
-static const char* ALLOCATION_TAG = "AppStreamClient";
+const char* AppStreamClient::SERVICE_NAME = "appstream";
+const char* AppStreamClient::ALLOCATION_TAG = "AppStreamClient";
 
 AppStreamClient::AppStreamClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -106,8 +106,8 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "devicefarm";
-static const char* ALLOCATION_TAG = "DeviceFarmClient";
+const char* DeviceFarmClient::SERVICE_NAME = "devicefarm";
+const char* DeviceFarmClient::ALLOCATION_TAG = "DeviceFarmClient";
 
 DeviceFarmClient::DeviceFarmClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

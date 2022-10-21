@@ -57,8 +57,8 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "mediaconvert";
-static const char* ALLOCATION_TAG = "MediaConvertClient";
+const char* MediaConvertClient::SERVICE_NAME = "mediaconvert";
+const char* MediaConvertClient::ALLOCATION_TAG = "MediaConvertClient";
 
 MediaConvertClient::MediaConvertClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

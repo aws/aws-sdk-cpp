@@ -96,8 +96,8 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "lex";
-static const char* ALLOCATION_TAG = "LexModelsV2Client";
+const char* LexModelsV2Client::SERVICE_NAME = "lex";
+const char* LexModelsV2Client::ALLOCATION_TAG = "LexModelsV2Client";
 
 LexModelsV2Client::LexModelsV2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

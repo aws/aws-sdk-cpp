@@ -39,8 +39,8 @@ using namespace Aws::LicenseManagerUserSubscriptions::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "license-manager-user-subscriptions";
-static const char* ALLOCATION_TAG = "LicenseManagerUserSubscriptionsClient";
+const char* LicenseManagerUserSubscriptionsClient::SERVICE_NAME = "license-manager-user-subscriptions";
+const char* LicenseManagerUserSubscriptionsClient::ALLOCATION_TAG = "LicenseManagerUserSubscriptionsClient";
 
 LicenseManagerUserSubscriptionsClient::LicenseManagerUserSubscriptionsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

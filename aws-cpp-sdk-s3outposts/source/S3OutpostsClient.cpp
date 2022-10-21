@@ -33,8 +33,8 @@ using namespace Aws::S3Outposts::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "s3-outposts";
-static const char* ALLOCATION_TAG = "S3OutpostsClient";
+const char* S3OutpostsClient::SERVICE_NAME = "s3-outposts";
+const char* S3OutpostsClient::ALLOCATION_TAG = "S3OutpostsClient";
 
 S3OutpostsClient::S3OutpostsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

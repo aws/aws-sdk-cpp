@@ -34,8 +34,8 @@ using namespace Aws::RDSDataService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "rds-data";
-static const char* ALLOCATION_TAG = "RDSDataServiceClient";
+const char* RDSDataServiceClient::SERVICE_NAME = "rds-data";
+const char* RDSDataServiceClient::ALLOCATION_TAG = "RDSDataServiceClient";
 
 RDSDataServiceClient::RDSDataServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -88,8 +88,8 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "medialive";
-static const char* ALLOCATION_TAG = "MediaLiveClient";
+const char* MediaLiveClient::SERVICE_NAME = "medialive";
+const char* MediaLiveClient::ALLOCATION_TAG = "MediaLiveClient";
 
 MediaLiveClient::MediaLiveClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

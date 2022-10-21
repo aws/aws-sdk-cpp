@@ -65,8 +65,8 @@ using namespace Aws::CodeArtifact::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "codeartifact";
-static const char* ALLOCATION_TAG = "CodeArtifactClient";
+const char* CodeArtifactClient::SERVICE_NAME = "codeartifact";
+const char* CodeArtifactClient::ALLOCATION_TAG = "CodeArtifactClient";
 
 CodeArtifactClient::CodeArtifactClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -37,8 +37,8 @@ using namespace Aws::RecycleBin::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "rbin";
-static const char* ALLOCATION_TAG = "RecycleBinClient";
+const char* RecycleBinClient::SERVICE_NAME = "rbin";
+const char* RecycleBinClient::ALLOCATION_TAG = "RecycleBinClient";
 
 RecycleBinClient::RecycleBinClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

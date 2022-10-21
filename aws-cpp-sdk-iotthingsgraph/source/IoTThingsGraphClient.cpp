@@ -29,8 +29,8 @@ using namespace Aws::IoTThingsGraph::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "iotthingsgraph";
-static const char* ALLOCATION_TAG = "IoTThingsGraphClient";
+const char* IoTThingsGraphClient::SERVICE_NAME = "iotthingsgraph";
+const char* IoTThingsGraphClient::ALLOCATION_TAG = "IoTThingsGraphClient";
 
 IoTThingsGraphClient::IoTThingsGraphClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -34,8 +34,8 @@ using namespace Aws::LexRuntimeService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "lex";
-static const char* ALLOCATION_TAG = "LexRuntimeServiceClient";
+const char* LexRuntimeServiceClient::SERVICE_NAME = "lex";
+const char* LexRuntimeServiceClient::ALLOCATION_TAG = "LexRuntimeServiceClient";
 
 LexRuntimeServiceClient::LexRuntimeServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

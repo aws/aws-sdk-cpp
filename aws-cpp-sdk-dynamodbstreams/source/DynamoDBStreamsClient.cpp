@@ -33,8 +33,8 @@ using namespace Aws::DynamoDBStreams::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "dynamodb";
-static const char* ALLOCATION_TAG = "DynamoDBStreamsClient";
+const char* DynamoDBStreamsClient::SERVICE_NAME = "dynamodb";
+const char* DynamoDBStreamsClient::ALLOCATION_TAG = "DynamoDBStreamsClient";
 
 DynamoDBStreamsClient::DynamoDBStreamsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

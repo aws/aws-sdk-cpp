@@ -71,8 +71,8 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "logs";
-static const char* ALLOCATION_TAG = "CloudWatchLogsClient";
+const char* CloudWatchLogsClient::SERVICE_NAME = "logs";
+const char* CloudWatchLogsClient::ALLOCATION_TAG = "CloudWatchLogsClient";
 
 CloudWatchLogsClient::CloudWatchLogsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

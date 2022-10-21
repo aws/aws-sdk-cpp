@@ -41,8 +41,8 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "chime";
-static const char* ALLOCATION_TAG = "ChimeSDKMediaPipelinesClient";
+const char* ChimeSDKMediaPipelinesClient::SERVICE_NAME = "chime";
+const char* ChimeSDKMediaPipelinesClient::ALLOCATION_TAG = "ChimeSDKMediaPipelinesClient";
 
 ChimeSDKMediaPipelinesClient::ChimeSDKMediaPipelinesClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

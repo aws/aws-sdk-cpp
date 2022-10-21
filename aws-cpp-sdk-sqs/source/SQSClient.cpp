@@ -50,8 +50,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "sqs";
-static const char* ALLOCATION_TAG = "SQSClient";
+const char* SQSClient::SERVICE_NAME = "sqs";
+const char* SQSClient::ALLOCATION_TAG = "SQSClient";
 
 SQSClient::SQSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

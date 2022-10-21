@@ -37,8 +37,8 @@ using namespace Aws::IoTFleetHub::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "iotfleethub";
-static const char* ALLOCATION_TAG = "IoTFleetHubClient";
+const char* IoTFleetHubClient::SERVICE_NAME = "iotfleethub";
+const char* IoTFleetHubClient::ALLOCATION_TAG = "IoTFleetHubClient";
 
 IoTFleetHubClient::IoTFleetHubClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

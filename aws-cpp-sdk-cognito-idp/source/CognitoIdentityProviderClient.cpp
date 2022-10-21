@@ -130,8 +130,8 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "cognito-idp";
-static const char* ALLOCATION_TAG = "CognitoIdentityProviderClient";
+const char* CognitoIdentityProviderClient::SERVICE_NAME = "cognito-idp";
+const char* CognitoIdentityProviderClient::ALLOCATION_TAG = "CognitoIdentityProviderClient";
 
 CognitoIdentityProviderClient::CognitoIdentityProviderClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

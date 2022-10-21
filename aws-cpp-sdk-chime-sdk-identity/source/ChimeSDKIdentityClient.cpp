@@ -53,8 +53,8 @@ using namespace Aws::ChimeSDKIdentity::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "chime";
-static const char* ALLOCATION_TAG = "ChimeSDKIdentityClient";
+const char* ChimeSDKIdentityClient::SERVICE_NAME = "chime";
+const char* ChimeSDKIdentityClient::ALLOCATION_TAG = "ChimeSDKIdentityClient";
 
 ChimeSDKIdentityClient::ChimeSDKIdentityClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

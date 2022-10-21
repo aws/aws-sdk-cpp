@@ -32,8 +32,8 @@ using namespace Aws::CloudSearchDomain::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "cloudsearch";
-static const char* ALLOCATION_TAG = "CloudSearchDomainClient";
+const char* CloudSearchDomainClient::SERVICE_NAME = "cloudsearch";
+const char* CloudSearchDomainClient::ALLOCATION_TAG = "CloudSearchDomainClient";
 
 CloudSearchDomainClient::CloudSearchDomainClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
