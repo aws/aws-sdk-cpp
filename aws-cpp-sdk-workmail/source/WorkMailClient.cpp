@@ -109,8 +109,8 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "workmail";
-static const char* ALLOCATION_TAG = "WorkMailClient";
+const char* WorkMailClient::SERVICE_NAME = "workmail";
+const char* WorkMailClient::ALLOCATION_TAG = "WorkMailClient";
 
 WorkMailClient::WorkMailClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

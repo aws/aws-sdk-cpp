@@ -32,8 +32,8 @@ using namespace Aws::PersonalizeEvents::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "personalize";
-static const char* ALLOCATION_TAG = "PersonalizeEventsClient";
+const char* PersonalizeEventsClient::SERVICE_NAME = "personalize";
+const char* PersonalizeEventsClient::ALLOCATION_TAG = "PersonalizeEventsClient";
 
 PersonalizeEventsClient::PersonalizeEventsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

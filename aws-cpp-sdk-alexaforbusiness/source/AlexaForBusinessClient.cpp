@@ -122,8 +122,8 @@ using namespace Aws::AlexaForBusiness::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "a4b";
-static const char* ALLOCATION_TAG = "AlexaForBusinessClient";
+const char* AlexaForBusinessClient::SERVICE_NAME = "a4b";
+const char* AlexaForBusinessClient::ALLOCATION_TAG = "AlexaForBusinessClient";
 
 AlexaForBusinessClient::AlexaForBusinessClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -35,8 +35,8 @@ using namespace Aws::EBS::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ebs";
-static const char* ALLOCATION_TAG = "EBSClient";
+const char* EBSClient::SERVICE_NAME = "ebs";
+const char* EBSClient::ALLOCATION_TAG = "EBSClient";
 
 EBSClient::EBSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

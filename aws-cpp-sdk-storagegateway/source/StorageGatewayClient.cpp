@@ -119,8 +119,8 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "storagegateway";
-static const char* ALLOCATION_TAG = "StorageGatewayClient";
+const char* StorageGatewayClient::SERVICE_NAME = "storagegateway";
+const char* StorageGatewayClient::ALLOCATION_TAG = "StorageGatewayClient";
 
 StorageGatewayClient::StorageGatewayClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

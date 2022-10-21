@@ -92,8 +92,8 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "route53resolver";
-static const char* ALLOCATION_TAG = "Route53ResolverClient";
+const char* Route53ResolverClient::SERVICE_NAME = "route53resolver";
+const char* Route53ResolverClient::ALLOCATION_TAG = "Route53ResolverClient";
 
 Route53ResolverClient::Route53ResolverClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

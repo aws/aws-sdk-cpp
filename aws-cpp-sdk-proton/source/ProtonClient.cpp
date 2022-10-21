@@ -104,8 +104,8 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "proton";
-static const char* ALLOCATION_TAG = "ProtonClient";
+const char* ProtonClient::SERVICE_NAME = "proton";
+const char* ProtonClient::ALLOCATION_TAG = "ProtonClient";
 
 ProtonClient::ProtonClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

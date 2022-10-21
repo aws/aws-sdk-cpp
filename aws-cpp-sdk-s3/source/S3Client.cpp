@@ -125,8 +125,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "s3";
-static const char* ALLOCATION_TAG = "S3Client";
+const char* S3Client::SERVICE_NAME = "s3";
+const char* S3Client::ALLOCATION_TAG = "S3Client";
 
 S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration,
                    Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/,

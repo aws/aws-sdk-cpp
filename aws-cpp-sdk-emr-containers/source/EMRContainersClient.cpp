@@ -44,8 +44,8 @@ using namespace Aws::EMRContainers::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "emr-containers";
-static const char* ALLOCATION_TAG = "EMRContainersClient";
+const char* EMRContainersClient::SERVICE_NAME = "emr-containers";
+const char* EMRContainersClient::ALLOCATION_TAG = "EMRContainersClient";
 
 EMRContainersClient::EMRContainersClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

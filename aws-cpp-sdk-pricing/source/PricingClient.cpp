@@ -32,8 +32,8 @@ using namespace Aws::Pricing::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "pricing";
-static const char* ALLOCATION_TAG = "PricingClient";
+const char* PricingClient::SERVICE_NAME = "pricing";
+const char* PricingClient::ALLOCATION_TAG = "PricingClient";
 
 PricingClient::PricingClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

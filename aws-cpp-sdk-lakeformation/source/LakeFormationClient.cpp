@@ -74,8 +74,8 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "lakeformation";
-static const char* ALLOCATION_TAG = "LakeFormationClient";
+const char* LakeFormationClient::SERVICE_NAME = "lakeformation";
+const char* LakeFormationClient::ALLOCATION_TAG = "LakeFormationClient";
 
 LakeFormationClient::LakeFormationClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

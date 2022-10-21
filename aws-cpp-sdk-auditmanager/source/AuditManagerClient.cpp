@@ -90,8 +90,8 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "auditmanager";
-static const char* ALLOCATION_TAG = "AuditManagerClient";
+const char* AuditManagerClient::SERVICE_NAME = "auditmanager";
+const char* AuditManagerClient::ALLOCATION_TAG = "AuditManagerClient";
 
 AuditManagerClient::AuditManagerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

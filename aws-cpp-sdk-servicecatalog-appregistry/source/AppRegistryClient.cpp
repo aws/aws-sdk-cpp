@@ -51,8 +51,8 @@ using namespace Aws::AppRegistry::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "servicecatalog";
-static const char* ALLOCATION_TAG = "AppRegistryClient";
+const char* AppRegistryClient::SERVICE_NAME = "servicecatalog";
+const char* AppRegistryClient::ALLOCATION_TAG = "AppRegistryClient";
 
 AppRegistryClient::AppRegistryClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

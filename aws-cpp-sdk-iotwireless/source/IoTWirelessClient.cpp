@@ -127,8 +127,8 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "iotwireless";
-static const char* ALLOCATION_TAG = "IoTWirelessClient";
+const char* IoTWirelessClient::SERVICE_NAME = "iotwireless";
+const char* IoTWirelessClient::ALLOCATION_TAG = "IoTWirelessClient";
 
 IoTWirelessClient::IoTWirelessClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -71,8 +71,8 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "lex";
-static const char* ALLOCATION_TAG = "LexModelBuildingServiceClient";
+const char* LexModelBuildingServiceClient::SERVICE_NAME = "lex";
+const char* LexModelBuildingServiceClient::ALLOCATION_TAG = "LexModelBuildingServiceClient";
 
 LexModelBuildingServiceClient::LexModelBuildingServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

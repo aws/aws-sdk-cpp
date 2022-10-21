@@ -37,8 +37,8 @@ using namespace Aws::PinpointSMSVoice::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "sms-voice";
-static const char* ALLOCATION_TAG = "PinpointSMSVoiceClient";
+const char* PinpointSMSVoiceClient::SERVICE_NAME = "sms-voice";
+const char* PinpointSMSVoiceClient::ALLOCATION_TAG = "PinpointSMSVoiceClient";
 
 PinpointSMSVoiceClient::PinpointSMSVoiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

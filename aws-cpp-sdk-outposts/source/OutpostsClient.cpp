@@ -55,8 +55,8 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "outposts";
-static const char* ALLOCATION_TAG = "OutpostsClient";
+const char* OutpostsClient::SERVICE_NAME = "outposts";
+const char* OutpostsClient::ALLOCATION_TAG = "OutpostsClient";
 
 OutpostsClient::OutpostsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -45,7 +45,7 @@ static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request,
   {
       receivedHandler(userData->request.get(), userData->response.get(), static_cast<long long>(body->len));
   }
-  AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, body->len << " bytes written to response.");
+  AWS_LOGSTREAM_TRACE(${className}::ALLOCATION_TAG, body->len << " bytes written to response.");
 
   return AWS_OP_SUCCESS;
 }
@@ -69,7 +69,7 @@ static void S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request,
 
   if (meta_request_result->error_code || meta_request_result->response_status != static_cast<int>(Aws::Http::HttpResponseCode::OK))
   {
-    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3CrtClient received error response for s3_meta_request with response code: " << meta_request_result->response_status
+    AWS_LOGSTREAM_ERROR(${className}::ALLOCATION_TAG, "S3CrtClient received error response for s3_meta_request with response code: " << meta_request_result->response_status
       << ", with error_code: " << meta_request_result->error_code);
   }
 
@@ -291,7 +291,7 @@ void ${className}::${operation.name}Async(${constText}${operation.name}ResponseR
 #end
 
   // make aws_s3_meta_request with callbacks
-  CrtRequestCallbackUserData *userData = Aws::New<CrtRequestCallbackUserData>(ALLOCATION_TAG);
+  CrtRequestCallbackUserData *userData = Aws::New<CrtRequestCallbackUserData>(${className}::ALLOCATION_TAG);
   aws_s3_meta_request_options options;
   AWS_ZERO_STRUCT(options);
 

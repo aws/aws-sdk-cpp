@@ -31,8 +31,8 @@ using namespace Aws::MarketplaceCommerceAnalytics::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "marketplacecommerceanalytics";
-static const char* ALLOCATION_TAG = "MarketplaceCommerceAnalyticsClient";
+const char* MarketplaceCommerceAnalyticsClient::SERVICE_NAME = "marketplacecommerceanalytics";
+const char* MarketplaceCommerceAnalyticsClient::ALLOCATION_TAG = "MarketplaceCommerceAnalyticsClient";
 
 MarketplaceCommerceAnalyticsClient::MarketplaceCommerceAnalyticsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

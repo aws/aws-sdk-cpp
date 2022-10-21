@@ -292,8 +292,8 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "sagemaker";
-static const char* ALLOCATION_TAG = "SageMakerClient";
+const char* SageMakerClient::SERVICE_NAME = "sagemaker";
+const char* SageMakerClient::ALLOCATION_TAG = "SageMakerClient";
 
 SageMakerClient::SageMakerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

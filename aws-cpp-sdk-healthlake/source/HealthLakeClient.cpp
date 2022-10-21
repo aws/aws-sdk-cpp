@@ -42,8 +42,8 @@ using namespace Aws::HealthLake::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "healthlake";
-static const char* ALLOCATION_TAG = "HealthLakeClient";
+const char* HealthLakeClient::SERVICE_NAME = "healthlake";
+const char* HealthLakeClient::ALLOCATION_TAG = "HealthLakeClient";
 
 HealthLakeClient::HealthLakeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

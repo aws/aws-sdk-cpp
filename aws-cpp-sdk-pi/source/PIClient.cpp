@@ -35,8 +35,8 @@ using namespace Aws::PI::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "pi";
-static const char* ALLOCATION_TAG = "PIClient";
+const char* PIClient::SERVICE_NAME = "pi";
+const char* PIClient::ALLOCATION_TAG = "PIClient";
 
 PIClient::PIClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

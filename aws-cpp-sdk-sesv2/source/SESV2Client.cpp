@@ -111,8 +111,8 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ses";
-static const char* ALLOCATION_TAG = "SESV2Client";
+const char* SESV2Client::SERVICE_NAME = "ses";
+const char* SESV2Client::ALLOCATION_TAG = "SESV2Client";
 
 SESV2Client::SESV2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

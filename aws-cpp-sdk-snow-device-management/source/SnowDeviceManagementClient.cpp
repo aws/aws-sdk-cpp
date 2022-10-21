@@ -42,8 +42,8 @@ using namespace Aws::SnowDeviceManagement::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "snow-device-management";
-static const char* ALLOCATION_TAG = "SnowDeviceManagementClient";
+const char* SnowDeviceManagementClient::SERVICE_NAME = "snow-device-management";
+const char* SnowDeviceManagementClient::ALLOCATION_TAG = "SnowDeviceManagementClient";
 
 SnowDeviceManagementClient::SnowDeviceManagementClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

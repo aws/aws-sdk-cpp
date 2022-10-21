@@ -45,8 +45,8 @@ using namespace Aws::FIS::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "fis";
-static const char* ALLOCATION_TAG = "FISClient";
+const char* FISClient::SERVICE_NAME = "fis";
+const char* FISClient::ALLOCATION_TAG = "FISClient";
 
 FISClient::FISClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

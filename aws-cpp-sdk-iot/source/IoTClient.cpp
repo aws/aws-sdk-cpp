@@ -262,8 +262,8 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "execute-api";
-static const char* ALLOCATION_TAG = "IoTClient";
+const char* IoTClient::SERVICE_NAME = "execute-api";
+const char* IoTClient::ALLOCATION_TAG = "IoTClient";
 
 IoTClient::IoTClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

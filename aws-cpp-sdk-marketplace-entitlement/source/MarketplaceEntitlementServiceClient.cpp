@@ -30,8 +30,8 @@ using namespace Aws::MarketplaceEntitlementService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "aws-marketplace";
-static const char* ALLOCATION_TAG = "MarketplaceEntitlementServiceClient";
+const char* MarketplaceEntitlementServiceClient::SERVICE_NAME = "aws-marketplace";
+const char* MarketplaceEntitlementServiceClient::ALLOCATION_TAG = "MarketplaceEntitlementServiceClient";
 
 MarketplaceEntitlementServiceClient::MarketplaceEntitlementServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

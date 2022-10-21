@@ -33,8 +33,8 @@ using namespace Aws::IoTJobsDataPlane::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "iot-jobs-data";
-static const char* ALLOCATION_TAG = "IoTJobsDataPlaneClient";
+const char* IoTJobsDataPlaneClient::SERVICE_NAME = "iot-jobs-data";
+const char* IoTJobsDataPlaneClient::ALLOCATION_TAG = "IoTJobsDataPlaneClient";
 
 IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

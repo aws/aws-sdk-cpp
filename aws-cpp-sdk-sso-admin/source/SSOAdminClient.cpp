@@ -66,8 +66,8 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "sso";
-static const char* ALLOCATION_TAG = "SSOAdminClient";
+const char* SSOAdminClient::SERVICE_NAME = "sso";
+const char* SSOAdminClient::ALLOCATION_TAG = "SSOAdminClient";
 
 SSOAdminClient::SSOAdminClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

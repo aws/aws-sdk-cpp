@@ -55,8 +55,8 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "iotevents";
-static const char* ALLOCATION_TAG = "IoTEventsClient";
+const char* IoTEventsClient::SERVICE_NAME = "iotevents";
+const char* IoTEventsClient::ALLOCATION_TAG = "IoTEventsClient";
 
 IoTEventsClient::IoTEventsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

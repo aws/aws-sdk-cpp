@@ -80,8 +80,8 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "workspaces-web";
-static const char* ALLOCATION_TAG = "WorkSpacesWebClient";
+const char* WorkSpacesWebClient::SERVICE_NAME = "workspaces-web";
+const char* WorkSpacesWebClient::ALLOCATION_TAG = "WorkSpacesWebClient";
 
 WorkSpacesWebClient::WorkSpacesWebClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

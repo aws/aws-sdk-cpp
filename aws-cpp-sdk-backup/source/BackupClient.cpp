@@ -94,8 +94,8 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "backup";
-static const char* ALLOCATION_TAG = "BackupClient";
+const char* BackupClient::SERVICE_NAME = "backup";
+const char* BackupClient::ALLOCATION_TAG = "BackupClient";
 
 BackupClient::BackupClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

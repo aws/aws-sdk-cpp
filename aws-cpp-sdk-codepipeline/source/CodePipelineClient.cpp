@@ -68,8 +68,8 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "codepipeline";
-static const char* ALLOCATION_TAG = "CodePipelineClient";
+const char* CodePipelineClient::SERVICE_NAME = "codepipeline";
+const char* CodePipelineClient::ALLOCATION_TAG = "CodePipelineClient";
 
 CodePipelineClient::CodePipelineClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

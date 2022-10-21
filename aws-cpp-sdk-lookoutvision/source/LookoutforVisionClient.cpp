@@ -51,8 +51,8 @@ using namespace Aws::LookoutforVision::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "lookoutvision";
-static const char* ALLOCATION_TAG = "LookoutforVisionClient";
+const char* LookoutforVisionClient::SERVICE_NAME = "lookoutvision";
+const char* LookoutforVisionClient::ALLOCATION_TAG = "LookoutforVisionClient";
 
 LookoutforVisionClient::LookoutforVisionClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

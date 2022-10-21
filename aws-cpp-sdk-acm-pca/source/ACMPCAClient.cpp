@@ -52,8 +52,8 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "acm-pca";
-static const char* ALLOCATION_TAG = "ACMPCAClient";
+const char* ACMPCAClient::SERVICE_NAME = "acm-pca";
+const char* ACMPCAClient::ALLOCATION_TAG = "ACMPCAClient";
 
 ACMPCAClient::ACMPCAClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

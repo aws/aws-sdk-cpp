@@ -68,8 +68,8 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "resiliencehub";
-static const char* ALLOCATION_TAG = "ResilienceHubClient";
+const char* ResilienceHubClient::SERVICE_NAME = "resiliencehub";
+const char* ResilienceHubClient::ALLOCATION_TAG = "ResilienceHubClient";
 
 ResilienceHubClient::ResilienceHubClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

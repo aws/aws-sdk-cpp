@@ -39,8 +39,8 @@ using namespace Aws::SupportApp::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "supportapp";
-static const char* ALLOCATION_TAG = "SupportAppClient";
+const char* SupportAppClient::SERVICE_NAME = "supportapp";
+const char* SupportAppClient::ALLOCATION_TAG = "SupportAppClient";
 
 SupportAppClient::SupportAppClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

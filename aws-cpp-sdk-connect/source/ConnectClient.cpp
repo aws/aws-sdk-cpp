@@ -190,8 +190,8 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "connect";
-static const char* ALLOCATION_TAG = "ConnectClient";
+const char* ConnectClient::SERVICE_NAME = "connect";
+const char* ConnectClient::ALLOCATION_TAG = "ConnectClient";
 
 ConnectClient::ConnectClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

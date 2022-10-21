@@ -72,8 +72,8 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "codedeploy";
-static const char* ALLOCATION_TAG = "CodeDeployClient";
+const char* CodeDeployClient::SERVICE_NAME = "codedeploy";
+const char* CodeDeployClient::ALLOCATION_TAG = "CodeDeployClient";
 
 CodeDeployClient::CodeDeployClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

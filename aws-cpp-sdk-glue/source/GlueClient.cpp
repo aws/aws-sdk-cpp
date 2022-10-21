@@ -215,8 +215,8 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "glue";
-static const char* ALLOCATION_TAG = "GlueClient";
+const char* GlueClient::SERVICE_NAME = "glue";
+const char* GlueClient::ALLOCATION_TAG = "GlueClient";
 
 GlueClient::GlueClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

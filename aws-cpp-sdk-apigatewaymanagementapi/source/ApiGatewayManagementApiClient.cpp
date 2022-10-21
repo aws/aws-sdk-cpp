@@ -32,8 +32,8 @@ using namespace Aws::ApiGatewayManagementApi::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "execute-api";
-static const char* ALLOCATION_TAG = "ApiGatewayManagementApiClient";
+const char* ApiGatewayManagementApiClient::SERVICE_NAME = "execute-api";
+const char* ApiGatewayManagementApiClient::ALLOCATION_TAG = "ApiGatewayManagementApiClient";
 
 ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -51,8 +51,8 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "secretsmanager";
-static const char* ALLOCATION_TAG = "SecretsManagerClient";
+const char* SecretsManagerClient::SERVICE_NAME = "secretsmanager";
+const char* SecretsManagerClient::ALLOCATION_TAG = "SecretsManagerClient";
 
 SecretsManagerClient::SecretsManagerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

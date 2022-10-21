@@ -62,8 +62,8 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "glacier";
-static const char* ALLOCATION_TAG = "GlacierClient";
+const char* GlacierClient::SERVICE_NAME = "glacier";
+const char* GlacierClient::ALLOCATION_TAG = "GlacierClient";
 
 GlacierClient::GlacierClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

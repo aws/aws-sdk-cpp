@@ -69,8 +69,8 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "es";
-static const char* ALLOCATION_TAG = "ElasticsearchServiceClient";
+const char* ElasticsearchServiceClient::SERVICE_NAME = "es";
+const char* ElasticsearchServiceClient::ALLOCATION_TAG = "ElasticsearchServiceClient";
 
 ElasticsearchServiceClient::ElasticsearchServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

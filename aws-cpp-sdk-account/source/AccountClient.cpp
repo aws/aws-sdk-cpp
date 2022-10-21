@@ -34,8 +34,8 @@ using namespace Aws::Account::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "account";
-static const char* ALLOCATION_TAG = "AccountClient";
+const char* AccountClient::SERVICE_NAME = "account";
+const char* AccountClient::ALLOCATION_TAG = "AccountClient";
 
 AccountClient::AccountClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

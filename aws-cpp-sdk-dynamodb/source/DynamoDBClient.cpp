@@ -83,8 +83,8 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "dynamodb";
-static const char* ALLOCATION_TAG = "DynamoDBClient";
+const char* DynamoDBClient::SERVICE_NAME = "dynamodb";
+const char* DynamoDBClient::ALLOCATION_TAG = "DynamoDBClient";
 
 DynamoDBClient::DynamoDBClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -48,8 +48,8 @@ using namespace Aws::ServiceQuotas::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "servicequotas";
-static const char* ALLOCATION_TAG = "ServiceQuotasClient";
+const char* ServiceQuotasClient::SERVICE_NAME = "servicequotas";
+const char* ServiceQuotasClient::ALLOCATION_TAG = "ServiceQuotasClient";
 
 ServiceQuotasClient::ServiceQuotasClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

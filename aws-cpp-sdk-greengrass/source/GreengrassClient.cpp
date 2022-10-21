@@ -121,8 +121,8 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "greengrass";
-static const char* ALLOCATION_TAG = "GreengrassClient";
+const char* GreengrassClient::SERVICE_NAME = "greengrass";
+const char* GreengrassClient::ALLOCATION_TAG = "GreengrassClient";
 
 GreengrassClient::GreengrassClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

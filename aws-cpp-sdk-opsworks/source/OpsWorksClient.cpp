@@ -101,8 +101,8 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "opsworks";
-static const char* ALLOCATION_TAG = "OpsWorksClient";
+const char* OpsWorksClient::SERVICE_NAME = "opsworks";
+const char* OpsWorksClient::ALLOCATION_TAG = "OpsWorksClient";
 
 OpsWorksClient::OpsWorksClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

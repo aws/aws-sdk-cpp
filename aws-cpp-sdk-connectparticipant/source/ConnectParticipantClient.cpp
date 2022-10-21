@@ -37,8 +37,8 @@ using namespace Aws::ConnectParticipant::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "execute-api";
-static const char* ALLOCATION_TAG = "ConnectParticipantClient";
+const char* ConnectParticipantClient::SERVICE_NAME = "execute-api";
+const char* ConnectParticipantClient::ALLOCATION_TAG = "ConnectParticipantClient";
 
 ConnectParticipantClient::ConnectParticipantClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

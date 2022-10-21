@@ -60,8 +60,8 @@ using namespace Aws::FinSpaceData::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "finspace-api";
-static const char* ALLOCATION_TAG = "FinSpaceDataClient";
+const char* FinSpaceDataClient::SERVICE_NAME = "finspace-api";
+const char* FinSpaceDataClient::ALLOCATION_TAG = "FinSpaceDataClient";
 
 FinSpaceDataClient::FinSpaceDataClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

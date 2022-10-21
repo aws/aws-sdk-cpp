@@ -73,8 +73,8 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "datasync";
-static const char* ALLOCATION_TAG = "DataSyncClient";
+const char* DataSyncClient::SERVICE_NAME = "datasync";
+const char* DataSyncClient::ALLOCATION_TAG = "DataSyncClient";
 
 DataSyncClient::DataSyncClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

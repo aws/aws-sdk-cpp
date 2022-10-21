@@ -41,8 +41,8 @@ using namespace Aws::Firehose::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "firehose";
-static const char* ALLOCATION_TAG = "FirehoseClient";
+const char* FirehoseClient::SERVICE_NAME = "firehose";
+const char* FirehoseClient::ALLOCATION_TAG = "FirehoseClient";
 
 FirehoseClient::FirehoseClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

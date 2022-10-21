@@ -55,8 +55,8 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "rolesanywhere";
-static const char* ALLOCATION_TAG = "RolesAnywhereClient";
+const char* RolesAnywhereClient::SERVICE_NAME = "rolesanywhere";
+const char* RolesAnywhereClient::ALLOCATION_TAG = "RolesAnywhereClient";
 
 RolesAnywhereClient::RolesAnywhereClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

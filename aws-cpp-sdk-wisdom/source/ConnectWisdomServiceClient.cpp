@@ -60,8 +60,8 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "wisdom";
-static const char* ALLOCATION_TAG = "ConnectWisdomServiceClient";
+const char* ConnectWisdomServiceClient::SERVICE_NAME = "wisdom";
+const char* ConnectWisdomServiceClient::ALLOCATION_TAG = "ConnectWisdomServiceClient";
 
 ConnectWisdomServiceClient::ConnectWisdomServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

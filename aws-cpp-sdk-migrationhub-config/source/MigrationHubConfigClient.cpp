@@ -32,8 +32,8 @@ using namespace Aws::MigrationHubConfig::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "mgh";
-static const char* ALLOCATION_TAG = "MigrationHubConfigClient";
+const char* MigrationHubConfigClient::SERVICE_NAME = "mgh";
+const char* MigrationHubConfigClient::ALLOCATION_TAG = "MigrationHubConfigClient";
 
 MigrationHubConfigClient::MigrationHubConfigClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

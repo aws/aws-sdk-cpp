@@ -82,8 +82,8 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "securityhub";
-static const char* ALLOCATION_TAG = "SecurityHubClient";
+const char* SecurityHubClient::SERVICE_NAME = "securityhub";
+const char* SecurityHubClient::ALLOCATION_TAG = "SecurityHubClient";
 
 SecurityHubClient::SecurityHubClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

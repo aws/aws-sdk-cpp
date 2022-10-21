@@ -102,8 +102,8 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "comprehend";
-static const char* ALLOCATION_TAG = "ComprehendClient";
+const char* ComprehendClient::SERVICE_NAME = "comprehend";
+const char* ComprehendClient::ALLOCATION_TAG = "ComprehendClient";
 
 ComprehendClient::ComprehendClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

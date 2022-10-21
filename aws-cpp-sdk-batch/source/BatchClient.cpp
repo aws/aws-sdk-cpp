@@ -53,8 +53,8 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "batch";
-static const char* ALLOCATION_TAG = "BatchClient";
+const char* BatchClient::SERVICE_NAME = "batch";
+const char* BatchClient::ALLOCATION_TAG = "BatchClient";
 
 BatchClient::BatchClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

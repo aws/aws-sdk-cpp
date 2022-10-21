@@ -164,8 +164,8 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ssm";
-static const char* ALLOCATION_TAG = "SSMClient";
+const char* SSMClient::SERVICE_NAME = "ssm";
+const char* SSMClient::ALLOCATION_TAG = "SSMClient";
 
 SSMClient::SSMClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

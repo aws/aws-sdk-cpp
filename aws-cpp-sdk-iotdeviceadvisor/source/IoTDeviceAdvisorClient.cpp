@@ -43,8 +43,8 @@ using namespace Aws::IoTDeviceAdvisor::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "iotdeviceadvisor";
-static const char* ALLOCATION_TAG = "IoTDeviceAdvisorClient";
+const char* IoTDeviceAdvisorClient::SERVICE_NAME = "iotdeviceadvisor";
+const char* IoTDeviceAdvisorClient::ALLOCATION_TAG = "IoTDeviceAdvisorClient";
 
 IoTDeviceAdvisorClient::IoTDeviceAdvisorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

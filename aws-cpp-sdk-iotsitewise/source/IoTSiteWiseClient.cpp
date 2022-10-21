@@ -100,8 +100,8 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "iotsitewise";
-static const char* ALLOCATION_TAG = "IoTSiteWiseClient";
+const char* IoTSiteWiseClient::SERVICE_NAME = "iotsitewise";
+const char* IoTSiteWiseClient::ALLOCATION_TAG = "IoTSiteWiseClient";
 
 IoTSiteWiseClient::IoTSiteWiseClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

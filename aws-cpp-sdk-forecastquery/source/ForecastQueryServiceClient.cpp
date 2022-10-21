@@ -31,8 +31,8 @@ using namespace Aws::ForecastQueryService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "forecast";
-static const char* ALLOCATION_TAG = "ForecastQueryServiceClient";
+const char* ForecastQueryServiceClient::SERVICE_NAME = "forecast";
+const char* ForecastQueryServiceClient::ALLOCATION_TAG = "ForecastQueryServiceClient";
 
 ForecastQueryServiceClient::ForecastQueryServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

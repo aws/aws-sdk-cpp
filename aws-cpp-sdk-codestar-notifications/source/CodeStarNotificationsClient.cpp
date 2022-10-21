@@ -42,8 +42,8 @@ using namespace Aws::CodeStarNotifications::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "codestar-notifications";
-static const char* ALLOCATION_TAG = "CodeStarNotificationsClient";
+const char* CodeStarNotificationsClient::SERVICE_NAME = "codestar-notifications";
+const char* CodeStarNotificationsClient::ALLOCATION_TAG = "CodeStarNotificationsClient";
 
 CodeStarNotificationsClient::CodeStarNotificationsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
