@@ -33,8 +33,8 @@ using namespace Aws::SSO::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "awsssoportal";
-static const char* ALLOCATION_TAG = "SSOClient";
+const char* SSOClient::SERVICE_NAME = "awsssoportal";
+const char* SSOClient::ALLOCATION_TAG = "SSOClient";
 
 SSOClient::SSOClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

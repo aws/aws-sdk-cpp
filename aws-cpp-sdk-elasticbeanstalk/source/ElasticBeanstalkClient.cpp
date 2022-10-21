@@ -77,8 +77,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "elasticbeanstalk";
-static const char* ALLOCATION_TAG = "ElasticBeanstalkClient";
+const char* ElasticBeanstalkClient::SERVICE_NAME = "elasticbeanstalk";
+const char* ElasticBeanstalkClient::ALLOCATION_TAG = "ElasticBeanstalkClient";
 
 ElasticBeanstalkClient::ElasticBeanstalkClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

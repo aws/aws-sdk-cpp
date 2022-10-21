@@ -95,8 +95,8 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "clouddirectory";
-static const char* ALLOCATION_TAG = "CloudDirectoryClient";
+const char* CloudDirectoryClient::SERVICE_NAME = "clouddirectory";
+const char* CloudDirectoryClient::ALLOCATION_TAG = "CloudDirectoryClient";
 
 CloudDirectoryClient::CloudDirectoryClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

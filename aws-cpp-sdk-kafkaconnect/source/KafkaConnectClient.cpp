@@ -41,8 +41,8 @@ using namespace Aws::KafkaConnect::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "kafkaconnect";
-static const char* ALLOCATION_TAG = "KafkaConnectClient";
+const char* KafkaConnectClient::SERVICE_NAME = "kafkaconnect";
+const char* KafkaConnectClient::ALLOCATION_TAG = "KafkaConnectClient";
 
 KafkaConnectClient::KafkaConnectClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

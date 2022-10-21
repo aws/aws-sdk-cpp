@@ -51,8 +51,8 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "appflow";
-static const char* ALLOCATION_TAG = "AppflowClient";
+const char* AppflowClient::SERVICE_NAME = "appflow";
+const char* AppflowClient::ALLOCATION_TAG = "AppflowClient";
 
 AppflowClient::AppflowClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

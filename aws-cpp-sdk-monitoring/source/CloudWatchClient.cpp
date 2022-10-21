@@ -68,8 +68,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "monitoring";
-static const char* ALLOCATION_TAG = "CloudWatchClient";
+const char* CloudWatchClient::SERVICE_NAME = "monitoring";
+const char* CloudWatchClient::ALLOCATION_TAG = "CloudWatchClient";
 
 CloudWatchClient::CloudWatchClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

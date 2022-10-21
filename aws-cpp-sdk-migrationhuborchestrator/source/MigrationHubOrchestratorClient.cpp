@@ -57,8 +57,8 @@ using namespace Aws::MigrationHubOrchestrator::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "migrationhub-orchestrator";
-static const char* ALLOCATION_TAG = "MigrationHubOrchestratorClient";
+const char* MigrationHubOrchestratorClient::SERVICE_NAME = "migrationhub-orchestrator";
+const char* MigrationHubOrchestratorClient::ALLOCATION_TAG = "MigrationHubOrchestratorClient";
 
 MigrationHubOrchestratorClient::MigrationHubOrchestratorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

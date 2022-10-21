@@ -39,8 +39,8 @@ using namespace Aws::RedshiftDataAPIService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "redshift-data";
-static const char* ALLOCATION_TAG = "RedshiftDataAPIServiceClient";
+const char* RedshiftDataAPIServiceClient::SERVICE_NAME = "redshift-data";
+const char* RedshiftDataAPIServiceClient::ALLOCATION_TAG = "RedshiftDataAPIServiceClient";
 
 RedshiftDataAPIServiceClient::RedshiftDataAPIServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

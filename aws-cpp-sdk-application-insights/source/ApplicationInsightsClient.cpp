@@ -56,8 +56,8 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "applicationinsights";
-static const char* ALLOCATION_TAG = "ApplicationInsightsClient";
+const char* ApplicationInsightsClient::SERVICE_NAME = "applicationinsights";
+const char* ApplicationInsightsClient::ALLOCATION_TAG = "ApplicationInsightsClient";
 
 ApplicationInsightsClient::ApplicationInsightsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

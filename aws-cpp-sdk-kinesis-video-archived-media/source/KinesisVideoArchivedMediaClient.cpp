@@ -35,8 +35,8 @@ using namespace Aws::KinesisVideoArchivedMedia::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "kinesisvideo";
-static const char* ALLOCATION_TAG = "KinesisVideoArchivedMediaClient";
+const char* KinesisVideoArchivedMediaClient::SERVICE_NAME = "kinesisvideo";
+const char* KinesisVideoArchivedMediaClient::ALLOCATION_TAG = "KinesisVideoArchivedMediaClient";
 
 KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

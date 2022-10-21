@@ -60,8 +60,8 @@ using namespace Aws::AmplifyBackend::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "amplifybackend";
-static const char* ALLOCATION_TAG = "AmplifyBackendClient";
+const char* AmplifyBackendClient::SERVICE_NAME = "amplifybackend";
+const char* AmplifyBackendClient::ALLOCATION_TAG = "AmplifyBackendClient";
 
 AmplifyBackendClient::AmplifyBackendClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

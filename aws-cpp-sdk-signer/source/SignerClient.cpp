@@ -46,8 +46,8 @@ using namespace Aws::signer::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "signer";
-static const char* ALLOCATION_TAG = "SignerClient";
+const char* SignerClient::SERVICE_NAME = "signer";
+const char* SignerClient::ALLOCATION_TAG = "SignerClient";
 
 SignerClient::SignerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -38,8 +38,8 @@ using namespace Aws::SavingsPlans::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "savingsplans";
-static const char* ALLOCATION_TAG = "SavingsPlansClient";
+const char* SavingsPlansClient::SERVICE_NAME = "savingsplans";
+const char* SavingsPlansClient::ALLOCATION_TAG = "SavingsPlansClient";
 
 SavingsPlansClient::SavingsPlansClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

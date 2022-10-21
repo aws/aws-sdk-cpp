@@ -57,8 +57,8 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "access-analyzer";
-static const char* ALLOCATION_TAG = "AccessAnalyzerClient";
+const char* AccessAnalyzerClient::SERVICE_NAME = "access-analyzer";
+const char* AccessAnalyzerClient::ALLOCATION_TAG = "AccessAnalyzerClient";
 
 AccessAnalyzerClient::AccessAnalyzerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

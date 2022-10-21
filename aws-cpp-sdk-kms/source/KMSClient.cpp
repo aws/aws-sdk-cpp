@@ -79,8 +79,8 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "kms";
-static const char* ALLOCATION_TAG = "KMSClient";
+const char* KMSClient::SERVICE_NAME = "kms";
+const char* KMSClient::ALLOCATION_TAG = "KMSClient";
 
 KMSClient::KMSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

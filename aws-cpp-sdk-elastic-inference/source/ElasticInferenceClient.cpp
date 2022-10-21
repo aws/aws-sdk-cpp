@@ -35,8 +35,8 @@ using namespace Aws::ElasticInference::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "elastic-inference";
-static const char* ALLOCATION_TAG = "ElasticInferenceClient";
+const char* ElasticInferenceClient::SERVICE_NAME = "elastic-inference";
+const char* ElasticInferenceClient::ALLOCATION_TAG = "ElasticInferenceClient";
 
 ElasticInferenceClient::ElasticInferenceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

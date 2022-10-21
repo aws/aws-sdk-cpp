@@ -53,8 +53,8 @@ using namespace Aws::PrivateNetworks::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "private-networks";
-static const char* ALLOCATION_TAG = "PrivateNetworksClient";
+const char* PrivateNetworksClient::SERVICE_NAME = "private-networks";
+const char* PrivateNetworksClient::ALLOCATION_TAG = "PrivateNetworksClient";
 
 PrivateNetworksClient::PrivateNetworksClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

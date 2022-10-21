@@ -52,8 +52,8 @@ using namespace Aws::Budgets::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "budgets";
-static const char* ALLOCATION_TAG = "BudgetsClient";
+const char* BudgetsClient::SERVICE_NAME = "budgets";
+const char* BudgetsClient::ALLOCATION_TAG = "BudgetsClient";
 
 BudgetsClient::BudgetsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

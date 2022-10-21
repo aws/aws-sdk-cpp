@@ -41,8 +41,8 @@ using namespace Aws::ivschat::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ivschat";
-static const char* ALLOCATION_TAG = "IvschatClient";
+const char* IvschatClient::SERVICE_NAME = "ivschat";
+const char* IvschatClient::ALLOCATION_TAG = "IvschatClient";
 
 IvschatClient::IvschatClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

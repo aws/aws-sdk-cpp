@@ -71,8 +71,8 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "mediatailor";
-static const char* ALLOCATION_TAG = "MediaTailorClient";
+const char* MediaTailorClient::SERVICE_NAME = "mediatailor";
+const char* MediaTailorClient::ALLOCATION_TAG = "MediaTailorClient";
 
 MediaTailorClient::MediaTailorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

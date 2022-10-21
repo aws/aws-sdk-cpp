@@ -70,8 +70,8 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "workdocs";
-static const char* ALLOCATION_TAG = "WorkDocsClient";
+const char* WorkDocsClient::SERVICE_NAME = "workdocs";
+const char* WorkDocsClient::ALLOCATION_TAG = "WorkDocsClient";
 
 WorkDocsClient::WorkDocsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -62,8 +62,8 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "mgn";
-static const char* ALLOCATION_TAG = "MgnClient";
+const char* MgnClient::SERVICE_NAME = "mgn";
+const char* MgnClient::ALLOCATION_TAG = "MgnClient";
 
 MgnClient::MgnClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

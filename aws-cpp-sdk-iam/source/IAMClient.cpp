@@ -188,8 +188,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "iam";
-static const char* ALLOCATION_TAG = "IAMClient";
+const char* IAMClient::SERVICE_NAME = "iam";
+const char* IAMClient::ALLOCATION_TAG = "IAMClient";
 
 IAMClient::IAMClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

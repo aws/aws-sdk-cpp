@@ -57,8 +57,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
 
-static const char* SERVICE_NAME = "machinelearning";
-static const char* ALLOCATION_TAG = "MachineLearningClient";
+const char* MachineLearningClient::SERVICE_NAME = "machinelearning";
+const char* MachineLearningClient::ALLOCATION_TAG = "MachineLearningClient";
 
 MachineLearningClient::MachineLearningClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -69,8 +69,8 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "wellarchitected";
-static const char* ALLOCATION_TAG = "WellArchitectedClient";
+const char* WellArchitectedClient::SERVICE_NAME = "wellarchitected";
+const char* WellArchitectedClient::ALLOCATION_TAG = "WellArchitectedClient";
 
 WellArchitectedClient::WellArchitectedClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

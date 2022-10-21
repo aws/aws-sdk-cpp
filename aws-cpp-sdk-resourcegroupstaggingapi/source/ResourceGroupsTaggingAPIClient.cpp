@@ -37,8 +37,8 @@ using namespace Aws::ResourceGroupsTaggingAPI::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "tagging";
-static const char* ALLOCATION_TAG = "ResourceGroupsTaggingAPIClient";
+const char* ResourceGroupsTaggingAPIClient::SERVICE_NAME = "tagging";
+const char* ResourceGroupsTaggingAPIClient::ALLOCATION_TAG = "ResourceGroupsTaggingAPIClient";
 
 ResourceGroupsTaggingAPIClient::ResourceGroupsTaggingAPIClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

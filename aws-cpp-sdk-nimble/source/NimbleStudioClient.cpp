@@ -76,8 +76,8 @@ using namespace Aws::NimbleStudio::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "nimble";
-static const char* ALLOCATION_TAG = "NimbleStudioClient";
+const char* NimbleStudioClient::SERVICE_NAME = "nimble";
+const char* NimbleStudioClient::ALLOCATION_TAG = "NimbleStudioClient";
 
 NimbleStudioClient::NimbleStudioClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

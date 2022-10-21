@@ -44,8 +44,8 @@ using namespace Aws::EMRServerless::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "emr-serverless";
-static const char* ALLOCATION_TAG = "EMRServerlessClient";
+const char* EMRServerlessClient::SERVICE_NAME = "emr-serverless";
+const char* EMRServerlessClient::ALLOCATION_TAG = "EMRServerlessClient";
 
 EMRServerlessClient::EMRServerlessClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

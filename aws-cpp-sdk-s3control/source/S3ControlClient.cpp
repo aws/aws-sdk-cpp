@@ -91,8 +91,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "s3";
-static const char* ALLOCATION_TAG = "S3ControlClient";
+const char* S3ControlClient::SERVICE_NAME = "s3";
+const char* S3ControlClient::ALLOCATION_TAG = "S3ControlClient";
 
 S3ControlClient::S3ControlClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

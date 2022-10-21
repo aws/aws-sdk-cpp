@@ -60,8 +60,8 @@ using namespace Aws::Schemas::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "schemas";
-static const char* ALLOCATION_TAG = "SchemasClient";
+const char* SchemasClient::SERVICE_NAME = "schemas";
+const char* SchemasClient::ALLOCATION_TAG = "SchemasClient";
 
 SchemasClient::SchemasClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

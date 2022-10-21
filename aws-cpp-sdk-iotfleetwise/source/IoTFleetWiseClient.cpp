@@ -79,8 +79,8 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "iotfleetwise";
-static const char* ALLOCATION_TAG = "IoTFleetWiseClient";
+const char* IoTFleetWiseClient::SERVICE_NAME = "iotfleetwise";
+const char* IoTFleetWiseClient::ALLOCATION_TAG = "IoTFleetWiseClient";
 
 IoTFleetWiseClient::IoTFleetWiseClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

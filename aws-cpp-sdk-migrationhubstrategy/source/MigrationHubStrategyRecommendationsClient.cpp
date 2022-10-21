@@ -49,8 +49,8 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "migrationhub-strategy";
-static const char* ALLOCATION_TAG = "MigrationHubStrategyRecommendationsClient";
+const char* MigrationHubStrategyRecommendationsClient::SERVICE_NAME = "migrationhub-strategy";
+const char* MigrationHubStrategyRecommendationsClient::ALLOCATION_TAG = "MigrationHubStrategyRecommendationsClient";
 
 MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

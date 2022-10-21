@@ -80,8 +80,8 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "events";
-static const char* ALLOCATION_TAG = "CloudWatchEventsClient";
+const char* CloudWatchEventsClient::SERVICE_NAME = "events";
+const char* CloudWatchEventsClient::ALLOCATION_TAG = "CloudWatchEventsClient";
 
 CloudWatchEventsClient::CloudWatchEventsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

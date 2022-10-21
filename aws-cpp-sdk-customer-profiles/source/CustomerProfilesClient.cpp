@@ -67,8 +67,8 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "profile";
-static const char* ALLOCATION_TAG = "CustomerProfilesClient";
+const char* CustomerProfilesClient::SERVICE_NAME = "profile";
+const char* CustomerProfilesClient::ALLOCATION_TAG = "CustomerProfilesClient";
 
 CustomerProfilesClient::CustomerProfilesClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

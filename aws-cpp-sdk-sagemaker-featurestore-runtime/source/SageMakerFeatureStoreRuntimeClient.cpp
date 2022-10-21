@@ -33,8 +33,8 @@ using namespace Aws::SageMakerFeatureStoreRuntime::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "sagemaker";
-static const char* ALLOCATION_TAG = "SageMakerFeatureStoreRuntimeClient";
+const char* SageMakerFeatureStoreRuntimeClient::SERVICE_NAME = "sagemaker";
+const char* SageMakerFeatureStoreRuntimeClient::ALLOCATION_TAG = "SageMakerFeatureStoreRuntimeClient";
 
 SageMakerFeatureStoreRuntimeClient::SageMakerFeatureStoreRuntimeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

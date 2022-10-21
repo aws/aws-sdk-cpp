@@ -99,8 +99,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "rds";
-static const char* ALLOCATION_TAG = "NeptuneClient";
+const char* NeptuneClient::SERVICE_NAME = "rds";
+const char* NeptuneClient::ALLOCATION_TAG = "NeptuneClient";
 
 NeptuneClient::NeptuneClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

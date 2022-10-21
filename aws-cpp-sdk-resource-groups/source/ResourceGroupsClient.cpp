@@ -45,8 +45,8 @@ using namespace Aws::ResourceGroups::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "resource-groups";
-static const char* ALLOCATION_TAG = "ResourceGroupsClient";
+const char* ResourceGroupsClient::SERVICE_NAME = "resource-groups";
+const char* ResourceGroupsClient::ALLOCATION_TAG = "ResourceGroupsClient";
 
 ResourceGroupsClient::ResourceGroupsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

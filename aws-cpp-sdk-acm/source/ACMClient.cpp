@@ -43,8 +43,8 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "acm";
-static const char* ALLOCATION_TAG = "ACMClient";
+const char* ACMClient::SERVICE_NAME = "acm";
+const char* ACMClient::ALLOCATION_TAG = "ACMClient";
 
 ACMClient::ACMClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

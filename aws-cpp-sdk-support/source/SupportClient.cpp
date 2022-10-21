@@ -43,8 +43,8 @@ using namespace Aws::Support::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "support";
-static const char* ALLOCATION_TAG = "SupportClient";
+const char* SupportClient::SERVICE_NAME = "support";
+const char* SupportClient::ALLOCATION_TAG = "SupportClient";
 
 SupportClient::SupportClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -49,8 +49,8 @@ using namespace Aws::CloudHSM::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "cloudhsm";
-static const char* ALLOCATION_TAG = "CloudHSMClient";
+const char* CloudHSMClient::SERVICE_NAME = "cloudhsm";
+const char* CloudHSMClient::ALLOCATION_TAG = "CloudHSMClient";
 
 CloudHSMClient::CloudHSMClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

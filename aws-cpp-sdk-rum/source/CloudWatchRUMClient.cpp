@@ -46,8 +46,8 @@ using namespace Aws::CloudWatchRUM::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "rum";
-static const char* ALLOCATION_TAG = "CloudWatchRUMClient";
+const char* CloudWatchRUMClient::SERVICE_NAME = "rum";
+const char* CloudWatchRUMClient::ALLOCATION_TAG = "CloudWatchRUMClient";
 
 CloudWatchRUMClient::CloudWatchRUMClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

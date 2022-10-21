@@ -52,8 +52,8 @@ using namespace Aws::CodeGuruProfiler::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "codeguru-profiler";
-static const char* ALLOCATION_TAG = "CodeGuruProfilerClient";
+const char* CodeGuruProfilerClient::SERVICE_NAME = "codeguru-profiler";
+const char* CodeGuruProfilerClient::ALLOCATION_TAG = "CodeGuruProfilerClient";
 
 CodeGuruProfilerClient::CodeGuruProfilerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

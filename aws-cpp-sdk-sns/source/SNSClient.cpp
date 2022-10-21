@@ -72,8 +72,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "sns";
-static const char* ALLOCATION_TAG = "SNSClient";
+const char* SNSClient::SERVICE_NAME = "sns";
+const char* SNSClient::ALLOCATION_TAG = "SNSClient";
 
 SNSClient::SNSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

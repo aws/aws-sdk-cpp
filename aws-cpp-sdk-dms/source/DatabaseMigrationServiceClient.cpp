@@ -93,8 +93,8 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "dms";
-static const char* ALLOCATION_TAG = "DatabaseMigrationServiceClient";
+const char* DatabaseMigrationServiceClient::SERVICE_NAME = "dms";
+const char* DatabaseMigrationServiceClient::ALLOCATION_TAG = "DatabaseMigrationServiceClient";
 
 DatabaseMigrationServiceClient::DatabaseMigrationServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

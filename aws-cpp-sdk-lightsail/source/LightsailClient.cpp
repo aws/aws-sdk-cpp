@@ -184,8 +184,8 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "lightsail";
-static const char* ALLOCATION_TAG = "LightsailClient";
+const char* LightsailClient::SERVICE_NAME = "lightsail";
+const char* LightsailClient::ALLOCATION_TAG = "LightsailClient";
 
 LightsailClient::LightsailClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -57,8 +57,8 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ivs";
-static const char* ALLOCATION_TAG = "IVSClient";
+const char* IVSClient::SERVICE_NAME = "ivs";
+const char* IVSClient::ALLOCATION_TAG = "IVSClient";
 
 IVSClient::IVSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

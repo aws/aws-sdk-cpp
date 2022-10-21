@@ -65,8 +65,8 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "cloudtrail";
-static const char* ALLOCATION_TAG = "CloudTrailClient";
+const char* CloudTrailClient::SERVICE_NAME = "cloudtrail";
+const char* CloudTrailClient::ALLOCATION_TAG = "CloudTrailClient";
 
 CloudTrailClient::CloudTrailClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -106,8 +106,8 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "codecommit";
-static const char* ALLOCATION_TAG = "CodeCommitClient";
+const char* CodeCommitClient::SERVICE_NAME = "codecommit";
+const char* CodeCommitClient::ALLOCATION_TAG = "CodeCommitClient";
 
 CodeCommitClient::CodeCommitClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

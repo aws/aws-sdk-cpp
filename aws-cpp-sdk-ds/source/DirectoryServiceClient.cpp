@@ -96,8 +96,8 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ds";
-static const char* ALLOCATION_TAG = "DirectoryServiceClient";
+const char* DirectoryServiceClient::SERVICE_NAME = "ds";
+const char* DirectoryServiceClient::ALLOCATION_TAG = "DirectoryServiceClient";
 
 DirectoryServiceClient::DirectoryServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -54,8 +54,8 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "groundstation";
-static const char* ALLOCATION_TAG = "GroundStationClient";
+const char* GroundStationClient::SERVICE_NAME = "groundstation";
+const char* GroundStationClient::ALLOCATION_TAG = "GroundStationClient";
 
 GroundStationClient::GroundStationClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -91,8 +91,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "autoscaling";
-static const char* ALLOCATION_TAG = "AutoScalingClient";
+const char* AutoScalingClient::SERVICE_NAME = "autoscaling";
+const char* AutoScalingClient::ALLOCATION_TAG = "AutoScalingClient";
 
 AutoScalingClient::AutoScalingClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

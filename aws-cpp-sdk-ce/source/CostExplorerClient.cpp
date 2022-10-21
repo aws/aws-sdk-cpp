@@ -64,8 +64,8 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ce";
-static const char* ALLOCATION_TAG = "CostExplorerClient";
+const char* CostExplorerClient::SERVICE_NAME = "ce";
+const char* CostExplorerClient::ALLOCATION_TAG = "CostExplorerClient";
 
 CostExplorerClient::CostExplorerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

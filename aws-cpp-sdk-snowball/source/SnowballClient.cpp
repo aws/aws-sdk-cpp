@@ -54,8 +54,8 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "snowball";
-static const char* ALLOCATION_TAG = "SnowballClient";
+const char* SnowballClient::SERVICE_NAME = "snowball";
+const char* SnowballClient::ALLOCATION_TAG = "SnowballClient";
 
 SnowballClient::SnowballClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

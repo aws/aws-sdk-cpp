@@ -31,8 +31,8 @@ using namespace Aws::WorkMailMessageFlow::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "workmailmessageflow";
-static const char* ALLOCATION_TAG = "WorkMailMessageFlowClient";
+const char* WorkMailMessageFlowClient::SERVICE_NAME = "workmailmessageflow";
+const char* WorkMailMessageFlowClient::ALLOCATION_TAG = "WorkMailMessageFlowClient";
 
 WorkMailMessageFlowClient::WorkMailMessageFlowClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

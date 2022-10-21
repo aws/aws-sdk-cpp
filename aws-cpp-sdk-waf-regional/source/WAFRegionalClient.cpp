@@ -110,8 +110,8 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "waf-regional";
-static const char* ALLOCATION_TAG = "WAFRegionalClient";
+const char* WAFRegionalClient::SERVICE_NAME = "waf-regional";
+const char* WAFRegionalClient::ALLOCATION_TAG = "WAFRegionalClient";
 
 WAFRegionalClient::WAFRegionalClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

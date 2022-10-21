@@ -59,8 +59,8 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "fms";
-static const char* ALLOCATION_TAG = "FMSClient";
+const char* FMSClient::SERVICE_NAME = "fms";
+const char* FMSClient::ALLOCATION_TAG = "FMSClient";
 
 FMSClient::FMSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

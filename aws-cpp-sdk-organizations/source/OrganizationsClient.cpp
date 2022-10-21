@@ -78,8 +78,8 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "organizations";
-static const char* ALLOCATION_TAG = "OrganizationsClient";
+const char* OrganizationsClient::SERVICE_NAME = "organizations";
+const char* OrganizationsClient::ALLOCATION_TAG = "OrganizationsClient";
 
 OrganizationsClient::OrganizationsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -36,8 +36,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "importexport";
-static const char* ALLOCATION_TAG = "ImportExportClient";
+const char* ImportExportClient::SERVICE_NAME = "importexport";
+const char* ImportExportClient::ALLOCATION_TAG = "ImportExportClient";
 
 ImportExportClient::ImportExportClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

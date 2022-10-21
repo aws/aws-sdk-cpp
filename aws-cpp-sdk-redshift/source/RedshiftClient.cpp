@@ -149,8 +149,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "redshift";
-static const char* ALLOCATION_TAG = "RedshiftClient";
+const char* RedshiftClient::SERVICE_NAME = "redshift";
+const char* RedshiftClient::ALLOCATION_TAG = "RedshiftClient";
 
 RedshiftClient::RedshiftClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -39,8 +39,8 @@ using namespace Aws::Health::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "health";
-static const char* ALLOCATION_TAG = "HealthClient";
+const char* HealthClient::SERVICE_NAME = "health";
+const char* HealthClient::ALLOCATION_TAG = "HealthClient";
 
 HealthClient::HealthClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

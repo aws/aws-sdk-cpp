@@ -52,8 +52,8 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "detective";
-static const char* ALLOCATION_TAG = "DetectiveClient";
+const char* DetectiveClient::SERVICE_NAME = "detective";
+const char* DetectiveClient::ALLOCATION_TAG = "DetectiveClient";
 
 DetectiveClient::DetectiveClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

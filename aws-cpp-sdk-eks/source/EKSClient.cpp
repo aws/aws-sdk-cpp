@@ -63,8 +63,8 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "eks";
-static const char* ALLOCATION_TAG = "EKSClient";
+const char* EKSClient::SERVICE_NAME = "eks";
+const char* EKSClient::ALLOCATION_TAG = "EKSClient";
 
 EKSClient::EKSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

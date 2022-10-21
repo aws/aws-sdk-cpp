@@ -80,8 +80,8 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "elasticmapreduce";
-static const char* ALLOCATION_TAG = "EMRClient";
+const char* EMRClient::SERVICE_NAME = "elasticmapreduce";
+const char* EMRClient::ALLOCATION_TAG = "EMRClient";
 
 EMRClient::EMRClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

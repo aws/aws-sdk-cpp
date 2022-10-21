@@ -66,8 +66,8 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "redshift-serverless";
-static const char* ALLOCATION_TAG = "RedshiftServerlessClient";
+const char* RedshiftServerlessClient::SERVICE_NAME = "redshift-serverless";
+const char* RedshiftServerlessClient::ALLOCATION_TAG = "RedshiftServerlessClient";
 
 RedshiftServerlessClient::RedshiftServerlessClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

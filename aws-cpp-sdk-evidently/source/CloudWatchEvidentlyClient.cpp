@@ -67,8 +67,8 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "evidently";
-static const char* ALLOCATION_TAG = "CloudWatchEvidentlyClient";
+const char* CloudWatchEvidentlyClient::SERVICE_NAME = "evidently";
+const char* CloudWatchEvidentlyClient::ALLOCATION_TAG = "CloudWatchEvidentlyClient";
 
 CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

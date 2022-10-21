@@ -92,8 +92,8 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "workspaces";
-static const char* ALLOCATION_TAG = "WorkSpacesClient";
+const char* WorkSpacesClient::SERVICE_NAME = "workspaces";
+const char* WorkSpacesClient::ALLOCATION_TAG = "WorkSpacesClient";
 
 WorkSpacesClient::WorkSpacesClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

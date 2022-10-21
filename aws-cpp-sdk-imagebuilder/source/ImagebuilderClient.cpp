@@ -79,8 +79,8 @@ using namespace Aws::imagebuilder::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "imagebuilder";
-static const char* ALLOCATION_TAG = "ImagebuilderClient";
+const char* ImagebuilderClient::SERVICE_NAME = "imagebuilder";
+const char* ImagebuilderClient::ALLOCATION_TAG = "ImagebuilderClient";
 
 ImagebuilderClient::ImagebuilderClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

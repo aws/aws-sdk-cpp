@@ -48,8 +48,8 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "backup-gateway";
-static const char* ALLOCATION_TAG = "BackupGatewayClient";
+const char* BackupGatewayClient::SERVICE_NAME = "backup-gateway";
+const char* BackupGatewayClient::ALLOCATION_TAG = "BackupGatewayClient";
 
 BackupGatewayClient::BackupGatewayClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

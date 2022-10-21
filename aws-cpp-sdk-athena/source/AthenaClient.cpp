@@ -66,8 +66,8 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "athena";
-static const char* ALLOCATION_TAG = "AthenaClient";
+const char* AthenaClient::SERVICE_NAME = "athena";
+const char* AthenaClient::ALLOCATION_TAG = "AthenaClient";
 
 AthenaClient::AthenaClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

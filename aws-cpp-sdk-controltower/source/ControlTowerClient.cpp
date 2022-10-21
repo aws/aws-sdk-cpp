@@ -33,8 +33,8 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "controltower";
-static const char* ALLOCATION_TAG = "ControlTowerClient";
+const char* ControlTowerClient::SERVICE_NAME = "controltower";
+const char* ControlTowerClient::ALLOCATION_TAG = "ControlTowerClient";
 
 ControlTowerClient::ControlTowerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

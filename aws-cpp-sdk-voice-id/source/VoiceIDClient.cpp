@@ -50,8 +50,8 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "voiceid";
-static const char* ALLOCATION_TAG = "VoiceIDClient";
+const char* VoiceIDClient::SERVICE_NAME = "voiceid";
+const char* VoiceIDClient::ALLOCATION_TAG = "VoiceIDClient";
 
 VoiceIDClient::VoiceIDClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

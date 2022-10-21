@@ -46,8 +46,8 @@ using namespace Aws::MediaPackageVod::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "mediapackage-vod";
-static const char* ALLOCATION_TAG = "MediaPackageVodClient";
+const char* MediaPackageVodClient::SERVICE_NAME = "mediapackage-vod";
+const char* MediaPackageVodClient::ALLOCATION_TAG = "MediaPackageVodClient";
 
 MediaPackageVodClient::MediaPackageVodClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

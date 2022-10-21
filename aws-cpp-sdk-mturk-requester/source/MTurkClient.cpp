@@ -68,8 +68,8 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "mturk-requester";
-static const char* ALLOCATION_TAG = "MTurkClient";
+const char* MTurkClient::SERVICE_NAME = "mturk-requester";
+const char* MTurkClient::ALLOCATION_TAG = "MTurkClient";
 
 MTurkClient::MTurkClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

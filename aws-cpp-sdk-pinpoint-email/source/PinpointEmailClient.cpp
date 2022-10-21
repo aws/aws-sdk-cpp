@@ -71,8 +71,8 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ses";
-static const char* ALLOCATION_TAG = "PinpointEmailClient";
+const char* PinpointEmailClient::SERVICE_NAME = "ses";
+const char* PinpointEmailClient::ALLOCATION_TAG = "PinpointEmailClient";
 
 PinpointEmailClient::PinpointEmailClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

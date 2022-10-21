@@ -44,8 +44,8 @@ using namespace Aws::Honeycode::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "honeycode";
-static const char* ALLOCATION_TAG = "HoneycodeClient";
+const char* HoneycodeClient::SERVICE_NAME = "honeycode";
+const char* HoneycodeClient::ALLOCATION_TAG = "HoneycodeClient";
 
 HoneycodeClient::HoneycodeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

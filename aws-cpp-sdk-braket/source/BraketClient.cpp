@@ -42,8 +42,8 @@ using namespace Aws::Braket::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "braket";
-static const char* ALLOCATION_TAG = "BraketClient";
+const char* BraketClient::SERVICE_NAME = "braket";
+const char* BraketClient::ALLOCATION_TAG = "BraketClient";
 
 BraketClient::BraketClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

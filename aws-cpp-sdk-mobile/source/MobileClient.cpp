@@ -38,8 +38,8 @@ using namespace Aws::Mobile::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "AWSMobileHubService";
-static const char* ALLOCATION_TAG = "MobileClient";
+const char* MobileClient::SERVICE_NAME = "AWSMobileHubService";
+const char* MobileClient::ALLOCATION_TAG = "MobileClient";
 
 MobileClient::MobileClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

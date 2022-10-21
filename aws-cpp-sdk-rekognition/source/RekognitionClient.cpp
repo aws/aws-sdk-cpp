@@ -92,8 +92,8 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "rekognition";
-static const char* ALLOCATION_TAG = "RekognitionClient";
+const char* RekognitionClient::SERVICE_NAME = "rekognition";
+const char* RekognitionClient::ALLOCATION_TAG = "RekognitionClient";
 
 RekognitionClient::RekognitionClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

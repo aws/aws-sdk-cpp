@@ -64,8 +64,8 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "memorydb";
-static const char* ALLOCATION_TAG = "MemoryDBClient";
+const char* MemoryDBClient::SERVICE_NAME = "memorydb";
+const char* MemoryDBClient::ALLOCATION_TAG = "MemoryDBClient";
 
 MemoryDBClient::MemoryDBClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

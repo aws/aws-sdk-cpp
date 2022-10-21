@@ -53,8 +53,8 @@ using namespace Aws::MigrationHubRefactorSpaces::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "refactor-spaces";
-static const char* ALLOCATION_TAG = "MigrationHubRefactorSpacesClient";
+const char* MigrationHubRefactorSpacesClient::SERVICE_NAME = "refactor-spaces";
+const char* MigrationHubRefactorSpacesClient::ALLOCATION_TAG = "MigrationHubRefactorSpacesClient";
 
 MigrationHubRefactorSpacesClient::MigrationHubRefactorSpacesClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

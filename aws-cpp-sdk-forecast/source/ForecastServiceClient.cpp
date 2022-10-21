@@ -92,8 +92,8 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "forecast";
-static const char* ALLOCATION_TAG = "ForecastServiceClient";
+const char* ForecastServiceClient::SERVICE_NAME = "forecast";
+const char* ForecastServiceClient::ALLOCATION_TAG = "ForecastServiceClient";
 
 ForecastServiceClient::ForecastServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

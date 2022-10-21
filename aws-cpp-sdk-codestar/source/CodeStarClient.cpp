@@ -47,8 +47,8 @@ using namespace Aws::CodeStar::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "codestar";
-static const char* ALLOCATION_TAG = "CodeStarClient";
+const char* CodeStarClient::SERVICE_NAME = "codestar";
+const char* CodeStarClient::ALLOCATION_TAG = "CodeStarClient";
 
 CodeStarClient::CodeStarClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

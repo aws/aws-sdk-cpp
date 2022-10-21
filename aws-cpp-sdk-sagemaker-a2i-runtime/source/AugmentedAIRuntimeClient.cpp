@@ -34,8 +34,8 @@ using namespace Aws::AugmentedAIRuntime::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "sagemaker";
-static const char* ALLOCATION_TAG = "AugmentedAIRuntimeClient";
+const char* AugmentedAIRuntimeClient::SERVICE_NAME = "sagemaker";
+const char* AugmentedAIRuntimeClient::ALLOCATION_TAG = "AugmentedAIRuntimeClient";
 
 AugmentedAIRuntimeClient::AugmentedAIRuntimeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

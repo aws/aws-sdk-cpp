@@ -51,8 +51,8 @@ using namespace Aws::MQ::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "mq";
-static const char* ALLOCATION_TAG = "MQClient";
+const char* MQClient::SERVICE_NAME = "mq";
+const char* MQClient::ALLOCATION_TAG = "MQClient";
 
 MQClient::MQClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

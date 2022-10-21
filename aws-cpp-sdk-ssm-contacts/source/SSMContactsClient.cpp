@@ -56,8 +56,8 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ssm-contacts";
-static const char* ALLOCATION_TAG = "SSMContactsClient";
+const char* SSMContactsClient::SERVICE_NAME = "ssm-contacts";
+const char* SSMContactsClient::ALLOCATION_TAG = "SSMContactsClient";
 
 SSMContactsClient::SSMContactsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

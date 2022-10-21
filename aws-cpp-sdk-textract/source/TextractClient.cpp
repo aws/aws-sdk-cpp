@@ -39,8 +39,8 @@ using namespace Aws::Textract::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "textract";
-static const char* ALLOCATION_TAG = "TextractClient";
+const char* TextractClient::SERVICE_NAME = "textract";
+const char* TextractClient::ALLOCATION_TAG = "TextractClient";
 
 TextractClient::TextractClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

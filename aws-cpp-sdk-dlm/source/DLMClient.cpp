@@ -37,8 +37,8 @@ using namespace Aws::DLM::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "dlm";
-static const char* ALLOCATION_TAG = "DLMClient";
+const char* DLMClient::SERVICE_NAME = "dlm";
+const char* DLMClient::ALLOCATION_TAG = "DLMClient";
 
 DLMClient::DLMClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

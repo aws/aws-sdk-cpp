@@ -35,8 +35,8 @@ using namespace Aws::MarketplaceCatalog::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "aws-marketplace";
-static const char* ALLOCATION_TAG = "MarketplaceCatalogClient";
+const char* MarketplaceCatalogClient::SERVICE_NAME = "aws-marketplace";
+const char* MarketplaceCatalogClient::ALLOCATION_TAG = "MarketplaceCatalogClient";
 
 MarketplaceCatalogClient::MarketplaceCatalogClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

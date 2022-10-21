@@ -167,8 +167,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "rds";
-static const char* ALLOCATION_TAG = "RDSClient";
+const char* RDSClient::SERVICE_NAME = "rds";
+const char* RDSClient::ALLOCATION_TAG = "RDSClient";
 
 RDSClient::RDSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

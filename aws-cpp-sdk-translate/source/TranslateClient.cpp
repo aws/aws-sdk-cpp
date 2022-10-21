@@ -47,8 +47,8 @@ using namespace Aws::Translate::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "translate";
-static const char* ALLOCATION_TAG = "TranslateClient";
+const char* TranslateClient::SERVICE_NAME = "translate";
+const char* TranslateClient::ALLOCATION_TAG = "TranslateClient";
 
 TranslateClient::TranslateClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

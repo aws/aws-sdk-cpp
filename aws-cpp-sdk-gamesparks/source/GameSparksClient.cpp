@@ -62,8 +62,8 @@ using namespace Aws::GameSparks::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "gamesparks";
-static const char* ALLOCATION_TAG = "GameSparksClient";
+const char* GameSparksClient::SERVICE_NAME = "gamesparks";
+const char* GameSparksClient::ALLOCATION_TAG = "GameSparksClient";
 
 GameSparksClient::GameSparksClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

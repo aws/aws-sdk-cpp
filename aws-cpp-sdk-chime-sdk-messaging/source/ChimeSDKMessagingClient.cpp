@@ -76,8 +76,8 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "chime";
-static const char* ALLOCATION_TAG = "ChimeSDKMessagingClient";
+const char* ChimeSDKMessagingClient::SERVICE_NAME = "chime";
+const char* ChimeSDKMessagingClient::ALLOCATION_TAG = "ChimeSDKMessagingClient";
 
 ChimeSDKMessagingClient::ChimeSDKMessagingClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

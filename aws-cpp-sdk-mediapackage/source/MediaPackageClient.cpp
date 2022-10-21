@@ -47,8 +47,8 @@ using namespace Aws::MediaPackage::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "mediapackage";
-static const char* ALLOCATION_TAG = "MediaPackageClient";
+const char* MediaPackageClient::SERVICE_NAME = "mediapackage";
+const char* MediaPackageClient::ALLOCATION_TAG = "MediaPackageClient";
 
 MediaPackageClient::MediaPackageClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

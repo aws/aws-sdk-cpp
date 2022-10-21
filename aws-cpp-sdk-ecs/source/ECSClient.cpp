@@ -81,8 +81,8 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ecs";
-static const char* ALLOCATION_TAG = "ECSClient";
+const char* ECSClient::SERVICE_NAME = "ecs";
+const char* ECSClient::ALLOCATION_TAG = "ECSClient";
 
 ECSClient::ECSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

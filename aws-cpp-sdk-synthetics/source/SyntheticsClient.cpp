@@ -50,8 +50,8 @@ using namespace Aws::Synthetics::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "synthetics";
-static const char* ALLOCATION_TAG = "SyntheticsClient";
+const char* SyntheticsClient::SERVICE_NAME = "synthetics";
+const char* SyntheticsClient::ALLOCATION_TAG = "SyntheticsClient";
 
 SyntheticsClient::SyntheticsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

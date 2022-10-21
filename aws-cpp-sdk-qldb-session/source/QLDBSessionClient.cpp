@@ -30,8 +30,8 @@ using namespace Aws::QLDBSession::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "qldb";
-static const char* ALLOCATION_TAG = "QLDBSessionClient";
+const char* QLDBSessionClient::SERVICE_NAME = "qldb";
+const char* QLDBSessionClient::ALLOCATION_TAG = "QLDBSessionClient";
 
 QLDBSessionClient::QLDBSessionClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -48,8 +48,8 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "datapipeline";
-static const char* ALLOCATION_TAG = "DataPipelineClient";
+const char* DataPipelineClient::SERVICE_NAME = "datapipeline";
+const char* DataPipelineClient::ALLOCATION_TAG = "DataPipelineClient";
 
 DataPipelineClient::DataPipelineClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

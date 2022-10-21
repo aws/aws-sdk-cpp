@@ -58,8 +58,8 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "cases";
-static const char* ALLOCATION_TAG = "ConnectCasesClient";
+const char* ConnectCasesClient::SERVICE_NAME = "cases";
+const char* ConnectCasesClient::ALLOCATION_TAG = "ConnectCasesClient";
 
 ConnectCasesClient::ConnectCasesClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

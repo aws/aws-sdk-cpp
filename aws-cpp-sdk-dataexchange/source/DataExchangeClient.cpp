@@ -58,8 +58,8 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "dataexchange";
-static const char* ALLOCATION_TAG = "DataExchangeClient";
+const char* DataExchangeClient::SERVICE_NAME = "dataexchange";
+const char* DataExchangeClient::ALLOCATION_TAG = "DataExchangeClient";
 
 DataExchangeClient::DataExchangeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

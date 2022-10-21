@@ -31,8 +31,8 @@ using namespace Aws::EC2InstanceConnect::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ec2-instance-connect";
-static const char* ALLOCATION_TAG = "EC2InstanceConnectClient";
+const char* EC2InstanceConnectClient::SERVICE_NAME = "ec2-instance-connect";
+const char* EC2InstanceConnectClient::ALLOCATION_TAG = "EC2InstanceConnectClient";
 
 EC2InstanceConnectClient::EC2InstanceConnectClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -60,8 +60,8 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "network-firewall";
-static const char* ALLOCATION_TAG = "NetworkFirewallClient";
+const char* NetworkFirewallClient::SERVICE_NAME = "network-firewall";
+const char* NetworkFirewallClient::ALLOCATION_TAG = "NetworkFirewallClient";
 
 NetworkFirewallClient::NetworkFirewallClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

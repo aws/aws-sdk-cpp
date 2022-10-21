@@ -40,8 +40,8 @@ using namespace Aws::MWAA::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "airflow";
-static const char* ALLOCATION_TAG = "MWAAClient";
+const char* MWAAClient::SERVICE_NAME = "airflow";
+const char* MWAAClient::ALLOCATION_TAG = "MWAAClient";
 
 MWAAClient::MWAAClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

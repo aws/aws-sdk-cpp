@@ -42,8 +42,8 @@ using namespace Aws::Cloud9::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "cloud9";
-static const char* ALLOCATION_TAG = "Cloud9Client";
+const char* Cloud9Client::SERVICE_NAME = "cloud9";
+const char* Cloud9Client::ALLOCATION_TAG = "Cloud9Client";
 
 Cloud9Client::Cloud9Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -62,8 +62,8 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "lookoutequipment";
-static const char* ALLOCATION_TAG = "LookoutEquipmentClient";
+const char* LookoutEquipmentClient::SERVICE_NAME = "lookoutequipment";
+const char* LookoutEquipmentClient::ALLOCATION_TAG = "LookoutEquipmentClient";
 
 LookoutEquipmentClient::LookoutEquipmentClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

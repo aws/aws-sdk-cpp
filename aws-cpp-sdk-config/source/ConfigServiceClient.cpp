@@ -117,8 +117,8 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "config";
-static const char* ALLOCATION_TAG = "ConfigServiceClient";
+const char* ConfigServiceClient::SERVICE_NAME = "config";
+const char* ConfigServiceClient::ALLOCATION_TAG = "ConfigServiceClient";
 
 ConfigServiceClient::ConfigServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

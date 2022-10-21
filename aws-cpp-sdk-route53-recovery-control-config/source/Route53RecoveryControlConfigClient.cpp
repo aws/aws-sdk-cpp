@@ -52,8 +52,8 @@ using namespace Aws::Route53RecoveryControlConfig::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "route53-recovery-control-config";
-static const char* ALLOCATION_TAG = "Route53RecoveryControlConfigClient";
+const char* Route53RecoveryControlConfigClient::SERVICE_NAME = "route53-recovery-control-config";
+const char* Route53RecoveryControlConfigClient::ALLOCATION_TAG = "Route53RecoveryControlConfigClient";
 
 Route53RecoveryControlConfigClient::Route53RecoveryControlConfigClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

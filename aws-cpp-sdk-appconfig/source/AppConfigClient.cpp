@@ -71,8 +71,8 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "appconfig";
-static const char* ALLOCATION_TAG = "AppConfigClient";
+const char* AppConfigClient::SERVICE_NAME = "appconfig";
+const char* AppConfigClient::ALLOCATION_TAG = "AppConfigClient";
 
 AppConfigClient::AppConfigClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

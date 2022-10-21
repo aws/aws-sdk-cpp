@@ -54,8 +54,8 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "comprehendmedical";
-static const char* ALLOCATION_TAG = "ComprehendMedicalClient";
+const char* ComprehendMedicalClient::SERVICE_NAME = "comprehendmedical";
+const char* ComprehendMedicalClient::ALLOCATION_TAG = "ComprehendMedicalClient";
 
 ComprehendMedicalClient::ComprehendMedicalClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

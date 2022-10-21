@@ -49,8 +49,8 @@ using namespace Aws::QLDB::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "qldb";
-static const char* ALLOCATION_TAG = "QLDBClient";
+const char* QLDBClient::SERVICE_NAME = "qldb";
+const char* QLDBClient::ALLOCATION_TAG = "QLDBClient";
 
 QLDBClient::QLDBClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -51,8 +51,8 @@ using namespace Aws::ConnectCampaigns::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "connect-campaigns";
-static const char* ALLOCATION_TAG = "ConnectCampaignsClient";
+const char* ConnectCampaignsClient::SERVICE_NAME = "connect-campaigns";
+const char* ConnectCampaignsClient::ALLOCATION_TAG = "ConnectCampaignsClient";
 
 ConnectCampaignsClient::ConnectCampaignsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

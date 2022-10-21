@@ -128,8 +128,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "cloudfront";
-static const char* ALLOCATION_TAG = "CloudFrontClient";
+const char* CloudFrontClient::SERVICE_NAME = "cloudfront";
+const char* CloudFrontClient::ALLOCATION_TAG = "CloudFrontClient";
 
 CloudFrontClient::CloudFrontClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

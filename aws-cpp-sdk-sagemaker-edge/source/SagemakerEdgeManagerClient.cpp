@@ -32,8 +32,8 @@ using namespace Aws::SagemakerEdgeManager::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "sagemaker";
-static const char* ALLOCATION_TAG = "SagemakerEdgeManagerClient";
+const char* SagemakerEdgeManagerClient::SERVICE_NAME = "sagemaker";
+const char* SagemakerEdgeManagerClient::ALLOCATION_TAG = "SagemakerEdgeManagerClient";
 
 SagemakerEdgeManagerClient::SagemakerEdgeManagerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -44,8 +44,8 @@ using namespace Aws::AppIntegrationsService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "app-integrations";
-static const char* ALLOCATION_TAG = "AppIntegrationsServiceClient";
+const char* AppIntegrationsServiceClient::SERVICE_NAME = "app-integrations";
+const char* AppIntegrationsServiceClient::ALLOCATION_TAG = "AppIntegrationsServiceClient";
 
 AppIntegrationsServiceClient::AppIntegrationsServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

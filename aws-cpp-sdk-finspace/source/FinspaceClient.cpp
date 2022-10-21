@@ -37,8 +37,8 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "finspace";
-static const char* ALLOCATION_TAG = "FinspaceClient";
+const char* FinspaceClient::SERVICE_NAME = "finspace";
+const char* FinspaceClient::ALLOCATION_TAG = "FinspaceClient";
 
 FinspaceClient::FinspaceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

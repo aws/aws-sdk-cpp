@@ -91,8 +91,8 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "lambda";
-static const char* ALLOCATION_TAG = "LambdaClient";
+const char* LambdaClient::SERVICE_NAME = "lambda";
+const char* LambdaClient::ALLOCATION_TAG = "LambdaClient";
 
 LambdaClient::LambdaClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

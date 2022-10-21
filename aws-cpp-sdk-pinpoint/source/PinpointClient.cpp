@@ -148,8 +148,8 @@ using namespace Aws::Pinpoint::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "mobiletargeting";
-static const char* ALLOCATION_TAG = "PinpointClient";
+const char* PinpointClient::SERVICE_NAME = "mobiletargeting";
+const char* PinpointClient::ALLOCATION_TAG = "PinpointClient";
 
 PinpointClient::PinpointClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -69,8 +69,8 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "es";
-static const char* ALLOCATION_TAG = "OpenSearchServiceClient";
+const char* OpenSearchServiceClient::SERVICE_NAME = "es";
+const char* OpenSearchServiceClient::ALLOCATION_TAG = "OpenSearchServiceClient";
 
 OpenSearchServiceClient::OpenSearchServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

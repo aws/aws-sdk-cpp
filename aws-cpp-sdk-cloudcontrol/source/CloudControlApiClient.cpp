@@ -37,8 +37,8 @@ using namespace Aws::CloudControlApi::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "cloudcontrolapi";
-static const char* ALLOCATION_TAG = "CloudControlApiClient";
+const char* CloudControlApiClient::SERVICE_NAME = "cloudcontrolapi";
+const char* CloudControlApiClient::ALLOCATION_TAG = "CloudControlApiClient";
 
 CloudControlApiClient::CloudControlApiClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

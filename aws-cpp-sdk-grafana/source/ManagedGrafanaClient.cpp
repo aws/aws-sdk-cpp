@@ -45,8 +45,8 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "grafana";
-static const char* ALLOCATION_TAG = "ManagedGrafanaClient";
+const char* ManagedGrafanaClient::SERVICE_NAME = "grafana";
+const char* ManagedGrafanaClient::ALLOCATION_TAG = "ManagedGrafanaClient";
 
 ManagedGrafanaClient::ManagedGrafanaClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

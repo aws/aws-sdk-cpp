@@ -56,8 +56,8 @@ using namespace Aws::ManagedBlockchain::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "managedblockchain";
-static const char* ALLOCATION_TAG = "ManagedBlockchainClient";
+const char* ManagedBlockchainClient::SERVICE_NAME = "managedblockchain";
+const char* ManagedBlockchainClient::ALLOCATION_TAG = "ManagedBlockchainClient";
 
 ManagedBlockchainClient::ManagedBlockchainClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

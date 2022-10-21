@@ -61,8 +61,8 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "m2";
-static const char* ALLOCATION_TAG = "MainframeModernizationClient";
+const char* MainframeModernizationClient::SERVICE_NAME = "m2";
+const char* MainframeModernizationClient::ALLOCATION_TAG = "MainframeModernizationClient";
 
 MainframeModernizationClient::MainframeModernizationClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

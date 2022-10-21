@@ -64,8 +64,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "elasticloadbalancing";
-static const char* ALLOCATION_TAG = "ElasticLoadBalancingv2Client";
+const char* ElasticLoadBalancingv2Client::SERVICE_NAME = "elasticloadbalancing";
+const char* ElasticLoadBalancingv2Client::ALLOCATION_TAG = "ElasticLoadBalancingv2Client";
 
 ElasticLoadBalancingv2Client::ElasticLoadBalancingv2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

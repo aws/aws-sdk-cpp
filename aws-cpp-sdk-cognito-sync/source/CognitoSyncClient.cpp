@@ -46,8 +46,8 @@ using namespace Aws::CognitoSync::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "cognito-sync";
-static const char* ALLOCATION_TAG = "CognitoSyncClient";
+const char* CognitoSyncClient::SERVICE_NAME = "cognito-sync";
+const char* CognitoSyncClient::ALLOCATION_TAG = "CognitoSyncClient";
 
 CognitoSyncClient::CognitoSyncClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

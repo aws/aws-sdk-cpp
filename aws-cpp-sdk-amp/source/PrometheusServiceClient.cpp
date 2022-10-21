@@ -50,8 +50,8 @@ using namespace Aws::PrometheusService::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "aps";
-static const char* ALLOCATION_TAG = "PrometheusServiceClient";
+const char* PrometheusServiceClient::SERVICE_NAME = "aps";
+const char* PrometheusServiceClient::ALLOCATION_TAG = "PrometheusServiceClient";
 
 PrometheusServiceClient::PrometheusServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

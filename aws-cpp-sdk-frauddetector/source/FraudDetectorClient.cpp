@@ -96,8 +96,8 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "frauddetector";
-static const char* ALLOCATION_TAG = "FraudDetectorClient";
+const char* FraudDetectorClient::SERVICE_NAME = "frauddetector";
+const char* FraudDetectorClient::ALLOCATION_TAG = "FraudDetectorClient";
 
 FraudDetectorClient::FraudDetectorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

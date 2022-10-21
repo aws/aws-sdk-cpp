@@ -38,8 +38,8 @@ using namespace Aws::BackupStorage::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "backup-storage";
-static const char* ALLOCATION_TAG = "BackupStorageClient";
+const char* BackupStorageClient::SERVICE_NAME = "backup-storage";
+const char* BackupStorageClient::ALLOCATION_TAG = "BackupStorageClient";
 
 BackupStorageClient::BackupStorageClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

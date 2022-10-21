@@ -66,8 +66,8 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "amplify";
-static const char* ALLOCATION_TAG = "AmplifyClient";
+const char* AmplifyClient::SERVICE_NAME = "amplify";
+const char* AmplifyClient::ALLOCATION_TAG = "AmplifyClient";
 
 AmplifyClient::AmplifyClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

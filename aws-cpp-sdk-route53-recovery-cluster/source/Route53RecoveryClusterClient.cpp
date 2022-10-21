@@ -33,8 +33,8 @@ using namespace Aws::Route53RecoveryCluster::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "route53-recovery-cluster";
-static const char* ALLOCATION_TAG = "Route53RecoveryClusterClient";
+const char* Route53RecoveryClusterClient::SERVICE_NAME = "route53-recovery-cluster";
+const char* Route53RecoveryClusterClient::ALLOCATION_TAG = "Route53RecoveryClusterClient";
 
 Route53RecoveryClusterClient::Route53RecoveryClusterClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

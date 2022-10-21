@@ -73,8 +73,8 @@ using namespace Aws::GlueDataBrew::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "databrew";
-static const char* ALLOCATION_TAG = "GlueDataBrewClient";
+const char* GlueDataBrewClient::SERVICE_NAME = "databrew";
+const char* GlueDataBrewClient::ALLOCATION_TAG = "GlueDataBrewClient";
 
 GlueDataBrewClient::GlueDataBrewClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

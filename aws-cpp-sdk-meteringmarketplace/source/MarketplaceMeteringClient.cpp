@@ -33,8 +33,8 @@ using namespace Aws::MarketplaceMetering::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "aws-marketplace";
-static const char* ALLOCATION_TAG = "MarketplaceMeteringClient";
+const char* MarketplaceMeteringClient::SERVICE_NAME = "aws-marketplace";
+const char* MarketplaceMeteringClient::ALLOCATION_TAG = "MarketplaceMeteringClient";
 
 MarketplaceMeteringClient::MarketplaceMeteringClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

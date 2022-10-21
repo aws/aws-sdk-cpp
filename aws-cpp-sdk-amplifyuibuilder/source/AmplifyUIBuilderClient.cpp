@@ -51,8 +51,8 @@ using namespace Aws::AmplifyUIBuilder::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "amplifyuibuilder";
-static const char* ALLOCATION_TAG = "AmplifyUIBuilderClient";
+const char* AmplifyUIBuilderClient::SERVICE_NAME = "amplifyuibuilder";
+const char* AmplifyUIBuilderClient::ALLOCATION_TAG = "AmplifyUIBuilderClient";
 
 AmplifyUIBuilderClient::AmplifyUIBuilderClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -45,8 +45,8 @@ using namespace Aws::ChimeSDKMeetings::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "chime";
-static const char* ALLOCATION_TAG = "ChimeSDKMeetingsClient";
+const char* ChimeSDKMeetingsClient::SERVICE_NAME = "chime";
+const char* ChimeSDKMeetingsClient::ALLOCATION_TAG = "ChimeSDKMeetingsClient";
 
 ChimeSDKMeetingsClient::ChimeSDKMeetingsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

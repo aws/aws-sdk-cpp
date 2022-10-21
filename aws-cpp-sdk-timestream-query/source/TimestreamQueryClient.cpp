@@ -43,8 +43,8 @@ using namespace Aws::TimestreamQuery::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "timestream";
-static const char* ALLOCATION_TAG = "TimestreamQueryClient";
+const char* TimestreamQueryClient::SERVICE_NAME = "timestream";
+const char* TimestreamQueryClient::ALLOCATION_TAG = "TimestreamQueryClient";
 
 TimestreamQueryClient::TimestreamQueryClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

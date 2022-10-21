@@ -59,8 +59,8 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "mediaconnect";
-static const char* ALLOCATION_TAG = "MediaConnectClient";
+const char* MediaConnectClient::SERVICE_NAME = "mediaconnect";
+const char* MediaConnectClient::ALLOCATION_TAG = "MediaConnectClient";
 
 MediaConnectClient::MediaConnectClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

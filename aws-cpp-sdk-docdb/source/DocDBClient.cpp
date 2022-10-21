@@ -83,8 +83,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "rds";
-static const char* ALLOCATION_TAG = "DocDBClient";
+const char* DocDBClient::SERVICE_NAME = "rds";
+const char* DocDBClient::ALLOCATION_TAG = "DocDBClient";
 
 DocDBClient::DocDBClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

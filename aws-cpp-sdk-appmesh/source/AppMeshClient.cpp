@@ -67,8 +67,8 @@ using namespace Aws::AppMesh::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "appmesh";
-static const char* ALLOCATION_TAG = "AppMeshClient";
+const char* AppMeshClient::SERVICE_NAME = "appmesh";
+const char* AppMeshClient::ALLOCATION_TAG = "AppMeshClient";
 
 AppMeshClient::AppMeshClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

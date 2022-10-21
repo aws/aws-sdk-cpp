@@ -70,8 +70,8 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "fsx";
-static const char* ALLOCATION_TAG = "FSxClient";
+const char* FSxClient::SERVICE_NAME = "fsx";
+const char* FSxClient::ALLOCATION_TAG = "FSxClient";
 
 FSxClient::FSxClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

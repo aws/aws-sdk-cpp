@@ -56,8 +56,8 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "elasticfilesystem";
-static const char* ALLOCATION_TAG = "EFSClient";
+const char* EFSClient::SERVICE_NAME = "elasticfilesystem";
+const char* EFSClient::ALLOCATION_TAG = "EFSClient";
 
 EFSClient::EFSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

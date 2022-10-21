@@ -30,8 +30,8 @@ using namespace Aws::ConnectContactLens::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "connect";
-static const char* ALLOCATION_TAG = "ConnectContactLensClient";
+const char* ConnectContactLensClient::SERVICE_NAME = "connect";
+const char* ConnectContactLensClient::ALLOCATION_TAG = "ConnectContactLensClient";
 
 ConnectContactLensClient::ConnectContactLensClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

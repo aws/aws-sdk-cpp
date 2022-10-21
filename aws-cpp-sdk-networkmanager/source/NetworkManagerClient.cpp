@@ -114,8 +114,8 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "networkmanager";
-static const char* ALLOCATION_TAG = "NetworkManagerClient";
+const char* NetworkManagerClient::SERVICE_NAME = "networkmanager";
+const char* NetworkManagerClient::ALLOCATION_TAG = "NetworkManagerClient";
 
 NetworkManagerClient::NetworkManagerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

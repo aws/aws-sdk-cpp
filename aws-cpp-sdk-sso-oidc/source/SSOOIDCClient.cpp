@@ -32,8 +32,8 @@ using namespace Aws::SSOOIDC::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "awsssooidc";
-static const char* ALLOCATION_TAG = "SSOOIDCClient";
+const char* SSOOIDCClient::SERVICE_NAME = "awsssooidc";
+const char* SSOOIDCClient::ALLOCATION_TAG = "SSOOIDCClient";
 
 SSOOIDCClient::SSOOIDCClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

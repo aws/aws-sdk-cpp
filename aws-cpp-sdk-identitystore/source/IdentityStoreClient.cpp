@@ -48,8 +48,8 @@ using namespace Aws::IdentityStore::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "identitystore";
-static const char* ALLOCATION_TAG = "IdentityStoreClient";
+const char* IdentityStoreClient::SERVICE_NAME = "identitystore";
+const char* IdentityStoreClient::ALLOCATION_TAG = "IdentityStoreClient";
 
 IdentityStoreClient::IdentityStoreClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

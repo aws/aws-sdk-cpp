@@ -64,8 +64,8 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "sms";
-static const char* ALLOCATION_TAG = "SMSClient";
+const char* SMSClient::SERVICE_NAME = "sms";
+const char* SMSClient::ALLOCATION_TAG = "SMSClient";
 
 SMSClient::SMSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

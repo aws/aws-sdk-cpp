@@ -52,8 +52,8 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "cognito-identity";
-static const char* ALLOCATION_TAG = "CognitoIdentityClient";
+const char* CognitoIdentityClient::SERVICE_NAME = "cognito-identity";
+const char* CognitoIdentityClient::ALLOCATION_TAG = "CognitoIdentityClient";
 
 CognitoIdentityClient::CognitoIdentityClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

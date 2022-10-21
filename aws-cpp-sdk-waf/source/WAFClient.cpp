@@ -106,8 +106,8 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "waf";
-static const char* ALLOCATION_TAG = "WAFClient";
+const char* WAFClient::SERVICE_NAME = "waf";
+const char* WAFClient::ALLOCATION_TAG = "WAFClient";
 
 WAFClient::WAFClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -60,8 +60,8 @@ using namespace Aws::KinesisAnalyticsV2::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "kinesisanalytics";
-static const char* ALLOCATION_TAG = "KinesisAnalyticsV2Client";
+const char* KinesisAnalyticsV2Client::SERVICE_NAME = "kinesisanalytics";
+const char* KinesisAnalyticsV2Client::ALLOCATION_TAG = "KinesisAnalyticsV2Client";
 
 KinesisAnalyticsV2Client::KinesisAnalyticsV2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

@@ -85,8 +85,8 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "events";
-static const char* ALLOCATION_TAG = "EventBridgeClient";
+const char* EventBridgeClient::SERVICE_NAME = "events";
+const char* EventBridgeClient::ALLOCATION_TAG = "EventBridgeClient";
 
 EventBridgeClient::EventBridgeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

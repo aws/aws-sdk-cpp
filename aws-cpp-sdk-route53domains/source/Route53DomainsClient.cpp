@@ -59,8 +59,8 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "route53domains";
-static const char* ALLOCATION_TAG = "Route53DomainsClient";
+const char* Route53DomainsClient::SERVICE_NAME = "route53domains";
+const char* Route53DomainsClient::ALLOCATION_TAG = "Route53DomainsClient";
 
 Route53DomainsClient::Route53DomainsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

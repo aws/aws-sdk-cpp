@@ -87,8 +87,8 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "transfer";
-static const char* ALLOCATION_TAG = "TransferClient";
+const char* TransferClient::SERVICE_NAME = "transfer";
+const char* TransferClient::ALLOCATION_TAG = "TransferClient";
 
 TransferClient::TransferClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

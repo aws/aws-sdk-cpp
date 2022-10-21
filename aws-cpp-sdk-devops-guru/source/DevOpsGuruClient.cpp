@@ -60,8 +60,8 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "devops-guru";
-static const char* ALLOCATION_TAG = "DevOpsGuruClient";
+const char* DevOpsGuruClient::SERVICE_NAME = "devops-guru";
+const char* DevOpsGuruClient::ALLOCATION_TAG = "DevOpsGuruClient";
 
 DevOpsGuruClient::DevOpsGuruClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

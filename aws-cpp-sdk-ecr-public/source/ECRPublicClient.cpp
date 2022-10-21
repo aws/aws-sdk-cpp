@@ -52,8 +52,8 @@ using namespace Aws::ECRPublic::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "ecr-public";
-static const char* ALLOCATION_TAG = "ECRPublicClient";
+const char* ECRPublicClient::SERVICE_NAME = "ecr-public";
+const char* ECRPublicClient::ALLOCATION_TAG = "ECRPublicClient";
 
 ECRPublicClient::ECRPublicClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

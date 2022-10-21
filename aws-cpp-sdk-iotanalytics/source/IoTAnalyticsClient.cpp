@@ -63,8 +63,8 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "iotanalytics";
-static const char* ALLOCATION_TAG = "IoTAnalyticsClient";
+const char* IoTAnalyticsClient::SERVICE_NAME = "iotanalytics";
+const char* IoTAnalyticsClient::ALLOCATION_TAG = "IoTAnalyticsClient";
 
 IoTAnalyticsClient::IoTAnalyticsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

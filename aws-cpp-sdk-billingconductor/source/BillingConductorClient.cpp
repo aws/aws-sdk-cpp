@@ -59,8 +59,8 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "billingconductor";
-static const char* ALLOCATION_TAG = "BillingConductorClient";
+const char* BillingConductorClient::SERVICE_NAME = "billingconductor";
+const char* BillingConductorClient::ALLOCATION_TAG = "BillingConductorClient";
 
 BillingConductorClient::BillingConductorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

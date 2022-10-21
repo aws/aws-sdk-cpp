@@ -89,8 +89,8 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "personalize";
-static const char* ALLOCATION_TAG = "PersonalizeClient";
+const char* PersonalizeClient::SERVICE_NAME = "personalize";
+const char* PersonalizeClient::ALLOCATION_TAG = "PersonalizeClient";
 
 PersonalizeClient::PersonalizeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

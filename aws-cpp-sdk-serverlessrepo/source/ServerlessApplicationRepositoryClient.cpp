@@ -43,8 +43,8 @@ using namespace Aws::ServerlessApplicationRepository::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "serverlessrepo";
-static const char* ALLOCATION_TAG = "ServerlessApplicationRepositoryClient";
+const char* ServerlessApplicationRepositoryClient::SERVICE_NAME = "serverlessrepo";
+const char* ServerlessApplicationRepositoryClient::ALLOCATION_TAG = "ServerlessApplicationRepositoryClient";
 
 ServerlessApplicationRepositoryClient::ServerlessApplicationRepositoryClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,

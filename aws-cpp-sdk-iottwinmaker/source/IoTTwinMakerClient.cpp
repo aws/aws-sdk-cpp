@@ -55,8 +55,8 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-static const char* SERVICE_NAME = "iottwinmaker";
-static const char* ALLOCATION_TAG = "IoTTwinMakerClient";
+const char* IoTTwinMakerClient::SERVICE_NAME = "iottwinmaker";
+const char* IoTTwinMakerClient::ALLOCATION_TAG = "IoTTwinMakerClient";
 
 IoTTwinMakerClient::IoTTwinMakerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
