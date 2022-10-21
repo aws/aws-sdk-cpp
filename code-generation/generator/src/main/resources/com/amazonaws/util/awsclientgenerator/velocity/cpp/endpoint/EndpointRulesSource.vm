@@ -34,6 +34,9 @@ const Aws::Vector<char> ${metadata.classNamePrefix}EndpointRules::Rules = {
 #if($tmpChar == "\")
 #set($tmpChar = "\\")
 #end
+#if($tmpChar == "'")
+#set($tmpChar = "\'")
+#end
 #if(25 == $lineLenth)
 #set($lineLenth = 0)
 

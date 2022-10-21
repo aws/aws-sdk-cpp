@@ -3,9 +3,12 @@
 #set($metadata = $serviceModel.metadata)
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
-#set($className = "${metadata.classNamePrefix}EndpointProvider")
+#set($epProviderClassName = "${metadata.classNamePrefix}EndpointProvider")
+#set($epContextClassName = "${metadata.classNamePrefix}ClientContextParameters")
+#set($epBuiltInClassName = "${metadata.classNamePrefix}BuiltInParameters")
 #pragma once
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
+\#include <aws/core/client/ClientConfiguration.h>
 \#include <aws/core/endpoint/DefaultEndpointProvider.h>
 \#include <aws/core/endpoint/EndpointParameter.h>
 \#include <aws/core/utils/memory/stl/AWSString.h>
@@ -22,23 +25,64 @@ namespace ${serviceNamespace}
 {
 namespace Endpoint
 {
-#set($endpointParametersType = "${metadata.classNamePrefix}EndpointParameters")
-using ${endpointParametersType} = Aws::List<Aws::Endpoint::EndpointParameter>;
+using EndpointParameters = Aws::Vector<Aws::Endpoint::EndpointParameter>;
 
 #if ($serviceModel.endpointRules)
-class ${className} : public Aws::Endpoint::DefaultEndpointProvider<${className}, ${endpointParametersType}>
+#if ($serviceModel.clientContextParams)
+class ${epContextClassName} : public Aws::Endpoint::ClientContextParameters
 {
 public:
-    using ${metadata.classNamePrefix}ResolveEndpointOutcome = typename Aws::Endpoint::DefaultEndpointProvider<${className}, ${endpointParametersType}>::ResolveEndpointOutcome;
+    virtual ~${epContextClassName}(){};
 
-    ${className}()
-      : Aws::Endpoint::DefaultEndpointProvider<${className}, ${endpointParametersType}>(${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}EndpointRules::Rules)
+#foreach($memberEntry in $serviceModel.clientContextParams.entrySet())
+    /**
+    * ${memberEntry.value.documentation}
+    */
+#if(${memberEntry.value.type} == "boolean")
+#set($paramType = "bool")
+#else
+#set($paramType = "Aws::String")
+#end
+    void Set${memberEntry.key}(${paramType} value);
+    const ClientContextParameters::EndpointParameter& Get${memberEntry.key}() const;
+#if( $foreach.hasNext )
+
+#end
+#end
+};
+#else##-#if ($serviceModel.clientContextParams)
+using ${epContextClassName} = Aws::Endpoint::ClientContextParameters;
+#end
+using ${epBuiltInClassName} = Aws::Endpoint::ClientContextParameters;
+class ${epProviderClassName};
+using DefaultEndpointProviderT = Aws::Endpoint::DefaultEndpointProvider<${epProviderClassName},
+                                                                        ${epBuiltInClassName},
+                                                                        ${epContextClassName}>;
+
+
+class ${epProviderClassName} : public DefaultEndpointProviderT
+{
+public:
+    using ${metadata.classNamePrefix}ResolveEndpointOutcome = typename DefaultEndpointProviderT::ResolveEndpointOutcome;
+
+    ${epProviderClassName}(const Client::ClientConfiguration& config = Client::ClientConfiguration())
+      : DefaultEndpointProviderT(${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}EndpointRules::Rules),
+        clientConfiguration(config)
     {}
 
-    ${metadata.classNamePrefix}ResolveEndpointOutcome ResolveEndpointImpl(const ${endpointParametersType}& epParams)
+    ${metadata.classNamePrefix}ResolveEndpointOutcome ResolveEndpointImpl(const EndpointParameters& epParams) const
     {
-        return Aws::Endpoint::ResolveEndpointDefaultImpl<${className}, ${endpointParametersType}>(epParams);
+        auto ResolveEndpointDefaultImpl =
+            Aws::Endpoint::ResolveEndpointDefaultImpl<${epProviderClassName}>;
+
+        return ResolveEndpointDefaultImpl(m_crtRuleEngine, m_builtInParameters.GetAllParameters(), m_clientContextParameters.GetAllParameters(), epParams);
     }
+
+    ~${metadata.classNamePrefix}EndpointProvider()
+    {
+    }
+protected:
+    Client::ClientConfiguration clientConfiguration;
 };
 #end
 } // namespace Endpoint

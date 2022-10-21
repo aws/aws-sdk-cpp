@@ -1,0 +1,14 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Request.h>
+
+namespace ${rootNamespace}
+{
+namespace ${serviceNamespace}
+{
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}
