@@ -33,10 +33,8 @@ using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 
-#if(!$metadata.signatureVersion.equals("bearer"))
-static const char* SERVICE_NAME = "${metadata.signingName}";
-#end
-static const char* ALLOCATION_TAG = "${className}";
+const char* ${className}::SERVICE_NAME = "${metadata.signingName}";
+const char* ${className}::ALLOCATION_TAG = "${className}";
 
 #parseOverrideOrDefault( "ServiceClientSourceInit_template" "com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
 

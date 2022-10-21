@@ -29,8 +29,8 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 
 
-static const char* SERVICE_NAME = "${metadata.signingName}";
-static const char* ALLOCATION_TAG = "${className}";
+const char* ${className}::SERVICE_NAME = "${metadata.signingName}";
+const char* ${className}::ALLOCATION_TAG = "${className}";
 #set($hostOverrideString = '')
 #if($metadata.globalEndpoint)
 #set($hostOverrideString = ', "' + $metadata.globalEndpoint + '"')
