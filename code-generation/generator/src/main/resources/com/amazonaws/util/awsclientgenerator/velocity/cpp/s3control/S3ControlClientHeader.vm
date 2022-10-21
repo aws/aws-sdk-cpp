@@ -44,6 +44,8 @@ namespace ${metadata.namespace}
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
+        static const char* SERVICE_NAME;
+        static const char* ALLOCATION_TAG;
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
 
