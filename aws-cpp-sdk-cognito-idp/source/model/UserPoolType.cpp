@@ -22,6 +22,8 @@ UserPoolType::UserPoolType() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_policiesHasBeenSet(false),
+    m_deletionProtection(DeletionProtectionType::NOT_SET),
+    m_deletionProtectionHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
     m_status(StatusType::NOT_SET),
     m_statusHasBeenSet(false),
@@ -61,6 +63,8 @@ UserPoolType::UserPoolType(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_policiesHasBeenSet(false),
+    m_deletionProtection(DeletionProtectionType::NOT_SET),
+    m_deletionProtectionHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
     m_status(StatusType::NOT_SET),
     m_statusHasBeenSet(false),
@@ -118,6 +122,13 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
     m_policies = jsonValue.GetObject("Policies");
 
     m_policiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeletionProtection"))
+  {
+    m_deletionProtection = DeletionProtectionTypeMapper::GetDeletionProtectionTypeForName(jsonValue.GetString("DeletionProtection"));
+
+    m_deletionProtectionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LambdaConfig"))
@@ -361,6 +372,11 @@ JsonValue UserPoolType::Jsonize() const
   {
    payload.WithObject("Policies", m_policies.Jsonize());
 
+  }
+
+  if(m_deletionProtectionHasBeenSet)
+  {
+   payload.WithString("DeletionProtection", DeletionProtectionTypeMapper::GetNameForDeletionProtectionType(m_deletionProtection));
   }
 
   if(m_lambdaConfigHasBeenSet)

@@ -8,6 +8,7 @@
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-idp/model/UserPoolPolicyType.h>
+#include <aws/cognito-idp/model/DeletionProtectionType.h>
 #include <aws/cognito-idp/model/LambdaConfigType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cognito-idp/model/VerificationMessageTemplateType.h>
@@ -121,6 +122,79 @@ namespace Model
      * <p>A container with the policies you want to update in a user pool.</p>
      */
     inline UpdateUserPoolRequest& WithPolicies(UserPoolPolicyType&& value) { SetPolicies(std::move(value)); return *this;}
+
+
+    /**
+     * <p>When active, <code>DeletionProtection</code> prevents accidental deletion of
+     * your user pool. Before you can delete a user pool that you have protected
+     * against deletion, you must deactivate this feature.</p> <p>When you try to
+     * delete a protected user pool in a <code>DeleteUserPool</code> API request,
+     * Amazon Cognito returns an <code>InvalidParameterException</code> error. To
+     * delete a protected user pool, send a new <code>DeleteUserPool</code> request
+     * after you deactivate deletion protection in an <code>UpdateUserPool</code> API
+     * request.</p>
+     */
+    inline const DeletionProtectionType& GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p>When active, <code>DeletionProtection</code> prevents accidental deletion of
+     * your user pool. Before you can delete a user pool that you have protected
+     * against deletion, you must deactivate this feature.</p> <p>When you try to
+     * delete a protected user pool in a <code>DeleteUserPool</code> API request,
+     * Amazon Cognito returns an <code>InvalidParameterException</code> error. To
+     * delete a protected user pool, send a new <code>DeleteUserPool</code> request
+     * after you deactivate deletion protection in an <code>UpdateUserPool</code> API
+     * request.</p>
+     */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+
+    /**
+     * <p>When active, <code>DeletionProtection</code> prevents accidental deletion of
+     * your user pool. Before you can delete a user pool that you have protected
+     * against deletion, you must deactivate this feature.</p> <p>When you try to
+     * delete a protected user pool in a <code>DeleteUserPool</code> API request,
+     * Amazon Cognito returns an <code>InvalidParameterException</code> error. To
+     * delete a protected user pool, send a new <code>DeleteUserPool</code> request
+     * after you deactivate deletion protection in an <code>UpdateUserPool</code> API
+     * request.</p>
+     */
+    inline void SetDeletionProtection(const DeletionProtectionType& value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+
+    /**
+     * <p>When active, <code>DeletionProtection</code> prevents accidental deletion of
+     * your user pool. Before you can delete a user pool that you have protected
+     * against deletion, you must deactivate this feature.</p> <p>When you try to
+     * delete a protected user pool in a <code>DeleteUserPool</code> API request,
+     * Amazon Cognito returns an <code>InvalidParameterException</code> error. To
+     * delete a protected user pool, send a new <code>DeleteUserPool</code> request
+     * after you deactivate deletion protection in an <code>UpdateUserPool</code> API
+     * request.</p>
+     */
+    inline void SetDeletionProtection(DeletionProtectionType&& value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = std::move(value); }
+
+    /**
+     * <p>When active, <code>DeletionProtection</code> prevents accidental deletion of
+     * your user pool. Before you can delete a user pool that you have protected
+     * against deletion, you must deactivate this feature.</p> <p>When you try to
+     * delete a protected user pool in a <code>DeleteUserPool</code> API request,
+     * Amazon Cognito returns an <code>InvalidParameterException</code> error. To
+     * delete a protected user pool, send a new <code>DeleteUserPool</code> request
+     * after you deactivate deletion protection in an <code>UpdateUserPool</code> API
+     * request.</p>
+     */
+    inline UpdateUserPoolRequest& WithDeletionProtection(const DeletionProtectionType& value) { SetDeletionProtection(value); return *this;}
+
+    /**
+     * <p>When active, <code>DeletionProtection</code> prevents accidental deletion of
+     * your user pool. Before you can delete a user pool that you have protected
+     * against deletion, you must deactivate this feature.</p> <p>When you try to
+     * delete a protected user pool in a <code>DeleteUserPool</code> API request,
+     * Amazon Cognito returns an <code>InvalidParameterException</code> error. To
+     * delete a protected user pool, send a new <code>DeleteUserPool</code> request
+     * after you deactivate deletion protection in an <code>UpdateUserPool</code> API
+     * request.</p>
+     */
+    inline UpdateUserPoolRequest& WithDeletionProtection(DeletionProtectionType&& value) { SetDeletionProtection(std::move(value)); return *this;}
 
 
     /**
@@ -954,6 +1028,9 @@ namespace Model
 
     UserPoolPolicyType m_policies;
     bool m_policiesHasBeenSet = false;
+
+    DeletionProtectionType m_deletionProtection;
+    bool m_deletionProtectionHasBeenSet = false;
 
     LambdaConfigType m_lambdaConfig;
     bool m_lambdaConfigHasBeenSet = false;

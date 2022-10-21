@@ -113,6 +113,15 @@ DescribeInferenceRecommendationsJobResult& DescribeInferenceRecommendationsJobRe
     }
   }
 
+  if(jsonValue.ValueExists("EndpointPerformances"))
+  {
+    Array<JsonView> endpointPerformancesJsonList = jsonValue.GetArray("EndpointPerformances");
+    for(unsigned endpointPerformancesIndex = 0; endpointPerformancesIndex < endpointPerformancesJsonList.GetLength(); ++endpointPerformancesIndex)
+    {
+      m_endpointPerformances.push_back(endpointPerformancesJsonList[endpointPerformancesIndex].AsObject());
+    }
+  }
+
 
 
   return *this;
