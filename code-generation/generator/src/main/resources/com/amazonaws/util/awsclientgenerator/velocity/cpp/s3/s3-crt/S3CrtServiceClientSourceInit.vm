@@ -185,6 +185,31 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   aws_s3_client_config s3CrtConfig;
   AWS_ZERO_STRUCT(s3CrtConfig);
   s3CrtConfig.region = Aws::Crt::ByteCursorFromCString(config.region.c_str());
+  s3CrtConfig.connect_timeout_ms = config.connectTimeoutMs;
+
+  aws_s3_tcp_keep_alive_options tcp_keep_alive_options;
+  if (config.enableTcpKeepAlive) {
+    const uint16_t keep_intvl = std::max<uint16_t>(15, config.tcpKeepAliveIntervalMs/1000);
+
+    AWS_ZERO_STRUCT(tcp_keep_alive_options);
+    tcp_keep_alive_options.keep_alive_interval_sec = keep_intvl;
+    tcp_keep_alive_options.keep_alive_timeout_sec = keep_intvl;
+
+    s3CrtConfig.tcp_keep_alive_options = &tcp_keep_alive_options;
+  }
+
+  aws_http_connection_monitoring_options tcp_monitoring_options;
+  if (config.lowSpeedLimit) {
+    // Use the same monitor interval default as used by the curl client, but allow override via requestTimeoutMs:
+    const uint32_t monitor_intvl = std::max<uint32_t>(3, config.requestTimeoutMs/1000);
+
+    AWS_ZERO_STRUCT(tcp_monitoring_options);
+    tcp_monitoring_options.minimum_throughput_bytes_per_second = config.lowSpeedLimit;
+    tcp_monitoring_options.allowable_throughput_failure_interval_seconds = monitor_intvl;
+
+    s3CrtConfig.monitoring_options = &tcp_monitoring_options;
+  }
+
   Aws::Crt::Io::ClientBootstrap* clientBootstrap = config.clientBootstrap ? config.clientBootstrap.get() : Aws::GetDefaultClientBootstrap();
   s3CrtConfig.client_bootstrap = clientBootstrap->GetUnderlyingHandle();
 

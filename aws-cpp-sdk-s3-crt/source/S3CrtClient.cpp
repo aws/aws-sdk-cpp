@@ -204,8 +204,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const std::shar
   s3CrtConfig.connect_timeout_ms = config.connectTimeoutMs;
 
   aws_s3_tcp_keep_alive_options tcp_keep_alive_options;
-  if (config.enableTcpKeepAlive)
-  {
+  if (config.enableTcpKeepAlive) {
     const uint16_t keep_intvl = std::max<uint16_t>(15, config.tcpKeepAliveIntervalMs/1000);
 
     AWS_ZERO_STRUCT(tcp_keep_alive_options);
