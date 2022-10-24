@@ -13,6 +13,7 @@
 #include <aws/acm-pca/model/CertificateAuthorityConfiguration.h>
 #include <aws/acm-pca/model/RevocationConfiguration.h>
 #include <aws/acm-pca/model/KeyStorageSecurityStandard.h>
+#include <aws/acm-pca/model/CertificateAuthorityUsageMode.h>
 #include <utility>
 
 namespace Aws
@@ -594,6 +595,55 @@ namespace Model
      */
     inline CertificateAuthority& WithKeyStorageSecurityStandard(KeyStorageSecurityStandard&& value) { SetKeyStorageSecurityStandard(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether the CA issues general-purpose certificates that typically
+     * require a revocation mechanism, or short-lived certificates that may optionally
+     * omit revocation because they expire quickly. Short-lived certificate validity is
+     * limited to seven days.</p> <p>The default value is GENERAL_PURPOSE.</p>
+     */
+    inline const CertificateAuthorityUsageMode& GetUsageMode() const{ return m_usageMode; }
+
+    /**
+     * <p>Specifies whether the CA issues general-purpose certificates that typically
+     * require a revocation mechanism, or short-lived certificates that may optionally
+     * omit revocation because they expire quickly. Short-lived certificate validity is
+     * limited to seven days.</p> <p>The default value is GENERAL_PURPOSE.</p>
+     */
+    inline bool UsageModeHasBeenSet() const { return m_usageModeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the CA issues general-purpose certificates that typically
+     * require a revocation mechanism, or short-lived certificates that may optionally
+     * omit revocation because they expire quickly. Short-lived certificate validity is
+     * limited to seven days.</p> <p>The default value is GENERAL_PURPOSE.</p>
+     */
+    inline void SetUsageMode(const CertificateAuthorityUsageMode& value) { m_usageModeHasBeenSet = true; m_usageMode = value; }
+
+    /**
+     * <p>Specifies whether the CA issues general-purpose certificates that typically
+     * require a revocation mechanism, or short-lived certificates that may optionally
+     * omit revocation because they expire quickly. Short-lived certificate validity is
+     * limited to seven days.</p> <p>The default value is GENERAL_PURPOSE.</p>
+     */
+    inline void SetUsageMode(CertificateAuthorityUsageMode&& value) { m_usageModeHasBeenSet = true; m_usageMode = std::move(value); }
+
+    /**
+     * <p>Specifies whether the CA issues general-purpose certificates that typically
+     * require a revocation mechanism, or short-lived certificates that may optionally
+     * omit revocation because they expire quickly. Short-lived certificate validity is
+     * limited to seven days.</p> <p>The default value is GENERAL_PURPOSE.</p>
+     */
+    inline CertificateAuthority& WithUsageMode(const CertificateAuthorityUsageMode& value) { SetUsageMode(value); return *this;}
+
+    /**
+     * <p>Specifies whether the CA issues general-purpose certificates that typically
+     * require a revocation mechanism, or short-lived certificates that may optionally
+     * omit revocation because they expire quickly. Short-lived certificate validity is
+     * limited to seven days.</p> <p>The default value is GENERAL_PURPOSE.</p>
+     */
+    inline CertificateAuthority& WithUsageMode(CertificateAuthorityUsageMode&& value) { SetUsageMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -637,6 +687,9 @@ namespace Model
 
     KeyStorageSecurityStandard m_keyStorageSecurityStandard;
     bool m_keyStorageSecurityStandardHasBeenSet = false;
+
+    CertificateAuthorityUsageMode m_usageMode;
+    bool m_usageModeHasBeenSet = false;
   };
 
 } // namespace Model

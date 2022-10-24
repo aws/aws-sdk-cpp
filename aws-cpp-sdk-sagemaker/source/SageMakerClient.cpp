@@ -198,6 +198,7 @@
 #include <aws/sagemaker/model/ListHyperParameterTuningJobsRequest.h>
 #include <aws/sagemaker/model/ListImageVersionsRequest.h>
 #include <aws/sagemaker/model/ListImagesRequest.h>
+#include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsRequest.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsRequest.h>
 #include <aws/sagemaker/model/ListLabelingJobsRequest.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamRequest.h>
@@ -4276,6 +4277,28 @@ void SageMakerClient::ListImagesAsync(const ListImagesRequest& request, const Li
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListImages(request), context);
+    } );
+}
+
+ListInferenceRecommendationsJobStepsOutcome SageMakerClient::ListInferenceRecommendationsJobSteps(const ListInferenceRecommendationsJobStepsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListInferenceRecommendationsJobStepsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListInferenceRecommendationsJobStepsOutcomeCallable SageMakerClient::ListInferenceRecommendationsJobStepsCallable(const ListInferenceRecommendationsJobStepsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListInferenceRecommendationsJobStepsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInferenceRecommendationsJobSteps(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::ListInferenceRecommendationsJobStepsAsync(const ListInferenceRecommendationsJobStepsRequest& request, const ListInferenceRecommendationsJobStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListInferenceRecommendationsJobSteps(request), context);
     } );
 }
 

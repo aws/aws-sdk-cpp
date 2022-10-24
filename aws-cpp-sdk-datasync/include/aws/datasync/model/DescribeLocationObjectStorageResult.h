@@ -9,6 +9,7 @@
 #include <aws/datasync/model/ObjectStorageServerProtocol.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/Array.h>
 #include <utility>
 
 namespace Aws
@@ -114,43 +115,43 @@ namespace Model
 
     /**
      * <p>The access key (for example, a user name) required to authenticate with the
-     * object storage server.</p>
+     * object storage system.</p>
      */
     inline const Aws::String& GetAccessKey() const{ return m_accessKey; }
 
     /**
      * <p>The access key (for example, a user name) required to authenticate with the
-     * object storage server.</p>
+     * object storage system.</p>
      */
     inline void SetAccessKey(const Aws::String& value) { m_accessKey = value; }
 
     /**
      * <p>The access key (for example, a user name) required to authenticate with the
-     * object storage server.</p>
+     * object storage system.</p>
      */
     inline void SetAccessKey(Aws::String&& value) { m_accessKey = std::move(value); }
 
     /**
      * <p>The access key (for example, a user name) required to authenticate with the
-     * object storage server.</p>
+     * object storage system.</p>
      */
     inline void SetAccessKey(const char* value) { m_accessKey.assign(value); }
 
     /**
      * <p>The access key (for example, a user name) required to authenticate with the
-     * object storage server.</p>
+     * object storage system.</p>
      */
     inline DescribeLocationObjectStorageResult& WithAccessKey(const Aws::String& value) { SetAccessKey(value); return *this;}
 
     /**
      * <p>The access key (for example, a user name) required to authenticate with the
-     * object storage server.</p>
+     * object storage system.</p>
      */
     inline DescribeLocationObjectStorageResult& WithAccessKey(Aws::String&& value) { SetAccessKey(std::move(value)); return *this;}
 
     /**
      * <p>The access key (for example, a user name) required to authenticate with the
-     * object storage server.</p>
+     * object storage system.</p>
      */
     inline DescribeLocationObjectStorageResult& WithAccessKey(const char* value) { SetAccessKey(value); return *this;}
 
@@ -175,27 +176,27 @@ namespace Model
 
 
     /**
-     * <p>The protocol that your object storage server uses to communicate.</p>
+     * <p>The protocol that your object storage system uses to communicate.</p>
      */
     inline const ObjectStorageServerProtocol& GetServerProtocol() const{ return m_serverProtocol; }
 
     /**
-     * <p>The protocol that your object storage server uses to communicate.</p>
+     * <p>The protocol that your object storage system uses to communicate.</p>
      */
     inline void SetServerProtocol(const ObjectStorageServerProtocol& value) { m_serverProtocol = value; }
 
     /**
-     * <p>The protocol that your object storage server uses to communicate.</p>
+     * <p>The protocol that your object storage system uses to communicate.</p>
      */
     inline void SetServerProtocol(ObjectStorageServerProtocol&& value) { m_serverProtocol = std::move(value); }
 
     /**
-     * <p>The protocol that your object storage server uses to communicate.</p>
+     * <p>The protocol that your object storage system uses to communicate.</p>
      */
     inline DescribeLocationObjectStorageResult& WithServerProtocol(const ObjectStorageServerProtocol& value) { SetServerProtocol(value); return *this;}
 
     /**
-     * <p>The protocol that your object storage server uses to communicate.</p>
+     * <p>The protocol that your object storage system uses to communicate.</p>
      */
     inline DescribeLocationObjectStorageResult& WithServerProtocol(ObjectStorageServerProtocol&& value) { SetServerProtocol(std::move(value)); return *this;}
 
@@ -274,6 +275,37 @@ namespace Model
      */
     inline DescribeLocationObjectStorageResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The self-signed certificate that DataSync uses to securely authenticate with
+     * your object storage system.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetServerCertificate() const{ return m_serverCertificate; }
+
+    /**
+     * <p>The self-signed certificate that DataSync uses to securely authenticate with
+     * your object storage system.</p>
+     */
+    inline void SetServerCertificate(const Aws::Utils::ByteBuffer& value) { m_serverCertificate = value; }
+
+    /**
+     * <p>The self-signed certificate that DataSync uses to securely authenticate with
+     * your object storage system.</p>
+     */
+    inline void SetServerCertificate(Aws::Utils::ByteBuffer&& value) { m_serverCertificate = std::move(value); }
+
+    /**
+     * <p>The self-signed certificate that DataSync uses to securely authenticate with
+     * your object storage system.</p>
+     */
+    inline DescribeLocationObjectStorageResult& WithServerCertificate(const Aws::Utils::ByteBuffer& value) { SetServerCertificate(value); return *this;}
+
+    /**
+     * <p>The self-signed certificate that DataSync uses to securely authenticate with
+     * your object storage system.</p>
+     */
+    inline DescribeLocationObjectStorageResult& WithServerCertificate(Aws::Utils::ByteBuffer&& value) { SetServerCertificate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_locationArn;
@@ -289,6 +321,8 @@ namespace Model
     Aws::Vector<Aws::String> m_agentArns;
 
     Aws::Utils::DateTime m_creationTime;
+
+    Aws::Utils::ByteBuffer m_serverCertificate;
   };
 
 } // namespace Model

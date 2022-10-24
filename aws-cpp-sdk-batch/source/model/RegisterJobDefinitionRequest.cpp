@@ -26,7 +26,8 @@ RegisterJobDefinitionRequest::RegisterJobDefinitionRequest() :
     m_propagateTagsHasBeenSet(false),
     m_timeoutHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_platformCapabilitiesHasBeenSet(false)
+    m_platformCapabilitiesHasBeenSet(false),
+    m_eksPropertiesHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,12 @@ Aws::String RegisterJobDefinitionRequest::SerializePayload() const
      platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString(PlatformCapabilityMapper::GetNameForPlatformCapability(m_platformCapabilities[platformCapabilitiesIndex]));
    }
    payload.WithArray("platformCapabilities", std::move(platformCapabilitiesJsonList));
+
+  }
+
+  if(m_eksPropertiesHasBeenSet)
+  {
+   payload.WithObject("eksProperties", m_eksProperties.Jsonize());
 
   }
 

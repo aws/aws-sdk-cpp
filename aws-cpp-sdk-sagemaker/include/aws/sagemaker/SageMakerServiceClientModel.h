@@ -165,6 +165,7 @@
 #include <aws/sagemaker/model/ListHyperParameterTuningJobsResult.h>
 #include <aws/sagemaker/model/ListImageVersionsResult.h>
 #include <aws/sagemaker/model/ListImagesResult.h>
+#include <aws/sagemaker/model/ListInferenceRecommendationsJobStepsResult.h>
 #include <aws/sagemaker/model/ListInferenceRecommendationsJobsResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamResult.h>
@@ -446,6 +447,7 @@ namespace Aws
       class ListHyperParameterTuningJobsRequest;
       class ListImageVersionsRequest;
       class ListImagesRequest;
+      class ListInferenceRecommendationsJobStepsRequest;
       class ListInferenceRecommendationsJobsRequest;
       class ListLabelingJobsRequest;
       class ListLabelingJobsForWorkteamRequest;
@@ -712,6 +714,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListHyperParameterTuningJobsResult, SageMakerError> ListHyperParameterTuningJobsOutcome;
       typedef Aws::Utils::Outcome<ListImageVersionsResult, SageMakerError> ListImageVersionsOutcome;
       typedef Aws::Utils::Outcome<ListImagesResult, SageMakerError> ListImagesOutcome;
+      typedef Aws::Utils::Outcome<ListInferenceRecommendationsJobStepsResult, SageMakerError> ListInferenceRecommendationsJobStepsOutcome;
       typedef Aws::Utils::Outcome<ListInferenceRecommendationsJobsResult, SageMakerError> ListInferenceRecommendationsJobsOutcome;
       typedef Aws::Utils::Outcome<ListLabelingJobsResult, SageMakerError> ListLabelingJobsOutcome;
       typedef Aws::Utils::Outcome<ListLabelingJobsForWorkteamResult, SageMakerError> ListLabelingJobsForWorkteamOutcome;
@@ -978,6 +981,7 @@ namespace Aws
       typedef std::future<ListHyperParameterTuningJobsOutcome> ListHyperParameterTuningJobsOutcomeCallable;
       typedef std::future<ListImageVersionsOutcome> ListImageVersionsOutcomeCallable;
       typedef std::future<ListImagesOutcome> ListImagesOutcomeCallable;
+      typedef std::future<ListInferenceRecommendationsJobStepsOutcome> ListInferenceRecommendationsJobStepsOutcomeCallable;
       typedef std::future<ListInferenceRecommendationsJobsOutcome> ListInferenceRecommendationsJobsOutcomeCallable;
       typedef std::future<ListLabelingJobsOutcome> ListLabelingJobsOutcomeCallable;
       typedef std::future<ListLabelingJobsForWorkteamOutcome> ListLabelingJobsForWorkteamOutcomeCallable;
@@ -1247,6 +1251,7 @@ namespace Aws
     typedef std::function<void(const SageMakerClient*, const Model::ListHyperParameterTuningJobsRequest&, const Model::ListHyperParameterTuningJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHyperParameterTuningJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListImageVersionsRequest&, const Model::ListImageVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImageVersionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListImagesRequest&, const Model::ListImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImagesResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListInferenceRecommendationsJobStepsRequest&, const Model::ListInferenceRecommendationsJobStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceRecommendationsJobStepsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListInferenceRecommendationsJobsRequest&, const Model::ListInferenceRecommendationsJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInferenceRecommendationsJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsRequest&, const Model::ListLabelingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsForWorkteamRequest&, const Model::ListLabelingJobsForWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsForWorkteamResponseReceivedHandler;

@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an Batch job dependency.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents an Batch job dependency.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobDependency">AWS
    * API Reference</a></p>
    */
@@ -39,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The job ID of the Batch job associated with this dependency.</p>
+     * <p>The job ID of the Batch job that's associated with this dependency.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
-     * <p>The job ID of the Batch job associated with this dependency.</p>
+     * <p>The job ID of the Batch job that's associated with this dependency.</p>
      */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
-     * <p>The job ID of the Batch job associated with this dependency.</p>
+     * <p>The job ID of the Batch job that's associated with this dependency.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
-     * <p>The job ID of the Batch job associated with this dependency.</p>
+     * <p>The job ID of the Batch job that's associated with this dependency.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
-     * <p>The job ID of the Batch job associated with this dependency.</p>
+     * <p>The job ID of the Batch job that's associated with this dependency.</p>
      */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
     /**
-     * <p>The job ID of the Batch job associated with this dependency.</p>
+     * <p>The job ID of the Batch job that's associated with this dependency.</p>
      */
     inline JobDependency& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
-     * <p>The job ID of the Batch job associated with this dependency.</p>
+     * <p>The job ID of the Batch job that's associated with this dependency.</p>
      */
     inline JobDependency& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
-     * <p>The job ID of the Batch job associated with this dependency.</p>
+     * <p>The job ID of the Batch job that's associated with this dependency.</p>
      */
     inline JobDependency& WithJobId(const char* value) { SetJobId(value); return *this;}
 

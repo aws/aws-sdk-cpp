@@ -48,7 +48,9 @@ JobDetail::JobDetail() :
     m_tagsHasBeenSet(false),
     m_propagateTags(false),
     m_propagateTagsHasBeenSet(false),
-    m_platformCapabilitiesHasBeenSet(false)
+    m_platformCapabilitiesHasBeenSet(false),
+    m_eksPropertiesHasBeenSet(false),
+    m_eksAttemptsHasBeenSet(false)
 {
 }
 
@@ -82,7 +84,9 @@ JobDetail::JobDetail(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_propagateTags(false),
     m_propagateTagsHasBeenSet(false),
-    m_platformCapabilitiesHasBeenSet(false)
+    m_platformCapabilitiesHasBeenSet(false),
+    m_eksPropertiesHasBeenSet(false),
+    m_eksAttemptsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -272,6 +276,23 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
     m_platformCapabilitiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("eksProperties"))
+  {
+    m_eksProperties = jsonValue.GetObject("eksProperties");
+
+    m_eksPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eksAttempts"))
+  {
+    Array<JsonView> eksAttemptsJsonList = jsonValue.GetArray("eksAttempts");
+    for(unsigned eksAttemptsIndex = 0; eksAttemptsIndex < eksAttemptsJsonList.GetLength(); ++eksAttemptsIndex)
+    {
+      m_eksAttempts.push_back(eksAttemptsJsonList[eksAttemptsIndex].AsObject());
+    }
+    m_eksAttemptsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -444,6 +465,23 @@ JsonValue JobDetail::Jsonize() const
      platformCapabilitiesJsonList[platformCapabilitiesIndex].AsString(PlatformCapabilityMapper::GetNameForPlatformCapability(m_platformCapabilities[platformCapabilitiesIndex]));
    }
    payload.WithArray("platformCapabilities", std::move(platformCapabilitiesJsonList));
+
+  }
+
+  if(m_eksPropertiesHasBeenSet)
+  {
+   payload.WithObject("eksProperties", m_eksProperties.Jsonize());
+
+  }
+
+  if(m_eksAttemptsHasBeenSet)
+  {
+   Array<JsonValue> eksAttemptsJsonList(m_eksAttempts.size());
+   for(unsigned eksAttemptsIndex = 0; eksAttemptsIndex < eksAttemptsJsonList.GetLength(); ++eksAttemptsIndex)
+   {
+     eksAttemptsJsonList[eksAttemptsIndex].AsObject(m_eksAttempts[eksAttemptsIndex].Jsonize());
+   }
+   payload.WithArray("eksAttempts", std::move(eksAttemptsJsonList));
 
   }
 
