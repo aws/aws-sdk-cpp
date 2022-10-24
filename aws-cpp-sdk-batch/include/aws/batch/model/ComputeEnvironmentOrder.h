@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The order in which compute environments are tried for job placement within a
+   * <p>The order that compute environments are tried in for job placement within a
    * queue. Compute environments are tried in ascending order. For example, if two
    * compute environments are associated with a job queue, the compute environment
    * with a lower order integer value is tried for job placement first. Compute

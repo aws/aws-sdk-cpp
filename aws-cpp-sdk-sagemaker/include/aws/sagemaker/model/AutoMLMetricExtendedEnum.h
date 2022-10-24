@@ -29,7 +29,8 @@ namespace Model
     PrecisionMacro,
     Recall,
     RecallMacro,
-    LogLoss
+    LogLoss,
+    InferenceLatency
   };
 
 namespace AutoMLMetricExtendedEnumMapper

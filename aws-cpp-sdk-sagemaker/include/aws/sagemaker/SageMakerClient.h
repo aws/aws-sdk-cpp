@@ -3776,6 +3776,25 @@ namespace SageMaker
         virtual void ListImagesAsync(const Model::ListImagesRequest& request, const ListImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of the subtasks for an Inference Recommender job.</p> <p>The
+         * supported subtasks are benchmarks, which evaluate the performance of your model
+         * on different instance types.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListInferenceRecommendationsJobStepsOutcome ListInferenceRecommendationsJobSteps(const Model::ListInferenceRecommendationsJobStepsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListInferenceRecommendationsJobSteps that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListInferenceRecommendationsJobStepsOutcomeCallable ListInferenceRecommendationsJobStepsCallable(const Model::ListInferenceRecommendationsJobStepsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListInferenceRecommendationsJobSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListInferenceRecommendationsJobStepsAsync(const Model::ListInferenceRecommendationsJobStepsRequest& request, const ListInferenceRecommendationsJobStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists recommendation jobs that satisfy various filters.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobs">AWS

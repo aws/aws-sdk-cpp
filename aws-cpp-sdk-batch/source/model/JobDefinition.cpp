@@ -35,7 +35,10 @@ JobDefinition::JobDefinition() :
     m_tagsHasBeenSet(false),
     m_propagateTags(false),
     m_propagateTagsHasBeenSet(false),
-    m_platformCapabilitiesHasBeenSet(false)
+    m_platformCapabilitiesHasBeenSet(false),
+    m_eksPropertiesHasBeenSet(false),
+    m_containerOrchestrationType(OrchestrationType::NOT_SET),
+    m_containerOrchestrationTypeHasBeenSet(false)
 {
 }
 
@@ -56,7 +59,10 @@ JobDefinition::JobDefinition(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_propagateTags(false),
     m_propagateTagsHasBeenSet(false),
-    m_platformCapabilitiesHasBeenSet(false)
+    m_platformCapabilitiesHasBeenSet(false),
+    m_eksPropertiesHasBeenSet(false),
+    m_containerOrchestrationType(OrchestrationType::NOT_SET),
+    m_containerOrchestrationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -170,6 +176,20 @@ JobDefinition& JobDefinition::operator =(JsonView jsonValue)
     m_platformCapabilitiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("eksProperties"))
+  {
+    m_eksProperties = jsonValue.GetObject("eksProperties");
+
+    m_eksPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("containerOrchestrationType"))
+  {
+    m_containerOrchestrationType = OrchestrationTypeMapper::GetOrchestrationTypeForName(jsonValue.GetString("containerOrchestrationType"));
+
+    m_containerOrchestrationTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -274,6 +294,17 @@ JsonValue JobDefinition::Jsonize() const
    }
    payload.WithArray("platformCapabilities", std::move(platformCapabilitiesJsonList));
 
+  }
+
+  if(m_eksPropertiesHasBeenSet)
+  {
+   payload.WithObject("eksProperties", m_eksProperties.Jsonize());
+
+  }
+
+  if(m_containerOrchestrationTypeHasBeenSet)
+  {
+   payload.WithString("containerOrchestrationType", OrchestrationTypeMapper::GetNameForOrchestrationType(m_containerOrchestrationType));
   }
 
   return payload;

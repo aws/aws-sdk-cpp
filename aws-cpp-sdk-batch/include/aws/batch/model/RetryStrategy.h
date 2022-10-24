@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The retry strategy associated with a job. For more information, see <a
+   * <p>The retry strategy that's associated with a job. For more information, see <a
    * href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated
    * job retries</a> in the <i>Batch User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RetryStrategy">AWS
@@ -74,58 +74,66 @@ namespace Model
 
 
     /**
-     * <p>Array of up to 5 objects that specify conditions under which the job should
-     * be retried or failed. If this parameter is specified, then the
-     * <code>attempts</code> parameter must also be specified.</p>
+     * <p>Array of up to 5 objects that specify the conditions where jobs are retried
+     * or failed. If this parameter is specified, then the <code>attempts</code>
+     * parameter must also be specified. If none of the listed conditions match, then
+     * the job is retried.</p>
      */
     inline const Aws::Vector<EvaluateOnExit>& GetEvaluateOnExit() const{ return m_evaluateOnExit; }
 
     /**
-     * <p>Array of up to 5 objects that specify conditions under which the job should
-     * be retried or failed. If this parameter is specified, then the
-     * <code>attempts</code> parameter must also be specified.</p>
+     * <p>Array of up to 5 objects that specify the conditions where jobs are retried
+     * or failed. If this parameter is specified, then the <code>attempts</code>
+     * parameter must also be specified. If none of the listed conditions match, then
+     * the job is retried.</p>
      */
     inline bool EvaluateOnExitHasBeenSet() const { return m_evaluateOnExitHasBeenSet; }
 
     /**
-     * <p>Array of up to 5 objects that specify conditions under which the job should
-     * be retried or failed. If this parameter is specified, then the
-     * <code>attempts</code> parameter must also be specified.</p>
+     * <p>Array of up to 5 objects that specify the conditions where jobs are retried
+     * or failed. If this parameter is specified, then the <code>attempts</code>
+     * parameter must also be specified. If none of the listed conditions match, then
+     * the job is retried.</p>
      */
     inline void SetEvaluateOnExit(const Aws::Vector<EvaluateOnExit>& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit = value; }
 
     /**
-     * <p>Array of up to 5 objects that specify conditions under which the job should
-     * be retried or failed. If this parameter is specified, then the
-     * <code>attempts</code> parameter must also be specified.</p>
+     * <p>Array of up to 5 objects that specify the conditions where jobs are retried
+     * or failed. If this parameter is specified, then the <code>attempts</code>
+     * parameter must also be specified. If none of the listed conditions match, then
+     * the job is retried.</p>
      */
     inline void SetEvaluateOnExit(Aws::Vector<EvaluateOnExit>&& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit = std::move(value); }
 
     /**
-     * <p>Array of up to 5 objects that specify conditions under which the job should
-     * be retried or failed. If this parameter is specified, then the
-     * <code>attempts</code> parameter must also be specified.</p>
+     * <p>Array of up to 5 objects that specify the conditions where jobs are retried
+     * or failed. If this parameter is specified, then the <code>attempts</code>
+     * parameter must also be specified. If none of the listed conditions match, then
+     * the job is retried.</p>
      */
     inline RetryStrategy& WithEvaluateOnExit(const Aws::Vector<EvaluateOnExit>& value) { SetEvaluateOnExit(value); return *this;}
 
     /**
-     * <p>Array of up to 5 objects that specify conditions under which the job should
-     * be retried or failed. If this parameter is specified, then the
-     * <code>attempts</code> parameter must also be specified.</p>
+     * <p>Array of up to 5 objects that specify the conditions where jobs are retried
+     * or failed. If this parameter is specified, then the <code>attempts</code>
+     * parameter must also be specified. If none of the listed conditions match, then
+     * the job is retried.</p>
      */
     inline RetryStrategy& WithEvaluateOnExit(Aws::Vector<EvaluateOnExit>&& value) { SetEvaluateOnExit(std::move(value)); return *this;}
 
     /**
-     * <p>Array of up to 5 objects that specify conditions under which the job should
-     * be retried or failed. If this parameter is specified, then the
-     * <code>attempts</code> parameter must also be specified.</p>
+     * <p>Array of up to 5 objects that specify the conditions where jobs are retried
+     * or failed. If this parameter is specified, then the <code>attempts</code>
+     * parameter must also be specified. If none of the listed conditions match, then
+     * the job is retried.</p>
      */
     inline RetryStrategy& AddEvaluateOnExit(const EvaluateOnExit& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit.push_back(value); return *this; }
 
     /**
-     * <p>Array of up to 5 objects that specify conditions under which the job should
-     * be retried or failed. If this parameter is specified, then the
-     * <code>attempts</code> parameter must also be specified.</p>
+     * <p>Array of up to 5 objects that specify the conditions where jobs are retried
+     * or failed. If this parameter is specified, then the <code>attempts</code>
+     * parameter must also be specified. If none of the listed conditions match, then
+     * the job is retried.</p>
      */
     inline RetryStrategy& AddEvaluateOnExit(EvaluateOnExit&& value) { m_evaluateOnExitHasBeenSet = true; m_evaluateOnExit.push_back(std::move(value)); return *this; }
 

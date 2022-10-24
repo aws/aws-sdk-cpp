@@ -20,7 +20,9 @@ CreateCertificateAuthorityRequest::CreateCertificateAuthorityRequest() :
     m_idempotencyTokenHasBeenSet(false),
     m_keyStorageSecurityStandard(KeyStorageSecurityStandard::NOT_SET),
     m_keyStorageSecurityStandardHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_usageMode(CertificateAuthorityUsageMode::NOT_SET),
+    m_usageModeHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,11 @@ Aws::String CreateCertificateAuthorityRequest::SerializePayload() const
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_usageModeHasBeenSet)
+  {
+   payload.WithString("UsageMode", CertificateAuthorityUsageModeMapper::GetNameForCertificateAuthorityUsageMode(m_usageMode));
   }
 
   return payload.View().WriteReadable();

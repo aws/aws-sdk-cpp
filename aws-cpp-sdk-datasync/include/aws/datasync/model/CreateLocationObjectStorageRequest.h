@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/ObjectStorageServerProtocol.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/Array.h>
 #include <aws/datasync/model/TagListEntry.h>
 #include <utility>
 
@@ -466,6 +467,67 @@ namespace Model
      */
     inline CreateLocationObjectStorageRequest& AddTags(TagListEntry&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetServerCertificate() const{ return m_serverCertificate; }
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     */
+    inline bool ServerCertificateHasBeenSet() const { return m_serverCertificateHasBeenSet; }
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     */
+    inline void SetServerCertificate(const Aws::Utils::ByteBuffer& value) { m_serverCertificateHasBeenSet = true; m_serverCertificate = value; }
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     */
+    inline void SetServerCertificate(Aws::Utils::ByteBuffer&& value) { m_serverCertificateHasBeenSet = true; m_serverCertificate = std::move(value); }
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     */
+    inline CreateLocationObjectStorageRequest& WithServerCertificate(const Aws::Utils::ByteBuffer& value) { SetServerCertificate(value); return *this;}
+
+    /**
+     * <p>Specifies a certificate to authenticate with an object storage system that
+     * uses a private or self-signed certificate authority (CA). You must specify a
+     * Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The
+     * certificate can be up to 32768 bytes (before Base64 encoding).</p> <p>To use
+     * this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
+     */
+    inline CreateLocationObjectStorageRequest& WithServerCertificate(Aws::Utils::ByteBuffer&& value) { SetServerCertificate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serverHostname;
@@ -494,6 +556,9 @@ namespace Model
 
     Aws::Vector<TagListEntry> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Utils::ByteBuffer m_serverCertificate;
+    bool m_serverCertificateHasBeenSet = false;
   };
 
 } // namespace Model

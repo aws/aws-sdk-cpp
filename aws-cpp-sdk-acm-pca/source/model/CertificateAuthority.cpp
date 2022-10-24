@@ -36,7 +36,9 @@ CertificateAuthority::CertificateAuthority() :
     m_revocationConfigurationHasBeenSet(false),
     m_restorableUntilHasBeenSet(false),
     m_keyStorageSecurityStandard(KeyStorageSecurityStandard::NOT_SET),
-    m_keyStorageSecurityStandardHasBeenSet(false)
+    m_keyStorageSecurityStandardHasBeenSet(false),
+    m_usageMode(CertificateAuthorityUsageMode::NOT_SET),
+    m_usageModeHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ CertificateAuthority::CertificateAuthority(JsonView jsonValue) :
     m_revocationConfigurationHasBeenSet(false),
     m_restorableUntilHasBeenSet(false),
     m_keyStorageSecurityStandard(KeyStorageSecurityStandard::NOT_SET),
-    m_keyStorageSecurityStandardHasBeenSet(false)
+    m_keyStorageSecurityStandardHasBeenSet(false),
+    m_usageMode(CertificateAuthorityUsageMode::NOT_SET),
+    m_usageModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -163,6 +167,13 @@ CertificateAuthority& CertificateAuthority::operator =(JsonView jsonValue)
     m_keyStorageSecurityStandardHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UsageMode"))
+  {
+    m_usageMode = CertificateAuthorityUsageModeMapper::GetCertificateAuthorityUsageModeForName(jsonValue.GetString("UsageMode"));
+
+    m_usageModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -243,6 +254,11 @@ JsonValue CertificateAuthority::Jsonize() const
   if(m_keyStorageSecurityStandardHasBeenSet)
   {
    payload.WithString("KeyStorageSecurityStandard", KeyStorageSecurityStandardMapper::GetNameForKeyStorageSecurityStandard(m_keyStorageSecurityStandard));
+  }
+
+  if(m_usageModeHasBeenSet)
+  {
+   payload.WithString("UsageMode", CertificateAuthorityUsageModeMapper::GetNameForCertificateAuthorityUsageMode(m_usageMode));
   }
 
   return payload;

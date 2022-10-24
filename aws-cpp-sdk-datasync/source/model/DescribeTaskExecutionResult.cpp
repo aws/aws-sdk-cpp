@@ -22,7 +22,8 @@ DescribeTaskExecutionResult::DescribeTaskExecutionResult() :
     m_estimatedBytesToTransfer(0),
     m_filesTransferred(0),
     m_bytesWritten(0),
-    m_bytesTransferred(0)
+    m_bytesTransferred(0),
+    m_bytesCompressed(0)
 {
 }
 
@@ -32,7 +33,8 @@ DescribeTaskExecutionResult::DescribeTaskExecutionResult(const Aws::AmazonWebSer
     m_estimatedBytesToTransfer(0),
     m_filesTransferred(0),
     m_bytesWritten(0),
-    m_bytesTransferred(0)
+    m_bytesTransferred(0),
+    m_bytesCompressed(0)
 {
   *this = result;
 }
@@ -115,6 +117,12 @@ DescribeTaskExecutionResult& DescribeTaskExecutionResult::operator =(const Aws::
   if(jsonValue.ValueExists("Result"))
   {
     m_result = jsonValue.GetObject("Result");
+
+  }
+
+  if(jsonValue.ValueExists("BytesCompressed"))
+  {
+    m_bytesCompressed = jsonValue.GetInt64("BytesCompressed");
 
   }
 

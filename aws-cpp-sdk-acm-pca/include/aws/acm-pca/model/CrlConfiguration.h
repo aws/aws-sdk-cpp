@@ -70,8 +70,8 @@ namespace Model
    * -inform DER -text -in <i>crl_path</i> -noout</code> </p> <p>For more
    * information, see <a
    * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html">Planning
-   * a certificate revocation list (CRL)</a> in the <i>Certificate Manager Private
-   * Certificate Authority (PCA) User Guide</i> </p><p><h3>See Also:</h3>   <a
+   * a certificate revocation list (CRL)</a> in the <i>Private Certificate Authority
+   * (PCA) User Guide</i> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CrlConfiguration">AWS
    * API Reference</a></p>
    */

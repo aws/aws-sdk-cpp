@@ -22,8 +22,9 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a job timeout configuration.</p><p><h3>See Also:</h3> 
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobTimeout">AWS
+   * <p>An object that represents a job timeout configuration.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobTimeout">AWS
    * API Reference</a></p>
    */
   class AWS_BATCH_API JobTimeout
@@ -36,30 +37,34 @@ namespace Model
 
 
     /**
-     * <p>The time duration in seconds (measured from the job attempt's
-     * <code>startedAt</code> timestamp) after which Batch terminates your jobs if they
-     * have not finished. The minimum value for the timeout is 60 seconds.</p>
+     * <p>The job timeout time (in seconds) that's measured from the job attempt's
+     * <code>startedAt</code> timestamp. After this time passes, Batch terminates your
+     * jobs if they aren't finished. The minimum value for the timeout is 60
+     * seconds.</p>
      */
     inline int GetAttemptDurationSeconds() const{ return m_attemptDurationSeconds; }
 
     /**
-     * <p>The time duration in seconds (measured from the job attempt's
-     * <code>startedAt</code> timestamp) after which Batch terminates your jobs if they
-     * have not finished. The minimum value for the timeout is 60 seconds.</p>
+     * <p>The job timeout time (in seconds) that's measured from the job attempt's
+     * <code>startedAt</code> timestamp. After this time passes, Batch terminates your
+     * jobs if they aren't finished. The minimum value for the timeout is 60
+     * seconds.</p>
      */
     inline bool AttemptDurationSecondsHasBeenSet() const { return m_attemptDurationSecondsHasBeenSet; }
 
     /**
-     * <p>The time duration in seconds (measured from the job attempt's
-     * <code>startedAt</code> timestamp) after which Batch terminates your jobs if they
-     * have not finished. The minimum value for the timeout is 60 seconds.</p>
+     * <p>The job timeout time (in seconds) that's measured from the job attempt's
+     * <code>startedAt</code> timestamp. After this time passes, Batch terminates your
+     * jobs if they aren't finished. The minimum value for the timeout is 60
+     * seconds.</p>
      */
     inline void SetAttemptDurationSeconds(int value) { m_attemptDurationSecondsHasBeenSet = true; m_attemptDurationSeconds = value; }
 
     /**
-     * <p>The time duration in seconds (measured from the job attempt's
-     * <code>startedAt</code> timestamp) after which Batch terminates your jobs if they
-     * have not finished. The minimum value for the timeout is 60 seconds.</p>
+     * <p>The job timeout time (in seconds) that's measured from the job attempt's
+     * <code>startedAt</code> timestamp. After this time passes, Batch terminates your
+     * jobs if they aren't finished. The minimum value for the timeout is 60
+     * seconds.</p>
      */
     inline JobTimeout& WithAttemptDurationSeconds(int value) { SetAttemptDurationSeconds(value); return *this;}
 

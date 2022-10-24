@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the details of a multi-node parallel job
+   * <p>An object that represents the details of a multi-node parallel job
    * node.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodeDetails">AWS
    * API Reference</a></p>
@@ -37,28 +37,28 @@ namespace Model
 
 
     /**
-     * <p>The node index for the node. Node index numbering begins at zero. This index
+     * <p>The node index for the node. Node index numbering starts at zero. This index
      * is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code>
      * environment variable.</p>
      */
     inline int GetNodeIndex() const{ return m_nodeIndex; }
 
     /**
-     * <p>The node index for the node. Node index numbering begins at zero. This index
+     * <p>The node index for the node. Node index numbering starts at zero. This index
      * is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code>
      * environment variable.</p>
      */
     inline bool NodeIndexHasBeenSet() const { return m_nodeIndexHasBeenSet; }
 
     /**
-     * <p>The node index for the node. Node index numbering begins at zero. This index
+     * <p>The node index for the node. Node index numbering starts at zero. This index
      * is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code>
      * environment variable.</p>
      */
     inline void SetNodeIndex(int value) { m_nodeIndexHasBeenSet = true; m_nodeIndex = value; }
 
     /**
-     * <p>The node index for the node. Node index numbering begins at zero. This index
+     * <p>The node index for the node. Node index numbering starts at zero. This index
      * is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code>
      * environment variable.</p>
      */

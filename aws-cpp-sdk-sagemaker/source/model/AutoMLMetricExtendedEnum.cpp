@@ -34,6 +34,7 @@ namespace Aws
         static const int Recall_HASH = HashingUtils::HashString("Recall");
         static const int RecallMacro_HASH = HashingUtils::HashString("RecallMacro");
         static const int LogLoss_HASH = HashingUtils::HashString("LogLoss");
+        static const int InferenceLatency_HASH = HashingUtils::HashString("InferenceLatency");
 
 
         AutoMLMetricExtendedEnum GetAutoMLMetricExtendedEnumForName(const Aws::String& name)
@@ -95,6 +96,10 @@ namespace Aws
           {
             return AutoMLMetricExtendedEnum::LogLoss;
           }
+          else if (hashCode == InferenceLatency_HASH)
+          {
+            return AutoMLMetricExtendedEnum::InferenceLatency;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -137,6 +142,8 @@ namespace Aws
             return "RecallMacro";
           case AutoMLMetricExtendedEnum::LogLoss:
             return "LogLoss";
+          case AutoMLMetricExtendedEnum::InferenceLatency:
+            return "InferenceLatency";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
