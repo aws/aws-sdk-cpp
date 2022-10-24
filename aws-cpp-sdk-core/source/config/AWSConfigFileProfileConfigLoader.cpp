@@ -152,6 +152,25 @@ namespace Aws
                             currentState = FAILURE;
                             continue;
                         }
+                        auto ssoSession = ssoSessionIt->second;
+                        auto prof = profile.second;
+                        // If sso session and profile have conflicting start url or region, fail to parse
+                        // the session/sso specific profile properties
+                        auto hasConflictingStartUrls = !ssoSession.GetSsoStartUrl().empty()
+                                                       && !prof.GetSsoStartUrl().empty()
+                                                       && ssoSession.GetSsoStartUrl() != prof.GetSsoStartUrl();
+                        auto hasConlflictingRegions = !ssoSession.GetSsoRegion().empty()
+                                                      && !prof.GetSsoRegion().empty()
+                                                      && ssoSession.GetSsoRegion() != prof.GetSsoRegion();
+                        if (hasConflictingStartUrls || hasConlflictingRegions) {
+                            AWS_LOGSTREAM_ERROR(PARSER_TAG,
+                                "SSO profile has a start url or region conflict with sso session");
+                            prof.SetSsoStartUrl("");
+                            prof.SetSsoRegion("");
+                            prof.SetSsoAccountId("");
+                            prof.SetSsoRoleName("");
+                            continue;
+                        }
                         profile.second.SetSsoSession(ssoSessionIt->second);
                     }
                 }
@@ -412,9 +431,18 @@ namespace Aws
                     if (!profile.GetSsoStartUrl().empty() || !profile.GetSsoRegion().empty()
                         || !profile.GetSsoAccountId().empty() || !profile.GetSsoRoleName().empty())
                     {
-                        if(profile.GetSsoStartUrl().empty() || profile.GetSsoRegion().empty()
-                           || profile.GetSsoAccountId().empty() || profile.GetSsoRoleName().empty())
-                        {
+                        // If there is no sso session, all fields are required. If an SSO session is present,
+                        // then only account id and sso role name are required.
+                        auto hasSession = currentKeyValues.find(SSO_SESSION_KEY) != currentKeyValues.end();
+                        auto hasInvalidProfileWithoutSession = !hasSession &&
+                                                               (profile.GetSsoStartUrl().empty()
+                                                                || profile.GetSsoRegion().empty()
+                                                                || profile.GetSsoAccountId().empty()
+                                                                || profile.GetSsoRoleName().empty());
+                        auto hasInvalidProfileWithSession = hasSession &&
+                                                            (profile.GetSsoAccountId().empty()
+                                                             || profile.GetSsoRoleName().empty());
+                        if (hasInvalidProfileWithoutSession || hasInvalidProfileWithSession) {
                             profile.SetSsoStartUrl("");
                             profile.SetSsoRegion("");
                             profile.SetSsoAccountId("");

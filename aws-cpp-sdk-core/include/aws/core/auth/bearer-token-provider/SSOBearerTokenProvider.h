@@ -11,7 +11,7 @@
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <aws/core/utils/threading/ReaderWriterLock.h>
 
-namespace Aws 
+namespace Aws
 {
     namespace Auth 
     {

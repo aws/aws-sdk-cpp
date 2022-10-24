@@ -914,6 +914,12 @@ public:
         ssToken << PATH_DELIM << "13f9d35043871d073ab260e020f0ffde092cb14b.json";
         m_ssoTokenFileName = ssToken.str();
 
+        Aws::StringStream ssRefreshToken;
+        ssRefreshToken << ssCachedTokenDirectory.str();
+        // SHA1 of "dev" -> 34c6fceca75e456f25e7e99531e2425c6c1de443
+        ssRefreshToken << PATH_DELIM << "34c6fceca75e456f25e7e99531e2425c6c1de443.json";
+        m_ssoTokenRefreshFileName = ssRefreshToken.str();
+
         mockHttpClient = Aws::MakeShared<MockHttpClient>(AllocationTag);
         mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(AllocationTag);
         mockHttpClientFactory->SetClient(mockHttpClient);
@@ -934,6 +940,7 @@ public:
     }
 
     Aws::String m_ssoTokenFileName;
+    Aws::String m_ssoTokenRefreshFileName;
     std::shared_ptr<MockHttpClient> mockHttpClient;
     std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
 };
@@ -999,6 +1006,114 @@ sso_start_url = https://d-92671207e4.awsapps.com/start
     ASSERT_EQ("secret", creds.GetAWSSecretKey());
     ASSERT_EQ("token", creds.GetSessionToken());
     ASSERT_EQ(DateTime((int64_t) 2303614800000), creds.GetExpiration());
+}
+
+TEST_F(SSOCredentialsProviderTest, TestParseCredentialsFromConfigCorrectlyWithRefresh)
+{
+    AWS_LOGSTREAM_DEBUG("TEST_SSO", "Preparing Test Token file in: " << m_ssoTokenRefreshFileName);
+    Aws::OFStream tokenFile(m_ssoTokenRefreshFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    tokenFile << R"({
+    "accessToken": "base64string",
+    "expiresAt": ")";
+    tokenFile << DateTime::Now().GetYear() + 1;
+    tokenFile << R"(-01-02T00:00:00Z",
+    "region": "us-west-2",
+    "startUrl": "https://d-92671207e4.awsapps.com/start"
+})";
+    tokenFile.close();
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "sso-profile", 1/*override*/);
+    Aws::Environment::SetEnv("AWS_PROFILE", "sso-profile", 1/*override*/);
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << R"([profile sso-profile]
+sso_session = dev
+sso_account_id = 012345678901
+sso_role_name = SampleRole
+sso_region = us-east-1
+sso_start_url = https://d-92671207e4.awsapps.com/start
+
+[sso-session dev]
+sso_region = us-east-1
+sso_start_url = https://d-92671207e4.awsapps.com/start
+)";
+    configFile.close();
+
+    Aws::Config::ReloadCachedConfigFile();
+    SSOCredentialsProvider provider;
+
+    // No response is set to mockHttpClient, there will be no response
+    auto creds = provider.GetAWSCredentials();
+    ASSERT_TRUE(creds.IsEmpty());
+    auto request = mockHttpClient->GetMostRecentHttpRequest();
+
+    ASSERT_EQ("https://portal.sso.us-east-1.amazonaws.com/federation/credentials?account_id=012345678901&role_name=SampleRole", request.GetURIString());
+    ASSERT_EQ("base64string", request.GetHeaderValue("x-amz-sso_bearer_token"));
+    // No response is set to mockHttpClient, there will be no response
+    creds = provider.GetAWSCredentials();
+    ASSERT_TRUE(creds.IsEmpty());
+
+    // adding a valid response to the http request
+    std::shared_ptr<HttpRequest> requestTmp = CreateHttpRequest(URI(request.GetURIString(true /*include querystring*/)), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    //Made up credentials
+    Aws::String goodResult = R"({
+   "roleCredentials": {
+      "accessKeyId": "access",
+      "expiration": 2303614800000,
+      "secretAccessKey": "secret",
+      "sessionToken": "token"
+   }
+}
+)";
+
+    std::shared_ptr<StandardHttpResponse> goodResponse = Aws::MakeShared<StandardHttpResponse>(AllocationTag, requestTmp);
+    goodResponse->SetResponseCode(HttpResponseCode::OK);
+    goodResponse->GetResponseBody() << goodResult;
+    mockHttpClient->AddResponseToReturn(goodResponse);
+
+    creds = provider.GetAWSCredentials();
+    ASSERT_FALSE(creds.IsEmpty());
+    ASSERT_EQ("access", creds.GetAWSAccessKeyId());
+    ASSERT_EQ("secret", creds.GetAWSSecretKey());
+    ASSERT_EQ("token", creds.GetSessionToken());
+    ASSERT_EQ(DateTime((int64_t) 2303614800000), creds.GetExpiration());
+}
+
+TEST_F(SSOCredentialsProviderTest, TestParseCredentialsFromConfigFailsWithConflictingConfiguration)
+{
+    AWS_LOGSTREAM_DEBUG("TEST_SSO", "Preparing Test Token file in: " << m_ssoTokenRefreshFileName);
+    Aws::OFStream tokenFile(m_ssoTokenRefreshFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    tokenFile << R"({
+    "accessToken": "base64string",
+    "expiresAt": ")";
+    tokenFile << DateTime::Now().GetYear() + 1;
+    tokenFile << R"(-01-02T00:00:00Z",
+    "region": "us-west-2",
+    "startUrl": "https://d-92671207e4.awsapps.com/start"
+})";
+    tokenFile.close();
+    Aws::Environment::SetEnv("AWS_DEFAULT_PROFILE", "sso-profile", 1/*override*/);
+    Aws::Environment::SetEnv("AWS_PROFILE", "sso-profile", 1/*override*/);
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << R"([profile sso-profile]
+sso_session = dev
+sso_account_id = 012345678901
+sso_role_name = SampleRole
+sso_region = us-west-2
+sso_start_url = https://a-different-url/start
+
+[sso-session dev]
+sso_region = us-east-1
+sso_start_url = https://d-92671207e4.awsapps.com/start
+)";
+    configFile.close();
+
+    Aws::Config::ReloadCachedConfigFile();
+    SSOCredentialsProvider provider;
+
+    // No response is set to mockHttpClient, there will be no response
+    auto creds = provider.GetAWSCredentials();
+    ASSERT_TRUE(creds.IsEmpty());
+    // No request is made for bad configuration
+    ASSERT_TRUE(mockHttpClient->GetAllRequestsMade().empty());
 }
 
 TEST_F(SSOCredentialsProviderTest, TestParseCredentialsFromExpiredTokenProvidesNoCredentials)
