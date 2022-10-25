@@ -33,42 +33,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline PutChannelPolicyRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline PutChannelPolicyRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the channel you are working on.</p>
+     * <p>The channel name associated with this Channel Policy.</p>
      */
     inline PutChannelPolicyRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
 

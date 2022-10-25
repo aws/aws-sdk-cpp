@@ -299,32 +299,32 @@ namespace Model
 
 
     /**
-     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     * <p>The type of schedule entry.</p>
      */
     inline const ScheduleEntryType& GetScheduleEntryType() const{ return m_scheduleEntryType; }
 
     /**
-     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     * <p>The type of schedule entry.</p>
      */
     inline bool ScheduleEntryTypeHasBeenSet() const { return m_scheduleEntryTypeHasBeenSet; }
 
     /**
-     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     * <p>The type of schedule entry.</p>
      */
     inline void SetScheduleEntryType(const ScheduleEntryType& value) { m_scheduleEntryTypeHasBeenSet = true; m_scheduleEntryType = value; }
 
     /**
-     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     * <p>The type of schedule entry.</p>
      */
     inline void SetScheduleEntryType(ScheduleEntryType&& value) { m_scheduleEntryTypeHasBeenSet = true; m_scheduleEntryType = std::move(value); }
 
     /**
-     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     * <p>The type of schedule entry.</p>
      */
     inline ScheduleEntry& WithScheduleEntryType(const ScheduleEntryType& value) { SetScheduleEntryType(value); return *this;}
 
     /**
-     * <p>The type of schedule entry.</p> <p>Valid values: PROGRAM or FILLER_SLATE.</p>
+     * <p>The type of schedule entry.</p>
      */
     inline ScheduleEntry& WithScheduleEntryType(ScheduleEntryType&& value) { SetScheduleEntryType(std::move(value)); return *this;}
 

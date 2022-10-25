@@ -22,7 +22,13 @@ namespace Model
     AWS_Lambda_Function,
     AWS_Lambda_LayerVersion,
     AWS_KMS_Key,
-    AWS_SecretsManager_Secret
+    AWS_SecretsManager_Secret,
+    AWS_EFS_FileSystem,
+    AWS_EC2_Snapshot,
+    AWS_ECR_Repository,
+    AWS_RDS_DBSnapshot,
+    AWS_RDS_DBClusterSnapshot,
+    AWS_SNS_Topic
   };
 
 namespace ResourceTypeMapper

@@ -187,108 +187,160 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name associated with the source location.</p>
      */
     inline const Aws::String& GetSourceLocationName() const{ return m_sourceLocationName; }
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name associated with the source location.</p>
      */
     inline bool SourceLocationNameHasBeenSet() const { return m_sourceLocationNameHasBeenSet; }
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name associated with the source location.</p>
      */
     inline void SetSourceLocationName(const Aws::String& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = value; }
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name associated with the source location.</p>
      */
     inline void SetSourceLocationName(Aws::String&& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = std::move(value); }
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name associated with the source location.</p>
      */
     inline void SetSourceLocationName(const char* value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName.assign(value); }
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name associated with the source location.</p>
      */
     inline CreateSourceLocationRequest& WithSourceLocationName(const Aws::String& value) { SetSourceLocationName(value); return *this;}
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name associated with the source location.</p>
      */
     inline CreateSourceLocationRequest& WithSourceLocationName(Aws::String&& value) { SetSourceLocationName(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the source location you are working on.</p>
+     * <p>The name associated with the source location.</p>
      */
     inline CreateSourceLocationRequest& WithSourceLocationName(const char* value) { SetSourceLocationName(value); return *this;}
 
 
     /**
-     * <p>The tags to assign to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags to assign to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags to assign to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to assign to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags to assign to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateSourceLocationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to assign to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateSourceLocationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to assign to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateSourceLocationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags to assign to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateSourceLocationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags to assign to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateSourceLocationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags to assign to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateSourceLocationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags to assign to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateSourceLocationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags to assign to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateSourceLocationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags to assign to the source location.</p>
+     * <p>The tags to assign to the source location. Tags are key-value pairs that you
+     * can associate with Amazon resources to help with organization, access control,
+     * and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+     * AWS Elemental MediaTailor Resources</a>.</p>
      */
     inline CreateSourceLocationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

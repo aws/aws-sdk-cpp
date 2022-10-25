@@ -38,6 +38,8 @@ ExportTask::ExportTask() :
     m_totalExtractedDataInGBHasBeenSet(false),
     m_failureCauseHasBeenSet(false),
     m_warningMessageHasBeenSet(false),
+    m_sourceType(ExportSourceType::NOT_SET),
+    m_sourceTypeHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -60,6 +62,8 @@ ExportTask::ExportTask(const XmlNode& xmlNode) :
     m_totalExtractedDataInGBHasBeenSet(false),
     m_failureCauseHasBeenSet(false),
     m_warningMessageHasBeenSet(false),
+    m_sourceType(ExportSourceType::NOT_SET),
+    m_sourceTypeHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -167,6 +171,12 @@ ExportTask& ExportTask::operator =(const XmlNode& xmlNode)
       m_warningMessage = Aws::Utils::Xml::DecodeEscapedXmlText(warningMessageNode.GetText());
       m_warningMessageHasBeenSet = true;
     }
+    XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
+    if(!sourceTypeNode.IsNull())
+    {
+      m_sourceType = ExportSourceTypeMapper::GetExportSourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()).c_str());
+      m_sourceTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -253,6 +263,11 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".WarningMessage=" << StringUtils::URLEncode(m_warningMessage.c_str()) << "&";
   }
 
+  if(m_sourceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SourceType=" << ExportSourceTypeMapper::GetNameForExportSourceType(m_sourceType) << "&";
+  }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -327,6 +342,10 @@ void ExportTask::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_warningMessageHasBeenSet)
   {
       oStream << location << ".WarningMessage=" << StringUtils::URLEncode(m_warningMessage.c_str()) << "&";
+  }
+  if(m_sourceTypeHasBeenSet)
+  {
+      oStream << location << ".SourceType=" << ExportSourceTypeMapper::GetNameForExportSourceType(m_sourceType) << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

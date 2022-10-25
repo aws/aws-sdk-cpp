@@ -36,26 +36,26 @@ namespace Model
 
 
     /**
-     * <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds.
-     * Maximum value: 3600 seconds.</p>
+     * <p>The total duration (in seconds) of each manifest. Minimum value:
+     * <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
      */
     inline int GetManifestWindowSeconds() const{ return m_manifestWindowSeconds; }
 
     /**
-     * <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds.
-     * Maximum value: 3600 seconds.</p>
+     * <p>The total duration (in seconds) of each manifest. Minimum value:
+     * <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
      */
     inline bool ManifestWindowSecondsHasBeenSet() const { return m_manifestWindowSecondsHasBeenSet; }
 
     /**
-     * <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds.
-     * Maximum value: 3600 seconds.</p>
+     * <p>The total duration (in seconds) of each manifest. Minimum value:
+     * <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
      */
     inline void SetManifestWindowSeconds(int value) { m_manifestWindowSecondsHasBeenSet = true; m_manifestWindowSeconds = value; }
 
     /**
-     * <p>The total duration (in seconds) of each manifest. Minimum value: 30 seconds.
-     * Maximum value: 3600 seconds.</p>
+     * <p>The total duration (in seconds) of each manifest. Minimum value:
+     * <code>30</code> seconds. Maximum value: <code>3600</code> seconds.</p>
      */
     inline HlsPlaylistSettings& WithManifestWindowSeconds(int value) { SetManifestWindowSeconds(value); return *this;}
 

@@ -46,8 +46,10 @@ namespace Model
      * <p>The maximum size of the connection pool for each target in a target group.
      * The value is expressed as a percentage of the <code>max_connections</code>
      * setting for the RDS DB instance or Aurora DB cluster used by the target
-     * group.</p> <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all
-     * other engines</p> <p>Constraints: Must be between 1 and 100.</p>
+     * group.</p> <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you
+     * must also include a value for this parameter.</p> <p>Default: 10 for RDS for
+     * Microsoft SQL Server, and 100 for all other engines</p> <p>Constraints: Must be
+     * between 1 and 100.</p>
      */
     inline int GetMaxConnectionsPercent() const{ return m_maxConnectionsPercent; }
 
@@ -55,8 +57,10 @@ namespace Model
      * <p>The maximum size of the connection pool for each target in a target group.
      * The value is expressed as a percentage of the <code>max_connections</code>
      * setting for the RDS DB instance or Aurora DB cluster used by the target
-     * group.</p> <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all
-     * other engines</p> <p>Constraints: Must be between 1 and 100.</p>
+     * group.</p> <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you
+     * must also include a value for this parameter.</p> <p>Default: 10 for RDS for
+     * Microsoft SQL Server, and 100 for all other engines</p> <p>Constraints: Must be
+     * between 1 and 100.</p>
      */
     inline bool MaxConnectionsPercentHasBeenSet() const { return m_maxConnectionsPercentHasBeenSet; }
 
@@ -64,8 +68,10 @@ namespace Model
      * <p>The maximum size of the connection pool for each target in a target group.
      * The value is expressed as a percentage of the <code>max_connections</code>
      * setting for the RDS DB instance or Aurora DB cluster used by the target
-     * group.</p> <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all
-     * other engines</p> <p>Constraints: Must be between 1 and 100.</p>
+     * group.</p> <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you
+     * must also include a value for this parameter.</p> <p>Default: 10 for RDS for
+     * Microsoft SQL Server, and 100 for all other engines</p> <p>Constraints: Must be
+     * between 1 and 100.</p>
      */
     inline void SetMaxConnectionsPercent(int value) { m_maxConnectionsPercentHasBeenSet = true; m_maxConnectionsPercent = value; }
 
@@ -73,8 +79,10 @@ namespace Model
      * <p>The maximum size of the connection pool for each target in a target group.
      * The value is expressed as a percentage of the <code>max_connections</code>
      * setting for the RDS DB instance or Aurora DB cluster used by the target
-     * group.</p> <p>Default: 10 for RDS for Microsoft SQL Server, and 100 for all
-     * other engines</p> <p>Constraints: Must be between 1 and 100.</p>
+     * group.</p> <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you
+     * must also include a value for this parameter.</p> <p>Default: 10 for RDS for
+     * Microsoft SQL Server, and 100 for all other engines</p> <p>Constraints: Must be
+     * between 1 and 100.</p>
      */
     inline ConnectionPoolConfiguration& WithMaxConnectionsPercent(int value) { SetMaxConnectionsPercent(value); return *this;}
 
@@ -85,9 +93,11 @@ namespace Model
      * <code>max_connections</code> setting for the RDS DB instance or Aurora DB
      * cluster used by the target group. With a high value, the proxy leaves a high
      * percentage of idle database connections open. A low value causes the proxy to
-     * close more idle connections and return them to the database.</p> <p>Default: The
-     * default value is half of the value of <code>MaxConnectionsPercent</code>. For
-     * example, if <code>MaxConnectionsPercent</code> is 80, then the default value of
+     * close more idle connections and return them to the database.</p> <p>If you
+     * specify this parameter, then you must also include a value for
+     * <code>MaxConnectionsPercent</code>.</p> <p>Default: The default value is half of
+     * the value of <code>MaxConnectionsPercent</code>. For example, if
+     * <code>MaxConnectionsPercent</code> is 80, then the default value of
      * <code>MaxIdleConnectionsPercent</code> is 40. If the value of
      * <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
      * <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the
@@ -102,9 +112,11 @@ namespace Model
      * <code>max_connections</code> setting for the RDS DB instance or Aurora DB
      * cluster used by the target group. With a high value, the proxy leaves a high
      * percentage of idle database connections open. A low value causes the proxy to
-     * close more idle connections and return them to the database.</p> <p>Default: The
-     * default value is half of the value of <code>MaxConnectionsPercent</code>. For
-     * example, if <code>MaxConnectionsPercent</code> is 80, then the default value of
+     * close more idle connections and return them to the database.</p> <p>If you
+     * specify this parameter, then you must also include a value for
+     * <code>MaxConnectionsPercent</code>.</p> <p>Default: The default value is half of
+     * the value of <code>MaxConnectionsPercent</code>. For example, if
+     * <code>MaxConnectionsPercent</code> is 80, then the default value of
      * <code>MaxIdleConnectionsPercent</code> is 40. If the value of
      * <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
      * <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the
@@ -119,9 +131,11 @@ namespace Model
      * <code>max_connections</code> setting for the RDS DB instance or Aurora DB
      * cluster used by the target group. With a high value, the proxy leaves a high
      * percentage of idle database connections open. A low value causes the proxy to
-     * close more idle connections and return them to the database.</p> <p>Default: The
-     * default value is half of the value of <code>MaxConnectionsPercent</code>. For
-     * example, if <code>MaxConnectionsPercent</code> is 80, then the default value of
+     * close more idle connections and return them to the database.</p> <p>If you
+     * specify this parameter, then you must also include a value for
+     * <code>MaxConnectionsPercent</code>.</p> <p>Default: The default value is half of
+     * the value of <code>MaxConnectionsPercent</code>. For example, if
+     * <code>MaxConnectionsPercent</code> is 80, then the default value of
      * <code>MaxIdleConnectionsPercent</code> is 40. If the value of
      * <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
      * <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the
@@ -136,9 +150,11 @@ namespace Model
      * <code>max_connections</code> setting for the RDS DB instance or Aurora DB
      * cluster used by the target group. With a high value, the proxy leaves a high
      * percentage of idle database connections open. A low value causes the proxy to
-     * close more idle connections and return them to the database.</p> <p>Default: The
-     * default value is half of the value of <code>MaxConnectionsPercent</code>. For
-     * example, if <code>MaxConnectionsPercent</code> is 80, then the default value of
+     * close more idle connections and return them to the database.</p> <p>If you
+     * specify this parameter, then you must also include a value for
+     * <code>MaxConnectionsPercent</code>.</p> <p>Default: The default value is half of
+     * the value of <code>MaxConnectionsPercent</code>. For example, if
+     * <code>MaxConnectionsPercent</code> is 80, then the default value of
      * <code>MaxIdleConnectionsPercent</code> is 40. If the value of
      * <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
      * <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the

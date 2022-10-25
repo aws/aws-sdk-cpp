@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     AUTO_STOP,
-    ALWAYS_ON
+    ALWAYS_ON,
+    MANUAL
   };
 
 namespace RunningModeMapper

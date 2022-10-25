@@ -26,8 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>This response includes only the "property" : "type" property.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The output item response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ResponseOutputItem">AWS
    * API Reference</a></p>
    */

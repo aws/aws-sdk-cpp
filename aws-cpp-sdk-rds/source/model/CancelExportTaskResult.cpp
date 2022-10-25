@@ -19,13 +19,15 @@ using namespace Aws;
 
 CancelExportTaskResult::CancelExportTaskResult() : 
     m_percentProgress(0),
-    m_totalExtractedDataInGB(0)
+    m_totalExtractedDataInGB(0),
+    m_sourceType(ExportSourceType::NOT_SET)
 {
 }
 
 CancelExportTaskResult::CancelExportTaskResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_percentProgress(0),
-    m_totalExtractedDataInGB(0)
+    m_totalExtractedDataInGB(0),
+    m_sourceType(ExportSourceType::NOT_SET)
 {
   *this = result;
 }
@@ -122,6 +124,11 @@ CancelExportTaskResult& CancelExportTaskResult::operator =(const Aws::AmazonWebS
     if(!warningMessageNode.IsNull())
     {
       m_warningMessage = Aws::Utils::Xml::DecodeEscapedXmlText(warningMessageNode.GetText());
+    }
+    XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
+    if(!sourceTypeNode.IsNull())
+    {
+      m_sourceType = ExportSourceTypeMapper::GetExportSourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()).c_str());
     }
   }
 

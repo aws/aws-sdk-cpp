@@ -20,7 +20,9 @@ namespace Model
     BYOL_GRAPHICS,
     BYOL_GRAPHICSPRO,
     BYOL_GRAPHICS_G4DN,
-    BYOL_REGULAR_WSP
+    BYOL_REGULAR_WSP,
+    BYOL_REGULAR_BYOP,
+    BYOL_GRAPHICS_G4DN_BYOP
   };
 
 namespace WorkspaceImageIngestionProcessMapper

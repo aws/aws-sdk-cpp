@@ -540,37 +540,37 @@ namespace Model
 
     /**
      * <p>The time zone in which the <code>Place</code> is located. Returned only when
-     * using Here as the selected partner.</p>
+     * using HERE as the selected partner.</p>
      */
     inline const TimeZone& GetTimeZone() const{ return m_timeZone; }
 
     /**
      * <p>The time zone in which the <code>Place</code> is located. Returned only when
-     * using Here as the selected partner.</p>
+     * using HERE as the selected partner.</p>
      */
     inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
 
     /**
      * <p>The time zone in which the <code>Place</code> is located. Returned only when
-     * using Here as the selected partner.</p>
+     * using HERE as the selected partner.</p>
      */
     inline void SetTimeZone(const TimeZone& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
 
     /**
      * <p>The time zone in which the <code>Place</code> is located. Returned only when
-     * using Here as the selected partner.</p>
+     * using HERE as the selected partner.</p>
      */
     inline void SetTimeZone(TimeZone&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
 
     /**
      * <p>The time zone in which the <code>Place</code> is located. Returned only when
-     * using Here as the selected partner.</p>
+     * using HERE as the selected partner.</p>
      */
     inline Place& WithTimeZone(const TimeZone& value) { SetTimeZone(value); return *this;}
 
     /**
      * <p>The time zone in which the <code>Place</code> is located. Returned only when
-     * using Here as the selected partner.</p>
+     * using HERE as the selected partner.</p>
      */
     inline Place& WithTimeZone(TimeZone&& value) { SetTimeZone(std::move(value)); return *this;}
 

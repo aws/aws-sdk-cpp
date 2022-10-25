@@ -81,67 +81,109 @@ namespace Model
 
     /**
      * <p>The ingestion process to be used when importing the image, depending on which
-     * protocol you want to use for your BYOL Workspace image, either PCoIP or
-     * WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in
-     * <code>_WSP</code>. To use PCoIP, specify a value that does not end in
-     * <code>_WSP</code>. </p> <p>For non-GPU-enabled bundles (bundles other than
-     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
-     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+     * protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces
+     * Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify
+     * a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does
+     * not end in <code>_WSP</code>. To use BYOP, specify a value that ends in
+     * <code>_BYOP</code>.</p> <p>For non-GPU-enabled bundles (bundles other than
+     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>,
+     * <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on
+     * the protocol.</p>  <p>The <code>BYOL_REGULAR_BYOP</code> and
+     * <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon
+     * WorkSpaces Core. Contact your account team to be allow-listed to use these
+     * values. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+     * 
      */
     inline const WorkspaceImageIngestionProcess& GetIngestionProcess() const{ return m_ingestionProcess; }
 
     /**
      * <p>The ingestion process to be used when importing the image, depending on which
-     * protocol you want to use for your BYOL Workspace image, either PCoIP or
-     * WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in
-     * <code>_WSP</code>. To use PCoIP, specify a value that does not end in
-     * <code>_WSP</code>. </p> <p>For non-GPU-enabled bundles (bundles other than
-     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
-     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+     * protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces
+     * Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify
+     * a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does
+     * not end in <code>_WSP</code>. To use BYOP, specify a value that ends in
+     * <code>_BYOP</code>.</p> <p>For non-GPU-enabled bundles (bundles other than
+     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>,
+     * <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on
+     * the protocol.</p>  <p>The <code>BYOL_REGULAR_BYOP</code> and
+     * <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon
+     * WorkSpaces Core. Contact your account team to be allow-listed to use these
+     * values. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+     * 
      */
     inline bool IngestionProcessHasBeenSet() const { return m_ingestionProcessHasBeenSet; }
 
     /**
      * <p>The ingestion process to be used when importing the image, depending on which
-     * protocol you want to use for your BYOL Workspace image, either PCoIP or
-     * WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in
-     * <code>_WSP</code>. To use PCoIP, specify a value that does not end in
-     * <code>_WSP</code>. </p> <p>For non-GPU-enabled bundles (bundles other than
-     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
-     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+     * protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces
+     * Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify
+     * a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does
+     * not end in <code>_WSP</code>. To use BYOP, specify a value that ends in
+     * <code>_BYOP</code>.</p> <p>For non-GPU-enabled bundles (bundles other than
+     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>,
+     * <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on
+     * the protocol.</p>  <p>The <code>BYOL_REGULAR_BYOP</code> and
+     * <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon
+     * WorkSpaces Core. Contact your account team to be allow-listed to use these
+     * values. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+     * 
      */
     inline void SetIngestionProcess(const WorkspaceImageIngestionProcess& value) { m_ingestionProcessHasBeenSet = true; m_ingestionProcess = value; }
 
     /**
      * <p>The ingestion process to be used when importing the image, depending on which
-     * protocol you want to use for your BYOL Workspace image, either PCoIP or
-     * WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in
-     * <code>_WSP</code>. To use PCoIP, specify a value that does not end in
-     * <code>_WSP</code>. </p> <p>For non-GPU-enabled bundles (bundles other than
-     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
-     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+     * protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces
+     * Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify
+     * a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does
+     * not end in <code>_WSP</code>. To use BYOP, specify a value that ends in
+     * <code>_BYOP</code>.</p> <p>For non-GPU-enabled bundles (bundles other than
+     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>,
+     * <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on
+     * the protocol.</p>  <p>The <code>BYOL_REGULAR_BYOP</code> and
+     * <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon
+     * WorkSpaces Core. Contact your account team to be allow-listed to use these
+     * values. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+     * 
      */
     inline void SetIngestionProcess(WorkspaceImageIngestionProcess&& value) { m_ingestionProcessHasBeenSet = true; m_ingestionProcess = std::move(value); }
 
     /**
      * <p>The ingestion process to be used when importing the image, depending on which
-     * protocol you want to use for your BYOL Workspace image, either PCoIP or
-     * WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in
-     * <code>_WSP</code>. To use PCoIP, specify a value that does not end in
-     * <code>_WSP</code>. </p> <p>For non-GPU-enabled bundles (bundles other than
-     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
-     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+     * protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces
+     * Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify
+     * a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does
+     * not end in <code>_WSP</code>. To use BYOP, specify a value that ends in
+     * <code>_BYOP</code>.</p> <p>For non-GPU-enabled bundles (bundles other than
+     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>,
+     * <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on
+     * the protocol.</p>  <p>The <code>BYOL_REGULAR_BYOP</code> and
+     * <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon
+     * WorkSpaces Core. Contact your account team to be allow-listed to use these
+     * values. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+     * 
      */
     inline ImportWorkspaceImageRequest& WithIngestionProcess(const WorkspaceImageIngestionProcess& value) { SetIngestionProcess(value); return *this;}
 
     /**
      * <p>The ingestion process to be used when importing the image, depending on which
-     * protocol you want to use for your BYOL Workspace image, either PCoIP or
-     * WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends in
-     * <code>_WSP</code>. To use PCoIP, specify a value that does not end in
-     * <code>_WSP</code>. </p> <p>For non-GPU-enabled bundles (bundles other than
-     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
-     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
+     * protocol you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces
+     * Streaming Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify
+     * a value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does
+     * not end in <code>_WSP</code>. To use BYOP, specify a value that ends in
+     * <code>_BYOP</code>.</p> <p>For non-GPU-enabled bundles (bundles other than
+     * Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code>,
+     * <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>, depending on
+     * the protocol.</p>  <p>The <code>BYOL_REGULAR_BYOP</code> and
+     * <code>BYOL_GRAPHICS_G4DN_BYOP</code> values are only supported by Amazon
+     * WorkSpaces Core. Contact your account team to be allow-listed to use these
+     * values. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+     * 
      */
     inline ImportWorkspaceImageRequest& WithIngestionProcess(WorkspaceImageIngestionProcess&& value) { SetIngestionProcess(std::move(value)); return *this;}
 

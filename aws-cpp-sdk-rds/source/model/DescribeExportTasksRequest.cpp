@@ -16,7 +16,9 @@ DescribeExportTasksRequest::DescribeExportTasksRequest() :
     m_filtersHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
+    m_maxRecordsHasBeenSet(false),
+    m_sourceType(ExportSourceType::NOT_SET),
+    m_sourceTypeHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,11 @@ Aws::String DescribeExportTasksRequest::SerializePayload() const
   if(m_maxRecordsHasBeenSet)
   {
     ss << "MaxRecords=" << m_maxRecords << "&";
+  }
+
+  if(m_sourceTypeHasBeenSet)
+  {
+    ss << "SourceType=" << ExportSourceTypeMapper::GetNameForExportSourceType(m_sourceType) << "&";
   }
 
   ss << "Version=2014-10-31";
