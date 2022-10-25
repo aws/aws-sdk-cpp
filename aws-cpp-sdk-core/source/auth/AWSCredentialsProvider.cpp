@@ -341,14 +341,14 @@ void TaskRoleCredentialsProvider::RefreshIfExpired()
 {
     AWS_LOGSTREAM_DEBUG(TASK_ROLE_LOG_TAG, "Checking if latest credential pull has expired.");
     ReaderLockGuard guard(m_reloadLock);
-    if (!m_credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
+    if (!IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
     {
         return;
     }
 
     guard.UpgradeToWriterLock();
 
-    if (!m_credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
+    if (!IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
     {
         return;
     }
