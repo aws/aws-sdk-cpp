@@ -41,4 +41,6 @@ public class Metadata {
 
     // For Pre-signed URL Generation
     private boolean hasPreSignedUrl;
+
+    private boolean awsQueryCompatible;
 }
