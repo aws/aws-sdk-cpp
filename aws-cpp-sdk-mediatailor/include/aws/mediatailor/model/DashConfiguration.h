@@ -93,9 +93,9 @@ namespace Model
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
-     * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * support sticky HTTP redirects. Valid values are <code>DISABLED</code> and
+     * <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the
+     * inclusion of the tag and is the default value.</p>
      */
     inline const Aws::String& GetMpdLocation() const{ return m_mpdLocation; }
 
@@ -105,9 +105,9 @@ namespace Model
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
-     * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * support sticky HTTP redirects. Valid values are <code>DISABLED</code> and
+     * <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the
+     * inclusion of the tag and is the default value.</p>
      */
     inline bool MpdLocationHasBeenSet() const { return m_mpdLocationHasBeenSet; }
 
@@ -117,9 +117,9 @@ namespace Model
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
-     * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * support sticky HTTP redirects. Valid values are <code>DISABLED</code> and
+     * <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the
+     * inclusion of the tag and is the default value.</p>
      */
     inline void SetMpdLocation(const Aws::String& value) { m_mpdLocationHasBeenSet = true; m_mpdLocation = value; }
 
@@ -129,9 +129,9 @@ namespace Model
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
-     * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * support sticky HTTP redirects. Valid values are <code>DISABLED</code> and
+     * <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the
+     * inclusion of the tag and is the default value.</p>
      */
     inline void SetMpdLocation(Aws::String&& value) { m_mpdLocationHasBeenSet = true; m_mpdLocation = std::move(value); }
 
@@ -141,9 +141,9 @@ namespace Model
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
-     * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * support sticky HTTP redirects. Valid values are <code>DISABLED</code> and
+     * <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the
+     * inclusion of the tag and is the default value.</p>
      */
     inline void SetMpdLocation(const char* value) { m_mpdLocationHasBeenSet = true; m_mpdLocation.assign(value); }
 
@@ -153,9 +153,9 @@ namespace Model
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
-     * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * support sticky HTTP redirects. Valid values are <code>DISABLED</code> and
+     * <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the
+     * inclusion of the tag and is the default value.</p>
      */
     inline DashConfiguration& WithMpdLocation(const Aws::String& value) { SetMpdLocation(value); return *this;}
 
@@ -165,9 +165,9 @@ namespace Model
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
-     * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * support sticky HTTP redirects. Valid values are <code>DISABLED</code> and
+     * <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the
+     * inclusion of the tag and is the default value.</p>
      */
     inline DashConfiguration& WithMpdLocation(Aws::String&& value) { SetMpdLocation(std::move(value)); return *this;}
 
@@ -177,9 +177,9 @@ namespace Model
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests, and you are either using client-side reporting or your players
-     * support sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * support sticky HTTP redirects. Valid values are <code>DISABLED</code> and
+     * <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code> setting enables the
+     * inclusion of the tag and is the default value.</p>
      */
     inline DashConfiguration& WithMpdLocation(const char* value) { SetMpdLocation(value); return *this;}
 
@@ -187,54 +187,60 @@ namespace Model
     /**
      * <p>The setting that controls whether MediaTailor handles manifests from the
      * origin server as multi-period manifests or single-period manifests. If your
-     * origin server produces single-period manifests, set this to SINGLE_PERIOD. The
-     * default setting is MULTI_PERIOD. For multi-period manifests, omit this setting
-     * or set it to MULTI_PERIOD.</p>
+     * origin server produces single-period manifests, set this to
+     * <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>.
+     * For multi-period manifests, omit this setting or set it to
+     * <code>MULTI_PERIOD</code>.</p>
      */
     inline const OriginManifestType& GetOriginManifestType() const{ return m_originManifestType; }
 
     /**
      * <p>The setting that controls whether MediaTailor handles manifests from the
      * origin server as multi-period manifests or single-period manifests. If your
-     * origin server produces single-period manifests, set this to SINGLE_PERIOD. The
-     * default setting is MULTI_PERIOD. For multi-period manifests, omit this setting
-     * or set it to MULTI_PERIOD.</p>
+     * origin server produces single-period manifests, set this to
+     * <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>.
+     * For multi-period manifests, omit this setting or set it to
+     * <code>MULTI_PERIOD</code>.</p>
      */
     inline bool OriginManifestTypeHasBeenSet() const { return m_originManifestTypeHasBeenSet; }
 
     /**
      * <p>The setting that controls whether MediaTailor handles manifests from the
      * origin server as multi-period manifests or single-period manifests. If your
-     * origin server produces single-period manifests, set this to SINGLE_PERIOD. The
-     * default setting is MULTI_PERIOD. For multi-period manifests, omit this setting
-     * or set it to MULTI_PERIOD.</p>
+     * origin server produces single-period manifests, set this to
+     * <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>.
+     * For multi-period manifests, omit this setting or set it to
+     * <code>MULTI_PERIOD</code>.</p>
      */
     inline void SetOriginManifestType(const OriginManifestType& value) { m_originManifestTypeHasBeenSet = true; m_originManifestType = value; }
 
     /**
      * <p>The setting that controls whether MediaTailor handles manifests from the
      * origin server as multi-period manifests or single-period manifests. If your
-     * origin server produces single-period manifests, set this to SINGLE_PERIOD. The
-     * default setting is MULTI_PERIOD. For multi-period manifests, omit this setting
-     * or set it to MULTI_PERIOD.</p>
+     * origin server produces single-period manifests, set this to
+     * <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>.
+     * For multi-period manifests, omit this setting or set it to
+     * <code>MULTI_PERIOD</code>.</p>
      */
     inline void SetOriginManifestType(OriginManifestType&& value) { m_originManifestTypeHasBeenSet = true; m_originManifestType = std::move(value); }
 
     /**
      * <p>The setting that controls whether MediaTailor handles manifests from the
      * origin server as multi-period manifests or single-period manifests. If your
-     * origin server produces single-period manifests, set this to SINGLE_PERIOD. The
-     * default setting is MULTI_PERIOD. For multi-period manifests, omit this setting
-     * or set it to MULTI_PERIOD.</p>
+     * origin server produces single-period manifests, set this to
+     * <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>.
+     * For multi-period manifests, omit this setting or set it to
+     * <code>MULTI_PERIOD</code>.</p>
      */
     inline DashConfiguration& WithOriginManifestType(const OriginManifestType& value) { SetOriginManifestType(value); return *this;}
 
     /**
      * <p>The setting that controls whether MediaTailor handles manifests from the
      * origin server as multi-period manifests or single-period manifests. If your
-     * origin server produces single-period manifests, set this to SINGLE_PERIOD. The
-     * default setting is MULTI_PERIOD. For multi-period manifests, omit this setting
-     * or set it to MULTI_PERIOD.</p>
+     * origin server produces single-period manifests, set this to
+     * <code>SINGLE_PERIOD</code>. The default setting is <code>MULTI_PERIOD</code>.
+     * For multi-period manifests, omit this setting or set it to
+     * <code>MULTI_PERIOD</code>.</p>
      */
     inline DashConfiguration& WithOriginManifestType(OriginManifestType&& value) { SetOriginManifestType(std::move(value)); return *this;}
 

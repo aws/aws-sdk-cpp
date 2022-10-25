@@ -315,7 +315,11 @@ namespace WorkSpaces
 
         /**
          * <p>Creates one or more WorkSpaces.</p> <p>This operation is asynchronous and
-         * returns before the WorkSpaces are created.</p><p><h3>See Also:</h3>   <a
+         * returns before the WorkSpaces are created.</p>  <p>The <code>MANUAL</code>
+         * running mode value is only supported by Amazon WorkSpaces Core. Contact your
+         * account team to be allow-listed to use this value. For more information, see <a
+         * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaces">AWS
          * API Reference</a></p>
          */
@@ -883,10 +887,10 @@ namespace WorkSpaces
         virtual void ImportClientBrandingAsync(const Model::ImportClientBrandingRequest& request, const ImportClientBrandingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into
-         * Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that
-         * is in your Amazon Web Services account, and you must own the image. For more
-         * information about creating BYOL images, see <a
+         * <p>Imports the specified Windows 10 Bring Your Own License (BYOL) or Windows
+         * Server 2016 BYOL image into Amazon WorkSpaces. The image must be an already
+         * licensed Amazon EC2 image that is in your Amazon Web Services account, and you
+         * must own the image. For more information about creating BYOL images, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
          * Bring Your Own Windows Desktop Licenses</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">AWS
@@ -1076,7 +1080,11 @@ namespace WorkSpaces
          * <p>Modifies the specified WorkSpace properties. For important information about
          * how to modify the size of the root and user volumes, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
-         * Modify a WorkSpace</a>. </p><p><h3>See Also:</h3>   <a
+         * Modify a WorkSpace</a>. </p>  <p>The <code>MANUAL</code> running mode
+         * value is only supported by Amazon WorkSpaces Core. Contact your account team to
+         * be allow-listed to use this value. For more information, see <a
+         * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">AWS
          * API Reference</a></p>
          */

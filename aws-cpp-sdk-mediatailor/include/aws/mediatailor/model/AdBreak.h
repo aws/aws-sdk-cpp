@@ -40,32 +40,38 @@ namespace Model
 
 
     /**
-     * <p>The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.</p>
+     * <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>,
+     * <code>TIME_SIGNAL</code>.</p>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
 
     /**
-     * <p>The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.</p>
+     * <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>,
+     * <code>TIME_SIGNAL</code>.</p>
      */
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
 
     /**
-     * <p>The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.</p>
+     * <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>,
+     * <code>TIME_SIGNAL</code>.</p>
      */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
-     * <p>The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.</p>
+     * <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>,
+     * <code>TIME_SIGNAL</code>.</p>
      */
     inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
 
     /**
-     * <p>The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.</p>
+     * <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>,
+     * <code>TIME_SIGNAL</code>.</p>
      */
     inline AdBreak& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
 
     /**
-     * <p>The SCTE-35 ad insertion type. Accepted value: SPLICE_INSERT.</p>
+     * <p>The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>,
+     * <code>TIME_SIGNAL</code>.</p>
      */
     inline AdBreak& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
 
@@ -131,44 +137,44 @@ namespace Model
 
 
     /**
-     * <p>This defines the SCTE-35 splice_insert() message inserted around the ad. For
-     * information about using splice_insert(), see the SCTE-35 specficiaiton, section
-     * 9.7.3.1.</p>
+     * <p>This defines the SCTE-35 <code>splice_insert()</code> message inserted around
+     * the ad. For information about using <code>splice_insert()</code>, see the
+     * SCTE-35 specficiaiton, section 9.7.3.1.</p>
      */
     inline const SpliceInsertMessage& GetSpliceInsertMessage() const{ return m_spliceInsertMessage; }
 
     /**
-     * <p>This defines the SCTE-35 splice_insert() message inserted around the ad. For
-     * information about using splice_insert(), see the SCTE-35 specficiaiton, section
-     * 9.7.3.1.</p>
+     * <p>This defines the SCTE-35 <code>splice_insert()</code> message inserted around
+     * the ad. For information about using <code>splice_insert()</code>, see the
+     * SCTE-35 specficiaiton, section 9.7.3.1.</p>
      */
     inline bool SpliceInsertMessageHasBeenSet() const { return m_spliceInsertMessageHasBeenSet; }
 
     /**
-     * <p>This defines the SCTE-35 splice_insert() message inserted around the ad. For
-     * information about using splice_insert(), see the SCTE-35 specficiaiton, section
-     * 9.7.3.1.</p>
+     * <p>This defines the SCTE-35 <code>splice_insert()</code> message inserted around
+     * the ad. For information about using <code>splice_insert()</code>, see the
+     * SCTE-35 specficiaiton, section 9.7.3.1.</p>
      */
     inline void SetSpliceInsertMessage(const SpliceInsertMessage& value) { m_spliceInsertMessageHasBeenSet = true; m_spliceInsertMessage = value; }
 
     /**
-     * <p>This defines the SCTE-35 splice_insert() message inserted around the ad. For
-     * information about using splice_insert(), see the SCTE-35 specficiaiton, section
-     * 9.7.3.1.</p>
+     * <p>This defines the SCTE-35 <code>splice_insert()</code> message inserted around
+     * the ad. For information about using <code>splice_insert()</code>, see the
+     * SCTE-35 specficiaiton, section 9.7.3.1.</p>
      */
     inline void SetSpliceInsertMessage(SpliceInsertMessage&& value) { m_spliceInsertMessageHasBeenSet = true; m_spliceInsertMessage = std::move(value); }
 
     /**
-     * <p>This defines the SCTE-35 splice_insert() message inserted around the ad. For
-     * information about using splice_insert(), see the SCTE-35 specficiaiton, section
-     * 9.7.3.1.</p>
+     * <p>This defines the SCTE-35 <code>splice_insert()</code> message inserted around
+     * the ad. For information about using <code>splice_insert()</code>, see the
+     * SCTE-35 specficiaiton, section 9.7.3.1.</p>
      */
     inline AdBreak& WithSpliceInsertMessage(const SpliceInsertMessage& value) { SetSpliceInsertMessage(value); return *this;}
 
     /**
-     * <p>This defines the SCTE-35 splice_insert() message inserted around the ad. For
-     * information about using splice_insert(), see the SCTE-35 specficiaiton, section
-     * 9.7.3.1.</p>
+     * <p>This defines the SCTE-35 <code>splice_insert()</code> message inserted around
+     * the ad. For information about using <code>splice_insert()</code>, see the
+     * SCTE-35 specficiaiton, section 9.7.3.1.</p>
      */
     inline AdBreak& WithSpliceInsertMessage(SpliceInsertMessage&& value) { SetSpliceInsertMessage(std::move(value)); return *this;}
 

@@ -66,17 +66,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
-     * world that blends 3D and 2D rendering.</p> </li> <li> <p>
-     * <code>VectorHereExplore</code> – A default HERE map style containing a neutral,
-     * global map and its features including roads, buildings, landmarks, and water
-     * features. It also now includes a fully designed map of Japan.</p> </li> <li> <p>
-     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
-     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
-     * segments and icons on top of HERE Explore to support use cases within transport
-     * and logistics.</p> </li> </ul>  <p>The <code>VectorHereContrast</code>
-     * style has been renamed from <code>VectorHereBerlin</code>.
-     * <code>VectorHereBerlin</code> has been deprecated, but will continue to work in
-     * applications that use it.</p> 
+     * world that blends 3D and 2D rendering.</p>  <p>The
+     * <code>VectorHereContrast</code> style has been renamed from
+     * <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been
+     * deprecated, but will continue to work in applications that use it.</p> 
+     * </li> <li> <p> <code>VectorHereExplore</code> – A default HERE map style
+     * containing a neutral, global map and its features including roads, buildings,
+     * landmarks, and water features. It also now includes a fully designed map of
+     * Japan.</p> </li> <li> <p> <code>VectorHereExploreTruck</code> – A global map
+     * containing truck restrictions and attributes (e.g. width / height / HAZMAT)
+     * symbolized with highlighted segments and icons on top of HERE Explore to support
+     * use cases within transport and logistics.</p> </li> <li> <p>
+     * <code>RasterHereExploreSatellite</code> – A global map containing high
+     * resolution satellite imagery.</p> </li> <li> <p>
+     * <code>HybridHereExploreSatellite</code> – A global map displaying the road
+     * network, street names, and city labels over satellite imagery. This style will
+     * automatically retrieve both raster and vector tiles, and your charges will be
+     * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
+     * raster tiles when rendering the map that you see. This means that more tiles are
+     * retrieved than when using either vector or raster tiles alone. Your charges will
+     * include all tiles retrieved.</p>  </li> </ul>
      */
     inline const Aws::String& GetStyle() const{ return m_style; }
 
@@ -108,17 +117,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
-     * world that blends 3D and 2D rendering.</p> </li> <li> <p>
-     * <code>VectorHereExplore</code> – A default HERE map style containing a neutral,
-     * global map and its features including roads, buildings, landmarks, and water
-     * features. It also now includes a fully designed map of Japan.</p> </li> <li> <p>
-     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
-     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
-     * segments and icons on top of HERE Explore to support use cases within transport
-     * and logistics.</p> </li> </ul>  <p>The <code>VectorHereContrast</code>
-     * style has been renamed from <code>VectorHereBerlin</code>.
-     * <code>VectorHereBerlin</code> has been deprecated, but will continue to work in
-     * applications that use it.</p> 
+     * world that blends 3D and 2D rendering.</p>  <p>The
+     * <code>VectorHereContrast</code> style has been renamed from
+     * <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been
+     * deprecated, but will continue to work in applications that use it.</p> 
+     * </li> <li> <p> <code>VectorHereExplore</code> – A default HERE map style
+     * containing a neutral, global map and its features including roads, buildings,
+     * landmarks, and water features. It also now includes a fully designed map of
+     * Japan.</p> </li> <li> <p> <code>VectorHereExploreTruck</code> – A global map
+     * containing truck restrictions and attributes (e.g. width / height / HAZMAT)
+     * symbolized with highlighted segments and icons on top of HERE Explore to support
+     * use cases within transport and logistics.</p> </li> <li> <p>
+     * <code>RasterHereExploreSatellite</code> – A global map containing high
+     * resolution satellite imagery.</p> </li> <li> <p>
+     * <code>HybridHereExploreSatellite</code> – A global map displaying the road
+     * network, street names, and city labels over satellite imagery. This style will
+     * automatically retrieve both raster and vector tiles, and your charges will be
+     * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
+     * raster tiles when rendering the map that you see. This means that more tiles are
+     * retrieved than when using either vector or raster tiles alone. Your charges will
+     * include all tiles retrieved.</p>  </li> </ul>
      */
     inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
 
@@ -150,17 +168,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
-     * world that blends 3D and 2D rendering.</p> </li> <li> <p>
-     * <code>VectorHereExplore</code> – A default HERE map style containing a neutral,
-     * global map and its features including roads, buildings, landmarks, and water
-     * features. It also now includes a fully designed map of Japan.</p> </li> <li> <p>
-     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
-     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
-     * segments and icons on top of HERE Explore to support use cases within transport
-     * and logistics.</p> </li> </ul>  <p>The <code>VectorHereContrast</code>
-     * style has been renamed from <code>VectorHereBerlin</code>.
-     * <code>VectorHereBerlin</code> has been deprecated, but will continue to work in
-     * applications that use it.</p> 
+     * world that blends 3D and 2D rendering.</p>  <p>The
+     * <code>VectorHereContrast</code> style has been renamed from
+     * <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been
+     * deprecated, but will continue to work in applications that use it.</p> 
+     * </li> <li> <p> <code>VectorHereExplore</code> – A default HERE map style
+     * containing a neutral, global map and its features including roads, buildings,
+     * landmarks, and water features. It also now includes a fully designed map of
+     * Japan.</p> </li> <li> <p> <code>VectorHereExploreTruck</code> – A global map
+     * containing truck restrictions and attributes (e.g. width / height / HAZMAT)
+     * symbolized with highlighted segments and icons on top of HERE Explore to support
+     * use cases within transport and logistics.</p> </li> <li> <p>
+     * <code>RasterHereExploreSatellite</code> – A global map containing high
+     * resolution satellite imagery.</p> </li> <li> <p>
+     * <code>HybridHereExploreSatellite</code> – A global map displaying the road
+     * network, street names, and city labels over satellite imagery. This style will
+     * automatically retrieve both raster and vector tiles, and your charges will be
+     * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
+     * raster tiles when rendering the map that you see. This means that more tiles are
+     * retrieved than when using either vector or raster tiles alone. Your charges will
+     * include all tiles retrieved.</p>  </li> </ul>
      */
     inline void SetStyle(const Aws::String& value) { m_styleHasBeenSet = true; m_style = value; }
 
@@ -192,17 +219,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
-     * world that blends 3D and 2D rendering.</p> </li> <li> <p>
-     * <code>VectorHereExplore</code> – A default HERE map style containing a neutral,
-     * global map and its features including roads, buildings, landmarks, and water
-     * features. It also now includes a fully designed map of Japan.</p> </li> <li> <p>
-     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
-     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
-     * segments and icons on top of HERE Explore to support use cases within transport
-     * and logistics.</p> </li> </ul>  <p>The <code>VectorHereContrast</code>
-     * style has been renamed from <code>VectorHereBerlin</code>.
-     * <code>VectorHereBerlin</code> has been deprecated, but will continue to work in
-     * applications that use it.</p> 
+     * world that blends 3D and 2D rendering.</p>  <p>The
+     * <code>VectorHereContrast</code> style has been renamed from
+     * <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been
+     * deprecated, but will continue to work in applications that use it.</p> 
+     * </li> <li> <p> <code>VectorHereExplore</code> – A default HERE map style
+     * containing a neutral, global map and its features including roads, buildings,
+     * landmarks, and water features. It also now includes a fully designed map of
+     * Japan.</p> </li> <li> <p> <code>VectorHereExploreTruck</code> – A global map
+     * containing truck restrictions and attributes (e.g. width / height / HAZMAT)
+     * symbolized with highlighted segments and icons on top of HERE Explore to support
+     * use cases within transport and logistics.</p> </li> <li> <p>
+     * <code>RasterHereExploreSatellite</code> – A global map containing high
+     * resolution satellite imagery.</p> </li> <li> <p>
+     * <code>HybridHereExploreSatellite</code> – A global map displaying the road
+     * network, street names, and city labels over satellite imagery. This style will
+     * automatically retrieve both raster and vector tiles, and your charges will be
+     * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
+     * raster tiles when rendering the map that you see. This means that more tiles are
+     * retrieved than when using either vector or raster tiles alone. Your charges will
+     * include all tiles retrieved.</p>  </li> </ul>
      */
     inline void SetStyle(Aws::String&& value) { m_styleHasBeenSet = true; m_style = std::move(value); }
 
@@ -234,17 +270,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
-     * world that blends 3D and 2D rendering.</p> </li> <li> <p>
-     * <code>VectorHereExplore</code> – A default HERE map style containing a neutral,
-     * global map and its features including roads, buildings, landmarks, and water
-     * features. It also now includes a fully designed map of Japan.</p> </li> <li> <p>
-     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
-     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
-     * segments and icons on top of HERE Explore to support use cases within transport
-     * and logistics.</p> </li> </ul>  <p>The <code>VectorHereContrast</code>
-     * style has been renamed from <code>VectorHereBerlin</code>.
-     * <code>VectorHereBerlin</code> has been deprecated, but will continue to work in
-     * applications that use it.</p> 
+     * world that blends 3D and 2D rendering.</p>  <p>The
+     * <code>VectorHereContrast</code> style has been renamed from
+     * <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been
+     * deprecated, but will continue to work in applications that use it.</p> 
+     * </li> <li> <p> <code>VectorHereExplore</code> – A default HERE map style
+     * containing a neutral, global map and its features including roads, buildings,
+     * landmarks, and water features. It also now includes a fully designed map of
+     * Japan.</p> </li> <li> <p> <code>VectorHereExploreTruck</code> – A global map
+     * containing truck restrictions and attributes (e.g. width / height / HAZMAT)
+     * symbolized with highlighted segments and icons on top of HERE Explore to support
+     * use cases within transport and logistics.</p> </li> <li> <p>
+     * <code>RasterHereExploreSatellite</code> – A global map containing high
+     * resolution satellite imagery.</p> </li> <li> <p>
+     * <code>HybridHereExploreSatellite</code> – A global map displaying the road
+     * network, street names, and city labels over satellite imagery. This style will
+     * automatically retrieve both raster and vector tiles, and your charges will be
+     * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
+     * raster tiles when rendering the map that you see. This means that more tiles are
+     * retrieved than when using either vector or raster tiles alone. Your charges will
+     * include all tiles retrieved.</p>  </li> </ul>
      */
     inline void SetStyle(const char* value) { m_styleHasBeenSet = true; m_style.assign(value); }
 
@@ -276,17 +321,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
-     * world that blends 3D and 2D rendering.</p> </li> <li> <p>
-     * <code>VectorHereExplore</code> – A default HERE map style containing a neutral,
-     * global map and its features including roads, buildings, landmarks, and water
-     * features. It also now includes a fully designed map of Japan.</p> </li> <li> <p>
-     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
-     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
-     * segments and icons on top of HERE Explore to support use cases within transport
-     * and logistics.</p> </li> </ul>  <p>The <code>VectorHereContrast</code>
-     * style has been renamed from <code>VectorHereBerlin</code>.
-     * <code>VectorHereBerlin</code> has been deprecated, but will continue to work in
-     * applications that use it.</p> 
+     * world that blends 3D and 2D rendering.</p>  <p>The
+     * <code>VectorHereContrast</code> style has been renamed from
+     * <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been
+     * deprecated, but will continue to work in applications that use it.</p> 
+     * </li> <li> <p> <code>VectorHereExplore</code> – A default HERE map style
+     * containing a neutral, global map and its features including roads, buildings,
+     * landmarks, and water features. It also now includes a fully designed map of
+     * Japan.</p> </li> <li> <p> <code>VectorHereExploreTruck</code> – A global map
+     * containing truck restrictions and attributes (e.g. width / height / HAZMAT)
+     * symbolized with highlighted segments and icons on top of HERE Explore to support
+     * use cases within transport and logistics.</p> </li> <li> <p>
+     * <code>RasterHereExploreSatellite</code> – A global map containing high
+     * resolution satellite imagery.</p> </li> <li> <p>
+     * <code>HybridHereExploreSatellite</code> – A global map displaying the road
+     * network, street names, and city labels over satellite imagery. This style will
+     * automatically retrieve both raster and vector tiles, and your charges will be
+     * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
+     * raster tiles when rendering the map that you see. This means that more tiles are
+     * retrieved than when using either vector or raster tiles alone. Your charges will
+     * include all tiles retrieved.</p>  </li> </ul>
      */
     inline MapConfiguration& WithStyle(const Aws::String& value) { SetStyle(value); return *this;}
 
@@ -318,17 +372,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
-     * world that blends 3D and 2D rendering.</p> </li> <li> <p>
-     * <code>VectorHereExplore</code> – A default HERE map style containing a neutral,
-     * global map and its features including roads, buildings, landmarks, and water
-     * features. It also now includes a fully designed map of Japan.</p> </li> <li> <p>
-     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
-     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
-     * segments and icons on top of HERE Explore to support use cases within transport
-     * and logistics.</p> </li> </ul>  <p>The <code>VectorHereContrast</code>
-     * style has been renamed from <code>VectorHereBerlin</code>.
-     * <code>VectorHereBerlin</code> has been deprecated, but will continue to work in
-     * applications that use it.</p> 
+     * world that blends 3D and 2D rendering.</p>  <p>The
+     * <code>VectorHereContrast</code> style has been renamed from
+     * <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been
+     * deprecated, but will continue to work in applications that use it.</p> 
+     * </li> <li> <p> <code>VectorHereExplore</code> – A default HERE map style
+     * containing a neutral, global map and its features including roads, buildings,
+     * landmarks, and water features. It also now includes a fully designed map of
+     * Japan.</p> </li> <li> <p> <code>VectorHereExploreTruck</code> – A global map
+     * containing truck restrictions and attributes (e.g. width / height / HAZMAT)
+     * symbolized with highlighted segments and icons on top of HERE Explore to support
+     * use cases within transport and logistics.</p> </li> <li> <p>
+     * <code>RasterHereExploreSatellite</code> – A global map containing high
+     * resolution satellite imagery.</p> </li> <li> <p>
+     * <code>HybridHereExploreSatellite</code> – A global map displaying the road
+     * network, street names, and city labels over satellite imagery. This style will
+     * automatically retrieve both raster and vector tiles, and your charges will be
+     * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
+     * raster tiles when rendering the map that you see. This means that more tiles are
+     * retrieved than when using either vector or raster tiles alone. Your charges will
+     * include all tiles retrieved.</p>  </li> </ul>
      */
     inline MapConfiguration& WithStyle(Aws::String&& value) { SetStyle(std::move(value)); return *this;}
 
@@ -360,17 +423,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
-     * world that blends 3D and 2D rendering.</p> </li> <li> <p>
-     * <code>VectorHereExplore</code> – A default HERE map style containing a neutral,
-     * global map and its features including roads, buildings, landmarks, and water
-     * features. It also now includes a fully designed map of Japan.</p> </li> <li> <p>
-     * <code>VectorHereExploreTruck</code> – A global map containing truck restrictions
-     * and attributes (e.g. width / height / HAZMAT) symbolized with highlighted
-     * segments and icons on top of HERE Explore to support use cases within transport
-     * and logistics.</p> </li> </ul>  <p>The <code>VectorHereContrast</code>
-     * style has been renamed from <code>VectorHereBerlin</code>.
-     * <code>VectorHereBerlin</code> has been deprecated, but will continue to work in
-     * applications that use it.</p> 
+     * world that blends 3D and 2D rendering.</p>  <p>The
+     * <code>VectorHereContrast</code> style has been renamed from
+     * <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been
+     * deprecated, but will continue to work in applications that use it.</p> 
+     * </li> <li> <p> <code>VectorHereExplore</code> – A default HERE map style
+     * containing a neutral, global map and its features including roads, buildings,
+     * landmarks, and water features. It also now includes a fully designed map of
+     * Japan.</p> </li> <li> <p> <code>VectorHereExploreTruck</code> – A global map
+     * containing truck restrictions and attributes (e.g. width / height / HAZMAT)
+     * symbolized with highlighted segments and icons on top of HERE Explore to support
+     * use cases within transport and logistics.</p> </li> <li> <p>
+     * <code>RasterHereExploreSatellite</code> – A global map containing high
+     * resolution satellite imagery.</p> </li> <li> <p>
+     * <code>HybridHereExploreSatellite</code> – A global map displaying the road
+     * network, street names, and city labels over satellite imagery. This style will
+     * automatically retrieve both raster and vector tiles, and your charges will be
+     * based on total tiles retrieved.</p>  <p>Hybrid styles use both vector and
+     * raster tiles when rendering the map that you see. This means that more tiles are
+     * retrieved than when using either vector or raster tiles alone. Your charges will
+     * include all tiles retrieved.</p>  </li> </ul>
      */
     inline MapConfiguration& WithStyle(const char* value) { SetStyle(value); return *this;}
 

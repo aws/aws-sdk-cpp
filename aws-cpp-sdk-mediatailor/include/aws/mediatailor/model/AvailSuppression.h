@@ -43,49 +43,55 @@ namespace Model
 
     /**
      * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad
-     * suppression is active and MediaTailor won't fill ad breaks on or behind the ad
-     * suppression Value time in the manifest lookback window.</p>
+     * breaks are filled with ads or slate. When Mode is set to
+     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     * fill ad breaks on or behind the ad suppression Value time in the manifest
+     * lookback window.</p>
      */
     inline const Mode& GetMode() const{ return m_mode; }
 
     /**
      * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad
-     * suppression is active and MediaTailor won't fill ad breaks on or behind the ad
-     * suppression Value time in the manifest lookback window.</p>
+     * breaks are filled with ads or slate. When Mode is set to
+     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     * fill ad breaks on or behind the ad suppression Value time in the manifest
+     * lookback window.</p>
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
      * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad
-     * suppression is active and MediaTailor won't fill ad breaks on or behind the ad
-     * suppression Value time in the manifest lookback window.</p>
+     * breaks are filled with ads or slate. When Mode is set to
+     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     * fill ad breaks on or behind the ad suppression Value time in the manifest
+     * lookback window.</p>
      */
     inline void SetMode(const Mode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
      * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad
-     * suppression is active and MediaTailor won't fill ad breaks on or behind the ad
-     * suppression Value time in the manifest lookback window.</p>
+     * breaks are filled with ads or slate. When Mode is set to
+     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     * fill ad breaks on or behind the ad suppression Value time in the manifest
+     * lookback window.</p>
      */
     inline void SetMode(Mode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
      * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad
-     * suppression is active and MediaTailor won't fill ad breaks on or behind the ad
-     * suppression Value time in the manifest lookback window.</p>
+     * breaks are filled with ads or slate. When Mode is set to
+     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     * fill ad breaks on or behind the ad suppression Value time in the manifest
+     * lookback window.</p>
      */
     inline AvailSuppression& WithMode(const Mode& value) { SetMode(value); return *this;}
 
     /**
      * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to BEHIND_LIVE_EDGE, ad
-     * suppression is active and MediaTailor won't fill ad breaks on or behind the ad
-     * suppression Value time in the manifest lookback window.</p>
+     * breaks are filled with ads or slate. When Mode is set to
+     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
+     * fill ad breaks on or behind the ad suppression Value time in the manifest
+     * lookback window.</p>
      */
     inline AvailSuppression& WithMode(Mode&& value) { SetMode(std::move(value)); return *this;}
 

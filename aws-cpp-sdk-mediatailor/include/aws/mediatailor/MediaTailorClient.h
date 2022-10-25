@@ -58,8 +58,8 @@ namespace MediaTailor
 
 
         /**
-         * <p>Configures Amazon CloudWatch log settings for a playback
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Amazon CloudWatch log settings for a playback configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForPlaybackConfiguration">AWS
          * API Reference</a></p>
          */
@@ -76,7 +76,10 @@ namespace MediaTailor
         virtual void ConfigureLogsForPlaybackConfigurationAsync(const Model::ConfigureLogsForPlaybackConfigurationRequest& request, const ConfigureLogsForPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a channel. For information about MediaTailor channels, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+         * with channels</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateChannel">AWS
          * API Reference</a></p>
          */
@@ -93,8 +96,7 @@ namespace MediaTailor
         virtual void CreateChannelAsync(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates name for a specific live source in a source location.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>The live source configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateLiveSource">AWS
          * API Reference</a></p>
          */
@@ -111,8 +113,12 @@ namespace MediaTailor
         virtual void CreateLiveSourceAsync(const Model::CreateLiveSourceRequest& request, const CreateLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new prefetch schedule for the specified playback
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a prefetch schedule for a playback configuration. A prefetch schedule
+         * allows you to tell MediaTailor to fetch and prepare certain ads before an ad
+         * break happens. For more information about ad prefetching, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using
+         * ad prefetching</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreatePrefetchSchedule">AWS
          * API Reference</a></p>
          */
@@ -129,7 +135,10 @@ namespace MediaTailor
         virtual void CreatePrefetchScheduleAsync(const Model::CreatePrefetchScheduleRequest& request, const CreatePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a program.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a program within a channel. For information about programs, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working
+         * with programs</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateProgram">AWS
          * API Reference</a></p>
          */
@@ -146,8 +155,11 @@ namespace MediaTailor
         virtual void CreateProgramAsync(const Model::CreateProgramRequest& request, const CreateProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a source location on a specific channel.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Creates a source location. A source location is a container for sources. For
+         * more information about source locations, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working
+         * with source locations</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateSourceLocation">AWS
          * API Reference</a></p>
          */
@@ -164,8 +176,7 @@ namespace MediaTailor
         virtual void CreateSourceLocationAsync(const Model::CreateSourceLocationRequest& request, const CreateSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates name for a specific VOD source in a source location.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>The VOD source configuration parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateVodSource">AWS
          * API Reference</a></p>
          */
@@ -182,8 +193,10 @@ namespace MediaTailor
         virtual void CreateVodSourceAsync(const Model::CreateVodSourceRequest& request, const CreateVodSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a channel. You must stop the channel before it can be
-         * deleted.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a channel. For information about MediaTailor channels, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+         * with channels</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannel">AWS
          * API Reference</a></p>
          */
@@ -200,7 +213,7 @@ namespace MediaTailor
         virtual void DeleteChannelAsync(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a channel's IAM policy.</p><p><h3>See Also:</h3>   <a
+         * <p>The channel policy to delete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannelPolicy">AWS
          * API Reference</a></p>
          */
@@ -217,8 +230,7 @@ namespace MediaTailor
         virtual void DeleteChannelPolicyAsync(const Model::DeleteChannelPolicyRequest& request, const DeleteChannelPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specific live source in a specific source location.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>The live source to delete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteLiveSource">AWS
          * API Reference</a></p>
          */
@@ -235,8 +247,11 @@ namespace MediaTailor
         virtual void DeleteLiveSourceAsync(const Model::DeleteLiveSourceRequest& request, const DeleteLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the playback configuration for the specified name.</p>  <p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a playback configuration. For information about MediaTailor
+         * configurations, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+         * with configurations in AWS Elemental MediaTailor</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePlaybackConfiguration">AWS
          * API Reference</a></p>
          */
@@ -254,8 +269,12 @@ namespace MediaTailor
 
         /**
          * <p>Deletes a prefetch schedule for a specific playback configuration. If you
-         * call DeletePrefetchSchedule on an expired prefetch schedule, MediaTailor returns
-         * an HTTP 404 status code.</p><p><h3>See Also:</h3>   <a
+         * call <code>DeletePrefetchSchedule</code> on an expired prefetch schedule,
+         * MediaTailor returns an HTTP 404 status code. For more information about ad
+         * prefetching, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using
+         * ad prefetching</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePrefetchSchedule">AWS
          * API Reference</a></p>
          */
@@ -272,7 +291,9 @@ namespace MediaTailor
         virtual void DeletePrefetchScheduleAsync(const Model::DeletePrefetchScheduleRequest& request, const DeletePrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specific program on a specific channel.</p><p><h3>See Also:</h3>  
+         * <p>Deletes a program within a channel. For information about programs, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working
+         * with programs</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteProgram">AWS
          * API Reference</a></p>
@@ -290,8 +311,11 @@ namespace MediaTailor
         virtual void DeleteProgramAsync(const Model::DeleteProgramRequest& request, const DeleteProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a source location on a specific channel.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a source location. A source location is a container for sources. For
+         * more information about source locations, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working
+         * with source locations</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteSourceLocation">AWS
          * API Reference</a></p>
          */
@@ -308,8 +332,7 @@ namespace MediaTailor
         virtual void DeleteSourceLocationAsync(const Model::DeleteSourceLocationRequest& request, const DeleteSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specific VOD source in a specific source location.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>The video on demand (VOD) source to delete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteVodSource">AWS
          * API Reference</a></p>
          */
@@ -326,7 +349,10 @@ namespace MediaTailor
         virtual void DeleteVodSourceAsync(const Model::DeleteVodSourceRequest& request, const DeleteVodSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the properties of a specific channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a channel. For information about MediaTailor channels, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+         * with channels</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeChannel">AWS
          * API Reference</a></p>
          */
@@ -343,8 +369,7 @@ namespace MediaTailor
         virtual void DescribeChannelAsync(const Model::DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides details about a specific live source in a specific source
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <p>The live source to describe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeLiveSource">AWS
          * API Reference</a></p>
          */
@@ -361,7 +386,9 @@ namespace MediaTailor
         virtual void DescribeLiveSourceAsync(const Model::DescribeLiveSourceRequest& request, const DescribeLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the properties of the requested program.</p><p><h3>See Also:</h3>  
+         * <p>Describes a program within a channel. For information about programs, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working
+         * with programs</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeProgram">AWS
          * API Reference</a></p>
@@ -379,7 +406,10 @@ namespace MediaTailor
         virtual void DescribeProgramAsync(const Model::DescribeProgramRequest& request, const DescribeProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the properties of the requested source location.</p><p><h3>See
+         * <p>Describes a source location. A source location is a container for sources.
+         * For more information about source locations, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working
+         * with source locations</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeSourceLocation">AWS
          * API Reference</a></p>
@@ -397,8 +427,8 @@ namespace MediaTailor
         virtual void DescribeSourceLocationAsync(const Model::DescribeSourceLocationRequest& request, const DescribeSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides details about a specific VOD source in a specific source
-         * location.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides details about a specific video on demand (VOD) source in a specific
+         * source location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeVodSource">AWS
          * API Reference</a></p>
          */
@@ -415,8 +445,8 @@ namespace MediaTailor
         virtual void DescribeVodSourceAsync(const Model::DescribeVodSourceRequest& request, const DescribeVodSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about a channel's IAM policy.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Returns the channel's IAM policy. IAM policies are used to control access to
+         * your channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelPolicy">AWS
          * API Reference</a></p>
          */
@@ -451,8 +481,11 @@ namespace MediaTailor
         virtual void GetChannelScheduleAsync(const Model::GetChannelScheduleRequest& request, const GetChannelScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the playback configuration for the specified name.</p>  <p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a playback configuration. For information about MediaTailor
+         * configurations, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+         * with configurations in AWS Elemental MediaTailor</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPlaybackConfiguration">AWS
          * API Reference</a></p>
          */
@@ -469,9 +502,12 @@ namespace MediaTailor
         virtual void GetPlaybackConfigurationAsync(const Model::GetPlaybackConfigurationRequest& request, const GetPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the prefetch schedule for a specific playback
-         * configuration. If you call GetPrefetchSchedule on an expired prefetch schedule,
-         * MediaTailor returns an HTTP 404 status code.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a prefetch schedule for a playback configuration. A prefetch
+         * schedule allows you to tell MediaTailor to fetch and prepare certain ads before
+         * an ad break happens. For more information about ad prefetching, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using
+         * ad prefetching</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPrefetchSchedule">AWS
          * API Reference</a></p>
          */
@@ -488,8 +524,8 @@ namespace MediaTailor
         virtual void GetPrefetchScheduleAsync(const Model::GetPrefetchScheduleRequest& request, const GetPrefetchScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of alerts for the given resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the alerts that are associated with a MediaTailor channel assembly
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListAlerts">AWS
          * API Reference</a></p>
          */
@@ -506,8 +542,8 @@ namespace MediaTailor
         virtual void ListAlertsAsync(const Model::ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list of channels that are associated with this
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about the channels that are associated with the current
+         * AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListChannels">AWS
          * API Reference</a></p>
          */
@@ -524,8 +560,8 @@ namespace MediaTailor
         virtual void ListChannelsAsync(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>lists all the live sources in a source location.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the live sources contained in a source location. A source represents a
+         * piece of content.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListLiveSources">AWS
          * API Reference</a></p>
          */
@@ -542,12 +578,11 @@ namespace MediaTailor
         virtual void ListLiveSourcesAsync(const Model::ListLiveSourcesRequest& request, const ListLiveSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the playback configurations defined in AWS Elemental
-         * MediaTailor. You can specify a maximum number of configurations to return at a
-         * time. The default maximum is 50. Results are returned in pagefuls. If
-         * MediaTailor has more configurations than the specified maximum, it provides
-         * parameters in the response that you can use to retrieve the next pageful.</p> 
-         * <p><h3>See Also:</h3>   <a
+         * <p>Retrieves existing playback configurations. For information about MediaTailor
+         * configurations, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+         * with Configurations in AWS Elemental MediaTailor</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPlaybackConfigurations">AWS
          * API Reference</a></p>
          */
@@ -564,7 +599,8 @@ namespace MediaTailor
         virtual void ListPlaybackConfigurationsAsync(const Model::ListPlaybackConfigurationsRequest& request, const ListPlaybackConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new prefetch schedule.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the prefetch schedules for a playback configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrefetchSchedules">AWS
          * API Reference</a></p>
          */
@@ -581,7 +617,8 @@ namespace MediaTailor
         virtual void ListPrefetchSchedulesAsync(const Model::ListPrefetchSchedulesRequest& request, const ListPrefetchSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list of source locations.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the source locations for a channel. A source location defines the host
+         * server URL, and contains a list of sources.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListSourceLocations">AWS
          * API Reference</a></p>
          */
@@ -598,8 +635,11 @@ namespace MediaTailor
         virtual void ListSourceLocationsAsync(const Model::ListSourceLocationsRequest& request, const ListSourceLocationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the tags assigned to the specified playback configuration
-         * resource.</p>  <p><h3>See Also:</h3>   <a
+         * <p>A list of tags that are associated with this resource. Tags are key-value
+         * pairs that you can associate with Amazon resources to help with organization,
+         * access control, and cost tracking. For more information, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+         * AWS Elemental MediaTailor Resources</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -616,7 +656,8 @@ namespace MediaTailor
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the VOD sources in a source location.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the VOD sources contained in a source location. A source represents a
+         * piece of content.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListVodSources">AWS
          * API Reference</a></p>
          */
@@ -633,7 +674,8 @@ namespace MediaTailor
         virtual void ListVodSourcesAsync(const Model::ListVodSourcesRequest& request, const ListVodSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an IAM policy for the channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an IAM policy for the channel. IAM policies are used to control
+         * access to your channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutChannelPolicy">AWS
          * API Reference</a></p>
          */
@@ -650,8 +692,11 @@ namespace MediaTailor
         virtual void PutChannelPolicyAsync(const Model::PutChannelPolicyRequest& request, const PutChannelPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a new playback configuration to AWS Elemental MediaTailor.</p> 
-         * <p><h3>See Also:</h3>   <a
+         * <p>Creates a playback configuration. For information about MediaTailor
+         * configurations, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working
+         * with configurations in AWS Elemental MediaTailor</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutPlaybackConfiguration">AWS
          * API Reference</a></p>
          */
@@ -668,7 +713,10 @@ namespace MediaTailor
         virtual void PutPlaybackConfigurationAsync(const Model::PutPlaybackConfigurationRequest& request, const PutPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a specific channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a channel. For information about MediaTailor channels, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+         * with channels</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StartChannel">AWS
          * API Reference</a></p>
          */
@@ -685,7 +733,10 @@ namespace MediaTailor
         virtual void StartChannelAsync(const Model::StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops a specific channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a channel. For information about MediaTailor channels, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+         * with channels</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StopChannel">AWS
          * API Reference</a></p>
          */
@@ -702,8 +753,11 @@ namespace MediaTailor
         virtual void StopChannelAsync(const Model::StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds tags to the specified playback configuration resource. You can specify
-         * one or more tags to add.</p>  <p><h3>See Also:</h3>   <a
+         * <p>The resource to tag. Tags are key-value pairs that you can associate with
+         * Amazon resources to help with organization, access control, and cost tracking.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging
+         * AWS Elemental MediaTailor Resources</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TagResource">AWS
          * API Reference</a></p>
          */
@@ -720,8 +774,7 @@ namespace MediaTailor
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes tags from the specified playback configuration resource. You can
-         * specify one or more tags to remove.</p>  <p><h3>See Also:</h3>   <a
+         * <p>The resource to untag.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -738,7 +791,10 @@ namespace MediaTailor
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a channel. For information about MediaTailor channels, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-channels.html">Working
+         * with channels</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateChannel">AWS
          * API Reference</a></p>
          */
@@ -755,8 +811,7 @@ namespace MediaTailor
         virtual void UpdateChannelAsync(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a specific live source in a specific source location.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates a live source's configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateLiveSource">AWS
          * API Reference</a></p>
          */
@@ -773,8 +828,11 @@ namespace MediaTailor
         virtual void UpdateLiveSourceAsync(const Model::UpdateLiveSourceRequest& request, const UpdateLiveSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a source location on a specific channel.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates a source location. A source location is a container for sources. For
+         * more information about source locations, see <a
+         * href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working
+         * with source locations</a> in the <i>MediaTailor User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateSourceLocation">AWS
          * API Reference</a></p>
          */
@@ -791,8 +849,7 @@ namespace MediaTailor
         virtual void UpdateSourceLocationAsync(const Model::UpdateSourceLocationRequest& request, const UpdateSourceLocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a specific VOD source in a specific source location.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates a VOD source's configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateVodSource">AWS
          * API Reference</a></p>
          */

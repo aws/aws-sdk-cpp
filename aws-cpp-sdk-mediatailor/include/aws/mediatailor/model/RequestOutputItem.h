@@ -103,98 +103,98 @@ namespace Model
 
     /**
      * <p>The name of the manifest for the channel. The name appears in the
-     * PlaybackUrl.</p>
+     * <code>PlaybackUrl</code>.</p>
      */
     inline const Aws::String& GetManifestName() const{ return m_manifestName; }
 
     /**
      * <p>The name of the manifest for the channel. The name appears in the
-     * PlaybackUrl.</p>
+     * <code>PlaybackUrl</code>.</p>
      */
     inline bool ManifestNameHasBeenSet() const { return m_manifestNameHasBeenSet; }
 
     /**
      * <p>The name of the manifest for the channel. The name appears in the
-     * PlaybackUrl.</p>
+     * <code>PlaybackUrl</code>.</p>
      */
     inline void SetManifestName(const Aws::String& value) { m_manifestNameHasBeenSet = true; m_manifestName = value; }
 
     /**
      * <p>The name of the manifest for the channel. The name appears in the
-     * PlaybackUrl.</p>
+     * <code>PlaybackUrl</code>.</p>
      */
     inline void SetManifestName(Aws::String&& value) { m_manifestNameHasBeenSet = true; m_manifestName = std::move(value); }
 
     /**
      * <p>The name of the manifest for the channel. The name appears in the
-     * PlaybackUrl.</p>
+     * <code>PlaybackUrl</code>.</p>
      */
     inline void SetManifestName(const char* value) { m_manifestNameHasBeenSet = true; m_manifestName.assign(value); }
 
     /**
      * <p>The name of the manifest for the channel. The name appears in the
-     * PlaybackUrl.</p>
+     * <code>PlaybackUrl</code>.</p>
      */
     inline RequestOutputItem& WithManifestName(const Aws::String& value) { SetManifestName(value); return *this;}
 
     /**
      * <p>The name of the manifest for the channel. The name appears in the
-     * PlaybackUrl.</p>
+     * <code>PlaybackUrl</code>.</p>
      */
     inline RequestOutputItem& WithManifestName(Aws::String&& value) { SetManifestName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the manifest for the channel. The name appears in the
-     * PlaybackUrl.</p>
+     * <code>PlaybackUrl</code>.</p>
      */
     inline RequestOutputItem& WithManifestName(const char* value) { SetManifestName(value); return *this;}
 
 
     /**
-     * <p>A string used to match which HttpPackageConfiguration is used for each
-     * VodSource.</p>
+     * <p>A string used to match which <code>HttpPackageConfiguration</code> is used
+     * for each <code>VodSource</code>.</p>
      */
     inline const Aws::String& GetSourceGroup() const{ return m_sourceGroup; }
 
     /**
-     * <p>A string used to match which HttpPackageConfiguration is used for each
-     * VodSource.</p>
+     * <p>A string used to match which <code>HttpPackageConfiguration</code> is used
+     * for each <code>VodSource</code>.</p>
      */
     inline bool SourceGroupHasBeenSet() const { return m_sourceGroupHasBeenSet; }
 
     /**
-     * <p>A string used to match which HttpPackageConfiguration is used for each
-     * VodSource.</p>
+     * <p>A string used to match which <code>HttpPackageConfiguration</code> is used
+     * for each <code>VodSource</code>.</p>
      */
     inline void SetSourceGroup(const Aws::String& value) { m_sourceGroupHasBeenSet = true; m_sourceGroup = value; }
 
     /**
-     * <p>A string used to match which HttpPackageConfiguration is used for each
-     * VodSource.</p>
+     * <p>A string used to match which <code>HttpPackageConfiguration</code> is used
+     * for each <code>VodSource</code>.</p>
      */
     inline void SetSourceGroup(Aws::String&& value) { m_sourceGroupHasBeenSet = true; m_sourceGroup = std::move(value); }
 
     /**
-     * <p>A string used to match which HttpPackageConfiguration is used for each
-     * VodSource.</p>
+     * <p>A string used to match which <code>HttpPackageConfiguration</code> is used
+     * for each <code>VodSource</code>.</p>
      */
     inline void SetSourceGroup(const char* value) { m_sourceGroupHasBeenSet = true; m_sourceGroup.assign(value); }
 
     /**
-     * <p>A string used to match which HttpPackageConfiguration is used for each
-     * VodSource.</p>
+     * <p>A string used to match which <code>HttpPackageConfiguration</code> is used
+     * for each <code>VodSource</code>.</p>
      */
     inline RequestOutputItem& WithSourceGroup(const Aws::String& value) { SetSourceGroup(value); return *this;}
 
     /**
-     * <p>A string used to match which HttpPackageConfiguration is used for each
-     * VodSource.</p>
+     * <p>A string used to match which <code>HttpPackageConfiguration</code> is used
+     * for each <code>VodSource</code>.</p>
      */
     inline RequestOutputItem& WithSourceGroup(Aws::String&& value) { SetSourceGroup(std::move(value)); return *this;}
 
     /**
-     * <p>A string used to match which HttpPackageConfiguration is used for each
-     * VodSource.</p>
+     * <p>A string used to match which <code>HttpPackageConfiguration</code> is used
+     * for each <code>VodSource</code>.</p>
      */
     inline RequestOutputItem& WithSourceGroup(const char* value) { SetSourceGroup(value); return *this;}
 

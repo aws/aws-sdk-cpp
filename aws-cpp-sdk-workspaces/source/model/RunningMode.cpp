@@ -22,6 +22,7 @@ namespace Aws
 
         static const int AUTO_STOP_HASH = HashingUtils::HashString("AUTO_STOP");
         static const int ALWAYS_ON_HASH = HashingUtils::HashString("ALWAYS_ON");
+        static const int MANUAL_HASH = HashingUtils::HashString("MANUAL");
 
 
         RunningMode GetRunningModeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ALWAYS_ON_HASH)
           {
             return RunningMode::ALWAYS_ON;
+          }
+          else if (hashCode == MANUAL_HASH)
+          {
+            return RunningMode::MANUAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "AUTO_STOP";
           case RunningMode::ALWAYS_ON:
             return "ALWAYS_ON";
+          case RunningMode::MANUAL:
+            return "MANUAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
