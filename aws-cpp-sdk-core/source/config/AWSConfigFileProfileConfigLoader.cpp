@@ -159,10 +159,10 @@ namespace Aws
                         auto hasConflictingStartUrls = !ssoSession.GetSsoStartUrl().empty()
                                                        && !prof.GetSsoStartUrl().empty()
                                                        && ssoSession.GetSsoStartUrl() != prof.GetSsoStartUrl();
-                        auto hasConlflictingRegions = !ssoSession.GetSsoRegion().empty()
+                        auto hasConflictingRegions = !ssoSession.GetSsoRegion().empty()
                                                       && !prof.GetSsoRegion().empty()
                                                       && ssoSession.GetSsoRegion() != prof.GetSsoRegion();
-                        if (hasConflictingStartUrls || hasConlflictingRegions) {
+                        if (hasConflictingStartUrls || hasConflictingRegions) {
                             AWS_LOGSTREAM_ERROR(PARSER_TAG,
                                 "SSO profile has a start url or region conflict with sso session");
                             prof.SetSsoStartUrl("");
