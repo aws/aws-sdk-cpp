@@ -42,15 +42,6 @@ SERVICE_NAME_REMAPS = {"runtime.lex": "lex",
                        "transcribe-streaming": "transcribestreaming",
                        "streams.dynamodb": "dynamodbstreams"}
 
-ENDPOINT_NAME_REMAPS = {"s3outposts": "outposts",
-                        "s3-control": None,
-                        "importexport": None,
-                        "license-manager-user-subscriptions": None,
-                        "redshift-serverless": "redshiftserverless",
-                        "sdb": None,
-                        "mobileanalytics": None,
-                        "rolesanywhere": None}
-
 CORE_COMPONENT_TO_MODEL = {"defaults": DEFAULTS_FILE_LOCATION,
                            "partitions": PARTITIONS_FILE_LOCATION}
 
@@ -84,42 +75,25 @@ def is_endpoints_enabled(sdk_root: str) -> bool:
 
 def _build_service_model_with_endpoints(models_dir: str, endpoint_rules_dir: str, c2j_model_filename) -> ServiceModel:
     """Return a ServiceModel containing paths to the Service models: C2J model and endpoints (rules and tests).
-    Thanks to our legacy and backward compatibility, a more complicated logic to match c2j models and smithy endpoints are required.
 
     :param models_dir (str): filepath (absolute or relative) to the dir with c2j models
     :param endpoint_rules_dir (str): filepath (absolute or relative) to the dir with dirs of endpoints
     :param c2j_model_filename (str): filename of a service C2J model (just filename, relative to models_dir without separator)
     :return: ServiceModel, a descriptor class holding Service models filenames
     """
-    with open(models_dir + "/" + c2j_model_filename) as c2j_model_file:
-        try:
-            c2j_model = json.loads(c2j_model_file.read())
-            service_id = c2j_model["metadata"].get("serviceId", None)
-            if not service_id:
-                service_id = c2j_model["metadata"]["serviceFullName"]
-                service_id = service_id.lower().replace("aws", "").replace("amazon", "").strip()
-            service_id = service_id.lower().replace(' ', '-')
-            service_ids_to_try = [service_id]
-            if ENDPOINT_NAME_REMAPS.get(service_id):
-                service_ids_to_try.append(ENDPOINT_NAME_REMAPS.get(service_id))
-            for service_id in service_ids_to_try:
-                endpoint_dir_service_id = service_id.lower().replace(' ', '-')
-                endpoint_rules_path = f"{endpoint_dir_service_id}/endpoint-rule-set.json"
-                endpoint_tests_path = f"{endpoint_dir_service_id}/endpoint-tests.json"
-                if os.path.exists(f"{endpoint_rules_dir}/{endpoint_dir_service_id}") \
-                        and os.path.exists(f"{endpoint_rules_dir}/{endpoint_rules_path}") \
-                        and os.path.exists(f"{endpoint_rules_dir}/{endpoint_tests_path}"):  # tests must exist
-                    return ServiceModel(service_id=service_id,
-                                        c2j_model=c2j_model_filename,
-                                        endpoint_rule_set=endpoint_rules_path,
-                                        endpoint_tests=endpoint_tests_path)
-            else:
-                raise RuntimeError(f"Service model {c2j_model_filename} (service_id {service_id}) does not have "
-                                   f"corresponding non-empty endpoint rules dir!")
-        except KeyError as exc:
-            raise KeyError(f"C2j Model does not contain ['metadata']['serviceId'] field: {exc}")
-        except Exception as exc:
-            raise Exception(f"Unknown exception while parsing c2j model {c2j_model_filename}: {exc}")
+
+    endpoint_rules_filename = c2j_model_filename.replace('.normal.json', '.endpoint-rule-set-1.json')
+    endpoint_rules_filepath = f"{endpoint_rules_dir}/{endpoint_rules_filename}"
+    endpoint_tests_filename = c2j_model_filename.replace('.normal.json', '.endpoint-tests-1.json')
+    endpoint_tests_filepath = f"{endpoint_rules_dir}/{endpoint_tests_filename}"
+    match = SERVICE_MODEL_FILENAME_PATTERN.match(c2j_model_filename)
+    service_id = match.group("service")
+
+    if os.path.exists(endpoint_rules_filepath) and os.path.exists(endpoint_tests_filepath):
+        return ServiceModel(service_id=service_id,
+                            c2j_model=c2j_model_filename,
+                            endpoint_rule_set=endpoint_rules_filename,
+                            endpoint_tests=endpoint_tests_filename)
 
 
 def collect_available_models(models_dir: str, endpoints_enabled: bool, endpoint_rules_dir: str) -> dict:
