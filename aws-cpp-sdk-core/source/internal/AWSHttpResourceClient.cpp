@@ -551,6 +551,17 @@ namespace Aws
         {
             SetErrorMarshaller(Aws::MakeUnique<Aws::Client::JsonErrorMarshaller>(SSO_RESOURCE_CLIENT_LOG_TAG));
 
+            m_endpoint = buildEndpoint(clientConfiguration, "portal.sso.", "federation/credentials");
+            m_oidcEndpoint = buildEndpoint(clientConfiguration, "oidc.", "token");
+
+            AWS_LOGSTREAM_INFO(SSO_RESOURCE_CLIENT_LOG_TAG, "Creating SSO ResourceClient with endpoint: " << m_endpoint);
+        }
+
+        Aws::String SSOCredentialsClient::buildEndpoint(
+            const Aws::Client::ClientConfiguration& clientConfiguration,
+            const Aws::String& domain,
+            const Aws::String& endpoint)
+        {
             Aws::StringStream ss;
             if (clientConfiguration.scheme == Aws::Http::Scheme::HTTP)
             {
@@ -566,15 +577,12 @@ namespace Aws
             auto hash = Aws::Utils::HashingUtils::HashString(clientConfiguration.region.c_str());
 
             AWS_LOGSTREAM_DEBUG(SSO_RESOURCE_CLIENT_LOG_TAG, "Preparing SSO client for region: " << clientConfiguration.region);
-
-            ss << "portal.sso." << clientConfiguration.region << ".amazonaws.com/federation/credentials";
+            ss << domain << clientConfiguration.region << ".amazonaws.com/" << endpoint;
             if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
             {
                 ss << ".cn";
             }
-            m_endpoint =  ss.str();
-
-            AWS_LOGSTREAM_INFO(SSO_RESOURCE_CLIENT_LOG_TAG, "Creating SSO ResourceClient with endpoint: " << m_endpoint);
+            return ss.str();
         }
 
         SSOCredentialsClient::SSOGetRoleCredentialsResult SSOCredentialsClient::GetSSOCredentials(const SSOGetRoleCredentialsRequest &request)
@@ -616,7 +624,7 @@ namespace Aws
         // An internal SSO CreateToken implementation to lightweight core package and not introduce a dependency on sso-oidc
         SSOCredentialsClient::SSOCreateTokenResult SSOCredentialsClient::CreateToken(const SSOCreateTokenRequest& request)
         {
-            std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(m_endpoint, HttpMethod::HTTP_GET,
+            std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(m_oidcEndpoint, HttpMethod::HTTP_POST,
                                                                        Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
             SSOCreateTokenResult result;
             if(!httpRequest) {

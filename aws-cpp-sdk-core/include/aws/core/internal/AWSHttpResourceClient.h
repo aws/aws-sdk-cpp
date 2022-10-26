@@ -279,7 +279,11 @@ namespace Aws
 
              SSOCreateTokenResult CreateToken(const SSOCreateTokenRequest& request);
          private:
+             Aws::String buildEndpoint(const Aws::Client::ClientConfiguration& clientConfiguration,
+                 const Aws::String& domain,
+                 const Aws::String& endpoint);
              Aws::String m_endpoint;
+             Aws::String m_oidcEndpoint;
          };
     } // namespace Internal
 } // namespace Aws
