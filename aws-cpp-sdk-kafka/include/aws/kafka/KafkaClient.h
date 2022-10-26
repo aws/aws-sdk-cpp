@@ -750,6 +750,24 @@ namespace Kafka
          */
         virtual void UpdateSecurityAsync(const Model::UpdateSecurityRequest& request, const UpdateSecurityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * Updates cluster broker volume size (or) sets cluster storage mode to
+         * TIERED.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateStorage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateStorageOutcome UpdateStorage(const Model::UpdateStorageRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateStorage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateStorageOutcomeCallable UpdateStorageCallable(const Model::UpdateStorageRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateStorage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateStorageAsync(const Model::UpdateStorageRequest& request, const UpdateStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:

@@ -49,6 +49,7 @@
 #include <aws/kafka/model/UpdateClusterKafkaVersionResult.h>
 #include <aws/kafka/model/UpdateMonitoringResult.h>
 #include <aws/kafka/model/UpdateSecurityResult.h>
+#include <aws/kafka/model/UpdateStorageResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in KafkaClient header */
 
@@ -121,6 +122,7 @@ namespace Aws
       class UpdateClusterKafkaVersionRequest;
       class UpdateMonitoringRequest;
       class UpdateSecurityRequest;
+      class UpdateStorageRequest;
       /* End of service model forward declarations required in KafkaClient header */
 
       /* Service model Outcome class definitions */
@@ -159,6 +161,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateClusterKafkaVersionResult, KafkaError> UpdateClusterKafkaVersionOutcome;
       typedef Aws::Utils::Outcome<UpdateMonitoringResult, KafkaError> UpdateMonitoringOutcome;
       typedef Aws::Utils::Outcome<UpdateSecurityResult, KafkaError> UpdateSecurityOutcome;
+      typedef Aws::Utils::Outcome<UpdateStorageResult, KafkaError> UpdateStorageOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -197,6 +200,7 @@ namespace Aws
       typedef std::future<UpdateClusterKafkaVersionOutcome> UpdateClusterKafkaVersionOutcomeCallable;
       typedef std::future<UpdateMonitoringOutcome> UpdateMonitoringOutcomeCallable;
       typedef std::future<UpdateSecurityOutcome> UpdateSecurityOutcomeCallable;
+      typedef std::future<UpdateStorageOutcome> UpdateStorageOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -238,6 +242,7 @@ namespace Aws
     typedef std::function<void(const KafkaClient*, const Model::UpdateClusterKafkaVersionRequest&, const Model::UpdateClusterKafkaVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterKafkaVersionResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UpdateMonitoringRequest&, const Model::UpdateMonitoringOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMonitoringResponseReceivedHandler;
     typedef std::function<void(const KafkaClient*, const Model::UpdateSecurityRequest&, const Model::UpdateSecurityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSecurityResponseReceivedHandler;
+    typedef std::function<void(const KafkaClient*, const Model::UpdateStorageRequest&, const Model::UpdateStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStorageResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace Kafka
 } // namespace Aws

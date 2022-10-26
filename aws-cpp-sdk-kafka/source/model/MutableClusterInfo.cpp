@@ -31,7 +31,9 @@ MutableClusterInfo::MutableClusterInfo() :
     m_instanceTypeHasBeenSet(false),
     m_clientAuthenticationHasBeenSet(false),
     m_encryptionInfoHasBeenSet(false),
-    m_connectivityInfoHasBeenSet(false)
+    m_connectivityInfoHasBeenSet(false),
+    m_storageMode(StorageMode::NOT_SET),
+    m_storageModeHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ MutableClusterInfo::MutableClusterInfo(JsonView jsonValue) :
     m_instanceTypeHasBeenSet(false),
     m_clientAuthenticationHasBeenSet(false),
     m_encryptionInfoHasBeenSet(false),
-    m_connectivityInfoHasBeenSet(false)
+    m_connectivityInfoHasBeenSet(false),
+    m_storageMode(StorageMode::NOT_SET),
+    m_storageModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -135,6 +139,13 @@ MutableClusterInfo& MutableClusterInfo::operator =(JsonView jsonValue)
     m_connectivityInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("storageMode"))
+  {
+    m_storageMode = StorageModeMapper::GetStorageModeForName(jsonValue.GetString("storageMode"));
+
+    m_storageModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -210,6 +221,11 @@ JsonValue MutableClusterInfo::Jsonize() const
   {
    payload.WithObject("connectivityInfo", m_connectivityInfo.Jsonize());
 
+  }
+
+  if(m_storageModeHasBeenSet)
+  {
+   payload.WithString("storageMode", StorageModeMapper::GetNameForStorageMode(m_storageMode));
   }
 
   return payload;
