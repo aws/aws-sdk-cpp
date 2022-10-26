@@ -221,7 +221,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const std::shar
     const uint32_t monitor_intvl = std::max<uint32_t>(3, config.requestTimeoutMs/1000);
 
     AWS_ZERO_STRUCT(tcp_monitoring_options);
-    tcp_monitoring_options.minimum_throughput_bytes_per_second = config.lowSpeedLimit;
+    tcp_monitoring_options.minimum_throughput_bytes_per_second = static_cast<uint64_t>(config.lowSpeedLimit);
     tcp_monitoring_options.allowable_throughput_failure_interval_seconds = monitor_intvl;
 
     s3CrtConfig.monitoring_options = &tcp_monitoring_options;
