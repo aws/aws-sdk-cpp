@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/neptune/model/ServerlessV2ScalingConfigurationInfo.h>
 #include <aws/neptune/model/DBClusterOptionGroupStatus.h>
 #include <aws/neptune/model/DBClusterMember.h>
 #include <aws/neptune/model/VpcSecurityGroupMembership.h>
@@ -1738,6 +1739,25 @@ namespace Model
      */
     inline DBCluster& WithAutomaticRestartTime(Aws::Utils::DateTime&& value) { SetAutomaticRestartTime(std::move(value)); return *this;}
 
+
+    
+    inline const ServerlessV2ScalingConfigurationInfo& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
+
+    
+    inline bool ServerlessV2ScalingConfigurationHasBeenSet() const { return m_serverlessV2ScalingConfigurationHasBeenSet; }
+
+    
+    inline void SetServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfigurationInfo& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = value; }
+
+    
+    inline void SetServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationInfo&& value) { m_serverlessV2ScalingConfigurationHasBeenSet = true; m_serverlessV2ScalingConfiguration = std::move(value); }
+
+    
+    inline DBCluster& WithServerlessV2ScalingConfiguration(const ServerlessV2ScalingConfigurationInfo& value) { SetServerlessV2ScalingConfiguration(value); return *this;}
+
+    
+    inline DBCluster& WithServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationInfo&& value) { SetServerlessV2ScalingConfiguration(std::move(value)); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -1859,6 +1879,9 @@ namespace Model
 
     Aws::Utils::DateTime m_automaticRestartTime;
     bool m_automaticRestartTimeHasBeenSet = false;
+
+    ServerlessV2ScalingConfigurationInfo m_serverlessV2ScalingConfiguration;
+    bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

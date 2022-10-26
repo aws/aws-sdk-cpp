@@ -79,7 +79,7 @@ CloudSearchDomainClient::~CloudSearchDomainClient()
 
 void CloudSearchDomainClient::init(const Client::ClientConfiguration& config)
 {
-  AWSClient::SetServiceClientName("cloudsearchdomain");
+  AWSClient::SetServiceClientName("CloudSearch Domain");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

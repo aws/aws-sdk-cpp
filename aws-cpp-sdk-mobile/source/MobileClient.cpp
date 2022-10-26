@@ -85,7 +85,7 @@ MobileClient::~MobileClient()
 
 void MobileClient::init(const Client::ClientConfiguration& config)
 {
-  AWSClient::SetServiceClientName("mobile");
+  AWSClient::SetServiceClientName("Mobile");
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {

@@ -55,6 +55,7 @@
 #include <aws/kafka/model/UpdateClusterKafkaVersionRequest.h>
 #include <aws/kafka/model/UpdateMonitoringRequest.h>
 #include <aws/kafka/model/UpdateSecurityRequest.h>
+#include <aws/kafka/model/UpdateStorageRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -1127,6 +1128,36 @@ void KafkaClient::UpdateSecurityAsync(const UpdateSecurityRequest& request, cons
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateSecurity(request), context);
+    } );
+}
+
+UpdateStorageOutcome KafkaClient::UpdateStorage(const UpdateStorageRequest& request) const
+{
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateStorage", "Required field: ClusterArn, is not set");
+    return UpdateStorageOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v1/clusters/");
+  uri.AddPathSegment(request.GetClusterArn());
+  uri.AddPathSegments("/storage");
+  return UpdateStorageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateStorageOutcomeCallable KafkaClient::UpdateStorageCallable(const UpdateStorageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStorageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStorage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::UpdateStorageAsync(const UpdateStorageRequest& request, const UpdateStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateStorage(request), context);
     } );
 }
 

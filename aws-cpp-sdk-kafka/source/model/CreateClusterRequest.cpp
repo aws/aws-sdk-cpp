@@ -25,7 +25,9 @@ CreateClusterRequest::CreateClusterRequest() :
     m_loggingInfoHasBeenSet(false),
     m_numberOfBrokerNodes(0),
     m_numberOfBrokerNodesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_storageMode(StorageMode::NOT_SET),
+    m_storageModeHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,11 @@ Aws::String CreateClusterRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_storageModeHasBeenSet)
+  {
+   payload.WithString("storageMode", StorageModeMapper::GetNameForStorageMode(m_storageMode));
   }
 
   return payload.View().WriteReadable();

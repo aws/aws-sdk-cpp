@@ -41,32 +41,44 @@ namespace Model
 
 
     /**
-     * EBS volume provisioned throughput information.
+     * 
+            <p>EBS volume provisioned throughput information.</p>
+         
      */
     inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
 
     /**
-     * EBS volume provisioned throughput information.
+     * 
+            <p>EBS volume provisioned throughput information.</p>
+         
      */
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
 
     /**
-     * EBS volume provisioned throughput information.
+     * 
+            <p>EBS volume provisioned throughput information.</p>
+         
      */
     inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
 
     /**
-     * EBS volume provisioned throughput information.
+     * 
+            <p>EBS volume provisioned throughput information.</p>
+         
      */
     inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
 
     /**
-     * EBS volume provisioned throughput information.
+     * 
+            <p>EBS volume provisioned throughput information.</p>
+         
      */
     inline EBSStorageInfo& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
 
     /**
-     * EBS volume provisioned throughput information.
+     * 
+            <p>EBS volume provisioned throughput information.</p>
+         
      */
     inline EBSStorageInfo& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
 

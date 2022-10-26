@@ -69,7 +69,8 @@ DBCluster::DBCluster() :
     m_deletionProtectionHasBeenSet(false),
     m_crossAccountClone(false),
     m_crossAccountCloneHasBeenSet(false),
-    m_automaticRestartTimeHasBeenSet(false)
+    m_automaticRestartTimeHasBeenSet(false),
+    m_serverlessV2ScalingConfigurationHasBeenSet(false)
 {
 }
 
@@ -122,7 +123,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_deletionProtectionHasBeenSet(false),
     m_crossAccountClone(false),
     m_crossAccountCloneHasBeenSet(false),
-    m_automaticRestartTimeHasBeenSet(false)
+    m_automaticRestartTimeHasBeenSet(false),
+    m_serverlessV2ScalingConfigurationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -415,6 +417,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_automaticRestartTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(automaticRestartTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_automaticRestartTimeHasBeenSet = true;
     }
+    XmlNode serverlessV2ScalingConfigurationNode = resultNode.FirstChild("ServerlessV2ScalingConfiguration");
+    if(!serverlessV2ScalingConfigurationNode.IsNull())
+    {
+      m_serverlessV2ScalingConfiguration = serverlessV2ScalingConfigurationNode;
+      m_serverlessV2ScalingConfigurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -658,6 +666,13 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+      Aws::StringStream serverlessV2ScalingConfigurationLocationAndMemberSs;
+      serverlessV2ScalingConfigurationLocationAndMemberSs << location << index << locationValue << ".ServerlessV2ScalingConfiguration";
+      m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -857,6 +872,12 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_automaticRestartTimeHasBeenSet)
   {
       oStream << location << ".AutomaticRestartTime=" << StringUtils::URLEncode(m_automaticRestartTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_serverlessV2ScalingConfigurationHasBeenSet)
+  {
+      Aws::String serverlessV2ScalingConfigurationLocationAndMember(location);
+      serverlessV2ScalingConfigurationLocationAndMember += ".ServerlessV2ScalingConfiguration";
+      m_serverlessV2ScalingConfiguration.OutputToStream(oStream, serverlessV2ScalingConfigurationLocationAndMember.c_str());
   }
 }
 

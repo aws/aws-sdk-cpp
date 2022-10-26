@@ -15,6 +15,7 @@
 #include <aws/kafka/model/OpenMonitoringInfo.h>
 #include <aws/kafka/model/LoggingInfo.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/kafka/model/StorageMode.h>
 #include <utility>
 
 namespace Aws
@@ -575,6 +576,55 @@ namespace Model
      */
     inline CreateClusterRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline const StorageMode& GetStorageMode() const{ return m_storageMode; }
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline bool StorageModeHasBeenSet() const { return m_storageModeHasBeenSet; }
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline void SetStorageMode(const StorageMode& value) { m_storageModeHasBeenSet = true; m_storageMode = value; }
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline void SetStorageMode(StorageMode&& value) { m_storageModeHasBeenSet = true; m_storageMode = std::move(value); }
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline CreateClusterRequest& WithStorageMode(const StorageMode& value) { SetStorageMode(value); return *this;}
+
+    /**
+     * 
+            <p>This controls storage mode for supported storage tiers.</p>
+    
+     *     
+     */
+    inline CreateClusterRequest& WithStorageMode(StorageMode&& value) { SetStorageMode(std::move(value)); return *this;}
+
   private:
 
     BrokerNodeGroupInfo m_brokerNodeGroupInfo;
@@ -609,6 +659,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    StorageMode m_storageMode;
+    bool m_storageModeHasBeenSet = false;
   };
 
 } // namespace Model
