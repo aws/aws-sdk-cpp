@@ -33,8 +33,9 @@ namespace Model
    * <code>ManagedRuleGroupStatement</code>. </p>  <p>This option is usually
    * set to none. It does not affect how the rules in the rule group are evaluated.
    * If you want the rules in the rule group to only count matches, do not use this
-   * and instead exclude those rules in your rule group reference statement settings.
-   * </p> <p><h3>See Also:</h3>   <a
+   * and instead use the rule action override option, with <code>Count</code> action,
+   * in your rule group reference statement settings. </p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/OverrideAction">AWS
    * API Reference</a></p>
    */
@@ -51,8 +52,9 @@ namespace Model
      * <p>Override the rule group evaluation result to count only. </p>  <p>This
      * option is usually set to none. It does not affect how the rules in the rule
      * group are evaluated. If you want the rules in the rule group to only count
-     * matches, do not use this and instead exclude those rules in your rule group
-     * reference statement settings. </p> 
+     * matches, do not use this and instead use the rule action override option, with
+     * <code>Count</code> action, in your rule group reference statement settings. </p>
+     * 
      */
     inline const CountAction& GetCount() const{ return m_count; }
 
@@ -60,8 +62,9 @@ namespace Model
      * <p>Override the rule group evaluation result to count only. </p>  <p>This
      * option is usually set to none. It does not affect how the rules in the rule
      * group are evaluated. If you want the rules in the rule group to only count
-     * matches, do not use this and instead exclude those rules in your rule group
-     * reference statement settings. </p> 
+     * matches, do not use this and instead use the rule action override option, with
+     * <code>Count</code> action, in your rule group reference statement settings. </p>
+     * 
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
@@ -69,8 +72,9 @@ namespace Model
      * <p>Override the rule group evaluation result to count only. </p>  <p>This
      * option is usually set to none. It does not affect how the rules in the rule
      * group are evaluated. If you want the rules in the rule group to only count
-     * matches, do not use this and instead exclude those rules in your rule group
-     * reference statement settings. </p> 
+     * matches, do not use this and instead use the rule action override option, with
+     * <code>Count</code> action, in your rule group reference statement settings. </p>
+     * 
      */
     inline void SetCount(const CountAction& value) { m_countHasBeenSet = true; m_count = value; }
 
@@ -78,8 +82,9 @@ namespace Model
      * <p>Override the rule group evaluation result to count only. </p>  <p>This
      * option is usually set to none. It does not affect how the rules in the rule
      * group are evaluated. If you want the rules in the rule group to only count
-     * matches, do not use this and instead exclude those rules in your rule group
-     * reference statement settings. </p> 
+     * matches, do not use this and instead use the rule action override option, with
+     * <code>Count</code> action, in your rule group reference statement settings. </p>
+     * 
      */
     inline void SetCount(CountAction&& value) { m_countHasBeenSet = true; m_count = std::move(value); }
 
@@ -87,8 +92,9 @@ namespace Model
      * <p>Override the rule group evaluation result to count only. </p>  <p>This
      * option is usually set to none. It does not affect how the rules in the rule
      * group are evaluated. If you want the rules in the rule group to only count
-     * matches, do not use this and instead exclude those rules in your rule group
-     * reference statement settings. </p> 
+     * matches, do not use this and instead use the rule action override option, with
+     * <code>Count</code> action, in your rule group reference statement settings. </p>
+     * 
      */
     inline OverrideAction& WithCount(const CountAction& value) { SetCount(value); return *this;}
 
@@ -96,8 +102,9 @@ namespace Model
      * <p>Override the rule group evaluation result to count only. </p>  <p>This
      * option is usually set to none. It does not affect how the rules in the rule
      * group are evaluated. If you want the rules in the rule group to only count
-     * matches, do not use this and instead exclude those rules in your rule group
-     * reference statement settings. </p> 
+     * matches, do not use this and instead use the rule action override option, with
+     * <code>Count</code> action, in your rule group reference statement settings. </p>
+     * 
      */
     inline OverrideAction& WithCount(CountAction&& value) { SetCount(std::move(value)); return *this;}
 

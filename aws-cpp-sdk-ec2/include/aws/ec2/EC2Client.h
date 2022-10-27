@@ -2228,9 +2228,11 @@ namespace EC2
         virtual void CreatePublicIpv4PoolAsync(const Model::CreatePublicIpv4PoolRequest& request, const CreatePublicIpv4PoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a root volume replacement task for an Amazon EC2 instance. The root
-         * volume can either be restored to its initial launch state, or it can be restored
-         * using a specific snapshot.</p> <p>For more information, see <a
+         * <p>Replaces the EBS-backed root volume for a <code>running</code> instance with
+         * a new volume that is restored to the original root volume's launch state, that
+         * is restored to a specific snapshot taken from the original root volume, or that
+         * is restored from an AMI that has the same key characteristics as that of the
+         * instance.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace
          * a root volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a

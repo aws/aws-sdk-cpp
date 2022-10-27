@@ -13,6 +13,7 @@
 #include <aws/wafv2/model/VisibilityConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/wafv2/model/CaptchaConfig.h>
+#include <aws/wafv2/model/ChallengeConfig.h>
 #include <aws/wafv2/model/Rule.h>
 #include <aws/wafv2/model/Tag.h>
 #include <aws/wafv2/model/CustomResponseBody.h>
@@ -645,6 +646,158 @@ namespace Model
      */
     inline CreateWebACLRequest& WithCaptchaConfig(CaptchaConfig&& value) { SetCaptchaConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies how WAF should handle challenge evaluations for rules that don't
+     * have their own <code>ChallengeConfig</code> settings. If you don't specify this,
+     * WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+     */
+    inline const ChallengeConfig& GetChallengeConfig() const{ return m_challengeConfig; }
+
+    /**
+     * <p>Specifies how WAF should handle challenge evaluations for rules that don't
+     * have their own <code>ChallengeConfig</code> settings. If you don't specify this,
+     * WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+     */
+    inline bool ChallengeConfigHasBeenSet() const { return m_challengeConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies how WAF should handle challenge evaluations for rules that don't
+     * have their own <code>ChallengeConfig</code> settings. If you don't specify this,
+     * WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+     */
+    inline void SetChallengeConfig(const ChallengeConfig& value) { m_challengeConfigHasBeenSet = true; m_challengeConfig = value; }
+
+    /**
+     * <p>Specifies how WAF should handle challenge evaluations for rules that don't
+     * have their own <code>ChallengeConfig</code> settings. If you don't specify this,
+     * WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+     */
+    inline void SetChallengeConfig(ChallengeConfig&& value) { m_challengeConfigHasBeenSet = true; m_challengeConfig = std::move(value); }
+
+    /**
+     * <p>Specifies how WAF should handle challenge evaluations for rules that don't
+     * have their own <code>ChallengeConfig</code> settings. If you don't specify this,
+     * WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+     */
+    inline CreateWebACLRequest& WithChallengeConfig(const ChallengeConfig& value) { SetChallengeConfig(value); return *this;}
+
+    /**
+     * <p>Specifies how WAF should handle challenge evaluations for rules that don't
+     * have their own <code>ChallengeConfig</code> settings. If you don't specify this,
+     * WAF uses its default settings for <code>ChallengeConfig</code>. </p>
+     */
+    inline CreateWebACLRequest& WithChallengeConfig(ChallengeConfig&& value) { SetChallengeConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTokenDomains() const{ return m_tokenDomains; }
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+     */
+    inline bool TokenDomainsHasBeenSet() const { return m_tokenDomainsHasBeenSet; }
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+     */
+    inline void SetTokenDomains(const Aws::Vector<Aws::String>& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = value; }
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+     */
+    inline void SetTokenDomains(Aws::Vector<Aws::String>&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = std::move(value); }
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+     */
+    inline CreateWebACLRequest& WithTokenDomains(const Aws::Vector<Aws::String>& value) { SetTokenDomains(value); return *this;}
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+     */
+    inline CreateWebACLRequest& WithTokenDomains(Aws::Vector<Aws::String>&& value) { SetTokenDomains(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+     */
+    inline CreateWebACLRequest& AddTokenDomains(const Aws::String& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+     */
+    inline CreateWebACLRequest& AddTokenDomains(Aws::String&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies the domains that WAF should accept in a web request token. This
+     * enables the use of tokens across multiple protected websites. When WAF provides
+     * a token, it uses the domain of the Amazon Web Services resource that the web ACL
+     * is protecting. If you don't specify a list of token domains, WAF accepts tokens
+     * only for the domain of the protected resource. With a token domain list, WAF
+     * accepts the resource's host domain plus all domains in the token domain list,
+     * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
+     * { "mywebsite.com", "myotherwebsite.com" }</code> </p>
+     */
+    inline CreateWebACLRequest& AddTokenDomains(const char* value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -673,6 +826,12 @@ namespace Model
 
     CaptchaConfig m_captchaConfig;
     bool m_captchaConfigHasBeenSet = false;
+
+    ChallengeConfig m_challengeConfig;
+    bool m_challengeConfigHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_tokenDomains;
+    bool m_tokenDomainsHasBeenSet = false;
   };
 
 } // namespace Model

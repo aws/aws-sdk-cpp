@@ -17,7 +17,10 @@ CreateReplaceRootVolumeTaskRequest::CreateReplaceRootVolumeTaskRequest() :
     m_clientTokenHasBeenSet(true),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
+    m_deleteReplacedRootVolume(false),
+    m_deleteReplacedRootVolumeHasBeenSet(false)
 {
 }
 
@@ -53,6 +56,16 @@ Aws::String CreateReplaceRootVolumeTaskRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_imageIdHasBeenSet)
+  {
+    ss << "ImageId=" << StringUtils::URLEncode(m_imageId.c_str()) << "&";
+  }
+
+  if(m_deleteReplacedRootVolumeHasBeenSet)
+  {
+    ss << "DeleteReplacedRootVolume=" << std::boolalpha << m_deleteReplacedRootVolume << "&";
   }
 
   ss << "Version=2016-11-15";
