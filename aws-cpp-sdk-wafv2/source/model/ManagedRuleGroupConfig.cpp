@@ -23,7 +23,8 @@ ManagedRuleGroupConfig::ManagedRuleGroupConfig() :
     m_payloadType(PayloadType::NOT_SET),
     m_payloadTypeHasBeenSet(false),
     m_usernameFieldHasBeenSet(false),
-    m_passwordFieldHasBeenSet(false)
+    m_passwordFieldHasBeenSet(false),
+    m_aWSManagedRulesBotControlRuleSetHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ ManagedRuleGroupConfig::ManagedRuleGroupConfig(JsonView jsonValue) :
     m_payloadType(PayloadType::NOT_SET),
     m_payloadTypeHasBeenSet(false),
     m_usernameFieldHasBeenSet(false),
-    m_passwordFieldHasBeenSet(false)
+    m_passwordFieldHasBeenSet(false),
+    m_aWSManagedRulesBotControlRuleSetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ ManagedRuleGroupConfig& ManagedRuleGroupConfig::operator =(JsonView jsonValue)
     m_passwordFieldHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AWSManagedRulesBotControlRuleSet"))
+  {
+    m_aWSManagedRulesBotControlRuleSet = jsonValue.GetObject("AWSManagedRulesBotControlRuleSet");
+
+    m_aWSManagedRulesBotControlRuleSetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +103,12 @@ JsonValue ManagedRuleGroupConfig::Jsonize() const
   if(m_passwordFieldHasBeenSet)
   {
    payload.WithObject("PasswordField", m_passwordField.Jsonize());
+
+  }
+
+  if(m_aWSManagedRulesBotControlRuleSetHasBeenSet)
+  {
+   payload.WithObject("AWSManagedRulesBotControlRuleSet", m_aWSManagedRulesBotControlRuleSet.Jsonize());
 
   }
 

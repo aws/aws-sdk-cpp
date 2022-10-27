@@ -13,21 +13,19 @@ namespace WAFV2
 {
 namespace Model
 {
-  enum class FailureReason
+  enum class InspectionLevel
   {
     NOT_SET,
-    TOKEN_MISSING,
-    TOKEN_EXPIRED,
-    TOKEN_INVALID,
-    TOKEN_DOMAIN_MISMATCH
+    COMMON,
+    TARGETED
   };
 
-namespace FailureReasonMapper
+namespace InspectionLevelMapper
 {
-AWS_WAFV2_API FailureReason GetFailureReasonForName(const Aws::String& name);
+AWS_WAFV2_API InspectionLevel GetInspectionLevelForName(const Aws::String& name);
 
-AWS_WAFV2_API Aws::String GetNameForFailureReason(FailureReason value);
-} // namespace FailureReasonMapper
+AWS_WAFV2_API Aws::String GetNameForInspectionLevel(InspectionLevel value);
+} // namespace InspectionLevelMapper
 } // namespace Model
 } // namespace WAFV2
 } // namespace Aws

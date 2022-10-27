@@ -1528,7 +1528,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1538,7 +1540,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1548,7 +1552,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1558,7 +1564,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1568,7 +1576,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1578,7 +1588,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1588,7 +1600,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>
@@ -1598,7 +1612,9 @@ namespace Model
     /**
      * <p>The Elastic IP (EIP) address for the cluster.</p> <p>Constraints: The cluster
      * must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     * gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     * gateway. Don't specify the Elastic IP address for a publicly accessible cluster
+     * with availability zone relocation turned on. For more information about
+     * provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management
      * Guide.</p>

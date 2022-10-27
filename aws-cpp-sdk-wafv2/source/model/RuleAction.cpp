@@ -22,7 +22,8 @@ RuleAction::RuleAction() :
     m_blockHasBeenSet(false),
     m_allowHasBeenSet(false),
     m_countHasBeenSet(false),
-    m_captchaHasBeenSet(false)
+    m_captchaHasBeenSet(false),
+    m_challengeHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ RuleAction::RuleAction(JsonView jsonValue) :
     m_blockHasBeenSet(false),
     m_allowHasBeenSet(false),
     m_countHasBeenSet(false),
-    m_captchaHasBeenSet(false)
+    m_captchaHasBeenSet(false),
+    m_challengeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +67,13 @@ RuleAction& RuleAction::operator =(JsonView jsonValue)
     m_captchaHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Challenge"))
+  {
+    m_challenge = jsonValue.GetObject("Challenge");
+
+    m_challengeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue RuleAction::Jsonize() const
   if(m_captchaHasBeenSet)
   {
    payload.WithObject("Captcha", m_captcha.Jsonize());
+
+  }
+
+  if(m_challengeHasBeenSet)
+  {
+   payload.WithObject("Challenge", m_challenge.Jsonize());
 
   }
 

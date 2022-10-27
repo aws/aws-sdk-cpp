@@ -9,6 +9,7 @@
 #include <aws/wafv2/model/PayloadType.h>
 #include <aws/wafv2/model/UsernameField.h>
 #include <aws/wafv2/model/PasswordField.h>
+#include <aws/wafv2/model/AWSManagedRulesBotControlRuleSet.h>
 #include <utility>
 
 namespace Aws
@@ -27,18 +28,12 @@ namespace Model
 {
 
   /**
-   * <p>Additional information that's used by a managed rule group. Most managed rule
-   * groups don't require this.</p> <p>Use this for the account takeover prevention
-   * managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
-   * information about the sign-in page of your application. </p> <p>You can provide
-   * multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule
-   * group configuration, for example <code>UsernameField</code> and
-   * <code>PasswordField</code>. The configuration that you provide depends on the
-   * needs of the managed rule group. For the ATP managed rule group, you provide the
-   * following individual configuration objects: <code>LoginPath</code>,
-   * <code>PasswordField</code>, <code>PayloadType</code> and
-   * <code>UsernameField</code>.</p> <p>For example specifications, see the examples
-   * section of <a>CreateWebACL</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Additional information that's used by a managed rule group. Many managed rule
+   * groups don't require this.</p> <p>Use the
+   * <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
+   * the protection level that you want the Bot Control rule group to use. </p>
+   * <p>For example specifications, see the examples section of
+   * <a>CreateWebACL</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ManagedRuleGroupConfig">AWS
    * API Reference</a></p>
    */
@@ -200,6 +195,73 @@ namespace Model
      */
     inline ManagedRuleGroupConfig& WithPasswordField(PasswordField&& value) { SetPasswordField(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Additional configuration for using the Bot Control managed rule group. Use
+     * this to specify the inspection level that you want to use. For information about
+     * using the Bot Control managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
+     * Bot Control rule group</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF
+     * Bot Control</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline const AWSManagedRulesBotControlRuleSet& GetAWSManagedRulesBotControlRuleSet() const{ return m_aWSManagedRulesBotControlRuleSet; }
+
+    /**
+     * <p>Additional configuration for using the Bot Control managed rule group. Use
+     * this to specify the inspection level that you want to use. For information about
+     * using the Bot Control managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
+     * Bot Control rule group</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF
+     * Bot Control</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline bool AWSManagedRulesBotControlRuleSetHasBeenSet() const { return m_aWSManagedRulesBotControlRuleSetHasBeenSet; }
+
+    /**
+     * <p>Additional configuration for using the Bot Control managed rule group. Use
+     * this to specify the inspection level that you want to use. For information about
+     * using the Bot Control managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
+     * Bot Control rule group</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF
+     * Bot Control</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline void SetAWSManagedRulesBotControlRuleSet(const AWSManagedRulesBotControlRuleSet& value) { m_aWSManagedRulesBotControlRuleSetHasBeenSet = true; m_aWSManagedRulesBotControlRuleSet = value; }
+
+    /**
+     * <p>Additional configuration for using the Bot Control managed rule group. Use
+     * this to specify the inspection level that you want to use. For information about
+     * using the Bot Control managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
+     * Bot Control rule group</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF
+     * Bot Control</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline void SetAWSManagedRulesBotControlRuleSet(AWSManagedRulesBotControlRuleSet&& value) { m_aWSManagedRulesBotControlRuleSetHasBeenSet = true; m_aWSManagedRulesBotControlRuleSet = std::move(value); }
+
+    /**
+     * <p>Additional configuration for using the Bot Control managed rule group. Use
+     * this to specify the inspection level that you want to use. For information about
+     * using the Bot Control managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
+     * Bot Control rule group</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF
+     * Bot Control</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline ManagedRuleGroupConfig& WithAWSManagedRulesBotControlRuleSet(const AWSManagedRulesBotControlRuleSet& value) { SetAWSManagedRulesBotControlRuleSet(value); return *this;}
+
+    /**
+     * <p>Additional configuration for using the Bot Control managed rule group. Use
+     * this to specify the inspection level that you want to use. For information about
+     * using the Bot Control managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
+     * Bot Control rule group</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF
+     * Bot Control</a> in the <i>WAF Developer Guide</i>.</p>
+     */
+    inline ManagedRuleGroupConfig& WithAWSManagedRulesBotControlRuleSet(AWSManagedRulesBotControlRuleSet&& value) { SetAWSManagedRulesBotControlRuleSet(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_loginPath;
@@ -213,6 +275,9 @@ namespace Model
 
     PasswordField m_passwordField;
     bool m_passwordFieldHasBeenSet = false;
+
+    AWSManagedRulesBotControlRuleSet m_aWSManagedRulesBotControlRuleSet;
+    bool m_aWSManagedRulesBotControlRuleSetHasBeenSet = false;
   };
 
 } // namespace Model

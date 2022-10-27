@@ -1247,8 +1247,8 @@ namespace SageMaker
          * account access IDs, secrets or tokens in any hyperparameter field. If the use of
          * security-sensitive credentials are detected, SageMaker will reject your training
          * job request and return an exception error.</p>  </li> <li> <p>
-         * <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3,
-         * EFS, or FSx location where it is stored.</p> </li> <li> <p>
+         * <code>InputDataConfig</code> - Describes the input required by the training job
+         * and the Amazon S3, EFS, or FSx location where it is stored.</p> </li> <li> <p>
          * <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want
          * SageMaker to save the results of model training. </p> </li> <li> <p>
          * <code>ResourceConfig</code> - Identifies the resources, ML compute instances,

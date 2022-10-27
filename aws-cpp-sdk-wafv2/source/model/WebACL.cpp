@@ -34,7 +34,9 @@ WebACL::WebACL() :
     m_managedByFirewallManagerHasBeenSet(false),
     m_labelNamespaceHasBeenSet(false),
     m_customResponseBodiesHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false)
+    m_captchaConfigHasBeenSet(false),
+    m_challengeConfigHasBeenSet(false),
+    m_tokenDomainsHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ WebACL::WebACL(JsonView jsonValue) :
     m_managedByFirewallManagerHasBeenSet(false),
     m_labelNamespaceHasBeenSet(false),
     m_customResponseBodiesHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false)
+    m_captchaConfigHasBeenSet(false),
+    m_challengeConfigHasBeenSet(false),
+    m_tokenDomainsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -171,6 +175,23 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     m_captchaConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChallengeConfig"))
+  {
+    m_challengeConfig = jsonValue.GetObject("ChallengeConfig");
+
+    m_challengeConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TokenDomains"))
+  {
+    Array<JsonView> tokenDomainsJsonList = jsonValue.GetArray("TokenDomains");
+    for(unsigned tokenDomainsIndex = 0; tokenDomainsIndex < tokenDomainsJsonList.GetLength(); ++tokenDomainsIndex)
+    {
+      m_tokenDomains.push_back(tokenDomainsJsonList[tokenDomainsIndex].AsString());
+    }
+    m_tokenDomainsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -279,6 +300,23 @@ JsonValue WebACL::Jsonize() const
   if(m_captchaConfigHasBeenSet)
   {
    payload.WithObject("CaptchaConfig", m_captchaConfig.Jsonize());
+
+  }
+
+  if(m_challengeConfigHasBeenSet)
+  {
+   payload.WithObject("ChallengeConfig", m_challengeConfig.Jsonize());
+
+  }
+
+  if(m_tokenDomainsHasBeenSet)
+  {
+   Array<JsonValue> tokenDomainsJsonList(m_tokenDomains.size());
+   for(unsigned tokenDomainsIndex = 0; tokenDomainsIndex < tokenDomainsJsonList.GetLength(); ++tokenDomainsIndex)
+   {
+     tokenDomainsJsonList[tokenDomainsIndex].AsString(m_tokenDomains[tokenDomainsIndex]);
+   }
+   payload.WithArray("TokenDomains", std::move(tokenDomainsJsonList));
 
   }
 

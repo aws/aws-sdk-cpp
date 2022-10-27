@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fms/model/NetworkFirewallStatefulRuleGroupOverride.h>
 #include <utility>
 
 namespace Aws
@@ -176,6 +177,43 @@ namespace Model
      */
     inline StatefulRuleGroup& WithPriority(int value) { SetPriority(value); return *this;}
 
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline const NetworkFirewallStatefulRuleGroupOverride& GetOverride() const{ return m_override; }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline void SetOverride(const NetworkFirewallStatefulRuleGroupOverride& value) { m_overrideHasBeenSet = true; m_override = value; }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline void SetOverride(NetworkFirewallStatefulRuleGroupOverride&& value) { m_overrideHasBeenSet = true; m_override = std::move(value); }
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline StatefulRuleGroup& WithOverride(const NetworkFirewallStatefulRuleGroupOverride& value) { SetOverride(value); return *this;}
+
+    /**
+     * <p>The action that allows the policy owner to override the behavior of the rule
+     * group within a policy.</p>
+     */
+    inline StatefulRuleGroup& WithOverride(NetworkFirewallStatefulRuleGroupOverride&& value) { SetOverride(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ruleGroupName;
@@ -186,6 +224,9 @@ namespace Model
 
     int m_priority;
     bool m_priorityHasBeenSet = false;
+
+    NetworkFirewallStatefulRuleGroupOverride m_override;
+    bool m_overrideHasBeenSet = false;
   };
 
 } // namespace Model

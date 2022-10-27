@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/CaptchaResponse.h>
+#include <aws/wafv2/model/ChallengeResponse.h>
 #include <aws/wafv2/model/HTTPHeader.h>
 #include <aws/wafv2/model/Label.h>
 #include <utility>
@@ -149,50 +150,42 @@ namespace Model
 
 
     /**
-     * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
+     * <p>The action that WAF applied to the request.</p>
      */
     inline const Aws::String& GetAction() const{ return m_action; }
 
     /**
-     * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
+     * <p>The action that WAF applied to the request.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
+     * <p>The action that WAF applied to the request.</p>
      */
     inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
+     * <p>The action that WAF applied to the request.</p>
      */
     inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
+     * <p>The action that WAF applied to the request.</p>
      */
     inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
 
     /**
-     * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
+     * <p>The action that WAF applied to the request.</p>
      */
     inline SampledHTTPRequest& WithAction(const Aws::String& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
+     * <p>The action that WAF applied to the request.</p>
      */
     inline SampledHTTPRequest& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
 
     /**
-     * <p>The action for the <code>Rule</code> that the request matched:
-     * <code>Allow</code>, <code>Block</code>, or <code>Count</code>.</p>
+     * <p>The action that WAF applied to the request.</p>
      */
     inline SampledHTTPRequest& WithAction(const char* value) { SetAction(value); return *this;}
 
@@ -451,6 +444,102 @@ namespace Model
      */
     inline SampledHTTPRequest& WithCaptchaResponse(CaptchaResponse&& value) { SetCaptchaResponse(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The <code>Challenge</code> response for the request.</p>
+     */
+    inline const ChallengeResponse& GetChallengeResponse() const{ return m_challengeResponse; }
+
+    /**
+     * <p>The <code>Challenge</code> response for the request.</p>
+     */
+    inline bool ChallengeResponseHasBeenSet() const { return m_challengeResponseHasBeenSet; }
+
+    /**
+     * <p>The <code>Challenge</code> response for the request.</p>
+     */
+    inline void SetChallengeResponse(const ChallengeResponse& value) { m_challengeResponseHasBeenSet = true; m_challengeResponse = value; }
+
+    /**
+     * <p>The <code>Challenge</code> response for the request.</p>
+     */
+    inline void SetChallengeResponse(ChallengeResponse&& value) { m_challengeResponseHasBeenSet = true; m_challengeResponse = std::move(value); }
+
+    /**
+     * <p>The <code>Challenge</code> response for the request.</p>
+     */
+    inline SampledHTTPRequest& WithChallengeResponse(const ChallengeResponse& value) { SetChallengeResponse(value); return *this;}
+
+    /**
+     * <p>The <code>Challenge</code> response for the request.</p>
+     */
+    inline SampledHTTPRequest& WithChallengeResponse(ChallengeResponse&& value) { SetChallengeResponse(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Used only for rule group rules that have a rule action override in place in
+     * the web ACL. This is the action that the rule group rule is configured for, and
+     * not the action that was applied to the request. The action that WAF applied is
+     * the <code>Action</code> value. </p>
+     */
+    inline const Aws::String& GetOverriddenAction() const{ return m_overriddenAction; }
+
+    /**
+     * <p>Used only for rule group rules that have a rule action override in place in
+     * the web ACL. This is the action that the rule group rule is configured for, and
+     * not the action that was applied to the request. The action that WAF applied is
+     * the <code>Action</code> value. </p>
+     */
+    inline bool OverriddenActionHasBeenSet() const { return m_overriddenActionHasBeenSet; }
+
+    /**
+     * <p>Used only for rule group rules that have a rule action override in place in
+     * the web ACL. This is the action that the rule group rule is configured for, and
+     * not the action that was applied to the request. The action that WAF applied is
+     * the <code>Action</code> value. </p>
+     */
+    inline void SetOverriddenAction(const Aws::String& value) { m_overriddenActionHasBeenSet = true; m_overriddenAction = value; }
+
+    /**
+     * <p>Used only for rule group rules that have a rule action override in place in
+     * the web ACL. This is the action that the rule group rule is configured for, and
+     * not the action that was applied to the request. The action that WAF applied is
+     * the <code>Action</code> value. </p>
+     */
+    inline void SetOverriddenAction(Aws::String&& value) { m_overriddenActionHasBeenSet = true; m_overriddenAction = std::move(value); }
+
+    /**
+     * <p>Used only for rule group rules that have a rule action override in place in
+     * the web ACL. This is the action that the rule group rule is configured for, and
+     * not the action that was applied to the request. The action that WAF applied is
+     * the <code>Action</code> value. </p>
+     */
+    inline void SetOverriddenAction(const char* value) { m_overriddenActionHasBeenSet = true; m_overriddenAction.assign(value); }
+
+    /**
+     * <p>Used only for rule group rules that have a rule action override in place in
+     * the web ACL. This is the action that the rule group rule is configured for, and
+     * not the action that was applied to the request. The action that WAF applied is
+     * the <code>Action</code> value. </p>
+     */
+    inline SampledHTTPRequest& WithOverriddenAction(const Aws::String& value) { SetOverriddenAction(value); return *this;}
+
+    /**
+     * <p>Used only for rule group rules that have a rule action override in place in
+     * the web ACL. This is the action that the rule group rule is configured for, and
+     * not the action that was applied to the request. The action that WAF applied is
+     * the <code>Action</code> value. </p>
+     */
+    inline SampledHTTPRequest& WithOverriddenAction(Aws::String&& value) { SetOverriddenAction(std::move(value)); return *this;}
+
+    /**
+     * <p>Used only for rule group rules that have a rule action override in place in
+     * the web ACL. This is the action that the rule group rule is configured for, and
+     * not the action that was applied to the request. The action that WAF applied is
+     * the <code>Action</code> value. </p>
+     */
+    inline SampledHTTPRequest& WithOverriddenAction(const char* value) { SetOverriddenAction(value); return *this;}
+
   private:
 
     HTTPRequest m_request;
@@ -479,6 +568,12 @@ namespace Model
 
     CaptchaResponse m_captchaResponse;
     bool m_captchaResponseHasBeenSet = false;
+
+    ChallengeResponse m_challengeResponse;
+    bool m_challengeResponseHasBeenSet = false;
+
+    Aws::String m_overriddenAction;
+    bool m_overriddenActionHasBeenSet = false;
   };
 
 } // namespace Model

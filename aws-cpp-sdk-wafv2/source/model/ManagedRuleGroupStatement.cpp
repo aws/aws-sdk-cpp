@@ -25,7 +25,8 @@ ManagedRuleGroupStatement::ManagedRuleGroupStatement() :
     m_versionHasBeenSet(false),
     m_excludedRulesHasBeenSet(false),
     m_scopeDownStatementHasBeenSet(false),
-    m_managedRuleGroupConfigsHasBeenSet(false)
+    m_managedRuleGroupConfigsHasBeenSet(false),
+    m_ruleActionOverridesHasBeenSet(false)
 {
 }
 
@@ -35,7 +36,8 @@ ManagedRuleGroupStatement::ManagedRuleGroupStatement(JsonView jsonValue) :
     m_versionHasBeenSet(false),
     m_excludedRulesHasBeenSet(false),
     m_scopeDownStatementHasBeenSet(false),
-    m_managedRuleGroupConfigsHasBeenSet(false)
+    m_managedRuleGroupConfigsHasBeenSet(false),
+    m_ruleActionOverridesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +99,16 @@ ManagedRuleGroupStatement& ManagedRuleGroupStatement::operator =(JsonView jsonVa
     m_managedRuleGroupConfigsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RuleActionOverrides"))
+  {
+    Array<JsonView> ruleActionOverridesJsonList = jsonValue.GetArray("RuleActionOverrides");
+    for(unsigned ruleActionOverridesIndex = 0; ruleActionOverridesIndex < ruleActionOverridesJsonList.GetLength(); ++ruleActionOverridesIndex)
+    {
+      m_ruleActionOverrides.push_back(ruleActionOverridesJsonList[ruleActionOverridesIndex].AsObject());
+    }
+    m_ruleActionOverridesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -147,6 +159,17 @@ JsonValue ManagedRuleGroupStatement::Jsonize() const
      managedRuleGroupConfigsJsonList[managedRuleGroupConfigsIndex].AsObject(m_managedRuleGroupConfigs[managedRuleGroupConfigsIndex].Jsonize());
    }
    payload.WithArray("ManagedRuleGroupConfigs", std::move(managedRuleGroupConfigsJsonList));
+
+  }
+
+  if(m_ruleActionOverridesHasBeenSet)
+  {
+   Array<JsonValue> ruleActionOverridesJsonList(m_ruleActionOverrides.size());
+   for(unsigned ruleActionOverridesIndex = 0; ruleActionOverridesIndex < ruleActionOverridesJsonList.GetLength(); ++ruleActionOverridesIndex)
+   {
+     ruleActionOverridesJsonList[ruleActionOverridesIndex].AsObject(m_ruleActionOverrides[ruleActionOverridesIndex].Jsonize());
+   }
+   payload.WithArray("RuleActionOverrides", std::move(ruleActionOverridesJsonList));
 
   }
 

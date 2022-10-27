@@ -78,7 +78,9 @@ namespace Model
     HEADER_MATCH_PATTERN,
     COOKIE_MATCH_PATTERN,
     MAP_MATCH_SCOPE,
-    OVERSIZE_HANDLING
+    OVERSIZE_HANDLING,
+    CHALLENGE_CONFIG,
+    TOKEN_DOMAIN
   };
 
 namespace ParameterExceptionFieldMapper

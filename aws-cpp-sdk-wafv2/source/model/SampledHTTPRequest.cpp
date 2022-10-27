@@ -29,7 +29,9 @@ SampledHTTPRequest::SampledHTTPRequest() :
     m_responseCodeSent(0),
     m_responseCodeSentHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_captchaResponseHasBeenSet(false)
+    m_captchaResponseHasBeenSet(false),
+    m_challengeResponseHasBeenSet(false),
+    m_overriddenActionHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ SampledHTTPRequest::SampledHTTPRequest(JsonView jsonValue) :
     m_responseCodeSent(0),
     m_responseCodeSentHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_captchaResponseHasBeenSet(false)
+    m_captchaResponseHasBeenSet(false),
+    m_challengeResponseHasBeenSet(false),
+    m_overriddenActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -120,6 +124,20 @@ SampledHTTPRequest& SampledHTTPRequest::operator =(JsonView jsonValue)
     m_captchaResponseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChallengeResponse"))
+  {
+    m_challengeResponse = jsonValue.GetObject("ChallengeResponse");
+
+    m_challengeResponseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OverriddenAction"))
+  {
+    m_overriddenAction = jsonValue.GetString("OverriddenAction");
+
+    m_overriddenActionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -187,6 +205,18 @@ JsonValue SampledHTTPRequest::Jsonize() const
   if(m_captchaResponseHasBeenSet)
   {
    payload.WithObject("CaptchaResponse", m_captchaResponse.Jsonize());
+
+  }
+
+  if(m_challengeResponseHasBeenSet)
+  {
+   payload.WithObject("ChallengeResponse", m_challengeResponse.Jsonize());
+
+  }
+
+  if(m_overriddenActionHasBeenSet)
+  {
+   payload.WithString("OverriddenAction", m_overriddenAction);
 
   }
 

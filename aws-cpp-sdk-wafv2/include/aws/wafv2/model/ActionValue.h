@@ -20,6 +20,7 @@ namespace Model
     BLOCK,
     COUNT,
     CAPTCHA,
+    CHALLENGE,
     EXCLUDED_AS_COUNT
   };
 

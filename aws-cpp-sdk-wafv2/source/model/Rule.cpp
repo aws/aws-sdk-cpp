@@ -27,7 +27,8 @@ Rule::Rule() :
     m_overrideActionHasBeenSet(false),
     m_ruleLabelsHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false)
+    m_captchaConfigHasBeenSet(false),
+    m_challengeConfigHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Rule::Rule(JsonView jsonValue) :
     m_overrideActionHasBeenSet(false),
     m_ruleLabelsHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false),
-    m_captchaConfigHasBeenSet(false)
+    m_captchaConfigHasBeenSet(false),
+    m_challengeConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +108,13 @@ Rule& Rule::operator =(JsonView jsonValue)
     m_captchaConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChallengeConfig"))
+  {
+    m_challengeConfig = jsonValue.GetObject("ChallengeConfig");
+
+    m_challengeConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +172,12 @@ JsonValue Rule::Jsonize() const
   if(m_captchaConfigHasBeenSet)
   {
    payload.WithObject("CaptchaConfig", m_captchaConfig.Jsonize());
+
+  }
+
+  if(m_challengeConfigHasBeenSet)
+  {
+   payload.WithObject("ChallengeConfig", m_challengeConfig.Jsonize());
 
   }
 

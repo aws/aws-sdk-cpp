@@ -26,9 +26,10 @@ namespace Model
 
   /**
    * <p>Custom request handling behavior that inserts custom headers into a web
-   * request. You can add custom request handling for the rule actions allow and
-   * count. </p> <p>For information about customizing web requests and responses, see
-   * <a
+   * request. You can add custom request handling for WAF to use when the rule action
+   * doesn't block the request. For example, <code>CaptchaAction</code> for requests
+   * with valid t okens, and <code>AllowAction</code>. </p> <p>For information about
+   * customizing web requests and responses, see <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
    * web requests and responses in WAF</a> in the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
