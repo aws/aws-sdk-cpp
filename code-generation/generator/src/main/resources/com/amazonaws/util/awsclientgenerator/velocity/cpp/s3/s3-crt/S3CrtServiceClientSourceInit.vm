@@ -189,7 +189,7 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
 
   aws_s3_tcp_keep_alive_options tcp_keep_alive_options;
   if (config.enableTcpKeepAlive) {
-    const int keep_intvl = std::max<int>(15, config.tcpKeepAliveIntervalMs/1000);
+    const uint16_t keep_intvl = std::max<uint16_t>(15, static_cast<uint16_t>(config.tcpKeepAliveIntervalMs)/1000);
 
     AWS_ZERO_STRUCT(tcp_keep_alive_options);
     tcp_keep_alive_options.keep_alive_interval_sec = keep_intvl;
@@ -201,7 +201,7 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   aws_http_connection_monitoring_options tcp_monitoring_options;
   if (config.lowSpeedLimit) {
     // Use the same monitor interval default as used by the curl client, but allow override via requestTimeoutMs:
-    const int monitor_intvl = std::max<int>(3, config.requestTimeoutMs/1000);
+    const uint32_t monitor_intvl = std::max<uint32_t>(3, static_cast<uint32_t>(config.requestTimeoutMs)/1000);
 
     AWS_ZERO_STRUCT(tcp_monitoring_options);
     tcp_monitoring_options.minimum_throughput_bytes_per_second = config.lowSpeedLimit;
