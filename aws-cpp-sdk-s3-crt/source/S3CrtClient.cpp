@@ -205,7 +205,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const std::shar
 
   aws_s3_tcp_keep_alive_options tcp_keep_alive_options;
   if (config.enableTcpKeepAlive) {
-    uint16_t configKeepAliveS = static_cast<uint16_t>(std::min(static_cast<long>(std::numeric_limits<uint16_t>::max()), static_cast<long>(config.tcpKeepAliveIntervalMs / 1000)));
+    uint16_t configKeepAliveS = static_cast<uint16_t>(std::min(static_cast<unsigned long>(std::numeric_limits<uint16_t>::max()), config.tcpKeepAliveIntervalMs / 1000ul));
     static const uint16_t MAX_CRT_KEEP_ALIVE = 15; // seconds
     const uint16_t keep_intvl = std::max(MAX_CRT_KEEP_ALIVE, configKeepAliveS);
 
@@ -219,7 +219,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const std::shar
   aws_http_connection_monitoring_options tcp_monitoring_options;
   if (config.lowSpeedLimit) {
     // Use the same monitor interval default as used by the curl client, but allow override via requestTimeoutMs:
-    uint32_t configMonitoringS = static_cast<uint32_t>(std::min(static_cast<long>(std::numeric_limits<uint32_t>::max()), static_cast<long>(config.requestTimeoutMs / 1000)));
+    uint32_t configMonitoringS = static_cast<uint32_t>(std::min(static_cast<unsigned long>(std::numeric_limits<uint32_t>::max()), config.requestTimeoutMs / 1000ul));
     static const uint32_t MAX_CRT_MONITORING = 3; // seconds
     const uint32_t monitor_intvl = std::max(MAX_CRT_MONITORING, configMonitoringS);
 
