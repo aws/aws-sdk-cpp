@@ -16,7 +16,8 @@ namespace Model
   enum class MessageType
   {
     NOT_SET,
-    SPLICE_INSERT
+    SPLICE_INSERT,
+    TIME_SIGNAL
   };
 
 namespace MessageTypeMapper

@@ -261,8 +261,8 @@ namespace AppStream
         virtual void CreateEntitlementAsync(const Model::CreateEntitlementRequest& request, const CreateEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a fleet. A fleet consists of streaming instances that run a specified
-         * image when using Always-On or On-Demand.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a fleet. A fleet consists of streaming instances that your users
+         * access for their applications and desktops.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateFleet">AWS
          * API Reference</a></p>
          */

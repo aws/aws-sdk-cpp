@@ -617,6 +617,47 @@ namespace Model
      */
     inline StackInstanceSummary& WithLastDriftCheckTimestamp(Aws::Utils::DateTime&& value) { SetLastDriftCheckTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline const Aws::String& GetLastOperationId() const{ return m_lastOperationId; }
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline bool LastOperationIdHasBeenSet() const { return m_lastOperationIdHasBeenSet; }
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline void SetLastOperationId(const Aws::String& value) { m_lastOperationIdHasBeenSet = true; m_lastOperationId = value; }
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline void SetLastOperationId(Aws::String&& value) { m_lastOperationIdHasBeenSet = true; m_lastOperationId = std::move(value); }
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline void SetLastOperationId(const char* value) { m_lastOperationIdHasBeenSet = true; m_lastOperationId.assign(value); }
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline StackInstanceSummary& WithLastOperationId(const Aws::String& value) { SetLastOperationId(value); return *this;}
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline StackInstanceSummary& WithLastOperationId(Aws::String&& value) { SetLastOperationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The last unique ID of a StackSet operation performed on a stack instance.</p>
+     */
+    inline StackInstanceSummary& WithLastOperationId(const char* value) { SetLastOperationId(value); return *this;}
+
   private:
 
     Aws::String m_stackSetId;
@@ -648,6 +689,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastDriftCheckTimestamp;
     bool m_lastDriftCheckTimestampHasBeenSet = false;
+
+    Aws::String m_lastOperationId;
+    bool m_lastOperationIdHasBeenSet = false;
   };
 
 } // namespace Model

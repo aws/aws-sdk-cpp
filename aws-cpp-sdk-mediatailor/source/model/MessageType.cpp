@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int SPLICE_INSERT_HASH = HashingUtils::HashString("SPLICE_INSERT");
+        static const int TIME_SIGNAL_HASH = HashingUtils::HashString("TIME_SIGNAL");
 
 
         MessageType GetMessageTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == SPLICE_INSERT_HASH)
           {
             return MessageType::SPLICE_INSERT;
+          }
+          else if (hashCode == TIME_SIGNAL_HASH)
+          {
+            return MessageType::TIME_SIGNAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case MessageType::SPLICE_INSERT:
             return "SPLICE_INSERT";
+          case MessageType::TIME_SIGNAL:
+            return "TIME_SIGNAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

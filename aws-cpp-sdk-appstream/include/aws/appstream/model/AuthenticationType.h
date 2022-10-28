@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     API,
     SAML,
-    USERPOOL
+    USERPOOL,
+    AWS_AD
   };
 
 namespace AuthenticationTypeMapper

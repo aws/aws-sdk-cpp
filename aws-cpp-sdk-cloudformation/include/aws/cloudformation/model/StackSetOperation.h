@@ -13,6 +13,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/DeploymentTargets.h>
 #include <aws/cloudformation/model/StackSetDriftDetectionDetails.h>
+#include <aws/cloudformation/model/StackSetOperationStatusDetails.h>
 #include <utility>
 
 namespace Aws
@@ -768,6 +769,37 @@ namespace Model
      */
     inline StackSetOperation& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
+
+    /**
+     * <p>Detailed information about the StackSet operation.</p>
+     */
+    inline const StackSetOperationStatusDetails& GetStatusDetails() const{ return m_statusDetails; }
+
+    /**
+     * <p>Detailed information about the StackSet operation.</p>
+     */
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
+
+    /**
+     * <p>Detailed information about the StackSet operation.</p>
+     */
+    inline void SetStatusDetails(const StackSetOperationStatusDetails& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
+
+    /**
+     * <p>Detailed information about the StackSet operation.</p>
+     */
+    inline void SetStatusDetails(StackSetOperationStatusDetails&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
+
+    /**
+     * <p>Detailed information about the StackSet operation.</p>
+     */
+    inline StackSetOperation& WithStatusDetails(const StackSetOperationStatusDetails& value) { SetStatusDetails(value); return *this;}
+
+    /**
+     * <p>Detailed information about the StackSet operation.</p>
+     */
+    inline StackSetOperation& WithStatusDetails(StackSetOperationStatusDetails&& value) { SetStatusDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_operationId;
@@ -808,6 +840,9 @@ namespace Model
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
+
+    StackSetOperationStatusDetails m_statusDetails;
+    bool m_statusDetailsHasBeenSet = false;
   };
 
 } // namespace Model

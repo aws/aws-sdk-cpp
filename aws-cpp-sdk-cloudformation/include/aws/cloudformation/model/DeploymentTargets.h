@@ -206,13 +206,12 @@ namespace Model
      * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
      * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
      * This enables user to avoid certain accounts within an OU such as suspended
-     * accounts.</p> </li> <li> <p> <code>UNION</code>: (default value) StackSets
-     * includes additional accounts deployment targets. </p> <p>This is the default
-     * value if <code>AccountFilterType</code> is not provided. This enables user to
-     * update an entire OU and individual accounts from a different OU in one request,
-     * which used to be two separate requests.</p> </li> <li> <p> <code>NONE</code>:
-     * Deploys to all the accounts in specified organizational units (OU).</p> </li>
-     * </ul>
+     * accounts.</p> </li> <li> <p> <code>UNION</code>: StackSets includes additional
+     * accounts deployment targets. </p> <p>This is the default value if
+     * <code>AccountFilterType</code> is not provided. This enables user to update an
+     * entire OU and individual accounts from a different OU in one request, which used
+     * to be two separate requests.</p> </li> <li> <p> <code>NONE</code>: Deploys to
+     * all the accounts in specified organizational units (OU).</p> </li> </ul>
      */
     inline const AccountFilterType& GetAccountFilterType() const{ return m_accountFilterType; }
 
@@ -224,13 +223,12 @@ namespace Model
      * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
      * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
      * This enables user to avoid certain accounts within an OU such as suspended
-     * accounts.</p> </li> <li> <p> <code>UNION</code>: (default value) StackSets
-     * includes additional accounts deployment targets. </p> <p>This is the default
-     * value if <code>AccountFilterType</code> is not provided. This enables user to
-     * update an entire OU and individual accounts from a different OU in one request,
-     * which used to be two separate requests.</p> </li> <li> <p> <code>NONE</code>:
-     * Deploys to all the accounts in specified organizational units (OU).</p> </li>
-     * </ul>
+     * accounts.</p> </li> <li> <p> <code>UNION</code>: StackSets includes additional
+     * accounts deployment targets. </p> <p>This is the default value if
+     * <code>AccountFilterType</code> is not provided. This enables user to update an
+     * entire OU and individual accounts from a different OU in one request, which used
+     * to be two separate requests.</p> </li> <li> <p> <code>NONE</code>: Deploys to
+     * all the accounts in specified organizational units (OU).</p> </li> </ul>
      */
     inline bool AccountFilterTypeHasBeenSet() const { return m_accountFilterTypeHasBeenSet; }
 
@@ -242,13 +240,12 @@ namespace Model
      * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
      * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
      * This enables user to avoid certain accounts within an OU such as suspended
-     * accounts.</p> </li> <li> <p> <code>UNION</code>: (default value) StackSets
-     * includes additional accounts deployment targets. </p> <p>This is the default
-     * value if <code>AccountFilterType</code> is not provided. This enables user to
-     * update an entire OU and individual accounts from a different OU in one request,
-     * which used to be two separate requests.</p> </li> <li> <p> <code>NONE</code>:
-     * Deploys to all the accounts in specified organizational units (OU).</p> </li>
-     * </ul>
+     * accounts.</p> </li> <li> <p> <code>UNION</code>: StackSets includes additional
+     * accounts deployment targets. </p> <p>This is the default value if
+     * <code>AccountFilterType</code> is not provided. This enables user to update an
+     * entire OU and individual accounts from a different OU in one request, which used
+     * to be two separate requests.</p> </li> <li> <p> <code>NONE</code>: Deploys to
+     * all the accounts in specified organizational units (OU).</p> </li> </ul>
      */
     inline void SetAccountFilterType(const AccountFilterType& value) { m_accountFilterTypeHasBeenSet = true; m_accountFilterType = value; }
 
@@ -260,13 +257,12 @@ namespace Model
      * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
      * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
      * This enables user to avoid certain accounts within an OU such as suspended
-     * accounts.</p> </li> <li> <p> <code>UNION</code>: (default value) StackSets
-     * includes additional accounts deployment targets. </p> <p>This is the default
-     * value if <code>AccountFilterType</code> is not provided. This enables user to
-     * update an entire OU and individual accounts from a different OU in one request,
-     * which used to be two separate requests.</p> </li> <li> <p> <code>NONE</code>:
-     * Deploys to all the accounts in specified organizational units (OU).</p> </li>
-     * </ul>
+     * accounts.</p> </li> <li> <p> <code>UNION</code>: StackSets includes additional
+     * accounts deployment targets. </p> <p>This is the default value if
+     * <code>AccountFilterType</code> is not provided. This enables user to update an
+     * entire OU and individual accounts from a different OU in one request, which used
+     * to be two separate requests.</p> </li> <li> <p> <code>NONE</code>: Deploys to
+     * all the accounts in specified organizational units (OU).</p> </li> </ul>
      */
     inline void SetAccountFilterType(AccountFilterType&& value) { m_accountFilterTypeHasBeenSet = true; m_accountFilterType = std::move(value); }
 
@@ -278,13 +274,12 @@ namespace Model
      * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
      * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
      * This enables user to avoid certain accounts within an OU such as suspended
-     * accounts.</p> </li> <li> <p> <code>UNION</code>: (default value) StackSets
-     * includes additional accounts deployment targets. </p> <p>This is the default
-     * value if <code>AccountFilterType</code> is not provided. This enables user to
-     * update an entire OU and individual accounts from a different OU in one request,
-     * which used to be two separate requests.</p> </li> <li> <p> <code>NONE</code>:
-     * Deploys to all the accounts in specified organizational units (OU).</p> </li>
-     * </ul>
+     * accounts.</p> </li> <li> <p> <code>UNION</code>: StackSets includes additional
+     * accounts deployment targets. </p> <p>This is the default value if
+     * <code>AccountFilterType</code> is not provided. This enables user to update an
+     * entire OU and individual accounts from a different OU in one request, which used
+     * to be two separate requests.</p> </li> <li> <p> <code>NONE</code>: Deploys to
+     * all the accounts in specified organizational units (OU).</p> </li> </ul>
      */
     inline DeploymentTargets& WithAccountFilterType(const AccountFilterType& value) { SetAccountFilterType(value); return *this;}
 
@@ -296,13 +291,12 @@ namespace Model
      * <code>Accounts</code> parameter. </p> </li> <li> <p> <code>DIFFERENCE</code>:
      * StackSets excludes the accounts specified in <code>Accounts</code> parameter.
      * This enables user to avoid certain accounts within an OU such as suspended
-     * accounts.</p> </li> <li> <p> <code>UNION</code>: (default value) StackSets
-     * includes additional accounts deployment targets. </p> <p>This is the default
-     * value if <code>AccountFilterType</code> is not provided. This enables user to
-     * update an entire OU and individual accounts from a different OU in one request,
-     * which used to be two separate requests.</p> </li> <li> <p> <code>NONE</code>:
-     * Deploys to all the accounts in specified organizational units (OU).</p> </li>
-     * </ul>
+     * accounts.</p> </li> <li> <p> <code>UNION</code>: StackSets includes additional
+     * accounts deployment targets. </p> <p>This is the default value if
+     * <code>AccountFilterType</code> is not provided. This enables user to update an
+     * entire OU and individual accounts from a different OU in one request, which used
+     * to be two separate requests.</p> </li> <li> <p> <code>NONE</code>: Deploys to
+     * all the accounts in specified organizational units (OU).</p> </li> </ul>
      */
     inline DeploymentTargets& WithAccountFilterType(AccountFilterType&& value) { SetAccountFilterType(std::move(value)); return *this;}
 

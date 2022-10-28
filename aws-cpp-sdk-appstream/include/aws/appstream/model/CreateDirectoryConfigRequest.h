@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appstream/model/ServiceAccountCredentials.h>
+#include <aws/appstream/model/CertificateBasedAuthProperties.h>
 #include <utility>
 
 namespace Aws
@@ -176,6 +177,85 @@ namespace Model
      */
     inline CreateDirectoryConfigRequest& WithServiceAccountCredentials(ServiceAccountCredentials&& value) { SetServiceAccountCredentials(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The certificate-based authentication properties used to authenticate SAML 2.0
+     * Identity Provider (IdP) user identities to Active Directory domain-joined
+     * streaming instances. Fallback is turned on by default when certificate-based
+     * authentication is <b>Enabled</b> . Fallback allows users to log in using their
+     * AD domain password if certificate-based authentication is unsuccessful, or to
+     * unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables
+     * certificate-based authentication, but does not allow users to log in using their
+     * AD domain password. Users will be disconnected to re-authenticate using
+     * certificates.</p>
+     */
+    inline const CertificateBasedAuthProperties& GetCertificateBasedAuthProperties() const{ return m_certificateBasedAuthProperties; }
+
+    /**
+     * <p>The certificate-based authentication properties used to authenticate SAML 2.0
+     * Identity Provider (IdP) user identities to Active Directory domain-joined
+     * streaming instances. Fallback is turned on by default when certificate-based
+     * authentication is <b>Enabled</b> . Fallback allows users to log in using their
+     * AD domain password if certificate-based authentication is unsuccessful, or to
+     * unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables
+     * certificate-based authentication, but does not allow users to log in using their
+     * AD domain password. Users will be disconnected to re-authenticate using
+     * certificates.</p>
+     */
+    inline bool CertificateBasedAuthPropertiesHasBeenSet() const { return m_certificateBasedAuthPropertiesHasBeenSet; }
+
+    /**
+     * <p>The certificate-based authentication properties used to authenticate SAML 2.0
+     * Identity Provider (IdP) user identities to Active Directory domain-joined
+     * streaming instances. Fallback is turned on by default when certificate-based
+     * authentication is <b>Enabled</b> . Fallback allows users to log in using their
+     * AD domain password if certificate-based authentication is unsuccessful, or to
+     * unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables
+     * certificate-based authentication, but does not allow users to log in using their
+     * AD domain password. Users will be disconnected to re-authenticate using
+     * certificates.</p>
+     */
+    inline void SetCertificateBasedAuthProperties(const CertificateBasedAuthProperties& value) { m_certificateBasedAuthPropertiesHasBeenSet = true; m_certificateBasedAuthProperties = value; }
+
+    /**
+     * <p>The certificate-based authentication properties used to authenticate SAML 2.0
+     * Identity Provider (IdP) user identities to Active Directory domain-joined
+     * streaming instances. Fallback is turned on by default when certificate-based
+     * authentication is <b>Enabled</b> . Fallback allows users to log in using their
+     * AD domain password if certificate-based authentication is unsuccessful, or to
+     * unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables
+     * certificate-based authentication, but does not allow users to log in using their
+     * AD domain password. Users will be disconnected to re-authenticate using
+     * certificates.</p>
+     */
+    inline void SetCertificateBasedAuthProperties(CertificateBasedAuthProperties&& value) { m_certificateBasedAuthPropertiesHasBeenSet = true; m_certificateBasedAuthProperties = std::move(value); }
+
+    /**
+     * <p>The certificate-based authentication properties used to authenticate SAML 2.0
+     * Identity Provider (IdP) user identities to Active Directory domain-joined
+     * streaming instances. Fallback is turned on by default when certificate-based
+     * authentication is <b>Enabled</b> . Fallback allows users to log in using their
+     * AD domain password if certificate-based authentication is unsuccessful, or to
+     * unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables
+     * certificate-based authentication, but does not allow users to log in using their
+     * AD domain password. Users will be disconnected to re-authenticate using
+     * certificates.</p>
+     */
+    inline CreateDirectoryConfigRequest& WithCertificateBasedAuthProperties(const CertificateBasedAuthProperties& value) { SetCertificateBasedAuthProperties(value); return *this;}
+
+    /**
+     * <p>The certificate-based authentication properties used to authenticate SAML 2.0
+     * Identity Provider (IdP) user identities to Active Directory domain-joined
+     * streaming instances. Fallback is turned on by default when certificate-based
+     * authentication is <b>Enabled</b> . Fallback allows users to log in using their
+     * AD domain password if certificate-based authentication is unsuccessful, or to
+     * unlock a desktop lock screen. <b>Enabled_no_directory_login_fallback</b> enables
+     * certificate-based authentication, but does not allow users to log in using their
+     * AD domain password. Users will be disconnected to re-authenticate using
+     * certificates.</p>
+     */
+    inline CreateDirectoryConfigRequest& WithCertificateBasedAuthProperties(CertificateBasedAuthProperties&& value) { SetCertificateBasedAuthProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_directoryName;
@@ -186,6 +266,9 @@ namespace Model
 
     ServiceAccountCredentials m_serviceAccountCredentials;
     bool m_serviceAccountCredentialsHasBeenSet = false;
+
+    CertificateBasedAuthProperties m_certificateBasedAuthProperties;
+    bool m_certificateBasedAuthPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

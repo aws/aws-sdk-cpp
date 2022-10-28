@@ -32,7 +32,8 @@ StackInstanceSummary::StackInstanceSummary() :
     m_organizationalUnitIdHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
     m_driftStatusHasBeenSet(false),
-    m_lastDriftCheckTimestampHasBeenSet(false)
+    m_lastDriftCheckTimestampHasBeenSet(false),
+    m_lastOperationIdHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ StackInstanceSummary::StackInstanceSummary(const XmlNode& xmlNode) :
     m_organizationalUnitIdHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
     m_driftStatusHasBeenSet(false),
-    m_lastDriftCheckTimestampHasBeenSet(false)
+    m_lastDriftCheckTimestampHasBeenSet(false),
+    m_lastOperationIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -119,6 +121,12 @@ StackInstanceSummary& StackInstanceSummary::operator =(const XmlNode& xmlNode)
       m_lastDriftCheckTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastDriftCheckTimestampNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
       m_lastDriftCheckTimestampHasBeenSet = true;
     }
+    XmlNode lastOperationIdNode = resultNode.FirstChild("LastOperationId");
+    if(!lastOperationIdNode.IsNull())
+    {
+      m_lastOperationId = Aws::Utils::Xml::DecodeEscapedXmlText(lastOperationIdNode.GetText());
+      m_lastOperationIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -178,6 +186,11 @@ void StackInstanceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_lastOperationIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LastOperationId=" << StringUtils::URLEncode(m_lastOperationId.c_str()) << "&";
+  }
+
 }
 
 void StackInstanceSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -223,6 +236,10 @@ void StackInstanceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_lastDriftCheckTimestampHasBeenSet)
   {
       oStream << location << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_lastOperationIdHasBeenSet)
+  {
+      oStream << location << ".LastOperationId=" << StringUtils::URLEncode(m_lastOperationId.c_str()) << "&";
   }
 }
 

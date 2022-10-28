@@ -129,8 +129,8 @@ namespace Cloud9
         virtual void DeleteEnvironmentAsync(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an environment member from an Cloud9 development
-         * environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an environment member from a development environment.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/DeleteEnvironmentMembership">AWS
          * API Reference</a></p>
          */

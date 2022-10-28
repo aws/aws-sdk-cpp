@@ -8,6 +8,7 @@
 #include <aws/mediatailor/model/MessageType.h>
 #include <aws/mediatailor/model/SlateSource.h>
 #include <aws/mediatailor/model/SpliceInsertMessage.h>
+#include <aws/mediatailor/model/TimeSignalMessage.h>
 #include <utility>
 
 namespace Aws
@@ -178,6 +179,61 @@ namespace Model
      */
     inline AdBreak& WithSpliceInsertMessage(SpliceInsertMessage&& value) { SetSpliceInsertMessage(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the
+     * ad.</p> <p>Programs on a channel's schedule can be configured with one or more
+     * ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad
+     * break. This message provides basic metadata about the ad break.</p> <p>See
+     * section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
+     */
+    inline const TimeSignalMessage& GetTimeSignalMessage() const{ return m_timeSignalMessage; }
+
+    /**
+     * <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the
+     * ad.</p> <p>Programs on a channel's schedule can be configured with one or more
+     * ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad
+     * break. This message provides basic metadata about the ad break.</p> <p>See
+     * section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
+     */
+    inline bool TimeSignalMessageHasBeenSet() const { return m_timeSignalMessageHasBeenSet; }
+
+    /**
+     * <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the
+     * ad.</p> <p>Programs on a channel's schedule can be configured with one or more
+     * ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad
+     * break. This message provides basic metadata about the ad break.</p> <p>See
+     * section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
+     */
+    inline void SetTimeSignalMessage(const TimeSignalMessage& value) { m_timeSignalMessageHasBeenSet = true; m_timeSignalMessage = value; }
+
+    /**
+     * <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the
+     * ad.</p> <p>Programs on a channel's schedule can be configured with one or more
+     * ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad
+     * break. This message provides basic metadata about the ad break.</p> <p>See
+     * section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
+     */
+    inline void SetTimeSignalMessage(TimeSignalMessage&& value) { m_timeSignalMessageHasBeenSet = true; m_timeSignalMessage = std::move(value); }
+
+    /**
+     * <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the
+     * ad.</p> <p>Programs on a channel's schedule can be configured with one or more
+     * ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad
+     * break. This message provides basic metadata about the ad break.</p> <p>See
+     * section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
+     */
+    inline AdBreak& WithTimeSignalMessage(const TimeSignalMessage& value) { SetTimeSignalMessage(value); return *this;}
+
+    /**
+     * <p>Defines the SCTE-35 <code>time_signal</code> message inserted around the
+     * ad.</p> <p>Programs on a channel's schedule can be configured with one or more
+     * ad breaks. You can attach a <code>splice_insert</code> SCTE-35 message to the ad
+     * break. This message provides basic metadata about the ad break.</p> <p>See
+     * section 9.7.4 of the 2022 SCTE-35 specification for more information.</p>
+     */
+    inline AdBreak& WithTimeSignalMessage(TimeSignalMessage&& value) { SetTimeSignalMessage(std::move(value)); return *this;}
+
   private:
 
     MessageType m_messageType;
@@ -191,6 +247,9 @@ namespace Model
 
     SpliceInsertMessage m_spliceInsertMessage;
     bool m_spliceInsertMessageHasBeenSet = false;
+
+    TimeSignalMessage m_timeSignalMessage;
+    bool m_timeSignalMessageHasBeenSet = false;
   };
 
 } // namespace Model
