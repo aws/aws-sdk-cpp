@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateDirectoryConfigRequest::UpdateDirectoryConfigRequest() : 
     m_directoryNameHasBeenSet(false),
     m_organizationalUnitDistinguishedNamesHasBeenSet(false),
-    m_serviceAccountCredentialsHasBeenSet(false)
+    m_serviceAccountCredentialsHasBeenSet(false),
+    m_certificateBasedAuthPropertiesHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String UpdateDirectoryConfigRequest::SerializePayload() const
   if(m_serviceAccountCredentialsHasBeenSet)
   {
    payload.WithObject("ServiceAccountCredentials", m_serviceAccountCredentials.Jsonize());
+
+  }
+
+  if(m_certificateBasedAuthPropertiesHasBeenSet)
+  {
+   payload.WithObject("CertificateBasedAuthProperties", m_certificateBasedAuthProperties.Jsonize());
 
   }
 

@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The status that stack instances are filtered by.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The filter to apply to stack instances</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackInstanceFilter">AWS
    * API Reference</a></p>
    */

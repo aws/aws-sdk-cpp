@@ -16,7 +16,8 @@ namespace Model
   enum class StackInstanceFilterName
   {
     NOT_SET,
-    DETAILED_STATUS
+    DETAILED_STATUS,
+    LAST_OPERATION_ID
   };
 
 namespace StackInstanceFilterNameMapper

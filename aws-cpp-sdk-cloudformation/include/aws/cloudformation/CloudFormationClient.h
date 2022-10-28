@@ -1488,7 +1488,7 @@ namespace CloudFormation
          * the type was registered. For more information, see <a
          * href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
          * <p>Once you've initiated testing on an extension using <code>TestType</code>,
-         * you can use <a
+         * you can pass the returned <code>TypeVersionArn</code> into <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
          * to monitor the current test status and test status description for the
          * extension.</p> <p>An extension must have a test status of <code>PASSED</code>

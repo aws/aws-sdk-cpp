@@ -22,7 +22,8 @@ DirectoryConfig::DirectoryConfig() :
     m_directoryNameHasBeenSet(false),
     m_organizationalUnitDistinguishedNamesHasBeenSet(false),
     m_serviceAccountCredentialsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_certificateBasedAuthPropertiesHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ DirectoryConfig::DirectoryConfig(JsonView jsonValue) :
     m_directoryNameHasBeenSet(false),
     m_organizationalUnitDistinguishedNamesHasBeenSet(false),
     m_serviceAccountCredentialsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_certificateBasedAuthPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +70,13 @@ DirectoryConfig& DirectoryConfig::operator =(JsonView jsonValue)
     m_createdTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CertificateBasedAuthProperties"))
+  {
+    m_certificateBasedAuthProperties = jsonValue.GetObject("CertificateBasedAuthProperties");
+
+    m_certificateBasedAuthPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -101,6 +110,12 @@ JsonValue DirectoryConfig::Jsonize() const
   if(m_createdTimeHasBeenSet)
   {
    payload.WithDouble("CreatedTime", m_createdTime.SecondsWithMSPrecision());
+  }
+
+  if(m_certificateBasedAuthPropertiesHasBeenSet)
+  {
+   payload.WithObject("CertificateBasedAuthProperties", m_certificateBasedAuthProperties.Jsonize());
+
   }
 
   return payload;

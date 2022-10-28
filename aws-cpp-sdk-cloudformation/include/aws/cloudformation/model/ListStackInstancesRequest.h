@@ -203,42 +203,42 @@ namespace Model
 
 
     /**
-     * <p>The status that stack instances are filtered by.</p>
+     * <p>The filter to apply to stack instances</p>
      */
     inline const Aws::Vector<StackInstanceFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>The status that stack instances are filtered by.</p>
+     * <p>The filter to apply to stack instances</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>The status that stack instances are filtered by.</p>
+     * <p>The filter to apply to stack instances</p>
      */
     inline void SetFilters(const Aws::Vector<StackInstanceFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>The status that stack instances are filtered by.</p>
+     * <p>The filter to apply to stack instances</p>
      */
     inline void SetFilters(Aws::Vector<StackInstanceFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>The status that stack instances are filtered by.</p>
+     * <p>The filter to apply to stack instances</p>
      */
     inline ListStackInstancesRequest& WithFilters(const Aws::Vector<StackInstanceFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>The status that stack instances are filtered by.</p>
+     * <p>The filter to apply to stack instances</p>
      */
     inline ListStackInstancesRequest& WithFilters(Aws::Vector<StackInstanceFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The status that stack instances are filtered by.</p>
+     * <p>The filter to apply to stack instances</p>
      */
     inline ListStackInstancesRequest& AddFilters(const StackInstanceFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>The status that stack instances are filtered by.</p>
+     * <p>The filter to apply to stack instances</p>
      */
     inline ListStackInstancesRequest& AddFilters(StackInstanceFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
