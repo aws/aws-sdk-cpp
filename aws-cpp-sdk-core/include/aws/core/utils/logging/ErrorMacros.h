@@ -20,12 +20,21 @@ do { \
   } \
 } while (0)
 
+#define AWS_CHECK_PTR(LOG_TAG, PTR) \
+do { \
+  if (PTR == nullptr) \
+  { \
+    AWS_LOGSTREAM_FATAL(LOG_TAG, "Unexpected nullptr: " #PTR); \
+    return; \
+  } \
+} while (0)
+
 #define AWS_OPERATION_CHECK_SUCCESS(OUTCOME, OPERATION, ERROR_TYPE, ERROR, ERROR_MESSAGE) \
 do { \
   if (!OUTCOME.IsSuccess()) \
   { \
-    AWS_LOGSTREAM_FATAL(#OPERATION, #ERROR_MESSAGE); \
-    return OPERATION##Outcome(Aws::Client::AWSError<ERROR_TYPE>(ERROR, #ERROR, #ERROR_MESSAGE, false)); \
+    AWS_LOGSTREAM_FATAL(#OPERATION, ERROR_MESSAGE); \
+    return OPERATION##Outcome(Aws::Client::AWSError<ERROR_TYPE>(ERROR, #ERROR, ERROR_MESSAGE, false)); \
   } \
 } while (0)
 

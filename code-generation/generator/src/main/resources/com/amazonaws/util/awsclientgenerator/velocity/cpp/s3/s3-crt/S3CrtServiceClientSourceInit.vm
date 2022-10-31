@@ -54,6 +54,9 @@ ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfigur
     Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, ${defaultCredentialsProviderChainParam},
         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+    m_clientConfiguration(clientConfiguration),
+#end
     m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
   init(clientConfiguration${credentialsParam});
@@ -64,6 +67,9 @@ ${className}::${className}(const AWSCredentials& credentials, const ${clientConf
     Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, ${simpleCredentialsProviderParam},
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+    m_clientConfiguration(clientConfiguration),
+#end
     m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
   init(clientConfiguration${credentialsParam});
@@ -75,6 +81,9 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
     Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+    m_clientConfiguration(clientConfiguration),
+#end
     m_executor(clientConfiguration.executor)${credentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
   init(clientConfiguration${credentialsParam});
@@ -85,6 +94,9 @@ ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfigur
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, ${defaultCredentialsProviderChainParam},
         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+    m_clientConfiguration(clientConfiguration),
+#end
     m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
   init(clientConfiguration${credentialsParam});
@@ -95,6 +107,9 @@ ${className}::${className}(const AWSCredentials& credentials, const ${clientConf
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, ${simpleCredentialsProviderParam},
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+    m_clientConfiguration(clientConfiguration),
+#end
     m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
   init(clientConfiguration${credentialsParam});
@@ -106,6 +121,9 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+    m_clientConfiguration(clientConfiguration),
+#end
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}${credentialsProviderMember}
 {
   init(clientConfiguration${credentialsParam});
@@ -117,9 +135,12 @@ ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvide
   const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}) :
   BASECLASS(clientConfiguration, signerProvider,
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+    m_clientConfiguration(clientConfiguration),
+#end
     m_executor(clientConfiguration.executor)${virtualAddressingInit}
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 #end
@@ -131,9 +152,20 @@ ${className}::~${className}()
 #end
 }
 
+#if($serviceModel.endpointRules)
+std::shared_ptr<Aws::${serviceNamespace}::Endpoint::${metadata.classNamePrefix}EndpointProviderBase>& ${className}::accessEndpointProvider()
+{
+  return m_endpointProvider;
+}
+
+#end
 void ${className}::init(const ${clientConfigurationNamespace}::ClientConfiguration& config${credentialsArg})
 {
   AWSClient::SetServiceClientName("${metadata.serviceId}");
+#if($serviceModel.endpointRules)
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
+#end
 #if($AdditionalServiceSpecificConfigLoadString)
   ${AdditionalServiceSpecificConfigLoadString}
 #end
@@ -322,6 +354,10 @@ void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::Clie
 
 void ${className}::OverrideEndpoint(const Aws::String& endpoint)
 {
+#if($serviceModel.endpointRules)
+    AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+    m_endpointProvider->OverrideEndpoint(endpoint);
+#else##-#if($serviceModel.endpointRules)
 #if($virtualAddressingSupported || $arnEndpointSupported || $metadata.hasEndpointTrait)
   if (endpoint.compare(0, 7, "http://") == 0)
   {
@@ -351,4 +387,5 @@ void ${className}::OverrideEndpoint(const Aws::String& endpoint)
 #if($metadata.hasEndpointDiscoveryTrait)
   m_enableEndpointDiscovery = false;
 #end
+#end##-#if($serviceModel.endpointRules)
 }

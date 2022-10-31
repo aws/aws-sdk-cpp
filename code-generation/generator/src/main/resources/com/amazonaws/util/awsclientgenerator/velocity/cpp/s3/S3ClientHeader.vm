@@ -48,6 +48,7 @@ namespace ${rootNamespace}
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY[] = "x-amz-server-side-encryption-customer-key";
         static const char SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5[] = "x-amz-server-side-encryption-customer-key-MD5";
     } // SS3Headers
+#if(!$serviceModel.endpointRules)
 
     // Get endpoint, signer region and signer service name after computing the endpoint.
     struct ComputeEndpointResult
@@ -60,7 +61,7 @@ namespace ${rootNamespace}
       Aws::String signerServiceName;
       Aws::String signerName;
     };
-#if(!$serviceModel.endpointRules)
+
     typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<${metadata.classNamePrefix}Errors>> ComputeEndpointOutcome;
 #end
 
@@ -72,12 +73,14 @@ namespace ${rootNamespace}
      * ${serviceModel.documentation}
      */
 #end
+#if(!$serviceModel.endpointRules)
     enum class US_EAST_1_REGIONAL_ENDPOINT_OPTION
     {
       NOT_SET,
       LEGACY,   //stands for using global endpoint for us-east-1,
       REGIONAL //stands for using regional endpoint for us-east-1
     };
+#end
 #set($finalClass = " final")
 #if($serviceModel.enableVirtualOperations)
 #set($finalClass = "")
@@ -177,6 +180,9 @@ namespace ${rootNamespace}
         virtual bool MultipartUploadSupported() const;
 
         void OverrideEndpoint(const Aws::String& endpoint);
+#if($serviceModel.endpointRules)
+        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+#end
 
 #if($serviceNamespace == "S3Crt")
 
@@ -215,7 +221,11 @@ namespace ${rootNamespace}
 
         void InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData, aws_s3_meta_request_options *options, const Aws::AmazonWebServiceRequest *requset, const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const;
 #else
-        void init(const Client::ClientConfiguration& clientConfiguration);
+#if(!$serviceModel.endpointRules)
+        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+#else
+        void init(const ${metadata.classNamePrefix}ClientConfiguration& clientConfiguration);
+#end
 #end
 #if(!$serviceModel.endpointRules)
         void Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile);
@@ -228,6 +238,9 @@ namespace ${rootNamespace}
         bool m_enableHostPrefixInjection = false;
         Aws::String m_configScheme;
 #end##-#if(!$serviceModel.endpointRules)
+#if($serviceModel.endpointRules)
+        ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
+#end
         std::shared_ptr<Utils::Threading::Executor> m_executor;
 #if($serviceNamespace == "S3Crt")
         struct aws_s3_client* m_s3CrtClient;
@@ -250,9 +263,11 @@ namespace ${rootNamespace}
         bool m_enableEndpointDiscovery = false;
 #end
 #if($serviceModel.endpointRules)
-        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
+        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
 #end
+#if(!$serviceModel.endpointRules)
         ${rootNamespace}::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION m_USEast1RegionalEndpointOption = ${rootNamespace}::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET;
+#end
     };
 
   } // namespace ${metadata.namespace}

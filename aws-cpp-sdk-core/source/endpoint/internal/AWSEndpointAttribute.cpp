@@ -8,6 +8,24 @@
 
 static const char ENDPOINT_AUTH_SCHEME_TAG[] = "EndpointAuthScheme::BuildEndpointAuthSchemeFromJson";
 
+Aws::String CrtToSdkSignerName(const Aws::String& crtSignerName)
+{
+    Aws::String sdkSigner = "NullSigner";
+    if (crtSignerName == "sigv4") {
+        sdkSigner = "SignatureV4";
+    } else if (crtSignerName == "sigv4a") {
+        sdkSigner = "AsymmetricSignatureV4";
+    } else if (crtSignerName == "none") {
+        sdkSigner = "NullSigner";
+    } else if (crtSignerName == "bearer") {
+        sdkSigner = "Bearer";
+    } else {
+        AWS_LOG_WARN(ENDPOINT_AUTH_SCHEME_TAG, (Aws::String("Unknown Endpoint authSchemes signer: ") + crtSignerName).c_str());
+    }
+
+    return sdkSigner;
+}
+
 Aws::Internal::Endpoint::EndpointAttributes
 Aws::Internal::Endpoint::EndpointAttributes::BuildEndpointAttributesFromJson(const Aws::String& iJsonStr)
 {
@@ -29,7 +47,7 @@ Aws::Internal::Endpoint::EndpointAttributes::BuildEndpointAttributesFromJson(con
                     for (const auto& mapItemProperty : property.GetAllObjects())
                     {
                         if (mapItemProperty.first == "name") {
-                            authScheme.SetName(mapItemProperty.second.AsString());
+                            authScheme.SetName(CrtToSdkSignerName(mapItemProperty.second.AsString()));
                         } else if (mapItemProperty.first == "signingName") {
                             authScheme.SetSigningName(mapItemProperty.second.AsString());
                         } else if (mapItemProperty.first == "signingRegion") {

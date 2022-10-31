@@ -724,6 +724,20 @@ public class C2jModelToGeneratorModelTransformer {
         Http http = new Http();
         http.setMethod(c2jHttp.getMethod());
         http.setRequestUri(c2jHttp.getRequestUri());
+        if (c2jServiceModel.getEndpointRules() != null && c2jHttp.getRequestUri() != null) {
+            // Legacy C2J models require path arguments preprocessed (i.e. removed) to avoid duplication with URI segments
+            if(c2jServiceModel.getServiceName().equalsIgnoreCase("S3")) {
+                String bucketPathToRemove = "/{Bucket}";
+                String requestUri = c2jHttp.getRequestUri();
+                if (requestUri.startsWith(bucketPathToRemove)) {
+                    requestUri = requestUri.substring(bucketPathToRemove.length());
+                    if (requestUri.isEmpty()) {
+                        requestUri = null;
+                    }
+                }
+                http.setRequestUri(requestUri);
+            }
+        }
         http.setResponseCode(c2jHttp.getResponseCode());
         return http;
     }

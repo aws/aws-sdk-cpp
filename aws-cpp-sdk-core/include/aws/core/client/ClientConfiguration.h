@@ -82,6 +82,12 @@ namespace Aws
              * Use dual stack endpoint in the endpoint calculation. It is your responsibility to verify that the service supports ipv6 in the region you select.
              */
             bool useDualStack = false;
+#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
+            /**
+             * Use FIPS endpoint in the endpoint calculation. Please check first that the service supports FIPS in a selected region.
+             */
+            bool useFIPS = false;
+#endif
             /**
              * Max concurrent tcp connections for a single http client to use. Default 25.
              */
@@ -235,6 +241,8 @@ namespace Aws
              * Enable host prefix injection.
              * For services whose endpoint is injectable. e.g. servicediscovery, you can modify the http host's prefix so as to add "data-" prefix for DiscoverInstances request.
              * Default to true, enabled. You can disable it for testing purpose.
+             *
+             * Deprecated in API v. 1.10. Please set in service-specific client configuration.
              */
             bool enableHostPrefixInjection = true;
 
@@ -246,6 +254,8 @@ namespace Aws
              * If a request requires endpoint discovery but you disabled it. The request will never succeed.
              * A boolean value is either true of false, use Optional here to have an instance does not contain a value,
              * such that SDK will decide the default behavior as stated before, if no value specified.
+             *
+             * Deprecated in API v. 1.10. Please set in service-specific client configuration.
              */
             Aws::Crt::Optional<bool> enableEndpointDiscovery;
 
@@ -253,6 +263,15 @@ namespace Aws
              * profileName in config file that will be used by this object to resolve more configurations.
              */
             Aws::String profileName;
+
+            /**
+             * A helper function to read config value from env variable of aws profile config
+             */
+            static Aws::String LoadConfigFromEnvOrProfile(const Aws::String& envKey,
+                                                          const Aws::String& profile,
+                                                          const Aws::String& profileProperty,
+                                                          const Aws::Vector<Aws::String>& allowedValues,
+                                                          const Aws::String& defaultValue);
         };
 
         /**
