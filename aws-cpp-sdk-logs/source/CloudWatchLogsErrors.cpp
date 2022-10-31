@@ -9,6 +9,7 @@
 #include <aws/logs/model/InvalidSequenceTokenException.h>
 #include <aws/logs/model/DataAlreadyAcceptedException.h>
 #include <aws/logs/model/MalformedQueryException.h>
+#include <aws/logs/model/TooManyTagsException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -37,6 +38,12 @@ template<> AWS_CLOUDWATCHLOGS_API MalformedQueryException CloudWatchLogsError::G
   return MalformedQueryException(this->GetJsonPayload().View());
 }
 
+template<> AWS_CLOUDWATCHLOGS_API TooManyTagsException CloudWatchLogsError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudWatchLogsErrors::TOO_MANY_TAGS);
+  return TooManyTagsException(this->GetJsonPayload().View());
+}
+
 namespace CloudWatchLogsErrorMapper
 {
 
@@ -47,6 +54,7 @@ static const int INVALID_SEQUENCE_TOKEN_HASH = HashingUtils::HashString("Invalid
 static const int DATA_ALREADY_ACCEPTED_HASH = HashingUtils::HashString("DataAlreadyAcceptedException");
 static const int MALFORMED_QUERY_HASH = HashingUtils::HashString("MalformedQueryException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
 
 
@@ -81,6 +89,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::LIMIT_EXCEEDED), true);
+  }
+  else if (hashCode == TOO_MANY_TAGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::TOO_MANY_TAGS), false);
   }
   else if (hashCode == INVALID_OPERATION_HASH)
   {

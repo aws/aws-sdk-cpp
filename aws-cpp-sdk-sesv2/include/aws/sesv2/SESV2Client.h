@@ -55,6 +55,26 @@ namespace SESV2
 
 
         /**
+         * <p>Retrieves batches of metric data collected based on your sending
+         * activity.</p> <p>You can execute this operation no more than 16 times per
+         * second, and with at most 160 queries from the batches per second
+         * (cumulative).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/BatchGetMetricData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetMetricDataOutcome BatchGetMetricData(const Model::BatchGetMetricDataRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetMetricData that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetMetricDataOutcomeCallable BatchGetMetricDataCallable(const Model::BatchGetMetricDataRequest& request) const;
+
+        /**
+         * An Async wrapper for BatchGetMetricData that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetMetricDataAsync(const Model::BatchGetMetricDataRequest& request, const BatchGetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Create a configuration set. <i>Configuration sets</i> are groups of rules
          * that you can apply to the emails that you send. You apply a configuration set to
          * an email by specifying the name of the configuration set when you call the
@@ -1079,6 +1099,25 @@ namespace SESV2
         virtual void ListImportJobsAsync(const Model::ListImportJobsRequest& request, const ListImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the recommendations present in your Amazon SES account in the current
+         * Amazon Web Services Region.</p> <p>You can execute this operation no more than
+         * once per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRecommendationsOutcome ListRecommendations(const Model::ListRecommendationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRecommendations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRecommendationsOutcomeCallable ListRecommendationsCallable(const Model::ListRecommendationsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListRecommendations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRecommendationsAsync(const Model::ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a list of email addresses that are on the suppression list for your
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">AWS
@@ -1190,6 +1229,24 @@ namespace SESV2
         virtual void PutAccountSuppressionAttributesAsync(const Model::PutAccountSuppressionAttributesRequest& request, const PutAccountSuppressionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Update your Amazon SES account VDM attributes.</p> <p>You can execute this
+         * operation no more than once per second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountVdmAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAccountVdmAttributesOutcome PutAccountVdmAttributes(const Model::PutAccountVdmAttributesRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutAccountVdmAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAccountVdmAttributesOutcomeCallable PutAccountVdmAttributesCallable(const Model::PutAccountVdmAttributesRequest& request) const;
+
+        /**
+         * An Async wrapper for PutAccountVdmAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAccountVdmAttributesAsync(const Model::PutAccountVdmAttributesRequest& request, const PutAccountVdmAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Associate a configuration set with a dedicated IP pool. You can use dedicated
          * IP pools to create groups of dedicated IP addresses for sending specific types
          * of email.</p><p><h3>See Also:</h3>   <a
@@ -1281,6 +1338,25 @@ namespace SESV2
          * An Async wrapper for PutConfigurationSetTrackingOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutConfigurationSetTrackingOptionsAsync(const Model::PutConfigurationSetTrackingOptionsRequest& request, const PutConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Specify VDM preferences for email that you send using the configuration
+         * set.</p> <p>You can execute this operation no more than once per
+         * second.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetVdmOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutConfigurationSetVdmOptionsOutcome PutConfigurationSetVdmOptions(const Model::PutConfigurationSetVdmOptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutConfigurationSetVdmOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutConfigurationSetVdmOptionsOutcomeCallable PutConfigurationSetVdmOptionsCallable(const Model::PutConfigurationSetVdmOptionsRequest& request) const;
+
+        /**
+         * An Async wrapper for PutConfigurationSetVdmOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutConfigurationSetVdmOptionsAsync(const Model::PutConfigurationSetVdmOptionsRequest& request, const PutConfigurationSetVdmOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Move a dedicated IP address to an existing dedicated IP pool.</p> 

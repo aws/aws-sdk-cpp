@@ -22,7 +22,8 @@ ExpenseDocument::ExpenseDocument() :
     m_expenseIndex(0),
     m_expenseIndexHasBeenSet(false),
     m_summaryFieldsHasBeenSet(false),
-    m_lineItemGroupsHasBeenSet(false)
+    m_lineItemGroupsHasBeenSet(false),
+    m_blocksHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ExpenseDocument::ExpenseDocument(JsonView jsonValue) :
     m_expenseIndex(0),
     m_expenseIndexHasBeenSet(false),
     m_summaryFieldsHasBeenSet(false),
-    m_lineItemGroupsHasBeenSet(false)
+    m_lineItemGroupsHasBeenSet(false),
+    m_blocksHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +64,16 @@ ExpenseDocument& ExpenseDocument::operator =(JsonView jsonValue)
       m_lineItemGroups.push_back(lineItemGroupsJsonList[lineItemGroupsIndex].AsObject());
     }
     m_lineItemGroupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Blocks"))
+  {
+    Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
+    for(unsigned blocksIndex = 0; blocksIndex < blocksJsonList.GetLength(); ++blocksIndex)
+    {
+      m_blocks.push_back(blocksJsonList[blocksIndex].AsObject());
+    }
+    m_blocksHasBeenSet = true;
   }
 
   return *this;
@@ -96,6 +108,17 @@ JsonValue ExpenseDocument::Jsonize() const
      lineItemGroupsJsonList[lineItemGroupsIndex].AsObject(m_lineItemGroups[lineItemGroupsIndex].Jsonize());
    }
    payload.WithArray("LineItemGroups", std::move(lineItemGroupsJsonList));
+
+  }
+
+  if(m_blocksHasBeenSet)
+  {
+   Array<JsonValue> blocksJsonList(m_blocks.size());
+   for(unsigned blocksIndex = 0; blocksIndex < blocksJsonList.GetLength(); ++blocksIndex)
+   {
+     blocksJsonList[blocksIndex].AsObject(m_blocks[blocksIndex].Jsonize());
+   }
+   payload.WithArray("Blocks", std::move(blocksJsonList));
 
   }
 

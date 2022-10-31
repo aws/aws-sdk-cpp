@@ -54,7 +54,8 @@ enum class CloudWatchLogsErrors
   LIMIT_EXCEEDED,
   MALFORMED_QUERY,
   OPERATION_ABORTED,
-  RESOURCE_ALREADY_EXISTS
+  RESOURCE_ALREADY_EXISTS,
+  TOO_MANY_TAGS
 };
 
 class AWS_CLOUDWATCHLOGS_API CloudWatchLogsError : public Aws::Client::AWSError<CloudWatchLogsErrors>

@@ -33,19 +33,29 @@ namespace Model
     ModifyIpamResourceCidrResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p>The CIDR of the resource.</p>
+     */
     inline const IpamResourceCidr& GetIpamResourceCidr() const{ return m_ipamResourceCidr; }
 
-    
+    /**
+     * <p>The CIDR of the resource.</p>
+     */
     inline void SetIpamResourceCidr(const IpamResourceCidr& value) { m_ipamResourceCidr = value; }
 
-    
+    /**
+     * <p>The CIDR of the resource.</p>
+     */
     inline void SetIpamResourceCidr(IpamResourceCidr&& value) { m_ipamResourceCidr = std::move(value); }
 
-    
+    /**
+     * <p>The CIDR of the resource.</p>
+     */
     inline ModifyIpamResourceCidrResponse& WithIpamResourceCidr(const IpamResourceCidr& value) { SetIpamResourceCidr(value); return *this;}
 
-    
+    /**
+     * <p>The CIDR of the resource.</p>
+     */
     inline ModifyIpamResourceCidrResponse& WithIpamResourceCidr(IpamResourceCidr&& value) { SetIpamResourceCidr(std::move(value)); return *this;}
 
 

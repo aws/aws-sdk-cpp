@@ -217,6 +217,25 @@ namespace AppRunner
         virtual void CreateVpcConnectorAsync(const Model::CreateVpcConnectorRequest& request, const CreateVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Create an App Runner VPC Ingress Connection resource. App Runner requires
+         * this resource when you want to associate your App Runner service with an Amazon
+         * VPC endpoint.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/CreateVpcIngressConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVpcIngressConnectionOutcome CreateVpcIngressConnection(const Model::CreateVpcIngressConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateVpcIngressConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateVpcIngressConnectionOutcomeCallable CreateVpcIngressConnectionCallable(const Model::CreateVpcIngressConnectionRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateVpcIngressConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateVpcIngressConnectionAsync(const Model::CreateVpcIngressConnectionRequest& request, const CreateVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Delete an App Runner automatic scaling configuration resource. You can delete
          * a specific revision or the latest active revision. You can't delete a
          * configuration that's used by one or more App Runner services.</p><p><h3>See
@@ -278,8 +297,9 @@ namespace AppRunner
         /**
          * <p>Delete an App Runner service.</p> <p>This is an asynchronous operation. On a
          * successful call, you can use the returned <code>OperationId</code> and the
-         * <a>ListOperations</a> call to track the operation's progress.</p><p><h3>See
-         * Also:</h3>   <a
+         * <a>ListOperations</a> call to track the operation's progress.</p>  <p>Make
+         * sure that you don't have any active VPCIngressConnections associated with the
+         * service you want to delete. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteService">AWS
          * API Reference</a></p>
          */
@@ -312,6 +332,28 @@ namespace AppRunner
          * An Async wrapper for DeleteVpcConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteVpcConnectorAsync(const Model::DeleteVpcConnectorRequest& request, const DeleteVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Delete an App Runner VPC Ingress Connection resource that's associated with
+         * an App Runner service. The VPC Ingress Connection must be in one of the
+         * following states to be deleted: </p> <ul> <li> <p> <code>AVAILABLE</code> </p>
+         * </li> <li> <p> <code>FAILED_CREATION</code> </p> </li> <li> <p>
+         * <code>FAILED_UPDATE</code> </p> </li> <li> <p> <code>FAILED_DELETION</code> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DeleteVpcIngressConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVpcIngressConnectionOutcome DeleteVpcIngressConnection(const Model::DeleteVpcIngressConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteVpcIngressConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVpcIngressConnectionOutcomeCallable DeleteVpcIngressConnectionCallable(const Model::DeleteVpcIngressConnectionRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteVpcIngressConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVpcIngressConnectionAsync(const Model::DeleteVpcIngressConnectionRequest& request, const DeleteVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Return a full description of an App Runner automatic scaling configuration
@@ -402,6 +444,24 @@ namespace AppRunner
          * An Async wrapper for DescribeVpcConnector that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeVpcConnectorAsync(const Model::DescribeVpcConnectorRequest& request, const DescribeVpcConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Return a full description of an App Runner VPC Ingress Connection
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/DescribeVpcIngressConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeVpcIngressConnectionOutcome DescribeVpcIngressConnection(const Model::DescribeVpcIngressConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeVpcIngressConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeVpcIngressConnectionOutcomeCallable DescribeVpcIngressConnectionCallable(const Model::DescribeVpcIngressConnectionRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeVpcIngressConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeVpcIngressConnectionAsync(const Model::DescribeVpcIngressConnectionRequest& request, const DescribeVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociate a custom domain name from an App Runner service.</p>
@@ -564,6 +624,24 @@ namespace AppRunner
         virtual void ListVpcConnectorsAsync(const Model::ListVpcConnectorsRequest& request, const ListVpcConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Return a list of App Runner VPC Ingress Connections in your Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListVpcIngressConnections">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListVpcIngressConnectionsOutcome ListVpcIngressConnections(const Model::ListVpcIngressConnectionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListVpcIngressConnections that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListVpcIngressConnectionsOutcomeCallable ListVpcIngressConnectionsCallable(const Model::ListVpcIngressConnectionsRequest& request) const;
+
+        /**
+         * An Async wrapper for ListVpcIngressConnections that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListVpcIngressConnectionsAsync(const Model::ListVpcIngressConnectionsRequest& request, const ListVpcIngressConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Pause an active App Runner service. App Runner reduces compute capacity for
          * the service to zero and loses state (for example, ephemeral storage is
          * removed).</p> <p>This is an asynchronous operation. On a successful call, you
@@ -689,6 +767,26 @@ namespace AppRunner
          * An Async wrapper for UpdateService that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateServiceAsync(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Update an existing App Runner VPC Ingress Connection resource. The VPC
+         * Ingress Connection must be in one of the following states to be updated:</p>
+         * <ul> <li> <p> AVAILABLE </p> </li> <li> <p> FAILED_CREATION </p> </li> <li> <p>
+         * FAILED_UPDATE </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateVpcIngressConnection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateVpcIngressConnectionOutcome UpdateVpcIngressConnection(const Model::UpdateVpcIngressConnectionRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateVpcIngressConnection that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateVpcIngressConnectionOutcomeCallable UpdateVpcIngressConnectionCallable(const Model::UpdateVpcIngressConnectionRequest& request) const;
+
+        /**
+         * An Async wrapper for UpdateVpcIngressConnection that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateVpcIngressConnectionAsync(const Model::UpdateVpcIngressConnectionRequest& request, const UpdateVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);

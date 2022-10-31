@@ -12,6 +12,7 @@
 #include <aws/sesv2/model/SendingOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/model/SuppressionOptions.h>
+#include <aws/sesv2/model/VdmOptions.h>
 #include <aws/sesv2/model/Tag.h>
 #include <utility>
 
@@ -277,6 +278,37 @@ namespace Model
      */
     inline GetConfigurationSetResult& WithSuppressionOptions(SuppressionOptions&& value) { SetSuppressionOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that contains information about the VDM preferences for your
+     * configuration set.</p>
+     */
+    inline const VdmOptions& GetVdmOptions() const{ return m_vdmOptions; }
+
+    /**
+     * <p>An object that contains information about the VDM preferences for your
+     * configuration set.</p>
+     */
+    inline void SetVdmOptions(const VdmOptions& value) { m_vdmOptions = value; }
+
+    /**
+     * <p>An object that contains information about the VDM preferences for your
+     * configuration set.</p>
+     */
+    inline void SetVdmOptions(VdmOptions&& value) { m_vdmOptions = std::move(value); }
+
+    /**
+     * <p>An object that contains information about the VDM preferences for your
+     * configuration set.</p>
+     */
+    inline GetConfigurationSetResult& WithVdmOptions(const VdmOptions& value) { SetVdmOptions(value); return *this;}
+
+    /**
+     * <p>An object that contains information about the VDM preferences for your
+     * configuration set.</p>
+     */
+    inline GetConfigurationSetResult& WithVdmOptions(VdmOptions&& value) { SetVdmOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_configurationSetName;
@@ -292,6 +324,8 @@ namespace Model
     Aws::Vector<Tag> m_tags;
 
     SuppressionOptions m_suppressionOptions;
+
+    VdmOptions m_vdmOptions;
   };
 
 } // namespace Model

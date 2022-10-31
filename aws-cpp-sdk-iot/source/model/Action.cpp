@@ -40,7 +40,8 @@ Action::Action() :
     m_timestreamHasBeenSet(false),
     m_httpHasBeenSet(false),
     m_kafkaHasBeenSet(false),
-    m_openSearchHasBeenSet(false)
+    m_openSearchHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ Action::Action(JsonView jsonValue) :
     m_timestreamHasBeenSet(false),
     m_httpHasBeenSet(false),
     m_kafkaHasBeenSet(false),
-    m_openSearchHasBeenSet(false)
+    m_openSearchHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -227,6 +229,13 @@ Action& Action::operator =(JsonView jsonValue)
     m_openSearchHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("location"))
+  {
+    m_location = jsonValue.GetObject("location");
+
+    m_locationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -363,6 +372,12 @@ JsonValue Action::Jsonize() const
   if(m_openSearchHasBeenSet)
   {
    payload.WithObject("openSearch", m_openSearch.Jsonize());
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithObject("location", m_location.Jsonize());
 
   }
 

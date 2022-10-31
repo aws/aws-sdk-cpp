@@ -13,6 +13,7 @@
 #include <aws/sesv2/model/SendingOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sesv2/model/SuppressionOptions.h>
+#include <aws/sesv2/model/VdmOptions.h>
 #include <aws/sesv2/model/Tag.h>
 #include <utility>
 
@@ -314,6 +315,43 @@ namespace Model
     
     inline CreateConfigurationSetRequest& WithSuppressionOptions(SuppressionOptions&& value) { SetSuppressionOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that defines the VDM options for emails that you send using the
+     * configuration set.</p>
+     */
+    inline const VdmOptions& GetVdmOptions() const{ return m_vdmOptions; }
+
+    /**
+     * <p>An object that defines the VDM options for emails that you send using the
+     * configuration set.</p>
+     */
+    inline bool VdmOptionsHasBeenSet() const { return m_vdmOptionsHasBeenSet; }
+
+    /**
+     * <p>An object that defines the VDM options for emails that you send using the
+     * configuration set.</p>
+     */
+    inline void SetVdmOptions(const VdmOptions& value) { m_vdmOptionsHasBeenSet = true; m_vdmOptions = value; }
+
+    /**
+     * <p>An object that defines the VDM options for emails that you send using the
+     * configuration set.</p>
+     */
+    inline void SetVdmOptions(VdmOptions&& value) { m_vdmOptionsHasBeenSet = true; m_vdmOptions = std::move(value); }
+
+    /**
+     * <p>An object that defines the VDM options for emails that you send using the
+     * configuration set.</p>
+     */
+    inline CreateConfigurationSetRequest& WithVdmOptions(const VdmOptions& value) { SetVdmOptions(value); return *this;}
+
+    /**
+     * <p>An object that defines the VDM options for emails that you send using the
+     * configuration set.</p>
+     */
+    inline CreateConfigurationSetRequest& WithVdmOptions(VdmOptions&& value) { SetVdmOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_configurationSetName;
@@ -336,6 +374,9 @@ namespace Model
 
     SuppressionOptions m_suppressionOptions;
     bool m_suppressionOptionsHasBeenSet = false;
+
+    VdmOptions m_vdmOptions;
+    bool m_vdmOptionsHasBeenSet = false;
   };
 
 } // namespace Model

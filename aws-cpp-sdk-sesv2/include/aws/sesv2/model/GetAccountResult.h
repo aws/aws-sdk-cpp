@@ -9,6 +9,7 @@
 #include <aws/sesv2/model/SendQuota.h>
 #include <aws/sesv2/model/SuppressionAttributes.h>
 #include <aws/sesv2/model/AccountDetails.h>
+#include <aws/sesv2/model/VdmAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -306,6 +307,32 @@ namespace Model
      */
     inline GetAccountResult& WithDetails(AccountDetails&& value) { SetDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The VDM attributes that apply to your Amazon SES account.</p>
+     */
+    inline const VdmAttributes& GetVdmAttributes() const{ return m_vdmAttributes; }
+
+    /**
+     * <p>The VDM attributes that apply to your Amazon SES account.</p>
+     */
+    inline void SetVdmAttributes(const VdmAttributes& value) { m_vdmAttributes = value; }
+
+    /**
+     * <p>The VDM attributes that apply to your Amazon SES account.</p>
+     */
+    inline void SetVdmAttributes(VdmAttributes&& value) { m_vdmAttributes = std::move(value); }
+
+    /**
+     * <p>The VDM attributes that apply to your Amazon SES account.</p>
+     */
+    inline GetAccountResult& WithVdmAttributes(const VdmAttributes& value) { SetVdmAttributes(value); return *this;}
+
+    /**
+     * <p>The VDM attributes that apply to your Amazon SES account.</p>
+     */
+    inline GetAccountResult& WithVdmAttributes(VdmAttributes&& value) { SetVdmAttributes(std::move(value)); return *this;}
+
   private:
 
     bool m_dedicatedIpAutoWarmupEnabled;
@@ -321,6 +348,8 @@ namespace Model
     SuppressionAttributes m_suppressionAttributes;
 
     AccountDetails m_details;
+
+    VdmAttributes m_vdmAttributes;
   };
 
 } // namespace Model

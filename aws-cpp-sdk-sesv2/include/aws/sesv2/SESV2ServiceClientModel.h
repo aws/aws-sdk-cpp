@@ -16,6 +16,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in SESV2Client header */
+#include <aws/sesv2/model/BatchGetMetricDataResult.h>
 #include <aws/sesv2/model/CreateConfigurationSetResult.h>
 #include <aws/sesv2/model/CreateConfigurationSetEventDestinationResult.h>
 #include <aws/sesv2/model/CreateContactResult.h>
@@ -66,17 +67,20 @@
 #include <aws/sesv2/model/ListEmailIdentitiesResult.h>
 #include <aws/sesv2/model/ListEmailTemplatesResult.h>
 #include <aws/sesv2/model/ListImportJobsResult.h>
+#include <aws/sesv2/model/ListRecommendationsResult.h>
 #include <aws/sesv2/model/ListSuppressedDestinationsResult.h>
 #include <aws/sesv2/model/ListTagsForResourceResult.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesResult.h>
 #include <aws/sesv2/model/PutAccountDetailsResult.h>
 #include <aws/sesv2/model/PutAccountSendingAttributesResult.h>
 #include <aws/sesv2/model/PutAccountSuppressionAttributesResult.h>
+#include <aws/sesv2/model/PutAccountVdmAttributesResult.h>
 #include <aws/sesv2/model/PutConfigurationSetDeliveryOptionsResult.h>
 #include <aws/sesv2/model/PutConfigurationSetReputationOptionsResult.h>
 #include <aws/sesv2/model/PutConfigurationSetSendingOptionsResult.h>
 #include <aws/sesv2/model/PutConfigurationSetSuppressionOptionsResult.h>
 #include <aws/sesv2/model/PutConfigurationSetTrackingOptionsResult.h>
+#include <aws/sesv2/model/PutConfigurationSetVdmOptionsResult.h>
 #include <aws/sesv2/model/PutDedicatedIpInPoolResult.h>
 #include <aws/sesv2/model/PutDedicatedIpWarmupAttributesResult.h>
 #include <aws/sesv2/model/PutDeliverabilityDashboardOptionResult.h>
@@ -134,6 +138,7 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in SESV2Client header */
+      class BatchGetMetricDataRequest;
       class CreateConfigurationSetRequest;
       class CreateConfigurationSetEventDestinationRequest;
       class CreateContactRequest;
@@ -184,17 +189,20 @@ namespace Aws
       class ListEmailIdentitiesRequest;
       class ListEmailTemplatesRequest;
       class ListImportJobsRequest;
+      class ListRecommendationsRequest;
       class ListSuppressedDestinationsRequest;
       class ListTagsForResourceRequest;
       class PutAccountDedicatedIpWarmupAttributesRequest;
       class PutAccountDetailsRequest;
       class PutAccountSendingAttributesRequest;
       class PutAccountSuppressionAttributesRequest;
+      class PutAccountVdmAttributesRequest;
       class PutConfigurationSetDeliveryOptionsRequest;
       class PutConfigurationSetReputationOptionsRequest;
       class PutConfigurationSetSendingOptionsRequest;
       class PutConfigurationSetSuppressionOptionsRequest;
       class PutConfigurationSetTrackingOptionsRequest;
+      class PutConfigurationSetVdmOptionsRequest;
       class PutDedicatedIpInPoolRequest;
       class PutDedicatedIpWarmupAttributesRequest;
       class PutDeliverabilityDashboardOptionRequest;
@@ -219,6 +227,7 @@ namespace Aws
       /* End of service model forward declarations required in SESV2Client header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<BatchGetMetricDataResult, SESV2Error> BatchGetMetricDataOutcome;
       typedef Aws::Utils::Outcome<CreateConfigurationSetResult, SESV2Error> CreateConfigurationSetOutcome;
       typedef Aws::Utils::Outcome<CreateConfigurationSetEventDestinationResult, SESV2Error> CreateConfigurationSetEventDestinationOutcome;
       typedef Aws::Utils::Outcome<CreateContactResult, SESV2Error> CreateContactOutcome;
@@ -269,17 +278,20 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListEmailIdentitiesResult, SESV2Error> ListEmailIdentitiesOutcome;
       typedef Aws::Utils::Outcome<ListEmailTemplatesResult, SESV2Error> ListEmailTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListImportJobsResult, SESV2Error> ListImportJobsOutcome;
+      typedef Aws::Utils::Outcome<ListRecommendationsResult, SESV2Error> ListRecommendationsOutcome;
       typedef Aws::Utils::Outcome<ListSuppressedDestinationsResult, SESV2Error> ListSuppressedDestinationsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, SESV2Error> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<PutAccountDedicatedIpWarmupAttributesResult, SESV2Error> PutAccountDedicatedIpWarmupAttributesOutcome;
       typedef Aws::Utils::Outcome<PutAccountDetailsResult, SESV2Error> PutAccountDetailsOutcome;
       typedef Aws::Utils::Outcome<PutAccountSendingAttributesResult, SESV2Error> PutAccountSendingAttributesOutcome;
       typedef Aws::Utils::Outcome<PutAccountSuppressionAttributesResult, SESV2Error> PutAccountSuppressionAttributesOutcome;
+      typedef Aws::Utils::Outcome<PutAccountVdmAttributesResult, SESV2Error> PutAccountVdmAttributesOutcome;
       typedef Aws::Utils::Outcome<PutConfigurationSetDeliveryOptionsResult, SESV2Error> PutConfigurationSetDeliveryOptionsOutcome;
       typedef Aws::Utils::Outcome<PutConfigurationSetReputationOptionsResult, SESV2Error> PutConfigurationSetReputationOptionsOutcome;
       typedef Aws::Utils::Outcome<PutConfigurationSetSendingOptionsResult, SESV2Error> PutConfigurationSetSendingOptionsOutcome;
       typedef Aws::Utils::Outcome<PutConfigurationSetSuppressionOptionsResult, SESV2Error> PutConfigurationSetSuppressionOptionsOutcome;
       typedef Aws::Utils::Outcome<PutConfigurationSetTrackingOptionsResult, SESV2Error> PutConfigurationSetTrackingOptionsOutcome;
+      typedef Aws::Utils::Outcome<PutConfigurationSetVdmOptionsResult, SESV2Error> PutConfigurationSetVdmOptionsOutcome;
       typedef Aws::Utils::Outcome<PutDedicatedIpInPoolResult, SESV2Error> PutDedicatedIpInPoolOutcome;
       typedef Aws::Utils::Outcome<PutDedicatedIpWarmupAttributesResult, SESV2Error> PutDedicatedIpWarmupAttributesOutcome;
       typedef Aws::Utils::Outcome<PutDeliverabilityDashboardOptionResult, SESV2Error> PutDeliverabilityDashboardOptionOutcome;
@@ -304,6 +316,7 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<BatchGetMetricDataOutcome> BatchGetMetricDataOutcomeCallable;
       typedef std::future<CreateConfigurationSetOutcome> CreateConfigurationSetOutcomeCallable;
       typedef std::future<CreateConfigurationSetEventDestinationOutcome> CreateConfigurationSetEventDestinationOutcomeCallable;
       typedef std::future<CreateContactOutcome> CreateContactOutcomeCallable;
@@ -354,17 +367,20 @@ namespace Aws
       typedef std::future<ListEmailIdentitiesOutcome> ListEmailIdentitiesOutcomeCallable;
       typedef std::future<ListEmailTemplatesOutcome> ListEmailTemplatesOutcomeCallable;
       typedef std::future<ListImportJobsOutcome> ListImportJobsOutcomeCallable;
+      typedef std::future<ListRecommendationsOutcome> ListRecommendationsOutcomeCallable;
       typedef std::future<ListSuppressedDestinationsOutcome> ListSuppressedDestinationsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<PutAccountDedicatedIpWarmupAttributesOutcome> PutAccountDedicatedIpWarmupAttributesOutcomeCallable;
       typedef std::future<PutAccountDetailsOutcome> PutAccountDetailsOutcomeCallable;
       typedef std::future<PutAccountSendingAttributesOutcome> PutAccountSendingAttributesOutcomeCallable;
       typedef std::future<PutAccountSuppressionAttributesOutcome> PutAccountSuppressionAttributesOutcomeCallable;
+      typedef std::future<PutAccountVdmAttributesOutcome> PutAccountVdmAttributesOutcomeCallable;
       typedef std::future<PutConfigurationSetDeliveryOptionsOutcome> PutConfigurationSetDeliveryOptionsOutcomeCallable;
       typedef std::future<PutConfigurationSetReputationOptionsOutcome> PutConfigurationSetReputationOptionsOutcomeCallable;
       typedef std::future<PutConfigurationSetSendingOptionsOutcome> PutConfigurationSetSendingOptionsOutcomeCallable;
       typedef std::future<PutConfigurationSetSuppressionOptionsOutcome> PutConfigurationSetSuppressionOptionsOutcomeCallable;
       typedef std::future<PutConfigurationSetTrackingOptionsOutcome> PutConfigurationSetTrackingOptionsOutcomeCallable;
+      typedef std::future<PutConfigurationSetVdmOptionsOutcome> PutConfigurationSetVdmOptionsOutcomeCallable;
       typedef std::future<PutDedicatedIpInPoolOutcome> PutDedicatedIpInPoolOutcomeCallable;
       typedef std::future<PutDedicatedIpWarmupAttributesOutcome> PutDedicatedIpWarmupAttributesOutcomeCallable;
       typedef std::future<PutDeliverabilityDashboardOptionOutcome> PutDeliverabilityDashboardOptionOutcomeCallable;
@@ -392,6 +408,7 @@ namespace Aws
     class SESV2Client;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const SESV2Client*, const Model::BatchGetMetricDataRequest&, const Model::BatchGetMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetMetricDataResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::CreateConfigurationSetRequest&, const Model::CreateConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationSetResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::CreateConfigurationSetEventDestinationRequest&, const Model::CreateConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationSetEventDestinationResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::CreateContactRequest&, const Model::CreateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactResponseReceivedHandler;
@@ -442,17 +459,20 @@ namespace Aws
     typedef std::function<void(const SESV2Client*, const Model::ListEmailIdentitiesRequest&, const Model::ListEmailIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEmailIdentitiesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListEmailTemplatesRequest&, const Model::ListEmailTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEmailTemplatesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListImportJobsRequest&, const Model::ListImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportJobsResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::ListRecommendationsRequest&, const Model::ListRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecommendationsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListSuppressedDestinationsRequest&, const Model::ListSuppressedDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSuppressedDestinationsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutAccountDedicatedIpWarmupAttributesRequest&, const Model::PutAccountDedicatedIpWarmupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutAccountDetailsRequest&, const Model::PutAccountDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountDetailsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutAccountSendingAttributesRequest&, const Model::PutAccountSendingAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSendingAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutAccountSuppressionAttributesRequest&, const Model::PutAccountSuppressionAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSuppressionAttributesResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::PutAccountVdmAttributesRequest&, const Model::PutAccountVdmAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountVdmAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetDeliveryOptionsRequest&, const Model::PutConfigurationSetDeliveryOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetDeliveryOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetReputationOptionsRequest&, const Model::PutConfigurationSetReputationOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetReputationOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetSendingOptionsRequest&, const Model::PutConfigurationSetSendingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetSendingOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetSuppressionOptionsRequest&, const Model::PutConfigurationSetSuppressionOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetSuppressionOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetTrackingOptionsRequest&, const Model::PutConfigurationSetTrackingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetTrackingOptionsResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetVdmOptionsRequest&, const Model::PutConfigurationSetVdmOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetVdmOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutDedicatedIpInPoolRequest&, const Model::PutDedicatedIpInPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDedicatedIpInPoolResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutDedicatedIpWarmupAttributesRequest&, const Model::PutDedicatedIpWarmupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDedicatedIpWarmupAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutDeliverabilityDashboardOptionRequest&, const Model::PutDeliverabilityDashboardOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDeliverabilityDashboardOptionResponseReceivedHandler;

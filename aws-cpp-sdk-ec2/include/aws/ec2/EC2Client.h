@@ -70,6 +70,26 @@ namespace EC2
 
 
         /**
+         * <p>Accepts an Elastic IP address transfer. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept">Accept
+         * a transferred Elastic IP address</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptAddressTransfer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AcceptAddressTransferOutcome AcceptAddressTransfer(const Model::AcceptAddressTransferRequest& request) const;
+
+        /**
+         * A Callable wrapper for AcceptAddressTransfer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AcceptAddressTransferOutcomeCallable AcceptAddressTransferCallable(const Model::AcceptAddressTransferRequest& request) const;
+
+        /**
+         * An Async wrapper for AcceptAddressTransfer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AcceptAddressTransferAsync(const Model::AcceptAddressTransferRequest& request, const AcceptAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Accepts the Convertible Reserved Instance exchange quote described in the
          * <a>GetReservedInstancesExchangeQuote</a> call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptReservedInstancesExchangeQuote">AWS
@@ -4697,6 +4717,26 @@ namespace EC2
         virtual void DescribeAccountAttributesAsync(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes an Elastic IP address transfer. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
+         * Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAddressTransfersOutcome DescribeAddressTransfers(const Model::DescribeAddressTransfersRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAddressTransfers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAddressTransfersOutcomeCallable DescribeAddressTransfersCallable(const Model::DescribeAddressTransfersRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeAddressTransfers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAddressTransfersAsync(const Model::DescribeAddressTransfersRequest& request, const DescribeAddressTransfersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the specified Elastic IP addresses or all of your Elastic IP
          * addresses.</p> <p>An Elastic IP address is for use in either the EC2-Classic
          * platform or in a VPC. For more information, see <a
@@ -7690,6 +7730,26 @@ namespace EC2
         virtual void DetachVpnGatewayAsync(const Model::DetachVpnGatewayRequest& request, const DetachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disables Elastic IP address transfer. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
+         * Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableAddressTransferOutcome DisableAddressTransfer(const Model::DisableAddressTransferRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisableAddressTransfer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableAddressTransferOutcomeCallable DisableAddressTransferCallable(const Model::DisableAddressTransferRequest& request) const;
+
+        /**
+         * An Async wrapper for DisableAddressTransfer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableAddressTransferAsync(const Model::DisableAddressTransferRequest& request, const DisableAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disables EBS encryption by default for your account in the current
          * Region.</p> <p>After you disable encryption by default, you can still create
          * encrypted volumes by enabling encryption when you create each volume.</p>
@@ -8152,6 +8212,26 @@ namespace EC2
          * An Async wrapper for DisassociateVpcCidrBlock that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateVpcCidrBlockAsync(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Enables Elastic IP address transfer. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer
+         * Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAddressTransfer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableAddressTransferOutcome EnableAddressTransfer(const Model::EnableAddressTransferRequest& request) const;
+
+        /**
+         * A Callable wrapper for EnableAddressTransfer that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableAddressTransferOutcomeCallable EnableAddressTransferCallable(const Model::EnableAddressTransferRequest& request) const;
+
+        /**
+         * An Async wrapper for EnableAddressTransfer that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableAddressTransferAsync(const Model::EnableAddressTransferRequest& request, const EnableAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables EBS encryption by default for your account in the current Region.</p>

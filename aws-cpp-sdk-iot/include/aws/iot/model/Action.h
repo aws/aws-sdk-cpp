@@ -27,6 +27,7 @@
 #include <aws/iot/model/HttpAction.h>
 #include <aws/iot/model/KafkaAction.h>
 #include <aws/iot/model/OpenSearchAction.h>
+#include <aws/iot/model/LocationAction.h>
 #include <utility>
 
 namespace Aws
@@ -811,6 +812,43 @@ namespace Model
      */
     inline Action& WithOpenSearch(OpenSearchAction&& value) { SetOpenSearch(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Location Service rule action sends device location updates from an
+     * MQTT message to an Amazon Location tracker resource.</p>
+     */
+    inline const LocationAction& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The Amazon Location Service rule action sends device location updates from an
+     * MQTT message to an Amazon Location tracker resource.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>The Amazon Location Service rule action sends device location updates from an
+     * MQTT message to an Amazon Location tracker resource.</p>
+     */
+    inline void SetLocation(const LocationAction& value) { m_locationHasBeenSet = true; m_location = value; }
+
+    /**
+     * <p>The Amazon Location Service rule action sends device location updates from an
+     * MQTT message to an Amazon Location tracker resource.</p>
+     */
+    inline void SetLocation(LocationAction&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
+
+    /**
+     * <p>The Amazon Location Service rule action sends device location updates from an
+     * MQTT message to an Amazon Location tracker resource.</p>
+     */
+    inline Action& WithLocation(const LocationAction& value) { SetLocation(value); return *this;}
+
+    /**
+     * <p>The Amazon Location Service rule action sends device location updates from an
+     * MQTT message to an Amazon Location tracker resource.</p>
+     */
+    inline Action& WithLocation(LocationAction&& value) { SetLocation(std::move(value)); return *this;}
+
   private:
 
     DynamoDBAction m_dynamoDB;
@@ -878,6 +916,9 @@ namespace Model
 
     OpenSearchAction m_openSearch;
     bool m_openSearchHasBeenSet = false;
+
+    LocationAction m_location;
+    bool m_locationHasBeenSet = false;
   };
 
 } // namespace Model

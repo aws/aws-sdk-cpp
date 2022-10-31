@@ -39,22 +39,22 @@ namespace Model
 
 
     /**
-     * <p>The ID of the fleet privisioning template version.</p>
+     * <p>The ID of the fleet provisioning template version.</p>
      */
     inline int GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>The ID of the fleet privisioning template version.</p>
+     * <p>The ID of the fleet provisioning template version.</p>
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
-     * <p>The ID of the fleet privisioning template version.</p>
+     * <p>The ID of the fleet provisioning template version.</p>
      */
     inline void SetVersionId(int value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>The ID of the fleet privisioning template version.</p>
+     * <p>The ID of the fleet provisioning template version.</p>
      */
     inline ProvisioningTemplateVersionSummary& WithVersionId(int value) { SetVersionId(value); return *this;}
 
