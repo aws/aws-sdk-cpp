@@ -377,7 +377,8 @@ namespace
                 DeleteObjectRequest deleteObjectRequest;
                 deleteObjectRequest.SetBucket(bucketName);
                 deleteObjectRequest.SetKey(object.GetKey());
-                Client->DeleteObject(deleteObjectRequest);
+                auto deleteObjectOutcome = Client->DeleteObject(deleteObjectRequest);
+                AWS_ASSERT_SUCCESS(deleteObjectOutcome);
             }
         }
 
@@ -603,7 +604,11 @@ namespace
             }
             else
             {
+#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
+                ASSERT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) getObjectOutcome.GetError().GetErrorType());
+#else
                 ASSERT_EQ(S3Errors::VALIDATION, getObjectOutcome.GetError().GetErrorType());
+#endif
             }
         }
 
@@ -871,6 +876,7 @@ namespace
         deleteObjectsRequest.SetDelete(deleteObjects);
         DeleteObjectsOutcome deleteObjectsOutcome = Client->DeleteObjects(deleteObjectsRequest);
         AWS_ASSERT_SUCCESS(deleteObjectsOutcome);
+        ASSERT_EQ(objectKeysWithNewlineCharacter.size(), deleteObjectsOutcome.GetResult().GetDeleted().size());
 
         ListObjectsRequest listObjectsRequest;
         listObjectsRequest.SetBucket(fullBucketName);
@@ -1452,7 +1458,15 @@ namespace
         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         Aws::String presignedUrlPut = Client->GeneratePresignedUrl(fullBucketName, TEST_DNS_UNFRIENDLY_OBJ_KEY, HttpMethod::HTTP_PUT);
+#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
+        // URI-segment addressing style, new default of the SDK
+        const Aws::String expectedUri = Aws::String("https://s3.") + Aws::Region::US_EAST_1 + ".amazonaws.com/" + fullBucketName + "/" + TEST_DNS_UNFRIENDLY_OBJ_KEY;
+        bool presignedUrlPutStartsWithExpectedUri = presignedUrlPut.rfind(expectedUri, 0) == 0;
+        ASSERT_TRUE(presignedUrlPutStartsWithExpectedUri);
+#else
+        // Force path style - configuration is no longer supported by the SDK
         ASSERT_EQ(0ul, presignedUrlPut.find("https://s3.amazonaws.com/" + fullBucketName + "/" + TEST_DNS_UNFRIENDLY_OBJ_KEY));
+#endif
     }
 
     TEST_F(BucketAndObjectOperationTest, TestCopyingFromKeysWithUnicodeCharacters)
@@ -2157,13 +2171,21 @@ namespace
         listObjectsOutcome = s3ClientWithDualStack.ListObjects(listObjectsRequest);
         ASSERT_FALSE(listObjectsOutcome.IsSuccess());
         ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
+        ASSERT_EQ("Host override cannot be combined with Dualstack, FIPS, or S3 Accelerate", listObjectsOutcome.GetError().GetMessage());
+#else
         ASSERT_EQ(S3Errors::VALIDATION, listObjectsOutcome.GetError().GetErrorType());
+#endif
 
         listObjectsRequest.SetBucket("arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint");
         listObjectsOutcome = s3ClientWithDualStack.ListObjects(listObjectsRequest);
         ASSERT_FALSE(listObjectsOutcome.IsSuccess());
         ASSERT_EQ(HttpResponseCode::REQUEST_NOT_MADE, listObjectsOutcome.GetError().GetResponseCode());
+#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
+        ASSERT_EQ("S3 Outposts does not support Dual-stack", listObjectsOutcome.GetError().GetMessage());
+#else
         ASSERT_EQ(S3Errors::VALIDATION, listObjectsOutcome.GetError().GetErrorType());
+#endif
     }
 
     TEST_F(BucketAndObjectOperationTest, TestS3AccessPointARN)
@@ -2263,9 +2285,11 @@ namespace
         DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint",
             "myendpoint-123456789012.s3-accesspoint-fips.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3, true);
 
+#if !(AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10)
         // Cross FIPS region Access Point ARN is not allowed even though use ARN region. It's different from non FIPS regions.
         config.region = "fips-us-gov-east-1";
         DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-west-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+#endif
 
         // FIPS region in ARN
         config.region = "fips-us-gov-west-1";

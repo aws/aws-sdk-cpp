@@ -8,6 +8,11 @@
 
 /* Generic header includes */
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
+#if($serviceModel.metadata.serviceId == "S3" || $metadata.hasEndpointDiscoveryTrait)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
+#else
+\#include <aws/core/client/GenericClientConfiguration.h>
+#end
 \#include <aws/core/client/AWSError.h>
 \#include <aws/core/utils/memory/stl/AWSString.h>
 \#include <aws/core/client/AsyncCallerContext.h>
@@ -78,6 +83,14 @@ namespace ${rootNamespace}
 
   namespace ${metadata.namespace}
   {
+#if($serviceModel.metadata.serviceId != "S3")
+#if(!$metadata.hasEndpointDiscoveryTrait)
+    using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+#else
+    using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
+#end
+#end
+
 #if($serviceModel.endpointRules)
     namespace Endpoint
     {

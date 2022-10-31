@@ -54,10 +54,17 @@ namespace ${metadata.namespace}
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
         void OverrideEndpoint(const Aws::String& endpoint);
+#if($serviceModel.endpointRules)
+        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+#end
     private:
-        void init(const Client::ClientConfiguration& clientConfiguration);
-        void Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile);
 #if(!$serviceModel.endpointRules)
+        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+#else
+        void init(const ${metadata.classNamePrefix}ClientConfiguration& clientConfiguration);
+#end
+#if(!$serviceModel.endpointRules)
+        void Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile);
         /**
          * For operations without account ID or ARN as parameters, e.g. CreateBucket, ListRegionalBuckets. Possible endpoints:
          * - s3-control[.dualstack].{region}.amazonaws.com
@@ -80,6 +87,9 @@ namespace ${metadata.namespace}
         bool m_enableHostPrefixInjection = false;
         Aws::String m_configScheme;
 #end##-#if(!$serviceModel.endpointRules)
+#if($serviceModel.endpointRules)
+        ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
+#end
         std::shared_ptr<Utils::Threading::Executor> m_executor;
 #if(!$serviceModel.endpointRules)
         bool m_useDualStack = false;
@@ -91,7 +101,7 @@ namespace ${metadata.namespace}
         bool m_enableEndpointDiscovery = false;
 #end
 #if($serviceModel.endpointRules)
-        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
+        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
 #end
     };
 

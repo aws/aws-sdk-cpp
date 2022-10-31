@@ -26,13 +26,37 @@ namespace Aws
             virtual ~AWSEndpoint()
             {};
 
-            const Aws::String& GetURL() const
+            Aws::String GetURL() const
             {
-                return m_url;
+                return m_uri.GetURIString();
             }
             void SetURL(Aws::String url)
             {
-                m_url = std::move(url);
+                m_uri = std::move(url);
+            }
+
+            const Aws::Http::URI GetURI() const
+            {
+                return m_uri;
+            }
+            void SetURI(Aws::Http::URI uri)
+            {
+                m_uri = std::move(uri);
+            }
+
+            void AddPathSegments(const Aws::String& pathSegments)
+            {
+                m_uri.AddPathSegments(pathSegments);
+            }
+
+            void AddPathSegment(const Aws::String& pathSegment)
+            {
+                m_uri.AddPathSegment(pathSegment);
+            }
+
+            void SetQueryString(const Aws::String& queryString)
+            {
+                m_uri.SetQueryString(queryString);
             }
 
             const Crt::Optional <EndpointAttributes>& GetAttributes() const
@@ -60,7 +84,7 @@ namespace Aws
 
         protected:
             // A URI containing at minimum the scheme and host. May optionally include a port and a path.
-            Aws::String m_url;
+            Aws::Http::URI m_uri;
 
             // A grab bag property map of endpoint attributes. The values here are considered unstable.
             Crt::Optional<EndpointAttributes> m_attributes;
