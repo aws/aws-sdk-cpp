@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2Endpoint.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/AcceptAddressTransferRequest.h>
 #include <aws/ec2/model/AcceptReservedInstancesExchangeQuoteRequest.h>
 #include <aws/ec2/model/AcceptTransitGatewayMulticastDomainAssociationsRequest.h>
 #include <aws/ec2/model/AcceptTransitGatewayPeeringAttachmentRequest.h>
@@ -220,6 +221,7 @@
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupMembersRequest.h>
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupSourcesRequest.h>
 #include <aws/ec2/model/DescribeAccountAttributesRequest.h>
+#include <aws/ec2/model/DescribeAddressTransfersRequest.h>
 #include <aws/ec2/model/DescribeAddressesRequest.h>
 #include <aws/ec2/model/DescribeAddressesAttributeRequest.h>
 #include <aws/ec2/model/DescribeAggregateIdFormatRequest.h>
@@ -359,6 +361,7 @@
 #include <aws/ec2/model/DetachNetworkInterfaceRequest.h>
 #include <aws/ec2/model/DetachVolumeRequest.h>
 #include <aws/ec2/model/DetachVpnGatewayRequest.h>
+#include <aws/ec2/model/DisableAddressTransferRequest.h>
 #include <aws/ec2/model/DisableEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/DisableFastLaunchRequest.h>
 #include <aws/ec2/model/DisableFastSnapshotRestoresRequest.h>
@@ -381,6 +384,7 @@
 #include <aws/ec2/model/DisassociateTransitGatewayRouteTableRequest.h>
 #include <aws/ec2/model/DisassociateTrunkInterfaceRequest.h>
 #include <aws/ec2/model/DisassociateVpcCidrBlockRequest.h>
+#include <aws/ec2/model/EnableAddressTransferRequest.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultRequest.h>
 #include <aws/ec2/model/EnableFastLaunchRequest.h>
 #include <aws/ec2/model/EnableFastSnapshotRestoresRequest.h>
@@ -641,6 +645,28 @@ void EC2Client::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+AcceptAddressTransferOutcome EC2Client::AcceptAddressTransfer(const AcceptAddressTransferRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return AcceptAddressTransferOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+AcceptAddressTransferOutcomeCallable EC2Client::AcceptAddressTransferCallable(const AcceptAddressTransferRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AcceptAddressTransferOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptAddressTransfer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::AcceptAddressTransferAsync(const AcceptAddressTransferRequest& request, const AcceptAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, AcceptAddressTransfer(request), context);
+    } );
 }
 
 AcceptReservedInstancesExchangeQuoteOutcome EC2Client::AcceptReservedInstancesExchangeQuote(const AcceptReservedInstancesExchangeQuoteRequest& request) const
@@ -5043,6 +5069,28 @@ void EC2Client::DescribeAccountAttributesAsync(const DescribeAccountAttributesRe
     } );
 }
 
+DescribeAddressTransfersOutcome EC2Client::DescribeAddressTransfers(const DescribeAddressTransfersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeAddressTransfersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeAddressTransfersOutcomeCallable EC2Client::DescribeAddressTransfersCallable(const DescribeAddressTransfersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAddressTransfersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAddressTransfers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeAddressTransfersAsync(const DescribeAddressTransfersRequest& request, const DescribeAddressTransfersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeAddressTransfers(request), context);
+    } );
+}
+
 DescribeAddressesOutcome EC2Client::DescribeAddresses(const DescribeAddressesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -8101,6 +8149,28 @@ void EC2Client::DetachVpnGatewayAsync(const DetachVpnGatewayRequest& request, co
     } );
 }
 
+DisableAddressTransferOutcome EC2Client::DisableAddressTransfer(const DisableAddressTransferRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DisableAddressTransferOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DisableAddressTransferOutcomeCallable EC2Client::DisableAddressTransferCallable(const DisableAddressTransferRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableAddressTransferOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableAddressTransfer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DisableAddressTransferAsync(const DisableAddressTransferRequest& request, const DisableAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DisableAddressTransfer(request), context);
+    } );
+}
+
 DisableEbsEncryptionByDefaultOutcome EC2Client::DisableEbsEncryptionByDefault(const DisableEbsEncryptionByDefaultRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -8582,6 +8652,28 @@ void EC2Client::DisassociateVpcCidrBlockAsync(const DisassociateVpcCidrBlockRequ
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DisassociateVpcCidrBlock(request), context);
+    } );
+}
+
+EnableAddressTransferOutcome EC2Client::EnableAddressTransfer(const EnableAddressTransferRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return EnableAddressTransferOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+EnableAddressTransferOutcomeCallable EC2Client::EnableAddressTransferCallable(const EnableAddressTransferRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableAddressTransferOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableAddressTransfer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::EnableAddressTransferAsync(const EnableAddressTransferRequest& request, const EnableAddressTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, EnableAddressTransfer(request), context);
     } );
 }
 

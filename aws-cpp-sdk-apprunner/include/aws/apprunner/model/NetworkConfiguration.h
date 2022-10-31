@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/apprunner/AppRunner_EXPORTS.h>
 #include <aws/apprunner/model/EgressConfiguration.h>
+#include <aws/apprunner/model/IngressConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -69,10 +70,44 @@ namespace Model
      */
     inline NetworkConfiguration& WithEgressConfiguration(EgressConfiguration&& value) { SetEgressConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Network configuration settings for inbound message traffic.</p>
+     */
+    inline const IngressConfiguration& GetIngressConfiguration() const{ return m_ingressConfiguration; }
+
+    /**
+     * <p>Network configuration settings for inbound message traffic.</p>
+     */
+    inline bool IngressConfigurationHasBeenSet() const { return m_ingressConfigurationHasBeenSet; }
+
+    /**
+     * <p>Network configuration settings for inbound message traffic.</p>
+     */
+    inline void SetIngressConfiguration(const IngressConfiguration& value) { m_ingressConfigurationHasBeenSet = true; m_ingressConfiguration = value; }
+
+    /**
+     * <p>Network configuration settings for inbound message traffic.</p>
+     */
+    inline void SetIngressConfiguration(IngressConfiguration&& value) { m_ingressConfigurationHasBeenSet = true; m_ingressConfiguration = std::move(value); }
+
+    /**
+     * <p>Network configuration settings for inbound message traffic.</p>
+     */
+    inline NetworkConfiguration& WithIngressConfiguration(const IngressConfiguration& value) { SetIngressConfiguration(value); return *this;}
+
+    /**
+     * <p>Network configuration settings for inbound message traffic.</p>
+     */
+    inline NetworkConfiguration& WithIngressConfiguration(IngressConfiguration&& value) { SetIngressConfiguration(std::move(value)); return *this;}
+
   private:
 
     EgressConfiguration m_egressConfiguration;
     bool m_egressConfigurationHasBeenSet = false;
+
+    IngressConfiguration m_ingressConfiguration;
+    bool m_ingressConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

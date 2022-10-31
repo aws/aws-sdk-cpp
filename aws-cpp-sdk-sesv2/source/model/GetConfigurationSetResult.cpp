@@ -73,6 +73,12 @@ GetConfigurationSetResult& GetConfigurationSetResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("VdmOptions"))
+  {
+    m_vdmOptions = jsonValue.GetObject("VdmOptions");
+
+  }
+
 
 
   return *this;

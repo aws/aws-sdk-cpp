@@ -1375,6 +1375,28 @@ namespace Connect
         virtual void DisassociateSecurityKeyAsync(const Model::DisassociateSecurityKeyRequest& request, const DisassociateSecurityKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Dismisses contacts from an agent’s CCP and returns the agent to an available
+         * state, which allows the agent to receive a new routed contact. Contacts can only
+         * be dismissed if they are in a <code>MISSED</code>, <code>ERROR</code>,
+         * <code>ENDED</code>, or <code>REJECTED</code> state in the <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">Agent
+         * Event Stream</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DismissUserContact">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DismissUserContactOutcome DismissUserContact(const Model::DismissUserContactRequest& request) const;
+
+        /**
+         * A Callable wrapper for DismissUserContact that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DismissUserContactOutcomeCallable DismissUserContactCallable(const Model::DismissUserContactRequest& request) const;
+
+        /**
+         * An Async wrapper for DismissUserContact that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DismissUserContactAsync(const Model::DismissUserContactRequest& request, const DismissUserContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the contact attributes for the specified contact.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes">AWS
@@ -3145,8 +3167,8 @@ namespace Connect
         virtual void UpdateTaskTemplateAsync(const Model::UpdateTaskTemplateRequest& request, const UpdateTaskTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the traffic distribution for a given traffic distribution group. For
-         * more information about updating a traffic distribution group see <a
+         * <p>Updates the traffic distribution for a given traffic distribution group. </p>
+         * <p>For more information about updating a traffic distribution group, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
          * telephony traffic distribution across Amazon Web Services Regions </a> in the
          * <i>Amazon Connect Administrator Guide</i>. </p><p><h3>See Also:</h3>   <a

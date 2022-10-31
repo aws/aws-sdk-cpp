@@ -20,6 +20,7 @@
 #include <aws/sesv2/SESV2Client.h>
 #include <aws/sesv2/SESV2Endpoint.h>
 #include <aws/sesv2/SESV2ErrorMarshaller.h>
+#include <aws/sesv2/model/BatchGetMetricDataRequest.h>
 #include <aws/sesv2/model/CreateConfigurationSetRequest.h>
 #include <aws/sesv2/model/CreateConfigurationSetEventDestinationRequest.h>
 #include <aws/sesv2/model/CreateContactRequest.h>
@@ -70,17 +71,20 @@
 #include <aws/sesv2/model/ListEmailIdentitiesRequest.h>
 #include <aws/sesv2/model/ListEmailTemplatesRequest.h>
 #include <aws/sesv2/model/ListImportJobsRequest.h>
+#include <aws/sesv2/model/ListRecommendationsRequest.h>
 #include <aws/sesv2/model/ListSuppressedDestinationsRequest.h>
 #include <aws/sesv2/model/ListTagsForResourceRequest.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountDetailsRequest.h>
 #include <aws/sesv2/model/PutAccountSendingAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountSuppressionAttributesRequest.h>
+#include <aws/sesv2/model/PutAccountVdmAttributesRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetDeliveryOptionsRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetReputationOptionsRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetSendingOptionsRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetSuppressionOptionsRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetTrackingOptionsRequest.h>
+#include <aws/sesv2/model/PutConfigurationSetVdmOptionsRequest.h>
 #include <aws/sesv2/model/PutDedicatedIpInPoolRequest.h>
 #include <aws/sesv2/model/PutDedicatedIpWarmupAttributesRequest.h>
 #include <aws/sesv2/model/PutDeliverabilityDashboardOptionRequest.h>
@@ -180,6 +184,29 @@ void SESV2Client::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+BatchGetMetricDataOutcome SESV2Client::BatchGetMetricData(const BatchGetMetricDataRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v2/email/metrics/batch");
+  return BatchGetMetricDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetMetricDataOutcomeCallable SESV2Client::BatchGetMetricDataCallable(const BatchGetMetricDataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetMetricDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetMetricData(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::BatchGetMetricDataAsync(const BatchGetMetricDataRequest& request, const BatchGetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, BatchGetMetricData(request), context);
+    } );
 }
 
 CreateConfigurationSetOutcome SESV2Client::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const
@@ -1578,6 +1605,29 @@ void SESV2Client::ListImportJobsAsync(const ListImportJobsRequest& request, cons
     } );
 }
 
+ListRecommendationsOutcome SESV2Client::ListRecommendations(const ListRecommendationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v2/email/vdm/recommendations");
+  return ListRecommendationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListRecommendationsOutcomeCallable SESV2Client::ListRecommendationsCallable(const ListRecommendationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecommendations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::ListRecommendationsAsync(const ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListRecommendations(request), context);
+    } );
+}
+
 ListSuppressedDestinationsOutcome SESV2Client::ListSuppressedDestinations(const ListSuppressedDestinationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1718,6 +1768,29 @@ void SESV2Client::PutAccountSuppressionAttributesAsync(const PutAccountSuppressi
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutAccountSuppressionAttributes(request), context);
+    } );
+}
+
+PutAccountVdmAttributesOutcome SESV2Client::PutAccountVdmAttributes(const PutAccountVdmAttributesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v2/email/account/vdm");
+  return PutAccountVdmAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutAccountVdmAttributesOutcomeCallable SESV2Client::PutAccountVdmAttributesCallable(const PutAccountVdmAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAccountVdmAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAccountVdmAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::PutAccountVdmAttributesAsync(const PutAccountVdmAttributesRequest& request, const PutAccountVdmAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutAccountVdmAttributes(request), context);
     } );
 }
 
@@ -1868,6 +1941,36 @@ void SESV2Client::PutConfigurationSetTrackingOptionsAsync(const PutConfiguration
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, PutConfigurationSetTrackingOptions(request), context);
+    } );
+}
+
+PutConfigurationSetVdmOptionsOutcome SESV2Client::PutConfigurationSetVdmOptions(const PutConfigurationSetVdmOptionsRequest& request) const
+{
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutConfigurationSetVdmOptions", "Required field: ConfigurationSetName, is not set");
+    return PutConfigurationSetVdmOptionsOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/v2/email/configuration-sets/");
+  uri.AddPathSegment(request.GetConfigurationSetName());
+  uri.AddPathSegments("/vdm-options");
+  return PutConfigurationSetVdmOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutConfigurationSetVdmOptionsOutcomeCallable SESV2Client::PutConfigurationSetVdmOptionsCallable(const PutConfigurationSetVdmOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutConfigurationSetVdmOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutConfigurationSetVdmOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::PutConfigurationSetVdmOptionsAsync(const PutConfigurationSetVdmOptionsRequest& request, const PutConfigurationSetVdmOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, PutConfigurationSetVdmOptions(request), context);
     } );
 }
 

@@ -49,6 +49,15 @@ DescribeCustomDomainsResult& DescribeCustomDomainsResult::operator =(const Aws::
     }
   }
 
+  if(jsonValue.ValueExists("VpcDNSTargets"))
+  {
+    Array<JsonView> vpcDNSTargetsJsonList = jsonValue.GetArray("VpcDNSTargets");
+    for(unsigned vpcDNSTargetsIndex = 0; vpcDNSTargetsIndex < vpcDNSTargetsJsonList.GetLength(); ++vpcDNSTargetsIndex)
+    {
+      m_vpcDNSTargets.push_back(vpcDNSTargetsJsonList[vpcDNSTargetsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");

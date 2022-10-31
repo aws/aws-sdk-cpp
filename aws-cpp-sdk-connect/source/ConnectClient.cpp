@@ -87,6 +87,7 @@
 #include <aws/connect/model/DisassociateQueueQuickConnectsRequest.h>
 #include <aws/connect/model/DisassociateRoutingProfileQueuesRequest.h>
 #include <aws/connect/model/DisassociateSecurityKeyRequest.h>
+#include <aws/connect/model/DismissUserContactRequest.h>
 #include <aws/connect/model/GetContactAttributesRequest.h>
 #include <aws/connect/model/GetCurrentMetricDataRequest.h>
 #include <aws/connect/model/GetCurrentUserDataRequest.h>
@@ -2450,6 +2451,42 @@ void ConnectClient::DisassociateSecurityKeyAsync(const DisassociateSecurityKeyRe
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DisassociateSecurityKey(request), context);
+    } );
+}
+
+DismissUserContactOutcome ConnectClient::DismissUserContact(const DismissUserContactRequest& request) const
+{
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DismissUserContact", "Required field: UserId, is not set");
+    return DismissUserContactOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DismissUserContact", "Required field: InstanceId, is not set");
+    return DismissUserContactOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/contact");
+  return DismissUserContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DismissUserContactOutcomeCallable ConnectClient::DismissUserContactCallable(const DismissUserContactRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DismissUserContactOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DismissUserContact(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DismissUserContactAsync(const DismissUserContactRequest& request, const DismissUserContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DismissUserContact(request), context);
     } );
 }
 

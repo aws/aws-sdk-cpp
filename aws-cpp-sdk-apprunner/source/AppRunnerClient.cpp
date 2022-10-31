@@ -26,16 +26,19 @@
 #include <aws/apprunner/model/CreateObservabilityConfigurationRequest.h>
 #include <aws/apprunner/model/CreateServiceRequest.h>
 #include <aws/apprunner/model/CreateVpcConnectorRequest.h>
+#include <aws/apprunner/model/CreateVpcIngressConnectionRequest.h>
 #include <aws/apprunner/model/DeleteAutoScalingConfigurationRequest.h>
 #include <aws/apprunner/model/DeleteConnectionRequest.h>
 #include <aws/apprunner/model/DeleteObservabilityConfigurationRequest.h>
 #include <aws/apprunner/model/DeleteServiceRequest.h>
 #include <aws/apprunner/model/DeleteVpcConnectorRequest.h>
+#include <aws/apprunner/model/DeleteVpcIngressConnectionRequest.h>
 #include <aws/apprunner/model/DescribeAutoScalingConfigurationRequest.h>
 #include <aws/apprunner/model/DescribeCustomDomainsRequest.h>
 #include <aws/apprunner/model/DescribeObservabilityConfigurationRequest.h>
 #include <aws/apprunner/model/DescribeServiceRequest.h>
 #include <aws/apprunner/model/DescribeVpcConnectorRequest.h>
+#include <aws/apprunner/model/DescribeVpcIngressConnectionRequest.h>
 #include <aws/apprunner/model/DisassociateCustomDomainRequest.h>
 #include <aws/apprunner/model/ListAutoScalingConfigurationsRequest.h>
 #include <aws/apprunner/model/ListConnectionsRequest.h>
@@ -44,12 +47,14 @@
 #include <aws/apprunner/model/ListServicesRequest.h>
 #include <aws/apprunner/model/ListTagsForResourceRequest.h>
 #include <aws/apprunner/model/ListVpcConnectorsRequest.h>
+#include <aws/apprunner/model/ListVpcIngressConnectionsRequest.h>
 #include <aws/apprunner/model/PauseServiceRequest.h>
 #include <aws/apprunner/model/ResumeServiceRequest.h>
 #include <aws/apprunner/model/StartDeploymentRequest.h>
 #include <aws/apprunner/model/TagResourceRequest.h>
 #include <aws/apprunner/model/UntagResourceRequest.h>
 #include <aws/apprunner/model/UpdateServiceRequest.h>
+#include <aws/apprunner/model/UpdateVpcIngressConnectionRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -262,6 +267,28 @@ void AppRunnerClient::CreateVpcConnectorAsync(const CreateVpcConnectorRequest& r
     } );
 }
 
+CreateVpcIngressConnectionOutcome AppRunnerClient::CreateVpcIngressConnection(const CreateVpcIngressConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateVpcIngressConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateVpcIngressConnectionOutcomeCallable AppRunnerClient::CreateVpcIngressConnectionCallable(const CreateVpcIngressConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVpcIngressConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVpcIngressConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRunnerClient::CreateVpcIngressConnectionAsync(const CreateVpcIngressConnectionRequest& request, const CreateVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateVpcIngressConnection(request), context);
+    } );
+}
+
 DeleteAutoScalingConfigurationOutcome AppRunnerClient::DeleteAutoScalingConfiguration(const DeleteAutoScalingConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -372,6 +399,28 @@ void AppRunnerClient::DeleteVpcConnectorAsync(const DeleteVpcConnectorRequest& r
     } );
 }
 
+DeleteVpcIngressConnectionOutcome AppRunnerClient::DeleteVpcIngressConnection(const DeleteVpcIngressConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteVpcIngressConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteVpcIngressConnectionOutcomeCallable AppRunnerClient::DeleteVpcIngressConnectionCallable(const DeleteVpcIngressConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVpcIngressConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVpcIngressConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRunnerClient::DeleteVpcIngressConnectionAsync(const DeleteVpcIngressConnectionRequest& request, const DeleteVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteVpcIngressConnection(request), context);
+    } );
+}
+
 DescribeAutoScalingConfigurationOutcome AppRunnerClient::DescribeAutoScalingConfiguration(const DescribeAutoScalingConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -479,6 +528,28 @@ void AppRunnerClient::DescribeVpcConnectorAsync(const DescribeVpcConnectorReques
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, DescribeVpcConnector(request), context);
+    } );
+}
+
+DescribeVpcIngressConnectionOutcome AppRunnerClient::DescribeVpcIngressConnection(const DescribeVpcIngressConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeVpcIngressConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeVpcIngressConnectionOutcomeCallable AppRunnerClient::DescribeVpcIngressConnectionCallable(const DescribeVpcIngressConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVpcIngressConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVpcIngressConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRunnerClient::DescribeVpcIngressConnectionAsync(const DescribeVpcIngressConnectionRequest& request, const DescribeVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeVpcIngressConnection(request), context);
     } );
 }
 
@@ -658,6 +729,28 @@ void AppRunnerClient::ListVpcConnectorsAsync(const ListVpcConnectorsRequest& req
     } );
 }
 
+ListVpcIngressConnectionsOutcome AppRunnerClient::ListVpcIngressConnections(const ListVpcIngressConnectionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListVpcIngressConnectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListVpcIngressConnectionsOutcomeCallable AppRunnerClient::ListVpcIngressConnectionsCallable(const ListVpcIngressConnectionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListVpcIngressConnectionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVpcIngressConnections(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRunnerClient::ListVpcIngressConnectionsAsync(const ListVpcIngressConnectionsRequest& request, const ListVpcIngressConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListVpcIngressConnections(request), context);
+    } );
+}
+
 PauseServiceOutcome AppRunnerClient::PauseService(const PauseServiceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -787,6 +880,28 @@ void AppRunnerClient::UpdateServiceAsync(const UpdateServiceRequest& request, co
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, UpdateService(request), context);
+    } );
+}
+
+UpdateVpcIngressConnectionOutcome AppRunnerClient::UpdateVpcIngressConnection(const UpdateVpcIngressConnectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateVpcIngressConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateVpcIngressConnectionOutcomeCallable AppRunnerClient::UpdateVpcIngressConnectionCallable(const UpdateVpcIngressConnectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateVpcIngressConnectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVpcIngressConnection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppRunnerClient::UpdateVpcIngressConnectionAsync(const UpdateVpcIngressConnectionRequest& request, const UpdateVpcIngressConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, UpdateVpcIngressConnection(request), context);
     } );
 }
 
