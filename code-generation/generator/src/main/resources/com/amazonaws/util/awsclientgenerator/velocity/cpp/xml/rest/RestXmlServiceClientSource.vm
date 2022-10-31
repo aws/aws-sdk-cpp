@@ -31,7 +31,7 @@ using namespace ${rootNamespace}::${serviceNamespace}::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 #if($serviceModel.endpointRules)
-using ResolveEndpointOutcome = Aws::${serviceNamespace}::Endpoint::${serviceNamespace}EndpointProvider::${metadata.classNamePrefix}ResolveEndpointOutcome;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 #end
 
 

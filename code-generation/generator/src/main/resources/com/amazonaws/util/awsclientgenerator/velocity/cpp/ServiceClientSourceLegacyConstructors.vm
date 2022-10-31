@@ -23,13 +23,13 @@
 #end
 #if($virtualAddressingSupported)
 #if($serviceModel.endpointRules)
-#set($addArgDummy = $additionalCtorArgs.put("useVirtualAddressing", "bool /*useVirtualAddressing = true*/"))
+#set($addArgDummy = $additionalCtorArgs.put("useVirtualAddressing", "bool useVirtualAddressing /*= true*/"))
 #else
 #set($addArgDummy = $additionalCtorArgs.put("useVirtualAddressing", "bool useVirtualAddressing /*= true*/"))
 #set($addArgDummy = $ctorMemberInitList.add("m_useVirtualAddressing(useVirtualAddressing)"))
 #set($virtualAddressing = ", bool useVirtualAddressing")
-#set($virtualAddressingInit = ", m_useVirtualAddressing(useVirtualAddressing)")
 #end
+#set($virtualAddressingInit = ", useVirtualAddressing")
 #else
 #set($virtualAddressing = "")
 #set($virtualAddressingInit = "")
@@ -40,11 +40,14 @@
 #set($USEast1RegionalEndpointArgString = "")
 #else
 #set($addArgDummy = $additionalCtorArgs.put("USEast1RegionalEndpoint", $USEast1RegionalEndpointArgString.replace(", ", "")))
+#set($USEast1RegionalEndpointInitString = ", USEast1RegionalEndPointOption")
 #end
 #if(!$USEast1RegionalEndpointInitString)
 #set($USEast1RegionalEndpointInitString = "")
 #else
+#if(!$serviceModel.endpointRules)
 #set($addArgDummy = $ctorMemberInitList.add($USEast1RegionalEndpointInitString.replace(", ", "")))
+#end
 #end
 #if(!$ForRegionExtraArgsString)
 #set($ForRegionExtraArgsString = "")##single place in m_baseUri assignment-init
@@ -79,6 +82,9 @@
   BASECLASS(clientConfiguration,
             Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG, bearerTokenProvider),
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+  m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+#end
   m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())
 #else,#end
 #foreach($ctorMemberInit in $ctorMemberInitList)
@@ -87,7 +93,7 @@
 #else#end
 #end
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 ## END OF BEARER TOKEN AUTH PROVIDER C-TOR
 
@@ -114,6 +120,9 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #else#end
 #end),
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+  m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+#end
   m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
 #end
 #foreach($ctorMemberInit in $ctorMemberInitList)
@@ -122,7 +131,7 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #end
 
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 ##END OF DEFAULT CREDENTIALS PROVIDER C-TOR
 
@@ -149,6 +158,9 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #else#end
 #end),
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+#end
     m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
 #end
 #foreach($ctorMemberInit in $ctorMemberInitList)
@@ -157,7 +169,7 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #end
 
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 ##END OF SIMPLE CREDENTIALS PROVIDER C-TOR
 
@@ -184,6 +196,9 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #else#end
 #end),
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
+#if($serviceModel.endpointRules)
+    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+#end
     m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
 #end
 #foreach($ctorMemberInit in $ctorMemberInitList)
@@ -192,7 +207,7 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #end
 
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 ##END OF SPECIFIED CREDENTIALS PROVIDER C-TOR
 #end##if($serviceModel.hasOnlyBearerAuth())
@@ -212,9 +227,12 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
   BASECLASS(clientConfiguration,
             signerProvider,
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)${virtualAddressingInit}
+#if($serviceModel.endpointRules)
+  m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+#end
+  m_executor(clientConfiguration.executor)
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 #end

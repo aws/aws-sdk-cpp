@@ -4,7 +4,8 @@
  */
 #pragma once
 
-#include "aws/core/Core_EXPORTS.h"
+#include <aws/core/Core_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 
 namespace Aws
 {
@@ -55,6 +56,11 @@ namespace Aws
             SERVICE_EXTENSION_START_RANGE = 128,
             OK = -1 // No error set
         };
+
+        /**
+         * Overload ostream operator<< for CoreErrors enum class for a prettier output such as "128"
+         */
+        AWS_CORE_API Aws::OStream& operator<< (Aws::OStream& oStream, CoreErrors code);
 
         namespace CoreErrorsMapper
         {

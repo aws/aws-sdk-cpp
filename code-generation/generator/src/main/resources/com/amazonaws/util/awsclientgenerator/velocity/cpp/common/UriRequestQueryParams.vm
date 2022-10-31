@@ -1,7 +1,7 @@
 #if($serviceModel.endpointRules)
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-#else##-#if($serviceModel.endpointRules)
+#end
 #if($operation.http.requestUri.contains("?"))
   Aws::StringStream ss;
 #end
@@ -18,11 +18,19 @@
 #set($queryStart = true)
 #set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
 #if(!$pathAndQuery.get(0).isEmpty())
+#if($serviceModel.endpointRules)
+  endpointResolutionOutcome.GetResult().AddPathSegments("${pathAndQuery.get(0)}");
+#else
   uri.AddPathSegments("${pathAndQuery.get(0)}");
+#end
 #end
   ss.str("${pathAndQuery.get(1)}");
 #elseif(!$uriPartString.equals("/"))
+#if($serviceModel.endpointRules)
+  endpointResolutionOutcome.GetResult().AddPathSegments("$uriPartString");
+#else
   uri.AddPathSegments("$uriPartString");
+#end
 #end## ---------------------------- if (request uri contains query) end ------
 #foreach($var in $uriVars)## for (parameter in request uri parameters) -------
 #set($varIndex = $partIndex - 1)
@@ -39,9 +47,17 @@
   ss << $parameter;
 #else
 #if($greedySyntax)
+#if($serviceModel.endpointRules)
+  endpointResolutionOutcome.GetResult().AddPathSegments($parameter);
+#else
   uri.AddPathSegments($parameter);
+#end
+#else
+#if($serviceModel.endpointRules)
+  endpointResolutionOutcome.GetResult().AddPathSegment($parameter);
 #else
   uri.AddPathSegment($parameter);
+#end
 #end
 #end
 #if($uriParts.size() > $partIndex)
@@ -54,7 +70,11 @@
 #end
   ss.str("${pathAndQuery.get(1)}");
 #elseif(!$uriPartString.equals("/"))
+#if($serviceModel.endpointRules)
+  endpointResolutionOutcome.GetResult().AddPathSegments("$uriPartString");
+#else
   uri.AddPathSegments("$uriPartString");
+#end
 #end
 #end
 #end## --------------------- if !skipFirst end ---
@@ -63,6 +83,9 @@
 #end## --------------------- if uriParts.size() > startIndex end ---
 #end## --------------------- for (parameter in request uri parameters) end ---
 #if($queryStart)
+#if($serviceModel.endpointRules)
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+#else
   uri.SetQueryString(ss.str());
 #end
-#end##-#if($serviceModel.endpointRules)
+#end

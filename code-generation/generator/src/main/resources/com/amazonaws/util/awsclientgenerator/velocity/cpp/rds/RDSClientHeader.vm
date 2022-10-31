@@ -50,8 +50,15 @@ namespace ${rootNamespace}
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
         void OverrideEndpoint(const Aws::String& endpoint);
+#if($serviceModel.endpointRules)
+        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+#end
     private:
+#if(!$serviceModel.endpointRules)
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+#else
+        void init(const ${metadata.classNamePrefix}ClientConfiguration& clientConfiguration);
+#end
 #if($metadata.hasEndpointDiscoveryTrait && !$serviceModel.endpointRules)
         void Load${metadata.classNamePrefix}SpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration);
 #end
@@ -75,9 +82,12 @@ namespace ${rootNamespace}
         bool m_useDualStack = false;
 #end
 #end
+#if($serviceModel.endpointRules)
+        ${metadata.classNamePrefix}ClientConfiguration m_clientConfiguration;
+#end
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
 #if($serviceModel.endpointRules)
-        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProvider> m_endpointProvider;
+        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
 #end
     };
   } // namespace ${metadata.namespace}

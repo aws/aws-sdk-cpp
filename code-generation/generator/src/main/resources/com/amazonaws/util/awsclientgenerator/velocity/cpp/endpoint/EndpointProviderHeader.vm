@@ -8,7 +8,11 @@
 #set($epBuiltInClassName = "${metadata.classNamePrefix}BuiltInParameters")
 #pragma once
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
-\#include <aws/core/client/ClientConfiguration.h>
+#if($serviceModel.metadata.serviceId == "S3" || $metadata.hasEndpointDiscoveryTrait)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
+#else
+\#include <aws/core/client/GenericClientConfiguration.h>
+#end
 \#include <aws/core/endpoint/DefaultEndpointProvider.h>
 \#include <aws/core/endpoint/EndpointParameter.h>
 \#include <aws/core/utils/memory/stl/AWSString.h>
@@ -53,36 +57,62 @@ public:
 #else##-#if ($serviceModel.clientContextParams)
 using ${epContextClassName} = Aws::Endpoint::ClientContextParameters;
 #end
-using ${epBuiltInClassName} = Aws::Endpoint::ClientContextParameters;
-class ${epProviderClassName};
+
+#if($serviceModel.metadata.serviceId != "S3")
+#if(!$metadata.hasEndpointDiscoveryTrait)
+using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+#else
+using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
+#end
+#end
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
+class ${epBuiltInClassName} : public Aws::Endpoint::BuiltInParameters
+{
+public:
+    virtual ~${epBuiltInClassName}(){};
+    using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+    virtual void SetFromClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& config);
+};
+#else
+using ${epBuiltInClassName} = Aws::Endpoint::BuiltInParameters;
+#end
+
+/**
+ * The type for the ${serviceNamespace} Client Endpoint Provider.
+ * Inherit from this Base class / "Interface" should you want to provide a custom endpoint provider.
+ * The SDK must use service-specific type for each service per specification.
+ */
+using ${metadata.classNamePrefix}EndpointProviderBase = Aws::Endpoint::EndpointProviderBase<${metadata.classNamePrefix}ClientConfiguration,
+                                                       ${epBuiltInClassName},
+                                                       ${epContextClassName}>;
+
+class ${metadata.classNamePrefix}EndpointProvider;
 using DefaultEndpointProviderT = Aws::Endpoint::DefaultEndpointProvider<${epProviderClassName},
+                                                                        ${metadata.classNamePrefix}ClientConfiguration,
                                                                         ${epBuiltInClassName},
                                                                         ${epContextClassName}>;
 
-
+/**
+ * Default endpoint provider used for this service
+ */
 class ${epProviderClassName} : public DefaultEndpointProviderT
 {
 public:
-    using ${metadata.classNamePrefix}ResolveEndpointOutcome = typename DefaultEndpointProviderT::ResolveEndpointOutcome;
+    using ${metadata.classNamePrefix}ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-    ${epProviderClassName}(const Client::ClientConfiguration& config = Client::ClientConfiguration())
-      : DefaultEndpointProviderT(${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}EndpointRules::Rules),
-        clientConfiguration(config)
+    ${epProviderClassName}()
+      : DefaultEndpointProviderT(${rootNamespace}::${serviceNamespace}::${metadata.classNamePrefix}EndpointRules::Rules)
     {}
 
     ${metadata.classNamePrefix}ResolveEndpointOutcome ResolveEndpointImpl(const EndpointParameters& epParams) const
     {
-        auto ResolveEndpointDefaultImpl =
-            Aws::Endpoint::ResolveEndpointDefaultImpl<${epProviderClassName}>;
-
+        auto ResolveEndpointDefaultImpl = Aws::Endpoint::ResolveEndpointDefaultImpl;
         return ResolveEndpointDefaultImpl(m_crtRuleEngine, m_builtInParameters.GetAllParameters(), m_clientContextParameters.GetAllParameters(), epParams);
     }
 
     ~${metadata.classNamePrefix}EndpointProvider()
     {
     }
-protected:
-    Client::ClientConfiguration clientConfiguration;
 };
 #end
 } // namespace Endpoint

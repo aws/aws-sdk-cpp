@@ -18,7 +18,7 @@
 static const char* ALLOCATION_TAG = "AWS${metadata.classNamePrefix}EndpointProviderTests";
 using ${metadata.classNamePrefix}EndpointProvider = Aws::${serviceNamespace}::Endpoint::${metadata.classNamePrefix}EndpointProvider;
 using EndpointParameters = Aws::Vector<Aws::Endpoint::EndpointParameter>;
-using ${metadata.classNamePrefix}ResolveEndpointOutcome = Aws::${serviceNamespace}::Endpoint::${metadata.classNamePrefix}EndpointProvider::${metadata.classNamePrefix}ResolveEndpointOutcome;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 using EpParam = Aws::Endpoint::EndpointParameter;
 using EpProp = Aws::Endpoint::EndpointParameter; // just a container to store test expectations
@@ -78,7 +78,7 @@ static const Aws::Vector<${metadata.classNamePrefix}EndpointProviderEndpointTest
 #end
 };
 
-void ValidateOutcome(const ${metadata.classNamePrefix}ResolveEndpointOutcome& outcome, const ${metadata.classNamePrefix}EndpointProviderEndpointTestCase::Expect& expect)
+void ValidateOutcome(const ResolveEndpointOutcome& outcome, const ${metadata.classNamePrefix}EndpointProviderEndpointTestCase::Expect& expect)
 {
     if(!expect.error.empty())
     {
