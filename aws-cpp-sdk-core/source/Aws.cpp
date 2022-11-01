@@ -150,7 +150,6 @@ namespace Aws
 
     void ShutdownAPI(const SDKOptions& options)
     {
-        Aws::Monitoring::CleanupMonitoring();
         Aws::Internal::CleanupEC2MetadataClient();
         Aws::Net::CleanupNetwork();
         Aws::CleanupEnumOverflowContainer();
