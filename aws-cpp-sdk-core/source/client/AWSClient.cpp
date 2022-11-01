@@ -622,6 +622,9 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::AmazonWebSer
         if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
             signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
         }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
         if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
             signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
         }
@@ -642,6 +645,9 @@ XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::AmazonWebServiceR
         signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
         if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
             signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
         }
         if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
             signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
@@ -1030,6 +1036,9 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& en
         if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
             signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
         }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
         if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
             signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
         }
@@ -1188,6 +1197,9 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::AmazonWebServiceRequest& reque
         if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
             signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
         }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
         if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
             signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
         }
@@ -1343,6 +1355,9 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::AmazonWebServiceRequest& request
         if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
             signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
         }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
         if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
             signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
         }
@@ -1362,6 +1377,9 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
         signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
         if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
             signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
         }
         if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
             signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();

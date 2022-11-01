@@ -53,7 +53,14 @@ Aws::Internal::Endpoint::EndpointAttributes::BuildEndpointAttributesFromJson(con
                         } else if (mapItemProperty.first == "signingRegion") {
                             authScheme.SetSigningRegion(mapItemProperty.second.AsString());
                         } else if (mapItemProperty.first == "signingRegionSet") {
-                            authScheme.SetSigningRegionSet(mapItemProperty.second.AsString());
+                            Aws::Utils::Array<Utils::Json::JsonView> signingRegionArray = mapItemProperty.second.AsArray();
+                            if (signingRegionArray.GetLength() != 1) {
+                                AWS_LOG_WARN(ENDPOINT_AUTH_SCHEME_TAG,
+                                             "Signing region set size is not equal to 1");
+                            }
+                            if (signingRegionArray.GetLength() > 0) {
+                                authScheme.SetSigningRegionSet(signingRegionArray.GetItem(0).AsString());
+                            }
                         } else if (mapItemProperty.first == "disableDoubleEncoding") {
                             authScheme.SetDisableDoubleEncoding(mapItemProperty.second.AsBool());
                         } else {

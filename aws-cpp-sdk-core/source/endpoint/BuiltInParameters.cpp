@@ -45,7 +45,7 @@ namespace Endpoint
                 forceFIPS = true;
                 SetStringParameter(AWS_REGION, regionOverride);
             } else if (StringEndsWith(config.region, FIPS_SUFFIX)) {
-                Aws::String regionOverride = config.region.substr(config.region.find(FIPS_SUFFIX));
+                Aws::String regionOverride = config.region.substr(0, config.region.size() - FIPS_SUFFIX.size());
                 forceFIPS = true;
                 SetStringParameter(AWS_REGION, regionOverride);
             } else {
