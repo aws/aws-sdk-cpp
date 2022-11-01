@@ -64,11 +64,11 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.add(generateClientHeaderFile(serviceModel));
         fileList.add(generateServiceClientModelInclude(serviceModel));
         fileList.add(generateClientSourceFile(serviceModel));
-        fileList.add(generateARNHeaderFile(serviceModel));
-        fileList.add(generateARNSourceFile(serviceModel));
+        if (serviceModel.getEndpointRules() == null) {
+            fileList.add(generateARNHeaderFile(serviceModel));
+            fileList.add(generateARNSourceFile(serviceModel));
+        }
         fileList.add(generateClientConfigurationFile(serviceModel));
-        fileList.add(generateRegionHeaderFile(serviceModel));
-        fileList.add(generateRegionSourceFile(serviceModel));
         if (serviceModel.getEndpointRules() != null) {
             fileList.add(generateEndpointRulesHeaderFile(serviceModel));
             fileList.add(generateEndpointRulesSourceFile(serviceModel));
@@ -80,6 +80,9 @@ public abstract class CppClientGenerator implements ClientGenerator {
                 fileList.add(generateServiceClientConfigurationHeaderFile(serviceModel));
                 fileList.add(generateServiceClientConfigurationSourceFile(serviceModel));
             }
+        } else {
+            fileList.add(generateRegionHeaderFile(serviceModel));
+            fileList.add(generateRegionSourceFile(serviceModel));
         }
         fileList.add(generateErrorsHeaderFile(serviceModel));
         fileList.add(generateErrorMarshallerHeaderFile(serviceModel));
