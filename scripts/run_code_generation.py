@@ -82,9 +82,9 @@ def _build_service_model_with_endpoints(models_dir: str, endpoint_rules_dir: str
     :return: ServiceModel, a descriptor class holding Service models filenames
     """
 
-    endpoint_rules_filename = c2j_model_filename.replace('.normal.json', '.endpoint-rule-set-1.json')
+    endpoint_rules_filename = c2j_model_filename.replace('.normal.json', '.endpoint-rule-set.json')
     endpoint_rules_filepath = f"{endpoint_rules_dir}/{endpoint_rules_filename}"
-    endpoint_tests_filename = c2j_model_filename.replace('.normal.json', '.endpoint-tests-1.json')
+    endpoint_tests_filename = c2j_model_filename.replace('.normal.json', '.endpoint-tests.json')
     endpoint_tests_filepath = f"{endpoint_rules_dir}/{endpoint_tests_filename}"
     match = SERVICE_MODEL_FILENAME_PATTERN.match(c2j_model_filename)
     service_id = match.group("service")
@@ -344,8 +344,10 @@ def generate_single_client(service_name: str,
         else:
             output_filename = "STDOUT"
         output_zip_file = run_generator_once(service_name, run_command, output_filename)
-        dir_to_delete_before_extract = f"{output_dir}/aws-cpp-sdk-{service_name}-generated-tests"
-        extract_zip(output_zip_file, f"{service_name}-generated-tests", output_dir, dir_to_delete_before_extract)
+        if not os.path.exists(f"{output_dir}/generated/tests"):
+            os.makedirs(f"{output_dir}/generated/tests")
+        dir_to_delete_before_extract = f"{output_dir}/generated/tests/aws-cpp-sdk-{service_name}-generated-tests"
+        extract_zip(output_zip_file, f"{service_name}-generated-tests", f"{output_dir}/generated/tests", dir_to_delete_before_extract)
 
     return service_name, status
 

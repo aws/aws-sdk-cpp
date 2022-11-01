@@ -39,14 +39,14 @@ ENDPOINT_RULESET_FILENAME_PATTERN = re.compile(
     "^"
     "(?P<service>.+)-"                                      # service name
     "(?P<date>[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9])"  # model date
-    ".endpoint-rule-set-1.json$"
+    ".endpoint-rule-set.json$"
 )
 
 ENDPOINT_TESTS_FILENAME_PATTERN = re.compile(
     "^"
     "(?P<service>.+)-"                                      # service name
     "(?P<date>[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9])"  # model date
-    ".endpoint-tests-1.json$"
+    ".endpoint-tests.json$"
 )
 
 
@@ -109,11 +109,11 @@ def copy_c2j_models(aws_reference_models_dir: str):
 
 def copy_endpoints20_rules(aws_reference_models_dir: str):
     try:
-        _copy_models(aws_reference_models_dir, ENDPOINT_RULES_LOCATION, "endpoint-rule-set-1.json", "endpoint-rule-set-1.json", ENDPOINT_RULESET_FILENAME_PATTERN)
+        _copy_models(aws_reference_models_dir, ENDPOINT_RULES_LOCATION, "endpoint-rule-set.json", "endpoint-rule-set-1.json", ENDPOINT_RULESET_FILENAME_PATTERN)
     except Exception as exc:
         print(f"Error: failed to copy endpoint rules: {exc}")
     try:
-        _copy_models(aws_reference_models_dir, ENDPOINT_RULES_LOCATION, "endpoint-tests-1.json", "endpoint-tests-1.json", ENDPOINT_TESTS_FILENAME_PATTERN)
+        _copy_models(aws_reference_models_dir, ENDPOINT_RULES_LOCATION, "endpoint-tests.json", "endpoint-tests-1.json", ENDPOINT_TESTS_FILENAME_PATTERN)
     except Exception as exc:
         print(f"Error: failed to copy endpoint tests: {exc}")
 

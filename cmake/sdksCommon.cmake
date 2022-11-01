@@ -176,12 +176,17 @@ list(APPEND SDK_TEST_PROJECT_LIST "eventbridge:aws-cpp-sdk-eventbridge-tests")
 
 build_sdk_list()
 
-foreach(GENERATED_C2J_TEST IN LISTS C2J_LIST)
-    STRING(REGEX REPLACE "([^:]+):.*" "\\1" GENERATED_C2J_TEST_RESULT ${GENERATED_C2J_TEST})
-    if(EXISTS "${CMAKE_SOURCE_DIR}/aws-cpp-sdk-${GENERATED_C2J_TEST_RESULT}-generated-tests")
-        list(APPEND SDK_TEST_PROJECT_LIST "${GENERATED_C2J_TEST_RESULT}:aws-cpp-sdk-${GENERATED_C2J_TEST_RESULT}-generated-tests")
+if(EXISTS "${CMAKE_SOURCE_DIR}/generated")
+    if(EXISTS "${CMAKE_SOURCE_DIR}/generated/tests")
+        foreach(GENERATED_C2J_TEST IN LISTS C2J_LIST)
+            STRING(REGEX REPLACE "([^:]+):.*" "\\1" GENERATED_C2J_TEST_RESULT ${GENERATED_C2J_TEST})
+
+            if(EXISTS "${CMAKE_SOURCE_DIR}/generated/tests/aws-cpp-sdk-${GENERATED_C2J_TEST_RESULT}-generated-tests")
+                list(APPEND SDK_TEST_PROJECT_LIST "${GENERATED_C2J_TEST_RESULT}:generated/tests/aws-cpp-sdk-${GENERATED_C2J_TEST_RESULT}-generated-tests")
+            endif()
+        endforeach()
     endif()
-endforeach()
+endif()
 
 set(SDK_DEPENDENCY_LIST "")
 list(APPEND SDK_DEPENDENCY_LIST "access-management:iam,cognito-identity,core")
