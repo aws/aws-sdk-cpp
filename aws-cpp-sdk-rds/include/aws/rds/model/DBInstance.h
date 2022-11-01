@@ -1693,42 +1693,42 @@ namespace Model
 
 
     /**
-     * <p>Specifies the storage type associated with DB instance.</p>
+     * <p>Specifies the storage type associated with the DB instance.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Specifies the storage type associated with DB instance.</p>
+     * <p>Specifies the storage type associated with the DB instance.</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the storage type associated with DB instance.</p>
+     * <p>Specifies the storage type associated with the DB instance.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type associated with DB instance.</p>
+     * <p>Specifies the storage type associated with the DB instance.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Specifies the storage type associated with DB instance.</p>
+     * <p>Specifies the storage type associated with the DB instance.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Specifies the storage type associated with DB instance.</p>
+     * <p>Specifies the storage type associated with the DB instance.</p>
      */
     inline DBInstance& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type associated with DB instance.</p>
+     * <p>Specifies the storage type associated with the DB instance.</p>
      */
     inline DBInstance& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the storage type associated with DB instance.</p>
+     * <p>Specifies the storage type associated with the DB instance.</p>
      */
     inline DBInstance& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -3613,6 +3613,27 @@ namespace Model
      */
     inline DBInstance& WithActivityStreamPolicyStatus(ActivityStreamPolicyStatus&& value) { SetActivityStreamPolicyStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the storage throughput for the DB instance.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>Specifies the storage throughput for the DB instance.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage throughput for the DB instance.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>Specifies the storage throughput for the DB instance.</p>
+     */
+    inline DBInstance& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -3842,6 +3863,9 @@ namespace Model
 
     ActivityStreamPolicyStatus m_activityStreamPolicyStatus;
     bool m_activityStreamPolicyStatusHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

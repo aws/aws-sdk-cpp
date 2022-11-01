@@ -445,42 +445,42 @@ namespace Model
 
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline DBInstanceAutomatedBackup& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline DBInstanceAutomatedBackup& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the VPC ID associated with the DB instance</p>
+     * <p>Provides the VPC ID associated with the DB instance.</p>
      */
     inline DBInstanceAutomatedBackup& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
@@ -1167,6 +1167,27 @@ namespace Model
      */
     inline DBInstanceAutomatedBackup& WithBackupTarget(const char* value) { SetBackupTarget(value); return *this;}
 
+
+    /**
+     * <p>Specifies the storage throughput for the automated backup.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>Specifies the storage throughput for the automated backup.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage throughput for the automated backup.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>Specifies the storage throughput for the automated backup.</p>
+     */
+    inline DBInstanceAutomatedBackup& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceArn;
@@ -1249,6 +1270,9 @@ namespace Model
 
     Aws::String m_backupTarget;
     bool m_backupTargetHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

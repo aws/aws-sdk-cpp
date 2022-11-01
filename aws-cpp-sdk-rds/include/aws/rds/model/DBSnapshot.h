@@ -1364,6 +1364,27 @@ namespace Model
      */
     inline DBSnapshot& WithSnapshotTarget(const char* value) { SetSnapshotTarget(value); return *this;}
 
+
+    /**
+     * <p>Specifies the storage throughput for the DB snapshot.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>Specifies the storage throughput for the DB snapshot.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage throughput for the DB snapshot.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>Specifies the storage throughput for the DB snapshot.</p>
+     */
+    inline DBSnapshot& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
   private:
 
     Aws::String m_dBSnapshotIdentifier;
@@ -1461,6 +1482,9 @@ namespace Model
 
     Aws::String m_snapshotTarget;
     bool m_snapshotTargetHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

@@ -53,7 +53,9 @@ DBInstanceAutomatedBackup::DBInstanceAutomatedBackup() :
     m_backupRetentionPeriodHasBeenSet(false),
     m_dBInstanceAutomatedBackupsArnHasBeenSet(false),
     m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
-    m_backupTargetHasBeenSet(false)
+    m_backupTargetHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
 }
 
@@ -90,7 +92,9 @@ DBInstanceAutomatedBackup::DBInstanceAutomatedBackup(const XmlNode& xmlNode) :
     m_backupRetentionPeriodHasBeenSet(false),
     m_dBInstanceAutomatedBackupsArnHasBeenSet(false),
     m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
-    m_backupTargetHasBeenSet(false)
+    m_backupTargetHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -269,6 +273,12 @@ DBInstanceAutomatedBackup& DBInstanceAutomatedBackup::operator =(const XmlNode& 
       m_backupTarget = Aws::Utils::Xml::DecodeEscapedXmlText(backupTargetNode.GetText());
       m_backupTargetHasBeenSet = true;
     }
+    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
+    if(!storageThroughputNode.IsNull())
+    {
+      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
+      m_storageThroughputHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -419,6 +429,11 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+
 }
 
 void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -538,6 +553,10 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
   if(m_backupTargetHasBeenSet)
   {
       oStream << location << ".BackupTarget=" << StringUtils::URLEncode(m_backupTarget.c_str()) << "&";
+  }
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 }
 

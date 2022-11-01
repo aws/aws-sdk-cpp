@@ -26,8 +26,8 @@ namespace Model
 
   /**
    * <p>Shows the group that a certain key belongs to. This helps differentiate
-   * responses like addresses that can appear similar in response JSON.</p><p><h3>See
-   * Also:</h3>   <a
+   * between names and addresses for different organizations, that can be hard to
+   * determine via JSON response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ExpenseGroupProperty">AWS
    * API Reference</a></p>
    */
@@ -41,47 +41,47 @@ namespace Model
 
 
     /**
-     * <p>Informs you on the kind of label associated with the group</p>
+     * <p>Informs you on whether the expense group is a name or an address.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTypes() const{ return m_types; }
 
     /**
-     * <p>Informs you on the kind of label associated with the group</p>
+     * <p>Informs you on whether the expense group is a name or an address.</p>
      */
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
 
     /**
-     * <p>Informs you on the kind of label associated with the group</p>
+     * <p>Informs you on whether the expense group is a name or an address.</p>
      */
     inline void SetTypes(const Aws::Vector<Aws::String>& value) { m_typesHasBeenSet = true; m_types = value; }
 
     /**
-     * <p>Informs you on the kind of label associated with the group</p>
+     * <p>Informs you on whether the expense group is a name or an address.</p>
      */
     inline void SetTypes(Aws::Vector<Aws::String>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
 
     /**
-     * <p>Informs you on the kind of label associated with the group</p>
+     * <p>Informs you on whether the expense group is a name or an address.</p>
      */
     inline ExpenseGroupProperty& WithTypes(const Aws::Vector<Aws::String>& value) { SetTypes(value); return *this;}
 
     /**
-     * <p>Informs you on the kind of label associated with the group</p>
+     * <p>Informs you on whether the expense group is a name or an address.</p>
      */
     inline ExpenseGroupProperty& WithTypes(Aws::Vector<Aws::String>&& value) { SetTypes(std::move(value)); return *this;}
 
     /**
-     * <p>Informs you on the kind of label associated with the group</p>
+     * <p>Informs you on whether the expense group is a name or an address.</p>
      */
     inline ExpenseGroupProperty& AddTypes(const Aws::String& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
 
     /**
-     * <p>Informs you on the kind of label associated with the group</p>
+     * <p>Informs you on whether the expense group is a name or an address.</p>
      */
     inline ExpenseGroupProperty& AddTypes(Aws::String&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Informs you on the kind of label associated with the group</p>
+     * <p>Informs you on whether the expense group is a name or an address.</p>
      */
     inline ExpenseGroupProperty& AddTypes(const char* value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
 

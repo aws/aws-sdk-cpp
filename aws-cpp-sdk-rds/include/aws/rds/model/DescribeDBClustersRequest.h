@@ -42,66 +42,74 @@ namespace Model
   public:
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The user-supplied DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
-     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match an
-     * existing DBClusterIdentifier.</p> </li> </ul>
+     * <p>The user-supplied DB cluster identifier or the Amazon Resource Name (ARN) of
+     * the DB cluster. If this parameter is specified, information from only the
+     * specific DB cluster is returned. This parameter isn't case-sensitive.</p>
+     * <p>Constraints:</p> <ul> <li> <p>If supplied, must match an existing
+     * DBClusterIdentifier.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 

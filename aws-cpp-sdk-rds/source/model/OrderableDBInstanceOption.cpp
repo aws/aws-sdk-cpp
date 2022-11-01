@@ -69,7 +69,17 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_supportsGlobalDatabasesHasBeenSet(false),
     m_supportsClusters(false),
     m_supportsClustersHasBeenSet(false),
-    m_supportedNetworkTypesHasBeenSet(false)
+    m_supportedNetworkTypesHasBeenSet(false),
+    m_supportsStorageThroughput(false),
+    m_supportsStorageThroughputHasBeenSet(false),
+    m_minStorageThroughputPerDbInstance(0),
+    m_minStorageThroughputPerDbInstanceHasBeenSet(false),
+    m_maxStorageThroughputPerDbInstance(0),
+    m_maxStorageThroughputPerDbInstanceHasBeenSet(false),
+    m_minStorageThroughputPerIops(0.0),
+    m_minStorageThroughputPerIopsHasBeenSet(false),
+    m_maxStorageThroughputPerIops(0.0),
+    m_maxStorageThroughputPerIopsHasBeenSet(false)
 {
 }
 
@@ -122,7 +132,17 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_supportsGlobalDatabasesHasBeenSet(false),
     m_supportsClusters(false),
     m_supportsClustersHasBeenSet(false),
-    m_supportedNetworkTypesHasBeenSet(false)
+    m_supportedNetworkTypesHasBeenSet(false),
+    m_supportsStorageThroughput(false),
+    m_supportsStorageThroughputHasBeenSet(false),
+    m_minStorageThroughputPerDbInstance(0),
+    m_minStorageThroughputPerDbInstanceHasBeenSet(false),
+    m_maxStorageThroughputPerDbInstance(0),
+    m_maxStorageThroughputPerDbInstanceHasBeenSet(false),
+    m_minStorageThroughputPerIops(0.0),
+    m_minStorageThroughputPerIopsHasBeenSet(false),
+    m_maxStorageThroughputPerIops(0.0),
+    m_maxStorageThroughputPerIopsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -343,6 +363,36 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
 
       m_supportedNetworkTypesHasBeenSet = true;
     }
+    XmlNode supportsStorageThroughputNode = resultNode.FirstChild("SupportsStorageThroughput");
+    if(!supportsStorageThroughputNode.IsNull())
+    {
+      m_supportsStorageThroughput = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsStorageThroughputNode.GetText()).c_str()).c_str());
+      m_supportsStorageThroughputHasBeenSet = true;
+    }
+    XmlNode minStorageThroughputPerDbInstanceNode = resultNode.FirstChild("MinStorageThroughputPerDbInstance");
+    if(!minStorageThroughputPerDbInstanceNode.IsNull())
+    {
+      m_minStorageThroughputPerDbInstance = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minStorageThroughputPerDbInstanceNode.GetText()).c_str()).c_str());
+      m_minStorageThroughputPerDbInstanceHasBeenSet = true;
+    }
+    XmlNode maxStorageThroughputPerDbInstanceNode = resultNode.FirstChild("MaxStorageThroughputPerDbInstance");
+    if(!maxStorageThroughputPerDbInstanceNode.IsNull())
+    {
+      m_maxStorageThroughputPerDbInstance = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxStorageThroughputPerDbInstanceNode.GetText()).c_str()).c_str());
+      m_maxStorageThroughputPerDbInstanceHasBeenSet = true;
+    }
+    XmlNode minStorageThroughputPerIopsNode = resultNode.FirstChild("MinStorageThroughputPerIops");
+    if(!minStorageThroughputPerIopsNode.IsNull())
+    {
+      m_minStorageThroughputPerIops = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minStorageThroughputPerIopsNode.GetText()).c_str()).c_str());
+      m_minStorageThroughputPerIopsHasBeenSet = true;
+    }
+    XmlNode maxStorageThroughputPerIopsNode = resultNode.FirstChild("MaxStorageThroughputPerIops");
+    if(!maxStorageThroughputPerIopsNode.IsNull())
+    {
+      m_maxStorageThroughputPerIops = StringUtils::ConvertToDouble(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxStorageThroughputPerIopsNode.GetText()).c_str()).c_str());
+      m_maxStorageThroughputPerIopsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -524,6 +574,31 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       }
   }
 
+  if(m_supportsStorageThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SupportsStorageThroughput=" << std::boolalpha << m_supportsStorageThroughput << "&";
+  }
+
+  if(m_minStorageThroughputPerDbInstanceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MinStorageThroughputPerDbInstance=" << m_minStorageThroughputPerDbInstance << "&";
+  }
+
+  if(m_maxStorageThroughputPerDbInstanceHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaxStorageThroughputPerDbInstance=" << m_maxStorageThroughputPerDbInstance << "&";
+  }
+
+  if(m_minStorageThroughputPerIopsHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".MinStorageThroughputPerIops=" << StringUtils::URLEncode(m_minStorageThroughputPerIops) << "&";
+  }
+
+  if(m_maxStorageThroughputPerIopsHasBeenSet)
+  {
+        oStream << location << index << locationValue << ".MaxStorageThroughputPerIops=" << StringUtils::URLEncode(m_maxStorageThroughputPerIops) << "&";
+  }
+
 }
 
 void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -671,6 +746,26 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       {
         oStream << location << ".SupportedNetworkTypes.member." << supportedNetworkTypesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_supportsStorageThroughputHasBeenSet)
+  {
+      oStream << location << ".SupportsStorageThroughput=" << std::boolalpha << m_supportsStorageThroughput << "&";
+  }
+  if(m_minStorageThroughputPerDbInstanceHasBeenSet)
+  {
+      oStream << location << ".MinStorageThroughputPerDbInstance=" << m_minStorageThroughputPerDbInstance << "&";
+  }
+  if(m_maxStorageThroughputPerDbInstanceHasBeenSet)
+  {
+      oStream << location << ".MaxStorageThroughputPerDbInstance=" << m_maxStorageThroughputPerDbInstance << "&";
+  }
+  if(m_minStorageThroughputPerIopsHasBeenSet)
+  {
+        oStream << location << ".MinStorageThroughputPerIops=" << StringUtils::URLEncode(m_minStorageThroughputPerIops) << "&";
+  }
+  if(m_maxStorageThroughputPerIopsHasBeenSet)
+  {
+        oStream << location << ".MaxStorageThroughputPerIops=" << StringUtils::URLEncode(m_maxStorageThroughputPerIops) << "&";
   }
 }
 

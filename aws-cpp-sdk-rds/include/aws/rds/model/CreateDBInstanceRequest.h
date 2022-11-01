@@ -515,41 +515,41 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
      * amount of storage for each storage type are the following:</p> <ul> <li>
-     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for
-     * RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
+     * <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536
+     * for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
      * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> <p>
      * <b>MySQL</b> </p> <p>Constraints to the amount of storage for each storage type
-     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be
-     * an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1):
-     * Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3):
+     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>MariaDB</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
-     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
-     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
-     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS
+     * storage (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic
+     * storage (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS
+     * storage (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic
+     * storage (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * <b>Oracle</b> </p> <p>Constraints to the amount of storage for each storage type
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3):
      * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
      * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
-     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p> <b>Oracle</b>
-     * </p> <p>Constraints to the amount of storage for each storage type are the
-     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
-     * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
-     * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
-     * Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p>
-     * <p>Constraints to the amount of storage for each storage type are the
-     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
-     * <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p>
-     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p>
-     * </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p> <ul> <li>
-     * <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p>
-     * </li> <li> <p>Web and Express editions: Must be an integer from 100 to
-     * 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul> <li>
-     * <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p>
-     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p>
-     * </li> </ul> </li> </ul>
+     * (standard): Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Constraints to the amount of storage for each storage type
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an integer from
+     * 20 to 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from
+     * 20 to 16384.</p> </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p>
+     * <ul> <li> <p>Enterprise and Standard editions: Must be an integer from 100 to
+     * 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from 100
+     * to 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul>
+     * <li> <p>Enterprise and Standard editions: Must be an integer from 20 to
+     * 1024.</p> </li> <li> <p>Web and Express editions: Must be an integer from 20 to
+     * 1024.</p> </li> </ul> </li> </ul>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
@@ -560,41 +560,41 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
      * amount of storage for each storage type are the following:</p> <ul> <li>
-     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for
-     * RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
+     * <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536
+     * for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
      * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> <p>
      * <b>MySQL</b> </p> <p>Constraints to the amount of storage for each storage type
-     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be
-     * an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1):
-     * Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3):
+     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>MariaDB</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
-     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
-     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
-     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS
+     * storage (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic
+     * storage (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS
+     * storage (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic
+     * storage (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * <b>Oracle</b> </p> <p>Constraints to the amount of storage for each storage type
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3):
      * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
      * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
-     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p> <b>Oracle</b>
-     * </p> <p>Constraints to the amount of storage for each storage type are the
-     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
-     * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
-     * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
-     * Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p>
-     * <p>Constraints to the amount of storage for each storage type are the
-     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
-     * <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p>
-     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p>
-     * </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p> <ul> <li>
-     * <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p>
-     * </li> <li> <p>Web and Express editions: Must be an integer from 100 to
-     * 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul> <li>
-     * <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p>
-     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p>
-     * </li> </ul> </li> </ul>
+     * (standard): Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Constraints to the amount of storage for each storage type
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an integer from
+     * 20 to 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from
+     * 20 to 16384.</p> </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p>
+     * <ul> <li> <p>Enterprise and Standard editions: Must be an integer from 100 to
+     * 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from 100
+     * to 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul>
+     * <li> <p>Enterprise and Standard editions: Must be an integer from 20 to
+     * 1024.</p> </li> <li> <p>Web and Express editions: Must be an integer from 20 to
+     * 1024.</p> </li> </ul> </li> </ul>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
@@ -605,41 +605,41 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
      * amount of storage for each storage type are the following:</p> <ul> <li>
-     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for
-     * RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
+     * <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536
+     * for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
      * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> <p>
      * <b>MySQL</b> </p> <p>Constraints to the amount of storage for each storage type
-     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be
-     * an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1):
-     * Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3):
+     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>MariaDB</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
-     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
-     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
-     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS
+     * storage (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic
+     * storage (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS
+     * storage (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic
+     * storage (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * <b>Oracle</b> </p> <p>Constraints to the amount of storage for each storage type
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3):
      * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
      * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
-     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p> <b>Oracle</b>
-     * </p> <p>Constraints to the amount of storage for each storage type are the
-     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
-     * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
-     * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
-     * Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p>
-     * <p>Constraints to the amount of storage for each storage type are the
-     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
-     * <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p>
-     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p>
-     * </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p> <ul> <li>
-     * <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p>
-     * </li> <li> <p>Web and Express editions: Must be an integer from 100 to
-     * 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul> <li>
-     * <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p>
-     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p>
-     * </li> </ul> </li> </ul>
+     * (standard): Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Constraints to the amount of storage for each storage type
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an integer from
+     * 20 to 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from
+     * 20 to 16384.</p> </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p>
+     * <ul> <li> <p>Enterprise and Standard editions: Must be an integer from 100 to
+     * 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from 100
+     * to 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul>
+     * <li> <p>Enterprise and Standard editions: Must be an integer from 20 to
+     * 1024.</p> </li> <li> <p>Web and Express editions: Must be an integer from 20 to
+     * 1024.</p> </li> </ul> </li> </ul>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
@@ -650,41 +650,41 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>Amazon RDS Custom</b> </p> <p>Constraints to the
      * amount of storage for each storage type are the following:</p> <ul> <li>
-     * <p>General Purpose (SSD) storage (gp2): Must be an integer from 40 to 65536 for
-     * RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
+     * <p>General Purpose (SSD) storage (gp2, gp3): Must be an integer from 40 to 65536
+     * for RDS Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> <li>
      * <p>Provisioned IOPS storage (io1): Must be an integer from 40 to 65536 for RDS
      * Custom for Oracle, 16384 for RDS Custom for SQL Server.</p> </li> </ul> <p>
      * <b>MySQL</b> </p> <p>Constraints to the amount of storage for each storage type
-     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be
-     * an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1):
-     * Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3):
+     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
+     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
      * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>MariaDB</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
-     * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
-     * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
-     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS
+     * storage (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic
+     * storage (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
      * <b>PostgreSQL</b> </p> <p>Constraints to the amount of storage for each storage
-     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):
+     * type are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3): Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS
+     * storage (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic
+     * storage (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p>
+     * <b>Oracle</b> </p> <p>Constraints to the amount of storage for each storage type
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2, gp3):
      * Must be an integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage
      * (io1): Must be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage
-     * (standard): Must be an integer from 5 to 3072.</p> </li> </ul> <p> <b>Oracle</b>
-     * </p> <p>Constraints to the amount of storage for each storage type are the
-     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2): Must be an
-     * integer from 20 to 65536.</p> </li> <li> <p>Provisioned IOPS storage (io1): Must
-     * be an integer from 100 to 65536.</p> </li> <li> <p>Magnetic storage (standard):
-     * Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL Server</b> </p>
-     * <p>Constraints to the amount of storage for each storage type are the
-     * following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2):</p> <ul> <li>
-     * <p>Enterprise and Standard editions: Must be an integer from 20 to 16384.</p>
-     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 16384.</p>
-     * </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p> <ul> <li>
-     * <p>Enterprise and Standard editions: Must be an integer from 100 to 16384.</p>
-     * </li> <li> <p>Web and Express editions: Must be an integer from 100 to
-     * 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul> <li>
-     * <p>Enterprise and Standard editions: Must be an integer from 20 to 1024.</p>
-     * </li> <li> <p>Web and Express editions: Must be an integer from 20 to 1024.</p>
-     * </li> </ul> </li> </ul>
+     * (standard): Must be an integer from 10 to 3072.</p> </li> </ul> <p> <b>SQL
+     * Server</b> </p> <p>Constraints to the amount of storage for each storage type
+     * are the following:</p> <ul> <li> <p>General Purpose (SSD) storage (gp2,
+     * gp3):</p> <ul> <li> <p>Enterprise and Standard editions: Must be an integer from
+     * 20 to 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from
+     * 20 to 16384.</p> </li> </ul> </li> <li> <p>Provisioned IOPS storage (io1):</p>
+     * <ul> <li> <p>Enterprise and Standard editions: Must be an integer from 100 to
+     * 16384.</p> </li> <li> <p>Web and Express editions: Must be an integer from 100
+     * to 16384.</p> </li> </ul> </li> <li> <p>Magnetic storage (standard):</p> <ul>
+     * <li> <p>Enterprise and Standard editions: Must be an integer from 20 to
+     * 1024.</p> </li> <li> <p>Web and Express editions: Must be an integer from 20 to
+     * 1024.</p> </li> </ul> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -2344,57 +2344,57 @@ namespace Model
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance. For information about valid
-     * <code>Iops</code> values, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
-     * DB instances, must be a multiple between .5 and 50 of the storage amount for the
-     * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
-     * the storage amount for the DB instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Storage is managed by the DB cluster.</p>
+     * initially allocated for the DB instance. For information about valid IOPS
+     * values, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon
+     * RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be
+     * a multiple between .5 and 50 of the storage amount for the DB instance. For SQL
+     * Server DB instances, must be a multiple between 1 and 50 of the storage amount
+     * for the DB instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * Storage is managed by the DB cluster.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance. For information about valid
-     * <code>Iops</code> values, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
-     * DB instances, must be a multiple between .5 and 50 of the storage amount for the
-     * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
-     * the storage amount for the DB instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Storage is managed by the DB cluster.</p>
+     * initially allocated for the DB instance. For information about valid IOPS
+     * values, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon
+     * RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be
+     * a multiple between .5 and 50 of the storage amount for the DB instance. For SQL
+     * Server DB instances, must be a multiple between 1 and 50 of the storage amount
+     * for the DB instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * Storage is managed by the DB cluster.</p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance. For information about valid
-     * <code>Iops</code> values, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
-     * DB instances, must be a multiple between .5 and 50 of the storage amount for the
-     * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
-     * the storage amount for the DB instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Storage is managed by the DB cluster.</p>
+     * initially allocated for the DB instance. For information about valid IOPS
+     * values, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon
+     * RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be
+     * a multiple between .5 and 50 of the storage amount for the DB instance. For SQL
+     * Server DB instances, must be a multiple between 1 and 50 of the storage amount
+     * for the DB instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * Storage is managed by the DB cluster.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
-     * initially allocated for the DB instance. For information about valid
-     * <code>Iops</code> values, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     * RDS Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS
-     * User Guide</i>.</p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
-     * DB instances, must be a multiple between .5 and 50 of the storage amount for the
-     * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
-     * the storage amount for the DB instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not
-     * applicable. Storage is managed by the DB cluster.</p>
+     * initially allocated for the DB instance. For information about valid IOPS
+     * values, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html">Amazon
+     * RDS DB instance storage</a> in the <i>Amazon RDS User Guide</i>.</p>
+     * <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL DB instances, must be
+     * a multiple between .5 and 50 of the storage amount for the DB instance. For SQL
+     * Server DB instances, must be a multiple between 1 and 50 of the storage amount
+     * for the DB instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
+     * Storage is managed by the DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 
@@ -2803,81 +2803,89 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. Storage is managed by the DB cluster.</p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. Storage is managed by the DB
+     * cluster.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. Storage is managed by the DB cluster.</p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. Storage is managed by the DB
+     * cluster.</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. Storage is managed by the DB cluster.</p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. Storage is managed by the DB
+     * cluster.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. Storage is managed by the DB cluster.</p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. Storage is managed by the DB
+     * cluster.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. Storage is managed by the DB cluster.</p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. Storage is managed by the DB
+     * cluster.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. Storage is managed by the DB cluster.</p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. Storage is managed by the DB
+     * cluster.</p>
      */
     inline CreateDBInstanceRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. Storage is managed by the DB cluster.</p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. Storage is managed by the DB
+     * cluster.</p>
      */
     inline CreateDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance.</p>
-     * <p>Valid values: <code>standard | gp2 | io1</code> </p> <p>If you specify
-     * <code>io1</code>, you must also include a value for the <code>Iops</code>
-     * parameter.</p> <p>Default: <code>io1</code> if the <code>Iops</code> parameter
-     * is specified, otherwise <code>gp2</code> </p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. Storage is managed by the DB cluster.</p>
+     * <p>Valid values: <code>gp2 | gp3 | io1 | standard</code> </p> <p>If you specify
+     * <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     * <code>Iops</code> parameter.</p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified, otherwise <code>gp2</code> </p> <p>
+     * <b>Amazon Aurora</b> </p> <p>Not applicable. Storage is managed by the DB
+     * cluster.</p>
      */
     inline CreateDBInstanceRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -4573,6 +4581,31 @@ namespace Model
      */
     inline CreateDBInstanceRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
 
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline CreateDBInstanceRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -4727,6 +4760,9 @@ namespace Model
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

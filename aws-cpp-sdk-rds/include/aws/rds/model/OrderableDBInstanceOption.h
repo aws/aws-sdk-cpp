@@ -1042,6 +1042,111 @@ namespace Model
      */
     inline OrderableDBInstanceOption& AddSupportedNetworkTypes(const char* value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
 
+
+    /**
+     * <p>Indicates whether a DB instance supports storage throughput.</p>
+     */
+    inline bool GetSupportsStorageThroughput() const{ return m_supportsStorageThroughput; }
+
+    /**
+     * <p>Indicates whether a DB instance supports storage throughput.</p>
+     */
+    inline bool SupportsStorageThroughputHasBeenSet() const { return m_supportsStorageThroughputHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a DB instance supports storage throughput.</p>
+     */
+    inline void SetSupportsStorageThroughput(bool value) { m_supportsStorageThroughputHasBeenSet = true; m_supportsStorageThroughput = value; }
+
+    /**
+     * <p>Indicates whether a DB instance supports storage throughput.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportsStorageThroughput(bool value) { SetSupportsStorageThroughput(value); return *this;}
+
+
+    /**
+     * <p>Minimum storage throughput for a DB instance.</p>
+     */
+    inline int GetMinStorageThroughputPerDbInstance() const{ return m_minStorageThroughputPerDbInstance; }
+
+    /**
+     * <p>Minimum storage throughput for a DB instance.</p>
+     */
+    inline bool MinStorageThroughputPerDbInstanceHasBeenSet() const { return m_minStorageThroughputPerDbInstanceHasBeenSet; }
+
+    /**
+     * <p>Minimum storage throughput for a DB instance.</p>
+     */
+    inline void SetMinStorageThroughputPerDbInstance(int value) { m_minStorageThroughputPerDbInstanceHasBeenSet = true; m_minStorageThroughputPerDbInstance = value; }
+
+    /**
+     * <p>Minimum storage throughput for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithMinStorageThroughputPerDbInstance(int value) { SetMinStorageThroughputPerDbInstance(value); return *this;}
+
+
+    /**
+     * <p>Maximum storage throughput for a DB instance.</p>
+     */
+    inline int GetMaxStorageThroughputPerDbInstance() const{ return m_maxStorageThroughputPerDbInstance; }
+
+    /**
+     * <p>Maximum storage throughput for a DB instance.</p>
+     */
+    inline bool MaxStorageThroughputPerDbInstanceHasBeenSet() const { return m_maxStorageThroughputPerDbInstanceHasBeenSet; }
+
+    /**
+     * <p>Maximum storage throughput for a DB instance.</p>
+     */
+    inline void SetMaxStorageThroughputPerDbInstance(int value) { m_maxStorageThroughputPerDbInstanceHasBeenSet = true; m_maxStorageThroughputPerDbInstance = value; }
+
+    /**
+     * <p>Maximum storage throughput for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithMaxStorageThroughputPerDbInstance(int value) { SetMaxStorageThroughputPerDbInstance(value); return *this;}
+
+
+    /**
+     * <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline double GetMinStorageThroughputPerIops() const{ return m_minStorageThroughputPerIops; }
+
+    /**
+     * <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline bool MinStorageThroughputPerIopsHasBeenSet() const { return m_minStorageThroughputPerIopsHasBeenSet; }
+
+    /**
+     * <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline void SetMinStorageThroughputPerIops(double value) { m_minStorageThroughputPerIopsHasBeenSet = true; m_minStorageThroughputPerIops = value; }
+
+    /**
+     * <p>Minimum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithMinStorageThroughputPerIops(double value) { SetMinStorageThroughputPerIops(value); return *this;}
+
+
+    /**
+     * <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline double GetMaxStorageThroughputPerIops() const{ return m_maxStorageThroughputPerIops; }
+
+    /**
+     * <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline bool MaxStorageThroughputPerIopsHasBeenSet() const { return m_maxStorageThroughputPerIopsHasBeenSet; }
+
+    /**
+     * <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline void SetMaxStorageThroughputPerIops(double value) { m_maxStorageThroughputPerIopsHasBeenSet = true; m_maxStorageThroughputPerIops = value; }
+
+    /**
+     * <p>Maximum storage throughput to provisioned IOPS ratio for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithMaxStorageThroughputPerIops(double value) { SetMaxStorageThroughputPerIops(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -1133,6 +1238,21 @@ namespace Model
 
     Aws::Vector<Aws::String> m_supportedNetworkTypes;
     bool m_supportedNetworkTypesHasBeenSet = false;
+
+    bool m_supportsStorageThroughput;
+    bool m_supportsStorageThroughputHasBeenSet = false;
+
+    int m_minStorageThroughputPerDbInstance;
+    bool m_minStorageThroughputPerDbInstanceHasBeenSet = false;
+
+    int m_maxStorageThroughputPerDbInstance;
+    bool m_maxStorageThroughputPerDbInstanceHasBeenSet = false;
+
+    double m_minStorageThroughputPerIops;
+    bool m_minStorageThroughputPerIopsHasBeenSet = false;
+
+    double m_maxStorageThroughputPerIops;
+    bool m_maxStorageThroughputPerIopsHasBeenSet = false;
   };
 
 } // namespace Model

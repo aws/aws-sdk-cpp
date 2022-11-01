@@ -1979,8 +1979,8 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
-     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>gp2 | gp3 |
+     * io1 | standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
@@ -2000,8 +2000,8 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
-     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>gp2 | gp3 |
+     * io1 | standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
@@ -2021,8 +2021,8 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
-     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>gp2 | gp3 |
+     * io1 | standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
@@ -2042,8 +2042,8 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
-     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>gp2 | gp3 |
+     * io1 | standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
@@ -2063,8 +2063,8 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
-     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>gp2 | gp3 |
+     * io1 | standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
@@ -2084,8 +2084,8 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
-     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>gp2 | gp3 |
+     * io1 | standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
@@ -2105,8 +2105,8 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
-     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>gp2 | gp3 |
+     * io1 | standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
@@ -2126,8 +2126,8 @@ namespace Model
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
      * instance, deleting the instance, creating a read replica for the instance, and
-     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>standard |
-     * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
+     * creating a DB snapshot of the instance.</p> <p>Valid values: <code>gp2 | gp3 |
+     * io1 | standard</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
      */
     inline ModifyDBInstanceRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
@@ -3741,6 +3741,31 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
 
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>Specifies the storage throughput value for the DB instance.</p> <p>This
+     * setting doesn't apply to RDS Custom or Amazon Aurora.</p>
+     */
+    inline ModifyDBInstanceRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -3886,6 +3911,9 @@ namespace Model
 
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
   };
 
 } // namespace Model
