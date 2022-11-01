@@ -119,7 +119,9 @@ DBInstance::DBInstance() :
     m_backupTargetHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_activityStreamPolicyStatus(ActivityStreamPolicyStatus::NOT_SET),
-    m_activityStreamPolicyStatusHasBeenSet(false)
+    m_activityStreamPolicyStatusHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
 }
 
@@ -222,7 +224,9 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_backupTargetHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_activityStreamPolicyStatus(ActivityStreamPolicyStatus::NOT_SET),
-    m_activityStreamPolicyStatusHasBeenSet(false)
+    m_activityStreamPolicyStatusHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -767,6 +771,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_activityStreamPolicyStatus = ActivityStreamPolicyStatusMapper::GetActivityStreamPolicyStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamPolicyStatusNode.GetText()).c_str()).c_str());
       m_activityStreamPolicyStatusHasBeenSet = true;
     }
+    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
+    if(!storageThroughputNode.IsNull())
+    {
+      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
+      m_storageThroughputHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1234,6 +1244,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".ActivityStreamPolicyStatus=" << ActivityStreamPolicyStatusMapper::GetNameForActivityStreamPolicyStatus(m_activityStreamPolicyStatus) << "&";
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1621,6 +1636,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_activityStreamPolicyStatusHasBeenSet)
   {
       oStream << location << ".ActivityStreamPolicyStatus=" << ActivityStreamPolicyStatusMapper::GetNameForActivityStreamPolicyStatus(m_activityStreamPolicyStatus) << "&";
+  }
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 }
 

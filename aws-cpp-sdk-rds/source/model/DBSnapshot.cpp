@@ -58,7 +58,9 @@ DBSnapshot::DBSnapshot() :
     m_tagListHasBeenSet(false),
     m_originalSnapshotCreateTimeHasBeenSet(false),
     m_snapshotDatabaseTimeHasBeenSet(false),
-    m_snapshotTargetHasBeenSet(false)
+    m_snapshotTargetHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
 }
 
@@ -100,7 +102,9 @@ DBSnapshot::DBSnapshot(const XmlNode& xmlNode) :
     m_tagListHasBeenSet(false),
     m_originalSnapshotCreateTimeHasBeenSet(false),
     m_snapshotDatabaseTimeHasBeenSet(false),
-    m_snapshotTargetHasBeenSet(false)
+    m_snapshotTargetHasBeenSet(false),
+    m_storageThroughput(0),
+    m_storageThroughputHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -315,6 +319,12 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
       m_snapshotTarget = Aws::Utils::Xml::DecodeEscapedXmlText(snapshotTargetNode.GetText());
       m_snapshotTargetHasBeenSet = true;
     }
+    XmlNode storageThroughputNode = resultNode.FirstChild("StorageThroughput");
+    if(!storageThroughputNode.IsNull())
+    {
+      m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
+      m_storageThroughputHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -494,6 +504,11 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".SnapshotTarget=" << StringUtils::URLEncode(m_snapshotTarget.c_str()) << "&";
   }
 
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+
 }
 
 void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -637,6 +652,10 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_snapshotTargetHasBeenSet)
   {
       oStream << location << ".SnapshotTarget=" << StringUtils::URLEncode(m_snapshotTarget.c_str()) << "&";
+  }
+  if(m_storageThroughputHasBeenSet)
+  {
+      oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 }
 

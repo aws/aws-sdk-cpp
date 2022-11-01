@@ -21,14 +21,16 @@ namespace Model
 IdentityDocument::IdentityDocument() : 
     m_documentIndex(0),
     m_documentIndexHasBeenSet(false),
-    m_identityDocumentFieldsHasBeenSet(false)
+    m_identityDocumentFieldsHasBeenSet(false),
+    m_blocksHasBeenSet(false)
 {
 }
 
 IdentityDocument::IdentityDocument(JsonView jsonValue) : 
     m_documentIndex(0),
     m_documentIndexHasBeenSet(false),
-    m_identityDocumentFieldsHasBeenSet(false)
+    m_identityDocumentFieldsHasBeenSet(false),
+    m_blocksHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,6 +54,16 @@ IdentityDocument& IdentityDocument::operator =(JsonView jsonValue)
     m_identityDocumentFieldsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Blocks"))
+  {
+    Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
+    for(unsigned blocksIndex = 0; blocksIndex < blocksJsonList.GetLength(); ++blocksIndex)
+    {
+      m_blocks.push_back(blocksJsonList[blocksIndex].AsObject());
+    }
+    m_blocksHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +85,17 @@ JsonValue IdentityDocument::Jsonize() const
      identityDocumentFieldsJsonList[identityDocumentFieldsIndex].AsObject(m_identityDocumentFields[identityDocumentFieldsIndex].Jsonize());
    }
    payload.WithArray("IdentityDocumentFields", std::move(identityDocumentFieldsJsonList));
+
+  }
+
+  if(m_blocksHasBeenSet)
+  {
+   Array<JsonValue> blocksJsonList(m_blocks.size());
+   for(unsigned blocksIndex = 0; blocksIndex < blocksJsonList.GetLength(); ++blocksIndex)
+   {
+     blocksJsonList[blocksIndex].AsObject(m_blocks[blocksIndex].Jsonize());
+   }
+   payload.WithArray("Blocks", std::move(blocksJsonList));
 
   }
 

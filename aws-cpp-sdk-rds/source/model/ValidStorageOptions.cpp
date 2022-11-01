@@ -26,7 +26,9 @@ ValidStorageOptions::ValidStorageOptions() :
     m_provisionedIopsHasBeenSet(false),
     m_iopsToStorageRatioHasBeenSet(false),
     m_supportsStorageAutoscaling(false),
-    m_supportsStorageAutoscalingHasBeenSet(false)
+    m_supportsStorageAutoscalingHasBeenSet(false),
+    m_provisionedStorageThroughputHasBeenSet(false),
+    m_storageThroughputToIopsRatioHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ ValidStorageOptions::ValidStorageOptions(const XmlNode& xmlNode) :
     m_provisionedIopsHasBeenSet(false),
     m_iopsToStorageRatioHasBeenSet(false),
     m_supportsStorageAutoscaling(false),
-    m_supportsStorageAutoscalingHasBeenSet(false)
+    m_supportsStorageAutoscalingHasBeenSet(false),
+    m_provisionedStorageThroughputHasBeenSet(false),
+    m_storageThroughputToIopsRatioHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -95,6 +99,30 @@ ValidStorageOptions& ValidStorageOptions::operator =(const XmlNode& xmlNode)
       m_supportsStorageAutoscaling = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsStorageAutoscalingNode.GetText()).c_str()).c_str());
       m_supportsStorageAutoscalingHasBeenSet = true;
     }
+    XmlNode provisionedStorageThroughputNode = resultNode.FirstChild("ProvisionedStorageThroughput");
+    if(!provisionedStorageThroughputNode.IsNull())
+    {
+      XmlNode provisionedStorageThroughputMember = provisionedStorageThroughputNode.FirstChild("Range");
+      while(!provisionedStorageThroughputMember.IsNull())
+      {
+        m_provisionedStorageThroughput.push_back(provisionedStorageThroughputMember);
+        provisionedStorageThroughputMember = provisionedStorageThroughputMember.NextNode("Range");
+      }
+
+      m_provisionedStorageThroughputHasBeenSet = true;
+    }
+    XmlNode storageThroughputToIopsRatioNode = resultNode.FirstChild("StorageThroughputToIopsRatio");
+    if(!storageThroughputToIopsRatioNode.IsNull())
+    {
+      XmlNode storageThroughputToIopsRatioMember = storageThroughputToIopsRatioNode.FirstChild("DoubleRange");
+      while(!storageThroughputToIopsRatioMember.IsNull())
+      {
+        m_storageThroughputToIopsRatio.push_back(storageThroughputToIopsRatioMember);
+        storageThroughputToIopsRatioMember = storageThroughputToIopsRatioMember.NextNode("DoubleRange");
+      }
+
+      m_storageThroughputToIopsRatioHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -145,6 +173,28 @@ void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".SupportsStorageAutoscaling=" << std::boolalpha << m_supportsStorageAutoscaling << "&";
   }
 
+  if(m_provisionedStorageThroughputHasBeenSet)
+  {
+      unsigned provisionedStorageThroughputIdx = 1;
+      for(auto& item : m_provisionedStorageThroughput)
+      {
+        Aws::StringStream provisionedStorageThroughputSs;
+        provisionedStorageThroughputSs << location << index << locationValue << ".Range." << provisionedStorageThroughputIdx++;
+        item.OutputToStream(oStream, provisionedStorageThroughputSs.str().c_str());
+      }
+  }
+
+  if(m_storageThroughputToIopsRatioHasBeenSet)
+  {
+      unsigned storageThroughputToIopsRatioIdx = 1;
+      for(auto& item : m_storageThroughputToIopsRatio)
+      {
+        Aws::StringStream storageThroughputToIopsRatioSs;
+        storageThroughputToIopsRatioSs << location << index << locationValue << ".DoubleRange." << storageThroughputToIopsRatioIdx++;
+        item.OutputToStream(oStream, storageThroughputToIopsRatioSs.str().c_str());
+      }
+  }
+
 }
 
 void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -186,6 +236,26 @@ void ValidStorageOptions::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_supportsStorageAutoscalingHasBeenSet)
   {
       oStream << location << ".SupportsStorageAutoscaling=" << std::boolalpha << m_supportsStorageAutoscaling << "&";
+  }
+  if(m_provisionedStorageThroughputHasBeenSet)
+  {
+      unsigned provisionedStorageThroughputIdx = 1;
+      for(auto& item : m_provisionedStorageThroughput)
+      {
+        Aws::StringStream provisionedStorageThroughputSs;
+        provisionedStorageThroughputSs << location <<  ".Range." << provisionedStorageThroughputIdx++;
+        item.OutputToStream(oStream, provisionedStorageThroughputSs.str().c_str());
+      }
+  }
+  if(m_storageThroughputToIopsRatioHasBeenSet)
+  {
+      unsigned storageThroughputToIopsRatioIdx = 1;
+      for(auto& item : m_storageThroughputToIopsRatio)
+      {
+        Aws::StringStream storageThroughputToIopsRatioSs;
+        storageThroughputToIopsRatioSs << location <<  ".DoubleRange." << storageThroughputToIopsRatioIdx++;
+        item.OutputToStream(oStream, storageThroughputToIopsRatioSs.str().c_str());
+      }
   }
 }
 
