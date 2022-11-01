@@ -174,8 +174,6 @@ def build_generator(generator_dir: str, max_workers: int) -> None:
     """
 
     mvn_cmd = [shutil.which("mvn"), "package", "-q"]  # subprocess.run does expand Path by default
-    mvn_cmd += [f"-DtargetDir={GENERATOR_TARGET_DIR}"]
-
     process = subprocess.run(mvn_cmd, cwd=generator_dir, timeout=5*60, check=True)
     process.check_returncode()
 

@@ -11,10 +11,6 @@
     <name>AWS Client Generator</name>
     <url>http://aws.amazon.com</url>
 
-    <properties>
-        <targetDir>${project.build.directory}</targetDir>
-    </properties>
-
     <build>
         <plugins>
             <plugin>
@@ -24,7 +20,6 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <outputDirectory>${targetDir}</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -38,7 +33,6 @@
                             <mainClass>com.amazonaws.util.awsclientgenerator.main</mainClass>
                         </manifest>
                     </archive>
-                    <outputDirectory>${targetDir}</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -53,7 +47,6 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-                    <outputDirectory>${targetDir}</outputDirectory>
                 </configuration>
                 <executions>
                     <execution>
