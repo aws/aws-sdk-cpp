@@ -50,7 +50,13 @@ public class EndpointTestParamsDeserializer implements JsonDeserializer<Endpoint
                     parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.STRING);
                     parameter.setStrValue("[\"*\"]");
                 } else {
-                    throw new JsonParseException("Unexpected EndpointTestParameter JSON value/type, primitive expected.");
+                    // TODO: follow-up once per-operation tests are enabled
+                    // throw new JsonParseException("Unexpected EndpointTestParameter JSON value/type, primitive expected.");
+                    // tracing Warning to Error because STDOUT is already occupied for binary forwarding
+                    parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.STRING);
+                    parameter.setStrValue(subJsonElement.toString());
+
+                    System.err.println("Warning: Unexpected json element while parsing test EndpointParameters: " + parameterName);
                 }
             }
         }
