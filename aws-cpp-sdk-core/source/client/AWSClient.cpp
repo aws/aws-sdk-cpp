@@ -1206,6 +1206,28 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::AmazonWebServiceRequest& reque
     }
     return MakeRequest(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
 }
+
+JsonOutcome AWSJsonClient::MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
+                                       Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
+                                       const char* signerName /* = Aws::Auth::NULL_SIGNER */,
+                                       const char* signerRegionOverride /* = nullptr */,
+                                       const char* signerServiceNameOverride /* = nullptr */) const
+{
+    const Aws::Http::URI& uri = endpoint.GetURI();
+    if (endpoint.GetAttributes()) {
+        signerName = endpoint.GetAttributes()->authScheme.GetName().c_str();
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegion()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegion()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningRegionSet()) {
+            signerRegionOverride = endpoint.GetAttributes()->authScheme.GetSigningRegionSet()->c_str();
+        }
+        if (endpoint.GetAttributes()->authScheme.GetSigningName()) {
+            signerServiceNameOverride = endpoint.GetAttributes()->authScheme.GetSigningName()->c_str();
+        }
+    }
+    return MakeRequest(uri, method, signerName, signerRegionOverride, signerServiceNameOverride);
+}
 #endif
 
 JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,

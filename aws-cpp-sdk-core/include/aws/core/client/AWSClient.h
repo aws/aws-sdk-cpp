@@ -403,6 +403,12 @@ namespace Aws
                                     const char* signerName = Aws::Auth::NULL_SIGNER,
                                     const char* signerRegionOverride = nullptr,
                                     const char* signerServiceNameOverride = nullptr) const;
+
+            JsonOutcome MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
+                                    Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+                                    const char* signerName = Aws::Auth::NULL_SIGNER,
+                                    const char* signerRegionOverride = nullptr,
+                                    const char* signerServiceNameOverride = nullptr) const;
 #endif
 
             /**

@@ -1,12 +1,19 @@
 ${operation.name}Outcome ${className}::${operation.name}() const
 {
+#if(!$serviceModel.endpointRules)
   Aws::StringStream ss;
+#end
 #if($metadata.hasEndpointTrait)
   ss << m_baseUri << "${operation.http.requestUri}";
 #else
+#if(!$serviceModel.endpointRules)
   ss << m_uri << "${operation.http.requestUri}";
 #end
+#end
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/EndpointRulesNoRequestUriComputation.vm")
+#if($serviceModel.endpointRules && $operation.http.requestUri && $operation.http.requestUri != "/")
+  endpointResolutionOutcome.GetResult().AddPathSegments("${operation.http.requestUri}");
+#end
 #if($serviceModel.endpointRules)
 #if($operation.result && $operation.result.shape.hasStreamMembers())
   return ${operation.name}Outcome(MakeRequestWithUnparsedResponse(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, ${operation.signerName}, "${operation.name}"));
