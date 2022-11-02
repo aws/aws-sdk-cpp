@@ -2,11 +2,9 @@ ${operation.name}Outcome ${className}::${operation.name}() const
 {
 #if(!$serviceModel.endpointRules)
   Aws::StringStream ss;
-#end
 #if($metadata.hasEndpointTrait)
   ss << m_baseUri << "${operation.http.requestUri}";
 #else
-#if(!$serviceModel.endpointRules)
   ss << m_uri << "${operation.http.requestUri}";
 #end
 #end
