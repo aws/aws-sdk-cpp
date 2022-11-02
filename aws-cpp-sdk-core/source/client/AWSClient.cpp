@@ -909,7 +909,7 @@ void AWSClient::AddCommonHeaders(HttpRequest& httpRequest) const
     httpRequest.SetUserAgent(m_userAgent);
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long long expirationInSeconds)
+Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
@@ -921,7 +921,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long lo
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     for (const auto& it: customizedHeaders)
@@ -937,7 +937,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const A
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const char* region, long long expirationInSeconds) const
+Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, const char* region, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
@@ -949,7 +949,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const c
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const char* region, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String AWSClient::GeneratePresignedUrl(const URI& uri, HttpMethod method, const char* region, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     for (const auto& it: customizedHeaders)
@@ -965,7 +965,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const c
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds) const
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     auto signer = GetSignerByName(Aws::Auth::SIGV4_SIGNER);
@@ -977,7 +977,7 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     for (const auto& it: customizedHeaders)
@@ -993,7 +993,7 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, long long expirationInSeconds) const
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     auto signer = GetSignerByName(signerName);
@@ -1005,7 +1005,7 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
     std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     for (const auto& it: customizedHeaders)
@@ -1063,7 +1063,7 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& en
 }
 #endif
 
-Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> httpRequest =
@@ -1077,7 +1077,7 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName,
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName,
 const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> httpRequest =
@@ -1091,7 +1091,7 @@ const Aws::Http::QueryStringParameterCollection& extraParams, long long expirati
     return {};
 }
 
-Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method,
+Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
 {
     std::shared_ptr<HttpRequest> httpRequest =
@@ -1105,11 +1105,12 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
     return {};
 }
 
-std::shared_ptr<Aws::Http::HttpRequest> AWSClient::ConvertToRequestForPresigning(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri,
+std::shared_ptr<Aws::Http::HttpRequest> AWSClient::ConvertToRequestForPresigning(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri,
     Aws::Http::HttpMethod method, const Aws::Http::QueryStringParameterCollection& extraParams) const
 {
-    request.PutToPresignedUrl(uri);
-    std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    Aws::Http::URI uriCopy = uri;
+    request.PutToPresignedUrl(uriCopy);
+    std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(uriCopy, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
 
     for (auto& param : extraParams)
     {

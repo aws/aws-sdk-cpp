@@ -47,12 +47,24 @@ const char* ${className}::ALLOCATION_TAG = "${className}";
 #if($metadata.protocol == "query")
 Aws::String ${className}::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
 {
+  if (!m_endpointProvider)
+  {
+    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Endpoint provider is not initialized.");
+    return "";
+  }
+  Aws::Endpoint::EndpointParameters endpointParameters;
+  endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", Aws::String(region)));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
+  if (!endpointResolutionOutcome.IsSuccess())
+  {
+    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Endpoint resolution failed: " << endpointResolutionOutcome.GetError().GetMessage());
+    return "";
+  }
   Aws::StringStream ss;
-  ss << "https://" << ${metadata.classNamePrefix}Endpoint::ForRegion(region);
   ss << "?" << requestToConvert.SerializePayload();
+  endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
 
-  URI uri(ss.str());
-  return GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region, 3600);
+  return GeneratePresignedUrl(endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_GET, region, 3600);
 }
 
 #end
