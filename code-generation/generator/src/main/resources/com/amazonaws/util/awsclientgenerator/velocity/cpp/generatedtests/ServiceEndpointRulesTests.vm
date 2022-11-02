@@ -62,7 +62,7 @@ struct ${metadata.classNamePrefix}EndpointProviderEndpointTestCase
     Aws::Vector<Aws::Endpoint::EndpointParameter> params;
     Aws::Vector<Aws::String> tags;
     Expect expect;
-    Aws::Vector<OperationInput> operationInput;
+    // Aws::Vector<OperationInput> operationInput;
 };
 
 static const Aws::Vector<${metadata.classNamePrefix}EndpointProviderEndpointTestCase> TEST_CASES = {
@@ -71,12 +71,30 @@ static const Aws::Vector<${metadata.classNamePrefix}EndpointProviderEndpointTest
   {"${testCase.documentation}", // documentation
     #if($testCase.params)${testCase.params.getAsCppSourceString(4)}#else{}#end, // params
     {#foreach($tag in $testCase.tags) "${tag}"#if($foreach.hasNext), #end #end}, // tags
-    #if($testCase.expect)${testCase.expect.getAsCppSourceString(4)}#else{}#end, // expect
-    #if($testCase.operationInputs)${testCase.operationInputs.getAsCppSourceString(4)}#else{}#end // operationInput
+    #if($testCase.expect)${testCase.expect.getAsCppSourceString(4)}#else{}#end // expect
+##    #if($testCase.operationInputs)${testCase.operationInputs.getAsCppSourceString(4)}#else{}#end // operationInput
 #if($foreach.hasNext)  },#else  }#end
 
 #end
 };
+
+Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
+{
+    Aws::String sdkSigner = "NullSigner";
+    if (rulesSignerName == "sigv4") {
+        sdkSigner = "SignatureV4";
+    } else if (rulesSignerName == "sigv4a") {
+        sdkSigner = "AsymmetricSignatureV4";
+    } else if (rulesSignerName == "none") {
+        sdkSigner = "NullSigner";
+    } else if (rulesSignerName == "bearer") {
+        sdkSigner = "Bearer";
+    } else {
+        sdkSigner = rulesSignerName;
+    }
+
+    return sdkSigner;
+}
 
 void ValidateOutcome(const ResolveEndpointOutcome& outcome, const ${metadata.classNamePrefix}EndpointProviderEndpointTestCase::Expect& expect)
 {
@@ -98,7 +116,7 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const ${metadata.cla
             {
                 if (expProperty.GetName() == "name") {
                     ASSERT_TRUE(!endpointResultAttrs->authScheme.GetName().empty());
-                    ASSERT_EQ(expProperty.GetStrValueNoCheck(), endpointResultAttrs->authScheme.GetName());
+                    ASSERT_EQ(RulesToSdkSignerName(expProperty.GetStrValueNoCheck()), endpointResultAttrs->authScheme.GetName());
                 } else if (expProperty.GetName() == "signingName") {
                     ASSERT_TRUE(endpointResultAttrs->authScheme.GetSigningName());
                     ASSERT_EQ(expProperty.GetStrValueNoCheck(), endpointResultAttrs->authScheme.GetSigningName().value());

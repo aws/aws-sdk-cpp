@@ -1466,15 +1466,7 @@ namespace
         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         Aws::String presignedUrlPut = Client->GeneratePresignedUrl(fullBucketName, TEST_DNS_UNFRIENDLY_OBJ_KEY, HttpMethod::HTTP_PUT);
-#if AWS_SDK_VERSION_MAJOR == 1 && AWS_SDK_VERSION_MINOR == 10
-        // URI-segment addressing style, new default of the SDK
-        const Aws::String expectedUri = Aws::String("https://s3.") + Aws::Region::US_EAST_1 + ".amazonaws.com/" + fullBucketName + "/" + TEST_DNS_UNFRIENDLY_OBJ_KEY;
-        bool presignedUrlPutStartsWithExpectedUri = presignedUrlPut.rfind(expectedUri, 0) == 0;
-        ASSERT_TRUE(presignedUrlPutStartsWithExpectedUri);
-#else
-        // Force path style - configuration is no longer supported by the SDK
         ASSERT_EQ(0ul, presignedUrlPut.find("https://s3.amazonaws.com/" + fullBucketName + "/" + TEST_DNS_UNFRIENDLY_OBJ_KEY));
-#endif
     }
 
     TEST_F(BucketAndObjectOperationTest, TestCopyingFromKeysWithUnicodeCharacters)

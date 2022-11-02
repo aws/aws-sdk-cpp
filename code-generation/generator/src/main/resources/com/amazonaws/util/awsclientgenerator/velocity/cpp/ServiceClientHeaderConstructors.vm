@@ -37,6 +37,7 @@
 #else
 #set($clientConfigurationCls = "Aws::" + ${clientConfigurationNamespace} + "::ClientConfiguration")
 #end
+#if($serviceModel.endpointRules && $serviceNamespace != "S3Crt")
 #if($serviceModel.hasOnlyBearerAuth())
 #set($bearerAddCtorArgs = {})
 #foreach ($ctorKey in ["signPayloads", "useVirtualAddressing", "USEast1RegionalEndpoint"])
@@ -135,6 +136,7 @@
 #end
 
 #end
+#end##-#if($serviceModel.endpointRules && $serviceNamespace != "S3Crt")
 
 #if($serviceModel.endpointRules)
         /* Legacy constructors due deprecation */

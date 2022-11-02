@@ -24,8 +24,10 @@
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/Platform.h>
 #include <aws/s3-crt/S3CrtClient.h>
+#if !(AWS_SDK_VERSION_MAJOR == 1 && AWS_SDK_VERSION_MINOR == 10)
 #include <aws/s3-crt/S3CrtARN.h>
 #include <aws/s3-crt/S3CrtEndpoint.h>
+#endif
 #include <aws/s3-crt/model/DeleteBucketRequest.h>
 #include <aws/s3-crt/model/CreateBucketRequest.h>
 #include <aws/s3-crt/model/HeadBucketRequest.h>
@@ -69,6 +71,7 @@ namespace
     static std::string BASE_DNS_UNFRIENDLY_TEST_NAME = "dns.unfriendly";
     static std::string BASE_LOCATION_BUCKET_TEST_NAME = "locbuckettest";
     static std::string BASE_OBJECTS_BUCKET_NAME = "objecttest";
+    static std::string BASE_OBJECTS_DEFAULT_CTOR_BUCKET_NAME = "ctortest";
     static std::string BASE_PUT_OBJECTS_BUCKET_NAME = "putobjecttest";
     static std::string BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "charsetstest";
     static std::string BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "presignedtest";
@@ -104,6 +107,7 @@ namespace
         AppendUUID(BASE_DNS_UNFRIENDLY_TEST_NAME);
         AppendUUID(BASE_LOCATION_BUCKET_TEST_NAME);
         AppendUUID(BASE_OBJECTS_BUCKET_NAME);
+        AppendUUID(BASE_OBJECTS_DEFAULT_CTOR_BUCKET_NAME);
         AppendUUID(BASE_PUT_OBJECTS_BUCKET_NAME);
         AppendUUID(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME);
         AppendUUID(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME);
@@ -141,6 +145,7 @@ namespace
             DeleteBucket(CalculateBucketName(BASE_DNS_UNFRIENDLY_TEST_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_LOCATION_BUCKET_TEST_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_OBJECTS_BUCKET_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_OBJECTS_DEFAULT_CTOR_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_PUT_MULTIPART_BUCKET_NAME.c_str()));
@@ -535,6 +540,13 @@ namespace
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
+        {
+            CreateBucketConfiguration bucketConfiguration;
+            Aws::S3Crt::ClientConfiguration dummyClientConfig;
+            bucketConfiguration.SetLocationConstraint(
+                    BucketLocationConstraintMapper::GetBucketLocationConstraintForName(dummyClientConfig.region));
+            createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
+        }
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
@@ -597,11 +609,18 @@ namespace
         //Create Client with default constructor
         Client = Aws::MakeShared<S3CrtClient>(ALLOCATION_TAG);
 
-        Aws::String fullBucketName = CalculateBucketName(BASE_OBJECTS_BUCKET_NAME.c_str());
+        Aws::String fullBucketName = CalculateBucketName(BASE_OBJECTS_DEFAULT_CTOR_BUCKET_NAME);
 
         CreateBucketRequest createBucketRequest;
         createBucketRequest.SetBucket(fullBucketName);
         createBucketRequest.SetACL(BucketCannedACL::private_);
+        {
+            CreateBucketConfiguration bucketConfiguration;
+            Aws::S3Crt::ClientConfiguration dummyClientConfig;
+            bucketConfiguration.SetLocationConstraint(
+                    BucketLocationConstraintMapper::GetBucketLocationConstraintForName(dummyClientConfig.region));
+            createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
+        }
 
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         AWS_ASSERT_SUCCESS(createBucketOutcome);
@@ -903,7 +922,16 @@ namespace
         AWS_ASSERT_SUCCESS(putObjectOutcome);
 
         Aws::String presignedUrlPut = Client->GeneratePresignedUrl(fullBucketName, TEST_DNS_UNFRIENDLY_OBJ_KEY, HttpMethod::HTTP_PUT);
+#if AWS_SDK_VERSION_MAJOR == 1 && AWS_SDK_VERSION_MINOR == 10
+        // URI-segment addressing style, new default of the SDK
+        const Aws::String expectedUri = Aws::String("https://s3.") + Aws::Region::US_EAST_1 + ".amazonaws.com/" + fullBucketName + "/" + TEST_DNS_UNFRIENDLY_OBJ_KEY;
+        bool presignedUrlPutStartsWithExpectedUri = presignedUrlPut.rfind(expectedUri, 0) == 0;
+        ASSERT_TRUE(presignedUrlPutStartsWithExpectedUri) << "Generated pre-signed url: " << presignedUrlPut.substr(0, expectedUri.size() + 10) << "...\n"
+            << " Does not start with\n  " << expectedUri;
+#else
+        // Force path style - configuration is no longer supported by the SDK
         ASSERT_EQ(0ul, presignedUrlPut.find("https://s3.amazonaws.com/" + fullBucketName + "/" + TEST_DNS_UNFRIENDLY_OBJ_KEY));
+#endif
     }
 
     TEST_F(BucketAndObjectOperationTest, TestCopyingFromKeysWithUnicodeCharacters)
@@ -1269,6 +1297,7 @@ namespace
         ASSERT_TRUE(isErrorEventReceived);
     }
 
+#if !(AWS_SDK_VERSION_MAJOR == 1 && AWS_SDK_VERSION_MINOR == 10)
     TEST_F(BucketAndObjectOperationTest, TestS3AccessPointARNValidation)
     {
         // The followings are examples for valid S3 ARN:
@@ -1580,6 +1609,7 @@ namespace
         ASSERT_STREQ("s3-object-lambda-fips.us-gov-east-1.amazonaws.com", S3CrtEndpoint::ForRegion("fips-us-gov-east-1", false, true, "s3-object-lambda").c_str());
         ASSERT_STREQ("s3-object-lambda-fips.us-gov-west-1.amazonaws.com", S3CrtEndpoint::ForRegion("us-gov-west-1-fips", false, true, "s3-object-lambda").c_str());
     }
+#endif // #if !(AWS_SDK_VERSION_MAJOR == 1 && AWS_SDK_VERSION_MINOR == 10)
 
     TEST_F(BucketAndObjectOperationTest, TestEmptyBody) {
         Aws::String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str());

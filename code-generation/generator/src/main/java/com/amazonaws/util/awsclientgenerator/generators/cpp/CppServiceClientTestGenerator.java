@@ -74,7 +74,7 @@ public class CppServiceClientTestGenerator implements ClientGenerator {
 
         List<SdkFileEntry> sdkFileEntries = new ArrayList<>();
 
-        String endpointProviderTestsFileName = String.format("%sEndpointProviderTests.cpp", serviceModel.getMetadata().getProjectName().toUpperCase());;
+        String endpointProviderTestsFileName = String.format("%sEndpointProviderTests.cpp", serviceModel.getMetadata().getClassNamePrefix());;
         SdkFileEntry endpointProviderTests = makeFile(template, context, endpointProviderTestsFileName, true);
         sdkFileEntries.add(endpointProviderTests);
 

@@ -60,7 +60,7 @@
   ${spaces}parentNode.SetAttributeValue("${serializationName}", ${memberVarName});
 #else
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
-#if($operation.arnEndpointAllowed && $operation.arnLocation.equals("body") && $operation.arnEndpointMemberName.equals($memberName))
+#if($operation.arnEndpointAllowed && $operation.arnLocation.equals("body") && $operation.arnEndpointMemberName.equals($memberName) && !$serviceModel.endpointRules))
   ${spaces}${metadata.classNamePrefix}ARN arn($CppViewHelper.computeMemberVariableName($operation.arnEndpointMemberName));
   ${spaces}if (arn && arn.Validate().IsSuccess())
   ${spaces}{

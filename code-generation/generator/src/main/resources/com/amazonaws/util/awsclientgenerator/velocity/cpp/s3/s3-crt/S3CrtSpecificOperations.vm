@@ -146,7 +146,11 @@ Aws::Client::StreamOutcome S3CrtClient::GenerateStreamOutcome(const std::shared_
   return StreamOutcome(std::move(httpOutcome));
 }
 
-void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData, aws_s3_meta_request_options *options, const Aws::AmazonWebServiceRequest *request, const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const
+void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData,
+                                             aws_s3_meta_request_options *options,
+                                             const Aws::AmazonWebServiceRequest *request,
+                                             const Aws::Http::URI &uri,
+                                             Aws::Http::HttpMethod method) const
 {
   std::shared_ptr<HttpRequest> httpRequest(nullptr);
   if (request)
@@ -215,7 +219,7 @@ static void ${operation.name}RequestShutdownCallback(void *user_data)
 #set($refText = "")
 #end
 #if($operation.request)
-void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
@@ -238,8 +242,13 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
   AWS_ZERO_STRUCT(options);
 
   userData->userCallback = static_cast<const void*>(&handler);
-  userData->userCallbackContext = context;
+  userData->userCallbackContext = handlerContext;
+
+#if($serviceModel.endpointRules)
+  InitCommonCrtRequestOption(userData, &options, &request, endpointResolutionOutcome.GetResult().GetURI(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
+#else
   InitCommonCrtRequestOption(userData, &options, &request, uri, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+#end
   options.shutdown_callback = ${operation.name}RequestShutdownCallback;
 #if($operation.name == "PutObject")
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
@@ -249,8 +258,20 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
   options.type = AWS_S3_META_REQUEST_TYPE_DEFAULT;
 #end
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
+#if($serviceModel.endpointRules)
+  if (endpointResolutionOutcome.GetResult().GetAttributes() && endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegion()) {
+    signing_config_override.region = Aws::Crt::ByteCursorFromCString(endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegion()->c_str());
+  }
+  if (endpointResolutionOutcome.GetResult().GetAttributes() && endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegionSet()) {
+    signing_config_override.region = Aws::Crt::ByteCursorFromCString(endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningRegionSet()->c_str());
+  }
+  if (endpointResolutionOutcome.GetResult().GetAttributes() && endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningName()) {
+    signing_config_override.service = Aws::Crt::ByteCursorFromCString(endpointResolutionOutcome.GetResult().GetAttributes()->authScheme.GetSigningName()->c_str());
+  }
+#else
   signing_config_override.region = Aws::Crt::ByteCursorFromCString(computeEndpointOutcome.GetResult().signerRegion.c_str());
   signing_config_override.service = Aws::Crt::ByteCursorFromCString(computeEndpointOutcome.GetResult().signerServiceName.c_str());
+#end
   options.signing_config = &signing_config_override;
 
   std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
@@ -260,9 +281,9 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
   if (aws_s3_client_make_meta_request(m_s3CrtClient, &options) == nullptr)
   {
 #if($operation.name == "PutObject")
-    return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), context);
+    return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
 #elseif($operation.name == "GetObject")
-    return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), context);
+    return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
 #end
   }
 }
@@ -287,14 +308,14 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 }
 
 #else## no request
-void ${className}::${operation.name}Async(${constText}${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ${className}::${operation.name}Async(${constText}${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
   Aws::StringStream ss;
 #if($virtualAddressingSupported || $arnEndpointSupported)
   ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
   if (!computeEndpointOutcome.IsSuccess())
   {
-    return handler(this, ${operation.name}Outcome(computeEndpointOutcome.GetError()), context);
+    return handler(this, ${operation.name}Outcome(computeEndpointOutcome.GetError()), handlerContext);
   }
   ss << computeEndpointOutcome.GetResult().endpoint;
 #end
@@ -305,7 +326,7 @@ void ${className}::${operation.name}Async(${constText}${operation.name}ResponseR
   AWS_ZERO_STRUCT(options);
 
   userData->userCallback = static_cast<const void*>(&handler);
-  userData->userCallbackContext = context;
+  userData->userCallbackContext = handlerContext;
   InitCommonCrtRequestOption(userData, &options, nullptr, ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
   options.shutdown_callback = ${operation.name}RequestShutdownCallback;
 #if($operation.name == "PutObject")
@@ -327,9 +348,9 @@ void ${className}::${operation.name}Async(${constText}${operation.name}ResponseR
   if (aws_s3_client_make_meta_request(m_s3CrtClient, &options) == nullptr)
   {
 #if($operation.name == "PutObject")
-    return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), context);
+    return handler(this, request, PutObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
 #elseif($operation.name == "GetObject")
-    return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), context);
+    return handler(this, request, GetObjectOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Unable to create s3 meta request", false)), handlerContext);
 #end
   }
 }
