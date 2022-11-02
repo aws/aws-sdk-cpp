@@ -84,38 +84,38 @@ namespace Model
 
 
     /**
-     * <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-     * group, or an IAM user).</p>
+     * <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or
+     * an IAM user).</p>
      */
     inline const Identity& GetIdentity() const{ return m_identity; }
 
     /**
-     * <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-     * group, or an IAM user).</p>
+     * <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or
+     * an IAM user).</p>
      */
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
 
     /**
-     * <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-     * group, or an IAM user).</p>
+     * <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or
+     * an IAM user).</p>
      */
     inline void SetIdentity(const Identity& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
-     * <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-     * group, or an IAM user).</p>
+     * <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or
+     * an IAM user).</p>
      */
     inline void SetIdentity(Identity&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
 
     /**
-     * <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-     * group, or an IAM user).</p>
+     * <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or
+     * an IAM user).</p>
      */
     inline AccessPolicySummary& WithIdentity(const Identity& value) { SetIdentity(value); return *this;}
 
     /**
-     * <p>The identity (an Amazon Web Services SSO user, an Amazon Web Services SSO
-     * group, or an IAM user).</p>
+     * <p>The identity (an IAM Identity Center user, an IAM Identity Center group, or
+     * an IAM user).</p>
      */
     inline AccessPolicySummary& WithIdentity(Identity&& value) { SetIdentity(std::move(value)); return *this;}
 

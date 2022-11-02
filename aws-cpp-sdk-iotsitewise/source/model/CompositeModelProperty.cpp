@@ -21,14 +21,16 @@ namespace Model
 CompositeModelProperty::CompositeModelProperty() : 
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_assetPropertyHasBeenSet(false)
+    m_assetPropertyHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
 CompositeModelProperty::CompositeModelProperty(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_assetPropertyHasBeenSet(false)
+    m_assetPropertyHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ CompositeModelProperty& CompositeModelProperty::operator =(JsonView jsonValue)
     m_assetPropertyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue CompositeModelProperty::Jsonize() const
   if(m_assetPropertyHasBeenSet)
   {
    payload.WithObject("assetProperty", m_assetProperty.Jsonize());
+
+  }
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
 
   }
 

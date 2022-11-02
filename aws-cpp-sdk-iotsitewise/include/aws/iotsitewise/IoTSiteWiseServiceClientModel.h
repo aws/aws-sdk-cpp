@@ -55,7 +55,9 @@
 #include <aws/iotsitewise/model/GetAssetPropertyValueHistoryResult.h>
 #include <aws/iotsitewise/model/GetInterpolatedAssetPropertyValuesResult.h>
 #include <aws/iotsitewise/model/ListAccessPoliciesResult.h>
+#include <aws/iotsitewise/model/ListAssetModelPropertiesResult.h>
 #include <aws/iotsitewise/model/ListAssetModelsResult.h>
+#include <aws/iotsitewise/model/ListAssetPropertiesResult.h>
 #include <aws/iotsitewise/model/ListAssetRelationshipsResult.h>
 #include <aws/iotsitewise/model/ListAssetsResult.h>
 #include <aws/iotsitewise/model/ListAssociatedAssetsResult.h>
@@ -161,7 +163,9 @@ namespace Aws
       class GetAssetPropertyValueHistoryRequest;
       class GetInterpolatedAssetPropertyValuesRequest;
       class ListAccessPoliciesRequest;
+      class ListAssetModelPropertiesRequest;
       class ListAssetModelsRequest;
+      class ListAssetPropertiesRequest;
       class ListAssetRelationshipsRequest;
       class ListAssetsRequest;
       class ListAssociatedAssetsRequest;
@@ -235,7 +239,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetAssetPropertyValueHistoryResult, IoTSiteWiseError> GetAssetPropertyValueHistoryOutcome;
       typedef Aws::Utils::Outcome<GetInterpolatedAssetPropertyValuesResult, IoTSiteWiseError> GetInterpolatedAssetPropertyValuesOutcome;
       typedef Aws::Utils::Outcome<ListAccessPoliciesResult, IoTSiteWiseError> ListAccessPoliciesOutcome;
+      typedef Aws::Utils::Outcome<ListAssetModelPropertiesResult, IoTSiteWiseError> ListAssetModelPropertiesOutcome;
       typedef Aws::Utils::Outcome<ListAssetModelsResult, IoTSiteWiseError> ListAssetModelsOutcome;
+      typedef Aws::Utils::Outcome<ListAssetPropertiesResult, IoTSiteWiseError> ListAssetPropertiesOutcome;
       typedef Aws::Utils::Outcome<ListAssetRelationshipsResult, IoTSiteWiseError> ListAssetRelationshipsOutcome;
       typedef Aws::Utils::Outcome<ListAssetsResult, IoTSiteWiseError> ListAssetsOutcome;
       typedef Aws::Utils::Outcome<ListAssociatedAssetsResult, IoTSiteWiseError> ListAssociatedAssetsOutcome;
@@ -309,7 +315,9 @@ namespace Aws
       typedef std::future<GetAssetPropertyValueHistoryOutcome> GetAssetPropertyValueHistoryOutcomeCallable;
       typedef std::future<GetInterpolatedAssetPropertyValuesOutcome> GetInterpolatedAssetPropertyValuesOutcomeCallable;
       typedef std::future<ListAccessPoliciesOutcome> ListAccessPoliciesOutcomeCallable;
+      typedef std::future<ListAssetModelPropertiesOutcome> ListAssetModelPropertiesOutcomeCallable;
       typedef std::future<ListAssetModelsOutcome> ListAssetModelsOutcomeCallable;
+      typedef std::future<ListAssetPropertiesOutcome> ListAssetPropertiesOutcomeCallable;
       typedef std::future<ListAssetRelationshipsOutcome> ListAssetRelationshipsOutcomeCallable;
       typedef std::future<ListAssetsOutcome> ListAssetsOutcomeCallable;
       typedef std::future<ListAssociatedAssetsOutcome> ListAssociatedAssetsOutcomeCallable;
@@ -386,7 +394,9 @@ namespace Aws
     typedef std::function<void(const IoTSiteWiseClient*, const Model::GetAssetPropertyValueHistoryRequest&, const Model::GetAssetPropertyValueHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetPropertyValueHistoryResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::GetInterpolatedAssetPropertyValuesRequest&, const Model::GetInterpolatedAssetPropertyValuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInterpolatedAssetPropertyValuesResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAccessPoliciesRequest&, const Model::ListAccessPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPoliciesResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssetModelPropertiesRequest&, const Model::ListAssetModelPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetModelPropertiesResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssetModelsRequest&, const Model::ListAssetModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetModelsResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssetPropertiesRequest&, const Model::ListAssetPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetPropertiesResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssetRelationshipsRequest&, const Model::ListAssetRelationshipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetRelationshipsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssetsRequest&, const Model::ListAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssociatedAssetsRequest&, const Model::ListAssociatedAssetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociatedAssetsResponseReceivedHandler;

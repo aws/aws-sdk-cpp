@@ -22,7 +22,8 @@ AssetModelCompositeModel::AssetModelCompositeModel() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+    m_propertiesHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ AssetModelCompositeModel::AssetModelCompositeModel(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+    m_propertiesHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +70,13 @@ AssetModelCompositeModel& AssetModelCompositeModel::operator =(JsonView jsonValu
     m_propertiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -101,6 +110,12 @@ JsonValue AssetModelCompositeModel::Jsonize() const
      propertiesJsonList[propertiesIndex].AsObject(m_properties[propertiesIndex].Jsonize());
    }
    payload.WithArray("properties", std::move(propertiesJsonList));
+
+  }
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
 
   }
 
