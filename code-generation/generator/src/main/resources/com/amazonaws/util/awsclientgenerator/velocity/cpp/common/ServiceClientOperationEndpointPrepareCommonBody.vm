@@ -188,3 +188,4 @@
   }
 #end
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointDiscoveryWithRules.vm")
