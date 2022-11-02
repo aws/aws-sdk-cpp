@@ -35,7 +35,7 @@ namespace Aws
                 m_uri = std::move(url);
             }
 
-            const Aws::Http::URI GetURI() const
+            const Aws::Http::URI& GetURI() const
             {
                 return m_uri;
             }
@@ -44,14 +44,16 @@ namespace Aws
                 m_uri = std::move(uri);
             }
 
-            void AddPathSegments(const Aws::String& pathSegments)
+            template<typename T>
+            inline void AddPathSegment(T&& pathSegment)
             {
-                m_uri.AddPathSegments(pathSegments);
+                m_uri.template AddPathSegment(std::forward<T>(pathSegment));
             }
 
-            void AddPathSegment(const Aws::String& pathSegment)
+            template<typename T>
+            inline void AddPathSegments(T&& pathSegments)
             {
-                m_uri.AddPathSegment(pathSegment);
+                m_uri.template AddPathSegment(std::forward<T>(pathSegments));
             }
 
             void SetQueryString(const Aws::String& queryString)
