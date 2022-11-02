@@ -8,7 +8,7 @@
 
 /* Generic header includes */
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
-#if($serviceModel.endpointRules && ($serviceModel.metadata.serviceId == "S3" || $metadata.hasEndpointDiscoveryTrait))
+#if($serviceModel.endpointRules && $serviceModel.metadata.serviceId == "S3")
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
 #else
 \#include <aws/core/client/GenericClientConfiguration.h>

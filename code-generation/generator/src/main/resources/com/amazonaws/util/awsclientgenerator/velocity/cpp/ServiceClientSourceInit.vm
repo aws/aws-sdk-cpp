@@ -334,7 +334,7 @@ void ${className}::init(const ${clientConfigurationCls}& config)
 #end##if($metadata.hasEndpointTrait)
 #end##-#if($serviceModel.endpointRules)
 }
-#if($metadata.hasEndpointDiscoveryTrait)
+#if(!$serviceModel.endpointRules && $metadata.hasEndpointDiscoveryTrait)
 
 void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration)
 {

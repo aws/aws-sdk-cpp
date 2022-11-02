@@ -1,5 +1,11 @@
 #if($serviceModel.endpointRules)
+#if(!$operation.hasEndpointDiscoveryTrait)
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+#else
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+#end
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
 #end
 #if($operation.http.requestUri.contains("?"))
