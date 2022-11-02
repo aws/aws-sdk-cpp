@@ -4,12 +4,95 @@
  */
 
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 
 
 namespace Aws
 {
 namespace Endpoint
 {
+
+int CharToDec(const char c)
+{
+    if(c >= '0' && c <= '9')
+        return c - '0';
+    if(c >= 'A' && c <= 'F')
+        return c - 'A' + 10;
+    if(c >= 'a' && c <= 'f')
+        return c - 'a' + 10;
+    return 0;
+}
+
+Aws::String PercentDecode(Aws::String inputString)
+{
+    if (inputString.find_first_of("%") == Aws::String::npos)
+    {
+        return inputString;
+    }
+    Aws::String result;
+    result.reserve(inputString.size());
+
+    bool percentFound = false;
+    char firstOctet = 0;
+    char secondOctet = 0;
+    for(size_t i = 0; i < inputString.size(); ++i)
+    {
+        const char currentChar = inputString[i];
+        if ('%' == currentChar)
+        {
+            if (percentFound)
+            {
+                // not percent-encoded string
+                result += currentChar;
+            }
+            percentFound = true;
+            continue;
+        }
+
+        if (percentFound)
+        {
+            if ((currentChar >= '0' && currentChar <= '9') ||
+                (currentChar >= 'A' && currentChar <= 'F') ||
+                (currentChar >= 'a' && currentChar <= 'f'))
+            {
+                if(!firstOctet)
+                {
+                    firstOctet = currentChar;
+                    continue;
+                }
+                if(!secondOctet)
+                {
+                    secondOctet = currentChar;
+                    char encodedChar = CharToDec(firstOctet) * 16 + CharToDec(secondOctet);
+                    result += encodedChar;
+
+                    percentFound = 0;
+                    firstOctet = 0;
+                    secondOctet = 0;
+                    continue;
+                }
+            } else {
+                // Non-percent encoded sequence
+                result += '%';
+                if(!firstOctet)
+                    result += firstOctet;
+                result += currentChar;
+                percentFound = 0;
+                firstOctet = 0;
+                secondOctet = 0;
+                continue;
+            }
+        }
+
+        if ('+' == currentChar)
+        {
+            result += ' ';
+            continue;
+        }
+        result += currentChar;
+    }
+    return result;
+}
 
 ResolveEndpointOutcome ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
                                                   const EndpointParameters& builtInParameters,
@@ -76,12 +159,12 @@ ResolveEndpointOutcome ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::Rul
             Aws::Endpoint::AWSEndpoint endpoint;
             const auto crtUrl = resolved->GetUrl();
             Aws::String sdkCrtUrl = Aws::String(crtUrl->begin(), crtUrl->end());
-            endpoint.SetURL(sdkCrtUrl);
+            endpoint.SetURL(PercentDecode(std::move(sdkCrtUrl)));
 
             // Transform attributes
             // Each attribute consist of properties, hence converting CRT properties to SDK attributes
             const auto crtProps = resolved->GetProperties();
-            if (crtProps) {
+            if (crtProps && crtProps->size() > 2) {
                 Aws::String sdkCrtProps = crtProps ? Aws::String(crtProps->begin(), crtProps->end()) : "";
 
                 Internal::Endpoint::EndpointAttributes epAttributes = Internal::Endpoint::EndpointAttributes::BuildEndpointAttributesFromJson(

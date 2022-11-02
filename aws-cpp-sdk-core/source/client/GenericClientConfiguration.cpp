@@ -78,5 +78,24 @@ GenericClientConfiguration<true>::GenericClientConfiguration(const ClientConfigu
     enableHostPrefixInjection = false; // disabled by default in the SDK
 }
 
+GenericClientConfiguration<true>::GenericClientConfiguration(const GenericClientConfiguration<true>& other)
+    : ClientConfiguration(static_cast<ClientConfiguration>(other)),
+      enableHostPrefixInjection(ClientConfiguration::enableHostPrefixInjection),
+      enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)
+{
+    if (other.enableEndpointDiscovery) {
+        enableEndpointDiscovery = other.enableEndpointDiscovery.value();
+    }
+    enableHostPrefixInjection = other.enableHostPrefixInjection;
+}
+
+GenericClientConfiguration<true>& GenericClientConfiguration<true>::operator=(const GenericClientConfiguration<true>& other)
+{
+  if (this != &other) {
+      *static_cast<ClientConfiguration*>(this) = static_cast<ClientConfiguration>(other);
+  }
+  return *this;
+}
+
 } // namespace Client
 } // namespace Aws
