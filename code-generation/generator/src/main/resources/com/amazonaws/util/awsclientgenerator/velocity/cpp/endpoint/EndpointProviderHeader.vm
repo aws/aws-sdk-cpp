@@ -8,7 +8,7 @@
 #set($epBuiltInClassName = "${metadata.classNamePrefix}BuiltInParameters")
 #pragma once
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
-#if($serviceModel.metadata.serviceId == "S3")
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
 #else
 \#include <aws/core/client/GenericClientConfiguration.h>
@@ -58,7 +58,7 @@ public:
 using ${epContextClassName} = Aws::Endpoint::ClientContextParameters;
 #end
 
-#if($serviceModel.metadata.serviceId != "S3")
+#if($serviceModel.metadata.serviceId != "S3" && $serviceModel.metadata.serviceId != "S3 Control")
 #if(!$metadata.hasEndpointDiscoveryTrait)
 using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
 #else

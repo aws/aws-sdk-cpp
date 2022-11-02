@@ -219,7 +219,10 @@ namespace ${rootNamespace}
           wrappedData->clientShutdownSem->Release();
         }
 
-        void InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData, aws_s3_meta_request_options *options, const Aws::AmazonWebServiceRequest *requset, const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const;
+        void InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData,
+                                        aws_s3_meta_request_options *options,
+                                        const Aws::AmazonWebServiceRequest *requset,
+                                        const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const;
 #else
 #if(!$serviceModel.endpointRules)
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

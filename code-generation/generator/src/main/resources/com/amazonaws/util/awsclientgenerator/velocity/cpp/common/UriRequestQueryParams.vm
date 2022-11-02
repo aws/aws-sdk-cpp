@@ -6,7 +6,15 @@
     endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   }
 #end
+#if(!$operation.request.shape.hasEventStreamMembers() && !$operation.s3CrtSpecific)
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+#else
+  if (!endpointResolutionOutcome.IsSuccess()) {
+    handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<CoreErrors>(
+        CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE", endpointResolutionOutcome.GetError().GetMessage(), false)), handlerContext);
+    return;
+  }
+#end
 #end
 #if($operation.http.requestUri.contains("?"))
   Aws::StringStream ss;

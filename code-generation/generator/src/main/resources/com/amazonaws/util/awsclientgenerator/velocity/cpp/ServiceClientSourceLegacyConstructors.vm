@@ -2,14 +2,15 @@
 #set($ctorMemberInitList = [])
 #set($signerCtorArgs = [])
 #set($additionalCtorArgs = {})
+#set($signPayloads = "")
+#set($signPayloadsParam = "")
+#set($signPayloadsClientConfigParam = "")
 #if($signPayloadsOptional)
 #set($signPayloads = ", Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads")
 #set($signPayloadsParam = ", signPayloads")
+#set($signPayloadsClientConfigParam = ", signPayloads")
 #set($addArgDummy = $additionalCtorArgs.put("signPayloads", "Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/"))
 #set($addArgDummy = $signerCtorArgs.add("signPayloads"))
-#else
-#set($signPayloads = "")
-#set($signPayloadsParam = "")
 #end
 #if($metadata.signatureVersion.equals("s3") || $metadata.signatureVersion.equals("s3v4"))
 #if(!$signPayloadsOptional)
@@ -83,7 +84,7 @@
             Aws::MakeShared<${signerToMake}>(ALLOCATION_TAG, bearerTokenProvider),
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-  m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+  m_clientConfiguration(clientConfiguration${signPayloadsClientConfigParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
 #end
   m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())
 #else,#end
@@ -121,7 +122,7 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #end),
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-  m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+  m_clientConfiguration(clientConfiguration${signPayloadsClientConfigParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
 #end
   m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
 #end
@@ -159,7 +160,7 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #end),
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_clientConfiguration(clientConfiguration${signPayloadsClientConfigParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
 #end
     m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
 #end
@@ -197,7 +198,7 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #end),
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_clientConfiguration(clientConfiguration${signPayloadsClientConfigParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
 #end
     m_executor(clientConfiguration.executor)#if($ctorMemberInitList.isEmpty())#else,
 #end
@@ -228,7 +229,7 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
             signerProvider,
             Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-  m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+  m_clientConfiguration(clientConfiguration${signPayloadsClientConfigParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
 #end
   m_executor(clientConfiguration.executor)
 {

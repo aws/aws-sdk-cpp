@@ -140,7 +140,7 @@ namespace
                                                     creds.GetSecretAccessKey(),
                                                     creds.GetSessionToken(),
                                                     creds.GetExpiration());
-                return {awsCredentials, configuration};
+                return {awsCredentials, Aws::MakeShared<S3::Endpoint::S3EndpointProvider>(ALLOCATION_TAG), configuration};
             }
             return {configuration};
         }
@@ -816,6 +816,7 @@ namespace
         CleanUpMRAPTest(bucketName, multiRegions, accessPointName);
     }
 
+#if !(AWS_SDK_VERSION_MAJOR == 1 && AWS_SDK_VERSION_MINOR == 10)
     TEST_F(S3ControlTest, TestCustomEndpointOverride)
     {
         // Outpost Access Point ARN without dualstack
@@ -990,4 +991,5 @@ namespace
         ASSERT_STREQ("s3-outposts.us-gov-east-1.amazonaws.com",
             S3ControlEndpoint::ForOutpostsArn(S3ControlARN("arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:bucket:my-bucket"), "").c_str());
     }
+#endif // #if !(AWS_SDK_VERSION_MAJOR == 1 && AWS_SDK_VERSION_MINOR == 10)
 }

@@ -57,6 +57,9 @@ namespace Aws
             GenericClientConfiguration(const char* profileName);
             explicit GenericClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy");
             GenericClientConfiguration(const ClientConfiguration& config);
+            GenericClientConfiguration(const GenericClientConfiguration&);
+            GenericClientConfiguration& operator=(const GenericClientConfiguration&);
+
 
             /**
              * Enable host prefix injection.

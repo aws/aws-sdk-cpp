@@ -13,9 +13,13 @@
 #else
 #set($doubleEncodeValue = "")
 #end
-#if($virtualAddressingSupported && !$serviceModel.endpointRules)
+#if($virtualAddressingSupported)
 #set($virtualAddressing = ", bool useVirtualAddressing")
+#if($serviceModel.endpointRules)
+#set($virtualAddressingInit = ", useVirtualAddressing")
+#else
 #set($virtualAddressingInit = ", m_useVirtualAddressing(useVirtualAddressing)")
+#end
 #else
 #set($virtualAddressing = "")
 #set($virtualAddressingInit = "")
@@ -25,6 +29,10 @@
 #end
 #if(!$USEast1RegionalEndpointInitString)
 #set($USEast1RegionalEndpointInitString = "")
+#else
+#if($serviceModel.endpointRules)
+#set($USEast1RegionalEndpointInitString = $USEast1RegionalEndpointInitString.replace("m_USEast1RegionalEndpointOption(", "").replace(")", ""))
+#end
 #end
 #if(!$ForRegionExtraArgsString)
 #set($ForRegionExtraArgsString = "")
@@ -55,9 +63,11 @@ ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfigur
         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration),
-#end
+    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}
+#else
     m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+#end
 {
   init(clientConfiguration${credentialsParam});
 }
@@ -68,9 +78,11 @@ ${className}::${className}(const AWSCredentials& credentials, const ${clientConf
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration),
-#end
+    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}
+#else
     m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+#end
 {
   init(clientConfiguration${credentialsParam});
 }
@@ -82,9 +94,11 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration),
-#end
+    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_executor(clientConfiguration.executor)${credentialsProviderMember}
+#else
     m_executor(clientConfiguration.executor)${credentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+#end
 {
   init(clientConfiguration${credentialsParam});
 }
@@ -95,9 +109,11 @@ ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfigur
         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration),
-#end
+    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}
+#else
     m_executor(clientConfiguration.executor)${defaultCredentialsProviderChainMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+#end
 {
   init(clientConfiguration${credentialsParam});
 }
@@ -108,9 +124,11 @@ ${className}::${className}(const AWSCredentials& credentials, const ${clientConf
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration),
-#end
+    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}
+#else
     m_executor(clientConfiguration.executor)${simpleCredentialsProviderMember}${virtualAddressingInit}${USEast1RegionalEndpointInitString}
+#end
 {
   init(clientConfiguration${credentialsParam});
 }
@@ -122,9 +140,11 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration),
-#end
+    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}
+#else
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}${credentialsProviderMember}
+#end
 {
   init(clientConfiguration${credentialsParam});
 }
@@ -136,9 +156,11 @@ ${className}::${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvide
   BASECLASS(clientConfiguration, signerProvider,
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
 #if($serviceModel.endpointRules)
-    m_clientConfiguration(clientConfiguration),
-#end
+    m_clientConfiguration(clientConfiguration${signPayloadsParam}${virtualAddressingInit}${USEast1RegionalEndpointInitString}),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}
+#else
+    m_executor(clientConfiguration.executor)${virtualAddressingInit}
+#end
 {
   init(m_clientConfiguration);
 }
@@ -163,9 +185,11 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
 {
   AWSClient::SetServiceClientName("${metadata.serviceId}");
 #if($serviceModel.endpointRules)
+  m_endpointProvider = Aws::MakeShared<S3Crt::Endpoint::S3CrtEndpointProvider>(ALLOCATION_TAG);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 #end
+#if(!$serviceModel.endpointRules)
 #if($AdditionalServiceSpecificConfigLoadString)
   ${AdditionalServiceSpecificConfigLoadString}
 #end
@@ -211,6 +235,7 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
 #if($metadata.hasEndpointTrait)
   m_enableHostPrefixInjection = config.enableHostPrefixInjection;
 #end
+#end##-#if($serviceModel.endpointRules)
 #if($serviceNamespace == "S3Crt")
 
   // initialize aws_s3_client;
@@ -280,7 +305,13 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   if (tlsConnectionOptions)
   {
     aws_tls_connection_options_copy(&tlsOptions, tlsConnectionOptions->GetUnderlyingHandle());
-    tlsOptions.server_name = aws_string_new_from_c_str(Aws::get_aws_allocator(), m_baseUri.c_str());
+    ResolveEndpointOutcome endpointOutcome = m_endpointProvider->ResolveEndpoint({});
+    if (!endpointOutcome.IsSuccess())
+    {
+      AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Failed to resolve base URI: " << endpointOutcome.GetError().GetMessage());
+      return;
+    }
+    tlsOptions.server_name = aws_string_new_from_c_str(Aws::get_aws_allocator(), endpointOutcome.GetResult().GetURL().c_str());
     s3CrtConfig.tls_connection_options = &tlsOptions;
   }
   else

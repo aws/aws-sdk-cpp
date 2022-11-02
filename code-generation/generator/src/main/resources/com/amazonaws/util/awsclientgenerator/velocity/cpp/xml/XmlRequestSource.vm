@@ -4,8 +4,10 @@
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
 \#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
+#if(!$serviceModel.endpointRules)
 #if($operation.hasAccountIdInArn || $operation.hasOutpostIdInArn)
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ARN.h>
+#end
 #end
 \#include <aws/core/utils/xml/XmlSerializer.h>
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>

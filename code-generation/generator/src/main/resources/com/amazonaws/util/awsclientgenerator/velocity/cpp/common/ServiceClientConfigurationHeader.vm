@@ -3,7 +3,7 @@
 #set($metadata = $serviceModel.metadata)
 #set($rootNamespace = $serviceModel.namespace)
 #set($serviceNamespace = $metadata.namespace)
-#if($metadata.hasEndpointDiscoveryTrait)
+#if($metadata.hasEndpointDiscoveryTrait || $metadata.hasEndpointTrait)
 #set($EndpointDiscoveryTraitSupported = "/*EndpointDiscoverySupported*/true")
 #else
 #set($EndpointDiscoveryTraitSupported = "/*EndpointDiscoverySupported*/false")
@@ -12,7 +12,7 @@
 
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/core/client/GenericClientConfiguration.h>
-#if($serviceModel.metadata.serviceId == "S3")
+#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
 \#include <aws/core/auth/signer/AWSAuthV4Signer.h>
 #end
 
@@ -54,18 +54,13 @@ namespace ${rootNamespace}
             */
 #set($classNamePrefix = $metadata.classNamePrefix)
 #set($clsPrefixWSpace = $classNamePrefix.replaceAll(".", " "))
-#set($earlyClose = $serviceModel.metadata.serviceId != "S3" && $serviceModel.metadata.serviceId != "S3 Control")
+#set($earlyClose = $serviceModel.metadata.serviceId != "S3")
             ${classNamePrefix}ClientConfiguration(const Client::ClientConfiguration& config#if($earlyClose));#else,
 #end
-#if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
-#if($metadata.signatureVersion.equals("s3") || $metadata.signatureVersion.equals("s3v4"))##Typically should be S3Control only
-            ${clsPrefixWSpace}                    Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent,
-#else
-            ${clsPrefixWSpace}                    Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::Never,
-#end
 #if($serviceModel.metadata.serviceId == "S3")
+            ${clsPrefixWSpace}                    Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::Never,
             ${clsPrefixWSpace}                    bool iUseVirtualAddressing = true,
-            ${clsPrefixWSpace}                    US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption = US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET#end);
+            ${clsPrefixWSpace}                    US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption = US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
 #end
 
 #if($serviceModel.metadata.serviceId == "S3")

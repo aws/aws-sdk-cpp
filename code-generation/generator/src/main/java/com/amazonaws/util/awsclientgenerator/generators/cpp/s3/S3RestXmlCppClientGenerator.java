@@ -115,10 +115,11 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
                 });
 
 
-        serviceModel.getOperations().values().stream()
-                .filter(operationEntry ->
-                        serviceModel.getMetadata().getNamespace().equals("S3Crt") && opsThatDoNotSupportFutureInS3CRT.contains(operationEntry.getName()))
-                .forEach(operationEntry -> operationEntry.setS3CrtSpecific(true));
+        if (serviceModel.getMetadata().getNamespace().equals("S3Crt")) {
+            serviceModel.getOperations().values().stream()
+                    .filter(operationEntry -> opsThatDoNotSupportFutureInS3CRT.contains(operationEntry.getName()))
+                    .forEach(operationEntry -> operationEntry.setS3CrtSpecific(true));
+        }
 
         Shape locationConstraints = serviceModel.getShapes().get("BucketLocationConstraint");
 

@@ -1,6 +1,6 @@
 void ${className}::${operation.name}Async(Model::${operation.request.shape.name}& request,
                 const ${operation.name}StreamReadyHandler& streamReadyHandler,
-                const ${operation.name}ResponseReceivedHandler& responseHandler,
+                const ${operation.name}ResponseReceivedHandler& handler,
                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
@@ -34,19 +34,19 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
   request.SetRequestSignedHandler([eventEncoderStream, sem](const Aws::Http::HttpRequest& httpRequest) { eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(httpRequest)); sem->ReleaseAll(); });
 
 #if($serviceModel.endpointRules)
-  m_executor->Submit([this, &endpointResolutionOutcome, &request, responseHandler, handlerContext] () mutable {
+  m_executor->Submit([this, &endpointResolutionOutcome, &request, handler, handlerContext] () mutable {
 #else
-  m_executor->Submit([this, uri, &request, responseHandler, handlerContext] () mutable {
+  m_executor->Submit([this, uri, &request, handler, handlerContext] () mutable {
 #end
       JsonOutcome outcome = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
       if(outcome.IsSuccess())
       {
-        responseHandler(this, request, ${operation.name}Outcome(NoResult()), handlerContext);
+        handler(this, request, ${operation.name}Outcome(NoResult()), handlerContext);
       }
       else
       {
         request.Get${streamModelNameWithFirstLetterCapitalized}()->Close();
-        responseHandler(this, request, ${operation.name}Outcome(outcome.GetError()), handlerContext);
+        handler(this, request, ${operation.name}Outcome(outcome.GetError()), handlerContext);
       }
       return ${operation.name}Outcome(NoResult());
   });

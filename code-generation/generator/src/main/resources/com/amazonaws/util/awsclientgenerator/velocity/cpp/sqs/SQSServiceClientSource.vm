@@ -2,6 +2,8 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
 #set($className = "${metadata.classNamePrefix}Client")
 \#include <aws/core/utils/Outcome.h>
 \#include <aws/core/auth/AWSAuthSigner.h>
@@ -47,7 +49,7 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
   return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #else
-  return ${operation.name}Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}));
+  return ${operation.name}Outcome(MakeRequest(request.GetQueueUrl(), request, Aws::Http::HttpMethod::HTTP_${operation.http.method}));
 #end
 }
 
@@ -59,11 +61,13 @@ ${operation.name}OutcomeCallable ${className}::${operation.name}Callable(const $
   return task->get_future();
 }
 
-void ${className}::${operation.name}Async(const ${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void ${className}::${operation.name}Async(const ${operation.request.shape.name}& request,
+      const ${operation.name}ResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const
 {
-  m_executor->Submit( [this, request, handler, context]()
+  m_executor->Submit( [this, request, handler, handlerContext]()
     {
-      handler(this, request, ${operation.name}(request), context);
+      handler(this, request, ${operation.name}(request), handlerContext);
     } );
 }
 
