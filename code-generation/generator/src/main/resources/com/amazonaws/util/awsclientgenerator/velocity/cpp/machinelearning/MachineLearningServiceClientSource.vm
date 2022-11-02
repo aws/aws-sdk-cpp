@@ -3,6 +3,7 @@
 
 #set($metadata = $serviceModel.metadata)
 #set($className = "${metadata.classNamePrefix}Client")
+#set($serviceNamespace = $metadata.namespace)
 \#include <aws/core/utils/Outcome.h>
 \#include <aws/core/auth/AWSAuthSigner.h>
 \#include <aws/core/client/CoreErrors.h>
