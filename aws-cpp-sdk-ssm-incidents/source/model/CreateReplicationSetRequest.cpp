@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateReplicationSetRequest::CreateReplicationSetRequest() : 
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_regionsHasBeenSet(false)
+    m_regionsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -37,6 +38,17 @@ Aws::String CreateReplicationSetRequest::SerializePayload() const
      regionsJsonMap.WithObject(regionsItem.first, regionsItem.second.Jsonize());
    }
    payload.WithObject("regions", std::move(regionsJsonMap));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

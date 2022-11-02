@@ -178,50 +178,50 @@ namespace Model
 
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEngagements() const{ return m_engagements; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline void SetEngagements(const Aws::Vector<Aws::String>& value) { m_engagements = value; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline void SetEngagements(Aws::Vector<Aws::String>&& value) { m_engagements = std::move(value); }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline GetResponsePlanResult& WithEngagements(const Aws::Vector<Aws::String>& value) { SetEngagements(value); return *this;}
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline GetResponsePlanResult& WithEngagements(Aws::Vector<Aws::String>&& value) { SetEngagements(std::move(value)); return *this;}
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline GetResponsePlanResult& AddEngagements(const Aws::String& value) { m_engagements.push_back(value); return *this; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline GetResponsePlanResult& AddEngagements(Aws::String&& value) { m_engagements.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The contacts and escalation plans that the response plan engages during an
-     * incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline GetResponsePlanResult& AddEngagements(const char* value) { m_engagements.push_back(value); return *this; }
 

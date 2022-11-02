@@ -118,50 +118,50 @@ namespace Model
 
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline UpdateReplicationSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline UpdateReplicationSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that the operation is called only once with the
+     * specified details.</p>
      */
     inline UpdateReplicationSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

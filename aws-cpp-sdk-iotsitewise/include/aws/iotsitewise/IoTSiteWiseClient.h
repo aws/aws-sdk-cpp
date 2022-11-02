@@ -233,10 +233,9 @@ namespace IoTSiteWise
         virtual void BatchPutAssetPropertyValueAsync(const Model::BatchPutAssetPropertyValueRequest& request, const BatchPutAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an access policy that grants the specified identity (Amazon Web
-         * Services SSO user, Amazon Web Services SSO group, or IAM user) access to the
-         * specified IoT SiteWise Monitor portal or project resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an access policy that grants the specified identity (IAM Identity
+         * Center user, IAM Identity Center group, or IAM user) access to the specified IoT
+         * SiteWise Monitor portal or project resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAccessPolicy">AWS
          * API Reference</a></p>
          */
@@ -361,9 +360,9 @@ namespace IoTSiteWise
 
         /**
          * <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise
-         * Monitor uses Amazon Web Services SSO or IAM to authenticate portal users and
-         * manage user permissions.</p>  <p>Before you can sign in to a new portal,
-         * you must add at least one identity to that portal. For more information, see <a
+         * Monitor uses IAM Identity Center or IAM to authenticate portal users and manage
+         * user permissions.</p>  <p>Before you can sign in to a new portal, you must
+         * add at least one identity to that portal. For more information, see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding
          * or removing portal administrators</a> in the <i>IoT SiteWise User Guide</i>.</p>
          * <p><h3>See Also:</h3>   <a
@@ -978,8 +977,8 @@ namespace IoTSiteWise
         virtual void GetInterpolatedAssetPropertyValuesAsync(const Model::GetInterpolatedAssetPropertyValuesRequest& request, const GetInterpolatedAssetPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of access policies for an identity (an Amazon Web
-         * Services SSO user, an Amazon Web Services SSO group, or an IAM user) or an IoT
+         * <p>Retrieves a paginated list of access policies for an identity (an IAM
+         * Identity Center user, an IAM Identity Center group, or an IAM user) or an IoT
          * SiteWise Monitor resource (a portal or project).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAccessPolicies">AWS
          * API Reference</a></p>
@@ -995,6 +994,25 @@ namespace IoTSiteWise
          * An Async wrapper for ListAccessPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAccessPoliciesAsync(const Model::ListAccessPoliciesRequest& request, const ListAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a paginated list of properties associated with an asset model. If
+         * you update properties associated with the model before you finish listing all
+         * the properties, you need to start all over again.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssetModelPropertiesOutcome ListAssetModelProperties(const Model::ListAssetModelPropertiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAssetModelProperties that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAssetModelPropertiesOutcomeCallable ListAssetModelPropertiesCallable(const Model::ListAssetModelPropertiesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListAssetModelProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAssetModelPropertiesAsync(const Model::ListAssetModelPropertiesRequest& request, const ListAssetModelPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a paginated list of summaries of all asset models.</p><p><h3>See
@@ -1013,6 +1031,25 @@ namespace IoTSiteWise
          * An Async wrapper for ListAssetModels that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListAssetModelsAsync(const Model::ListAssetModelsRequest& request, const ListAssetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a paginated list of properties associated with an asset. If you
+         * update properties associated with the model before you finish listing all the
+         * properties, you need to start all over again.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssetPropertiesOutcome ListAssetProperties(const Model::ListAssetPropertiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAssetProperties that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAssetPropertiesOutcomeCallable ListAssetPropertiesCallable(const Model::ListAssetPropertiesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListAssetProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAssetPropertiesAsync(const Model::ListAssetPropertiesRequest& request, const ListAssetPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a paginated list of asset relationships for an asset. You can use

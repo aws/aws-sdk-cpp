@@ -270,56 +270,56 @@ namespace Model
 
 
     /**
-     * <p>The contacts and escalation plans that Incident Manager engages at the start
-     * of the incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEngagements() const{ return m_engagements; }
 
     /**
-     * <p>The contacts and escalation plans that Incident Manager engages at the start
-     * of the incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline bool EngagementsHasBeenSet() const { return m_engagementsHasBeenSet; }
 
     /**
-     * <p>The contacts and escalation plans that Incident Manager engages at the start
-     * of the incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline void SetEngagements(const Aws::Vector<Aws::String>& value) { m_engagementsHasBeenSet = true; m_engagements = value; }
 
     /**
-     * <p>The contacts and escalation plans that Incident Manager engages at the start
-     * of the incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline void SetEngagements(Aws::Vector<Aws::String>&& value) { m_engagementsHasBeenSet = true; m_engagements = std::move(value); }
 
     /**
-     * <p>The contacts and escalation plans that Incident Manager engages at the start
-     * of the incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline UpdateResponsePlanRequest& WithEngagements(const Aws::Vector<Aws::String>& value) { SetEngagements(value); return *this;}
 
     /**
-     * <p>The contacts and escalation plans that Incident Manager engages at the start
-     * of the incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline UpdateResponsePlanRequest& WithEngagements(Aws::Vector<Aws::String>&& value) { SetEngagements(std::move(value)); return *this;}
 
     /**
-     * <p>The contacts and escalation plans that Incident Manager engages at the start
-     * of the incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline UpdateResponsePlanRequest& AddEngagements(const Aws::String& value) { m_engagementsHasBeenSet = true; m_engagements.push_back(value); return *this; }
 
     /**
-     * <p>The contacts and escalation plans that Incident Manager engages at the start
-     * of the incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline UpdateResponsePlanRequest& AddEngagements(Aws::String&& value) { m_engagementsHasBeenSet = true; m_engagements.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The contacts and escalation plans that Incident Manager engages at the start
-     * of the incident.</p>
+     * <p>The Amazon Resource Name (ARN) for the contacts and escalation plans that the
+     * response plan engages during an incident.</p>
      */
     inline UpdateResponsePlanRequest& AddEngagements(const char* value) { m_engagementsHasBeenSet = true; m_engagements.push_back(value); return *this; }
 
@@ -513,92 +513,105 @@ namespace Model
 
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action. To call this action, you must also have permission to call the
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetIncidentTemplateTags() const{ return m_incidentTemplateTags; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action. To call this action, you must also have permission to call the
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
     inline bool IncidentTemplateTagsHasBeenSet() const { return m_incidentTemplateTagsHasBeenSet; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action. To call this action, you must also have permission to call the
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
     inline void SetIncidentTemplateTags(const Aws::Map<Aws::String, Aws::String>& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags = value; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action. To call this action, you must also have permission to call the
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
     inline void SetIncidentTemplateTags(Aws::Map<Aws::String, Aws::String>&& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags = std::move(value); }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action. To call this action, you must also have permission to call the
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateTags(const Aws::Map<Aws::String, Aws::String>& value) { SetIncidentTemplateTags(value); return *this;}
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action. To call this action, you must also have permission to call the
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
     inline UpdateResponsePlanRequest& WithIncidentTemplateTags(Aws::Map<Aws::String, Aws::String>&& value) { SetIncidentTemplateTags(std::move(value)); return *this;}
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action. To call this action, you must also have permission to call the
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
     inline UpdateResponsePlanRequest& AddIncidentTemplateTags(const Aws::String& key, const Aws::String& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(key, value); return *this; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action. To call this action, you must also have permission to call the
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
     inline UpdateResponsePlanRequest& AddIncidentTemplateTags(Aws::String&& key, const Aws::String& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action. To call this action, you must also have permission to call the
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
     inline UpdateResponsePlanRequest& AddIncidentTemplateTags(const Aws::String& key, Aws::String&& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action. To call this action, you must also have permission to call the
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
     inline UpdateResponsePlanRequest& AddIncidentTemplateTags(Aws::String&& key, Aws::String&& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action. To call this action, you must also have permission to call the
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
     inline UpdateResponsePlanRequest& AddIncidentTemplateTags(const char* key, Aws::String&& value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action. To call this action, you must also have permission to call the
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
     inline UpdateResponsePlanRequest& AddIncidentTemplateTags(Aws::String&& key, const char* value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Tags to apply to an incident when calling the <code>StartIncident</code> API
-     * action. To call this action, you must also have permission to call the
+     * <p>Tags to assign to the template. When the <code>StartIncident</code> API
+     * action is called, Incident Manager assigns the tags specified in the template to
+     * the incident. To call this action, you must also have permission to call the
      * <code>TagResource</code> API action for the incident record resource.</p>
      */
     inline UpdateResponsePlanRequest& AddIncidentTemplateTags(const char* key, const char* value) { m_incidentTemplateTagsHasBeenSet = true; m_incidentTemplateTags.emplace(key, value); return *this; }

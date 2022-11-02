@@ -137,32 +137,32 @@ namespace Model
 
 
     /**
-     * <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or
-     * IAM user) to which this access policy applies.</p>
+     * <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM
+     * user) to which this access policy applies.</p>
      */
     inline const Identity& GetAccessPolicyIdentity() const{ return m_accessPolicyIdentity; }
 
     /**
-     * <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or
-     * IAM user) to which this access policy applies.</p>
+     * <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM
+     * user) to which this access policy applies.</p>
      */
     inline void SetAccessPolicyIdentity(const Identity& value) { m_accessPolicyIdentity = value; }
 
     /**
-     * <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or
-     * IAM user) to which this access policy applies.</p>
+     * <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM
+     * user) to which this access policy applies.</p>
      */
     inline void SetAccessPolicyIdentity(Identity&& value) { m_accessPolicyIdentity = std::move(value); }
 
     /**
-     * <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or
-     * IAM user) to which this access policy applies.</p>
+     * <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM
+     * user) to which this access policy applies.</p>
      */
     inline DescribeAccessPolicyResult& WithAccessPolicyIdentity(const Identity& value) { SetAccessPolicyIdentity(value); return *this;}
 
     /**
-     * <p>The identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or
-     * IAM user) to which this access policy applies.</p>
+     * <p>The identity (IAM Identity Center user, IAM Identity Center group, or IAM
+     * user) to which this access policy applies.</p>
      */
     inline DescribeAccessPolicyResult& WithAccessPolicyIdentity(Identity&& value) { SetAccessPolicyIdentity(std::move(value)); return *this;}
 

@@ -65,7 +65,9 @@
 #include <aws/iotsitewise/model/GetAssetPropertyValueHistoryRequest.h>
 #include <aws/iotsitewise/model/GetInterpolatedAssetPropertyValuesRequest.h>
 #include <aws/iotsitewise/model/ListAccessPoliciesRequest.h>
+#include <aws/iotsitewise/model/ListAssetModelPropertiesRequest.h>
 #include <aws/iotsitewise/model/ListAssetModelsRequest.h>
+#include <aws/iotsitewise/model/ListAssetPropertiesRequest.h>
 #include <aws/iotsitewise/model/ListAssetRelationshipsRequest.h>
 #include <aws/iotsitewise/model/ListAssetsRequest.h>
 #include <aws/iotsitewise/model/ListAssociatedAssetsRequest.h>
@@ -1839,6 +1841,45 @@ void IoTSiteWiseClient::ListAccessPoliciesAsync(const ListAccessPoliciesRequest&
     } );
 }
 
+ListAssetModelPropertiesOutcome IoTSiteWiseClient::ListAssetModelProperties(const ListAssetModelPropertiesRequest& request) const
+{
+  if (!request.AssetModelIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAssetModelProperties", "Required field: AssetModelId, is not set");
+    return ListAssetModelPropertiesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetModelId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListAssetModelProperties", "Invalid DNS host: " << uri.GetAuthority());
+      return ListAssetModelPropertiesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/asset-models/");
+  uri.AddPathSegment(request.GetAssetModelId());
+  uri.AddPathSegments("/properties");
+  return ListAssetModelPropertiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAssetModelPropertiesOutcomeCallable IoTSiteWiseClient::ListAssetModelPropertiesCallable(const ListAssetModelPropertiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAssetModelPropertiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssetModelProperties(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::ListAssetModelPropertiesAsync(const ListAssetModelPropertiesRequest& request, const ListAssetModelPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAssetModelProperties(request), context);
+    } );
+}
+
 ListAssetModelsOutcome IoTSiteWiseClient::ListAssetModels(const ListAssetModelsRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
@@ -1868,6 +1909,45 @@ void IoTSiteWiseClient::ListAssetModelsAsync(const ListAssetModelsRequest& reque
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListAssetModels(request), context);
+    } );
+}
+
+ListAssetPropertiesOutcome IoTSiteWiseClient::ListAssetProperties(const ListAssetPropertiesRequest& request) const
+{
+  if (!request.AssetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAssetProperties", "Required field: AssetId, is not set");
+    return ListAssetPropertiesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssetId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("api." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("ListAssetProperties", "Invalid DNS host: " << uri.GetAuthority());
+      return ListAssetPropertiesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  uri.AddPathSegments("/assets/");
+  uri.AddPathSegment(request.GetAssetId());
+  uri.AddPathSegments("/properties");
+  return ListAssetPropertiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAssetPropertiesOutcomeCallable IoTSiteWiseClient::ListAssetPropertiesCallable(const ListAssetPropertiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAssetPropertiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssetProperties(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::ListAssetPropertiesAsync(const ListAssetPropertiesRequest& request, const ListAssetPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListAssetProperties(request), context);
     } );
 }
 

@@ -28,10 +28,10 @@ namespace Model
 
   /**
    * <p>Contains an identity that can access an IoT SiteWise Monitor resource.</p>
-   *  <p>Currently, you can't use Amazon Web Services APIs to retrieve Amazon
-   * Web Services SSO identity IDs. You can find the Amazon Web Services SSO identity
-   * IDs in the URL of user and group pages in the <a
-   * href="https://console.aws.amazon.com/singlesignon">Amazon Web Services SSO
+   *  <p>Currently, you can't use Amazon Web Services APIs to retrieve IAM
+   * Identity Center identity IDs. You can find the IAM Identity Center identity IDs
+   * in the URL of user and group pages in the <a
+   * href="https://console.aws.amazon.com/singlesignon">IAM Identity Center
    * console</a>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Identity">AWS
    * API Reference</a></p>
@@ -46,63 +46,63 @@ namespace Model
 
 
     /**
-     * <p>An Amazon Web Services SSO user identity.</p>
+     * <p>An IAM Identity Center user identity.</p>
      */
     inline const UserIdentity& GetUser() const{ return m_user; }
 
     /**
-     * <p>An Amazon Web Services SSO user identity.</p>
+     * <p>An IAM Identity Center user identity.</p>
      */
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
-     * <p>An Amazon Web Services SSO user identity.</p>
+     * <p>An IAM Identity Center user identity.</p>
      */
     inline void SetUser(const UserIdentity& value) { m_userHasBeenSet = true; m_user = value; }
 
     /**
-     * <p>An Amazon Web Services SSO user identity.</p>
+     * <p>An IAM Identity Center user identity.</p>
      */
     inline void SetUser(UserIdentity&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
     /**
-     * <p>An Amazon Web Services SSO user identity.</p>
+     * <p>An IAM Identity Center user identity.</p>
      */
     inline Identity& WithUser(const UserIdentity& value) { SetUser(value); return *this;}
 
     /**
-     * <p>An Amazon Web Services SSO user identity.</p>
+     * <p>An IAM Identity Center user identity.</p>
      */
     inline Identity& WithUser(UserIdentity&& value) { SetUser(std::move(value)); return *this;}
 
 
     /**
-     * <p>An Amazon Web Services SSO group identity.</p>
+     * <p>An IAM Identity Center group identity.</p>
      */
     inline const GroupIdentity& GetGroup() const{ return m_group; }
 
     /**
-     * <p>An Amazon Web Services SSO group identity.</p>
+     * <p>An IAM Identity Center group identity.</p>
      */
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
 
     /**
-     * <p>An Amazon Web Services SSO group identity.</p>
+     * <p>An IAM Identity Center group identity.</p>
      */
     inline void SetGroup(const GroupIdentity& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
-     * <p>An Amazon Web Services SSO group identity.</p>
+     * <p>An IAM Identity Center group identity.</p>
      */
     inline void SetGroup(GroupIdentity&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
 
     /**
-     * <p>An Amazon Web Services SSO group identity.</p>
+     * <p>An IAM Identity Center group identity.</p>
      */
     inline Identity& WithGroup(const GroupIdentity& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>An Amazon Web Services SSO group identity.</p>
+     * <p>An IAM Identity Center group identity.</p>
      */
     inline Identity& WithGroup(GroupIdentity&& value) { SetGroup(std::move(value)); return *this;}
 
