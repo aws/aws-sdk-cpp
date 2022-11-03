@@ -74,7 +74,9 @@ namespace ${rootNamespace}
 #end
 #if($metadata.hasEndpointDiscoveryTrait)
         mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
+#if(!$serviceModel.endpointRules)
         bool m_enableEndpointDiscovery = false;
+#end
 #end
 #if(!$serviceModel.endpointRules)
         Aws::String m_configScheme;

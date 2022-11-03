@@ -11,6 +11,7 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
+#include <aws/core/VersionConfig.h>
 
 #if defined(GetMessage)
 #undef GetMessage
