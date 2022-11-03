@@ -12,7 +12,6 @@
 #include <aws/core/http/HttpClientFactory.h>
 
 #include <aws/eventbridge/EventBridgeClient.h>
-#include <aws/eventbridge/EventBridgeEndpoint.h>
 #include <aws/eventbridge/model/PutEventsRequest.h>
 
 
@@ -146,11 +145,12 @@ static const std::pair<const char*, const char*> X_AMZ_HEADER = {"x-amz-region-s
 static const Aws::Vector<EventBridgeEndpointTestCase> TEST_CASES = {
         {"us-east-1", false, false, nullptr, "events.us-east-1.amazonaws.com", nullptr, {}},
         {"us-east-1", false, false, "abc123.456def", "abc123.456def.endpoint.events.amazonaws.com", nullptr, {X_AMZ_HEADER}},
-        {"us-east-1", false, false, "badactor.aws?foo=bar", nullptr, "Invalid EventBridge EndpointId DNS hostname", {}},
-        {"us-east-1", false, false, "", nullptr, "EndpointId must not be a zero length string", {}},
-        {"us-east-1", false, true, nullptr, "events.dualstack.us-east-1.amazonaws.com", nullptr, {}},
-        {"us-east-1", false, true, "abc123.456def","abc123.456def.endpoint.events.amazonaws.com", nullptr, {X_AMZ_HEADER}},
-        {"us-east-1", true, false, nullptr, "events-fips.us-east-1.api.aws", nullptr, {}},
+        {"us-east-1", false, false, "badactor.aws?foo=bar", nullptr, "EndpointId must be a valid host label.", {}},
+        {"us-east-1", false, false, "", nullptr, "EndpointId must be a valid host label.", {}},
+        // Service does not support dualstack
+        // {"us-east-1", false, true, nullptr, "events.dualstack.us-east-1.amazonaws.com", nullptr, {}},
+        // {"us-east-1", false, true, "abc123.456def","abc123.456def.endpoint.events.amazonaws.com", nullptr, {X_AMZ_HEADER}},
+        {"us-east-1", true, false, nullptr, "events-fips.us-east-1.amazonaws.com", nullptr, {}},
         /* TODO: enable commented out tests once FIPS and dualstack endpoint support becomes available in the SDK.
          * CPP SDK does not support proper FIPS endpoint generation & detection
         {"us-east-1", true, false, "abc123.456def", "", "FIPS is not supported with EventBridge multi-region endpoints", {}},
@@ -171,11 +171,7 @@ TEST_F(EventBridgeTests, TestPutEventsEndpointTests)
         Aws::Client::ClientConfiguration clientConfig;
         clientConfig.region = testCase.clientRegion;
         clientConfig.useDualStack = testCase.useDualStackEndpoint;
-
-        if(testCase.useFipsEndpoint) {
-            // CPP SDK does not autogenerate eventbridge FIPS/dualstack endpoints
-            clientConfig.endpointOverride = "events-fips.us-east-1.api.aws";
-        }
+        clientConfig.useFIPS = testCase.useFipsEndpoint;
 
         Aws::Auth::AWSCredentials mockCreds("accessKey", "secretKey", "sessionToken");
         Aws::EventBridge::EventBridgeClient eventBridgeClient(mockCreds, clientConfig);
