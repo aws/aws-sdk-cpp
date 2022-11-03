@@ -59,7 +59,6 @@
 #end##--#if(!$operation.s3CrtSpecific)
 
         /**
-
          * An Async wrapper for ${operation.name} that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         $virtual void ${operation.name}Async(const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
