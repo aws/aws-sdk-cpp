@@ -63,17 +63,17 @@ namespace Aws
             /**
              * The core of the endpoint provider interface. Implement ResolveEndpointImpl in Derived
              */
-            ResolveEndpointOutcome ResolveEndpoint(const EndpointParameters& endpointParameters) const
+            ResolveEndpointOutcome ResolveEndpoint(const EndpointParameters& endpointParameters) const override
             {
                 const DerivedT& derived = static_cast<const DerivedT&>(*this);
                 return derived.ResolveEndpointImpl(endpointParameters);
             };
 
-            const ClientContextParametersT& GetClientContextParameters() const
+            const ClientContextParametersT& GetClientContextParameters() const override
             {
                 return m_clientContextParameters;
             }
-            ClientContextParametersT& AccessClientContextParameters()
+            ClientContextParametersT& AccessClientContextParameters() override
             {
                 return m_clientContextParameters;
             }
