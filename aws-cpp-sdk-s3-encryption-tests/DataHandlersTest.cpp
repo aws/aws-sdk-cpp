@@ -31,7 +31,9 @@ class MockS3Client : public Aws::S3::S3Client
 {
 public:
     MockS3Client(Aws::Client::ClientConfiguration clientConfiguration = Aws::Client::ClientConfiguration()) :
-        S3Client(Aws::Auth::AWSCredentials("", ""), clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_body(nullptr)
+        S3Client(Aws::Auth::AWSCredentials("", ""),
+                 Aws::MakeShared<Aws::S3::Endpoint::S3EndpointProvider>(ALLOCATION_TAG),
+                         clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_body(nullptr)
     {
     }
 
