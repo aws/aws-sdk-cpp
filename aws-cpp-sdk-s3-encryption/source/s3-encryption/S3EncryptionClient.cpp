@@ -39,14 +39,14 @@ namespace Aws
 
         S3EncryptionClientBase::S3EncryptionClientBase(const std::shared_ptr<EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
             const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
-            m_s3Client(Aws::MakeUnique<S3Client>(ALLOCATION_TAG, credentials, clientConfiguration)), m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig)
+            m_s3Client(Aws::MakeUnique<S3Client>(ALLOCATION_TAG, credentials, Aws::MakeShared<S3::Endpoint::S3EndpointProvider>(ALLOCATION_TAG), clientConfiguration)), m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig)
         {
             m_s3Client->SetServiceClientName("S3CryptoV1n");
         }
 
         S3EncryptionClientBase::S3EncryptionClientBase(const std::shared_ptr<EncryptionMaterials>& encryptionMaterials,
             const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfiguration) :
-            m_s3Client(Aws::MakeUnique<S3Client>(ALLOCATION_TAG, credentialsProvider, clientConfiguration)), m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig)
+            m_s3Client(Aws::MakeUnique<S3Client>(ALLOCATION_TAG, credentialsProvider, Aws::MakeShared<S3::Endpoint::S3EndpointProvider>(ALLOCATION_TAG), clientConfiguration)), m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig)
         {
             m_s3Client->SetServiceClientName("S3CryptoV1n");
         }
