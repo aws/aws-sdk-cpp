@@ -48,7 +48,9 @@ Cluster::Cluster() :
     m_snapshotWindowHasBeenSet(false),
     m_aCLNameHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false)
+    m_autoMinorVersionUpgradeHasBeenSet(false),
+    m_dataTiering(DataTieringStatus::NOT_SET),
+    m_dataTieringHasBeenSet(false)
 {
 }
 
@@ -82,7 +84,9 @@ Cluster::Cluster(JsonView jsonValue) :
     m_snapshotWindowHasBeenSet(false),
     m_aCLNameHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false)
+    m_autoMinorVersionUpgradeHasBeenSet(false),
+    m_dataTiering(DataTieringStatus::NOT_SET),
+    m_dataTieringHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -270,6 +274,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_autoMinorVersionUpgradeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataTiering"))
+  {
+    m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(jsonValue.GetString("DataTiering"));
+
+    m_dataTieringHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -434,6 +445,11 @@ JsonValue Cluster::Jsonize() const
   {
    payload.WithBool("AutoMinorVersionUpgrade", m_autoMinorVersionUpgrade);
 
+  }
+
+  if(m_dataTieringHasBeenSet)
+  {
+   payload.WithString("DataTiering", DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering));
   }
 
   return payload;

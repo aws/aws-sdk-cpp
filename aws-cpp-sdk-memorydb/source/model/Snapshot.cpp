@@ -24,7 +24,9 @@ Snapshot::Snapshot() :
     m_sourceHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_aRNHasBeenSet(false),
-    m_clusterConfigurationHasBeenSet(false)
+    m_clusterConfigurationHasBeenSet(false),
+    m_dataTiering(DataTieringStatus::NOT_SET),
+    m_dataTieringHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ Snapshot::Snapshot(JsonView jsonValue) :
     m_sourceHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_aRNHasBeenSet(false),
-    m_clusterConfigurationHasBeenSet(false)
+    m_clusterConfigurationHasBeenSet(false),
+    m_dataTiering(DataTieringStatus::NOT_SET),
+    m_dataTieringHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +87,13 @@ Snapshot& Snapshot::operator =(JsonView jsonValue)
     m_clusterConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataTiering"))
+  {
+    m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(jsonValue.GetString("DataTiering"));
+
+    m_dataTieringHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +135,11 @@ JsonValue Snapshot::Jsonize() const
   {
    payload.WithObject("ClusterConfiguration", m_clusterConfiguration.Jsonize());
 
+  }
+
+  if(m_dataTieringHasBeenSet)
+  {
+   payload.WithString("DataTiering", DataTieringStatusMapper::GetNameForDataTieringStatus(m_dataTiering));
   }
 
   return payload;

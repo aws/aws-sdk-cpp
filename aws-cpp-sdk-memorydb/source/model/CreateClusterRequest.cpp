@@ -39,7 +39,9 @@ CreateClusterRequest::CreateClusterRequest() :
     m_aCLNameHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false)
+    m_autoMinorVersionUpgradeHasBeenSet(false),
+    m_dataTiering(false),
+    m_dataTieringHasBeenSet(false)
 {
 }
 
@@ -185,6 +187,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_autoMinorVersionUpgradeHasBeenSet)
   {
    payload.WithBool("AutoMinorVersionUpgrade", m_autoMinorVersionUpgrade);
+
+  }
+
+  if(m_dataTieringHasBeenSet)
+  {
+   payload.WithBool("DataTiering", m_dataTiering);
 
   }
 
