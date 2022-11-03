@@ -25,13 +25,7 @@ using EpProp = Aws::Endpoint::EndpointParameter; // just a container to store te
 using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<EpProp>>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
-class ${metadata.classNamePrefix}EndpointProviderTests :public ::testing::TestWithParam<size_t>
-{
-public:
-
-protected:
-
-};
+class ${metadata.classNamePrefix}EndpointProviderTests : public ::testing::TestWithParam<size_t> {};
 
 struct ${metadata.classNamePrefix}EndpointProviderEndpointTestCase
 {
