@@ -44,7 +44,7 @@
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
 
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)); + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("${operation.name}", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
         endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
