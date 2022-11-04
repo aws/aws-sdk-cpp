@@ -260,13 +260,13 @@ void InstanceProfileCredentialsProvider::RefreshIfExpired()
 {
     AWS_LOGSTREAM_DEBUG(INSTANCE_LOG_TAG, "Checking if latest credential pull has expired.");
     ReaderLockGuard guard(m_reloadLock);
-    if (!IsTimeToRefresh(m_loadFrequencyMs))
+    if (!AWSCredentials().IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs))
     {
         return;
     }
 
     guard.UpgradeToWriterLock();
-    if (!IsTimeToRefresh(m_loadFrequencyMs)) // double-checked lock to avoid refreshing twice
+    if (!AWSCredentials().IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs)) // double-checked lock to avoid refreshing twice
     {
         return;
     }
