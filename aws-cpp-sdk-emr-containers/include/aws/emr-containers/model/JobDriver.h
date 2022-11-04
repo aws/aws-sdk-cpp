@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Specify the driver that the job runs on.</p><p><h3>See Also:</h3>   <a
+   * <p>Specify the driver that the job runs on. Exactly one of the two available job
+   * drivers is required, either sparkSqlJobDriver or
+   * sparkSubmitJobDriver.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/JobDriver">AWS
    * API Reference</a></p>
    */

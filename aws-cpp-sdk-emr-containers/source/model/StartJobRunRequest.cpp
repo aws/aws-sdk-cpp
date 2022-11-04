@@ -21,7 +21,9 @@ StartJobRunRequest::StartJobRunRequest() :
     m_releaseLabelHasBeenSet(false),
     m_jobDriverHasBeenSet(false),
     m_configurationOverridesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_jobTemplateIdHasBeenSet(false),
+    m_jobTemplateParametersHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,23 @@ Aws::String StartJobRunRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_jobTemplateIdHasBeenSet)
+  {
+   payload.WithString("jobTemplateId", m_jobTemplateId);
+
+  }
+
+  if(m_jobTemplateParametersHasBeenSet)
+  {
+   JsonValue jobTemplateParametersJsonMap;
+   for(auto& jobTemplateParametersItem : m_jobTemplateParameters)
+   {
+     jobTemplateParametersJsonMap.WithString(jobTemplateParametersItem.first, jobTemplateParametersItem.second);
+   }
+   payload.WithObject("jobTemplateParameters", std::move(jobTemplateParametersJsonMap));
 
   }
 

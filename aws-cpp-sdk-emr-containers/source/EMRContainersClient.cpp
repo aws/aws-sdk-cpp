@@ -21,14 +21,18 @@
 #include <aws/emr-containers/EMRContainersEndpoint.h>
 #include <aws/emr-containers/EMRContainersErrorMarshaller.h>
 #include <aws/emr-containers/model/CancelJobRunRequest.h>
+#include <aws/emr-containers/model/CreateJobTemplateRequest.h>
 #include <aws/emr-containers/model/CreateManagedEndpointRequest.h>
 #include <aws/emr-containers/model/CreateVirtualClusterRequest.h>
+#include <aws/emr-containers/model/DeleteJobTemplateRequest.h>
 #include <aws/emr-containers/model/DeleteManagedEndpointRequest.h>
 #include <aws/emr-containers/model/DeleteVirtualClusterRequest.h>
 #include <aws/emr-containers/model/DescribeJobRunRequest.h>
+#include <aws/emr-containers/model/DescribeJobTemplateRequest.h>
 #include <aws/emr-containers/model/DescribeManagedEndpointRequest.h>
 #include <aws/emr-containers/model/DescribeVirtualClusterRequest.h>
 #include <aws/emr-containers/model/ListJobRunsRequest.h>
+#include <aws/emr-containers/model/ListJobTemplatesRequest.h>
 #include <aws/emr-containers/model/ListManagedEndpointsRequest.h>
 #include <aws/emr-containers/model/ListTagsForResourceRequest.h>
 #include <aws/emr-containers/model/ListVirtualClustersRequest.h>
@@ -151,6 +155,29 @@ void EMRContainersClient::CancelJobRunAsync(const CancelJobRunRequest& request, 
     } );
 }
 
+CreateJobTemplateOutcome EMRContainersClient::CreateJobTemplate(const CreateJobTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/jobtemplates");
+  return CreateJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateJobTemplateOutcomeCallable EMRContainersClient::CreateJobTemplateCallable(const CreateJobTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateJobTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateJobTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRContainersClient::CreateJobTemplateAsync(const CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CreateJobTemplate(request), context);
+    } );
+}
+
 CreateManagedEndpointOutcome EMRContainersClient::CreateManagedEndpoint(const CreateManagedEndpointRequest& request) const
 {
   if (!request.VirtualClusterIdHasBeenSet())
@@ -201,6 +228,35 @@ void EMRContainersClient::CreateVirtualClusterAsync(const CreateVirtualClusterRe
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CreateVirtualCluster(request), context);
+    } );
+}
+
+DeleteJobTemplateOutcome EMRContainersClient::DeleteJobTemplate(const DeleteJobTemplateRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJobTemplate", "Required field: Id, is not set");
+    return DeleteJobTemplateOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/jobtemplates/");
+  uri.AddPathSegment(request.GetId());
+  return DeleteJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteJobTemplateOutcomeCallable EMRContainersClient::DeleteJobTemplateCallable(const DeleteJobTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteJobTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJobTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRContainersClient::DeleteJobTemplateAsync(const DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DeleteJobTemplate(request), context);
     } );
 }
 
@@ -305,6 +361,35 @@ void EMRContainersClient::DescribeJobRunAsync(const DescribeJobRunRequest& reque
     } );
 }
 
+DescribeJobTemplateOutcome EMRContainersClient::DescribeJobTemplate(const DescribeJobTemplateRequest& request) const
+{
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJobTemplate", "Required field: Id, is not set");
+    return DescribeJobTemplateOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/jobtemplates/");
+  uri.AddPathSegment(request.GetId());
+  return DescribeJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeJobTemplateOutcomeCallable EMRContainersClient::DescribeJobTemplateCallable(const DescribeJobTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeJobTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRContainersClient::DescribeJobTemplateAsync(const DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, DescribeJobTemplate(request), context);
+    } );
+}
+
 DescribeManagedEndpointOutcome EMRContainersClient::DescribeManagedEndpoint(const DescribeManagedEndpointRequest& request) const
 {
   if (!request.IdHasBeenSet())
@@ -397,6 +482,29 @@ void EMRContainersClient::ListJobRunsAsync(const ListJobRunsRequest& request, co
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, ListJobRuns(request), context);
+    } );
+}
+
+ListJobTemplatesOutcome EMRContainersClient::ListJobTemplates(const ListJobTemplatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/jobtemplates");
+  return ListJobTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListJobTemplatesOutcomeCallable EMRContainersClient::ListJobTemplatesCallable(const ListJobTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListJobTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRContainersClient::ListJobTemplatesAsync(const ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, ListJobTemplates(request), context);
     } );
 }
 
