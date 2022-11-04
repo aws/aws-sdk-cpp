@@ -27,21 +27,28 @@ namespace Aws
         static const char DEFAULT_ENDPOINT_PROVIDER_TAG[] = "Aws::Endpoint::DefaultEndpointProvider";
 
         /**
-         * Default endpoint provider template used in this SDK.
-         *
-         * Curiously Recurring Template Pattern is used (mostly for reducing the amount of copy-paste code
-         *   static polymorphism is not applicable in the existing design):
-         * https://en.cppreference.com/w/cpp/language/crtp
+         * Default template implementation for endpoint resolution
+         * @param ruleEngine
+         * @param builtInParameters
+         * @param clientContextParameters
+         * @param endpointParameters
+         * @return
          */
-        template<typename DerivedT,  // i.e. S3EndpointProvider
-                 typename ClientConfigurationT, // i.e. S3ClientConfiguration
+        AWS_CORE_API ResolveEndpointOutcome
+        ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
+                                   const EndpointParameters& builtInParameters,
+                                   const EndpointParameters& clientContextParameters,
+                                   const EndpointParameters& endpointParameters);
+
+        /**
+         * Default endpoint provider template used in this SDK.
+         */
+        template<typename ClientConfigurationT = Aws::Client::GenericClientConfiguration<false>,
                  typename BuiltInParametersT = Aws::Endpoint::BuiltInParameters,
                  typename ClientContextParametersT = Aws::Endpoint::ClientContextParameters>
         class AWS_CORE_API DefaultEndpointProvider : public EndpointProviderBase<ClientConfigurationT, BuiltInParametersT, ClientContextParametersT>
         {
         public:
-            using EndpointProviderBaseT = EndpointProviderBase<ClientConfigurationT, BuiltInParametersT, ClientContextParametersT>;
-
             DefaultEndpointProvider(const Aws::Vector<char>& endpointRulesBLOB)
                 : m_crtRuleEngine(Aws::Crt::ByteCursorFromArray((const uint8_t*) endpointRulesBLOB.data(), endpointRulesBLOB.size()),
                                   Aws::Crt::ByteCursorFromArray((const uint8_t*) AWSPartitions::PartitionsBlob.data(), AWSPartitions::PartitionsBlobSize))
@@ -61,12 +68,12 @@ namespace Aws
             }
 
             /**
-             * The core of the endpoint provider interface. Implement ResolveEndpointImpl in Derived
+             * Default implementation of the ResolveEndpoint
              */
             ResolveEndpointOutcome ResolveEndpoint(const EndpointParameters& endpointParameters) const override
             {
-                const DerivedT& derived = static_cast<const DerivedT&>(*this);
-                return derived.ResolveEndpointImpl(endpointParameters);
+                auto ResolveEndpointDefaultImpl = Aws::Endpoint::ResolveEndpointDefaultImpl;
+                return ResolveEndpointDefaultImpl(m_crtRuleEngine, m_builtInParameters.GetAllParameters(), m_clientContextParameters.GetAllParameters(), endpointParameters);
             };
 
             const ClientContextParametersT& GetClientContextParameters() const override
@@ -103,19 +110,7 @@ namespace Aws
             BuiltInParametersT m_builtInParameters;
         };
 
-
-        /**
-         * Default template implementation for endpoint resolution
-         * @param ruleEngine
-         * @param builtInParameters
-         * @param clientContextParameters
-         * @param endpointParameters
-         * @return
-         */
-        ResolveEndpointOutcome
-        ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
-                                   const EndpointParameters& builtInParameters,
-                                   const EndpointParameters& clientContextParameters,
-                                   const EndpointParameters& endpointParameters);
+        // Export symbol from the DLL:
+        template class AWS_CORE_API DefaultEndpointProvider<Aws::Client::GenericClientConfiguration</*HasEndpointDiscovery*/ true> >;
     } // namespace Endpoint
 } // namespace Aws

@@ -12,7 +12,14 @@ namespace Aws
 namespace Endpoint
 {
 
-int CharToDec(const char c)
+/**
+ * Export endpoint provider symbols from DLL
+ */
+template class AWS_CORE_API DefaultEndpointProvider<Aws::Client::GenericClientConfiguration<false>,
+            Aws::Endpoint::BuiltInParameters,
+            Aws::Endpoint::ClientContextParameters>;
+
+char CharToDec(const char c)
 {
     if(c >= '0' && c <= '9')
         return c - '0';
@@ -66,7 +73,7 @@ Aws::String PercentDecode(Aws::String inputString)
                     char encodedChar = CharToDec(firstOctet) * 16 + CharToDec(secondOctet);
                     result += encodedChar;
 
-                    percentFound = 0;
+                    percentFound = false;
                     firstOctet = 0;
                     secondOctet = 0;
                     continue;
@@ -77,7 +84,7 @@ Aws::String PercentDecode(Aws::String inputString)
                 if(!firstOctet)
                     result += firstOctet;
                 result += currentChar;
-                percentFound = 0;
+                percentFound = false;
                 firstOctet = 0;
                 secondOctet = 0;
                 continue;
@@ -94,10 +101,11 @@ Aws::String PercentDecode(Aws::String inputString)
     return result;
 }
 
-ResolveEndpointOutcome ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
-                                                  const EndpointParameters& builtInParameters,
-                                                  const EndpointParameters& clientContextParameters,
-                                                  const EndpointParameters& endpointParameters)
+AWS_CORE_API ResolveEndpointOutcome
+ResolveEndpointDefaultImpl(const Aws::Crt::Endpoints::RuleEngine& ruleEngine,
+                           const EndpointParameters& builtInParameters,
+                           const EndpointParameters& clientContextParameters,
+                           const EndpointParameters& endpointParameters)
 {
     if(!ruleEngine) {
         AWS_LOGSTREAM_FATAL(DEFAULT_ENDPOINT_PROVIDER_TAG, "Invalid CRT Rule Engine state");

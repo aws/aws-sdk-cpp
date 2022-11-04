@@ -84,7 +84,7 @@
 #end
     ${className}::${className}(const ${signerToMake}& bearerTokenProvider,
 #if($serviceModel.endpointRules)
-    ${clsWSpace}  ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
+    ${clsWSpace}  ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
 #end
     ${clsWSpace}  ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration#if($bearerAddCtorArgs.isEmpty())) :#else,#end
 #foreach($ctorArgument in $bearerAddCtorArgs)
@@ -118,7 +118,7 @@
 ${className}::${className}(const ${clientConfigurationCls}& clientConfiguration#if($defCredsChainCtor.isEmpty() && !$serviceModel.endpointRules)) :#else,#end
 
 #if($serviceModel.endpointRules)
-${clsWSpace}  ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> endpointProvider#if($defCredsChainCtor.isEmpty())) :#else,#end
+${clsWSpace}  ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider#if($defCredsChainCtor.isEmpty())) :#else,#end
 
 #end
 #foreach($ctorArgument in $defCredsChainCtor)
@@ -158,7 +158,7 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #end
 ${className}::${className}(const AWSCredentials& credentials,
 #if($serviceModel.endpointRules)
-${clsWSpace}  ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
+${clsWSpace}  ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
 #end
 ${clsWSpace}  ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration#if($simpleCredsCtor.isEmpty())) :#else,#end
 
@@ -199,7 +199,7 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #end
 ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
 #if($serviceModel.endpointRules)
-${clsWSpace}  ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
+${clsWSpace}  ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
 #end
 ${clsWSpace}  ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration#if($specCredsCtor.isEmpty())) :#else,#end
 
@@ -268,7 +268,7 @@ ${className}::~${className}()
 }
 
 #if($serviceModel.endpointRules)
-std::shared_ptr<Aws::${serviceNamespace}::Endpoint::${metadata.classNamePrefix}EndpointProviderBase>& ${className}::accessEndpointProvider()
+std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& ${className}::accessEndpointProvider()
 {
   return m_endpointProvider;
 }

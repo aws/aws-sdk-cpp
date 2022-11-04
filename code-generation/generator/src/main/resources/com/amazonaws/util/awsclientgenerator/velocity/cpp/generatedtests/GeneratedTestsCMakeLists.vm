@@ -1,7 +1,7 @@
 #set($metadata = $serviceModel.metadata)
 #set($projectNameCaps = $metadata.projectName.toUpperCase())
 #set($awsProjectGeneratedTestSrc = "$" + "{AWS_" + $metadata.projectName.toUpperCase() + "_GENERATED_TEST_SRC}")
-add_project(aws-cpp-sdk-${metadata.projectName}-generated-tests
+add_project(${metadata.projectName}-gen-tests
     "Tests for the AWS $projectNameCaps C++ SDK"
     testing-resources
     aws-cpp-sdk-${metadata.projectName}

@@ -37,7 +37,7 @@ namespace ${serviceNamespace}
 
       void OverrideEndpoint(const Aws::String& endpoint);
 #if($serviceModel.endpointRules)
-      std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+      std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end
     private:
 #if(!$serviceModel.endpointRules)
@@ -75,7 +75,7 @@ namespace ${serviceNamespace}
 #end
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
 #if($serviceModel.endpointRules)
-      std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
+      std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
 #end
   };
 

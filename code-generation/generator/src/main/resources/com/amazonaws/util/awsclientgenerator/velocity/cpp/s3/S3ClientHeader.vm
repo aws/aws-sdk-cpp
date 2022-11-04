@@ -181,7 +181,7 @@ namespace ${rootNamespace}
 
         void OverrideEndpoint(const Aws::String& endpoint);
 #if($serviceModel.endpointRules)
-        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+        std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end
 
 #if($serviceNamespace == "S3Crt")
@@ -268,7 +268,7 @@ namespace ${rootNamespace}
 #end
 #end
 #if($serviceModel.endpointRules)
-        std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
+        std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> m_endpointProvider;
 #end
 #if(!$serviceModel.endpointRules)
         ${rootNamespace}::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION m_USEast1RegionalEndpointOption = ${rootNamespace}::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET;

@@ -99,7 +99,7 @@ public class MainGenerator {
         spec.setVersion(serviceModel.getMetadata().getApiVersion());
         CppServiceClientTestGenerator cppTestGenerator = new CppServiceClientTestGenerator();
         SdkFileEntry[] apiFiles = cppTestGenerator.generateSourceFiles(serviceModel);
-        String componentOutputName = String.format("aws-%s-sdk-%s-generated-tests", spec.getLanguageBinding(), serviceModel.getMetadata().getProjectName());
+        String componentOutputName = String.format("%s-gen-tests", serviceModel.getMetadata().getProjectName());
 
         return compressFilesToZip(apiFiles, componentOutputName);
     }

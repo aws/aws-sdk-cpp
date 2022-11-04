@@ -90,13 +90,9 @@ namespace ${rootNamespace}
     using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration<true>;
 #end
 #end
+    using ${metadata.classNamePrefix}EndpointProviderBase = Aws::${metadata.namespace}::Endpoint::${metadata.classNamePrefix}EndpointProviderBase;
+    using ${metadata.classNamePrefix}EndpointProvider = Aws::${metadata.namespace}::Endpoint::${metadata.classNamePrefix}EndpointProvider;
 
-#if($serviceModel.endpointRules)
-    namespace Endpoint
-    {
-      class ${metadata.classNamePrefix}EndpointProvider;
-    } // namespace Endpoint
-#end
     namespace Model
     {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelDeclarations.vm")

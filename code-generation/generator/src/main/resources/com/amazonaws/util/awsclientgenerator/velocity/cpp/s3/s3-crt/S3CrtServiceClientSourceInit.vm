@@ -175,7 +175,7 @@ ${className}::~${className}()
 }
 
 #if($serviceModel.endpointRules)
-std::shared_ptr<Aws::${serviceNamespace}::Endpoint::${metadata.classNamePrefix}EndpointProviderBase>& ${className}::accessEndpointProvider()
+std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& ${className}::accessEndpointProvider()
 {
   return m_endpointProvider;
 }
@@ -185,7 +185,7 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
 {
   AWSClient::SetServiceClientName("${metadata.serviceId}");
 #if($serviceModel.endpointRules)
-  m_endpointProvider = Aws::MakeShared<S3Crt::Endpoint::S3CrtEndpointProvider>(ALLOCATION_TAG);
+  m_endpointProvider = Aws::MakeShared<S3CrtEndpointProvider>(ALLOCATION_TAG);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config);
 #end

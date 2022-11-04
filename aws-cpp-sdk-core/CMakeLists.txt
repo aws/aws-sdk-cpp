@@ -54,6 +54,7 @@ file(GLOB HTTP_STANDARD_HEADERS "include/aws/core/http/standard/*.h")
 file(GLOB CONFIG_HEADERS "include/aws/core/config/*.h")
 file(GLOB CONFIG_DEFAULTS_HEADERS "include/aws/core/config/defaults/*.h")
 file(GLOB ENDPOINT_HEADERS "include/aws/core/endpoint/*.h")
+file(GLOB ENDPOINT_INTERNAL_HEADERS "include/aws/core/endpoint/internal/*.h")
 file(GLOB MONITORING_HEADERS "include/aws/core/monitoring/*.h")
 file(GLOB PLATFORM_HEADERS "include/aws/core/platform/*.h")
 file(GLOB UTILS_HEADERS "include/aws/core/utils/*.h")
@@ -257,6 +258,8 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${HTTP_STANDARD_HEADERS}
   ${CONFIG_HEADERS}
   ${CONFIG_DEFAULTS_HEADERS}
+  ${ENDPOINT_HEADERS}
+  ${ENDPOINT_INTERNAL_HEADERS}
   ${MONITORING_HEADERS}
   ${HTTP_CLIENT_HEADERS}
   ${PLATFORM_HEADERS}
@@ -373,6 +376,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\config" FILES ${CONFIG_HEADERS})
     source_group("Header Files\\aws\\core\\config\\defaults" FILES ${CONFIG_DEFAULTS_HEADERS})
     source_group("Header Files\\aws\\core\\endpoint" FILES ${ENDPOINT_HEADERS})
+    source_group("Header Files\\aws\\core\\endpoint\\internal" FILES ${ENDPOINT_INTERNAL_HEADERS})
     source_group("Header Files\\aws\\core\\monitoring" FILES ${MONITORING_HEADERS})
     source_group("Header Files\\aws\\core\\platform" FILES ${PLATFORM_HEADERS})
     source_group("Header Files\\aws\\core\\utils" FILES ${UTILS_HEADERS})
@@ -593,6 +597,8 @@ install (FILES ${HTTP_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http)
 install (FILES ${HTTP_STANDARD_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/http/standard)
 install (FILES ${CONFIG_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/config/)
 install (FILES ${CONFIG_DEFAULTS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/config/defaults)
+install (FILES ${ENDPOINT_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/endpoint)
+install (FILES ${ENDPOINT_INTERNAL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/endpoint/internal)
 install (FILES ${MONITORING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/monitoring)
 install (FILES ${PLATFORM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/platform)
 install (FILES ${UTILS_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils)
