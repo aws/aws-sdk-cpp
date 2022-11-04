@@ -249,6 +249,11 @@ AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
     return AWSCredentials();
 }
 
+bool InstanceProfileCredentialsProvider::ExpiresSoon() const
+{
+    return ((AWSCredentials().GetExpiration() - Aws::Utils::DateTime::Now()).count() < AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD);
+}
+
 void InstanceProfileCredentialsProvider::Reload()
 {
     AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Credentials have expired attempting to re-pull from EC2 Metadata Service.");
@@ -260,13 +265,13 @@ void InstanceProfileCredentialsProvider::RefreshIfExpired()
 {
     AWS_LOGSTREAM_DEBUG(INSTANCE_LOG_TAG, "Checking if latest credential pull has expired.");
     ReaderLockGuard guard(m_reloadLock);
-    if (!AWSCredentials().IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs))
+    if (!AWSCredentials().IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
     {
         return;
     }
 
     guard.UpgradeToWriterLock();
-    if (!AWSCredentials().IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs)) // double-checked lock to avoid refreshing twice
+    if (!AWSCredentials().IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon()) // double-checked lock to avoid refreshing twice
     {
         return;
     }
