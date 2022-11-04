@@ -61,6 +61,7 @@
 #include <aws/ec2/model/CancelCapacityReservationFleetsRequest.h>
 #include <aws/ec2/model/CancelConversionTaskRequest.h>
 #include <aws/ec2/model/CancelExportTaskRequest.h>
+#include <aws/ec2/model/CancelImageLaunchPermissionRequest.h>
 #include <aws/ec2/model/CancelImportTaskRequest.h>
 #include <aws/ec2/model/CancelReservedInstancesListingRequest.h>
 #include <aws/ec2/model/CancelSpotFleetRequestsRequest.h>
@@ -1546,6 +1547,28 @@ void EC2Client::CancelExportTaskAsync(const CancelExportTaskRequest& request, co
   m_executor->Submit( [this, request, handler, context]()
     {
       handler(this, request, CancelExportTask(request), context);
+    } );
+}
+
+CancelImageLaunchPermissionOutcome EC2Client::CancelImageLaunchPermission(const CancelImageLaunchPermissionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CancelImageLaunchPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CancelImageLaunchPermissionOutcomeCallable EC2Client::CancelImageLaunchPermissionCallable(const CancelImageLaunchPermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelImageLaunchPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelImageLaunchPermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CancelImageLaunchPermissionAsync(const CancelImageLaunchPermissionRequest& request, const CancelImageLaunchPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context]()
+    {
+      handler(this, request, CancelImageLaunchPermission(request), context);
     } );
 }
 

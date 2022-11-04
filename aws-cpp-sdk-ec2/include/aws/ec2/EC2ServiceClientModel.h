@@ -53,6 +53,7 @@
 #include <aws/ec2/model/CancelBundleTaskResponse.h>
 #include <aws/ec2/model/CancelCapacityReservationResponse.h>
 #include <aws/ec2/model/CancelCapacityReservationFleetsResponse.h>
+#include <aws/ec2/model/CancelImageLaunchPermissionResponse.h>
 #include <aws/ec2/model/CancelImportTaskResponse.h>
 #include <aws/ec2/model/CancelReservedInstancesListingResponse.h>
 #include <aws/ec2/model/CancelSpotFleetRequestsResponse.h>
@@ -584,6 +585,7 @@ namespace Aws
       class CancelCapacityReservationFleetsRequest;
       class CancelConversionTaskRequest;
       class CancelExportTaskRequest;
+      class CancelImageLaunchPermissionRequest;
       class CancelImportTaskRequest;
       class CancelReservedInstancesListingRequest;
       class CancelSpotFleetRequestsRequest;
@@ -1133,6 +1135,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CancelCapacityReservationFleetsResponse, EC2Error> CancelCapacityReservationFleetsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> CancelConversionTaskOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> CancelExportTaskOutcome;
+      typedef Aws::Utils::Outcome<CancelImageLaunchPermissionResponse, EC2Error> CancelImageLaunchPermissionOutcome;
       typedef Aws::Utils::Outcome<CancelImportTaskResponse, EC2Error> CancelImportTaskOutcome;
       typedef Aws::Utils::Outcome<CancelReservedInstancesListingResponse, EC2Error> CancelReservedInstancesListingOutcome;
       typedef Aws::Utils::Outcome<CancelSpotFleetRequestsResponse, EC2Error> CancelSpotFleetRequestsOutcome;
@@ -1682,6 +1685,7 @@ namespace Aws
       typedef std::future<CancelCapacityReservationFleetsOutcome> CancelCapacityReservationFleetsOutcomeCallable;
       typedef std::future<CancelConversionTaskOutcome> CancelConversionTaskOutcomeCallable;
       typedef std::future<CancelExportTaskOutcome> CancelExportTaskOutcomeCallable;
+      typedef std::future<CancelImageLaunchPermissionOutcome> CancelImageLaunchPermissionOutcomeCallable;
       typedef std::future<CancelImportTaskOutcome> CancelImportTaskOutcomeCallable;
       typedef std::future<CancelReservedInstancesListingOutcome> CancelReservedInstancesListingOutcomeCallable;
       typedef std::future<CancelSpotFleetRequestsOutcome> CancelSpotFleetRequestsOutcomeCallable;
@@ -2234,6 +2238,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::CancelCapacityReservationFleetsRequest&, const Model::CancelCapacityReservationFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelCapacityReservationFleetsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelConversionTaskRequest&, const Model::CancelConversionTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelConversionTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelExportTaskRequest&, const Model::CancelExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelExportTaskResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CancelImageLaunchPermissionRequest&, const Model::CancelImageLaunchPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelImageLaunchPermissionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelImportTaskRequest&, const Model::CancelImportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelImportTaskResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelReservedInstancesListingRequest&, const Model::CancelReservedInstancesListingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelReservedInstancesListingResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CancelSpotFleetRequestsRequest&, const Model::CancelSpotFleetRequestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelSpotFleetRequestsResponseReceivedHandler;

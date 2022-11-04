@@ -87,6 +87,26 @@ namespace EMRContainers
         virtual void CancelJobRunAsync(const Model::CancelJobRunRequest& request, const CancelJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a job template. Job template stores values of StartJobRun API request
+         * in a template and can be used to start a job run. Job template allows two use
+         * cases: avoid repeating recurring StartJobRun API request values, enforcing
+         * certain values in StartJobRun API request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateJobTemplateOutcome CreateJobTemplate(const Model::CreateJobTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateJobTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateJobTemplateOutcomeCallable CreateJobTemplateCallable(const Model::CreateJobTemplateRequest& request) const;
+
+        /**
+         * An Async wrapper for CreateJobTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateJobTemplateAsync(const Model::CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a managed endpoint. A managed endpoint is a gateway that connects EMR
          * Studio to Amazon EMR on EKS so that EMR Studio can communicate with your virtual
          * cluster.</p><p><h3>See Also:</h3>   <a
@@ -126,6 +146,26 @@ namespace EMRContainers
          * An Async wrapper for CreateVirtualCluster that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateVirtualClusterAsync(const Model::CreateVirtualClusterRequest& request, const CreateVirtualClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a job template. Job template stores values of StartJobRun API request
+         * in a template and can be used to start a job run. Job template allows two use
+         * cases: avoid repeating recurring StartJobRun API request values, enforcing
+         * certain values in StartJobRun API request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteJobTemplateOutcome DeleteJobTemplate(const Model::DeleteJobTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteJobTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteJobTemplateOutcomeCallable DeleteJobTemplateCallable(const Model::DeleteJobTemplateRequest& request) const;
+
+        /**
+         * An Async wrapper for DeleteJobTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteJobTemplateAsync(const Model::DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a managed endpoint. A managed endpoint is a gateway that connects EMR
@@ -188,6 +228,27 @@ namespace EMRContainers
         virtual void DescribeJobRunAsync(const Model::DescribeJobRunRequest& request, const DescribeJobRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Displays detailed information about a specified job template. Job template
+         * stores values of StartJobRun API request in a template and can be used to start
+         * a job run. Job template allows two use cases: avoid repeating recurring
+         * StartJobRun API request values, enforcing certain values in StartJobRun API
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeJobTemplateOutcome DescribeJobTemplate(const Model::DescribeJobTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeJobTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeJobTemplateOutcomeCallable DescribeJobTemplateCallable(const Model::DescribeJobTemplateRequest& request) const;
+
+        /**
+         * An Async wrapper for DescribeJobTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeJobTemplateAsync(const Model::DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Displays detailed information about a managed endpoint. A managed endpoint is
          * a gateway that connects EMR Studio to Amazon EMR on EKS so that EMR Studio can
          * communicate with your virtual cluster.</p><p><h3>See Also:</h3>   <a
@@ -246,6 +307,27 @@ namespace EMRContainers
          * An Async wrapper for ListJobRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListJobRunsAsync(const Model::ListJobRunsRequest& request, const ListJobRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists job templates based on a set of parameters. Job template stores values
+         * of StartJobRun API request in a template and can be used to start a job run. Job
+         * template allows two use cases: avoid repeating recurring StartJobRun API request
+         * values, enforcing certain values in StartJobRun API request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListJobTemplatesOutcome ListJobTemplates(const Model::ListJobTemplatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListJobTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListJobTemplatesOutcomeCallable ListJobTemplatesCallable(const Model::ListJobTemplatesRequest& request) const;
+
+        /**
+         * An Async wrapper for ListJobTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListJobTemplatesAsync(const Model::ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists managed endpoints based on a set of parameters. A managed endpoint is a

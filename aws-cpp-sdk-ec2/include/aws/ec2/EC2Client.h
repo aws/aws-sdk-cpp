@@ -1078,6 +1078,27 @@ namespace EC2
         virtual void CancelExportTaskAsync(const Model::CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes your Amazon Web Services account from the launch permissions for the
+         * specified AMI. For more information, see <a
+         * href="https://docs.aws.amazon.com/">Cancel sharing an AMI with your Amazon Web
+         * Services account</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelImageLaunchPermissionOutcome CancelImageLaunchPermission(const Model::CancelImageLaunchPermissionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelImageLaunchPermission that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelImageLaunchPermissionOutcomeCallable CancelImageLaunchPermissionCallable(const Model::CancelImageLaunchPermissionRequest& request) const;
+
+        /**
+         * An Async wrapper for CancelImageLaunchPermission that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelImageLaunchPermissionAsync(const Model::CancelImageLaunchPermissionRequest& request, const CancelImageLaunchPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Cancels an in-process import virtual machine or import snapshot
          * task.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImportTask">AWS
