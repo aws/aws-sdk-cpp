@@ -69,5 +69,8 @@ namespace Aws
              */
             virtual ResolveEndpointOutcome ResolveEndpoint(const EndpointParameters& endpointParameters) const = 0;
         };
+
+        // Export symbol from the DLL:
+        template class AWS_CORE_API EndpointProviderBase<Aws::Client::GenericClientConfiguration</*HasEndpointDiscovery*/ true> >;
     } // namespace Endpoint
 } // namespace Aws

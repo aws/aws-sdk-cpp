@@ -7,6 +7,7 @@
 #pragma once
 
 #include <aws/core/client/AWSError.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
@@ -132,5 +133,7 @@ namespace Aws
             bool m_boolValue = false;
             Aws::String m_stringValue;
         };
+
+        using EndpointParameters = Aws::Vector<Aws::Endpoint::EndpointParameter>;
     } // namespace Endpoint
 } // namespace Aws

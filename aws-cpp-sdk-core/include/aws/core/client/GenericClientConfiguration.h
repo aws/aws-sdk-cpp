@@ -28,8 +28,8 @@ namespace Aws
              * Create a configuration based on settings in the aws configuration file for the given profile name.
              * The configuration file location can be set via the environment variable AWS_CONFIG_FILE
              */
-            GenericClientConfiguration(const char* profileName)
-              : ClientConfiguration(profileName)
+            GenericClientConfiguration(const char* inputProfileName)
+              : ClientConfiguration(inputProfileName)
             {}
 
             /**

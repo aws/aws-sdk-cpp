@@ -338,14 +338,14 @@ def generate_single_client(service_name: str,
         run_command.append("--generate-tests")
 
         if tmp_dir:
-            output_filename = f"{tmp_dir}/{model_files.c2j_model.replace('.normal.json', '-generated-tests.zip')}"
+            output_filename = f"{tmp_dir}/{model_files.c2j_model.replace('.normal.json', '-gen-tests.zip')}"
         else:
             output_filename = "STDOUT"
         output_zip_file = run_generator_once(service_name, run_command, output_filename)
         if not os.path.exists(f"{output_dir}/generated/tests"):
             os.makedirs(f"{output_dir}/generated/tests")
-        dir_to_delete_before_extract = f"{output_dir}/generated/tests/aws-cpp-sdk-{service_name}-generated-tests"
-        extract_zip(output_zip_file, f"{service_name}-generated-tests", f"{output_dir}/generated/tests", dir_to_delete_before_extract)
+        dir_to_delete_before_extract = f"{output_dir}/generated/tests/{service_name}-gen-tests"
+        extract_zip(output_zip_file, f"{service_name}-gen-tests", f"{output_dir}/generated/tests", dir_to_delete_before_extract)
 
     return service_name, status
 

@@ -13,6 +13,8 @@ namespace Aws
 {
 namespace Client
 {
+template struct AWS_CORE_API GenericClientConfiguration<false>;
+
 bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::String &profileName)
 {
   bool enabled = true;  // default value for AWS Services with enabled discovery trait
@@ -51,8 +53,8 @@ GenericClientConfiguration<true>::GenericClientConfiguration()
     enableHostPrefixInjection = false; // disabled by default in the SDK
 }
 
-GenericClientConfiguration<true>::GenericClientConfiguration(const char* profileName)
-    : ClientConfiguration(profileName),
+GenericClientConfiguration<true>::GenericClientConfiguration(const char* inputProfileName)
+    : ClientConfiguration(inputProfileName),
       enableHostPrefixInjection(ClientConfiguration::enableHostPrefixInjection),
       enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)
 {
@@ -60,8 +62,8 @@ GenericClientConfiguration<true>::GenericClientConfiguration(const char* profile
     enableHostPrefixInjection = false; // disabled by default in the SDK
 }
 
-GenericClientConfiguration<true>::GenericClientConfiguration(bool useSmartDefaults, const char* defaultMode)
-    : ClientConfiguration(useSmartDefaults, defaultMode),
+GenericClientConfiguration<true>::GenericClientConfiguration(bool useSmartDefaults, const char* inputDefaultMode)
+    : ClientConfiguration(useSmartDefaults, inputDefaultMode),
       enableHostPrefixInjection(ClientConfiguration::enableHostPrefixInjection),
       enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)
 {
