@@ -82,12 +82,12 @@ namespace Aws
              * Use dual stack endpoint in the endpoint calculation. It is your responsibility to verify that the service supports ipv6 in the region you select.
              */
             bool useDualStack = false;
-#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
+
             /**
              * Use FIPS endpoint in the endpoint calculation. Please check first that the service supports FIPS in a selected region.
              */
             bool useFIPS = false;
-#endif
+
             /**
              * Max concurrent tcp connections for a single http client to use. Default 25.
              */

@@ -154,7 +154,6 @@ namespace Aws
              */
             Aws::String GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0);
 
-#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
             Aws::String GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& endpoint,
                                              Aws::Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                                              const Aws::Http::HeaderValueCollection& customizedHeaders = {},
@@ -162,7 +161,6 @@ namespace Aws
                                              const char* signerName = Aws::Auth::SIGV4_SIGNER,
                                              const char* signerRegionOverride = nullptr,
                                              const char* signerServiceNameOverride = nullptr);
-#endif
 
             Aws::String GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method,
                 const Aws::Http::QueryStringParameterCollection& extraParams = Aws::Http::QueryStringParameterCollection(), long long expirationInSeconds = 0) const;
@@ -269,14 +267,12 @@ namespace Aws
                     const char* signerRegionOverride = nullptr,
                     const char* signerServiceNameOverride = nullptr) const;
 
-#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
             StreamOutcome MakeRequestWithUnparsedResponse(const Aws::AmazonWebServiceRequest& request,
                                                           const Aws::Endpoint::AWSEndpoint& endpoint,
                                                           Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                                                           const char* signerName = Aws::Auth::SIGV4_SIGNER,
                                                           const char* signerRegionOverride = nullptr,
                                                           const char* signerServiceNameOverride = nullptr) const;
-#endif
 
             /**
              * Abstract.  Subclassing clients should override this to tell the client how to marshall error payloads
@@ -390,7 +386,6 @@ namespace Aws
              */
             virtual AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override;
 
-#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
             /**
              * Returns a Json document or an error from the request. Does some marshalling json and raw streams,
              * then just calls AttemptExhaustively.
@@ -409,7 +404,6 @@ namespace Aws
                                     const char* signerName = Aws::Auth::NULL_SIGNER,
                                     const char* signerRegionOverride = nullptr,
                                     const char* signerServiceNameOverride = nullptr) const;
-#endif
 
             /**
              * Returns a Json document or an error from the request. Does some marshalling json and raw streams,
@@ -471,7 +465,6 @@ namespace Aws
              */
             virtual AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override;
 
-#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
             /**
              * Returns an xml document or an error from the request. Does some marshalling xml and raw streams,
              * then just calls AttemptExhaustively.
@@ -491,7 +484,6 @@ namespace Aws
                                    const char* signerName = Aws::Auth::SIGV4_SIGNER,
                                    const char* signerRegionOverride = nullptr,
                                    const char* signerServiceNameOverride = nullptr) const;
-#endif
 
             /**
              * Returns an xml document or an error from the request. Does some marshalling xml and raw streams,
@@ -533,14 +525,12 @@ namespace Aws
                 const char* signerRegionOverride = nullptr,
                 const char* signerServiceNameOverride = nullptr) const;
 
-#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
             XmlOutcome MakeRequestWithEventStream(const Aws::AmazonWebServiceRequest& request,
                                                   const Aws::Endpoint::AWSEndpoint& endpoint,
                                                   Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                                                   const char* signerName = Aws::Auth::SIGV4_SIGNER,
                                                   const char* signerRegionOverride = nullptr,
                                                   const char* signerServiceNameOverride = nullptr) const;
-#endif
 
             /**
             * This is used for event stream response.

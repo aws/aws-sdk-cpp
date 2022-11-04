@@ -608,7 +608,6 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
     return StreamOutcome(std::move(httpResponseOutcome));
 }
 
-#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
 StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::AmazonWebServiceRequest& request,
                                                          const Aws::Endpoint::AWSEndpoint& endpoint,
                                                          Http::HttpMethod method,
@@ -656,7 +655,6 @@ XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::AmazonWebServiceR
 
     return MakeRequestWithEventStream(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
 }
-#endif
 
 XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
@@ -1021,7 +1019,6 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::Http::URI& uri, Aws::Http
     return {};
 }
 
-#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& endpoint,
                                             Aws::Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
                                             const Aws::Http::HeaderValueCollection& customizedHeaders /* = {} */,
@@ -1061,7 +1058,6 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::Endpoint::AWSEndpoint& en
 
     return {};
 }
-#endif
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, const Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
@@ -1184,7 +1180,6 @@ AWSJsonClient::AWSJsonClient(const Aws::Client::ClientConfiguration& configurati
 {
 }
 
-#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
 JsonOutcome AWSJsonClient::MakeRequest(const Aws::AmazonWebServiceRequest& request,
                                        const Aws::Endpoint::AWSEndpoint& endpoint,
                                        Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
@@ -1229,7 +1224,6 @@ JsonOutcome AWSJsonClient::MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoin
     }
     return MakeRequest(uri, method, signerName, signerRegionOverride, signerServiceNameOverride);
 }
-#endif
 
 JsonOutcome AWSJsonClient::MakeRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
@@ -1364,7 +1358,6 @@ AWSXMLClient::AWSXMLClient(const Aws::Client::ClientConfiguration& configuration
 {
 }
 
-#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
 XmlOutcome AWSXMLClient::MakeRequest(const Aws::AmazonWebServiceRequest& request,
                                      const Aws::Endpoint::AWSEndpoint& endpoint,
                                      Http::HttpMethod method /* = Http::HttpMethod::HTTP_POST */,
@@ -1410,7 +1403,6 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
     }
     return MakeRequest(uri, method, signerName, requestName, signerRegionOverride, signerServiceNameOverride);
 }
-#endif
 
 XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,

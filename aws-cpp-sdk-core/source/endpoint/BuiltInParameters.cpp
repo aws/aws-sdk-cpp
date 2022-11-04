@@ -53,10 +53,8 @@ namespace Endpoint
             }
         }
 
-#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
         static const Aws::String AWS_USE_FIPS = "UseFIPS";
         SetBooleanParameter(AWS_USE_FIPS, config.useFIPS || forceFIPS);
-#endif
 
         static const Aws::String AWS_USE_DUAL_STACK = "UseDualStack";
         SetBooleanParameter(AWS_USE_DUAL_STACK, config.useDualStack);

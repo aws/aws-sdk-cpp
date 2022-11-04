@@ -41,9 +41,7 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
 {
     clientConfig.scheme = Aws::Http::Scheme::HTTPS;
     clientConfig.useDualStack = false;
-#if AWS_SDK_VERSION_MAJOR == 1 || AWS_SDK_VERSION_MINOR == 10
     clientConfig.useFIPS = false;
-#endif
     clientConfig.maxConnections = 25;
     clientConfig.httpRequestTimeoutMs = 0;
     clientConfig.requestTimeoutMs = 3000;
