@@ -32,7 +32,7 @@
 #end
 #set($clsWSpace = $className.replaceAll(".", " "))
 #if($serviceModel.endpointRules)
-#set($endpointsProviderDefaultCtorCall = "Aws::MakeShared<" + ${serviceNamespace} + "::Endpoint::" + ${metadata.classNamePrefix} + "EndpointProvider>(ALLOCATION_TAG)")
+#set($endpointsProviderDefaultCtorCall = "Aws::MakeShared<" + ${metadata.classNamePrefix} + "EndpointProvider>(ALLOCATION_TAG)")
 #set($clientConfigurationCls = "Aws::" + ${serviceNamespace} + "::" + ${metadata.classNamePrefix} + "ClientConfiguration")
 #else
 #set($clientConfigurationCls = "Aws::" + ${clientConfigurationNamespace} + "::ClientConfiguration")
@@ -48,7 +48,7 @@
         */
         ${className}(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
 #if($serviceModel.endpointRules)
-        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorCall},
+        ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorCall},
 #end
         ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration = ${clientConfigurationCls}()#if($bearerAddCtorArgs.isEmpty()));#else,#end
 
@@ -68,7 +68,7 @@
         ${className}(const ${clientConfigurationCls}& clientConfiguration = ${clientConfigurationCls}()#if($defCredsChainCtor.isEmpty() && !$serviceModel.endpointRules));#else,#end
 
 #if($serviceModel.endpointRules)
-        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorCall}#if($defCredsChainCtor.isEmpty()));#else,#end
+        ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorCall}#if($defCredsChainCtor.isEmpty()));#else,#end
 
 #end
 #foreach($ctorArgument in $defCredsChainCtor)
@@ -86,7 +86,7 @@
         */
         ${className}(const Aws::Auth::AWSCredentials& credentials,
 #if($serviceModel.endpointRules)
-        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorCall},
+        ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorCall},
 #end
         ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration = ${clientConfigurationCls}()#if($simpleCredsCtor.isEmpty()));#else,#end
 
@@ -105,7 +105,7 @@
         */
         ${className}(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
 #if($serviceModel.endpointRules)
-        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorCall},
+        ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorCall},
 #end
         ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration = ${clientConfigurationCls}()#if($specCredsCtor.isEmpty()));#else,#end
 
@@ -126,7 +126,7 @@
         */
         ${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
 #if($serviceModel.endpointRules)
-        ${clsWSpace} std::shared_ptr<Endpoint::${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorCall},
+        ${clsWSpace} std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider = ${endpointsProviderDefaultCtorCall},
 #end
         ${clsWSpace} const ${clientConfigurationCls}& clientConfiguration = ${clientConfigurationCls}()#if($standaloneCredsCtor.isEmpty()));#else,#end
 

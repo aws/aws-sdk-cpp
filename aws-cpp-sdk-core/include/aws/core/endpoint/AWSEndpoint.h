@@ -47,13 +47,13 @@ namespace Aws
             template<typename T>
             inline void AddPathSegment(T&& pathSegment)
             {
-                m_uri.template AddPathSegment(std::forward<T>(pathSegment));
+                m_uri.AddPathSegment(std::forward<T>(pathSegment));
             }
 
             template<typename T>
             inline void AddPathSegments(T&& pathSegments)
             {
-                m_uri.template AddPathSegments(std::forward<T>(pathSegments));
+                m_uri.AddPathSegments(std::forward<T>(pathSegments));
             }
 
             void SetQueryString(const Aws::String& queryString)

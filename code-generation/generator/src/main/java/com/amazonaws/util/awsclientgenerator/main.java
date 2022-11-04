@@ -115,7 +115,7 @@ public class main {
                             generated = generateServiceTest(arbitraryJson, endpointRules, endpointRuleTests, languageBinding, serviceName, namespace,
                                     licenseText);
 
-                            componentOutputName = String.format("aws-cpp-sdk-%s-generated-tests", serviceName);
+                            componentOutputName = String.format("%s-gen-tests", serviceName);
                         }
                     } else {
                         if (generateTests) {

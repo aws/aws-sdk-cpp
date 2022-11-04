@@ -22,14 +22,14 @@ static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REG
 static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
 #end
 
-void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}SpecificConfig(const Aws::String& profileName)
+void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}SpecificConfig(const Aws::String& inputProfileName)
 {
 #if($serviceModel.metadata.serviceId == "S3")
   if (Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET == this->useUSEast1RegionalEndPointOption)
   {
     const Aws::String& useUSEastOption =
         BaseClientConfigClass::LoadConfigFromEnvOrProfile(US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR,
-                                                          profileName,
+                                                          inputProfileName,
                                                           US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR,
                                                           {"legacy", "regional"},
                                                           "regional");
@@ -41,7 +41,7 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
   }
 
   Aws::String s3DisableMultiRegionAccessPoints = ClientConfiguration::LoadConfigFromEnvOrProfile(S3_DISABLE_MULTIREGION_ACCESS_POINTS_ENV_VAR,
-                                                                                        profileName,
+                                                                                        inputProfileName,
                                                                                         S3_DISABLE_MULTIREGION_ACCESS_POINTS_CONFIG_VAR,
                                                                                         {"true", "false"},
                                                                                         "false");
@@ -52,7 +52,7 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
 #end
 #if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
   Aws::String useArnRegionCfg = ClientConfiguration::LoadConfigFromEnvOrProfile(S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE,
-                                                                               profileName,
+                                                                               inputProfileName,
                                                                                S3_USE_ARN_REGION_CONFIG_FILE_OPTION,
                                                                                {"true", "false"},
                                                                                "false");
@@ -69,10 +69,10 @@ ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}Clien
   Load${serviceNamespace}SpecificConfig(this->profileName);
 }
 
-${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const char* profileName)
-: BaseClientConfigClass(profileName)
+${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const char* inputProfileName)
+: BaseClientConfigClass(inputProfileName)
 {
-  Load${serviceNamespace}SpecificConfig(Aws::String(profileName));
+  Load${serviceNamespace}SpecificConfig(Aws::String(inputProfileName));
 }
 
 ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(bool useSmartDefaults, const char* defaultMode)

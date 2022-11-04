@@ -35,7 +35,7 @@
 #set($virtualAddressing = "")
 #set($virtualAddressingInit = "")
 #end
-#set($endpointsProviderDefaultCtorCall = "m_endpointProvider(Aws::MakeShared<" + ${serviceNamespace} + "::Endpoint::" + ${metadata.classNamePrefix} + "EndpointProvider>(ALLOCATION_TAG))")
+#set($endpointsProviderDefaultCtorCall = "m_endpointProvider(Aws::MakeShared<" + ${metadata.classNamePrefix} + "EndpointProvider>(ALLOCATION_TAG))")
 #set($addArgDummy = $ctorMemberInitList.add($endpointsProviderDefaultCtorCall))
 #if(!$USEast1RegionalEndpointArgString)
 #set($USEast1RegionalEndpointArgString = "")
