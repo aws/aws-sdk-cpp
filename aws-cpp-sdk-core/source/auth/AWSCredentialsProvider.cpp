@@ -251,7 +251,16 @@ AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
 
 bool InstanceProfileCredentialsProvider::ExpiresSoon() const
 {
-    return ((AWSCredentials().GetExpiration() - Aws::Utils::DateTime::Now()).count() < AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD);
+    ReaderLockGuard guard(m_reloadLock);
+    auto profileIter = m_ec2MetadataConfigLoader->GetProfiles().find(Aws::Config::INSTANCE_PROFILE_KEY);
+    AWSCredentials credentials;
+
+    if(profileIter != m_ec2MetadataConfigLoader->GetProfiles().end())
+    {
+        credentials = profileIter->second.GetCredentials();
+    }
+
+    return ((credentials.GetExpiration() - Aws::Utils::DateTime::Now()).count() < AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD);
 }
 
 void InstanceProfileCredentialsProvider::Reload()
@@ -265,16 +274,25 @@ void InstanceProfileCredentialsProvider::RefreshIfExpired()
 {
     AWS_LOGSTREAM_DEBUG(INSTANCE_LOG_TAG, "Checking if latest credential pull has expired.");
     ReaderLockGuard guard(m_reloadLock);
-    if (!AWSCredentials().IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
+    auto profileIter = m_ec2MetadataConfigLoader->GetProfiles().find(Aws::Config::INSTANCE_PROFILE_KEY);
+    AWSCredentials credentials;
+
+    if(profileIter != m_ec2MetadataConfigLoader->GetProfiles().end())
     {
-        return;
+        credentials = profileIter->second.GetCredentials();
+
+        if (!credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
+        {
+            return;
+        }
+
+        guard.UpgradeToWriterLock();
+        if (!credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon()) // double-checked lock to avoid refreshing twice
+        {
+            return;
+        }
     }
 
-    guard.UpgradeToWriterLock();
-    if (!AWSCredentials().IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon()) // double-checked lock to avoid refreshing twice
-    {
-        return;
-    }
     Reload();
 }
 
