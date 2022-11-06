@@ -39,7 +39,7 @@ DeltaTarget& DeltaTarget::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeltaTables"))
   {
-    Array<JsonView> deltaTablesJsonList = jsonValue.GetArray("DeltaTables");
+    Aws::Utils::Array<JsonView> deltaTablesJsonList = jsonValue.GetArray("DeltaTables");
     for(unsigned deltaTablesIndex = 0; deltaTablesIndex < deltaTablesJsonList.GetLength(); ++deltaTablesIndex)
     {
       m_deltaTables.push_back(deltaTablesJsonList[deltaTablesIndex].AsString());
@@ -70,7 +70,7 @@ JsonValue DeltaTarget::Jsonize() const
 
   if(m_deltaTablesHasBeenSet)
   {
-   Array<JsonValue> deltaTablesJsonList(m_deltaTables.size());
+   Aws::Utils::Array<JsonValue> deltaTablesJsonList(m_deltaTables.size());
    for(unsigned deltaTablesIndex = 0; deltaTablesIndex < deltaTablesJsonList.GetLength(); ++deltaTablesIndex)
    {
      deltaTablesJsonList[deltaTablesIndex].AsString(m_deltaTables[deltaTablesIndex]);

@@ -44,7 +44,7 @@ CookieMatchPattern& CookieMatchPattern::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IncludedCookies"))
   {
-    Array<JsonView> includedCookiesJsonList = jsonValue.GetArray("IncludedCookies");
+    Aws::Utils::Array<JsonView> includedCookiesJsonList = jsonValue.GetArray("IncludedCookies");
     for(unsigned includedCookiesIndex = 0; includedCookiesIndex < includedCookiesJsonList.GetLength(); ++includedCookiesIndex)
     {
       m_includedCookies.push_back(includedCookiesJsonList[includedCookiesIndex].AsString());
@@ -54,7 +54,7 @@ CookieMatchPattern& CookieMatchPattern::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExcludedCookies"))
   {
-    Array<JsonView> excludedCookiesJsonList = jsonValue.GetArray("ExcludedCookies");
+    Aws::Utils::Array<JsonView> excludedCookiesJsonList = jsonValue.GetArray("ExcludedCookies");
     for(unsigned excludedCookiesIndex = 0; excludedCookiesIndex < excludedCookiesJsonList.GetLength(); ++excludedCookiesIndex)
     {
       m_excludedCookies.push_back(excludedCookiesJsonList[excludedCookiesIndex].AsString());
@@ -77,7 +77,7 @@ JsonValue CookieMatchPattern::Jsonize() const
 
   if(m_includedCookiesHasBeenSet)
   {
-   Array<JsonValue> includedCookiesJsonList(m_includedCookies.size());
+   Aws::Utils::Array<JsonValue> includedCookiesJsonList(m_includedCookies.size());
    for(unsigned includedCookiesIndex = 0; includedCookiesIndex < includedCookiesJsonList.GetLength(); ++includedCookiesIndex)
    {
      includedCookiesJsonList[includedCookiesIndex].AsString(m_includedCookies[includedCookiesIndex]);
@@ -88,7 +88,7 @@ JsonValue CookieMatchPattern::Jsonize() const
 
   if(m_excludedCookiesHasBeenSet)
   {
-   Array<JsonValue> excludedCookiesJsonList(m_excludedCookies.size());
+   Aws::Utils::Array<JsonValue> excludedCookiesJsonList(m_excludedCookies.size());
    for(unsigned excludedCookiesIndex = 0; excludedCookiesIndex < excludedCookiesJsonList.GetLength(); ++excludedCookiesIndex)
    {
      excludedCookiesJsonList[excludedCookiesIndex].AsString(m_excludedCookies[excludedCookiesIndex]);

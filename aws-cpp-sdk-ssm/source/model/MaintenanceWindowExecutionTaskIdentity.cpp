@@ -118,7 +118,7 @@ MaintenanceWindowExecutionTaskIdentity& MaintenanceWindowExecutionTaskIdentity::
 
   if(jsonValue.ValueExists("TriggeredAlarms"))
   {
-    Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
+    Aws::Utils::Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
     for(unsigned triggeredAlarmsIndex = 0; triggeredAlarmsIndex < triggeredAlarmsJsonList.GetLength(); ++triggeredAlarmsIndex)
     {
       m_triggeredAlarms.push_back(triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject());
@@ -185,7 +185,7 @@ JsonValue MaintenanceWindowExecutionTaskIdentity::Jsonize() const
 
   if(m_triggeredAlarmsHasBeenSet)
   {
-   Array<JsonValue> triggeredAlarmsJsonList(m_triggeredAlarms.size());
+   Aws::Utils::Array<JsonValue> triggeredAlarmsJsonList(m_triggeredAlarms.size());
    for(unsigned triggeredAlarmsIndex = 0; triggeredAlarmsIndex < triggeredAlarmsJsonList.GetLength(); ++triggeredAlarmsIndex)
    {
      triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject(m_triggeredAlarms[triggeredAlarmsIndex].Jsonize());

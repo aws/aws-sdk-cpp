@@ -29,22 +29,48 @@ namespace XRay
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        XRayClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        XRayClient(const Aws::XRay::XRayClientConfiguration& clientConfiguration = Aws::XRay::XRayClientConfiguration(),
+                   std::shared_ptr<XRayEndpointProviderBase> endpointProvider = Aws::MakeShared<XRayEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         XRayClient(const Aws::Auth::AWSCredentials& credentials,
-                   const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                   std::shared_ptr<XRayEndpointProviderBase> endpointProvider = Aws::MakeShared<XRayEndpointProvider>(ALLOCATION_TAG),
+                   const Aws::XRay::XRayClientConfiguration& clientConfiguration = Aws::XRay::XRayClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         XRayClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                   const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                   std::shared_ptr<XRayEndpointProviderBase> endpointProvider = Aws::MakeShared<XRayEndpointProvider>(ALLOCATION_TAG),
+                   const Aws::XRay::XRayClientConfiguration& clientConfiguration = Aws::XRay::XRayClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        XRayClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        XRayClient(const Aws::Auth::AWSCredentials& credentials,
+                   const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        XRayClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                   const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~XRayClient();
 
 
@@ -595,12 +621,13 @@ namespace XRay
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<XRayEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const XRayClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      XRayClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<XRayEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace XRay

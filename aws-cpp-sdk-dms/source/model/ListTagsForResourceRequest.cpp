@@ -30,7 +30,7 @@ Aws::String ListTagsForResourceRequest::SerializePayload() const
 
   if(m_resourceArnListHasBeenSet)
   {
-   Array<JsonValue> resourceArnListJsonList(m_resourceArnList.size());
+   Aws::Utils::Array<JsonValue> resourceArnListJsonList(m_resourceArnList.size());
    for(unsigned resourceArnListIndex = 0; resourceArnListIndex < resourceArnListJsonList.GetLength(); ++resourceArnListIndex)
    {
      resourceArnListJsonList[resourceArnListIndex].AsString(m_resourceArnList[resourceArnListIndex]);

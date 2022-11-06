@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/cloudfront/CloudFrontErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/cloudfront/CloudFrontEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -132,6 +134,10 @@ namespace Aws
 
   namespace CloudFront
   {
+    using CloudFrontClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudFrontEndpointProviderBase = Aws::CloudFront::Endpoint::CloudFrontEndpointProviderBase;
+    using CloudFrontEndpointProvider = Aws::CloudFront::Endpoint::CloudFrontEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CloudFrontClient header */

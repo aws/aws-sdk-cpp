@@ -42,7 +42,7 @@ DescribeKeywordsResult& DescribeKeywordsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("Keywords"))
   {
-    Array<JsonView> keywordsJsonList = jsonValue.GetArray("Keywords");
+    Aws::Utils::Array<JsonView> keywordsJsonList = jsonValue.GetArray("Keywords");
     for(unsigned keywordsIndex = 0; keywordsIndex < keywordsJsonList.GetLength(); ++keywordsIndex)
     {
       m_keywords.push_back(keywordsJsonList[keywordsIndex].AsObject());

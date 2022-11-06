@@ -36,7 +36,7 @@ ListTemplateStepGroupsResult& ListTemplateStepGroupsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("templateStepGroupSummary"))
   {
-    Array<JsonView> templateStepGroupSummaryJsonList = jsonValue.GetArray("templateStepGroupSummary");
+    Aws::Utils::Array<JsonView> templateStepGroupSummaryJsonList = jsonValue.GetArray("templateStepGroupSummary");
     for(unsigned templateStepGroupSummaryIndex = 0; templateStepGroupSummaryIndex < templateStepGroupSummaryJsonList.GetLength(); ++templateStepGroupSummaryIndex)
     {
       m_templateStepGroupSummary.push_back(templateStepGroupSummaryJsonList[templateStepGroupSummaryIndex].AsObject());

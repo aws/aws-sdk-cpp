@@ -30,7 +30,7 @@ Aws::String UpdateLabelGroupRequest::SerializePayload() const
 
   if(m_faultCodesHasBeenSet)
   {
-   Array<JsonValue> faultCodesJsonList(m_faultCodes.size());
+   Aws::Utils::Array<JsonValue> faultCodesJsonList(m_faultCodes.size());
    for(unsigned faultCodesIndex = 0; faultCodesIndex < faultCodesJsonList.GetLength(); ++faultCodesIndex)
    {
      faultCodesJsonList[faultCodesIndex].AsString(m_faultCodes[faultCodesIndex]);

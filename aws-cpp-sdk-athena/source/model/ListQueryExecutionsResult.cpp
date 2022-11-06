@@ -30,7 +30,7 @@ ListQueryExecutionsResult& ListQueryExecutionsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("QueryExecutionIds"))
   {
-    Array<JsonView> queryExecutionIdsJsonList = jsonValue.GetArray("QueryExecutionIds");
+    Aws::Utils::Array<JsonView> queryExecutionIdsJsonList = jsonValue.GetArray("QueryExecutionIds");
     for(unsigned queryExecutionIdsIndex = 0; queryExecutionIdsIndex < queryExecutionIdsJsonList.GetLength(); ++queryExecutionIdsIndex)
     {
       m_queryExecutionIds.push_back(queryExecutionIdsJsonList[queryExecutionIdsIndex].AsString());

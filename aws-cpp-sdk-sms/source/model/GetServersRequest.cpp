@@ -38,7 +38,7 @@ Aws::String GetServersRequest::SerializePayload() const
 
   if(m_vmServerAddressListHasBeenSet)
   {
-   Array<JsonValue> vmServerAddressListJsonList(m_vmServerAddressList.size());
+   Aws::Utils::Array<JsonValue> vmServerAddressListJsonList(m_vmServerAddressList.size());
    for(unsigned vmServerAddressListIndex = 0; vmServerAddressListIndex < vmServerAddressListJsonList.GetLength(); ++vmServerAddressListIndex)
    {
      vmServerAddressListJsonList[vmServerAddressListIndex].AsObject(m_vmServerAddressList[vmServerAddressListIndex].Jsonize());

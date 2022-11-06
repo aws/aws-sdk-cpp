@@ -38,7 +38,7 @@ Aws::String BatchGetImageRequest::SerializePayload() const
 
   if(m_imageIdsHasBeenSet)
   {
-   Array<JsonValue> imageIdsJsonList(m_imageIds.size());
+   Aws::Utils::Array<JsonValue> imageIdsJsonList(m_imageIds.size());
    for(unsigned imageIdsIndex = 0; imageIdsIndex < imageIdsJsonList.GetLength(); ++imageIdsIndex)
    {
      imageIdsJsonList[imageIdsIndex].AsObject(m_imageIds[imageIdsIndex].Jsonize());
@@ -49,7 +49,7 @@ Aws::String BatchGetImageRequest::SerializePayload() const
 
   if(m_acceptedMediaTypesHasBeenSet)
   {
-   Array<JsonValue> acceptedMediaTypesJsonList(m_acceptedMediaTypes.size());
+   Aws::Utils::Array<JsonValue> acceptedMediaTypesJsonList(m_acceptedMediaTypes.size());
    for(unsigned acceptedMediaTypesIndex = 0; acceptedMediaTypesIndex < acceptedMediaTypesJsonList.GetLength(); ++acceptedMediaTypesIndex)
    {
      acceptedMediaTypesJsonList[acceptedMediaTypesIndex].AsString(m_acceptedMediaTypes[acceptedMediaTypesIndex]);

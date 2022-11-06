@@ -30,7 +30,7 @@ GetDataQualityMetricsResult& GetDataQualityMetricsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AnomalyDetectorDataQualityMetricList"))
   {
-    Array<JsonView> anomalyDetectorDataQualityMetricListJsonList = jsonValue.GetArray("AnomalyDetectorDataQualityMetricList");
+    Aws::Utils::Array<JsonView> anomalyDetectorDataQualityMetricListJsonList = jsonValue.GetArray("AnomalyDetectorDataQualityMetricList");
     for(unsigned anomalyDetectorDataQualityMetricListIndex = 0; anomalyDetectorDataQualityMetricListIndex < anomalyDetectorDataQualityMetricListJsonList.GetLength(); ++anomalyDetectorDataQualityMetricListIndex)
     {
       m_anomalyDetectorDataQualityMetricList.push_back(anomalyDetectorDataQualityMetricListJsonList[anomalyDetectorDataQualityMetricListIndex].AsObject());

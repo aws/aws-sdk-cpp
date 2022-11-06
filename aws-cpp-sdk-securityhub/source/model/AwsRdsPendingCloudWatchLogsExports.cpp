@@ -35,7 +35,7 @@ AwsRdsPendingCloudWatchLogsExports& AwsRdsPendingCloudWatchLogsExports::operator
 {
   if(jsonValue.ValueExists("LogTypesToEnable"))
   {
-    Array<JsonView> logTypesToEnableJsonList = jsonValue.GetArray("LogTypesToEnable");
+    Aws::Utils::Array<JsonView> logTypesToEnableJsonList = jsonValue.GetArray("LogTypesToEnable");
     for(unsigned logTypesToEnableIndex = 0; logTypesToEnableIndex < logTypesToEnableJsonList.GetLength(); ++logTypesToEnableIndex)
     {
       m_logTypesToEnable.push_back(logTypesToEnableJsonList[logTypesToEnableIndex].AsString());
@@ -45,7 +45,7 @@ AwsRdsPendingCloudWatchLogsExports& AwsRdsPendingCloudWatchLogsExports::operator
 
   if(jsonValue.ValueExists("LogTypesToDisable"))
   {
-    Array<JsonView> logTypesToDisableJsonList = jsonValue.GetArray("LogTypesToDisable");
+    Aws::Utils::Array<JsonView> logTypesToDisableJsonList = jsonValue.GetArray("LogTypesToDisable");
     for(unsigned logTypesToDisableIndex = 0; logTypesToDisableIndex < logTypesToDisableJsonList.GetLength(); ++logTypesToDisableIndex)
     {
       m_logTypesToDisable.push_back(logTypesToDisableJsonList[logTypesToDisableIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue AwsRdsPendingCloudWatchLogsExports::Jsonize() const
 
   if(m_logTypesToEnableHasBeenSet)
   {
-   Array<JsonValue> logTypesToEnableJsonList(m_logTypesToEnable.size());
+   Aws::Utils::Array<JsonValue> logTypesToEnableJsonList(m_logTypesToEnable.size());
    for(unsigned logTypesToEnableIndex = 0; logTypesToEnableIndex < logTypesToEnableJsonList.GetLength(); ++logTypesToEnableIndex)
    {
      logTypesToEnableJsonList[logTypesToEnableIndex].AsString(m_logTypesToEnable[logTypesToEnableIndex]);
@@ -73,7 +73,7 @@ JsonValue AwsRdsPendingCloudWatchLogsExports::Jsonize() const
 
   if(m_logTypesToDisableHasBeenSet)
   {
-   Array<JsonValue> logTypesToDisableJsonList(m_logTypesToDisable.size());
+   Aws::Utils::Array<JsonValue> logTypesToDisableJsonList(m_logTypesToDisable.size());
    for(unsigned logTypesToDisableIndex = 0; logTypesToDisableIndex < logTypesToDisableJsonList.GetLength(); ++logTypesToDisableIndex)
    {
      logTypesToDisableJsonList[logTypesToDisableIndex].AsString(m_logTypesToDisable[logTypesToDisableIndex]);

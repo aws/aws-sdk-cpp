@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/codedeploy/CodeDeployErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/codedeploy/CodeDeployEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -84,6 +86,10 @@ namespace Aws
 
   namespace CodeDeploy
   {
+    using CodeDeployClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CodeDeployEndpointProviderBase = Aws::CodeDeploy::Endpoint::CodeDeployEndpointProviderBase;
+    using CodeDeployEndpointProvider = Aws::CodeDeploy::Endpoint::CodeDeployEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CodeDeployClient header */

@@ -55,7 +55,7 @@ WirelessDeviceLogOption& WirelessDeviceLogOption::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Events"))
   {
-    Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
+    Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
     for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
     {
       m_events.push_back(eventsJsonList[eventsIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue WirelessDeviceLogOption::Jsonize() const
 
   if(m_eventsHasBeenSet)
   {
-   Array<JsonValue> eventsJsonList(m_events.size());
+   Aws::Utils::Array<JsonValue> eventsJsonList(m_events.size());
    for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
    {
      eventsJsonList[eventsIndex].AsObject(m_events[eventsIndex].Jsonize());

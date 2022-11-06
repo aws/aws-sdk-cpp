@@ -112,7 +112,7 @@ ImageRecipe& ImageRecipe::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("components"))
   {
-    Array<JsonView> componentsJsonList = jsonValue.GetArray("components");
+    Aws::Utils::Array<JsonView> componentsJsonList = jsonValue.GetArray("components");
     for(unsigned componentsIndex = 0; componentsIndex < componentsJsonList.GetLength(); ++componentsIndex)
     {
       m_components.push_back(componentsJsonList[componentsIndex].AsObject());
@@ -129,7 +129,7 @@ ImageRecipe& ImageRecipe::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("blockDeviceMappings"))
   {
-    Array<JsonView> blockDeviceMappingsJsonList = jsonValue.GetArray("blockDeviceMappings");
+    Aws::Utils::Array<JsonView> blockDeviceMappingsJsonList = jsonValue.GetArray("blockDeviceMappings");
     for(unsigned blockDeviceMappingsIndex = 0; blockDeviceMappingsIndex < blockDeviceMappingsJsonList.GetLength(); ++blockDeviceMappingsIndex)
     {
       m_blockDeviceMappings.push_back(blockDeviceMappingsJsonList[blockDeviceMappingsIndex].AsObject());
@@ -217,7 +217,7 @@ JsonValue ImageRecipe::Jsonize() const
 
   if(m_componentsHasBeenSet)
   {
-   Array<JsonValue> componentsJsonList(m_components.size());
+   Aws::Utils::Array<JsonValue> componentsJsonList(m_components.size());
    for(unsigned componentsIndex = 0; componentsIndex < componentsJsonList.GetLength(); ++componentsIndex)
    {
      componentsJsonList[componentsIndex].AsObject(m_components[componentsIndex].Jsonize());
@@ -234,7 +234,7 @@ JsonValue ImageRecipe::Jsonize() const
 
   if(m_blockDeviceMappingsHasBeenSet)
   {
-   Array<JsonValue> blockDeviceMappingsJsonList(m_blockDeviceMappings.size());
+   Aws::Utils::Array<JsonValue> blockDeviceMappingsJsonList(m_blockDeviceMappings.size());
    for(unsigned blockDeviceMappingsIndex = 0; blockDeviceMappingsIndex < blockDeviceMappingsJsonList.GetLength(); ++blockDeviceMappingsIndex)
    {
      blockDeviceMappingsJsonList[blockDeviceMappingsIndex].AsObject(m_blockDeviceMappings[blockDeviceMappingsIndex].Jsonize());

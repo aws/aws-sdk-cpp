@@ -24,7 +24,7 @@ Aws::String BatchCreateVariableRequest::SerializePayload() const
 
   if(m_variableEntriesHasBeenSet)
   {
-   Array<JsonValue> variableEntriesJsonList(m_variableEntries.size());
+   Aws::Utils::Array<JsonValue> variableEntriesJsonList(m_variableEntries.size());
    for(unsigned variableEntriesIndex = 0; variableEntriesIndex < variableEntriesJsonList.GetLength(); ++variableEntriesIndex)
    {
      variableEntriesJsonList[variableEntriesIndex].AsObject(m_variableEntries[variableEntriesIndex].Jsonize());
@@ -35,7 +35,7 @@ Aws::String BatchCreateVariableRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

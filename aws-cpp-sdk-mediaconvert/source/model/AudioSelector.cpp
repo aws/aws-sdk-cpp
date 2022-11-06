@@ -116,7 +116,7 @@ AudioSelector& AudioSelector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("pids"))
   {
-    Array<JsonView> pidsJsonList = jsonValue.GetArray("pids");
+    Aws::Utils::Array<JsonView> pidsJsonList = jsonValue.GetArray("pids");
     for(unsigned pidsIndex = 0; pidsIndex < pidsJsonList.GetLength(); ++pidsIndex)
     {
       m_pids.push_back(pidsJsonList[pidsIndex].AsInteger());
@@ -147,7 +147,7 @@ AudioSelector& AudioSelector::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tracks"))
   {
-    Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
+    Aws::Utils::Array<JsonView> tracksJsonList = jsonValue.GetArray("tracks");
     for(unsigned tracksIndex = 0; tracksIndex < tracksJsonList.GetLength(); ++tracksIndex)
     {
       m_tracks.push_back(tracksJsonList[tracksIndex].AsInteger());
@@ -203,7 +203,7 @@ JsonValue AudioSelector::Jsonize() const
 
   if(m_pidsHasBeenSet)
   {
-   Array<JsonValue> pidsJsonList(m_pids.size());
+   Aws::Utils::Array<JsonValue> pidsJsonList(m_pids.size());
    for(unsigned pidsIndex = 0; pidsIndex < pidsJsonList.GetLength(); ++pidsIndex)
    {
      pidsJsonList[pidsIndex].AsInteger(m_pids[pidsIndex]);
@@ -231,7 +231,7 @@ JsonValue AudioSelector::Jsonize() const
 
   if(m_tracksHasBeenSet)
   {
-   Array<JsonValue> tracksJsonList(m_tracks.size());
+   Aws::Utils::Array<JsonValue> tracksJsonList(m_tracks.size());
    for(unsigned tracksIndex = 0; tracksIndex < tracksJsonList.GetLength(); ++tracksIndex)
    {
      tracksJsonList[tracksIndex].AsInteger(m_tracks[tracksIndex]);

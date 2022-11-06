@@ -42,7 +42,7 @@ PermissionGroupParams& PermissionGroupParams::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("datasetPermissions"))
   {
-    Array<JsonView> datasetPermissionsJsonList = jsonValue.GetArray("datasetPermissions");
+    Aws::Utils::Array<JsonView> datasetPermissionsJsonList = jsonValue.GetArray("datasetPermissions");
     for(unsigned datasetPermissionsIndex = 0; datasetPermissionsIndex < datasetPermissionsJsonList.GetLength(); ++datasetPermissionsIndex)
     {
       m_datasetPermissions.push_back(datasetPermissionsJsonList[datasetPermissionsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue PermissionGroupParams::Jsonize() const
 
   if(m_datasetPermissionsHasBeenSet)
   {
-   Array<JsonValue> datasetPermissionsJsonList(m_datasetPermissions.size());
+   Aws::Utils::Array<JsonValue> datasetPermissionsJsonList(m_datasetPermissions.size());
    for(unsigned datasetPermissionsIndex = 0; datasetPermissionsIndex < datasetPermissionsJsonList.GetLength(); ++datasetPermissionsIndex)
    {
      datasetPermissionsJsonList[datasetPermissionsIndex].AsObject(m_datasetPermissions[datasetPermissionsIndex].Jsonize());

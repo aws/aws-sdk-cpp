@@ -30,7 +30,7 @@ Aws::String UpdateParameterGroupRequest::SerializePayload() const
 
   if(m_parameterNameValuesHasBeenSet)
   {
-   Array<JsonValue> parameterNameValuesJsonList(m_parameterNameValues.size());
+   Aws::Utils::Array<JsonValue> parameterNameValuesJsonList(m_parameterNameValues.size());
    for(unsigned parameterNameValuesIndex = 0; parameterNameValuesIndex < parameterNameValuesJsonList.GetLength(); ++parameterNameValuesIndex)
    {
      parameterNameValuesJsonList[parameterNameValuesIndex].AsObject(m_parameterNameValues[parameterNameValuesIndex].Jsonize());

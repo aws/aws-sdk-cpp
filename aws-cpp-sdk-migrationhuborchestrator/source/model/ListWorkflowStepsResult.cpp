@@ -36,7 +36,7 @@ ListWorkflowStepsResult& ListWorkflowStepsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("workflowStepsSummary"))
   {
-    Array<JsonView> workflowStepsSummaryJsonList = jsonValue.GetArray("workflowStepsSummary");
+    Aws::Utils::Array<JsonView> workflowStepsSummaryJsonList = jsonValue.GetArray("workflowStepsSummary");
     for(unsigned workflowStepsSummaryIndex = 0; workflowStepsSummaryIndex < workflowStepsSummaryJsonList.GetLength(); ++workflowStepsSummaryIndex)
     {
       m_workflowStepsSummary.push_back(workflowStepsSummaryJsonList[workflowStepsSummaryIndex].AsObject());

@@ -35,7 +35,7 @@ EffectiveDeploymentStatusDetails& EffectiveDeploymentStatusDetails::operator =(J
 {
   if(jsonValue.ValueExists("errorStack"))
   {
-    Array<JsonView> errorStackJsonList = jsonValue.GetArray("errorStack");
+    Aws::Utils::Array<JsonView> errorStackJsonList = jsonValue.GetArray("errorStack");
     for(unsigned errorStackIndex = 0; errorStackIndex < errorStackJsonList.GetLength(); ++errorStackIndex)
     {
       m_errorStack.push_back(errorStackJsonList[errorStackIndex].AsString());
@@ -45,7 +45,7 @@ EffectiveDeploymentStatusDetails& EffectiveDeploymentStatusDetails::operator =(J
 
   if(jsonValue.ValueExists("errorTypes"))
   {
-    Array<JsonView> errorTypesJsonList = jsonValue.GetArray("errorTypes");
+    Aws::Utils::Array<JsonView> errorTypesJsonList = jsonValue.GetArray("errorTypes");
     for(unsigned errorTypesIndex = 0; errorTypesIndex < errorTypesJsonList.GetLength(); ++errorTypesIndex)
     {
       m_errorTypes.push_back(errorTypesJsonList[errorTypesIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue EffectiveDeploymentStatusDetails::Jsonize() const
 
   if(m_errorStackHasBeenSet)
   {
-   Array<JsonValue> errorStackJsonList(m_errorStack.size());
+   Aws::Utils::Array<JsonValue> errorStackJsonList(m_errorStack.size());
    for(unsigned errorStackIndex = 0; errorStackIndex < errorStackJsonList.GetLength(); ++errorStackIndex)
    {
      errorStackJsonList[errorStackIndex].AsString(m_errorStack[errorStackIndex]);
@@ -73,7 +73,7 @@ JsonValue EffectiveDeploymentStatusDetails::Jsonize() const
 
   if(m_errorTypesHasBeenSet)
   {
-   Array<JsonValue> errorTypesJsonList(m_errorTypes.size());
+   Aws::Utils::Array<JsonValue> errorTypesJsonList(m_errorTypes.size());
    for(unsigned errorTypesIndex = 0; errorTypesIndex < errorTypesJsonList.GetLength(); ++errorTypesIndex)
    {
      errorTypesJsonList[errorTypesIndex].AsString(m_errorTypes[errorTypesIndex]);

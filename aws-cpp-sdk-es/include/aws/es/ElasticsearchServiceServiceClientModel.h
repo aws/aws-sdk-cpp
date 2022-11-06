@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/es/ElasticsearchServiceErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/es/ElasticsearchServiceEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -88,6 +90,10 @@ namespace Aws
 
   namespace ElasticsearchService
   {
+    using ElasticsearchServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElasticsearchServiceEndpointProviderBase = Aws::ElasticsearchService::Endpoint::ElasticsearchServiceEndpointProviderBase;
+    using ElasticsearchServiceEndpointProvider = Aws::ElasticsearchService::Endpoint::ElasticsearchServiceEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ElasticsearchServiceClient header */

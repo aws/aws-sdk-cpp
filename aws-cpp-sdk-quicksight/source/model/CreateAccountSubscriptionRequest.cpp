@@ -79,7 +79,7 @@ Aws::String CreateAccountSubscriptionRequest::SerializePayload() const
 
   if(m_adminGroupHasBeenSet)
   {
-   Array<JsonValue> adminGroupJsonList(m_adminGroup.size());
+   Aws::Utils::Array<JsonValue> adminGroupJsonList(m_adminGroup.size());
    for(unsigned adminGroupIndex = 0; adminGroupIndex < adminGroupJsonList.GetLength(); ++adminGroupIndex)
    {
      adminGroupJsonList[adminGroupIndex].AsString(m_adminGroup[adminGroupIndex]);
@@ -90,7 +90,7 @@ Aws::String CreateAccountSubscriptionRequest::SerializePayload() const
 
   if(m_authorGroupHasBeenSet)
   {
-   Array<JsonValue> authorGroupJsonList(m_authorGroup.size());
+   Aws::Utils::Array<JsonValue> authorGroupJsonList(m_authorGroup.size());
    for(unsigned authorGroupIndex = 0; authorGroupIndex < authorGroupJsonList.GetLength(); ++authorGroupIndex)
    {
      authorGroupJsonList[authorGroupIndex].AsString(m_authorGroup[authorGroupIndex]);
@@ -101,7 +101,7 @@ Aws::String CreateAccountSubscriptionRequest::SerializePayload() const
 
   if(m_readerGroupHasBeenSet)
   {
-   Array<JsonValue> readerGroupJsonList(m_readerGroup.size());
+   Aws::Utils::Array<JsonValue> readerGroupJsonList(m_readerGroup.size());
    for(unsigned readerGroupIndex = 0; readerGroupIndex < readerGroupJsonList.GetLength(); ++readerGroupIndex)
    {
      readerGroupJsonList[readerGroupIndex].AsString(m_readerGroup[readerGroupIndex]);

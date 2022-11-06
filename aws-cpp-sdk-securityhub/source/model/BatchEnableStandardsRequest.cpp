@@ -23,7 +23,7 @@ Aws::String BatchEnableStandardsRequest::SerializePayload() const
 
   if(m_standardsSubscriptionRequestsHasBeenSet)
   {
-   Array<JsonValue> standardsSubscriptionRequestsJsonList(m_standardsSubscriptionRequests.size());
+   Aws::Utils::Array<JsonValue> standardsSubscriptionRequestsJsonList(m_standardsSubscriptionRequests.size());
    for(unsigned standardsSubscriptionRequestsIndex = 0; standardsSubscriptionRequestsIndex < standardsSubscriptionRequestsJsonList.GetLength(); ++standardsSubscriptionRequestsIndex)
    {
      standardsSubscriptionRequestsJsonList[standardsSubscriptionRequestsIndex].AsObject(m_standardsSubscriptionRequests[standardsSubscriptionRequestsIndex].Jsonize());

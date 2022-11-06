@@ -45,7 +45,7 @@ VpcConfigRequest& VpcConfigRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("subnetIds"))
   {
-    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -55,7 +55,7 @@ VpcConfigRequest& VpcConfigRequest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("securityGroupIds"))
   {
-    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -79,7 +79,7 @@ VpcConfigRequest& VpcConfigRequest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("publicAccessCidrs"))
   {
-    Array<JsonView> publicAccessCidrsJsonList = jsonValue.GetArray("publicAccessCidrs");
+    Aws::Utils::Array<JsonView> publicAccessCidrsJsonList = jsonValue.GetArray("publicAccessCidrs");
     for(unsigned publicAccessCidrsIndex = 0; publicAccessCidrsIndex < publicAccessCidrsJsonList.GetLength(); ++publicAccessCidrsIndex)
     {
       m_publicAccessCidrs.push_back(publicAccessCidrsJsonList[publicAccessCidrsIndex].AsString());
@@ -96,7 +96,7 @@ JsonValue VpcConfigRequest::Jsonize() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
@@ -107,7 +107,7 @@ JsonValue VpcConfigRequest::Jsonize() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
@@ -130,7 +130,7 @@ JsonValue VpcConfigRequest::Jsonize() const
 
   if(m_publicAccessCidrsHasBeenSet)
   {
-   Array<JsonValue> publicAccessCidrsJsonList(m_publicAccessCidrs.size());
+   Aws::Utils::Array<JsonValue> publicAccessCidrsJsonList(m_publicAccessCidrs.size());
    for(unsigned publicAccessCidrsIndex = 0; publicAccessCidrsIndex < publicAccessCidrsJsonList.GetLength(); ++publicAccessCidrsIndex)
    {
      publicAccessCidrsJsonList[publicAccessCidrsIndex].AsString(m_publicAccessCidrs[publicAccessCidrsIndex]);

@@ -130,7 +130,7 @@ DeleteEventSourceMappingResult& DeleteEventSourceMappingResult::operator =(const
 
   if(jsonValue.ValueExists("Topics"))
   {
-    Array<JsonView> topicsJsonList = jsonValue.GetArray("Topics");
+    Aws::Utils::Array<JsonView> topicsJsonList = jsonValue.GetArray("Topics");
     for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
     {
       m_topics.push_back(topicsJsonList[topicsIndex].AsString());
@@ -139,7 +139,7 @@ DeleteEventSourceMappingResult& DeleteEventSourceMappingResult::operator =(const
 
   if(jsonValue.ValueExists("Queues"))
   {
-    Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
+    Aws::Utils::Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
     for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
     {
       m_queues.push_back(queuesJsonList[queuesIndex].AsString());
@@ -148,7 +148,7 @@ DeleteEventSourceMappingResult& DeleteEventSourceMappingResult::operator =(const
 
   if(jsonValue.ValueExists("SourceAccessConfigurations"))
   {
-    Array<JsonView> sourceAccessConfigurationsJsonList = jsonValue.GetArray("SourceAccessConfigurations");
+    Aws::Utils::Array<JsonView> sourceAccessConfigurationsJsonList = jsonValue.GetArray("SourceAccessConfigurations");
     for(unsigned sourceAccessConfigurationsIndex = 0; sourceAccessConfigurationsIndex < sourceAccessConfigurationsJsonList.GetLength(); ++sourceAccessConfigurationsIndex)
     {
       m_sourceAccessConfigurations.push_back(sourceAccessConfigurationsJsonList[sourceAccessConfigurationsIndex].AsObject());
@@ -187,7 +187,7 @@ DeleteEventSourceMappingResult& DeleteEventSourceMappingResult::operator =(const
 
   if(jsonValue.ValueExists("FunctionResponseTypes"))
   {
-    Array<JsonView> functionResponseTypesJsonList = jsonValue.GetArray("FunctionResponseTypes");
+    Aws::Utils::Array<JsonView> functionResponseTypesJsonList = jsonValue.GetArray("FunctionResponseTypes");
     for(unsigned functionResponseTypesIndex = 0; functionResponseTypesIndex < functionResponseTypesJsonList.GetLength(); ++functionResponseTypesIndex)
     {
       m_functionResponseTypes.push_back(FunctionResponseTypeMapper::GetFunctionResponseTypeForName(functionResponseTypesJsonList[functionResponseTypesIndex].AsString()));

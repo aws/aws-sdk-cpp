@@ -30,7 +30,7 @@ CreateRecoveryGroupResult& CreateRecoveryGroupResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("cells"))
   {
-    Array<JsonView> cellsJsonList = jsonValue.GetArray("cells");
+    Aws::Utils::Array<JsonView> cellsJsonList = jsonValue.GetArray("cells");
     for(unsigned cellsIndex = 0; cellsIndex < cellsJsonList.GetLength(); ++cellsIndex)
     {
       m_cells.push_back(cellsJsonList[cellsIndex].AsString());

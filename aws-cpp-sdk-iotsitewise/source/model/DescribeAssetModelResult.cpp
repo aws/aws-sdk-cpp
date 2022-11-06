@@ -54,7 +54,7 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("assetModelProperties"))
   {
-    Array<JsonView> assetModelPropertiesJsonList = jsonValue.GetArray("assetModelProperties");
+    Aws::Utils::Array<JsonView> assetModelPropertiesJsonList = jsonValue.GetArray("assetModelProperties");
     for(unsigned assetModelPropertiesIndex = 0; assetModelPropertiesIndex < assetModelPropertiesJsonList.GetLength(); ++assetModelPropertiesIndex)
     {
       m_assetModelProperties.push_back(assetModelPropertiesJsonList[assetModelPropertiesIndex].AsObject());
@@ -63,7 +63,7 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("assetModelHierarchies"))
   {
-    Array<JsonView> assetModelHierarchiesJsonList = jsonValue.GetArray("assetModelHierarchies");
+    Aws::Utils::Array<JsonView> assetModelHierarchiesJsonList = jsonValue.GetArray("assetModelHierarchies");
     for(unsigned assetModelHierarchiesIndex = 0; assetModelHierarchiesIndex < assetModelHierarchiesJsonList.GetLength(); ++assetModelHierarchiesIndex)
     {
       m_assetModelHierarchies.push_back(assetModelHierarchiesJsonList[assetModelHierarchiesIndex].AsObject());
@@ -72,7 +72,7 @@ DescribeAssetModelResult& DescribeAssetModelResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("assetModelCompositeModels"))
   {
-    Array<JsonView> assetModelCompositeModelsJsonList = jsonValue.GetArray("assetModelCompositeModels");
+    Aws::Utils::Array<JsonView> assetModelCompositeModelsJsonList = jsonValue.GetArray("assetModelCompositeModels");
     for(unsigned assetModelCompositeModelsIndex = 0; assetModelCompositeModelsIndex < assetModelCompositeModelsJsonList.GetLength(); ++assetModelCompositeModelsIndex)
     {
       m_assetModelCompositeModels.push_back(assetModelCompositeModelsJsonList[assetModelCompositeModelsIndex].AsObject());

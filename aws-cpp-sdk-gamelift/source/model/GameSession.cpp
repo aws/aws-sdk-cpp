@@ -151,7 +151,7 @@ GameSession& GameSession::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GameProperties"))
   {
-    Array<JsonView> gamePropertiesJsonList = jsonValue.GetArray("GameProperties");
+    Aws::Utils::Array<JsonView> gamePropertiesJsonList = jsonValue.GetArray("GameProperties");
     for(unsigned gamePropertiesIndex = 0; gamePropertiesIndex < gamePropertiesJsonList.GetLength(); ++gamePropertiesIndex)
     {
       m_gameProperties.push_back(gamePropertiesJsonList[gamePropertiesIndex].AsObject());
@@ -280,7 +280,7 @@ JsonValue GameSession::Jsonize() const
 
   if(m_gamePropertiesHasBeenSet)
   {
-   Array<JsonValue> gamePropertiesJsonList(m_gameProperties.size());
+   Aws::Utils::Array<JsonValue> gamePropertiesJsonList(m_gameProperties.size());
    for(unsigned gamePropertiesIndex = 0; gamePropertiesIndex < gamePropertiesJsonList.GetLength(); ++gamePropertiesIndex)
    {
      gamePropertiesJsonList[gamePropertiesIndex].AsObject(m_gameProperties[gamePropertiesIndex].Jsonize());

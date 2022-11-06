@@ -57,7 +57,7 @@ BackupSelection& BackupSelection::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Resources"))
   {
-    Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
+    Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsString());
@@ -67,7 +67,7 @@ BackupSelection& BackupSelection::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ListOfTags"))
   {
-    Array<JsonView> listOfTagsJsonList = jsonValue.GetArray("ListOfTags");
+    Aws::Utils::Array<JsonView> listOfTagsJsonList = jsonValue.GetArray("ListOfTags");
     for(unsigned listOfTagsIndex = 0; listOfTagsIndex < listOfTagsJsonList.GetLength(); ++listOfTagsIndex)
     {
       m_listOfTags.push_back(listOfTagsJsonList[listOfTagsIndex].AsObject());
@@ -77,7 +77,7 @@ BackupSelection& BackupSelection::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NotResources"))
   {
-    Array<JsonView> notResourcesJsonList = jsonValue.GetArray("NotResources");
+    Aws::Utils::Array<JsonView> notResourcesJsonList = jsonValue.GetArray("NotResources");
     for(unsigned notResourcesIndex = 0; notResourcesIndex < notResourcesJsonList.GetLength(); ++notResourcesIndex)
     {
       m_notResources.push_back(notResourcesJsonList[notResourcesIndex].AsString());
@@ -113,7 +113,7 @@ JsonValue BackupSelection::Jsonize() const
 
   if(m_resourcesHasBeenSet)
   {
-   Array<JsonValue> resourcesJsonList(m_resources.size());
+   Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
    {
      resourcesJsonList[resourcesIndex].AsString(m_resources[resourcesIndex]);
@@ -124,7 +124,7 @@ JsonValue BackupSelection::Jsonize() const
 
   if(m_listOfTagsHasBeenSet)
   {
-   Array<JsonValue> listOfTagsJsonList(m_listOfTags.size());
+   Aws::Utils::Array<JsonValue> listOfTagsJsonList(m_listOfTags.size());
    for(unsigned listOfTagsIndex = 0; listOfTagsIndex < listOfTagsJsonList.GetLength(); ++listOfTagsIndex)
    {
      listOfTagsJsonList[listOfTagsIndex].AsObject(m_listOfTags[listOfTagsIndex].Jsonize());
@@ -135,7 +135,7 @@ JsonValue BackupSelection::Jsonize() const
 
   if(m_notResourcesHasBeenSet)
   {
-   Array<JsonValue> notResourcesJsonList(m_notResources.size());
+   Aws::Utils::Array<JsonValue> notResourcesJsonList(m_notResources.size());
    for(unsigned notResourcesIndex = 0; notResourcesIndex < notResourcesJsonList.GetLength(); ++notResourcesIndex)
    {
      notResourcesJsonList[notResourcesIndex].AsString(m_notResources[notResourcesIndex]);

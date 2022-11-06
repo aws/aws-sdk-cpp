@@ -41,7 +41,7 @@ GroupConfiguration& GroupConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Configuration"))
   {
-    Array<JsonView> configurationJsonList = jsonValue.GetArray("Configuration");
+    Aws::Utils::Array<JsonView> configurationJsonList = jsonValue.GetArray("Configuration");
     for(unsigned configurationIndex = 0; configurationIndex < configurationJsonList.GetLength(); ++configurationIndex)
     {
       m_configuration.push_back(configurationJsonList[configurationIndex].AsObject());
@@ -51,7 +51,7 @@ GroupConfiguration& GroupConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ProposedConfiguration"))
   {
-    Array<JsonView> proposedConfigurationJsonList = jsonValue.GetArray("ProposedConfiguration");
+    Aws::Utils::Array<JsonView> proposedConfigurationJsonList = jsonValue.GetArray("ProposedConfiguration");
     for(unsigned proposedConfigurationIndex = 0; proposedConfigurationIndex < proposedConfigurationJsonList.GetLength(); ++proposedConfigurationIndex)
     {
       m_proposedConfiguration.push_back(proposedConfigurationJsonList[proposedConfigurationIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue GroupConfiguration::Jsonize() const
 
   if(m_configurationHasBeenSet)
   {
-   Array<JsonValue> configurationJsonList(m_configuration.size());
+   Aws::Utils::Array<JsonValue> configurationJsonList(m_configuration.size());
    for(unsigned configurationIndex = 0; configurationIndex < configurationJsonList.GetLength(); ++configurationIndex)
    {
      configurationJsonList[configurationIndex].AsObject(m_configuration[configurationIndex].Jsonize());
@@ -93,7 +93,7 @@ JsonValue GroupConfiguration::Jsonize() const
 
   if(m_proposedConfigurationHasBeenSet)
   {
-   Array<JsonValue> proposedConfigurationJsonList(m_proposedConfiguration.size());
+   Aws::Utils::Array<JsonValue> proposedConfigurationJsonList(m_proposedConfiguration.size());
    for(unsigned proposedConfigurationIndex = 0; proposedConfigurationIndex < proposedConfigurationJsonList.GetLength(); ++proposedConfigurationIndex)
    {
      proposedConfigurationJsonList[proposedConfigurationIndex].AsObject(m_proposedConfiguration[proposedConfigurationIndex].Jsonize());

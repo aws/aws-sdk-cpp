@@ -30,7 +30,7 @@ ListPermissionSetsResult& ListPermissionSetsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PermissionSets"))
   {
-    Array<JsonView> permissionSetsJsonList = jsonValue.GetArray("PermissionSets");
+    Aws::Utils::Array<JsonView> permissionSetsJsonList = jsonValue.GetArray("PermissionSets");
     for(unsigned permissionSetsIndex = 0; permissionSetsIndex < permissionSetsJsonList.GetLength(); ++permissionSetsIndex)
     {
       m_permissionSets.push_back(permissionSetsJsonList[permissionSetsIndex].AsString());

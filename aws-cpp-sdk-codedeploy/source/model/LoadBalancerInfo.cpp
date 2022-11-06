@@ -37,7 +37,7 @@ LoadBalancerInfo& LoadBalancerInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("elbInfoList"))
   {
-    Array<JsonView> elbInfoListJsonList = jsonValue.GetArray("elbInfoList");
+    Aws::Utils::Array<JsonView> elbInfoListJsonList = jsonValue.GetArray("elbInfoList");
     for(unsigned elbInfoListIndex = 0; elbInfoListIndex < elbInfoListJsonList.GetLength(); ++elbInfoListIndex)
     {
       m_elbInfoList.push_back(elbInfoListJsonList[elbInfoListIndex].AsObject());
@@ -47,7 +47,7 @@ LoadBalancerInfo& LoadBalancerInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("targetGroupInfoList"))
   {
-    Array<JsonView> targetGroupInfoListJsonList = jsonValue.GetArray("targetGroupInfoList");
+    Aws::Utils::Array<JsonView> targetGroupInfoListJsonList = jsonValue.GetArray("targetGroupInfoList");
     for(unsigned targetGroupInfoListIndex = 0; targetGroupInfoListIndex < targetGroupInfoListJsonList.GetLength(); ++targetGroupInfoListIndex)
     {
       m_targetGroupInfoList.push_back(targetGroupInfoListJsonList[targetGroupInfoListIndex].AsObject());
@@ -57,7 +57,7 @@ LoadBalancerInfo& LoadBalancerInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("targetGroupPairInfoList"))
   {
-    Array<JsonView> targetGroupPairInfoListJsonList = jsonValue.GetArray("targetGroupPairInfoList");
+    Aws::Utils::Array<JsonView> targetGroupPairInfoListJsonList = jsonValue.GetArray("targetGroupPairInfoList");
     for(unsigned targetGroupPairInfoListIndex = 0; targetGroupPairInfoListIndex < targetGroupPairInfoListJsonList.GetLength(); ++targetGroupPairInfoListIndex)
     {
       m_targetGroupPairInfoList.push_back(targetGroupPairInfoListJsonList[targetGroupPairInfoListIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue LoadBalancerInfo::Jsonize() const
 
   if(m_elbInfoListHasBeenSet)
   {
-   Array<JsonValue> elbInfoListJsonList(m_elbInfoList.size());
+   Aws::Utils::Array<JsonValue> elbInfoListJsonList(m_elbInfoList.size());
    for(unsigned elbInfoListIndex = 0; elbInfoListIndex < elbInfoListJsonList.GetLength(); ++elbInfoListIndex)
    {
      elbInfoListJsonList[elbInfoListIndex].AsObject(m_elbInfoList[elbInfoListIndex].Jsonize());
@@ -85,7 +85,7 @@ JsonValue LoadBalancerInfo::Jsonize() const
 
   if(m_targetGroupInfoListHasBeenSet)
   {
-   Array<JsonValue> targetGroupInfoListJsonList(m_targetGroupInfoList.size());
+   Aws::Utils::Array<JsonValue> targetGroupInfoListJsonList(m_targetGroupInfoList.size());
    for(unsigned targetGroupInfoListIndex = 0; targetGroupInfoListIndex < targetGroupInfoListJsonList.GetLength(); ++targetGroupInfoListIndex)
    {
      targetGroupInfoListJsonList[targetGroupInfoListIndex].AsObject(m_targetGroupInfoList[targetGroupInfoListIndex].Jsonize());
@@ -96,7 +96,7 @@ JsonValue LoadBalancerInfo::Jsonize() const
 
   if(m_targetGroupPairInfoListHasBeenSet)
   {
-   Array<JsonValue> targetGroupPairInfoListJsonList(m_targetGroupPairInfoList.size());
+   Aws::Utils::Array<JsonValue> targetGroupPairInfoListJsonList(m_targetGroupPairInfoList.size());
    for(unsigned targetGroupPairInfoListIndex = 0; targetGroupPairInfoListIndex < targetGroupPairInfoListJsonList.GetLength(); ++targetGroupPairInfoListIndex)
    {
      targetGroupPairInfoListJsonList[targetGroupPairInfoListIndex].AsObject(m_targetGroupPairInfoList[targetGroupPairInfoListIndex].Jsonize());

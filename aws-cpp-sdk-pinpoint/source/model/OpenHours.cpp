@@ -44,7 +44,7 @@ OpenHours& OpenHours::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> eMAILJsonMap = jsonValue.GetObject("EMAIL").GetAllObjects();
     for(auto& eMAILItem : eMAILJsonMap)
     {
-      Array<JsonView> listOfOpenHoursRulesJsonList = eMAILItem.second.AsArray();
+      Aws::Utils::Array<JsonView> listOfOpenHoursRulesJsonList = eMAILItem.second.AsArray();
       Aws::Vector<OpenHoursRule> listOfOpenHoursRulesList;
       listOfOpenHoursRulesList.reserve((size_t)listOfOpenHoursRulesJsonList.GetLength());
       for(unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength(); ++listOfOpenHoursRulesIndex)
@@ -61,7 +61,7 @@ OpenHours& OpenHours::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> sMSJsonMap = jsonValue.GetObject("SMS").GetAllObjects();
     for(auto& sMSItem : sMSJsonMap)
     {
-      Array<JsonView> listOfOpenHoursRulesJsonList = sMSItem.second.AsArray();
+      Aws::Utils::Array<JsonView> listOfOpenHoursRulesJsonList = sMSItem.second.AsArray();
       Aws::Vector<OpenHoursRule> listOfOpenHoursRulesList;
       listOfOpenHoursRulesList.reserve((size_t)listOfOpenHoursRulesJsonList.GetLength());
       for(unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength(); ++listOfOpenHoursRulesIndex)
@@ -78,7 +78,7 @@ OpenHours& OpenHours::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> pUSHJsonMap = jsonValue.GetObject("PUSH").GetAllObjects();
     for(auto& pUSHItem : pUSHJsonMap)
     {
-      Array<JsonView> listOfOpenHoursRulesJsonList = pUSHItem.second.AsArray();
+      Aws::Utils::Array<JsonView> listOfOpenHoursRulesJsonList = pUSHItem.second.AsArray();
       Aws::Vector<OpenHoursRule> listOfOpenHoursRulesList;
       listOfOpenHoursRulesList.reserve((size_t)listOfOpenHoursRulesJsonList.GetLength());
       for(unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength(); ++listOfOpenHoursRulesIndex)
@@ -95,7 +95,7 @@ OpenHours& OpenHours::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> vOICEJsonMap = jsonValue.GetObject("VOICE").GetAllObjects();
     for(auto& vOICEItem : vOICEJsonMap)
     {
-      Array<JsonView> listOfOpenHoursRulesJsonList = vOICEItem.second.AsArray();
+      Aws::Utils::Array<JsonView> listOfOpenHoursRulesJsonList = vOICEItem.second.AsArray();
       Aws::Vector<OpenHoursRule> listOfOpenHoursRulesList;
       listOfOpenHoursRulesList.reserve((size_t)listOfOpenHoursRulesJsonList.GetLength());
       for(unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength(); ++listOfOpenHoursRulesIndex)
@@ -112,7 +112,7 @@ OpenHours& OpenHours::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> cUSTOMJsonMap = jsonValue.GetObject("CUSTOM").GetAllObjects();
     for(auto& cUSTOMItem : cUSTOMJsonMap)
     {
-      Array<JsonView> listOfOpenHoursRulesJsonList = cUSTOMItem.second.AsArray();
+      Aws::Utils::Array<JsonView> listOfOpenHoursRulesJsonList = cUSTOMItem.second.AsArray();
       Aws::Vector<OpenHoursRule> listOfOpenHoursRulesList;
       listOfOpenHoursRulesList.reserve((size_t)listOfOpenHoursRulesJsonList.GetLength());
       for(unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength(); ++listOfOpenHoursRulesIndex)
@@ -136,7 +136,7 @@ JsonValue OpenHours::Jsonize() const
    JsonValue eMAILJsonMap;
    for(auto& eMAILItem : m_eMAIL)
    {
-     Array<JsonValue> listOfOpenHoursRulesJsonList(eMAILItem.second.size());
+     Aws::Utils::Array<JsonValue> listOfOpenHoursRulesJsonList(eMAILItem.second.size());
      for(unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength(); ++listOfOpenHoursRulesIndex)
      {
        listOfOpenHoursRulesJsonList[listOfOpenHoursRulesIndex].AsObject(eMAILItem.second[listOfOpenHoursRulesIndex].Jsonize());
@@ -152,7 +152,7 @@ JsonValue OpenHours::Jsonize() const
    JsonValue sMSJsonMap;
    for(auto& sMSItem : m_sMS)
    {
-     Array<JsonValue> listOfOpenHoursRulesJsonList(sMSItem.second.size());
+     Aws::Utils::Array<JsonValue> listOfOpenHoursRulesJsonList(sMSItem.second.size());
      for(unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength(); ++listOfOpenHoursRulesIndex)
      {
        listOfOpenHoursRulesJsonList[listOfOpenHoursRulesIndex].AsObject(sMSItem.second[listOfOpenHoursRulesIndex].Jsonize());
@@ -168,7 +168,7 @@ JsonValue OpenHours::Jsonize() const
    JsonValue pUSHJsonMap;
    for(auto& pUSHItem : m_pUSH)
    {
-     Array<JsonValue> listOfOpenHoursRulesJsonList(pUSHItem.second.size());
+     Aws::Utils::Array<JsonValue> listOfOpenHoursRulesJsonList(pUSHItem.second.size());
      for(unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength(); ++listOfOpenHoursRulesIndex)
      {
        listOfOpenHoursRulesJsonList[listOfOpenHoursRulesIndex].AsObject(pUSHItem.second[listOfOpenHoursRulesIndex].Jsonize());
@@ -184,7 +184,7 @@ JsonValue OpenHours::Jsonize() const
    JsonValue vOICEJsonMap;
    for(auto& vOICEItem : m_vOICE)
    {
-     Array<JsonValue> listOfOpenHoursRulesJsonList(vOICEItem.second.size());
+     Aws::Utils::Array<JsonValue> listOfOpenHoursRulesJsonList(vOICEItem.second.size());
      for(unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength(); ++listOfOpenHoursRulesIndex)
      {
        listOfOpenHoursRulesJsonList[listOfOpenHoursRulesIndex].AsObject(vOICEItem.second[listOfOpenHoursRulesIndex].Jsonize());
@@ -200,7 +200,7 @@ JsonValue OpenHours::Jsonize() const
    JsonValue cUSTOMJsonMap;
    for(auto& cUSTOMItem : m_cUSTOM)
    {
-     Array<JsonValue> listOfOpenHoursRulesJsonList(cUSTOMItem.second.size());
+     Aws::Utils::Array<JsonValue> listOfOpenHoursRulesJsonList(cUSTOMItem.second.size());
      for(unsigned listOfOpenHoursRulesIndex = 0; listOfOpenHoursRulesIndex < listOfOpenHoursRulesJsonList.GetLength(); ++listOfOpenHoursRulesIndex)
      {
        listOfOpenHoursRulesJsonList[listOfOpenHoursRulesIndex].AsObject(cUSTOMItem.second[listOfOpenHoursRulesIndex].Jsonize());

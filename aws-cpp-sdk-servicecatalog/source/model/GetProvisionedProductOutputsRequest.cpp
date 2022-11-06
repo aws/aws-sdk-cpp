@@ -47,7 +47,7 @@ Aws::String GetProvisionedProductOutputsRequest::SerializePayload() const
 
   if(m_outputKeysHasBeenSet)
   {
-   Array<JsonValue> outputKeysJsonList(m_outputKeys.size());
+   Aws::Utils::Array<JsonValue> outputKeysJsonList(m_outputKeys.size());
    for(unsigned outputKeysIndex = 0; outputKeysIndex < outputKeysJsonList.GetLength(); ++outputKeysIndex)
    {
      outputKeysJsonList[outputKeysIndex].AsString(m_outputKeys[outputKeysIndex]);

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/finspace-data/FinSpaceDataErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/finspace-data/FinSpaceDataEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -80,6 +82,10 @@ namespace Aws
 
   namespace FinSpaceData
   {
+    using FinSpaceDataClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using FinSpaceDataEndpointProviderBase = Aws::FinSpaceData::Endpoint::FinSpaceDataEndpointProviderBase;
+    using FinSpaceDataEndpointProvider = Aws::FinSpaceData::Endpoint::FinSpaceDataEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in FinSpaceDataClient header */

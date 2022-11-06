@@ -30,7 +30,7 @@ Aws::String DisassociateConfigurationItemsFromApplicationRequest::SerializePaylo
 
   if(m_configurationIdsHasBeenSet)
   {
-   Array<JsonValue> configurationIdsJsonList(m_configurationIds.size());
+   Aws::Utils::Array<JsonValue> configurationIdsJsonList(m_configurationIds.size());
    for(unsigned configurationIdsIndex = 0; configurationIdsIndex < configurationIdsJsonList.GetLength(); ++configurationIdsIndex)
    {
      configurationIdsJsonList[configurationIdsIndex].AsString(m_configurationIds[configurationIdsIndex]);

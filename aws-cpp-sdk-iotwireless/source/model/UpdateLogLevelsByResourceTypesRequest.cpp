@@ -31,7 +31,7 @@ Aws::String UpdateLogLevelsByResourceTypesRequest::SerializePayload() const
 
   if(m_wirelessDeviceLogOptionsHasBeenSet)
   {
-   Array<JsonValue> wirelessDeviceLogOptionsJsonList(m_wirelessDeviceLogOptions.size());
+   Aws::Utils::Array<JsonValue> wirelessDeviceLogOptionsJsonList(m_wirelessDeviceLogOptions.size());
    for(unsigned wirelessDeviceLogOptionsIndex = 0; wirelessDeviceLogOptionsIndex < wirelessDeviceLogOptionsJsonList.GetLength(); ++wirelessDeviceLogOptionsIndex)
    {
      wirelessDeviceLogOptionsJsonList[wirelessDeviceLogOptionsIndex].AsObject(m_wirelessDeviceLogOptions[wirelessDeviceLogOptionsIndex].Jsonize());
@@ -42,7 +42,7 @@ Aws::String UpdateLogLevelsByResourceTypesRequest::SerializePayload() const
 
   if(m_wirelessGatewayLogOptionsHasBeenSet)
   {
-   Array<JsonValue> wirelessGatewayLogOptionsJsonList(m_wirelessGatewayLogOptions.size());
+   Aws::Utils::Array<JsonValue> wirelessGatewayLogOptionsJsonList(m_wirelessGatewayLogOptions.size());
    for(unsigned wirelessGatewayLogOptionsIndex = 0; wirelessGatewayLogOptionsIndex < wirelessGatewayLogOptionsJsonList.GetLength(); ++wirelessGatewayLogOptionsIndex)
    {
      wirelessGatewayLogOptionsJsonList[wirelessGatewayLogOptionsIndex].AsObject(m_wirelessGatewayLogOptions[wirelessGatewayLogOptionsIndex].Jsonize());

@@ -30,7 +30,7 @@ ListFunctionsResult& ListFunctionsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("functions"))
   {
-    Array<JsonView> functionsJsonList = jsonValue.GetArray("functions");
+    Aws::Utils::Array<JsonView> functionsJsonList = jsonValue.GetArray("functions");
     for(unsigned functionsIndex = 0; functionsIndex < functionsJsonList.GetLength(); ++functionsIndex)
     {
       m_functions.push_back(functionsJsonList[functionsIndex].AsObject());

@@ -120,7 +120,7 @@ LongTermPricingListEntry& LongTermPricingListEntry::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("JobIds"))
   {
-    Array<JsonView> jobIdsJsonList = jsonValue.GetArray("JobIds");
+    Aws::Utils::Array<JsonView> jobIdsJsonList = jsonValue.GetArray("JobIds");
     for(unsigned jobIdsIndex = 0; jobIdsIndex < jobIdsJsonList.GetLength(); ++jobIdsIndex)
     {
       m_jobIds.push_back(jobIdsJsonList[jobIdsIndex].AsString());
@@ -187,7 +187,7 @@ JsonValue LongTermPricingListEntry::Jsonize() const
 
   if(m_jobIdsHasBeenSet)
   {
-   Array<JsonValue> jobIdsJsonList(m_jobIds.size());
+   Aws::Utils::Array<JsonValue> jobIdsJsonList(m_jobIds.size());
    for(unsigned jobIdsIndex = 0; jobIdsIndex < jobIdsJsonList.GetLength(); ++jobIdsIndex)
    {
      jobIdsJsonList[jobIdsIndex].AsString(m_jobIds[jobIdsIndex]);

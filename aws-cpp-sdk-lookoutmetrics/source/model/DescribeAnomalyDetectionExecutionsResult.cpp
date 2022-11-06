@@ -30,7 +30,7 @@ DescribeAnomalyDetectionExecutionsResult& DescribeAnomalyDetectionExecutionsResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ExecutionList"))
   {
-    Array<JsonView> executionListJsonList = jsonValue.GetArray("ExecutionList");
+    Aws::Utils::Array<JsonView> executionListJsonList = jsonValue.GetArray("ExecutionList");
     for(unsigned executionListIndex = 0; executionListIndex < executionListJsonList.GetLength(); ++executionListIndex)
     {
       m_executionList.push_back(executionListJsonList[executionListIndex].AsObject());

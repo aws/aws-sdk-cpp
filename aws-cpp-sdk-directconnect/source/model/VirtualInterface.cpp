@@ -232,7 +232,7 @@ VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("routeFilterPrefixes"))
   {
-    Array<JsonView> routeFilterPrefixesJsonList = jsonValue.GetArray("routeFilterPrefixes");
+    Aws::Utils::Array<JsonView> routeFilterPrefixesJsonList = jsonValue.GetArray("routeFilterPrefixes");
     for(unsigned routeFilterPrefixesIndex = 0; routeFilterPrefixesIndex < routeFilterPrefixesJsonList.GetLength(); ++routeFilterPrefixesIndex)
     {
       m_routeFilterPrefixes.push_back(routeFilterPrefixesJsonList[routeFilterPrefixesIndex].AsObject());
@@ -242,7 +242,7 @@ VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("bgpPeers"))
   {
-    Array<JsonView> bgpPeersJsonList = jsonValue.GetArray("bgpPeers");
+    Aws::Utils::Array<JsonView> bgpPeersJsonList = jsonValue.GetArray("bgpPeers");
     for(unsigned bgpPeersIndex = 0; bgpPeersIndex < bgpPeersJsonList.GetLength(); ++bgpPeersIndex)
     {
       m_bgpPeers.push_back(bgpPeersJsonList[bgpPeersIndex].AsObject());
@@ -273,7 +273,7 @@ VirtualInterface& VirtualInterface::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -409,7 +409,7 @@ JsonValue VirtualInterface::Jsonize() const
 
   if(m_routeFilterPrefixesHasBeenSet)
   {
-   Array<JsonValue> routeFilterPrefixesJsonList(m_routeFilterPrefixes.size());
+   Aws::Utils::Array<JsonValue> routeFilterPrefixesJsonList(m_routeFilterPrefixes.size());
    for(unsigned routeFilterPrefixesIndex = 0; routeFilterPrefixesIndex < routeFilterPrefixesJsonList.GetLength(); ++routeFilterPrefixesIndex)
    {
      routeFilterPrefixesJsonList[routeFilterPrefixesIndex].AsObject(m_routeFilterPrefixes[routeFilterPrefixesIndex].Jsonize());
@@ -420,7 +420,7 @@ JsonValue VirtualInterface::Jsonize() const
 
   if(m_bgpPeersHasBeenSet)
   {
-   Array<JsonValue> bgpPeersJsonList(m_bgpPeers.size());
+   Aws::Utils::Array<JsonValue> bgpPeersJsonList(m_bgpPeers.size());
    for(unsigned bgpPeersIndex = 0; bgpPeersIndex < bgpPeersJsonList.GetLength(); ++bgpPeersIndex)
    {
      bgpPeersJsonList[bgpPeersIndex].AsObject(m_bgpPeers[bgpPeersIndex].Jsonize());
@@ -449,7 +449,7 @@ JsonValue VirtualInterface::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

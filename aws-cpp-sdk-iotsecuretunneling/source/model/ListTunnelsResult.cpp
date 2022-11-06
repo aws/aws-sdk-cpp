@@ -30,7 +30,7 @@ ListTunnelsResult& ListTunnelsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("tunnelSummaries"))
   {
-    Array<JsonView> tunnelSummariesJsonList = jsonValue.GetArray("tunnelSummaries");
+    Aws::Utils::Array<JsonView> tunnelSummariesJsonList = jsonValue.GetArray("tunnelSummaries");
     for(unsigned tunnelSummariesIndex = 0; tunnelSummariesIndex < tunnelSummariesJsonList.GetLength(); ++tunnelSummariesIndex)
     {
       m_tunnelSummaries.push_back(tunnelSummariesJsonList[tunnelSummariesIndex].AsObject());

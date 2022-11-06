@@ -48,7 +48,7 @@ ExpenseDocument& ExpenseDocument::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SummaryFields"))
   {
-    Array<JsonView> summaryFieldsJsonList = jsonValue.GetArray("SummaryFields");
+    Aws::Utils::Array<JsonView> summaryFieldsJsonList = jsonValue.GetArray("SummaryFields");
     for(unsigned summaryFieldsIndex = 0; summaryFieldsIndex < summaryFieldsJsonList.GetLength(); ++summaryFieldsIndex)
     {
       m_summaryFields.push_back(summaryFieldsJsonList[summaryFieldsIndex].AsObject());
@@ -58,7 +58,7 @@ ExpenseDocument& ExpenseDocument::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LineItemGroups"))
   {
-    Array<JsonView> lineItemGroupsJsonList = jsonValue.GetArray("LineItemGroups");
+    Aws::Utils::Array<JsonView> lineItemGroupsJsonList = jsonValue.GetArray("LineItemGroups");
     for(unsigned lineItemGroupsIndex = 0; lineItemGroupsIndex < lineItemGroupsJsonList.GetLength(); ++lineItemGroupsIndex)
     {
       m_lineItemGroups.push_back(lineItemGroupsJsonList[lineItemGroupsIndex].AsObject());
@@ -68,7 +68,7 @@ ExpenseDocument& ExpenseDocument::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Blocks"))
   {
-    Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
+    Aws::Utils::Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
     for(unsigned blocksIndex = 0; blocksIndex < blocksJsonList.GetLength(); ++blocksIndex)
     {
       m_blocks.push_back(blocksJsonList[blocksIndex].AsObject());
@@ -91,7 +91,7 @@ JsonValue ExpenseDocument::Jsonize() const
 
   if(m_summaryFieldsHasBeenSet)
   {
-   Array<JsonValue> summaryFieldsJsonList(m_summaryFields.size());
+   Aws::Utils::Array<JsonValue> summaryFieldsJsonList(m_summaryFields.size());
    for(unsigned summaryFieldsIndex = 0; summaryFieldsIndex < summaryFieldsJsonList.GetLength(); ++summaryFieldsIndex)
    {
      summaryFieldsJsonList[summaryFieldsIndex].AsObject(m_summaryFields[summaryFieldsIndex].Jsonize());
@@ -102,7 +102,7 @@ JsonValue ExpenseDocument::Jsonize() const
 
   if(m_lineItemGroupsHasBeenSet)
   {
-   Array<JsonValue> lineItemGroupsJsonList(m_lineItemGroups.size());
+   Aws::Utils::Array<JsonValue> lineItemGroupsJsonList(m_lineItemGroups.size());
    for(unsigned lineItemGroupsIndex = 0; lineItemGroupsIndex < lineItemGroupsJsonList.GetLength(); ++lineItemGroupsIndex)
    {
      lineItemGroupsJsonList[lineItemGroupsIndex].AsObject(m_lineItemGroups[lineItemGroupsIndex].Jsonize());
@@ -113,7 +113,7 @@ JsonValue ExpenseDocument::Jsonize() const
 
   if(m_blocksHasBeenSet)
   {
-   Array<JsonValue> blocksJsonList(m_blocks.size());
+   Aws::Utils::Array<JsonValue> blocksJsonList(m_blocks.size());
    for(unsigned blocksIndex = 0; blocksIndex < blocksJsonList.GetLength(); ++blocksIndex)
    {
      blocksJsonList[blocksIndex].AsObject(m_blocks[blocksIndex].Jsonize());

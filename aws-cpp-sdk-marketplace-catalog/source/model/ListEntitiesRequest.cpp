@@ -41,7 +41,7 @@ Aws::String ListEntitiesRequest::SerializePayload() const
 
   if(m_filterListHasBeenSet)
   {
-   Array<JsonValue> filterListJsonList(m_filterList.size());
+   Aws::Utils::Array<JsonValue> filterListJsonList(m_filterList.size());
    for(unsigned filterListIndex = 0; filterListIndex < filterListJsonList.GetLength(); ++filterListIndex)
    {
      filterListJsonList[filterListIndex].AsObject(m_filterList[filterListIndex].Jsonize());

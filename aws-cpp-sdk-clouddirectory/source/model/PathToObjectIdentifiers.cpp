@@ -42,7 +42,7 @@ PathToObjectIdentifiers& PathToObjectIdentifiers::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ObjectIdentifiers"))
   {
-    Array<JsonView> objectIdentifiersJsonList = jsonValue.GetArray("ObjectIdentifiers");
+    Aws::Utils::Array<JsonView> objectIdentifiersJsonList = jsonValue.GetArray("ObjectIdentifiers");
     for(unsigned objectIdentifiersIndex = 0; objectIdentifiersIndex < objectIdentifiersJsonList.GetLength(); ++objectIdentifiersIndex)
     {
       m_objectIdentifiers.push_back(objectIdentifiersJsonList[objectIdentifiersIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue PathToObjectIdentifiers::Jsonize() const
 
   if(m_objectIdentifiersHasBeenSet)
   {
-   Array<JsonValue> objectIdentifiersJsonList(m_objectIdentifiers.size());
+   Aws::Utils::Array<JsonValue> objectIdentifiersJsonList(m_objectIdentifiers.size());
    for(unsigned objectIdentifiersIndex = 0; objectIdentifiersIndex < objectIdentifiersJsonList.GetLength(); ++objectIdentifiersIndex)
    {
      objectIdentifiersJsonList[objectIdentifiersIndex].AsString(m_objectIdentifiers[objectIdentifiersIndex]);

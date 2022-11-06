@@ -35,7 +35,7 @@ PushSync& PushSync::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ApplicationArns"))
   {
-    Array<JsonView> applicationArnsJsonList = jsonValue.GetArray("ApplicationArns");
+    Aws::Utils::Array<JsonView> applicationArnsJsonList = jsonValue.GetArray("ApplicationArns");
     for(unsigned applicationArnsIndex = 0; applicationArnsIndex < applicationArnsJsonList.GetLength(); ++applicationArnsIndex)
     {
       m_applicationArns.push_back(applicationArnsJsonList[applicationArnsIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue PushSync::Jsonize() const
 
   if(m_applicationArnsHasBeenSet)
   {
-   Array<JsonValue> applicationArnsJsonList(m_applicationArns.size());
+   Aws::Utils::Array<JsonValue> applicationArnsJsonList(m_applicationArns.size());
    for(unsigned applicationArnsIndex = 0; applicationArnsIndex < applicationArnsJsonList.GetLength(); ++applicationArnsIndex)
    {
      applicationArnsJsonList[applicationArnsIndex].AsString(m_applicationArns[applicationArnsIndex]);

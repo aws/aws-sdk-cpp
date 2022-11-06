@@ -23,7 +23,7 @@ Aws::String DescribeTrustedAdvisorCheckSummariesRequest::SerializePayload() cons
 
   if(m_checkIdsHasBeenSet)
   {
-   Array<JsonValue> checkIdsJsonList(m_checkIds.size());
+   Aws::Utils::Array<JsonValue> checkIdsJsonList(m_checkIds.size());
    for(unsigned checkIdsIndex = 0; checkIdsIndex < checkIdsJsonList.GetLength(); ++checkIdsIndex)
    {
      checkIdsJsonList[checkIdsIndex].AsString(m_checkIds[checkIdsIndex]);

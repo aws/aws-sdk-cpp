@@ -35,7 +35,7 @@ BatchLookupPolicyResponse& BatchLookupPolicyResponse::operator =(JsonView jsonVa
 {
   if(jsonValue.ValueExists("PolicyToPathList"))
   {
-    Array<JsonView> policyToPathListJsonList = jsonValue.GetArray("PolicyToPathList");
+    Aws::Utils::Array<JsonView> policyToPathListJsonList = jsonValue.GetArray("PolicyToPathList");
     for(unsigned policyToPathListIndex = 0; policyToPathListIndex < policyToPathListJsonList.GetLength(); ++policyToPathListIndex)
     {
       m_policyToPathList.push_back(policyToPathListJsonList[policyToPathListIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue BatchLookupPolicyResponse::Jsonize() const
 
   if(m_policyToPathListHasBeenSet)
   {
-   Array<JsonValue> policyToPathListJsonList(m_policyToPathList.size());
+   Aws::Utils::Array<JsonValue> policyToPathListJsonList(m_policyToPathList.size());
    for(unsigned policyToPathListIndex = 0; policyToPathListIndex < policyToPathListJsonList.GetLength(); ++policyToPathListIndex)
    {
      policyToPathListJsonList[policyToPathListIndex].AsObject(m_policyToPathList[policyToPathListIndex].Jsonize());

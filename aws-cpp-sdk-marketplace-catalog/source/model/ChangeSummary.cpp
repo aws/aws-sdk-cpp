@@ -62,7 +62,7 @@ ChangeSummary& ChangeSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ErrorDetailList"))
   {
-    Array<JsonView> errorDetailListJsonList = jsonValue.GetArray("ErrorDetailList");
+    Aws::Utils::Array<JsonView> errorDetailListJsonList = jsonValue.GetArray("ErrorDetailList");
     for(unsigned errorDetailListIndex = 0; errorDetailListIndex < errorDetailListJsonList.GetLength(); ++errorDetailListIndex)
     {
       m_errorDetailList.push_back(errorDetailListJsonList[errorDetailListIndex].AsObject());
@@ -104,7 +104,7 @@ JsonValue ChangeSummary::Jsonize() const
 
   if(m_errorDetailListHasBeenSet)
   {
-   Array<JsonValue> errorDetailListJsonList(m_errorDetailList.size());
+   Aws::Utils::Array<JsonValue> errorDetailListJsonList(m_errorDetailList.size());
    for(unsigned errorDetailListIndex = 0; errorDetailListIndex < errorDetailListJsonList.GetLength(); ++errorDetailListIndex)
    {
      errorDetailListJsonList[errorDetailListIndex].AsObject(m_errorDetailList[errorDetailListIndex].Jsonize());

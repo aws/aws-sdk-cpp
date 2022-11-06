@@ -51,7 +51,7 @@ S3Resource& S3Resource::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TargetOnDeviceServices"))
   {
-    Array<JsonView> targetOnDeviceServicesJsonList = jsonValue.GetArray("TargetOnDeviceServices");
+    Aws::Utils::Array<JsonView> targetOnDeviceServicesJsonList = jsonValue.GetArray("TargetOnDeviceServices");
     for(unsigned targetOnDeviceServicesIndex = 0; targetOnDeviceServicesIndex < targetOnDeviceServicesJsonList.GetLength(); ++targetOnDeviceServicesIndex)
     {
       m_targetOnDeviceServices.push_back(targetOnDeviceServicesJsonList[targetOnDeviceServicesIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue S3Resource::Jsonize() const
 
   if(m_targetOnDeviceServicesHasBeenSet)
   {
-   Array<JsonValue> targetOnDeviceServicesJsonList(m_targetOnDeviceServices.size());
+   Aws::Utils::Array<JsonValue> targetOnDeviceServicesJsonList(m_targetOnDeviceServices.size());
    for(unsigned targetOnDeviceServicesIndex = 0; targetOnDeviceServicesIndex < targetOnDeviceServicesJsonList.GetLength(); ++targetOnDeviceServicesIndex)
    {
      targetOnDeviceServicesJsonList[targetOnDeviceServicesIndex].AsObject(m_targetOnDeviceServices[targetOnDeviceServicesIndex].Jsonize());

@@ -44,22 +44,48 @@ namespace SFN
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        SFNClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        SFNClient(const Aws::SFN::SFNClientConfiguration& clientConfiguration = Aws::SFN::SFNClientConfiguration(),
+                  std::shared_ptr<SFNEndpointProviderBase> endpointProvider = Aws::MakeShared<SFNEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SFNClient(const Aws::Auth::AWSCredentials& credentials,
-                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<SFNEndpointProviderBase> endpointProvider = Aws::MakeShared<SFNEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::SFN::SFNClientConfiguration& clientConfiguration = Aws::SFN::SFNClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         SFNClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<SFNEndpointProviderBase> endpointProvider = Aws::MakeShared<SFNEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::SFN::SFNClientConfiguration& clientConfiguration = Aws::SFN::SFNClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SFNClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        SFNClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        SFNClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~SFNClient();
 
 
@@ -599,14 +625,13 @@ namespace SFN
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<SFNEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const SFNClientConfiguration& clientConfiguration);
 
-      Aws::String m_baseUri;
-      Aws::String m_scheme;
-      bool m_enableHostPrefixInjection = false;
-      Aws::String m_configScheme;
+      SFNClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<SFNEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace SFN

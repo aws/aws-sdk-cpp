@@ -36,7 +36,7 @@ ListWorkflowStepGroupsResult& ListWorkflowStepGroupsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("workflowStepGroupsSummary"))
   {
-    Array<JsonView> workflowStepGroupsSummaryJsonList = jsonValue.GetArray("workflowStepGroupsSummary");
+    Aws::Utils::Array<JsonView> workflowStepGroupsSummaryJsonList = jsonValue.GetArray("workflowStepGroupsSummary");
     for(unsigned workflowStepGroupsSummaryIndex = 0; workflowStepGroupsSummaryIndex < workflowStepGroupsSummaryJsonList.GetLength(); ++workflowStepGroupsSummaryIndex)
     {
       m_workflowStepGroupsSummary.push_back(workflowStepGroupsSummaryJsonList[workflowStepGroupsSummaryIndex].AsObject());

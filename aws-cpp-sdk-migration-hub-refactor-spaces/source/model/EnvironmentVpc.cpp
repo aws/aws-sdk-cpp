@@ -52,7 +52,7 @@ EnvironmentVpc& EnvironmentVpc::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CidrBlocks"))
   {
-    Array<JsonView> cidrBlocksJsonList = jsonValue.GetArray("CidrBlocks");
+    Aws::Utils::Array<JsonView> cidrBlocksJsonList = jsonValue.GetArray("CidrBlocks");
     for(unsigned cidrBlocksIndex = 0; cidrBlocksIndex < cidrBlocksJsonList.GetLength(); ++cidrBlocksIndex)
     {
       m_cidrBlocks.push_back(cidrBlocksJsonList[cidrBlocksIndex].AsString());
@@ -110,7 +110,7 @@ JsonValue EnvironmentVpc::Jsonize() const
 
   if(m_cidrBlocksHasBeenSet)
   {
-   Array<JsonValue> cidrBlocksJsonList(m_cidrBlocks.size());
+   Aws::Utils::Array<JsonValue> cidrBlocksJsonList(m_cidrBlocks.size());
    for(unsigned cidrBlocksIndex = 0; cidrBlocksIndex < cidrBlocksJsonList.GetLength(); ++cidrBlocksIndex)
    {
      cidrBlocksJsonList[cidrBlocksIndex].AsString(m_cidrBlocks[cidrBlocksIndex]);

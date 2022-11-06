@@ -127,7 +127,7 @@ AwsLambdaFunctionDetails& AwsLambdaFunctionDetails::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("Layers"))
   {
-    Array<JsonView> layersJsonList = jsonValue.GetArray("Layers");
+    Aws::Utils::Array<JsonView> layersJsonList = jsonValue.GetArray("Layers");
     for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
     {
       m_layers.push_back(layersJsonList[layersIndex].AsObject());
@@ -255,7 +255,7 @@ JsonValue AwsLambdaFunctionDetails::Jsonize() const
 
   if(m_layersHasBeenSet)
   {
-   Array<JsonValue> layersJsonList(m_layers.size());
+   Aws::Utils::Array<JsonValue> layersJsonList(m_layers.size());
    for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
    {
      layersJsonList[layersIndex].AsObject(m_layers[layersIndex].Jsonize());

@@ -54,7 +54,7 @@ ListSlotsResult& ListSlotsResult::operator =(const Aws::AmazonWebServiceResult<J
 
   if(jsonValue.ValueExists("slotSummaries"))
   {
-    Array<JsonView> slotSummariesJsonList = jsonValue.GetArray("slotSummaries");
+    Aws::Utils::Array<JsonView> slotSummariesJsonList = jsonValue.GetArray("slotSummaries");
     for(unsigned slotSummariesIndex = 0; slotSummariesIndex < slotSummariesJsonList.GetLength(); ++slotSummariesIndex)
     {
       m_slotSummaries.push_back(slotSummariesJsonList[slotSummariesIndex].AsObject());

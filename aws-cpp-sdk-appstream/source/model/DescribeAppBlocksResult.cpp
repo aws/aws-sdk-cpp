@@ -30,7 +30,7 @@ DescribeAppBlocksResult& DescribeAppBlocksResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AppBlocks"))
   {
-    Array<JsonView> appBlocksJsonList = jsonValue.GetArray("AppBlocks");
+    Aws::Utils::Array<JsonView> appBlocksJsonList = jsonValue.GetArray("AppBlocks");
     for(unsigned appBlocksIndex = 0; appBlocksIndex < appBlocksJsonList.GetLength(); ++appBlocksIndex)
     {
       m_appBlocks.push_back(appBlocksJsonList[appBlocksIndex].AsObject());

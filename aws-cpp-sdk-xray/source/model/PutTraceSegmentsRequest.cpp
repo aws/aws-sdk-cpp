@@ -23,7 +23,7 @@ Aws::String PutTraceSegmentsRequest::SerializePayload() const
 
   if(m_traceSegmentDocumentsHasBeenSet)
   {
-   Array<JsonValue> traceSegmentDocumentsJsonList(m_traceSegmentDocuments.size());
+   Aws::Utils::Array<JsonValue> traceSegmentDocumentsJsonList(m_traceSegmentDocuments.size());
    for(unsigned traceSegmentDocumentsIndex = 0; traceSegmentDocumentsIndex < traceSegmentDocumentsJsonList.GetLength(); ++traceSegmentDocumentsIndex)
    {
      traceSegmentDocumentsJsonList[traceSegmentDocumentsIndex].AsString(m_traceSegmentDocuments[traceSegmentDocumentsIndex]);

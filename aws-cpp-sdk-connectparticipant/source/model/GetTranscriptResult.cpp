@@ -36,7 +36,7 @@ GetTranscriptResult& GetTranscriptResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("Transcript"))
   {
-    Array<JsonView> transcriptJsonList = jsonValue.GetArray("Transcript");
+    Aws::Utils::Array<JsonView> transcriptJsonList = jsonValue.GetArray("Transcript");
     for(unsigned transcriptIndex = 0; transcriptIndex < transcriptJsonList.GetLength(); ++transcriptIndex)
     {
       m_transcript.push_back(transcriptJsonList[transcriptIndex].AsObject());

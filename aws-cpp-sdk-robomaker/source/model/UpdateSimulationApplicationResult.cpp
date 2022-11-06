@@ -48,7 +48,7 @@ UpdateSimulationApplicationResult& UpdateSimulationApplicationResult::operator =
 
   if(jsonValue.ValueExists("sources"))
   {
-    Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
     for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());

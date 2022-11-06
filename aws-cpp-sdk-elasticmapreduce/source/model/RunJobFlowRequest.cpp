@@ -98,7 +98,7 @@ Aws::String RunJobFlowRequest::SerializePayload() const
 
   if(m_stepsHasBeenSet)
   {
-   Array<JsonValue> stepsJsonList(m_steps.size());
+   Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
    for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
    {
      stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
@@ -109,7 +109,7 @@ Aws::String RunJobFlowRequest::SerializePayload() const
 
   if(m_bootstrapActionsHasBeenSet)
   {
-   Array<JsonValue> bootstrapActionsJsonList(m_bootstrapActions.size());
+   Aws::Utils::Array<JsonValue> bootstrapActionsJsonList(m_bootstrapActions.size());
    for(unsigned bootstrapActionsIndex = 0; bootstrapActionsIndex < bootstrapActionsJsonList.GetLength(); ++bootstrapActionsIndex)
    {
      bootstrapActionsJsonList[bootstrapActionsIndex].AsObject(m_bootstrapActions[bootstrapActionsIndex].Jsonize());
@@ -120,7 +120,7 @@ Aws::String RunJobFlowRequest::SerializePayload() const
 
   if(m_supportedProductsHasBeenSet)
   {
-   Array<JsonValue> supportedProductsJsonList(m_supportedProducts.size());
+   Aws::Utils::Array<JsonValue> supportedProductsJsonList(m_supportedProducts.size());
    for(unsigned supportedProductsIndex = 0; supportedProductsIndex < supportedProductsJsonList.GetLength(); ++supportedProductsIndex)
    {
      supportedProductsJsonList[supportedProductsIndex].AsString(m_supportedProducts[supportedProductsIndex]);
@@ -131,7 +131,7 @@ Aws::String RunJobFlowRequest::SerializePayload() const
 
   if(m_newSupportedProductsHasBeenSet)
   {
-   Array<JsonValue> newSupportedProductsJsonList(m_newSupportedProducts.size());
+   Aws::Utils::Array<JsonValue> newSupportedProductsJsonList(m_newSupportedProducts.size());
    for(unsigned newSupportedProductsIndex = 0; newSupportedProductsIndex < newSupportedProductsJsonList.GetLength(); ++newSupportedProductsIndex)
    {
      newSupportedProductsJsonList[newSupportedProductsIndex].AsObject(m_newSupportedProducts[newSupportedProductsIndex].Jsonize());
@@ -142,7 +142,7 @@ Aws::String RunJobFlowRequest::SerializePayload() const
 
   if(m_applicationsHasBeenSet)
   {
-   Array<JsonValue> applicationsJsonList(m_applications.size());
+   Aws::Utils::Array<JsonValue> applicationsJsonList(m_applications.size());
    for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
    {
      applicationsJsonList[applicationsIndex].AsObject(m_applications[applicationsIndex].Jsonize());
@@ -153,7 +153,7 @@ Aws::String RunJobFlowRequest::SerializePayload() const
 
   if(m_configurationsHasBeenSet)
   {
-   Array<JsonValue> configurationsJsonList(m_configurations.size());
+   Aws::Utils::Array<JsonValue> configurationsJsonList(m_configurations.size());
    for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
    {
      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());
@@ -182,7 +182,7 @@ Aws::String RunJobFlowRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -245,7 +245,7 @@ Aws::String RunJobFlowRequest::SerializePayload() const
 
   if(m_placementGroupConfigsHasBeenSet)
   {
-   Array<JsonValue> placementGroupConfigsJsonList(m_placementGroupConfigs.size());
+   Aws::Utils::Array<JsonValue> placementGroupConfigsJsonList(m_placementGroupConfigs.size());
    for(unsigned placementGroupConfigsIndex = 0; placementGroupConfigsIndex < placementGroupConfigsJsonList.GetLength(); ++placementGroupConfigsIndex)
    {
      placementGroupConfigsJsonList[placementGroupConfigsIndex].AsObject(m_placementGroupConfigs[placementGroupConfigsIndex].Jsonize());

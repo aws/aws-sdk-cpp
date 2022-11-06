@@ -30,7 +30,7 @@ ListConstraintsForPortfolioResult& ListConstraintsForPortfolioResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConstraintDetails"))
   {
-    Array<JsonView> constraintDetailsJsonList = jsonValue.GetArray("ConstraintDetails");
+    Aws::Utils::Array<JsonView> constraintDetailsJsonList = jsonValue.GetArray("ConstraintDetails");
     for(unsigned constraintDetailsIndex = 0; constraintDetailsIndex < constraintDetailsJsonList.GetLength(); ++constraintDetailsIndex)
     {
       m_constraintDetails.push_back(constraintDetailsJsonList[constraintDetailsIndex].AsObject());

@@ -48,7 +48,7 @@ DirectoryConfig& DirectoryConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OrganizationalUnitDistinguishedNames"))
   {
-    Array<JsonView> organizationalUnitDistinguishedNamesJsonList = jsonValue.GetArray("OrganizationalUnitDistinguishedNames");
+    Aws::Utils::Array<JsonView> organizationalUnitDistinguishedNamesJsonList = jsonValue.GetArray("OrganizationalUnitDistinguishedNames");
     for(unsigned organizationalUnitDistinguishedNamesIndex = 0; organizationalUnitDistinguishedNamesIndex < organizationalUnitDistinguishedNamesJsonList.GetLength(); ++organizationalUnitDistinguishedNamesIndex)
     {
       m_organizationalUnitDistinguishedNames.push_back(organizationalUnitDistinguishedNamesJsonList[organizationalUnitDistinguishedNamesIndex].AsString());
@@ -92,7 +92,7 @@ JsonValue DirectoryConfig::Jsonize() const
 
   if(m_organizationalUnitDistinguishedNamesHasBeenSet)
   {
-   Array<JsonValue> organizationalUnitDistinguishedNamesJsonList(m_organizationalUnitDistinguishedNames.size());
+   Aws::Utils::Array<JsonValue> organizationalUnitDistinguishedNamesJsonList(m_organizationalUnitDistinguishedNames.size());
    for(unsigned organizationalUnitDistinguishedNamesIndex = 0; organizationalUnitDistinguishedNamesIndex < organizationalUnitDistinguishedNamesJsonList.GetLength(); ++organizationalUnitDistinguishedNamesIndex)
    {
      organizationalUnitDistinguishedNamesJsonList[organizationalUnitDistinguishedNamesIndex].AsString(m_organizationalUnitDistinguishedNames[organizationalUnitDistinguishedNamesIndex]);

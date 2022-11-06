@@ -29,22 +29,48 @@ namespace LocationService
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        LocationServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        LocationServiceClient(const Aws::LocationService::LocationServiceClientConfiguration& clientConfiguration = Aws::LocationService::LocationServiceClientConfiguration(),
+                              std::shared_ptr<LocationServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<LocationServiceEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         LocationServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                              const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                              std::shared_ptr<LocationServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<LocationServiceEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::LocationService::LocationServiceClientConfiguration& clientConfiguration = Aws::LocationService::LocationServiceClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         LocationServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                              const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                              std::shared_ptr<LocationServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<LocationServiceEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::LocationService::LocationServiceClientConfiguration& clientConfiguration = Aws::LocationService::LocationServiceClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LocationServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        LocationServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        LocationServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~LocationServiceClient();
 
 
@@ -1157,14 +1183,13 @@ namespace LocationService
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<LocationServiceEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const LocationServiceClientConfiguration& clientConfiguration);
 
-      Aws::String m_baseUri;
-      Aws::String m_scheme;
-      bool m_enableHostPrefixInjection = false;
-      Aws::String m_configScheme;
+      LocationServiceClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<LocationServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace LocationService

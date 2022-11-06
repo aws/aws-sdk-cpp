@@ -42,7 +42,7 @@ RelatedDeployments& RelatedDeployments::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("autoUpdateOutdatedInstancesDeploymentIds"))
   {
-    Array<JsonView> autoUpdateOutdatedInstancesDeploymentIdsJsonList = jsonValue.GetArray("autoUpdateOutdatedInstancesDeploymentIds");
+    Aws::Utils::Array<JsonView> autoUpdateOutdatedInstancesDeploymentIdsJsonList = jsonValue.GetArray("autoUpdateOutdatedInstancesDeploymentIds");
     for(unsigned autoUpdateOutdatedInstancesDeploymentIdsIndex = 0; autoUpdateOutdatedInstancesDeploymentIdsIndex < autoUpdateOutdatedInstancesDeploymentIdsJsonList.GetLength(); ++autoUpdateOutdatedInstancesDeploymentIdsIndex)
     {
       m_autoUpdateOutdatedInstancesDeploymentIds.push_back(autoUpdateOutdatedInstancesDeploymentIdsJsonList[autoUpdateOutdatedInstancesDeploymentIdsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue RelatedDeployments::Jsonize() const
 
   if(m_autoUpdateOutdatedInstancesDeploymentIdsHasBeenSet)
   {
-   Array<JsonValue> autoUpdateOutdatedInstancesDeploymentIdsJsonList(m_autoUpdateOutdatedInstancesDeploymentIds.size());
+   Aws::Utils::Array<JsonValue> autoUpdateOutdatedInstancesDeploymentIdsJsonList(m_autoUpdateOutdatedInstancesDeploymentIds.size());
    for(unsigned autoUpdateOutdatedInstancesDeploymentIdsIndex = 0; autoUpdateOutdatedInstancesDeploymentIdsIndex < autoUpdateOutdatedInstancesDeploymentIdsJsonList.GetLength(); ++autoUpdateOutdatedInstancesDeploymentIdsIndex)
    {
      autoUpdateOutdatedInstancesDeploymentIdsJsonList[autoUpdateOutdatedInstancesDeploymentIdsIndex].AsString(m_autoUpdateOutdatedInstancesDeploymentIds[autoUpdateOutdatedInstancesDeploymentIdsIndex]);

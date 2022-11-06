@@ -54,7 +54,7 @@ WhatIfForecastExportSummary& WhatIfForecastExportSummary::operator =(JsonView js
 
   if(jsonValue.ValueExists("WhatIfForecastArns"))
   {
-    Array<JsonView> whatIfForecastArnsJsonList = jsonValue.GetArray("WhatIfForecastArns");
+    Aws::Utils::Array<JsonView> whatIfForecastArnsJsonList = jsonValue.GetArray("WhatIfForecastArns");
     for(unsigned whatIfForecastArnsIndex = 0; whatIfForecastArnsIndex < whatIfForecastArnsJsonList.GetLength(); ++whatIfForecastArnsIndex)
     {
       m_whatIfForecastArns.push_back(whatIfForecastArnsJsonList[whatIfForecastArnsIndex].AsString());
@@ -119,7 +119,7 @@ JsonValue WhatIfForecastExportSummary::Jsonize() const
 
   if(m_whatIfForecastArnsHasBeenSet)
   {
-   Array<JsonValue> whatIfForecastArnsJsonList(m_whatIfForecastArns.size());
+   Aws::Utils::Array<JsonValue> whatIfForecastArnsJsonList(m_whatIfForecastArns.size());
    for(unsigned whatIfForecastArnsIndex = 0; whatIfForecastArnsIndex < whatIfForecastArnsJsonList.GetLength(); ++whatIfForecastArnsIndex)
    {
      whatIfForecastArnsJsonList[whatIfForecastArnsIndex].AsString(m_whatIfForecastArns[whatIfForecastArnsIndex]);

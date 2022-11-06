@@ -30,7 +30,7 @@ ListResourceComplianceSummariesResult& ListResourceComplianceSummariesResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ResourceComplianceSummaryItems"))
   {
-    Array<JsonView> resourceComplianceSummaryItemsJsonList = jsonValue.GetArray("ResourceComplianceSummaryItems");
+    Aws::Utils::Array<JsonView> resourceComplianceSummaryItemsJsonList = jsonValue.GetArray("ResourceComplianceSummaryItems");
     for(unsigned resourceComplianceSummaryItemsIndex = 0; resourceComplianceSummaryItemsIndex < resourceComplianceSummaryItemsJsonList.GetLength(); ++resourceComplianceSummaryItemsIndex)
     {
       m_resourceComplianceSummaryItems.push_back(resourceComplianceSummaryItemsJsonList[resourceComplianceSummaryItemsIndex].AsObject());

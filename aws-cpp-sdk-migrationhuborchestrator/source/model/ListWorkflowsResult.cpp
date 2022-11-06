@@ -36,7 +36,7 @@ ListWorkflowsResult& ListWorkflowsResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("migrationWorkflowSummary"))
   {
-    Array<JsonView> migrationWorkflowSummaryJsonList = jsonValue.GetArray("migrationWorkflowSummary");
+    Aws::Utils::Array<JsonView> migrationWorkflowSummaryJsonList = jsonValue.GetArray("migrationWorkflowSummary");
     for(unsigned migrationWorkflowSummaryIndex = 0; migrationWorkflowSummaryIndex < migrationWorkflowSummaryJsonList.GetLength(); ++migrationWorkflowSummaryIndex)
     {
       m_migrationWorkflowSummary.push_back(migrationWorkflowSummaryJsonList[migrationWorkflowSummaryIndex].AsObject());

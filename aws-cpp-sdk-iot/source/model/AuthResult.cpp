@@ -71,7 +71,7 @@ AuthResult& AuthResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("missingContextValues"))
   {
-    Array<JsonView> missingContextValuesJsonList = jsonValue.GetArray("missingContextValues");
+    Aws::Utils::Array<JsonView> missingContextValuesJsonList = jsonValue.GetArray("missingContextValues");
     for(unsigned missingContextValuesIndex = 0; missingContextValuesIndex < missingContextValuesJsonList.GetLength(); ++missingContextValuesIndex)
     {
       m_missingContextValues.push_back(missingContextValuesJsonList[missingContextValuesIndex].AsString());
@@ -111,7 +111,7 @@ JsonValue AuthResult::Jsonize() const
 
   if(m_missingContextValuesHasBeenSet)
   {
-   Array<JsonValue> missingContextValuesJsonList(m_missingContextValues.size());
+   Aws::Utils::Array<JsonValue> missingContextValuesJsonList(m_missingContextValues.size());
    for(unsigned missingContextValuesIndex = 0; missingContextValuesIndex < missingContextValuesJsonList.GetLength(); ++missingContextValuesIndex)
    {
      missingContextValuesJsonList[missingContextValuesIndex].AsString(m_missingContextValues[missingContextValuesIndex]);

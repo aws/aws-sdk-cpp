@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/glue/GlueErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/glue/GlueEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -235,6 +237,10 @@ namespace Aws
 
   namespace Glue
   {
+    using GlueClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GlueEndpointProviderBase = Aws::Glue::Endpoint::GlueEndpointProviderBase;
+    using GlueEndpointProvider = Aws::Glue::Endpoint::GlueEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in GlueClient header */

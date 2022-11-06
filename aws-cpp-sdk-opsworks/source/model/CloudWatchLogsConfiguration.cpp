@@ -44,7 +44,7 @@ CloudWatchLogsConfiguration& CloudWatchLogsConfiguration::operator =(JsonView js
 
   if(jsonValue.ValueExists("LogStreams"))
   {
-    Array<JsonView> logStreamsJsonList = jsonValue.GetArray("LogStreams");
+    Aws::Utils::Array<JsonView> logStreamsJsonList = jsonValue.GetArray("LogStreams");
     for(unsigned logStreamsIndex = 0; logStreamsIndex < logStreamsJsonList.GetLength(); ++logStreamsIndex)
     {
       m_logStreams.push_back(logStreamsJsonList[logStreamsIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue CloudWatchLogsConfiguration::Jsonize() const
 
   if(m_logStreamsHasBeenSet)
   {
-   Array<JsonValue> logStreamsJsonList(m_logStreams.size());
+   Aws::Utils::Array<JsonValue> logStreamsJsonList(m_logStreams.size());
    for(unsigned logStreamsIndex = 0; logStreamsIndex < logStreamsJsonList.GetLength(); ++logStreamsIndex)
    {
      logStreamsJsonList[logStreamsIndex].AsObject(m_logStreams[logStreamsIndex].Jsonize());

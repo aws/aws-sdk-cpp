@@ -46,7 +46,7 @@ OracleSQLCatalogTarget& OracleSQLCatalogTarget::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
@@ -83,7 +83,7 @@ JsonValue OracleSQLCatalogTarget::Jsonize() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);

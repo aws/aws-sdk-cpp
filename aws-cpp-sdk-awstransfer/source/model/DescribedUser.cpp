@@ -67,7 +67,7 @@ DescribedUser& DescribedUser::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("HomeDirectoryMappings"))
   {
-    Array<JsonView> homeDirectoryMappingsJsonList = jsonValue.GetArray("HomeDirectoryMappings");
+    Aws::Utils::Array<JsonView> homeDirectoryMappingsJsonList = jsonValue.GetArray("HomeDirectoryMappings");
     for(unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength(); ++homeDirectoryMappingsIndex)
     {
       m_homeDirectoryMappings.push_back(homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject());
@@ -105,7 +105,7 @@ DescribedUser& DescribedUser::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SshPublicKeys"))
   {
-    Array<JsonView> sshPublicKeysJsonList = jsonValue.GetArray("SshPublicKeys");
+    Aws::Utils::Array<JsonView> sshPublicKeysJsonList = jsonValue.GetArray("SshPublicKeys");
     for(unsigned sshPublicKeysIndex = 0; sshPublicKeysIndex < sshPublicKeysJsonList.GetLength(); ++sshPublicKeysIndex)
     {
       m_sshPublicKeys.push_back(sshPublicKeysJsonList[sshPublicKeysIndex].AsObject());
@@ -115,7 +115,7 @@ DescribedUser& DescribedUser::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -151,7 +151,7 @@ JsonValue DescribedUser::Jsonize() const
 
   if(m_homeDirectoryMappingsHasBeenSet)
   {
-   Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
+   Aws::Utils::Array<JsonValue> homeDirectoryMappingsJsonList(m_homeDirectoryMappings.size());
    for(unsigned homeDirectoryMappingsIndex = 0; homeDirectoryMappingsIndex < homeDirectoryMappingsJsonList.GetLength(); ++homeDirectoryMappingsIndex)
    {
      homeDirectoryMappingsJsonList[homeDirectoryMappingsIndex].AsObject(m_homeDirectoryMappings[homeDirectoryMappingsIndex].Jsonize());
@@ -185,7 +185,7 @@ JsonValue DescribedUser::Jsonize() const
 
   if(m_sshPublicKeysHasBeenSet)
   {
-   Array<JsonValue> sshPublicKeysJsonList(m_sshPublicKeys.size());
+   Aws::Utils::Array<JsonValue> sshPublicKeysJsonList(m_sshPublicKeys.size());
    for(unsigned sshPublicKeysIndex = 0; sshPublicKeysIndex < sshPublicKeysJsonList.GetLength(); ++sshPublicKeysIndex)
    {
      sshPublicKeysJsonList[sshPublicKeysIndex].AsObject(m_sshPublicKeys[sshPublicKeysIndex].Jsonize());
@@ -196,7 +196,7 @@ JsonValue DescribedUser::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

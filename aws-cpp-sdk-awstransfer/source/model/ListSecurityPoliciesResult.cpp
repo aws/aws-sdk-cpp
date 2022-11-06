@@ -36,7 +36,7 @@ ListSecurityPoliciesResult& ListSecurityPoliciesResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("SecurityPolicyNames"))
   {
-    Array<JsonView> securityPolicyNamesJsonList = jsonValue.GetArray("SecurityPolicyNames");
+    Aws::Utils::Array<JsonView> securityPolicyNamesJsonList = jsonValue.GetArray("SecurityPolicyNames");
     for(unsigned securityPolicyNamesIndex = 0; securityPolicyNamesIndex < securityPolicyNamesJsonList.GetLength(); ++securityPolicyNamesIndex)
     {
       m_securityPolicyNames.push_back(securityPolicyNamesJsonList[securityPolicyNamesIndex].AsString());

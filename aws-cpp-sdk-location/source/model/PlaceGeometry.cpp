@@ -33,7 +33,7 @@ PlaceGeometry& PlaceGeometry::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Point"))
   {
-    Array<JsonView> pointJsonList = jsonValue.GetArray("Point");
+    Aws::Utils::Array<JsonView> pointJsonList = jsonValue.GetArray("Point");
     for(unsigned pointIndex = 0; pointIndex < pointJsonList.GetLength(); ++pointIndex)
     {
       m_point.push_back(pointJsonList[pointIndex].AsDouble());
@@ -50,7 +50,7 @@ JsonValue PlaceGeometry::Jsonize() const
 
   if(m_pointHasBeenSet)
   {
-   Array<JsonValue> pointJsonList(m_point.size());
+   Aws::Utils::Array<JsonValue> pointJsonList(m_point.size());
    for(unsigned pointIndex = 0; pointIndex < pointJsonList.GetLength(); ++pointIndex)
    {
      pointJsonList[pointIndex].AsDouble(m_point[pointIndex]);

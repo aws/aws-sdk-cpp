@@ -34,7 +34,7 @@ Aws::String DescribeOptedOutNumbersRequest::SerializePayload() const
 
   if(m_optedOutNumbersHasBeenSet)
   {
-   Array<JsonValue> optedOutNumbersJsonList(m_optedOutNumbers.size());
+   Aws::Utils::Array<JsonValue> optedOutNumbersJsonList(m_optedOutNumbers.size());
    for(unsigned optedOutNumbersIndex = 0; optedOutNumbersIndex < optedOutNumbersJsonList.GetLength(); ++optedOutNumbersIndex)
    {
      optedOutNumbersJsonList[optedOutNumbersIndex].AsString(m_optedOutNumbers[optedOutNumbersIndex]);
@@ -45,7 +45,7 @@ Aws::String DescribeOptedOutNumbersRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

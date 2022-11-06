@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/apprunner/AppRunnerErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/apprunner/AppRunnerEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -84,6 +86,10 @@ namespace Aws
 
   namespace AppRunner
   {
+    using AppRunnerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppRunnerEndpointProviderBase = Aws::AppRunner::Endpoint::AppRunnerEndpointProviderBase;
+    using AppRunnerEndpointProvider = Aws::AppRunner::Endpoint::AppRunnerEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in AppRunnerClient header */

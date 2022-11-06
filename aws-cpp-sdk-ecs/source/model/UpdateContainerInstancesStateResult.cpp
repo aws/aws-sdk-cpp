@@ -30,7 +30,7 @@ UpdateContainerInstancesStateResult& UpdateContainerInstancesStateResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("containerInstances"))
   {
-    Array<JsonView> containerInstancesJsonList = jsonValue.GetArray("containerInstances");
+    Aws::Utils::Array<JsonView> containerInstancesJsonList = jsonValue.GetArray("containerInstances");
     for(unsigned containerInstancesIndex = 0; containerInstancesIndex < containerInstancesJsonList.GetLength(); ++containerInstancesIndex)
     {
       m_containerInstances.push_back(containerInstancesJsonList[containerInstancesIndex].AsObject());
@@ -39,7 +39,7 @@ UpdateContainerInstancesStateResult& UpdateContainerInstancesStateResult::operat
 
   if(jsonValue.ValueExists("failures"))
   {
-    Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
+    Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());

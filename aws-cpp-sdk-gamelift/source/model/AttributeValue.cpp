@@ -55,7 +55,7 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SL"))
   {
-    Array<JsonView> sLJsonList = jsonValue.GetArray("SL");
+    Aws::Utils::Array<JsonView> sLJsonList = jsonValue.GetArray("SL");
     for(unsigned sLIndex = 0; sLIndex < sLJsonList.GetLength(); ++sLIndex)
     {
       m_sL.push_back(sLJsonList[sLIndex].AsString());
@@ -94,7 +94,7 @@ JsonValue AttributeValue::Jsonize() const
 
   if(m_sLHasBeenSet)
   {
-   Array<JsonValue> sLJsonList(m_sL.size());
+   Aws::Utils::Array<JsonValue> sLJsonList(m_sL.size());
    for(unsigned sLIndex = 0; sLIndex < sLJsonList.GetLength(); ++sLIndex)
    {
      sLJsonList[sLIndex].AsString(m_sL[sLIndex]);

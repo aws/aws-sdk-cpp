@@ -76,7 +76,7 @@ FeatureSummary& FeatureSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("evaluationRules"))
   {
-    Array<JsonView> evaluationRulesJsonList = jsonValue.GetArray("evaluationRules");
+    Aws::Utils::Array<JsonView> evaluationRulesJsonList = jsonValue.GetArray("evaluationRules");
     for(unsigned evaluationRulesIndex = 0; evaluationRulesIndex < evaluationRulesJsonList.GetLength(); ++evaluationRulesIndex)
     {
       m_evaluationRules.push_back(evaluationRulesJsonList[evaluationRulesIndex].AsObject());
@@ -155,7 +155,7 @@ JsonValue FeatureSummary::Jsonize() const
 
   if(m_evaluationRulesHasBeenSet)
   {
-   Array<JsonValue> evaluationRulesJsonList(m_evaluationRules.size());
+   Aws::Utils::Array<JsonValue> evaluationRulesJsonList(m_evaluationRules.size());
    for(unsigned evaluationRulesIndex = 0; evaluationRulesIndex < evaluationRulesJsonList.GetLength(); ++evaluationRulesIndex)
    {
      evaluationRulesJsonList[evaluationRulesIndex].AsObject(m_evaluationRules[evaluationRulesIndex].Jsonize());

@@ -30,7 +30,7 @@ GetCompatibleKafkaVersionsResult& GetCompatibleKafkaVersionsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("compatibleKafkaVersions"))
   {
-    Array<JsonView> compatibleKafkaVersionsJsonList = jsonValue.GetArray("compatibleKafkaVersions");
+    Aws::Utils::Array<JsonView> compatibleKafkaVersionsJsonList = jsonValue.GetArray("compatibleKafkaVersions");
     for(unsigned compatibleKafkaVersionsIndex = 0; compatibleKafkaVersionsIndex < compatibleKafkaVersionsJsonList.GetLength(); ++compatibleKafkaVersionsIndex)
     {
       m_compatibleKafkaVersions.push_back(compatibleKafkaVersionsJsonList[compatibleKafkaVersionsIndex].AsObject());

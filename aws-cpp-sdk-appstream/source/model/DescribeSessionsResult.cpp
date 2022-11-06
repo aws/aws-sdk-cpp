@@ -30,7 +30,7 @@ DescribeSessionsResult& DescribeSessionsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Sessions"))
   {
-    Array<JsonView> sessionsJsonList = jsonValue.GetArray("Sessions");
+    Aws::Utils::Array<JsonView> sessionsJsonList = jsonValue.GetArray("Sessions");
     for(unsigned sessionsIndex = 0; sessionsIndex < sessionsJsonList.GetLength(); ++sessionsIndex)
     {
       m_sessions.push_back(sessionsJsonList[sessionsIndex].AsObject());

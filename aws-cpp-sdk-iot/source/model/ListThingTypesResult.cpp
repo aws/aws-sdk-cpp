@@ -30,7 +30,7 @@ ListThingTypesResult& ListThingTypesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("thingTypes"))
   {
-    Array<JsonView> thingTypesJsonList = jsonValue.GetArray("thingTypes");
+    Aws::Utils::Array<JsonView> thingTypesJsonList = jsonValue.GetArray("thingTypes");
     for(unsigned thingTypesIndex = 0; thingTypesIndex < thingTypesJsonList.GetLength(); ++thingTypesIndex)
     {
       m_thingTypes.push_back(thingTypesJsonList[thingTypesIndex].AsObject());

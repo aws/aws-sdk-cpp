@@ -28,7 +28,7 @@ Aws::String CreateObjectRequest::SerializePayload() const
 
   if(m_schemaFacetsHasBeenSet)
   {
-   Array<JsonValue> schemaFacetsJsonList(m_schemaFacets.size());
+   Aws::Utils::Array<JsonValue> schemaFacetsJsonList(m_schemaFacets.size());
    for(unsigned schemaFacetsIndex = 0; schemaFacetsIndex < schemaFacetsJsonList.GetLength(); ++schemaFacetsIndex)
    {
      schemaFacetsJsonList[schemaFacetsIndex].AsObject(m_schemaFacets[schemaFacetsIndex].Jsonize());
@@ -39,7 +39,7 @@ Aws::String CreateObjectRequest::SerializePayload() const
 
   if(m_objectAttributeListHasBeenSet)
   {
-   Array<JsonValue> objectAttributeListJsonList(m_objectAttributeList.size());
+   Aws::Utils::Array<JsonValue> objectAttributeListJsonList(m_objectAttributeList.size());
    for(unsigned objectAttributeListIndex = 0; objectAttributeListIndex < objectAttributeListJsonList.GetLength(); ++objectAttributeListIndex)
    {
      objectAttributeListJsonList[objectAttributeListIndex].AsObject(m_objectAttributeList[objectAttributeListIndex].Jsonize());

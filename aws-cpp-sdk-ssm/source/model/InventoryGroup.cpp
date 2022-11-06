@@ -42,7 +42,7 @@ InventoryGroup& InventoryGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Filters"))
   {
-    Array<JsonView> filtersJsonList = jsonValue.GetArray("Filters");
+    Aws::Utils::Array<JsonView> filtersJsonList = jsonValue.GetArray("Filters");
     for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
     {
       m_filters.push_back(filtersJsonList[filtersIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue InventoryGroup::Jsonize() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

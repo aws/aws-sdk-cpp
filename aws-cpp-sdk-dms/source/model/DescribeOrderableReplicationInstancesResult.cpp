@@ -30,7 +30,7 @@ DescribeOrderableReplicationInstancesResult& DescribeOrderableReplicationInstanc
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("OrderableReplicationInstances"))
   {
-    Array<JsonView> orderableReplicationInstancesJsonList = jsonValue.GetArray("OrderableReplicationInstances");
+    Aws::Utils::Array<JsonView> orderableReplicationInstancesJsonList = jsonValue.GetArray("OrderableReplicationInstances");
     for(unsigned orderableReplicationInstancesIndex = 0; orderableReplicationInstancesIndex < orderableReplicationInstancesJsonList.GetLength(); ++orderableReplicationInstancesIndex)
     {
       m_orderableReplicationInstances.push_back(orderableReplicationInstancesJsonList[orderableReplicationInstancesIndex].AsObject());

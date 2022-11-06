@@ -44,7 +44,7 @@ NotificationAction& NotificationAction::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("smsConfigurations"))
   {
-    Array<JsonView> smsConfigurationsJsonList = jsonValue.GetArray("smsConfigurations");
+    Aws::Utils::Array<JsonView> smsConfigurationsJsonList = jsonValue.GetArray("smsConfigurations");
     for(unsigned smsConfigurationsIndex = 0; smsConfigurationsIndex < smsConfigurationsJsonList.GetLength(); ++smsConfigurationsIndex)
     {
       m_smsConfigurations.push_back(smsConfigurationsJsonList[smsConfigurationsIndex].AsObject());
@@ -54,7 +54,7 @@ NotificationAction& NotificationAction::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("emailConfigurations"))
   {
-    Array<JsonView> emailConfigurationsJsonList = jsonValue.GetArray("emailConfigurations");
+    Aws::Utils::Array<JsonView> emailConfigurationsJsonList = jsonValue.GetArray("emailConfigurations");
     for(unsigned emailConfigurationsIndex = 0; emailConfigurationsIndex < emailConfigurationsJsonList.GetLength(); ++emailConfigurationsIndex)
     {
       m_emailConfigurations.push_back(emailConfigurationsJsonList[emailConfigurationsIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue NotificationAction::Jsonize() const
 
   if(m_smsConfigurationsHasBeenSet)
   {
-   Array<JsonValue> smsConfigurationsJsonList(m_smsConfigurations.size());
+   Aws::Utils::Array<JsonValue> smsConfigurationsJsonList(m_smsConfigurations.size());
    for(unsigned smsConfigurationsIndex = 0; smsConfigurationsIndex < smsConfigurationsJsonList.GetLength(); ++smsConfigurationsIndex)
    {
      smsConfigurationsJsonList[smsConfigurationsIndex].AsObject(m_smsConfigurations[smsConfigurationsIndex].Jsonize());
@@ -88,7 +88,7 @@ JsonValue NotificationAction::Jsonize() const
 
   if(m_emailConfigurationsHasBeenSet)
   {
-   Array<JsonValue> emailConfigurationsJsonList(m_emailConfigurations.size());
+   Aws::Utils::Array<JsonValue> emailConfigurationsJsonList(m_emailConfigurations.size());
    for(unsigned emailConfigurationsIndex = 0; emailConfigurationsIndex < emailConfigurationsJsonList.GetLength(); ++emailConfigurationsIndex)
    {
      emailConfigurationsJsonList[emailConfigurationsIndex].AsObject(m_emailConfigurations[emailConfigurationsIndex].Jsonize());

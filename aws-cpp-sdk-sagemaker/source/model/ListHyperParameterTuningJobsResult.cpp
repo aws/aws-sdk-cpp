@@ -30,7 +30,7 @@ ListHyperParameterTuningJobsResult& ListHyperParameterTuningJobsResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HyperParameterTuningJobSummaries"))
   {
-    Array<JsonView> hyperParameterTuningJobSummariesJsonList = jsonValue.GetArray("HyperParameterTuningJobSummaries");
+    Aws::Utils::Array<JsonView> hyperParameterTuningJobSummariesJsonList = jsonValue.GetArray("HyperParameterTuningJobSummaries");
     for(unsigned hyperParameterTuningJobSummariesIndex = 0; hyperParameterTuningJobSummariesIndex < hyperParameterTuningJobSummariesJsonList.GetLength(); ++hyperParameterTuningJobSummariesIndex)
     {
       m_hyperParameterTuningJobSummaries.push_back(hyperParameterTuningJobSummariesJsonList[hyperParameterTuningJobSummariesIndex].AsObject());

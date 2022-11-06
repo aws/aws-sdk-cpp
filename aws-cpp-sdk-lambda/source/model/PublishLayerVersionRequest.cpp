@@ -40,7 +40,7 @@ Aws::String PublishLayerVersionRequest::SerializePayload() const
 
   if(m_compatibleRuntimesHasBeenSet)
   {
-   Array<JsonValue> compatibleRuntimesJsonList(m_compatibleRuntimes.size());
+   Aws::Utils::Array<JsonValue> compatibleRuntimesJsonList(m_compatibleRuntimes.size());
    for(unsigned compatibleRuntimesIndex = 0; compatibleRuntimesIndex < compatibleRuntimesJsonList.GetLength(); ++compatibleRuntimesIndex)
    {
      compatibleRuntimesJsonList[compatibleRuntimesIndex].AsString(RuntimeMapper::GetNameForRuntime(m_compatibleRuntimes[compatibleRuntimesIndex]));
@@ -57,7 +57,7 @@ Aws::String PublishLayerVersionRequest::SerializePayload() const
 
   if(m_compatibleArchitecturesHasBeenSet)
   {
-   Array<JsonValue> compatibleArchitecturesJsonList(m_compatibleArchitectures.size());
+   Aws::Utils::Array<JsonValue> compatibleArchitecturesJsonList(m_compatibleArchitectures.size());
    for(unsigned compatibleArchitecturesIndex = 0; compatibleArchitecturesIndex < compatibleArchitecturesJsonList.GetLength(); ++compatibleArchitecturesIndex)
    {
      compatibleArchitecturesJsonList[compatibleArchitecturesIndex].AsString(ArchitectureMapper::GetNameForArchitecture(m_compatibleArchitectures[compatibleArchitecturesIndex]));

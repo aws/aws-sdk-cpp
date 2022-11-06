@@ -44,7 +44,7 @@ QueryStringObject& QueryStringObject::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("queryStringsAllowList"))
   {
-    Array<JsonView> queryStringsAllowListJsonList = jsonValue.GetArray("queryStringsAllowList");
+    Aws::Utils::Array<JsonView> queryStringsAllowListJsonList = jsonValue.GetArray("queryStringsAllowList");
     for(unsigned queryStringsAllowListIndex = 0; queryStringsAllowListIndex < queryStringsAllowListJsonList.GetLength(); ++queryStringsAllowListIndex)
     {
       m_queryStringsAllowList.push_back(queryStringsAllowListJsonList[queryStringsAllowListIndex].AsString());
@@ -67,7 +67,7 @@ JsonValue QueryStringObject::Jsonize() const
 
   if(m_queryStringsAllowListHasBeenSet)
   {
-   Array<JsonValue> queryStringsAllowListJsonList(m_queryStringsAllowList.size());
+   Aws::Utils::Array<JsonValue> queryStringsAllowListJsonList(m_queryStringsAllowList.size());
    for(unsigned queryStringsAllowListIndex = 0; queryStringsAllowListIndex < queryStringsAllowListJsonList.GetLength(); ++queryStringsAllowListIndex)
    {
      queryStringsAllowListJsonList[queryStringsAllowListIndex].AsString(m_queryStringsAllowList[queryStringsAllowListIndex]);

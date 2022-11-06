@@ -30,7 +30,7 @@ ListAllowedNodeTypeUpdatesResult& ListAllowedNodeTypeUpdatesResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ScaleUpNodeTypes"))
   {
-    Array<JsonView> scaleUpNodeTypesJsonList = jsonValue.GetArray("ScaleUpNodeTypes");
+    Aws::Utils::Array<JsonView> scaleUpNodeTypesJsonList = jsonValue.GetArray("ScaleUpNodeTypes");
     for(unsigned scaleUpNodeTypesIndex = 0; scaleUpNodeTypesIndex < scaleUpNodeTypesJsonList.GetLength(); ++scaleUpNodeTypesIndex)
     {
       m_scaleUpNodeTypes.push_back(scaleUpNodeTypesJsonList[scaleUpNodeTypesIndex].AsString());
@@ -39,7 +39,7 @@ ListAllowedNodeTypeUpdatesResult& ListAllowedNodeTypeUpdatesResult::operator =(c
 
   if(jsonValue.ValueExists("ScaleDownNodeTypes"))
   {
-    Array<JsonView> scaleDownNodeTypesJsonList = jsonValue.GetArray("ScaleDownNodeTypes");
+    Aws::Utils::Array<JsonView> scaleDownNodeTypesJsonList = jsonValue.GetArray("ScaleDownNodeTypes");
     for(unsigned scaleDownNodeTypesIndex = 0; scaleDownNodeTypesIndex < scaleDownNodeTypesJsonList.GetLength(); ++scaleDownNodeTypesIndex)
     {
       m_scaleDownNodeTypes.push_back(scaleDownNodeTypesJsonList[scaleDownNodeTypesIndex].AsString());

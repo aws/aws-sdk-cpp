@@ -44,7 +44,7 @@ UnableToDetectSchemaException& UnableToDetectSchemaException::operator =(JsonVie
 
   if(jsonValue.ValueExists("RawInputRecords"))
   {
-    Array<JsonView> rawInputRecordsJsonList = jsonValue.GetArray("RawInputRecords");
+    Aws::Utils::Array<JsonView> rawInputRecordsJsonList = jsonValue.GetArray("RawInputRecords");
     for(unsigned rawInputRecordsIndex = 0; rawInputRecordsIndex < rawInputRecordsJsonList.GetLength(); ++rawInputRecordsIndex)
     {
       m_rawInputRecords.push_back(rawInputRecordsJsonList[rawInputRecordsIndex].AsString());
@@ -54,7 +54,7 @@ UnableToDetectSchemaException& UnableToDetectSchemaException::operator =(JsonVie
 
   if(jsonValue.ValueExists("ProcessedInputRecords"))
   {
-    Array<JsonView> processedInputRecordsJsonList = jsonValue.GetArray("ProcessedInputRecords");
+    Aws::Utils::Array<JsonView> processedInputRecordsJsonList = jsonValue.GetArray("ProcessedInputRecords");
     for(unsigned processedInputRecordsIndex = 0; processedInputRecordsIndex < processedInputRecordsJsonList.GetLength(); ++processedInputRecordsIndex)
     {
       m_processedInputRecords.push_back(processedInputRecordsJsonList[processedInputRecordsIndex].AsString());
@@ -77,7 +77,7 @@ JsonValue UnableToDetectSchemaException::Jsonize() const
 
   if(m_rawInputRecordsHasBeenSet)
   {
-   Array<JsonValue> rawInputRecordsJsonList(m_rawInputRecords.size());
+   Aws::Utils::Array<JsonValue> rawInputRecordsJsonList(m_rawInputRecords.size());
    for(unsigned rawInputRecordsIndex = 0; rawInputRecordsIndex < rawInputRecordsJsonList.GetLength(); ++rawInputRecordsIndex)
    {
      rawInputRecordsJsonList[rawInputRecordsIndex].AsString(m_rawInputRecords[rawInputRecordsIndex]);
@@ -88,7 +88,7 @@ JsonValue UnableToDetectSchemaException::Jsonize() const
 
   if(m_processedInputRecordsHasBeenSet)
   {
-   Array<JsonValue> processedInputRecordsJsonList(m_processedInputRecords.size());
+   Aws::Utils::Array<JsonValue> processedInputRecordsJsonList(m_processedInputRecords.size());
    for(unsigned processedInputRecordsIndex = 0; processedInputRecordsIndex < processedInputRecordsJsonList.GetLength(); ++processedInputRecordsIndex)
    {
      processedInputRecordsJsonList[processedInputRecordsIndex].AsString(m_processedInputRecords[processedInputRecordsIndex]);

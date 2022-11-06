@@ -71,7 +71,7 @@ Cell& Cell::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("formattedValues"))
   {
-    Array<JsonView> formattedValuesJsonList = jsonValue.GetArray("formattedValues");
+    Aws::Utils::Array<JsonView> formattedValuesJsonList = jsonValue.GetArray("formattedValues");
     for(unsigned formattedValuesIndex = 0; formattedValuesIndex < formattedValuesJsonList.GetLength(); ++formattedValuesIndex)
     {
       m_formattedValues.push_back(formattedValuesJsonList[formattedValuesIndex].AsString());
@@ -111,7 +111,7 @@ JsonValue Cell::Jsonize() const
 
   if(m_formattedValuesHasBeenSet)
   {
-   Array<JsonValue> formattedValuesJsonList(m_formattedValues.size());
+   Aws::Utils::Array<JsonValue> formattedValuesJsonList(m_formattedValues.size());
    for(unsigned formattedValuesIndex = 0; formattedValuesIndex < formattedValuesJsonList.GetLength(); ++formattedValuesIndex)
    {
      formattedValuesJsonList[formattedValuesIndex].AsString(m_formattedValues[formattedValuesIndex]);

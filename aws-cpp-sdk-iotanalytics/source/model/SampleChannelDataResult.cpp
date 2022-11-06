@@ -31,7 +31,7 @@ SampleChannelDataResult& SampleChannelDataResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("payloads"))
   {
-    Array<JsonView> payloadsJsonList = jsonValue.GetArray("payloads");
+    Aws::Utils::Array<JsonView> payloadsJsonList = jsonValue.GetArray("payloads");
     for(unsigned payloadsIndex = 0; payloadsIndex < payloadsJsonList.GetLength(); ++payloadsIndex)
     {
       m_payloads.push_back(HashingUtils::Base64Decode(payloadsJsonList[payloadsIndex].AsString()));

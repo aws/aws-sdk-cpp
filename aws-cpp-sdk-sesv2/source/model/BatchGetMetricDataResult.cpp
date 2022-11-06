@@ -30,7 +30,7 @@ BatchGetMetricDataResult& BatchGetMetricDataResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Results"))
   {
-    Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");
+    Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");
     for(unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex)
     {
       m_results.push_back(resultsJsonList[resultsIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetMetricDataResult& BatchGetMetricDataResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("Errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

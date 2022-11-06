@@ -30,7 +30,7 @@ ListProvisionedProductPlansResult& ListProvisionedProductPlansResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ProvisionedProductPlans"))
   {
-    Array<JsonView> provisionedProductPlansJsonList = jsonValue.GetArray("ProvisionedProductPlans");
+    Aws::Utils::Array<JsonView> provisionedProductPlansJsonList = jsonValue.GetArray("ProvisionedProductPlans");
     for(unsigned provisionedProductPlansIndex = 0; provisionedProductPlansIndex < provisionedProductPlansJsonList.GetLength(); ++provisionedProductPlansIndex)
     {
       m_provisionedProductPlans.push_back(provisionedProductPlansJsonList[provisionedProductPlansIndex].AsObject());

@@ -82,7 +82,7 @@ GrantEntitlementRequest& GrantEntitlementRequest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("subscribers"))
   {
-    Array<JsonView> subscribersJsonList = jsonValue.GetArray("subscribers");
+    Aws::Utils::Array<JsonView> subscribersJsonList = jsonValue.GetArray("subscribers");
     for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
     {
       m_subscribers.push_back(subscribersJsonList[subscribersIndex].AsString());
@@ -128,7 +128,7 @@ JsonValue GrantEntitlementRequest::Jsonize() const
 
   if(m_subscribersHasBeenSet)
   {
-   Array<JsonValue> subscribersJsonList(m_subscribers.size());
+   Aws::Utils::Array<JsonValue> subscribersJsonList(m_subscribers.size());
    for(unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex)
    {
      subscribersJsonList[subscribersIndex].AsString(m_subscribers[subscribersIndex]);

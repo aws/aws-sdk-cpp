@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/ivschat/IvschatErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/ivschat/IvschatEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -61,6 +63,10 @@ namespace Aws
 
   namespace ivschat
   {
+    using IvschatClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IvschatEndpointProviderBase = Aws::ivschat::Endpoint::IvschatEndpointProviderBase;
+    using IvschatEndpointProvider = Aws::ivschat::Endpoint::IvschatEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in IvschatClient header */

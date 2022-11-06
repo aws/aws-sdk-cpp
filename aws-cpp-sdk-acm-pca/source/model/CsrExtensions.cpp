@@ -42,7 +42,7 @@ CsrExtensions& CsrExtensions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubjectInformationAccess"))
   {
-    Array<JsonView> subjectInformationAccessJsonList = jsonValue.GetArray("SubjectInformationAccess");
+    Aws::Utils::Array<JsonView> subjectInformationAccessJsonList = jsonValue.GetArray("SubjectInformationAccess");
     for(unsigned subjectInformationAccessIndex = 0; subjectInformationAccessIndex < subjectInformationAccessJsonList.GetLength(); ++subjectInformationAccessIndex)
     {
       m_subjectInformationAccess.push_back(subjectInformationAccessJsonList[subjectInformationAccessIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue CsrExtensions::Jsonize() const
 
   if(m_subjectInformationAccessHasBeenSet)
   {
-   Array<JsonValue> subjectInformationAccessJsonList(m_subjectInformationAccess.size());
+   Aws::Utils::Array<JsonValue> subjectInformationAccessJsonList(m_subjectInformationAccess.size());
    for(unsigned subjectInformationAccessIndex = 0; subjectInformationAccessIndex < subjectInformationAccessJsonList.GetLength(); ++subjectInformationAccessIndex)
    {
      subjectInformationAccessJsonList[subjectInformationAccessIndex].AsObject(m_subjectInformationAccess[subjectInformationAccessIndex].Jsonize());

@@ -36,7 +36,7 @@ DescribePortfolioSharesResult& DescribePortfolioSharesResult::operator =(const A
 
   if(jsonValue.ValueExists("PortfolioShareDetails"))
   {
-    Array<JsonView> portfolioShareDetailsJsonList = jsonValue.GetArray("PortfolioShareDetails");
+    Aws::Utils::Array<JsonView> portfolioShareDetailsJsonList = jsonValue.GetArray("PortfolioShareDetails");
     for(unsigned portfolioShareDetailsIndex = 0; portfolioShareDetailsIndex < portfolioShareDetailsJsonList.GetLength(); ++portfolioShareDetailsIndex)
     {
       m_portfolioShareDetails.push_back(portfolioShareDetailsJsonList[portfolioShareDetailsIndex].AsObject());

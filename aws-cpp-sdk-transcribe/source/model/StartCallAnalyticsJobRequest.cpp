@@ -65,7 +65,7 @@ Aws::String StartCallAnalyticsJobRequest::SerializePayload() const
 
   if(m_channelDefinitionsHasBeenSet)
   {
-   Array<JsonValue> channelDefinitionsJsonList(m_channelDefinitions.size());
+   Aws::Utils::Array<JsonValue> channelDefinitionsJsonList(m_channelDefinitions.size());
    for(unsigned channelDefinitionsIndex = 0; channelDefinitionsIndex < channelDefinitionsJsonList.GetLength(); ++channelDefinitionsIndex)
    {
      channelDefinitionsJsonList[channelDefinitionsIndex].AsObject(m_channelDefinitions[channelDefinitionsIndex].Jsonize());

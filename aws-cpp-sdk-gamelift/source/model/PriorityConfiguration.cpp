@@ -35,7 +35,7 @@ PriorityConfiguration& PriorityConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("PriorityOrder"))
   {
-    Array<JsonView> priorityOrderJsonList = jsonValue.GetArray("PriorityOrder");
+    Aws::Utils::Array<JsonView> priorityOrderJsonList = jsonValue.GetArray("PriorityOrder");
     for(unsigned priorityOrderIndex = 0; priorityOrderIndex < priorityOrderJsonList.GetLength(); ++priorityOrderIndex)
     {
       m_priorityOrder.push_back(PriorityTypeMapper::GetPriorityTypeForName(priorityOrderJsonList[priorityOrderIndex].AsString()));
@@ -45,7 +45,7 @@ PriorityConfiguration& PriorityConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LocationOrder"))
   {
-    Array<JsonView> locationOrderJsonList = jsonValue.GetArray("LocationOrder");
+    Aws::Utils::Array<JsonView> locationOrderJsonList = jsonValue.GetArray("LocationOrder");
     for(unsigned locationOrderIndex = 0; locationOrderIndex < locationOrderJsonList.GetLength(); ++locationOrderIndex)
     {
       m_locationOrder.push_back(locationOrderJsonList[locationOrderIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue PriorityConfiguration::Jsonize() const
 
   if(m_priorityOrderHasBeenSet)
   {
-   Array<JsonValue> priorityOrderJsonList(m_priorityOrder.size());
+   Aws::Utils::Array<JsonValue> priorityOrderJsonList(m_priorityOrder.size());
    for(unsigned priorityOrderIndex = 0; priorityOrderIndex < priorityOrderJsonList.GetLength(); ++priorityOrderIndex)
    {
      priorityOrderJsonList[priorityOrderIndex].AsString(PriorityTypeMapper::GetNameForPriorityType(m_priorityOrder[priorityOrderIndex]));
@@ -73,7 +73,7 @@ JsonValue PriorityConfiguration::Jsonize() const
 
   if(m_locationOrderHasBeenSet)
   {
-   Array<JsonValue> locationOrderJsonList(m_locationOrder.size());
+   Aws::Utils::Array<JsonValue> locationOrderJsonList(m_locationOrder.size());
    for(unsigned locationOrderIndex = 0; locationOrderIndex < locationOrderJsonList.GetLength(); ++locationOrderIndex)
    {
      locationOrderJsonList[locationOrderIndex].AsString(m_locationOrder[locationOrderIndex]);

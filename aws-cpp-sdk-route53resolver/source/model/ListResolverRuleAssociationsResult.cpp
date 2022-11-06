@@ -44,7 +44,7 @@ ListResolverRuleAssociationsResult& ListResolverRuleAssociationsResult::operator
 
   if(jsonValue.ValueExists("ResolverRuleAssociations"))
   {
-    Array<JsonView> resolverRuleAssociationsJsonList = jsonValue.GetArray("ResolverRuleAssociations");
+    Aws::Utils::Array<JsonView> resolverRuleAssociationsJsonList = jsonValue.GetArray("ResolverRuleAssociations");
     for(unsigned resolverRuleAssociationsIndex = 0; resolverRuleAssociationsIndex < resolverRuleAssociationsJsonList.GetLength(); ++resolverRuleAssociationsIndex)
     {
       m_resolverRuleAssociations.push_back(resolverRuleAssociationsJsonList[resolverRuleAssociationsIndex].AsObject());

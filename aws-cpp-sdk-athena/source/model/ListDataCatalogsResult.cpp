@@ -30,7 +30,7 @@ ListDataCatalogsResult& ListDataCatalogsResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DataCatalogsSummary"))
   {
-    Array<JsonView> dataCatalogsSummaryJsonList = jsonValue.GetArray("DataCatalogsSummary");
+    Aws::Utils::Array<JsonView> dataCatalogsSummaryJsonList = jsonValue.GetArray("DataCatalogsSummary");
     for(unsigned dataCatalogsSummaryIndex = 0; dataCatalogsSummaryIndex < dataCatalogsSummaryJsonList.GetLength(); ++dataCatalogsSummaryIndex)
     {
       m_dataCatalogsSummary.push_back(dataCatalogsSummaryJsonList[dataCatalogsSummaryIndex].AsObject());

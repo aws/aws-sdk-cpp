@@ -30,7 +30,7 @@ ListGraphqlApisResult& ListGraphqlApisResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("graphqlApis"))
   {
-    Array<JsonView> graphqlApisJsonList = jsonValue.GetArray("graphqlApis");
+    Aws::Utils::Array<JsonView> graphqlApisJsonList = jsonValue.GetArray("graphqlApis");
     for(unsigned graphqlApisIndex = 0; graphqlApisIndex < graphqlApisJsonList.GetLength(); ++graphqlApisIndex)
     {
       m_graphqlApis.push_back(graphqlApisJsonList[graphqlApisIndex].AsObject());

@@ -44,7 +44,7 @@ BatchRestrictions& BatchRestrictions::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("computeTypesAllowed"))
   {
-    Array<JsonView> computeTypesAllowedJsonList = jsonValue.GetArray("computeTypesAllowed");
+    Aws::Utils::Array<JsonView> computeTypesAllowedJsonList = jsonValue.GetArray("computeTypesAllowed");
     for(unsigned computeTypesAllowedIndex = 0; computeTypesAllowedIndex < computeTypesAllowedJsonList.GetLength(); ++computeTypesAllowedIndex)
     {
       m_computeTypesAllowed.push_back(computeTypesAllowedJsonList[computeTypesAllowedIndex].AsString());
@@ -67,7 +67,7 @@ JsonValue BatchRestrictions::Jsonize() const
 
   if(m_computeTypesAllowedHasBeenSet)
   {
-   Array<JsonValue> computeTypesAllowedJsonList(m_computeTypesAllowed.size());
+   Aws::Utils::Array<JsonValue> computeTypesAllowedJsonList(m_computeTypesAllowed.size());
    for(unsigned computeTypesAllowedIndex = 0; computeTypesAllowedIndex < computeTypesAllowedJsonList.GetLength(); ++computeTypesAllowedIndex)
    {
      computeTypesAllowedJsonList[computeTypesAllowedIndex].AsString(m_computeTypesAllowed[computeTypesAllowedIndex]);

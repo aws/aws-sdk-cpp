@@ -16,10 +16,11 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/cognito-sync/CognitoSyncClient.h>
-#include <aws/cognito-sync/CognitoSyncEndpoint.h>
 #include <aws/cognito-sync/CognitoSyncErrorMarshaller.h>
+#include <aws/cognito-sync/CognitoSyncEndpointProvider.h>
 #include <aws/cognito-sync/model/BulkPublishRequest.h>
 #include <aws/cognito-sync/model/DeleteDatasetRequest.h>
 #include <aws/cognito-sync/model/DescribeDatasetRequest.h>
@@ -45,20 +46,71 @@ using namespace Aws::CognitoSync;
 using namespace Aws::CognitoSync::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 const char* CognitoSyncClient::SERVICE_NAME = "cognito-sync";
 const char* CognitoSyncClient::ALLOCATION_TAG = "CognitoSyncClient";
 
-CognitoSyncClient::CognitoSyncClient(const Client::ClientConfiguration& clientConfiguration) :
+CognitoSyncClient::CognitoSyncClient(const CognitoSync::CognitoSyncClientConfiguration& clientConfiguration,
+                                     std::shared_ptr<CognitoSyncEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CognitoSyncErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
+}
+
+CognitoSyncClient::CognitoSyncClient(const AWSCredentials& credentials,
+                                     std::shared_ptr<CognitoSyncEndpointProviderBase> endpointProvider,
+                                     const CognitoSync::CognitoSyncClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CognitoSyncErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+CognitoSyncClient::CognitoSyncClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                     std::shared_ptr<CognitoSyncEndpointProviderBase> endpointProvider,
+                                     const CognitoSync::CognitoSyncClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CognitoSyncErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  CognitoSyncClient::CognitoSyncClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CognitoSyncErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<CognitoSyncEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
 }
 
 CognitoSyncClient::CognitoSyncClient(const AWSCredentials& credentials,
@@ -69,9 +121,11 @@ CognitoSyncClient::CognitoSyncClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CognitoSyncErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<CognitoSyncEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 CognitoSyncClient::CognitoSyncClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
@@ -82,53 +136,50 @@ CognitoSyncClient::CognitoSyncClient(const std::shared_ptr<AWSCredentialsProvide
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CognitoSyncErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<CognitoSyncEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 CognitoSyncClient::~CognitoSyncClient()
 {
 }
 
-void CognitoSyncClient::init(const Client::ClientConfiguration& config)
+std::shared_ptr<CognitoSyncEndpointProviderBase>& CognitoSyncClient::accessEndpointProvider()
+{
+  return m_endpointProvider;
+}
+
+void CognitoSyncClient::init(const CognitoSync::CognitoSyncClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Cognito Sync");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + CognitoSyncEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
 }
 
 void CognitoSyncClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
 BulkPublishOutcome CognitoSyncClient::BulkPublish(const BulkPublishRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BulkPublish, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BulkPublish", "Required field: IdentityPoolId, is not set");
     return BulkPublishOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/bulkpublish");
-  return BulkPublishOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BulkPublish, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/bulkpublish");
+  return BulkPublishOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BulkPublishOutcomeCallable CognitoSyncClient::BulkPublishCallable(const BulkPublishRequest& request) const
@@ -149,6 +200,7 @@ void CognitoSyncClient::BulkPublishAsync(const BulkPublishRequest& request, cons
 
 DeleteDatasetOutcome CognitoSyncClient::DeleteDataset(const DeleteDatasetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteDataset", "Required field: IdentityPoolId, is not set");
@@ -164,14 +216,15 @@ DeleteDatasetOutcome CognitoSyncClient::DeleteDataset(const DeleteDatasetRequest
     AWS_LOGSTREAM_ERROR("DeleteDataset", "Required field: DatasetName, is not set");
     return DeleteDatasetOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/identities/");
-  uri.AddPathSegment(request.GetIdentityId());
-  uri.AddPathSegments("/datasets/");
-  uri.AddPathSegment(request.GetDatasetName());
-  return DeleteDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identities/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetName());
+  return DeleteDatasetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDatasetOutcomeCallable CognitoSyncClient::DeleteDatasetCallable(const DeleteDatasetRequest& request) const
@@ -192,6 +245,7 @@ void CognitoSyncClient::DeleteDatasetAsync(const DeleteDatasetRequest& request, 
 
 DescribeDatasetOutcome CognitoSyncClient::DescribeDataset(const DescribeDatasetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeDataset", "Required field: IdentityPoolId, is not set");
@@ -207,14 +261,15 @@ DescribeDatasetOutcome CognitoSyncClient::DescribeDataset(const DescribeDatasetR
     AWS_LOGSTREAM_ERROR("DescribeDataset", "Required field: DatasetName, is not set");
     return DescribeDatasetOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/identities/");
-  uri.AddPathSegment(request.GetIdentityId());
-  uri.AddPathSegments("/datasets/");
-  uri.AddPathSegment(request.GetDatasetName());
-  return DescribeDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identities/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetName());
+  return DescribeDatasetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDatasetOutcomeCallable CognitoSyncClient::DescribeDatasetCallable(const DescribeDatasetRequest& request) const
@@ -235,15 +290,17 @@ void CognitoSyncClient::DescribeDatasetAsync(const DescribeDatasetRequest& reque
 
 DescribeIdentityPoolUsageOutcome CognitoSyncClient::DescribeIdentityPoolUsage(const DescribeIdentityPoolUsageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeIdentityPoolUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeIdentityPoolUsage", "Required field: IdentityPoolId, is not set");
     return DescribeIdentityPoolUsageOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  return DescribeIdentityPoolUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeIdentityPoolUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  return DescribeIdentityPoolUsageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeIdentityPoolUsageOutcomeCallable CognitoSyncClient::DescribeIdentityPoolUsageCallable(const DescribeIdentityPoolUsageRequest& request) const
@@ -264,6 +321,7 @@ void CognitoSyncClient::DescribeIdentityPoolUsageAsync(const DescribeIdentityPoo
 
 DescribeIdentityUsageOutcome CognitoSyncClient::DescribeIdentityUsage(const DescribeIdentityUsageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeIdentityUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DescribeIdentityUsage", "Required field: IdentityPoolId, is not set");
@@ -274,12 +332,13 @@ DescribeIdentityUsageOutcome CognitoSyncClient::DescribeIdentityUsage(const Desc
     AWS_LOGSTREAM_ERROR("DescribeIdentityUsage", "Required field: IdentityId, is not set");
     return DescribeIdentityUsageOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/identities/");
-  uri.AddPathSegment(request.GetIdentityId());
-  return DescribeIdentityUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeIdentityUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identities/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityId());
+  return DescribeIdentityUsageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeIdentityUsageOutcomeCallable CognitoSyncClient::DescribeIdentityUsageCallable(const DescribeIdentityUsageRequest& request) const
@@ -300,16 +359,18 @@ void CognitoSyncClient::DescribeIdentityUsageAsync(const DescribeIdentityUsageRe
 
 GetBulkPublishDetailsOutcome CognitoSyncClient::GetBulkPublishDetails(const GetBulkPublishDetailsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBulkPublishDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetBulkPublishDetails", "Required field: IdentityPoolId, is not set");
     return GetBulkPublishDetailsOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/getBulkPublishDetails");
-  return GetBulkPublishDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBulkPublishDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/getBulkPublishDetails");
+  return GetBulkPublishDetailsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBulkPublishDetailsOutcomeCallable CognitoSyncClient::GetBulkPublishDetailsCallable(const GetBulkPublishDetailsRequest& request) const
@@ -330,16 +391,18 @@ void CognitoSyncClient::GetBulkPublishDetailsAsync(const GetBulkPublishDetailsRe
 
 GetCognitoEventsOutcome CognitoSyncClient::GetCognitoEvents(const GetCognitoEventsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCognitoEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetCognitoEvents", "Required field: IdentityPoolId, is not set");
     return GetCognitoEventsOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/events");
-  return GetCognitoEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCognitoEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/events");
+  return GetCognitoEventsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetCognitoEventsOutcomeCallable CognitoSyncClient::GetCognitoEventsCallable(const GetCognitoEventsRequest& request) const
@@ -360,16 +423,18 @@ void CognitoSyncClient::GetCognitoEventsAsync(const GetCognitoEventsRequest& req
 
 GetIdentityPoolConfigurationOutcome CognitoSyncClient::GetIdentityPoolConfiguration(const GetIdentityPoolConfigurationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIdentityPoolConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetIdentityPoolConfiguration", "Required field: IdentityPoolId, is not set");
     return GetIdentityPoolConfigurationOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/configuration");
-  return GetIdentityPoolConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIdentityPoolConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
+  return GetIdentityPoolConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetIdentityPoolConfigurationOutcomeCallable CognitoSyncClient::GetIdentityPoolConfigurationCallable(const GetIdentityPoolConfigurationRequest& request) const
@@ -390,6 +455,7 @@ void CognitoSyncClient::GetIdentityPoolConfigurationAsync(const GetIdentityPoolC
 
 ListDatasetsOutcome CognitoSyncClient::ListDatasets(const ListDatasetsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDatasets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListDatasets", "Required field: IdentityPoolId, is not set");
@@ -400,13 +466,14 @@ ListDatasetsOutcome CognitoSyncClient::ListDatasets(const ListDatasetsRequest& r
     AWS_LOGSTREAM_ERROR("ListDatasets", "Required field: IdentityId, is not set");
     return ListDatasetsOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/identities/");
-  uri.AddPathSegment(request.GetIdentityId());
-  uri.AddPathSegments("/datasets");
-  return ListDatasetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDatasets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identities/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/datasets");
+  return ListDatasetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDatasetsOutcomeCallable CognitoSyncClient::ListDatasetsCallable(const ListDatasetsRequest& request) const
@@ -427,9 +494,11 @@ void CognitoSyncClient::ListDatasetsAsync(const ListDatasetsRequest& request, co
 
 ListIdentityPoolUsageOutcome CognitoSyncClient::ListIdentityPoolUsage(const ListIdentityPoolUsageRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools");
-  return ListIdentityPoolUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIdentityPoolUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListIdentityPoolUsage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools");
+  return ListIdentityPoolUsageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListIdentityPoolUsageOutcomeCallable CognitoSyncClient::ListIdentityPoolUsageCallable(const ListIdentityPoolUsageRequest& request) const
@@ -450,6 +519,7 @@ void CognitoSyncClient::ListIdentityPoolUsageAsync(const ListIdentityPoolUsageRe
 
 ListRecordsOutcome CognitoSyncClient::ListRecords(const ListRecordsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListRecords", "Required field: IdentityPoolId, is not set");
@@ -465,15 +535,16 @@ ListRecordsOutcome CognitoSyncClient::ListRecords(const ListRecordsRequest& requ
     AWS_LOGSTREAM_ERROR("ListRecords", "Required field: DatasetName, is not set");
     return ListRecordsOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/identities/");
-  uri.AddPathSegment(request.GetIdentityId());
-  uri.AddPathSegments("/datasets/");
-  uri.AddPathSegment(request.GetDatasetName());
-  uri.AddPathSegments("/records");
-  return ListRecordsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identities/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/records");
+  return ListRecordsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListRecordsOutcomeCallable CognitoSyncClient::ListRecordsCallable(const ListRecordsRequest& request) const
@@ -494,6 +565,7 @@ void CognitoSyncClient::ListRecordsAsync(const ListRecordsRequest& request, cons
 
 RegisterDeviceOutcome CognitoSyncClient::RegisterDevice(const RegisterDeviceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RegisterDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("RegisterDevice", "Required field: IdentityPoolId, is not set");
@@ -504,13 +576,14 @@ RegisterDeviceOutcome CognitoSyncClient::RegisterDevice(const RegisterDeviceRequ
     AWS_LOGSTREAM_ERROR("RegisterDevice", "Required field: IdentityId, is not set");
     return RegisterDeviceOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/identity/");
-  uri.AddPathSegment(request.GetIdentityId());
-  uri.AddPathSegments("/device");
-  return RegisterDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RegisterDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identity/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/device");
+  return RegisterDeviceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterDeviceOutcomeCallable CognitoSyncClient::RegisterDeviceCallable(const RegisterDeviceRequest& request) const
@@ -531,16 +604,18 @@ void CognitoSyncClient::RegisterDeviceAsync(const RegisterDeviceRequest& request
 
 SetCognitoEventsOutcome CognitoSyncClient::SetCognitoEvents(const SetCognitoEventsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetCognitoEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("SetCognitoEvents", "Required field: IdentityPoolId, is not set");
     return SetCognitoEventsOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/events");
-  return SetCognitoEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetCognitoEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/events");
+  return SetCognitoEventsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetCognitoEventsOutcomeCallable CognitoSyncClient::SetCognitoEventsCallable(const SetCognitoEventsRequest& request) const
@@ -561,16 +636,18 @@ void CognitoSyncClient::SetCognitoEventsAsync(const SetCognitoEventsRequest& req
 
 SetIdentityPoolConfigurationOutcome CognitoSyncClient::SetIdentityPoolConfiguration(const SetIdentityPoolConfigurationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetIdentityPoolConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("SetIdentityPoolConfiguration", "Required field: IdentityPoolId, is not set");
     return SetIdentityPoolConfigurationOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentityPoolId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/configuration");
-  return SetIdentityPoolConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetIdentityPoolConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/configuration");
+  return SetIdentityPoolConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SetIdentityPoolConfigurationOutcomeCallable CognitoSyncClient::SetIdentityPoolConfigurationCallable(const SetIdentityPoolConfigurationRequest& request) const
@@ -591,6 +668,7 @@ void CognitoSyncClient::SetIdentityPoolConfigurationAsync(const SetIdentityPoolC
 
 SubscribeToDatasetOutcome CognitoSyncClient::SubscribeToDataset(const SubscribeToDatasetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SubscribeToDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("SubscribeToDataset", "Required field: IdentityPoolId, is not set");
@@ -611,16 +689,17 @@ SubscribeToDatasetOutcome CognitoSyncClient::SubscribeToDataset(const SubscribeT
     AWS_LOGSTREAM_ERROR("SubscribeToDataset", "Required field: DeviceId, is not set");
     return SubscribeToDatasetOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/identities/");
-  uri.AddPathSegment(request.GetIdentityId());
-  uri.AddPathSegments("/datasets/");
-  uri.AddPathSegment(request.GetDatasetName());
-  uri.AddPathSegments("/subscriptions/");
-  uri.AddPathSegment(request.GetDeviceId());
-  return SubscribeToDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SubscribeToDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identities/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceId());
+  return SubscribeToDatasetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SubscribeToDatasetOutcomeCallable CognitoSyncClient::SubscribeToDatasetCallable(const SubscribeToDatasetRequest& request) const
@@ -641,6 +720,7 @@ void CognitoSyncClient::SubscribeToDatasetAsync(const SubscribeToDatasetRequest&
 
 UnsubscribeFromDatasetOutcome CognitoSyncClient::UnsubscribeFromDataset(const UnsubscribeFromDatasetRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UnsubscribeFromDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UnsubscribeFromDataset", "Required field: IdentityPoolId, is not set");
@@ -661,16 +741,17 @@ UnsubscribeFromDatasetOutcome CognitoSyncClient::UnsubscribeFromDataset(const Un
     AWS_LOGSTREAM_ERROR("UnsubscribeFromDataset", "Required field: DeviceId, is not set");
     return UnsubscribeFromDatasetOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/identities/");
-  uri.AddPathSegment(request.GetIdentityId());
-  uri.AddPathSegments("/datasets/");
-  uri.AddPathSegment(request.GetDatasetName());
-  uri.AddPathSegments("/subscriptions/");
-  uri.AddPathSegment(request.GetDeviceId());
-  return UnsubscribeFromDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UnsubscribeFromDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identities/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/subscriptions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDeviceId());
+  return UnsubscribeFromDatasetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UnsubscribeFromDatasetOutcomeCallable CognitoSyncClient::UnsubscribeFromDatasetCallable(const UnsubscribeFromDatasetRequest& request) const
@@ -691,6 +772,7 @@ void CognitoSyncClient::UnsubscribeFromDatasetAsync(const UnsubscribeFromDataset
 
 UpdateRecordsOutcome CognitoSyncClient::UpdateRecords(const UpdateRecordsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.IdentityPoolIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateRecords", "Required field: IdentityPoolId, is not set");
@@ -706,14 +788,15 @@ UpdateRecordsOutcome CognitoSyncClient::UpdateRecords(const UpdateRecordsRequest
     AWS_LOGSTREAM_ERROR("UpdateRecords", "Required field: DatasetName, is not set");
     return UpdateRecordsOutcome(Aws::Client::AWSError<CognitoSyncErrors>(CognitoSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/identitypools/");
-  uri.AddPathSegment(request.GetIdentityPoolId());
-  uri.AddPathSegments("/identities/");
-  uri.AddPathSegment(request.GetIdentityId());
-  uri.AddPathSegments("/datasets/");
-  uri.AddPathSegment(request.GetDatasetName());
-  return UpdateRecordsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRecords, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identitypools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityPoolId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/identities/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentityId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/datasets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDatasetName());
+  return UpdateRecordsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRecordsOutcomeCallable CognitoSyncClient::UpdateRecordsCallable(const UpdateRecordsRequest& request) const

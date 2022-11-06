@@ -36,7 +36,7 @@ CreateMeetingWithAttendeesResult& CreateMeetingWithAttendeesResult::operator =(c
 
   if(jsonValue.ValueExists("Attendees"))
   {
-    Array<JsonView> attendeesJsonList = jsonValue.GetArray("Attendees");
+    Aws::Utils::Array<JsonView> attendeesJsonList = jsonValue.GetArray("Attendees");
     for(unsigned attendeesIndex = 0; attendeesIndex < attendeesJsonList.GetLength(); ++attendeesIndex)
     {
       m_attendees.push_back(attendeesJsonList[attendeesIndex].AsObject());
@@ -45,7 +45,7 @@ CreateMeetingWithAttendeesResult& CreateMeetingWithAttendeesResult::operator =(c
 
   if(jsonValue.ValueExists("Errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

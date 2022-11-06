@@ -30,7 +30,7 @@ ListComponentsResult& ListComponentsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("components"))
   {
-    Array<JsonView> componentsJsonList = jsonValue.GetArray("components");
+    Aws::Utils::Array<JsonView> componentsJsonList = jsonValue.GetArray("components");
     for(unsigned componentsIndex = 0; componentsIndex < componentsJsonList.GetLength(); ++componentsIndex)
     {
       m_components.push_back(componentsJsonList[componentsIndex].AsObject());

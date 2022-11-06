@@ -30,7 +30,7 @@ ListNetworkResourcesResult& ListNetworkResourcesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("networkResources"))
   {
-    Array<JsonView> networkResourcesJsonList = jsonValue.GetArray("networkResources");
+    Aws::Utils::Array<JsonView> networkResourcesJsonList = jsonValue.GetArray("networkResources");
     for(unsigned networkResourcesIndex = 0; networkResourcesIndex < networkResourcesJsonList.GetLength(); ++networkResourcesIndex)
     {
       m_networkResources.push_back(networkResourcesJsonList[networkResourcesIndex].AsObject());

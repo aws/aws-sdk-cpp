@@ -30,7 +30,7 @@ ListTimeSeriesResult& ListTimeSeriesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TimeSeriesSummaries"))
   {
-    Array<JsonView> timeSeriesSummariesJsonList = jsonValue.GetArray("TimeSeriesSummaries");
+    Aws::Utils::Array<JsonView> timeSeriesSummariesJsonList = jsonValue.GetArray("TimeSeriesSummaries");
     for(unsigned timeSeriesSummariesIndex = 0; timeSeriesSummariesIndex < timeSeriesSummariesJsonList.GetLength(); ++timeSeriesSummariesIndex)
     {
       m_timeSeriesSummaries.push_back(timeSeriesSummariesJsonList[timeSeriesSummariesIndex].AsObject());

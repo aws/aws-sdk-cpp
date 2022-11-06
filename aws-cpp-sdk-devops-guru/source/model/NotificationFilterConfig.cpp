@@ -35,7 +35,7 @@ NotificationFilterConfig& NotificationFilterConfig::operator =(JsonView jsonValu
 {
   if(jsonValue.ValueExists("Severities"))
   {
-    Array<JsonView> severitiesJsonList = jsonValue.GetArray("Severities");
+    Aws::Utils::Array<JsonView> severitiesJsonList = jsonValue.GetArray("Severities");
     for(unsigned severitiesIndex = 0; severitiesIndex < severitiesJsonList.GetLength(); ++severitiesIndex)
     {
       m_severities.push_back(InsightSeverityMapper::GetInsightSeverityForName(severitiesJsonList[severitiesIndex].AsString()));
@@ -45,7 +45,7 @@ NotificationFilterConfig& NotificationFilterConfig::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("MessageTypes"))
   {
-    Array<JsonView> messageTypesJsonList = jsonValue.GetArray("MessageTypes");
+    Aws::Utils::Array<JsonView> messageTypesJsonList = jsonValue.GetArray("MessageTypes");
     for(unsigned messageTypesIndex = 0; messageTypesIndex < messageTypesJsonList.GetLength(); ++messageTypesIndex)
     {
       m_messageTypes.push_back(NotificationMessageTypeMapper::GetNotificationMessageTypeForName(messageTypesJsonList[messageTypesIndex].AsString()));
@@ -62,7 +62,7 @@ JsonValue NotificationFilterConfig::Jsonize() const
 
   if(m_severitiesHasBeenSet)
   {
-   Array<JsonValue> severitiesJsonList(m_severities.size());
+   Aws::Utils::Array<JsonValue> severitiesJsonList(m_severities.size());
    for(unsigned severitiesIndex = 0; severitiesIndex < severitiesJsonList.GetLength(); ++severitiesIndex)
    {
      severitiesJsonList[severitiesIndex].AsString(InsightSeverityMapper::GetNameForInsightSeverity(m_severities[severitiesIndex]));
@@ -73,7 +73,7 @@ JsonValue NotificationFilterConfig::Jsonize() const
 
   if(m_messageTypesHasBeenSet)
   {
-   Array<JsonValue> messageTypesJsonList(m_messageTypes.size());
+   Aws::Utils::Array<JsonValue> messageTypesJsonList(m_messageTypes.size());
    for(unsigned messageTypesIndex = 0; messageTypesIndex < messageTypesJsonList.GetLength(); ++messageTypesIndex)
    {
      messageTypesJsonList[messageTypesIndex].AsString(NotificationMessageTypeMapper::GetNameForNotificationMessageType(m_messageTypes[messageTypesIndex]));

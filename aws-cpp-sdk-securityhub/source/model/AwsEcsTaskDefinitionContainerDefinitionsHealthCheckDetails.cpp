@@ -49,7 +49,7 @@ AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails& AwsEcsTaskDefinition
 {
   if(jsonValue.ValueExists("Command"))
   {
-    Array<JsonView> commandJsonList = jsonValue.GetArray("Command");
+    Aws::Utils::Array<JsonView> commandJsonList = jsonValue.GetArray("Command");
     for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
     {
       m_command.push_back(commandJsonList[commandIndex].AsString());
@@ -94,7 +94,7 @@ JsonValue AwsEcsTaskDefinitionContainerDefinitionsHealthCheckDetails::Jsonize() 
 
   if(m_commandHasBeenSet)
   {
-   Array<JsonValue> commandJsonList(m_command.size());
+   Aws::Utils::Array<JsonValue> commandJsonList(m_command.size());
    for(unsigned commandIndex = 0; commandIndex < commandJsonList.GetLength(); ++commandIndex)
    {
      commandJsonList[commandIndex].AsString(m_command[commandIndex]);

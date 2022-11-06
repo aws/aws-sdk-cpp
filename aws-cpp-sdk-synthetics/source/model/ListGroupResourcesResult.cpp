@@ -30,7 +30,7 @@ ListGroupResourcesResult& ListGroupResourcesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Resources"))
   {
-    Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
+    Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsString());

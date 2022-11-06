@@ -38,7 +38,7 @@ Aws::String StartTaskExecutionRequest::SerializePayload() const
 
   if(m_includesHasBeenSet)
   {
-   Array<JsonValue> includesJsonList(m_includes.size());
+   Aws::Utils::Array<JsonValue> includesJsonList(m_includes.size());
    for(unsigned includesIndex = 0; includesIndex < includesJsonList.GetLength(); ++includesIndex)
    {
      includesJsonList[includesIndex].AsObject(m_includes[includesIndex].Jsonize());
@@ -49,7 +49,7 @@ Aws::String StartTaskExecutionRequest::SerializePayload() const
 
   if(m_excludesHasBeenSet)
   {
-   Array<JsonValue> excludesJsonList(m_excludes.size());
+   Aws::Utils::Array<JsonValue> excludesJsonList(m_excludes.size());
    for(unsigned excludesIndex = 0; excludesIndex < excludesJsonList.GetLength(); ++excludesIndex)
    {
      excludesJsonList[excludesIndex].AsObject(m_excludes[excludesIndex].Jsonize());

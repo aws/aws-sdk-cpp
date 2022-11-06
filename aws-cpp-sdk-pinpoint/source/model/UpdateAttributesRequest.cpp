@@ -33,7 +33,7 @@ UpdateAttributesRequest& UpdateAttributesRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Blacklist"))
   {
-    Array<JsonView> blacklistJsonList = jsonValue.GetArray("Blacklist");
+    Aws::Utils::Array<JsonView> blacklistJsonList = jsonValue.GetArray("Blacklist");
     for(unsigned blacklistIndex = 0; blacklistIndex < blacklistJsonList.GetLength(); ++blacklistIndex)
     {
       m_blacklist.push_back(blacklistJsonList[blacklistIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue UpdateAttributesRequest::Jsonize() const
 
   if(m_blacklistHasBeenSet)
   {
-   Array<JsonValue> blacklistJsonList(m_blacklist.size());
+   Aws::Utils::Array<JsonValue> blacklistJsonList(m_blacklist.size());
    for(unsigned blacklistIndex = 0; blacklistIndex < blacklistJsonList.GetLength(); ++blacklistIndex)
    {
      blacklistJsonList[blacklistIndex].AsString(m_blacklist[blacklistIndex]);

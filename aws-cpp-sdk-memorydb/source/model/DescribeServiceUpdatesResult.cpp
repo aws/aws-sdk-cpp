@@ -36,7 +36,7 @@ DescribeServiceUpdatesResult& DescribeServiceUpdatesResult::operator =(const Aws
 
   if(jsonValue.ValueExists("ServiceUpdates"))
   {
-    Array<JsonView> serviceUpdatesJsonList = jsonValue.GetArray("ServiceUpdates");
+    Aws::Utils::Array<JsonView> serviceUpdatesJsonList = jsonValue.GetArray("ServiceUpdates");
     for(unsigned serviceUpdatesIndex = 0; serviceUpdatesIndex < serviceUpdatesJsonList.GetLength(); ++serviceUpdatesIndex)
     {
       m_serviceUpdates.push_back(serviceUpdatesJsonList[serviceUpdatesIndex].AsObject());

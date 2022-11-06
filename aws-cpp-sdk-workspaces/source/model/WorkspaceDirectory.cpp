@@ -99,7 +99,7 @@ WorkspaceDirectory& WorkspaceDirectory::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -109,7 +109,7 @@ WorkspaceDirectory& WorkspaceDirectory::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DnsIpAddresses"))
   {
-    Array<JsonView> dnsIpAddressesJsonList = jsonValue.GetArray("DnsIpAddresses");
+    Aws::Utils::Array<JsonView> dnsIpAddressesJsonList = jsonValue.GetArray("DnsIpAddresses");
     for(unsigned dnsIpAddressesIndex = 0; dnsIpAddressesIndex < dnsIpAddressesJsonList.GetLength(); ++dnsIpAddressesIndex)
     {
       m_dnsIpAddresses.push_back(dnsIpAddressesJsonList[dnsIpAddressesIndex].AsString());
@@ -161,7 +161,7 @@ WorkspaceDirectory& WorkspaceDirectory::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ipGroupIds"))
   {
-    Array<JsonView> ipGroupIdsJsonList = jsonValue.GetArray("ipGroupIds");
+    Aws::Utils::Array<JsonView> ipGroupIdsJsonList = jsonValue.GetArray("ipGroupIds");
     for(unsigned ipGroupIdsIndex = 0; ipGroupIdsIndex < ipGroupIdsJsonList.GetLength(); ++ipGroupIdsIndex)
     {
       m_ipGroupIds.push_back(ipGroupIdsJsonList[ipGroupIdsIndex].AsString());
@@ -230,7 +230,7 @@ JsonValue WorkspaceDirectory::Jsonize() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
@@ -241,7 +241,7 @@ JsonValue WorkspaceDirectory::Jsonize() const
 
   if(m_dnsIpAddressesHasBeenSet)
   {
-   Array<JsonValue> dnsIpAddressesJsonList(m_dnsIpAddresses.size());
+   Aws::Utils::Array<JsonValue> dnsIpAddressesJsonList(m_dnsIpAddresses.size());
    for(unsigned dnsIpAddressesIndex = 0; dnsIpAddressesIndex < dnsIpAddressesJsonList.GetLength(); ++dnsIpAddressesIndex)
    {
      dnsIpAddressesJsonList[dnsIpAddressesIndex].AsString(m_dnsIpAddresses[dnsIpAddressesIndex]);
@@ -286,7 +286,7 @@ JsonValue WorkspaceDirectory::Jsonize() const
 
   if(m_ipGroupIdsHasBeenSet)
   {
-   Array<JsonValue> ipGroupIdsJsonList(m_ipGroupIds.size());
+   Aws::Utils::Array<JsonValue> ipGroupIdsJsonList(m_ipGroupIds.size());
    for(unsigned ipGroupIdsIndex = 0; ipGroupIdsIndex < ipGroupIdsJsonList.GetLength(); ++ipGroupIdsIndex)
    {
      ipGroupIdsJsonList[ipGroupIdsIndex].AsString(m_ipGroupIds[ipGroupIdsIndex]);

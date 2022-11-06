@@ -30,7 +30,7 @@ ListInferenceRecommendationsJobsResult& ListInferenceRecommendationsJobsResult::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InferenceRecommendationsJobs"))
   {
-    Array<JsonView> inferenceRecommendationsJobsJsonList = jsonValue.GetArray("InferenceRecommendationsJobs");
+    Aws::Utils::Array<JsonView> inferenceRecommendationsJobsJsonList = jsonValue.GetArray("InferenceRecommendationsJobs");
     for(unsigned inferenceRecommendationsJobsIndex = 0; inferenceRecommendationsJobsIndex < inferenceRecommendationsJobsJsonList.GetLength(); ++inferenceRecommendationsJobsIndex)
     {
       m_inferenceRecommendationsJobs.push_back(inferenceRecommendationsJobsJsonList[inferenceRecommendationsJobsIndex].AsObject());

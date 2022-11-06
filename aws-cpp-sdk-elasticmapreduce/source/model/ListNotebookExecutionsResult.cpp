@@ -30,7 +30,7 @@ ListNotebookExecutionsResult& ListNotebookExecutionsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NotebookExecutions"))
   {
-    Array<JsonView> notebookExecutionsJsonList = jsonValue.GetArray("NotebookExecutions");
+    Aws::Utils::Array<JsonView> notebookExecutionsJsonList = jsonValue.GetArray("NotebookExecutions");
     for(unsigned notebookExecutionsIndex = 0; notebookExecutionsIndex < notebookExecutionsJsonList.GetLength(); ++notebookExecutionsIndex)
     {
       m_notebookExecutions.push_back(notebookExecutionsJsonList[notebookExecutionsIndex].AsObject());

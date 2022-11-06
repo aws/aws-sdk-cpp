@@ -79,7 +79,7 @@ S3Location& S3Location::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AccessControlList"))
   {
-    Array<JsonView> accessControlListJsonList = jsonValue.GetArray("AccessControlList");
+    Aws::Utils::Array<JsonView> accessControlListJsonList = jsonValue.GetArray("AccessControlList");
     for(unsigned accessControlListIndex = 0; accessControlListIndex < accessControlListJsonList.GetLength(); ++accessControlListIndex)
     {
       m_accessControlList.push_back(accessControlListJsonList[accessControlListIndex].AsObject());
@@ -146,7 +146,7 @@ JsonValue S3Location::Jsonize() const
 
   if(m_accessControlListHasBeenSet)
   {
-   Array<JsonValue> accessControlListJsonList(m_accessControlList.size());
+   Aws::Utils::Array<JsonValue> accessControlListJsonList(m_accessControlList.size());
    for(unsigned accessControlListIndex = 0; accessControlListIndex < accessControlListJsonList.GetLength(); ++accessControlListIndex)
    {
      accessControlListJsonList[accessControlListIndex].AsObject(m_accessControlList[accessControlListIndex].Jsonize());

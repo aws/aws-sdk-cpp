@@ -45,7 +45,7 @@ KmsKeyConfiguration& KmsKeyConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("grants"))
   {
-    Array<JsonView> grantsJsonList = jsonValue.GetArray("grants");
+    Aws::Utils::Array<JsonView> grantsJsonList = jsonValue.GetArray("grants");
     for(unsigned grantsIndex = 0; grantsIndex < grantsJsonList.GetLength(); ++grantsIndex)
     {
       m_grants.push_back(grantsJsonList[grantsIndex].AsObject());
@@ -73,7 +73,7 @@ JsonValue KmsKeyConfiguration::Jsonize() const
 
   if(m_grantsHasBeenSet)
   {
-   Array<JsonValue> grantsJsonList(m_grants.size());
+   Aws::Utils::Array<JsonValue> grantsJsonList(m_grants.size());
    for(unsigned grantsIndex = 0; grantsIndex < grantsJsonList.GetLength(); ++grantsIndex)
    {
      grantsJsonList[grantsIndex].AsObject(m_grants[grantsIndex].Jsonize());

@@ -30,7 +30,7 @@ ListFeatureGroupsResult& ListFeatureGroupsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FeatureGroupSummaries"))
   {
-    Array<JsonView> featureGroupSummariesJsonList = jsonValue.GetArray("FeatureGroupSummaries");
+    Aws::Utils::Array<JsonView> featureGroupSummariesJsonList = jsonValue.GetArray("FeatureGroupSummaries");
     for(unsigned featureGroupSummariesIndex = 0; featureGroupSummariesIndex < featureGroupSummariesJsonList.GetLength(); ++featureGroupSummariesIndex)
     {
       m_featureGroupSummaries.push_back(featureGroupSummariesJsonList[featureGroupSummariesIndex].AsObject());

@@ -42,7 +42,7 @@ DescribeOptedOutNumbersResult& DescribeOptedOutNumbersResult::operator =(const A
 
   if(jsonValue.ValueExists("OptedOutNumbers"))
   {
-    Array<JsonView> optedOutNumbersJsonList = jsonValue.GetArray("OptedOutNumbers");
+    Aws::Utils::Array<JsonView> optedOutNumbersJsonList = jsonValue.GetArray("OptedOutNumbers");
     for(unsigned optedOutNumbersIndex = 0; optedOutNumbersIndex < optedOutNumbersJsonList.GetLength(); ++optedOutNumbersIndex)
     {
       m_optedOutNumbers.push_back(optedOutNumbersJsonList[optedOutNumbersIndex].AsObject());

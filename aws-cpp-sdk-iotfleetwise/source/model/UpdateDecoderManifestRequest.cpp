@@ -44,7 +44,7 @@ Aws::String UpdateDecoderManifestRequest::SerializePayload() const
 
   if(m_signalDecodersToAddHasBeenSet)
   {
-   Array<JsonValue> signalDecodersToAddJsonList(m_signalDecodersToAdd.size());
+   Aws::Utils::Array<JsonValue> signalDecodersToAddJsonList(m_signalDecodersToAdd.size());
    for(unsigned signalDecodersToAddIndex = 0; signalDecodersToAddIndex < signalDecodersToAddJsonList.GetLength(); ++signalDecodersToAddIndex)
    {
      signalDecodersToAddJsonList[signalDecodersToAddIndex].AsObject(m_signalDecodersToAdd[signalDecodersToAddIndex].Jsonize());
@@ -55,7 +55,7 @@ Aws::String UpdateDecoderManifestRequest::SerializePayload() const
 
   if(m_signalDecodersToUpdateHasBeenSet)
   {
-   Array<JsonValue> signalDecodersToUpdateJsonList(m_signalDecodersToUpdate.size());
+   Aws::Utils::Array<JsonValue> signalDecodersToUpdateJsonList(m_signalDecodersToUpdate.size());
    for(unsigned signalDecodersToUpdateIndex = 0; signalDecodersToUpdateIndex < signalDecodersToUpdateJsonList.GetLength(); ++signalDecodersToUpdateIndex)
    {
      signalDecodersToUpdateJsonList[signalDecodersToUpdateIndex].AsObject(m_signalDecodersToUpdate[signalDecodersToUpdateIndex].Jsonize());
@@ -66,7 +66,7 @@ Aws::String UpdateDecoderManifestRequest::SerializePayload() const
 
   if(m_signalDecodersToRemoveHasBeenSet)
   {
-   Array<JsonValue> signalDecodersToRemoveJsonList(m_signalDecodersToRemove.size());
+   Aws::Utils::Array<JsonValue> signalDecodersToRemoveJsonList(m_signalDecodersToRemove.size());
    for(unsigned signalDecodersToRemoveIndex = 0; signalDecodersToRemoveIndex < signalDecodersToRemoveJsonList.GetLength(); ++signalDecodersToRemoveIndex)
    {
      signalDecodersToRemoveJsonList[signalDecodersToRemoveIndex].AsString(m_signalDecodersToRemove[signalDecodersToRemoveIndex]);
@@ -77,7 +77,7 @@ Aws::String UpdateDecoderManifestRequest::SerializePayload() const
 
   if(m_networkInterfacesToAddHasBeenSet)
   {
-   Array<JsonValue> networkInterfacesToAddJsonList(m_networkInterfacesToAdd.size());
+   Aws::Utils::Array<JsonValue> networkInterfacesToAddJsonList(m_networkInterfacesToAdd.size());
    for(unsigned networkInterfacesToAddIndex = 0; networkInterfacesToAddIndex < networkInterfacesToAddJsonList.GetLength(); ++networkInterfacesToAddIndex)
    {
      networkInterfacesToAddJsonList[networkInterfacesToAddIndex].AsObject(m_networkInterfacesToAdd[networkInterfacesToAddIndex].Jsonize());
@@ -88,7 +88,7 @@ Aws::String UpdateDecoderManifestRequest::SerializePayload() const
 
   if(m_networkInterfacesToUpdateHasBeenSet)
   {
-   Array<JsonValue> networkInterfacesToUpdateJsonList(m_networkInterfacesToUpdate.size());
+   Aws::Utils::Array<JsonValue> networkInterfacesToUpdateJsonList(m_networkInterfacesToUpdate.size());
    for(unsigned networkInterfacesToUpdateIndex = 0; networkInterfacesToUpdateIndex < networkInterfacesToUpdateJsonList.GetLength(); ++networkInterfacesToUpdateIndex)
    {
      networkInterfacesToUpdateJsonList[networkInterfacesToUpdateIndex].AsObject(m_networkInterfacesToUpdate[networkInterfacesToUpdateIndex].Jsonize());
@@ -99,7 +99,7 @@ Aws::String UpdateDecoderManifestRequest::SerializePayload() const
 
   if(m_networkInterfacesToRemoveHasBeenSet)
   {
-   Array<JsonValue> networkInterfacesToRemoveJsonList(m_networkInterfacesToRemove.size());
+   Aws::Utils::Array<JsonValue> networkInterfacesToRemoveJsonList(m_networkInterfacesToRemove.size());
    for(unsigned networkInterfacesToRemoveIndex = 0; networkInterfacesToRemoveIndex < networkInterfacesToRemoveJsonList.GetLength(); ++networkInterfacesToRemoveIndex)
    {
      networkInterfacesToRemoveJsonList[networkInterfacesToRemoveIndex].AsString(m_networkInterfacesToRemove[networkInterfacesToRemoveIndex]);

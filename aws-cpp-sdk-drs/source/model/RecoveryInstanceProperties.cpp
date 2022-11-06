@@ -47,7 +47,7 @@ RecoveryInstanceProperties& RecoveryInstanceProperties::operator =(JsonView json
 {
   if(jsonValue.ValueExists("cpus"))
   {
-    Array<JsonView> cpusJsonList = jsonValue.GetArray("cpus");
+    Aws::Utils::Array<JsonView> cpusJsonList = jsonValue.GetArray("cpus");
     for(unsigned cpusIndex = 0; cpusIndex < cpusJsonList.GetLength(); ++cpusIndex)
     {
       m_cpus.push_back(cpusJsonList[cpusIndex].AsObject());
@@ -57,7 +57,7 @@ RecoveryInstanceProperties& RecoveryInstanceProperties::operator =(JsonView json
 
   if(jsonValue.ValueExists("disks"))
   {
-    Array<JsonView> disksJsonList = jsonValue.GetArray("disks");
+    Aws::Utils::Array<JsonView> disksJsonList = jsonValue.GetArray("disks");
     for(unsigned disksIndex = 0; disksIndex < disksJsonList.GetLength(); ++disksIndex)
     {
       m_disks.push_back(disksJsonList[disksIndex].AsObject());
@@ -81,7 +81,7 @@ RecoveryInstanceProperties& RecoveryInstanceProperties::operator =(JsonView json
 
   if(jsonValue.ValueExists("networkInterfaces"))
   {
-    Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
+    Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
     for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
     {
       m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());
@@ -112,7 +112,7 @@ JsonValue RecoveryInstanceProperties::Jsonize() const
 
   if(m_cpusHasBeenSet)
   {
-   Array<JsonValue> cpusJsonList(m_cpus.size());
+   Aws::Utils::Array<JsonValue> cpusJsonList(m_cpus.size());
    for(unsigned cpusIndex = 0; cpusIndex < cpusJsonList.GetLength(); ++cpusIndex)
    {
      cpusJsonList[cpusIndex].AsObject(m_cpus[cpusIndex].Jsonize());
@@ -123,7 +123,7 @@ JsonValue RecoveryInstanceProperties::Jsonize() const
 
   if(m_disksHasBeenSet)
   {
-   Array<JsonValue> disksJsonList(m_disks.size());
+   Aws::Utils::Array<JsonValue> disksJsonList(m_disks.size());
    for(unsigned disksIndex = 0; disksIndex < disksJsonList.GetLength(); ++disksIndex)
    {
      disksJsonList[disksIndex].AsObject(m_disks[disksIndex].Jsonize());
@@ -146,7 +146,7 @@ JsonValue RecoveryInstanceProperties::Jsonize() const
 
   if(m_networkInterfacesHasBeenSet)
   {
-   Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
+   Aws::Utils::Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
    for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
    {
      networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());

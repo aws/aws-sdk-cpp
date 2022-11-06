@@ -42,7 +42,7 @@ Ec2Config& Ec2Config::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroupArns"))
   {
-    Array<JsonView> securityGroupArnsJsonList = jsonValue.GetArray("SecurityGroupArns");
+    Aws::Utils::Array<JsonView> securityGroupArnsJsonList = jsonValue.GetArray("SecurityGroupArns");
     for(unsigned securityGroupArnsIndex = 0; securityGroupArnsIndex < securityGroupArnsJsonList.GetLength(); ++securityGroupArnsIndex)
     {
       m_securityGroupArns.push_back(securityGroupArnsJsonList[securityGroupArnsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue Ec2Config::Jsonize() const
 
   if(m_securityGroupArnsHasBeenSet)
   {
-   Array<JsonValue> securityGroupArnsJsonList(m_securityGroupArns.size());
+   Aws::Utils::Array<JsonValue> securityGroupArnsJsonList(m_securityGroupArns.size());
    for(unsigned securityGroupArnsIndex = 0; securityGroupArnsIndex < securityGroupArnsJsonList.GetLength(); ++securityGroupArnsIndex)
    {
      securityGroupArnsJsonList[securityGroupArnsIndex].AsString(m_securityGroupArns[securityGroupArnsIndex]);

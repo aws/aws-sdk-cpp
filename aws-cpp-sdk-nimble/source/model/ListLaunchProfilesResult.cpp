@@ -30,7 +30,7 @@ ListLaunchProfilesResult& ListLaunchProfilesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("launchProfiles"))
   {
-    Array<JsonView> launchProfilesJsonList = jsonValue.GetArray("launchProfiles");
+    Aws::Utils::Array<JsonView> launchProfilesJsonList = jsonValue.GetArray("launchProfiles");
     for(unsigned launchProfilesIndex = 0; launchProfilesIndex < launchProfilesJsonList.GetLength(); ++launchProfilesIndex)
     {
       m_launchProfiles.push_back(launchProfilesJsonList[launchProfilesIndex].AsObject());

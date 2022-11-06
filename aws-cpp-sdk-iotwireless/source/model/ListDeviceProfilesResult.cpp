@@ -36,7 +36,7 @@ ListDeviceProfilesResult& ListDeviceProfilesResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("DeviceProfileList"))
   {
-    Array<JsonView> deviceProfileListJsonList = jsonValue.GetArray("DeviceProfileList");
+    Aws::Utils::Array<JsonView> deviceProfileListJsonList = jsonValue.GetArray("DeviceProfileList");
     for(unsigned deviceProfileListIndex = 0; deviceProfileListIndex < deviceProfileListJsonList.GetLength(); ++deviceProfileListIndex)
     {
       m_deviceProfileList.push_back(deviceProfileListJsonList[deviceProfileListIndex].AsObject());

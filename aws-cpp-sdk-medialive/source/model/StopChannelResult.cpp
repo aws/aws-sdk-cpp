@@ -56,7 +56,7 @@ StopChannelResult& StopChannelResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("destinations"))
   {
-    Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
+    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
@@ -65,7 +65,7 @@ StopChannelResult& StopChannelResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("egressEndpoints"))
   {
-    Array<JsonView> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");
+    Aws::Utils::Array<JsonView> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");
     for(unsigned egressEndpointsIndex = 0; egressEndpointsIndex < egressEndpointsJsonList.GetLength(); ++egressEndpointsIndex)
     {
       m_egressEndpoints.push_back(egressEndpointsJsonList[egressEndpointsIndex].AsObject());
@@ -86,7 +86,7 @@ StopChannelResult& StopChannelResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("inputAttachments"))
   {
-    Array<JsonView> inputAttachmentsJsonList = jsonValue.GetArray("inputAttachments");
+    Aws::Utils::Array<JsonView> inputAttachmentsJsonList = jsonValue.GetArray("inputAttachments");
     for(unsigned inputAttachmentsIndex = 0; inputAttachmentsIndex < inputAttachmentsJsonList.GetLength(); ++inputAttachmentsIndex)
     {
       m_inputAttachments.push_back(inputAttachmentsJsonList[inputAttachmentsIndex].AsObject());
@@ -119,7 +119,7 @@ StopChannelResult& StopChannelResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("pipelineDetails"))
   {
-    Array<JsonView> pipelineDetailsJsonList = jsonValue.GetArray("pipelineDetails");
+    Aws::Utils::Array<JsonView> pipelineDetailsJsonList = jsonValue.GetArray("pipelineDetails");
     for(unsigned pipelineDetailsIndex = 0; pipelineDetailsIndex < pipelineDetailsJsonList.GetLength(); ++pipelineDetailsIndex)
     {
       m_pipelineDetails.push_back(pipelineDetailsJsonList[pipelineDetailsIndex].AsObject());

@@ -119,7 +119,7 @@ OpsItem& OpsItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Notifications"))
   {
-    Array<JsonView> notificationsJsonList = jsonValue.GetArray("Notifications");
+    Aws::Utils::Array<JsonView> notificationsJsonList = jsonValue.GetArray("Notifications");
     for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
     {
       m_notifications.push_back(notificationsJsonList[notificationsIndex].AsObject());
@@ -136,7 +136,7 @@ OpsItem& OpsItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RelatedOpsItems"))
   {
-    Array<JsonView> relatedOpsItemsJsonList = jsonValue.GetArray("RelatedOpsItems");
+    Aws::Utils::Array<JsonView> relatedOpsItemsJsonList = jsonValue.GetArray("RelatedOpsItems");
     for(unsigned relatedOpsItemsIndex = 0; relatedOpsItemsIndex < relatedOpsItemsJsonList.GetLength(); ++relatedOpsItemsIndex)
     {
       m_relatedOpsItems.push_back(relatedOpsItemsJsonList[relatedOpsItemsIndex].AsObject());
@@ -274,7 +274,7 @@ JsonValue OpsItem::Jsonize() const
 
   if(m_notificationsHasBeenSet)
   {
-   Array<JsonValue> notificationsJsonList(m_notifications.size());
+   Aws::Utils::Array<JsonValue> notificationsJsonList(m_notifications.size());
    for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
    {
      notificationsJsonList[notificationsIndex].AsObject(m_notifications[notificationsIndex].Jsonize());
@@ -291,7 +291,7 @@ JsonValue OpsItem::Jsonize() const
 
   if(m_relatedOpsItemsHasBeenSet)
   {
-   Array<JsonValue> relatedOpsItemsJsonList(m_relatedOpsItems.size());
+   Aws::Utils::Array<JsonValue> relatedOpsItemsJsonList(m_relatedOpsItems.size());
    for(unsigned relatedOpsItemsIndex = 0; relatedOpsItemsIndex < relatedOpsItemsJsonList.GetLength(); ++relatedOpsItemsIndex)
    {
      relatedOpsItemsJsonList[relatedOpsItemsIndex].AsObject(m_relatedOpsItems[relatedOpsItemsIndex].Jsonize());

@@ -30,7 +30,7 @@ DescribeVirtualInterfacesResult& DescribeVirtualInterfacesResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("virtualInterfaces"))
   {
-    Array<JsonView> virtualInterfacesJsonList = jsonValue.GetArray("virtualInterfaces");
+    Aws::Utils::Array<JsonView> virtualInterfacesJsonList = jsonValue.GetArray("virtualInterfaces");
     for(unsigned virtualInterfacesIndex = 0; virtualInterfacesIndex < virtualInterfacesJsonList.GetLength(); ++virtualInterfacesIndex)
     {
       m_virtualInterfaces.push_back(virtualInterfacesJsonList[virtualInterfacesIndex].AsObject());

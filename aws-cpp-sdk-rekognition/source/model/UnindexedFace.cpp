@@ -35,7 +35,7 @@ UnindexedFace& UnindexedFace::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Reasons"))
   {
-    Array<JsonView> reasonsJsonList = jsonValue.GetArray("Reasons");
+    Aws::Utils::Array<JsonView> reasonsJsonList = jsonValue.GetArray("Reasons");
     for(unsigned reasonsIndex = 0; reasonsIndex < reasonsJsonList.GetLength(); ++reasonsIndex)
     {
       m_reasons.push_back(ReasonMapper::GetReasonForName(reasonsJsonList[reasonsIndex].AsString()));
@@ -59,7 +59,7 @@ JsonValue UnindexedFace::Jsonize() const
 
   if(m_reasonsHasBeenSet)
   {
-   Array<JsonValue> reasonsJsonList(m_reasons.size());
+   Aws::Utils::Array<JsonValue> reasonsJsonList(m_reasons.size());
    for(unsigned reasonsIndex = 0; reasonsIndex < reasonsJsonList.GetLength(); ++reasonsIndex)
    {
      reasonsJsonList[reasonsIndex].AsString(ReasonMapper::GetNameForReason(m_reasons[reasonsIndex]));

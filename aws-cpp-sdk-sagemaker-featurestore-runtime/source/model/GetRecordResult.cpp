@@ -30,7 +30,7 @@ GetRecordResult& GetRecordResult::operator =(const Aws::AmazonWebServiceResult<J
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Record"))
   {
-    Array<JsonView> recordJsonList = jsonValue.GetArray("Record");
+    Aws::Utils::Array<JsonView> recordJsonList = jsonValue.GetArray("Record");
     for(unsigned recordIndex = 0; recordIndex < recordJsonList.GetLength(); ++recordIndex)
     {
       m_record.push_back(recordJsonList[recordIndex].AsObject());

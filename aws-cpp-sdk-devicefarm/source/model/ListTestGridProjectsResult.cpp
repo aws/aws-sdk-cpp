@@ -30,7 +30,7 @@ ListTestGridProjectsResult& ListTestGridProjectsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("testGridProjects"))
   {
-    Array<JsonView> testGridProjectsJsonList = jsonValue.GetArray("testGridProjects");
+    Aws::Utils::Array<JsonView> testGridProjectsJsonList = jsonValue.GetArray("testGridProjects");
     for(unsigned testGridProjectsIndex = 0; testGridProjectsIndex < testGridProjectsJsonList.GetLength(); ++testGridProjectsIndex)
     {
       m_testGridProjects.push_back(testGridProjectsJsonList[testGridProjectsIndex].AsObject());

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/lexv2-models/LexModelsV2Errors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/lexv2-models/LexModelsV2EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -114,6 +116,10 @@ namespace Aws
 
   namespace LexModelsV2
   {
+    using LexModelsV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LexModelsV2EndpointProviderBase = Aws::LexModelsV2::Endpoint::LexModelsV2EndpointProviderBase;
+    using LexModelsV2EndpointProvider = Aws::LexModelsV2::Endpoint::LexModelsV2EndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in LexModelsV2Client header */

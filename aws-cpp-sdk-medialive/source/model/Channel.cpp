@@ -96,7 +96,7 @@ Channel& Channel::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("destinations"))
   {
-    Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
+    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
     for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
@@ -106,7 +106,7 @@ Channel& Channel::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("egressEndpoints"))
   {
-    Array<JsonView> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");
+    Aws::Utils::Array<JsonView> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");
     for(unsigned egressEndpointsIndex = 0; egressEndpointsIndex < egressEndpointsJsonList.GetLength(); ++egressEndpointsIndex)
     {
       m_egressEndpoints.push_back(egressEndpointsJsonList[egressEndpointsIndex].AsObject());
@@ -130,7 +130,7 @@ Channel& Channel::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inputAttachments"))
   {
-    Array<JsonView> inputAttachmentsJsonList = jsonValue.GetArray("inputAttachments");
+    Aws::Utils::Array<JsonView> inputAttachmentsJsonList = jsonValue.GetArray("inputAttachments");
     for(unsigned inputAttachmentsIndex = 0; inputAttachmentsIndex < inputAttachmentsJsonList.GetLength(); ++inputAttachmentsIndex)
     {
       m_inputAttachments.push_back(inputAttachmentsJsonList[inputAttachmentsIndex].AsObject());
@@ -168,7 +168,7 @@ Channel& Channel::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("pipelineDetails"))
   {
-    Array<JsonView> pipelineDetailsJsonList = jsonValue.GetArray("pipelineDetails");
+    Aws::Utils::Array<JsonView> pipelineDetailsJsonList = jsonValue.GetArray("pipelineDetails");
     for(unsigned pipelineDetailsIndex = 0; pipelineDetailsIndex < pipelineDetailsJsonList.GetLength(); ++pipelineDetailsIndex)
     {
       m_pipelineDetails.push_back(pipelineDetailsJsonList[pipelineDetailsIndex].AsObject());
@@ -240,7 +240,7 @@ JsonValue Channel::Jsonize() const
 
   if(m_destinationsHasBeenSet)
   {
-   Array<JsonValue> destinationsJsonList(m_destinations.size());
+   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
    {
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
@@ -251,7 +251,7 @@ JsonValue Channel::Jsonize() const
 
   if(m_egressEndpointsHasBeenSet)
   {
-   Array<JsonValue> egressEndpointsJsonList(m_egressEndpoints.size());
+   Aws::Utils::Array<JsonValue> egressEndpointsJsonList(m_egressEndpoints.size());
    for(unsigned egressEndpointsIndex = 0; egressEndpointsIndex < egressEndpointsJsonList.GetLength(); ++egressEndpointsIndex)
    {
      egressEndpointsJsonList[egressEndpointsIndex].AsObject(m_egressEndpoints[egressEndpointsIndex].Jsonize());
@@ -274,7 +274,7 @@ JsonValue Channel::Jsonize() const
 
   if(m_inputAttachmentsHasBeenSet)
   {
-   Array<JsonValue> inputAttachmentsJsonList(m_inputAttachments.size());
+   Aws::Utils::Array<JsonValue> inputAttachmentsJsonList(m_inputAttachments.size());
    for(unsigned inputAttachmentsIndex = 0; inputAttachmentsIndex < inputAttachmentsJsonList.GetLength(); ++inputAttachmentsIndex)
    {
      inputAttachmentsJsonList[inputAttachmentsIndex].AsObject(m_inputAttachments[inputAttachmentsIndex].Jsonize());
@@ -308,7 +308,7 @@ JsonValue Channel::Jsonize() const
 
   if(m_pipelineDetailsHasBeenSet)
   {
-   Array<JsonValue> pipelineDetailsJsonList(m_pipelineDetails.size());
+   Aws::Utils::Array<JsonValue> pipelineDetailsJsonList(m_pipelineDetails.size());
    for(unsigned pipelineDetailsIndex = 0; pipelineDetailsIndex < pipelineDetailsJsonList.GetLength(); ++pipelineDetailsIndex)
    {
      pipelineDetailsJsonList[pipelineDetailsIndex].AsObject(m_pipelineDetails[pipelineDetailsIndex].Jsonize());

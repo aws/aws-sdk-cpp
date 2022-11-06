@@ -30,7 +30,7 @@ ListUserProfilesResult& ListUserProfilesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("userProfiles"))
   {
-    Array<JsonView> userProfilesJsonList = jsonValue.GetArray("userProfiles");
+    Aws::Utils::Array<JsonView> userProfilesJsonList = jsonValue.GetArray("userProfiles");
     for(unsigned userProfilesIndex = 0; userProfilesIndex < userProfilesJsonList.GetLength(); ++userProfilesIndex)
     {
       m_userProfiles.push_back(userProfilesJsonList[userProfilesIndex].AsObject());

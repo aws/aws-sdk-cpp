@@ -24,7 +24,7 @@ Aws::String DescribeEventDetailsForOrganizationRequest::SerializePayload() const
 
   if(m_organizationEventDetailFiltersHasBeenSet)
   {
-   Array<JsonValue> organizationEventDetailFiltersJsonList(m_organizationEventDetailFilters.size());
+   Aws::Utils::Array<JsonValue> organizationEventDetailFiltersJsonList(m_organizationEventDetailFilters.size());
    for(unsigned organizationEventDetailFiltersIndex = 0; organizationEventDetailFiltersIndex < organizationEventDetailFiltersJsonList.GetLength(); ++organizationEventDetailFiltersIndex)
    {
      organizationEventDetailFiltersJsonList[organizationEventDetailFiltersIndex].AsObject(m_organizationEventDetailFilters[organizationEventDetailFiltersIndex].Jsonize());

@@ -36,7 +36,7 @@ GetLambdaFunctionRecommendationsResult& GetLambdaFunctionRecommendationsResult::
 
   if(jsonValue.ValueExists("lambdaFunctionRecommendations"))
   {
-    Array<JsonView> lambdaFunctionRecommendationsJsonList = jsonValue.GetArray("lambdaFunctionRecommendations");
+    Aws::Utils::Array<JsonView> lambdaFunctionRecommendationsJsonList = jsonValue.GetArray("lambdaFunctionRecommendations");
     for(unsigned lambdaFunctionRecommendationsIndex = 0; lambdaFunctionRecommendationsIndex < lambdaFunctionRecommendationsJsonList.GetLength(); ++lambdaFunctionRecommendationsIndex)
     {
       m_lambdaFunctionRecommendations.push_back(lambdaFunctionRecommendationsJsonList[lambdaFunctionRecommendationsIndex].AsObject());

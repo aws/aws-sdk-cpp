@@ -36,7 +36,7 @@ ListRoutingControlsResult& ListRoutingControlsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("RoutingControls"))
   {
-    Array<JsonView> routingControlsJsonList = jsonValue.GetArray("RoutingControls");
+    Aws::Utils::Array<JsonView> routingControlsJsonList = jsonValue.GetArray("RoutingControls");
     for(unsigned routingControlsIndex = 0; routingControlsIndex < routingControlsJsonList.GetLength(); ++routingControlsIndex)
     {
       m_routingControls.push_back(routingControlsJsonList[routingControlsIndex].AsObject());

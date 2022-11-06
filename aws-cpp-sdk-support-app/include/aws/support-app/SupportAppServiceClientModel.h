@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/support-app/SupportAppErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/support-app/SupportAppEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -59,6 +61,10 @@ namespace Aws
 
   namespace SupportApp
   {
+    using SupportAppClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SupportAppEndpointProviderBase = Aws::SupportApp::Endpoint::SupportAppEndpointProviderBase;
+    using SupportAppEndpointProvider = Aws::SupportApp::Endpoint::SupportAppEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in SupportAppClient header */

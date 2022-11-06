@@ -62,7 +62,7 @@ MultiplexProgram& MultiplexProgram::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("pipelineDetails"))
   {
-    Array<JsonView> pipelineDetailsJsonList = jsonValue.GetArray("pipelineDetails");
+    Aws::Utils::Array<JsonView> pipelineDetailsJsonList = jsonValue.GetArray("pipelineDetails");
     for(unsigned pipelineDetailsIndex = 0; pipelineDetailsIndex < pipelineDetailsJsonList.GetLength(); ++pipelineDetailsIndex)
     {
       m_pipelineDetails.push_back(pipelineDetailsJsonList[pipelineDetailsIndex].AsObject());
@@ -104,7 +104,7 @@ JsonValue MultiplexProgram::Jsonize() const
 
   if(m_pipelineDetailsHasBeenSet)
   {
-   Array<JsonValue> pipelineDetailsJsonList(m_pipelineDetails.size());
+   Aws::Utils::Array<JsonValue> pipelineDetailsJsonList(m_pipelineDetails.size());
    for(unsigned pipelineDetailsIndex = 0; pipelineDetailsIndex < pipelineDetailsJsonList.GetLength(); ++pipelineDetailsIndex)
    {
      pipelineDetailsJsonList[pipelineDetailsIndex].AsObject(m_pipelineDetails[pipelineDetailsIndex].Jsonize());

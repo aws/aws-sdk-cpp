@@ -53,7 +53,7 @@ Tmpfs& Tmpfs::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("mountOptions"))
   {
-    Array<JsonView> mountOptionsJsonList = jsonValue.GetArray("mountOptions");
+    Aws::Utils::Array<JsonView> mountOptionsJsonList = jsonValue.GetArray("mountOptions");
     for(unsigned mountOptionsIndex = 0; mountOptionsIndex < mountOptionsJsonList.GetLength(); ++mountOptionsIndex)
     {
       m_mountOptions.push_back(mountOptionsJsonList[mountOptionsIndex].AsString());
@@ -82,7 +82,7 @@ JsonValue Tmpfs::Jsonize() const
 
   if(m_mountOptionsHasBeenSet)
   {
-   Array<JsonValue> mountOptionsJsonList(m_mountOptions.size());
+   Aws::Utils::Array<JsonValue> mountOptionsJsonList(m_mountOptions.size());
    for(unsigned mountOptionsIndex = 0; mountOptionsIndex < mountOptionsJsonList.GetLength(); ++mountOptionsIndex)
    {
      mountOptionsJsonList[mountOptionsIndex].AsString(m_mountOptions[mountOptionsIndex]);

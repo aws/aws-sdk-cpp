@@ -30,7 +30,7 @@ Aws::String PutRecordBatchRequest::SerializePayload() const
 
   if(m_recordsHasBeenSet)
   {
-   Array<JsonValue> recordsJsonList(m_records.size());
+   Aws::Utils::Array<JsonValue> recordsJsonList(m_records.size());
    for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
    {
      recordsJsonList[recordsIndex].AsObject(m_records[recordsIndex].Jsonize());

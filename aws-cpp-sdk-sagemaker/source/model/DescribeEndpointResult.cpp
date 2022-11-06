@@ -50,7 +50,7 @@ DescribeEndpointResult& DescribeEndpointResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("ProductionVariants"))
   {
-    Array<JsonView> productionVariantsJsonList = jsonValue.GetArray("ProductionVariants");
+    Aws::Utils::Array<JsonView> productionVariantsJsonList = jsonValue.GetArray("ProductionVariants");
     for(unsigned productionVariantsIndex = 0; productionVariantsIndex < productionVariantsJsonList.GetLength(); ++productionVariantsIndex)
     {
       m_productionVariants.push_back(productionVariantsJsonList[productionVariantsIndex].AsObject());

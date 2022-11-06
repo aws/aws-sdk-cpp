@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/nimble/NimbleStudioErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/nimble/NimbleStudioEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -96,6 +98,10 @@ namespace Aws
 
   namespace NimbleStudio
   {
+    using NimbleStudioClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using NimbleStudioEndpointProviderBase = Aws::NimbleStudio::Endpoint::NimbleStudioEndpointProviderBase;
+    using NimbleStudioEndpointProvider = Aws::NimbleStudio::Endpoint::NimbleStudioEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in NimbleStudioClient header */

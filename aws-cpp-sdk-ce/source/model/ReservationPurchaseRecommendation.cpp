@@ -88,7 +88,7 @@ ReservationPurchaseRecommendation& ReservationPurchaseRecommendation::operator =
 
   if(jsonValue.ValueExists("RecommendationDetails"))
   {
-    Array<JsonView> recommendationDetailsJsonList = jsonValue.GetArray("RecommendationDetails");
+    Aws::Utils::Array<JsonView> recommendationDetailsJsonList = jsonValue.GetArray("RecommendationDetails");
     for(unsigned recommendationDetailsIndex = 0; recommendationDetailsIndex < recommendationDetailsJsonList.GetLength(); ++recommendationDetailsIndex)
     {
       m_recommendationDetails.push_back(recommendationDetailsJsonList[recommendationDetailsIndex].AsObject());
@@ -138,7 +138,7 @@ JsonValue ReservationPurchaseRecommendation::Jsonize() const
 
   if(m_recommendationDetailsHasBeenSet)
   {
-   Array<JsonValue> recommendationDetailsJsonList(m_recommendationDetails.size());
+   Aws::Utils::Array<JsonValue> recommendationDetailsJsonList(m_recommendationDetails.size());
    for(unsigned recommendationDetailsIndex = 0; recommendationDetailsIndex < recommendationDetailsJsonList.GetLength(); ++recommendationDetailsIndex)
    {
      recommendationDetailsJsonList[recommendationDetailsIndex].AsObject(m_recommendationDetails[recommendationDetailsIndex].Jsonize());

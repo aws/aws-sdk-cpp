@@ -33,7 +33,7 @@ Aws::String CreateProxySessionRequest::SerializePayload() const
 
   if(m_participantPhoneNumbersHasBeenSet)
   {
-   Array<JsonValue> participantPhoneNumbersJsonList(m_participantPhoneNumbers.size());
+   Aws::Utils::Array<JsonValue> participantPhoneNumbersJsonList(m_participantPhoneNumbers.size());
    for(unsigned participantPhoneNumbersIndex = 0; participantPhoneNumbersIndex < participantPhoneNumbersJsonList.GetLength(); ++participantPhoneNumbersIndex)
    {
      participantPhoneNumbersJsonList[participantPhoneNumbersIndex].AsString(m_participantPhoneNumbers[participantPhoneNumbersIndex]);
@@ -56,7 +56,7 @@ Aws::String CreateProxySessionRequest::SerializePayload() const
 
   if(m_capabilitiesHasBeenSet)
   {
-   Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
+   Aws::Utils::Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
    for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
    {
      capabilitiesJsonList[capabilitiesIndex].AsString(CapabilityMapper::GetNameForCapability(m_capabilities[capabilitiesIndex]));

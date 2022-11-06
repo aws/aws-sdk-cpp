@@ -36,7 +36,7 @@ SearchAvailablePhoneNumbersResult& SearchAvailablePhoneNumbersResult::operator =
 
   if(jsonValue.ValueExists("AvailableNumbersList"))
   {
-    Array<JsonView> availableNumbersListJsonList = jsonValue.GetArray("AvailableNumbersList");
+    Aws::Utils::Array<JsonView> availableNumbersListJsonList = jsonValue.GetArray("AvailableNumbersList");
     for(unsigned availableNumbersListIndex = 0; availableNumbersListIndex < availableNumbersListJsonList.GetLength(); ++availableNumbersListIndex)
     {
       m_availableNumbersList.push_back(availableNumbersListJsonList[availableNumbersListIndex].AsObject());

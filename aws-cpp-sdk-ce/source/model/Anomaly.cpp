@@ -79,7 +79,7 @@ Anomaly& Anomaly::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RootCauses"))
   {
-    Array<JsonView> rootCausesJsonList = jsonValue.GetArray("RootCauses");
+    Aws::Utils::Array<JsonView> rootCausesJsonList = jsonValue.GetArray("RootCauses");
     for(unsigned rootCausesIndex = 0; rootCausesIndex < rootCausesJsonList.GetLength(); ++rootCausesIndex)
     {
       m_rootCauses.push_back(rootCausesJsonList[rootCausesIndex].AsObject());
@@ -148,7 +148,7 @@ JsonValue Anomaly::Jsonize() const
 
   if(m_rootCausesHasBeenSet)
   {
-   Array<JsonValue> rootCausesJsonList(m_rootCauses.size());
+   Aws::Utils::Array<JsonValue> rootCausesJsonList(m_rootCauses.size());
    for(unsigned rootCausesIndex = 0; rootCausesIndex < rootCausesJsonList.GetLength(); ++rootCausesIndex)
    {
      rootCausesJsonList[rootCausesIndex].AsObject(m_rootCauses[rootCausesIndex].Jsonize());

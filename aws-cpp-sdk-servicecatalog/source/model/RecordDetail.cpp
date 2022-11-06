@@ -138,7 +138,7 @@ RecordDetail& RecordDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RecordErrors"))
   {
-    Array<JsonView> recordErrorsJsonList = jsonValue.GetArray("RecordErrors");
+    Aws::Utils::Array<JsonView> recordErrorsJsonList = jsonValue.GetArray("RecordErrors");
     for(unsigned recordErrorsIndex = 0; recordErrorsIndex < recordErrorsJsonList.GetLength(); ++recordErrorsIndex)
     {
       m_recordErrors.push_back(recordErrorsJsonList[recordErrorsIndex].AsObject());
@@ -148,7 +148,7 @@ RecordDetail& RecordDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RecordTags"))
   {
-    Array<JsonView> recordTagsJsonList = jsonValue.GetArray("RecordTags");
+    Aws::Utils::Array<JsonView> recordTagsJsonList = jsonValue.GetArray("RecordTags");
     for(unsigned recordTagsIndex = 0; recordTagsIndex < recordTagsJsonList.GetLength(); ++recordTagsIndex)
     {
       m_recordTags.push_back(recordTagsJsonList[recordTagsIndex].AsObject());
@@ -235,7 +235,7 @@ JsonValue RecordDetail::Jsonize() const
 
   if(m_recordErrorsHasBeenSet)
   {
-   Array<JsonValue> recordErrorsJsonList(m_recordErrors.size());
+   Aws::Utils::Array<JsonValue> recordErrorsJsonList(m_recordErrors.size());
    for(unsigned recordErrorsIndex = 0; recordErrorsIndex < recordErrorsJsonList.GetLength(); ++recordErrorsIndex)
    {
      recordErrorsJsonList[recordErrorsIndex].AsObject(m_recordErrors[recordErrorsIndex].Jsonize());
@@ -246,7 +246,7 @@ JsonValue RecordDetail::Jsonize() const
 
   if(m_recordTagsHasBeenSet)
   {
-   Array<JsonValue> recordTagsJsonList(m_recordTags.size());
+   Aws::Utils::Array<JsonValue> recordTagsJsonList(m_recordTags.size());
    for(unsigned recordTagsIndex = 0; recordTagsIndex < recordTagsJsonList.GetLength(); ++recordTagsIndex)
    {
      recordTagsJsonList[recordTagsIndex].AsObject(m_recordTags[recordTagsIndex].Jsonize());

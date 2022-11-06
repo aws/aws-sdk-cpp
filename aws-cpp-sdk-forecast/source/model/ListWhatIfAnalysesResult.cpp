@@ -30,7 +30,7 @@ ListWhatIfAnalysesResult& ListWhatIfAnalysesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WhatIfAnalyses"))
   {
-    Array<JsonView> whatIfAnalysesJsonList = jsonValue.GetArray("WhatIfAnalyses");
+    Aws::Utils::Array<JsonView> whatIfAnalysesJsonList = jsonValue.GetArray("WhatIfAnalyses");
     for(unsigned whatIfAnalysesIndex = 0; whatIfAnalysesIndex < whatIfAnalysesJsonList.GetLength(); ++whatIfAnalysesIndex)
     {
       m_whatIfAnalyses.push_back(whatIfAnalysesJsonList[whatIfAnalysesIndex].AsObject());

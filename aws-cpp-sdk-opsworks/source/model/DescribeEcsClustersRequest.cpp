@@ -27,7 +27,7 @@ Aws::String DescribeEcsClustersRequest::SerializePayload() const
 
   if(m_ecsClusterArnsHasBeenSet)
   {
-   Array<JsonValue> ecsClusterArnsJsonList(m_ecsClusterArns.size());
+   Aws::Utils::Array<JsonValue> ecsClusterArnsJsonList(m_ecsClusterArns.size());
    for(unsigned ecsClusterArnsIndex = 0; ecsClusterArnsIndex < ecsClusterArnsJsonList.GetLength(); ++ecsClusterArnsIndex)
    {
      ecsClusterArnsJsonList[ecsClusterArnsIndex].AsString(m_ecsClusterArns[ecsClusterArnsIndex]);

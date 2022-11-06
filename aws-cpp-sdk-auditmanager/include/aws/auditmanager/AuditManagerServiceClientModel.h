@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/auditmanager/AuditManagerErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/auditmanager/AuditManagerEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -110,6 +112,10 @@ namespace Aws
 
   namespace AuditManager
   {
+    using AuditManagerClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AuditManagerEndpointProviderBase = Aws::AuditManager::Endpoint::AuditManagerEndpointProviderBase;
+    using AuditManagerEndpointProvider = Aws::AuditManager::Endpoint::AuditManagerEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in AuditManagerClient header */

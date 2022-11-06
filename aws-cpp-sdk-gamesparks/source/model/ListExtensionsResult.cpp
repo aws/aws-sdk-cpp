@@ -30,7 +30,7 @@ ListExtensionsResult& ListExtensionsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Extensions"))
   {
-    Array<JsonView> extensionsJsonList = jsonValue.GetArray("Extensions");
+    Aws::Utils::Array<JsonView> extensionsJsonList = jsonValue.GetArray("Extensions");
     for(unsigned extensionsIndex = 0; extensionsIndex < extensionsJsonList.GetLength(); ++extensionsIndex)
     {
       m_extensions.push_back(extensionsJsonList[extensionsIndex].AsObject());

@@ -30,7 +30,7 @@ GetFindingStatisticsResult& GetFindingStatisticsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("countsByGroup"))
   {
-    Array<JsonView> countsByGroupJsonList = jsonValue.GetArray("countsByGroup");
+    Aws::Utils::Array<JsonView> countsByGroupJsonList = jsonValue.GetArray("countsByGroup");
     for(unsigned countsByGroupIndex = 0; countsByGroupIndex < countsByGroupJsonList.GetLength(); ++countsByGroupIndex)
     {
       m_countsByGroup.push_back(countsByGroupJsonList[countsByGroupIndex].AsObject());

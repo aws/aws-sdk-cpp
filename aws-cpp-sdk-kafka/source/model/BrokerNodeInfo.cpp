@@ -80,7 +80,7 @@ BrokerNodeInfo& BrokerNodeInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("endpoints"))
   {
-    Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
+    Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
     for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
     {
       m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsString());
@@ -127,7 +127,7 @@ JsonValue BrokerNodeInfo::Jsonize() const
 
   if(m_endpointsHasBeenSet)
   {
-   Array<JsonValue> endpointsJsonList(m_endpoints.size());
+   Aws::Utils::Array<JsonValue> endpointsJsonList(m_endpoints.size());
    for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
    {
      endpointsJsonList[endpointsIndex].AsString(m_endpoints[endpointsIndex]);

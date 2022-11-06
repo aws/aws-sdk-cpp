@@ -32,7 +32,7 @@ Aws::String CreateLocationFsxLustreRequest::SerializePayload() const
 
   if(m_securityGroupArnsHasBeenSet)
   {
-   Array<JsonValue> securityGroupArnsJsonList(m_securityGroupArns.size());
+   Aws::Utils::Array<JsonValue> securityGroupArnsJsonList(m_securityGroupArns.size());
    for(unsigned securityGroupArnsIndex = 0; securityGroupArnsIndex < securityGroupArnsJsonList.GetLength(); ++securityGroupArnsIndex)
    {
      securityGroupArnsJsonList[securityGroupArnsIndex].AsString(m_securityGroupArns[securityGroupArnsIndex]);
@@ -49,7 +49,7 @@ Aws::String CreateLocationFsxLustreRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

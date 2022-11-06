@@ -41,7 +41,7 @@ ShareRule& ShareRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TargetAccounts"))
   {
-    Array<JsonView> targetAccountsJsonList = jsonValue.GetArray("TargetAccounts");
+    Aws::Utils::Array<JsonView> targetAccountsJsonList = jsonValue.GetArray("TargetAccounts");
     for(unsigned targetAccountsIndex = 0; targetAccountsIndex < targetAccountsJsonList.GetLength(); ++targetAccountsIndex)
     {
       m_targetAccounts.push_back(targetAccountsJsonList[targetAccountsIndex].AsString());
@@ -72,7 +72,7 @@ JsonValue ShareRule::Jsonize() const
 
   if(m_targetAccountsHasBeenSet)
   {
-   Array<JsonValue> targetAccountsJsonList(m_targetAccounts.size());
+   Aws::Utils::Array<JsonValue> targetAccountsJsonList(m_targetAccounts.size());
    for(unsigned targetAccountsIndex = 0; targetAccountsIndex < targetAccountsJsonList.GetLength(); ++targetAccountsIndex)
    {
      targetAccountsJsonList[targetAccountsIndex].AsString(m_targetAccounts[targetAccountsIndex]);

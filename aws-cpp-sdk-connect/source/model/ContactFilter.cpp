@@ -33,7 +33,7 @@ ContactFilter& ContactFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ContactStates"))
   {
-    Array<JsonView> contactStatesJsonList = jsonValue.GetArray("ContactStates");
+    Aws::Utils::Array<JsonView> contactStatesJsonList = jsonValue.GetArray("ContactStates");
     for(unsigned contactStatesIndex = 0; contactStatesIndex < contactStatesJsonList.GetLength(); ++contactStatesIndex)
     {
       m_contactStates.push_back(ContactStateMapper::GetContactStateForName(contactStatesJsonList[contactStatesIndex].AsString()));
@@ -50,7 +50,7 @@ JsonValue ContactFilter::Jsonize() const
 
   if(m_contactStatesHasBeenSet)
   {
-   Array<JsonValue> contactStatesJsonList(m_contactStates.size());
+   Aws::Utils::Array<JsonValue> contactStatesJsonList(m_contactStates.size());
    for(unsigned contactStatesIndex = 0; contactStatesIndex < contactStatesJsonList.GetLength(); ++contactStatesIndex)
    {
      contactStatesJsonList[contactStatesIndex].AsString(ContactStateMapper::GetNameForContactState(m_contactStates[contactStatesIndex]));

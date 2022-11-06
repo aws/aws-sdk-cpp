@@ -84,7 +84,7 @@ BuildBatchPhase& BuildBatchPhase::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("contexts"))
   {
-    Array<JsonView> contextsJsonList = jsonValue.GetArray("contexts");
+    Aws::Utils::Array<JsonView> contextsJsonList = jsonValue.GetArray("contexts");
     for(unsigned contextsIndex = 0; contextsIndex < contextsJsonList.GetLength(); ++contextsIndex)
     {
       m_contexts.push_back(contextsJsonList[contextsIndex].AsObject());
@@ -127,7 +127,7 @@ JsonValue BuildBatchPhase::Jsonize() const
 
   if(m_contextsHasBeenSet)
   {
-   Array<JsonValue> contextsJsonList(m_contexts.size());
+   Aws::Utils::Array<JsonValue> contextsJsonList(m_contexts.size());
    for(unsigned contextsIndex = 0; contextsIndex < contextsJsonList.GetLength(); ++contextsIndex)
    {
      contextsJsonList[contextsIndex].AsObject(m_contexts[contextsIndex].Jsonize());

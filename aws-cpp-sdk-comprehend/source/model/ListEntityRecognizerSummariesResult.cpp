@@ -30,7 +30,7 @@ ListEntityRecognizerSummariesResult& ListEntityRecognizerSummariesResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EntityRecognizerSummariesList"))
   {
-    Array<JsonView> entityRecognizerSummariesListJsonList = jsonValue.GetArray("EntityRecognizerSummariesList");
+    Aws::Utils::Array<JsonView> entityRecognizerSummariesListJsonList = jsonValue.GetArray("EntityRecognizerSummariesList");
     for(unsigned entityRecognizerSummariesListIndex = 0; entityRecognizerSummariesListIndex < entityRecognizerSummariesListJsonList.GetLength(); ++entityRecognizerSummariesListIndex)
     {
       m_entityRecognizerSummariesList.push_back(entityRecognizerSummariesListJsonList[entityRecognizerSummariesListIndex].AsObject());

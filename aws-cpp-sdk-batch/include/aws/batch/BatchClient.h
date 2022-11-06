@@ -41,22 +41,48 @@ namespace Batch
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        BatchClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        BatchClient(const Aws::Batch::BatchClientConfiguration& clientConfiguration = Aws::Batch::BatchClientConfiguration(),
+                    std::shared_ptr<BatchEndpointProviderBase> endpointProvider = Aws::MakeShared<BatchEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         BatchClient(const Aws::Auth::AWSCredentials& credentials,
-                    const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                    std::shared_ptr<BatchEndpointProviderBase> endpointProvider = Aws::MakeShared<BatchEndpointProvider>(ALLOCATION_TAG),
+                    const Aws::Batch::BatchClientConfiguration& clientConfiguration = Aws::Batch::BatchClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         BatchClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                    std::shared_ptr<BatchEndpointProviderBase> endpointProvider = Aws::MakeShared<BatchEndpointProvider>(ALLOCATION_TAG),
+                    const Aws::Batch::BatchClientConfiguration& clientConfiguration = Aws::Batch::BatchClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        BatchClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        BatchClient(const Aws::Auth::AWSCredentials& credentials,
+                    const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        BatchClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                    const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~BatchClient();
 
 
@@ -604,12 +630,13 @@ namespace Batch
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<BatchEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const BatchClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      BatchClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<BatchEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Batch

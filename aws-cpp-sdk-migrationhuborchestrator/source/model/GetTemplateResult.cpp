@@ -50,7 +50,7 @@ GetTemplateResult& GetTemplateResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsObject());
@@ -59,7 +59,7 @@ GetTemplateResult& GetTemplateResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("tools"))
   {
-    Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
+    Aws::Utils::Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
     for(unsigned toolsIndex = 0; toolsIndex < toolsJsonList.GetLength(); ++toolsIndex)
     {
       m_tools.push_back(toolsJsonList[toolsIndex].AsObject());

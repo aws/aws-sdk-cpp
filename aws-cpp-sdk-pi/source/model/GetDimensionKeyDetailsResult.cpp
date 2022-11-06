@@ -30,7 +30,7 @@ GetDimensionKeyDetailsResult& GetDimensionKeyDetailsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Dimensions"))
   {
-    Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
+    Aws::Utils::Array<JsonView> dimensionsJsonList = jsonValue.GetArray("Dimensions");
     for(unsigned dimensionsIndex = 0; dimensionsIndex < dimensionsJsonList.GetLength(); ++dimensionsIndex)
     {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());

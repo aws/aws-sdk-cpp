@@ -36,7 +36,7 @@ DescribeSubnetGroupsResult& DescribeSubnetGroupsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("SubnetGroups"))
   {
-    Array<JsonView> subnetGroupsJsonList = jsonValue.GetArray("SubnetGroups");
+    Aws::Utils::Array<JsonView> subnetGroupsJsonList = jsonValue.GetArray("SubnetGroups");
     for(unsigned subnetGroupsIndex = 0; subnetGroupsIndex < subnetGroupsJsonList.GetLength(); ++subnetGroupsIndex)
     {
       m_subnetGroups.push_back(subnetGroupsJsonList[subnetGroupsIndex].AsObject());

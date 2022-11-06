@@ -30,7 +30,7 @@ GetResourceShareInvitationsResult& GetResourceShareInvitationsResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resourceShareInvitations"))
   {
-    Array<JsonView> resourceShareInvitationsJsonList = jsonValue.GetArray("resourceShareInvitations");
+    Aws::Utils::Array<JsonView> resourceShareInvitationsJsonList = jsonValue.GetArray("resourceShareInvitations");
     for(unsigned resourceShareInvitationsIndex = 0; resourceShareInvitationsIndex < resourceShareInvitationsJsonList.GetLength(); ++resourceShareInvitationsIndex)
     {
       m_resourceShareInvitations.push_back(resourceShareInvitationsJsonList[resourceShareInvitationsIndex].AsObject());

@@ -33,7 +33,7 @@ Scte35TimeSignalScheduleActionSettings& Scte35TimeSignalScheduleActionSettings::
 {
   if(jsonValue.ValueExists("scte35Descriptors"))
   {
-    Array<JsonView> scte35DescriptorsJsonList = jsonValue.GetArray("scte35Descriptors");
+    Aws::Utils::Array<JsonView> scte35DescriptorsJsonList = jsonValue.GetArray("scte35Descriptors");
     for(unsigned scte35DescriptorsIndex = 0; scte35DescriptorsIndex < scte35DescriptorsJsonList.GetLength(); ++scte35DescriptorsIndex)
     {
       m_scte35Descriptors.push_back(scte35DescriptorsJsonList[scte35DescriptorsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue Scte35TimeSignalScheduleActionSettings::Jsonize() const
 
   if(m_scte35DescriptorsHasBeenSet)
   {
-   Array<JsonValue> scte35DescriptorsJsonList(m_scte35Descriptors.size());
+   Aws::Utils::Array<JsonValue> scte35DescriptorsJsonList(m_scte35Descriptors.size());
    for(unsigned scte35DescriptorsIndex = 0; scte35DescriptorsIndex < scte35DescriptorsJsonList.GetLength(); ++scte35DescriptorsIndex)
    {
      scte35DescriptorsJsonList[scte35DescriptorsIndex].AsObject(m_scte35Descriptors[scte35DescriptorsIndex].Jsonize());

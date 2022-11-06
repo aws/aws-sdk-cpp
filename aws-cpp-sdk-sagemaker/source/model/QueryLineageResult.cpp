@@ -30,7 +30,7 @@ QueryLineageResult& QueryLineageResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Vertices"))
   {
-    Array<JsonView> verticesJsonList = jsonValue.GetArray("Vertices");
+    Aws::Utils::Array<JsonView> verticesJsonList = jsonValue.GetArray("Vertices");
     for(unsigned verticesIndex = 0; verticesIndex < verticesJsonList.GetLength(); ++verticesIndex)
     {
       m_vertices.push_back(verticesJsonList[verticesIndex].AsObject());
@@ -39,7 +39,7 @@ QueryLineageResult& QueryLineageResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("Edges"))
   {
-    Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
+    Aws::Utils::Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
     for(unsigned edgesIndex = 0; edgesIndex < edgesJsonList.GetLength(); ++edgesIndex)
     {
       m_edges.push_back(edgesJsonList[edgesIndex].AsObject());

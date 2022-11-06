@@ -44,7 +44,7 @@ CookieObject& CookieObject::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("cookiesAllowList"))
   {
-    Array<JsonView> cookiesAllowListJsonList = jsonValue.GetArray("cookiesAllowList");
+    Aws::Utils::Array<JsonView> cookiesAllowListJsonList = jsonValue.GetArray("cookiesAllowList");
     for(unsigned cookiesAllowListIndex = 0; cookiesAllowListIndex < cookiesAllowListJsonList.GetLength(); ++cookiesAllowListIndex)
     {
       m_cookiesAllowList.push_back(cookiesAllowListJsonList[cookiesAllowListIndex].AsString());
@@ -66,7 +66,7 @@ JsonValue CookieObject::Jsonize() const
 
   if(m_cookiesAllowListHasBeenSet)
   {
-   Array<JsonValue> cookiesAllowListJsonList(m_cookiesAllowList.size());
+   Aws::Utils::Array<JsonValue> cookiesAllowListJsonList(m_cookiesAllowList.size());
    for(unsigned cookiesAllowListIndex = 0; cookiesAllowListIndex < cookiesAllowListJsonList.GetLength(); ++cookiesAllowListIndex)
    {
      cookiesAllowListJsonList[cookiesAllowListIndex].AsString(m_cookiesAllowList[cookiesAllowListIndex]);

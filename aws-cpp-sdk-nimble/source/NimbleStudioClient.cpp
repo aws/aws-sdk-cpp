@@ -16,10 +16,11 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/nimble/NimbleStudioClient.h>
-#include <aws/nimble/NimbleStudioEndpoint.h>
 #include <aws/nimble/NimbleStudioErrorMarshaller.h>
+#include <aws/nimble/NimbleStudioEndpointProvider.h>
 #include <aws/nimble/model/AcceptEulasRequest.h>
 #include <aws/nimble/model/CreateLaunchProfileRequest.h>
 #include <aws/nimble/model/CreateStreamingImageRequest.h>
@@ -75,20 +76,71 @@ using namespace Aws::NimbleStudio;
 using namespace Aws::NimbleStudio::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 const char* NimbleStudioClient::SERVICE_NAME = "nimble";
 const char* NimbleStudioClient::ALLOCATION_TAG = "NimbleStudioClient";
 
-NimbleStudioClient::NimbleStudioClient(const Client::ClientConfiguration& clientConfiguration) :
+NimbleStudioClient::NimbleStudioClient(const NimbleStudio::NimbleStudioClientConfiguration& clientConfiguration,
+                                       std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<NimbleStudioErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
+}
+
+NimbleStudioClient::NimbleStudioClient(const AWSCredentials& credentials,
+                                       std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider,
+                                       const NimbleStudio::NimbleStudioClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<NimbleStudioErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+NimbleStudioClient::NimbleStudioClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                       std::shared_ptr<NimbleStudioEndpointProviderBase> endpointProvider,
+                                       const NimbleStudio::NimbleStudioClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<NimbleStudioErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  NimbleStudioClient::NimbleStudioClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<NimbleStudioErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<NimbleStudioEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
 }
 
 NimbleStudioClient::NimbleStudioClient(const AWSCredentials& credentials,
@@ -99,9 +151,11 @@ NimbleStudioClient::NimbleStudioClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<NimbleStudioErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<NimbleStudioEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 NimbleStudioClient::NimbleStudioClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
@@ -112,53 +166,50 @@ NimbleStudioClient::NimbleStudioClient(const std::shared_ptr<AWSCredentialsProvi
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<NimbleStudioErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<NimbleStudioEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 NimbleStudioClient::~NimbleStudioClient()
 {
 }
 
-void NimbleStudioClient::init(const Client::ClientConfiguration& config)
+std::shared_ptr<NimbleStudioEndpointProviderBase>& NimbleStudioClient::accessEndpointProvider()
+{
+  return m_endpointProvider;
+}
+
+void NimbleStudioClient::init(const NimbleStudio::NimbleStudioClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("nimble");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + NimbleStudioEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
 }
 
 void NimbleStudioClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
 AcceptEulasOutcome NimbleStudioClient::AcceptEulas(const AcceptEulasRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AcceptEulas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("AcceptEulas", "Required field: StudioId, is not set");
     return AcceptEulasOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/eula-acceptances");
-  return AcceptEulasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AcceptEulas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/eula-acceptances");
+  return AcceptEulasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AcceptEulasOutcomeCallable NimbleStudioClient::AcceptEulasCallable(const AcceptEulasRequest& request) const
@@ -179,16 +230,18 @@ void NimbleStudioClient::AcceptEulasAsync(const AcceptEulasRequest& request, con
 
 CreateLaunchProfileOutcome NimbleStudioClient::CreateLaunchProfile(const CreateLaunchProfileRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLaunchProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateLaunchProfile", "Required field: StudioId, is not set");
     return CreateLaunchProfileOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/launch-profiles");
-  return CreateLaunchProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLaunchProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launch-profiles");
+  return CreateLaunchProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateLaunchProfileOutcomeCallable NimbleStudioClient::CreateLaunchProfileCallable(const CreateLaunchProfileRequest& request) const
@@ -209,16 +262,18 @@ void NimbleStudioClient::CreateLaunchProfileAsync(const CreateLaunchProfileReque
 
 CreateStreamingImageOutcome NimbleStudioClient::CreateStreamingImage(const CreateStreamingImageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStreamingImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateStreamingImage", "Required field: StudioId, is not set");
     return CreateStreamingImageOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/streaming-images");
-  return CreateStreamingImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStreamingImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-images");
+  return CreateStreamingImageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateStreamingImageOutcomeCallable NimbleStudioClient::CreateStreamingImageCallable(const CreateStreamingImageRequest& request) const
@@ -239,16 +294,18 @@ void NimbleStudioClient::CreateStreamingImageAsync(const CreateStreamingImageReq
 
 CreateStreamingSessionOutcome NimbleStudioClient::CreateStreamingSession(const CreateStreamingSessionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateStreamingSession", "Required field: StudioId, is not set");
     return CreateStreamingSessionOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/streaming-sessions");
-  return CreateStreamingSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-sessions");
+  return CreateStreamingSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateStreamingSessionOutcomeCallable NimbleStudioClient::CreateStreamingSessionCallable(const CreateStreamingSessionRequest& request) const
@@ -269,6 +326,7 @@ void NimbleStudioClient::CreateStreamingSessionAsync(const CreateStreamingSessio
 
 CreateStreamingSessionStreamOutcome NimbleStudioClient::CreateStreamingSessionStream(const CreateStreamingSessionStreamRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStreamingSessionStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SessionIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateStreamingSessionStream", "Required field: SessionId, is not set");
@@ -279,13 +337,14 @@ CreateStreamingSessionStreamOutcome NimbleStudioClient::CreateStreamingSessionSt
     AWS_LOGSTREAM_ERROR("CreateStreamingSessionStream", "Required field: StudioId, is not set");
     return CreateStreamingSessionStreamOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/streaming-sessions/");
-  uri.AddPathSegment(request.GetSessionId());
-  uri.AddPathSegments("/streams");
-  return CreateStreamingSessionStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStreamingSessionStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-sessions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streams");
+  return CreateStreamingSessionStreamOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateStreamingSessionStreamOutcomeCallable NimbleStudioClient::CreateStreamingSessionStreamCallable(const CreateStreamingSessionStreamRequest& request) const
@@ -306,9 +365,11 @@ void NimbleStudioClient::CreateStreamingSessionStreamAsync(const CreateStreaming
 
 CreateStudioOutcome NimbleStudioClient::CreateStudio(const CreateStudioRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios");
-  return CreateStudioOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStudio, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStudio, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios");
+  return CreateStudioOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateStudioOutcomeCallable NimbleStudioClient::CreateStudioCallable(const CreateStudioRequest& request) const
@@ -329,16 +390,18 @@ void NimbleStudioClient::CreateStudioAsync(const CreateStudioRequest& request, c
 
 CreateStudioComponentOutcome NimbleStudioClient::CreateStudioComponent(const CreateStudioComponentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateStudioComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateStudioComponent", "Required field: StudioId, is not set");
     return CreateStudioComponentOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/studio-components");
-  return CreateStudioComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateStudioComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/studio-components");
+  return CreateStudioComponentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateStudioComponentOutcomeCallable NimbleStudioClient::CreateStudioComponentCallable(const CreateStudioComponentRequest& request) const
@@ -359,6 +422,7 @@ void NimbleStudioClient::CreateStudioComponentAsync(const CreateStudioComponentR
 
 DeleteLaunchProfileOutcome NimbleStudioClient::DeleteLaunchProfile(const DeleteLaunchProfileRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLaunchProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteLaunchProfile", "Required field: LaunchProfileId, is not set");
@@ -369,12 +433,13 @@ DeleteLaunchProfileOutcome NimbleStudioClient::DeleteLaunchProfile(const DeleteL
     AWS_LOGSTREAM_ERROR("DeleteLaunchProfile", "Required field: StudioId, is not set");
     return DeleteLaunchProfileOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/launch-profiles/");
-  uri.AddPathSegment(request.GetLaunchProfileId());
-  return DeleteLaunchProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLaunchProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launch-profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunchProfileId());
+  return DeleteLaunchProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteLaunchProfileOutcomeCallable NimbleStudioClient::DeleteLaunchProfileCallable(const DeleteLaunchProfileRequest& request) const
@@ -395,6 +460,7 @@ void NimbleStudioClient::DeleteLaunchProfileAsync(const DeleteLaunchProfileReque
 
 DeleteLaunchProfileMemberOutcome NimbleStudioClient::DeleteLaunchProfileMember(const DeleteLaunchProfileMemberRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLaunchProfileMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteLaunchProfileMember", "Required field: LaunchProfileId, is not set");
@@ -410,14 +476,15 @@ DeleteLaunchProfileMemberOutcome NimbleStudioClient::DeleteLaunchProfileMember(c
     AWS_LOGSTREAM_ERROR("DeleteLaunchProfileMember", "Required field: StudioId, is not set");
     return DeleteLaunchProfileMemberOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/launch-profiles/");
-  uri.AddPathSegment(request.GetLaunchProfileId());
-  uri.AddPathSegments("/membership/");
-  uri.AddPathSegment(request.GetPrincipalId());
-  return DeleteLaunchProfileMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLaunchProfileMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launch-profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunchProfileId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/membership/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
+  return DeleteLaunchProfileMemberOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteLaunchProfileMemberOutcomeCallable NimbleStudioClient::DeleteLaunchProfileMemberCallable(const DeleteLaunchProfileMemberRequest& request) const
@@ -438,6 +505,7 @@ void NimbleStudioClient::DeleteLaunchProfileMemberAsync(const DeleteLaunchProfil
 
 DeleteStreamingImageOutcome NimbleStudioClient::DeleteStreamingImage(const DeleteStreamingImageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStreamingImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StreamingImageIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteStreamingImage", "Required field: StreamingImageId, is not set");
@@ -448,12 +516,13 @@ DeleteStreamingImageOutcome NimbleStudioClient::DeleteStreamingImage(const Delet
     AWS_LOGSTREAM_ERROR("DeleteStreamingImage", "Required field: StudioId, is not set");
     return DeleteStreamingImageOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/streaming-images/");
-  uri.AddPathSegment(request.GetStreamingImageId());
-  return DeleteStreamingImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStreamingImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-images/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStreamingImageId());
+  return DeleteStreamingImageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteStreamingImageOutcomeCallable NimbleStudioClient::DeleteStreamingImageCallable(const DeleteStreamingImageRequest& request) const
@@ -474,6 +543,7 @@ void NimbleStudioClient::DeleteStreamingImageAsync(const DeleteStreamingImageReq
 
 DeleteStreamingSessionOutcome NimbleStudioClient::DeleteStreamingSession(const DeleteStreamingSessionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SessionIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteStreamingSession", "Required field: SessionId, is not set");
@@ -484,12 +554,13 @@ DeleteStreamingSessionOutcome NimbleStudioClient::DeleteStreamingSession(const D
     AWS_LOGSTREAM_ERROR("DeleteStreamingSession", "Required field: StudioId, is not set");
     return DeleteStreamingSessionOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/streaming-sessions/");
-  uri.AddPathSegment(request.GetSessionId());
-  return DeleteStreamingSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-sessions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  return DeleteStreamingSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteStreamingSessionOutcomeCallable NimbleStudioClient::DeleteStreamingSessionCallable(const DeleteStreamingSessionRequest& request) const
@@ -510,15 +581,17 @@ void NimbleStudioClient::DeleteStreamingSessionAsync(const DeleteStreamingSessio
 
 DeleteStudioOutcome NimbleStudioClient::DeleteStudio(const DeleteStudioRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStudio, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteStudio", "Required field: StudioId, is not set");
     return DeleteStudioOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  return DeleteStudioOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStudio, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  return DeleteStudioOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteStudioOutcomeCallable NimbleStudioClient::DeleteStudioCallable(const DeleteStudioRequest& request) const
@@ -539,6 +612,7 @@ void NimbleStudioClient::DeleteStudioAsync(const DeleteStudioRequest& request, c
 
 DeleteStudioComponentOutcome NimbleStudioClient::DeleteStudioComponent(const DeleteStudioComponentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStudioComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioComponentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteStudioComponent", "Required field: StudioComponentId, is not set");
@@ -549,12 +623,13 @@ DeleteStudioComponentOutcome NimbleStudioClient::DeleteStudioComponent(const Del
     AWS_LOGSTREAM_ERROR("DeleteStudioComponent", "Required field: StudioId, is not set");
     return DeleteStudioComponentOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/studio-components/");
-  uri.AddPathSegment(request.GetStudioComponentId());
-  return DeleteStudioComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStudioComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/studio-components/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioComponentId());
+  return DeleteStudioComponentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteStudioComponentOutcomeCallable NimbleStudioClient::DeleteStudioComponentCallable(const DeleteStudioComponentRequest& request) const
@@ -575,6 +650,7 @@ void NimbleStudioClient::DeleteStudioComponentAsync(const DeleteStudioComponentR
 
 DeleteStudioMemberOutcome NimbleStudioClient::DeleteStudioMember(const DeleteStudioMemberRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteStudioMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PrincipalIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteStudioMember", "Required field: PrincipalId, is not set");
@@ -585,12 +661,13 @@ DeleteStudioMemberOutcome NimbleStudioClient::DeleteStudioMember(const DeleteStu
     AWS_LOGSTREAM_ERROR("DeleteStudioMember", "Required field: StudioId, is not set");
     return DeleteStudioMemberOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/membership/");
-  uri.AddPathSegment(request.GetPrincipalId());
-  return DeleteStudioMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteStudioMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/membership/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
+  return DeleteStudioMemberOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteStudioMemberOutcomeCallable NimbleStudioClient::DeleteStudioMemberCallable(const DeleteStudioMemberRequest& request) const
@@ -611,15 +688,17 @@ void NimbleStudioClient::DeleteStudioMemberAsync(const DeleteStudioMemberRequest
 
 GetEulaOutcome NimbleStudioClient::GetEula(const GetEulaRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEula, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.EulaIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetEula", "Required field: EulaId, is not set");
     return GetEulaOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EulaId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/eulas/");
-  uri.AddPathSegment(request.GetEulaId());
-  return GetEulaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetEula, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/eulas/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEulaId());
+  return GetEulaOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetEulaOutcomeCallable NimbleStudioClient::GetEulaCallable(const GetEulaRequest& request) const
@@ -640,6 +719,7 @@ void NimbleStudioClient::GetEulaAsync(const GetEulaRequest& request, const GetEu
 
 GetLaunchProfileOutcome NimbleStudioClient::GetLaunchProfile(const GetLaunchProfileRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLaunchProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetLaunchProfile", "Required field: LaunchProfileId, is not set");
@@ -650,12 +730,13 @@ GetLaunchProfileOutcome NimbleStudioClient::GetLaunchProfile(const GetLaunchProf
     AWS_LOGSTREAM_ERROR("GetLaunchProfile", "Required field: StudioId, is not set");
     return GetLaunchProfileOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/launch-profiles/");
-  uri.AddPathSegment(request.GetLaunchProfileId());
-  return GetLaunchProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLaunchProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launch-profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunchProfileId());
+  return GetLaunchProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLaunchProfileOutcomeCallable NimbleStudioClient::GetLaunchProfileCallable(const GetLaunchProfileRequest& request) const
@@ -676,6 +757,7 @@ void NimbleStudioClient::GetLaunchProfileAsync(const GetLaunchProfileRequest& re
 
 GetLaunchProfileDetailsOutcome NimbleStudioClient::GetLaunchProfileDetails(const GetLaunchProfileDetailsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLaunchProfileDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetLaunchProfileDetails", "Required field: LaunchProfileId, is not set");
@@ -686,13 +768,14 @@ GetLaunchProfileDetailsOutcome NimbleStudioClient::GetLaunchProfileDetails(const
     AWS_LOGSTREAM_ERROR("GetLaunchProfileDetails", "Required field: StudioId, is not set");
     return GetLaunchProfileDetailsOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/launch-profiles/");
-  uri.AddPathSegment(request.GetLaunchProfileId());
-  uri.AddPathSegments("/details");
-  return GetLaunchProfileDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLaunchProfileDetails, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launch-profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunchProfileId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/details");
+  return GetLaunchProfileDetailsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLaunchProfileDetailsOutcomeCallable NimbleStudioClient::GetLaunchProfileDetailsCallable(const GetLaunchProfileDetailsRequest& request) const
@@ -713,6 +796,7 @@ void NimbleStudioClient::GetLaunchProfileDetailsAsync(const GetLaunchProfileDeta
 
 GetLaunchProfileInitializationOutcome NimbleStudioClient::GetLaunchProfileInitialization(const GetLaunchProfileInitializationRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLaunchProfileInitialization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetLaunchProfileInitialization", "Required field: LaunchProfileId, is not set");
@@ -738,13 +822,14 @@ GetLaunchProfileInitializationOutcome NimbleStudioClient::GetLaunchProfileInitia
     AWS_LOGSTREAM_ERROR("GetLaunchProfileInitialization", "Required field: StudioId, is not set");
     return GetLaunchProfileInitializationOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/launch-profiles/");
-  uri.AddPathSegment(request.GetLaunchProfileId());
-  uri.AddPathSegments("/init");
-  return GetLaunchProfileInitializationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLaunchProfileInitialization, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launch-profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunchProfileId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/init");
+  return GetLaunchProfileInitializationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLaunchProfileInitializationOutcomeCallable NimbleStudioClient::GetLaunchProfileInitializationCallable(const GetLaunchProfileInitializationRequest& request) const
@@ -765,6 +850,7 @@ void NimbleStudioClient::GetLaunchProfileInitializationAsync(const GetLaunchProf
 
 GetLaunchProfileMemberOutcome NimbleStudioClient::GetLaunchProfileMember(const GetLaunchProfileMemberRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLaunchProfileMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetLaunchProfileMember", "Required field: LaunchProfileId, is not set");
@@ -780,14 +866,15 @@ GetLaunchProfileMemberOutcome NimbleStudioClient::GetLaunchProfileMember(const G
     AWS_LOGSTREAM_ERROR("GetLaunchProfileMember", "Required field: StudioId, is not set");
     return GetLaunchProfileMemberOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/launch-profiles/");
-  uri.AddPathSegment(request.GetLaunchProfileId());
-  uri.AddPathSegments("/membership/");
-  uri.AddPathSegment(request.GetPrincipalId());
-  return GetLaunchProfileMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLaunchProfileMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launch-profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunchProfileId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/membership/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
+  return GetLaunchProfileMemberOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLaunchProfileMemberOutcomeCallable NimbleStudioClient::GetLaunchProfileMemberCallable(const GetLaunchProfileMemberRequest& request) const
@@ -808,6 +895,7 @@ void NimbleStudioClient::GetLaunchProfileMemberAsync(const GetLaunchProfileMembe
 
 GetStreamingImageOutcome NimbleStudioClient::GetStreamingImage(const GetStreamingImageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStreamingImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StreamingImageIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetStreamingImage", "Required field: StreamingImageId, is not set");
@@ -818,12 +906,13 @@ GetStreamingImageOutcome NimbleStudioClient::GetStreamingImage(const GetStreamin
     AWS_LOGSTREAM_ERROR("GetStreamingImage", "Required field: StudioId, is not set");
     return GetStreamingImageOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/streaming-images/");
-  uri.AddPathSegment(request.GetStreamingImageId());
-  return GetStreamingImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStreamingImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-images/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStreamingImageId());
+  return GetStreamingImageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStreamingImageOutcomeCallable NimbleStudioClient::GetStreamingImageCallable(const GetStreamingImageRequest& request) const
@@ -844,6 +933,7 @@ void NimbleStudioClient::GetStreamingImageAsync(const GetStreamingImageRequest& 
 
 GetStreamingSessionOutcome NimbleStudioClient::GetStreamingSession(const GetStreamingSessionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SessionIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetStreamingSession", "Required field: SessionId, is not set");
@@ -854,12 +944,13 @@ GetStreamingSessionOutcome NimbleStudioClient::GetStreamingSession(const GetStre
     AWS_LOGSTREAM_ERROR("GetStreamingSession", "Required field: StudioId, is not set");
     return GetStreamingSessionOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/streaming-sessions/");
-  uri.AddPathSegment(request.GetSessionId());
-  return GetStreamingSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-sessions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  return GetStreamingSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStreamingSessionOutcomeCallable NimbleStudioClient::GetStreamingSessionCallable(const GetStreamingSessionRequest& request) const
@@ -880,6 +971,7 @@ void NimbleStudioClient::GetStreamingSessionAsync(const GetStreamingSessionReque
 
 GetStreamingSessionStreamOutcome NimbleStudioClient::GetStreamingSessionStream(const GetStreamingSessionStreamRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStreamingSessionStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SessionIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetStreamingSessionStream", "Required field: SessionId, is not set");
@@ -895,14 +987,15 @@ GetStreamingSessionStreamOutcome NimbleStudioClient::GetStreamingSessionStream(c
     AWS_LOGSTREAM_ERROR("GetStreamingSessionStream", "Required field: StudioId, is not set");
     return GetStreamingSessionStreamOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/streaming-sessions/");
-  uri.AddPathSegment(request.GetSessionId());
-  uri.AddPathSegments("/streams/");
-  uri.AddPathSegment(request.GetStreamId());
-  return GetStreamingSessionStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStreamingSessionStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-sessions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streams/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStreamId());
+  return GetStreamingSessionStreamOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStreamingSessionStreamOutcomeCallable NimbleStudioClient::GetStreamingSessionStreamCallable(const GetStreamingSessionStreamRequest& request) const
@@ -923,15 +1016,17 @@ void NimbleStudioClient::GetStreamingSessionStreamAsync(const GetStreamingSessio
 
 GetStudioOutcome NimbleStudioClient::GetStudio(const GetStudioRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStudio, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetStudio", "Required field: StudioId, is not set");
     return GetStudioOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  return GetStudioOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStudio, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  return GetStudioOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStudioOutcomeCallable NimbleStudioClient::GetStudioCallable(const GetStudioRequest& request) const
@@ -952,6 +1047,7 @@ void NimbleStudioClient::GetStudioAsync(const GetStudioRequest& request, const G
 
 GetStudioComponentOutcome NimbleStudioClient::GetStudioComponent(const GetStudioComponentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStudioComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioComponentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetStudioComponent", "Required field: StudioComponentId, is not set");
@@ -962,12 +1058,13 @@ GetStudioComponentOutcome NimbleStudioClient::GetStudioComponent(const GetStudio
     AWS_LOGSTREAM_ERROR("GetStudioComponent", "Required field: StudioId, is not set");
     return GetStudioComponentOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/studio-components/");
-  uri.AddPathSegment(request.GetStudioComponentId());
-  return GetStudioComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStudioComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/studio-components/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioComponentId());
+  return GetStudioComponentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStudioComponentOutcomeCallable NimbleStudioClient::GetStudioComponentCallable(const GetStudioComponentRequest& request) const
@@ -988,6 +1085,7 @@ void NimbleStudioClient::GetStudioComponentAsync(const GetStudioComponentRequest
 
 GetStudioMemberOutcome NimbleStudioClient::GetStudioMember(const GetStudioMemberRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetStudioMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.PrincipalIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetStudioMember", "Required field: PrincipalId, is not set");
@@ -998,12 +1096,13 @@ GetStudioMemberOutcome NimbleStudioClient::GetStudioMember(const GetStudioMember
     AWS_LOGSTREAM_ERROR("GetStudioMember", "Required field: StudioId, is not set");
     return GetStudioMemberOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/membership/");
-  uri.AddPathSegment(request.GetPrincipalId());
-  return GetStudioMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetStudioMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/membership/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
+  return GetStudioMemberOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetStudioMemberOutcomeCallable NimbleStudioClient::GetStudioMemberCallable(const GetStudioMemberRequest& request) const
@@ -1024,16 +1123,18 @@ void NimbleStudioClient::GetStudioMemberAsync(const GetStudioMemberRequest& requ
 
 ListEulaAcceptancesOutcome NimbleStudioClient::ListEulaAcceptances(const ListEulaAcceptancesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEulaAcceptances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListEulaAcceptances", "Required field: StudioId, is not set");
     return ListEulaAcceptancesOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/eula-acceptances");
-  return ListEulaAcceptancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEulaAcceptances, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/eula-acceptances");
+  return ListEulaAcceptancesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEulaAcceptancesOutcomeCallable NimbleStudioClient::ListEulaAcceptancesCallable(const ListEulaAcceptancesRequest& request) const
@@ -1054,9 +1155,11 @@ void NimbleStudioClient::ListEulaAcceptancesAsync(const ListEulaAcceptancesReque
 
 ListEulasOutcome NimbleStudioClient::ListEulas(const ListEulasRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/eulas");
-  return ListEulasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEulas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEulas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/eulas");
+  return ListEulasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEulasOutcomeCallable NimbleStudioClient::ListEulasCallable(const ListEulasRequest& request) const
@@ -1077,6 +1180,7 @@ void NimbleStudioClient::ListEulasAsync(const ListEulasRequest& request, const L
 
 ListLaunchProfileMembersOutcome NimbleStudioClient::ListLaunchProfileMembers(const ListLaunchProfileMembersRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLaunchProfileMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListLaunchProfileMembers", "Required field: LaunchProfileId, is not set");
@@ -1087,13 +1191,14 @@ ListLaunchProfileMembersOutcome NimbleStudioClient::ListLaunchProfileMembers(con
     AWS_LOGSTREAM_ERROR("ListLaunchProfileMembers", "Required field: StudioId, is not set");
     return ListLaunchProfileMembersOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/launch-profiles/");
-  uri.AddPathSegment(request.GetLaunchProfileId());
-  uri.AddPathSegments("/membership");
-  return ListLaunchProfileMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLaunchProfileMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launch-profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunchProfileId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/membership");
+  return ListLaunchProfileMembersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListLaunchProfileMembersOutcomeCallable NimbleStudioClient::ListLaunchProfileMembersCallable(const ListLaunchProfileMembersRequest& request) const
@@ -1114,16 +1219,18 @@ void NimbleStudioClient::ListLaunchProfileMembersAsync(const ListLaunchProfileMe
 
 ListLaunchProfilesOutcome NimbleStudioClient::ListLaunchProfiles(const ListLaunchProfilesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLaunchProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListLaunchProfiles", "Required field: StudioId, is not set");
     return ListLaunchProfilesOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/launch-profiles");
-  return ListLaunchProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLaunchProfiles, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launch-profiles");
+  return ListLaunchProfilesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListLaunchProfilesOutcomeCallable NimbleStudioClient::ListLaunchProfilesCallable(const ListLaunchProfilesRequest& request) const
@@ -1144,16 +1251,18 @@ void NimbleStudioClient::ListLaunchProfilesAsync(const ListLaunchProfilesRequest
 
 ListStreamingImagesOutcome NimbleStudioClient::ListStreamingImages(const ListStreamingImagesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStreamingImages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListStreamingImages", "Required field: StudioId, is not set");
     return ListStreamingImagesOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/streaming-images");
-  return ListStreamingImagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStreamingImages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-images");
+  return ListStreamingImagesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListStreamingImagesOutcomeCallable NimbleStudioClient::ListStreamingImagesCallable(const ListStreamingImagesRequest& request) const
@@ -1174,16 +1283,18 @@ void NimbleStudioClient::ListStreamingImagesAsync(const ListStreamingImagesReque
 
 ListStreamingSessionsOutcome NimbleStudioClient::ListStreamingSessions(const ListStreamingSessionsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStreamingSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListStreamingSessions", "Required field: StudioId, is not set");
     return ListStreamingSessionsOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/streaming-sessions");
-  return ListStreamingSessionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStreamingSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-sessions");
+  return ListStreamingSessionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListStreamingSessionsOutcomeCallable NimbleStudioClient::ListStreamingSessionsCallable(const ListStreamingSessionsRequest& request) const
@@ -1204,16 +1315,18 @@ void NimbleStudioClient::ListStreamingSessionsAsync(const ListStreamingSessionsR
 
 ListStudioComponentsOutcome NimbleStudioClient::ListStudioComponents(const ListStudioComponentsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStudioComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListStudioComponents", "Required field: StudioId, is not set");
     return ListStudioComponentsOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/studio-components");
-  return ListStudioComponentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStudioComponents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/studio-components");
+  return ListStudioComponentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListStudioComponentsOutcomeCallable NimbleStudioClient::ListStudioComponentsCallable(const ListStudioComponentsRequest& request) const
@@ -1234,16 +1347,18 @@ void NimbleStudioClient::ListStudioComponentsAsync(const ListStudioComponentsReq
 
 ListStudioMembersOutcome NimbleStudioClient::ListStudioMembers(const ListStudioMembersRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStudioMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListStudioMembers", "Required field: StudioId, is not set");
     return ListStudioMembersOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/membership");
-  return ListStudioMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStudioMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/membership");
+  return ListStudioMembersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListStudioMembersOutcomeCallable NimbleStudioClient::ListStudioMembersCallable(const ListStudioMembersRequest& request) const
@@ -1264,9 +1379,11 @@ void NimbleStudioClient::ListStudioMembersAsync(const ListStudioMembersRequest& 
 
 ListStudiosOutcome NimbleStudioClient::ListStudios(const ListStudiosRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios");
-  return ListStudiosOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStudios, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStudios, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios");
+  return ListStudiosOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListStudiosOutcomeCallable NimbleStudioClient::ListStudiosCallable(const ListStudiosRequest& request) const
@@ -1287,15 +1404,17 @@ void NimbleStudioClient::ListStudiosAsync(const ListStudiosRequest& request, con
 
 ListTagsForResourceOutcome NimbleStudioClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/tags/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable NimbleStudioClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1316,6 +1435,7 @@ void NimbleStudioClient::ListTagsForResourceAsync(const ListTagsForResourceReque
 
 PutLaunchProfileMembersOutcome NimbleStudioClient::PutLaunchProfileMembers(const PutLaunchProfileMembersRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutLaunchProfileMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutLaunchProfileMembers", "Required field: LaunchProfileId, is not set");
@@ -1326,13 +1446,14 @@ PutLaunchProfileMembersOutcome NimbleStudioClient::PutLaunchProfileMembers(const
     AWS_LOGSTREAM_ERROR("PutLaunchProfileMembers", "Required field: StudioId, is not set");
     return PutLaunchProfileMembersOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/launch-profiles/");
-  uri.AddPathSegment(request.GetLaunchProfileId());
-  uri.AddPathSegments("/membership");
-  return PutLaunchProfileMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutLaunchProfileMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launch-profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunchProfileId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/membership");
+  return PutLaunchProfileMembersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutLaunchProfileMembersOutcomeCallable NimbleStudioClient::PutLaunchProfileMembersCallable(const PutLaunchProfileMembersRequest& request) const
@@ -1353,16 +1474,18 @@ void NimbleStudioClient::PutLaunchProfileMembersAsync(const PutLaunchProfileMemb
 
 PutStudioMembersOutcome NimbleStudioClient::PutStudioMembers(const PutStudioMembersRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutStudioMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutStudioMembers", "Required field: StudioId, is not set");
     return PutStudioMembersOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/membership");
-  return PutStudioMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutStudioMembers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/membership");
+  return PutStudioMembersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutStudioMembersOutcomeCallable NimbleStudioClient::PutStudioMembersCallable(const PutStudioMembersRequest& request) const
@@ -1383,6 +1506,7 @@ void NimbleStudioClient::PutStudioMembersAsync(const PutStudioMembersRequest& re
 
 StartStreamingSessionOutcome NimbleStudioClient::StartStreamingSession(const StartStreamingSessionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SessionIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartStreamingSession", "Required field: SessionId, is not set");
@@ -1393,13 +1517,14 @@ StartStreamingSessionOutcome NimbleStudioClient::StartStreamingSession(const Sta
     AWS_LOGSTREAM_ERROR("StartStreamingSession", "Required field: StudioId, is not set");
     return StartStreamingSessionOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/streaming-sessions/");
-  uri.AddPathSegment(request.GetSessionId());
-  uri.AddPathSegments("/start");
-  return StartStreamingSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-sessions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/start");
+  return StartStreamingSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartStreamingSessionOutcomeCallable NimbleStudioClient::StartStreamingSessionCallable(const StartStreamingSessionRequest& request) const
@@ -1420,16 +1545,18 @@ void NimbleStudioClient::StartStreamingSessionAsync(const StartStreamingSessionR
 
 StartStudioSSOConfigurationRepairOutcome NimbleStudioClient::StartStudioSSOConfigurationRepair(const StartStudioSSOConfigurationRepairRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartStudioSSOConfigurationRepair, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartStudioSSOConfigurationRepair", "Required field: StudioId, is not set");
     return StartStudioSSOConfigurationRepairOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/sso-configuration");
-  return StartStudioSSOConfigurationRepairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartStudioSSOConfigurationRepair, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sso-configuration");
+  return StartStudioSSOConfigurationRepairOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartStudioSSOConfigurationRepairOutcomeCallable NimbleStudioClient::StartStudioSSOConfigurationRepairCallable(const StartStudioSSOConfigurationRepairRequest& request) const
@@ -1450,6 +1577,7 @@ void NimbleStudioClient::StartStudioSSOConfigurationRepairAsync(const StartStudi
 
 StopStreamingSessionOutcome NimbleStudioClient::StopStreamingSession(const StopStreamingSessionRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SessionIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StopStreamingSession", "Required field: SessionId, is not set");
@@ -1460,13 +1588,14 @@ StopStreamingSessionOutcome NimbleStudioClient::StopStreamingSession(const StopS
     AWS_LOGSTREAM_ERROR("StopStreamingSession", "Required field: StudioId, is not set");
     return StopStreamingSessionOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/streaming-sessions/");
-  uri.AddPathSegment(request.GetSessionId());
-  uri.AddPathSegments("/stop");
-  return StopStreamingSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopStreamingSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-sessions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
+  return StopStreamingSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopStreamingSessionOutcomeCallable NimbleStudioClient::StopStreamingSessionCallable(const StopStreamingSessionRequest& request) const
@@ -1487,15 +1616,17 @@ void NimbleStudioClient::StopStreamingSessionAsync(const StopStreamingSessionReq
 
 TagResourceOutcome NimbleStudioClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/tags/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable NimbleStudioClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1516,6 +1647,7 @@ void NimbleStudioClient::TagResourceAsync(const TagResourceRequest& request, con
 
 UntagResourceOutcome NimbleStudioClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
@@ -1526,10 +1658,11 @@ UntagResourceOutcome NimbleStudioClient::UntagResource(const UntagResourceReques
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/tags/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable NimbleStudioClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1550,6 +1683,7 @@ void NimbleStudioClient::UntagResourceAsync(const UntagResourceRequest& request,
 
 UpdateLaunchProfileOutcome NimbleStudioClient::UpdateLaunchProfile(const UpdateLaunchProfileRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLaunchProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateLaunchProfile", "Required field: LaunchProfileId, is not set");
@@ -1560,12 +1694,13 @@ UpdateLaunchProfileOutcome NimbleStudioClient::UpdateLaunchProfile(const UpdateL
     AWS_LOGSTREAM_ERROR("UpdateLaunchProfile", "Required field: StudioId, is not set");
     return UpdateLaunchProfileOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/launch-profiles/");
-  uri.AddPathSegment(request.GetLaunchProfileId());
-  return UpdateLaunchProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLaunchProfile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launch-profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunchProfileId());
+  return UpdateLaunchProfileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateLaunchProfileOutcomeCallable NimbleStudioClient::UpdateLaunchProfileCallable(const UpdateLaunchProfileRequest& request) const
@@ -1586,6 +1721,7 @@ void NimbleStudioClient::UpdateLaunchProfileAsync(const UpdateLaunchProfileReque
 
 UpdateLaunchProfileMemberOutcome NimbleStudioClient::UpdateLaunchProfileMember(const UpdateLaunchProfileMemberRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLaunchProfileMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchProfileIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateLaunchProfileMember", "Required field: LaunchProfileId, is not set");
@@ -1601,14 +1737,15 @@ UpdateLaunchProfileMemberOutcome NimbleStudioClient::UpdateLaunchProfileMember(c
     AWS_LOGSTREAM_ERROR("UpdateLaunchProfileMember", "Required field: StudioId, is not set");
     return UpdateLaunchProfileMemberOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/launch-profiles/");
-  uri.AddPathSegment(request.GetLaunchProfileId());
-  uri.AddPathSegments("/membership/");
-  uri.AddPathSegment(request.GetPrincipalId());
-  return UpdateLaunchProfileMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLaunchProfileMember, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launch-profiles/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunchProfileId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/membership/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPrincipalId());
+  return UpdateLaunchProfileMemberOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateLaunchProfileMemberOutcomeCallable NimbleStudioClient::UpdateLaunchProfileMemberCallable(const UpdateLaunchProfileMemberRequest& request) const
@@ -1629,6 +1766,7 @@ void NimbleStudioClient::UpdateLaunchProfileMemberAsync(const UpdateLaunchProfil
 
 UpdateStreamingImageOutcome NimbleStudioClient::UpdateStreamingImage(const UpdateStreamingImageRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStreamingImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StreamingImageIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateStreamingImage", "Required field: StreamingImageId, is not set");
@@ -1639,12 +1777,13 @@ UpdateStreamingImageOutcome NimbleStudioClient::UpdateStreamingImage(const Updat
     AWS_LOGSTREAM_ERROR("UpdateStreamingImage", "Required field: StudioId, is not set");
     return UpdateStreamingImageOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/streaming-images/");
-  uri.AddPathSegment(request.GetStreamingImageId());
-  return UpdateStreamingImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStreamingImage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/streaming-images/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStreamingImageId());
+  return UpdateStreamingImageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateStreamingImageOutcomeCallable NimbleStudioClient::UpdateStreamingImageCallable(const UpdateStreamingImageRequest& request) const
@@ -1665,15 +1804,17 @@ void NimbleStudioClient::UpdateStreamingImageAsync(const UpdateStreamingImageReq
 
 UpdateStudioOutcome NimbleStudioClient::UpdateStudio(const UpdateStudioRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStudio, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateStudio", "Required field: StudioId, is not set");
     return UpdateStudioOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  return UpdateStudioOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStudio, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  return UpdateStudioOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateStudioOutcomeCallable NimbleStudioClient::UpdateStudioCallable(const UpdateStudioRequest& request) const
@@ -1694,6 +1835,7 @@ void NimbleStudioClient::UpdateStudioAsync(const UpdateStudioRequest& request, c
 
 UpdateStudioComponentOutcome NimbleStudioClient::UpdateStudioComponent(const UpdateStudioComponentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStudioComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.StudioComponentIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateStudioComponent", "Required field: StudioComponentId, is not set");
@@ -1704,12 +1846,13 @@ UpdateStudioComponentOutcome NimbleStudioClient::UpdateStudioComponent(const Upd
     AWS_LOGSTREAM_ERROR("UpdateStudioComponent", "Required field: StudioId, is not set");
     return UpdateStudioComponentOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
-  Aws::Http::URI uri = m_uri;
-  uri.AddPathSegments("/2020-08-01/studios/");
-  uri.AddPathSegment(request.GetStudioId());
-  uri.AddPathSegments("/studio-components/");
-  uri.AddPathSegment(request.GetStudioComponentId());
-  return UpdateStudioComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStudioComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2020-08-01/studios/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/studio-components/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetStudioComponentId());
+  return UpdateStudioComponentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateStudioComponentOutcomeCallable NimbleStudioClient::UpdateStudioComponentCallable(const UpdateStudioComponentRequest& request) const

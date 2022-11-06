@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/devicefarm/DeviceFarmErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/devicefarm/DeviceFarmEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -126,6 +128,10 @@ namespace Aws
 
   namespace DeviceFarm
   {
+    using DeviceFarmClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using DeviceFarmEndpointProviderBase = Aws::DeviceFarm::Endpoint::DeviceFarmEndpointProviderBase;
+    using DeviceFarmEndpointProvider = Aws::DeviceFarm::Endpoint::DeviceFarmEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in DeviceFarmClient header */

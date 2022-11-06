@@ -42,7 +42,7 @@ DescribeFleetLocationAttributesResult& DescribeFleetLocationAttributesResult::op
 
   if(jsonValue.ValueExists("LocationAttributes"))
   {
-    Array<JsonView> locationAttributesJsonList = jsonValue.GetArray("LocationAttributes");
+    Aws::Utils::Array<JsonView> locationAttributesJsonList = jsonValue.GetArray("LocationAttributes");
     for(unsigned locationAttributesIndex = 0; locationAttributesIndex < locationAttributesJsonList.GetLength(); ++locationAttributesIndex)
     {
       m_locationAttributes.push_back(locationAttributesJsonList[locationAttributesIndex].AsObject());

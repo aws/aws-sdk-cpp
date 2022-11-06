@@ -44,7 +44,7 @@ CaseFilter& CaseFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("andAll"))
   {
-    Array<JsonView> andAllJsonList = jsonValue.GetArray("andAll");
+    Aws::Utils::Array<JsonView> andAllJsonList = jsonValue.GetArray("andAll");
     for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
     {
       m_andAll.push_back(andAllJsonList[andAllIndex].AsObject());
@@ -75,7 +75,7 @@ JsonValue CaseFilter::Jsonize() const
 
   if(m_andAllHasBeenSet)
   {
-   Array<JsonValue> andAllJsonList(m_andAll.size());
+   Aws::Utils::Array<JsonValue> andAllJsonList(m_andAll.size());
    for(unsigned andAllIndex = 0; andAllIndex < andAllJsonList.GetLength(); ++andAllIndex)
    {
      andAllJsonList[andAllIndex].AsObject(m_andAll[andAllIndex].Jsonize());

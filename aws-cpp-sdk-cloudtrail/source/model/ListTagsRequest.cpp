@@ -24,7 +24,7 @@ Aws::String ListTagsRequest::SerializePayload() const
 
   if(m_resourceIdListHasBeenSet)
   {
-   Array<JsonValue> resourceIdListJsonList(m_resourceIdList.size());
+   Aws::Utils::Array<JsonValue> resourceIdListJsonList(m_resourceIdList.size());
    for(unsigned resourceIdListIndex = 0; resourceIdListIndex < resourceIdListJsonList.GetLength(); ++resourceIdListIndex)
    {
      resourceIdListJsonList[resourceIdListIndex].AsString(m_resourceIdList[resourceIdListIndex]);

@@ -23,7 +23,7 @@ Aws::String DescribeDeliveryChannelsRequest::SerializePayload() const
 
   if(m_deliveryChannelNamesHasBeenSet)
   {
-   Array<JsonValue> deliveryChannelNamesJsonList(m_deliveryChannelNames.size());
+   Aws::Utils::Array<JsonValue> deliveryChannelNamesJsonList(m_deliveryChannelNames.size());
    for(unsigned deliveryChannelNamesIndex = 0; deliveryChannelNamesIndex < deliveryChannelNamesJsonList.GetLength(); ++deliveryChannelNamesIndex)
    {
      deliveryChannelNamesJsonList[deliveryChannelNamesIndex].AsString(m_deliveryChannelNames[deliveryChannelNamesIndex]);

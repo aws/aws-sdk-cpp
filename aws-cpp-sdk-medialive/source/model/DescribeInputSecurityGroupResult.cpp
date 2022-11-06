@@ -44,7 +44,7 @@ DescribeInputSecurityGroupResult& DescribeInputSecurityGroupResult::operator =(c
 
   if(jsonValue.ValueExists("inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
@@ -68,7 +68,7 @@ DescribeInputSecurityGroupResult& DescribeInputSecurityGroupResult::operator =(c
 
   if(jsonValue.ValueExists("whitelistRules"))
   {
-    Array<JsonView> whitelistRulesJsonList = jsonValue.GetArray("whitelistRules");
+    Aws::Utils::Array<JsonView> whitelistRulesJsonList = jsonValue.GetArray("whitelistRules");
     for(unsigned whitelistRulesIndex = 0; whitelistRulesIndex < whitelistRulesJsonList.GetLength(); ++whitelistRulesIndex)
     {
       m_whitelistRules.push_back(whitelistRulesJsonList[whitelistRulesIndex].AsObject());

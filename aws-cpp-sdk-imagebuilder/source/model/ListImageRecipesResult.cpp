@@ -36,7 +36,7 @@ ListImageRecipesResult& ListImageRecipesResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("imageRecipeSummaryList"))
   {
-    Array<JsonView> imageRecipeSummaryListJsonList = jsonValue.GetArray("imageRecipeSummaryList");
+    Aws::Utils::Array<JsonView> imageRecipeSummaryListJsonList = jsonValue.GetArray("imageRecipeSummaryList");
     for(unsigned imageRecipeSummaryListIndex = 0; imageRecipeSummaryListIndex < imageRecipeSummaryListJsonList.GetLength(); ++imageRecipeSummaryListIndex)
     {
       m_imageRecipeSummaryList.push_back(imageRecipeSummaryListJsonList[imageRecipeSummaryListIndex].AsObject());

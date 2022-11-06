@@ -30,7 +30,7 @@ ListVPCEConfigurationsResult& ListVPCEConfigurationsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("vpceConfigurations"))
   {
-    Array<JsonView> vpceConfigurationsJsonList = jsonValue.GetArray("vpceConfigurations");
+    Aws::Utils::Array<JsonView> vpceConfigurationsJsonList = jsonValue.GetArray("vpceConfigurations");
     for(unsigned vpceConfigurationsIndex = 0; vpceConfigurationsIndex < vpceConfigurationsJsonList.GetLength(); ++vpceConfigurationsIndex)
     {
       m_vpceConfigurations.push_back(vpceConfigurationsJsonList[vpceConfigurationsIndex].AsObject());

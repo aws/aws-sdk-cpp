@@ -36,7 +36,7 @@ ListApplicationInstanceDependenciesResult& ListApplicationInstanceDependenciesRe
 
   if(jsonValue.ValueExists("PackageObjects"))
   {
-    Array<JsonView> packageObjectsJsonList = jsonValue.GetArray("PackageObjects");
+    Aws::Utils::Array<JsonView> packageObjectsJsonList = jsonValue.GetArray("PackageObjects");
     for(unsigned packageObjectsIndex = 0; packageObjectsIndex < packageObjectsJsonList.GetLength(); ++packageObjectsIndex)
     {
       m_packageObjects.push_back(packageObjectsJsonList[packageObjectsIndex].AsObject());

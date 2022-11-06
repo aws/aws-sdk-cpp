@@ -30,7 +30,7 @@ GetRelationalDatabaseLogEventsResult& GetRelationalDatabaseLogEventsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("resourceLogEvents"))
   {
-    Array<JsonView> resourceLogEventsJsonList = jsonValue.GetArray("resourceLogEvents");
+    Aws::Utils::Array<JsonView> resourceLogEventsJsonList = jsonValue.GetArray("resourceLogEvents");
     for(unsigned resourceLogEventsIndex = 0; resourceLogEventsIndex < resourceLogEventsJsonList.GetLength(); ++resourceLogEventsIndex)
     {
       m_resourceLogEvents.push_back(resourceLogEventsJsonList[resourceLogEventsIndex].AsObject());

@@ -53,7 +53,7 @@ Aws::String UpdateDistributionRequest::SerializePayload() const
 
   if(m_cacheBehaviorsHasBeenSet)
   {
-   Array<JsonValue> cacheBehaviorsJsonList(m_cacheBehaviors.size());
+   Aws::Utils::Array<JsonValue> cacheBehaviorsJsonList(m_cacheBehaviors.size());
    for(unsigned cacheBehaviorsIndex = 0; cacheBehaviorsIndex < cacheBehaviorsJsonList.GetLength(); ++cacheBehaviorsIndex)
    {
      cacheBehaviorsJsonList[cacheBehaviorsIndex].AsObject(m_cacheBehaviors[cacheBehaviorsIndex].Jsonize());

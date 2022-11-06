@@ -109,7 +109,7 @@ Aws::String UpdateSMBFileShareRequest::SerializePayload() const
 
   if(m_adminUserListHasBeenSet)
   {
-   Array<JsonValue> adminUserListJsonList(m_adminUserList.size());
+   Aws::Utils::Array<JsonValue> adminUserListJsonList(m_adminUserList.size());
    for(unsigned adminUserListIndex = 0; adminUserListIndex < adminUserListJsonList.GetLength(); ++adminUserListIndex)
    {
      adminUserListJsonList[adminUserListIndex].AsString(m_adminUserList[adminUserListIndex]);
@@ -120,7 +120,7 @@ Aws::String UpdateSMBFileShareRequest::SerializePayload() const
 
   if(m_validUserListHasBeenSet)
   {
-   Array<JsonValue> validUserListJsonList(m_validUserList.size());
+   Aws::Utils::Array<JsonValue> validUserListJsonList(m_validUserList.size());
    for(unsigned validUserListIndex = 0; validUserListIndex < validUserListJsonList.GetLength(); ++validUserListIndex)
    {
      validUserListJsonList[validUserListIndex].AsString(m_validUserList[validUserListIndex]);
@@ -131,7 +131,7 @@ Aws::String UpdateSMBFileShareRequest::SerializePayload() const
 
   if(m_invalidUserListHasBeenSet)
   {
-   Array<JsonValue> invalidUserListJsonList(m_invalidUserList.size());
+   Aws::Utils::Array<JsonValue> invalidUserListJsonList(m_invalidUserList.size());
    for(unsigned invalidUserListIndex = 0; invalidUserListIndex < invalidUserListJsonList.GetLength(); ++invalidUserListIndex)
    {
      invalidUserListJsonList[invalidUserListIndex].AsString(m_invalidUserList[invalidUserListIndex]);

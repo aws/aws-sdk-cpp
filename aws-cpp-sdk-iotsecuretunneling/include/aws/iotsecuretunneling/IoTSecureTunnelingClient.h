@@ -32,22 +32,48 @@ namespace IoTSecureTunneling
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        IoTSecureTunnelingClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        IoTSecureTunnelingClient(const Aws::IoTSecureTunneling::IoTSecureTunnelingClientConfiguration& clientConfiguration = Aws::IoTSecureTunneling::IoTSecureTunnelingClientConfiguration(),
+                                 std::shared_ptr<IoTSecureTunnelingEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTSecureTunnelingEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IoTSecureTunnelingClient(const Aws::Auth::AWSCredentials& credentials,
-                                 const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                 std::shared_ptr<IoTSecureTunnelingEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTSecureTunnelingEndpointProvider>(ALLOCATION_TAG),
+                                 const Aws::IoTSecureTunneling::IoTSecureTunnelingClientConfiguration& clientConfiguration = Aws::IoTSecureTunneling::IoTSecureTunnelingClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         IoTSecureTunnelingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                 const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                 std::shared_ptr<IoTSecureTunnelingEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTSecureTunnelingEndpointProvider>(ALLOCATION_TAG),
+                                 const Aws::IoTSecureTunneling::IoTSecureTunnelingClientConfiguration& clientConfiguration = Aws::IoTSecureTunneling::IoTSecureTunnelingClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        IoTSecureTunnelingClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        IoTSecureTunnelingClient(const Aws::Auth::AWSCredentials& credentials,
+                                 const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        IoTSecureTunnelingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                 const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~IoTSecureTunnelingClient();
 
 
@@ -213,12 +239,13 @@ namespace IoTSecureTunneling
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<IoTSecureTunnelingEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const IoTSecureTunnelingClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      IoTSecureTunnelingClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<IoTSecureTunnelingEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace IoTSecureTunneling

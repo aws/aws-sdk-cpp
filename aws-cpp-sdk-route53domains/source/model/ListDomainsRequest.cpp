@@ -27,7 +27,7 @@ Aws::String ListDomainsRequest::SerializePayload() const
 
   if(m_filterConditionsHasBeenSet)
   {
-   Array<JsonValue> filterConditionsJsonList(m_filterConditions.size());
+   Aws::Utils::Array<JsonValue> filterConditionsJsonList(m_filterConditions.size());
    for(unsigned filterConditionsIndex = 0; filterConditionsIndex < filterConditionsJsonList.GetLength(); ++filterConditionsIndex)
    {
      filterConditionsJsonList[filterConditionsIndex].AsObject(m_filterConditions[filterConditionsIndex].Jsonize());

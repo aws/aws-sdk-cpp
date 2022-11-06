@@ -24,7 +24,7 @@ Aws::String AssociateSigninDelegateGroupsWithAccountRequest::SerializePayload() 
 
   if(m_signinDelegateGroupsHasBeenSet)
   {
-   Array<JsonValue> signinDelegateGroupsJsonList(m_signinDelegateGroups.size());
+   Aws::Utils::Array<JsonValue> signinDelegateGroupsJsonList(m_signinDelegateGroups.size());
    for(unsigned signinDelegateGroupsIndex = 0; signinDelegateGroupsIndex < signinDelegateGroupsJsonList.GetLength(); ++signinDelegateGroupsIndex)
    {
      signinDelegateGroupsJsonList[signinDelegateGroupsIndex].AsObject(m_signinDelegateGroups[signinDelegateGroupsIndex].Jsonize());

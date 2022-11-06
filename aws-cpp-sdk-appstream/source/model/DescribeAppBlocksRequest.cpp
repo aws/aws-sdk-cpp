@@ -26,7 +26,7 @@ Aws::String DescribeAppBlocksRequest::SerializePayload() const
 
   if(m_arnsHasBeenSet)
   {
-   Array<JsonValue> arnsJsonList(m_arns.size());
+   Aws::Utils::Array<JsonValue> arnsJsonList(m_arns.size());
    for(unsigned arnsIndex = 0; arnsIndex < arnsJsonList.GetLength(); ++arnsIndex)
    {
      arnsJsonList[arnsIndex].AsString(m_arns[arnsIndex]);

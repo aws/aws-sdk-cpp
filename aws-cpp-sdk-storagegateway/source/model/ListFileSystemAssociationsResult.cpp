@@ -42,7 +42,7 @@ ListFileSystemAssociationsResult& ListFileSystemAssociationsResult::operator =(c
 
   if(jsonValue.ValueExists("FileSystemAssociationSummaryList"))
   {
-    Array<JsonView> fileSystemAssociationSummaryListJsonList = jsonValue.GetArray("FileSystemAssociationSummaryList");
+    Aws::Utils::Array<JsonView> fileSystemAssociationSummaryListJsonList = jsonValue.GetArray("FileSystemAssociationSummaryList");
     for(unsigned fileSystemAssociationSummaryListIndex = 0; fileSystemAssociationSummaryListIndex < fileSystemAssociationSummaryListJsonList.GetLength(); ++fileSystemAssociationSummaryListIndex)
     {
       m_fileSystemAssociationSummaryList.push_back(fileSystemAssociationSummaryListJsonList[fileSystemAssociationSummaryListIndex].AsObject());

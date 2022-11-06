@@ -132,7 +132,7 @@ Container& Container::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("networkBindings"))
   {
-    Array<JsonView> networkBindingsJsonList = jsonValue.GetArray("networkBindings");
+    Aws::Utils::Array<JsonView> networkBindingsJsonList = jsonValue.GetArray("networkBindings");
     for(unsigned networkBindingsIndex = 0; networkBindingsIndex < networkBindingsJsonList.GetLength(); ++networkBindingsIndex)
     {
       m_networkBindings.push_back(networkBindingsJsonList[networkBindingsIndex].AsObject());
@@ -142,7 +142,7 @@ Container& Container::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("networkInterfaces"))
   {
-    Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
+    Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
     for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
     {
       m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());
@@ -159,7 +159,7 @@ Container& Container::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("managedAgents"))
   {
-    Array<JsonView> managedAgentsJsonList = jsonValue.GetArray("managedAgents");
+    Aws::Utils::Array<JsonView> managedAgentsJsonList = jsonValue.GetArray("managedAgents");
     for(unsigned managedAgentsIndex = 0; managedAgentsIndex < managedAgentsJsonList.GetLength(); ++managedAgentsIndex)
     {
       m_managedAgents.push_back(managedAgentsJsonList[managedAgentsIndex].AsObject());
@@ -190,7 +190,7 @@ Container& Container::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("gpuIds"))
   {
-    Array<JsonView> gpuIdsJsonList = jsonValue.GetArray("gpuIds");
+    Aws::Utils::Array<JsonView> gpuIdsJsonList = jsonValue.GetArray("gpuIds");
     for(unsigned gpuIdsIndex = 0; gpuIdsIndex < gpuIdsJsonList.GetLength(); ++gpuIdsIndex)
     {
       m_gpuIds.push_back(gpuIdsJsonList[gpuIdsIndex].AsString());
@@ -261,7 +261,7 @@ JsonValue Container::Jsonize() const
 
   if(m_networkBindingsHasBeenSet)
   {
-   Array<JsonValue> networkBindingsJsonList(m_networkBindings.size());
+   Aws::Utils::Array<JsonValue> networkBindingsJsonList(m_networkBindings.size());
    for(unsigned networkBindingsIndex = 0; networkBindingsIndex < networkBindingsJsonList.GetLength(); ++networkBindingsIndex)
    {
      networkBindingsJsonList[networkBindingsIndex].AsObject(m_networkBindings[networkBindingsIndex].Jsonize());
@@ -272,7 +272,7 @@ JsonValue Container::Jsonize() const
 
   if(m_networkInterfacesHasBeenSet)
   {
-   Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
+   Aws::Utils::Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
    for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
    {
      networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());
@@ -288,7 +288,7 @@ JsonValue Container::Jsonize() const
 
   if(m_managedAgentsHasBeenSet)
   {
-   Array<JsonValue> managedAgentsJsonList(m_managedAgents.size());
+   Aws::Utils::Array<JsonValue> managedAgentsJsonList(m_managedAgents.size());
    for(unsigned managedAgentsIndex = 0; managedAgentsIndex < managedAgentsJsonList.GetLength(); ++managedAgentsIndex)
    {
      managedAgentsJsonList[managedAgentsIndex].AsObject(m_managedAgents[managedAgentsIndex].Jsonize());
@@ -317,7 +317,7 @@ JsonValue Container::Jsonize() const
 
   if(m_gpuIdsHasBeenSet)
   {
-   Array<JsonValue> gpuIdsJsonList(m_gpuIds.size());
+   Aws::Utils::Array<JsonValue> gpuIdsJsonList(m_gpuIds.size());
    for(unsigned gpuIdsIndex = 0; gpuIdsIndex < gpuIdsJsonList.GetLength(); ++gpuIdsIndex)
    {
      gpuIdsJsonList[gpuIdsIndex].AsString(m_gpuIds[gpuIdsIndex]);

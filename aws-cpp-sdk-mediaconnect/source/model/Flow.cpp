@@ -82,7 +82,7 @@ Flow& Flow::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("entitlements"))
   {
-    Array<JsonView> entitlementsJsonList = jsonValue.GetArray("entitlements");
+    Aws::Utils::Array<JsonView> entitlementsJsonList = jsonValue.GetArray("entitlements");
     for(unsigned entitlementsIndex = 0; entitlementsIndex < entitlementsJsonList.GetLength(); ++entitlementsIndex)
     {
       m_entitlements.push_back(entitlementsJsonList[entitlementsIndex].AsObject());
@@ -99,7 +99,7 @@ Flow& Flow::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("mediaStreams"))
   {
-    Array<JsonView> mediaStreamsJsonList = jsonValue.GetArray("mediaStreams");
+    Aws::Utils::Array<JsonView> mediaStreamsJsonList = jsonValue.GetArray("mediaStreams");
     for(unsigned mediaStreamsIndex = 0; mediaStreamsIndex < mediaStreamsJsonList.GetLength(); ++mediaStreamsIndex)
     {
       m_mediaStreams.push_back(mediaStreamsJsonList[mediaStreamsIndex].AsObject());
@@ -116,7 +116,7 @@ Flow& Flow::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("outputs"))
   {
-    Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
+    Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
     for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
     {
       m_outputs.push_back(outputsJsonList[outputsIndex].AsObject());
@@ -140,7 +140,7 @@ Flow& Flow::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("sources"))
   {
-    Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
     for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
     {
       m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
@@ -157,7 +157,7 @@ Flow& Flow::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("vpcInterfaces"))
   {
-    Array<JsonView> vpcInterfacesJsonList = jsonValue.GetArray("vpcInterfaces");
+    Aws::Utils::Array<JsonView> vpcInterfacesJsonList = jsonValue.GetArray("vpcInterfaces");
     for(unsigned vpcInterfacesIndex = 0; vpcInterfacesIndex < vpcInterfacesJsonList.GetLength(); ++vpcInterfacesIndex)
     {
       m_vpcInterfaces.push_back(vpcInterfacesJsonList[vpcInterfacesIndex].AsObject());
@@ -199,7 +199,7 @@ JsonValue Flow::Jsonize() const
 
   if(m_entitlementsHasBeenSet)
   {
-   Array<JsonValue> entitlementsJsonList(m_entitlements.size());
+   Aws::Utils::Array<JsonValue> entitlementsJsonList(m_entitlements.size());
    for(unsigned entitlementsIndex = 0; entitlementsIndex < entitlementsJsonList.GetLength(); ++entitlementsIndex)
    {
      entitlementsJsonList[entitlementsIndex].AsObject(m_entitlements[entitlementsIndex].Jsonize());
@@ -216,7 +216,7 @@ JsonValue Flow::Jsonize() const
 
   if(m_mediaStreamsHasBeenSet)
   {
-   Array<JsonValue> mediaStreamsJsonList(m_mediaStreams.size());
+   Aws::Utils::Array<JsonValue> mediaStreamsJsonList(m_mediaStreams.size());
    for(unsigned mediaStreamsIndex = 0; mediaStreamsIndex < mediaStreamsJsonList.GetLength(); ++mediaStreamsIndex)
    {
      mediaStreamsJsonList[mediaStreamsIndex].AsObject(m_mediaStreams[mediaStreamsIndex].Jsonize());
@@ -233,7 +233,7 @@ JsonValue Flow::Jsonize() const
 
   if(m_outputsHasBeenSet)
   {
-   Array<JsonValue> outputsJsonList(m_outputs.size());
+   Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
    for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
    {
      outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());
@@ -256,7 +256,7 @@ JsonValue Flow::Jsonize() const
 
   if(m_sourcesHasBeenSet)
   {
-   Array<JsonValue> sourcesJsonList(m_sources.size());
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
@@ -272,7 +272,7 @@ JsonValue Flow::Jsonize() const
 
   if(m_vpcInterfacesHasBeenSet)
   {
-   Array<JsonValue> vpcInterfacesJsonList(m_vpcInterfaces.size());
+   Aws::Utils::Array<JsonValue> vpcInterfacesJsonList(m_vpcInterfaces.size());
    for(unsigned vpcInterfacesIndex = 0; vpcInterfacesIndex < vpcInterfacesJsonList.GetLength(); ++vpcInterfacesIndex)
    {
      vpcInterfacesJsonList[vpcInterfacesIndex].AsObject(m_vpcInterfaces[vpcInterfacesIndex].Jsonize());

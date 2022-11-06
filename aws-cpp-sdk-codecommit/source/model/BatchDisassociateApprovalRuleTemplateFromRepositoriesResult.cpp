@@ -30,7 +30,7 @@ BatchDisassociateApprovalRuleTemplateFromRepositoriesResult& BatchDisassociateAp
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("disassociatedRepositoryNames"))
   {
-    Array<JsonView> disassociatedRepositoryNamesJsonList = jsonValue.GetArray("disassociatedRepositoryNames");
+    Aws::Utils::Array<JsonView> disassociatedRepositoryNamesJsonList = jsonValue.GetArray("disassociatedRepositoryNames");
     for(unsigned disassociatedRepositoryNamesIndex = 0; disassociatedRepositoryNamesIndex < disassociatedRepositoryNamesJsonList.GetLength(); ++disassociatedRepositoryNamesIndex)
     {
       m_disassociatedRepositoryNames.push_back(disassociatedRepositoryNamesJsonList[disassociatedRepositoryNamesIndex].AsString());
@@ -39,7 +39,7 @@ BatchDisassociateApprovalRuleTemplateFromRepositoriesResult& BatchDisassociateAp
 
   if(jsonValue.ValueExists("errors"))
   {
-    Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
     for(unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex)
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());

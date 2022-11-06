@@ -60,7 +60,7 @@ AwsS3BucketWebsiteConfiguration& AwsS3BucketWebsiteConfiguration::operator =(Jso
 
   if(jsonValue.ValueExists("RoutingRules"))
   {
-    Array<JsonView> routingRulesJsonList = jsonValue.GetArray("RoutingRules");
+    Aws::Utils::Array<JsonView> routingRulesJsonList = jsonValue.GetArray("RoutingRules");
     for(unsigned routingRulesIndex = 0; routingRulesIndex < routingRulesJsonList.GetLength(); ++routingRulesIndex)
     {
       m_routingRules.push_back(routingRulesJsonList[routingRulesIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue AwsS3BucketWebsiteConfiguration::Jsonize() const
 
   if(m_routingRulesHasBeenSet)
   {
-   Array<JsonValue> routingRulesJsonList(m_routingRules.size());
+   Aws::Utils::Array<JsonValue> routingRulesJsonList(m_routingRules.size());
    for(unsigned routingRulesIndex = 0; routingRulesIndex < routingRulesJsonList.GetLength(); ++routingRulesIndex)
    {
      routingRulesJsonList[routingRulesIndex].AsObject(m_routingRules[routingRulesIndex].Jsonize());

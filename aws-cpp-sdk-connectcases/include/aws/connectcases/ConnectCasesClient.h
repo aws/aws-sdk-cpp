@@ -35,22 +35,48 @@ namespace ConnectCases
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ConnectCasesClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ConnectCasesClient(const Aws::ConnectCases::ConnectCasesClientConfiguration& clientConfiguration = Aws::ConnectCases::ConnectCasesClientConfiguration(),
+                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectCasesEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ConnectCasesClient(const Aws::Auth::AWSCredentials& credentials,
-                           const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectCasesEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::ConnectCases::ConnectCasesClientConfiguration& clientConfiguration = Aws::ConnectCases::ConnectCasesClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ConnectCasesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectCasesEndpointProvider>(ALLOCATION_TAG),
+                           const Aws::ConnectCases::ConnectCasesClientConfiguration& clientConfiguration = Aws::ConnectCases::ConnectCasesClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ConnectCasesClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ConnectCasesClient(const Aws::Auth::AWSCredentials& credentials,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ConnectCasesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                           const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ConnectCasesClient();
 
 
@@ -602,12 +628,13 @@ namespace ConnectCases
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ConnectCasesEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const ConnectCasesClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ConnectCasesClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ConnectCasesEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ConnectCases

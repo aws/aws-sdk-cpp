@@ -39,7 +39,7 @@ Aws::String CreateLaunchProfileRequest::SerializePayload() const
 
   if(m_ec2SubnetIdsHasBeenSet)
   {
-   Array<JsonValue> ec2SubnetIdsJsonList(m_ec2SubnetIds.size());
+   Aws::Utils::Array<JsonValue> ec2SubnetIdsJsonList(m_ec2SubnetIds.size());
    for(unsigned ec2SubnetIdsIndex = 0; ec2SubnetIdsIndex < ec2SubnetIdsJsonList.GetLength(); ++ec2SubnetIdsIndex)
    {
      ec2SubnetIdsJsonList[ec2SubnetIdsIndex].AsString(m_ec2SubnetIds[ec2SubnetIdsIndex]);
@@ -50,7 +50,7 @@ Aws::String CreateLaunchProfileRequest::SerializePayload() const
 
   if(m_launchProfileProtocolVersionsHasBeenSet)
   {
-   Array<JsonValue> launchProfileProtocolVersionsJsonList(m_launchProfileProtocolVersions.size());
+   Aws::Utils::Array<JsonValue> launchProfileProtocolVersionsJsonList(m_launchProfileProtocolVersions.size());
    for(unsigned launchProfileProtocolVersionsIndex = 0; launchProfileProtocolVersionsIndex < launchProfileProtocolVersionsJsonList.GetLength(); ++launchProfileProtocolVersionsIndex)
    {
      launchProfileProtocolVersionsJsonList[launchProfileProtocolVersionsIndex].AsString(m_launchProfileProtocolVersions[launchProfileProtocolVersionsIndex]);
@@ -73,7 +73,7 @@ Aws::String CreateLaunchProfileRequest::SerializePayload() const
 
   if(m_studioComponentIdsHasBeenSet)
   {
-   Array<JsonValue> studioComponentIdsJsonList(m_studioComponentIds.size());
+   Aws::Utils::Array<JsonValue> studioComponentIdsJsonList(m_studioComponentIds.size());
    for(unsigned studioComponentIdsIndex = 0; studioComponentIdsIndex < studioComponentIdsJsonList.GetLength(); ++studioComponentIdsIndex)
    {
      studioComponentIdsJsonList[studioComponentIdsIndex].AsString(m_studioComponentIds[studioComponentIdsIndex]);

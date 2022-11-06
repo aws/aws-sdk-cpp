@@ -30,7 +30,7 @@ ListImageVersionsResult& ListImageVersionsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ImageVersions"))
   {
-    Array<JsonView> imageVersionsJsonList = jsonValue.GetArray("ImageVersions");
+    Aws::Utils::Array<JsonView> imageVersionsJsonList = jsonValue.GetArray("ImageVersions");
     for(unsigned imageVersionsIndex = 0; imageVersionsIndex < imageVersionsJsonList.GetLength(); ++imageVersionsIndex)
     {
       m_imageVersions.push_back(imageVersionsJsonList[imageVersionsIndex].AsObject());

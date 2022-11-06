@@ -30,7 +30,7 @@ Aws::String PutInsightSelectorsRequest::SerializePayload() const
 
   if(m_insightSelectorsHasBeenSet)
   {
-   Array<JsonValue> insightSelectorsJsonList(m_insightSelectors.size());
+   Aws::Utils::Array<JsonValue> insightSelectorsJsonList(m_insightSelectors.size());
    for(unsigned insightSelectorsIndex = 0; insightSelectorsIndex < insightSelectorsJsonList.GetLength(); ++insightSelectorsIndex)
    {
      insightSelectorsJsonList[insightSelectorsIndex].AsObject(m_insightSelectors[insightSelectorsIndex].Jsonize());

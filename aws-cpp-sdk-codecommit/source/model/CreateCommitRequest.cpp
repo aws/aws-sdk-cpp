@@ -75,7 +75,7 @@ Aws::String CreateCommitRequest::SerializePayload() const
 
   if(m_putFilesHasBeenSet)
   {
-   Array<JsonValue> putFilesJsonList(m_putFiles.size());
+   Aws::Utils::Array<JsonValue> putFilesJsonList(m_putFiles.size());
    for(unsigned putFilesIndex = 0; putFilesIndex < putFilesJsonList.GetLength(); ++putFilesIndex)
    {
      putFilesJsonList[putFilesIndex].AsObject(m_putFiles[putFilesIndex].Jsonize());
@@ -86,7 +86,7 @@ Aws::String CreateCommitRequest::SerializePayload() const
 
   if(m_deleteFilesHasBeenSet)
   {
-   Array<JsonValue> deleteFilesJsonList(m_deleteFiles.size());
+   Aws::Utils::Array<JsonValue> deleteFilesJsonList(m_deleteFiles.size());
    for(unsigned deleteFilesIndex = 0; deleteFilesIndex < deleteFilesJsonList.GetLength(); ++deleteFilesIndex)
    {
      deleteFilesJsonList[deleteFilesIndex].AsObject(m_deleteFiles[deleteFilesIndex].Jsonize());
@@ -97,7 +97,7 @@ Aws::String CreateCommitRequest::SerializePayload() const
 
   if(m_setFileModesHasBeenSet)
   {
-   Array<JsonValue> setFileModesJsonList(m_setFileModes.size());
+   Aws::Utils::Array<JsonValue> setFileModesJsonList(m_setFileModes.size());
    for(unsigned setFileModesIndex = 0; setFileModesIndex < setFileModesJsonList.GetLength(); ++setFileModesIndex)
    {
      setFileModesJsonList[setFileModesIndex].AsObject(m_setFileModes[setFileModesIndex].Jsonize());

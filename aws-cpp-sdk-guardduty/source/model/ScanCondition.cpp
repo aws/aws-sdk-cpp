@@ -33,7 +33,7 @@ ScanCondition& ScanCondition::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("mapEquals"))
   {
-    Array<JsonView> mapEqualsJsonList = jsonValue.GetArray("mapEquals");
+    Aws::Utils::Array<JsonView> mapEqualsJsonList = jsonValue.GetArray("mapEquals");
     for(unsigned mapEqualsIndex = 0; mapEqualsIndex < mapEqualsJsonList.GetLength(); ++mapEqualsIndex)
     {
       m_mapEquals.push_back(mapEqualsJsonList[mapEqualsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue ScanCondition::Jsonize() const
 
   if(m_mapEqualsHasBeenSet)
   {
-   Array<JsonValue> mapEqualsJsonList(m_mapEquals.size());
+   Aws::Utils::Array<JsonValue> mapEqualsJsonList(m_mapEquals.size());
    for(unsigned mapEqualsIndex = 0; mapEqualsIndex < mapEqualsJsonList.GetLength(); ++mapEqualsIndex)
    {
      mapEqualsJsonList[mapEqualsIndex].AsObject(m_mapEquals[mapEqualsIndex].Jsonize());

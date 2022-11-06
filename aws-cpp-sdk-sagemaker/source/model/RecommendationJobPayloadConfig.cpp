@@ -42,7 +42,7 @@ RecommendationJobPayloadConfig& RecommendationJobPayloadConfig::operator =(JsonV
 
   if(jsonValue.ValueExists("SupportedContentTypes"))
   {
-    Array<JsonView> supportedContentTypesJsonList = jsonValue.GetArray("SupportedContentTypes");
+    Aws::Utils::Array<JsonView> supportedContentTypesJsonList = jsonValue.GetArray("SupportedContentTypes");
     for(unsigned supportedContentTypesIndex = 0; supportedContentTypesIndex < supportedContentTypesJsonList.GetLength(); ++supportedContentTypesIndex)
     {
       m_supportedContentTypes.push_back(supportedContentTypesJsonList[supportedContentTypesIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue RecommendationJobPayloadConfig::Jsonize() const
 
   if(m_supportedContentTypesHasBeenSet)
   {
-   Array<JsonValue> supportedContentTypesJsonList(m_supportedContentTypes.size());
+   Aws::Utils::Array<JsonValue> supportedContentTypesJsonList(m_supportedContentTypes.size());
    for(unsigned supportedContentTypesIndex = 0; supportedContentTypesIndex < supportedContentTypesJsonList.GetLength(); ++supportedContentTypesIndex)
    {
      supportedContentTypesJsonList[supportedContentTypesIndex].AsString(m_supportedContentTypes[supportedContentTypesIndex]);

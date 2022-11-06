@@ -89,7 +89,7 @@ StreamDescription& StreamDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Shards"))
   {
-    Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
+    Aws::Utils::Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
     for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
     {
       m_shards.push_back(shardsJsonList[shardsIndex].AsObject());
@@ -120,7 +120,7 @@ StreamDescription& StreamDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EnhancedMonitoring"))
   {
-    Array<JsonView> enhancedMonitoringJsonList = jsonValue.GetArray("EnhancedMonitoring");
+    Aws::Utils::Array<JsonView> enhancedMonitoringJsonList = jsonValue.GetArray("EnhancedMonitoring");
     for(unsigned enhancedMonitoringIndex = 0; enhancedMonitoringIndex < enhancedMonitoringJsonList.GetLength(); ++enhancedMonitoringIndex)
     {
       m_enhancedMonitoring.push_back(enhancedMonitoringJsonList[enhancedMonitoringIndex].AsObject());
@@ -174,7 +174,7 @@ JsonValue StreamDescription::Jsonize() const
 
   if(m_shardsHasBeenSet)
   {
-   Array<JsonValue> shardsJsonList(m_shards.size());
+   Aws::Utils::Array<JsonValue> shardsJsonList(m_shards.size());
    for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
    {
      shardsJsonList[shardsIndex].AsObject(m_shards[shardsIndex].Jsonize());
@@ -202,7 +202,7 @@ JsonValue StreamDescription::Jsonize() const
 
   if(m_enhancedMonitoringHasBeenSet)
   {
-   Array<JsonValue> enhancedMonitoringJsonList(m_enhancedMonitoring.size());
+   Aws::Utils::Array<JsonValue> enhancedMonitoringJsonList(m_enhancedMonitoring.size());
    for(unsigned enhancedMonitoringIndex = 0; enhancedMonitoringIndex < enhancedMonitoringJsonList.GetLength(); ++enhancedMonitoringIndex)
    {
      enhancedMonitoringJsonList[enhancedMonitoringIndex].AsObject(m_enhancedMonitoring[enhancedMonitoringIndex].Jsonize());

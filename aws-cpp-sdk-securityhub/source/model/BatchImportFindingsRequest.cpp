@@ -23,7 +23,7 @@ Aws::String BatchImportFindingsRequest::SerializePayload() const
 
   if(m_findingsHasBeenSet)
   {
-   Array<JsonValue> findingsJsonList(m_findings.size());
+   Aws::Utils::Array<JsonValue> findingsJsonList(m_findings.size());
    for(unsigned findingsIndex = 0; findingsIndex < findingsJsonList.GetLength(); ++findingsIndex)
    {
      findingsJsonList[findingsIndex].AsObject(m_findings[findingsIndex].Jsonize());

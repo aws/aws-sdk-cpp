@@ -70,7 +70,7 @@ Aws::String CreateIndexRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -81,7 +81,7 @@ Aws::String CreateIndexRequest::SerializePayload() const
 
   if(m_userTokenConfigurationsHasBeenSet)
   {
-   Array<JsonValue> userTokenConfigurationsJsonList(m_userTokenConfigurations.size());
+   Aws::Utils::Array<JsonValue> userTokenConfigurationsJsonList(m_userTokenConfigurations.size());
    for(unsigned userTokenConfigurationsIndex = 0; userTokenConfigurationsIndex < userTokenConfigurationsJsonList.GetLength(); ++userTokenConfigurationsIndex)
    {
      userTokenConfigurationsJsonList[userTokenConfigurationsIndex].AsObject(m_userTokenConfigurations[userTokenConfigurationsIndex].Jsonize());

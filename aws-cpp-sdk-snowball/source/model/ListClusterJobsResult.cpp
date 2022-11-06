@@ -30,7 +30,7 @@ ListClusterJobsResult& ListClusterJobsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("JobListEntries"))
   {
-    Array<JsonView> jobListEntriesJsonList = jsonValue.GetArray("JobListEntries");
+    Aws::Utils::Array<JsonView> jobListEntriesJsonList = jsonValue.GetArray("JobListEntries");
     for(unsigned jobListEntriesIndex = 0; jobListEntriesIndex < jobListEntriesJsonList.GetLength(); ++jobListEntriesIndex)
     {
       m_jobListEntries.push_back(jobListEntriesJsonList[jobListEntriesIndex].AsObject());

@@ -33,7 +33,7 @@ Aws::String CreateProcessingJobRequest::SerializePayload() const
 
   if(m_processingInputsHasBeenSet)
   {
-   Array<JsonValue> processingInputsJsonList(m_processingInputs.size());
+   Aws::Utils::Array<JsonValue> processingInputsJsonList(m_processingInputs.size());
    for(unsigned processingInputsIndex = 0; processingInputsIndex < processingInputsJsonList.GetLength(); ++processingInputsIndex)
    {
      processingInputsJsonList[processingInputsIndex].AsObject(m_processingInputs[processingInputsIndex].Jsonize());
@@ -97,7 +97,7 @@ Aws::String CreateProcessingJobRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

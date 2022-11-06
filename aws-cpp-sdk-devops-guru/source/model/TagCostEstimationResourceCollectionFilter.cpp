@@ -42,7 +42,7 @@ TagCostEstimationResourceCollectionFilter& TagCostEstimationResourceCollectionFi
 
   if(jsonValue.ValueExists("TagValues"))
   {
-    Array<JsonView> tagValuesJsonList = jsonValue.GetArray("TagValues");
+    Aws::Utils::Array<JsonView> tagValuesJsonList = jsonValue.GetArray("TagValues");
     for(unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex)
     {
       m_tagValues.push_back(tagValuesJsonList[tagValuesIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue TagCostEstimationResourceCollectionFilter::Jsonize() const
 
   if(m_tagValuesHasBeenSet)
   {
-   Array<JsonValue> tagValuesJsonList(m_tagValues.size());
+   Aws::Utils::Array<JsonValue> tagValuesJsonList(m_tagValues.size());
    for(unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex)
    {
      tagValuesJsonList[tagValuesIndex].AsString(m_tagValues[tagValuesIndex]);

@@ -48,7 +48,7 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
 
   if(jsonValue.ValueExists("lifeCycleStates"))
   {
-    Array<JsonView> lifeCycleStatesJsonList = jsonValue.GetArray("lifeCycleStates");
+    Aws::Utils::Array<JsonView> lifeCycleStatesJsonList = jsonValue.GetArray("lifeCycleStates");
     for(unsigned lifeCycleStatesIndex = 0; lifeCycleStatesIndex < lifeCycleStatesJsonList.GetLength(); ++lifeCycleStatesIndex)
     {
       m_lifeCycleStates.push_back(LifeCycleStateMapper::GetLifeCycleStateForName(lifeCycleStatesJsonList[lifeCycleStatesIndex].AsString()));
@@ -58,7 +58,7 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
 
   if(jsonValue.ValueExists("replicationTypes"))
   {
-    Array<JsonView> replicationTypesJsonList = jsonValue.GetArray("replicationTypes");
+    Aws::Utils::Array<JsonView> replicationTypesJsonList = jsonValue.GetArray("replicationTypes");
     for(unsigned replicationTypesIndex = 0; replicationTypesIndex < replicationTypesJsonList.GetLength(); ++replicationTypesIndex)
     {
       m_replicationTypes.push_back(ReplicationTypeMapper::GetReplicationTypeForName(replicationTypesJsonList[replicationTypesIndex].AsString()));
@@ -68,7 +68,7 @@ DescribeSourceServersRequestFilters& DescribeSourceServersRequestFilters::operat
 
   if(jsonValue.ValueExists("sourceServerIDs"))
   {
-    Array<JsonView> sourceServerIDsJsonList = jsonValue.GetArray("sourceServerIDs");
+    Aws::Utils::Array<JsonView> sourceServerIDsJsonList = jsonValue.GetArray("sourceServerIDs");
     for(unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex)
     {
       m_sourceServerIDs.push_back(sourceServerIDsJsonList[sourceServerIDsIndex].AsString());
@@ -91,7 +91,7 @@ JsonValue DescribeSourceServersRequestFilters::Jsonize() const
 
   if(m_lifeCycleStatesHasBeenSet)
   {
-   Array<JsonValue> lifeCycleStatesJsonList(m_lifeCycleStates.size());
+   Aws::Utils::Array<JsonValue> lifeCycleStatesJsonList(m_lifeCycleStates.size());
    for(unsigned lifeCycleStatesIndex = 0; lifeCycleStatesIndex < lifeCycleStatesJsonList.GetLength(); ++lifeCycleStatesIndex)
    {
      lifeCycleStatesJsonList[lifeCycleStatesIndex].AsString(LifeCycleStateMapper::GetNameForLifeCycleState(m_lifeCycleStates[lifeCycleStatesIndex]));
@@ -102,7 +102,7 @@ JsonValue DescribeSourceServersRequestFilters::Jsonize() const
 
   if(m_replicationTypesHasBeenSet)
   {
-   Array<JsonValue> replicationTypesJsonList(m_replicationTypes.size());
+   Aws::Utils::Array<JsonValue> replicationTypesJsonList(m_replicationTypes.size());
    for(unsigned replicationTypesIndex = 0; replicationTypesIndex < replicationTypesJsonList.GetLength(); ++replicationTypesIndex)
    {
      replicationTypesJsonList[replicationTypesIndex].AsString(ReplicationTypeMapper::GetNameForReplicationType(m_replicationTypes[replicationTypesIndex]));
@@ -113,7 +113,7 @@ JsonValue DescribeSourceServersRequestFilters::Jsonize() const
 
   if(m_sourceServerIDsHasBeenSet)
   {
-   Array<JsonValue> sourceServerIDsJsonList(m_sourceServerIDs.size());
+   Aws::Utils::Array<JsonValue> sourceServerIDsJsonList(m_sourceServerIDs.size());
    for(unsigned sourceServerIDsIndex = 0; sourceServerIDsIndex < sourceServerIDsJsonList.GetLength(); ++sourceServerIDsIndex)
    {
      sourceServerIDsJsonList[sourceServerIDsIndex].AsString(m_sourceServerIDs[sourceServerIDsIndex]);

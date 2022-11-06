@@ -53,7 +53,7 @@ AwsWafRegionalRuleDetails& AwsWafRegionalRuleDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("PredicateList"))
   {
-    Array<JsonView> predicateListJsonList = jsonValue.GetArray("PredicateList");
+    Aws::Utils::Array<JsonView> predicateListJsonList = jsonValue.GetArray("PredicateList");
     for(unsigned predicateListIndex = 0; predicateListIndex < predicateListJsonList.GetLength(); ++predicateListIndex)
     {
       m_predicateList.push_back(predicateListJsonList[predicateListIndex].AsObject());
@@ -89,7 +89,7 @@ JsonValue AwsWafRegionalRuleDetails::Jsonize() const
 
   if(m_predicateListHasBeenSet)
   {
-   Array<JsonValue> predicateListJsonList(m_predicateList.size());
+   Aws::Utils::Array<JsonValue> predicateListJsonList(m_predicateList.size());
    for(unsigned predicateListIndex = 0; predicateListIndex < predicateListJsonList.GetLength(); ++predicateListIndex)
    {
      predicateListJsonList[predicateListIndex].AsObject(m_predicateList[predicateListIndex].Jsonize());

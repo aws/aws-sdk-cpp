@@ -36,7 +36,7 @@ ResumeWorkflowRunResult& ResumeWorkflowRunResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("NodeIds"))
   {
-    Array<JsonView> nodeIdsJsonList = jsonValue.GetArray("NodeIds");
+    Aws::Utils::Array<JsonView> nodeIdsJsonList = jsonValue.GetArray("NodeIds");
     for(unsigned nodeIdsIndex = 0; nodeIdsIndex < nodeIdsJsonList.GetLength(); ++nodeIdsIndex)
     {
       m_nodeIds.push_back(nodeIdsJsonList[nodeIdsIndex].AsString());

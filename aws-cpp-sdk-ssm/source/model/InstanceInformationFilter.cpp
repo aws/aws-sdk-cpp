@@ -44,7 +44,7 @@ InstanceInformationFilter& InstanceInformationFilter::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("valueSet"))
   {
-    Array<JsonView> valueSetJsonList = jsonValue.GetArray("valueSet");
+    Aws::Utils::Array<JsonView> valueSetJsonList = jsonValue.GetArray("valueSet");
     for(unsigned valueSetIndex = 0; valueSetIndex < valueSetJsonList.GetLength(); ++valueSetIndex)
     {
       m_valueSet.push_back(valueSetJsonList[valueSetIndex].AsString());
@@ -66,7 +66,7 @@ JsonValue InstanceInformationFilter::Jsonize() const
 
   if(m_valueSetHasBeenSet)
   {
-   Array<JsonValue> valueSetJsonList(m_valueSet.size());
+   Aws::Utils::Array<JsonValue> valueSetJsonList(m_valueSet.size());
    for(unsigned valueSetIndex = 0; valueSetIndex < valueSetJsonList.GetLength(); ++valueSetIndex)
    {
      valueSetJsonList[valueSetIndex].AsString(m_valueSet[valueSetIndex]);

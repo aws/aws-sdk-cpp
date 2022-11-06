@@ -36,7 +36,7 @@ ListTrustAnchorsResult& ListTrustAnchorsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("trustAnchors"))
   {
-    Array<JsonView> trustAnchorsJsonList = jsonValue.GetArray("trustAnchors");
+    Aws::Utils::Array<JsonView> trustAnchorsJsonList = jsonValue.GetArray("trustAnchors");
     for(unsigned trustAnchorsIndex = 0; trustAnchorsIndex < trustAnchorsJsonList.GetLength(); ++trustAnchorsIndex)
     {
       m_trustAnchors.push_back(trustAnchorsJsonList[trustAnchorsIndex].AsObject());

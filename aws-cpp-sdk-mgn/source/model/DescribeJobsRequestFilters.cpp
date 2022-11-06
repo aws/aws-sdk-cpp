@@ -44,7 +44,7 @@ DescribeJobsRequestFilters& DescribeJobsRequestFilters::operator =(JsonView json
 
   if(jsonValue.ValueExists("jobIDs"))
   {
-    Array<JsonView> jobIDsJsonList = jsonValue.GetArray("jobIDs");
+    Aws::Utils::Array<JsonView> jobIDsJsonList = jsonValue.GetArray("jobIDs");
     for(unsigned jobIDsIndex = 0; jobIDsIndex < jobIDsJsonList.GetLength(); ++jobIDsIndex)
     {
       m_jobIDs.push_back(jobIDsJsonList[jobIDsIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue DescribeJobsRequestFilters::Jsonize() const
 
   if(m_jobIDsHasBeenSet)
   {
-   Array<JsonValue> jobIDsJsonList(m_jobIDs.size());
+   Aws::Utils::Array<JsonValue> jobIDsJsonList(m_jobIDs.size());
    for(unsigned jobIDsIndex = 0; jobIDsIndex < jobIDsJsonList.GetLength(); ++jobIDsIndex)
    {
      jobIDsJsonList[jobIDsIndex].AsString(m_jobIDs[jobIDsIndex]);

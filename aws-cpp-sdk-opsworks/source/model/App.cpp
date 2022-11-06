@@ -98,7 +98,7 @@ App& App::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DataSources"))
   {
-    Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("DataSources");
+    Aws::Utils::Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("DataSources");
     for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
     {
       m_dataSources.push_back(dataSourcesJsonList[dataSourcesIndex].AsObject());
@@ -122,7 +122,7 @@ App& App::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Domains"))
   {
-    Array<JsonView> domainsJsonList = jsonValue.GetArray("Domains");
+    Aws::Utils::Array<JsonView> domainsJsonList = jsonValue.GetArray("Domains");
     for(unsigned domainsIndex = 0; domainsIndex < domainsJsonList.GetLength(); ++domainsIndex)
     {
       m_domains.push_back(domainsJsonList[domainsIndex].AsString());
@@ -163,7 +163,7 @@ App& App::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Environment"))
   {
-    Array<JsonView> environmentJsonList = jsonValue.GetArray("Environment");
+    Aws::Utils::Array<JsonView> environmentJsonList = jsonValue.GetArray("Environment");
     for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
     {
       m_environment.push_back(environmentJsonList[environmentIndex].AsObject());
@@ -210,7 +210,7 @@ JsonValue App::Jsonize() const
 
   if(m_dataSourcesHasBeenSet)
   {
-   Array<JsonValue> dataSourcesJsonList(m_dataSources.size());
+   Aws::Utils::Array<JsonValue> dataSourcesJsonList(m_dataSources.size());
    for(unsigned dataSourcesIndex = 0; dataSourcesIndex < dataSourcesJsonList.GetLength(); ++dataSourcesIndex)
    {
      dataSourcesJsonList[dataSourcesIndex].AsObject(m_dataSources[dataSourcesIndex].Jsonize());
@@ -232,7 +232,7 @@ JsonValue App::Jsonize() const
 
   if(m_domainsHasBeenSet)
   {
-   Array<JsonValue> domainsJsonList(m_domains.size());
+   Aws::Utils::Array<JsonValue> domainsJsonList(m_domains.size());
    for(unsigned domainsIndex = 0; domainsIndex < domainsJsonList.GetLength(); ++domainsIndex)
    {
      domainsJsonList[domainsIndex].AsString(m_domains[domainsIndex]);
@@ -272,7 +272,7 @@ JsonValue App::Jsonize() const
 
   if(m_environmentHasBeenSet)
   {
-   Array<JsonValue> environmentJsonList(m_environment.size());
+   Aws::Utils::Array<JsonValue> environmentJsonList(m_environment.size());
    for(unsigned environmentIndex = 0; environmentIndex < environmentJsonList.GetLength(); ++environmentIndex)
    {
      environmentJsonList[environmentIndex].AsObject(m_environment[environmentIndex].Jsonize());

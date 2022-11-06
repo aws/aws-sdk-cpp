@@ -30,7 +30,7 @@ DescribeConfigurationRecordersResult& DescribeConfigurationRecordersResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConfigurationRecorders"))
   {
-    Array<JsonView> configurationRecordersJsonList = jsonValue.GetArray("ConfigurationRecorders");
+    Aws::Utils::Array<JsonView> configurationRecordersJsonList = jsonValue.GetArray("ConfigurationRecorders");
     for(unsigned configurationRecordersIndex = 0; configurationRecordersIndex < configurationRecordersJsonList.GetLength(); ++configurationRecordersIndex)
     {
       m_configurationRecorders.push_back(configurationRecordersJsonList[configurationRecordersIndex].AsObject());

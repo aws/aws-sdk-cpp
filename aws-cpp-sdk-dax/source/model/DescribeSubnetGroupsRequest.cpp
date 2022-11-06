@@ -26,7 +26,7 @@ Aws::String DescribeSubnetGroupsRequest::SerializePayload() const
 
   if(m_subnetGroupNamesHasBeenSet)
   {
-   Array<JsonValue> subnetGroupNamesJsonList(m_subnetGroupNames.size());
+   Aws::Utils::Array<JsonValue> subnetGroupNamesJsonList(m_subnetGroupNames.size());
    for(unsigned subnetGroupNamesIndex = 0; subnetGroupNamesIndex < subnetGroupNamesJsonList.GetLength(); ++subnetGroupNamesIndex)
    {
      subnetGroupNamesJsonList[subnetGroupNamesIndex].AsString(m_subnetGroupNames[subnetGroupNamesIndex]);

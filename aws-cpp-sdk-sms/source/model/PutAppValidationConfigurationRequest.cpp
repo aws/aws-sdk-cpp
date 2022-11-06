@@ -31,7 +31,7 @@ Aws::String PutAppValidationConfigurationRequest::SerializePayload() const
 
   if(m_appValidationConfigurationsHasBeenSet)
   {
-   Array<JsonValue> appValidationConfigurationsJsonList(m_appValidationConfigurations.size());
+   Aws::Utils::Array<JsonValue> appValidationConfigurationsJsonList(m_appValidationConfigurations.size());
    for(unsigned appValidationConfigurationsIndex = 0; appValidationConfigurationsIndex < appValidationConfigurationsJsonList.GetLength(); ++appValidationConfigurationsIndex)
    {
      appValidationConfigurationsJsonList[appValidationConfigurationsIndex].AsObject(m_appValidationConfigurations[appValidationConfigurationsIndex].Jsonize());
@@ -42,7 +42,7 @@ Aws::String PutAppValidationConfigurationRequest::SerializePayload() const
 
   if(m_serverGroupValidationConfigurationsHasBeenSet)
   {
-   Array<JsonValue> serverGroupValidationConfigurationsJsonList(m_serverGroupValidationConfigurations.size());
+   Aws::Utils::Array<JsonValue> serverGroupValidationConfigurationsJsonList(m_serverGroupValidationConfigurations.size());
    for(unsigned serverGroupValidationConfigurationsIndex = 0; serverGroupValidationConfigurationsIndex < serverGroupValidationConfigurationsJsonList.GetLength(); ++serverGroupValidationConfigurationsIndex)
    {
      serverGroupValidationConfigurationsJsonList[serverGroupValidationConfigurationsIndex].AsObject(m_serverGroupValidationConfigurations[serverGroupValidationConfigurationsIndex].Jsonize());

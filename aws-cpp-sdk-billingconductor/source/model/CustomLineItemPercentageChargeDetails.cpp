@@ -44,7 +44,7 @@ CustomLineItemPercentageChargeDetails& CustomLineItemPercentageChargeDetails::op
 
   if(jsonValue.ValueExists("AssociatedValues"))
   {
-    Array<JsonView> associatedValuesJsonList = jsonValue.GetArray("AssociatedValues");
+    Aws::Utils::Array<JsonView> associatedValuesJsonList = jsonValue.GetArray("AssociatedValues");
     for(unsigned associatedValuesIndex = 0; associatedValuesIndex < associatedValuesJsonList.GetLength(); ++associatedValuesIndex)
     {
       m_associatedValues.push_back(associatedValuesJsonList[associatedValuesIndex].AsString());
@@ -67,7 +67,7 @@ JsonValue CustomLineItemPercentageChargeDetails::Jsonize() const
 
   if(m_associatedValuesHasBeenSet)
   {
-   Array<JsonValue> associatedValuesJsonList(m_associatedValues.size());
+   Aws::Utils::Array<JsonValue> associatedValuesJsonList(m_associatedValues.size());
    for(unsigned associatedValuesIndex = 0; associatedValuesIndex < associatedValuesJsonList.GetLength(); ++associatedValuesIndex)
    {
      associatedValuesJsonList[associatedValuesIndex].AsString(m_associatedValues[associatedValuesIndex]);

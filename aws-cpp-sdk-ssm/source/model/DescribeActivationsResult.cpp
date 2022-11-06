@@ -30,7 +30,7 @@ DescribeActivationsResult& DescribeActivationsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ActivationList"))
   {
-    Array<JsonView> activationListJsonList = jsonValue.GetArray("ActivationList");
+    Aws::Utils::Array<JsonView> activationListJsonList = jsonValue.GetArray("ActivationList");
     for(unsigned activationListIndex = 0; activationListIndex < activationListJsonList.GetLength(); ++activationListIndex)
     {
       m_activationList.push_back(activationListJsonList[activationListIndex].AsObject());

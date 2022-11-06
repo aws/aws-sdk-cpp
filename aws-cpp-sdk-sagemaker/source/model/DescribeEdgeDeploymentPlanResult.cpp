@@ -48,7 +48,7 @@ DescribeEdgeDeploymentPlanResult& DescribeEdgeDeploymentPlanResult::operator =(c
 
   if(jsonValue.ValueExists("ModelConfigs"))
   {
-    Array<JsonView> modelConfigsJsonList = jsonValue.GetArray("ModelConfigs");
+    Aws::Utils::Array<JsonView> modelConfigsJsonList = jsonValue.GetArray("ModelConfigs");
     for(unsigned modelConfigsIndex = 0; modelConfigsIndex < modelConfigsJsonList.GetLength(); ++modelConfigsIndex)
     {
       m_modelConfigs.push_back(modelConfigsJsonList[modelConfigsIndex].AsObject());
@@ -81,7 +81,7 @@ DescribeEdgeDeploymentPlanResult& DescribeEdgeDeploymentPlanResult::operator =(c
 
   if(jsonValue.ValueExists("Stages"))
   {
-    Array<JsonView> stagesJsonList = jsonValue.GetArray("Stages");
+    Aws::Utils::Array<JsonView> stagesJsonList = jsonValue.GetArray("Stages");
     for(unsigned stagesIndex = 0; stagesIndex < stagesJsonList.GetLength(); ++stagesIndex)
     {
       m_stages.push_back(stagesJsonList[stagesIndex].AsObject());

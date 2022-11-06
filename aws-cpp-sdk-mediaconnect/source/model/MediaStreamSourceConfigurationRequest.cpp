@@ -46,7 +46,7 @@ MediaStreamSourceConfigurationRequest& MediaStreamSourceConfigurationRequest::op
 
   if(jsonValue.ValueExists("inputConfigurations"))
   {
-    Array<JsonView> inputConfigurationsJsonList = jsonValue.GetArray("inputConfigurations");
+    Aws::Utils::Array<JsonView> inputConfigurationsJsonList = jsonValue.GetArray("inputConfigurations");
     for(unsigned inputConfigurationsIndex = 0; inputConfigurationsIndex < inputConfigurationsJsonList.GetLength(); ++inputConfigurationsIndex)
     {
       m_inputConfigurations.push_back(inputConfigurationsJsonList[inputConfigurationsIndex].AsObject());
@@ -75,7 +75,7 @@ JsonValue MediaStreamSourceConfigurationRequest::Jsonize() const
 
   if(m_inputConfigurationsHasBeenSet)
   {
-   Array<JsonValue> inputConfigurationsJsonList(m_inputConfigurations.size());
+   Aws::Utils::Array<JsonValue> inputConfigurationsJsonList(m_inputConfigurations.size());
    for(unsigned inputConfigurationsIndex = 0; inputConfigurationsIndex < inputConfigurationsJsonList.GetLength(); ++inputConfigurationsIndex)
    {
      inputConfigurationsJsonList[inputConfigurationsIndex].AsObject(m_inputConfigurations[inputConfigurationsIndex].Jsonize());

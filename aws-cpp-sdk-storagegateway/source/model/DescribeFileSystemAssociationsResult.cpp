@@ -30,7 +30,7 @@ DescribeFileSystemAssociationsResult& DescribeFileSystemAssociationsResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FileSystemAssociationInfoList"))
   {
-    Array<JsonView> fileSystemAssociationInfoListJsonList = jsonValue.GetArray("FileSystemAssociationInfoList");
+    Aws::Utils::Array<JsonView> fileSystemAssociationInfoListJsonList = jsonValue.GetArray("FileSystemAssociationInfoList");
     for(unsigned fileSystemAssociationInfoListIndex = 0; fileSystemAssociationInfoListIndex < fileSystemAssociationInfoListJsonList.GetLength(); ++fileSystemAssociationInfoListIndex)
     {
       m_fileSystemAssociationInfoList.push_back(fileSystemAssociationInfoListJsonList[fileSystemAssociationInfoListIndex].AsObject());

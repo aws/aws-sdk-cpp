@@ -42,7 +42,7 @@ DescribeReplicationTaskAssessmentResultsResult& DescribeReplicationTaskAssessmen
 
   if(jsonValue.ValueExists("ReplicationTaskAssessmentResults"))
   {
-    Array<JsonView> replicationTaskAssessmentResultsJsonList = jsonValue.GetArray("ReplicationTaskAssessmentResults");
+    Aws::Utils::Array<JsonView> replicationTaskAssessmentResultsJsonList = jsonValue.GetArray("ReplicationTaskAssessmentResults");
     for(unsigned replicationTaskAssessmentResultsIndex = 0; replicationTaskAssessmentResultsIndex < replicationTaskAssessmentResultsJsonList.GetLength(); ++replicationTaskAssessmentResultsIndex)
     {
       m_replicationTaskAssessmentResults.push_back(replicationTaskAssessmentResultsJsonList[replicationTaskAssessmentResultsIndex].AsObject());

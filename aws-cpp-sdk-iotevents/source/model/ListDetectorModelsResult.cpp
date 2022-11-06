@@ -30,7 +30,7 @@ ListDetectorModelsResult& ListDetectorModelsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("detectorModelSummaries"))
   {
-    Array<JsonView> detectorModelSummariesJsonList = jsonValue.GetArray("detectorModelSummaries");
+    Aws::Utils::Array<JsonView> detectorModelSummariesJsonList = jsonValue.GetArray("detectorModelSummaries");
     for(unsigned detectorModelSummariesIndex = 0; detectorModelSummariesIndex < detectorModelSummariesJsonList.GetLength(); ++detectorModelSummariesIndex)
     {
       m_detectorModelSummaries.push_back(detectorModelSummariesJsonList[detectorModelSummariesIndex].AsObject());

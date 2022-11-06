@@ -30,7 +30,7 @@ ListTableStorageOptimizersResult& ListTableStorageOptimizersResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("StorageOptimizerList"))
   {
-    Array<JsonView> storageOptimizerListJsonList = jsonValue.GetArray("StorageOptimizerList");
+    Aws::Utils::Array<JsonView> storageOptimizerListJsonList = jsonValue.GetArray("StorageOptimizerList");
     for(unsigned storageOptimizerListIndex = 0; storageOptimizerListIndex < storageOptimizerListJsonList.GetLength(); ++storageOptimizerListIndex)
     {
       m_storageOptimizerList.push_back(storageOptimizerListJsonList[storageOptimizerListIndex].AsObject());

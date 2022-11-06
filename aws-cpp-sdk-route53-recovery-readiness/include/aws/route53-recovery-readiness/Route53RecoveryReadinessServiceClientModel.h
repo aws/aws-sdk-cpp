@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/route53-recovery-readiness/Route53RecoveryReadinessErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/route53-recovery-readiness/Route53RecoveryReadinessEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -77,6 +79,10 @@ namespace Aws
 
   namespace Route53RecoveryReadiness
   {
+    using Route53RecoveryReadinessClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Route53RecoveryReadinessEndpointProviderBase = Aws::Route53RecoveryReadiness::Endpoint::Route53RecoveryReadinessEndpointProviderBase;
+    using Route53RecoveryReadinessEndpointProvider = Aws::Route53RecoveryReadiness::Endpoint::Route53RecoveryReadinessEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in Route53RecoveryReadinessClient header */

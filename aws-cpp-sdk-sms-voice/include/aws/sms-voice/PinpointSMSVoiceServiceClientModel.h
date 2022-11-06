@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/sms-voice/PinpointSMSVoiceErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/sms-voice/PinpointSMSVoiceEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -57,6 +59,10 @@ namespace Aws
 
   namespace PinpointSMSVoice
   {
+    using PinpointSMSVoiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PinpointSMSVoiceEndpointProviderBase = Aws::PinpointSMSVoice::Endpoint::PinpointSMSVoiceEndpointProviderBase;
+    using PinpointSMSVoiceEndpointProvider = Aws::PinpointSMSVoice::Endpoint::PinpointSMSVoiceEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in PinpointSMSVoiceClient header */

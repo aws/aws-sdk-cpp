@@ -36,7 +36,7 @@ GetDomainStatisticsReportResult& GetDomainStatisticsReportResult::operator =(con
 
   if(jsonValue.ValueExists("DailyVolumes"))
   {
-    Array<JsonView> dailyVolumesJsonList = jsonValue.GetArray("DailyVolumes");
+    Aws::Utils::Array<JsonView> dailyVolumesJsonList = jsonValue.GetArray("DailyVolumes");
     for(unsigned dailyVolumesIndex = 0; dailyVolumesIndex < dailyVolumesJsonList.GetLength(); ++dailyVolumesIndex)
     {
       m_dailyVolumes.push_back(dailyVolumesJsonList[dailyVolumesIndex].AsObject());

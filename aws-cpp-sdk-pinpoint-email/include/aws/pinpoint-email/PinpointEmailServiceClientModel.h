@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/pinpoint-email/PinpointEmailErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/pinpoint-email/PinpointEmailEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -91,6 +93,10 @@ namespace Aws
 
   namespace PinpointEmail
   {
+    using PinpointEmailClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PinpointEmailEndpointProviderBase = Aws::PinpointEmail::Endpoint::PinpointEmailEndpointProviderBase;
+    using PinpointEmailEndpointProvider = Aws::PinpointEmail::Endpoint::PinpointEmailEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in PinpointEmailClient header */

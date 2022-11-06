@@ -36,7 +36,7 @@ ReadPipelineResult& ReadPipelineResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("Warnings"))
   {
-    Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
+    Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("Warnings");
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());

@@ -60,7 +60,7 @@ Aws::String CreateLocationSmbRequest::SerializePayload() const
 
   if(m_agentArnsHasBeenSet)
   {
-   Array<JsonValue> agentArnsJsonList(m_agentArns.size());
+   Aws::Utils::Array<JsonValue> agentArnsJsonList(m_agentArns.size());
    for(unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex)
    {
      agentArnsJsonList[agentArnsIndex].AsString(m_agentArns[agentArnsIndex]);
@@ -77,7 +77,7 @@ Aws::String CreateLocationSmbRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

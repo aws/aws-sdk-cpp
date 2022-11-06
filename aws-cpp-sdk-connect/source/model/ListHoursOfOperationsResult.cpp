@@ -30,7 +30,7 @@ ListHoursOfOperationsResult& ListHoursOfOperationsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("HoursOfOperationSummaryList"))
   {
-    Array<JsonView> hoursOfOperationSummaryListJsonList = jsonValue.GetArray("HoursOfOperationSummaryList");
+    Aws::Utils::Array<JsonView> hoursOfOperationSummaryListJsonList = jsonValue.GetArray("HoursOfOperationSummaryList");
     for(unsigned hoursOfOperationSummaryListIndex = 0; hoursOfOperationSummaryListIndex < hoursOfOperationSummaryListJsonList.GetLength(); ++hoursOfOperationSummaryListIndex)
     {
       m_hoursOfOperationSummaryList.push_back(hoursOfOperationSummaryListJsonList[hoursOfOperationSummaryListIndex].AsObject());

@@ -33,7 +33,7 @@ Aws::String UpdateTypedLinkFacetRequest::SerializePayload() const
 
   if(m_attributeUpdatesHasBeenSet)
   {
-   Array<JsonValue> attributeUpdatesJsonList(m_attributeUpdates.size());
+   Aws::Utils::Array<JsonValue> attributeUpdatesJsonList(m_attributeUpdates.size());
    for(unsigned attributeUpdatesIndex = 0; attributeUpdatesIndex < attributeUpdatesJsonList.GetLength(); ++attributeUpdatesIndex)
    {
      attributeUpdatesJsonList[attributeUpdatesIndex].AsObject(m_attributeUpdates[attributeUpdatesIndex].Jsonize());
@@ -44,7 +44,7 @@ Aws::String UpdateTypedLinkFacetRequest::SerializePayload() const
 
   if(m_identityAttributeOrderHasBeenSet)
   {
-   Array<JsonValue> identityAttributeOrderJsonList(m_identityAttributeOrder.size());
+   Aws::Utils::Array<JsonValue> identityAttributeOrderJsonList(m_identityAttributeOrder.size());
    for(unsigned identityAttributeOrderIndex = 0; identityAttributeOrderIndex < identityAttributeOrderJsonList.GetLength(); ++identityAttributeOrderIndex)
    {
      identityAttributeOrderJsonList[identityAttributeOrderIndex].AsString(m_identityAttributeOrder[identityAttributeOrderIndex]);

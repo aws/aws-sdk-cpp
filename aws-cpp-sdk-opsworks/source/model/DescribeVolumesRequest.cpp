@@ -44,7 +44,7 @@ Aws::String DescribeVolumesRequest::SerializePayload() const
 
   if(m_volumeIdsHasBeenSet)
   {
-   Array<JsonValue> volumeIdsJsonList(m_volumeIds.size());
+   Aws::Utils::Array<JsonValue> volumeIdsJsonList(m_volumeIds.size());
    for(unsigned volumeIdsIndex = 0; volumeIdsIndex < volumeIdsJsonList.GetLength(); ++volumeIdsIndex)
    {
      volumeIdsJsonList[volumeIdsIndex].AsString(m_volumeIds[volumeIdsIndex]);

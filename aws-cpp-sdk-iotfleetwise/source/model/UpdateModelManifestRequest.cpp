@@ -40,7 +40,7 @@ Aws::String UpdateModelManifestRequest::SerializePayload() const
 
   if(m_nodesToAddHasBeenSet)
   {
-   Array<JsonValue> nodesToAddJsonList(m_nodesToAdd.size());
+   Aws::Utils::Array<JsonValue> nodesToAddJsonList(m_nodesToAdd.size());
    for(unsigned nodesToAddIndex = 0; nodesToAddIndex < nodesToAddJsonList.GetLength(); ++nodesToAddIndex)
    {
      nodesToAddJsonList[nodesToAddIndex].AsString(m_nodesToAdd[nodesToAddIndex]);
@@ -51,7 +51,7 @@ Aws::String UpdateModelManifestRequest::SerializePayload() const
 
   if(m_nodesToRemoveHasBeenSet)
   {
-   Array<JsonValue> nodesToRemoveJsonList(m_nodesToRemove.size());
+   Aws::Utils::Array<JsonValue> nodesToRemoveJsonList(m_nodesToRemove.size());
    for(unsigned nodesToRemoveIndex = 0; nodesToRemoveIndex < nodesToRemoveJsonList.GetLength(); ++nodesToRemoveIndex)
    {
      nodesToRemoveJsonList[nodesToRemoveIndex].AsString(m_nodesToRemove[nodesToRemoveIndex]);

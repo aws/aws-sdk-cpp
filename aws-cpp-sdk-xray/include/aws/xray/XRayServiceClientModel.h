@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/xray/XRayErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/xray/XRayEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -76,6 +78,10 @@ namespace Aws
 
   namespace XRay
   {
+    using XRayClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using XRayEndpointProviderBase = Aws::XRay::Endpoint::XRayEndpointProviderBase;
+    using XRayEndpointProvider = Aws::XRay::Endpoint::XRayEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in XRayClient header */

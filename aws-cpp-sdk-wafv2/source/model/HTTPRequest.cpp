@@ -78,7 +78,7 @@ HTTPRequest& HTTPRequest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Headers"))
   {
-    Array<JsonView> headersJsonList = jsonValue.GetArray("Headers");
+    Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("Headers");
     for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
     {
       m_headers.push_back(headersJsonList[headersIndex].AsObject());
@@ -125,7 +125,7 @@ JsonValue HTTPRequest::Jsonize() const
 
   if(m_headersHasBeenSet)
   {
-   Array<JsonValue> headersJsonList(m_headers.size());
+   Aws::Utils::Array<JsonValue> headersJsonList(m_headers.size());
    for(unsigned headersIndex = 0; headersIndex < headersJsonList.GetLength(); ++headersIndex)
    {
      headersJsonList[headersIndex].AsObject(m_headers[headersIndex].Jsonize());

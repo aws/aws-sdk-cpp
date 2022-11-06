@@ -30,7 +30,7 @@ DescribeElasticIpsResult& DescribeElasticIpsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ElasticIps"))
   {
-    Array<JsonView> elasticIpsJsonList = jsonValue.GetArray("ElasticIps");
+    Aws::Utils::Array<JsonView> elasticIpsJsonList = jsonValue.GetArray("ElasticIps");
     for(unsigned elasticIpsIndex = 0; elasticIpsIndex < elasticIpsJsonList.GetLength(); ++elasticIpsIndex)
     {
       m_elasticIps.push_back(elasticIpsJsonList[elasticIpsIndex].AsObject());

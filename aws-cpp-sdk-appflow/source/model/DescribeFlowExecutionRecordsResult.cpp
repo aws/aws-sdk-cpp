@@ -30,7 +30,7 @@ DescribeFlowExecutionRecordsResult& DescribeFlowExecutionRecordsResult::operator
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("flowExecutions"))
   {
-    Array<JsonView> flowExecutionsJsonList = jsonValue.GetArray("flowExecutions");
+    Aws::Utils::Array<JsonView> flowExecutionsJsonList = jsonValue.GetArray("flowExecutions");
     for(unsigned flowExecutionsIndex = 0; flowExecutionsIndex < flowExecutionsJsonList.GetLength(); ++flowExecutionsIndex)
     {
       m_flowExecutions.push_back(flowExecutionsJsonList[flowExecutionsIndex].AsObject());

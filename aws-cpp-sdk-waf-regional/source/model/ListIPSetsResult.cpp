@@ -36,7 +36,7 @@ ListIPSetsResult& ListIPSetsResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("IPSets"))
   {
-    Array<JsonView> iPSetsJsonList = jsonValue.GetArray("IPSets");
+    Aws::Utils::Array<JsonView> iPSetsJsonList = jsonValue.GetArray("IPSets");
     for(unsigned iPSetsIndex = 0; iPSetsIndex < iPSetsJsonList.GetLength(); ++iPSetsIndex)
     {
       m_iPSets.push_back(iPSetsJsonList[iPSetsIndex].AsObject());

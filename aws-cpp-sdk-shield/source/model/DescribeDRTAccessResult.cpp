@@ -36,7 +36,7 @@ DescribeDRTAccessResult& DescribeDRTAccessResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("LogBucketList"))
   {
-    Array<JsonView> logBucketListJsonList = jsonValue.GetArray("LogBucketList");
+    Aws::Utils::Array<JsonView> logBucketListJsonList = jsonValue.GetArray("LogBucketList");
     for(unsigned logBucketListIndex = 0; logBucketListIndex < logBucketListJsonList.GetLength(); ++logBucketListIndex)
     {
       m_logBucketList.push_back(logBucketListJsonList[logBucketListIndex].AsString());

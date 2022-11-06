@@ -177,7 +177,7 @@ AwsRdsDbInstanceDetails& AwsRdsDbInstanceDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AssociatedRoles"))
   {
-    Array<JsonView> associatedRolesJsonList = jsonValue.GetArray("AssociatedRoles");
+    Aws::Utils::Array<JsonView> associatedRolesJsonList = jsonValue.GetArray("AssociatedRoles");
     for(unsigned associatedRolesIndex = 0; associatedRolesIndex < associatedRolesJsonList.GetLength(); ++associatedRolesIndex)
     {
       m_associatedRoles.push_back(associatedRolesJsonList[associatedRolesIndex].AsObject());
@@ -306,7 +306,7 @@ AwsRdsDbInstanceDetails& AwsRdsDbInstanceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("VpcSecurityGroups"))
   {
-    Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
+    Aws::Utils::Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
     for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
     {
       m_vpcSecurityGroups.push_back(vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject());
@@ -365,7 +365,7 @@ AwsRdsDbInstanceDetails& AwsRdsDbInstanceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DbSecurityGroups"))
   {
-    Array<JsonView> dbSecurityGroupsJsonList = jsonValue.GetArray("DbSecurityGroups");
+    Aws::Utils::Array<JsonView> dbSecurityGroupsJsonList = jsonValue.GetArray("DbSecurityGroups");
     for(unsigned dbSecurityGroupsIndex = 0; dbSecurityGroupsIndex < dbSecurityGroupsJsonList.GetLength(); ++dbSecurityGroupsIndex)
     {
       m_dbSecurityGroups.push_back(dbSecurityGroupsJsonList[dbSecurityGroupsIndex].AsString());
@@ -375,7 +375,7 @@ AwsRdsDbInstanceDetails& AwsRdsDbInstanceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DbParameterGroups"))
   {
-    Array<JsonView> dbParameterGroupsJsonList = jsonValue.GetArray("DbParameterGroups");
+    Aws::Utils::Array<JsonView> dbParameterGroupsJsonList = jsonValue.GetArray("DbParameterGroups");
     for(unsigned dbParameterGroupsIndex = 0; dbParameterGroupsIndex < dbParameterGroupsJsonList.GetLength(); ++dbParameterGroupsIndex)
     {
       m_dbParameterGroups.push_back(dbParameterGroupsJsonList[dbParameterGroupsIndex].AsObject());
@@ -434,7 +434,7 @@ AwsRdsDbInstanceDetails& AwsRdsDbInstanceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReadReplicaDBInstanceIdentifiers"))
   {
-    Array<JsonView> readReplicaDBInstanceIdentifiersJsonList = jsonValue.GetArray("ReadReplicaDBInstanceIdentifiers");
+    Aws::Utils::Array<JsonView> readReplicaDBInstanceIdentifiersJsonList = jsonValue.GetArray("ReadReplicaDBInstanceIdentifiers");
     for(unsigned readReplicaDBInstanceIdentifiersIndex = 0; readReplicaDBInstanceIdentifiersIndex < readReplicaDBInstanceIdentifiersJsonList.GetLength(); ++readReplicaDBInstanceIdentifiersIndex)
     {
       m_readReplicaDBInstanceIdentifiers.push_back(readReplicaDBInstanceIdentifiersJsonList[readReplicaDBInstanceIdentifiersIndex].AsString());
@@ -444,7 +444,7 @@ AwsRdsDbInstanceDetails& AwsRdsDbInstanceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ReadReplicaDBClusterIdentifiers"))
   {
-    Array<JsonView> readReplicaDBClusterIdentifiersJsonList = jsonValue.GetArray("ReadReplicaDBClusterIdentifiers");
+    Aws::Utils::Array<JsonView> readReplicaDBClusterIdentifiersJsonList = jsonValue.GetArray("ReadReplicaDBClusterIdentifiers");
     for(unsigned readReplicaDBClusterIdentifiersIndex = 0; readReplicaDBClusterIdentifiersIndex < readReplicaDBClusterIdentifiersJsonList.GetLength(); ++readReplicaDBClusterIdentifiersIndex)
     {
       m_readReplicaDBClusterIdentifiers.push_back(readReplicaDBClusterIdentifiersJsonList[readReplicaDBClusterIdentifiersIndex].AsString());
@@ -468,7 +468,7 @@ AwsRdsDbInstanceDetails& AwsRdsDbInstanceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OptionGroupMemberships"))
   {
-    Array<JsonView> optionGroupMembershipsJsonList = jsonValue.GetArray("OptionGroupMemberships");
+    Aws::Utils::Array<JsonView> optionGroupMembershipsJsonList = jsonValue.GetArray("OptionGroupMemberships");
     for(unsigned optionGroupMembershipsIndex = 0; optionGroupMembershipsIndex < optionGroupMembershipsJsonList.GetLength(); ++optionGroupMembershipsIndex)
     {
       m_optionGroupMemberships.push_back(optionGroupMembershipsJsonList[optionGroupMembershipsIndex].AsObject());
@@ -492,7 +492,7 @@ AwsRdsDbInstanceDetails& AwsRdsDbInstanceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("StatusInfos"))
   {
-    Array<JsonView> statusInfosJsonList = jsonValue.GetArray("StatusInfos");
+    Aws::Utils::Array<JsonView> statusInfosJsonList = jsonValue.GetArray("StatusInfos");
     for(unsigned statusInfosIndex = 0; statusInfosIndex < statusInfosJsonList.GetLength(); ++statusInfosIndex)
     {
       m_statusInfos.push_back(statusInfosJsonList[statusInfosIndex].AsObject());
@@ -509,7 +509,7 @@ AwsRdsDbInstanceDetails& AwsRdsDbInstanceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DomainMemberships"))
   {
-    Array<JsonView> domainMembershipsJsonList = jsonValue.GetArray("DomainMemberships");
+    Aws::Utils::Array<JsonView> domainMembershipsJsonList = jsonValue.GetArray("DomainMemberships");
     for(unsigned domainMembershipsIndex = 0; domainMembershipsIndex < domainMembershipsJsonList.GetLength(); ++domainMembershipsIndex)
     {
       m_domainMemberships.push_back(domainMembershipsJsonList[domainMembershipsIndex].AsObject());
@@ -575,7 +575,7 @@ AwsRdsDbInstanceDetails& AwsRdsDbInstanceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EnabledCloudWatchLogsExports"))
   {
-    Array<JsonView> enabledCloudWatchLogsExportsJsonList = jsonValue.GetArray("EnabledCloudWatchLogsExports");
+    Aws::Utils::Array<JsonView> enabledCloudWatchLogsExportsJsonList = jsonValue.GetArray("EnabledCloudWatchLogsExports");
     for(unsigned enabledCloudWatchLogsExportsIndex = 0; enabledCloudWatchLogsExportsIndex < enabledCloudWatchLogsExportsJsonList.GetLength(); ++enabledCloudWatchLogsExportsIndex)
     {
       m_enabledCloudWatchLogsExports.push_back(enabledCloudWatchLogsExportsJsonList[enabledCloudWatchLogsExportsIndex].AsString());
@@ -585,7 +585,7 @@ AwsRdsDbInstanceDetails& AwsRdsDbInstanceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ProcessorFeatures"))
   {
-    Array<JsonView> processorFeaturesJsonList = jsonValue.GetArray("ProcessorFeatures");
+    Aws::Utils::Array<JsonView> processorFeaturesJsonList = jsonValue.GetArray("ProcessorFeatures");
     for(unsigned processorFeaturesIndex = 0; processorFeaturesIndex < processorFeaturesJsonList.GetLength(); ++processorFeaturesIndex)
     {
       m_processorFeatures.push_back(processorFeaturesJsonList[processorFeaturesIndex].AsObject());
@@ -616,7 +616,7 @@ JsonValue AwsRdsDbInstanceDetails::Jsonize() const
 
   if(m_associatedRolesHasBeenSet)
   {
-   Array<JsonValue> associatedRolesJsonList(m_associatedRoles.size());
+   Aws::Utils::Array<JsonValue> associatedRolesJsonList(m_associatedRoles.size());
    for(unsigned associatedRolesIndex = 0; associatedRolesIndex < associatedRolesJsonList.GetLength(); ++associatedRolesIndex)
    {
      associatedRolesJsonList[associatedRolesIndex].AsObject(m_associatedRoles[associatedRolesIndex].Jsonize());
@@ -729,7 +729,7 @@ JsonValue AwsRdsDbInstanceDetails::Jsonize() const
 
   if(m_vpcSecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> vpcSecurityGroupsJsonList(m_vpcSecurityGroups.size());
+   Aws::Utils::Array<JsonValue> vpcSecurityGroupsJsonList(m_vpcSecurityGroups.size());
    for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
    {
      vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject(m_vpcSecurityGroups[vpcSecurityGroupsIndex].Jsonize());
@@ -782,7 +782,7 @@ JsonValue AwsRdsDbInstanceDetails::Jsonize() const
 
   if(m_dbSecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> dbSecurityGroupsJsonList(m_dbSecurityGroups.size());
+   Aws::Utils::Array<JsonValue> dbSecurityGroupsJsonList(m_dbSecurityGroups.size());
    for(unsigned dbSecurityGroupsIndex = 0; dbSecurityGroupsIndex < dbSecurityGroupsJsonList.GetLength(); ++dbSecurityGroupsIndex)
    {
      dbSecurityGroupsJsonList[dbSecurityGroupsIndex].AsString(m_dbSecurityGroups[dbSecurityGroupsIndex]);
@@ -793,7 +793,7 @@ JsonValue AwsRdsDbInstanceDetails::Jsonize() const
 
   if(m_dbParameterGroupsHasBeenSet)
   {
-   Array<JsonValue> dbParameterGroupsJsonList(m_dbParameterGroups.size());
+   Aws::Utils::Array<JsonValue> dbParameterGroupsJsonList(m_dbParameterGroups.size());
    for(unsigned dbParameterGroupsIndex = 0; dbParameterGroupsIndex < dbParameterGroupsJsonList.GetLength(); ++dbParameterGroupsIndex)
    {
      dbParameterGroupsJsonList[dbParameterGroupsIndex].AsObject(m_dbParameterGroups[dbParameterGroupsIndex].Jsonize());
@@ -846,7 +846,7 @@ JsonValue AwsRdsDbInstanceDetails::Jsonize() const
 
   if(m_readReplicaDBInstanceIdentifiersHasBeenSet)
   {
-   Array<JsonValue> readReplicaDBInstanceIdentifiersJsonList(m_readReplicaDBInstanceIdentifiers.size());
+   Aws::Utils::Array<JsonValue> readReplicaDBInstanceIdentifiersJsonList(m_readReplicaDBInstanceIdentifiers.size());
    for(unsigned readReplicaDBInstanceIdentifiersIndex = 0; readReplicaDBInstanceIdentifiersIndex < readReplicaDBInstanceIdentifiersJsonList.GetLength(); ++readReplicaDBInstanceIdentifiersIndex)
    {
      readReplicaDBInstanceIdentifiersJsonList[readReplicaDBInstanceIdentifiersIndex].AsString(m_readReplicaDBInstanceIdentifiers[readReplicaDBInstanceIdentifiersIndex]);
@@ -857,7 +857,7 @@ JsonValue AwsRdsDbInstanceDetails::Jsonize() const
 
   if(m_readReplicaDBClusterIdentifiersHasBeenSet)
   {
-   Array<JsonValue> readReplicaDBClusterIdentifiersJsonList(m_readReplicaDBClusterIdentifiers.size());
+   Aws::Utils::Array<JsonValue> readReplicaDBClusterIdentifiersJsonList(m_readReplicaDBClusterIdentifiers.size());
    for(unsigned readReplicaDBClusterIdentifiersIndex = 0; readReplicaDBClusterIdentifiersIndex < readReplicaDBClusterIdentifiersJsonList.GetLength(); ++readReplicaDBClusterIdentifiersIndex)
    {
      readReplicaDBClusterIdentifiersJsonList[readReplicaDBClusterIdentifiersIndex].AsString(m_readReplicaDBClusterIdentifiers[readReplicaDBClusterIdentifiersIndex]);
@@ -880,7 +880,7 @@ JsonValue AwsRdsDbInstanceDetails::Jsonize() const
 
   if(m_optionGroupMembershipsHasBeenSet)
   {
-   Array<JsonValue> optionGroupMembershipsJsonList(m_optionGroupMemberships.size());
+   Aws::Utils::Array<JsonValue> optionGroupMembershipsJsonList(m_optionGroupMemberships.size());
    for(unsigned optionGroupMembershipsIndex = 0; optionGroupMembershipsIndex < optionGroupMembershipsJsonList.GetLength(); ++optionGroupMembershipsIndex)
    {
      optionGroupMembershipsJsonList[optionGroupMembershipsIndex].AsObject(m_optionGroupMemberships[optionGroupMembershipsIndex].Jsonize());
@@ -903,7 +903,7 @@ JsonValue AwsRdsDbInstanceDetails::Jsonize() const
 
   if(m_statusInfosHasBeenSet)
   {
-   Array<JsonValue> statusInfosJsonList(m_statusInfos.size());
+   Aws::Utils::Array<JsonValue> statusInfosJsonList(m_statusInfos.size());
    for(unsigned statusInfosIndex = 0; statusInfosIndex < statusInfosJsonList.GetLength(); ++statusInfosIndex)
    {
      statusInfosJsonList[statusInfosIndex].AsObject(m_statusInfos[statusInfosIndex].Jsonize());
@@ -920,7 +920,7 @@ JsonValue AwsRdsDbInstanceDetails::Jsonize() const
 
   if(m_domainMembershipsHasBeenSet)
   {
-   Array<JsonValue> domainMembershipsJsonList(m_domainMemberships.size());
+   Aws::Utils::Array<JsonValue> domainMembershipsJsonList(m_domainMemberships.size());
    for(unsigned domainMembershipsIndex = 0; domainMembershipsIndex < domainMembershipsJsonList.GetLength(); ++domainMembershipsIndex)
    {
      domainMembershipsJsonList[domainMembershipsIndex].AsObject(m_domainMemberships[domainMembershipsIndex].Jsonize());
@@ -979,7 +979,7 @@ JsonValue AwsRdsDbInstanceDetails::Jsonize() const
 
   if(m_enabledCloudWatchLogsExportsHasBeenSet)
   {
-   Array<JsonValue> enabledCloudWatchLogsExportsJsonList(m_enabledCloudWatchLogsExports.size());
+   Aws::Utils::Array<JsonValue> enabledCloudWatchLogsExportsJsonList(m_enabledCloudWatchLogsExports.size());
    for(unsigned enabledCloudWatchLogsExportsIndex = 0; enabledCloudWatchLogsExportsIndex < enabledCloudWatchLogsExportsJsonList.GetLength(); ++enabledCloudWatchLogsExportsIndex)
    {
      enabledCloudWatchLogsExportsJsonList[enabledCloudWatchLogsExportsIndex].AsString(m_enabledCloudWatchLogsExports[enabledCloudWatchLogsExportsIndex]);
@@ -990,7 +990,7 @@ JsonValue AwsRdsDbInstanceDetails::Jsonize() const
 
   if(m_processorFeaturesHasBeenSet)
   {
-   Array<JsonValue> processorFeaturesJsonList(m_processorFeatures.size());
+   Aws::Utils::Array<JsonValue> processorFeaturesJsonList(m_processorFeatures.size());
    for(unsigned processorFeaturesIndex = 0; processorFeaturesIndex < processorFeaturesJsonList.GetLength(); ++processorFeaturesIndex)
    {
      processorFeaturesJsonList[processorFeaturesIndex].AsObject(m_processorFeatures[processorFeaturesIndex].Jsonize());

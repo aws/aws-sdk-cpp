@@ -37,7 +37,7 @@ Limits& Limits::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("StorageTypes"))
   {
-    Array<JsonView> storageTypesJsonList = jsonValue.GetArray("StorageTypes");
+    Aws::Utils::Array<JsonView> storageTypesJsonList = jsonValue.GetArray("StorageTypes");
     for(unsigned storageTypesIndex = 0; storageTypesIndex < storageTypesJsonList.GetLength(); ++storageTypesIndex)
     {
       m_storageTypes.push_back(storageTypesJsonList[storageTypesIndex].AsObject());
@@ -54,7 +54,7 @@ Limits& Limits::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdditionalLimits"))
   {
-    Array<JsonView> additionalLimitsJsonList = jsonValue.GetArray("AdditionalLimits");
+    Aws::Utils::Array<JsonView> additionalLimitsJsonList = jsonValue.GetArray("AdditionalLimits");
     for(unsigned additionalLimitsIndex = 0; additionalLimitsIndex < additionalLimitsJsonList.GetLength(); ++additionalLimitsIndex)
     {
       m_additionalLimits.push_back(additionalLimitsJsonList[additionalLimitsIndex].AsObject());
@@ -71,7 +71,7 @@ JsonValue Limits::Jsonize() const
 
   if(m_storageTypesHasBeenSet)
   {
-   Array<JsonValue> storageTypesJsonList(m_storageTypes.size());
+   Aws::Utils::Array<JsonValue> storageTypesJsonList(m_storageTypes.size());
    for(unsigned storageTypesIndex = 0; storageTypesIndex < storageTypesJsonList.GetLength(); ++storageTypesIndex)
    {
      storageTypesJsonList[storageTypesIndex].AsObject(m_storageTypes[storageTypesIndex].Jsonize());
@@ -88,7 +88,7 @@ JsonValue Limits::Jsonize() const
 
   if(m_additionalLimitsHasBeenSet)
   {
-   Array<JsonValue> additionalLimitsJsonList(m_additionalLimits.size());
+   Aws::Utils::Array<JsonValue> additionalLimitsJsonList(m_additionalLimits.size());
    for(unsigned additionalLimitsIndex = 0; additionalLimitsIndex < additionalLimitsJsonList.GetLength(); ++additionalLimitsIndex)
    {
      additionalLimitsJsonList[additionalLimitsIndex].AsObject(m_additionalLimits[additionalLimitsIndex].Jsonize());

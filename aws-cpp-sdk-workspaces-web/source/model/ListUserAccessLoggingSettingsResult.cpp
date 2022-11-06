@@ -36,7 +36,7 @@ ListUserAccessLoggingSettingsResult& ListUserAccessLoggingSettingsResult::operat
 
   if(jsonValue.ValueExists("userAccessLoggingSettings"))
   {
-    Array<JsonView> userAccessLoggingSettingsJsonList = jsonValue.GetArray("userAccessLoggingSettings");
+    Aws::Utils::Array<JsonView> userAccessLoggingSettingsJsonList = jsonValue.GetArray("userAccessLoggingSettings");
     for(unsigned userAccessLoggingSettingsIndex = 0; userAccessLoggingSettingsIndex < userAccessLoggingSettingsJsonList.GetLength(); ++userAccessLoggingSettingsIndex)
     {
       m_userAccessLoggingSettings.push_back(userAccessLoggingSettingsJsonList[userAccessLoggingSettingsIndex].AsObject());

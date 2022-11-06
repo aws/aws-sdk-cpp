@@ -67,7 +67,7 @@ Output& Output::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PartitionColumns"))
   {
-    Array<JsonView> partitionColumnsJsonList = jsonValue.GetArray("PartitionColumns");
+    Aws::Utils::Array<JsonView> partitionColumnsJsonList = jsonValue.GetArray("PartitionColumns");
     for(unsigned partitionColumnsIndex = 0; partitionColumnsIndex < partitionColumnsJsonList.GetLength(); ++partitionColumnsIndex)
     {
       m_partitionColumns.push_back(partitionColumnsJsonList[partitionColumnsIndex].AsString());
@@ -122,7 +122,7 @@ JsonValue Output::Jsonize() const
 
   if(m_partitionColumnsHasBeenSet)
   {
-   Array<JsonValue> partitionColumnsJsonList(m_partitionColumns.size());
+   Aws::Utils::Array<JsonValue> partitionColumnsJsonList(m_partitionColumns.size());
    for(unsigned partitionColumnsIndex = 0; partitionColumnsIndex < partitionColumnsJsonList.GetLength(); ++partitionColumnsIndex)
    {
      partitionColumnsJsonList[partitionColumnsIndex].AsString(m_partitionColumns[partitionColumnsIndex]);

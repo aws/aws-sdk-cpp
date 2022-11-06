@@ -96,7 +96,7 @@ Aws::String UpdateOriginEndpointRequest::SerializePayload() const
 
   if(m_whitelistHasBeenSet)
   {
-   Array<JsonValue> whitelistJsonList(m_whitelist.size());
+   Aws::Utils::Array<JsonValue> whitelistJsonList(m_whitelist.size());
    for(unsigned whitelistIndex = 0; whitelistIndex < whitelistJsonList.GetLength(); ++whitelistIndex)
    {
      whitelistJsonList[whitelistIndex].AsString(m_whitelist[whitelistIndex]);

@@ -78,7 +78,7 @@ RequestPhoneNumberResult& RequestPhoneNumberResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("NumberCapabilities"))
   {
-    Array<JsonView> numberCapabilitiesJsonList = jsonValue.GetArray("NumberCapabilities");
+    Aws::Utils::Array<JsonView> numberCapabilitiesJsonList = jsonValue.GetArray("NumberCapabilities");
     for(unsigned numberCapabilitiesIndex = 0; numberCapabilitiesIndex < numberCapabilitiesJsonList.GetLength(); ++numberCapabilitiesIndex)
     {
       m_numberCapabilities.push_back(NumberCapabilityMapper::GetNumberCapabilityForName(numberCapabilitiesJsonList[numberCapabilitiesIndex].AsString()));
@@ -135,7 +135,7 @@ RequestPhoneNumberResult& RequestPhoneNumberResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

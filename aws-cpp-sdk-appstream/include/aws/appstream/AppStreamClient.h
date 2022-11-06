@@ -44,22 +44,48 @@ namespace AppStream
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AppStreamClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AppStreamClient(const Aws::AppStream::AppStreamClientConfiguration& clientConfiguration = Aws::AppStream::AppStreamClientConfiguration(),
+                        std::shared_ptr<AppStreamEndpointProviderBase> endpointProvider = Aws::MakeShared<AppStreamEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AppStreamClient(const Aws::Auth::AWSCredentials& credentials,
-                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<AppStreamEndpointProviderBase> endpointProvider = Aws::MakeShared<AppStreamEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::AppStream::AppStreamClientConfiguration& clientConfiguration = Aws::AppStream::AppStreamClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AppStreamClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<AppStreamEndpointProviderBase> endpointProvider = Aws::MakeShared<AppStreamEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::AppStream::AppStreamClientConfiguration& clientConfiguration = Aws::AppStream::AppStreamClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AppStreamClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AppStreamClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        AppStreamClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~AppStreamClient();
 
 
@@ -1298,12 +1324,13 @@ namespace AppStream
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<AppStreamEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const AppStreamClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      AppStreamClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<AppStreamEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AppStream

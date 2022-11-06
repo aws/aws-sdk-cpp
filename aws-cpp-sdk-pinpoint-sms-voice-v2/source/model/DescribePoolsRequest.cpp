@@ -27,7 +27,7 @@ Aws::String DescribePoolsRequest::SerializePayload() const
 
   if(m_poolIdsHasBeenSet)
   {
-   Array<JsonValue> poolIdsJsonList(m_poolIds.size());
+   Aws::Utils::Array<JsonValue> poolIdsJsonList(m_poolIds.size());
    for(unsigned poolIdsIndex = 0; poolIdsIndex < poolIdsJsonList.GetLength(); ++poolIdsIndex)
    {
      poolIdsJsonList[poolIdsIndex].AsString(m_poolIds[poolIdsIndex]);
@@ -38,7 +38,7 @@ Aws::String DescribePoolsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

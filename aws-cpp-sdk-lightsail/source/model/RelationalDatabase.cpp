@@ -131,7 +131,7 @@ RelationalDatabase& RelationalDatabase::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -260,7 +260,7 @@ RelationalDatabase& RelationalDatabase::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("pendingMaintenanceActions"))
   {
-    Array<JsonView> pendingMaintenanceActionsJsonList = jsonValue.GetArray("pendingMaintenanceActions");
+    Aws::Utils::Array<JsonView> pendingMaintenanceActionsJsonList = jsonValue.GetArray("pendingMaintenanceActions");
     for(unsigned pendingMaintenanceActionsIndex = 0; pendingMaintenanceActionsIndex < pendingMaintenanceActionsJsonList.GetLength(); ++pendingMaintenanceActionsIndex)
     {
       m_pendingMaintenanceActions.push_back(pendingMaintenanceActionsJsonList[pendingMaintenanceActionsIndex].AsObject());
@@ -318,7 +318,7 @@ JsonValue RelationalDatabase::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -430,7 +430,7 @@ JsonValue RelationalDatabase::Jsonize() const
 
   if(m_pendingMaintenanceActionsHasBeenSet)
   {
-   Array<JsonValue> pendingMaintenanceActionsJsonList(m_pendingMaintenanceActions.size());
+   Aws::Utils::Array<JsonValue> pendingMaintenanceActionsJsonList(m_pendingMaintenanceActions.size());
    for(unsigned pendingMaintenanceActionsIndex = 0; pendingMaintenanceActionsIndex < pendingMaintenanceActionsJsonList.GetLength(); ++pendingMaintenanceActionsIndex)
    {
      pendingMaintenanceActionsJsonList[pendingMaintenanceActionsIndex].AsObject(m_pendingMaintenanceActions[pendingMaintenanceActionsIndex].Jsonize());

@@ -44,7 +44,7 @@ Aws::String CompleteLayerUploadRequest::SerializePayload() const
 
   if(m_layerDigestsHasBeenSet)
   {
-   Array<JsonValue> layerDigestsJsonList(m_layerDigests.size());
+   Aws::Utils::Array<JsonValue> layerDigestsJsonList(m_layerDigests.size());
    for(unsigned layerDigestsIndex = 0; layerDigestsIndex < layerDigestsJsonList.GetLength(); ++layerDigestsIndex)
    {
      layerDigestsJsonList[layerDigestsIndex].AsString(m_layerDigests[layerDigestsIndex]);

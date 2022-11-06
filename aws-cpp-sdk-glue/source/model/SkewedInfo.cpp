@@ -37,7 +37,7 @@ SkewedInfo& SkewedInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SkewedColumnNames"))
   {
-    Array<JsonView> skewedColumnNamesJsonList = jsonValue.GetArray("SkewedColumnNames");
+    Aws::Utils::Array<JsonView> skewedColumnNamesJsonList = jsonValue.GetArray("SkewedColumnNames");
     for(unsigned skewedColumnNamesIndex = 0; skewedColumnNamesIndex < skewedColumnNamesJsonList.GetLength(); ++skewedColumnNamesIndex)
     {
       m_skewedColumnNames.push_back(skewedColumnNamesJsonList[skewedColumnNamesIndex].AsString());
@@ -47,7 +47,7 @@ SkewedInfo& SkewedInfo::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SkewedColumnValues"))
   {
-    Array<JsonView> skewedColumnValuesJsonList = jsonValue.GetArray("SkewedColumnValues");
+    Aws::Utils::Array<JsonView> skewedColumnValuesJsonList = jsonValue.GetArray("SkewedColumnValues");
     for(unsigned skewedColumnValuesIndex = 0; skewedColumnValuesIndex < skewedColumnValuesJsonList.GetLength(); ++skewedColumnValuesIndex)
     {
       m_skewedColumnValues.push_back(skewedColumnValuesJsonList[skewedColumnValuesIndex].AsString());
@@ -74,7 +74,7 @@ JsonValue SkewedInfo::Jsonize() const
 
   if(m_skewedColumnNamesHasBeenSet)
   {
-   Array<JsonValue> skewedColumnNamesJsonList(m_skewedColumnNames.size());
+   Aws::Utils::Array<JsonValue> skewedColumnNamesJsonList(m_skewedColumnNames.size());
    for(unsigned skewedColumnNamesIndex = 0; skewedColumnNamesIndex < skewedColumnNamesJsonList.GetLength(); ++skewedColumnNamesIndex)
    {
      skewedColumnNamesJsonList[skewedColumnNamesIndex].AsString(m_skewedColumnNames[skewedColumnNamesIndex]);
@@ -85,7 +85,7 @@ JsonValue SkewedInfo::Jsonize() const
 
   if(m_skewedColumnValuesHasBeenSet)
   {
-   Array<JsonValue> skewedColumnValuesJsonList(m_skewedColumnValues.size());
+   Aws::Utils::Array<JsonValue> skewedColumnValuesJsonList(m_skewedColumnValues.size());
    for(unsigned skewedColumnValuesIndex = 0; skewedColumnValuesIndex < skewedColumnValuesJsonList.GetLength(); ++skewedColumnValuesIndex)
    {
      skewedColumnValuesJsonList[skewedColumnValuesIndex].AsString(m_skewedColumnValues[skewedColumnValuesIndex]);

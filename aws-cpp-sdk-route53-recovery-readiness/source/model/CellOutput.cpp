@@ -55,7 +55,7 @@ CellOutput& CellOutput::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("cells"))
   {
-    Array<JsonView> cellsJsonList = jsonValue.GetArray("cells");
+    Aws::Utils::Array<JsonView> cellsJsonList = jsonValue.GetArray("cells");
     for(unsigned cellsIndex = 0; cellsIndex < cellsJsonList.GetLength(); ++cellsIndex)
     {
       m_cells.push_back(cellsJsonList[cellsIndex].AsString());
@@ -65,7 +65,7 @@ CellOutput& CellOutput::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("parentReadinessScopes"))
   {
-    Array<JsonView> parentReadinessScopesJsonList = jsonValue.GetArray("parentReadinessScopes");
+    Aws::Utils::Array<JsonView> parentReadinessScopesJsonList = jsonValue.GetArray("parentReadinessScopes");
     for(unsigned parentReadinessScopesIndex = 0; parentReadinessScopesIndex < parentReadinessScopesJsonList.GetLength(); ++parentReadinessScopesIndex)
     {
       m_parentReadinessScopes.push_back(parentReadinessScopesJsonList[parentReadinessScopesIndex].AsString());
@@ -104,7 +104,7 @@ JsonValue CellOutput::Jsonize() const
 
   if(m_cellsHasBeenSet)
   {
-   Array<JsonValue> cellsJsonList(m_cells.size());
+   Aws::Utils::Array<JsonValue> cellsJsonList(m_cells.size());
    for(unsigned cellsIndex = 0; cellsIndex < cellsJsonList.GetLength(); ++cellsIndex)
    {
      cellsJsonList[cellsIndex].AsString(m_cells[cellsIndex]);
@@ -115,7 +115,7 @@ JsonValue CellOutput::Jsonize() const
 
   if(m_parentReadinessScopesHasBeenSet)
   {
-   Array<JsonValue> parentReadinessScopesJsonList(m_parentReadinessScopes.size());
+   Aws::Utils::Array<JsonValue> parentReadinessScopesJsonList(m_parentReadinessScopes.size());
    for(unsigned parentReadinessScopesIndex = 0; parentReadinessScopesIndex < parentReadinessScopesJsonList.GetLength(); ++parentReadinessScopesIndex)
    {
      parentReadinessScopesJsonList[parentReadinessScopesIndex].AsString(m_parentReadinessScopes[parentReadinessScopesIndex]);

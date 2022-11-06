@@ -30,7 +30,7 @@ ListApiKeysResult& ListApiKeysResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("apiKeys"))
   {
-    Array<JsonView> apiKeysJsonList = jsonValue.GetArray("apiKeys");
+    Aws::Utils::Array<JsonView> apiKeysJsonList = jsonValue.GetArray("apiKeys");
     for(unsigned apiKeysIndex = 0; apiKeysIndex < apiKeysJsonList.GetLength(); ++apiKeysIndex)
     {
       m_apiKeys.push_back(apiKeysJsonList[apiKeysIndex].AsObject());

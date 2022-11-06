@@ -58,7 +58,7 @@ DescribeFeatureGroupResult& DescribeFeatureGroupResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("FeatureDefinitions"))
   {
-    Array<JsonView> featureDefinitionsJsonList = jsonValue.GetArray("FeatureDefinitions");
+    Aws::Utils::Array<JsonView> featureDefinitionsJsonList = jsonValue.GetArray("FeatureDefinitions");
     for(unsigned featureDefinitionsIndex = 0; featureDefinitionsIndex < featureDefinitionsJsonList.GetLength(); ++featureDefinitionsIndex)
     {
       m_featureDefinitions.push_back(featureDefinitionsJsonList[featureDefinitionsIndex].AsObject());

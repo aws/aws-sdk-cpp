@@ -53,7 +53,7 @@ ResponseCard& ResponseCard::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("genericAttachments"))
   {
-    Array<JsonView> genericAttachmentsJsonList = jsonValue.GetArray("genericAttachments");
+    Aws::Utils::Array<JsonView> genericAttachmentsJsonList = jsonValue.GetArray("genericAttachments");
     for(unsigned genericAttachmentsIndex = 0; genericAttachmentsIndex < genericAttachmentsJsonList.GetLength(); ++genericAttachmentsIndex)
     {
       m_genericAttachments.push_back(genericAttachmentsJsonList[genericAttachmentsIndex].AsObject());
@@ -81,7 +81,7 @@ JsonValue ResponseCard::Jsonize() const
 
   if(m_genericAttachmentsHasBeenSet)
   {
-   Array<JsonValue> genericAttachmentsJsonList(m_genericAttachments.size());
+   Aws::Utils::Array<JsonValue> genericAttachmentsJsonList(m_genericAttachments.size());
    for(unsigned genericAttachmentsIndex = 0; genericAttachmentsIndex < genericAttachmentsJsonList.GetLength(); ++genericAttachmentsIndex)
    {
      genericAttachmentsJsonList[genericAttachmentsIndex].AsObject(m_genericAttachments[genericAttachmentsIndex].Jsonize());

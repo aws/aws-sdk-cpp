@@ -30,7 +30,7 @@ ListScheduledAuditsResult& ListScheduledAuditsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("scheduledAudits"))
   {
-    Array<JsonView> scheduledAuditsJsonList = jsonValue.GetArray("scheduledAudits");
+    Aws::Utils::Array<JsonView> scheduledAuditsJsonList = jsonValue.GetArray("scheduledAudits");
     for(unsigned scheduledAuditsIndex = 0; scheduledAuditsIndex < scheduledAuditsJsonList.GetLength(); ++scheduledAuditsIndex)
     {
       m_scheduledAudits.push_back(scheduledAuditsJsonList[scheduledAuditsIndex].AsObject());

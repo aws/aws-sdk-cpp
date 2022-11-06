@@ -30,7 +30,7 @@ ListRecommendationsResult& ListRecommendationsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RecommendationSummaries"))
   {
-    Array<JsonView> recommendationSummariesJsonList = jsonValue.GetArray("RecommendationSummaries");
+    Aws::Utils::Array<JsonView> recommendationSummariesJsonList = jsonValue.GetArray("RecommendationSummaries");
     for(unsigned recommendationSummariesIndex = 0; recommendationSummariesIndex < recommendationSummariesJsonList.GetLength(); ++recommendationSummariesIndex)
     {
       m_recommendationSummaries.push_back(recommendationSummariesJsonList[recommendationSummariesIndex].AsObject());

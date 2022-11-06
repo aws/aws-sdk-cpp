@@ -30,7 +30,7 @@ ListIdentityProviderConfigsResult& ListIdentityProviderConfigsResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("identityProviderConfigs"))
   {
-    Array<JsonView> identityProviderConfigsJsonList = jsonValue.GetArray("identityProviderConfigs");
+    Aws::Utils::Array<JsonView> identityProviderConfigsJsonList = jsonValue.GetArray("identityProviderConfigs");
     for(unsigned identityProviderConfigsIndex = 0; identityProviderConfigsIndex < identityProviderConfigsJsonList.GetLength(); ++identityProviderConfigsIndex)
     {
       m_identityProviderConfigs.push_back(identityProviderConfigsJsonList[identityProviderConfigsIndex].AsObject());

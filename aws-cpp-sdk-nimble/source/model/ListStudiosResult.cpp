@@ -36,7 +36,7 @@ ListStudiosResult& ListStudiosResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("studios"))
   {
-    Array<JsonView> studiosJsonList = jsonValue.GetArray("studios");
+    Aws::Utils::Array<JsonView> studiosJsonList = jsonValue.GetArray("studios");
     for(unsigned studiosIndex = 0; studiosIndex < studiosJsonList.GetLength(); ++studiosIndex)
     {
       m_studios.push_back(studiosJsonList[studiosIndex].AsObject());

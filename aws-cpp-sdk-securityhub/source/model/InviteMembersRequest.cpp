@@ -23,7 +23,7 @@ Aws::String InviteMembersRequest::SerializePayload() const
 
   if(m_accountIdsHasBeenSet)
   {
-   Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
    for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
    {
      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);

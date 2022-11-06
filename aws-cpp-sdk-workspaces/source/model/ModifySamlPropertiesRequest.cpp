@@ -37,7 +37,7 @@ Aws::String ModifySamlPropertiesRequest::SerializePayload() const
 
   if(m_propertiesToDeleteHasBeenSet)
   {
-   Array<JsonValue> propertiesToDeleteJsonList(m_propertiesToDelete.size());
+   Aws::Utils::Array<JsonValue> propertiesToDeleteJsonList(m_propertiesToDelete.size());
    for(unsigned propertiesToDeleteIndex = 0; propertiesToDeleteIndex < propertiesToDeleteJsonList.GetLength(); ++propertiesToDeleteIndex)
    {
      propertiesToDeleteJsonList[propertiesToDeleteIndex].AsString(DeletableSamlPropertyMapper::GetNameForDeletableSamlProperty(m_propertiesToDelete[propertiesToDeleteIndex]));

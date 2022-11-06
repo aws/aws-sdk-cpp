@@ -36,7 +36,7 @@ ListWorkspacesResult& ListWorkspacesResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("workspaceSummaries"))
   {
-    Array<JsonView> workspaceSummariesJsonList = jsonValue.GetArray("workspaceSummaries");
+    Aws::Utils::Array<JsonView> workspaceSummariesJsonList = jsonValue.GetArray("workspaceSummaries");
     for(unsigned workspaceSummariesIndex = 0; workspaceSummariesIndex < workspaceSummariesJsonList.GetLength(); ++workspaceSummariesIndex)
     {
       m_workspaceSummaries.push_back(workspaceSummariesJsonList[workspaceSummariesIndex].AsObject());

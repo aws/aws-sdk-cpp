@@ -126,7 +126,7 @@ GrantedLicense& GrantedLicense::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Entitlements"))
   {
-    Array<JsonView> entitlementsJsonList = jsonValue.GetArray("Entitlements");
+    Aws::Utils::Array<JsonView> entitlementsJsonList = jsonValue.GetArray("Entitlements");
     for(unsigned entitlementsIndex = 0; entitlementsIndex < entitlementsJsonList.GetLength(); ++entitlementsIndex)
     {
       m_entitlements.push_back(entitlementsJsonList[entitlementsIndex].AsObject());
@@ -143,7 +143,7 @@ GrantedLicense& GrantedLicense::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LicenseMetadata"))
   {
-    Array<JsonView> licenseMetadataJsonList = jsonValue.GetArray("LicenseMetadata");
+    Aws::Utils::Array<JsonView> licenseMetadataJsonList = jsonValue.GetArray("LicenseMetadata");
     for(unsigned licenseMetadataIndex = 0; licenseMetadataIndex < licenseMetadataJsonList.GetLength(); ++licenseMetadataIndex)
     {
       m_licenseMetadata.push_back(licenseMetadataJsonList[licenseMetadataIndex].AsObject());
@@ -234,7 +234,7 @@ JsonValue GrantedLicense::Jsonize() const
 
   if(m_entitlementsHasBeenSet)
   {
-   Array<JsonValue> entitlementsJsonList(m_entitlements.size());
+   Aws::Utils::Array<JsonValue> entitlementsJsonList(m_entitlements.size());
    for(unsigned entitlementsIndex = 0; entitlementsIndex < entitlementsJsonList.GetLength(); ++entitlementsIndex)
    {
      entitlementsJsonList[entitlementsIndex].AsObject(m_entitlements[entitlementsIndex].Jsonize());
@@ -251,7 +251,7 @@ JsonValue GrantedLicense::Jsonize() const
 
   if(m_licenseMetadataHasBeenSet)
   {
-   Array<JsonValue> licenseMetadataJsonList(m_licenseMetadata.size());
+   Aws::Utils::Array<JsonValue> licenseMetadataJsonList(m_licenseMetadata.size());
    for(unsigned licenseMetadataIndex = 0; licenseMetadataIndex < licenseMetadataJsonList.GetLength(); ++licenseMetadataIndex)
    {
      licenseMetadataJsonList[licenseMetadataIndex].AsObject(m_licenseMetadata[licenseMetadataIndex].Jsonize());

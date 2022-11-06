@@ -72,7 +72,7 @@ Schedule& Schedule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("JobNames"))
   {
-    Array<JsonView> jobNamesJsonList = jsonValue.GetArray("JobNames");
+    Aws::Utils::Array<JsonView> jobNamesJsonList = jsonValue.GetArray("JobNames");
     for(unsigned jobNamesIndex = 0; jobNamesIndex < jobNamesJsonList.GetLength(); ++jobNamesIndex)
     {
       m_jobNames.push_back(jobNamesJsonList[jobNamesIndex].AsString());
@@ -151,7 +151,7 @@ JsonValue Schedule::Jsonize() const
 
   if(m_jobNamesHasBeenSet)
   {
-   Array<JsonValue> jobNamesJsonList(m_jobNames.size());
+   Aws::Utils::Array<JsonValue> jobNamesJsonList(m_jobNames.size());
    for(unsigned jobNamesIndex = 0; jobNamesIndex < jobNamesJsonList.GetLength(); ++jobNamesIndex)
    {
      jobNamesJsonList[jobNamesIndex].AsString(m_jobNames[jobNamesIndex]);

@@ -65,7 +65,7 @@ OrganizationCustomRuleMetadata& OrganizationCustomRuleMetadata::operator =(JsonV
 
   if(jsonValue.ValueExists("OrganizationConfigRuleTriggerTypes"))
   {
-    Array<JsonView> organizationConfigRuleTriggerTypesJsonList = jsonValue.GetArray("OrganizationConfigRuleTriggerTypes");
+    Aws::Utils::Array<JsonView> organizationConfigRuleTriggerTypesJsonList = jsonValue.GetArray("OrganizationConfigRuleTriggerTypes");
     for(unsigned organizationConfigRuleTriggerTypesIndex = 0; organizationConfigRuleTriggerTypesIndex < organizationConfigRuleTriggerTypesJsonList.GetLength(); ++organizationConfigRuleTriggerTypesIndex)
     {
       m_organizationConfigRuleTriggerTypes.push_back(OrganizationConfigRuleTriggerTypeMapper::GetOrganizationConfigRuleTriggerTypeForName(organizationConfigRuleTriggerTypesJsonList[organizationConfigRuleTriggerTypesIndex].AsString()));
@@ -89,7 +89,7 @@ OrganizationCustomRuleMetadata& OrganizationCustomRuleMetadata::operator =(JsonV
 
   if(jsonValue.ValueExists("ResourceTypesScope"))
   {
-    Array<JsonView> resourceTypesScopeJsonList = jsonValue.GetArray("ResourceTypesScope");
+    Aws::Utils::Array<JsonView> resourceTypesScopeJsonList = jsonValue.GetArray("ResourceTypesScope");
     for(unsigned resourceTypesScopeIndex = 0; resourceTypesScopeIndex < resourceTypesScopeJsonList.GetLength(); ++resourceTypesScopeIndex)
     {
       m_resourceTypesScope.push_back(resourceTypesScopeJsonList[resourceTypesScopeIndex].AsString());
@@ -139,7 +139,7 @@ JsonValue OrganizationCustomRuleMetadata::Jsonize() const
 
   if(m_organizationConfigRuleTriggerTypesHasBeenSet)
   {
-   Array<JsonValue> organizationConfigRuleTriggerTypesJsonList(m_organizationConfigRuleTriggerTypes.size());
+   Aws::Utils::Array<JsonValue> organizationConfigRuleTriggerTypesJsonList(m_organizationConfigRuleTriggerTypes.size());
    for(unsigned organizationConfigRuleTriggerTypesIndex = 0; organizationConfigRuleTriggerTypesIndex < organizationConfigRuleTriggerTypesJsonList.GetLength(); ++organizationConfigRuleTriggerTypesIndex)
    {
      organizationConfigRuleTriggerTypesJsonList[organizationConfigRuleTriggerTypesIndex].AsString(OrganizationConfigRuleTriggerTypeMapper::GetNameForOrganizationConfigRuleTriggerType(m_organizationConfigRuleTriggerTypes[organizationConfigRuleTriggerTypesIndex]));
@@ -161,7 +161,7 @@ JsonValue OrganizationCustomRuleMetadata::Jsonize() const
 
   if(m_resourceTypesScopeHasBeenSet)
   {
-   Array<JsonValue> resourceTypesScopeJsonList(m_resourceTypesScope.size());
+   Aws::Utils::Array<JsonValue> resourceTypesScopeJsonList(m_resourceTypesScope.size());
    for(unsigned resourceTypesScopeIndex = 0; resourceTypesScopeIndex < resourceTypesScopeJsonList.GetLength(); ++resourceTypesScopeIndex)
    {
      resourceTypesScopeJsonList[resourceTypesScopeIndex].AsString(m_resourceTypesScope[resourceTypesScopeIndex]);

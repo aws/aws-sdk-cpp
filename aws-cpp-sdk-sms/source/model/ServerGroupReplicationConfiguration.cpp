@@ -42,7 +42,7 @@ ServerGroupReplicationConfiguration& ServerGroupReplicationConfiguration::operat
 
   if(jsonValue.ValueExists("serverReplicationConfigurations"))
   {
-    Array<JsonView> serverReplicationConfigurationsJsonList = jsonValue.GetArray("serverReplicationConfigurations");
+    Aws::Utils::Array<JsonView> serverReplicationConfigurationsJsonList = jsonValue.GetArray("serverReplicationConfigurations");
     for(unsigned serverReplicationConfigurationsIndex = 0; serverReplicationConfigurationsIndex < serverReplicationConfigurationsJsonList.GetLength(); ++serverReplicationConfigurationsIndex)
     {
       m_serverReplicationConfigurations.push_back(serverReplicationConfigurationsJsonList[serverReplicationConfigurationsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue ServerGroupReplicationConfiguration::Jsonize() const
 
   if(m_serverReplicationConfigurationsHasBeenSet)
   {
-   Array<JsonValue> serverReplicationConfigurationsJsonList(m_serverReplicationConfigurations.size());
+   Aws::Utils::Array<JsonValue> serverReplicationConfigurationsJsonList(m_serverReplicationConfigurations.size());
    for(unsigned serverReplicationConfigurationsIndex = 0; serverReplicationConfigurationsIndex < serverReplicationConfigurationsJsonList.GetLength(); ++serverReplicationConfigurationsIndex)
    {
      serverReplicationConfigurationsJsonList[serverReplicationConfigurationsIndex].AsObject(m_serverReplicationConfigurations[serverReplicationConfigurationsIndex].Jsonize());

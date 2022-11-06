@@ -42,7 +42,7 @@ SpellCorrectedQuery& SpellCorrectedQuery::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Corrections"))
   {
-    Array<JsonView> correctionsJsonList = jsonValue.GetArray("Corrections");
+    Aws::Utils::Array<JsonView> correctionsJsonList = jsonValue.GetArray("Corrections");
     for(unsigned correctionsIndex = 0; correctionsIndex < correctionsJsonList.GetLength(); ++correctionsIndex)
     {
       m_corrections.push_back(correctionsJsonList[correctionsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue SpellCorrectedQuery::Jsonize() const
 
   if(m_correctionsHasBeenSet)
   {
-   Array<JsonValue> correctionsJsonList(m_corrections.size());
+   Aws::Utils::Array<JsonValue> correctionsJsonList(m_corrections.size());
    for(unsigned correctionsIndex = 0; correctionsIndex < correctionsJsonList.GetLength(); ++correctionsIndex)
    {
      correctionsJsonList[correctionsIndex].AsObject(m_corrections[correctionsIndex].Jsonize());

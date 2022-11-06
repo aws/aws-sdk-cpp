@@ -33,7 +33,7 @@ ProtectionLimits& ProtectionLimits::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ProtectedResourceTypeLimits"))
   {
-    Array<JsonView> protectedResourceTypeLimitsJsonList = jsonValue.GetArray("ProtectedResourceTypeLimits");
+    Aws::Utils::Array<JsonView> protectedResourceTypeLimitsJsonList = jsonValue.GetArray("ProtectedResourceTypeLimits");
     for(unsigned protectedResourceTypeLimitsIndex = 0; protectedResourceTypeLimitsIndex < protectedResourceTypeLimitsJsonList.GetLength(); ++protectedResourceTypeLimitsIndex)
     {
       m_protectedResourceTypeLimits.push_back(protectedResourceTypeLimitsJsonList[protectedResourceTypeLimitsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue ProtectionLimits::Jsonize() const
 
   if(m_protectedResourceTypeLimitsHasBeenSet)
   {
-   Array<JsonValue> protectedResourceTypeLimitsJsonList(m_protectedResourceTypeLimits.size());
+   Aws::Utils::Array<JsonValue> protectedResourceTypeLimitsJsonList(m_protectedResourceTypeLimits.size());
    for(unsigned protectedResourceTypeLimitsIndex = 0; protectedResourceTypeLimitsIndex < protectedResourceTypeLimitsJsonList.GetLength(); ++protectedResourceTypeLimitsIndex)
    {
      protectedResourceTypeLimitsJsonList[protectedResourceTypeLimitsIndex].AsObject(m_protectedResourceTypeLimits[protectedResourceTypeLimitsIndex].Jsonize());

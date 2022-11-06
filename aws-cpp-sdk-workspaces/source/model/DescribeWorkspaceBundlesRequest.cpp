@@ -25,7 +25,7 @@ Aws::String DescribeWorkspaceBundlesRequest::SerializePayload() const
 
   if(m_bundleIdsHasBeenSet)
   {
-   Array<JsonValue> bundleIdsJsonList(m_bundleIds.size());
+   Aws::Utils::Array<JsonValue> bundleIdsJsonList(m_bundleIds.size());
    for(unsigned bundleIdsIndex = 0; bundleIdsIndex < bundleIdsJsonList.GetLength(); ++bundleIdsIndex)
    {
      bundleIdsJsonList[bundleIdsIndex].AsString(m_bundleIds[bundleIdsIndex]);

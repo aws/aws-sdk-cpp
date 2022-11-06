@@ -36,7 +36,7 @@ ListStreamSessionsResult& ListStreamSessionsResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("streamSessions"))
   {
-    Array<JsonView> streamSessionsJsonList = jsonValue.GetArray("streamSessions");
+    Aws::Utils::Array<JsonView> streamSessionsJsonList = jsonValue.GetArray("streamSessions");
     for(unsigned streamSessionsIndex = 0; streamSessionsIndex < streamSessionsJsonList.GetLength(); ++streamSessionsIndex)
     {
       m_streamSessions.push_back(streamSessionsJsonList[streamSessionsIndex].AsObject());

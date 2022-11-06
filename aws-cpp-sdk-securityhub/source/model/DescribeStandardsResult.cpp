@@ -30,7 +30,7 @@ DescribeStandardsResult& DescribeStandardsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Standards"))
   {
-    Array<JsonView> standardsJsonList = jsonValue.GetArray("Standards");
+    Aws::Utils::Array<JsonView> standardsJsonList = jsonValue.GetArray("Standards");
     for(unsigned standardsIndex = 0; standardsIndex < standardsJsonList.GetLength(); ++standardsIndex)
     {
       m_standards.push_back(standardsJsonList[standardsIndex].AsObject());

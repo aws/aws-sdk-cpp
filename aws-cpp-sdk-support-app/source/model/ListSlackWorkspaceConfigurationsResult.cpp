@@ -36,7 +36,7 @@ ListSlackWorkspaceConfigurationsResult& ListSlackWorkspaceConfigurationsResult::
 
   if(jsonValue.ValueExists("slackWorkspaceConfigurations"))
   {
-    Array<JsonView> slackWorkspaceConfigurationsJsonList = jsonValue.GetArray("slackWorkspaceConfigurations");
+    Aws::Utils::Array<JsonView> slackWorkspaceConfigurationsJsonList = jsonValue.GetArray("slackWorkspaceConfigurations");
     for(unsigned slackWorkspaceConfigurationsIndex = 0; slackWorkspaceConfigurationsIndex < slackWorkspaceConfigurationsJsonList.GetLength(); ++slackWorkspaceConfigurationsIndex)
     {
       m_slackWorkspaceConfigurations.push_back(slackWorkspaceConfigurationsJsonList[slackWorkspaceConfigurationsIndex].AsObject());

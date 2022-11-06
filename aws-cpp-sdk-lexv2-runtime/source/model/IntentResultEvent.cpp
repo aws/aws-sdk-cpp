@@ -52,7 +52,7 @@ IntentResultEvent& IntentResultEvent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("interpretations"))
   {
-    Array<JsonView> interpretationsJsonList = jsonValue.GetArray("interpretations");
+    Aws::Utils::Array<JsonView> interpretationsJsonList = jsonValue.GetArray("interpretations");
     for(unsigned interpretationsIndex = 0; interpretationsIndex < interpretationsJsonList.GetLength(); ++interpretationsIndex)
     {
       m_interpretations.push_back(interpretationsJsonList[interpretationsIndex].AsObject());
@@ -105,7 +105,7 @@ JsonValue IntentResultEvent::Jsonize() const
 
   if(m_interpretationsHasBeenSet)
   {
-   Array<JsonValue> interpretationsJsonList(m_interpretations.size());
+   Aws::Utils::Array<JsonValue> interpretationsJsonList(m_interpretations.size());
    for(unsigned interpretationsIndex = 0; interpretationsIndex < interpretationsJsonList.GetLength(); ++interpretationsIndex)
    {
      interpretationsJsonList[interpretationsIndex].AsObject(m_interpretations[interpretationsIndex].Jsonize());

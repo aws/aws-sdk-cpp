@@ -36,7 +36,7 @@ DescribeReplicationTasksResult& DescribeReplicationTasksResult::operator =(const
 
   if(jsonValue.ValueExists("ReplicationTasks"))
   {
-    Array<JsonView> replicationTasksJsonList = jsonValue.GetArray("ReplicationTasks");
+    Aws::Utils::Array<JsonView> replicationTasksJsonList = jsonValue.GetArray("ReplicationTasks");
     for(unsigned replicationTasksIndex = 0; replicationTasksIndex < replicationTasksJsonList.GetLength(); ++replicationTasksIndex)
     {
       m_replicationTasks.push_back(replicationTasksJsonList[replicationTasksIndex].AsObject());

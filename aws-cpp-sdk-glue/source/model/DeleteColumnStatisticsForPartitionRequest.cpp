@@ -45,7 +45,7 @@ Aws::String DeleteColumnStatisticsForPartitionRequest::SerializePayload() const
 
   if(m_partitionValuesHasBeenSet)
   {
-   Array<JsonValue> partitionValuesJsonList(m_partitionValues.size());
+   Aws::Utils::Array<JsonValue> partitionValuesJsonList(m_partitionValues.size());
    for(unsigned partitionValuesIndex = 0; partitionValuesIndex < partitionValuesJsonList.GetLength(); ++partitionValuesIndex)
    {
      partitionValuesJsonList[partitionValuesIndex].AsString(m_partitionValues[partitionValuesIndex]);

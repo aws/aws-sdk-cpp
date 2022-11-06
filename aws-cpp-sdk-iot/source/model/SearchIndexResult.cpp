@@ -36,7 +36,7 @@ SearchIndexResult& SearchIndexResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("things"))
   {
-    Array<JsonView> thingsJsonList = jsonValue.GetArray("things");
+    Aws::Utils::Array<JsonView> thingsJsonList = jsonValue.GetArray("things");
     for(unsigned thingsIndex = 0; thingsIndex < thingsJsonList.GetLength(); ++thingsIndex)
     {
       m_things.push_back(thingsJsonList[thingsIndex].AsObject());
@@ -45,7 +45,7 @@ SearchIndexResult& SearchIndexResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("thingGroups"))
   {
-    Array<JsonView> thingGroupsJsonList = jsonValue.GetArray("thingGroups");
+    Aws::Utils::Array<JsonView> thingGroupsJsonList = jsonValue.GetArray("thingGroups");
     for(unsigned thingGroupsIndex = 0; thingGroupsIndex < thingGroupsJsonList.GetLength(); ++thingGroupsIndex)
     {
       m_thingGroups.push_back(thingGroupsJsonList[thingGroupsIndex].AsObject());

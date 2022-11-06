@@ -36,7 +36,7 @@ ListPricingRulesResult& ListPricingRulesResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("PricingRules"))
   {
-    Array<JsonView> pricingRulesJsonList = jsonValue.GetArray("PricingRules");
+    Aws::Utils::Array<JsonView> pricingRulesJsonList = jsonValue.GetArray("PricingRules");
     for(unsigned pricingRulesIndex = 0; pricingRulesIndex < pricingRulesJsonList.GetLength(); ++pricingRulesIndex)
     {
       m_pricingRules.push_back(pricingRulesJsonList[pricingRulesIndex].AsObject());

@@ -36,7 +36,7 @@ ListSqlInjectionMatchSetsResult& ListSqlInjectionMatchSetsResult::operator =(con
 
   if(jsonValue.ValueExists("SqlInjectionMatchSets"))
   {
-    Array<JsonView> sqlInjectionMatchSetsJsonList = jsonValue.GetArray("SqlInjectionMatchSets");
+    Aws::Utils::Array<JsonView> sqlInjectionMatchSetsJsonList = jsonValue.GetArray("SqlInjectionMatchSets");
     for(unsigned sqlInjectionMatchSetsIndex = 0; sqlInjectionMatchSetsIndex < sqlInjectionMatchSetsJsonList.GetLength(); ++sqlInjectionMatchSetsIndex)
     {
       m_sqlInjectionMatchSets.push_back(sqlInjectionMatchSetsJsonList[sqlInjectionMatchSetsIndex].AsObject());

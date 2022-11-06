@@ -44,7 +44,7 @@ GetServersResult& GetServersResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("serverList"))
   {
-    Array<JsonView> serverListJsonList = jsonValue.GetArray("serverList");
+    Aws::Utils::Array<JsonView> serverListJsonList = jsonValue.GetArray("serverList");
     for(unsigned serverListIndex = 0; serverListIndex < serverListJsonList.GetLength(); ++serverListIndex)
     {
       m_serverList.push_back(serverListJsonList[serverListIndex].AsObject());

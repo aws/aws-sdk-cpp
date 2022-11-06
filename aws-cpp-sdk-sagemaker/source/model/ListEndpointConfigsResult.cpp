@@ -30,7 +30,7 @@ ListEndpointConfigsResult& ListEndpointConfigsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EndpointConfigs"))
   {
-    Array<JsonView> endpointConfigsJsonList = jsonValue.GetArray("EndpointConfigs");
+    Aws::Utils::Array<JsonView> endpointConfigsJsonList = jsonValue.GetArray("EndpointConfigs");
     for(unsigned endpointConfigsIndex = 0; endpointConfigsIndex < endpointConfigsJsonList.GetLength(); ++endpointConfigsIndex)
     {
       m_endpointConfigs.push_back(endpointConfigsJsonList[endpointConfigsIndex].AsObject());

@@ -62,7 +62,7 @@ TableWithColumnsResource& TableWithColumnsResource::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("ColumnNames"))
   {
-    Array<JsonView> columnNamesJsonList = jsonValue.GetArray("ColumnNames");
+    Aws::Utils::Array<JsonView> columnNamesJsonList = jsonValue.GetArray("ColumnNames");
     for(unsigned columnNamesIndex = 0; columnNamesIndex < columnNamesJsonList.GetLength(); ++columnNamesIndex)
     {
       m_columnNames.push_back(columnNamesJsonList[columnNamesIndex].AsString());
@@ -104,7 +104,7 @@ JsonValue TableWithColumnsResource::Jsonize() const
 
   if(m_columnNamesHasBeenSet)
   {
-   Array<JsonValue> columnNamesJsonList(m_columnNames.size());
+   Aws::Utils::Array<JsonValue> columnNamesJsonList(m_columnNames.size());
    for(unsigned columnNamesIndex = 0; columnNamesIndex < columnNamesJsonList.GetLength(); ++columnNamesIndex)
    {
      columnNamesJsonList[columnNamesIndex].AsString(m_columnNames[columnNamesIndex]);

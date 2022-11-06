@@ -49,7 +49,7 @@ Aws::String GenerateDataKeyPairWithoutPlaintextRequest::SerializePayload() const
 
   if(m_grantTokensHasBeenSet)
   {
-   Array<JsonValue> grantTokensJsonList(m_grantTokens.size());
+   Aws::Utils::Array<JsonValue> grantTokensJsonList(m_grantTokens.size());
    for(unsigned grantTokensIndex = 0; grantTokensIndex < grantTokensJsonList.GetLength(); ++grantTokensIndex)
    {
      grantTokensJsonList[grantTokensIndex].AsString(m_grantTokens[grantTokensIndex]);

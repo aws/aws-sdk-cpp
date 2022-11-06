@@ -40,7 +40,7 @@ DescribeDeviceResult& DescribeDeviceResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AlternateSoftwares"))
   {
-    Array<JsonView> alternateSoftwaresJsonList = jsonValue.GetArray("AlternateSoftwares");
+    Aws::Utils::Array<JsonView> alternateSoftwaresJsonList = jsonValue.GetArray("AlternateSoftwares");
     for(unsigned alternateSoftwaresIndex = 0; alternateSoftwaresIndex < alternateSoftwaresJsonList.GetLength(); ++alternateSoftwaresIndex)
     {
       m_alternateSoftwares.push_back(alternateSoftwaresJsonList[alternateSoftwaresIndex].AsObject());

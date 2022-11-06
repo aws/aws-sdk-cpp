@@ -37,7 +37,7 @@ Aws::String GetMediaForFragmentListRequest::SerializePayload() const
 
   if(m_fragmentsHasBeenSet)
   {
-   Array<JsonValue> fragmentsJsonList(m_fragments.size());
+   Aws::Utils::Array<JsonValue> fragmentsJsonList(m_fragments.size());
    for(unsigned fragmentsIndex = 0; fragmentsIndex < fragmentsJsonList.GetLength(); ++fragmentsIndex)
    {
      fragmentsJsonList[fragmentsIndex].AsString(m_fragments[fragmentsIndex]);

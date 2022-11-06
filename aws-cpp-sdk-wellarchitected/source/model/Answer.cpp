@@ -114,7 +114,7 @@ Answer& Answer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Choices"))
   {
-    Array<JsonView> choicesJsonList = jsonValue.GetArray("Choices");
+    Aws::Utils::Array<JsonView> choicesJsonList = jsonValue.GetArray("Choices");
     for(unsigned choicesIndex = 0; choicesIndex < choicesJsonList.GetLength(); ++choicesIndex)
     {
       m_choices.push_back(choicesJsonList[choicesIndex].AsObject());
@@ -124,7 +124,7 @@ Answer& Answer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SelectedChoices"))
   {
-    Array<JsonView> selectedChoicesJsonList = jsonValue.GetArray("SelectedChoices");
+    Aws::Utils::Array<JsonView> selectedChoicesJsonList = jsonValue.GetArray("SelectedChoices");
     for(unsigned selectedChoicesIndex = 0; selectedChoicesIndex < selectedChoicesJsonList.GetLength(); ++selectedChoicesIndex)
     {
       m_selectedChoices.push_back(selectedChoicesJsonList[selectedChoicesIndex].AsString());
@@ -134,7 +134,7 @@ Answer& Answer::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ChoiceAnswers"))
   {
-    Array<JsonView> choiceAnswersJsonList = jsonValue.GetArray("ChoiceAnswers");
+    Aws::Utils::Array<JsonView> choiceAnswersJsonList = jsonValue.GetArray("ChoiceAnswers");
     for(unsigned choiceAnswersIndex = 0; choiceAnswersIndex < choiceAnswersJsonList.GetLength(); ++choiceAnswersIndex)
     {
       m_choiceAnswers.push_back(choiceAnswersJsonList[choiceAnswersIndex].AsObject());
@@ -221,7 +221,7 @@ JsonValue Answer::Jsonize() const
 
   if(m_choicesHasBeenSet)
   {
-   Array<JsonValue> choicesJsonList(m_choices.size());
+   Aws::Utils::Array<JsonValue> choicesJsonList(m_choices.size());
    for(unsigned choicesIndex = 0; choicesIndex < choicesJsonList.GetLength(); ++choicesIndex)
    {
      choicesJsonList[choicesIndex].AsObject(m_choices[choicesIndex].Jsonize());
@@ -232,7 +232,7 @@ JsonValue Answer::Jsonize() const
 
   if(m_selectedChoicesHasBeenSet)
   {
-   Array<JsonValue> selectedChoicesJsonList(m_selectedChoices.size());
+   Aws::Utils::Array<JsonValue> selectedChoicesJsonList(m_selectedChoices.size());
    for(unsigned selectedChoicesIndex = 0; selectedChoicesIndex < selectedChoicesJsonList.GetLength(); ++selectedChoicesIndex)
    {
      selectedChoicesJsonList[selectedChoicesIndex].AsString(m_selectedChoices[selectedChoicesIndex]);
@@ -243,7 +243,7 @@ JsonValue Answer::Jsonize() const
 
   if(m_choiceAnswersHasBeenSet)
   {
-   Array<JsonValue> choiceAnswersJsonList(m_choiceAnswers.size());
+   Aws::Utils::Array<JsonValue> choiceAnswersJsonList(m_choiceAnswers.size());
    for(unsigned choiceAnswersIndex = 0; choiceAnswersIndex < choiceAnswersJsonList.GetLength(); ++choiceAnswersIndex)
    {
      choiceAnswersJsonList[choiceAnswersIndex].AsObject(m_choiceAnswers[choiceAnswersIndex].Jsonize());

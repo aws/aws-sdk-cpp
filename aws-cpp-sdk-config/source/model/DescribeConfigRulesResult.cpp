@@ -30,7 +30,7 @@ DescribeConfigRulesResult& DescribeConfigRulesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConfigRules"))
   {
-    Array<JsonView> configRulesJsonList = jsonValue.GetArray("ConfigRules");
+    Aws::Utils::Array<JsonView> configRulesJsonList = jsonValue.GetArray("ConfigRules");
     for(unsigned configRulesIndex = 0; configRulesIndex < configRulesJsonList.GetLength(); ++configRulesIndex)
     {
       m_configRules.push_back(configRulesJsonList[configRulesIndex].AsObject());

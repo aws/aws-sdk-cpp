@@ -44,7 +44,7 @@ FailureSummary& FailureSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("failures"))
   {
-    Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
+    Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
     for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
     {
       m_failures.push_back(failuresJsonList[failuresIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue FailureSummary::Jsonize() const
 
   if(m_failuresHasBeenSet)
   {
-   Array<JsonValue> failuresJsonList(m_failures.size());
+   Aws::Utils::Array<JsonValue> failuresJsonList(m_failures.size());
    for(unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex)
    {
      failuresJsonList[failuresIndex].AsObject(m_failures[failuresIndex].Jsonize());

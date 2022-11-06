@@ -42,7 +42,7 @@ ColumnLFTag& ColumnLFTag::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LFTags"))
   {
-    Array<JsonView> lFTagsJsonList = jsonValue.GetArray("LFTags");
+    Aws::Utils::Array<JsonView> lFTagsJsonList = jsonValue.GetArray("LFTags");
     for(unsigned lFTagsIndex = 0; lFTagsIndex < lFTagsJsonList.GetLength(); ++lFTagsIndex)
     {
       m_lFTags.push_back(lFTagsJsonList[lFTagsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue ColumnLFTag::Jsonize() const
 
   if(m_lFTagsHasBeenSet)
   {
-   Array<JsonValue> lFTagsJsonList(m_lFTags.size());
+   Aws::Utils::Array<JsonValue> lFTagsJsonList(m_lFTags.size());
    for(unsigned lFTagsIndex = 0; lFTagsIndex < lFTagsJsonList.GetLength(); ++lFTagsIndex)
    {
      lFTagsJsonList[lFTagsIndex].AsObject(m_lFTags[lFTagsIndex].Jsonize());

@@ -40,7 +40,7 @@ Aws::String ListAvailableResourceDimensionsRequest::SerializePayload() const
 
   if(m_metricsHasBeenSet)
   {
-   Array<JsonValue> metricsJsonList(m_metrics.size());
+   Aws::Utils::Array<JsonValue> metricsJsonList(m_metrics.size());
    for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
    {
      metricsJsonList[metricsIndex].AsString(m_metrics[metricsIndex]);

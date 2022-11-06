@@ -109,7 +109,7 @@ AutoMLJobSummary& AutoMLJobSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PartialFailureReasons"))
   {
-    Array<JsonView> partialFailureReasonsJsonList = jsonValue.GetArray("PartialFailureReasons");
+    Aws::Utils::Array<JsonView> partialFailureReasonsJsonList = jsonValue.GetArray("PartialFailureReasons");
     for(unsigned partialFailureReasonsIndex = 0; partialFailureReasonsIndex < partialFailureReasonsJsonList.GetLength(); ++partialFailureReasonsIndex)
     {
       m_partialFailureReasons.push_back(partialFailureReasonsJsonList[partialFailureReasonsIndex].AsObject());
@@ -169,7 +169,7 @@ JsonValue AutoMLJobSummary::Jsonize() const
 
   if(m_partialFailureReasonsHasBeenSet)
   {
-   Array<JsonValue> partialFailureReasonsJsonList(m_partialFailureReasons.size());
+   Aws::Utils::Array<JsonValue> partialFailureReasonsJsonList(m_partialFailureReasons.size());
    for(unsigned partialFailureReasonsIndex = 0; partialFailureReasonsIndex < partialFailureReasonsJsonList.GetLength(); ++partialFailureReasonsIndex)
    {
      partialFailureReasonsJsonList[partialFailureReasonsIndex].AsObject(m_partialFailureReasons[partialFailureReasonsIndex].Jsonize());

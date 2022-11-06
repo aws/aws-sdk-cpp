@@ -36,7 +36,7 @@ ListProfileTimesResult& ListProfileTimesResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("profileTimes"))
   {
-    Array<JsonView> profileTimesJsonList = jsonValue.GetArray("profileTimes");
+    Aws::Utils::Array<JsonView> profileTimesJsonList = jsonValue.GetArray("profileTimes");
     for(unsigned profileTimesIndex = 0; profileTimesIndex < profileTimesJsonList.GetLength(); ++profileTimesIndex)
     {
       m_profileTimes.push_back(profileTimesJsonList[profileTimesIndex].AsObject());

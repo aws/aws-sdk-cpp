@@ -36,7 +36,7 @@ ListEventSourceMappingsResult& ListEventSourceMappingsResult::operator =(const A
 
   if(jsonValue.ValueExists("EventSourceMappings"))
   {
-    Array<JsonView> eventSourceMappingsJsonList = jsonValue.GetArray("EventSourceMappings");
+    Aws::Utils::Array<JsonView> eventSourceMappingsJsonList = jsonValue.GetArray("EventSourceMappings");
     for(unsigned eventSourceMappingsIndex = 0; eventSourceMappingsIndex < eventSourceMappingsJsonList.GetLength(); ++eventSourceMappingsIndex)
     {
       m_eventSourceMappings.push_back(eventSourceMappingsJsonList[eventSourceMappingsIndex].AsObject());

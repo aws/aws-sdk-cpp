@@ -111,7 +111,7 @@ WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("notificationDestinations"))
   {
-    Array<JsonView> notificationDestinationsJsonList = jsonValue.GetArray("notificationDestinations");
+    Aws::Utils::Array<JsonView> notificationDestinationsJsonList = jsonValue.GetArray("notificationDestinations");
     for(unsigned notificationDestinationsIndex = 0; notificationDestinationsIndex < notificationDestinationsJsonList.GetLength(); ++notificationDestinationsIndex)
     {
       m_notificationDestinations.push_back(NotificationDestinationTypeMapper::GetNotificationDestinationTypeForName(notificationDestinationsJsonList[notificationDestinationsIndex].AsString()));
@@ -191,7 +191,7 @@ JsonValue WorkspaceSummary::Jsonize() const
 
   if(m_notificationDestinationsHasBeenSet)
   {
-   Array<JsonValue> notificationDestinationsJsonList(m_notificationDestinations.size());
+   Aws::Utils::Array<JsonValue> notificationDestinationsJsonList(m_notificationDestinations.size());
    for(unsigned notificationDestinationsIndex = 0; notificationDestinationsIndex < notificationDestinationsJsonList.GetLength(); ++notificationDestinationsIndex)
    {
      notificationDestinationsJsonList[notificationDestinationsIndex].AsString(NotificationDestinationTypeMapper::GetNameForNotificationDestinationType(m_notificationDestinations[notificationDestinationsIndex]));

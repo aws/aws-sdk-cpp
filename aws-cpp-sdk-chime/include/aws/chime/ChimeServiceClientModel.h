@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/chime/ChimeErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/chime/ChimeEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -204,6 +206,10 @@ namespace Aws
 
   namespace Chime
   {
+    using ChimeClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ChimeEndpointProviderBase = Aws::Chime::Endpoint::ChimeEndpointProviderBase;
+    using ChimeEndpointProvider = Aws::Chime::Endpoint::ChimeEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ChimeClient header */

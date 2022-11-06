@@ -30,7 +30,7 @@ ListBackendEnvironmentsResult& ListBackendEnvironmentsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("backendEnvironments"))
   {
-    Array<JsonView> backendEnvironmentsJsonList = jsonValue.GetArray("backendEnvironments");
+    Aws::Utils::Array<JsonView> backendEnvironmentsJsonList = jsonValue.GetArray("backendEnvironments");
     for(unsigned backendEnvironmentsIndex = 0; backendEnvironmentsIndex < backendEnvironmentsJsonList.GetLength(); ++backendEnvironmentsIndex)
     {
       m_backendEnvironments.push_back(backendEnvironmentsJsonList[backendEnvironmentsIndex].AsObject());

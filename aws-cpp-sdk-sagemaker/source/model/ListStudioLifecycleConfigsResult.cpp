@@ -36,7 +36,7 @@ ListStudioLifecycleConfigsResult& ListStudioLifecycleConfigsResult::operator =(c
 
   if(jsonValue.ValueExists("StudioLifecycleConfigs"))
   {
-    Array<JsonView> studioLifecycleConfigsJsonList = jsonValue.GetArray("StudioLifecycleConfigs");
+    Aws::Utils::Array<JsonView> studioLifecycleConfigsJsonList = jsonValue.GetArray("StudioLifecycleConfigs");
     for(unsigned studioLifecycleConfigsIndex = 0; studioLifecycleConfigsIndex < studioLifecycleConfigsJsonList.GetLength(); ++studioLifecycleConfigsIndex)
     {
       m_studioLifecycleConfigs.push_back(studioLifecycleConfigsJsonList[studioLifecycleConfigsIndex].AsObject());

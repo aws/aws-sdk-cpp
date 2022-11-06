@@ -36,7 +36,7 @@ ListTemplateStepsResult& ListTemplateStepsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("templateStepSummaryList"))
   {
-    Array<JsonView> templateStepSummaryListJsonList = jsonValue.GetArray("templateStepSummaryList");
+    Aws::Utils::Array<JsonView> templateStepSummaryListJsonList = jsonValue.GetArray("templateStepSummaryList");
     for(unsigned templateStepSummaryListIndex = 0; templateStepSummaryListIndex < templateStepSummaryListJsonList.GetLength(); ++templateStepSummaryListIndex)
     {
       m_templateStepSummaryList.push_back(templateStepSummaryListJsonList[templateStepSummaryListIndex].AsObject());

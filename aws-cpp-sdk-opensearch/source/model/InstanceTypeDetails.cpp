@@ -99,7 +99,7 @@ InstanceTypeDetails& InstanceTypeDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InstanceRole"))
   {
-    Array<JsonView> instanceRoleJsonList = jsonValue.GetArray("InstanceRole");
+    Aws::Utils::Array<JsonView> instanceRoleJsonList = jsonValue.GetArray("InstanceRole");
     for(unsigned instanceRoleIndex = 0; instanceRoleIndex < instanceRoleJsonList.GetLength(); ++instanceRoleIndex)
     {
       m_instanceRole.push_back(instanceRoleJsonList[instanceRoleIndex].AsString());
@@ -151,7 +151,7 @@ JsonValue InstanceTypeDetails::Jsonize() const
 
   if(m_instanceRoleHasBeenSet)
   {
-   Array<JsonValue> instanceRoleJsonList(m_instanceRole.size());
+   Aws::Utils::Array<JsonValue> instanceRoleJsonList(m_instanceRole.size());
    for(unsigned instanceRoleIndex = 0; instanceRoleIndex < instanceRoleJsonList.GetLength(); ++instanceRoleIndex)
    {
      instanceRoleJsonList[instanceRoleIndex].AsString(m_instanceRole[instanceRoleIndex]);

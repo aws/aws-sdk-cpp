@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/backup-gateway/BackupGatewayErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/backup-gateway/BackupGatewayEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -68,6 +70,10 @@ namespace Aws
 
   namespace BackupGateway
   {
+    using BackupGatewayClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using BackupGatewayEndpointProviderBase = Aws::BackupGateway::Endpoint::BackupGatewayEndpointProviderBase;
+    using BackupGatewayEndpointProvider = Aws::BackupGateway::Endpoint::BackupGatewayEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in BackupGatewayClient header */

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/iot1click-projects/IoT1ClickProjectsErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/iot1click-projects/IoT1ClickProjectsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -65,6 +67,10 @@ namespace Aws
 
   namespace IoT1ClickProjects
   {
+    using IoT1ClickProjectsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoT1ClickProjectsEndpointProviderBase = Aws::IoT1ClickProjects::Endpoint::IoT1ClickProjectsEndpointProviderBase;
+    using IoT1ClickProjectsEndpointProvider = Aws::IoT1ClickProjects::Endpoint::IoT1ClickProjectsEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in IoT1ClickProjectsClient header */

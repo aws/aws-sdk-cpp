@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/transcribe/TranscribeServiceErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/transcribe/TranscribeServiceEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -83,6 +85,10 @@ namespace Aws
 
   namespace TranscribeService
   {
+    using TranscribeServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using TranscribeServiceEndpointProviderBase = Aws::TranscribeService::Endpoint::TranscribeServiceEndpointProviderBase;
+    using TranscribeServiceEndpointProvider = Aws::TranscribeService::Endpoint::TranscribeServiceEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in TranscribeServiceClient header */

@@ -30,7 +30,7 @@ ListRepositoryAssociationsResult& ListRepositoryAssociationsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RepositoryAssociationSummaries"))
   {
-    Array<JsonView> repositoryAssociationSummariesJsonList = jsonValue.GetArray("RepositoryAssociationSummaries");
+    Aws::Utils::Array<JsonView> repositoryAssociationSummariesJsonList = jsonValue.GetArray("RepositoryAssociationSummaries");
     for(unsigned repositoryAssociationSummariesIndex = 0; repositoryAssociationSummariesIndex < repositoryAssociationSummariesJsonList.GetLength(); ++repositoryAssociationSummariesIndex)
     {
       m_repositoryAssociationSummaries.push_back(repositoryAssociationSummariesJsonList[repositoryAssociationSummariesIndex].AsObject());

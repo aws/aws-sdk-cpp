@@ -68,7 +68,7 @@ Aws::String CreateTaskTemplateRequest::SerializePayload() const
 
   if(m_fieldsHasBeenSet)
   {
-   Array<JsonValue> fieldsJsonList(m_fields.size());
+   Aws::Utils::Array<JsonValue> fieldsJsonList(m_fields.size());
    for(unsigned fieldsIndex = 0; fieldsIndex < fieldsJsonList.GetLength(); ++fieldsIndex)
    {
      fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());

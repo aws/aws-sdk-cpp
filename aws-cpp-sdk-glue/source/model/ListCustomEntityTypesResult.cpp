@@ -30,7 +30,7 @@ ListCustomEntityTypesResult& ListCustomEntityTypesResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CustomEntityTypes"))
   {
-    Array<JsonView> customEntityTypesJsonList = jsonValue.GetArray("CustomEntityTypes");
+    Aws::Utils::Array<JsonView> customEntityTypesJsonList = jsonValue.GetArray("CustomEntityTypes");
     for(unsigned customEntityTypesIndex = 0; customEntityTypesIndex < customEntityTypesJsonList.GetLength(); ++customEntityTypesIndex)
     {
       m_customEntityTypes.push_back(customEntityTypesJsonList[customEntityTypesIndex].AsObject());

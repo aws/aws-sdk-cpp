@@ -24,7 +24,7 @@ Aws::String UpdatePipelineRequest::SerializePayload() const
 
   if(m_pipelineActivitiesHasBeenSet)
   {
-   Array<JsonValue> pipelineActivitiesJsonList(m_pipelineActivities.size());
+   Aws::Utils::Array<JsonValue> pipelineActivitiesJsonList(m_pipelineActivities.size());
    for(unsigned pipelineActivitiesIndex = 0; pipelineActivitiesIndex < pipelineActivitiesJsonList.GetLength(); ++pipelineActivitiesIndex)
    {
      pipelineActivitiesJsonList[pipelineActivitiesIndex].AsObject(m_pipelineActivities[pipelineActivitiesIndex].Jsonize());

@@ -130,7 +130,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Shards"))
   {
-    Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
+    Aws::Utils::Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
     for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
     {
       m_shards.push_back(shardsJsonList[shardsIndex].AsObject());
@@ -189,7 +189,7 @@ Cluster& Cluster::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsObject());
@@ -320,7 +320,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_shardsHasBeenSet)
   {
-   Array<JsonValue> shardsJsonList(m_shards.size());
+   Aws::Utils::Array<JsonValue> shardsJsonList(m_shards.size());
    for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
    {
      shardsJsonList[shardsIndex].AsObject(m_shards[shardsIndex].Jsonize());
@@ -372,7 +372,7 @@ JsonValue Cluster::Jsonize() const
 
   if(m_securityGroupsHasBeenSet)
   {
-   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
    {
      securityGroupsJsonList[securityGroupsIndex].AsObject(m_securityGroups[securityGroupsIndex].Jsonize());

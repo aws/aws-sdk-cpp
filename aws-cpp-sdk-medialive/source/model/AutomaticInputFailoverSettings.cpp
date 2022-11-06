@@ -50,7 +50,7 @@ AutomaticInputFailoverSettings& AutomaticInputFailoverSettings::operator =(JsonV
 
   if(jsonValue.ValueExists("failoverConditions"))
   {
-    Array<JsonView> failoverConditionsJsonList = jsonValue.GetArray("failoverConditions");
+    Aws::Utils::Array<JsonView> failoverConditionsJsonList = jsonValue.GetArray("failoverConditions");
     for(unsigned failoverConditionsIndex = 0; failoverConditionsIndex < failoverConditionsJsonList.GetLength(); ++failoverConditionsIndex)
     {
       m_failoverConditions.push_back(failoverConditionsJsonList[failoverConditionsIndex].AsObject());
@@ -87,7 +87,7 @@ JsonValue AutomaticInputFailoverSettings::Jsonize() const
 
   if(m_failoverConditionsHasBeenSet)
   {
-   Array<JsonValue> failoverConditionsJsonList(m_failoverConditions.size());
+   Aws::Utils::Array<JsonValue> failoverConditionsJsonList(m_failoverConditions.size());
    for(unsigned failoverConditionsIndex = 0; failoverConditionsIndex < failoverConditionsJsonList.GetLength(); ++failoverConditionsIndex)
    {
      failoverConditionsJsonList[failoverConditionsIndex].AsObject(m_failoverConditions[failoverConditionsIndex].Jsonize());

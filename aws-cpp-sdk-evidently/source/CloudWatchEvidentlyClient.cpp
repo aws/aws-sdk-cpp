@@ -16,10 +16,11 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 
 #include <aws/evidently/CloudWatchEvidentlyClient.h>
-#include <aws/evidently/CloudWatchEvidentlyEndpoint.h>
 #include <aws/evidently/CloudWatchEvidentlyErrorMarshaller.h>
+#include <aws/evidently/CloudWatchEvidentlyEndpointProvider.h>
 #include <aws/evidently/model/BatchEvaluateFeatureRequest.h>
 #include <aws/evidently/model/CreateExperimentRequest.h>
 #include <aws/evidently/model/CreateFeatureRequest.h>
@@ -66,20 +67,71 @@ using namespace Aws::CloudWatchEvidently;
 using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 const char* CloudWatchEvidentlyClient::SERVICE_NAME = "evidently";
 const char* CloudWatchEvidentlyClient::ALLOCATION_TAG = "CloudWatchEvidentlyClient";
 
-CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const Client::ClientConfiguration& clientConfiguration) :
+CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const CloudWatchEvidently::CloudWatchEvidentlyClientConfiguration& clientConfiguration,
+                                                     std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudWatchEvidentlyErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
+}
+
+CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const AWSCredentials& credentials,
+                                                     std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase> endpointProvider,
+                                                     const CloudWatchEvidently::CloudWatchEvidentlyClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CloudWatchEvidentlyErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                                     std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase> endpointProvider,
+                                                     const CloudWatchEvidently::CloudWatchEvidentlyClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CloudWatchEvidentlyErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<CloudWatchEvidentlyErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<CloudWatchEvidentlyEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
 }
 
 CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const AWSCredentials& credentials,
@@ -90,9 +142,11 @@ CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const AWSCredentials& crede
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudWatchEvidentlyErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<CloudWatchEvidentlyEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
@@ -103,71 +157,50 @@ CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const std::shared_ptr<AWSCr
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudWatchEvidentlyErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<CloudWatchEvidentlyEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 CloudWatchEvidentlyClient::~CloudWatchEvidentlyClient()
 {
 }
 
-void CloudWatchEvidentlyClient::init(const Client::ClientConfiguration& config)
+std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase>& CloudWatchEvidentlyClient::accessEndpointProvider()
+{
+  return m_endpointProvider;
+}
+
+void CloudWatchEvidentlyClient::init(const CloudWatchEvidently::CloudWatchEvidentlyClientConfiguration& config)
 {
   AWSClient::SetServiceClientName("Evidently");
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  m_scheme = m_configScheme;
-  if (config.endpointOverride.empty())
-  {
-      m_baseUri = CloudWatchEvidentlyEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
-  m_enableHostPrefixInjection = config.enableHostPrefixInjection;
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
 }
 
 void CloudWatchEvidentlyClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0)
-  {
-      m_scheme = "http";
-      m_baseUri = endpoint.substr(7);
-  }
-  else if (endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_scheme = "https";
-      m_baseUri = endpoint.substr(8);
-  }
-  else
-  {
-      m_scheme = m_configScheme;
-      m_baseUri = endpoint;
-  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
 BatchEvaluateFeatureOutcome CloudWatchEvidentlyClient::BatchEvaluateFeature(const BatchEvaluateFeatureRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchEvaluateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("BatchEvaluateFeature", "Required field: Project, is not set");
     return BatchEvaluateFeatureOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("dataplane." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("BatchEvaluateFeature", "Invalid DNS host: " << uri.GetAuthority());
-      return BatchEvaluateFeatureOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/evaluations");
-  return BatchEvaluateFeatureOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchEvaluateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/evaluations");
+  return BatchEvaluateFeatureOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchEvaluateFeatureOutcomeCallable CloudWatchEvidentlyClient::BatchEvaluateFeatureCallable(const BatchEvaluateFeatureRequest& request) const
@@ -188,16 +221,18 @@ void CloudWatchEvidentlyClient::BatchEvaluateFeatureAsync(const BatchEvaluateFea
 
 CreateExperimentOutcome CloudWatchEvidentlyClient::CreateExperiment(const CreateExperimentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateExperiment", "Required field: Project, is not set");
     return CreateExperimentOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/experiments");
-  return CreateExperimentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/experiments");
+  return CreateExperimentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateExperimentOutcomeCallable CloudWatchEvidentlyClient::CreateExperimentCallable(const CreateExperimentRequest& request) const
@@ -218,16 +253,18 @@ void CloudWatchEvidentlyClient::CreateExperimentAsync(const CreateExperimentRequ
 
 CreateFeatureOutcome CloudWatchEvidentlyClient::CreateFeature(const CreateFeatureRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateFeature", "Required field: Project, is not set");
     return CreateFeatureOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/features");
-  return CreateFeatureOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/features");
+  return CreateFeatureOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateFeatureOutcomeCallable CloudWatchEvidentlyClient::CreateFeatureCallable(const CreateFeatureRequest& request) const
@@ -248,16 +285,18 @@ void CloudWatchEvidentlyClient::CreateFeatureAsync(const CreateFeatureRequest& r
 
 CreateLaunchOutcome CloudWatchEvidentlyClient::CreateLaunch(const CreateLaunchRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("CreateLaunch", "Required field: Project, is not set");
     return CreateLaunchOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/launches");
-  return CreateLaunchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launches");
+  return CreateLaunchOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateLaunchOutcomeCallable CloudWatchEvidentlyClient::CreateLaunchCallable(const CreateLaunchRequest& request) const
@@ -278,9 +317,11 @@ void CloudWatchEvidentlyClient::CreateLaunchAsync(const CreateLaunchRequest& req
 
 CreateProjectOutcome CloudWatchEvidentlyClient::CreateProject(const CreateProjectRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects");
-  return CreateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects");
+  return CreateProjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateProjectOutcomeCallable CloudWatchEvidentlyClient::CreateProjectCallable(const CreateProjectRequest& request) const
@@ -301,9 +342,11 @@ void CloudWatchEvidentlyClient::CreateProjectAsync(const CreateProjectRequest& r
 
 CreateSegmentOutcome CloudWatchEvidentlyClient::CreateSegment(const CreateSegmentRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/segments");
-  return CreateSegmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/segments");
+  return CreateSegmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSegmentOutcomeCallable CloudWatchEvidentlyClient::CreateSegmentCallable(const CreateSegmentRequest& request) const
@@ -324,6 +367,7 @@ void CloudWatchEvidentlyClient::CreateSegmentAsync(const CreateSegmentRequest& r
 
 DeleteExperimentOutcome CloudWatchEvidentlyClient::DeleteExperiment(const DeleteExperimentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExperimentHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteExperiment", "Required field: Experiment, is not set");
@@ -334,12 +378,13 @@ DeleteExperimentOutcome CloudWatchEvidentlyClient::DeleteExperiment(const Delete
     AWS_LOGSTREAM_ERROR("DeleteExperiment", "Required field: Project, is not set");
     return DeleteExperimentOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/experiments/");
-  uri.AddPathSegment(request.GetExperiment());
-  return DeleteExperimentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/experiments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperiment());
+  return DeleteExperimentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteExperimentOutcomeCallable CloudWatchEvidentlyClient::DeleteExperimentCallable(const DeleteExperimentRequest& request) const
@@ -360,6 +405,7 @@ void CloudWatchEvidentlyClient::DeleteExperimentAsync(const DeleteExperimentRequ
 
 DeleteFeatureOutcome CloudWatchEvidentlyClient::DeleteFeature(const DeleteFeatureRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FeatureHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteFeature", "Required field: Feature, is not set");
@@ -370,12 +416,13 @@ DeleteFeatureOutcome CloudWatchEvidentlyClient::DeleteFeature(const DeleteFeatur
     AWS_LOGSTREAM_ERROR("DeleteFeature", "Required field: Project, is not set");
     return DeleteFeatureOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/features/");
-  uri.AddPathSegment(request.GetFeature());
-  return DeleteFeatureOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/features/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFeature());
+  return DeleteFeatureOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteFeatureOutcomeCallable CloudWatchEvidentlyClient::DeleteFeatureCallable(const DeleteFeatureRequest& request) const
@@ -396,6 +443,7 @@ void CloudWatchEvidentlyClient::DeleteFeatureAsync(const DeleteFeatureRequest& r
 
 DeleteLaunchOutcome CloudWatchEvidentlyClient::DeleteLaunch(const DeleteLaunchRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteLaunch", "Required field: Launch, is not set");
@@ -406,12 +454,13 @@ DeleteLaunchOutcome CloudWatchEvidentlyClient::DeleteLaunch(const DeleteLaunchRe
     AWS_LOGSTREAM_ERROR("DeleteLaunch", "Required field: Project, is not set");
     return DeleteLaunchOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/launches/");
-  uri.AddPathSegment(request.GetLaunch());
-  return DeleteLaunchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launches/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunch());
+  return DeleteLaunchOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteLaunchOutcomeCallable CloudWatchEvidentlyClient::DeleteLaunchCallable(const DeleteLaunchRequest& request) const
@@ -432,15 +481,17 @@ void CloudWatchEvidentlyClient::DeleteLaunchAsync(const DeleteLaunchRequest& req
 
 DeleteProjectOutcome CloudWatchEvidentlyClient::DeleteProject(const DeleteProjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteProject", "Required field: Project, is not set");
     return DeleteProjectOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  return DeleteProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  return DeleteProjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteProjectOutcomeCallable CloudWatchEvidentlyClient::DeleteProjectCallable(const DeleteProjectRequest& request) const
@@ -461,15 +512,17 @@ void CloudWatchEvidentlyClient::DeleteProjectAsync(const DeleteProjectRequest& r
 
 DeleteSegmentOutcome CloudWatchEvidentlyClient::DeleteSegment(const DeleteSegmentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SegmentHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("DeleteSegment", "Required field: Segment, is not set");
     return DeleteSegmentOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Segment]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/segments/");
-  uri.AddPathSegment(request.GetSegment());
-  return DeleteSegmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/segments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSegment());
+  return DeleteSegmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSegmentOutcomeCallable CloudWatchEvidentlyClient::DeleteSegmentCallable(const DeleteSegmentRequest& request) const
@@ -490,6 +543,7 @@ void CloudWatchEvidentlyClient::DeleteSegmentAsync(const DeleteSegmentRequest& r
 
 EvaluateFeatureOutcome CloudWatchEvidentlyClient::EvaluateFeature(const EvaluateFeatureRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, EvaluateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FeatureHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("EvaluateFeature", "Required field: Feature, is not set");
@@ -500,21 +554,13 @@ EvaluateFeatureOutcome CloudWatchEvidentlyClient::EvaluateFeature(const Evaluate
     AWS_LOGSTREAM_ERROR("EvaluateFeature", "Required field: Project, is not set");
     return EvaluateFeatureOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("dataplane." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("EvaluateFeature", "Invalid DNS host: " << uri.GetAuthority());
-      return EvaluateFeatureOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/evaluations/");
-  uri.AddPathSegment(request.GetFeature());
-  return EvaluateFeatureOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EvaluateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/evaluations/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFeature());
+  return EvaluateFeatureOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EvaluateFeatureOutcomeCallable CloudWatchEvidentlyClient::EvaluateFeatureCallable(const EvaluateFeatureRequest& request) const
@@ -535,6 +581,7 @@ void CloudWatchEvidentlyClient::EvaluateFeatureAsync(const EvaluateFeatureReques
 
 GetExperimentOutcome CloudWatchEvidentlyClient::GetExperiment(const GetExperimentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExperimentHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetExperiment", "Required field: Experiment, is not set");
@@ -545,12 +592,13 @@ GetExperimentOutcome CloudWatchEvidentlyClient::GetExperiment(const GetExperimen
     AWS_LOGSTREAM_ERROR("GetExperiment", "Required field: Project, is not set");
     return GetExperimentOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/experiments/");
-  uri.AddPathSegment(request.GetExperiment());
-  return GetExperimentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/experiments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperiment());
+  return GetExperimentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetExperimentOutcomeCallable CloudWatchEvidentlyClient::GetExperimentCallable(const GetExperimentRequest& request) const
@@ -571,6 +619,7 @@ void CloudWatchEvidentlyClient::GetExperimentAsync(const GetExperimentRequest& r
 
 GetExperimentResultsOutcome CloudWatchEvidentlyClient::GetExperimentResults(const GetExperimentResultsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetExperimentResults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExperimentHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetExperimentResults", "Required field: Experiment, is not set");
@@ -581,13 +630,14 @@ GetExperimentResultsOutcome CloudWatchEvidentlyClient::GetExperimentResults(cons
     AWS_LOGSTREAM_ERROR("GetExperimentResults", "Required field: Project, is not set");
     return GetExperimentResultsOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/experiments/");
-  uri.AddPathSegment(request.GetExperiment());
-  uri.AddPathSegments("/results");
-  return GetExperimentResultsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetExperimentResults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/experiments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperiment());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/results");
+  return GetExperimentResultsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetExperimentResultsOutcomeCallable CloudWatchEvidentlyClient::GetExperimentResultsCallable(const GetExperimentResultsRequest& request) const
@@ -608,6 +658,7 @@ void CloudWatchEvidentlyClient::GetExperimentResultsAsync(const GetExperimentRes
 
 GetFeatureOutcome CloudWatchEvidentlyClient::GetFeature(const GetFeatureRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FeatureHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetFeature", "Required field: Feature, is not set");
@@ -618,12 +669,13 @@ GetFeatureOutcome CloudWatchEvidentlyClient::GetFeature(const GetFeatureRequest&
     AWS_LOGSTREAM_ERROR("GetFeature", "Required field: Project, is not set");
     return GetFeatureOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/features/");
-  uri.AddPathSegment(request.GetFeature());
-  return GetFeatureOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/features/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFeature());
+  return GetFeatureOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFeatureOutcomeCallable CloudWatchEvidentlyClient::GetFeatureCallable(const GetFeatureRequest& request) const
@@ -644,6 +696,7 @@ void CloudWatchEvidentlyClient::GetFeatureAsync(const GetFeatureRequest& request
 
 GetLaunchOutcome CloudWatchEvidentlyClient::GetLaunch(const GetLaunchRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetLaunch", "Required field: Launch, is not set");
@@ -654,12 +707,13 @@ GetLaunchOutcome CloudWatchEvidentlyClient::GetLaunch(const GetLaunchRequest& re
     AWS_LOGSTREAM_ERROR("GetLaunch", "Required field: Project, is not set");
     return GetLaunchOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/launches/");
-  uri.AddPathSegment(request.GetLaunch());
-  return GetLaunchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launches/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunch());
+  return GetLaunchOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLaunchOutcomeCallable CloudWatchEvidentlyClient::GetLaunchCallable(const GetLaunchRequest& request) const
@@ -680,15 +734,17 @@ void CloudWatchEvidentlyClient::GetLaunchAsync(const GetLaunchRequest& request, 
 
 GetProjectOutcome CloudWatchEvidentlyClient::GetProject(const GetProjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetProject", "Required field: Project, is not set");
     return GetProjectOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  return GetProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  return GetProjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetProjectOutcomeCallable CloudWatchEvidentlyClient::GetProjectCallable(const GetProjectRequest& request) const
@@ -709,15 +765,17 @@ void CloudWatchEvidentlyClient::GetProjectAsync(const GetProjectRequest& request
 
 GetSegmentOutcome CloudWatchEvidentlyClient::GetSegment(const GetSegmentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SegmentHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("GetSegment", "Required field: Segment, is not set");
     return GetSegmentOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Segment]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/segments/");
-  uri.AddPathSegment(request.GetSegment());
-  return GetSegmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSegment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/segments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSegment());
+  return GetSegmentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSegmentOutcomeCallable CloudWatchEvidentlyClient::GetSegmentCallable(const GetSegmentRequest& request) const
@@ -738,16 +796,18 @@ void CloudWatchEvidentlyClient::GetSegmentAsync(const GetSegmentRequest& request
 
 ListExperimentsOutcome CloudWatchEvidentlyClient::ListExperiments(const ListExperimentsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExperiments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListExperiments", "Required field: Project, is not set");
     return ListExperimentsOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/experiments");
-  return ListExperimentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExperiments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/experiments");
+  return ListExperimentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListExperimentsOutcomeCallable CloudWatchEvidentlyClient::ListExperimentsCallable(const ListExperimentsRequest& request) const
@@ -768,16 +828,18 @@ void CloudWatchEvidentlyClient::ListExperimentsAsync(const ListExperimentsReques
 
 ListFeaturesOutcome CloudWatchEvidentlyClient::ListFeatures(const ListFeaturesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFeatures, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListFeatures", "Required field: Project, is not set");
     return ListFeaturesOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/features");
-  return ListFeaturesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFeatures, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/features");
+  return ListFeaturesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListFeaturesOutcomeCallable CloudWatchEvidentlyClient::ListFeaturesCallable(const ListFeaturesRequest& request) const
@@ -798,16 +860,18 @@ void CloudWatchEvidentlyClient::ListFeaturesAsync(const ListFeaturesRequest& req
 
 ListLaunchesOutcome CloudWatchEvidentlyClient::ListLaunches(const ListLaunchesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLaunches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListLaunches", "Required field: Project, is not set");
     return ListLaunchesOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/launches");
-  return ListLaunchesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLaunches, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launches");
+  return ListLaunchesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListLaunchesOutcomeCallable CloudWatchEvidentlyClient::ListLaunchesCallable(const ListLaunchesRequest& request) const
@@ -828,9 +892,11 @@ void CloudWatchEvidentlyClient::ListLaunchesAsync(const ListLaunchesRequest& req
 
 ListProjectsOutcome CloudWatchEvidentlyClient::ListProjects(const ListProjectsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects");
-  return ListProjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListProjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects");
+  return ListProjectsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListProjectsOutcomeCallable CloudWatchEvidentlyClient::ListProjectsCallable(const ListProjectsRequest& request) const
@@ -851,6 +917,7 @@ void CloudWatchEvidentlyClient::ListProjectsAsync(const ListProjectsRequest& req
 
 ListSegmentReferencesOutcome CloudWatchEvidentlyClient::ListSegmentReferences(const ListSegmentReferencesRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSegmentReferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.SegmentHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListSegmentReferences", "Required field: Segment, is not set");
@@ -861,11 +928,12 @@ ListSegmentReferencesOutcome CloudWatchEvidentlyClient::ListSegmentReferences(co
     AWS_LOGSTREAM_ERROR("ListSegmentReferences", "Required field: Type, is not set");
     return ListSegmentReferencesOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/segments/");
-  uri.AddPathSegment(request.GetSegment());
-  uri.AddPathSegments("/references");
-  return ListSegmentReferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSegmentReferences, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/segments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSegment());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/references");
+  return ListSegmentReferencesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSegmentReferencesOutcomeCallable CloudWatchEvidentlyClient::ListSegmentReferencesCallable(const ListSegmentReferencesRequest& request) const
@@ -886,9 +954,11 @@ void CloudWatchEvidentlyClient::ListSegmentReferencesAsync(const ListSegmentRefe
 
 ListSegmentsOutcome CloudWatchEvidentlyClient::ListSegments(const ListSegmentsRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/segments");
-  return ListSegmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSegments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSegments, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/segments");
+  return ListSegmentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSegmentsOutcomeCallable CloudWatchEvidentlyClient::ListSegmentsCallable(const ListSegmentsRequest& request) const
@@ -909,15 +979,17 @@ void CloudWatchEvidentlyClient::ListSegmentsAsync(const ListSegmentsRequest& req
 
 ListTagsForResourceOutcome CloudWatchEvidentlyClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
     return ListTagsForResourceOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable CloudWatchEvidentlyClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -938,24 +1010,17 @@ void CloudWatchEvidentlyClient::ListTagsForResourceAsync(const ListTagsForResour
 
 PutProjectEventsOutcome CloudWatchEvidentlyClient::PutProjectEvents(const PutProjectEventsRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutProjectEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("PutProjectEvents", "Required field: Project, is not set");
     return PutProjectEventsOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  if (m_enableHostPrefixInjection)
-  {
-    uri.SetAuthority("dataplane." + uri.GetAuthority());
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("PutProjectEvents", "Invalid DNS host: " << uri.GetAuthority());
-      return PutProjectEventsOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-  uri.AddPathSegments("/events/projects/");
-  uri.AddPathSegment(request.GetProject());
-  return PutProjectEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutProjectEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/events/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  return PutProjectEventsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutProjectEventsOutcomeCallable CloudWatchEvidentlyClient::PutProjectEventsCallable(const PutProjectEventsRequest& request) const
@@ -976,6 +1041,7 @@ void CloudWatchEvidentlyClient::PutProjectEventsAsync(const PutProjectEventsRequ
 
 StartExperimentOutcome CloudWatchEvidentlyClient::StartExperiment(const StartExperimentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExperimentHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartExperiment", "Required field: Experiment, is not set");
@@ -986,13 +1052,14 @@ StartExperimentOutcome CloudWatchEvidentlyClient::StartExperiment(const StartExp
     AWS_LOGSTREAM_ERROR("StartExperiment", "Required field: Project, is not set");
     return StartExperimentOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/experiments/");
-  uri.AddPathSegment(request.GetExperiment());
-  uri.AddPathSegments("/start");
-  return StartExperimentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/experiments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperiment());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/start");
+  return StartExperimentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartExperimentOutcomeCallable CloudWatchEvidentlyClient::StartExperimentCallable(const StartExperimentRequest& request) const
@@ -1013,6 +1080,7 @@ void CloudWatchEvidentlyClient::StartExperimentAsync(const StartExperimentReques
 
 StartLaunchOutcome CloudWatchEvidentlyClient::StartLaunch(const StartLaunchRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StartLaunch", "Required field: Launch, is not set");
@@ -1023,13 +1091,14 @@ StartLaunchOutcome CloudWatchEvidentlyClient::StartLaunch(const StartLaunchReque
     AWS_LOGSTREAM_ERROR("StartLaunch", "Required field: Project, is not set");
     return StartLaunchOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/launches/");
-  uri.AddPathSegment(request.GetLaunch());
-  uri.AddPathSegments("/start");
-  return StartLaunchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launches/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunch());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/start");
+  return StartLaunchOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartLaunchOutcomeCallable CloudWatchEvidentlyClient::StartLaunchCallable(const StartLaunchRequest& request) const
@@ -1050,6 +1119,7 @@ void CloudWatchEvidentlyClient::StartLaunchAsync(const StartLaunchRequest& reque
 
 StopExperimentOutcome CloudWatchEvidentlyClient::StopExperiment(const StopExperimentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExperimentHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StopExperiment", "Required field: Experiment, is not set");
@@ -1060,13 +1130,14 @@ StopExperimentOutcome CloudWatchEvidentlyClient::StopExperiment(const StopExperi
     AWS_LOGSTREAM_ERROR("StopExperiment", "Required field: Project, is not set");
     return StopExperimentOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/experiments/");
-  uri.AddPathSegment(request.GetExperiment());
-  uri.AddPathSegments("/cancel");
-  return StopExperimentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/experiments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperiment());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
+  return StopExperimentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopExperimentOutcomeCallable CloudWatchEvidentlyClient::StopExperimentCallable(const StopExperimentRequest& request) const
@@ -1087,6 +1158,7 @@ void CloudWatchEvidentlyClient::StopExperimentAsync(const StopExperimentRequest&
 
 StopLaunchOutcome CloudWatchEvidentlyClient::StopLaunch(const StopLaunchRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("StopLaunch", "Required field: Launch, is not set");
@@ -1097,13 +1169,14 @@ StopLaunchOutcome CloudWatchEvidentlyClient::StopLaunch(const StopLaunchRequest&
     AWS_LOGSTREAM_ERROR("StopLaunch", "Required field: Project, is not set");
     return StopLaunchOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/launches/");
-  uri.AddPathSegment(request.GetLaunch());
-  uri.AddPathSegments("/cancel");
-  return StopLaunchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launches/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunch());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
+  return StopLaunchOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopLaunchOutcomeCallable CloudWatchEvidentlyClient::StopLaunchCallable(const StopLaunchRequest& request) const
@@ -1124,15 +1197,17 @@ void CloudWatchEvidentlyClient::StopLaunchAsync(const StopLaunchRequest& request
 
 TagResourceOutcome CloudWatchEvidentlyClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
     return TagResourceOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable CloudWatchEvidentlyClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1153,9 +1228,11 @@ void CloudWatchEvidentlyClient::TagResourceAsync(const TagResourceRequest& reque
 
 TestSegmentPatternOutcome CloudWatchEvidentlyClient::TestSegmentPattern(const TestSegmentPatternRequest& request) const
 {
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/test-segment-pattern");
-  return TestSegmentPatternOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TestSegmentPattern, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TestSegmentPattern, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/test-segment-pattern");
+  return TestSegmentPatternOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TestSegmentPatternOutcomeCallable CloudWatchEvidentlyClient::TestSegmentPatternCallable(const TestSegmentPatternRequest& request) const
@@ -1176,6 +1253,7 @@ void CloudWatchEvidentlyClient::TestSegmentPatternAsync(const TestSegmentPattern
 
 UntagResourceOutcome CloudWatchEvidentlyClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceArnHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
@@ -1186,10 +1264,11 @@ UntagResourceOutcome CloudWatchEvidentlyClient::UntagResource(const UntagResourc
     AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
     return UntagResourceOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/tags/");
-  uri.AddPathSegment(request.GetResourceArn());
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable CloudWatchEvidentlyClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1210,6 +1289,7 @@ void CloudWatchEvidentlyClient::UntagResourceAsync(const UntagResourceRequest& r
 
 UpdateExperimentOutcome CloudWatchEvidentlyClient::UpdateExperiment(const UpdateExperimentRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ExperimentHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateExperiment", "Required field: Experiment, is not set");
@@ -1220,12 +1300,13 @@ UpdateExperimentOutcome CloudWatchEvidentlyClient::UpdateExperiment(const Update
     AWS_LOGSTREAM_ERROR("UpdateExperiment", "Required field: Project, is not set");
     return UpdateExperimentOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/experiments/");
-  uri.AddPathSegment(request.GetExperiment());
-  return UpdateExperimentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateExperiment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/experiments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetExperiment());
+  return UpdateExperimentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateExperimentOutcomeCallable CloudWatchEvidentlyClient::UpdateExperimentCallable(const UpdateExperimentRequest& request) const
@@ -1246,6 +1327,7 @@ void CloudWatchEvidentlyClient::UpdateExperimentAsync(const UpdateExperimentRequ
 
 UpdateFeatureOutcome CloudWatchEvidentlyClient::UpdateFeature(const UpdateFeatureRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FeatureHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateFeature", "Required field: Feature, is not set");
@@ -1256,12 +1338,13 @@ UpdateFeatureOutcome CloudWatchEvidentlyClient::UpdateFeature(const UpdateFeatur
     AWS_LOGSTREAM_ERROR("UpdateFeature", "Required field: Project, is not set");
     return UpdateFeatureOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/features/");
-  uri.AddPathSegment(request.GetFeature());
-  return UpdateFeatureOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFeature, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/features/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFeature());
+  return UpdateFeatureOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateFeatureOutcomeCallable CloudWatchEvidentlyClient::UpdateFeatureCallable(const UpdateFeatureRequest& request) const
@@ -1282,6 +1365,7 @@ void CloudWatchEvidentlyClient::UpdateFeatureAsync(const UpdateFeatureRequest& r
 
 UpdateLaunchOutcome CloudWatchEvidentlyClient::UpdateLaunch(const UpdateLaunchRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LaunchHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateLaunch", "Required field: Launch, is not set");
@@ -1292,12 +1376,13 @@ UpdateLaunchOutcome CloudWatchEvidentlyClient::UpdateLaunch(const UpdateLaunchRe
     AWS_LOGSTREAM_ERROR("UpdateLaunch", "Required field: Project, is not set");
     return UpdateLaunchOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/launches/");
-  uri.AddPathSegment(request.GetLaunch());
-  return UpdateLaunchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLaunch, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/launches/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLaunch());
+  return UpdateLaunchOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateLaunchOutcomeCallable CloudWatchEvidentlyClient::UpdateLaunchCallable(const UpdateLaunchRequest& request) const
@@ -1318,15 +1403,17 @@ void CloudWatchEvidentlyClient::UpdateLaunchAsync(const UpdateLaunchRequest& req
 
 UpdateProjectOutcome CloudWatchEvidentlyClient::UpdateProject(const UpdateProjectRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateProject", "Required field: Project, is not set");
     return UpdateProjectOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  return UpdateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateProject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  return UpdateProjectOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateProjectOutcomeCallable CloudWatchEvidentlyClient::UpdateProjectCallable(const UpdateProjectRequest& request) const
@@ -1347,16 +1434,18 @@ void CloudWatchEvidentlyClient::UpdateProjectAsync(const UpdateProjectRequest& r
 
 UpdateProjectDataDeliveryOutcome CloudWatchEvidentlyClient::UpdateProjectDataDelivery(const UpdateProjectDataDeliveryRequest& request) const
 {
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProjectDataDelivery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ProjectHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("UpdateProjectDataDelivery", "Required field: Project, is not set");
     return UpdateProjectDataDeliveryOutcome(Aws::Client::AWSError<CloudWatchEvidentlyErrors>(CloudWatchEvidentlyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Project]", false));
   }
-  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  uri.AddPathSegments("/projects/");
-  uri.AddPathSegment(request.GetProject());
-  uri.AddPathSegments("/data-delivery");
-  return UpdateProjectDataDeliveryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateProjectDataDelivery, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProject());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/data-delivery");
+  return UpdateProjectDataDeliveryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateProjectDataDeliveryOutcomeCallable CloudWatchEvidentlyClient::UpdateProjectDataDeliveryCallable(const UpdateProjectDataDeliveryRequest& request) const

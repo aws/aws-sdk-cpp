@@ -122,7 +122,7 @@ GetEnvironmentResult& GetEnvironmentResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("securityGroupIds"))
   {
-    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -143,7 +143,7 @@ GetEnvironmentResult& GetEnvironmentResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("storageConfigurations"))
   {
-    Array<JsonView> storageConfigurationsJsonList = jsonValue.GetArray("storageConfigurations");
+    Aws::Utils::Array<JsonView> storageConfigurationsJsonList = jsonValue.GetArray("storageConfigurations");
     for(unsigned storageConfigurationsIndex = 0; storageConfigurationsIndex < storageConfigurationsJsonList.GetLength(); ++storageConfigurationsIndex)
     {
       m_storageConfigurations.push_back(storageConfigurationsJsonList[storageConfigurationsIndex].AsObject());
@@ -152,7 +152,7 @@ GetEnvironmentResult& GetEnvironmentResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("subnetIds"))
   {
-    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());

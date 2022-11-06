@@ -42,7 +42,7 @@ ResourceTag& ResourceTag::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TagsList"))
   {
-    Array<JsonView> tagsListJsonList = jsonValue.GetArray("TagsList");
+    Aws::Utils::Array<JsonView> tagsListJsonList = jsonValue.GetArray("TagsList");
     for(unsigned tagsListIndex = 0; tagsListIndex < tagsListJsonList.GetLength(); ++tagsListIndex)
     {
       m_tagsList.push_back(tagsListJsonList[tagsListIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue ResourceTag::Jsonize() const
 
   if(m_tagsListHasBeenSet)
   {
-   Array<JsonValue> tagsListJsonList(m_tagsList.size());
+   Aws::Utils::Array<JsonValue> tagsListJsonList(m_tagsList.size());
    for(unsigned tagsListIndex = 0; tagsListIndex < tagsListJsonList.GetLength(); ++tagsListIndex)
    {
      tagsListJsonList[tagsListIndex].AsObject(m_tagsList[tagsListIndex].Jsonize());

@@ -29,22 +29,48 @@ namespace WorkMailMessageFlow
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        WorkMailMessageFlowClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        WorkMailMessageFlowClient(const Aws::WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration& clientConfiguration = Aws::WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration(),
+                                  std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkMailMessageFlowEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         WorkMailMessageFlowClient(const Aws::Auth::AWSCredentials& credentials,
-                                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                  std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkMailMessageFlowEndpointProvider>(ALLOCATION_TAG),
+                                  const Aws::WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration& clientConfiguration = Aws::WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         WorkMailMessageFlowClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                  std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkMailMessageFlowEndpointProvider>(ALLOCATION_TAG),
+                                  const Aws::WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration& clientConfiguration = Aws::WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        WorkMailMessageFlowClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        WorkMailMessageFlowClient(const Aws::Auth::AWSCredentials& credentials,
+                                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        WorkMailMessageFlowClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~WorkMailMessageFlowClient();
 
 
@@ -96,12 +122,13 @@ namespace WorkMailMessageFlow
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<WorkMailMessageFlowEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const WorkMailMessageFlowClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      WorkMailMessageFlowClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace WorkMailMessageFlow

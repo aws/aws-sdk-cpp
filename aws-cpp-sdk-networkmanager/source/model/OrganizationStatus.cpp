@@ -60,7 +60,7 @@ OrganizationStatus& OrganizationStatus::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AccountStatusList"))
   {
-    Array<JsonView> accountStatusListJsonList = jsonValue.GetArray("AccountStatusList");
+    Aws::Utils::Array<JsonView> accountStatusListJsonList = jsonValue.GetArray("AccountStatusList");
     for(unsigned accountStatusListIndex = 0; accountStatusListIndex < accountStatusListJsonList.GetLength(); ++accountStatusListIndex)
     {
       m_accountStatusList.push_back(accountStatusListJsonList[accountStatusListIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue OrganizationStatus::Jsonize() const
 
   if(m_accountStatusListHasBeenSet)
   {
-   Array<JsonValue> accountStatusListJsonList(m_accountStatusList.size());
+   Aws::Utils::Array<JsonValue> accountStatusListJsonList(m_accountStatusList.size());
    for(unsigned accountStatusListIndex = 0; accountStatusListIndex < accountStatusListJsonList.GetLength(); ++accountStatusListIndex)
    {
      accountStatusListJsonList[accountStatusListIndex].AsObject(m_accountStatusList[accountStatusListIndex].Jsonize());

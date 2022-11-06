@@ -82,7 +82,7 @@ ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("outputArtifacts"))
   {
-    Array<JsonView> outputArtifactsJsonList = jsonValue.GetArray("outputArtifacts");
+    Aws::Utils::Array<JsonView> outputArtifactsJsonList = jsonValue.GetArray("outputArtifacts");
     for(unsigned outputArtifactsIndex = 0; outputArtifactsIndex < outputArtifactsJsonList.GetLength(); ++outputArtifactsIndex)
     {
       m_outputArtifacts.push_back(outputArtifactsJsonList[outputArtifactsIndex].AsObject());
@@ -92,7 +92,7 @@ ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inputArtifacts"))
   {
-    Array<JsonView> inputArtifactsJsonList = jsonValue.GetArray("inputArtifacts");
+    Aws::Utils::Array<JsonView> inputArtifactsJsonList = jsonValue.GetArray("inputArtifacts");
     for(unsigned inputArtifactsIndex = 0; inputArtifactsIndex < inputArtifactsJsonList.GetLength(); ++inputArtifactsIndex)
     {
       m_inputArtifacts.push_back(inputArtifactsJsonList[inputArtifactsIndex].AsObject());
@@ -159,7 +159,7 @@ JsonValue ActionDeclaration::Jsonize() const
 
   if(m_outputArtifactsHasBeenSet)
   {
-   Array<JsonValue> outputArtifactsJsonList(m_outputArtifacts.size());
+   Aws::Utils::Array<JsonValue> outputArtifactsJsonList(m_outputArtifacts.size());
    for(unsigned outputArtifactsIndex = 0; outputArtifactsIndex < outputArtifactsJsonList.GetLength(); ++outputArtifactsIndex)
    {
      outputArtifactsJsonList[outputArtifactsIndex].AsObject(m_outputArtifacts[outputArtifactsIndex].Jsonize());
@@ -170,7 +170,7 @@ JsonValue ActionDeclaration::Jsonize() const
 
   if(m_inputArtifactsHasBeenSet)
   {
-   Array<JsonValue> inputArtifactsJsonList(m_inputArtifacts.size());
+   Aws::Utils::Array<JsonValue> inputArtifactsJsonList(m_inputArtifacts.size());
    for(unsigned inputArtifactsIndex = 0; inputArtifactsIndex < inputArtifactsJsonList.GetLength(); ++inputArtifactsIndex)
    {
      inputArtifactsJsonList[inputArtifactsIndex].AsObject(m_inputArtifacts[inputArtifactsIndex].Jsonize());

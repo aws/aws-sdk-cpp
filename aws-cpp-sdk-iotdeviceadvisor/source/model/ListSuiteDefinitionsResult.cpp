@@ -30,7 +30,7 @@ ListSuiteDefinitionsResult& ListSuiteDefinitionsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("suiteDefinitionInformationList"))
   {
-    Array<JsonView> suiteDefinitionInformationListJsonList = jsonValue.GetArray("suiteDefinitionInformationList");
+    Aws::Utils::Array<JsonView> suiteDefinitionInformationListJsonList = jsonValue.GetArray("suiteDefinitionInformationList");
     for(unsigned suiteDefinitionInformationListIndex = 0; suiteDefinitionInformationListIndex < suiteDefinitionInformationListJsonList.GetLength(); ++suiteDefinitionInformationListIndex)
     {
       m_suiteDefinitionInformationList.push_back(suiteDefinitionInformationListJsonList[suiteDefinitionInformationListIndex].AsObject());

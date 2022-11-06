@@ -65,7 +65,7 @@ AwsElbLoadBalancerDetails& AwsElbLoadBalancerDetails::operator =(JsonView jsonVa
 {
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
-    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
@@ -75,7 +75,7 @@ AwsElbLoadBalancerDetails& AwsElbLoadBalancerDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("BackendServerDescriptions"))
   {
-    Array<JsonView> backendServerDescriptionsJsonList = jsonValue.GetArray("BackendServerDescriptions");
+    Aws::Utils::Array<JsonView> backendServerDescriptionsJsonList = jsonValue.GetArray("BackendServerDescriptions");
     for(unsigned backendServerDescriptionsIndex = 0; backendServerDescriptionsIndex < backendServerDescriptionsJsonList.GetLength(); ++backendServerDescriptionsIndex)
     {
       m_backendServerDescriptions.push_back(backendServerDescriptionsJsonList[backendServerDescriptionsIndex].AsObject());
@@ -120,7 +120,7 @@ AwsElbLoadBalancerDetails& AwsElbLoadBalancerDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Instances"))
   {
-    Array<JsonView> instancesJsonList = jsonValue.GetArray("Instances");
+    Aws::Utils::Array<JsonView> instancesJsonList = jsonValue.GetArray("Instances");
     for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
     {
       m_instances.push_back(instancesJsonList[instancesIndex].AsObject());
@@ -130,7 +130,7 @@ AwsElbLoadBalancerDetails& AwsElbLoadBalancerDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ListenerDescriptions"))
   {
-    Array<JsonView> listenerDescriptionsJsonList = jsonValue.GetArray("ListenerDescriptions");
+    Aws::Utils::Array<JsonView> listenerDescriptionsJsonList = jsonValue.GetArray("ListenerDescriptions");
     for(unsigned listenerDescriptionsIndex = 0; listenerDescriptionsIndex < listenerDescriptionsJsonList.GetLength(); ++listenerDescriptionsIndex)
     {
       m_listenerDescriptions.push_back(listenerDescriptionsJsonList[listenerDescriptionsIndex].AsObject());
@@ -168,7 +168,7 @@ AwsElbLoadBalancerDetails& AwsElbLoadBalancerDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("SecurityGroups"))
   {
-    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
+    Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
     for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
@@ -185,7 +185,7 @@ AwsElbLoadBalancerDetails& AwsElbLoadBalancerDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("Subnets"))
   {
-    Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
+    Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
     for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
     {
       m_subnets.push_back(subnetsJsonList[subnetsIndex].AsString());
@@ -209,7 +209,7 @@ JsonValue AwsElbLoadBalancerDetails::Jsonize() const
 
   if(m_availabilityZonesHasBeenSet)
   {
-   Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
    {
      availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
@@ -220,7 +220,7 @@ JsonValue AwsElbLoadBalancerDetails::Jsonize() const
 
   if(m_backendServerDescriptionsHasBeenSet)
   {
-   Array<JsonValue> backendServerDescriptionsJsonList(m_backendServerDescriptions.size());
+   Aws::Utils::Array<JsonValue> backendServerDescriptionsJsonList(m_backendServerDescriptions.size());
    for(unsigned backendServerDescriptionsIndex = 0; backendServerDescriptionsIndex < backendServerDescriptionsJsonList.GetLength(); ++backendServerDescriptionsIndex)
    {
      backendServerDescriptionsJsonList[backendServerDescriptionsIndex].AsObject(m_backendServerDescriptions[backendServerDescriptionsIndex].Jsonize());
@@ -261,7 +261,7 @@ JsonValue AwsElbLoadBalancerDetails::Jsonize() const
 
   if(m_instancesHasBeenSet)
   {
-   Array<JsonValue> instancesJsonList(m_instances.size());
+   Aws::Utils::Array<JsonValue> instancesJsonList(m_instances.size());
    for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
    {
      instancesJsonList[instancesIndex].AsObject(m_instances[instancesIndex].Jsonize());
@@ -272,7 +272,7 @@ JsonValue AwsElbLoadBalancerDetails::Jsonize() const
 
   if(m_listenerDescriptionsHasBeenSet)
   {
-   Array<JsonValue> listenerDescriptionsJsonList(m_listenerDescriptions.size());
+   Aws::Utils::Array<JsonValue> listenerDescriptionsJsonList(m_listenerDescriptions.size());
    for(unsigned listenerDescriptionsIndex = 0; listenerDescriptionsIndex < listenerDescriptionsJsonList.GetLength(); ++listenerDescriptionsIndex)
    {
      listenerDescriptionsJsonList[listenerDescriptionsIndex].AsObject(m_listenerDescriptions[listenerDescriptionsIndex].Jsonize());
@@ -307,7 +307,7 @@ JsonValue AwsElbLoadBalancerDetails::Jsonize() const
 
   if(m_securityGroupsHasBeenSet)
   {
-   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   Aws::Utils::Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
    {
      securityGroupsJsonList[securityGroupsIndex].AsString(m_securityGroups[securityGroupsIndex]);
@@ -324,7 +324,7 @@ JsonValue AwsElbLoadBalancerDetails::Jsonize() const
 
   if(m_subnetsHasBeenSet)
   {
-   Array<JsonValue> subnetsJsonList(m_subnets.size());
+   Aws::Utils::Array<JsonValue> subnetsJsonList(m_subnets.size());
    for(unsigned subnetsIndex = 0; subnetsIndex < subnetsJsonList.GetLength(); ++subnetsIndex)
    {
      subnetsJsonList[subnetsIndex].AsString(m_subnets[subnetsIndex]);

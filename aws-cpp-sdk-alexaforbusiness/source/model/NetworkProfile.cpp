@@ -118,7 +118,7 @@ NetworkProfile& NetworkProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TrustAnchors"))
   {
-    Array<JsonView> trustAnchorsJsonList = jsonValue.GetArray("TrustAnchors");
+    Aws::Utils::Array<JsonView> trustAnchorsJsonList = jsonValue.GetArray("TrustAnchors");
     for(unsigned trustAnchorsIndex = 0; trustAnchorsIndex < trustAnchorsJsonList.GetLength(); ++trustAnchorsIndex)
     {
       m_trustAnchors.push_back(trustAnchorsJsonList[trustAnchorsIndex].AsString());
@@ -187,7 +187,7 @@ JsonValue NetworkProfile::Jsonize() const
 
   if(m_trustAnchorsHasBeenSet)
   {
-   Array<JsonValue> trustAnchorsJsonList(m_trustAnchors.size());
+   Aws::Utils::Array<JsonValue> trustAnchorsJsonList(m_trustAnchors.size());
    for(unsigned trustAnchorsIndex = 0; trustAnchorsIndex < trustAnchorsJsonList.GetLength(); ++trustAnchorsIndex)
    {
      trustAnchorsJsonList[trustAnchorsIndex].AsString(m_trustAnchors[trustAnchorsIndex]);

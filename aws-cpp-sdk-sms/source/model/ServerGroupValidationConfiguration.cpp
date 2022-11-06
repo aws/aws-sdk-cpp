@@ -42,7 +42,7 @@ ServerGroupValidationConfiguration& ServerGroupValidationConfiguration::operator
 
   if(jsonValue.ValueExists("serverValidationConfigurations"))
   {
-    Array<JsonView> serverValidationConfigurationsJsonList = jsonValue.GetArray("serverValidationConfigurations");
+    Aws::Utils::Array<JsonView> serverValidationConfigurationsJsonList = jsonValue.GetArray("serverValidationConfigurations");
     for(unsigned serverValidationConfigurationsIndex = 0; serverValidationConfigurationsIndex < serverValidationConfigurationsJsonList.GetLength(); ++serverValidationConfigurationsIndex)
     {
       m_serverValidationConfigurations.push_back(serverValidationConfigurationsJsonList[serverValidationConfigurationsIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue ServerGroupValidationConfiguration::Jsonize() const
 
   if(m_serverValidationConfigurationsHasBeenSet)
   {
-   Array<JsonValue> serverValidationConfigurationsJsonList(m_serverValidationConfigurations.size());
+   Aws::Utils::Array<JsonValue> serverValidationConfigurationsJsonList(m_serverValidationConfigurations.size());
    for(unsigned serverValidationConfigurationsIndex = 0; serverValidationConfigurationsIndex < serverValidationConfigurationsJsonList.GetLength(); ++serverValidationConfigurationsIndex)
    {
      serverValidationConfigurationsJsonList[serverValidationConfigurationsIndex].AsObject(m_serverValidationConfigurations[serverValidationConfigurationsIndex].Jsonize());

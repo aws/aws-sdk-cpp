@@ -30,7 +30,7 @@ Aws::String LookupEventsRequest::SerializePayload() const
 
   if(m_lookupAttributesHasBeenSet)
   {
-   Array<JsonValue> lookupAttributesJsonList(m_lookupAttributes.size());
+   Aws::Utils::Array<JsonValue> lookupAttributesJsonList(m_lookupAttributes.size());
    for(unsigned lookupAttributesIndex = 0; lookupAttributesIndex < lookupAttributesJsonList.GetLength(); ++lookupAttributesIndex)
    {
      lookupAttributesJsonList[lookupAttributesIndex].AsObject(m_lookupAttributes[lookupAttributesIndex].Jsonize());

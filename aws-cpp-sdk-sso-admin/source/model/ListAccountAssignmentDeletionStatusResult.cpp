@@ -30,7 +30,7 @@ ListAccountAssignmentDeletionStatusResult& ListAccountAssignmentDeletionStatusRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AccountAssignmentsDeletionStatus"))
   {
-    Array<JsonView> accountAssignmentsDeletionStatusJsonList = jsonValue.GetArray("AccountAssignmentsDeletionStatus");
+    Aws::Utils::Array<JsonView> accountAssignmentsDeletionStatusJsonList = jsonValue.GetArray("AccountAssignmentsDeletionStatus");
     for(unsigned accountAssignmentsDeletionStatusIndex = 0; accountAssignmentsDeletionStatusIndex < accountAssignmentsDeletionStatusJsonList.GetLength(); ++accountAssignmentsDeletionStatusIndex)
     {
       m_accountAssignmentsDeletionStatus.push_back(accountAssignmentsDeletionStatusJsonList[accountAssignmentsDeletionStatusIndex].AsObject());

@@ -95,7 +95,7 @@ CertificateSummary& CertificateSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubjectAlternativeNameSummaries"))
   {
-    Array<JsonView> subjectAlternativeNameSummariesJsonList = jsonValue.GetArray("SubjectAlternativeNameSummaries");
+    Aws::Utils::Array<JsonView> subjectAlternativeNameSummariesJsonList = jsonValue.GetArray("SubjectAlternativeNameSummaries");
     for(unsigned subjectAlternativeNameSummariesIndex = 0; subjectAlternativeNameSummariesIndex < subjectAlternativeNameSummariesJsonList.GetLength(); ++subjectAlternativeNameSummariesIndex)
     {
       m_subjectAlternativeNameSummaries.push_back(subjectAlternativeNameSummariesJsonList[subjectAlternativeNameSummariesIndex].AsString());
@@ -133,7 +133,7 @@ CertificateSummary& CertificateSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("KeyUsages"))
   {
-    Array<JsonView> keyUsagesJsonList = jsonValue.GetArray("KeyUsages");
+    Aws::Utils::Array<JsonView> keyUsagesJsonList = jsonValue.GetArray("KeyUsages");
     for(unsigned keyUsagesIndex = 0; keyUsagesIndex < keyUsagesJsonList.GetLength(); ++keyUsagesIndex)
     {
       m_keyUsages.push_back(KeyUsageNameMapper::GetKeyUsageNameForName(keyUsagesJsonList[keyUsagesIndex].AsString()));
@@ -143,7 +143,7 @@ CertificateSummary& CertificateSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExtendedKeyUsages"))
   {
-    Array<JsonView> extendedKeyUsagesJsonList = jsonValue.GetArray("ExtendedKeyUsages");
+    Aws::Utils::Array<JsonView> extendedKeyUsagesJsonList = jsonValue.GetArray("ExtendedKeyUsages");
     for(unsigned extendedKeyUsagesIndex = 0; extendedKeyUsagesIndex < extendedKeyUsagesJsonList.GetLength(); ++extendedKeyUsagesIndex)
     {
       m_extendedKeyUsages.push_back(ExtendedKeyUsageNameMapper::GetExtendedKeyUsageNameForName(extendedKeyUsagesJsonList[extendedKeyUsagesIndex].AsString()));
@@ -235,7 +235,7 @@ JsonValue CertificateSummary::Jsonize() const
 
   if(m_subjectAlternativeNameSummariesHasBeenSet)
   {
-   Array<JsonValue> subjectAlternativeNameSummariesJsonList(m_subjectAlternativeNameSummaries.size());
+   Aws::Utils::Array<JsonValue> subjectAlternativeNameSummariesJsonList(m_subjectAlternativeNameSummaries.size());
    for(unsigned subjectAlternativeNameSummariesIndex = 0; subjectAlternativeNameSummariesIndex < subjectAlternativeNameSummariesJsonList.GetLength(); ++subjectAlternativeNameSummariesIndex)
    {
      subjectAlternativeNameSummariesJsonList[subjectAlternativeNameSummariesIndex].AsString(m_subjectAlternativeNameSummaries[subjectAlternativeNameSummariesIndex]);
@@ -267,7 +267,7 @@ JsonValue CertificateSummary::Jsonize() const
 
   if(m_keyUsagesHasBeenSet)
   {
-   Array<JsonValue> keyUsagesJsonList(m_keyUsages.size());
+   Aws::Utils::Array<JsonValue> keyUsagesJsonList(m_keyUsages.size());
    for(unsigned keyUsagesIndex = 0; keyUsagesIndex < keyUsagesJsonList.GetLength(); ++keyUsagesIndex)
    {
      keyUsagesJsonList[keyUsagesIndex].AsString(KeyUsageNameMapper::GetNameForKeyUsageName(m_keyUsages[keyUsagesIndex]));
@@ -278,7 +278,7 @@ JsonValue CertificateSummary::Jsonize() const
 
   if(m_extendedKeyUsagesHasBeenSet)
   {
-   Array<JsonValue> extendedKeyUsagesJsonList(m_extendedKeyUsages.size());
+   Aws::Utils::Array<JsonValue> extendedKeyUsagesJsonList(m_extendedKeyUsages.size());
    for(unsigned extendedKeyUsagesIndex = 0; extendedKeyUsagesIndex < extendedKeyUsagesJsonList.GetLength(); ++extendedKeyUsagesIndex)
    {
      extendedKeyUsagesJsonList[extendedKeyUsagesIndex].AsString(ExtendedKeyUsageNameMapper::GetNameForExtendedKeyUsageName(m_extendedKeyUsages[extendedKeyUsagesIndex]));

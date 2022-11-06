@@ -50,7 +50,7 @@ CustomMessageActivity& CustomMessageActivity::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EndpointTypes"))
   {
-    Array<JsonView> endpointTypesJsonList = jsonValue.GetArray("EndpointTypes");
+    Aws::Utils::Array<JsonView> endpointTypesJsonList = jsonValue.GetArray("EndpointTypes");
     for(unsigned endpointTypesIndex = 0; endpointTypesIndex < endpointTypesJsonList.GetLength(); ++endpointTypesIndex)
     {
       m_endpointTypes.push_back(__EndpointTypesElementMapper::Get__EndpointTypesElementForName(endpointTypesJsonList[endpointTypesIndex].AsString()));
@@ -101,7 +101,7 @@ JsonValue CustomMessageActivity::Jsonize() const
 
   if(m_endpointTypesHasBeenSet)
   {
-   Array<JsonValue> endpointTypesJsonList(m_endpointTypes.size());
+   Aws::Utils::Array<JsonValue> endpointTypesJsonList(m_endpointTypes.size());
    for(unsigned endpointTypesIndex = 0; endpointTypesIndex < endpointTypesJsonList.GetLength(); ++endpointTypesIndex)
    {
      endpointTypesJsonList[endpointTypesIndex].AsString(__EndpointTypesElementMapper::GetNameFor__EndpointTypesElement(m_endpointTypes[endpointTypesIndex]));
