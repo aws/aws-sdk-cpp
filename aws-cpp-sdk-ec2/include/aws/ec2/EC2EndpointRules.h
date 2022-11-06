@@ -5,17 +5,18 @@
 
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
-#include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
-
 namespace EC2
 {
-namespace EC2Endpoint
+class EC2EndpointRules
 {
-AWS_EC2_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
-} // namespace EC2Endpoint
+public:
+    static Aws::String GetRulesAsString();
+    static const Aws::Vector<char> Rules; 
+};
 } // namespace EC2
 } // namespace Aws
