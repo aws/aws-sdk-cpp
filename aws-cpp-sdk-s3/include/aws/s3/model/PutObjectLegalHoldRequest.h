@@ -46,6 +46,17 @@ namespace Model
     Aws::String GetChecksumAlgorithmName() const override;
 
 
+    EndpointParameters GetEndpointContextParams() const override
+    {
+        EndpointParameters parameters;
+        if (BucketHasBeenSet()) {
+            parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+        }
+
+        return parameters;
+    }
+
+
     /**
      * <p>The bucket name containing the object that you want to place a legal hold on.
      * </p> <p>When using this action with an access point, you must direct requests to
