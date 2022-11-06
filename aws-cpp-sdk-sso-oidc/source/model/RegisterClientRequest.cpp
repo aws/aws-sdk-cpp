@@ -37,7 +37,7 @@ Aws::String RegisterClientRequest::SerializePayload() const
 
   if(m_scopesHasBeenSet)
   {
-   Array<JsonValue> scopesJsonList(m_scopes.size());
+   Aws::Utils::Array<JsonValue> scopesJsonList(m_scopes.size());
    for(unsigned scopesIndex = 0; scopesIndex < scopesJsonList.GetLength(); ++scopesIndex)
    {
      scopesJsonList[scopesIndex].AsString(m_scopes[scopesIndex]);

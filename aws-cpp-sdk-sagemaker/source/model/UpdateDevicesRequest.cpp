@@ -30,7 +30,7 @@ Aws::String UpdateDevicesRequest::SerializePayload() const
 
   if(m_devicesHasBeenSet)
   {
-   Array<JsonValue> devicesJsonList(m_devices.size());
+   Aws::Utils::Array<JsonValue> devicesJsonList(m_devices.size());
    for(unsigned devicesIndex = 0; devicesIndex < devicesJsonList.GetLength(); ++devicesIndex)
    {
      devicesJsonList[devicesIndex].AsObject(m_devices[devicesIndex].Jsonize());

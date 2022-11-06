@@ -181,7 +181,7 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Types"))
   {
-    Array<JsonView> typesJsonList = jsonValue.GetArray("Types");
+    Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("Types");
     for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
     {
       m_types.push_back(typesJsonList[typesIndex].AsString());
@@ -288,7 +288,7 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Malware"))
   {
-    Array<JsonView> malwareJsonList = jsonValue.GetArray("Malware");
+    Aws::Utils::Array<JsonView> malwareJsonList = jsonValue.GetArray("Malware");
     for(unsigned malwareIndex = 0; malwareIndex < malwareJsonList.GetLength(); ++malwareIndex)
     {
       m_malware.push_back(malwareJsonList[malwareIndex].AsObject());
@@ -305,7 +305,7 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("NetworkPath"))
   {
-    Array<JsonView> networkPathJsonList = jsonValue.GetArray("NetworkPath");
+    Aws::Utils::Array<JsonView> networkPathJsonList = jsonValue.GetArray("NetworkPath");
     for(unsigned networkPathIndex = 0; networkPathIndex < networkPathJsonList.GetLength(); ++networkPathIndex)
     {
       m_networkPath.push_back(networkPathJsonList[networkPathIndex].AsObject());
@@ -322,7 +322,7 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Threats"))
   {
-    Array<JsonView> threatsJsonList = jsonValue.GetArray("Threats");
+    Aws::Utils::Array<JsonView> threatsJsonList = jsonValue.GetArray("Threats");
     for(unsigned threatsIndex = 0; threatsIndex < threatsJsonList.GetLength(); ++threatsIndex)
     {
       m_threats.push_back(threatsJsonList[threatsIndex].AsObject());
@@ -332,7 +332,7 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ThreatIntelIndicators"))
   {
-    Array<JsonView> threatIntelIndicatorsJsonList = jsonValue.GetArray("ThreatIntelIndicators");
+    Aws::Utils::Array<JsonView> threatIntelIndicatorsJsonList = jsonValue.GetArray("ThreatIntelIndicators");
     for(unsigned threatIntelIndicatorsIndex = 0; threatIntelIndicatorsIndex < threatIntelIndicatorsJsonList.GetLength(); ++threatIntelIndicatorsIndex)
     {
       m_threatIntelIndicators.push_back(threatIntelIndicatorsJsonList[threatIntelIndicatorsIndex].AsObject());
@@ -342,7 +342,7 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Resources"))
   {
-    Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
+    Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
     for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
     {
       m_resources.push_back(resourcesJsonList[resourcesIndex].AsObject());
@@ -387,7 +387,7 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RelatedFindings"))
   {
-    Array<JsonView> relatedFindingsJsonList = jsonValue.GetArray("RelatedFindings");
+    Aws::Utils::Array<JsonView> relatedFindingsJsonList = jsonValue.GetArray("RelatedFindings");
     for(unsigned relatedFindingsIndex = 0; relatedFindingsIndex < relatedFindingsJsonList.GetLength(); ++relatedFindingsIndex)
     {
       m_relatedFindings.push_back(relatedFindingsJsonList[relatedFindingsIndex].AsObject());
@@ -404,7 +404,7 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Vulnerabilities"))
   {
-    Array<JsonView> vulnerabilitiesJsonList = jsonValue.GetArray("Vulnerabilities");
+    Aws::Utils::Array<JsonView> vulnerabilitiesJsonList = jsonValue.GetArray("Vulnerabilities");
     for(unsigned vulnerabilitiesIndex = 0; vulnerabilitiesIndex < vulnerabilitiesJsonList.GetLength(); ++vulnerabilitiesIndex)
     {
       m_vulnerabilities.push_back(vulnerabilitiesJsonList[vulnerabilitiesIndex].AsObject());
@@ -497,7 +497,7 @@ JsonValue AwsSecurityFinding::Jsonize() const
 
   if(m_typesHasBeenSet)
   {
-   Array<JsonValue> typesJsonList(m_types.size());
+   Aws::Utils::Array<JsonValue> typesJsonList(m_types.size());
    for(unsigned typesIndex = 0; typesIndex < typesJsonList.GetLength(); ++typesIndex)
    {
      typesJsonList[typesIndex].AsString(m_types[typesIndex]);
@@ -596,7 +596,7 @@ JsonValue AwsSecurityFinding::Jsonize() const
 
   if(m_malwareHasBeenSet)
   {
-   Array<JsonValue> malwareJsonList(m_malware.size());
+   Aws::Utils::Array<JsonValue> malwareJsonList(m_malware.size());
    for(unsigned malwareIndex = 0; malwareIndex < malwareJsonList.GetLength(); ++malwareIndex)
    {
      malwareJsonList[malwareIndex].AsObject(m_malware[malwareIndex].Jsonize());
@@ -613,7 +613,7 @@ JsonValue AwsSecurityFinding::Jsonize() const
 
   if(m_networkPathHasBeenSet)
   {
-   Array<JsonValue> networkPathJsonList(m_networkPath.size());
+   Aws::Utils::Array<JsonValue> networkPathJsonList(m_networkPath.size());
    for(unsigned networkPathIndex = 0; networkPathIndex < networkPathJsonList.GetLength(); ++networkPathIndex)
    {
      networkPathJsonList[networkPathIndex].AsObject(m_networkPath[networkPathIndex].Jsonize());
@@ -630,7 +630,7 @@ JsonValue AwsSecurityFinding::Jsonize() const
 
   if(m_threatsHasBeenSet)
   {
-   Array<JsonValue> threatsJsonList(m_threats.size());
+   Aws::Utils::Array<JsonValue> threatsJsonList(m_threats.size());
    for(unsigned threatsIndex = 0; threatsIndex < threatsJsonList.GetLength(); ++threatsIndex)
    {
      threatsJsonList[threatsIndex].AsObject(m_threats[threatsIndex].Jsonize());
@@ -641,7 +641,7 @@ JsonValue AwsSecurityFinding::Jsonize() const
 
   if(m_threatIntelIndicatorsHasBeenSet)
   {
-   Array<JsonValue> threatIntelIndicatorsJsonList(m_threatIntelIndicators.size());
+   Aws::Utils::Array<JsonValue> threatIntelIndicatorsJsonList(m_threatIntelIndicators.size());
    for(unsigned threatIntelIndicatorsIndex = 0; threatIntelIndicatorsIndex < threatIntelIndicatorsJsonList.GetLength(); ++threatIntelIndicatorsIndex)
    {
      threatIntelIndicatorsJsonList[threatIntelIndicatorsIndex].AsObject(m_threatIntelIndicators[threatIntelIndicatorsIndex].Jsonize());
@@ -652,7 +652,7 @@ JsonValue AwsSecurityFinding::Jsonize() const
 
   if(m_resourcesHasBeenSet)
   {
-   Array<JsonValue> resourcesJsonList(m_resources.size());
+   Aws::Utils::Array<JsonValue> resourcesJsonList(m_resources.size());
    for(unsigned resourcesIndex = 0; resourcesIndex < resourcesJsonList.GetLength(); ++resourcesIndex)
    {
      resourcesJsonList[resourcesIndex].AsObject(m_resources[resourcesIndex].Jsonize());
@@ -690,7 +690,7 @@ JsonValue AwsSecurityFinding::Jsonize() const
 
   if(m_relatedFindingsHasBeenSet)
   {
-   Array<JsonValue> relatedFindingsJsonList(m_relatedFindings.size());
+   Aws::Utils::Array<JsonValue> relatedFindingsJsonList(m_relatedFindings.size());
    for(unsigned relatedFindingsIndex = 0; relatedFindingsIndex < relatedFindingsJsonList.GetLength(); ++relatedFindingsIndex)
    {
      relatedFindingsJsonList[relatedFindingsIndex].AsObject(m_relatedFindings[relatedFindingsIndex].Jsonize());
@@ -707,7 +707,7 @@ JsonValue AwsSecurityFinding::Jsonize() const
 
   if(m_vulnerabilitiesHasBeenSet)
   {
-   Array<JsonValue> vulnerabilitiesJsonList(m_vulnerabilities.size());
+   Aws::Utils::Array<JsonValue> vulnerabilitiesJsonList(m_vulnerabilities.size());
    for(unsigned vulnerabilitiesIndex = 0; vulnerabilitiesIndex < vulnerabilitiesJsonList.GetLength(); ++vulnerabilitiesIndex)
    {
      vulnerabilitiesJsonList[vulnerabilitiesIndex].AsObject(m_vulnerabilities[vulnerabilitiesIndex].Jsonize());

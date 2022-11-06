@@ -36,7 +36,7 @@ ListXssMatchSetsResult& ListXssMatchSetsResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("XssMatchSets"))
   {
-    Array<JsonView> xssMatchSetsJsonList = jsonValue.GetArray("XssMatchSets");
+    Aws::Utils::Array<JsonView> xssMatchSetsJsonList = jsonValue.GetArray("XssMatchSets");
     for(unsigned xssMatchSetsIndex = 0; xssMatchSetsIndex < xssMatchSetsJsonList.GetLength(); ++xssMatchSetsIndex)
     {
       m_xssMatchSets.push_back(xssMatchSetsJsonList[xssMatchSetsIndex].AsObject());

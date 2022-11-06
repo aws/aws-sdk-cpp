@@ -100,7 +100,7 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("findingReasonCodes"))
   {
-    Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("findingReasonCodes");
+    Aws::Utils::Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("findingReasonCodes");
     for(unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength(); ++findingReasonCodesIndex)
     {
       m_findingReasonCodes.push_back(InstanceRecommendationFindingReasonCodeMapper::GetInstanceRecommendationFindingReasonCodeForName(findingReasonCodesJsonList[findingReasonCodesIndex].AsString()));
@@ -110,7 +110,7 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("utilizationMetrics"))
   {
-    Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
+    Aws::Utils::Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
     for(unsigned utilizationMetricsIndex = 0; utilizationMetricsIndex < utilizationMetricsJsonList.GetLength(); ++utilizationMetricsIndex)
     {
       m_utilizationMetrics.push_back(utilizationMetricsJsonList[utilizationMetricsIndex].AsObject());
@@ -127,7 +127,7 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("recommendationOptions"))
   {
-    Array<JsonView> recommendationOptionsJsonList = jsonValue.GetArray("recommendationOptions");
+    Aws::Utils::Array<JsonView> recommendationOptionsJsonList = jsonValue.GetArray("recommendationOptions");
     for(unsigned recommendationOptionsIndex = 0; recommendationOptionsIndex < recommendationOptionsJsonList.GetLength(); ++recommendationOptionsIndex)
     {
       m_recommendationOptions.push_back(recommendationOptionsJsonList[recommendationOptionsIndex].AsObject());
@@ -137,7 +137,7 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("recommendationSources"))
   {
-    Array<JsonView> recommendationSourcesJsonList = jsonValue.GetArray("recommendationSources");
+    Aws::Utils::Array<JsonView> recommendationSourcesJsonList = jsonValue.GetArray("recommendationSources");
     for(unsigned recommendationSourcesIndex = 0; recommendationSourcesIndex < recommendationSourcesJsonList.GetLength(); ++recommendationSourcesIndex)
     {
       m_recommendationSources.push_back(recommendationSourcesJsonList[recommendationSourcesIndex].AsObject());
@@ -168,7 +168,7 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("inferredWorkloadTypes"))
   {
-    Array<JsonView> inferredWorkloadTypesJsonList = jsonValue.GetArray("inferredWorkloadTypes");
+    Aws::Utils::Array<JsonView> inferredWorkloadTypesJsonList = jsonValue.GetArray("inferredWorkloadTypes");
     for(unsigned inferredWorkloadTypesIndex = 0; inferredWorkloadTypesIndex < inferredWorkloadTypesJsonList.GetLength(); ++inferredWorkloadTypesIndex)
     {
       m_inferredWorkloadTypes.push_back(InferredWorkloadTypeMapper::GetInferredWorkloadTypeForName(inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString()));
@@ -214,7 +214,7 @@ JsonValue InstanceRecommendation::Jsonize() const
 
   if(m_findingReasonCodesHasBeenSet)
   {
-   Array<JsonValue> findingReasonCodesJsonList(m_findingReasonCodes.size());
+   Aws::Utils::Array<JsonValue> findingReasonCodesJsonList(m_findingReasonCodes.size());
    for(unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength(); ++findingReasonCodesIndex)
    {
      findingReasonCodesJsonList[findingReasonCodesIndex].AsString(InstanceRecommendationFindingReasonCodeMapper::GetNameForInstanceRecommendationFindingReasonCode(m_findingReasonCodes[findingReasonCodesIndex]));
@@ -225,7 +225,7 @@ JsonValue InstanceRecommendation::Jsonize() const
 
   if(m_utilizationMetricsHasBeenSet)
   {
-   Array<JsonValue> utilizationMetricsJsonList(m_utilizationMetrics.size());
+   Aws::Utils::Array<JsonValue> utilizationMetricsJsonList(m_utilizationMetrics.size());
    for(unsigned utilizationMetricsIndex = 0; utilizationMetricsIndex < utilizationMetricsJsonList.GetLength(); ++utilizationMetricsIndex)
    {
      utilizationMetricsJsonList[utilizationMetricsIndex].AsObject(m_utilizationMetrics[utilizationMetricsIndex].Jsonize());
@@ -242,7 +242,7 @@ JsonValue InstanceRecommendation::Jsonize() const
 
   if(m_recommendationOptionsHasBeenSet)
   {
-   Array<JsonValue> recommendationOptionsJsonList(m_recommendationOptions.size());
+   Aws::Utils::Array<JsonValue> recommendationOptionsJsonList(m_recommendationOptions.size());
    for(unsigned recommendationOptionsIndex = 0; recommendationOptionsIndex < recommendationOptionsJsonList.GetLength(); ++recommendationOptionsIndex)
    {
      recommendationOptionsJsonList[recommendationOptionsIndex].AsObject(m_recommendationOptions[recommendationOptionsIndex].Jsonize());
@@ -253,7 +253,7 @@ JsonValue InstanceRecommendation::Jsonize() const
 
   if(m_recommendationSourcesHasBeenSet)
   {
-   Array<JsonValue> recommendationSourcesJsonList(m_recommendationSources.size());
+   Aws::Utils::Array<JsonValue> recommendationSourcesJsonList(m_recommendationSources.size());
    for(unsigned recommendationSourcesIndex = 0; recommendationSourcesIndex < recommendationSourcesJsonList.GetLength(); ++recommendationSourcesIndex)
    {
      recommendationSourcesJsonList[recommendationSourcesIndex].AsObject(m_recommendationSources[recommendationSourcesIndex].Jsonize());
@@ -280,7 +280,7 @@ JsonValue InstanceRecommendation::Jsonize() const
 
   if(m_inferredWorkloadTypesHasBeenSet)
   {
-   Array<JsonValue> inferredWorkloadTypesJsonList(m_inferredWorkloadTypes.size());
+   Aws::Utils::Array<JsonValue> inferredWorkloadTypesJsonList(m_inferredWorkloadTypes.size());
    for(unsigned inferredWorkloadTypesIndex = 0; inferredWorkloadTypesIndex < inferredWorkloadTypesJsonList.GetLength(); ++inferredWorkloadTypesIndex)
    {
      inferredWorkloadTypesJsonList[inferredWorkloadTypesIndex].AsString(InferredWorkloadTypeMapper::GetNameForInferredWorkloadType(m_inferredWorkloadTypes[inferredWorkloadTypesIndex]));

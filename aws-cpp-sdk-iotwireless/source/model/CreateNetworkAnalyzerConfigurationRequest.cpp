@@ -42,7 +42,7 @@ Aws::String CreateNetworkAnalyzerConfigurationRequest::SerializePayload() const
 
   if(m_wirelessDevicesHasBeenSet)
   {
-   Array<JsonValue> wirelessDevicesJsonList(m_wirelessDevices.size());
+   Aws::Utils::Array<JsonValue> wirelessDevicesJsonList(m_wirelessDevices.size());
    for(unsigned wirelessDevicesIndex = 0; wirelessDevicesIndex < wirelessDevicesJsonList.GetLength(); ++wirelessDevicesIndex)
    {
      wirelessDevicesJsonList[wirelessDevicesIndex].AsString(m_wirelessDevices[wirelessDevicesIndex]);
@@ -53,7 +53,7 @@ Aws::String CreateNetworkAnalyzerConfigurationRequest::SerializePayload() const
 
   if(m_wirelessGatewaysHasBeenSet)
   {
-   Array<JsonValue> wirelessGatewaysJsonList(m_wirelessGateways.size());
+   Aws::Utils::Array<JsonValue> wirelessGatewaysJsonList(m_wirelessGateways.size());
    for(unsigned wirelessGatewaysIndex = 0; wirelessGatewaysIndex < wirelessGatewaysJsonList.GetLength(); ++wirelessGatewaysIndex)
    {
      wirelessGatewaysJsonList[wirelessGatewaysIndex].AsString(m_wirelessGateways[wirelessGatewaysIndex]);
@@ -70,7 +70,7 @@ Aws::String CreateNetworkAnalyzerConfigurationRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

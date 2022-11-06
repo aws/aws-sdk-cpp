@@ -61,7 +61,7 @@ InstanceProfile& InstanceProfile::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("excludeAppPackagesFromCleanup"))
   {
-    Array<JsonView> excludeAppPackagesFromCleanupJsonList = jsonValue.GetArray("excludeAppPackagesFromCleanup");
+    Aws::Utils::Array<JsonView> excludeAppPackagesFromCleanupJsonList = jsonValue.GetArray("excludeAppPackagesFromCleanup");
     for(unsigned excludeAppPackagesFromCleanupIndex = 0; excludeAppPackagesFromCleanupIndex < excludeAppPackagesFromCleanupJsonList.GetLength(); ++excludeAppPackagesFromCleanupIndex)
     {
       m_excludeAppPackagesFromCleanup.push_back(excludeAppPackagesFromCleanupJsonList[excludeAppPackagesFromCleanupIndex].AsString());
@@ -111,7 +111,7 @@ JsonValue InstanceProfile::Jsonize() const
 
   if(m_excludeAppPackagesFromCleanupHasBeenSet)
   {
-   Array<JsonValue> excludeAppPackagesFromCleanupJsonList(m_excludeAppPackagesFromCleanup.size());
+   Aws::Utils::Array<JsonValue> excludeAppPackagesFromCleanupJsonList(m_excludeAppPackagesFromCleanup.size());
    for(unsigned excludeAppPackagesFromCleanupIndex = 0; excludeAppPackagesFromCleanupIndex < excludeAppPackagesFromCleanupJsonList.GetLength(); ++excludeAppPackagesFromCleanupIndex)
    {
      excludeAppPackagesFromCleanupJsonList[excludeAppPackagesFromCleanupIndex].AsString(m_excludeAppPackagesFromCleanup[excludeAppPackagesFromCleanupIndex]);

@@ -40,7 +40,7 @@ CompareFacesResult& CompareFacesResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("FaceMatches"))
   {
-    Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
+    Aws::Utils::Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
     for(unsigned faceMatchesIndex = 0; faceMatchesIndex < faceMatchesJsonList.GetLength(); ++faceMatchesIndex)
     {
       m_faceMatches.push_back(faceMatchesJsonList[faceMatchesIndex].AsObject());
@@ -49,7 +49,7 @@ CompareFacesResult& CompareFacesResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("UnmatchedFaces"))
   {
-    Array<JsonView> unmatchedFacesJsonList = jsonValue.GetArray("UnmatchedFaces");
+    Aws::Utils::Array<JsonView> unmatchedFacesJsonList = jsonValue.GetArray("UnmatchedFaces");
     for(unsigned unmatchedFacesIndex = 0; unmatchedFacesIndex < unmatchedFacesJsonList.GetLength(); ++unmatchedFacesIndex)
     {
       m_unmatchedFaces.push_back(unmatchedFacesJsonList[unmatchedFacesIndex].AsObject());

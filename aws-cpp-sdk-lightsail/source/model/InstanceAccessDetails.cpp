@@ -116,7 +116,7 @@ InstanceAccessDetails& InstanceAccessDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("hostKeys"))
   {
-    Array<JsonView> hostKeysJsonList = jsonValue.GetArray("hostKeys");
+    Aws::Utils::Array<JsonView> hostKeysJsonList = jsonValue.GetArray("hostKeys");
     for(unsigned hostKeysIndex = 0; hostKeysIndex < hostKeysJsonList.GetLength(); ++hostKeysIndex)
     {
       m_hostKeys.push_back(hostKeysJsonList[hostKeysIndex].AsObject());
@@ -185,7 +185,7 @@ JsonValue InstanceAccessDetails::Jsonize() const
 
   if(m_hostKeysHasBeenSet)
   {
-   Array<JsonValue> hostKeysJsonList(m_hostKeys.size());
+   Aws::Utils::Array<JsonValue> hostKeysJsonList(m_hostKeys.size());
    for(unsigned hostKeysIndex = 0; hostKeysIndex < hostKeysJsonList.GetLength(); ++hostKeysIndex)
    {
      hostKeysJsonList[hostKeysIndex].AsObject(m_hostKeys[hostKeysIndex].Jsonize());

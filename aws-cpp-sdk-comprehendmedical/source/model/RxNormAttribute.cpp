@@ -108,7 +108,7 @@ RxNormAttribute& RxNormAttribute::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Traits"))
   {
-    Array<JsonView> traitsJsonList = jsonValue.GetArray("Traits");
+    Aws::Utils::Array<JsonView> traitsJsonList = jsonValue.GetArray("Traits");
     for(unsigned traitsIndex = 0; traitsIndex < traitsJsonList.GetLength(); ++traitsIndex)
     {
       m_traits.push_back(traitsJsonList[traitsIndex].AsObject());
@@ -166,7 +166,7 @@ JsonValue RxNormAttribute::Jsonize() const
 
   if(m_traitsHasBeenSet)
   {
-   Array<JsonValue> traitsJsonList(m_traits.size());
+   Aws::Utils::Array<JsonValue> traitsJsonList(m_traits.size());
    for(unsigned traitsIndex = 0; traitsIndex < traitsJsonList.GetLength(); ++traitsIndex)
    {
      traitsJsonList[traitsIndex].AsObject(m_traits[traitsIndex].Jsonize());

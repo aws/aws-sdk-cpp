@@ -77,7 +77,7 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
 
   if(m_dataBundlesHasBeenSet)
   {
-   Array<JsonValue> dataBundlesJsonList(m_dataBundles.size());
+   Aws::Utils::Array<JsonValue> dataBundlesJsonList(m_dataBundles.size());
    for(unsigned dataBundlesIndex = 0; dataBundlesIndex < dataBundlesJsonList.GetLength(); ++dataBundlesIndex)
    {
      dataBundlesJsonList[dataBundlesIndex].AsString(m_dataBundles[dataBundlesIndex]);

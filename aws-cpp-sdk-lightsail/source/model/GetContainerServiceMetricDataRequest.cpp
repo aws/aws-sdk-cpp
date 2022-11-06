@@ -57,7 +57,7 @@ Aws::String GetContainerServiceMetricDataRequest::SerializePayload() const
 
   if(m_statisticsHasBeenSet)
   {
-   Array<JsonValue> statisticsJsonList(m_statistics.size());
+   Aws::Utils::Array<JsonValue> statisticsJsonList(m_statistics.size());
    for(unsigned statisticsIndex = 0; statisticsIndex < statisticsJsonList.GetLength(); ++statisticsIndex)
    {
      statisticsJsonList[statisticsIndex].AsString(MetricStatisticMapper::GetNameForMetricStatistic(m_statistics[statisticsIndex]));

@@ -57,12 +57,12 @@ UpdateUsageResult& UpdateUsageResult::operator =(const Aws::AmazonWebServiceResu
     Aws::Map<Aws::String, JsonView> valuesJsonMap = jsonValue.GetObject("values").GetAllObjects();
     for(auto& valuesItem : valuesJsonMap)
     {
-      Array<JsonView> listOfUsageJsonList = valuesItem.second.AsArray();
+      Aws::Utils::Array<JsonView> listOfUsageJsonList = valuesItem.second.AsArray();
       Aws::Vector<Aws::Vector<long long>> listOfUsageList;
       listOfUsageList.reserve((size_t)listOfUsageJsonList.GetLength());
       for(unsigned listOfUsageIndex = 0; listOfUsageIndex < listOfUsageJsonList.GetLength(); ++listOfUsageIndex)
       {
-        Array<JsonView> listOfLongJsonList = listOfUsageJsonList[listOfUsageIndex].AsArray();
+        Aws::Utils::Array<JsonView> listOfLongJsonList = listOfUsageJsonList[listOfUsageIndex].AsArray();
         Aws::Vector<long long> listOfLongList;
         listOfLongList.reserve((size_t)listOfLongJsonList.GetLength());
         for(unsigned listOfLongIndex = 0; listOfLongIndex < listOfLongJsonList.GetLength(); ++listOfLongIndex)

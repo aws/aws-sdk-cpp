@@ -42,7 +42,7 @@ Geometry& Geometry::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Polygon"))
   {
-    Array<JsonView> polygonJsonList = jsonValue.GetArray("Polygon");
+    Aws::Utils::Array<JsonView> polygonJsonList = jsonValue.GetArray("Polygon");
     for(unsigned polygonIndex = 0; polygonIndex < polygonJsonList.GetLength(); ++polygonIndex)
     {
       m_polygon.push_back(polygonJsonList[polygonIndex].AsObject());
@@ -65,7 +65,7 @@ JsonValue Geometry::Jsonize() const
 
   if(m_polygonHasBeenSet)
   {
-   Array<JsonValue> polygonJsonList(m_polygon.size());
+   Aws::Utils::Array<JsonValue> polygonJsonList(m_polygon.size());
    for(unsigned polygonIndex = 0; polygonIndex < polygonJsonList.GetLength(); ++polygonIndex)
    {
      polygonJsonList[polygonIndex].AsObject(m_polygon[polygonIndex].Jsonize());

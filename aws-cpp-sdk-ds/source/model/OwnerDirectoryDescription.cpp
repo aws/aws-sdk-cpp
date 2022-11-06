@@ -59,7 +59,7 @@ OwnerDirectoryDescription& OwnerDirectoryDescription::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("DnsIpAddrs"))
   {
-    Array<JsonView> dnsIpAddrsJsonList = jsonValue.GetArray("DnsIpAddrs");
+    Aws::Utils::Array<JsonView> dnsIpAddrsJsonList = jsonValue.GetArray("DnsIpAddrs");
     for(unsigned dnsIpAddrsIndex = 0; dnsIpAddrsIndex < dnsIpAddrsJsonList.GetLength(); ++dnsIpAddrsIndex)
     {
       m_dnsIpAddrs.push_back(dnsIpAddrsJsonList[dnsIpAddrsIndex].AsString());
@@ -109,7 +109,7 @@ JsonValue OwnerDirectoryDescription::Jsonize() const
 
   if(m_dnsIpAddrsHasBeenSet)
   {
-   Array<JsonValue> dnsIpAddrsJsonList(m_dnsIpAddrs.size());
+   Aws::Utils::Array<JsonValue> dnsIpAddrsJsonList(m_dnsIpAddrs.size());
    for(unsigned dnsIpAddrsIndex = 0; dnsIpAddrsIndex < dnsIpAddrsJsonList.GetLength(); ++dnsIpAddrsIndex)
    {
      dnsIpAddrsJsonList[dnsIpAddrsIndex].AsString(m_dnsIpAddrs[dnsIpAddrsIndex]);

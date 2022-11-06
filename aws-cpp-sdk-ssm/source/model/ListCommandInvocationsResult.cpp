@@ -30,7 +30,7 @@ ListCommandInvocationsResult& ListCommandInvocationsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("CommandInvocations"))
   {
-    Array<JsonView> commandInvocationsJsonList = jsonValue.GetArray("CommandInvocations");
+    Aws::Utils::Array<JsonView> commandInvocationsJsonList = jsonValue.GetArray("CommandInvocations");
     for(unsigned commandInvocationsIndex = 0; commandInvocationsIndex < commandInvocationsJsonList.GetLength(); ++commandInvocationsIndex)
     {
       m_commandInvocations.push_back(commandInvocationsJsonList[commandInvocationsIndex].AsObject());

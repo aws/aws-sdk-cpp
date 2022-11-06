@@ -46,7 +46,7 @@ Aws::String UpdateCostCategoryDefinitionRequest::SerializePayload() const
 
   if(m_rulesHasBeenSet)
   {
-   Array<JsonValue> rulesJsonList(m_rules.size());
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
@@ -63,7 +63,7 @@ Aws::String UpdateCostCategoryDefinitionRequest::SerializePayload() const
 
   if(m_splitChargeRulesHasBeenSet)
   {
-   Array<JsonValue> splitChargeRulesJsonList(m_splitChargeRules.size());
+   Aws::Utils::Array<JsonValue> splitChargeRulesJsonList(m_splitChargeRules.size());
    for(unsigned splitChargeRulesIndex = 0; splitChargeRulesIndex < splitChargeRulesJsonList.GetLength(); ++splitChargeRulesIndex)
    {
      splitChargeRulesJsonList[splitChargeRulesIndex].AsObject(m_splitChargeRules[splitChargeRulesIndex].Jsonize());

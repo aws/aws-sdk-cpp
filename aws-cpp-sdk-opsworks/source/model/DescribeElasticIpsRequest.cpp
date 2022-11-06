@@ -37,7 +37,7 @@ Aws::String DescribeElasticIpsRequest::SerializePayload() const
 
   if(m_ipsHasBeenSet)
   {
-   Array<JsonValue> ipsJsonList(m_ips.size());
+   Aws::Utils::Array<JsonValue> ipsJsonList(m_ips.size());
    for(unsigned ipsIndex = 0; ipsIndex < ipsJsonList.GetLength(); ++ipsIndex)
    {
      ipsJsonList[ipsIndex].AsString(m_ips[ipsIndex]);

@@ -32,7 +32,7 @@ Aws::String CreateWorkflowRequest::SerializePayload() const
 
   if(m_stepsHasBeenSet)
   {
-   Array<JsonValue> stepsJsonList(m_steps.size());
+   Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
    for(unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex)
    {
      stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
@@ -43,7 +43,7 @@ Aws::String CreateWorkflowRequest::SerializePayload() const
 
   if(m_onExceptionStepsHasBeenSet)
   {
-   Array<JsonValue> onExceptionStepsJsonList(m_onExceptionSteps.size());
+   Aws::Utils::Array<JsonValue> onExceptionStepsJsonList(m_onExceptionSteps.size());
    for(unsigned onExceptionStepsIndex = 0; onExceptionStepsIndex < onExceptionStepsJsonList.GetLength(); ++onExceptionStepsIndex)
    {
      onExceptionStepsJsonList[onExceptionStepsIndex].AsObject(m_onExceptionSteps[onExceptionStepsIndex].Jsonize());
@@ -54,7 +54,7 @@ Aws::String CreateWorkflowRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

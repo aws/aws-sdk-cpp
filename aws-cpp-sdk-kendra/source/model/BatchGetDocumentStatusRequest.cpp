@@ -30,7 +30,7 @@ Aws::String BatchGetDocumentStatusRequest::SerializePayload() const
 
   if(m_documentInfoListHasBeenSet)
   {
-   Array<JsonValue> documentInfoListJsonList(m_documentInfoList.size());
+   Aws::Utils::Array<JsonValue> documentInfoListJsonList(m_documentInfoList.size());
    for(unsigned documentInfoListIndex = 0; documentInfoListIndex < documentInfoListJsonList.GetLength(); ++documentInfoListIndex)
    {
      documentInfoListJsonList[documentInfoListIndex].AsObject(m_documentInfoList[documentInfoListIndex].Jsonize());

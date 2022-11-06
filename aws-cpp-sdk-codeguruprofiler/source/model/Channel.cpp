@@ -37,7 +37,7 @@ Channel& Channel::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("eventPublishers"))
   {
-    Array<JsonView> eventPublishersJsonList = jsonValue.GetArray("eventPublishers");
+    Aws::Utils::Array<JsonView> eventPublishersJsonList = jsonValue.GetArray("eventPublishers");
     for(unsigned eventPublishersIndex = 0; eventPublishersIndex < eventPublishersJsonList.GetLength(); ++eventPublishersIndex)
     {
       m_eventPublishers.push_back(EventPublisherMapper::GetEventPublisherForName(eventPublishersJsonList[eventPublishersIndex].AsString()));
@@ -68,7 +68,7 @@ JsonValue Channel::Jsonize() const
 
   if(m_eventPublishersHasBeenSet)
   {
-   Array<JsonValue> eventPublishersJsonList(m_eventPublishers.size());
+   Aws::Utils::Array<JsonValue> eventPublishersJsonList(m_eventPublishers.size());
    for(unsigned eventPublishersIndex = 0; eventPublishersIndex < eventPublishersJsonList.GetLength(); ++eventPublishersIndex)
    {
      eventPublishersJsonList[eventPublishersIndex].AsString(EventPublisherMapper::GetNameForEventPublisher(m_eventPublishers[eventPublishersIndex]));

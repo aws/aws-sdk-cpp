@@ -30,7 +30,7 @@ ListIdentityProvidersResult& ListIdentityProvidersResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("IdentityProviderSummaries"))
   {
-    Array<JsonView> identityProviderSummariesJsonList = jsonValue.GetArray("IdentityProviderSummaries");
+    Aws::Utils::Array<JsonView> identityProviderSummariesJsonList = jsonValue.GetArray("IdentityProviderSummaries");
     for(unsigned identityProviderSummariesIndex = 0; identityProviderSummariesIndex < identityProviderSummariesJsonList.GetLength(); ++identityProviderSummariesIndex)
     {
       m_identityProviderSummaries.push_back(identityProviderSummariesJsonList[identityProviderSummariesIndex].AsObject());

@@ -64,7 +64,7 @@ GatewaySummary& GatewaySummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("gatewayCapabilitySummaries"))
   {
-    Array<JsonView> gatewayCapabilitySummariesJsonList = jsonValue.GetArray("gatewayCapabilitySummaries");
+    Aws::Utils::Array<JsonView> gatewayCapabilitySummariesJsonList = jsonValue.GetArray("gatewayCapabilitySummaries");
     for(unsigned gatewayCapabilitySummariesIndex = 0; gatewayCapabilitySummariesIndex < gatewayCapabilitySummariesJsonList.GetLength(); ++gatewayCapabilitySummariesIndex)
     {
       m_gatewayCapabilitySummaries.push_back(gatewayCapabilitySummariesJsonList[gatewayCapabilitySummariesIndex].AsObject());
@@ -113,7 +113,7 @@ JsonValue GatewaySummary::Jsonize() const
 
   if(m_gatewayCapabilitySummariesHasBeenSet)
   {
-   Array<JsonValue> gatewayCapabilitySummariesJsonList(m_gatewayCapabilitySummaries.size());
+   Aws::Utils::Array<JsonValue> gatewayCapabilitySummariesJsonList(m_gatewayCapabilitySummaries.size());
    for(unsigned gatewayCapabilitySummariesIndex = 0; gatewayCapabilitySummariesIndex < gatewayCapabilitySummariesJsonList.GetLength(); ++gatewayCapabilitySummariesIndex)
    {
      gatewayCapabilitySummariesJsonList[gatewayCapabilitySummariesIndex].AsObject(m_gatewayCapabilitySummaries[gatewayCapabilitySummariesIndex].Jsonize());

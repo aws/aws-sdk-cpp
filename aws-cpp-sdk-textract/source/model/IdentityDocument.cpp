@@ -46,7 +46,7 @@ IdentityDocument& IdentityDocument::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IdentityDocumentFields"))
   {
-    Array<JsonView> identityDocumentFieldsJsonList = jsonValue.GetArray("IdentityDocumentFields");
+    Aws::Utils::Array<JsonView> identityDocumentFieldsJsonList = jsonValue.GetArray("IdentityDocumentFields");
     for(unsigned identityDocumentFieldsIndex = 0; identityDocumentFieldsIndex < identityDocumentFieldsJsonList.GetLength(); ++identityDocumentFieldsIndex)
     {
       m_identityDocumentFields.push_back(identityDocumentFieldsJsonList[identityDocumentFieldsIndex].AsObject());
@@ -56,7 +56,7 @@ IdentityDocument& IdentityDocument::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Blocks"))
   {
-    Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
+    Aws::Utils::Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
     for(unsigned blocksIndex = 0; blocksIndex < blocksJsonList.GetLength(); ++blocksIndex)
     {
       m_blocks.push_back(blocksJsonList[blocksIndex].AsObject());
@@ -79,7 +79,7 @@ JsonValue IdentityDocument::Jsonize() const
 
   if(m_identityDocumentFieldsHasBeenSet)
   {
-   Array<JsonValue> identityDocumentFieldsJsonList(m_identityDocumentFields.size());
+   Aws::Utils::Array<JsonValue> identityDocumentFieldsJsonList(m_identityDocumentFields.size());
    for(unsigned identityDocumentFieldsIndex = 0; identityDocumentFieldsIndex < identityDocumentFieldsJsonList.GetLength(); ++identityDocumentFieldsIndex)
    {
      identityDocumentFieldsJsonList[identityDocumentFieldsIndex].AsObject(m_identityDocumentFields[identityDocumentFieldsIndex].Jsonize());
@@ -90,7 +90,7 @@ JsonValue IdentityDocument::Jsonize() const
 
   if(m_blocksHasBeenSet)
   {
-   Array<JsonValue> blocksJsonList(m_blocks.size());
+   Aws::Utils::Array<JsonValue> blocksJsonList(m_blocks.size());
    for(unsigned blocksIndex = 0; blocksIndex < blocksJsonList.GetLength(); ++blocksIndex)
    {
      blocksJsonList[blocksIndex].AsObject(m_blocks[blocksIndex].Jsonize());

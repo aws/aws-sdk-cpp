@@ -32,7 +32,7 @@ DescribeBrokerInstanceOptionsResult& DescribeBrokerInstanceOptionsResult::operat
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("brokerInstanceOptions"))
   {
-    Array<JsonView> brokerInstanceOptionsJsonList = jsonValue.GetArray("brokerInstanceOptions");
+    Aws::Utils::Array<JsonView> brokerInstanceOptionsJsonList = jsonValue.GetArray("brokerInstanceOptions");
     for(unsigned brokerInstanceOptionsIndex = 0; brokerInstanceOptionsIndex < brokerInstanceOptionsJsonList.GetLength(); ++brokerInstanceOptionsIndex)
     {
       m_brokerInstanceOptions.push_back(brokerInstanceOptionsJsonList[brokerInstanceOptionsIndex].AsObject());

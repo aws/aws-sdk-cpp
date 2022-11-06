@@ -157,7 +157,7 @@ Job& Job::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("hopDestinations"))
   {
-    Array<JsonView> hopDestinationsJsonList = jsonValue.GetArray("hopDestinations");
+    Aws::Utils::Array<JsonView> hopDestinationsJsonList = jsonValue.GetArray("hopDestinations");
     for(unsigned hopDestinationsIndex = 0; hopDestinationsIndex < hopDestinationsJsonList.GetLength(); ++hopDestinationsIndex)
     {
       m_hopDestinations.push_back(hopDestinationsJsonList[hopDestinationsIndex].AsObject());
@@ -195,7 +195,7 @@ Job& Job::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("outputGroupDetails"))
   {
-    Array<JsonView> outputGroupDetailsJsonList = jsonValue.GetArray("outputGroupDetails");
+    Aws::Utils::Array<JsonView> outputGroupDetailsJsonList = jsonValue.GetArray("outputGroupDetails");
     for(unsigned outputGroupDetailsIndex = 0; outputGroupDetailsIndex < outputGroupDetailsJsonList.GetLength(); ++outputGroupDetailsIndex)
     {
       m_outputGroupDetails.push_back(outputGroupDetailsJsonList[outputGroupDetailsIndex].AsObject());
@@ -219,7 +219,7 @@ Job& Job::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("queueTransitions"))
   {
-    Array<JsonView> queueTransitionsJsonList = jsonValue.GetArray("queueTransitions");
+    Aws::Utils::Array<JsonView> queueTransitionsJsonList = jsonValue.GetArray("queueTransitions");
     for(unsigned queueTransitionsIndex = 0; queueTransitionsIndex < queueTransitionsJsonList.GetLength(); ++queueTransitionsIndex)
     {
       m_queueTransitions.push_back(queueTransitionsJsonList[queueTransitionsIndex].AsObject());
@@ -339,7 +339,7 @@ JsonValue Job::Jsonize() const
 
   if(m_hopDestinationsHasBeenSet)
   {
-   Array<JsonValue> hopDestinationsJsonList(m_hopDestinations.size());
+   Aws::Utils::Array<JsonValue> hopDestinationsJsonList(m_hopDestinations.size());
    for(unsigned hopDestinationsIndex = 0; hopDestinationsIndex < hopDestinationsJsonList.GetLength(); ++hopDestinationsIndex)
    {
      hopDestinationsJsonList[hopDestinationsIndex].AsObject(m_hopDestinations[hopDestinationsIndex].Jsonize());
@@ -374,7 +374,7 @@ JsonValue Job::Jsonize() const
 
   if(m_outputGroupDetailsHasBeenSet)
   {
-   Array<JsonValue> outputGroupDetailsJsonList(m_outputGroupDetails.size());
+   Aws::Utils::Array<JsonValue> outputGroupDetailsJsonList(m_outputGroupDetails.size());
    for(unsigned outputGroupDetailsIndex = 0; outputGroupDetailsIndex < outputGroupDetailsJsonList.GetLength(); ++outputGroupDetailsIndex)
    {
      outputGroupDetailsJsonList[outputGroupDetailsIndex].AsObject(m_outputGroupDetails[outputGroupDetailsIndex].Jsonize());
@@ -397,7 +397,7 @@ JsonValue Job::Jsonize() const
 
   if(m_queueTransitionsHasBeenSet)
   {
-   Array<JsonValue> queueTransitionsJsonList(m_queueTransitions.size());
+   Aws::Utils::Array<JsonValue> queueTransitionsJsonList(m_queueTransitions.size());
    for(unsigned queueTransitionsIndex = 0; queueTransitionsIndex < queueTransitionsJsonList.GetLength(); ++queueTransitionsIndex)
    {
      queueTransitionsJsonList[queueTransitionsIndex].AsObject(m_queueTransitions[queueTransitionsIndex].Jsonize());

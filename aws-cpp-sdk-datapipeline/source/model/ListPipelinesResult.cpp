@@ -32,7 +32,7 @@ ListPipelinesResult& ListPipelinesResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("pipelineIdList"))
   {
-    Array<JsonView> pipelineIdListJsonList = jsonValue.GetArray("pipelineIdList");
+    Aws::Utils::Array<JsonView> pipelineIdListJsonList = jsonValue.GetArray("pipelineIdList");
     for(unsigned pipelineIdListIndex = 0; pipelineIdListIndex < pipelineIdListJsonList.GetLength(); ++pipelineIdListIndex)
     {
       m_pipelineIdList.push_back(pipelineIdListJsonList[pipelineIdListIndex].AsObject());

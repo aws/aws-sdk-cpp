@@ -30,7 +30,7 @@ Aws::String AddCustomAttributesRequest::SerializePayload() const
 
   if(m_customAttributesHasBeenSet)
   {
-   Array<JsonValue> customAttributesJsonList(m_customAttributes.size());
+   Aws::Utils::Array<JsonValue> customAttributesJsonList(m_customAttributes.size());
    for(unsigned customAttributesIndex = 0; customAttributesIndex < customAttributesJsonList.GetLength(); ++customAttributesIndex)
    {
      customAttributesJsonList[customAttributesIndex].AsObject(m_customAttributes[customAttributesIndex].Jsonize());

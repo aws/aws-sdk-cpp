@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/opensearch/OpenSearchServiceErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/opensearch/OpenSearchServiceEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -88,6 +90,10 @@ namespace Aws
 
   namespace OpenSearchService
   {
+    using OpenSearchServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OpenSearchServiceEndpointProviderBase = Aws::OpenSearchService::Endpoint::OpenSearchServiceEndpointProviderBase;
+    using OpenSearchServiceEndpointProvider = Aws::OpenSearchService::Endpoint::OpenSearchServiceEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in OpenSearchServiceClient header */

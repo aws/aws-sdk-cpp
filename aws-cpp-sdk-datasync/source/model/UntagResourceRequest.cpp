@@ -30,7 +30,7 @@ Aws::String UntagResourceRequest::SerializePayload() const
 
   if(m_keysHasBeenSet)
   {
-   Array<JsonValue> keysJsonList(m_keys.size());
+   Aws::Utils::Array<JsonValue> keysJsonList(m_keys.size());
    for(unsigned keysIndex = 0; keysIndex < keysJsonList.GetLength(); ++keysIndex)
    {
      keysJsonList[keysIndex].AsString(m_keys[keysIndex]);

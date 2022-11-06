@@ -172,7 +172,7 @@ ConfigurationItem& ConfigurationItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("relatedEvents"))
   {
-    Array<JsonView> relatedEventsJsonList = jsonValue.GetArray("relatedEvents");
+    Aws::Utils::Array<JsonView> relatedEventsJsonList = jsonValue.GetArray("relatedEvents");
     for(unsigned relatedEventsIndex = 0; relatedEventsIndex < relatedEventsJsonList.GetLength(); ++relatedEventsIndex)
     {
       m_relatedEvents.push_back(relatedEventsJsonList[relatedEventsIndex].AsString());
@@ -182,7 +182,7 @@ ConfigurationItem& ConfigurationItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("relationships"))
   {
-    Array<JsonView> relationshipsJsonList = jsonValue.GetArray("relationships");
+    Aws::Utils::Array<JsonView> relationshipsJsonList = jsonValue.GetArray("relationships");
     for(unsigned relationshipsIndex = 0; relationshipsIndex < relationshipsJsonList.GetLength(); ++relationshipsIndex)
     {
       m_relationships.push_back(relationshipsJsonList[relationshipsIndex].AsObject());
@@ -301,7 +301,7 @@ JsonValue ConfigurationItem::Jsonize() const
 
   if(m_relatedEventsHasBeenSet)
   {
-   Array<JsonValue> relatedEventsJsonList(m_relatedEvents.size());
+   Aws::Utils::Array<JsonValue> relatedEventsJsonList(m_relatedEvents.size());
    for(unsigned relatedEventsIndex = 0; relatedEventsIndex < relatedEventsJsonList.GetLength(); ++relatedEventsIndex)
    {
      relatedEventsJsonList[relatedEventsIndex].AsString(m_relatedEvents[relatedEventsIndex]);
@@ -312,7 +312,7 @@ JsonValue ConfigurationItem::Jsonize() const
 
   if(m_relationshipsHasBeenSet)
   {
-   Array<JsonValue> relationshipsJsonList(m_relationships.size());
+   Aws::Utils::Array<JsonValue> relationshipsJsonList(m_relationships.size());
    for(unsigned relationshipsIndex = 0; relationshipsIndex < relationshipsJsonList.GetLength(); ++relationshipsIndex)
    {
      relationshipsJsonList[relationshipsIndex].AsObject(m_relationships[relationshipsIndex].Jsonize());

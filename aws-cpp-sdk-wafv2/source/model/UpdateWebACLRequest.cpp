@@ -64,7 +64,7 @@ Aws::String UpdateWebACLRequest::SerializePayload() const
 
   if(m_rulesHasBeenSet)
   {
-   Array<JsonValue> rulesJsonList(m_rules.size());
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
@@ -110,7 +110,7 @@ Aws::String UpdateWebACLRequest::SerializePayload() const
 
   if(m_tokenDomainsHasBeenSet)
   {
-   Array<JsonValue> tokenDomainsJsonList(m_tokenDomains.size());
+   Aws::Utils::Array<JsonValue> tokenDomainsJsonList(m_tokenDomains.size());
    for(unsigned tokenDomainsIndex = 0; tokenDomainsIndex < tokenDomainsJsonList.GetLength(); ++tokenDomainsIndex)
    {
      tokenDomainsJsonList[tokenDomainsIndex].AsString(m_tokenDomains[tokenDomainsIndex]);

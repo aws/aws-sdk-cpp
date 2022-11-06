@@ -30,7 +30,7 @@ ListDecoderManifestSignalsResult& ListDecoderManifestSignalsResult::operator =(c
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("signalDecoders"))
   {
-    Array<JsonView> signalDecodersJsonList = jsonValue.GetArray("signalDecoders");
+    Aws::Utils::Array<JsonView> signalDecodersJsonList = jsonValue.GetArray("signalDecoders");
     for(unsigned signalDecodersIndex = 0; signalDecodersIndex < signalDecodersJsonList.GetLength(); ++signalDecodersIndex)
     {
       m_signalDecoders.push_back(signalDecodersJsonList[signalDecodersIndex].AsObject());

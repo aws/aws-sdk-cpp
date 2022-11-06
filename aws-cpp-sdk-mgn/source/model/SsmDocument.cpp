@@ -62,7 +62,7 @@ SsmDocument& SsmDocument::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
     for(auto& parametersItem : parametersJsonMap)
     {
-      Array<JsonView> ssmParameterStoreParametersJsonList = parametersItem.second.AsArray();
+      Aws::Utils::Array<JsonView> ssmParameterStoreParametersJsonList = parametersItem.second.AsArray();
       Aws::Vector<SsmParameterStoreParameter> ssmParameterStoreParametersList;
       ssmParameterStoreParametersList.reserve((size_t)ssmParameterStoreParametersJsonList.GetLength());
       for(unsigned ssmParameterStoreParametersIndex = 0; ssmParameterStoreParametersIndex < ssmParameterStoreParametersJsonList.GetLength(); ++ssmParameterStoreParametersIndex)
@@ -112,7 +112,7 @@ JsonValue SsmDocument::Jsonize() const
    JsonValue parametersJsonMap;
    for(auto& parametersItem : m_parameters)
    {
-     Array<JsonValue> ssmParameterStoreParametersJsonList(parametersItem.second.size());
+     Aws::Utils::Array<JsonValue> ssmParameterStoreParametersJsonList(parametersItem.second.size());
      for(unsigned ssmParameterStoreParametersIndex = 0; ssmParameterStoreParametersIndex < ssmParameterStoreParametersJsonList.GetLength(); ++ssmParameterStoreParametersIndex)
      {
        ssmParameterStoreParametersJsonList[ssmParameterStoreParametersIndex].AsObject(parametersItem.second[ssmParameterStoreParametersIndex].Jsonize());

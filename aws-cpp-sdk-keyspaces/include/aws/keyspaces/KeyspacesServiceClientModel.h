@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/keyspaces/KeyspacesErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/keyspaces/KeyspacesEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -62,6 +64,10 @@ namespace Aws
 
   namespace Keyspaces
   {
+    using KeyspacesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using KeyspacesEndpointProviderBase = Aws::Keyspaces::Endpoint::KeyspacesEndpointProviderBase;
+    using KeyspacesEndpointProvider = Aws::Keyspaces::Endpoint::KeyspacesEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in KeyspacesClient header */

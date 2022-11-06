@@ -25,7 +25,7 @@ Aws::String DescribeFindingsRequest::SerializePayload() const
 
   if(m_findingArnsHasBeenSet)
   {
-   Array<JsonValue> findingArnsJsonList(m_findingArns.size());
+   Aws::Utils::Array<JsonValue> findingArnsJsonList(m_findingArns.size());
    for(unsigned findingArnsIndex = 0; findingArnsIndex < findingArnsJsonList.GetLength(); ++findingArnsIndex)
    {
      findingArnsJsonList[findingArnsIndex].AsString(m_findingArns[findingArnsIndex]);

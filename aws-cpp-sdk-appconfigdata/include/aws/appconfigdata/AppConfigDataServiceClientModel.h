@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/appconfigdata/AppConfigDataErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/appconfigdata/AppConfigDataEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -51,6 +53,10 @@ namespace Aws
 
   namespace AppConfigData
   {
+    using AppConfigDataClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AppConfigDataEndpointProviderBase = Aws::AppConfigData::Endpoint::AppConfigDataEndpointProviderBase;
+    using AppConfigDataEndpointProvider = Aws::AppConfigData::Endpoint::AppConfigDataEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in AppConfigDataClient header */

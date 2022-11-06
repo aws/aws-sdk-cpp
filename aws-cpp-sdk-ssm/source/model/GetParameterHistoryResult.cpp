@@ -30,7 +30,7 @@ GetParameterHistoryResult& GetParameterHistoryResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Parameters"))
   {
-    Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
+    Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
     for(unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex)
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());

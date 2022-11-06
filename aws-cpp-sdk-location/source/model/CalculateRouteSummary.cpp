@@ -75,7 +75,7 @@ CalculateRouteSummary& CalculateRouteSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("RouteBBox"))
   {
-    Array<JsonView> routeBBoxJsonList = jsonValue.GetArray("RouteBBox");
+    Aws::Utils::Array<JsonView> routeBBoxJsonList = jsonValue.GetArray("RouteBBox");
     for(unsigned routeBBoxIndex = 0; routeBBoxIndex < routeBBoxJsonList.GetLength(); ++routeBBoxIndex)
     {
       m_routeBBox.push_back(routeBBoxJsonList[routeBBoxIndex].AsDouble());
@@ -115,7 +115,7 @@ JsonValue CalculateRouteSummary::Jsonize() const
 
   if(m_routeBBoxHasBeenSet)
   {
-   Array<JsonValue> routeBBoxJsonList(m_routeBBox.size());
+   Aws::Utils::Array<JsonValue> routeBBoxJsonList(m_routeBBox.size());
    for(unsigned routeBBoxIndex = 0; routeBBoxIndex < routeBBoxJsonList.GetLength(); ++routeBBoxIndex)
    {
      routeBBoxJsonList[routeBBoxIndex].AsDouble(m_routeBBox[routeBBoxIndex]);

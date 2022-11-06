@@ -69,7 +69,7 @@ Aws::String CreateSecretRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
@@ -80,7 +80,7 @@ Aws::String CreateSecretRequest::SerializePayload() const
 
   if(m_addReplicaRegionsHasBeenSet)
   {
-   Array<JsonValue> addReplicaRegionsJsonList(m_addReplicaRegions.size());
+   Aws::Utils::Array<JsonValue> addReplicaRegionsJsonList(m_addReplicaRegions.size());
    for(unsigned addReplicaRegionsIndex = 0; addReplicaRegionsIndex < addReplicaRegionsJsonList.GetLength(); ++addReplicaRegionsIndex)
    {
      addReplicaRegionsJsonList[addReplicaRegionsIndex].AsObject(m_addReplicaRegions[addReplicaRegionsIndex].Jsonize());

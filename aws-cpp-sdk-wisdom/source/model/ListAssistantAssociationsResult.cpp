@@ -30,7 +30,7 @@ ListAssistantAssociationsResult& ListAssistantAssociationsResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assistantAssociationSummaries"))
   {
-    Array<JsonView> assistantAssociationSummariesJsonList = jsonValue.GetArray("assistantAssociationSummaries");
+    Aws::Utils::Array<JsonView> assistantAssociationSummariesJsonList = jsonValue.GetArray("assistantAssociationSummaries");
     for(unsigned assistantAssociationSummariesIndex = 0; assistantAssociationSummariesIndex < assistantAssociationSummariesJsonList.GetLength(); ++assistantAssociationSummariesIndex)
     {
       m_assistantAssociationSummaries.push_back(assistantAssociationSummariesJsonList[assistantAssociationSummariesIndex].AsObject());

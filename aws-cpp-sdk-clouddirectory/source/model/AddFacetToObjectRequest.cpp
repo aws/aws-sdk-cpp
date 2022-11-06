@@ -33,7 +33,7 @@ Aws::String AddFacetToObjectRequest::SerializePayload() const
 
   if(m_objectAttributeListHasBeenSet)
   {
-   Array<JsonValue> objectAttributeListJsonList(m_objectAttributeList.size());
+   Aws::Utils::Array<JsonValue> objectAttributeListJsonList(m_objectAttributeList.size());
    for(unsigned objectAttributeListIndex = 0; objectAttributeListIndex < objectAttributeListJsonList.GetLength(); ++objectAttributeListIndex)
    {
      objectAttributeListJsonList[objectAttributeListIndex].AsObject(m_objectAttributeList[objectAttributeListIndex].Jsonize());

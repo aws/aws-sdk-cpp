@@ -93,7 +93,7 @@ FeatureGroup& FeatureGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FeatureDefinitions"))
   {
-    Array<JsonView> featureDefinitionsJsonList = jsonValue.GetArray("FeatureDefinitions");
+    Aws::Utils::Array<JsonView> featureDefinitionsJsonList = jsonValue.GetArray("FeatureDefinitions");
     for(unsigned featureDefinitionsIndex = 0; featureDefinitionsIndex < featureDefinitionsJsonList.GetLength(); ++featureDefinitionsIndex)
     {
       m_featureDefinitions.push_back(featureDefinitionsJsonList[featureDefinitionsIndex].AsObject());
@@ -173,7 +173,7 @@ FeatureGroup& FeatureGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -214,7 +214,7 @@ JsonValue FeatureGroup::Jsonize() const
 
   if(m_featureDefinitionsHasBeenSet)
   {
-   Array<JsonValue> featureDefinitionsJsonList(m_featureDefinitions.size());
+   Aws::Utils::Array<JsonValue> featureDefinitionsJsonList(m_featureDefinitions.size());
    for(unsigned featureDefinitionsIndex = 0; featureDefinitionsIndex < featureDefinitionsJsonList.GetLength(); ++featureDefinitionsIndex)
    {
      featureDefinitionsJsonList[featureDefinitionsIndex].AsObject(m_featureDefinitions[featureDefinitionsIndex].Jsonize());
@@ -282,7 +282,7 @@ JsonValue FeatureGroup::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

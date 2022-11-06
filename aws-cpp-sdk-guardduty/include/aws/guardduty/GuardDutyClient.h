@@ -46,22 +46,48 @@ namespace GuardDuty
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        GuardDutyClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        GuardDutyClient(const Aws::GuardDuty::GuardDutyClientConfiguration& clientConfiguration = Aws::GuardDuty::GuardDutyClientConfiguration(),
+                        std::shared_ptr<GuardDutyEndpointProviderBase> endpointProvider = Aws::MakeShared<GuardDutyEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         GuardDutyClient(const Aws::Auth::AWSCredentials& credentials,
-                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<GuardDutyEndpointProviderBase> endpointProvider = Aws::MakeShared<GuardDutyEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::GuardDuty::GuardDutyClientConfiguration& clientConfiguration = Aws::GuardDuty::GuardDutyClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         GuardDutyClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                        std::shared_ptr<GuardDutyEndpointProviderBase> endpointProvider = Aws::MakeShared<GuardDutyEndpointProvider>(ALLOCATION_TAG),
+                        const Aws::GuardDuty::GuardDutyClientConfiguration& clientConfiguration = Aws::GuardDuty::GuardDutyClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        GuardDutyClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        GuardDutyClient(const Aws::Auth::AWSCredentials& credentials,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        GuardDutyClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                        const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~GuardDutyClient();
 
 
@@ -1218,12 +1244,13 @@ namespace GuardDuty
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<GuardDutyEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const GuardDutyClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      GuardDutyClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<GuardDutyEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace GuardDuty

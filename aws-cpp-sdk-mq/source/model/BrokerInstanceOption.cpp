@@ -47,7 +47,7 @@ BrokerInstanceOption& BrokerInstanceOption::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("availabilityZones"))
   {
-    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
+    Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsObject());
@@ -78,7 +78,7 @@ BrokerInstanceOption& BrokerInstanceOption::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("supportedDeploymentModes"))
   {
-    Array<JsonView> supportedDeploymentModesJsonList = jsonValue.GetArray("supportedDeploymentModes");
+    Aws::Utils::Array<JsonView> supportedDeploymentModesJsonList = jsonValue.GetArray("supportedDeploymentModes");
     for(unsigned supportedDeploymentModesIndex = 0; supportedDeploymentModesIndex < supportedDeploymentModesJsonList.GetLength(); ++supportedDeploymentModesIndex)
     {
       m_supportedDeploymentModes.push_back(DeploymentModeMapper::GetDeploymentModeForName(supportedDeploymentModesJsonList[supportedDeploymentModesIndex].AsString()));
@@ -88,7 +88,7 @@ BrokerInstanceOption& BrokerInstanceOption::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("supportedEngineVersions"))
   {
-    Array<JsonView> supportedEngineVersionsJsonList = jsonValue.GetArray("supportedEngineVersions");
+    Aws::Utils::Array<JsonView> supportedEngineVersionsJsonList = jsonValue.GetArray("supportedEngineVersions");
     for(unsigned supportedEngineVersionsIndex = 0; supportedEngineVersionsIndex < supportedEngineVersionsJsonList.GetLength(); ++supportedEngineVersionsIndex)
     {
       m_supportedEngineVersions.push_back(supportedEngineVersionsJsonList[supportedEngineVersionsIndex].AsString());
@@ -105,7 +105,7 @@ JsonValue BrokerInstanceOption::Jsonize() const
 
   if(m_availabilityZonesHasBeenSet)
   {
-   Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
    {
      availabilityZonesJsonList[availabilityZonesIndex].AsObject(m_availabilityZones[availabilityZonesIndex].Jsonize());
@@ -132,7 +132,7 @@ JsonValue BrokerInstanceOption::Jsonize() const
 
   if(m_supportedDeploymentModesHasBeenSet)
   {
-   Array<JsonValue> supportedDeploymentModesJsonList(m_supportedDeploymentModes.size());
+   Aws::Utils::Array<JsonValue> supportedDeploymentModesJsonList(m_supportedDeploymentModes.size());
    for(unsigned supportedDeploymentModesIndex = 0; supportedDeploymentModesIndex < supportedDeploymentModesJsonList.GetLength(); ++supportedDeploymentModesIndex)
    {
      supportedDeploymentModesJsonList[supportedDeploymentModesIndex].AsString(DeploymentModeMapper::GetNameForDeploymentMode(m_supportedDeploymentModes[supportedDeploymentModesIndex]));
@@ -143,7 +143,7 @@ JsonValue BrokerInstanceOption::Jsonize() const
 
   if(m_supportedEngineVersionsHasBeenSet)
   {
-   Array<JsonValue> supportedEngineVersionsJsonList(m_supportedEngineVersions.size());
+   Aws::Utils::Array<JsonValue> supportedEngineVersionsJsonList(m_supportedEngineVersions.size());
    for(unsigned supportedEngineVersionsIndex = 0; supportedEngineVersionsIndex < supportedEngineVersionsJsonList.GetLength(); ++supportedEngineVersionsIndex)
    {
      supportedEngineVersionsJsonList[supportedEngineVersionsIndex].AsString(m_supportedEngineVersions[supportedEngineVersionsIndex]);

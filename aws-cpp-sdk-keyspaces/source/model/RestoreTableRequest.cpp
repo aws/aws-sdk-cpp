@@ -78,7 +78,7 @@ Aws::String RestoreTableRequest::SerializePayload() const
 
   if(m_tagsOverrideHasBeenSet)
   {
-   Array<JsonValue> tagsOverrideJsonList(m_tagsOverride.size());
+   Aws::Utils::Array<JsonValue> tagsOverrideJsonList(m_tagsOverride.size());
    for(unsigned tagsOverrideIndex = 0; tagsOverrideIndex < tagsOverrideJsonList.GetLength(); ++tagsOverrideIndex)
    {
      tagsOverrideJsonList[tagsOverrideIndex].AsObject(m_tagsOverride[tagsOverrideIndex].Jsonize());

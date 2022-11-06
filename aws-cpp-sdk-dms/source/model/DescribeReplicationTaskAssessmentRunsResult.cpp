@@ -36,7 +36,7 @@ DescribeReplicationTaskAssessmentRunsResult& DescribeReplicationTaskAssessmentRu
 
   if(jsonValue.ValueExists("ReplicationTaskAssessmentRuns"))
   {
-    Array<JsonView> replicationTaskAssessmentRunsJsonList = jsonValue.GetArray("ReplicationTaskAssessmentRuns");
+    Aws::Utils::Array<JsonView> replicationTaskAssessmentRunsJsonList = jsonValue.GetArray("ReplicationTaskAssessmentRuns");
     for(unsigned replicationTaskAssessmentRunsIndex = 0; replicationTaskAssessmentRunsIndex < replicationTaskAssessmentRunsJsonList.GetLength(); ++replicationTaskAssessmentRunsIndex)
     {
       m_replicationTaskAssessmentRuns.push_back(replicationTaskAssessmentRunsJsonList[replicationTaskAssessmentRunsIndex].AsObject());

@@ -42,7 +42,7 @@ DescribeScheduleResult& DescribeScheduleResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("JobNames"))
   {
-    Array<JsonView> jobNamesJsonList = jsonValue.GetArray("JobNames");
+    Aws::Utils::Array<JsonView> jobNamesJsonList = jsonValue.GetArray("JobNames");
     for(unsigned jobNamesIndex = 0; jobNamesIndex < jobNamesJsonList.GetLength(); ++jobNamesIndex)
     {
       m_jobNames.push_back(jobNamesJsonList[jobNamesIndex].AsString());

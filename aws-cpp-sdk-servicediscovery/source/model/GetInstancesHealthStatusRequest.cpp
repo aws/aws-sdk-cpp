@@ -33,7 +33,7 @@ Aws::String GetInstancesHealthStatusRequest::SerializePayload() const
 
   if(m_instancesHasBeenSet)
   {
-   Array<JsonValue> instancesJsonList(m_instances.size());
+   Aws::Utils::Array<JsonValue> instancesJsonList(m_instances.size());
    for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
    {
      instancesJsonList[instancesIndex].AsString(m_instances[instancesIndex]);

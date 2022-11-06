@@ -66,7 +66,7 @@ User& User::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ACLNames"))
   {
-    Array<JsonView> aCLNamesJsonList = jsonValue.GetArray("ACLNames");
+    Aws::Utils::Array<JsonView> aCLNamesJsonList = jsonValue.GetArray("ACLNames");
     for(unsigned aCLNamesIndex = 0; aCLNamesIndex < aCLNamesJsonList.GetLength(); ++aCLNamesIndex)
     {
       m_aCLNames.push_back(aCLNamesJsonList[aCLNamesIndex].AsString());
@@ -122,7 +122,7 @@ JsonValue User::Jsonize() const
 
   if(m_aCLNamesHasBeenSet)
   {
-   Array<JsonValue> aCLNamesJsonList(m_aCLNames.size());
+   Aws::Utils::Array<JsonValue> aCLNamesJsonList(m_aCLNames.size());
    for(unsigned aCLNamesIndex = 0; aCLNamesIndex < aCLNamesJsonList.GetLength(); ++aCLNamesIndex)
    {
      aCLNamesJsonList[aCLNamesIndex].AsString(m_aCLNames[aCLNamesIndex]);

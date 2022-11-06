@@ -69,7 +69,7 @@ InsightEvent& InsightEvent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TopAnomalousServices"))
   {
-    Array<JsonView> topAnomalousServicesJsonList = jsonValue.GetArray("TopAnomalousServices");
+    Aws::Utils::Array<JsonView> topAnomalousServicesJsonList = jsonValue.GetArray("TopAnomalousServices");
     for(unsigned topAnomalousServicesIndex = 0; topAnomalousServicesIndex < topAnomalousServicesJsonList.GetLength(); ++topAnomalousServicesIndex)
     {
       m_topAnomalousServices.push_back(topAnomalousServicesJsonList[topAnomalousServicesIndex].AsObject());
@@ -109,7 +109,7 @@ JsonValue InsightEvent::Jsonize() const
 
   if(m_topAnomalousServicesHasBeenSet)
   {
-   Array<JsonValue> topAnomalousServicesJsonList(m_topAnomalousServices.size());
+   Aws::Utils::Array<JsonValue> topAnomalousServicesJsonList(m_topAnomalousServices.size());
    for(unsigned topAnomalousServicesIndex = 0; topAnomalousServicesIndex < topAnomalousServicesJsonList.GetLength(); ++topAnomalousServicesIndex)
    {
      topAnomalousServicesJsonList[topAnomalousServicesIndex].AsObject(m_topAnomalousServices[topAnomalousServicesIndex].Jsonize());

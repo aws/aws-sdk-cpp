@@ -34,7 +34,7 @@ Aws::String CreateTokenRequest::SerializePayload() const
 
   if(m_roleArnsHasBeenSet)
   {
-   Array<JsonValue> roleArnsJsonList(m_roleArns.size());
+   Aws::Utils::Array<JsonValue> roleArnsJsonList(m_roleArns.size());
    for(unsigned roleArnsIndex = 0; roleArnsIndex < roleArnsJsonList.GetLength(); ++roleArnsIndex)
    {
      roleArnsJsonList[roleArnsIndex].AsString(m_roleArns[roleArnsIndex]);
@@ -51,7 +51,7 @@ Aws::String CreateTokenRequest::SerializePayload() const
 
   if(m_tokenPropertiesHasBeenSet)
   {
-   Array<JsonValue> tokenPropertiesJsonList(m_tokenProperties.size());
+   Aws::Utils::Array<JsonValue> tokenPropertiesJsonList(m_tokenProperties.size());
    for(unsigned tokenPropertiesIndex = 0; tokenPropertiesIndex < tokenPropertiesJsonList.GetLength(); ++tokenPropertiesIndex)
    {
      tokenPropertiesJsonList[tokenPropertiesIndex].AsString(m_tokenProperties[tokenPropertiesIndex]);

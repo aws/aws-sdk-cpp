@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/marketplace-entitlement/MarketplaceEntitlementServiceEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -50,6 +52,10 @@ namespace Aws
 
   namespace MarketplaceEntitlementService
   {
+    using MarketplaceEntitlementServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using MarketplaceEntitlementServiceEndpointProviderBase = Aws::MarketplaceEntitlementService::Endpoint::MarketplaceEntitlementServiceEndpointProviderBase;
+    using MarketplaceEntitlementServiceEndpointProvider = Aws::MarketplaceEntitlementService::Endpoint::MarketplaceEntitlementServiceEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in MarketplaceEntitlementServiceClient header */

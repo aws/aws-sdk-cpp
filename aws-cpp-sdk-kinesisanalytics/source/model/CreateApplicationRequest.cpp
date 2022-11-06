@@ -41,7 +41,7 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsObject(m_inputs[inputsIndex].Jsonize());
@@ -52,7 +52,7 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 
   if(m_outputsHasBeenSet)
   {
-   Array<JsonValue> outputsJsonList(m_outputs.size());
+   Aws::Utils::Array<JsonValue> outputsJsonList(m_outputs.size());
    for(unsigned outputsIndex = 0; outputsIndex < outputsJsonList.GetLength(); ++outputsIndex)
    {
      outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());
@@ -63,7 +63,7 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 
   if(m_cloudWatchLoggingOptionsHasBeenSet)
   {
-   Array<JsonValue> cloudWatchLoggingOptionsJsonList(m_cloudWatchLoggingOptions.size());
+   Aws::Utils::Array<JsonValue> cloudWatchLoggingOptionsJsonList(m_cloudWatchLoggingOptions.size());
    for(unsigned cloudWatchLoggingOptionsIndex = 0; cloudWatchLoggingOptionsIndex < cloudWatchLoggingOptionsJsonList.GetLength(); ++cloudWatchLoggingOptionsIndex)
    {
      cloudWatchLoggingOptionsJsonList[cloudWatchLoggingOptionsIndex].AsObject(m_cloudWatchLoggingOptions[cloudWatchLoggingOptionsIndex].Jsonize());
@@ -80,7 +80,7 @@ Aws::String CreateApplicationRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

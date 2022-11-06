@@ -36,7 +36,7 @@ ListAppVersionResourcesResult& ListAppVersionResourcesResult::operator =(const A
 
   if(jsonValue.ValueExists("physicalResources"))
   {
-    Array<JsonView> physicalResourcesJsonList = jsonValue.GetArray("physicalResources");
+    Aws::Utils::Array<JsonView> physicalResourcesJsonList = jsonValue.GetArray("physicalResources");
     for(unsigned physicalResourcesIndex = 0; physicalResourcesIndex < physicalResourcesJsonList.GetLength(); ++physicalResourcesIndex)
     {
       m_physicalResources.push_back(physicalResourcesJsonList[physicalResourcesIndex].AsObject());

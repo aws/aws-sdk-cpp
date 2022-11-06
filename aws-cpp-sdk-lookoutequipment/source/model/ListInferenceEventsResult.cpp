@@ -36,7 +36,7 @@ ListInferenceEventsResult& ListInferenceEventsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("InferenceEventSummaries"))
   {
-    Array<JsonView> inferenceEventSummariesJsonList = jsonValue.GetArray("InferenceEventSummaries");
+    Aws::Utils::Array<JsonView> inferenceEventSummariesJsonList = jsonValue.GetArray("InferenceEventSummaries");
     for(unsigned inferenceEventSummariesIndex = 0; inferenceEventSummariesIndex < inferenceEventSummariesJsonList.GetLength(); ++inferenceEventSummariesIndex)
     {
       m_inferenceEventSummaries.push_back(inferenceEventSummariesJsonList[inferenceEventSummariesIndex].AsObject());

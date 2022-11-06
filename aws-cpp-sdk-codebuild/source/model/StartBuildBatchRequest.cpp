@@ -70,7 +70,7 @@ Aws::String StartBuildBatchRequest::SerializePayload() const
 
   if(m_secondarySourcesOverrideHasBeenSet)
   {
-   Array<JsonValue> secondarySourcesOverrideJsonList(m_secondarySourcesOverride.size());
+   Aws::Utils::Array<JsonValue> secondarySourcesOverrideJsonList(m_secondarySourcesOverride.size());
    for(unsigned secondarySourcesOverrideIndex = 0; secondarySourcesOverrideIndex < secondarySourcesOverrideJsonList.GetLength(); ++secondarySourcesOverrideIndex)
    {
      secondarySourcesOverrideJsonList[secondarySourcesOverrideIndex].AsObject(m_secondarySourcesOverride[secondarySourcesOverrideIndex].Jsonize());
@@ -81,7 +81,7 @@ Aws::String StartBuildBatchRequest::SerializePayload() const
 
   if(m_secondarySourcesVersionOverrideHasBeenSet)
   {
-   Array<JsonValue> secondarySourcesVersionOverrideJsonList(m_secondarySourcesVersionOverride.size());
+   Aws::Utils::Array<JsonValue> secondarySourcesVersionOverrideJsonList(m_secondarySourcesVersionOverride.size());
    for(unsigned secondarySourcesVersionOverrideIndex = 0; secondarySourcesVersionOverrideIndex < secondarySourcesVersionOverrideJsonList.GetLength(); ++secondarySourcesVersionOverrideIndex)
    {
      secondarySourcesVersionOverrideJsonList[secondarySourcesVersionOverrideIndex].AsObject(m_secondarySourcesVersionOverride[secondarySourcesVersionOverrideIndex].Jsonize());
@@ -104,7 +104,7 @@ Aws::String StartBuildBatchRequest::SerializePayload() const
 
   if(m_secondaryArtifactsOverrideHasBeenSet)
   {
-   Array<JsonValue> secondaryArtifactsOverrideJsonList(m_secondaryArtifactsOverride.size());
+   Aws::Utils::Array<JsonValue> secondaryArtifactsOverrideJsonList(m_secondaryArtifactsOverride.size());
    for(unsigned secondaryArtifactsOverrideIndex = 0; secondaryArtifactsOverrideIndex < secondaryArtifactsOverrideJsonList.GetLength(); ++secondaryArtifactsOverrideIndex)
    {
      secondaryArtifactsOverrideJsonList[secondaryArtifactsOverrideIndex].AsObject(m_secondaryArtifactsOverride[secondaryArtifactsOverrideIndex].Jsonize());
@@ -115,7 +115,7 @@ Aws::String StartBuildBatchRequest::SerializePayload() const
 
   if(m_environmentVariablesOverrideHasBeenSet)
   {
-   Array<JsonValue> environmentVariablesOverrideJsonList(m_environmentVariablesOverride.size());
+   Aws::Utils::Array<JsonValue> environmentVariablesOverrideJsonList(m_environmentVariablesOverride.size());
    for(unsigned environmentVariablesOverrideIndex = 0; environmentVariablesOverrideIndex < environmentVariablesOverrideJsonList.GetLength(); ++environmentVariablesOverrideIndex)
    {
      environmentVariablesOverrideJsonList[environmentVariablesOverrideIndex].AsObject(m_environmentVariablesOverride[environmentVariablesOverrideIndex].Jsonize());

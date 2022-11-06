@@ -35,7 +35,7 @@ UpdateTaintsPayload& UpdateTaintsPayload::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("addOrUpdateTaints"))
   {
-    Array<JsonView> addOrUpdateTaintsJsonList = jsonValue.GetArray("addOrUpdateTaints");
+    Aws::Utils::Array<JsonView> addOrUpdateTaintsJsonList = jsonValue.GetArray("addOrUpdateTaints");
     for(unsigned addOrUpdateTaintsIndex = 0; addOrUpdateTaintsIndex < addOrUpdateTaintsJsonList.GetLength(); ++addOrUpdateTaintsIndex)
     {
       m_addOrUpdateTaints.push_back(addOrUpdateTaintsJsonList[addOrUpdateTaintsIndex].AsObject());
@@ -45,7 +45,7 @@ UpdateTaintsPayload& UpdateTaintsPayload::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("removeTaints"))
   {
-    Array<JsonView> removeTaintsJsonList = jsonValue.GetArray("removeTaints");
+    Aws::Utils::Array<JsonView> removeTaintsJsonList = jsonValue.GetArray("removeTaints");
     for(unsigned removeTaintsIndex = 0; removeTaintsIndex < removeTaintsJsonList.GetLength(); ++removeTaintsIndex)
     {
       m_removeTaints.push_back(removeTaintsJsonList[removeTaintsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue UpdateTaintsPayload::Jsonize() const
 
   if(m_addOrUpdateTaintsHasBeenSet)
   {
-   Array<JsonValue> addOrUpdateTaintsJsonList(m_addOrUpdateTaints.size());
+   Aws::Utils::Array<JsonValue> addOrUpdateTaintsJsonList(m_addOrUpdateTaints.size());
    for(unsigned addOrUpdateTaintsIndex = 0; addOrUpdateTaintsIndex < addOrUpdateTaintsJsonList.GetLength(); ++addOrUpdateTaintsIndex)
    {
      addOrUpdateTaintsJsonList[addOrUpdateTaintsIndex].AsObject(m_addOrUpdateTaints[addOrUpdateTaintsIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue UpdateTaintsPayload::Jsonize() const
 
   if(m_removeTaintsHasBeenSet)
   {
-   Array<JsonValue> removeTaintsJsonList(m_removeTaints.size());
+   Aws::Utils::Array<JsonValue> removeTaintsJsonList(m_removeTaints.size());
    for(unsigned removeTaintsIndex = 0; removeTaintsIndex < removeTaintsJsonList.GetLength(); ++removeTaintsIndex)
    {
      removeTaintsJsonList[removeTaintsIndex].AsObject(m_removeTaints[removeTaintsIndex].Jsonize());

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/waf-regional/WAFRegionalErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/waf-regional/WAFRegionalEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -130,6 +132,10 @@ namespace Aws
 
   namespace WAFRegional
   {
+    using WAFRegionalClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WAFRegionalEndpointProviderBase = Aws::WAFRegional::Endpoint::WAFRegionalEndpointProviderBase;
+    using WAFRegionalEndpointProvider = Aws::WAFRegional::Endpoint::WAFRegionalEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in WAFRegionalClient header */

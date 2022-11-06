@@ -111,7 +111,7 @@ EcsParameters& EcsParameters::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CapacityProviderStrategy"))
   {
-    Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("CapacityProviderStrategy");
+    Aws::Utils::Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("CapacityProviderStrategy");
     for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
     {
       m_capacityProviderStrategy.push_back(capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject());
@@ -135,7 +135,7 @@ EcsParameters& EcsParameters::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PlacementConstraints"))
   {
-    Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("PlacementConstraints");
+    Aws::Utils::Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("PlacementConstraints");
     for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
     {
       m_placementConstraints.push_back(placementConstraintsJsonList[placementConstraintsIndex].AsObject());
@@ -145,7 +145,7 @@ EcsParameters& EcsParameters::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PlacementStrategy"))
   {
-    Array<JsonView> placementStrategyJsonList = jsonValue.GetArray("PlacementStrategy");
+    Aws::Utils::Array<JsonView> placementStrategyJsonList = jsonValue.GetArray("PlacementStrategy");
     for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
     {
       m_placementStrategy.push_back(placementStrategyJsonList[placementStrategyIndex].AsObject());
@@ -169,7 +169,7 @@ EcsParameters& EcsParameters::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -221,7 +221,7 @@ JsonValue EcsParameters::Jsonize() const
 
   if(m_capacityProviderStrategyHasBeenSet)
   {
-   Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
+   Aws::Utils::Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
    for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
    {
      capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
@@ -244,7 +244,7 @@ JsonValue EcsParameters::Jsonize() const
 
   if(m_placementConstraintsHasBeenSet)
   {
-   Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
+   Aws::Utils::Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
    for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
    {
      placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
@@ -255,7 +255,7 @@ JsonValue EcsParameters::Jsonize() const
 
   if(m_placementStrategyHasBeenSet)
   {
-   Array<JsonValue> placementStrategyJsonList(m_placementStrategy.size());
+   Aws::Utils::Array<JsonValue> placementStrategyJsonList(m_placementStrategy.size());
    for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
    {
      placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
@@ -277,7 +277,7 @@ JsonValue EcsParameters::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

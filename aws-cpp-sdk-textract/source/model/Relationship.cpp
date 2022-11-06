@@ -44,7 +44,7 @@ Relationship& Relationship::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Ids"))
   {
-    Array<JsonView> idsJsonList = jsonValue.GetArray("Ids");
+    Aws::Utils::Array<JsonView> idsJsonList = jsonValue.GetArray("Ids");
     for(unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex)
     {
       m_ids.push_back(idsJsonList[idsIndex].AsString());
@@ -66,7 +66,7 @@ JsonValue Relationship::Jsonize() const
 
   if(m_idsHasBeenSet)
   {
-   Array<JsonValue> idsJsonList(m_ids.size());
+   Aws::Utils::Array<JsonValue> idsJsonList(m_ids.size());
    for(unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex)
    {
      idsJsonList[idsIndex].AsString(m_ids[idsIndex]);

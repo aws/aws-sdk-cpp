@@ -33,7 +33,7 @@ NtpPayload& NtpPayload::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("NtpServers"))
   {
-    Array<JsonView> ntpServersJsonList = jsonValue.GetArray("NtpServers");
+    Aws::Utils::Array<JsonView> ntpServersJsonList = jsonValue.GetArray("NtpServers");
     for(unsigned ntpServersIndex = 0; ntpServersIndex < ntpServersJsonList.GetLength(); ++ntpServersIndex)
     {
       m_ntpServers.push_back(ntpServersJsonList[ntpServersIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue NtpPayload::Jsonize() const
 
   if(m_ntpServersHasBeenSet)
   {
-   Array<JsonValue> ntpServersJsonList(m_ntpServers.size());
+   Aws::Utils::Array<JsonValue> ntpServersJsonList(m_ntpServers.size());
    for(unsigned ntpServersIndex = 0; ntpServersIndex < ntpServersJsonList.GetLength(); ++ntpServersIndex)
    {
      ntpServersJsonList[ntpServersIndex].AsString(m_ntpServers[ntpServersIndex]);

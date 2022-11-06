@@ -30,7 +30,7 @@ GetContainerServicesResult& GetContainerServicesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("containerServices"))
   {
-    Array<JsonView> containerServicesJsonList = jsonValue.GetArray("containerServices");
+    Aws::Utils::Array<JsonView> containerServicesJsonList = jsonValue.GetArray("containerServices");
     for(unsigned containerServicesIndex = 0; containerServicesIndex < containerServicesJsonList.GetLength(); ++containerServicesIndex)
     {
       m_containerServices.push_back(containerServicesJsonList[containerServicesIndex].AsObject());

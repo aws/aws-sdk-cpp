@@ -66,22 +66,48 @@ namespace Health
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        HealthClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        HealthClient(const Aws::Health::HealthClientConfiguration& clientConfiguration = Aws::Health::HealthClientConfiguration(),
+                     std::shared_ptr<HealthEndpointProviderBase> endpointProvider = Aws::MakeShared<HealthEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         HealthClient(const Aws::Auth::AWSCredentials& credentials,
-                     const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                     std::shared_ptr<HealthEndpointProviderBase> endpointProvider = Aws::MakeShared<HealthEndpointProvider>(ALLOCATION_TAG),
+                     const Aws::Health::HealthClientConfiguration& clientConfiguration = Aws::Health::HealthClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         HealthClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                     std::shared_ptr<HealthEndpointProviderBase> endpointProvider = Aws::MakeShared<HealthEndpointProvider>(ALLOCATION_TAG),
+                     const Aws::Health::HealthClientConfiguration& clientConfiguration = Aws::Health::HealthClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        HealthClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        HealthClient(const Aws::Auth::AWSCredentials& credentials,
+                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        HealthClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                     const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~HealthClient();
 
 
@@ -478,12 +504,13 @@ namespace Health
         virtual void EnableHealthServiceAccessForOrganizationAsync(const EnableHealthServiceAccessForOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<HealthEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const HealthClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      HealthClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<HealthEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Health

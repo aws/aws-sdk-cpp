@@ -33,7 +33,7 @@ Aws::String DescribeDomainControllersRequest::SerializePayload() const
 
   if(m_domainControllerIdsHasBeenSet)
   {
-   Array<JsonValue> domainControllerIdsJsonList(m_domainControllerIds.size());
+   Aws::Utils::Array<JsonValue> domainControllerIdsJsonList(m_domainControllerIds.size());
    for(unsigned domainControllerIdsIndex = 0; domainControllerIdsIndex < domainControllerIdsJsonList.GetLength(); ++domainControllerIdsIndex)
    {
      domainControllerIdsJsonList[domainControllerIdsIndex].AsString(m_domainControllerIds[domainControllerIdsIndex]);

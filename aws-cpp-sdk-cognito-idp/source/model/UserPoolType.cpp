@@ -161,7 +161,7 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SchemaAttributes"))
   {
-    Array<JsonView> schemaAttributesJsonList = jsonValue.GetArray("SchemaAttributes");
+    Aws::Utils::Array<JsonView> schemaAttributesJsonList = jsonValue.GetArray("SchemaAttributes");
     for(unsigned schemaAttributesIndex = 0; schemaAttributesIndex < schemaAttributesJsonList.GetLength(); ++schemaAttributesIndex)
     {
       m_schemaAttributes.push_back(schemaAttributesJsonList[schemaAttributesIndex].AsObject());
@@ -171,7 +171,7 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AutoVerifiedAttributes"))
   {
-    Array<JsonView> autoVerifiedAttributesJsonList = jsonValue.GetArray("AutoVerifiedAttributes");
+    Aws::Utils::Array<JsonView> autoVerifiedAttributesJsonList = jsonValue.GetArray("AutoVerifiedAttributes");
     for(unsigned autoVerifiedAttributesIndex = 0; autoVerifiedAttributesIndex < autoVerifiedAttributesJsonList.GetLength(); ++autoVerifiedAttributesIndex)
     {
       m_autoVerifiedAttributes.push_back(VerifiedAttributeTypeMapper::GetVerifiedAttributeTypeForName(autoVerifiedAttributesJsonList[autoVerifiedAttributesIndex].AsString()));
@@ -181,7 +181,7 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AliasAttributes"))
   {
-    Array<JsonView> aliasAttributesJsonList = jsonValue.GetArray("AliasAttributes");
+    Aws::Utils::Array<JsonView> aliasAttributesJsonList = jsonValue.GetArray("AliasAttributes");
     for(unsigned aliasAttributesIndex = 0; aliasAttributesIndex < aliasAttributesJsonList.GetLength(); ++aliasAttributesIndex)
     {
       m_aliasAttributes.push_back(AliasAttributeTypeMapper::GetAliasAttributeTypeForName(aliasAttributesJsonList[aliasAttributesIndex].AsString()));
@@ -191,7 +191,7 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("UsernameAttributes"))
   {
-    Array<JsonView> usernameAttributesJsonList = jsonValue.GetArray("UsernameAttributes");
+    Aws::Utils::Array<JsonView> usernameAttributesJsonList = jsonValue.GetArray("UsernameAttributes");
     for(unsigned usernameAttributesIndex = 0; usernameAttributesIndex < usernameAttributesJsonList.GetLength(); ++usernameAttributesIndex)
     {
       m_usernameAttributes.push_back(UsernameAttributeTypeMapper::GetUsernameAttributeTypeForName(usernameAttributesJsonList[usernameAttributesIndex].AsString()));
@@ -402,7 +402,7 @@ JsonValue UserPoolType::Jsonize() const
 
   if(m_schemaAttributesHasBeenSet)
   {
-   Array<JsonValue> schemaAttributesJsonList(m_schemaAttributes.size());
+   Aws::Utils::Array<JsonValue> schemaAttributesJsonList(m_schemaAttributes.size());
    for(unsigned schemaAttributesIndex = 0; schemaAttributesIndex < schemaAttributesJsonList.GetLength(); ++schemaAttributesIndex)
    {
      schemaAttributesJsonList[schemaAttributesIndex].AsObject(m_schemaAttributes[schemaAttributesIndex].Jsonize());
@@ -413,7 +413,7 @@ JsonValue UserPoolType::Jsonize() const
 
   if(m_autoVerifiedAttributesHasBeenSet)
   {
-   Array<JsonValue> autoVerifiedAttributesJsonList(m_autoVerifiedAttributes.size());
+   Aws::Utils::Array<JsonValue> autoVerifiedAttributesJsonList(m_autoVerifiedAttributes.size());
    for(unsigned autoVerifiedAttributesIndex = 0; autoVerifiedAttributesIndex < autoVerifiedAttributesJsonList.GetLength(); ++autoVerifiedAttributesIndex)
    {
      autoVerifiedAttributesJsonList[autoVerifiedAttributesIndex].AsString(VerifiedAttributeTypeMapper::GetNameForVerifiedAttributeType(m_autoVerifiedAttributes[autoVerifiedAttributesIndex]));
@@ -424,7 +424,7 @@ JsonValue UserPoolType::Jsonize() const
 
   if(m_aliasAttributesHasBeenSet)
   {
-   Array<JsonValue> aliasAttributesJsonList(m_aliasAttributes.size());
+   Aws::Utils::Array<JsonValue> aliasAttributesJsonList(m_aliasAttributes.size());
    for(unsigned aliasAttributesIndex = 0; aliasAttributesIndex < aliasAttributesJsonList.GetLength(); ++aliasAttributesIndex)
    {
      aliasAttributesJsonList[aliasAttributesIndex].AsString(AliasAttributeTypeMapper::GetNameForAliasAttributeType(m_aliasAttributes[aliasAttributesIndex]));
@@ -435,7 +435,7 @@ JsonValue UserPoolType::Jsonize() const
 
   if(m_usernameAttributesHasBeenSet)
   {
-   Array<JsonValue> usernameAttributesJsonList(m_usernameAttributes.size());
+   Aws::Utils::Array<JsonValue> usernameAttributesJsonList(m_usernameAttributes.size());
    for(unsigned usernameAttributesIndex = 0; usernameAttributesIndex < usernameAttributesJsonList.GetLength(); ++usernameAttributesIndex)
    {
      usernameAttributesJsonList[usernameAttributesIndex].AsString(UsernameAttributeTypeMapper::GetNameForUsernameAttributeType(m_usernameAttributes[usernameAttributesIndex]));

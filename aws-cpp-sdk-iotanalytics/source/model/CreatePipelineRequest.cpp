@@ -31,7 +31,7 @@ Aws::String CreatePipelineRequest::SerializePayload() const
 
   if(m_pipelineActivitiesHasBeenSet)
   {
-   Array<JsonValue> pipelineActivitiesJsonList(m_pipelineActivities.size());
+   Aws::Utils::Array<JsonValue> pipelineActivitiesJsonList(m_pipelineActivities.size());
    for(unsigned pipelineActivitiesIndex = 0; pipelineActivitiesIndex < pipelineActivitiesJsonList.GetLength(); ++pipelineActivitiesIndex)
    {
      pipelineActivitiesJsonList[pipelineActivitiesIndex].AsObject(m_pipelineActivities[pipelineActivitiesIndex].Jsonize());
@@ -42,7 +42,7 @@ Aws::String CreatePipelineRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

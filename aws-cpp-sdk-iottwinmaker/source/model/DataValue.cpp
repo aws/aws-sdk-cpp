@@ -85,7 +85,7 @@ DataValue& DataValue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("listValue"))
   {
-    Array<JsonView> listValueJsonList = jsonValue.GetArray("listValue");
+    Aws::Utils::Array<JsonView> listValueJsonList = jsonValue.GetArray("listValue");
     for(unsigned listValueIndex = 0; listValueIndex < listValueJsonList.GetLength(); ++listValueIndex)
     {
       m_listValue.push_back(listValueJsonList[listValueIndex].AsObject());
@@ -157,7 +157,7 @@ JsonValue DataValue::Jsonize() const
 
   if(m_listValueHasBeenSet)
   {
-   Array<JsonValue> listValueJsonList(m_listValue.size());
+   Aws::Utils::Array<JsonValue> listValueJsonList(m_listValue.size());
    for(unsigned listValueIndex = 0; listValueIndex < listValueJsonList.GetLength(); ++listValueIndex)
    {
      listValueJsonList[listValueIndex].AsObject(m_listValue[listValueIndex].Jsonize());

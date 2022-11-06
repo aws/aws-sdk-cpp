@@ -33,7 +33,7 @@ TimeSignalMessage& TimeSignalMessage::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SegmentationDescriptors"))
   {
-    Array<JsonView> segmentationDescriptorsJsonList = jsonValue.GetArray("SegmentationDescriptors");
+    Aws::Utils::Array<JsonView> segmentationDescriptorsJsonList = jsonValue.GetArray("SegmentationDescriptors");
     for(unsigned segmentationDescriptorsIndex = 0; segmentationDescriptorsIndex < segmentationDescriptorsJsonList.GetLength(); ++segmentationDescriptorsIndex)
     {
       m_segmentationDescriptors.push_back(segmentationDescriptorsJsonList[segmentationDescriptorsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue TimeSignalMessage::Jsonize() const
 
   if(m_segmentationDescriptorsHasBeenSet)
   {
-   Array<JsonValue> segmentationDescriptorsJsonList(m_segmentationDescriptors.size());
+   Aws::Utils::Array<JsonValue> segmentationDescriptorsJsonList(m_segmentationDescriptors.size());
    for(unsigned segmentationDescriptorsIndex = 0; segmentationDescriptorsIndex < segmentationDescriptorsJsonList.GetLength(); ++segmentationDescriptorsIndex)
    {
      segmentationDescriptorsJsonList[segmentationDescriptorsIndex].AsObject(m_segmentationDescriptors[segmentationDescriptorsIndex].Jsonize());

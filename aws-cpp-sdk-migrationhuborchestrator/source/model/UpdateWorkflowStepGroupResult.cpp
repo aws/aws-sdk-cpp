@@ -54,7 +54,7 @@ UpdateWorkflowStepGroupResult& UpdateWorkflowStepGroupResult::operator =(const A
 
   if(jsonValue.ValueExists("tools"))
   {
-    Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
+    Aws::Utils::Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
     for(unsigned toolsIndex = 0; toolsIndex < toolsJsonList.GetLength(); ++toolsIndex)
     {
       m_tools.push_back(toolsJsonList[toolsIndex].AsObject());
@@ -63,7 +63,7 @@ UpdateWorkflowStepGroupResult& UpdateWorkflowStepGroupResult::operator =(const A
 
   if(jsonValue.ValueExists("next"))
   {
-    Array<JsonView> nextJsonList = jsonValue.GetArray("next");
+    Aws::Utils::Array<JsonView> nextJsonList = jsonValue.GetArray("next");
     for(unsigned nextIndex = 0; nextIndex < nextJsonList.GetLength(); ++nextIndex)
     {
       m_next.push_back(nextJsonList[nextIndex].AsString());
@@ -72,7 +72,7 @@ UpdateWorkflowStepGroupResult& UpdateWorkflowStepGroupResult::operator =(const A
 
   if(jsonValue.ValueExists("previous"))
   {
-    Array<JsonView> previousJsonList = jsonValue.GetArray("previous");
+    Aws::Utils::Array<JsonView> previousJsonList = jsonValue.GetArray("previous");
     for(unsigned previousIndex = 0; previousIndex < previousJsonList.GetLength(); ++previousIndex)
     {
       m_previous.push_back(previousJsonList[previousIndex].AsString());

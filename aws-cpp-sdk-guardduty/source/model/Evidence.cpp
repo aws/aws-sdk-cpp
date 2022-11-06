@@ -33,7 +33,7 @@ Evidence& Evidence::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("threatIntelligenceDetails"))
   {
-    Array<JsonView> threatIntelligenceDetailsJsonList = jsonValue.GetArray("threatIntelligenceDetails");
+    Aws::Utils::Array<JsonView> threatIntelligenceDetailsJsonList = jsonValue.GetArray("threatIntelligenceDetails");
     for(unsigned threatIntelligenceDetailsIndex = 0; threatIntelligenceDetailsIndex < threatIntelligenceDetailsJsonList.GetLength(); ++threatIntelligenceDetailsIndex)
     {
       m_threatIntelligenceDetails.push_back(threatIntelligenceDetailsJsonList[threatIntelligenceDetailsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue Evidence::Jsonize() const
 
   if(m_threatIntelligenceDetailsHasBeenSet)
   {
-   Array<JsonValue> threatIntelligenceDetailsJsonList(m_threatIntelligenceDetails.size());
+   Aws::Utils::Array<JsonValue> threatIntelligenceDetailsJsonList(m_threatIntelligenceDetails.size());
    for(unsigned threatIntelligenceDetailsIndex = 0; threatIntelligenceDetailsIndex < threatIntelligenceDetailsJsonList.GetLength(); ++threatIntelligenceDetailsIndex)
    {
      threatIntelligenceDetailsJsonList[threatIntelligenceDetailsIndex].AsObject(m_threatIntelligenceDetails[threatIntelligenceDetailsIndex].Jsonize());

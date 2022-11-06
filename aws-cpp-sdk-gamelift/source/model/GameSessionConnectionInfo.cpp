@@ -71,7 +71,7 @@ GameSessionConnectionInfo& GameSessionConnectionInfo::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("MatchedPlayerSessions"))
   {
-    Array<JsonView> matchedPlayerSessionsJsonList = jsonValue.GetArray("MatchedPlayerSessions");
+    Aws::Utils::Array<JsonView> matchedPlayerSessionsJsonList = jsonValue.GetArray("MatchedPlayerSessions");
     for(unsigned matchedPlayerSessionsIndex = 0; matchedPlayerSessionsIndex < matchedPlayerSessionsJsonList.GetLength(); ++matchedPlayerSessionsIndex)
     {
       m_matchedPlayerSessions.push_back(matchedPlayerSessionsJsonList[matchedPlayerSessionsIndex].AsObject());
@@ -112,7 +112,7 @@ JsonValue GameSessionConnectionInfo::Jsonize() const
 
   if(m_matchedPlayerSessionsHasBeenSet)
   {
-   Array<JsonValue> matchedPlayerSessionsJsonList(m_matchedPlayerSessions.size());
+   Aws::Utils::Array<JsonValue> matchedPlayerSessionsJsonList(m_matchedPlayerSessions.size());
    for(unsigned matchedPlayerSessionsIndex = 0; matchedPlayerSessionsIndex < matchedPlayerSessionsJsonList.GetLength(); ++matchedPlayerSessionsIndex)
    {
      matchedPlayerSessionsJsonList[matchedPlayerSessionsIndex].AsObject(m_matchedPlayerSessions[matchedPlayerSessionsIndex].Jsonize());

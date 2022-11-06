@@ -34,7 +34,7 @@ ListSnapshotBlocksResult& ListSnapshotBlocksResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Blocks"))
   {
-    Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
+    Aws::Utils::Array<JsonView> blocksJsonList = jsonValue.GetArray("Blocks");
     for(unsigned blocksIndex = 0; blocksIndex < blocksJsonList.GetLength(); ++blocksIndex)
     {
       m_blocks.push_back(blocksJsonList[blocksIndex].AsObject());

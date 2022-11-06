@@ -48,7 +48,7 @@ ParticipatingGateways& ParticipatingGateways::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GatewayList"))
   {
-    Array<JsonView> gatewayListJsonList = jsonValue.GetArray("GatewayList");
+    Aws::Utils::Array<JsonView> gatewayListJsonList = jsonValue.GetArray("GatewayList");
     for(unsigned gatewayListIndex = 0; gatewayListIndex < gatewayListJsonList.GetLength(); ++gatewayListIndex)
     {
       m_gatewayList.push_back(gatewayListJsonList[gatewayListIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue ParticipatingGateways::Jsonize() const
 
   if(m_gatewayListHasBeenSet)
   {
-   Array<JsonValue> gatewayListJsonList(m_gatewayList.size());
+   Aws::Utils::Array<JsonValue> gatewayListJsonList(m_gatewayList.size());
    for(unsigned gatewayListIndex = 0; gatewayListIndex < gatewayListJsonList.GetLength(); ++gatewayListIndex)
    {
      gatewayListJsonList[gatewayListIndex].AsObject(m_gatewayList[gatewayListIndex].Jsonize());

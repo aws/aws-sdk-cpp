@@ -111,7 +111,7 @@ Aws::String PutIntegrationRequest::SerializePayload() const
 
   if(m_cacheKeyParametersHasBeenSet)
   {
-   Array<JsonValue> cacheKeyParametersJsonList(m_cacheKeyParameters.size());
+   Aws::Utils::Array<JsonValue> cacheKeyParametersJsonList(m_cacheKeyParameters.size());
    for(unsigned cacheKeyParametersIndex = 0; cacheKeyParametersIndex < cacheKeyParametersJsonList.GetLength(); ++cacheKeyParametersIndex)
    {
      cacheKeyParametersJsonList[cacheKeyParametersIndex].AsString(m_cacheKeyParameters[cacheKeyParametersIndex]);

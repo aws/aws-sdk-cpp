@@ -30,7 +30,7 @@ ListDiscoverersResult& ListDiscoverersResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Discoverers"))
   {
-    Array<JsonView> discoverersJsonList = jsonValue.GetArray("Discoverers");
+    Aws::Utils::Array<JsonView> discoverersJsonList = jsonValue.GetArray("Discoverers");
     for(unsigned discoverersIndex = 0; discoverersIndex < discoverersJsonList.GetLength(); ++discoverersIndex)
     {
       m_discoverers.push_back(discoverersJsonList[discoverersIndex].AsObject());

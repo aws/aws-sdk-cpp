@@ -42,7 +42,7 @@ DescribeCustomDomainsResult& DescribeCustomDomainsResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("CustomDomains"))
   {
-    Array<JsonView> customDomainsJsonList = jsonValue.GetArray("CustomDomains");
+    Aws::Utils::Array<JsonView> customDomainsJsonList = jsonValue.GetArray("CustomDomains");
     for(unsigned customDomainsIndex = 0; customDomainsIndex < customDomainsJsonList.GetLength(); ++customDomainsIndex)
     {
       m_customDomains.push_back(customDomainsJsonList[customDomainsIndex].AsObject());
@@ -51,7 +51,7 @@ DescribeCustomDomainsResult& DescribeCustomDomainsResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("VpcDNSTargets"))
   {
-    Array<JsonView> vpcDNSTargetsJsonList = jsonValue.GetArray("VpcDNSTargets");
+    Aws::Utils::Array<JsonView> vpcDNSTargetsJsonList = jsonValue.GetArray("VpcDNSTargets");
     for(unsigned vpcDNSTargetsIndex = 0; vpcDNSTargetsIndex < vpcDNSTargetsJsonList.GetLength(); ++vpcDNSTargetsIndex)
     {
       m_vpcDNSTargets.push_back(vpcDNSTargetsJsonList[vpcDNSTargetsIndex].AsObject());

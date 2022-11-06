@@ -53,7 +53,7 @@ FileCacheDataRepositoryAssociation& FileCacheDataRepositoryAssociation::operator
 
   if(jsonValue.ValueExists("DataRepositorySubdirectories"))
   {
-    Array<JsonView> dataRepositorySubdirectoriesJsonList = jsonValue.GetArray("DataRepositorySubdirectories");
+    Aws::Utils::Array<JsonView> dataRepositorySubdirectoriesJsonList = jsonValue.GetArray("DataRepositorySubdirectories");
     for(unsigned dataRepositorySubdirectoriesIndex = 0; dataRepositorySubdirectoriesIndex < dataRepositorySubdirectoriesJsonList.GetLength(); ++dataRepositorySubdirectoriesIndex)
     {
       m_dataRepositorySubdirectories.push_back(dataRepositorySubdirectoriesJsonList[dataRepositorySubdirectoriesIndex].AsString());
@@ -89,7 +89,7 @@ JsonValue FileCacheDataRepositoryAssociation::Jsonize() const
 
   if(m_dataRepositorySubdirectoriesHasBeenSet)
   {
-   Array<JsonValue> dataRepositorySubdirectoriesJsonList(m_dataRepositorySubdirectories.size());
+   Aws::Utils::Array<JsonValue> dataRepositorySubdirectoriesJsonList(m_dataRepositorySubdirectories.size());
    for(unsigned dataRepositorySubdirectoriesIndex = 0; dataRepositorySubdirectoriesIndex < dataRepositorySubdirectoriesJsonList.GetLength(); ++dataRepositorySubdirectoriesIndex)
    {
      dataRepositorySubdirectoriesJsonList[dataRepositorySubdirectoriesIndex].AsString(m_dataRepositorySubdirectories[dataRepositorySubdirectoriesIndex]);

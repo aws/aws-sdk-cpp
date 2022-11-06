@@ -44,7 +44,7 @@ DnsConfig& DnsConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DnsRecords"))
   {
-    Array<JsonView> dnsRecordsJsonList = jsonValue.GetArray("DnsRecords");
+    Aws::Utils::Array<JsonView> dnsRecordsJsonList = jsonValue.GetArray("DnsRecords");
     for(unsigned dnsRecordsIndex = 0; dnsRecordsIndex < dnsRecordsJsonList.GetLength(); ++dnsRecordsIndex)
     {
       m_dnsRecords.push_back(dnsRecordsJsonList[dnsRecordsIndex].AsObject());
@@ -66,7 +66,7 @@ JsonValue DnsConfig::Jsonize() const
 
   if(m_dnsRecordsHasBeenSet)
   {
-   Array<JsonValue> dnsRecordsJsonList(m_dnsRecords.size());
+   Aws::Utils::Array<JsonValue> dnsRecordsJsonList(m_dnsRecords.size());
    for(unsigned dnsRecordsIndex = 0; dnsRecordsIndex < dnsRecordsJsonList.GetLength(); ++dnsRecordsIndex)
    {
      dnsRecordsJsonList[dnsRecordsIndex].AsObject(m_dnsRecords[dnsRecordsIndex].Jsonize());

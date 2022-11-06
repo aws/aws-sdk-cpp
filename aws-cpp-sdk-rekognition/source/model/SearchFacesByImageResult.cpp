@@ -44,7 +44,7 @@ SearchFacesByImageResult& SearchFacesByImageResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("FaceMatches"))
   {
-    Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
+    Aws::Utils::Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
     for(unsigned faceMatchesIndex = 0; faceMatchesIndex < faceMatchesJsonList.GetLength(); ++faceMatchesIndex)
     {
       m_faceMatches.push_back(faceMatchesJsonList[faceMatchesIndex].AsObject());

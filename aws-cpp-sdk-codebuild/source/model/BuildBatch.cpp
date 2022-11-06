@@ -166,7 +166,7 @@ BuildBatch& BuildBatch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("phases"))
   {
-    Array<JsonView> phasesJsonList = jsonValue.GetArray("phases");
+    Aws::Utils::Array<JsonView> phasesJsonList = jsonValue.GetArray("phases");
     for(unsigned phasesIndex = 0; phasesIndex < phasesJsonList.GetLength(); ++phasesIndex)
     {
       m_phases.push_back(phasesJsonList[phasesIndex].AsObject());
@@ -183,7 +183,7 @@ BuildBatch& BuildBatch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("secondarySources"))
   {
-    Array<JsonView> secondarySourcesJsonList = jsonValue.GetArray("secondarySources");
+    Aws::Utils::Array<JsonView> secondarySourcesJsonList = jsonValue.GetArray("secondarySources");
     for(unsigned secondarySourcesIndex = 0; secondarySourcesIndex < secondarySourcesJsonList.GetLength(); ++secondarySourcesIndex)
     {
       m_secondarySources.push_back(secondarySourcesJsonList[secondarySourcesIndex].AsObject());
@@ -193,7 +193,7 @@ BuildBatch& BuildBatch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("secondarySourceVersions"))
   {
-    Array<JsonView> secondarySourceVersionsJsonList = jsonValue.GetArray("secondarySourceVersions");
+    Aws::Utils::Array<JsonView> secondarySourceVersionsJsonList = jsonValue.GetArray("secondarySourceVersions");
     for(unsigned secondarySourceVersionsIndex = 0; secondarySourceVersionsIndex < secondarySourceVersionsJsonList.GetLength(); ++secondarySourceVersionsIndex)
     {
       m_secondarySourceVersions.push_back(secondarySourceVersionsJsonList[secondarySourceVersionsIndex].AsObject());
@@ -210,7 +210,7 @@ BuildBatch& BuildBatch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("secondaryArtifacts"))
   {
-    Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("secondaryArtifacts");
+    Aws::Utils::Array<JsonView> secondaryArtifactsJsonList = jsonValue.GetArray("secondaryArtifacts");
     for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
     {
       m_secondaryArtifacts.push_back(secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject());
@@ -297,7 +297,7 @@ BuildBatch& BuildBatch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("fileSystemLocations"))
   {
-    Array<JsonView> fileSystemLocationsJsonList = jsonValue.GetArray("fileSystemLocations");
+    Aws::Utils::Array<JsonView> fileSystemLocationsJsonList = jsonValue.GetArray("fileSystemLocations");
     for(unsigned fileSystemLocationsIndex = 0; fileSystemLocationsIndex < fileSystemLocationsJsonList.GetLength(); ++fileSystemLocationsIndex)
     {
       m_fileSystemLocations.push_back(fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject());
@@ -314,7 +314,7 @@ BuildBatch& BuildBatch::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("buildGroups"))
   {
-    Array<JsonView> buildGroupsJsonList = jsonValue.GetArray("buildGroups");
+    Aws::Utils::Array<JsonView> buildGroupsJsonList = jsonValue.GetArray("buildGroups");
     for(unsigned buildGroupsIndex = 0; buildGroupsIndex < buildGroupsJsonList.GetLength(); ++buildGroupsIndex)
     {
       m_buildGroups.push_back(buildGroupsJsonList[buildGroupsIndex].AsObject());
@@ -389,7 +389,7 @@ JsonValue BuildBatch::Jsonize() const
 
   if(m_phasesHasBeenSet)
   {
-   Array<JsonValue> phasesJsonList(m_phases.size());
+   Aws::Utils::Array<JsonValue> phasesJsonList(m_phases.size());
    for(unsigned phasesIndex = 0; phasesIndex < phasesJsonList.GetLength(); ++phasesIndex)
    {
      phasesJsonList[phasesIndex].AsObject(m_phases[phasesIndex].Jsonize());
@@ -406,7 +406,7 @@ JsonValue BuildBatch::Jsonize() const
 
   if(m_secondarySourcesHasBeenSet)
   {
-   Array<JsonValue> secondarySourcesJsonList(m_secondarySources.size());
+   Aws::Utils::Array<JsonValue> secondarySourcesJsonList(m_secondarySources.size());
    for(unsigned secondarySourcesIndex = 0; secondarySourcesIndex < secondarySourcesJsonList.GetLength(); ++secondarySourcesIndex)
    {
      secondarySourcesJsonList[secondarySourcesIndex].AsObject(m_secondarySources[secondarySourcesIndex].Jsonize());
@@ -417,7 +417,7 @@ JsonValue BuildBatch::Jsonize() const
 
   if(m_secondarySourceVersionsHasBeenSet)
   {
-   Array<JsonValue> secondarySourceVersionsJsonList(m_secondarySourceVersions.size());
+   Aws::Utils::Array<JsonValue> secondarySourceVersionsJsonList(m_secondarySourceVersions.size());
    for(unsigned secondarySourceVersionsIndex = 0; secondarySourceVersionsIndex < secondarySourceVersionsJsonList.GetLength(); ++secondarySourceVersionsIndex)
    {
      secondarySourceVersionsJsonList[secondarySourceVersionsIndex].AsObject(m_secondarySourceVersions[secondarySourceVersionsIndex].Jsonize());
@@ -434,7 +434,7 @@ JsonValue BuildBatch::Jsonize() const
 
   if(m_secondaryArtifactsHasBeenSet)
   {
-   Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
+   Aws::Utils::Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
    for(unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength(); ++secondaryArtifactsIndex)
    {
      secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject(m_secondaryArtifacts[secondaryArtifactsIndex].Jsonize());
@@ -511,7 +511,7 @@ JsonValue BuildBatch::Jsonize() const
 
   if(m_fileSystemLocationsHasBeenSet)
   {
-   Array<JsonValue> fileSystemLocationsJsonList(m_fileSystemLocations.size());
+   Aws::Utils::Array<JsonValue> fileSystemLocationsJsonList(m_fileSystemLocations.size());
    for(unsigned fileSystemLocationsIndex = 0; fileSystemLocationsIndex < fileSystemLocationsJsonList.GetLength(); ++fileSystemLocationsIndex)
    {
      fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject(m_fileSystemLocations[fileSystemLocationsIndex].Jsonize());
@@ -528,7 +528,7 @@ JsonValue BuildBatch::Jsonize() const
 
   if(m_buildGroupsHasBeenSet)
   {
-   Array<JsonValue> buildGroupsJsonList(m_buildGroups.size());
+   Aws::Utils::Array<JsonValue> buildGroupsJsonList(m_buildGroups.size());
    for(unsigned buildGroupsIndex = 0; buildGroupsIndex < buildGroupsJsonList.GetLength(); ++buildGroupsIndex)
    {
      buildGroupsJsonList[buildGroupsIndex].AsObject(m_buildGroups[buildGroupsIndex].Jsonize());

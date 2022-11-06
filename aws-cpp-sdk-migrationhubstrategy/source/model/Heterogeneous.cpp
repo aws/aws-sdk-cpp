@@ -33,7 +33,7 @@ Heterogeneous& Heterogeneous::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("targetDatabaseEngine"))
   {
-    Array<JsonView> targetDatabaseEngineJsonList = jsonValue.GetArray("targetDatabaseEngine");
+    Aws::Utils::Array<JsonView> targetDatabaseEngineJsonList = jsonValue.GetArray("targetDatabaseEngine");
     for(unsigned targetDatabaseEngineIndex = 0; targetDatabaseEngineIndex < targetDatabaseEngineJsonList.GetLength(); ++targetDatabaseEngineIndex)
     {
       m_targetDatabaseEngine.push_back(HeterogeneousTargetDatabaseEngineMapper::GetHeterogeneousTargetDatabaseEngineForName(targetDatabaseEngineJsonList[targetDatabaseEngineIndex].AsString()));
@@ -50,7 +50,7 @@ JsonValue Heterogeneous::Jsonize() const
 
   if(m_targetDatabaseEngineHasBeenSet)
   {
-   Array<JsonValue> targetDatabaseEngineJsonList(m_targetDatabaseEngine.size());
+   Aws::Utils::Array<JsonValue> targetDatabaseEngineJsonList(m_targetDatabaseEngine.size());
    for(unsigned targetDatabaseEngineIndex = 0; targetDatabaseEngineIndex < targetDatabaseEngineJsonList.GetLength(); ++targetDatabaseEngineIndex)
    {
      targetDatabaseEngineJsonList[targetDatabaseEngineIndex].AsString(HeterogeneousTargetDatabaseEngineMapper::GetNameForHeterogeneousTargetDatabaseEngine(m_targetDatabaseEngine[targetDatabaseEngineIndex]));

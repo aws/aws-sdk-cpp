@@ -30,7 +30,7 @@ Aws::String AddUploadBufferRequest::SerializePayload() const
 
   if(m_diskIdsHasBeenSet)
   {
-   Array<JsonValue> diskIdsJsonList(m_diskIds.size());
+   Aws::Utils::Array<JsonValue> diskIdsJsonList(m_diskIds.size());
    for(unsigned diskIdsIndex = 0; diskIdsIndex < diskIdsJsonList.GetLength(); ++diskIdsIndex)
    {
      diskIdsJsonList[diskIdsIndex].AsString(m_diskIds[diskIdsIndex]);

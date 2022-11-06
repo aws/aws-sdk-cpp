@@ -61,7 +61,7 @@ Aws::String DescribeEventsRequest::SerializePayload() const
 
   if(m_eventCategoriesHasBeenSet)
   {
-   Array<JsonValue> eventCategoriesJsonList(m_eventCategories.size());
+   Aws::Utils::Array<JsonValue> eventCategoriesJsonList(m_eventCategories.size());
    for(unsigned eventCategoriesIndex = 0; eventCategoriesIndex < eventCategoriesJsonList.GetLength(); ++eventCategoriesIndex)
    {
      eventCategoriesJsonList[eventCategoriesIndex].AsString(m_eventCategories[eventCategoriesIndex]);
@@ -72,7 +72,7 @@ Aws::String DescribeEventsRequest::SerializePayload() const
 
   if(m_filtersHasBeenSet)
   {
-   Array<JsonValue> filtersJsonList(m_filters.size());
+   Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
    for(unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex)
    {
      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/elastictranscoder/ElasticTranscoderErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/elastictranscoder/ElasticTranscoderEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -65,6 +67,10 @@ namespace Aws
 
   namespace ElasticTranscoder
   {
+    using ElasticTranscoderClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElasticTranscoderEndpointProviderBase = Aws::ElasticTranscoder::Endpoint::ElasticTranscoderEndpointProviderBase;
+    using ElasticTranscoderEndpointProvider = Aws::ElasticTranscoder::Endpoint::ElasticTranscoderEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ElasticTranscoderClient header */

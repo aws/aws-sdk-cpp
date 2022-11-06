@@ -30,7 +30,7 @@ ListPromptsResult& ListPromptsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PromptSummaryList"))
   {
-    Array<JsonView> promptSummaryListJsonList = jsonValue.GetArray("PromptSummaryList");
+    Aws::Utils::Array<JsonView> promptSummaryListJsonList = jsonValue.GetArray("PromptSummaryList");
     for(unsigned promptSummaryListIndex = 0; promptSummaryListIndex < promptSummaryListJsonList.GetLength(); ++promptSummaryListIndex)
     {
       m_promptSummaryList.push_back(promptSummaryListJsonList[promptSummaryListIndex].AsObject());

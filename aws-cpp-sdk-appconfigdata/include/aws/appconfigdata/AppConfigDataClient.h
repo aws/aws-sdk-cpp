@@ -58,22 +58,48 @@ namespace AppConfigData
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AppConfigDataClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AppConfigDataClient(const Aws::AppConfigData::AppConfigDataClientConfiguration& clientConfiguration = Aws::AppConfigData::AppConfigDataClientConfiguration(),
+                            std::shared_ptr<AppConfigDataEndpointProviderBase> endpointProvider = Aws::MakeShared<AppConfigDataEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AppConfigDataClient(const Aws::Auth::AWSCredentials& credentials,
-                            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                            std::shared_ptr<AppConfigDataEndpointProviderBase> endpointProvider = Aws::MakeShared<AppConfigDataEndpointProvider>(ALLOCATION_TAG),
+                            const Aws::AppConfigData::AppConfigDataClientConfiguration& clientConfiguration = Aws::AppConfigData::AppConfigDataClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AppConfigDataClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                            std::shared_ptr<AppConfigDataEndpointProviderBase> endpointProvider = Aws::MakeShared<AppConfigDataEndpointProvider>(ALLOCATION_TAG),
+                            const Aws::AppConfigData::AppConfigDataClientConfiguration& clientConfiguration = Aws::AppConfigData::AppConfigDataClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AppConfigDataClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AppConfigDataClient(const Aws::Auth::AWSCredentials& credentials,
+                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        AppConfigDataClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                            const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~AppConfigDataClient();
 
 
@@ -132,12 +158,13 @@ namespace AppConfigData
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<AppConfigDataEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const AppConfigDataClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      AppConfigDataClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<AppConfigDataEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace AppConfigData

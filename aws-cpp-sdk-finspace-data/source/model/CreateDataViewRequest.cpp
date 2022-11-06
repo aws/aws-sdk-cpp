@@ -44,7 +44,7 @@ Aws::String CreateDataViewRequest::SerializePayload() const
 
   if(m_sortColumnsHasBeenSet)
   {
-   Array<JsonValue> sortColumnsJsonList(m_sortColumns.size());
+   Aws::Utils::Array<JsonValue> sortColumnsJsonList(m_sortColumns.size());
    for(unsigned sortColumnsIndex = 0; sortColumnsIndex < sortColumnsJsonList.GetLength(); ++sortColumnsIndex)
    {
      sortColumnsJsonList[sortColumnsIndex].AsString(m_sortColumns[sortColumnsIndex]);
@@ -55,7 +55,7 @@ Aws::String CreateDataViewRequest::SerializePayload() const
 
   if(m_partitionColumnsHasBeenSet)
   {
-   Array<JsonValue> partitionColumnsJsonList(m_partitionColumns.size());
+   Aws::Utils::Array<JsonValue> partitionColumnsJsonList(m_partitionColumns.size());
    for(unsigned partitionColumnsIndex = 0; partitionColumnsIndex < partitionColumnsJsonList.GetLength(); ++partitionColumnsIndex)
    {
      partitionColumnsJsonList[partitionColumnsIndex].AsString(m_partitionColumns[partitionColumnsIndex]);

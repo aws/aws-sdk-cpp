@@ -37,7 +37,7 @@ EbsSnapshotConfiguration& EbsSnapshotConfiguration::operator =(JsonView jsonValu
 {
   if(jsonValue.ValueExists("userIds"))
   {
-    Array<JsonView> userIdsJsonList = jsonValue.GetArray("userIds");
+    Aws::Utils::Array<JsonView> userIdsJsonList = jsonValue.GetArray("userIds");
     for(unsigned userIdsIndex = 0; userIdsIndex < userIdsJsonList.GetLength(); ++userIdsIndex)
     {
       m_userIds.push_back(userIdsJsonList[userIdsIndex].AsString());
@@ -47,7 +47,7 @@ EbsSnapshotConfiguration& EbsSnapshotConfiguration::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("groups"))
   {
-    Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
+    Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
     for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
     {
       m_groups.push_back(groupsJsonList[groupsIndex].AsString());
@@ -71,7 +71,7 @@ JsonValue EbsSnapshotConfiguration::Jsonize() const
 
   if(m_userIdsHasBeenSet)
   {
-   Array<JsonValue> userIdsJsonList(m_userIds.size());
+   Aws::Utils::Array<JsonValue> userIdsJsonList(m_userIds.size());
    for(unsigned userIdsIndex = 0; userIdsIndex < userIdsJsonList.GetLength(); ++userIdsIndex)
    {
      userIdsJsonList[userIdsIndex].AsString(m_userIds[userIdsIndex]);
@@ -82,7 +82,7 @@ JsonValue EbsSnapshotConfiguration::Jsonize() const
 
   if(m_groupsHasBeenSet)
   {
-   Array<JsonValue> groupsJsonList(m_groups.size());
+   Aws::Utils::Array<JsonValue> groupsJsonList(m_groups.size());
    for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
    {
      groupsJsonList[groupsIndex].AsString(m_groups[groupsIndex]);

@@ -33,7 +33,7 @@ TelephonyConfig& TelephonyConfig::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Distributions"))
   {
-    Array<JsonView> distributionsJsonList = jsonValue.GetArray("Distributions");
+    Aws::Utils::Array<JsonView> distributionsJsonList = jsonValue.GetArray("Distributions");
     for(unsigned distributionsIndex = 0; distributionsIndex < distributionsJsonList.GetLength(); ++distributionsIndex)
     {
       m_distributions.push_back(distributionsJsonList[distributionsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue TelephonyConfig::Jsonize() const
 
   if(m_distributionsHasBeenSet)
   {
-   Array<JsonValue> distributionsJsonList(m_distributions.size());
+   Aws::Utils::Array<JsonValue> distributionsJsonList(m_distributions.size());
    for(unsigned distributionsIndex = 0; distributionsIndex < distributionsJsonList.GetLength(); ++distributionsIndex)
    {
      distributionsJsonList[distributionsIndex].AsObject(m_distributions[distributionsIndex].Jsonize());

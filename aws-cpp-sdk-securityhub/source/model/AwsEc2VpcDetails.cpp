@@ -39,7 +39,7 @@ AwsEc2VpcDetails& AwsEc2VpcDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CidrBlockAssociationSet"))
   {
-    Array<JsonView> cidrBlockAssociationSetJsonList = jsonValue.GetArray("CidrBlockAssociationSet");
+    Aws::Utils::Array<JsonView> cidrBlockAssociationSetJsonList = jsonValue.GetArray("CidrBlockAssociationSet");
     for(unsigned cidrBlockAssociationSetIndex = 0; cidrBlockAssociationSetIndex < cidrBlockAssociationSetJsonList.GetLength(); ++cidrBlockAssociationSetIndex)
     {
       m_cidrBlockAssociationSet.push_back(cidrBlockAssociationSetJsonList[cidrBlockAssociationSetIndex].AsObject());
@@ -49,7 +49,7 @@ AwsEc2VpcDetails& AwsEc2VpcDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Ipv6CidrBlockAssociationSet"))
   {
-    Array<JsonView> ipv6CidrBlockAssociationSetJsonList = jsonValue.GetArray("Ipv6CidrBlockAssociationSet");
+    Aws::Utils::Array<JsonView> ipv6CidrBlockAssociationSetJsonList = jsonValue.GetArray("Ipv6CidrBlockAssociationSet");
     for(unsigned ipv6CidrBlockAssociationSetIndex = 0; ipv6CidrBlockAssociationSetIndex < ipv6CidrBlockAssociationSetJsonList.GetLength(); ++ipv6CidrBlockAssociationSetIndex)
     {
       m_ipv6CidrBlockAssociationSet.push_back(ipv6CidrBlockAssociationSetJsonList[ipv6CidrBlockAssociationSetIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue AwsEc2VpcDetails::Jsonize() const
 
   if(m_cidrBlockAssociationSetHasBeenSet)
   {
-   Array<JsonValue> cidrBlockAssociationSetJsonList(m_cidrBlockAssociationSet.size());
+   Aws::Utils::Array<JsonValue> cidrBlockAssociationSetJsonList(m_cidrBlockAssociationSet.size());
    for(unsigned cidrBlockAssociationSetIndex = 0; cidrBlockAssociationSetIndex < cidrBlockAssociationSetJsonList.GetLength(); ++cidrBlockAssociationSetIndex)
    {
      cidrBlockAssociationSetJsonList[cidrBlockAssociationSetIndex].AsObject(m_cidrBlockAssociationSet[cidrBlockAssociationSetIndex].Jsonize());
@@ -91,7 +91,7 @@ JsonValue AwsEc2VpcDetails::Jsonize() const
 
   if(m_ipv6CidrBlockAssociationSetHasBeenSet)
   {
-   Array<JsonValue> ipv6CidrBlockAssociationSetJsonList(m_ipv6CidrBlockAssociationSet.size());
+   Aws::Utils::Array<JsonValue> ipv6CidrBlockAssociationSetJsonList(m_ipv6CidrBlockAssociationSet.size());
    for(unsigned ipv6CidrBlockAssociationSetIndex = 0; ipv6CidrBlockAssociationSetIndex < ipv6CidrBlockAssociationSetJsonList.GetLength(); ++ipv6CidrBlockAssociationSetIndex)
    {
      ipv6CidrBlockAssociationSetJsonList[ipv6CidrBlockAssociationSetIndex].AsObject(m_ipv6CidrBlockAssociationSet[ipv6CidrBlockAssociationSetIndex].Jsonize());

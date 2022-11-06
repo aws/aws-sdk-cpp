@@ -35,7 +35,7 @@ AwsBackupBackupVaultNotificationsDetails& AwsBackupBackupVaultNotificationsDetai
 {
   if(jsonValue.ValueExists("BackupVaultEvents"))
   {
-    Array<JsonView> backupVaultEventsJsonList = jsonValue.GetArray("BackupVaultEvents");
+    Aws::Utils::Array<JsonView> backupVaultEventsJsonList = jsonValue.GetArray("BackupVaultEvents");
     for(unsigned backupVaultEventsIndex = 0; backupVaultEventsIndex < backupVaultEventsJsonList.GetLength(); ++backupVaultEventsIndex)
     {
       m_backupVaultEvents.push_back(backupVaultEventsJsonList[backupVaultEventsIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue AwsBackupBackupVaultNotificationsDetails::Jsonize() const
 
   if(m_backupVaultEventsHasBeenSet)
   {
-   Array<JsonValue> backupVaultEventsJsonList(m_backupVaultEvents.size());
+   Aws::Utils::Array<JsonValue> backupVaultEventsJsonList(m_backupVaultEvents.size());
    for(unsigned backupVaultEventsIndex = 0; backupVaultEventsIndex < backupVaultEventsJsonList.GetLength(); ++backupVaultEventsIndex)
    {
      backupVaultEventsJsonList[backupVaultEventsIndex].AsString(m_backupVaultEvents[backupVaultEventsIndex]);

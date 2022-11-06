@@ -30,7 +30,7 @@ GetStaticIpsResult& GetStaticIpsResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("staticIps"))
   {
-    Array<JsonView> staticIpsJsonList = jsonValue.GetArray("staticIps");
+    Aws::Utils::Array<JsonView> staticIpsJsonList = jsonValue.GetArray("staticIps");
     for(unsigned staticIpsIndex = 0; staticIpsIndex < staticIpsJsonList.GetLength(); ++staticIpsIndex)
     {
       m_staticIps.push_back(staticIpsJsonList[staticIpsIndex].AsObject());

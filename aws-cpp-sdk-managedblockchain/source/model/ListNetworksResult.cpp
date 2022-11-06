@@ -30,7 +30,7 @@ ListNetworksResult& ListNetworksResult::operator =(const Aws::AmazonWebServiceRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Networks"))
   {
-    Array<JsonView> networksJsonList = jsonValue.GetArray("Networks");
+    Aws::Utils::Array<JsonView> networksJsonList = jsonValue.GetArray("Networks");
     for(unsigned networksIndex = 0; networksIndex < networksJsonList.GetLength(); ++networksIndex)
     {
       m_networks.push_back(networksJsonList[networksIndex].AsObject());

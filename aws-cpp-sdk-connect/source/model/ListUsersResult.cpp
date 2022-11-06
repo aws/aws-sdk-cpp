@@ -30,7 +30,7 @@ ListUsersResult& ListUsersResult::operator =(const Aws::AmazonWebServiceResult<J
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UserSummaryList"))
   {
-    Array<JsonView> userSummaryListJsonList = jsonValue.GetArray("UserSummaryList");
+    Aws::Utils::Array<JsonView> userSummaryListJsonList = jsonValue.GetArray("UserSummaryList");
     for(unsigned userSummaryListIndex = 0; userSummaryListIndex < userSummaryListJsonList.GetLength(); ++userSummaryListIndex)
     {
       m_userSummaryList.push_back(userSummaryListJsonList[userSummaryListIndex].AsObject());

@@ -30,7 +30,7 @@ ListAttachmentsResult& ListAttachmentsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Attachments"))
   {
-    Array<JsonView> attachmentsJsonList = jsonValue.GetArray("Attachments");
+    Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("Attachments");
     for(unsigned attachmentsIndex = 0; attachmentsIndex < attachmentsJsonList.GetLength(); ++attachmentsIndex)
     {
       m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());

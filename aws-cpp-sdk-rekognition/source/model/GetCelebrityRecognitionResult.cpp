@@ -56,7 +56,7 @@ GetCelebrityRecognitionResult& GetCelebrityRecognitionResult::operator =(const A
 
   if(jsonValue.ValueExists("Celebrities"))
   {
-    Array<JsonView> celebritiesJsonList = jsonValue.GetArray("Celebrities");
+    Aws::Utils::Array<JsonView> celebritiesJsonList = jsonValue.GetArray("Celebrities");
     for(unsigned celebritiesIndex = 0; celebritiesIndex < celebritiesJsonList.GetLength(); ++celebritiesIndex)
     {
       m_celebrities.push_back(celebritiesJsonList[celebritiesIndex].AsObject());

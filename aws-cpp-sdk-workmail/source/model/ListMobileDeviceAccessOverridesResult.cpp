@@ -30,7 +30,7 @@ ListMobileDeviceAccessOverridesResult& ListMobileDeviceAccessOverridesResult::op
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Overrides"))
   {
-    Array<JsonView> overridesJsonList = jsonValue.GetArray("Overrides");
+    Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("Overrides");
     for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
     {
       m_overrides.push_back(overridesJsonList[overridesIndex].AsObject());

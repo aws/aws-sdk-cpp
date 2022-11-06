@@ -104,7 +104,7 @@ PullRequest& PullRequest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("pullRequestTargets"))
   {
-    Array<JsonView> pullRequestTargetsJsonList = jsonValue.GetArray("pullRequestTargets");
+    Aws::Utils::Array<JsonView> pullRequestTargetsJsonList = jsonValue.GetArray("pullRequestTargets");
     for(unsigned pullRequestTargetsIndex = 0; pullRequestTargetsIndex < pullRequestTargetsJsonList.GetLength(); ++pullRequestTargetsIndex)
     {
       m_pullRequestTargets.push_back(pullRequestTargetsJsonList[pullRequestTargetsIndex].AsObject());
@@ -128,7 +128,7 @@ PullRequest& PullRequest::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("approvalRules"))
   {
-    Array<JsonView> approvalRulesJsonList = jsonValue.GetArray("approvalRules");
+    Aws::Utils::Array<JsonView> approvalRulesJsonList = jsonValue.GetArray("approvalRules");
     for(unsigned approvalRulesIndex = 0; approvalRulesIndex < approvalRulesJsonList.GetLength(); ++approvalRulesIndex)
     {
       m_approvalRules.push_back(approvalRulesJsonList[approvalRulesIndex].AsObject());
@@ -184,7 +184,7 @@ JsonValue PullRequest::Jsonize() const
 
   if(m_pullRequestTargetsHasBeenSet)
   {
-   Array<JsonValue> pullRequestTargetsJsonList(m_pullRequestTargets.size());
+   Aws::Utils::Array<JsonValue> pullRequestTargetsJsonList(m_pullRequestTargets.size());
    for(unsigned pullRequestTargetsIndex = 0; pullRequestTargetsIndex < pullRequestTargetsJsonList.GetLength(); ++pullRequestTargetsIndex)
    {
      pullRequestTargetsJsonList[pullRequestTargetsIndex].AsObject(m_pullRequestTargets[pullRequestTargetsIndex].Jsonize());
@@ -207,7 +207,7 @@ JsonValue PullRequest::Jsonize() const
 
   if(m_approvalRulesHasBeenSet)
   {
-   Array<JsonValue> approvalRulesJsonList(m_approvalRules.size());
+   Aws::Utils::Array<JsonValue> approvalRulesJsonList(m_approvalRules.size());
    for(unsigned approvalRulesIndex = 0; approvalRulesIndex < approvalRulesJsonList.GetLength(); ++approvalRulesIndex)
    {
      approvalRulesJsonList[approvalRulesIndex].AsObject(m_approvalRules[approvalRulesIndex].Jsonize());

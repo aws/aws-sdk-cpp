@@ -33,7 +33,7 @@ CompositeSlotTypeSetting& CompositeSlotTypeSetting::operator =(JsonView jsonValu
 {
   if(jsonValue.ValueExists("subSlots"))
   {
-    Array<JsonView> subSlotsJsonList = jsonValue.GetArray("subSlots");
+    Aws::Utils::Array<JsonView> subSlotsJsonList = jsonValue.GetArray("subSlots");
     for(unsigned subSlotsIndex = 0; subSlotsIndex < subSlotsJsonList.GetLength(); ++subSlotsIndex)
     {
       m_subSlots.push_back(subSlotsJsonList[subSlotsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue CompositeSlotTypeSetting::Jsonize() const
 
   if(m_subSlotsHasBeenSet)
   {
-   Array<JsonValue> subSlotsJsonList(m_subSlots.size());
+   Aws::Utils::Array<JsonValue> subSlotsJsonList(m_subSlots.size());
    for(unsigned subSlotsIndex = 0; subSlotsIndex < subSlotsJsonList.GetLength(); ++subSlotsIndex)
    {
      subSlotsJsonList[subSlotsIndex].AsObject(m_subSlots[subSlotsIndex].Jsonize());

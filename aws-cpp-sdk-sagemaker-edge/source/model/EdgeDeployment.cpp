@@ -64,7 +64,7 @@ EdgeDeployment& EdgeDeployment::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Definitions"))
   {
-    Array<JsonView> definitionsJsonList = jsonValue.GetArray("Definitions");
+    Aws::Utils::Array<JsonView> definitionsJsonList = jsonValue.GetArray("Definitions");
     for(unsigned definitionsIndex = 0; definitionsIndex < definitionsJsonList.GetLength(); ++definitionsIndex)
     {
       m_definitions.push_back(definitionsJsonList[definitionsIndex].AsObject());
@@ -97,7 +97,7 @@ JsonValue EdgeDeployment::Jsonize() const
 
   if(m_definitionsHasBeenSet)
   {
-   Array<JsonValue> definitionsJsonList(m_definitions.size());
+   Aws::Utils::Array<JsonValue> definitionsJsonList(m_definitions.size());
    for(unsigned definitionsIndex = 0; definitionsIndex < definitionsJsonList.GetLength(); ++definitionsIndex)
    {
      definitionsJsonList[definitionsIndex].AsObject(m_definitions[definitionsIndex].Jsonize());

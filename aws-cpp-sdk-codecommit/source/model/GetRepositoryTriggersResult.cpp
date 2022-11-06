@@ -36,7 +36,7 @@ GetRepositoryTriggersResult& GetRepositoryTriggersResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("triggers"))
   {
-    Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
+    Aws::Utils::Array<JsonView> triggersJsonList = jsonValue.GetArray("triggers");
     for(unsigned triggersIndex = 0; triggersIndex < triggersJsonList.GetLength(); ++triggersIndex)
     {
       m_triggers.push_back(triggersJsonList[triggersIndex].AsObject());

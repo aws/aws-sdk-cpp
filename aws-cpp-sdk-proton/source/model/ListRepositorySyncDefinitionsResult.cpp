@@ -36,7 +36,7 @@ ListRepositorySyncDefinitionsResult& ListRepositorySyncDefinitionsResult::operat
 
   if(jsonValue.ValueExists("syncDefinitions"))
   {
-    Array<JsonView> syncDefinitionsJsonList = jsonValue.GetArray("syncDefinitions");
+    Aws::Utils::Array<JsonView> syncDefinitionsJsonList = jsonValue.GetArray("syncDefinitions");
     for(unsigned syncDefinitionsIndex = 0; syncDefinitionsIndex < syncDefinitionsJsonList.GetLength(); ++syncDefinitionsIndex)
     {
       m_syncDefinitions.push_back(syncDefinitionsJsonList[syncDefinitionsIndex].AsObject());

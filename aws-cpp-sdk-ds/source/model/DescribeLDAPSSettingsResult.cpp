@@ -30,7 +30,7 @@ DescribeLDAPSSettingsResult& DescribeLDAPSSettingsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LDAPSSettingsInfo"))
   {
-    Array<JsonView> lDAPSSettingsInfoJsonList = jsonValue.GetArray("LDAPSSettingsInfo");
+    Aws::Utils::Array<JsonView> lDAPSSettingsInfoJsonList = jsonValue.GetArray("LDAPSSettingsInfo");
     for(unsigned lDAPSSettingsInfoIndex = 0; lDAPSSettingsInfoIndex < lDAPSSettingsInfoJsonList.GetLength(); ++lDAPSSettingsInfoIndex)
     {
       m_lDAPSSettingsInfo.push_back(lDAPSSettingsInfoJsonList[lDAPSSettingsInfoIndex].AsObject());

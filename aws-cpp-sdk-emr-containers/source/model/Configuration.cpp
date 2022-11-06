@@ -54,7 +54,7 @@ Configuration& Configuration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("configurations"))
   {
-    Array<JsonView> configurationsJsonList = jsonValue.GetArray("configurations");
+    Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());
@@ -88,7 +88,7 @@ JsonValue Configuration::Jsonize() const
 
   if(m_configurationsHasBeenSet)
   {
-   Array<JsonValue> configurationsJsonList(m_configurations.size());
+   Aws::Utils::Array<JsonValue> configurationsJsonList(m_configurations.size());
    for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
    {
      configurationsJsonList[configurationsIndex].AsObject(m_configurations[configurationsIndex].Jsonize());

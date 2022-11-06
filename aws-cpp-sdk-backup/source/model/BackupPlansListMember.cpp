@@ -105,7 +105,7 @@ BackupPlansListMember& BackupPlansListMember::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AdvancedBackupSettings"))
   {
-    Array<JsonView> advancedBackupSettingsJsonList = jsonValue.GetArray("AdvancedBackupSettings");
+    Aws::Utils::Array<JsonView> advancedBackupSettingsJsonList = jsonValue.GetArray("AdvancedBackupSettings");
     for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
     {
       m_advancedBackupSettings.push_back(advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject());
@@ -167,7 +167,7 @@ JsonValue BackupPlansListMember::Jsonize() const
 
   if(m_advancedBackupSettingsHasBeenSet)
   {
-   Array<JsonValue> advancedBackupSettingsJsonList(m_advancedBackupSettings.size());
+   Aws::Utils::Array<JsonValue> advancedBackupSettingsJsonList(m_advancedBackupSettings.size());
    for(unsigned advancedBackupSettingsIndex = 0; advancedBackupSettingsIndex < advancedBackupSettingsJsonList.GetLength(); ++advancedBackupSettingsIndex)
    {
      advancedBackupSettingsJsonList[advancedBackupSettingsIndex].AsObject(m_advancedBackupSettings[advancedBackupSettingsIndex].Jsonize());

@@ -33,7 +33,7 @@ AggregatedVariablesImportanceMetrics& AggregatedVariablesImportanceMetrics::oper
 {
   if(jsonValue.ValueExists("logOddsMetrics"))
   {
-    Array<JsonView> logOddsMetricsJsonList = jsonValue.GetArray("logOddsMetrics");
+    Aws::Utils::Array<JsonView> logOddsMetricsJsonList = jsonValue.GetArray("logOddsMetrics");
     for(unsigned logOddsMetricsIndex = 0; logOddsMetricsIndex < logOddsMetricsJsonList.GetLength(); ++logOddsMetricsIndex)
     {
       m_logOddsMetrics.push_back(logOddsMetricsJsonList[logOddsMetricsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue AggregatedVariablesImportanceMetrics::Jsonize() const
 
   if(m_logOddsMetricsHasBeenSet)
   {
-   Array<JsonValue> logOddsMetricsJsonList(m_logOddsMetrics.size());
+   Aws::Utils::Array<JsonValue> logOddsMetricsJsonList(m_logOddsMetrics.size());
    for(unsigned logOddsMetricsIndex = 0; logOddsMetricsIndex < logOddsMetricsJsonList.GetLength(); ++logOddsMetricsIndex)
    {
      logOddsMetricsJsonList[logOddsMetricsIndex].AsObject(m_logOddsMetrics[logOddsMetricsIndex].Jsonize());

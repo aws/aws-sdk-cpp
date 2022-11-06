@@ -34,7 +34,7 @@ Aws::String DescribeOrganizationResourceCollectionHealthRequest::SerializePayloa
 
   if(m_accountIdsHasBeenSet)
   {
-   Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
    for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
    {
      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
@@ -45,7 +45,7 @@ Aws::String DescribeOrganizationResourceCollectionHealthRequest::SerializePayloa
 
   if(m_organizationalUnitIdsHasBeenSet)
   {
-   Array<JsonValue> organizationalUnitIdsJsonList(m_organizationalUnitIds.size());
+   Aws::Utils::Array<JsonValue> organizationalUnitIdsJsonList(m_organizationalUnitIds.size());
    for(unsigned organizationalUnitIdsIndex = 0; organizationalUnitIdsIndex < organizationalUnitIdsJsonList.GetLength(); ++organizationalUnitIdsIndex)
    {
      organizationalUnitIdsJsonList[organizationalUnitIdsIndex].AsString(m_organizationalUnitIds[organizationalUnitIdsIndex]);

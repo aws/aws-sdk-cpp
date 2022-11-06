@@ -77,7 +77,7 @@ CreateWorkflowResult& CreateWorkflowResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("stepTargets"))
   {
-    Array<JsonView> stepTargetsJsonList = jsonValue.GetArray("stepTargets");
+    Aws::Utils::Array<JsonView> stepTargetsJsonList = jsonValue.GetArray("stepTargets");
     for(unsigned stepTargetsIndex = 0; stepTargetsIndex < stepTargetsJsonList.GetLength(); ++stepTargetsIndex)
     {
       m_stepTargets.push_back(stepTargetsJsonList[stepTargetsIndex].AsString());

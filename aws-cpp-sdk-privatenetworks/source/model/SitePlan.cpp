@@ -35,7 +35,7 @@ SitePlan& SitePlan::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("options"))
   {
-    Array<JsonView> optionsJsonList = jsonValue.GetArray("options");
+    Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("options");
     for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
     {
       m_options.push_back(optionsJsonList[optionsIndex].AsObject());
@@ -45,7 +45,7 @@ SitePlan& SitePlan::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resourceDefinitions"))
   {
-    Array<JsonView> resourceDefinitionsJsonList = jsonValue.GetArray("resourceDefinitions");
+    Aws::Utils::Array<JsonView> resourceDefinitionsJsonList = jsonValue.GetArray("resourceDefinitions");
     for(unsigned resourceDefinitionsIndex = 0; resourceDefinitionsIndex < resourceDefinitionsJsonList.GetLength(); ++resourceDefinitionsIndex)
     {
       m_resourceDefinitions.push_back(resourceDefinitionsJsonList[resourceDefinitionsIndex].AsObject());
@@ -62,7 +62,7 @@ JsonValue SitePlan::Jsonize() const
 
   if(m_optionsHasBeenSet)
   {
-   Array<JsonValue> optionsJsonList(m_options.size());
+   Aws::Utils::Array<JsonValue> optionsJsonList(m_options.size());
    for(unsigned optionsIndex = 0; optionsIndex < optionsJsonList.GetLength(); ++optionsIndex)
    {
      optionsJsonList[optionsIndex].AsObject(m_options[optionsIndex].Jsonize());
@@ -73,7 +73,7 @@ JsonValue SitePlan::Jsonize() const
 
   if(m_resourceDefinitionsHasBeenSet)
   {
-   Array<JsonValue> resourceDefinitionsJsonList(m_resourceDefinitions.size());
+   Aws::Utils::Array<JsonValue> resourceDefinitionsJsonList(m_resourceDefinitions.size());
    for(unsigned resourceDefinitionsIndex = 0; resourceDefinitionsIndex < resourceDefinitionsJsonList.GetLength(); ++resourceDefinitionsIndex)
    {
      resourceDefinitionsJsonList[resourceDefinitionsIndex].AsObject(m_resourceDefinitions[resourceDefinitionsIndex].Jsonize());

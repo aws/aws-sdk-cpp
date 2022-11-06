@@ -42,7 +42,7 @@ CellInput& CellInput::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("facts"))
   {
-    Array<JsonView> factsJsonList = jsonValue.GetArray("facts");
+    Aws::Utils::Array<JsonView> factsJsonList = jsonValue.GetArray("facts");
     for(unsigned factsIndex = 0; factsIndex < factsJsonList.GetLength(); ++factsIndex)
     {
       m_facts.push_back(factsJsonList[factsIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue CellInput::Jsonize() const
 
   if(m_factsHasBeenSet)
   {
-   Array<JsonValue> factsJsonList(m_facts.size());
+   Aws::Utils::Array<JsonValue> factsJsonList(m_facts.size());
    for(unsigned factsIndex = 0; factsIndex < factsJsonList.GetLength(); ++factsIndex)
    {
      factsJsonList[factsIndex].AsString(m_facts[factsIndex]);

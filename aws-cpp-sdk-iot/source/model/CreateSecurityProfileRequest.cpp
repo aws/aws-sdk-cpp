@@ -34,7 +34,7 @@ Aws::String CreateSecurityProfileRequest::SerializePayload() const
 
   if(m_behaviorsHasBeenSet)
   {
-   Array<JsonValue> behaviorsJsonList(m_behaviors.size());
+   Aws::Utils::Array<JsonValue> behaviorsJsonList(m_behaviors.size());
    for(unsigned behaviorsIndex = 0; behaviorsIndex < behaviorsJsonList.GetLength(); ++behaviorsIndex)
    {
      behaviorsJsonList[behaviorsIndex].AsObject(m_behaviors[behaviorsIndex].Jsonize());
@@ -56,7 +56,7 @@ Aws::String CreateSecurityProfileRequest::SerializePayload() const
 
   if(m_additionalMetricsToRetainV2HasBeenSet)
   {
-   Array<JsonValue> additionalMetricsToRetainV2JsonList(m_additionalMetricsToRetainV2.size());
+   Aws::Utils::Array<JsonValue> additionalMetricsToRetainV2JsonList(m_additionalMetricsToRetainV2.size());
    for(unsigned additionalMetricsToRetainV2Index = 0; additionalMetricsToRetainV2Index < additionalMetricsToRetainV2JsonList.GetLength(); ++additionalMetricsToRetainV2Index)
    {
      additionalMetricsToRetainV2JsonList[additionalMetricsToRetainV2Index].AsObject(m_additionalMetricsToRetainV2[additionalMetricsToRetainV2Index].Jsonize());
@@ -67,7 +67,7 @@ Aws::String CreateSecurityProfileRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -36,7 +36,7 @@ GetTagValuesResult& GetTagValuesResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("TagValues"))
   {
-    Array<JsonView> tagValuesJsonList = jsonValue.GetArray("TagValues");
+    Aws::Utils::Array<JsonView> tagValuesJsonList = jsonValue.GetArray("TagValues");
     for(unsigned tagValuesIndex = 0; tagValuesIndex < tagValuesJsonList.GetLength(); ++tagValuesIndex)
     {
       m_tagValues.push_back(tagValuesJsonList[tagValuesIndex].AsString());

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/ec2-instance-connect/EC2InstanceConnectErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/ec2-instance-connect/EC2InstanceConnectEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -51,6 +53,10 @@ namespace Aws
 
   namespace EC2InstanceConnect
   {
+    using EC2InstanceConnectClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EC2InstanceConnectEndpointProviderBase = Aws::EC2InstanceConnect::Endpoint::EC2InstanceConnectEndpointProviderBase;
+    using EC2InstanceConnectEndpointProvider = Aws::EC2InstanceConnect::Endpoint::EC2InstanceConnectEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in EC2InstanceConnectClient header */

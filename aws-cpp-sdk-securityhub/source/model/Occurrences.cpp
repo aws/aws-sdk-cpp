@@ -41,7 +41,7 @@ Occurrences& Occurrences::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LineRanges"))
   {
-    Array<JsonView> lineRangesJsonList = jsonValue.GetArray("LineRanges");
+    Aws::Utils::Array<JsonView> lineRangesJsonList = jsonValue.GetArray("LineRanges");
     for(unsigned lineRangesIndex = 0; lineRangesIndex < lineRangesJsonList.GetLength(); ++lineRangesIndex)
     {
       m_lineRanges.push_back(lineRangesJsonList[lineRangesIndex].AsObject());
@@ -51,7 +51,7 @@ Occurrences& Occurrences::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("OffsetRanges"))
   {
-    Array<JsonView> offsetRangesJsonList = jsonValue.GetArray("OffsetRanges");
+    Aws::Utils::Array<JsonView> offsetRangesJsonList = jsonValue.GetArray("OffsetRanges");
     for(unsigned offsetRangesIndex = 0; offsetRangesIndex < offsetRangesJsonList.GetLength(); ++offsetRangesIndex)
     {
       m_offsetRanges.push_back(offsetRangesJsonList[offsetRangesIndex].AsObject());
@@ -61,7 +61,7 @@ Occurrences& Occurrences::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Pages"))
   {
-    Array<JsonView> pagesJsonList = jsonValue.GetArray("Pages");
+    Aws::Utils::Array<JsonView> pagesJsonList = jsonValue.GetArray("Pages");
     for(unsigned pagesIndex = 0; pagesIndex < pagesJsonList.GetLength(); ++pagesIndex)
     {
       m_pages.push_back(pagesJsonList[pagesIndex].AsObject());
@@ -71,7 +71,7 @@ Occurrences& Occurrences::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Records"))
   {
-    Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
+    Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("Records");
     for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
@@ -81,7 +81,7 @@ Occurrences& Occurrences::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Cells"))
   {
-    Array<JsonView> cellsJsonList = jsonValue.GetArray("Cells");
+    Aws::Utils::Array<JsonView> cellsJsonList = jsonValue.GetArray("Cells");
     for(unsigned cellsIndex = 0; cellsIndex < cellsJsonList.GetLength(); ++cellsIndex)
     {
       m_cells.push_back(cellsJsonList[cellsIndex].AsObject());
@@ -98,7 +98,7 @@ JsonValue Occurrences::Jsonize() const
 
   if(m_lineRangesHasBeenSet)
   {
-   Array<JsonValue> lineRangesJsonList(m_lineRanges.size());
+   Aws::Utils::Array<JsonValue> lineRangesJsonList(m_lineRanges.size());
    for(unsigned lineRangesIndex = 0; lineRangesIndex < lineRangesJsonList.GetLength(); ++lineRangesIndex)
    {
      lineRangesJsonList[lineRangesIndex].AsObject(m_lineRanges[lineRangesIndex].Jsonize());
@@ -109,7 +109,7 @@ JsonValue Occurrences::Jsonize() const
 
   if(m_offsetRangesHasBeenSet)
   {
-   Array<JsonValue> offsetRangesJsonList(m_offsetRanges.size());
+   Aws::Utils::Array<JsonValue> offsetRangesJsonList(m_offsetRanges.size());
    for(unsigned offsetRangesIndex = 0; offsetRangesIndex < offsetRangesJsonList.GetLength(); ++offsetRangesIndex)
    {
      offsetRangesJsonList[offsetRangesIndex].AsObject(m_offsetRanges[offsetRangesIndex].Jsonize());
@@ -120,7 +120,7 @@ JsonValue Occurrences::Jsonize() const
 
   if(m_pagesHasBeenSet)
   {
-   Array<JsonValue> pagesJsonList(m_pages.size());
+   Aws::Utils::Array<JsonValue> pagesJsonList(m_pages.size());
    for(unsigned pagesIndex = 0; pagesIndex < pagesJsonList.GetLength(); ++pagesIndex)
    {
      pagesJsonList[pagesIndex].AsObject(m_pages[pagesIndex].Jsonize());
@@ -131,7 +131,7 @@ JsonValue Occurrences::Jsonize() const
 
   if(m_recordsHasBeenSet)
   {
-   Array<JsonValue> recordsJsonList(m_records.size());
+   Aws::Utils::Array<JsonValue> recordsJsonList(m_records.size());
    for(unsigned recordsIndex = 0; recordsIndex < recordsJsonList.GetLength(); ++recordsIndex)
    {
      recordsJsonList[recordsIndex].AsObject(m_records[recordsIndex].Jsonize());
@@ -142,7 +142,7 @@ JsonValue Occurrences::Jsonize() const
 
   if(m_cellsHasBeenSet)
   {
-   Array<JsonValue> cellsJsonList(m_cells.size());
+   Aws::Utils::Array<JsonValue> cellsJsonList(m_cells.size());
    for(unsigned cellsIndex = 0; cellsIndex < cellsJsonList.GetLength(); ++cellsIndex)
    {
      cellsJsonList[cellsIndex].AsObject(m_cells[cellsIndex].Jsonize());

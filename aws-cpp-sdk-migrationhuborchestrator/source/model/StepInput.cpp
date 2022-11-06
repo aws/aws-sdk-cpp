@@ -55,7 +55,7 @@ StepInput& StepInput::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("listOfStringsValue"))
   {
-    Array<JsonView> listOfStringsValueJsonList = jsonValue.GetArray("listOfStringsValue");
+    Aws::Utils::Array<JsonView> listOfStringsValueJsonList = jsonValue.GetArray("listOfStringsValue");
     for(unsigned listOfStringsValueIndex = 0; listOfStringsValueIndex < listOfStringsValueJsonList.GetLength(); ++listOfStringsValueIndex)
     {
       m_listOfStringsValue.push_back(listOfStringsValueJsonList[listOfStringsValueIndex].AsString());
@@ -94,7 +94,7 @@ JsonValue StepInput::Jsonize() const
 
   if(m_listOfStringsValueHasBeenSet)
   {
-   Array<JsonValue> listOfStringsValueJsonList(m_listOfStringsValue.size());
+   Aws::Utils::Array<JsonValue> listOfStringsValueJsonList(m_listOfStringsValue.size());
    for(unsigned listOfStringsValueIndex = 0; listOfStringsValueIndex < listOfStringsValueJsonList.GetLength(); ++listOfStringsValueIndex)
    {
      listOfStringsValueJsonList[listOfStringsValueIndex].AsString(m_listOfStringsValue[listOfStringsValueIndex]);

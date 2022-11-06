@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/guardduty/GuardDutyErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/guardduty/GuardDutyEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -111,6 +113,10 @@ namespace Aws
 
   namespace GuardDuty
   {
+    using GuardDutyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using GuardDutyEndpointProviderBase = Aws::GuardDuty::Endpoint::GuardDutyEndpointProviderBase;
+    using GuardDutyEndpointProvider = Aws::GuardDuty::Endpoint::GuardDutyEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in GuardDutyClient header */

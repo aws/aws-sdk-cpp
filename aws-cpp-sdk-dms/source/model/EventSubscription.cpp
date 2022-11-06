@@ -93,7 +93,7 @@ EventSubscription& EventSubscription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SourceIdsList"))
   {
-    Array<JsonView> sourceIdsListJsonList = jsonValue.GetArray("SourceIdsList");
+    Aws::Utils::Array<JsonView> sourceIdsListJsonList = jsonValue.GetArray("SourceIdsList");
     for(unsigned sourceIdsListIndex = 0; sourceIdsListIndex < sourceIdsListJsonList.GetLength(); ++sourceIdsListIndex)
     {
       m_sourceIdsList.push_back(sourceIdsListJsonList[sourceIdsListIndex].AsString());
@@ -103,7 +103,7 @@ EventSubscription& EventSubscription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EventCategoriesList"))
   {
-    Array<JsonView> eventCategoriesListJsonList = jsonValue.GetArray("EventCategoriesList");
+    Aws::Utils::Array<JsonView> eventCategoriesListJsonList = jsonValue.GetArray("EventCategoriesList");
     for(unsigned eventCategoriesListIndex = 0; eventCategoriesListIndex < eventCategoriesListJsonList.GetLength(); ++eventCategoriesListIndex)
     {
       m_eventCategoriesList.push_back(eventCategoriesListJsonList[eventCategoriesListIndex].AsString());
@@ -163,7 +163,7 @@ JsonValue EventSubscription::Jsonize() const
 
   if(m_sourceIdsListHasBeenSet)
   {
-   Array<JsonValue> sourceIdsListJsonList(m_sourceIdsList.size());
+   Aws::Utils::Array<JsonValue> sourceIdsListJsonList(m_sourceIdsList.size());
    for(unsigned sourceIdsListIndex = 0; sourceIdsListIndex < sourceIdsListJsonList.GetLength(); ++sourceIdsListIndex)
    {
      sourceIdsListJsonList[sourceIdsListIndex].AsString(m_sourceIdsList[sourceIdsListIndex]);
@@ -174,7 +174,7 @@ JsonValue EventSubscription::Jsonize() const
 
   if(m_eventCategoriesListHasBeenSet)
   {
-   Array<JsonValue> eventCategoriesListJsonList(m_eventCategoriesList.size());
+   Aws::Utils::Array<JsonValue> eventCategoriesListJsonList(m_eventCategoriesList.size());
    for(unsigned eventCategoriesListIndex = 0; eventCategoriesListIndex < eventCategoriesListJsonList.GetLength(); ++eventCategoriesListIndex)
    {
      eventCategoriesListJsonList[eventCategoriesListIndex].AsString(m_eventCategoriesList[eventCategoriesListIndex]);

@@ -44,7 +44,7 @@ Aws::String CreateResourcePolicyStatementRequest::SerializePayload() const
 
   if(m_principalHasBeenSet)
   {
-   Array<JsonValue> principalJsonList(m_principal.size());
+   Aws::Utils::Array<JsonValue> principalJsonList(m_principal.size());
    for(unsigned principalIndex = 0; principalIndex < principalJsonList.GetLength(); ++principalIndex)
    {
      principalJsonList[principalIndex].AsObject(m_principal[principalIndex].Jsonize());
@@ -55,7 +55,7 @@ Aws::String CreateResourcePolicyStatementRequest::SerializePayload() const
 
   if(m_actionHasBeenSet)
   {
-   Array<JsonValue> actionJsonList(m_action.size());
+   Aws::Utils::Array<JsonValue> actionJsonList(m_action.size());
    for(unsigned actionIndex = 0; actionIndex < actionJsonList.GetLength(); ++actionIndex)
    {
      actionJsonList[actionIndex].AsString(m_action[actionIndex]);

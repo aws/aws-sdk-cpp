@@ -151,7 +151,7 @@ ApplicationComponentDetail& ApplicationComponentDetail::operator =(JsonView json
 
   if(jsonValue.ValueExists("listAntipatternSeveritySummary"))
   {
-    Array<JsonView> listAntipatternSeveritySummaryJsonList = jsonValue.GetArray("listAntipatternSeveritySummary");
+    Aws::Utils::Array<JsonView> listAntipatternSeveritySummaryJsonList = jsonValue.GetArray("listAntipatternSeveritySummary");
     for(unsigned listAntipatternSeveritySummaryIndex = 0; listAntipatternSeveritySummaryIndex < listAntipatternSeveritySummaryJsonList.GetLength(); ++listAntipatternSeveritySummaryIndex)
     {
       m_listAntipatternSeveritySummary.push_back(listAntipatternSeveritySummaryJsonList[listAntipatternSeveritySummaryIndex].AsObject());
@@ -203,7 +203,7 @@ ApplicationComponentDetail& ApplicationComponentDetail::operator =(JsonView json
 
   if(jsonValue.ValueExists("sourceCodeRepositories"))
   {
-    Array<JsonView> sourceCodeRepositoriesJsonList = jsonValue.GetArray("sourceCodeRepositories");
+    Aws::Utils::Array<JsonView> sourceCodeRepositoriesJsonList = jsonValue.GetArray("sourceCodeRepositories");
     for(unsigned sourceCodeRepositoriesIndex = 0; sourceCodeRepositoriesIndex < sourceCodeRepositoriesJsonList.GetLength(); ++sourceCodeRepositoriesIndex)
     {
       m_sourceCodeRepositories.push_back(sourceCodeRepositoriesJsonList[sourceCodeRepositoriesIndex].AsObject());
@@ -282,7 +282,7 @@ JsonValue ApplicationComponentDetail::Jsonize() const
 
   if(m_listAntipatternSeveritySummaryHasBeenSet)
   {
-   Array<JsonValue> listAntipatternSeveritySummaryJsonList(m_listAntipatternSeveritySummary.size());
+   Aws::Utils::Array<JsonValue> listAntipatternSeveritySummaryJsonList(m_listAntipatternSeveritySummary.size());
    for(unsigned listAntipatternSeveritySummaryIndex = 0; listAntipatternSeveritySummaryIndex < listAntipatternSeveritySummaryJsonList.GetLength(); ++listAntipatternSeveritySummaryIndex)
    {
      listAntipatternSeveritySummaryJsonList[listAntipatternSeveritySummaryIndex].AsObject(m_listAntipatternSeveritySummary[listAntipatternSeveritySummaryIndex].Jsonize());
@@ -328,7 +328,7 @@ JsonValue ApplicationComponentDetail::Jsonize() const
 
   if(m_sourceCodeRepositoriesHasBeenSet)
   {
-   Array<JsonValue> sourceCodeRepositoriesJsonList(m_sourceCodeRepositories.size());
+   Aws::Utils::Array<JsonValue> sourceCodeRepositoriesJsonList(m_sourceCodeRepositories.size());
    for(unsigned sourceCodeRepositoriesIndex = 0; sourceCodeRepositoriesIndex < sourceCodeRepositoriesJsonList.GetLength(); ++sourceCodeRepositoriesIndex)
    {
      sourceCodeRepositoriesJsonList[sourceCodeRepositoriesIndex].AsObject(m_sourceCodeRepositories[sourceCodeRepositoriesIndex].Jsonize());

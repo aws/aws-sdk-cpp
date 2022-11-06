@@ -35,7 +35,7 @@ Aws::String UpdateLaunchRequest::SerializePayload() const
 
   if(m_groupsHasBeenSet)
   {
-   Array<JsonValue> groupsJsonList(m_groups.size());
+   Aws::Utils::Array<JsonValue> groupsJsonList(m_groups.size());
    for(unsigned groupsIndex = 0; groupsIndex < groupsJsonList.GetLength(); ++groupsIndex)
    {
      groupsJsonList[groupsIndex].AsObject(m_groups[groupsIndex].Jsonize());
@@ -46,7 +46,7 @@ Aws::String UpdateLaunchRequest::SerializePayload() const
 
   if(m_metricMonitorsHasBeenSet)
   {
-   Array<JsonValue> metricMonitorsJsonList(m_metricMonitors.size());
+   Aws::Utils::Array<JsonValue> metricMonitorsJsonList(m_metricMonitors.size());
    for(unsigned metricMonitorsIndex = 0; metricMonitorsIndex < metricMonitorsJsonList.GetLength(); ++metricMonitorsIndex)
    {
      metricMonitorsJsonList[metricMonitorsIndex].AsObject(m_metricMonitors[metricMonitorsIndex].Jsonize());

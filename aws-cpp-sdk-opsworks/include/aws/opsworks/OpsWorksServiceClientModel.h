@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/opsworks/OpsWorksErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/opsworks/OpsWorksEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -86,6 +88,10 @@ namespace Aws
 
   namespace OpsWorks
   {
+    using OpsWorksClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OpsWorksEndpointProviderBase = Aws::OpsWorks::Endpoint::OpsWorksEndpointProviderBase;
+    using OpsWorksEndpointProvider = Aws::OpsWorks::Endpoint::OpsWorksEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in OpsWorksClient header */

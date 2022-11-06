@@ -32,22 +32,48 @@ namespace PrivateNetworks
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        PrivateNetworksClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        PrivateNetworksClient(const Aws::PrivateNetworks::PrivateNetworksClientConfiguration& clientConfiguration = Aws::PrivateNetworks::PrivateNetworksClientConfiguration(),
+                              std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider = Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PrivateNetworksClient(const Aws::Auth::AWSCredentials& credentials,
-                              const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                              std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider = Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::PrivateNetworks::PrivateNetworksClientConfiguration& clientConfiguration = Aws::PrivateNetworks::PrivateNetworksClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         PrivateNetworksClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                              const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                              std::shared_ptr<PrivateNetworksEndpointProviderBase> endpointProvider = Aws::MakeShared<PrivateNetworksEndpointProvider>(ALLOCATION_TAG),
+                              const Aws::PrivateNetworks::PrivateNetworksClientConfiguration& clientConfiguration = Aws::PrivateNetworks::PrivateNetworksClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        PrivateNetworksClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        PrivateNetworksClient(const Aws::Auth::AWSCredentials& credentials,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        PrivateNetworksClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                              const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~PrivateNetworksClient();
 
 
@@ -510,12 +536,13 @@ namespace PrivateNetworks
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<PrivateNetworksEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const PrivateNetworksClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      PrivateNetworksClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<PrivateNetworksEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace PrivateNetworks

@@ -32,7 +32,7 @@ ListUserGroupsResult& ListUserGroupsResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GroupList"))
   {
-    Array<JsonView> groupListJsonList = jsonValue.GetArray("GroupList");
+    Aws::Utils::Array<JsonView> groupListJsonList = jsonValue.GetArray("GroupList");
     for(unsigned groupListIndex = 0; groupListIndex < groupListJsonList.GetLength(); ++groupListIndex)
     {
       m_groupList.push_back(groupListJsonList[groupListIndex].AsObject());

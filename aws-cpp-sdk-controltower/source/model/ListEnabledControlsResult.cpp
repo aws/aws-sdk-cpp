@@ -30,7 +30,7 @@ ListEnabledControlsResult& ListEnabledControlsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("enabledControls"))
   {
-    Array<JsonView> enabledControlsJsonList = jsonValue.GetArray("enabledControls");
+    Aws::Utils::Array<JsonView> enabledControlsJsonList = jsonValue.GetArray("enabledControls");
     for(unsigned enabledControlsIndex = 0; enabledControlsIndex < enabledControlsJsonList.GetLength(); ++enabledControlsIndex)
     {
       m_enabledControls.push_back(enabledControlsJsonList[enabledControlsIndex].AsObject());

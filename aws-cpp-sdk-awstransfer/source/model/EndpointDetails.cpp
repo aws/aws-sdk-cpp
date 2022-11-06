@@ -41,7 +41,7 @@ EndpointDetails& EndpointDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("AddressAllocationIds"))
   {
-    Array<JsonView> addressAllocationIdsJsonList = jsonValue.GetArray("AddressAllocationIds");
+    Aws::Utils::Array<JsonView> addressAllocationIdsJsonList = jsonValue.GetArray("AddressAllocationIds");
     for(unsigned addressAllocationIdsIndex = 0; addressAllocationIdsIndex < addressAllocationIdsJsonList.GetLength(); ++addressAllocationIdsIndex)
     {
       m_addressAllocationIds.push_back(addressAllocationIdsJsonList[addressAllocationIdsIndex].AsString());
@@ -51,7 +51,7 @@ EndpointDetails& EndpointDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubnetIds"))
   {
-    Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
+    Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
     for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
@@ -75,7 +75,7 @@ EndpointDetails& EndpointDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
-    Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
     for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
@@ -92,7 +92,7 @@ JsonValue EndpointDetails::Jsonize() const
 
   if(m_addressAllocationIdsHasBeenSet)
   {
-   Array<JsonValue> addressAllocationIdsJsonList(m_addressAllocationIds.size());
+   Aws::Utils::Array<JsonValue> addressAllocationIdsJsonList(m_addressAllocationIds.size());
    for(unsigned addressAllocationIdsIndex = 0; addressAllocationIdsIndex < addressAllocationIdsJsonList.GetLength(); ++addressAllocationIdsIndex)
    {
      addressAllocationIdsJsonList[addressAllocationIdsIndex].AsString(m_addressAllocationIds[addressAllocationIdsIndex]);
@@ -103,7 +103,7 @@ JsonValue EndpointDetails::Jsonize() const
 
   if(m_subnetIdsHasBeenSet)
   {
-   Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
+   Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
    for(unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex)
    {
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
@@ -126,7 +126,7 @@ JsonValue EndpointDetails::Jsonize() const
 
   if(m_securityGroupIdsHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
    for(unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex)
    {
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);

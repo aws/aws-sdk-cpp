@@ -82,7 +82,7 @@ LineItem& LineItem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AssetInformationList"))
   {
-    Array<JsonView> assetInformationListJsonList = jsonValue.GetArray("AssetInformationList");
+    Aws::Utils::Array<JsonView> assetInformationListJsonList = jsonValue.GetArray("AssetInformationList");
     for(unsigned assetInformationListIndex = 0; assetInformationListIndex < assetInformationListJsonList.GetLength(); ++assetInformationListIndex)
     {
       m_assetInformationList.push_back(assetInformationListJsonList[assetInformationListIndex].AsObject());
@@ -128,7 +128,7 @@ JsonValue LineItem::Jsonize() const
 
   if(m_assetInformationListHasBeenSet)
   {
-   Array<JsonValue> assetInformationListJsonList(m_assetInformationList.size());
+   Aws::Utils::Array<JsonValue> assetInformationListJsonList(m_assetInformationList.size());
    for(unsigned assetInformationListIndex = 0; assetInformationListIndex < assetInformationListJsonList.GetLength(); ++assetInformationListIndex)
    {
      assetInformationListJsonList[assetInformationListIndex].AsObject(m_assetInformationList[assetInformationListIndex].Jsonize());

@@ -36,7 +36,7 @@ Aws::String CreateListenerRequest::SerializePayload() const
 
   if(m_portRangesHasBeenSet)
   {
-   Array<JsonValue> portRangesJsonList(m_portRanges.size());
+   Aws::Utils::Array<JsonValue> portRangesJsonList(m_portRanges.size());
    for(unsigned portRangesIndex = 0; portRangesIndex < portRangesJsonList.GetLength(); ++portRangesIndex)
    {
      portRangesJsonList[portRangesIndex].AsObject(m_portRanges[portRangesIndex].Jsonize());

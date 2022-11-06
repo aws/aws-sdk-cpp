@@ -30,7 +30,7 @@ DescribeUsageReportSubscriptionsResult& DescribeUsageReportSubscriptionsResult::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("UsageReportSubscriptions"))
   {
-    Array<JsonView> usageReportSubscriptionsJsonList = jsonValue.GetArray("UsageReportSubscriptions");
+    Aws::Utils::Array<JsonView> usageReportSubscriptionsJsonList = jsonValue.GetArray("UsageReportSubscriptions");
     for(unsigned usageReportSubscriptionsIndex = 0; usageReportSubscriptionsIndex < usageReportSubscriptionsJsonList.GetLength(); ++usageReportSubscriptionsIndex)
     {
       m_usageReportSubscriptions.push_back(usageReportSubscriptionsJsonList[usageReportSubscriptionsIndex].AsObject());

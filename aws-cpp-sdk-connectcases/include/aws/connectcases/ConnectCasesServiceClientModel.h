@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/connectcases/ConnectCasesErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/connectcases/ConnectCasesEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -77,6 +79,10 @@ namespace Aws
 
   namespace ConnectCases
   {
+    using ConnectCasesClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ConnectCasesEndpointProviderBase = Aws::ConnectCases::Endpoint::ConnectCasesEndpointProviderBase;
+    using ConnectCasesEndpointProvider = Aws::ConnectCases::Endpoint::ConnectCasesEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ConnectCasesClient header */

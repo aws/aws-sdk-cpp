@@ -52,7 +52,7 @@ ListResolverQueryLogConfigAssociationsResult& ListResolverQueryLogConfigAssociat
 
   if(jsonValue.ValueExists("ResolverQueryLogConfigAssociations"))
   {
-    Array<JsonView> resolverQueryLogConfigAssociationsJsonList = jsonValue.GetArray("ResolverQueryLogConfigAssociations");
+    Aws::Utils::Array<JsonView> resolverQueryLogConfigAssociationsJsonList = jsonValue.GetArray("ResolverQueryLogConfigAssociations");
     for(unsigned resolverQueryLogConfigAssociationsIndex = 0; resolverQueryLogConfigAssociationsIndex < resolverQueryLogConfigAssociationsJsonList.GetLength(); ++resolverQueryLogConfigAssociationsIndex)
     {
       m_resolverQueryLogConfigAssociations.push_back(resolverQueryLogConfigAssociationsJsonList[resolverQueryLogConfigAssociationsIndex].AsObject());

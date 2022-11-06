@@ -36,7 +36,7 @@ ListSnapshotsResult& ListSnapshotsResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("snapshots"))
   {
-    Array<JsonView> snapshotsJsonList = jsonValue.GetArray("snapshots");
+    Aws::Utils::Array<JsonView> snapshotsJsonList = jsonValue.GetArray("snapshots");
     for(unsigned snapshotsIndex = 0; snapshotsIndex < snapshotsJsonList.GetLength(); ++snapshotsIndex)
     {
       m_snapshots.push_back(snapshotsJsonList[snapshotsIndex].AsObject());

@@ -36,7 +36,7 @@ ListCertificatesResult& ListCertificatesResult::operator =(const Aws::AmazonWebS
 
   if(jsonValue.ValueExists("CertificatesInfo"))
   {
-    Array<JsonView> certificatesInfoJsonList = jsonValue.GetArray("CertificatesInfo");
+    Aws::Utils::Array<JsonView> certificatesInfoJsonList = jsonValue.GetArray("CertificatesInfo");
     for(unsigned certificatesInfoIndex = 0; certificatesInfoIndex < certificatesInfoJsonList.GetLength(); ++certificatesInfoIndex)
     {
       m_certificatesInfo.push_back(certificatesInfoJsonList[certificatesInfoIndex].AsObject());

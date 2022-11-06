@@ -30,7 +30,7 @@ ListEventsDetectionJobsResult& ListEventsDetectionJobsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EventsDetectionJobPropertiesList"))
   {
-    Array<JsonView> eventsDetectionJobPropertiesListJsonList = jsonValue.GetArray("EventsDetectionJobPropertiesList");
+    Aws::Utils::Array<JsonView> eventsDetectionJobPropertiesListJsonList = jsonValue.GetArray("EventsDetectionJobPropertiesList");
     for(unsigned eventsDetectionJobPropertiesListIndex = 0; eventsDetectionJobPropertiesListIndex < eventsDetectionJobPropertiesListJsonList.GetLength(); ++eventsDetectionJobPropertiesListIndex)
     {
       m_eventsDetectionJobPropertiesList.push_back(eventsDetectionJobPropertiesListJsonList[eventsDetectionJobPropertiesListIndex].AsObject());

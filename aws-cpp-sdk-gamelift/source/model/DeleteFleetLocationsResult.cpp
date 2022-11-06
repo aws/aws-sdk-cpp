@@ -42,7 +42,7 @@ DeleteFleetLocationsResult& DeleteFleetLocationsResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("LocationStates"))
   {
-    Array<JsonView> locationStatesJsonList = jsonValue.GetArray("LocationStates");
+    Aws::Utils::Array<JsonView> locationStatesJsonList = jsonValue.GetArray("LocationStates");
     for(unsigned locationStatesIndex = 0; locationStatesIndex < locationStatesJsonList.GetLength(); ++locationStatesIndex)
     {
       m_locationStates.push_back(locationStatesJsonList[locationStatesIndex].AsObject());

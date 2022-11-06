@@ -30,7 +30,7 @@ ListRoutingProfilesResult& ListRoutingProfilesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RoutingProfileSummaryList"))
   {
-    Array<JsonView> routingProfileSummaryListJsonList = jsonValue.GetArray("RoutingProfileSummaryList");
+    Aws::Utils::Array<JsonView> routingProfileSummaryListJsonList = jsonValue.GetArray("RoutingProfileSummaryList");
     for(unsigned routingProfileSummaryListIndex = 0; routingProfileSummaryListIndex < routingProfileSummaryListJsonList.GetLength(); ++routingProfileSummaryListIndex)
     {
       m_routingProfileSummaryList.push_back(routingProfileSummaryListJsonList[routingProfileSummaryListIndex].AsObject());

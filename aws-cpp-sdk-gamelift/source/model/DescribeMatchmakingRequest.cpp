@@ -23,7 +23,7 @@ Aws::String DescribeMatchmakingRequest::SerializePayload() const
 
   if(m_ticketIdsHasBeenSet)
   {
-   Array<JsonValue> ticketIdsJsonList(m_ticketIds.size());
+   Aws::Utils::Array<JsonValue> ticketIdsJsonList(m_ticketIds.size());
    for(unsigned ticketIdsIndex = 0; ticketIdsIndex < ticketIdsJsonList.GetLength(); ++ticketIdsIndex)
    {
      ticketIdsJsonList[ticketIdsIndex].AsString(m_ticketIds[ticketIdsIndex]);

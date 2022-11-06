@@ -30,7 +30,7 @@ ListSimulationJobsResult& ListSimulationJobsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("simulationJobSummaries"))
   {
-    Array<JsonView> simulationJobSummariesJsonList = jsonValue.GetArray("simulationJobSummaries");
+    Aws::Utils::Array<JsonView> simulationJobSummariesJsonList = jsonValue.GetArray("simulationJobSummaries");
     for(unsigned simulationJobSummariesIndex = 0; simulationJobSummariesIndex < simulationJobSummariesJsonList.GetLength(); ++simulationJobSummariesIndex)
     {
       m_simulationJobSummaries.push_back(simulationJobSummariesJsonList[simulationJobSummariesIndex].AsObject());

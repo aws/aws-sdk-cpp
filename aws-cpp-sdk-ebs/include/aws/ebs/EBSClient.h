@@ -52,22 +52,48 @@ namespace EBS
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        EBSClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        EBSClient(const Aws::EBS::EBSClientConfiguration& clientConfiguration = Aws::EBS::EBSClientConfiguration(),
+                  std::shared_ptr<EBSEndpointProviderBase> endpointProvider = Aws::MakeShared<EBSEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         EBSClient(const Aws::Auth::AWSCredentials& credentials,
-                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<EBSEndpointProviderBase> endpointProvider = Aws::MakeShared<EBSEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::EBS::EBSClientConfiguration& clientConfiguration = Aws::EBS::EBSClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         EBSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                  std::shared_ptr<EBSEndpointProviderBase> endpointProvider = Aws::MakeShared<EBSEndpointProvider>(ALLOCATION_TAG),
+                  const Aws::EBS::EBSClientConfiguration& clientConfiguration = Aws::EBS::EBSClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        EBSClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        EBSClient(const Aws::Auth::AWSCredentials& credentials,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        EBSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                  const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~EBSClient();
 
 
@@ -190,12 +216,13 @@ namespace EBS
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<EBSEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const EBSClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      EBSClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<EBSEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace EBS

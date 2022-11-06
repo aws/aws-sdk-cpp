@@ -33,7 +33,7 @@ AccountGrouping& AccountGrouping::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("LinkedAccountIds"))
   {
-    Array<JsonView> linkedAccountIdsJsonList = jsonValue.GetArray("LinkedAccountIds");
+    Aws::Utils::Array<JsonView> linkedAccountIdsJsonList = jsonValue.GetArray("LinkedAccountIds");
     for(unsigned linkedAccountIdsIndex = 0; linkedAccountIdsIndex < linkedAccountIdsJsonList.GetLength(); ++linkedAccountIdsIndex)
     {
       m_linkedAccountIds.push_back(linkedAccountIdsJsonList[linkedAccountIdsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue AccountGrouping::Jsonize() const
 
   if(m_linkedAccountIdsHasBeenSet)
   {
-   Array<JsonValue> linkedAccountIdsJsonList(m_linkedAccountIds.size());
+   Aws::Utils::Array<JsonValue> linkedAccountIdsJsonList(m_linkedAccountIds.size());
    for(unsigned linkedAccountIdsIndex = 0; linkedAccountIdsIndex < linkedAccountIdsJsonList.GetLength(); ++linkedAccountIdsIndex)
    {
      linkedAccountIdsJsonList[linkedAccountIdsIndex].AsString(m_linkedAccountIds[linkedAccountIdsIndex]);

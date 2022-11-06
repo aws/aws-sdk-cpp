@@ -30,7 +30,7 @@ Aws::String UpdateProfileRequest::SerializePayload() const
 
   if(m_certificateIdsHasBeenSet)
   {
-   Array<JsonValue> certificateIdsJsonList(m_certificateIds.size());
+   Aws::Utils::Array<JsonValue> certificateIdsJsonList(m_certificateIds.size());
    for(unsigned certificateIdsIndex = 0; certificateIdsIndex < certificateIdsJsonList.GetLength(); ++certificateIdsIndex)
    {
      certificateIdsJsonList[certificateIdsIndex].AsString(m_certificateIds[certificateIdsIndex]);

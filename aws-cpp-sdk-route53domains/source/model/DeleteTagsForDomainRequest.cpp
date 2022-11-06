@@ -30,7 +30,7 @@ Aws::String DeleteTagsForDomainRequest::SerializePayload() const
 
   if(m_tagsToDeleteHasBeenSet)
   {
-   Array<JsonValue> tagsToDeleteJsonList(m_tagsToDelete.size());
+   Aws::Utils::Array<JsonValue> tagsToDeleteJsonList(m_tagsToDelete.size());
    for(unsigned tagsToDeleteIndex = 0; tagsToDeleteIndex < tagsToDeleteJsonList.GetLength(); ++tagsToDeleteIndex)
    {
      tagsToDeleteJsonList[tagsToDeleteIndex].AsString(m_tagsToDelete[tagsToDeleteIndex]);

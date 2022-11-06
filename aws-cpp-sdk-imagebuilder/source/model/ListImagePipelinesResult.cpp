@@ -36,7 +36,7 @@ ListImagePipelinesResult& ListImagePipelinesResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("imagePipelineList"))
   {
-    Array<JsonView> imagePipelineListJsonList = jsonValue.GetArray("imagePipelineList");
+    Aws::Utils::Array<JsonView> imagePipelineListJsonList = jsonValue.GetArray("imagePipelineList");
     for(unsigned imagePipelineListIndex = 0; imagePipelineListIndex < imagePipelineListJsonList.GetLength(); ++imagePipelineListIndex)
     {
       m_imagePipelineList.push_back(imagePipelineListJsonList[imagePipelineListIndex].AsObject());

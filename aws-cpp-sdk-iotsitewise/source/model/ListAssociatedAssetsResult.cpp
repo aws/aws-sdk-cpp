@@ -30,7 +30,7 @@ ListAssociatedAssetsResult& ListAssociatedAssetsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assetSummaries"))
   {
-    Array<JsonView> assetSummariesJsonList = jsonValue.GetArray("assetSummaries");
+    Aws::Utils::Array<JsonView> assetSummariesJsonList = jsonValue.GetArray("assetSummaries");
     for(unsigned assetSummariesIndex = 0; assetSummariesIndex < assetSummariesJsonList.GetLength(); ++assetSummariesIndex)
     {
       m_assetSummaries.push_back(assetSummariesJsonList[assetSummariesIndex].AsObject());

@@ -23,7 +23,7 @@ Aws::String DescribeResourceGroupsRequest::SerializePayload() const
 
   if(m_resourceGroupArnsHasBeenSet)
   {
-   Array<JsonValue> resourceGroupArnsJsonList(m_resourceGroupArns.size());
+   Aws::Utils::Array<JsonValue> resourceGroupArnsJsonList(m_resourceGroupArns.size());
    for(unsigned resourceGroupArnsIndex = 0; resourceGroupArnsIndex < resourceGroupArnsJsonList.GetLength(); ++resourceGroupArnsIndex)
    {
      resourceGroupArnsJsonList[resourceGroupArnsIndex].AsString(m_resourceGroupArns[resourceGroupArnsIndex]);

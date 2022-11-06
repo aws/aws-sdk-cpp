@@ -30,7 +30,7 @@ ListLunaClientsResult& ListLunaClientsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ClientList"))
   {
-    Array<JsonView> clientListJsonList = jsonValue.GetArray("ClientList");
+    Aws::Utils::Array<JsonView> clientListJsonList = jsonValue.GetArray("ClientList");
     for(unsigned clientListIndex = 0; clientListIndex < clientListJsonList.GetLength(); ++clientListIndex)
     {
       m_clientList.push_back(clientListJsonList[clientListIndex].AsString());

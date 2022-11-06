@@ -104,7 +104,7 @@ InfrastructureConfigurationSummary& InfrastructureConfigurationSummary::operator
 
   if(jsonValue.ValueExists("instanceTypes"))
   {
-    Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
+    Aws::Utils::Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
     for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
     {
       m_instanceTypes.push_back(instanceTypesJsonList[instanceTypesIndex].AsString());
@@ -180,7 +180,7 @@ JsonValue InfrastructureConfigurationSummary::Jsonize() const
 
   if(m_instanceTypesHasBeenSet)
   {
-   Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
+   Aws::Utils::Array<JsonValue> instanceTypesJsonList(m_instanceTypes.size());
    for(unsigned instanceTypesIndex = 0; instanceTypesIndex < instanceTypesJsonList.GetLength(); ++instanceTypesIndex)
    {
      instanceTypesJsonList[instanceTypesIndex].AsString(m_instanceTypes[instanceTypesIndex]);

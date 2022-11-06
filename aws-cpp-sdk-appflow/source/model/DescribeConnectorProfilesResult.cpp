@@ -30,7 +30,7 @@ DescribeConnectorProfilesResult& DescribeConnectorProfilesResult::operator =(con
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("connectorProfileDetails"))
   {
-    Array<JsonView> connectorProfileDetailsJsonList = jsonValue.GetArray("connectorProfileDetails");
+    Aws::Utils::Array<JsonView> connectorProfileDetailsJsonList = jsonValue.GetArray("connectorProfileDetails");
     for(unsigned connectorProfileDetailsIndex = 0; connectorProfileDetailsIndex < connectorProfileDetailsJsonList.GetLength(); ++connectorProfileDetailsIndex)
     {
       m_connectorProfileDetails.push_back(connectorProfileDetailsJsonList[connectorProfileDetailsIndex].AsObject());

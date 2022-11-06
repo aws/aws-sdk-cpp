@@ -30,7 +30,7 @@ ListLensSharesResult& ListLensSharesResult::operator =(const Aws::AmazonWebServi
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("LensShareSummaries"))
   {
-    Array<JsonView> lensShareSummariesJsonList = jsonValue.GetArray("LensShareSummaries");
+    Aws::Utils::Array<JsonView> lensShareSummariesJsonList = jsonValue.GetArray("LensShareSummaries");
     for(unsigned lensShareSummariesIndex = 0; lensShareSummariesIndex < lensShareSummariesJsonList.GetLength(); ++lensShareSummariesIndex)
     {
       m_lensShareSummaries.push_back(lensShareSummariesJsonList[lensShareSummariesIndex].AsObject());

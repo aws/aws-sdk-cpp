@@ -30,7 +30,7 @@ DescribeServiceErrorsResult& DescribeServiceErrorsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ServiceErrors"))
   {
-    Array<JsonView> serviceErrorsJsonList = jsonValue.GetArray("ServiceErrors");
+    Aws::Utils::Array<JsonView> serviceErrorsJsonList = jsonValue.GetArray("ServiceErrors");
     for(unsigned serviceErrorsIndex = 0; serviceErrorsIndex < serviceErrorsJsonList.GetLength(); ++serviceErrorsIndex)
     {
       m_serviceErrors.push_back(serviceErrorsJsonList[serviceErrorsIndex].AsObject());

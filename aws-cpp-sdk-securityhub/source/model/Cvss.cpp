@@ -71,7 +71,7 @@ Cvss& Cvss::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Adjustments"))
   {
-    Array<JsonView> adjustmentsJsonList = jsonValue.GetArray("Adjustments");
+    Aws::Utils::Array<JsonView> adjustmentsJsonList = jsonValue.GetArray("Adjustments");
     for(unsigned adjustmentsIndex = 0; adjustmentsIndex < adjustmentsJsonList.GetLength(); ++adjustmentsIndex)
     {
       m_adjustments.push_back(adjustmentsJsonList[adjustmentsIndex].AsObject());
@@ -112,7 +112,7 @@ JsonValue Cvss::Jsonize() const
 
   if(m_adjustmentsHasBeenSet)
   {
-   Array<JsonValue> adjustmentsJsonList(m_adjustments.size());
+   Aws::Utils::Array<JsonValue> adjustmentsJsonList(m_adjustments.size());
    for(unsigned adjustmentsIndex = 0; adjustmentsIndex < adjustmentsJsonList.GetLength(); ++adjustmentsIndex)
    {
      adjustmentsJsonList[adjustmentsIndex].AsObject(m_adjustments[adjustmentsIndex].Jsonize());

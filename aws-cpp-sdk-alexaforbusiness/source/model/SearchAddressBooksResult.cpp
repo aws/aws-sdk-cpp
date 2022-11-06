@@ -32,7 +32,7 @@ SearchAddressBooksResult& SearchAddressBooksResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AddressBooks"))
   {
-    Array<JsonView> addressBooksJsonList = jsonValue.GetArray("AddressBooks");
+    Aws::Utils::Array<JsonView> addressBooksJsonList = jsonValue.GetArray("AddressBooks");
     for(unsigned addressBooksIndex = 0; addressBooksIndex < addressBooksJsonList.GetLength(); ++addressBooksIndex)
     {
       m_addressBooks.push_back(addressBooksJsonList[addressBooksIndex].AsObject());

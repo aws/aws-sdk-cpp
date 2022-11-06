@@ -36,7 +36,7 @@ ListAnomalousLogGroupsResult& ListAnomalousLogGroupsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("AnomalousLogGroups"))
   {
-    Array<JsonView> anomalousLogGroupsJsonList = jsonValue.GetArray("AnomalousLogGroups");
+    Aws::Utils::Array<JsonView> anomalousLogGroupsJsonList = jsonValue.GetArray("AnomalousLogGroups");
     for(unsigned anomalousLogGroupsIndex = 0; anomalousLogGroupsIndex < anomalousLogGroupsJsonList.GetLength(); ++anomalousLogGroupsIndex)
     {
       m_anomalousLogGroups.push_back(anomalousLogGroupsJsonList[anomalousLogGroupsIndex].AsObject());

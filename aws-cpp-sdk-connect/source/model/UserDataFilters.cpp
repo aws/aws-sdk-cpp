@@ -35,7 +35,7 @@ UserDataFilters& UserDataFilters::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Queues"))
   {
-    Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
+    Aws::Utils::Array<JsonView> queuesJsonList = jsonValue.GetArray("Queues");
     for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
     {
       m_queues.push_back(queuesJsonList[queuesIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue UserDataFilters::Jsonize() const
 
   if(m_queuesHasBeenSet)
   {
-   Array<JsonValue> queuesJsonList(m_queues.size());
+   Aws::Utils::Array<JsonValue> queuesJsonList(m_queues.size());
    for(unsigned queuesIndex = 0; queuesIndex < queuesJsonList.GetLength(); ++queuesIndex)
    {
      queuesJsonList[queuesIndex].AsString(m_queues[queuesIndex]);

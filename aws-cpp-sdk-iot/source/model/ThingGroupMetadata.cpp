@@ -44,7 +44,7 @@ ThingGroupMetadata& ThingGroupMetadata::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("rootToParentThingGroups"))
   {
-    Array<JsonView> rootToParentThingGroupsJsonList = jsonValue.GetArray("rootToParentThingGroups");
+    Aws::Utils::Array<JsonView> rootToParentThingGroupsJsonList = jsonValue.GetArray("rootToParentThingGroups");
     for(unsigned rootToParentThingGroupsIndex = 0; rootToParentThingGroupsIndex < rootToParentThingGroupsJsonList.GetLength(); ++rootToParentThingGroupsIndex)
     {
       m_rootToParentThingGroups.push_back(rootToParentThingGroupsJsonList[rootToParentThingGroupsIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue ThingGroupMetadata::Jsonize() const
 
   if(m_rootToParentThingGroupsHasBeenSet)
   {
-   Array<JsonValue> rootToParentThingGroupsJsonList(m_rootToParentThingGroups.size());
+   Aws::Utils::Array<JsonValue> rootToParentThingGroupsJsonList(m_rootToParentThingGroups.size());
    for(unsigned rootToParentThingGroupsIndex = 0; rootToParentThingGroupsIndex < rootToParentThingGroupsJsonList.GetLength(); ++rootToParentThingGroupsIndex)
    {
      rootToParentThingGroupsJsonList[rootToParentThingGroupsIndex].AsObject(m_rootToParentThingGroups[rootToParentThingGroupsIndex].Jsonize());

@@ -30,7 +30,7 @@ PutApplicationPolicyResult& PutApplicationPolicyResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("statements"))
   {
-    Array<JsonView> statementsJsonList = jsonValue.GetArray("statements");
+    Aws::Utils::Array<JsonView> statementsJsonList = jsonValue.GetArray("statements");
     for(unsigned statementsIndex = 0; statementsIndex < statementsJsonList.GetLength(); ++statementsIndex)
     {
       m_statements.push_back(statementsJsonList[statementsIndex].AsObject());

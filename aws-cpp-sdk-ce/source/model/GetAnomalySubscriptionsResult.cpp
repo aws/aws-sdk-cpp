@@ -30,7 +30,7 @@ GetAnomalySubscriptionsResult& GetAnomalySubscriptionsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AnomalySubscriptions"))
   {
-    Array<JsonView> anomalySubscriptionsJsonList = jsonValue.GetArray("AnomalySubscriptions");
+    Aws::Utils::Array<JsonView> anomalySubscriptionsJsonList = jsonValue.GetArray("AnomalySubscriptions");
     for(unsigned anomalySubscriptionsIndex = 0; anomalySubscriptionsIndex < anomalySubscriptionsJsonList.GetLength(); ++anomalySubscriptionsIndex)
     {
       m_anomalySubscriptions.push_back(anomalySubscriptionsJsonList[anomalySubscriptionsIndex].AsObject());

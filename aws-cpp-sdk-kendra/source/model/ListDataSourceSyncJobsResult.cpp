@@ -30,7 +30,7 @@ ListDataSourceSyncJobsResult& ListDataSourceSyncJobsResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("History"))
   {
-    Array<JsonView> historyJsonList = jsonValue.GetArray("History");
+    Aws::Utils::Array<JsonView> historyJsonList = jsonValue.GetArray("History");
     for(unsigned historyIndex = 0; historyIndex < historyJsonList.GetLength(); ++historyIndex)
     {
       m_history.push_back(historyJsonList[historyIndex].AsObject());

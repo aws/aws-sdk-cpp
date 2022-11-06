@@ -30,7 +30,7 @@ ListWhatIfForecastsResult& ListWhatIfForecastsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WhatIfForecasts"))
   {
-    Array<JsonView> whatIfForecastsJsonList = jsonValue.GetArray("WhatIfForecasts");
+    Aws::Utils::Array<JsonView> whatIfForecastsJsonList = jsonValue.GetArray("WhatIfForecasts");
     for(unsigned whatIfForecastsIndex = 0; whatIfForecastsIndex < whatIfForecastsJsonList.GetLength(); ++whatIfForecastsIndex)
     {
       m_whatIfForecasts.push_back(whatIfForecastsJsonList[whatIfForecastsIndex].AsObject());

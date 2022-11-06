@@ -93,7 +93,7 @@ DataViewSummary& DataViewSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("partitionColumns"))
   {
-    Array<JsonView> partitionColumnsJsonList = jsonValue.GetArray("partitionColumns");
+    Aws::Utils::Array<JsonView> partitionColumnsJsonList = jsonValue.GetArray("partitionColumns");
     for(unsigned partitionColumnsIndex = 0; partitionColumnsIndex < partitionColumnsJsonList.GetLength(); ++partitionColumnsIndex)
     {
       m_partitionColumns.push_back(partitionColumnsJsonList[partitionColumnsIndex].AsString());
@@ -103,7 +103,7 @@ DataViewSummary& DataViewSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("sortColumns"))
   {
-    Array<JsonView> sortColumnsJsonList = jsonValue.GetArray("sortColumns");
+    Aws::Utils::Array<JsonView> sortColumnsJsonList = jsonValue.GetArray("sortColumns");
     for(unsigned sortColumnsIndex = 0; sortColumnsIndex < sortColumnsJsonList.GetLength(); ++sortColumnsIndex)
     {
       m_sortColumns.push_back(sortColumnsJsonList[sortColumnsIndex].AsString());
@@ -186,7 +186,7 @@ JsonValue DataViewSummary::Jsonize() const
 
   if(m_partitionColumnsHasBeenSet)
   {
-   Array<JsonValue> partitionColumnsJsonList(m_partitionColumns.size());
+   Aws::Utils::Array<JsonValue> partitionColumnsJsonList(m_partitionColumns.size());
    for(unsigned partitionColumnsIndex = 0; partitionColumnsIndex < partitionColumnsJsonList.GetLength(); ++partitionColumnsIndex)
    {
      partitionColumnsJsonList[partitionColumnsIndex].AsString(m_partitionColumns[partitionColumnsIndex]);
@@ -197,7 +197,7 @@ JsonValue DataViewSummary::Jsonize() const
 
   if(m_sortColumnsHasBeenSet)
   {
-   Array<JsonValue> sortColumnsJsonList(m_sortColumns.size());
+   Aws::Utils::Array<JsonValue> sortColumnsJsonList(m_sortColumns.size());
    for(unsigned sortColumnsIndex = 0; sortColumnsIndex < sortColumnsJsonList.GetLength(); ++sortColumnsIndex)
    {
      sortColumnsJsonList[sortColumnsIndex].AsString(m_sortColumns[sortColumnsIndex]);

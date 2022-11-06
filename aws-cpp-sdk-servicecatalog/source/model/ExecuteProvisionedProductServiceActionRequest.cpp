@@ -55,7 +55,7 @@ Aws::String ExecuteProvisionedProductServiceActionRequest::SerializePayload() co
    JsonValue parametersJsonMap;
    for(auto& parametersItem : m_parameters)
    {
-     Array<JsonValue> executionParameterValueListJsonList(parametersItem.second.size());
+     Aws::Utils::Array<JsonValue> executionParameterValueListJsonList(parametersItem.second.size());
      for(unsigned executionParameterValueListIndex = 0; executionParameterValueListIndex < executionParameterValueListJsonList.GetLength(); ++executionParameterValueListIndex)
      {
        executionParameterValueListJsonList[executionParameterValueListIndex].AsString(parametersItem.second[executionParameterValueListIndex]);

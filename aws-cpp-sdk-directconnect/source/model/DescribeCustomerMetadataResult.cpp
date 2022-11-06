@@ -32,7 +32,7 @@ DescribeCustomerMetadataResult& DescribeCustomerMetadataResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("agreements"))
   {
-    Array<JsonView> agreementsJsonList = jsonValue.GetArray("agreements");
+    Aws::Utils::Array<JsonView> agreementsJsonList = jsonValue.GetArray("agreements");
     for(unsigned agreementsIndex = 0; agreementsIndex < agreementsJsonList.GetLength(); ++agreementsIndex)
     {
       m_agreements.push_back(agreementsJsonList[agreementsIndex].AsObject());

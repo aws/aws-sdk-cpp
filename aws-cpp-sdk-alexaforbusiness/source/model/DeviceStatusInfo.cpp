@@ -39,7 +39,7 @@ DeviceStatusInfo& DeviceStatusInfo::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("DeviceStatusDetails"))
   {
-    Array<JsonView> deviceStatusDetailsJsonList = jsonValue.GetArray("DeviceStatusDetails");
+    Aws::Utils::Array<JsonView> deviceStatusDetailsJsonList = jsonValue.GetArray("DeviceStatusDetails");
     for(unsigned deviceStatusDetailsIndex = 0; deviceStatusDetailsIndex < deviceStatusDetailsJsonList.GetLength(); ++deviceStatusDetailsIndex)
     {
       m_deviceStatusDetails.push_back(deviceStatusDetailsJsonList[deviceStatusDetailsIndex].AsObject());
@@ -70,7 +70,7 @@ JsonValue DeviceStatusInfo::Jsonize() const
 
   if(m_deviceStatusDetailsHasBeenSet)
   {
-   Array<JsonValue> deviceStatusDetailsJsonList(m_deviceStatusDetails.size());
+   Aws::Utils::Array<JsonValue> deviceStatusDetailsJsonList(m_deviceStatusDetails.size());
    for(unsigned deviceStatusDetailsIndex = 0; deviceStatusDetailsIndex < deviceStatusDetailsJsonList.GetLength(); ++deviceStatusDetailsIndex)
    {
      deviceStatusDetailsJsonList[deviceStatusDetailsIndex].AsObject(m_deviceStatusDetails[deviceStatusDetailsIndex].Jsonize());

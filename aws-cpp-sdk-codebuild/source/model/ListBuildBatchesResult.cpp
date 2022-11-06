@@ -30,7 +30,7 @@ ListBuildBatchesResult& ListBuildBatchesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ids"))
   {
-    Array<JsonView> idsJsonList = jsonValue.GetArray("ids");
+    Aws::Utils::Array<JsonView> idsJsonList = jsonValue.GetArray("ids");
     for(unsigned idsIndex = 0; idsIndex < idsJsonList.GetLength(); ++idsIndex)
     {
       m_ids.push_back(idsJsonList[idsIndex].AsString());

@@ -32,7 +32,7 @@ ListGroupMembershipsResult& ListGroupMembershipsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("GroupMemberList"))
   {
-    Array<JsonView> groupMemberListJsonList = jsonValue.GetArray("GroupMemberList");
+    Aws::Utils::Array<JsonView> groupMemberListJsonList = jsonValue.GetArray("GroupMemberList");
     for(unsigned groupMemberListIndex = 0; groupMemberListIndex < groupMemberListJsonList.GetLength(); ++groupMemberListIndex)
     {
       m_groupMemberList.push_back(groupMemberListJsonList[groupMemberListIndex].AsObject());

@@ -30,7 +30,7 @@ ListAWSServiceAccessForOrganizationResult& ListAWSServiceAccessForOrganizationRe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("EnabledServicePrincipals"))
   {
-    Array<JsonView> enabledServicePrincipalsJsonList = jsonValue.GetArray("EnabledServicePrincipals");
+    Aws::Utils::Array<JsonView> enabledServicePrincipalsJsonList = jsonValue.GetArray("EnabledServicePrincipals");
     for(unsigned enabledServicePrincipalsIndex = 0; enabledServicePrincipalsIndex < enabledServicePrincipalsJsonList.GetLength(); ++enabledServicePrincipalsIndex)
     {
       m_enabledServicePrincipals.push_back(enabledServicePrincipalsJsonList[enabledServicePrincipalsIndex].AsObject());

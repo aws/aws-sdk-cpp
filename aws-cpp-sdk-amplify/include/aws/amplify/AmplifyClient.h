@@ -35,22 +35,48 @@ namespace Amplify
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        AmplifyClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        AmplifyClient(const Aws::Amplify::AmplifyClientConfiguration& clientConfiguration = Aws::Amplify::AmplifyClientConfiguration(),
+                      std::shared_ptr<AmplifyEndpointProviderBase> endpointProvider = Aws::MakeShared<AmplifyEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AmplifyClient(const Aws::Auth::AWSCredentials& credentials,
-                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      std::shared_ptr<AmplifyEndpointProviderBase> endpointProvider = Aws::MakeShared<AmplifyEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Amplify::AmplifyClientConfiguration& clientConfiguration = Aws::Amplify::AmplifyClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         AmplifyClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                      std::shared_ptr<AmplifyEndpointProviderBase> endpointProvider = Aws::MakeShared<AmplifyEndpointProvider>(ALLOCATION_TAG),
+                      const Aws::Amplify::AmplifyClientConfiguration& clientConfiguration = Aws::Amplify::AmplifyClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AmplifyClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        AmplifyClient(const Aws::Auth::AWSCredentials& credentials,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        AmplifyClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                      const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~AmplifyClient();
 
 
@@ -705,12 +731,13 @@ namespace Amplify
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<AmplifyEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const AmplifyClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      AmplifyClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<AmplifyEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace Amplify

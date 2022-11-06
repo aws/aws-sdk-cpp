@@ -75,7 +75,7 @@ DataCaptureConfig& DataCaptureConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("CaptureOptions"))
   {
-    Array<JsonView> captureOptionsJsonList = jsonValue.GetArray("CaptureOptions");
+    Aws::Utils::Array<JsonView> captureOptionsJsonList = jsonValue.GetArray("CaptureOptions");
     for(unsigned captureOptionsIndex = 0; captureOptionsIndex < captureOptionsJsonList.GetLength(); ++captureOptionsIndex)
     {
       m_captureOptions.push_back(captureOptionsJsonList[captureOptionsIndex].AsObject());
@@ -123,7 +123,7 @@ JsonValue DataCaptureConfig::Jsonize() const
 
   if(m_captureOptionsHasBeenSet)
   {
-   Array<JsonValue> captureOptionsJsonList(m_captureOptions.size());
+   Aws::Utils::Array<JsonValue> captureOptionsJsonList(m_captureOptions.size());
    for(unsigned captureOptionsIndex = 0; captureOptionsIndex < captureOptionsJsonList.GetLength(); ++captureOptionsIndex)
    {
      captureOptionsJsonList[captureOptionsIndex].AsObject(m_captureOptions[captureOptionsIndex].Jsonize());

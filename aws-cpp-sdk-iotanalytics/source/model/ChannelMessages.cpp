@@ -33,7 +33,7 @@ ChannelMessages& ChannelMessages::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("s3Paths"))
   {
-    Array<JsonView> s3PathsJsonList = jsonValue.GetArray("s3Paths");
+    Aws::Utils::Array<JsonView> s3PathsJsonList = jsonValue.GetArray("s3Paths");
     for(unsigned s3PathsIndex = 0; s3PathsIndex < s3PathsJsonList.GetLength(); ++s3PathsIndex)
     {
       m_s3Paths.push_back(s3PathsJsonList[s3PathsIndex].AsString());
@@ -50,7 +50,7 @@ JsonValue ChannelMessages::Jsonize() const
 
   if(m_s3PathsHasBeenSet)
   {
-   Array<JsonValue> s3PathsJsonList(m_s3Paths.size());
+   Aws::Utils::Array<JsonValue> s3PathsJsonList(m_s3Paths.size());
    for(unsigned s3PathsIndex = 0; s3PathsIndex < s3PathsJsonList.GetLength(); ++s3PathsIndex)
    {
      s3PathsJsonList[s3PathsIndex].AsString(m_s3Paths[s3PathsIndex]);

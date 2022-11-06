@@ -30,7 +30,7 @@ Aws::String DetachInstancesFromLoadBalancerRequest::SerializePayload() const
 
   if(m_instanceNamesHasBeenSet)
   {
-   Array<JsonValue> instanceNamesJsonList(m_instanceNames.size());
+   Aws::Utils::Array<JsonValue> instanceNamesJsonList(m_instanceNames.size());
    for(unsigned instanceNamesIndex = 0; instanceNamesIndex < instanceNamesJsonList.GetLength(); ++instanceNamesIndex)
    {
      instanceNamesJsonList[instanceNamesIndex].AsString(m_instanceNames[instanceNamesIndex]);

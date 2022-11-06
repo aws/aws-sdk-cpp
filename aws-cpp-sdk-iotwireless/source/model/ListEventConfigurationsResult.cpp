@@ -36,7 +36,7 @@ ListEventConfigurationsResult& ListEventConfigurationsResult::operator =(const A
 
   if(jsonValue.ValueExists("EventConfigurationsList"))
   {
-    Array<JsonView> eventConfigurationsListJsonList = jsonValue.GetArray("EventConfigurationsList");
+    Aws::Utils::Array<JsonView> eventConfigurationsListJsonList = jsonValue.GetArray("EventConfigurationsList");
     for(unsigned eventConfigurationsListIndex = 0; eventConfigurationsListIndex < eventConfigurationsListJsonList.GetLength(); ++eventConfigurationsListIndex)
     {
       m_eventConfigurationsList.push_back(eventConfigurationsListJsonList[eventConfigurationsListIndex].AsObject());

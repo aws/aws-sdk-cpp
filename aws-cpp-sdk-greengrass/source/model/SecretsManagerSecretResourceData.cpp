@@ -42,7 +42,7 @@ SecretsManagerSecretResourceData& SecretsManagerSecretResourceData::operator =(J
 
   if(jsonValue.ValueExists("AdditionalStagingLabelsToDownload"))
   {
-    Array<JsonView> additionalStagingLabelsToDownloadJsonList = jsonValue.GetArray("AdditionalStagingLabelsToDownload");
+    Aws::Utils::Array<JsonView> additionalStagingLabelsToDownloadJsonList = jsonValue.GetArray("AdditionalStagingLabelsToDownload");
     for(unsigned additionalStagingLabelsToDownloadIndex = 0; additionalStagingLabelsToDownloadIndex < additionalStagingLabelsToDownloadJsonList.GetLength(); ++additionalStagingLabelsToDownloadIndex)
     {
       m_additionalStagingLabelsToDownload.push_back(additionalStagingLabelsToDownloadJsonList[additionalStagingLabelsToDownloadIndex].AsString());
@@ -65,7 +65,7 @@ JsonValue SecretsManagerSecretResourceData::Jsonize() const
 
   if(m_additionalStagingLabelsToDownloadHasBeenSet)
   {
-   Array<JsonValue> additionalStagingLabelsToDownloadJsonList(m_additionalStagingLabelsToDownload.size());
+   Aws::Utils::Array<JsonValue> additionalStagingLabelsToDownloadJsonList(m_additionalStagingLabelsToDownload.size());
    for(unsigned additionalStagingLabelsToDownloadIndex = 0; additionalStagingLabelsToDownloadIndex < additionalStagingLabelsToDownloadJsonList.GetLength(); ++additionalStagingLabelsToDownloadIndex)
    {
      additionalStagingLabelsToDownloadJsonList[additionalStagingLabelsToDownloadIndex].AsString(m_additionalStagingLabelsToDownload[additionalStagingLabelsToDownloadIndex]);

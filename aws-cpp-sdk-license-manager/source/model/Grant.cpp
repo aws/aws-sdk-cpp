@@ -116,7 +116,7 @@ Grant& Grant::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GrantedOperations"))
   {
-    Array<JsonView> grantedOperationsJsonList = jsonValue.GetArray("GrantedOperations");
+    Aws::Utils::Array<JsonView> grantedOperationsJsonList = jsonValue.GetArray("GrantedOperations");
     for(unsigned grantedOperationsIndex = 0; grantedOperationsIndex < grantedOperationsJsonList.GetLength(); ++grantedOperationsIndex)
     {
       m_grantedOperations.push_back(AllowedOperationMapper::GetAllowedOperationForName(grantedOperationsJsonList[grantedOperationsIndex].AsString()));
@@ -186,7 +186,7 @@ JsonValue Grant::Jsonize() const
 
   if(m_grantedOperationsHasBeenSet)
   {
-   Array<JsonValue> grantedOperationsJsonList(m_grantedOperations.size());
+   Aws::Utils::Array<JsonValue> grantedOperationsJsonList(m_grantedOperations.size());
    for(unsigned grantedOperationsIndex = 0; grantedOperationsIndex < grantedOperationsJsonList.GetLength(); ++grantedOperationsIndex)
    {
      grantedOperationsJsonList[grantedOperationsIndex].AsString(AllowedOperationMapper::GetNameForAllowedOperation(m_grantedOperations[grantedOperationsIndex]));

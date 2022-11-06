@@ -44,7 +44,7 @@ ListFindingAggregationsResult& ListFindingAggregationsResult::operator =(const A
 
   if(jsonValue.ValueExists("responses"))
   {
-    Array<JsonView> responsesJsonList = jsonValue.GetArray("responses");
+    Aws::Utils::Array<JsonView> responsesJsonList = jsonValue.GetArray("responses");
     for(unsigned responsesIndex = 0; responsesIndex < responsesJsonList.GetLength(); ++responsesIndex)
     {
       m_responses.push_back(responsesJsonList[responsesIndex].AsObject());

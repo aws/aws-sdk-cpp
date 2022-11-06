@@ -37,7 +37,7 @@ AddThingsToThingGroupParams& AddThingsToThingGroupParams::operator =(JsonView js
 {
   if(jsonValue.ValueExists("thingGroupNames"))
   {
-    Array<JsonView> thingGroupNamesJsonList = jsonValue.GetArray("thingGroupNames");
+    Aws::Utils::Array<JsonView> thingGroupNamesJsonList = jsonValue.GetArray("thingGroupNames");
     for(unsigned thingGroupNamesIndex = 0; thingGroupNamesIndex < thingGroupNamesJsonList.GetLength(); ++thingGroupNamesIndex)
     {
       m_thingGroupNames.push_back(thingGroupNamesJsonList[thingGroupNamesIndex].AsString());
@@ -61,7 +61,7 @@ JsonValue AddThingsToThingGroupParams::Jsonize() const
 
   if(m_thingGroupNamesHasBeenSet)
   {
-   Array<JsonValue> thingGroupNamesJsonList(m_thingGroupNames.size());
+   Aws::Utils::Array<JsonValue> thingGroupNamesJsonList(m_thingGroupNames.size());
    for(unsigned thingGroupNamesIndex = 0; thingGroupNamesIndex < thingGroupNamesJsonList.GetLength(); ++thingGroupNamesIndex)
    {
      thingGroupNamesJsonList[thingGroupNamesIndex].AsString(m_thingGroupNames[thingGroupNamesIndex]);

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/autoscaling-plans/AutoScalingPlansErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/autoscaling-plans/AutoScalingPlansEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -55,6 +57,10 @@ namespace Aws
 
   namespace AutoScalingPlans
   {
+    using AutoScalingPlansClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using AutoScalingPlansEndpointProviderBase = Aws::AutoScalingPlans::Endpoint::AutoScalingPlansEndpointProviderBase;
+    using AutoScalingPlansEndpointProvider = Aws::AutoScalingPlans::Endpoint::AutoScalingPlansEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in AutoScalingPlansClient header */

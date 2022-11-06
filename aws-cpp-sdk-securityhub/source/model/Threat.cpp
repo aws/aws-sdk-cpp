@@ -62,7 +62,7 @@ Threat& Threat::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("FilePaths"))
   {
-    Array<JsonView> filePathsJsonList = jsonValue.GetArray("FilePaths");
+    Aws::Utils::Array<JsonView> filePathsJsonList = jsonValue.GetArray("FilePaths");
     for(unsigned filePathsIndex = 0; filePathsIndex < filePathsJsonList.GetLength(); ++filePathsIndex)
     {
       m_filePaths.push_back(filePathsJsonList[filePathsIndex].AsObject());
@@ -97,7 +97,7 @@ JsonValue Threat::Jsonize() const
 
   if(m_filePathsHasBeenSet)
   {
-   Array<JsonValue> filePathsJsonList(m_filePaths.size());
+   Aws::Utils::Array<JsonValue> filePathsJsonList(m_filePaths.size());
    for(unsigned filePathsIndex = 0; filePathsIndex < filePathsJsonList.GetLength(); ++filePathsIndex)
    {
      filePathsJsonList[filePathsIndex].AsObject(m_filePaths[filePathsIndex].Jsonize());

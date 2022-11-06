@@ -30,7 +30,7 @@ ListBatchSegmentJobsResult& ListBatchSegmentJobsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("batchSegmentJobs"))
   {
-    Array<JsonView> batchSegmentJobsJsonList = jsonValue.GetArray("batchSegmentJobs");
+    Aws::Utils::Array<JsonView> batchSegmentJobsJsonList = jsonValue.GetArray("batchSegmentJobs");
     for(unsigned batchSegmentJobsIndex = 0; batchSegmentJobsIndex < batchSegmentJobsJsonList.GetLength(); ++batchSegmentJobsIndex)
     {
       m_batchSegmentJobs.push_back(batchSegmentJobsJsonList[batchSegmentJobsIndex].AsObject());

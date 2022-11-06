@@ -29,22 +29,48 @@ namespace DocDB
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DocDBClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        DocDBClient(const Aws::DocDB::DocDBClientConfiguration& clientConfiguration = Aws::DocDB::DocDBClientConfiguration(),
+                    std::shared_ptr<DocDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DocDBEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DocDBClient(const Aws::Auth::AWSCredentials& credentials,
-                    const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                    std::shared_ptr<DocDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DocDBEndpointProvider>(ALLOCATION_TAG),
+                    const Aws::DocDB::DocDBClientConfiguration& clientConfiguration = Aws::DocDB::DocDBClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         DocDBClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                    std::shared_ptr<DocDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DocDBEndpointProvider>(ALLOCATION_TAG),
+                    const Aws::DocDB::DocDBClientConfiguration& clientConfiguration = Aws::DocDB::DocDBClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DocDBClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DocDBClient(const Aws::Auth::AWSCredentials& credentials,
+                    const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        DocDBClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                    const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~DocDBClient();
 
 
@@ -1148,13 +1174,13 @@ namespace DocDB
 
 
         void OverrideEndpoint(const Aws::String& endpoint);
+        std::shared_ptr<DocDBEndpointProviderBase>& accessEndpointProvider();
   private:
-        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void init(const DocDBClientConfiguration& clientConfiguration);
 
-        Aws::String m_uri;
-        Aws::String m_configScheme;
-        bool m_useDualStack = false;
+        DocDBClientConfiguration m_clientConfiguration;
         std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+        std::shared_ptr<DocDBEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DocDB

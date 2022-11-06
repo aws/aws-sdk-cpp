@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/forecastquery/ForecastQueryServiceErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/forecastquery/ForecastQueryServiceEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -51,6 +53,10 @@ namespace Aws
 
   namespace ForecastQueryService
   {
+    using ForecastQueryServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ForecastQueryServiceEndpointProviderBase = Aws::ForecastQueryService::Endpoint::ForecastQueryServiceEndpointProviderBase;
+    using ForecastQueryServiceEndpointProvider = Aws::ForecastQueryService::Endpoint::ForecastQueryServiceEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ForecastQueryServiceClient header */

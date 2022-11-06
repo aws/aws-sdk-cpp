@@ -44,7 +44,7 @@ HeaderMatchPattern& HeaderMatchPattern::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("IncludedHeaders"))
   {
-    Array<JsonView> includedHeadersJsonList = jsonValue.GetArray("IncludedHeaders");
+    Aws::Utils::Array<JsonView> includedHeadersJsonList = jsonValue.GetArray("IncludedHeaders");
     for(unsigned includedHeadersIndex = 0; includedHeadersIndex < includedHeadersJsonList.GetLength(); ++includedHeadersIndex)
     {
       m_includedHeaders.push_back(includedHeadersJsonList[includedHeadersIndex].AsString());
@@ -54,7 +54,7 @@ HeaderMatchPattern& HeaderMatchPattern::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ExcludedHeaders"))
   {
-    Array<JsonView> excludedHeadersJsonList = jsonValue.GetArray("ExcludedHeaders");
+    Aws::Utils::Array<JsonView> excludedHeadersJsonList = jsonValue.GetArray("ExcludedHeaders");
     for(unsigned excludedHeadersIndex = 0; excludedHeadersIndex < excludedHeadersJsonList.GetLength(); ++excludedHeadersIndex)
     {
       m_excludedHeaders.push_back(excludedHeadersJsonList[excludedHeadersIndex].AsString());
@@ -77,7 +77,7 @@ JsonValue HeaderMatchPattern::Jsonize() const
 
   if(m_includedHeadersHasBeenSet)
   {
-   Array<JsonValue> includedHeadersJsonList(m_includedHeaders.size());
+   Aws::Utils::Array<JsonValue> includedHeadersJsonList(m_includedHeaders.size());
    for(unsigned includedHeadersIndex = 0; includedHeadersIndex < includedHeadersJsonList.GetLength(); ++includedHeadersIndex)
    {
      includedHeadersJsonList[includedHeadersIndex].AsString(m_includedHeaders[includedHeadersIndex]);
@@ -88,7 +88,7 @@ JsonValue HeaderMatchPattern::Jsonize() const
 
   if(m_excludedHeadersHasBeenSet)
   {
-   Array<JsonValue> excludedHeadersJsonList(m_excludedHeaders.size());
+   Aws::Utils::Array<JsonValue> excludedHeadersJsonList(m_excludedHeaders.size());
    for(unsigned excludedHeadersIndex = 0; excludedHeadersIndex < excludedHeadersJsonList.GetLength(); ++excludedHeadersIndex)
    {
      excludedHeadersJsonList[excludedHeadersIndex].AsString(m_excludedHeaders[excludedHeadersIndex]);

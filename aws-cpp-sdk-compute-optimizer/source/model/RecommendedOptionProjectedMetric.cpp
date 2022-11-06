@@ -53,7 +53,7 @@ RecommendedOptionProjectedMetric& RecommendedOptionProjectedMetric::operator =(J
 
   if(jsonValue.ValueExists("projectedMetrics"))
   {
-    Array<JsonView> projectedMetricsJsonList = jsonValue.GetArray("projectedMetrics");
+    Aws::Utils::Array<JsonView> projectedMetricsJsonList = jsonValue.GetArray("projectedMetrics");
     for(unsigned projectedMetricsIndex = 0; projectedMetricsIndex < projectedMetricsJsonList.GetLength(); ++projectedMetricsIndex)
     {
       m_projectedMetrics.push_back(projectedMetricsJsonList[projectedMetricsIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue RecommendedOptionProjectedMetric::Jsonize() const
 
   if(m_projectedMetricsHasBeenSet)
   {
-   Array<JsonValue> projectedMetricsJsonList(m_projectedMetrics.size());
+   Aws::Utils::Array<JsonValue> projectedMetricsJsonList(m_projectedMetrics.size());
    for(unsigned projectedMetricsIndex = 0; projectedMetricsIndex < projectedMetricsJsonList.GetLength(); ++projectedMetricsIndex)
    {
      projectedMetricsJsonList[projectedMetricsIndex].AsObject(m_projectedMetrics[projectedMetricsIndex].Jsonize());

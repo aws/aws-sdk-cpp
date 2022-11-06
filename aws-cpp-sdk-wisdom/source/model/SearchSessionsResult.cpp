@@ -36,7 +36,7 @@ SearchSessionsResult& SearchSessionsResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("sessionSummaries"))
   {
-    Array<JsonView> sessionSummariesJsonList = jsonValue.GetArray("sessionSummaries");
+    Aws::Utils::Array<JsonView> sessionSummariesJsonList = jsonValue.GetArray("sessionSummaries");
     for(unsigned sessionSummariesIndex = 0; sessionSummariesIndex < sessionSummariesJsonList.GetLength(); ++sessionSummariesIndex)
     {
       m_sessionSummaries.push_back(sessionSummariesJsonList[sessionSummariesIndex].AsObject());

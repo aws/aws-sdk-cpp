@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/panorama/PanoramaErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/panorama/PanoramaEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -83,6 +85,10 @@ namespace Aws
 
   namespace Panorama
   {
+    using PanoramaClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PanoramaEndpointProviderBase = Aws::Panorama::Endpoint::PanoramaEndpointProviderBase;
+    using PanoramaEndpointProvider = Aws::Panorama::Endpoint::PanoramaEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in PanoramaClient header */

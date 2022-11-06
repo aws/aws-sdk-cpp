@@ -30,7 +30,7 @@ GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("recentIntentSummaryView"))
   {
-    Array<JsonView> recentIntentSummaryViewJsonList = jsonValue.GetArray("recentIntentSummaryView");
+    Aws::Utils::Array<JsonView> recentIntentSummaryViewJsonList = jsonValue.GetArray("recentIntentSummaryView");
     for(unsigned recentIntentSummaryViewIndex = 0; recentIntentSummaryViewIndex < recentIntentSummaryViewJsonList.GetLength(); ++recentIntentSummaryViewIndex)
     {
       m_recentIntentSummaryView.push_back(recentIntentSummaryViewJsonList[recentIntentSummaryViewIndex].AsObject());
@@ -60,7 +60,7 @@ GetSessionResult& GetSessionResult::operator =(const Aws::AmazonWebServiceResult
 
   if(jsonValue.ValueExists("activeContexts"))
   {
-    Array<JsonView> activeContextsJsonList = jsonValue.GetArray("activeContexts");
+    Aws::Utils::Array<JsonView> activeContextsJsonList = jsonValue.GetArray("activeContexts");
     for(unsigned activeContextsIndex = 0; activeContextsIndex < activeContextsJsonList.GetLength(); ++activeContextsIndex)
     {
       m_activeContexts.push_back(activeContextsJsonList[activeContextsIndex].AsObject());

@@ -117,7 +117,7 @@ Framework& Framework::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("controlSets"))
   {
-    Array<JsonView> controlSetsJsonList = jsonValue.GetArray("controlSets");
+    Aws::Utils::Array<JsonView> controlSetsJsonList = jsonValue.GetArray("controlSets");
     for(unsigned controlSetsIndex = 0; controlSetsIndex < controlSetsJsonList.GetLength(); ++controlSetsIndex)
     {
       m_controlSets.push_back(controlSetsJsonList[controlSetsIndex].AsObject());
@@ -219,7 +219,7 @@ JsonValue Framework::Jsonize() const
 
   if(m_controlSetsHasBeenSet)
   {
-   Array<JsonValue> controlSetsJsonList(m_controlSets.size());
+   Aws::Utils::Array<JsonValue> controlSetsJsonList(m_controlSets.size());
    for(unsigned controlSetsIndex = 0; controlSetsIndex < controlSetsJsonList.GetLength(); ++controlSetsIndex)
    {
      controlSetsJsonList[controlSetsIndex].AsObject(m_controlSets[controlSetsIndex].Jsonize());

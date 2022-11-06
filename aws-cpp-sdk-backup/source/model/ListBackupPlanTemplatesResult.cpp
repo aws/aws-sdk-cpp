@@ -36,7 +36,7 @@ ListBackupPlanTemplatesResult& ListBackupPlanTemplatesResult::operator =(const A
 
   if(jsonValue.ValueExists("BackupPlanTemplatesList"))
   {
-    Array<JsonView> backupPlanTemplatesListJsonList = jsonValue.GetArray("BackupPlanTemplatesList");
+    Aws::Utils::Array<JsonView> backupPlanTemplatesListJsonList = jsonValue.GetArray("BackupPlanTemplatesList");
     for(unsigned backupPlanTemplatesListIndex = 0; backupPlanTemplatesListIndex < backupPlanTemplatesListJsonList.GetLength(); ++backupPlanTemplatesListIndex)
     {
       m_backupPlanTemplatesList.push_back(backupPlanTemplatesListJsonList[backupPlanTemplatesListIndex].AsObject());

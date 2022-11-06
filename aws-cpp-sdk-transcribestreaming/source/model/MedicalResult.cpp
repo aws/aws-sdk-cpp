@@ -77,7 +77,7 @@ MedicalResult& MedicalResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Alternatives"))
   {
-    Array<JsonView> alternativesJsonList = jsonValue.GetArray("Alternatives");
+    Aws::Utils::Array<JsonView> alternativesJsonList = jsonValue.GetArray("Alternatives");
     for(unsigned alternativesIndex = 0; alternativesIndex < alternativesJsonList.GetLength(); ++alternativesIndex)
     {
       m_alternatives.push_back(alternativesJsonList[alternativesIndex].AsObject());
@@ -125,7 +125,7 @@ JsonValue MedicalResult::Jsonize() const
 
   if(m_alternativesHasBeenSet)
   {
-   Array<JsonValue> alternativesJsonList(m_alternatives.size());
+   Aws::Utils::Array<JsonValue> alternativesJsonList(m_alternatives.size());
    for(unsigned alternativesIndex = 0; alternativesIndex < alternativesJsonList.GetLength(); ++alternativesIndex)
    {
      alternativesJsonList[alternativesIndex].AsObject(m_alternatives[alternativesIndex].Jsonize());

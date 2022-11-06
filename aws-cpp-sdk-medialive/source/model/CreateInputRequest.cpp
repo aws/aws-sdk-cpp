@@ -35,7 +35,7 @@ Aws::String CreateInputRequest::SerializePayload() const
 
   if(m_destinationsHasBeenSet)
   {
-   Array<JsonValue> destinationsJsonList(m_destinations.size());
+   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
    {
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
@@ -46,7 +46,7 @@ Aws::String CreateInputRequest::SerializePayload() const
 
   if(m_inputDevicesHasBeenSet)
   {
-   Array<JsonValue> inputDevicesJsonList(m_inputDevices.size());
+   Aws::Utils::Array<JsonValue> inputDevicesJsonList(m_inputDevices.size());
    for(unsigned inputDevicesIndex = 0; inputDevicesIndex < inputDevicesJsonList.GetLength(); ++inputDevicesIndex)
    {
      inputDevicesJsonList[inputDevicesIndex].AsObject(m_inputDevices[inputDevicesIndex].Jsonize());
@@ -57,7 +57,7 @@ Aws::String CreateInputRequest::SerializePayload() const
 
   if(m_inputSecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> inputSecurityGroupsJsonList(m_inputSecurityGroups.size());
+   Aws::Utils::Array<JsonValue> inputSecurityGroupsJsonList(m_inputSecurityGroups.size());
    for(unsigned inputSecurityGroupsIndex = 0; inputSecurityGroupsIndex < inputSecurityGroupsJsonList.GetLength(); ++inputSecurityGroupsIndex)
    {
      inputSecurityGroupsJsonList[inputSecurityGroupsIndex].AsString(m_inputSecurityGroups[inputSecurityGroupsIndex]);
@@ -68,7 +68,7 @@ Aws::String CreateInputRequest::SerializePayload() const
 
   if(m_mediaConnectFlowsHasBeenSet)
   {
-   Array<JsonValue> mediaConnectFlowsJsonList(m_mediaConnectFlows.size());
+   Aws::Utils::Array<JsonValue> mediaConnectFlowsJsonList(m_mediaConnectFlows.size());
    for(unsigned mediaConnectFlowsIndex = 0; mediaConnectFlowsIndex < mediaConnectFlowsJsonList.GetLength(); ++mediaConnectFlowsIndex)
    {
      mediaConnectFlowsJsonList[mediaConnectFlowsIndex].AsObject(m_mediaConnectFlows[mediaConnectFlowsIndex].Jsonize());
@@ -97,7 +97,7 @@ Aws::String CreateInputRequest::SerializePayload() const
 
   if(m_sourcesHasBeenSet)
   {
-   Array<JsonValue> sourcesJsonList(m_sources.size());
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());

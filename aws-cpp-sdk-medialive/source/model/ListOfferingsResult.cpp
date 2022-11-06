@@ -36,7 +36,7 @@ ListOfferingsResult& ListOfferingsResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("offerings"))
   {
-    Array<JsonView> offeringsJsonList = jsonValue.GetArray("offerings");
+    Aws::Utils::Array<JsonView> offeringsJsonList = jsonValue.GetArray("offerings");
     for(unsigned offeringsIndex = 0; offeringsIndex < offeringsJsonList.GetLength(); ++offeringsIndex)
     {
       m_offerings.push_back(offeringsJsonList[offeringsIndex].AsObject());

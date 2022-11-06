@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/privatenetworks/PrivateNetworksErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/privatenetworks/PrivateNetworksEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -74,6 +76,10 @@ namespace Aws
 
   namespace PrivateNetworks
   {
+    using PrivateNetworksClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using PrivateNetworksEndpointProviderBase = Aws::PrivateNetworks::Endpoint::PrivateNetworksEndpointProviderBase;
+    using PrivateNetworksEndpointProvider = Aws::PrivateNetworks::Endpoint::PrivateNetworksEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in PrivateNetworksClient header */

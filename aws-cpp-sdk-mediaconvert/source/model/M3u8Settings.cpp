@@ -119,7 +119,7 @@ M3u8Settings& M3u8Settings::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("audioPids"))
   {
-    Array<JsonView> audioPidsJsonList = jsonValue.GetArray("audioPids");
+    Aws::Utils::Array<JsonView> audioPidsJsonList = jsonValue.GetArray("audioPids");
     for(unsigned audioPidsIndex = 0; audioPidsIndex < audioPidsJsonList.GetLength(); ++audioPidsIndex)
     {
       m_audioPids.push_back(audioPidsJsonList[audioPidsIndex].AsInteger());
@@ -259,7 +259,7 @@ JsonValue M3u8Settings::Jsonize() const
 
   if(m_audioPidsHasBeenSet)
   {
-   Array<JsonValue> audioPidsJsonList(m_audioPids.size());
+   Aws::Utils::Array<JsonValue> audioPidsJsonList(m_audioPids.size());
    for(unsigned audioPidsIndex = 0; audioPidsIndex < audioPidsJsonList.GetLength(); ++audioPidsIndex)
    {
      audioPidsJsonList[audioPidsIndex].AsInteger(m_audioPids[audioPidsIndex]);

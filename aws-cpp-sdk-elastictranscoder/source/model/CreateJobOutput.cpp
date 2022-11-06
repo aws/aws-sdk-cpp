@@ -93,7 +93,7 @@ CreateJobOutput& CreateJobOutput::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Watermarks"))
   {
-    Array<JsonView> watermarksJsonList = jsonValue.GetArray("Watermarks");
+    Aws::Utils::Array<JsonView> watermarksJsonList = jsonValue.GetArray("Watermarks");
     for(unsigned watermarksIndex = 0; watermarksIndex < watermarksJsonList.GetLength(); ++watermarksIndex)
     {
       m_watermarks.push_back(watermarksJsonList[watermarksIndex].AsObject());
@@ -167,7 +167,7 @@ JsonValue CreateJobOutput::Jsonize() const
 
   if(m_watermarksHasBeenSet)
   {
-   Array<JsonValue> watermarksJsonList(m_watermarks.size());
+   Aws::Utils::Array<JsonValue> watermarksJsonList(m_watermarks.size());
    for(unsigned watermarksIndex = 0; watermarksIndex < watermarksJsonList.GetLength(); ++watermarksIndex)
    {
      watermarksJsonList[watermarksIndex].AsObject(m_watermarks[watermarksIndex].Jsonize());

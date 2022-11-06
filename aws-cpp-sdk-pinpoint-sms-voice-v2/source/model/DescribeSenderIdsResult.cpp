@@ -30,7 +30,7 @@ DescribeSenderIdsResult& DescribeSenderIdsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("SenderIds"))
   {
-    Array<JsonView> senderIdsJsonList = jsonValue.GetArray("SenderIds");
+    Aws::Utils::Array<JsonView> senderIdsJsonList = jsonValue.GetArray("SenderIds");
     for(unsigned senderIdsIndex = 0; senderIdsIndex < senderIdsJsonList.GetLength(); ++senderIdsIndex)
     {
       m_senderIds.push_back(senderIdsJsonList[senderIdsIndex].AsObject());

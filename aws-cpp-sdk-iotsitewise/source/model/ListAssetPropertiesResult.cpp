@@ -30,7 +30,7 @@ ListAssetPropertiesResult& ListAssetPropertiesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assetPropertySummaries"))
   {
-    Array<JsonView> assetPropertySummariesJsonList = jsonValue.GetArray("assetPropertySummaries");
+    Aws::Utils::Array<JsonView> assetPropertySummariesJsonList = jsonValue.GetArray("assetPropertySummaries");
     for(unsigned assetPropertySummariesIndex = 0; assetPropertySummariesIndex < assetPropertySummariesJsonList.GetLength(); ++assetPropertySummariesIndex)
     {
       m_assetPropertySummaries.push_back(assetPropertySummariesJsonList[assetPropertySummariesIndex].AsObject());

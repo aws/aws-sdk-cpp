@@ -56,7 +56,7 @@ GetImpersonationRoleResult& GetImpersonationRoleResult::operator =(const Aws::Am
 
   if(jsonValue.ValueExists("Rules"))
   {
-    Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());

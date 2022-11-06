@@ -24,7 +24,7 @@ Aws::String DisableRequest::SerializePayload() const
 
   if(m_accountIdsHasBeenSet)
   {
-   Array<JsonValue> accountIdsJsonList(m_accountIds.size());
+   Aws::Utils::Array<JsonValue> accountIdsJsonList(m_accountIds.size());
    for(unsigned accountIdsIndex = 0; accountIdsIndex < accountIdsJsonList.GetLength(); ++accountIdsIndex)
    {
      accountIdsJsonList[accountIdsIndex].AsString(m_accountIds[accountIdsIndex]);
@@ -35,7 +35,7 @@ Aws::String DisableRequest::SerializePayload() const
 
   if(m_resourceTypesHasBeenSet)
   {
-   Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
+   Aws::Utils::Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
    for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
    {
      resourceTypesJsonList[resourceTypesIndex].AsString(ResourceScanTypeMapper::GetNameForResourceScanType(m_resourceTypes[resourceTypesIndex]));

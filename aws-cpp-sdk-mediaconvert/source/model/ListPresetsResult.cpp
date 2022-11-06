@@ -36,7 +36,7 @@ ListPresetsResult& ListPresetsResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("presets"))
   {
-    Array<JsonView> presetsJsonList = jsonValue.GetArray("presets");
+    Aws::Utils::Array<JsonView> presetsJsonList = jsonValue.GetArray("presets");
     for(unsigned presetsIndex = 0; presetsIndex < presetsJsonList.GetLength(); ++presetsIndex)
     {
       m_presets.push_back(presetsJsonList[presetsIndex].AsObject());

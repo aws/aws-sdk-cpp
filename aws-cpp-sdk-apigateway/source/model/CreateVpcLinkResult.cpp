@@ -50,7 +50,7 @@ CreateVpcLinkResult& CreateVpcLinkResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("targetArns"))
   {
-    Array<JsonView> targetArnsJsonList = jsonValue.GetArray("targetArns");
+    Aws::Utils::Array<JsonView> targetArnsJsonList = jsonValue.GetArray("targetArns");
     for(unsigned targetArnsIndex = 0; targetArnsIndex < targetArnsJsonList.GetLength(); ++targetArnsIndex)
     {
       m_targetArns.push_back(targetArnsJsonList[targetArnsIndex].AsString());

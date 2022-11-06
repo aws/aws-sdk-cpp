@@ -30,7 +30,7 @@ GetEventPredictionResult& GetEventPredictionResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("modelScores"))
   {
-    Array<JsonView> modelScoresJsonList = jsonValue.GetArray("modelScores");
+    Aws::Utils::Array<JsonView> modelScoresJsonList = jsonValue.GetArray("modelScores");
     for(unsigned modelScoresIndex = 0; modelScoresIndex < modelScoresJsonList.GetLength(); ++modelScoresIndex)
     {
       m_modelScores.push_back(modelScoresJsonList[modelScoresIndex].AsObject());
@@ -39,7 +39,7 @@ GetEventPredictionResult& GetEventPredictionResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("ruleResults"))
   {
-    Array<JsonView> ruleResultsJsonList = jsonValue.GetArray("ruleResults");
+    Aws::Utils::Array<JsonView> ruleResultsJsonList = jsonValue.GetArray("ruleResults");
     for(unsigned ruleResultsIndex = 0; ruleResultsIndex < ruleResultsJsonList.GetLength(); ++ruleResultsIndex)
     {
       m_ruleResults.push_back(ruleResultsJsonList[ruleResultsIndex].AsObject());
@@ -48,7 +48,7 @@ GetEventPredictionResult& GetEventPredictionResult::operator =(const Aws::Amazon
 
   if(jsonValue.ValueExists("externalModelOutputs"))
   {
-    Array<JsonView> externalModelOutputsJsonList = jsonValue.GetArray("externalModelOutputs");
+    Aws::Utils::Array<JsonView> externalModelOutputsJsonList = jsonValue.GetArray("externalModelOutputs");
     for(unsigned externalModelOutputsIndex = 0; externalModelOutputsIndex < externalModelOutputsJsonList.GetLength(); ++externalModelOutputsIndex)
     {
       m_externalModelOutputs.push_back(externalModelOutputsJsonList[externalModelOutputsIndex].AsObject());

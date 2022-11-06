@@ -53,7 +53,7 @@ ErrorDetail& ErrorDetail::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("resourceIds"))
   {
-    Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
+    Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
     for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
     {
       m_resourceIds.push_back(resourceIdsJsonList[resourceIdsIndex].AsString());
@@ -81,7 +81,7 @@ JsonValue ErrorDetail::Jsonize() const
 
   if(m_resourceIdsHasBeenSet)
   {
-   Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
+   Aws::Utils::Array<JsonValue> resourceIdsJsonList(m_resourceIds.size());
    for(unsigned resourceIdsIndex = 0; resourceIdsIndex < resourceIdsJsonList.GetLength(); ++resourceIdsIndex)
    {
      resourceIdsJsonList[resourceIdsIndex].AsString(m_resourceIds[resourceIdsIndex]);

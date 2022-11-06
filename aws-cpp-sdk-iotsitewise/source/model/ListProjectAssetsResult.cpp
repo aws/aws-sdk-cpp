@@ -30,7 +30,7 @@ ListProjectAssetsResult& ListProjectAssetsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("assetIds"))
   {
-    Array<JsonView> assetIdsJsonList = jsonValue.GetArray("assetIds");
+    Aws::Utils::Array<JsonView> assetIdsJsonList = jsonValue.GetArray("assetIds");
     for(unsigned assetIdsIndex = 0; assetIdsIndex < assetIdsJsonList.GetLength(); ++assetIdsIndex)
     {
       m_assetIds.push_back(assetIdsJsonList[assetIdsIndex].AsString());

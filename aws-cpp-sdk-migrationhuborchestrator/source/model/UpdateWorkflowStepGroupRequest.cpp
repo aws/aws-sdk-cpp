@@ -43,7 +43,7 @@ Aws::String UpdateWorkflowStepGroupRequest::SerializePayload() const
 
   if(m_nextHasBeenSet)
   {
-   Array<JsonValue> nextJsonList(m_next.size());
+   Aws::Utils::Array<JsonValue> nextJsonList(m_next.size());
    for(unsigned nextIndex = 0; nextIndex < nextJsonList.GetLength(); ++nextIndex)
    {
      nextJsonList[nextIndex].AsString(m_next[nextIndex]);
@@ -54,7 +54,7 @@ Aws::String UpdateWorkflowStepGroupRequest::SerializePayload() const
 
   if(m_previousHasBeenSet)
   {
-   Array<JsonValue> previousJsonList(m_previous.size());
+   Aws::Utils::Array<JsonValue> previousJsonList(m_previous.size());
    for(unsigned previousIndex = 0; previousIndex < previousJsonList.GetLength(); ++previousIndex)
    {
      previousJsonList[previousIndex].AsString(m_previous[previousIndex]);

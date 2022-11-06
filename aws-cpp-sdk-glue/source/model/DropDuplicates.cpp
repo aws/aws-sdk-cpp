@@ -44,7 +44,7 @@ DropDuplicates& DropDuplicates::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Inputs"))
   {
-    Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
+    Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
     for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
@@ -54,10 +54,10 @@ DropDuplicates& DropDuplicates::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Columns"))
   {
-    Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
+    Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
     for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
     {
-      Array<JsonView> limitedStringListJsonList = columnsJsonList[columnsIndex].AsArray();
+      Aws::Utils::Array<JsonView> limitedStringListJsonList = columnsJsonList[columnsIndex].AsArray();
       Aws::Vector<Aws::String> limitedStringListList;
       limitedStringListList.reserve((size_t)limitedStringListJsonList.GetLength());
       for(unsigned limitedStringListIndex = 0; limitedStringListIndex < limitedStringListJsonList.GetLength(); ++limitedStringListIndex)
@@ -84,7 +84,7 @@ JsonValue DropDuplicates::Jsonize() const
 
   if(m_inputsHasBeenSet)
   {
-   Array<JsonValue> inputsJsonList(m_inputs.size());
+   Aws::Utils::Array<JsonValue> inputsJsonList(m_inputs.size());
    for(unsigned inputsIndex = 0; inputsIndex < inputsJsonList.GetLength(); ++inputsIndex)
    {
      inputsJsonList[inputsIndex].AsString(m_inputs[inputsIndex]);
@@ -95,10 +95,10 @@ JsonValue DropDuplicates::Jsonize() const
 
   if(m_columnsHasBeenSet)
   {
-   Array<JsonValue> columnsJsonList(m_columns.size());
+   Aws::Utils::Array<JsonValue> columnsJsonList(m_columns.size());
    for(unsigned columnsIndex = 0; columnsIndex < columnsJsonList.GetLength(); ++columnsIndex)
    {
-     Array<JsonValue> limitedStringListJsonList(m_columns[columnsIndex].size());
+     Aws::Utils::Array<JsonValue> limitedStringListJsonList(m_columns[columnsIndex].size());
      for(unsigned limitedStringListIndex = 0; limitedStringListIndex < limitedStringListJsonList.GetLength(); ++limitedStringListIndex)
      {
        limitedStringListJsonList[limitedStringListIndex].AsString(m_columns[columnsIndex][limitedStringListIndex]);

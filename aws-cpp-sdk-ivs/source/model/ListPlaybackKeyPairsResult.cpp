@@ -30,7 +30,7 @@ ListPlaybackKeyPairsResult& ListPlaybackKeyPairsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("keyPairs"))
   {
-    Array<JsonView> keyPairsJsonList = jsonValue.GetArray("keyPairs");
+    Aws::Utils::Array<JsonView> keyPairsJsonList = jsonValue.GetArray("keyPairs");
     for(unsigned keyPairsIndex = 0; keyPairsIndex < keyPairsJsonList.GetLength(); ++keyPairsIndex)
     {
       m_keyPairs.push_back(keyPairsJsonList[keyPairsIndex].AsObject());

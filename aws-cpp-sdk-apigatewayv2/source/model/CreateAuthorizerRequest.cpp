@@ -71,7 +71,7 @@ Aws::String CreateAuthorizerRequest::SerializePayload() const
 
   if(m_identitySourceHasBeenSet)
   {
-   Array<JsonValue> identitySourceJsonList(m_identitySource.size());
+   Aws::Utils::Array<JsonValue> identitySourceJsonList(m_identitySource.size());
    for(unsigned identitySourceIndex = 0; identitySourceIndex < identitySourceJsonList.GetLength(); ++identitySourceIndex)
    {
      identitySourceJsonList[identitySourceIndex].AsString(m_identitySource[identitySourceIndex]);

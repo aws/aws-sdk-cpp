@@ -64,7 +64,7 @@ DescribeGatewayInformationResult& DescribeGatewayInformationResult::operator =(c
 
   if(jsonValue.ValueExists("GatewayNetworkInterfaces"))
   {
-    Array<JsonView> gatewayNetworkInterfacesJsonList = jsonValue.GetArray("GatewayNetworkInterfaces");
+    Aws::Utils::Array<JsonView> gatewayNetworkInterfacesJsonList = jsonValue.GetArray("GatewayNetworkInterfaces");
     for(unsigned gatewayNetworkInterfacesIndex = 0; gatewayNetworkInterfacesIndex < gatewayNetworkInterfacesJsonList.GetLength(); ++gatewayNetworkInterfacesIndex)
     {
       m_gatewayNetworkInterfaces.push_back(gatewayNetworkInterfacesJsonList[gatewayNetworkInterfacesIndex].AsObject());
@@ -103,7 +103,7 @@ DescribeGatewayInformationResult& DescribeGatewayInformationResult::operator =(c
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -154,7 +154,7 @@ DescribeGatewayInformationResult& DescribeGatewayInformationResult::operator =(c
 
   if(jsonValue.ValueExists("SupportedGatewayCapacities"))
   {
-    Array<JsonView> supportedGatewayCapacitiesJsonList = jsonValue.GetArray("SupportedGatewayCapacities");
+    Aws::Utils::Array<JsonView> supportedGatewayCapacitiesJsonList = jsonValue.GetArray("SupportedGatewayCapacities");
     for(unsigned supportedGatewayCapacitiesIndex = 0; supportedGatewayCapacitiesIndex < supportedGatewayCapacitiesJsonList.GetLength(); ++supportedGatewayCapacitiesIndex)
     {
       m_supportedGatewayCapacities.push_back(GatewayCapacityMapper::GetGatewayCapacityForName(supportedGatewayCapacitiesJsonList[supportedGatewayCapacitiesIndex].AsString()));

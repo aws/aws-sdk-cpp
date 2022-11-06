@@ -26,7 +26,7 @@ Aws::String DescribeOrganizationConfigRulesRequest::SerializePayload() const
 
   if(m_organizationConfigRuleNamesHasBeenSet)
   {
-   Array<JsonValue> organizationConfigRuleNamesJsonList(m_organizationConfigRuleNames.size());
+   Aws::Utils::Array<JsonValue> organizationConfigRuleNamesJsonList(m_organizationConfigRuleNames.size());
    for(unsigned organizationConfigRuleNamesIndex = 0; organizationConfigRuleNamesIndex < organizationConfigRuleNamesJsonList.GetLength(); ++organizationConfigRuleNamesIndex)
    {
      organizationConfigRuleNamesJsonList[organizationConfigRuleNamesIndex].AsString(m_organizationConfigRuleNames[organizationConfigRuleNamesIndex]);

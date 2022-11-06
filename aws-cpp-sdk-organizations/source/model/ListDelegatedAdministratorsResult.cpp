@@ -30,7 +30,7 @@ ListDelegatedAdministratorsResult& ListDelegatedAdministratorsResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("DelegatedAdministrators"))
   {
-    Array<JsonView> delegatedAdministratorsJsonList = jsonValue.GetArray("DelegatedAdministrators");
+    Aws::Utils::Array<JsonView> delegatedAdministratorsJsonList = jsonValue.GetArray("DelegatedAdministrators");
     for(unsigned delegatedAdministratorsIndex = 0; delegatedAdministratorsIndex < delegatedAdministratorsJsonList.GetLength(); ++delegatedAdministratorsIndex)
     {
       m_delegatedAdministrators.push_back(delegatedAdministratorsJsonList[delegatedAdministratorsIndex].AsObject());

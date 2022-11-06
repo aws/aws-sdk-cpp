@@ -39,7 +39,7 @@ AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails& AwsS3BucketB
 {
   if(jsonValue.ValueExists("Operands"))
   {
-    Array<JsonView> operandsJsonList = jsonValue.GetArray("Operands");
+    Aws::Utils::Array<JsonView> operandsJsonList = jsonValue.GetArray("Operands");
     for(unsigned operandsIndex = 0; operandsIndex < operandsJsonList.GetLength(); ++operandsIndex)
     {
       m_operands.push_back(operandsJsonList[operandsIndex].AsObject());
@@ -77,7 +77,7 @@ JsonValue AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateDetails::Js
 
   if(m_operandsHasBeenSet)
   {
-   Array<JsonValue> operandsJsonList(m_operands.size());
+   Aws::Utils::Array<JsonValue> operandsJsonList(m_operands.size());
    for(unsigned operandsIndex = 0; operandsIndex < operandsJsonList.GetLength(); ++operandsIndex)
    {
      operandsJsonList[operandsIndex].AsObject(m_operands[operandsIndex].Jsonize());

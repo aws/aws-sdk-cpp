@@ -30,7 +30,7 @@ GetNetworkTelemetryResult& GetNetworkTelemetryResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("NetworkTelemetry"))
   {
-    Array<JsonView> networkTelemetryJsonList = jsonValue.GetArray("NetworkTelemetry");
+    Aws::Utils::Array<JsonView> networkTelemetryJsonList = jsonValue.GetArray("NetworkTelemetry");
     for(unsigned networkTelemetryIndex = 0; networkTelemetryIndex < networkTelemetryJsonList.GetLength(); ++networkTelemetryIndex)
     {
       m_networkTelemetry.push_back(networkTelemetryJsonList[networkTelemetryIndex].AsObject());

@@ -87,22 +87,48 @@ namespace ApplicationDiscoveryService
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ApplicationDiscoveryServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        ApplicationDiscoveryServiceClient(const Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration& clientConfiguration = Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration(),
+                                          std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationDiscoveryServiceEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ApplicationDiscoveryServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                          std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationDiscoveryServiceEndpointProvider>(ALLOCATION_TAG),
+                                          const Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration& clientConfiguration = Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ApplicationDiscoveryServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                          const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                          std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationDiscoveryServiceEndpointProvider>(ALLOCATION_TAG),
+                                          const Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration& clientConfiguration = Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ApplicationDiscoveryServiceClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        ApplicationDiscoveryServiceClient(const Aws::Auth::AWSCredentials& credentials,
+                                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        ApplicationDiscoveryServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                          const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~ApplicationDiscoveryServiceClient();
 
 
@@ -583,12 +609,13 @@ namespace ApplicationDiscoveryService
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const ApplicationDiscoveryServiceClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      ApplicationDiscoveryServiceClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace ApplicationDiscoveryService

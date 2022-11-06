@@ -41,7 +41,7 @@ AmiAggregation& AmiAggregation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("amis"))
   {
-    Array<JsonView> amisJsonList = jsonValue.GetArray("amis");
+    Aws::Utils::Array<JsonView> amisJsonList = jsonValue.GetArray("amis");
     for(unsigned amisIndex = 0; amisIndex < amisJsonList.GetLength(); ++amisIndex)
     {
       m_amis.push_back(amisJsonList[amisIndex].AsObject());
@@ -72,7 +72,7 @@ JsonValue AmiAggregation::Jsonize() const
 
   if(m_amisHasBeenSet)
   {
-   Array<JsonValue> amisJsonList(m_amis.size());
+   Aws::Utils::Array<JsonValue> amisJsonList(m_amis.size());
    for(unsigned amisIndex = 0; amisIndex < amisJsonList.GetLength(); ++amisIndex)
    {
      amisJsonList[amisIndex].AsObject(m_amis[amisIndex].Jsonize());

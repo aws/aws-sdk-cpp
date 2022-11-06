@@ -24,7 +24,7 @@ Aws::String BatchDeleteRecipeVersionRequest::SerializePayload() const
 
   if(m_recipeVersionsHasBeenSet)
   {
-   Array<JsonValue> recipeVersionsJsonList(m_recipeVersions.size());
+   Aws::Utils::Array<JsonValue> recipeVersionsJsonList(m_recipeVersions.size());
    for(unsigned recipeVersionsIndex = 0; recipeVersionsIndex < recipeVersionsJsonList.GetLength(); ++recipeVersionsIndex)
    {
      recipeVersionsJsonList[recipeVersionsIndex].AsString(m_recipeVersions[recipeVersionsIndex]);

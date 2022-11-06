@@ -30,7 +30,7 @@ ListRoomMembershipsResult& ListRoomMembershipsResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RoomMemberships"))
   {
-    Array<JsonView> roomMembershipsJsonList = jsonValue.GetArray("RoomMemberships");
+    Aws::Utils::Array<JsonView> roomMembershipsJsonList = jsonValue.GetArray("RoomMemberships");
     for(unsigned roomMembershipsIndex = 0; roomMembershipsIndex < roomMembershipsJsonList.GetLength(); ++roomMembershipsIndex)
     {
       m_roomMemberships.push_back(roomMembershipsJsonList[roomMembershipsIndex].AsObject());

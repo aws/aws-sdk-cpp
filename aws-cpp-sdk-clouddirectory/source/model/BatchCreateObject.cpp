@@ -41,7 +41,7 @@ BatchCreateObject& BatchCreateObject::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SchemaFacet"))
   {
-    Array<JsonView> schemaFacetJsonList = jsonValue.GetArray("SchemaFacet");
+    Aws::Utils::Array<JsonView> schemaFacetJsonList = jsonValue.GetArray("SchemaFacet");
     for(unsigned schemaFacetIndex = 0; schemaFacetIndex < schemaFacetJsonList.GetLength(); ++schemaFacetIndex)
     {
       m_schemaFacet.push_back(schemaFacetJsonList[schemaFacetIndex].AsObject());
@@ -51,7 +51,7 @@ BatchCreateObject& BatchCreateObject::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ObjectAttributeList"))
   {
-    Array<JsonView> objectAttributeListJsonList = jsonValue.GetArray("ObjectAttributeList");
+    Aws::Utils::Array<JsonView> objectAttributeListJsonList = jsonValue.GetArray("ObjectAttributeList");
     for(unsigned objectAttributeListIndex = 0; objectAttributeListIndex < objectAttributeListJsonList.GetLength(); ++objectAttributeListIndex)
     {
       m_objectAttributeList.push_back(objectAttributeListJsonList[objectAttributeListIndex].AsObject());
@@ -89,7 +89,7 @@ JsonValue BatchCreateObject::Jsonize() const
 
   if(m_schemaFacetHasBeenSet)
   {
-   Array<JsonValue> schemaFacetJsonList(m_schemaFacet.size());
+   Aws::Utils::Array<JsonValue> schemaFacetJsonList(m_schemaFacet.size());
    for(unsigned schemaFacetIndex = 0; schemaFacetIndex < schemaFacetJsonList.GetLength(); ++schemaFacetIndex)
    {
      schemaFacetJsonList[schemaFacetIndex].AsObject(m_schemaFacet[schemaFacetIndex].Jsonize());
@@ -100,7 +100,7 @@ JsonValue BatchCreateObject::Jsonize() const
 
   if(m_objectAttributeListHasBeenSet)
   {
-   Array<JsonValue> objectAttributeListJsonList(m_objectAttributeList.size());
+   Aws::Utils::Array<JsonValue> objectAttributeListJsonList(m_objectAttributeList.size());
    for(unsigned objectAttributeListIndex = 0; objectAttributeListIndex < objectAttributeListJsonList.GetLength(); ++objectAttributeListIndex)
    {
      objectAttributeListJsonList[objectAttributeListIndex].AsObject(m_objectAttributeList[objectAttributeListIndex].Jsonize());

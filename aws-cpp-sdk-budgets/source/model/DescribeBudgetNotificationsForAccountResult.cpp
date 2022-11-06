@@ -30,7 +30,7 @@ DescribeBudgetNotificationsForAccountResult& DescribeBudgetNotificationsForAccou
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BudgetNotificationsForAccount"))
   {
-    Array<JsonView> budgetNotificationsForAccountJsonList = jsonValue.GetArray("BudgetNotificationsForAccount");
+    Aws::Utils::Array<JsonView> budgetNotificationsForAccountJsonList = jsonValue.GetArray("BudgetNotificationsForAccount");
     for(unsigned budgetNotificationsForAccountIndex = 0; budgetNotificationsForAccountIndex < budgetNotificationsForAccountJsonList.GetLength(); ++budgetNotificationsForAccountIndex)
     {
       m_budgetNotificationsForAccount.push_back(budgetNotificationsForAccountJsonList[budgetNotificationsForAccountIndex].AsObject());

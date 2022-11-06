@@ -77,7 +77,7 @@ RecommendationJobInputConfig& RecommendationJobInputConfig::operator =(JsonView 
 
   if(jsonValue.ValueExists("EndpointConfigurations"))
   {
-    Array<JsonView> endpointConfigurationsJsonList = jsonValue.GetArray("EndpointConfigurations");
+    Aws::Utils::Array<JsonView> endpointConfigurationsJsonList = jsonValue.GetArray("EndpointConfigurations");
     for(unsigned endpointConfigurationsIndex = 0; endpointConfigurationsIndex < endpointConfigurationsJsonList.GetLength(); ++endpointConfigurationsIndex)
     {
       m_endpointConfigurations.push_back(endpointConfigurationsJsonList[endpointConfigurationsIndex].AsObject());
@@ -101,7 +101,7 @@ RecommendationJobInputConfig& RecommendationJobInputConfig::operator =(JsonView 
 
   if(jsonValue.ValueExists("Endpoints"))
   {
-    Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
+    Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
     for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
     {
       m_endpoints.push_back(endpointsJsonList[endpointsIndex].AsObject());
@@ -142,7 +142,7 @@ JsonValue RecommendationJobInputConfig::Jsonize() const
 
   if(m_endpointConfigurationsHasBeenSet)
   {
-   Array<JsonValue> endpointConfigurationsJsonList(m_endpointConfigurations.size());
+   Aws::Utils::Array<JsonValue> endpointConfigurationsJsonList(m_endpointConfigurations.size());
    for(unsigned endpointConfigurationsIndex = 0; endpointConfigurationsIndex < endpointConfigurationsJsonList.GetLength(); ++endpointConfigurationsIndex)
    {
      endpointConfigurationsJsonList[endpointConfigurationsIndex].AsObject(m_endpointConfigurations[endpointConfigurationsIndex].Jsonize());
@@ -165,7 +165,7 @@ JsonValue RecommendationJobInputConfig::Jsonize() const
 
   if(m_endpointsHasBeenSet)
   {
-   Array<JsonValue> endpointsJsonList(m_endpoints.size());
+   Aws::Utils::Array<JsonValue> endpointsJsonList(m_endpoints.size());
    for(unsigned endpointsIndex = 0; endpointsIndex < endpointsJsonList.GetLength(); ++endpointsIndex)
    {
      endpointsJsonList[endpointsIndex].AsObject(m_endpoints[endpointsIndex].Jsonize());

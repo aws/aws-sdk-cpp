@@ -35,7 +35,7 @@ OpsItemInvalidParameterException& OpsItemInvalidParameterException::operator =(J
 {
   if(jsonValue.ValueExists("ParameterNames"))
   {
-    Array<JsonView> parameterNamesJsonList = jsonValue.GetArray("ParameterNames");
+    Aws::Utils::Array<JsonView> parameterNamesJsonList = jsonValue.GetArray("ParameterNames");
     for(unsigned parameterNamesIndex = 0; parameterNamesIndex < parameterNamesJsonList.GetLength(); ++parameterNamesIndex)
     {
       m_parameterNames.push_back(parameterNamesJsonList[parameterNamesIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue OpsItemInvalidParameterException::Jsonize() const
 
   if(m_parameterNamesHasBeenSet)
   {
-   Array<JsonValue> parameterNamesJsonList(m_parameterNames.size());
+   Aws::Utils::Array<JsonValue> parameterNamesJsonList(m_parameterNames.size());
    for(unsigned parameterNamesIndex = 0; parameterNamesIndex < parameterNamesJsonList.GetLength(); ++parameterNamesIndex)
    {
      parameterNamesJsonList[parameterNamesIndex].AsString(m_parameterNames[parameterNamesIndex]);

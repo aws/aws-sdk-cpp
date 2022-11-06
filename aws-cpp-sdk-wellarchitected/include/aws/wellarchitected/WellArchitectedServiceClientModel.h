@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/wellarchitected/WellArchitectedErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/wellarchitected/WellArchitectedEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -82,6 +84,10 @@ namespace Aws
 
   namespace WellArchitected
   {
+    using WellArchitectedClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WellArchitectedEndpointProviderBase = Aws::WellArchitected::Endpoint::WellArchitectedEndpointProviderBase;
+    using WellArchitectedEndpointProvider = Aws::WellArchitected::Endpoint::WellArchitectedEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in WellArchitectedClient header */

@@ -50,7 +50,7 @@ BuildGroup& BuildGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("dependsOn"))
   {
-    Array<JsonView> dependsOnJsonList = jsonValue.GetArray("dependsOn");
+    Aws::Utils::Array<JsonView> dependsOnJsonList = jsonValue.GetArray("dependsOn");
     for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
     {
       m_dependsOn.push_back(dependsOnJsonList[dependsOnIndex].AsString());
@@ -74,7 +74,7 @@ BuildGroup& BuildGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("priorBuildSummaryList"))
   {
-    Array<JsonView> priorBuildSummaryListJsonList = jsonValue.GetArray("priorBuildSummaryList");
+    Aws::Utils::Array<JsonView> priorBuildSummaryListJsonList = jsonValue.GetArray("priorBuildSummaryList");
     for(unsigned priorBuildSummaryListIndex = 0; priorBuildSummaryListIndex < priorBuildSummaryListJsonList.GetLength(); ++priorBuildSummaryListIndex)
     {
       m_priorBuildSummaryList.push_back(priorBuildSummaryListJsonList[priorBuildSummaryListIndex].AsObject());
@@ -97,7 +97,7 @@ JsonValue BuildGroup::Jsonize() const
 
   if(m_dependsOnHasBeenSet)
   {
-   Array<JsonValue> dependsOnJsonList(m_dependsOn.size());
+   Aws::Utils::Array<JsonValue> dependsOnJsonList(m_dependsOn.size());
    for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
    {
      dependsOnJsonList[dependsOnIndex].AsString(m_dependsOn[dependsOnIndex]);
@@ -120,7 +120,7 @@ JsonValue BuildGroup::Jsonize() const
 
   if(m_priorBuildSummaryListHasBeenSet)
   {
-   Array<JsonValue> priorBuildSummaryListJsonList(m_priorBuildSummaryList.size());
+   Aws::Utils::Array<JsonValue> priorBuildSummaryListJsonList(m_priorBuildSummaryList.size());
    for(unsigned priorBuildSummaryListIndex = 0; priorBuildSummaryListIndex < priorBuildSummaryListJsonList.GetLength(); ++priorBuildSummaryListIndex)
    {
      priorBuildSummaryListJsonList[priorBuildSummaryListIndex].AsObject(m_priorBuildSummaryList[priorBuildSummaryListIndex].Jsonize());

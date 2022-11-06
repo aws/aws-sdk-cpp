@@ -63,7 +63,7 @@ SopRecommendation& SopRecommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("items"))
   {
-    Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
+    Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
     for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
@@ -127,7 +127,7 @@ JsonValue SopRecommendation::Jsonize() const
 
   if(m_itemsHasBeenSet)
   {
-   Array<JsonValue> itemsJsonList(m_items.size());
+   Aws::Utils::Array<JsonValue> itemsJsonList(m_items.size());
    for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
    {
      itemsJsonList[itemsIndex].AsObject(m_items[itemsIndex].Jsonize());

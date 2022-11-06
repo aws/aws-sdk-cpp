@@ -30,7 +30,7 @@ DescribeFileCachesResult& DescribeFileCachesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FileCaches"))
   {
-    Array<JsonView> fileCachesJsonList = jsonValue.GetArray("FileCaches");
+    Aws::Utils::Array<JsonView> fileCachesJsonList = jsonValue.GetArray("FileCaches");
     for(unsigned fileCachesIndex = 0; fileCachesIndex < fileCachesJsonList.GetLength(); ++fileCachesIndex)
     {
       m_fileCaches.push_back(fileCachesJsonList[fileCachesIndex].AsObject());

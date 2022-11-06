@@ -39,7 +39,7 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ips"))
   {
-    Array<JsonView> ipsJsonList = jsonValue.GetArray("ips");
+    Aws::Utils::Array<JsonView> ipsJsonList = jsonValue.GetArray("ips");
     for(unsigned ipsIndex = 0; ipsIndex < ipsJsonList.GetLength(); ++ipsIndex)
     {
       m_ips.push_back(ipsJsonList[ipsIndex].AsString());
@@ -70,7 +70,7 @@ JsonValue NetworkInterface::Jsonize() const
 
   if(m_ipsHasBeenSet)
   {
-   Array<JsonValue> ipsJsonList(m_ips.size());
+   Aws::Utils::Array<JsonValue> ipsJsonList(m_ips.size());
    for(unsigned ipsIndex = 0; ipsIndex < ipsJsonList.GetLength(); ++ipsIndex)
    {
      ipsJsonList[ipsIndex].AsString(m_ips[ipsIndex]);

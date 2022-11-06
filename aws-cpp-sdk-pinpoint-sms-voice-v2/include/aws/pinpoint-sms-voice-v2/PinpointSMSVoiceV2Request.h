@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/pinpoint-sms-voice-v2/PinpointSMSVoiceV2_EXPORTS.h>
+#include <aws/core/endpoint/AWSEndpoint.h>
 #include <aws/core/AmazonSerializableWebServiceRequest.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/http/HttpRequest.h>
@@ -16,6 +17,9 @@ namespace PinpointSMSVoiceV2
   class AWS_PINPOINTSMSVOICEV2_API PinpointSMSVoiceV2Request : public Aws::AmazonSerializableWebServiceRequest
   {
   public:
+    using EndpointParameter = Aws::Endpoint::EndpointParameter;
+    using EndpointParameters = Aws::Endpoint::EndpointParameters;
+
     virtual ~PinpointSMSVoiceV2Request () {}
 
     void AddParametersToRequest(Aws::Http::HttpRequest& httpRequest) const { AWS_UNREFERENCED_PARAM(httpRequest); }

@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/cur/CostandUsageReportServiceErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/cur/CostandUsageReportServiceEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -53,6 +55,10 @@ namespace Aws
 
   namespace CostandUsageReportService
   {
+    using CostandUsageReportServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CostandUsageReportServiceEndpointProviderBase = Aws::CostandUsageReportService::Endpoint::CostandUsageReportServiceEndpointProviderBase;
+    using CostandUsageReportServiceEndpointProvider = Aws::CostandUsageReportService::Endpoint::CostandUsageReportServiceEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CostandUsageReportServiceClient header */

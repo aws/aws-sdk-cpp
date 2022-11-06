@@ -30,7 +30,7 @@ DescribeInstanceAssociationsStatusResult& DescribeInstanceAssociationsStatusResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InstanceAssociationStatusInfos"))
   {
-    Array<JsonView> instanceAssociationStatusInfosJsonList = jsonValue.GetArray("InstanceAssociationStatusInfos");
+    Aws::Utils::Array<JsonView> instanceAssociationStatusInfosJsonList = jsonValue.GetArray("InstanceAssociationStatusInfos");
     for(unsigned instanceAssociationStatusInfosIndex = 0; instanceAssociationStatusInfosIndex < instanceAssociationStatusInfosJsonList.GetLength(); ++instanceAssociationStatusInfosIndex)
     {
       m_instanceAssociationStatusInfos.push_back(instanceAssociationStatusInfosJsonList[instanceAssociationStatusInfosIndex].AsObject());

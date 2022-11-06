@@ -35,7 +35,7 @@ ContactFilter& ContactFilter::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("channel"))
   {
-    Array<JsonView> channelJsonList = jsonValue.GetArray("channel");
+    Aws::Utils::Array<JsonView> channelJsonList = jsonValue.GetArray("channel");
     for(unsigned channelIndex = 0; channelIndex < channelJsonList.GetLength(); ++channelIndex)
     {
       m_channel.push_back(channelJsonList[channelIndex].AsString());
@@ -59,7 +59,7 @@ JsonValue ContactFilter::Jsonize() const
 
   if(m_channelHasBeenSet)
   {
-   Array<JsonValue> channelJsonList(m_channel.size());
+   Aws::Utils::Array<JsonValue> channelJsonList(m_channel.size());
    for(unsigned channelIndex = 0; channelIndex < channelJsonList.GetLength(); ++channelIndex)
    {
      channelJsonList[channelIndex].AsString(m_channel[channelIndex]);

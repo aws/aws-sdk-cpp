@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/elasticmapreduce/EMRErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/elasticmapreduce/EMREndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -90,6 +92,10 @@ namespace Aws
 
   namespace EMR
   {
+    using EMRClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EMREndpointProviderBase = Aws::EMR::Endpoint::EMREndpointProviderBase;
+    using EMREndpointProvider = Aws::EMR::Endpoint::EMREndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in EMRClient header */

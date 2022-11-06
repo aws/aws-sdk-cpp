@@ -30,7 +30,7 @@ DescribeRulesPackagesResult& DescribeRulesPackagesResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("rulesPackages"))
   {
-    Array<JsonView> rulesPackagesJsonList = jsonValue.GetArray("rulesPackages");
+    Aws::Utils::Array<JsonView> rulesPackagesJsonList = jsonValue.GetArray("rulesPackages");
     for(unsigned rulesPackagesIndex = 0; rulesPackagesIndex < rulesPackagesJsonList.GetLength(); ++rulesPackagesIndex)
     {
       m_rulesPackages.push_back(rulesPackagesJsonList[rulesPackagesIndex].AsObject());

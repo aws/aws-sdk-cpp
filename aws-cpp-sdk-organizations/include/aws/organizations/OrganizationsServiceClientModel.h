@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/organizations/OrganizationsErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/organizations/OrganizationsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -87,6 +89,10 @@ namespace Aws
 
   namespace Organizations
   {
+    using OrganizationsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using OrganizationsEndpointProviderBase = Aws::Organizations::Endpoint::OrganizationsEndpointProviderBase;
+    using OrganizationsEndpointProvider = Aws::Organizations::Endpoint::OrganizationsEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in OrganizationsClient header */

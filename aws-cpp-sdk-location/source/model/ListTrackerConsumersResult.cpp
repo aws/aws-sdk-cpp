@@ -30,7 +30,7 @@ ListTrackerConsumersResult& ListTrackerConsumersResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConsumerArns"))
   {
-    Array<JsonView> consumerArnsJsonList = jsonValue.GetArray("ConsumerArns");
+    Aws::Utils::Array<JsonView> consumerArnsJsonList = jsonValue.GetArray("ConsumerArns");
     for(unsigned consumerArnsIndex = 0; consumerArnsIndex < consumerArnsJsonList.GetLength(); ++consumerArnsIndex)
     {
       m_consumerArns.push_back(consumerArnsJsonList[consumerArnsIndex].AsString());

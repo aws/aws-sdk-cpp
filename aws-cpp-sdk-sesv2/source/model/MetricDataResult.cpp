@@ -44,7 +44,7 @@ MetricDataResult& MetricDataResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Timestamps"))
   {
-    Array<JsonView> timestampsJsonList = jsonValue.GetArray("Timestamps");
+    Aws::Utils::Array<JsonView> timestampsJsonList = jsonValue.GetArray("Timestamps");
     for(unsigned timestampsIndex = 0; timestampsIndex < timestampsJsonList.GetLength(); ++timestampsIndex)
     {
       m_timestamps.push_back(timestampsJsonList[timestampsIndex].AsDouble());
@@ -54,7 +54,7 @@ MetricDataResult& MetricDataResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Values"))
   {
-    Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
+    Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
     for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
     {
       m_values.push_back(valuesJsonList[valuesIndex].AsInt64());
@@ -77,7 +77,7 @@ JsonValue MetricDataResult::Jsonize() const
 
   if(m_timestampsHasBeenSet)
   {
-   Array<JsonValue> timestampsJsonList(m_timestamps.size());
+   Aws::Utils::Array<JsonValue> timestampsJsonList(m_timestamps.size());
    for(unsigned timestampsIndex = 0; timestampsIndex < timestampsJsonList.GetLength(); ++timestampsIndex)
    {
      timestampsJsonList[timestampsIndex].AsDouble(m_timestamps[timestampsIndex].SecondsWithMSPrecision());
@@ -88,7 +88,7 @@ JsonValue MetricDataResult::Jsonize() const
 
   if(m_valuesHasBeenSet)
   {
-   Array<JsonValue> valuesJsonList(m_values.size());
+   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
    {
      valuesJsonList[valuesIndex].AsInt64(m_values[valuesIndex]);

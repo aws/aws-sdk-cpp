@@ -30,7 +30,7 @@ ListFleetsForVehicleResult& ListFleetsForVehicleResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("fleets"))
   {
-    Array<JsonView> fleetsJsonList = jsonValue.GetArray("fleets");
+    Aws::Utils::Array<JsonView> fleetsJsonList = jsonValue.GetArray("fleets");
     for(unsigned fleetsIndex = 0; fleetsIndex < fleetsJsonList.GetLength(); ++fleetsIndex)
     {
       m_fleets.push_back(fleetsJsonList[fleetsIndex].AsString());

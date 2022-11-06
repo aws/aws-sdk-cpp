@@ -59,7 +59,7 @@ Aws::String UpdateControlRequest::SerializePayload() const
 
   if(m_controlMappingSourcesHasBeenSet)
   {
-   Array<JsonValue> controlMappingSourcesJsonList(m_controlMappingSources.size());
+   Aws::Utils::Array<JsonValue> controlMappingSourcesJsonList(m_controlMappingSources.size());
    for(unsigned controlMappingSourcesIndex = 0; controlMappingSourcesIndex < controlMappingSourcesJsonList.GetLength(); ++controlMappingSourcesIndex)
    {
      controlMappingSourcesJsonList[controlMappingSourcesIndex].AsObject(m_controlMappingSources[controlMappingSourcesIndex].Jsonize());

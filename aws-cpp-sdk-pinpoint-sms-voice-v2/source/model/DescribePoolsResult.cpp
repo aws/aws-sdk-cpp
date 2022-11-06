@@ -30,7 +30,7 @@ DescribePoolsResult& DescribePoolsResult::operator =(const Aws::AmazonWebService
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Pools"))
   {
-    Array<JsonView> poolsJsonList = jsonValue.GetArray("Pools");
+    Aws::Utils::Array<JsonView> poolsJsonList = jsonValue.GetArray("Pools");
     for(unsigned poolsIndex = 0; poolsIndex < poolsJsonList.GetLength(); ++poolsIndex)
     {
       m_pools.push_back(poolsJsonList[poolsIndex].AsObject());

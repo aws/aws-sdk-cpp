@@ -36,7 +36,7 @@ ListSpeakersResult& ListSpeakersResult::operator =(const Aws::AmazonWebServiceRe
 
   if(jsonValue.ValueExists("SpeakerSummaries"))
   {
-    Array<JsonView> speakerSummariesJsonList = jsonValue.GetArray("SpeakerSummaries");
+    Aws::Utils::Array<JsonView> speakerSummariesJsonList = jsonValue.GetArray("SpeakerSummaries");
     for(unsigned speakerSummariesIndex = 0; speakerSummariesIndex < speakerSummariesJsonList.GetLength(); ++speakerSummariesIndex)
     {
       m_speakerSummaries.push_back(speakerSummariesJsonList[speakerSummariesIndex].AsObject());

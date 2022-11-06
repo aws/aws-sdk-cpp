@@ -38,7 +38,7 @@ Aws::String UpdateTrainingJobRequest::SerializePayload() const
 
   if(m_profilerRuleConfigurationsHasBeenSet)
   {
-   Array<JsonValue> profilerRuleConfigurationsJsonList(m_profilerRuleConfigurations.size());
+   Aws::Utils::Array<JsonValue> profilerRuleConfigurationsJsonList(m_profilerRuleConfigurations.size());
    for(unsigned profilerRuleConfigurationsIndex = 0; profilerRuleConfigurationsIndex < profilerRuleConfigurationsJsonList.GetLength(); ++profilerRuleConfigurationsIndex)
    {
      profilerRuleConfigurationsJsonList[profilerRuleConfigurationsIndex].AsObject(m_profilerRuleConfigurations[profilerRuleConfigurationsIndex].Jsonize());

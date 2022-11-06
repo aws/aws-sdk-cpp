@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/iotsitewise/IoTSiteWiseErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/iotsitewise/IoTSiteWiseEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -115,6 +117,10 @@ namespace Aws
 
   namespace IoTSiteWise
   {
+    using IoTSiteWiseClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTSiteWiseEndpointProviderBase = Aws::IoTSiteWise::Endpoint::IoTSiteWiseEndpointProviderBase;
+    using IoTSiteWiseEndpointProvider = Aws::IoTSiteWise::Endpoint::IoTSiteWiseEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in IoTSiteWiseClient header */

@@ -62,7 +62,7 @@ UsageReportSubscription& UsageReportSubscription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SubscriptionErrors"))
   {
-    Array<JsonView> subscriptionErrorsJsonList = jsonValue.GetArray("SubscriptionErrors");
+    Aws::Utils::Array<JsonView> subscriptionErrorsJsonList = jsonValue.GetArray("SubscriptionErrors");
     for(unsigned subscriptionErrorsIndex = 0; subscriptionErrorsIndex < subscriptionErrorsJsonList.GetLength(); ++subscriptionErrorsIndex)
     {
       m_subscriptionErrors.push_back(subscriptionErrorsJsonList[subscriptionErrorsIndex].AsObject());
@@ -95,7 +95,7 @@ JsonValue UsageReportSubscription::Jsonize() const
 
   if(m_subscriptionErrorsHasBeenSet)
   {
-   Array<JsonValue> subscriptionErrorsJsonList(m_subscriptionErrors.size());
+   Aws::Utils::Array<JsonValue> subscriptionErrorsJsonList(m_subscriptionErrors.size());
    for(unsigned subscriptionErrorsIndex = 0; subscriptionErrorsIndex < subscriptionErrorsJsonList.GetLength(); ++subscriptionErrorsIndex)
    {
      subscriptionErrorsJsonList[subscriptionErrorsIndex].AsObject(m_subscriptionErrors[subscriptionErrorsIndex].Jsonize());

@@ -37,7 +37,7 @@ Aws::String UpdateDeviceInstanceRequest::SerializePayload() const
 
   if(m_labelsHasBeenSet)
   {
-   Array<JsonValue> labelsJsonList(m_labels.size());
+   Aws::Utils::Array<JsonValue> labelsJsonList(m_labels.size());
    for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
    {
      labelsJsonList[labelsIndex].AsString(m_labels[labelsIndex]);

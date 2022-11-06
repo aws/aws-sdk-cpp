@@ -37,7 +37,7 @@ AggregatedLogOddsMetric& AggregatedLogOddsMetric::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("variableNames"))
   {
-    Array<JsonView> variableNamesJsonList = jsonValue.GetArray("variableNames");
+    Aws::Utils::Array<JsonView> variableNamesJsonList = jsonValue.GetArray("variableNames");
     for(unsigned variableNamesIndex = 0; variableNamesIndex < variableNamesJsonList.GetLength(); ++variableNamesIndex)
     {
       m_variableNames.push_back(variableNamesJsonList[variableNamesIndex].AsString());
@@ -61,7 +61,7 @@ JsonValue AggregatedLogOddsMetric::Jsonize() const
 
   if(m_variableNamesHasBeenSet)
   {
-   Array<JsonValue> variableNamesJsonList(m_variableNames.size());
+   Aws::Utils::Array<JsonValue> variableNamesJsonList(m_variableNames.size());
    for(unsigned variableNamesIndex = 0; variableNamesIndex < variableNamesJsonList.GetLength(); ++variableNamesIndex)
    {
      variableNamesJsonList[variableNamesIndex].AsString(m_variableNames[variableNamesIndex]);

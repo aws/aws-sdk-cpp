@@ -30,7 +30,7 @@ GetRulesResult& GetRulesResult::operator =(const Aws::AmazonWebServiceResult<Jso
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ruleDetails"))
   {
-    Array<JsonView> ruleDetailsJsonList = jsonValue.GetArray("ruleDetails");
+    Aws::Utils::Array<JsonView> ruleDetailsJsonList = jsonValue.GetArray("ruleDetails");
     for(unsigned ruleDetailsIndex = 0; ruleDetailsIndex < ruleDetailsJsonList.GetLength(); ++ruleDetailsIndex)
     {
       m_ruleDetails.push_back(ruleDetailsJsonList[ruleDetailsIndex].AsObject());

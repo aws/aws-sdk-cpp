@@ -30,7 +30,7 @@ GetVpcLinksResult& GetVpcLinksResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("items"))
   {
-    Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
+    Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
     for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());

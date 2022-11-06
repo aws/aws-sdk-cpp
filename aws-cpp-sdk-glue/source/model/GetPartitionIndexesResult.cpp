@@ -30,7 +30,7 @@ GetPartitionIndexesResult& GetPartitionIndexesResult::operator =(const Aws::Amaz
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("PartitionIndexDescriptorList"))
   {
-    Array<JsonView> partitionIndexDescriptorListJsonList = jsonValue.GetArray("PartitionIndexDescriptorList");
+    Aws::Utils::Array<JsonView> partitionIndexDescriptorListJsonList = jsonValue.GetArray("PartitionIndexDescriptorList");
     for(unsigned partitionIndexDescriptorListIndex = 0; partitionIndexDescriptorListIndex < partitionIndexDescriptorListJsonList.GetLength(); ++partitionIndexDescriptorListIndex)
     {
       m_partitionIndexDescriptorList.push_back(partitionIndexDescriptorListJsonList[partitionIndexDescriptorListIndex].AsObject());

@@ -85,7 +85,7 @@ Aws::String CreateStreamProcessorRequest::SerializePayload() const
 
   if(m_regionsOfInterestHasBeenSet)
   {
-   Array<JsonValue> regionsOfInterestJsonList(m_regionsOfInterest.size());
+   Aws::Utils::Array<JsonValue> regionsOfInterestJsonList(m_regionsOfInterest.size());
    for(unsigned regionsOfInterestIndex = 0; regionsOfInterestIndex < regionsOfInterestJsonList.GetLength(); ++regionsOfInterestIndex)
    {
      regionsOfInterestJsonList[regionsOfInterestIndex].AsObject(m_regionsOfInterest[regionsOfInterestIndex].Jsonize());

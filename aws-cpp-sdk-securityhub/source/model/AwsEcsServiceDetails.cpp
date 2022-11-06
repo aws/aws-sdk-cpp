@@ -83,7 +83,7 @@ AwsEcsServiceDetails& AwsEcsServiceDetails::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("CapacityProviderStrategy"))
   {
-    Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("CapacityProviderStrategy");
+    Aws::Utils::Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("CapacityProviderStrategy");
     for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
     {
       m_capacityProviderStrategy.push_back(capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject());
@@ -149,7 +149,7 @@ AwsEcsServiceDetails& AwsEcsServiceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("LoadBalancers"))
   {
-    Array<JsonView> loadBalancersJsonList = jsonValue.GetArray("LoadBalancers");
+    Aws::Utils::Array<JsonView> loadBalancersJsonList = jsonValue.GetArray("LoadBalancers");
     for(unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex)
     {
       m_loadBalancers.push_back(loadBalancersJsonList[loadBalancersIndex].AsObject());
@@ -173,7 +173,7 @@ AwsEcsServiceDetails& AwsEcsServiceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PlacementConstraints"))
   {
-    Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("PlacementConstraints");
+    Aws::Utils::Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("PlacementConstraints");
     for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
     {
       m_placementConstraints.push_back(placementConstraintsJsonList[placementConstraintsIndex].AsObject());
@@ -183,7 +183,7 @@ AwsEcsServiceDetails& AwsEcsServiceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("PlacementStrategies"))
   {
-    Array<JsonView> placementStrategiesJsonList = jsonValue.GetArray("PlacementStrategies");
+    Aws::Utils::Array<JsonView> placementStrategiesJsonList = jsonValue.GetArray("PlacementStrategies");
     for(unsigned placementStrategiesIndex = 0; placementStrategiesIndex < placementStrategiesJsonList.GetLength(); ++placementStrategiesIndex)
     {
       m_placementStrategies.push_back(placementStrategiesJsonList[placementStrategiesIndex].AsObject());
@@ -235,7 +235,7 @@ AwsEcsServiceDetails& AwsEcsServiceDetails::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ServiceRegistries"))
   {
-    Array<JsonView> serviceRegistriesJsonList = jsonValue.GetArray("ServiceRegistries");
+    Aws::Utils::Array<JsonView> serviceRegistriesJsonList = jsonValue.GetArray("ServiceRegistries");
     for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
     {
       m_serviceRegistries.push_back(serviceRegistriesJsonList[serviceRegistriesIndex].AsObject());
@@ -259,7 +259,7 @@ JsonValue AwsEcsServiceDetails::Jsonize() const
 
   if(m_capacityProviderStrategyHasBeenSet)
   {
-   Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
+   Aws::Utils::Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
    for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
    {
      capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
@@ -318,7 +318,7 @@ JsonValue AwsEcsServiceDetails::Jsonize() const
 
   if(m_loadBalancersHasBeenSet)
   {
-   Array<JsonValue> loadBalancersJsonList(m_loadBalancers.size());
+   Aws::Utils::Array<JsonValue> loadBalancersJsonList(m_loadBalancers.size());
    for(unsigned loadBalancersIndex = 0; loadBalancersIndex < loadBalancersJsonList.GetLength(); ++loadBalancersIndex)
    {
      loadBalancersJsonList[loadBalancersIndex].AsObject(m_loadBalancers[loadBalancersIndex].Jsonize());
@@ -341,7 +341,7 @@ JsonValue AwsEcsServiceDetails::Jsonize() const
 
   if(m_placementConstraintsHasBeenSet)
   {
-   Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
+   Aws::Utils::Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
    for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
    {
      placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
@@ -352,7 +352,7 @@ JsonValue AwsEcsServiceDetails::Jsonize() const
 
   if(m_placementStrategiesHasBeenSet)
   {
-   Array<JsonValue> placementStrategiesJsonList(m_placementStrategies.size());
+   Aws::Utils::Array<JsonValue> placementStrategiesJsonList(m_placementStrategies.size());
    for(unsigned placementStrategiesIndex = 0; placementStrategiesIndex < placementStrategiesJsonList.GetLength(); ++placementStrategiesIndex)
    {
      placementStrategiesJsonList[placementStrategiesIndex].AsObject(m_placementStrategies[placementStrategiesIndex].Jsonize());
@@ -399,7 +399,7 @@ JsonValue AwsEcsServiceDetails::Jsonize() const
 
   if(m_serviceRegistriesHasBeenSet)
   {
-   Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
+   Aws::Utils::Array<JsonValue> serviceRegistriesJsonList(m_serviceRegistries.size());
    for(unsigned serviceRegistriesIndex = 0; serviceRegistriesIndex < serviceRegistriesJsonList.GetLength(); ++serviceRegistriesIndex)
    {
      serviceRegistriesJsonList[serviceRegistriesIndex].AsObject(m_serviceRegistries[serviceRegistriesIndex].Jsonize());

@@ -30,7 +30,7 @@ ListBudgetsForResourceResult& ListBudgetsForResourceResult::operator =(const Aws
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Budgets"))
   {
-    Array<JsonView> budgetsJsonList = jsonValue.GetArray("Budgets");
+    Aws::Utils::Array<JsonView> budgetsJsonList = jsonValue.GetArray("Budgets");
     for(unsigned budgetsIndex = 0; budgetsIndex < budgetsJsonList.GetLength(); ++budgetsIndex)
     {
       m_budgets.push_back(budgetsJsonList[budgetsIndex].AsObject());

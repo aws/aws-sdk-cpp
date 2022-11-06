@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/sdb/SimpleDBErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/sdb/SimpleDBEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -54,6 +56,10 @@ namespace Aws
 
   namespace SimpleDB
   {
+    using SimpleDBClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using SimpleDBEndpointProviderBase = Aws::SimpleDB::Endpoint::SimpleDBEndpointProviderBase;
+    using SimpleDBEndpointProvider = Aws::SimpleDB::Endpoint::SimpleDBEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in SimpleDBClient header */

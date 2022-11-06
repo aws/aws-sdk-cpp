@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/cloudcontrol/CloudControlApiErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/cloudcontrol/CloudControlApiEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -57,6 +59,10 @@ namespace Aws
 
   namespace CloudControlApi
   {
+    using CloudControlApiClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudControlApiEndpointProviderBase = Aws::CloudControlApi::Endpoint::CloudControlApiEndpointProviderBase;
+    using CloudControlApiEndpointProvider = Aws::CloudControlApi::Endpoint::CloudControlApiEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CloudControlApiClient header */

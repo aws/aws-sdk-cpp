@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/evidently/CloudWatchEvidentlyErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/evidently/CloudWatchEvidentlyEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -87,6 +89,10 @@ namespace Aws
 
   namespace CloudWatchEvidently
   {
+    using CloudWatchEvidentlyClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudWatchEvidentlyEndpointProviderBase = Aws::CloudWatchEvidently::Endpoint::CloudWatchEvidentlyEndpointProviderBase;
+    using CloudWatchEvidentlyEndpointProvider = Aws::CloudWatchEvidently::Endpoint::CloudWatchEvidentlyEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CloudWatchEvidentlyClient header */

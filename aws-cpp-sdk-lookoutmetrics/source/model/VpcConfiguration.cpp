@@ -35,7 +35,7 @@ VpcConfiguration& VpcConfiguration::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("SubnetIdList"))
   {
-    Array<JsonView> subnetIdListJsonList = jsonValue.GetArray("SubnetIdList");
+    Aws::Utils::Array<JsonView> subnetIdListJsonList = jsonValue.GetArray("SubnetIdList");
     for(unsigned subnetIdListIndex = 0; subnetIdListIndex < subnetIdListJsonList.GetLength(); ++subnetIdListIndex)
     {
       m_subnetIdList.push_back(subnetIdListJsonList[subnetIdListIndex].AsString());
@@ -45,7 +45,7 @@ VpcConfiguration& VpcConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SecurityGroupIdList"))
   {
-    Array<JsonView> securityGroupIdListJsonList = jsonValue.GetArray("SecurityGroupIdList");
+    Aws::Utils::Array<JsonView> securityGroupIdListJsonList = jsonValue.GetArray("SecurityGroupIdList");
     for(unsigned securityGroupIdListIndex = 0; securityGroupIdListIndex < securityGroupIdListJsonList.GetLength(); ++securityGroupIdListIndex)
     {
       m_securityGroupIdList.push_back(securityGroupIdListJsonList[securityGroupIdListIndex].AsString());
@@ -62,7 +62,7 @@ JsonValue VpcConfiguration::Jsonize() const
 
   if(m_subnetIdListHasBeenSet)
   {
-   Array<JsonValue> subnetIdListJsonList(m_subnetIdList.size());
+   Aws::Utils::Array<JsonValue> subnetIdListJsonList(m_subnetIdList.size());
    for(unsigned subnetIdListIndex = 0; subnetIdListIndex < subnetIdListJsonList.GetLength(); ++subnetIdListIndex)
    {
      subnetIdListJsonList[subnetIdListIndex].AsString(m_subnetIdList[subnetIdListIndex]);
@@ -73,7 +73,7 @@ JsonValue VpcConfiguration::Jsonize() const
 
   if(m_securityGroupIdListHasBeenSet)
   {
-   Array<JsonValue> securityGroupIdListJsonList(m_securityGroupIdList.size());
+   Aws::Utils::Array<JsonValue> securityGroupIdListJsonList(m_securityGroupIdList.size());
    for(unsigned securityGroupIdListIndex = 0; securityGroupIdListIndex < securityGroupIdListJsonList.GetLength(); ++securityGroupIdListIndex)
    {
      securityGroupIdListJsonList[securityGroupIdListIndex].AsString(m_securityGroupIdList[securityGroupIdListIndex]);

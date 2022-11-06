@@ -30,7 +30,7 @@ BatchGetGraphMemberDatasourcesResult& BatchGetGraphMemberDatasourcesResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("MemberDatasources"))
   {
-    Array<JsonView> memberDatasourcesJsonList = jsonValue.GetArray("MemberDatasources");
+    Aws::Utils::Array<JsonView> memberDatasourcesJsonList = jsonValue.GetArray("MemberDatasources");
     for(unsigned memberDatasourcesIndex = 0; memberDatasourcesIndex < memberDatasourcesJsonList.GetLength(); ++memberDatasourcesIndex)
     {
       m_memberDatasources.push_back(memberDatasourcesJsonList[memberDatasourcesIndex].AsObject());
@@ -39,7 +39,7 @@ BatchGetGraphMemberDatasourcesResult& BatchGetGraphMemberDatasourcesResult::oper
 
   if(jsonValue.ValueExists("UnprocessedAccounts"))
   {
-    Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("UnprocessedAccounts");
+    Aws::Utils::Array<JsonView> unprocessedAccountsJsonList = jsonValue.GetArray("UnprocessedAccounts");
     for(unsigned unprocessedAccountsIndex = 0; unprocessedAccountsIndex < unprocessedAccountsJsonList.GetLength(); ++unprocessedAccountsIndex)
     {
       m_unprocessedAccounts.push_back(unprocessedAccountsJsonList[unprocessedAccountsIndex].AsObject());

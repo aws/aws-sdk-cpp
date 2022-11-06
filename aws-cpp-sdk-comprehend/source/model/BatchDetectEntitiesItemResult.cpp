@@ -44,7 +44,7 @@ BatchDetectEntitiesItemResult& BatchDetectEntitiesItemResult::operator =(JsonVie
 
   if(jsonValue.ValueExists("Entities"))
   {
-    Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");
+    Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");
     for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
     {
       m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());
@@ -67,7 +67,7 @@ JsonValue BatchDetectEntitiesItemResult::Jsonize() const
 
   if(m_entitiesHasBeenSet)
   {
-   Array<JsonValue> entitiesJsonList(m_entities.size());
+   Aws::Utils::Array<JsonValue> entitiesJsonList(m_entities.size());
    for(unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex)
    {
      entitiesJsonList[entitiesIndex].AsObject(m_entities[entitiesIndex].Jsonize());

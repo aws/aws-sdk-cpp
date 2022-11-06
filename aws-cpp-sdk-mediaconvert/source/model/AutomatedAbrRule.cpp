@@ -43,7 +43,7 @@ AutomatedAbrRule& AutomatedAbrRule::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("allowedRenditions"))
   {
-    Array<JsonView> allowedRenditionsJsonList = jsonValue.GetArray("allowedRenditions");
+    Aws::Utils::Array<JsonView> allowedRenditionsJsonList = jsonValue.GetArray("allowedRenditions");
     for(unsigned allowedRenditionsIndex = 0; allowedRenditionsIndex < allowedRenditionsJsonList.GetLength(); ++allowedRenditionsIndex)
     {
       m_allowedRenditions.push_back(allowedRenditionsJsonList[allowedRenditionsIndex].AsObject());
@@ -53,7 +53,7 @@ AutomatedAbrRule& AutomatedAbrRule::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("forceIncludeRenditions"))
   {
-    Array<JsonView> forceIncludeRenditionsJsonList = jsonValue.GetArray("forceIncludeRenditions");
+    Aws::Utils::Array<JsonView> forceIncludeRenditionsJsonList = jsonValue.GetArray("forceIncludeRenditions");
     for(unsigned forceIncludeRenditionsIndex = 0; forceIncludeRenditionsIndex < forceIncludeRenditionsJsonList.GetLength(); ++forceIncludeRenditionsIndex)
     {
       m_forceIncludeRenditions.push_back(forceIncludeRenditionsJsonList[forceIncludeRenditionsIndex].AsObject());
@@ -91,7 +91,7 @@ JsonValue AutomatedAbrRule::Jsonize() const
 
   if(m_allowedRenditionsHasBeenSet)
   {
-   Array<JsonValue> allowedRenditionsJsonList(m_allowedRenditions.size());
+   Aws::Utils::Array<JsonValue> allowedRenditionsJsonList(m_allowedRenditions.size());
    for(unsigned allowedRenditionsIndex = 0; allowedRenditionsIndex < allowedRenditionsJsonList.GetLength(); ++allowedRenditionsIndex)
    {
      allowedRenditionsJsonList[allowedRenditionsIndex].AsObject(m_allowedRenditions[allowedRenditionsIndex].Jsonize());
@@ -102,7 +102,7 @@ JsonValue AutomatedAbrRule::Jsonize() const
 
   if(m_forceIncludeRenditionsHasBeenSet)
   {
-   Array<JsonValue> forceIncludeRenditionsJsonList(m_forceIncludeRenditions.size());
+   Aws::Utils::Array<JsonValue> forceIncludeRenditionsJsonList(m_forceIncludeRenditions.size());
    for(unsigned forceIncludeRenditionsIndex = 0; forceIncludeRenditionsIndex < forceIncludeRenditionsJsonList.GetLength(); ++forceIncludeRenditionsIndex)
    {
      forceIncludeRenditionsJsonList[forceIncludeRenditionsIndex].AsObject(m_forceIncludeRenditions[forceIncludeRenditionsIndex].Jsonize());

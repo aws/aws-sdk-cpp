@@ -43,7 +43,7 @@ Aws::String UpdateGameSessionQueueRequest::SerializePayload() const
 
   if(m_playerLatencyPoliciesHasBeenSet)
   {
-   Array<JsonValue> playerLatencyPoliciesJsonList(m_playerLatencyPolicies.size());
+   Aws::Utils::Array<JsonValue> playerLatencyPoliciesJsonList(m_playerLatencyPolicies.size());
    for(unsigned playerLatencyPoliciesIndex = 0; playerLatencyPoliciesIndex < playerLatencyPoliciesJsonList.GetLength(); ++playerLatencyPoliciesIndex)
    {
      playerLatencyPoliciesJsonList[playerLatencyPoliciesIndex].AsObject(m_playerLatencyPolicies[playerLatencyPoliciesIndex].Jsonize());
@@ -54,7 +54,7 @@ Aws::String UpdateGameSessionQueueRequest::SerializePayload() const
 
   if(m_destinationsHasBeenSet)
   {
-   Array<JsonValue> destinationsJsonList(m_destinations.size());
+   Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
    for(unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex)
    {
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());

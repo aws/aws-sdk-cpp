@@ -44,7 +44,7 @@ BatchGetRecordIdentifier& BatchGetRecordIdentifier::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("RecordIdentifiersValueAsString"))
   {
-    Array<JsonView> recordIdentifiersValueAsStringJsonList = jsonValue.GetArray("RecordIdentifiersValueAsString");
+    Aws::Utils::Array<JsonView> recordIdentifiersValueAsStringJsonList = jsonValue.GetArray("RecordIdentifiersValueAsString");
     for(unsigned recordIdentifiersValueAsStringIndex = 0; recordIdentifiersValueAsStringIndex < recordIdentifiersValueAsStringJsonList.GetLength(); ++recordIdentifiersValueAsStringIndex)
     {
       m_recordIdentifiersValueAsString.push_back(recordIdentifiersValueAsStringJsonList[recordIdentifiersValueAsStringIndex].AsString());
@@ -54,7 +54,7 @@ BatchGetRecordIdentifier& BatchGetRecordIdentifier::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("FeatureNames"))
   {
-    Array<JsonView> featureNamesJsonList = jsonValue.GetArray("FeatureNames");
+    Aws::Utils::Array<JsonView> featureNamesJsonList = jsonValue.GetArray("FeatureNames");
     for(unsigned featureNamesIndex = 0; featureNamesIndex < featureNamesJsonList.GetLength(); ++featureNamesIndex)
     {
       m_featureNames.push_back(featureNamesJsonList[featureNamesIndex].AsString());
@@ -77,7 +77,7 @@ JsonValue BatchGetRecordIdentifier::Jsonize() const
 
   if(m_recordIdentifiersValueAsStringHasBeenSet)
   {
-   Array<JsonValue> recordIdentifiersValueAsStringJsonList(m_recordIdentifiersValueAsString.size());
+   Aws::Utils::Array<JsonValue> recordIdentifiersValueAsStringJsonList(m_recordIdentifiersValueAsString.size());
    for(unsigned recordIdentifiersValueAsStringIndex = 0; recordIdentifiersValueAsStringIndex < recordIdentifiersValueAsStringJsonList.GetLength(); ++recordIdentifiersValueAsStringIndex)
    {
      recordIdentifiersValueAsStringJsonList[recordIdentifiersValueAsStringIndex].AsString(m_recordIdentifiersValueAsString[recordIdentifiersValueAsStringIndex]);
@@ -88,7 +88,7 @@ JsonValue BatchGetRecordIdentifier::Jsonize() const
 
   if(m_featureNamesHasBeenSet)
   {
-   Array<JsonValue> featureNamesJsonList(m_featureNames.size());
+   Aws::Utils::Array<JsonValue> featureNamesJsonList(m_featureNames.size());
    for(unsigned featureNamesIndex = 0; featureNamesIndex < featureNamesJsonList.GetLength(); ++featureNamesIndex)
    {
      featureNamesJsonList[featureNamesIndex].AsString(m_featureNames[featureNamesIndex]);

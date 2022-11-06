@@ -51,7 +51,7 @@ Service& Service::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("categories"))
   {
-    Array<JsonView> categoriesJsonList = jsonValue.GetArray("categories");
+    Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("categories");
     for(unsigned categoriesIndex = 0; categoriesIndex < categoriesJsonList.GetLength(); ++categoriesIndex)
     {
       m_categories.push_back(categoriesJsonList[categoriesIndex].AsObject());
@@ -80,7 +80,7 @@ JsonValue Service::Jsonize() const
 
   if(m_categoriesHasBeenSet)
   {
-   Array<JsonValue> categoriesJsonList(m_categories.size());
+   Aws::Utils::Array<JsonValue> categoriesJsonList(m_categories.size());
    for(unsigned categoriesIndex = 0; categoriesIndex < categoriesJsonList.GetLength(); ++categoriesIndex)
    {
      categoriesJsonList[categoriesIndex].AsObject(m_categories[categoriesIndex].Jsonize());

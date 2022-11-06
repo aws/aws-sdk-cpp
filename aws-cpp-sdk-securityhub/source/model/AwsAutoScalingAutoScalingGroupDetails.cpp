@@ -60,7 +60,7 @@ AwsAutoScalingAutoScalingGroupDetails& AwsAutoScalingAutoScalingGroupDetails::op
 
   if(jsonValue.ValueExists("LoadBalancerNames"))
   {
-    Array<JsonView> loadBalancerNamesJsonList = jsonValue.GetArray("LoadBalancerNames");
+    Aws::Utils::Array<JsonView> loadBalancerNamesJsonList = jsonValue.GetArray("LoadBalancerNames");
     for(unsigned loadBalancerNamesIndex = 0; loadBalancerNamesIndex < loadBalancerNamesJsonList.GetLength(); ++loadBalancerNamesIndex)
     {
       m_loadBalancerNames.push_back(loadBalancerNamesJsonList[loadBalancerNamesIndex].AsString());
@@ -98,7 +98,7 @@ AwsAutoScalingAutoScalingGroupDetails& AwsAutoScalingAutoScalingGroupDetails::op
 
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
-    Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
     for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
     {
       m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsObject());
@@ -135,7 +135,7 @@ JsonValue AwsAutoScalingAutoScalingGroupDetails::Jsonize() const
 
   if(m_loadBalancerNamesHasBeenSet)
   {
-   Array<JsonValue> loadBalancerNamesJsonList(m_loadBalancerNames.size());
+   Aws::Utils::Array<JsonValue> loadBalancerNamesJsonList(m_loadBalancerNames.size());
    for(unsigned loadBalancerNamesIndex = 0; loadBalancerNamesIndex < loadBalancerNamesJsonList.GetLength(); ++loadBalancerNamesIndex)
    {
      loadBalancerNamesJsonList[loadBalancerNamesIndex].AsString(m_loadBalancerNames[loadBalancerNamesIndex]);
@@ -170,7 +170,7 @@ JsonValue AwsAutoScalingAutoScalingGroupDetails::Jsonize() const
 
   if(m_availabilityZonesHasBeenSet)
   {
-   Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
    {
      availabilityZonesJsonList[availabilityZonesIndex].AsObject(m_availabilityZones[availabilityZonesIndex].Jsonize());

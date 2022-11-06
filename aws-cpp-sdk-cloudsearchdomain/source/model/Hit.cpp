@@ -49,7 +49,7 @@ Hit& Hit::operator =(JsonView jsonValue)
     Aws::Map<Aws::String, JsonView> fieldsJsonMap = jsonValue.GetObject("fields").GetAllObjects();
     for(auto& fieldsItem : fieldsJsonMap)
     {
-      Array<JsonView> fieldValueJsonList = fieldsItem.second.AsArray();
+      Aws::Utils::Array<JsonView> fieldValueJsonList = fieldsItem.second.AsArray();
       Aws::Vector<Aws::String> fieldValueList;
       fieldValueList.reserve((size_t)fieldValueJsonList.GetLength());
       for(unsigned fieldValueIndex = 0; fieldValueIndex < fieldValueJsonList.GetLength(); ++fieldValueIndex)
@@ -99,7 +99,7 @@ JsonValue Hit::Jsonize() const
    JsonValue fieldsJsonMap;
    for(auto& fieldsItem : m_fields)
    {
-     Array<JsonValue> fieldValueJsonList(fieldsItem.second.size());
+     Aws::Utils::Array<JsonValue> fieldValueJsonList(fieldsItem.second.size());
      for(unsigned fieldValueIndex = 0; fieldValueIndex < fieldValueJsonList.GetLength(); ++fieldValueIndex)
      {
        fieldValueJsonList[fieldValueIndex].AsString(fieldsItem.second[fieldValueIndex]);

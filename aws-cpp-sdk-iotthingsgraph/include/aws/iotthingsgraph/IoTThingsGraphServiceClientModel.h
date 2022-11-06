@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/iotthingsgraph/IoTThingsGraphErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/iotthingsgraph/IoTThingsGraphEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -49,6 +51,10 @@ namespace Aws
 
   namespace IoTThingsGraph
   {
+    using IoTThingsGraphClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoTThingsGraphEndpointProviderBase = Aws::IoTThingsGraph::Endpoint::IoTThingsGraphEndpointProviderBase;
+    using IoTThingsGraphEndpointProvider = Aws::IoTThingsGraph::Endpoint::IoTThingsGraphEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in IoTThingsGraphClient header */

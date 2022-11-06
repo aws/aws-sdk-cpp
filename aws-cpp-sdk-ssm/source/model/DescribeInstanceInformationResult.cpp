@@ -30,7 +30,7 @@ DescribeInstanceInformationResult& DescribeInstanceInformationResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InstanceInformationList"))
   {
-    Array<JsonView> instanceInformationListJsonList = jsonValue.GetArray("InstanceInformationList");
+    Aws::Utils::Array<JsonView> instanceInformationListJsonList = jsonValue.GetArray("InstanceInformationList");
     for(unsigned instanceInformationListIndex = 0; instanceInformationListIndex < instanceInformationListJsonList.GetLength(); ++instanceInformationListIndex)
     {
       m_instanceInformationList.push_back(instanceInformationListJsonList[instanceInformationListIndex].AsObject());

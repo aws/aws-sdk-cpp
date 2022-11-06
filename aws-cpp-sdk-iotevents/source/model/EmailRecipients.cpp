@@ -33,7 +33,7 @@ EmailRecipients& EmailRecipients::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("to"))
   {
-    Array<JsonView> toJsonList = jsonValue.GetArray("to");
+    Aws::Utils::Array<JsonView> toJsonList = jsonValue.GetArray("to");
     for(unsigned toIndex = 0; toIndex < toJsonList.GetLength(); ++toIndex)
     {
       m_to.push_back(toJsonList[toIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue EmailRecipients::Jsonize() const
 
   if(m_toHasBeenSet)
   {
-   Array<JsonValue> toJsonList(m_to.size());
+   Aws::Utils::Array<JsonValue> toJsonList(m_to.size());
    for(unsigned toIndex = 0; toIndex < toJsonList.GetLength(); ++toIndex)
    {
      toJsonList[toIndex].AsObject(m_to[toIndex].Jsonize());

@@ -39,7 +39,7 @@ Aws::String UpdateSipRuleRequest::SerializePayload() const
 
   if(m_targetApplicationsHasBeenSet)
   {
-   Array<JsonValue> targetApplicationsJsonList(m_targetApplications.size());
+   Aws::Utils::Array<JsonValue> targetApplicationsJsonList(m_targetApplications.size());
    for(unsigned targetApplicationsIndex = 0; targetApplicationsIndex < targetApplicationsJsonList.GetLength(); ++targetApplicationsIndex)
    {
      targetApplicationsJsonList[targetApplicationsIndex].AsObject(m_targetApplications[targetApplicationsIndex].Jsonize());

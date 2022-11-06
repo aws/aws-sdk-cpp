@@ -98,7 +98,7 @@ DescribeBotLocaleResult& DescribeBotLocaleResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("failureReasons"))
   {
-    Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
+    Aws::Utils::Array<JsonView> failureReasonsJsonList = jsonValue.GetArray("failureReasons");
     for(unsigned failureReasonsIndex = 0; failureReasonsIndex < failureReasonsJsonList.GetLength(); ++failureReasonsIndex)
     {
       m_failureReasons.push_back(failureReasonsJsonList[failureReasonsIndex].AsString());
@@ -125,7 +125,7 @@ DescribeBotLocaleResult& DescribeBotLocaleResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("botLocaleHistoryEvents"))
   {
-    Array<JsonView> botLocaleHistoryEventsJsonList = jsonValue.GetArray("botLocaleHistoryEvents");
+    Aws::Utils::Array<JsonView> botLocaleHistoryEventsJsonList = jsonValue.GetArray("botLocaleHistoryEvents");
     for(unsigned botLocaleHistoryEventsIndex = 0; botLocaleHistoryEventsIndex < botLocaleHistoryEventsJsonList.GetLength(); ++botLocaleHistoryEventsIndex)
     {
       m_botLocaleHistoryEvents.push_back(botLocaleHistoryEventsJsonList[botLocaleHistoryEventsIndex].AsObject());
@@ -134,7 +134,7 @@ DescribeBotLocaleResult& DescribeBotLocaleResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("recommendedActions"))
   {
-    Array<JsonView> recommendedActionsJsonList = jsonValue.GetArray("recommendedActions");
+    Aws::Utils::Array<JsonView> recommendedActionsJsonList = jsonValue.GetArray("recommendedActions");
     for(unsigned recommendedActionsIndex = 0; recommendedActionsIndex < recommendedActionsJsonList.GetLength(); ++recommendedActionsIndex)
     {
       m_recommendedActions.push_back(recommendedActionsJsonList[recommendedActionsIndex].AsString());

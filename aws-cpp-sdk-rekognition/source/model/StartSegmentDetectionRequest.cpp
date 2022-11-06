@@ -58,7 +58,7 @@ Aws::String StartSegmentDetectionRequest::SerializePayload() const
 
   if(m_segmentTypesHasBeenSet)
   {
-   Array<JsonValue> segmentTypesJsonList(m_segmentTypes.size());
+   Aws::Utils::Array<JsonValue> segmentTypesJsonList(m_segmentTypes.size());
    for(unsigned segmentTypesIndex = 0; segmentTypesIndex < segmentTypesJsonList.GetLength(); ++segmentTypesIndex)
    {
      segmentTypesJsonList[segmentTypesIndex].AsString(SegmentTypeMapper::GetNameForSegmentType(m_segmentTypes[segmentTypesIndex]));

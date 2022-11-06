@@ -62,7 +62,7 @@ TrainingJobDefinition& TrainingJobDefinition::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("InputDataConfig"))
   {
-    Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
+    Aws::Utils::Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
     for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
     {
       m_inputDataConfig.push_back(inputDataConfigJsonList[inputDataConfigIndex].AsObject());
@@ -116,7 +116,7 @@ JsonValue TrainingJobDefinition::Jsonize() const
 
   if(m_inputDataConfigHasBeenSet)
   {
-   Array<JsonValue> inputDataConfigJsonList(m_inputDataConfig.size());
+   Aws::Utils::Array<JsonValue> inputDataConfigJsonList(m_inputDataConfig.size());
    for(unsigned inputDataConfigIndex = 0; inputDataConfigIndex < inputDataConfigJsonList.GetLength(); ++inputDataConfigIndex)
    {
      inputDataConfigJsonList[inputDataConfigIndex].AsObject(m_inputDataConfig[inputDataConfigIndex].Jsonize());

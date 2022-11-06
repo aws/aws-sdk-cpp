@@ -36,7 +36,7 @@ ListSubChannelsResult& ListSubChannelsResult::operator =(const Aws::AmazonWebSer
 
   if(jsonValue.ValueExists("SubChannels"))
   {
-    Array<JsonView> subChannelsJsonList = jsonValue.GetArray("SubChannels");
+    Aws::Utils::Array<JsonView> subChannelsJsonList = jsonValue.GetArray("SubChannels");
     for(unsigned subChannelsIndex = 0; subChannelsIndex < subChannelsJsonList.GetLength(); ++subChannelsIndex)
     {
       m_subChannels.push_back(subChannelsJsonList[subChannelsIndex].AsObject());

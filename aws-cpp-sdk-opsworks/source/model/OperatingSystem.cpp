@@ -68,7 +68,7 @@ OperatingSystem& OperatingSystem::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ConfigurationManagers"))
   {
-    Array<JsonView> configurationManagersJsonList = jsonValue.GetArray("ConfigurationManagers");
+    Aws::Utils::Array<JsonView> configurationManagersJsonList = jsonValue.GetArray("ConfigurationManagers");
     for(unsigned configurationManagersIndex = 0; configurationManagersIndex < configurationManagersJsonList.GetLength(); ++configurationManagersIndex)
     {
       m_configurationManagers.push_back(configurationManagersJsonList[configurationManagersIndex].AsObject());
@@ -124,7 +124,7 @@ JsonValue OperatingSystem::Jsonize() const
 
   if(m_configurationManagersHasBeenSet)
   {
-   Array<JsonValue> configurationManagersJsonList(m_configurationManagers.size());
+   Aws::Utils::Array<JsonValue> configurationManagersJsonList(m_configurationManagers.size());
    for(unsigned configurationManagersIndex = 0; configurationManagersIndex < configurationManagersJsonList.GetLength(); ++configurationManagersIndex)
    {
      configurationManagersJsonList[configurationManagersIndex].AsObject(m_configurationManagers[configurationManagersIndex].Jsonize());

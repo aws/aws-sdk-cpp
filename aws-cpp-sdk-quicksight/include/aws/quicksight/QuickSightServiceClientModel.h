@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/quicksight/QuickSightErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/quicksight/QuickSightEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -169,6 +171,10 @@ namespace Aws
 
   namespace QuickSight
   {
+    using QuickSightClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using QuickSightEndpointProviderBase = Aws::QuickSight::Endpoint::QuickSightEndpointProviderBase;
+    using QuickSightEndpointProvider = Aws::QuickSight::Endpoint::QuickSightEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in QuickSightClient header */

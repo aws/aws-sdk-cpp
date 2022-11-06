@@ -36,7 +36,7 @@ QueryAssistantResult& QueryAssistantResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("results"))
   {
-    Array<JsonView> resultsJsonList = jsonValue.GetArray("results");
+    Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("results");
     for(unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex)
     {
       m_results.push_back(resultsJsonList[resultsIndex].AsObject());

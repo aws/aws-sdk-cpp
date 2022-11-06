@@ -30,7 +30,7 @@ ListAssessmentFrameworksResult& ListAssessmentFrameworksResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("frameworkMetadataList"))
   {
-    Array<JsonView> frameworkMetadataListJsonList = jsonValue.GetArray("frameworkMetadataList");
+    Aws::Utils::Array<JsonView> frameworkMetadataListJsonList = jsonValue.GetArray("frameworkMetadataList");
     for(unsigned frameworkMetadataListIndex = 0; frameworkMetadataListIndex < frameworkMetadataListJsonList.GetLength(); ++frameworkMetadataListIndex)
     {
       m_frameworkMetadataList.push_back(frameworkMetadataListJsonList[frameworkMetadataListIndex].AsObject());

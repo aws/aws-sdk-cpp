@@ -30,7 +30,7 @@ GetInsightsResult& GetInsightsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Insights"))
   {
-    Array<JsonView> insightsJsonList = jsonValue.GetArray("Insights");
+    Aws::Utils::Array<JsonView> insightsJsonList = jsonValue.GetArray("Insights");
     for(unsigned insightsIndex = 0; insightsIndex < insightsJsonList.GetLength(); ++insightsIndex)
     {
       m_insights.push_back(insightsJsonList[insightsIndex].AsObject());

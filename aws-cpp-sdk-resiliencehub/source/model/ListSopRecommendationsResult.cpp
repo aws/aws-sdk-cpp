@@ -36,7 +36,7 @@ ListSopRecommendationsResult& ListSopRecommendationsResult::operator =(const Aws
 
   if(jsonValue.ValueExists("sopRecommendations"))
   {
-    Array<JsonView> sopRecommendationsJsonList = jsonValue.GetArray("sopRecommendations");
+    Aws::Utils::Array<JsonView> sopRecommendationsJsonList = jsonValue.GetArray("sopRecommendations");
     for(unsigned sopRecommendationsIndex = 0; sopRecommendationsIndex < sopRecommendationsJsonList.GetLength(); ++sopRecommendationsIndex)
     {
       m_sopRecommendations.push_back(sopRecommendationsJsonList[sopRecommendationsIndex].AsObject());

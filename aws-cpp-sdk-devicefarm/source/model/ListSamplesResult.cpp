@@ -30,7 +30,7 @@ ListSamplesResult& ListSamplesResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("samples"))
   {
-    Array<JsonView> samplesJsonList = jsonValue.GetArray("samples");
+    Aws::Utils::Array<JsonView> samplesJsonList = jsonValue.GetArray("samples");
     for(unsigned samplesIndex = 0; samplesIndex < samplesJsonList.GetLength(); ++samplesIndex)
     {
       m_samples.push_back(samplesJsonList[samplesIndex].AsObject());

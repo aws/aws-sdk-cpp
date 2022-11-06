@@ -30,7 +30,7 @@ ListNotificationsResult& ListNotificationsResult::operator =(const Aws::AmazonWe
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("notifications"))
   {
-    Array<JsonView> notificationsJsonList = jsonValue.GetArray("notifications");
+    Aws::Utils::Array<JsonView> notificationsJsonList = jsonValue.GetArray("notifications");
     for(unsigned notificationsIndex = 0; notificationsIndex < notificationsJsonList.GetLength(); ++notificationsIndex)
     {
       m_notifications.push_back(notificationsJsonList[notificationsIndex].AsObject());

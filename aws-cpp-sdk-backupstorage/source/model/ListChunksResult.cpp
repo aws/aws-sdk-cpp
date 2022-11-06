@@ -30,7 +30,7 @@ ListChunksResult& ListChunksResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ChunkList"))
   {
-    Array<JsonView> chunkListJsonList = jsonValue.GetArray("ChunkList");
+    Aws::Utils::Array<JsonView> chunkListJsonList = jsonValue.GetArray("ChunkList");
     for(unsigned chunkListIndex = 0; chunkListIndex < chunkListJsonList.GetLength(); ++chunkListIndex)
     {
       m_chunkList.push_back(chunkListJsonList[chunkListIndex].AsObject());

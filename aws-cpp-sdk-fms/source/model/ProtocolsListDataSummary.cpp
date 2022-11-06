@@ -60,7 +60,7 @@ ProtocolsListDataSummary& ProtocolsListDataSummary::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("ProtocolsList"))
   {
-    Array<JsonView> protocolsListJsonList = jsonValue.GetArray("ProtocolsList");
+    Aws::Utils::Array<JsonView> protocolsListJsonList = jsonValue.GetArray("ProtocolsList");
     for(unsigned protocolsListIndex = 0; protocolsListIndex < protocolsListJsonList.GetLength(); ++protocolsListIndex)
     {
       m_protocolsList.push_back(protocolsListJsonList[protocolsListIndex].AsString());
@@ -95,7 +95,7 @@ JsonValue ProtocolsListDataSummary::Jsonize() const
 
   if(m_protocolsListHasBeenSet)
   {
-   Array<JsonValue> protocolsListJsonList(m_protocolsList.size());
+   Aws::Utils::Array<JsonValue> protocolsListJsonList(m_protocolsList.size());
    for(unsigned protocolsListIndex = 0; protocolsListIndex < protocolsListJsonList.GetLength(); ++protocolsListIndex)
    {
      protocolsListJsonList[protocolsListIndex].AsString(m_protocolsList[protocolsListIndex]);

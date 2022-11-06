@@ -30,7 +30,7 @@ ListScheduledQueriesResult& ListScheduledQueriesResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ScheduledQueries"))
   {
-    Array<JsonView> scheduledQueriesJsonList = jsonValue.GetArray("ScheduledQueries");
+    Aws::Utils::Array<JsonView> scheduledQueriesJsonList = jsonValue.GetArray("ScheduledQueries");
     for(unsigned scheduledQueriesIndex = 0; scheduledQueriesIndex < scheduledQueriesJsonList.GetLength(); ++scheduledQueriesIndex)
     {
       m_scheduledQueries.push_back(scheduledQueriesJsonList[scheduledQueriesIndex].AsObject());

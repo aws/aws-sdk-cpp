@@ -36,7 +36,7 @@ ListWorkflowsResult& ListWorkflowsResult::operator =(const Aws::AmazonWebService
 
   if(jsonValue.ValueExists("Workflows"))
   {
-    Array<JsonView> workflowsJsonList = jsonValue.GetArray("Workflows");
+    Aws::Utils::Array<JsonView> workflowsJsonList = jsonValue.GetArray("Workflows");
     for(unsigned workflowsIndex = 0; workflowsIndex < workflowsJsonList.GetLength(); ++workflowsIndex)
     {
       m_workflows.push_back(workflowsJsonList[workflowsIndex].AsObject());

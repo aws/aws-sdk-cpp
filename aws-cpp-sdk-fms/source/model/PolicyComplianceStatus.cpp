@@ -73,7 +73,7 @@ PolicyComplianceStatus& PolicyComplianceStatus::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EvaluationResults"))
   {
-    Array<JsonView> evaluationResultsJsonList = jsonValue.GetArray("EvaluationResults");
+    Aws::Utils::Array<JsonView> evaluationResultsJsonList = jsonValue.GetArray("EvaluationResults");
     for(unsigned evaluationResultsIndex = 0; evaluationResultsIndex < evaluationResultsJsonList.GetLength(); ++evaluationResultsIndex)
     {
       m_evaluationResults.push_back(evaluationResultsJsonList[evaluationResultsIndex].AsObject());
@@ -131,7 +131,7 @@ JsonValue PolicyComplianceStatus::Jsonize() const
 
   if(m_evaluationResultsHasBeenSet)
   {
-   Array<JsonValue> evaluationResultsJsonList(m_evaluationResults.size());
+   Aws::Utils::Array<JsonValue> evaluationResultsJsonList(m_evaluationResults.size());
    for(unsigned evaluationResultsIndex = 0; evaluationResultsIndex < evaluationResultsJsonList.GetLength(); ++evaluationResultsIndex)
    {
      evaluationResultsJsonList[evaluationResultsIndex].AsObject(m_evaluationResults[evaluationResultsIndex].Jsonize());

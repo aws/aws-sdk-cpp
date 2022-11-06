@@ -30,7 +30,7 @@ DescribeRuntimeVersionsResult& DescribeRuntimeVersionsResult::operator =(const A
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("RuntimeVersions"))
   {
-    Array<JsonView> runtimeVersionsJsonList = jsonValue.GetArray("RuntimeVersions");
+    Aws::Utils::Array<JsonView> runtimeVersionsJsonList = jsonValue.GetArray("RuntimeVersions");
     for(unsigned runtimeVersionsIndex = 0; runtimeVersionsIndex < runtimeVersionsJsonList.GetLength(); ++runtimeVersionsIndex)
     {
       m_runtimeVersions.push_back(runtimeVersionsJsonList[runtimeVersionsIndex].AsObject());

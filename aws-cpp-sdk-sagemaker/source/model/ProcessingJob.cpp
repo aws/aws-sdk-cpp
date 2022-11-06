@@ -77,7 +77,7 @@ ProcessingJob& ProcessingJob::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ProcessingInputs"))
   {
-    Array<JsonView> processingInputsJsonList = jsonValue.GetArray("ProcessingInputs");
+    Aws::Utils::Array<JsonView> processingInputsJsonList = jsonValue.GetArray("ProcessingInputs");
     for(unsigned processingInputsIndex = 0; processingInputsIndex < processingInputsJsonList.GetLength(); ++processingInputsIndex)
     {
       m_processingInputs.push_back(processingInputsJsonList[processingInputsIndex].AsObject());
@@ -230,7 +230,7 @@ ProcessingJob& ProcessingJob::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
@@ -247,7 +247,7 @@ JsonValue ProcessingJob::Jsonize() const
 
   if(m_processingInputsHasBeenSet)
   {
-   Array<JsonValue> processingInputsJsonList(m_processingInputs.size());
+   Aws::Utils::Array<JsonValue> processingInputsJsonList(m_processingInputs.size());
    for(unsigned processingInputsIndex = 0; processingInputsIndex < processingInputsJsonList.GetLength(); ++processingInputsIndex)
    {
      processingInputsJsonList[processingInputsIndex].AsObject(m_processingInputs[processingInputsIndex].Jsonize());
@@ -378,7 +378,7 @@ JsonValue ProcessingJob::Jsonize() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

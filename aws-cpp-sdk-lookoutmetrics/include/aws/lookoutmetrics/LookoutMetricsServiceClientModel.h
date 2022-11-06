@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/lookoutmetrics/LookoutMetricsErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/lookoutmetrics/LookoutMetricsEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -79,6 +81,10 @@ namespace Aws
 
   namespace LookoutMetrics
   {
+    using LookoutMetricsClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LookoutMetricsEndpointProviderBase = Aws::LookoutMetrics::Endpoint::LookoutMetricsEndpointProviderBase;
+    using LookoutMetricsEndpointProvider = Aws::LookoutMetrics::Endpoint::LookoutMetricsEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in LookoutMetricsClient header */

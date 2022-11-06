@@ -56,7 +56,7 @@ GetMergeConflictsResult& GetMergeConflictsResult::operator =(const Aws::AmazonWe
 
   if(jsonValue.ValueExists("conflictMetadataList"))
   {
-    Array<JsonView> conflictMetadataListJsonList = jsonValue.GetArray("conflictMetadataList");
+    Aws::Utils::Array<JsonView> conflictMetadataListJsonList = jsonValue.GetArray("conflictMetadataList");
     for(unsigned conflictMetadataListIndex = 0; conflictMetadataListIndex < conflictMetadataListJsonList.GetLength(); ++conflictMetadataListIndex)
     {
       m_conflictMetadataList.push_back(conflictMetadataListJsonList[conflictMetadataListIndex].AsObject());

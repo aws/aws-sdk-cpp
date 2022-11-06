@@ -69,7 +69,7 @@ MigrationTask& MigrationTask::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ResourceAttributeList"))
   {
-    Array<JsonView> resourceAttributeListJsonList = jsonValue.GetArray("ResourceAttributeList");
+    Aws::Utils::Array<JsonView> resourceAttributeListJsonList = jsonValue.GetArray("ResourceAttributeList");
     for(unsigned resourceAttributeListIndex = 0; resourceAttributeListIndex < resourceAttributeListJsonList.GetLength(); ++resourceAttributeListIndex)
     {
       m_resourceAttributeList.push_back(resourceAttributeListJsonList[resourceAttributeListIndex].AsObject());
@@ -109,7 +109,7 @@ JsonValue MigrationTask::Jsonize() const
 
   if(m_resourceAttributeListHasBeenSet)
   {
-   Array<JsonValue> resourceAttributeListJsonList(m_resourceAttributeList.size());
+   Aws::Utils::Array<JsonValue> resourceAttributeListJsonList(m_resourceAttributeList.size());
    for(unsigned resourceAttributeListIndex = 0; resourceAttributeListIndex < resourceAttributeListJsonList.GetLength(); ++resourceAttributeListIndex)
    {
      resourceAttributeListJsonList[resourceAttributeListIndex].AsObject(m_resourceAttributeList[resourceAttributeListIndex].Jsonize());

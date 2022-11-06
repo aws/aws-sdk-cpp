@@ -30,7 +30,7 @@ DescribeMatchmakingConfigurationsResult& DescribeMatchmakingConfigurationsResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Configurations"))
   {
-    Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
+    Aws::Utils::Array<JsonView> configurationsJsonList = jsonValue.GetArray("Configurations");
     for(unsigned configurationsIndex = 0; configurationsIndex < configurationsJsonList.GetLength(); ++configurationsIndex)
     {
       m_configurations.push_back(configurationsJsonList[configurationsIndex].AsObject());

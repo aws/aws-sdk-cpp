@@ -71,7 +71,7 @@ EndpointSetting& EndpointSetting::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("EnumValues"))
   {
-    Array<JsonView> enumValuesJsonList = jsonValue.GetArray("EnumValues");
+    Aws::Utils::Array<JsonView> enumValuesJsonList = jsonValue.GetArray("EnumValues");
     for(unsigned enumValuesIndex = 0; enumValuesIndex < enumValuesJsonList.GetLength(); ++enumValuesIndex)
     {
       m_enumValues.push_back(enumValuesJsonList[enumValuesIndex].AsString());
@@ -141,7 +141,7 @@ JsonValue EndpointSetting::Jsonize() const
 
   if(m_enumValuesHasBeenSet)
   {
-   Array<JsonValue> enumValuesJsonList(m_enumValues.size());
+   Aws::Utils::Array<JsonValue> enumValuesJsonList(m_enumValues.size());
    for(unsigned enumValuesIndex = 0; enumValuesIndex < enumValuesJsonList.GetLength(); ++enumValuesIndex)
    {
      enumValuesJsonList[enumValuesIndex].AsString(m_enumValues[enumValuesIndex]);

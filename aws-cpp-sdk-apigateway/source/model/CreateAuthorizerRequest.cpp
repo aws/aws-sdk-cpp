@@ -45,7 +45,7 @@ Aws::String CreateAuthorizerRequest::SerializePayload() const
 
   if(m_providerARNsHasBeenSet)
   {
-   Array<JsonValue> providerARNsJsonList(m_providerARNs.size());
+   Aws::Utils::Array<JsonValue> providerARNsJsonList(m_providerARNs.size());
    for(unsigned providerARNsIndex = 0; providerARNsIndex < providerARNsJsonList.GetLength(); ++providerARNsIndex)
    {
      providerARNsJsonList[providerARNsIndex].AsString(m_providerARNs[providerARNsIndex]);

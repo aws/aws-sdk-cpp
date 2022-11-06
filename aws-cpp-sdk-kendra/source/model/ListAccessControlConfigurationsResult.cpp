@@ -36,7 +36,7 @@ ListAccessControlConfigurationsResult& ListAccessControlConfigurationsResult::op
 
   if(jsonValue.ValueExists("AccessControlConfigurations"))
   {
-    Array<JsonView> accessControlConfigurationsJsonList = jsonValue.GetArray("AccessControlConfigurations");
+    Aws::Utils::Array<JsonView> accessControlConfigurationsJsonList = jsonValue.GetArray("AccessControlConfigurations");
     for(unsigned accessControlConfigurationsIndex = 0; accessControlConfigurationsIndex < accessControlConfigurationsJsonList.GetLength(); ++accessControlConfigurationsIndex)
     {
       m_accessControlConfigurations.push_back(accessControlConfigurationsJsonList[accessControlConfigurationsIndex].AsObject());

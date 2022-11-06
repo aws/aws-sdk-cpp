@@ -30,7 +30,7 @@ DescribeFleetUtilizationResult& DescribeFleetUtilizationResult::operator =(const
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("FleetUtilization"))
   {
-    Array<JsonView> fleetUtilizationJsonList = jsonValue.GetArray("FleetUtilization");
+    Aws::Utils::Array<JsonView> fleetUtilizationJsonList = jsonValue.GetArray("FleetUtilization");
     for(unsigned fleetUtilizationIndex = 0; fleetUtilizationIndex < fleetUtilizationJsonList.GetLength(); ++fleetUtilizationIndex)
     {
       m_fleetUtilization.push_back(fleetUtilizationJsonList[fleetUtilizationIndex].AsObject());

@@ -68,7 +68,7 @@ SavingsPlanOffering& SavingsPlanOffering::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("productTypes"))
   {
-    Array<JsonView> productTypesJsonList = jsonValue.GetArray("productTypes");
+    Aws::Utils::Array<JsonView> productTypesJsonList = jsonValue.GetArray("productTypes");
     for(unsigned productTypesIndex = 0; productTypesIndex < productTypesJsonList.GetLength(); ++productTypesIndex)
     {
       m_productTypes.push_back(SavingsPlanProductTypeMapper::GetSavingsPlanProductTypeForName(productTypesJsonList[productTypesIndex].AsString()));
@@ -134,7 +134,7 @@ SavingsPlanOffering& SavingsPlanOffering::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("properties"))
   {
-    Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
+    Aws::Utils::Array<JsonView> propertiesJsonList = jsonValue.GetArray("properties");
     for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
     {
       m_properties.push_back(propertiesJsonList[propertiesIndex].AsObject());
@@ -157,7 +157,7 @@ JsonValue SavingsPlanOffering::Jsonize() const
 
   if(m_productTypesHasBeenSet)
   {
-   Array<JsonValue> productTypesJsonList(m_productTypes.size());
+   Aws::Utils::Array<JsonValue> productTypesJsonList(m_productTypes.size());
    for(unsigned productTypesIndex = 0; productTypesIndex < productTypesJsonList.GetLength(); ++productTypesIndex)
    {
      productTypesJsonList[productTypesIndex].AsString(SavingsPlanProductTypeMapper::GetNameForSavingsPlanProductType(m_productTypes[productTypesIndex]));
@@ -213,7 +213,7 @@ JsonValue SavingsPlanOffering::Jsonize() const
 
   if(m_propertiesHasBeenSet)
   {
-   Array<JsonValue> propertiesJsonList(m_properties.size());
+   Aws::Utils::Array<JsonValue> propertiesJsonList(m_properties.size());
    for(unsigned propertiesIndex = 0; propertiesIndex < propertiesJsonList.GetLength(); ++propertiesIndex)
    {
      propertiesJsonList[propertiesIndex].AsObject(m_properties[propertiesIndex].Jsonize());

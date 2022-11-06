@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/inspector2/Inspector2Errors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/inspector2/Inspector2EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -81,6 +83,10 @@ namespace Aws
 
   namespace Inspector2
   {
+    using Inspector2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using Inspector2EndpointProviderBase = Aws::Inspector2::Endpoint::Inspector2EndpointProviderBase;
+    using Inspector2EndpointProvider = Aws::Inspector2::Endpoint::Inspector2EndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in Inspector2Client header */

@@ -40,7 +40,7 @@ Aws::String CreateAnalyzerRequest::SerializePayload() const
 
   if(m_archiveRulesHasBeenSet)
   {
-   Array<JsonValue> archiveRulesJsonList(m_archiveRules.size());
+   Aws::Utils::Array<JsonValue> archiveRulesJsonList(m_archiveRules.size());
    for(unsigned archiveRulesIndex = 0; archiveRulesIndex < archiveRulesJsonList.GetLength(); ++archiveRulesIndex)
    {
      archiveRulesJsonList[archiveRulesIndex].AsObject(m_archiveRules[archiveRulesIndex].Jsonize());

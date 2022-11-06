@@ -81,7 +81,7 @@ Aws::String CreateFleetRequest::SerializePayload() const
 
   if(m_logPathsHasBeenSet)
   {
-   Array<JsonValue> logPathsJsonList(m_logPaths.size());
+   Aws::Utils::Array<JsonValue> logPathsJsonList(m_logPaths.size());
    for(unsigned logPathsIndex = 0; logPathsIndex < logPathsJsonList.GetLength(); ++logPathsIndex)
    {
      logPathsJsonList[logPathsIndex].AsString(m_logPaths[logPathsIndex]);
@@ -97,7 +97,7 @@ Aws::String CreateFleetRequest::SerializePayload() const
 
   if(m_eC2InboundPermissionsHasBeenSet)
   {
-   Array<JsonValue> eC2InboundPermissionsJsonList(m_eC2InboundPermissions.size());
+   Aws::Utils::Array<JsonValue> eC2InboundPermissionsJsonList(m_eC2InboundPermissions.size());
    for(unsigned eC2InboundPermissionsIndex = 0; eC2InboundPermissionsIndex < eC2InboundPermissionsJsonList.GetLength(); ++eC2InboundPermissionsIndex)
    {
      eC2InboundPermissionsJsonList[eC2InboundPermissionsIndex].AsObject(m_eC2InboundPermissions[eC2InboundPermissionsIndex].Jsonize());
@@ -125,7 +125,7 @@ Aws::String CreateFleetRequest::SerializePayload() const
 
   if(m_metricGroupsHasBeenSet)
   {
-   Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
+   Aws::Utils::Array<JsonValue> metricGroupsJsonList(m_metricGroups.size());
    for(unsigned metricGroupsIndex = 0; metricGroupsIndex < metricGroupsJsonList.GetLength(); ++metricGroupsIndex)
    {
      metricGroupsJsonList[metricGroupsIndex].AsString(m_metricGroups[metricGroupsIndex]);
@@ -165,7 +165,7 @@ Aws::String CreateFleetRequest::SerializePayload() const
 
   if(m_locationsHasBeenSet)
   {
-   Array<JsonValue> locationsJsonList(m_locations.size());
+   Aws::Utils::Array<JsonValue> locationsJsonList(m_locations.size());
    for(unsigned locationsIndex = 0; locationsIndex < locationsJsonList.GetLength(); ++locationsIndex)
    {
      locationsJsonList[locationsIndex].AsObject(m_locations[locationsIndex].Jsonize());
@@ -176,7 +176,7 @@ Aws::String CreateFleetRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

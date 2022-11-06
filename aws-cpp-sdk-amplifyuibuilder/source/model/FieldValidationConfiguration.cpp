@@ -39,7 +39,7 @@ FieldValidationConfiguration& FieldValidationConfiguration::operator =(JsonView 
 {
   if(jsonValue.ValueExists("numValues"))
   {
-    Array<JsonView> numValuesJsonList = jsonValue.GetArray("numValues");
+    Aws::Utils::Array<JsonView> numValuesJsonList = jsonValue.GetArray("numValues");
     for(unsigned numValuesIndex = 0; numValuesIndex < numValuesJsonList.GetLength(); ++numValuesIndex)
     {
       m_numValues.push_back(numValuesJsonList[numValuesIndex].AsInteger());
@@ -49,7 +49,7 @@ FieldValidationConfiguration& FieldValidationConfiguration::operator =(JsonView 
 
   if(jsonValue.ValueExists("strValues"))
   {
-    Array<JsonView> strValuesJsonList = jsonValue.GetArray("strValues");
+    Aws::Utils::Array<JsonView> strValuesJsonList = jsonValue.GetArray("strValues");
     for(unsigned strValuesIndex = 0; strValuesIndex < strValuesJsonList.GetLength(); ++strValuesIndex)
     {
       m_strValues.push_back(strValuesJsonList[strValuesIndex].AsString());
@@ -80,7 +80,7 @@ JsonValue FieldValidationConfiguration::Jsonize() const
 
   if(m_numValuesHasBeenSet)
   {
-   Array<JsonValue> numValuesJsonList(m_numValues.size());
+   Aws::Utils::Array<JsonValue> numValuesJsonList(m_numValues.size());
    for(unsigned numValuesIndex = 0; numValuesIndex < numValuesJsonList.GetLength(); ++numValuesIndex)
    {
      numValuesJsonList[numValuesIndex].AsInteger(m_numValues[numValuesIndex]);
@@ -91,7 +91,7 @@ JsonValue FieldValidationConfiguration::Jsonize() const
 
   if(m_strValuesHasBeenSet)
   {
-   Array<JsonValue> strValuesJsonList(m_strValues.size());
+   Aws::Utils::Array<JsonValue> strValuesJsonList(m_strValues.size());
    for(unsigned strValuesIndex = 0; strValuesIndex < strValuesJsonList.GetLength(); ++strValuesIndex)
    {
      strValuesJsonList[strValuesIndex].AsString(m_strValues[strValuesIndex]);

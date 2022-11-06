@@ -90,7 +90,7 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Rules"))
   {
-    Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
+    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
     for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
     {
       m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
@@ -124,7 +124,7 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AvailableLabels"))
   {
-    Array<JsonView> availableLabelsJsonList = jsonValue.GetArray("AvailableLabels");
+    Aws::Utils::Array<JsonView> availableLabelsJsonList = jsonValue.GetArray("AvailableLabels");
     for(unsigned availableLabelsIndex = 0; availableLabelsIndex < availableLabelsJsonList.GetLength(); ++availableLabelsIndex)
     {
       m_availableLabels.push_back(availableLabelsJsonList[availableLabelsIndex].AsObject());
@@ -134,7 +134,7 @@ RuleGroup& RuleGroup::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ConsumedLabels"))
   {
-    Array<JsonView> consumedLabelsJsonList = jsonValue.GetArray("ConsumedLabels");
+    Aws::Utils::Array<JsonView> consumedLabelsJsonList = jsonValue.GetArray("ConsumedLabels");
     for(unsigned consumedLabelsIndex = 0; consumedLabelsIndex < consumedLabelsJsonList.GetLength(); ++consumedLabelsIndex)
     {
       m_consumedLabels.push_back(consumedLabelsJsonList[consumedLabelsIndex].AsObject());
@@ -181,7 +181,7 @@ JsonValue RuleGroup::Jsonize() const
 
   if(m_rulesHasBeenSet)
   {
-   Array<JsonValue> rulesJsonList(m_rules.size());
+   Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
    for(unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex)
    {
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
@@ -215,7 +215,7 @@ JsonValue RuleGroup::Jsonize() const
 
   if(m_availableLabelsHasBeenSet)
   {
-   Array<JsonValue> availableLabelsJsonList(m_availableLabels.size());
+   Aws::Utils::Array<JsonValue> availableLabelsJsonList(m_availableLabels.size());
    for(unsigned availableLabelsIndex = 0; availableLabelsIndex < availableLabelsJsonList.GetLength(); ++availableLabelsIndex)
    {
      availableLabelsJsonList[availableLabelsIndex].AsObject(m_availableLabels[availableLabelsIndex].Jsonize());
@@ -226,7 +226,7 @@ JsonValue RuleGroup::Jsonize() const
 
   if(m_consumedLabelsHasBeenSet)
   {
-   Array<JsonValue> consumedLabelsJsonList(m_consumedLabels.size());
+   Aws::Utils::Array<JsonValue> consumedLabelsJsonList(m_consumedLabels.size());
    for(unsigned consumedLabelsIndex = 0; consumedLabelsIndex < consumedLabelsJsonList.GetLength(); ++consumedLabelsIndex)
    {
      consumedLabelsJsonList[consumedLabelsIndex].AsObject(m_consumedLabels[consumedLabelsIndex].Jsonize());

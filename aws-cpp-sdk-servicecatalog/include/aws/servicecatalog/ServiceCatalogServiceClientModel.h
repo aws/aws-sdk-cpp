@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/servicecatalog/ServiceCatalogErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/servicecatalog/ServiceCatalogEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -136,6 +138,10 @@ namespace Aws
 
   namespace ServiceCatalog
   {
+    using ServiceCatalogClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ServiceCatalogEndpointProviderBase = Aws::ServiceCatalog::Endpoint::ServiceCatalogEndpointProviderBase;
+    using ServiceCatalogEndpointProvider = Aws::ServiceCatalog::Endpoint::ServiceCatalogEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ServiceCatalogClient header */

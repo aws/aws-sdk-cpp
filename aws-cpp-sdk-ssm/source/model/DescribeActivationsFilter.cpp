@@ -44,7 +44,7 @@ DescribeActivationsFilter& DescribeActivationsFilter::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("FilterValues"))
   {
-    Array<JsonView> filterValuesJsonList = jsonValue.GetArray("FilterValues");
+    Aws::Utils::Array<JsonView> filterValuesJsonList = jsonValue.GetArray("FilterValues");
     for(unsigned filterValuesIndex = 0; filterValuesIndex < filterValuesJsonList.GetLength(); ++filterValuesIndex)
     {
       m_filterValues.push_back(filterValuesJsonList[filterValuesIndex].AsString());
@@ -66,7 +66,7 @@ JsonValue DescribeActivationsFilter::Jsonize() const
 
   if(m_filterValuesHasBeenSet)
   {
-   Array<JsonValue> filterValuesJsonList(m_filterValues.size());
+   Aws::Utils::Array<JsonValue> filterValuesJsonList(m_filterValues.size());
    for(unsigned filterValuesIndex = 0; filterValuesIndex < filterValuesJsonList.GetLength(); ++filterValuesIndex)
    {
      filterValuesJsonList[filterValuesIndex].AsString(m_filterValues[filterValuesIndex]);

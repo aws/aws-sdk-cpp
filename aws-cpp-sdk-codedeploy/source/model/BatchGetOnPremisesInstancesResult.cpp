@@ -30,7 +30,7 @@ BatchGetOnPremisesInstancesResult& BatchGetOnPremisesInstancesResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("instanceInfos"))
   {
-    Array<JsonView> instanceInfosJsonList = jsonValue.GetArray("instanceInfos");
+    Aws::Utils::Array<JsonView> instanceInfosJsonList = jsonValue.GetArray("instanceInfos");
     for(unsigned instanceInfosIndex = 0; instanceInfosIndex < instanceInfosJsonList.GetLength(); ++instanceInfosIndex)
     {
       m_instanceInfos.push_back(instanceInfosJsonList[instanceInfosIndex].AsObject());

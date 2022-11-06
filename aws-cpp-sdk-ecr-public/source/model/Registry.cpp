@@ -71,7 +71,7 @@ Registry& Registry::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("aliases"))
   {
-    Array<JsonView> aliasesJsonList = jsonValue.GetArray("aliases");
+    Aws::Utils::Array<JsonView> aliasesJsonList = jsonValue.GetArray("aliases");
     for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
     {
       m_aliases.push_back(aliasesJsonList[aliasesIndex].AsObject());
@@ -112,7 +112,7 @@ JsonValue Registry::Jsonize() const
 
   if(m_aliasesHasBeenSet)
   {
-   Array<JsonValue> aliasesJsonList(m_aliases.size());
+   Aws::Utils::Array<JsonValue> aliasesJsonList(m_aliases.size());
    for(unsigned aliasesIndex = 0; aliasesIndex < aliasesJsonList.GetLength(); ++aliasesIndex)
    {
      aliasesJsonList[aliasesIndex].AsObject(m_aliases[aliasesIndex].Jsonize());

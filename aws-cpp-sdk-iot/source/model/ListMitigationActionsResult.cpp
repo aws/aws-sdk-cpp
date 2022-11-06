@@ -30,7 +30,7 @@ ListMitigationActionsResult& ListMitigationActionsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("actionIdentifiers"))
   {
-    Array<JsonView> actionIdentifiersJsonList = jsonValue.GetArray("actionIdentifiers");
+    Aws::Utils::Array<JsonView> actionIdentifiersJsonList = jsonValue.GetArray("actionIdentifiers");
     for(unsigned actionIdentifiersIndex = 0; actionIdentifiersIndex < actionIdentifiersJsonList.GetLength(); ++actionIdentifiersIndex)
     {
       m_actionIdentifiers.push_back(actionIdentifiersJsonList[actionIdentifiersIndex].AsObject());

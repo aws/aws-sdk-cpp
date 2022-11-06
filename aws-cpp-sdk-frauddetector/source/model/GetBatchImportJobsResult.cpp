@@ -30,7 +30,7 @@ GetBatchImportJobsResult& GetBatchImportJobsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("batchImports"))
   {
-    Array<JsonView> batchImportsJsonList = jsonValue.GetArray("batchImports");
+    Aws::Utils::Array<JsonView> batchImportsJsonList = jsonValue.GetArray("batchImports");
     for(unsigned batchImportsIndex = 0; batchImportsIndex < batchImportsJsonList.GetLength(); ++batchImportsIndex)
     {
       m_batchImports.push_back(batchImportsJsonList[batchImportsIndex].AsObject());

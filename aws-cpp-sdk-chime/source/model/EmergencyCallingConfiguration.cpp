@@ -33,7 +33,7 @@ EmergencyCallingConfiguration& EmergencyCallingConfiguration::operator =(JsonVie
 {
   if(jsonValue.ValueExists("DNIS"))
   {
-    Array<JsonView> dNISJsonList = jsonValue.GetArray("DNIS");
+    Aws::Utils::Array<JsonView> dNISJsonList = jsonValue.GetArray("DNIS");
     for(unsigned dNISIndex = 0; dNISIndex < dNISJsonList.GetLength(); ++dNISIndex)
     {
       m_dNIS.push_back(dNISJsonList[dNISIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue EmergencyCallingConfiguration::Jsonize() const
 
   if(m_dNISHasBeenSet)
   {
-   Array<JsonValue> dNISJsonList(m_dNIS.size());
+   Aws::Utils::Array<JsonValue> dNISJsonList(m_dNIS.size());
    for(unsigned dNISIndex = 0; dNISIndex < dNISJsonList.GetLength(); ++dNISIndex)
    {
      dNISJsonList[dNISIndex].AsObject(m_dNIS[dNISIndex].Jsonize());

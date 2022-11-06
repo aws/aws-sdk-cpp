@@ -44,7 +44,7 @@ Aws::String AcceptDirectConnectGatewayAssociationProposalRequest::SerializePaylo
 
   if(m_overrideAllowedPrefixesToDirectConnectGatewayHasBeenSet)
   {
-   Array<JsonValue> overrideAllowedPrefixesToDirectConnectGatewayJsonList(m_overrideAllowedPrefixesToDirectConnectGateway.size());
+   Aws::Utils::Array<JsonValue> overrideAllowedPrefixesToDirectConnectGatewayJsonList(m_overrideAllowedPrefixesToDirectConnectGateway.size());
    for(unsigned overrideAllowedPrefixesToDirectConnectGatewayIndex = 0; overrideAllowedPrefixesToDirectConnectGatewayIndex < overrideAllowedPrefixesToDirectConnectGatewayJsonList.GetLength(); ++overrideAllowedPrefixesToDirectConnectGatewayIndex)
    {
      overrideAllowedPrefixesToDirectConnectGatewayJsonList[overrideAllowedPrefixesToDirectConnectGatewayIndex].AsObject(m_overrideAllowedPrefixesToDirectConnectGateway[overrideAllowedPrefixesToDirectConnectGatewayIndex].Jsonize());

@@ -44,7 +44,7 @@ ListMedicalTranscriptionJobsResult& ListMedicalTranscriptionJobsResult::operator
 
   if(jsonValue.ValueExists("MedicalTranscriptionJobSummaries"))
   {
-    Array<JsonView> medicalTranscriptionJobSummariesJsonList = jsonValue.GetArray("MedicalTranscriptionJobSummaries");
+    Aws::Utils::Array<JsonView> medicalTranscriptionJobSummariesJsonList = jsonValue.GetArray("MedicalTranscriptionJobSummaries");
     for(unsigned medicalTranscriptionJobSummariesIndex = 0; medicalTranscriptionJobSummariesIndex < medicalTranscriptionJobSummariesJsonList.GetLength(); ++medicalTranscriptionJobSummariesIndex)
     {
       m_medicalTranscriptionJobSummaries.push_back(medicalTranscriptionJobSummariesJsonList[medicalTranscriptionJobSummariesIndex].AsObject());

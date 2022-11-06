@@ -36,7 +36,7 @@ ListTrafficDistributionGroupsResult& ListTrafficDistributionGroupsResult::operat
 
   if(jsonValue.ValueExists("TrafficDistributionGroupSummaryList"))
   {
-    Array<JsonView> trafficDistributionGroupSummaryListJsonList = jsonValue.GetArray("TrafficDistributionGroupSummaryList");
+    Aws::Utils::Array<JsonView> trafficDistributionGroupSummaryListJsonList = jsonValue.GetArray("TrafficDistributionGroupSummaryList");
     for(unsigned trafficDistributionGroupSummaryListIndex = 0; trafficDistributionGroupSummaryListIndex < trafficDistributionGroupSummaryListJsonList.GetLength(); ++trafficDistributionGroupSummaryListIndex)
     {
       m_trafficDistributionGroupSummaryList.push_back(trafficDistributionGroupSummaryListJsonList[trafficDistributionGroupSummaryListIndex].AsObject());

@@ -55,7 +55,7 @@ InstanceSummary& InstanceSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Products"))
   {
-    Array<JsonView> productsJsonList = jsonValue.GetArray("Products");
+    Aws::Utils::Array<JsonView> productsJsonList = jsonValue.GetArray("Products");
     for(unsigned productsIndex = 0; productsIndex < productsJsonList.GetLength(); ++productsIndex)
     {
       m_products.push_back(productsJsonList[productsIndex].AsString());
@@ -98,7 +98,7 @@ JsonValue InstanceSummary::Jsonize() const
 
   if(m_productsHasBeenSet)
   {
-   Array<JsonValue> productsJsonList(m_products.size());
+   Aws::Utils::Array<JsonValue> productsJsonList(m_products.size());
    for(unsigned productsIndex = 0; productsIndex < productsJsonList.GetLength(); ++productsIndex)
    {
      productsJsonList[productsIndex].AsString(m_products[productsIndex]);

@@ -36,7 +36,7 @@ ListVirtualGatewaysResult& ListVirtualGatewaysResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("virtualGateways"))
   {
-    Array<JsonView> virtualGatewaysJsonList = jsonValue.GetArray("virtualGateways");
+    Aws::Utils::Array<JsonView> virtualGatewaysJsonList = jsonValue.GetArray("virtualGateways");
     for(unsigned virtualGatewaysIndex = 0; virtualGatewaysIndex < virtualGatewaysJsonList.GetLength(); ++virtualGatewaysIndex)
     {
       m_virtualGateways.push_back(virtualGatewaysJsonList[virtualGatewaysIndex].AsObject());

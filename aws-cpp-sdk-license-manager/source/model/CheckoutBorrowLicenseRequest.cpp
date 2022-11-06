@@ -35,7 +35,7 @@ Aws::String CheckoutBorrowLicenseRequest::SerializePayload() const
 
   if(m_entitlementsHasBeenSet)
   {
-   Array<JsonValue> entitlementsJsonList(m_entitlements.size());
+   Aws::Utils::Array<JsonValue> entitlementsJsonList(m_entitlements.size());
    for(unsigned entitlementsIndex = 0; entitlementsIndex < entitlementsJsonList.GetLength(); ++entitlementsIndex)
    {
      entitlementsJsonList[entitlementsIndex].AsObject(m_entitlements[entitlementsIndex].Jsonize());
@@ -57,7 +57,7 @@ Aws::String CheckoutBorrowLicenseRequest::SerializePayload() const
 
   if(m_checkoutMetadataHasBeenSet)
   {
-   Array<JsonValue> checkoutMetadataJsonList(m_checkoutMetadata.size());
+   Aws::Utils::Array<JsonValue> checkoutMetadataJsonList(m_checkoutMetadata.size());
    for(unsigned checkoutMetadataIndex = 0; checkoutMetadataIndex < checkoutMetadataJsonList.GetLength(); ++checkoutMetadataIndex)
    {
      checkoutMetadataJsonList[checkoutMetadataIndex].AsObject(m_checkoutMetadata[checkoutMetadataIndex].Jsonize());

@@ -30,7 +30,7 @@ ListUserAssociationsResult& ListUserAssociationsResult::operator =(const Aws::Am
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("InstanceUserSummaries"))
   {
-    Array<JsonView> instanceUserSummariesJsonList = jsonValue.GetArray("InstanceUserSummaries");
+    Aws::Utils::Array<JsonView> instanceUserSummariesJsonList = jsonValue.GetArray("InstanceUserSummaries");
     for(unsigned instanceUserSummariesIndex = 0; instanceUserSummariesIndex < instanceUserSummariesJsonList.GetLength(); ++instanceUserSummariesIndex)
     {
       m_instanceUserSummaries.push_back(instanceUserSummariesJsonList[instanceUserSummariesIndex].AsObject());

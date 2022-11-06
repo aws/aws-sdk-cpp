@@ -24,7 +24,7 @@ Aws::String DescribeClustersRequest::SerializePayload() const
 
   if(m_clustersHasBeenSet)
   {
-   Array<JsonValue> clustersJsonList(m_clusters.size());
+   Aws::Utils::Array<JsonValue> clustersJsonList(m_clusters.size());
    for(unsigned clustersIndex = 0; clustersIndex < clustersJsonList.GetLength(); ++clustersIndex)
    {
      clustersJsonList[clustersIndex].AsString(m_clusters[clustersIndex]);
@@ -35,7 +35,7 @@ Aws::String DescribeClustersRequest::SerializePayload() const
 
   if(m_includeHasBeenSet)
   {
-   Array<JsonValue> includeJsonList(m_include.size());
+   Aws::Utils::Array<JsonValue> includeJsonList(m_include.size());
    for(unsigned includeIndex = 0; includeIndex < includeJsonList.GetLength(); ++includeIndex)
    {
      includeJsonList[includeIndex].AsString(ClusterFieldMapper::GetNameForClusterField(m_include[includeIndex]));

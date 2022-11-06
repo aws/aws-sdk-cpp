@@ -30,7 +30,7 @@ GetMLTransformsResult& GetMLTransformsResult::operator =(const Aws::AmazonWebSer
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Transforms"))
   {
-    Array<JsonView> transformsJsonList = jsonValue.GetArray("Transforms");
+    Aws::Utils::Array<JsonView> transformsJsonList = jsonValue.GetArray("Transforms");
     for(unsigned transformsIndex = 0; transformsIndex < transformsJsonList.GetLength(); ++transformsIndex)
     {
       m_transforms.push_back(transformsJsonList[transformsIndex].AsObject());

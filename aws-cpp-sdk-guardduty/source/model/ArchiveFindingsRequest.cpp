@@ -24,7 +24,7 @@ Aws::String ArchiveFindingsRequest::SerializePayload() const
 
   if(m_findingIdsHasBeenSet)
   {
-   Array<JsonValue> findingIdsJsonList(m_findingIds.size());
+   Aws::Utils::Array<JsonValue> findingIdsJsonList(m_findingIds.size());
    for(unsigned findingIdsIndex = 0; findingIdsIndex < findingIdsJsonList.GetLength(); ++findingIdsIndex)
    {
      findingIdsJsonList[findingIdsIndex].AsString(m_findingIds[findingIdsIndex]);

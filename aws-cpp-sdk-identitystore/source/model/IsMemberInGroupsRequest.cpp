@@ -37,7 +37,7 @@ Aws::String IsMemberInGroupsRequest::SerializePayload() const
 
   if(m_groupIdsHasBeenSet)
   {
-   Array<JsonValue> groupIdsJsonList(m_groupIds.size());
+   Aws::Utils::Array<JsonValue> groupIdsJsonList(m_groupIds.size());
    for(unsigned groupIdsIndex = 0; groupIdsIndex < groupIdsJsonList.GetLength(); ++groupIdsIndex)
    {
      groupIdsJsonList[groupIdsIndex].AsString(m_groupIds[groupIdsIndex]);

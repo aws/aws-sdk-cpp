@@ -76,7 +76,7 @@ StartSimulationJobBatchResult& StartSimulationJobBatchResult::operator =(const A
 
   if(jsonValue.ValueExists("failedRequests"))
   {
-    Array<JsonView> failedRequestsJsonList = jsonValue.GetArray("failedRequests");
+    Aws::Utils::Array<JsonView> failedRequestsJsonList = jsonValue.GetArray("failedRequests");
     for(unsigned failedRequestsIndex = 0; failedRequestsIndex < failedRequestsJsonList.GetLength(); ++failedRequestsIndex)
     {
       m_failedRequests.push_back(failedRequestsJsonList[failedRequestsIndex].AsObject());
@@ -85,7 +85,7 @@ StartSimulationJobBatchResult& StartSimulationJobBatchResult::operator =(const A
 
   if(jsonValue.ValueExists("pendingRequests"))
   {
-    Array<JsonView> pendingRequestsJsonList = jsonValue.GetArray("pendingRequests");
+    Aws::Utils::Array<JsonView> pendingRequestsJsonList = jsonValue.GetArray("pendingRequests");
     for(unsigned pendingRequestsIndex = 0; pendingRequestsIndex < pendingRequestsJsonList.GetLength(); ++pendingRequestsIndex)
     {
       m_pendingRequests.push_back(pendingRequestsJsonList[pendingRequestsIndex].AsObject());
@@ -94,7 +94,7 @@ StartSimulationJobBatchResult& StartSimulationJobBatchResult::operator =(const A
 
   if(jsonValue.ValueExists("createdRequests"))
   {
-    Array<JsonView> createdRequestsJsonList = jsonValue.GetArray("createdRequests");
+    Aws::Utils::Array<JsonView> createdRequestsJsonList = jsonValue.GetArray("createdRequests");
     for(unsigned createdRequestsIndex = 0; createdRequestsIndex < createdRequestsJsonList.GetLength(); ++createdRequestsIndex)
     {
       m_createdRequests.push_back(createdRequestsJsonList[createdRequestsIndex].AsObject());

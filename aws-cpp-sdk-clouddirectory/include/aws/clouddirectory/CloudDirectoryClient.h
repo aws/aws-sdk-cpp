@@ -37,22 +37,48 @@ namespace CloudDirectory
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudDirectoryClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudDirectoryClient(const Aws::CloudDirectory::CloudDirectoryClientConfiguration& clientConfiguration = Aws::CloudDirectory::CloudDirectoryClientConfiguration(),
+                             std::shared_ptr<CloudDirectoryEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudDirectoryEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudDirectoryClient(const Aws::Auth::AWSCredentials& credentials,
-                             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                             std::shared_ptr<CloudDirectoryEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudDirectoryEndpointProvider>(ALLOCATION_TAG),
+                             const Aws::CloudDirectory::CloudDirectoryClientConfiguration& clientConfiguration = Aws::CloudDirectory::CloudDirectoryClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CloudDirectoryClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                             std::shared_ptr<CloudDirectoryEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudDirectoryEndpointProvider>(ALLOCATION_TAG),
+                             const Aws::CloudDirectory::CloudDirectoryClientConfiguration& clientConfiguration = Aws::CloudDirectory::CloudDirectoryClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudDirectoryClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudDirectoryClient(const Aws::Auth::AWSCredentials& credentials,
+                             const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CloudDirectoryClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                             const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CloudDirectoryClient();
 
 
@@ -1316,12 +1342,13 @@ namespace CloudDirectory
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CloudDirectoryEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const CloudDirectoryClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CloudDirectoryClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CloudDirectoryEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudDirectory

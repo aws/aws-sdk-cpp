@@ -36,7 +36,7 @@ GetFindingsReportAccountSummaryResult& GetFindingsReportAccountSummaryResult::op
 
   if(jsonValue.ValueExists("reportSummaries"))
   {
-    Array<JsonView> reportSummariesJsonList = jsonValue.GetArray("reportSummaries");
+    Aws::Utils::Array<JsonView> reportSummariesJsonList = jsonValue.GetArray("reportSummaries");
     for(unsigned reportSummariesIndex = 0; reportSummariesIndex < reportSummariesJsonList.GetLength(); ++reportSummariesIndex)
     {
       m_reportSummaries.push_back(reportSummariesJsonList[reportSummariesIndex].AsObject());

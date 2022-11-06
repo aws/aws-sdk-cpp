@@ -48,7 +48,7 @@ GetDefaultRetentionPolicyResult& GetDefaultRetentionPolicyResult::operator =(con
 
   if(jsonValue.ValueExists("FolderConfigurations"))
   {
-    Array<JsonView> folderConfigurationsJsonList = jsonValue.GetArray("FolderConfigurations");
+    Aws::Utils::Array<JsonView> folderConfigurationsJsonList = jsonValue.GetArray("FolderConfigurations");
     for(unsigned folderConfigurationsIndex = 0; folderConfigurationsIndex < folderConfigurationsJsonList.GetLength(); ++folderConfigurationsIndex)
     {
       m_folderConfigurations.push_back(folderConfigurationsJsonList[folderConfigurationsIndex].AsObject());

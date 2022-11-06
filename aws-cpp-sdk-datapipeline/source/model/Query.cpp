@@ -33,7 +33,7 @@ Query& Query::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("selectors"))
   {
-    Array<JsonView> selectorsJsonList = jsonValue.GetArray("selectors");
+    Aws::Utils::Array<JsonView> selectorsJsonList = jsonValue.GetArray("selectors");
     for(unsigned selectorsIndex = 0; selectorsIndex < selectorsJsonList.GetLength(); ++selectorsIndex)
     {
       m_selectors.push_back(selectorsJsonList[selectorsIndex].AsObject());
@@ -50,7 +50,7 @@ JsonValue Query::Jsonize() const
 
   if(m_selectorsHasBeenSet)
   {
-   Array<JsonValue> selectorsJsonList(m_selectors.size());
+   Aws::Utils::Array<JsonValue> selectorsJsonList(m_selectors.size());
    for(unsigned selectorsIndex = 0; selectorsIndex < selectorsJsonList.GetLength(); ++selectorsIndex)
    {
      selectorsJsonList[selectorsIndex].AsObject(m_selectors[selectorsIndex].Jsonize());

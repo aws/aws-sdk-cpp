@@ -46,7 +46,7 @@ ComponentRecommendation& ComponentRecommendation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("configRecommendations"))
   {
-    Array<JsonView> configRecommendationsJsonList = jsonValue.GetArray("configRecommendations");
+    Aws::Utils::Array<JsonView> configRecommendationsJsonList = jsonValue.GetArray("configRecommendations");
     for(unsigned configRecommendationsIndex = 0; configRecommendationsIndex < configRecommendationsJsonList.GetLength(); ++configRecommendationsIndex)
     {
       m_configRecommendations.push_back(configRecommendationsJsonList[configRecommendationsIndex].AsObject());
@@ -76,7 +76,7 @@ JsonValue ComponentRecommendation::Jsonize() const
 
   if(m_configRecommendationsHasBeenSet)
   {
-   Array<JsonValue> configRecommendationsJsonList(m_configRecommendations.size());
+   Aws::Utils::Array<JsonValue> configRecommendationsJsonList(m_configRecommendations.size());
    for(unsigned configRecommendationsIndex = 0; configRecommendationsIndex < configRecommendationsJsonList.GetLength(); ++configRecommendationsIndex)
    {
      configRecommendationsJsonList[configRecommendationsIndex].AsObject(m_configRecommendations[configRecommendationsIndex].Jsonize());

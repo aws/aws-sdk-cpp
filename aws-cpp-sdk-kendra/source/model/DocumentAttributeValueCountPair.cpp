@@ -53,7 +53,7 @@ DocumentAttributeValueCountPair& DocumentAttributeValueCountPair::operator =(Jso
 
   if(jsonValue.ValueExists("FacetResults"))
   {
-    Array<JsonView> facetResultsJsonList = jsonValue.GetArray("FacetResults");
+    Aws::Utils::Array<JsonView> facetResultsJsonList = jsonValue.GetArray("FacetResults");
     for(unsigned facetResultsIndex = 0; facetResultsIndex < facetResultsJsonList.GetLength(); ++facetResultsIndex)
     {
       m_facetResults.push_back(facetResultsJsonList[facetResultsIndex].AsObject());
@@ -82,7 +82,7 @@ JsonValue DocumentAttributeValueCountPair::Jsonize() const
 
   if(m_facetResultsHasBeenSet)
   {
-   Array<JsonValue> facetResultsJsonList(m_facetResults.size());
+   Aws::Utils::Array<JsonValue> facetResultsJsonList(m_facetResults.size());
    for(unsigned facetResultsIndex = 0; facetResultsIndex < facetResultsJsonList.GetLength(); ++facetResultsIndex)
    {
      facetResultsJsonList[facetResultsIndex].AsObject(m_facetResults[facetResultsIndex].Jsonize());

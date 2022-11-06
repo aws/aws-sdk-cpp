@@ -37,22 +37,48 @@ namespace CloudSearchDomain
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        CloudSearchDomainClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        CloudSearchDomainClient(const Aws::CloudSearchDomain::CloudSearchDomainClientConfiguration& clientConfiguration = Aws::CloudSearchDomain::CloudSearchDomainClientConfiguration(),
+                                std::shared_ptr<CloudSearchDomainEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudSearchDomainClient(const Aws::Auth::AWSCredentials& credentials,
-                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                std::shared_ptr<CloudSearchDomainEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::CloudSearchDomain::CloudSearchDomainClientConfiguration& clientConfiguration = Aws::CloudSearchDomain::CloudSearchDomainClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         CloudSearchDomainClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                                std::shared_ptr<CloudSearchDomainEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG),
+                                const Aws::CloudSearchDomain::CloudSearchDomainClientConfiguration& clientConfiguration = Aws::CloudSearchDomain::CloudSearchDomainClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudSearchDomainClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        CloudSearchDomainClient(const Aws::Auth::AWSCredentials& credentials,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        CloudSearchDomainClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                                const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~CloudSearchDomainClient();
 
 
@@ -164,12 +190,13 @@ namespace CloudSearchDomain
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<CloudSearchDomainEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const CloudSearchDomainClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
-      Aws::String m_configScheme;
+      CloudSearchDomainClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<CloudSearchDomainEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace CloudSearchDomain

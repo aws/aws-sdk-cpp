@@ -36,7 +36,7 @@ ListRecoveryPointsByBackupVaultResult& ListRecoveryPointsByBackupVaultResult::op
 
   if(jsonValue.ValueExists("RecoveryPoints"))
   {
-    Array<JsonView> recoveryPointsJsonList = jsonValue.GetArray("RecoveryPoints");
+    Aws::Utils::Array<JsonView> recoveryPointsJsonList = jsonValue.GetArray("RecoveryPoints");
     for(unsigned recoveryPointsIndex = 0; recoveryPointsIndex < recoveryPointsJsonList.GetLength(); ++recoveryPointsIndex)
     {
       m_recoveryPoints.push_back(recoveryPointsJsonList[recoveryPointsIndex].AsObject());

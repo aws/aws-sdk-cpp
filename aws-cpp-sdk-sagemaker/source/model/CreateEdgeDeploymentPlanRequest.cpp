@@ -33,7 +33,7 @@ Aws::String CreateEdgeDeploymentPlanRequest::SerializePayload() const
 
   if(m_modelConfigsHasBeenSet)
   {
-   Array<JsonValue> modelConfigsJsonList(m_modelConfigs.size());
+   Aws::Utils::Array<JsonValue> modelConfigsJsonList(m_modelConfigs.size());
    for(unsigned modelConfigsIndex = 0; modelConfigsIndex < modelConfigsJsonList.GetLength(); ++modelConfigsIndex)
    {
      modelConfigsJsonList[modelConfigsIndex].AsObject(m_modelConfigs[modelConfigsIndex].Jsonize());
@@ -50,7 +50,7 @@ Aws::String CreateEdgeDeploymentPlanRequest::SerializePayload() const
 
   if(m_stagesHasBeenSet)
   {
-   Array<JsonValue> stagesJsonList(m_stages.size());
+   Aws::Utils::Array<JsonValue> stagesJsonList(m_stages.size());
    for(unsigned stagesIndex = 0; stagesIndex < stagesJsonList.GetLength(); ++stagesIndex)
    {
      stagesJsonList[stagesIndex].AsObject(m_stages[stagesIndex].Jsonize());
@@ -61,7 +61,7 @@ Aws::String CreateEdgeDeploymentPlanRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

@@ -46,7 +46,7 @@ GetDataViewResult& GetDataViewResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("partitionColumns"))
   {
-    Array<JsonView> partitionColumnsJsonList = jsonValue.GetArray("partitionColumns");
+    Aws::Utils::Array<JsonView> partitionColumnsJsonList = jsonValue.GetArray("partitionColumns");
     for(unsigned partitionColumnsIndex = 0; partitionColumnsIndex < partitionColumnsJsonList.GetLength(); ++partitionColumnsIndex)
     {
       m_partitionColumns.push_back(partitionColumnsJsonList[partitionColumnsIndex].AsString());
@@ -85,7 +85,7 @@ GetDataViewResult& GetDataViewResult::operator =(const Aws::AmazonWebServiceResu
 
   if(jsonValue.ValueExists("sortColumns"))
   {
-    Array<JsonView> sortColumnsJsonList = jsonValue.GetArray("sortColumns");
+    Aws::Utils::Array<JsonView> sortColumnsJsonList = jsonValue.GetArray("sortColumns");
     for(unsigned sortColumnsIndex = 0; sortColumnsIndex < sortColumnsJsonList.GetLength(); ++sortColumnsIndex)
     {
       m_sortColumns.push_back(sortColumnsJsonList[sortColumnsIndex].AsString());

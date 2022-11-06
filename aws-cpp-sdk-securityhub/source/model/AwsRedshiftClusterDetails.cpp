@@ -175,7 +175,7 @@ AwsRedshiftClusterDetails& AwsRedshiftClusterDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ClusterNodes"))
   {
-    Array<JsonView> clusterNodesJsonList = jsonValue.GetArray("ClusterNodes");
+    Aws::Utils::Array<JsonView> clusterNodesJsonList = jsonValue.GetArray("ClusterNodes");
     for(unsigned clusterNodesIndex = 0; clusterNodesIndex < clusterNodesJsonList.GetLength(); ++clusterNodesIndex)
     {
       m_clusterNodes.push_back(clusterNodesJsonList[clusterNodesIndex].AsObject());
@@ -185,7 +185,7 @@ AwsRedshiftClusterDetails& AwsRedshiftClusterDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ClusterParameterGroups"))
   {
-    Array<JsonView> clusterParameterGroupsJsonList = jsonValue.GetArray("ClusterParameterGroups");
+    Aws::Utils::Array<JsonView> clusterParameterGroupsJsonList = jsonValue.GetArray("ClusterParameterGroups");
     for(unsigned clusterParameterGroupsIndex = 0; clusterParameterGroupsIndex < clusterParameterGroupsJsonList.GetLength(); ++clusterParameterGroupsIndex)
     {
       m_clusterParameterGroups.push_back(clusterParameterGroupsJsonList[clusterParameterGroupsIndex].AsObject());
@@ -209,7 +209,7 @@ AwsRedshiftClusterDetails& AwsRedshiftClusterDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("ClusterSecurityGroups"))
   {
-    Array<JsonView> clusterSecurityGroupsJsonList = jsonValue.GetArray("ClusterSecurityGroups");
+    Aws::Utils::Array<JsonView> clusterSecurityGroupsJsonList = jsonValue.GetArray("ClusterSecurityGroups");
     for(unsigned clusterSecurityGroupsIndex = 0; clusterSecurityGroupsIndex < clusterSecurityGroupsJsonList.GetLength(); ++clusterSecurityGroupsIndex)
     {
       m_clusterSecurityGroups.push_back(clusterSecurityGroupsJsonList[clusterSecurityGroupsIndex].AsObject());
@@ -254,7 +254,7 @@ AwsRedshiftClusterDetails& AwsRedshiftClusterDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("DeferredMaintenanceWindows"))
   {
-    Array<JsonView> deferredMaintenanceWindowsJsonList = jsonValue.GetArray("DeferredMaintenanceWindows");
+    Aws::Utils::Array<JsonView> deferredMaintenanceWindowsJsonList = jsonValue.GetArray("DeferredMaintenanceWindows");
     for(unsigned deferredMaintenanceWindowsIndex = 0; deferredMaintenanceWindowsIndex < deferredMaintenanceWindowsJsonList.GetLength(); ++deferredMaintenanceWindowsIndex)
     {
       m_deferredMaintenanceWindows.push_back(deferredMaintenanceWindowsJsonList[deferredMaintenanceWindowsIndex].AsObject());
@@ -320,7 +320,7 @@ AwsRedshiftClusterDetails& AwsRedshiftClusterDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("IamRoles"))
   {
-    Array<JsonView> iamRolesJsonList = jsonValue.GetArray("IamRoles");
+    Aws::Utils::Array<JsonView> iamRolesJsonList = jsonValue.GetArray("IamRoles");
     for(unsigned iamRolesIndex = 0; iamRolesIndex < iamRolesJsonList.GetLength(); ++iamRolesIndex)
     {
       m_iamRoles.push_back(iamRolesJsonList[iamRolesIndex].AsObject());
@@ -379,7 +379,7 @@ AwsRedshiftClusterDetails& AwsRedshiftClusterDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("PendingActions"))
   {
-    Array<JsonView> pendingActionsJsonList = jsonValue.GetArray("PendingActions");
+    Aws::Utils::Array<JsonView> pendingActionsJsonList = jsonValue.GetArray("PendingActions");
     for(unsigned pendingActionsIndex = 0; pendingActionsIndex < pendingActionsJsonList.GetLength(); ++pendingActionsIndex)
     {
       m_pendingActions.push_back(pendingActionsJsonList[pendingActionsIndex].AsString());
@@ -445,7 +445,7 @@ AwsRedshiftClusterDetails& AwsRedshiftClusterDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("VpcSecurityGroups"))
   {
-    Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
+    Aws::Utils::Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
     for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
     {
       m_vpcSecurityGroups.push_back(vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject());
@@ -505,7 +505,7 @@ JsonValue AwsRedshiftClusterDetails::Jsonize() const
 
   if(m_clusterNodesHasBeenSet)
   {
-   Array<JsonValue> clusterNodesJsonList(m_clusterNodes.size());
+   Aws::Utils::Array<JsonValue> clusterNodesJsonList(m_clusterNodes.size());
    for(unsigned clusterNodesIndex = 0; clusterNodesIndex < clusterNodesJsonList.GetLength(); ++clusterNodesIndex)
    {
      clusterNodesJsonList[clusterNodesIndex].AsObject(m_clusterNodes[clusterNodesIndex].Jsonize());
@@ -516,7 +516,7 @@ JsonValue AwsRedshiftClusterDetails::Jsonize() const
 
   if(m_clusterParameterGroupsHasBeenSet)
   {
-   Array<JsonValue> clusterParameterGroupsJsonList(m_clusterParameterGroups.size());
+   Aws::Utils::Array<JsonValue> clusterParameterGroupsJsonList(m_clusterParameterGroups.size());
    for(unsigned clusterParameterGroupsIndex = 0; clusterParameterGroupsIndex < clusterParameterGroupsJsonList.GetLength(); ++clusterParameterGroupsIndex)
    {
      clusterParameterGroupsJsonList[clusterParameterGroupsIndex].AsObject(m_clusterParameterGroups[clusterParameterGroupsIndex].Jsonize());
@@ -539,7 +539,7 @@ JsonValue AwsRedshiftClusterDetails::Jsonize() const
 
   if(m_clusterSecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> clusterSecurityGroupsJsonList(m_clusterSecurityGroups.size());
+   Aws::Utils::Array<JsonValue> clusterSecurityGroupsJsonList(m_clusterSecurityGroups.size());
    for(unsigned clusterSecurityGroupsIndex = 0; clusterSecurityGroupsIndex < clusterSecurityGroupsJsonList.GetLength(); ++clusterSecurityGroupsIndex)
    {
      clusterSecurityGroupsJsonList[clusterSecurityGroupsIndex].AsObject(m_clusterSecurityGroups[clusterSecurityGroupsIndex].Jsonize());
@@ -580,7 +580,7 @@ JsonValue AwsRedshiftClusterDetails::Jsonize() const
 
   if(m_deferredMaintenanceWindowsHasBeenSet)
   {
-   Array<JsonValue> deferredMaintenanceWindowsJsonList(m_deferredMaintenanceWindows.size());
+   Aws::Utils::Array<JsonValue> deferredMaintenanceWindowsJsonList(m_deferredMaintenanceWindows.size());
    for(unsigned deferredMaintenanceWindowsIndex = 0; deferredMaintenanceWindowsIndex < deferredMaintenanceWindowsJsonList.GetLength(); ++deferredMaintenanceWindowsIndex)
    {
      deferredMaintenanceWindowsJsonList[deferredMaintenanceWindowsIndex].AsObject(m_deferredMaintenanceWindows[deferredMaintenanceWindowsIndex].Jsonize());
@@ -639,7 +639,7 @@ JsonValue AwsRedshiftClusterDetails::Jsonize() const
 
   if(m_iamRolesHasBeenSet)
   {
-   Array<JsonValue> iamRolesJsonList(m_iamRoles.size());
+   Aws::Utils::Array<JsonValue> iamRolesJsonList(m_iamRoles.size());
    for(unsigned iamRolesIndex = 0; iamRolesIndex < iamRolesJsonList.GetLength(); ++iamRolesIndex)
    {
      iamRolesJsonList[iamRolesIndex].AsObject(m_iamRoles[iamRolesIndex].Jsonize());
@@ -692,7 +692,7 @@ JsonValue AwsRedshiftClusterDetails::Jsonize() const
 
   if(m_pendingActionsHasBeenSet)
   {
-   Array<JsonValue> pendingActionsJsonList(m_pendingActions.size());
+   Aws::Utils::Array<JsonValue> pendingActionsJsonList(m_pendingActions.size());
    for(unsigned pendingActionsIndex = 0; pendingActionsIndex < pendingActionsJsonList.GetLength(); ++pendingActionsIndex)
    {
      pendingActionsJsonList[pendingActionsIndex].AsString(m_pendingActions[pendingActionsIndex]);
@@ -751,7 +751,7 @@ JsonValue AwsRedshiftClusterDetails::Jsonize() const
 
   if(m_vpcSecurityGroupsHasBeenSet)
   {
-   Array<JsonValue> vpcSecurityGroupsJsonList(m_vpcSecurityGroups.size());
+   Aws::Utils::Array<JsonValue> vpcSecurityGroupsJsonList(m_vpcSecurityGroups.size());
    for(unsigned vpcSecurityGroupsIndex = 0; vpcSecurityGroupsIndex < vpcSecurityGroupsJsonList.GetLength(); ++vpcSecurityGroupsIndex)
    {
      vpcSecurityGroupsJsonList[vpcSecurityGroupsIndex].AsObject(m_vpcSecurityGroups[vpcSecurityGroupsIndex].Jsonize());

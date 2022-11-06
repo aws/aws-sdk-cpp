@@ -42,7 +42,7 @@ UntagColumnOperation& UntagColumnOperation::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TagNames"))
   {
-    Array<JsonView> tagNamesJsonList = jsonValue.GetArray("TagNames");
+    Aws::Utils::Array<JsonView> tagNamesJsonList = jsonValue.GetArray("TagNames");
     for(unsigned tagNamesIndex = 0; tagNamesIndex < tagNamesJsonList.GetLength(); ++tagNamesIndex)
     {
       m_tagNames.push_back(ColumnTagNameMapper::GetColumnTagNameForName(tagNamesJsonList[tagNamesIndex].AsString()));
@@ -65,7 +65,7 @@ JsonValue UntagColumnOperation::Jsonize() const
 
   if(m_tagNamesHasBeenSet)
   {
-   Array<JsonValue> tagNamesJsonList(m_tagNames.size());
+   Aws::Utils::Array<JsonValue> tagNamesJsonList(m_tagNames.size());
    for(unsigned tagNamesIndex = 0; tagNamesIndex < tagNamesJsonList.GetLength(); ++tagNamesIndex)
    {
      tagNamesJsonList[tagNamesIndex].AsString(ColumnTagNameMapper::GetNameForColumnTagName(m_tagNames[tagNamesIndex]));

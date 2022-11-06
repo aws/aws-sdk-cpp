@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/worklink/WorkLinkErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/worklink/WorkLinkEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -49,6 +51,10 @@ namespace Aws
 
   namespace WorkLink
   {
+    using WorkLinkClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using WorkLinkEndpointProviderBase = Aws::WorkLink::Endpoint::WorkLinkEndpointProviderBase;
+    using WorkLinkEndpointProvider = Aws::WorkLink::Endpoint::WorkLinkEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in WorkLinkClient header */

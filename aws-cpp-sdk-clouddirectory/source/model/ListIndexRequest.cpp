@@ -31,7 +31,7 @@ Aws::String ListIndexRequest::SerializePayload() const
 
   if(m_rangesOnIndexedValuesHasBeenSet)
   {
-   Array<JsonValue> rangesOnIndexedValuesJsonList(m_rangesOnIndexedValues.size());
+   Aws::Utils::Array<JsonValue> rangesOnIndexedValuesJsonList(m_rangesOnIndexedValues.size());
    for(unsigned rangesOnIndexedValuesIndex = 0; rangesOnIndexedValuesIndex < rangesOnIndexedValuesJsonList.GetLength(); ++rangesOnIndexedValuesIndex)
    {
      rangesOnIndexedValuesJsonList[rangesOnIndexedValuesIndex].AsObject(m_rangesOnIndexedValues[rangesOnIndexedValuesIndex].Jsonize());

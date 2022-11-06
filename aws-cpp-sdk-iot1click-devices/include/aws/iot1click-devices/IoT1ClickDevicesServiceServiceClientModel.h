@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/iot1click-devices/IoT1ClickDevicesServiceErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/iot1click-devices/IoT1ClickDevicesServiceEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -61,6 +63,10 @@ namespace Aws
 
   namespace IoT1ClickDevicesService
   {
+    using IoT1ClickDevicesServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using IoT1ClickDevicesServiceEndpointProviderBase = Aws::IoT1ClickDevicesService::Endpoint::IoT1ClickDevicesServiceEndpointProviderBase;
+    using IoT1ClickDevicesServiceEndpointProvider = Aws::IoT1ClickDevicesService::Endpoint::IoT1ClickDevicesServiceEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in IoT1ClickDevicesServiceClient header */

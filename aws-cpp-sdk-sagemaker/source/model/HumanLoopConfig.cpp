@@ -104,7 +104,7 @@ HumanLoopConfig& HumanLoopConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("TaskKeywords"))
   {
-    Array<JsonView> taskKeywordsJsonList = jsonValue.GetArray("TaskKeywords");
+    Aws::Utils::Array<JsonView> taskKeywordsJsonList = jsonValue.GetArray("TaskKeywords");
     for(unsigned taskKeywordsIndex = 0; taskKeywordsIndex < taskKeywordsJsonList.GetLength(); ++taskKeywordsIndex)
     {
       m_taskKeywords.push_back(taskKeywordsJsonList[taskKeywordsIndex].AsString());
@@ -170,7 +170,7 @@ JsonValue HumanLoopConfig::Jsonize() const
 
   if(m_taskKeywordsHasBeenSet)
   {
-   Array<JsonValue> taskKeywordsJsonList(m_taskKeywords.size());
+   Aws::Utils::Array<JsonValue> taskKeywordsJsonList(m_taskKeywords.size());
    for(unsigned taskKeywordsIndex = 0; taskKeywordsIndex < taskKeywordsJsonList.GetLength(); ++taskKeywordsIndex)
    {
      taskKeywordsJsonList[taskKeywordsIndex].AsString(m_taskKeywords[taskKeywordsIndex]);

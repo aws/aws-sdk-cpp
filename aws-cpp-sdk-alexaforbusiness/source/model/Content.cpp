@@ -37,7 +37,7 @@ Content& Content::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("TextList"))
   {
-    Array<JsonView> textListJsonList = jsonValue.GetArray("TextList");
+    Aws::Utils::Array<JsonView> textListJsonList = jsonValue.GetArray("TextList");
     for(unsigned textListIndex = 0; textListIndex < textListJsonList.GetLength(); ++textListIndex)
     {
       m_textList.push_back(textListJsonList[textListIndex].AsObject());
@@ -47,7 +47,7 @@ Content& Content::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("SsmlList"))
   {
-    Array<JsonView> ssmlListJsonList = jsonValue.GetArray("SsmlList");
+    Aws::Utils::Array<JsonView> ssmlListJsonList = jsonValue.GetArray("SsmlList");
     for(unsigned ssmlListIndex = 0; ssmlListIndex < ssmlListJsonList.GetLength(); ++ssmlListIndex)
     {
       m_ssmlList.push_back(ssmlListJsonList[ssmlListIndex].AsObject());
@@ -57,7 +57,7 @@ Content& Content::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AudioList"))
   {
-    Array<JsonView> audioListJsonList = jsonValue.GetArray("AudioList");
+    Aws::Utils::Array<JsonView> audioListJsonList = jsonValue.GetArray("AudioList");
     for(unsigned audioListIndex = 0; audioListIndex < audioListJsonList.GetLength(); ++audioListIndex)
     {
       m_audioList.push_back(audioListJsonList[audioListIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue Content::Jsonize() const
 
   if(m_textListHasBeenSet)
   {
-   Array<JsonValue> textListJsonList(m_textList.size());
+   Aws::Utils::Array<JsonValue> textListJsonList(m_textList.size());
    for(unsigned textListIndex = 0; textListIndex < textListJsonList.GetLength(); ++textListIndex)
    {
      textListJsonList[textListIndex].AsObject(m_textList[textListIndex].Jsonize());
@@ -85,7 +85,7 @@ JsonValue Content::Jsonize() const
 
   if(m_ssmlListHasBeenSet)
   {
-   Array<JsonValue> ssmlListJsonList(m_ssmlList.size());
+   Aws::Utils::Array<JsonValue> ssmlListJsonList(m_ssmlList.size());
    for(unsigned ssmlListIndex = 0; ssmlListIndex < ssmlListJsonList.GetLength(); ++ssmlListIndex)
    {
      ssmlListJsonList[ssmlListIndex].AsObject(m_ssmlList[ssmlListIndex].Jsonize());
@@ -96,7 +96,7 @@ JsonValue Content::Jsonize() const
 
   if(m_audioListHasBeenSet)
   {
-   Array<JsonValue> audioListJsonList(m_audioList.size());
+   Aws::Utils::Array<JsonValue> audioListJsonList(m_audioList.size());
    for(unsigned audioListIndex = 0; audioListIndex < audioListJsonList.GetLength(); ++audioListIndex)
    {
      audioListJsonList[audioListIndex].AsObject(m_audioList[audioListIndex].Jsonize());

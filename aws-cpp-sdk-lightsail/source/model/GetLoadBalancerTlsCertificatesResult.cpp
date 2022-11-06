@@ -30,7 +30,7 @@ GetLoadBalancerTlsCertificatesResult& GetLoadBalancerTlsCertificatesResult::oper
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("tlsCertificates"))
   {
-    Array<JsonView> tlsCertificatesJsonList = jsonValue.GetArray("tlsCertificates");
+    Aws::Utils::Array<JsonView> tlsCertificatesJsonList = jsonValue.GetArray("tlsCertificates");
     for(unsigned tlsCertificatesIndex = 0; tlsCertificatesIndex < tlsCertificatesJsonList.GetLength(); ++tlsCertificatesIndex)
     {
       m_tlsCertificates.push_back(tlsCertificatesJsonList[tlsCertificatesIndex].AsObject());

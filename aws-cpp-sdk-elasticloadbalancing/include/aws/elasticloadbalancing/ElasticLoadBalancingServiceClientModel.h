@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/elasticloadbalancing/ElasticLoadBalancingErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/elasticloadbalancing/ElasticLoadBalancingEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -78,6 +80,10 @@ namespace Aws
 
   namespace ElasticLoadBalancing
   {
+    using ElasticLoadBalancingClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using ElasticLoadBalancingEndpointProviderBase = Aws::ElasticLoadBalancing::Endpoint::ElasticLoadBalancingEndpointProviderBase;
+    using ElasticLoadBalancingEndpointProvider = Aws::ElasticLoadBalancing::Endpoint::ElasticLoadBalancingEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in ElasticLoadBalancingClient header */

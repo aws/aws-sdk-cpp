@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/lex/LexRuntimeServiceErrors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/lex/LexRuntimeServiceEndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -54,6 +56,10 @@ namespace Aws
 
   namespace LexRuntimeService
   {
+    using LexRuntimeServiceClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using LexRuntimeServiceEndpointProviderBase = Aws::LexRuntimeService::Endpoint::LexRuntimeServiceEndpointProviderBase;
+    using LexRuntimeServiceEndpointProvider = Aws::LexRuntimeService::Endpoint::LexRuntimeServiceEndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in LexRuntimeServiceClient header */

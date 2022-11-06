@@ -35,7 +35,7 @@ ServerlessRequest& ServerlessRequest::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("vpcConfigs"))
   {
-    Array<JsonView> vpcConfigsJsonList = jsonValue.GetArray("vpcConfigs");
+    Aws::Utils::Array<JsonView> vpcConfigsJsonList = jsonValue.GetArray("vpcConfigs");
     for(unsigned vpcConfigsIndex = 0; vpcConfigsIndex < vpcConfigsJsonList.GetLength(); ++vpcConfigsIndex)
     {
       m_vpcConfigs.push_back(vpcConfigsJsonList[vpcConfigsIndex].AsObject());
@@ -59,7 +59,7 @@ JsonValue ServerlessRequest::Jsonize() const
 
   if(m_vpcConfigsHasBeenSet)
   {
-   Array<JsonValue> vpcConfigsJsonList(m_vpcConfigs.size());
+   Aws::Utils::Array<JsonValue> vpcConfigsJsonList(m_vpcConfigs.size());
    for(unsigned vpcConfigsIndex = 0; vpcConfigsIndex < vpcConfigsJsonList.GetLength(); ++vpcConfigsIndex)
    {
      vpcConfigsJsonList[vpcConfigsIndex].AsObject(m_vpcConfigs[vpcConfigsIndex].Jsonize());

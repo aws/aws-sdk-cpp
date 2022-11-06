@@ -30,7 +30,7 @@ ListKnowledgeBasesResult& ListKnowledgeBasesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("knowledgeBaseSummaries"))
   {
-    Array<JsonView> knowledgeBaseSummariesJsonList = jsonValue.GetArray("knowledgeBaseSummaries");
+    Aws::Utils::Array<JsonView> knowledgeBaseSummariesJsonList = jsonValue.GetArray("knowledgeBaseSummaries");
     for(unsigned knowledgeBaseSummariesIndex = 0; knowledgeBaseSummariesIndex < knowledgeBaseSummariesJsonList.GetLength(); ++knowledgeBaseSummariesIndex)
     {
       m_knowledgeBaseSummaries.push_back(knowledgeBaseSummariesJsonList[knowledgeBaseSummariesIndex].AsObject());

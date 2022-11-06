@@ -30,7 +30,7 @@ DescribeWorkspacesConnectionStatusResult& DescribeWorkspacesConnectionStatusResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("WorkspacesConnectionStatus"))
   {
-    Array<JsonView> workspacesConnectionStatusJsonList = jsonValue.GetArray("WorkspacesConnectionStatus");
+    Aws::Utils::Array<JsonView> workspacesConnectionStatusJsonList = jsonValue.GetArray("WorkspacesConnectionStatus");
     for(unsigned workspacesConnectionStatusIndex = 0; workspacesConnectionStatusIndex < workspacesConnectionStatusJsonList.GetLength(); ++workspacesConnectionStatusIndex)
     {
       m_workspacesConnectionStatus.push_back(workspacesConnectionStatusJsonList[workspacesConnectionStatusIndex].AsObject());

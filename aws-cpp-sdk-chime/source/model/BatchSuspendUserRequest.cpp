@@ -24,7 +24,7 @@ Aws::String BatchSuspendUserRequest::SerializePayload() const
 
   if(m_userIdListHasBeenSet)
   {
-   Array<JsonValue> userIdListJsonList(m_userIdList.size());
+   Aws::Utils::Array<JsonValue> userIdListJsonList(m_userIdList.size());
    for(unsigned userIdListIndex = 0; userIdListIndex < userIdListJsonList.GetLength(); ++userIdListIndex)
    {
      userIdListJsonList[userIdListIndex].AsString(m_userIdList[userIdListIndex]);

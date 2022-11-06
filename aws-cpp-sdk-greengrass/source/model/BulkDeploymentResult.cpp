@@ -84,7 +84,7 @@ BulkDeploymentResult& BulkDeploymentResult::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("ErrorDetails"))
   {
-    Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("ErrorDetails");
+    Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("ErrorDetails");
     for(unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex)
     {
       m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsObject());
@@ -144,7 +144,7 @@ JsonValue BulkDeploymentResult::Jsonize() const
 
   if(m_errorDetailsHasBeenSet)
   {
-   Array<JsonValue> errorDetailsJsonList(m_errorDetails.size());
+   Aws::Utils::Array<JsonValue> errorDetailsJsonList(m_errorDetails.size());
    for(unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex)
    {
      errorDetailsJsonList[errorDetailsIndex].AsObject(m_errorDetails[errorDetailsIndex].Jsonize());

@@ -37,7 +37,7 @@ Aws::String AssociatePersonasToEntitiesRequest::SerializePayload() const
 
   if(m_personasHasBeenSet)
   {
-   Array<JsonValue> personasJsonList(m_personas.size());
+   Aws::Utils::Array<JsonValue> personasJsonList(m_personas.size());
    for(unsigned personasIndex = 0; personasIndex < personasJsonList.GetLength(); ++personasIndex)
    {
      personasJsonList[personasIndex].AsObject(m_personas[personasIndex].Jsonize());

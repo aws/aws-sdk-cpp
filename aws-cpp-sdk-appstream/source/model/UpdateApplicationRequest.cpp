@@ -79,7 +79,7 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
 
   if(m_attributesToDeleteHasBeenSet)
   {
-   Array<JsonValue> attributesToDeleteJsonList(m_attributesToDelete.size());
+   Aws::Utils::Array<JsonValue> attributesToDeleteJsonList(m_attributesToDelete.size());
    for(unsigned attributesToDeleteIndex = 0; attributesToDeleteIndex < attributesToDeleteJsonList.GetLength(); ++attributesToDeleteIndex)
    {
      attributesToDeleteJsonList[attributesToDeleteIndex].AsString(ApplicationAttributeMapper::GetNameForApplicationAttribute(m_attributesToDelete[attributesToDeleteIndex]));

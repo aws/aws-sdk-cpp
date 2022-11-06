@@ -40,7 +40,7 @@ Aws::String CreatePackageImportJobRequest::SerializePayload() const
 
   if(m_jobTagsHasBeenSet)
   {
-   Array<JsonValue> jobTagsJsonList(m_jobTags.size());
+   Aws::Utils::Array<JsonValue> jobTagsJsonList(m_jobTags.size());
    for(unsigned jobTagsIndex = 0; jobTagsIndex < jobTagsJsonList.GetLength(); ++jobTagsIndex)
    {
      jobTagsJsonList[jobTagsIndex].AsObject(m_jobTags[jobTagsIndex].Jsonize());

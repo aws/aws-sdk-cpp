@@ -36,7 +36,7 @@ GetContactListResult& GetContactListResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Topics"))
   {
-    Array<JsonView> topicsJsonList = jsonValue.GetArray("Topics");
+    Aws::Utils::Array<JsonView> topicsJsonList = jsonValue.GetArray("Topics");
     for(unsigned topicsIndex = 0; topicsIndex < topicsJsonList.GetLength(); ++topicsIndex)
     {
       m_topics.push_back(topicsJsonList[topicsIndex].AsObject());
@@ -63,7 +63,7 @@ GetContactListResult& GetContactListResult::operator =(const Aws::AmazonWebServi
 
   if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());

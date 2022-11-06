@@ -57,7 +57,7 @@ DeviceSelectionConfig& DeviceSelectionConfig::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DeviceNames"))
   {
-    Array<JsonView> deviceNamesJsonList = jsonValue.GetArray("DeviceNames");
+    Aws::Utils::Array<JsonView> deviceNamesJsonList = jsonValue.GetArray("DeviceNames");
     for(unsigned deviceNamesIndex = 0; deviceNamesIndex < deviceNamesJsonList.GetLength(); ++deviceNamesIndex)
     {
       m_deviceNames.push_back(deviceNamesJsonList[deviceNamesIndex].AsString());
@@ -92,7 +92,7 @@ JsonValue DeviceSelectionConfig::Jsonize() const
 
   if(m_deviceNamesHasBeenSet)
   {
-   Array<JsonValue> deviceNamesJsonList(m_deviceNames.size());
+   Aws::Utils::Array<JsonValue> deviceNamesJsonList(m_deviceNames.size());
    for(unsigned deviceNamesIndex = 0; deviceNamesIndex < deviceNamesJsonList.GetLength(); ++deviceNamesIndex)
    {
      deviceNamesJsonList[deviceNamesIndex].AsString(m_deviceNames[deviceNamesIndex]);

@@ -62,7 +62,7 @@ PillarDifference& PillarDifference::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("QuestionDifferences"))
   {
-    Array<JsonView> questionDifferencesJsonList = jsonValue.GetArray("QuestionDifferences");
+    Aws::Utils::Array<JsonView> questionDifferencesJsonList = jsonValue.GetArray("QuestionDifferences");
     for(unsigned questionDifferencesIndex = 0; questionDifferencesIndex < questionDifferencesJsonList.GetLength(); ++questionDifferencesIndex)
     {
       m_questionDifferences.push_back(questionDifferencesJsonList[questionDifferencesIndex].AsObject());
@@ -96,7 +96,7 @@ JsonValue PillarDifference::Jsonize() const
 
   if(m_questionDifferencesHasBeenSet)
   {
-   Array<JsonValue> questionDifferencesJsonList(m_questionDifferences.size());
+   Aws::Utils::Array<JsonValue> questionDifferencesJsonList(m_questionDifferences.size());
    for(unsigned questionDifferencesIndex = 0; questionDifferencesIndex < questionDifferencesJsonList.GetLength(); ++questionDifferencesIndex)
    {
      questionDifferencesJsonList[questionDifferencesIndex].AsObject(m_questionDifferences[questionDifferencesIndex].Jsonize());

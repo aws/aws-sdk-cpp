@@ -46,7 +46,7 @@ S3BucketConfiguration& S3BucketConfiguration::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("bucketAclGrants"))
   {
-    Array<JsonView> bucketAclGrantsJsonList = jsonValue.GetArray("bucketAclGrants");
+    Aws::Utils::Array<JsonView> bucketAclGrantsJsonList = jsonValue.GetArray("bucketAclGrants");
     for(unsigned bucketAclGrantsIndex = 0; bucketAclGrantsIndex < bucketAclGrantsJsonList.GetLength(); ++bucketAclGrantsIndex)
     {
       m_bucketAclGrants.push_back(bucketAclGrantsJsonList[bucketAclGrantsIndex].AsObject());
@@ -86,7 +86,7 @@ JsonValue S3BucketConfiguration::Jsonize() const
 
   if(m_bucketAclGrantsHasBeenSet)
   {
-   Array<JsonValue> bucketAclGrantsJsonList(m_bucketAclGrants.size());
+   Aws::Utils::Array<JsonValue> bucketAclGrantsJsonList(m_bucketAclGrants.size());
    for(unsigned bucketAclGrantsIndex = 0; bucketAclGrantsIndex < bucketAclGrantsJsonList.GetLength(); ++bucketAclGrantsIndex)
    {
      bucketAclGrantsJsonList[bucketAclGrantsIndex].AsObject(m_bucketAclGrants[bucketAclGrantsIndex].Jsonize());

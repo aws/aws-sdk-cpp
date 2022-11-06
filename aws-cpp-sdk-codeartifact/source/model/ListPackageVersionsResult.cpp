@@ -56,7 +56,7 @@ ListPackageVersionsResult& ListPackageVersionsResult::operator =(const Aws::Amaz
 
   if(jsonValue.ValueExists("versions"))
   {
-    Array<JsonView> versionsJsonList = jsonValue.GetArray("versions");
+    Aws::Utils::Array<JsonView> versionsJsonList = jsonValue.GetArray("versions");
     for(unsigned versionsIndex = 0; versionsIndex < versionsJsonList.GetLength(); ++versionsIndex)
     {
       m_versions.push_back(versionsJsonList[versionsIndex].AsObject());

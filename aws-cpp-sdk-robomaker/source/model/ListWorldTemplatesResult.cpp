@@ -30,7 +30,7 @@ ListWorldTemplatesResult& ListWorldTemplatesResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("templateSummaries"))
   {
-    Array<JsonView> templateSummariesJsonList = jsonValue.GetArray("templateSummaries");
+    Aws::Utils::Array<JsonView> templateSummariesJsonList = jsonValue.GetArray("templateSummaries");
     for(unsigned templateSummariesIndex = 0; templateSummariesIndex < templateSummariesJsonList.GetLength(); ++templateSummariesIndex)
     {
       m_templateSummaries.push_back(templateSummariesJsonList[templateSummariesIndex].AsObject());

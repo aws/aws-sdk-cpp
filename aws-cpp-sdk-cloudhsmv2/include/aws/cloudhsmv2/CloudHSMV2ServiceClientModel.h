@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/cloudhsmv2/CloudHSMV2Errors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/cloudhsmv2/CloudHSMV2EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -64,6 +66,10 @@ namespace Aws
 
   namespace CloudHSMV2
   {
+    using CloudHSMV2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using CloudHSMV2EndpointProviderBase = Aws::CloudHSMV2::Endpoint::CloudHSMV2EndpointProviderBase;
+    using CloudHSMV2EndpointProvider = Aws::CloudHSMV2::Endpoint::CloudHSMV2EndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in CloudHSMV2Client header */

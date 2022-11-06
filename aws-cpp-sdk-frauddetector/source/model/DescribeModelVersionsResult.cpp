@@ -30,7 +30,7 @@ DescribeModelVersionsResult& DescribeModelVersionsResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("modelVersionDetails"))
   {
-    Array<JsonView> modelVersionDetailsJsonList = jsonValue.GetArray("modelVersionDetails");
+    Aws::Utils::Array<JsonView> modelVersionDetailsJsonList = jsonValue.GetArray("modelVersionDetails");
     for(unsigned modelVersionDetailsIndex = 0; modelVersionDetailsIndex < modelVersionDetailsJsonList.GetLength(); ++modelVersionDetailsIndex)
     {
       m_modelVersionDetails.push_back(modelVersionDetailsJsonList[modelVersionDetailsIndex].AsObject());

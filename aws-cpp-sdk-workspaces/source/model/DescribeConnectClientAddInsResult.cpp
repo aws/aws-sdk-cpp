@@ -30,7 +30,7 @@ DescribeConnectClientAddInsResult& DescribeConnectClientAddInsResult::operator =
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("AddIns"))
   {
-    Array<JsonView> addInsJsonList = jsonValue.GetArray("AddIns");
+    Aws::Utils::Array<JsonView> addInsJsonList = jsonValue.GetArray("AddIns");
     for(unsigned addInsIndex = 0; addInsIndex < addInsJsonList.GetLength(); ++addInsIndex)
     {
       m_addIns.push_back(addInsJsonList[addInsIndex].AsObject());
