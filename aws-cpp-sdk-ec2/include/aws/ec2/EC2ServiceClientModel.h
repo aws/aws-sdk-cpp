@@ -7,10 +7,12 @@
 
 /* Generic header includes */
 #include <aws/ec2/EC2Errors.h>
+#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/ec2/EC2EndpointProvider.h>
 #include <future>
 #include <functional>
 /* End of generic header includes */
@@ -541,6 +543,10 @@ namespace Aws
 
   namespace EC2
   {
+    using EC2ClientConfiguration = Aws::Client::GenericClientConfiguration<false>;
+    using EC2EndpointProviderBase = Aws::EC2::Endpoint::EC2EndpointProviderBase;
+    using EC2EndpointProvider = Aws::EC2::Endpoint::EC2EndpointProvider;
+
     namespace Model
     {
       /* Service model forward declarations required in EC2Client header */
