@@ -5,17 +5,18 @@
 
 #pragma once
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
-#include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
-
 namespace DynamoDB
 {
-namespace DynamoDBEndpoint
+class DynamoDBEndpointRules
 {
-AWS_DYNAMODB_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
-} // namespace DynamoDBEndpoint
+public:
+    static Aws::String GetRulesAsString();
+    static const Aws::Vector<char> Rules; 
+};
 } // namespace DynamoDB
 } // namespace Aws

@@ -43,22 +43,48 @@ namespace DynamoDB
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        DynamoDBClient(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+        DynamoDBClient(const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfiguration = Aws::DynamoDB::DynamoDBClientConfiguration(),
+                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG));
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DynamoDBClient(const Aws::Auth::AWSCredentials& credentials,
-                       const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfiguration = Aws::DynamoDB::DynamoDBClientConfiguration());
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         DynamoDBClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
+                       const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfiguration = Aws::DynamoDB::DynamoDBClientConfiguration());
 
+
+        /* Legacy constructors due deprecation */
+       /**
+        * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DynamoDBClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+        * is not specified, it will be initialized to default values.
+        */
+        DynamoDBClient(const Aws::Auth::AWSCredentials& credentials,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+       /**
+        * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+        * the default http client factory will be used
+        */
+        DynamoDBClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+                       const Aws::Client::ClientConfiguration& clientConfiguration);
+
+        /* End of legacy constructors due deprecation */
         virtual ~DynamoDBClient();
 
 
@@ -1544,15 +1570,14 @@ namespace DynamoDB
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
+      std::shared_ptr<DynamoDBEndpointProviderBase>& accessEndpointProvider();
     private:
-      void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-      void LoadDynamoDBSpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration);
+      void init(const DynamoDBClientConfiguration& clientConfiguration);
 
-      Aws::String m_uri;
       mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
-      bool m_enableEndpointDiscovery = false;
-      Aws::String m_configScheme;
+      DynamoDBClientConfiguration m_clientConfiguration;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+      std::shared_ptr<DynamoDBEndpointProviderBase> m_endpointProvider;
   };
 
 } // namespace DynamoDB
