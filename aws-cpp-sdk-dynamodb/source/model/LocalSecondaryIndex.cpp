@@ -44,7 +44,7 @@ LocalSecondaryIndex& LocalSecondaryIndex::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("KeySchema"))
   {
-    Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
+    Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
     for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
     {
       m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue LocalSecondaryIndex::Jsonize() const
 
   if(m_keySchemaHasBeenSet)
   {
-   Array<JsonValue> keySchemaJsonList(m_keySchema.size());
+   Aws::Utils::Array<JsonValue> keySchemaJsonList(m_keySchema.size());
    for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
    {
      keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());

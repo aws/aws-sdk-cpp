@@ -30,7 +30,7 @@ Aws::String UpdateGlobalTableRequest::SerializePayload() const
 
   if(m_replicaUpdatesHasBeenSet)
   {
-   Array<JsonValue> replicaUpdatesJsonList(m_replicaUpdates.size());
+   Aws::Utils::Array<JsonValue> replicaUpdatesJsonList(m_replicaUpdates.size());
    for(unsigned replicaUpdatesIndex = 0; replicaUpdatesIndex < replicaUpdatesJsonList.GetLength(); ++replicaUpdatesIndex)
    {
      replicaUpdatesJsonList[replicaUpdatesIndex].AsObject(m_replicaUpdates[replicaUpdatesIndex].Jsonize());

@@ -5,17 +5,18 @@
 
 #pragma once
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
-#include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
-
 namespace DynamoDBStreams
 {
-namespace DynamoDBStreamsEndpoint
+class DynamoDBStreamsEndpointRules
 {
-AWS_DYNAMODBSTREAMS_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
-} // namespace DynamoDBStreamsEndpoint
+public:
+    static Aws::String GetRulesAsString();
+    static const Aws::Vector<char> Rules; 
+};
 } // namespace DynamoDBStreams
 } // namespace Aws

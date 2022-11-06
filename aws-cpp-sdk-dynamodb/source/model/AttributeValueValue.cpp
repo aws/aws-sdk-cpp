@@ -9,6 +9,7 @@
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
+using Aws::Utils::Array;
 
 //
 // Strings
@@ -63,7 +64,7 @@ JsonValue AttributeValueByteBuffer::Jsonize() const
 
 AttributeValueStringSet::AttributeValueStringSet(JsonView jsonValue)
 {
-    Array<JsonView> ss = jsonValue.GetArray("SS");
+    Aws::Utils::Array<JsonView> ss = jsonValue.GetArray("SS");
 
     for (unsigned i = 0; i < ss.GetLength(); ++i)
     {
@@ -91,7 +92,7 @@ JsonValue AttributeValueStringSet::Jsonize() const
 
     if (m_sS.size() > 0)
     {
-        Array<JsonValue> array(m_sS.size());
+        Aws::Utils::Array<JsonValue> array(m_sS.size());
         for (unsigned i = 0; i < m_sS.size(); ++i)
         {
             array[i].AsString(m_sS[i]);
@@ -108,7 +109,7 @@ JsonValue AttributeValueStringSet::Jsonize() const
 
 AttributeValueNumberSet::AttributeValueNumberSet(JsonView jsonValue)
 {
-    const Array<JsonView> ns = jsonValue.GetArray("NS");
+    const Aws::Utils::Array<JsonView> ns = jsonValue.GetArray("NS");
 
     for (unsigned i = 0; i < ns.GetLength(); ++i)
     {
@@ -136,7 +137,7 @@ JsonValue AttributeValueNumberSet::Jsonize() const
 
     if (m_nS.size() > 0)
     {
-        Array<JsonValue> array(m_nS.size());
+        Aws::Utils::Array<JsonValue> array(m_nS.size());
         for (unsigned i = 0; i < m_nS.size(); ++i)
         {
             array[i].AsString(m_nS[i]);
@@ -153,7 +154,7 @@ JsonValue AttributeValueNumberSet::Jsonize() const
 
 AttributeValueByteBufferSet::AttributeValueByteBufferSet(JsonView jsonValue)
 {
-    const Array<JsonView> bs = jsonValue.GetArray("BS");
+    const Aws::Utils::Array<JsonView> bs = jsonValue.GetArray("BS");
 
     for (unsigned i = 0; i < bs.GetLength(); ++i)
     {
@@ -181,7 +182,7 @@ JsonValue AttributeValueByteBufferSet::Jsonize() const
 
     if (m_bS.size() > 0)
     {
-        Array<JsonValue> array(m_bS.size());
+        Aws::Utils::Array<JsonValue> array(m_bS.size());
         for (unsigned i = 0; i < m_bS.size(); ++i)
         {
             array[i].AsString(HashingUtils::Base64Encode(m_bS[i]));
@@ -259,7 +260,7 @@ JsonValue AttributeValueMap::Jsonize() const
 
 AttributeValueList::AttributeValueList(JsonView jsonValue)
 {
-    const Array<JsonView> array = jsonValue.GetArray("L");
+    const Aws::Utils::Array<JsonView> array = jsonValue.GetArray("L");
 
     for (unsigned i = 0; i < array.GetLength(); ++i)
     {
@@ -294,7 +295,7 @@ JsonValue AttributeValueList::Jsonize() const
 {
     JsonValue value;
 
-    Array<JsonValue> list(m_l.size());
+    Aws::Utils::Array<JsonValue> list(m_l.size());
 
     for (unsigned i = 0; i < m_l.size(); ++i)
     {

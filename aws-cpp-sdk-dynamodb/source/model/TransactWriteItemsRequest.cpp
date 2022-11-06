@@ -29,7 +29,7 @@ Aws::String TransactWriteItemsRequest::SerializePayload() const
 
   if(m_transactItemsHasBeenSet)
   {
-   Array<JsonValue> transactItemsJsonList(m_transactItems.size());
+   Aws::Utils::Array<JsonValue> transactItemsJsonList(m_transactItems.size());
    for(unsigned transactItemsIndex = 0; transactItemsIndex < transactItemsJsonList.GetLength(); ++transactItemsIndex)
    {
      transactItemsJsonList[transactItemsIndex].AsObject(m_transactItems[transactItemsIndex].Jsonize());

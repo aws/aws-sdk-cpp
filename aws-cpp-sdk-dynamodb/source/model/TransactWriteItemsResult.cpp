@@ -30,7 +30,7 @@ TransactWriteItemsResult& TransactWriteItemsResult::operator =(const Aws::Amazon
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ConsumedCapacity"))
   {
-    Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
+    Aws::Utils::Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
     for(unsigned consumedCapacityIndex = 0; consumedCapacityIndex < consumedCapacityJsonList.GetLength(); ++consumedCapacityIndex)
     {
       m_consumedCapacity.push_back(consumedCapacityJsonList[consumedCapacityIndex].AsObject());
@@ -42,7 +42,7 @@ TransactWriteItemsResult& TransactWriteItemsResult::operator =(const Aws::Amazon
     Aws::Map<Aws::String, JsonView> itemCollectionMetricsJsonMap = jsonValue.GetObject("ItemCollectionMetrics").GetAllObjects();
     for(auto& itemCollectionMetricsItem : itemCollectionMetricsJsonMap)
     {
-      Array<JsonView> itemCollectionMetricsMultipleJsonList = itemCollectionMetricsItem.second.AsArray();
+      Aws::Utils::Array<JsonView> itemCollectionMetricsMultipleJsonList = itemCollectionMetricsItem.second.AsArray();
       Aws::Vector<ItemCollectionMetrics> itemCollectionMetricsMultipleList;
       itemCollectionMetricsMultipleList.reserve((size_t)itemCollectionMetricsMultipleJsonList.GetLength());
       for(unsigned itemCollectionMetricsMultipleIndex = 0; itemCollectionMetricsMultipleIndex < itemCollectionMetricsMultipleJsonList.GetLength(); ++itemCollectionMetricsMultipleIndex)

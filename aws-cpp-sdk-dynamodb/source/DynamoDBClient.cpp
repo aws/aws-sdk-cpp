@@ -16,11 +16,12 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/platform/Environment.h>
 
 #include <aws/dynamodb/DynamoDBClient.h>
-#include <aws/dynamodb/DynamoDBEndpoint.h>
 #include <aws/dynamodb/DynamoDBErrorMarshaller.h>
+#include <aws/dynamodb/DynamoDBEndpointProvider.h>
 #include <aws/dynamodb/model/BatchExecuteStatementRequest.h>
 #include <aws/dynamodb/model/BatchGetItemRequest.h>
 #include <aws/dynamodb/model/BatchWriteItemRequest.h>
@@ -82,20 +83,71 @@ using namespace Aws::DynamoDB;
 using namespace Aws::DynamoDB::Model;
 using namespace Aws::Http;
 using namespace Aws::Utils::Json;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 const char* DynamoDBClient::SERVICE_NAME = "dynamodb";
 const char* DynamoDBClient::ALLOCATION_TAG = "DynamoDBClient";
 
-DynamoDBClient::DynamoDBClient(const Client::ClientConfiguration& clientConfiguration) :
+DynamoDBClient::DynamoDBClient(const DynamoDB::DynamoDBClientConfiguration& clientConfiguration,
+                               std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
                                              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG)),
-  m_executor(clientConfiguration.executor)
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(std::move(endpointProvider))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
+}
+
+DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials,
+                               std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider,
+                               const DynamoDB::DynamoDBClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                               std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider,
+                               const DynamoDB::DynamoDBClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             credentialsProvider,
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG)),
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(std::move(endpointProvider))
+{
+  init(m_clientConfiguration);
+}
+
+    /* Legacy constructors due deprecation */
+  DynamoDBClient::DynamoDBClient(const Client::ClientConfiguration& clientConfiguration) :
+  BASECLASS(clientConfiguration,
+            Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
+                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             SERVICE_NAME,
+                                             Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+            Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG)),
+  m_clientConfiguration(clientConfiguration),
+  m_executor(clientConfiguration.executor),
+  m_endpointProvider(Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG))
+{
+  init(m_clientConfiguration);
 }
 
 DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials,
@@ -106,9 +158,11 @@ DynamoDBClient::DynamoDBClient(const AWSCredentials& credentials,
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
 DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
@@ -119,84 +173,42 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor)
+    m_clientConfiguration(clientConfiguration),
+    m_executor(clientConfiguration.executor),
+    m_endpointProvider(Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG))
 {
-  init(clientConfiguration);
+  init(m_clientConfiguration);
 }
 
+    /* End of legacy constructors due deprecation */
 DynamoDBClient::~DynamoDBClient()
 {
 }
 
-void DynamoDBClient::init(const Client::ClientConfiguration& config)
+std::shared_ptr<DynamoDBEndpointProviderBase>& DynamoDBClient::accessEndpointProvider()
 {
-  AWSClient::SetServiceClientName("DynamoDB");
-  LoadDynamoDBSpecificConfig(config);
-  m_configScheme = SchemeMapper::ToString(config.scheme);
-  if (config.endpointOverride.empty())
-  {
-      m_uri = m_configScheme + "://" + DynamoDBEndpoint::ForRegion(config.region, config.useDualStack);
-  }
-  else
-  {
-      OverrideEndpoint(config.endpointOverride);
-  }
+  return m_endpointProvider;
 }
 
-void DynamoDBClient::LoadDynamoDBSpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration)
+void DynamoDBClient::init(const DynamoDB::DynamoDBClientConfiguration& config)
 {
-  if (!clientConfiguration.endpointOverride.empty())
-  {
-    m_enableEndpointDiscovery = false;
-  }
-  else if (clientConfiguration.enableEndpointDiscovery)
-  {
-    m_enableEndpointDiscovery = clientConfiguration.enableEndpointDiscovery.value();
-  }
-  else
-  {
-    m_enableEndpointDiscovery = false;
-
-    Aws::String enableEndpointDiscovery = Aws::Environment::GetEnv("AWS_ENABLE_ENDPOINT_DISCOVERY");
-    if (enableEndpointDiscovery.empty())
-    {
-      enableEndpointDiscovery = Aws::Config::GetCachedConfigValue(clientConfiguration.profileName, "endpoint_discovery_enabled");
-    }
-
-    if (enableEndpointDiscovery == "true")
-    {
-      m_enableEndpointDiscovery = true;
-    }
-    else if (enableEndpointDiscovery == "false")
-    {
-      m_enableEndpointDiscovery = false;
-    }
-    else if (!enableEndpointDiscovery.empty())
-    {
-      AWS_LOGSTREAM_WARN("DynamoDBClient", R"(Using the SDK default configuration for Endpoint Discovery. )"
-        R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY" or )"
-        R"(your config file's variable "endpoint_discovery_enabled" are explicitly set to "true" or "false" (case-sensitive) or not set at all.)");
-    }
-  }
+  AWSClient::SetServiceClientName("DynamoDB");
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config);
 }
 
 void DynamoDBClient::OverrideEndpoint(const Aws::String& endpoint)
 {
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
-  m_enableEndpointDiscovery = false;
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->OverrideEndpoint(endpoint);
 }
 
 BatchExecuteStatementOutcome DynamoDBClient::BatchExecuteStatement(const BatchExecuteStatementRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return BatchExecuteStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchExecuteStatement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchExecuteStatement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchExecuteStatementOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchExecuteStatementOutcomeCallable DynamoDBClient::BatchExecuteStatementCallable(const BatchExecuteStatementRequest& request) const
@@ -217,15 +229,16 @@ void DynamoDBClient::BatchExecuteStatementAsync(const BatchExecuteStatementReque
 
 BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("BatchGetItem", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -235,9 +248,11 @@ BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& requ
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("BatchGetItem", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -245,7 +260,11 @@ BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& requ
       }
     }
   }
-  return BatchGetItemOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchGetItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchGetItemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchGetItemOutcomeCallable DynamoDBClient::BatchGetItemCallable(const BatchGetItemRequest& request) const
@@ -266,15 +285,16 @@ void DynamoDBClient::BatchGetItemAsync(const BatchGetItemRequest& request, const
 
 BatchWriteItemOutcome DynamoDBClient::BatchWriteItem(const BatchWriteItemRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchWriteItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("BatchWriteItem", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -284,9 +304,11 @@ BatchWriteItemOutcome DynamoDBClient::BatchWriteItem(const BatchWriteItemRequest
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("BatchWriteItem", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -294,7 +316,11 @@ BatchWriteItemOutcome DynamoDBClient::BatchWriteItem(const BatchWriteItemRequest
       }
     }
   }
-  return BatchWriteItemOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchWriteItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchWriteItemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchWriteItemOutcomeCallable DynamoDBClient::BatchWriteItemCallable(const BatchWriteItemRequest& request) const
@@ -315,15 +341,16 @@ void DynamoDBClient::BatchWriteItemAsync(const BatchWriteItemRequest& request, c
 
 CreateBackupOutcome DynamoDBClient::CreateBackup(const CreateBackupRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateBackup", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -333,9 +360,11 @@ CreateBackupOutcome DynamoDBClient::CreateBackup(const CreateBackupRequest& requ
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("CreateBackup", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -343,7 +372,11 @@ CreateBackupOutcome DynamoDBClient::CreateBackup(const CreateBackupRequest& requ
       }
     }
   }
-  return CreateBackupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateBackupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBackupOutcomeCallable DynamoDBClient::CreateBackupCallable(const CreateBackupRequest& request) const
@@ -364,15 +397,16 @@ void DynamoDBClient::CreateBackupAsync(const CreateBackupRequest& request, const
 
 CreateGlobalTableOutcome DynamoDBClient::CreateGlobalTable(const CreateGlobalTableRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateGlobalTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateGlobalTable", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -382,9 +416,11 @@ CreateGlobalTableOutcome DynamoDBClient::CreateGlobalTable(const CreateGlobalTab
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("CreateGlobalTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -392,7 +428,11 @@ CreateGlobalTableOutcome DynamoDBClient::CreateGlobalTable(const CreateGlobalTab
       }
     }
   }
-  return CreateGlobalTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateGlobalTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateGlobalTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateGlobalTableOutcomeCallable DynamoDBClient::CreateGlobalTableCallable(const CreateGlobalTableRequest& request) const
@@ -413,15 +453,16 @@ void DynamoDBClient::CreateGlobalTableAsync(const CreateGlobalTableRequest& requ
 
 CreateTableOutcome DynamoDBClient::CreateTable(const CreateTableRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateTable", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -431,9 +472,11 @@ CreateTableOutcome DynamoDBClient::CreateTable(const CreateTableRequest& request
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("CreateTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -441,7 +484,11 @@ CreateTableOutcome DynamoDBClient::CreateTable(const CreateTableRequest& request
       }
     }
   }
-  return CreateTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateTableOutcomeCallable DynamoDBClient::CreateTableCallable(const CreateTableRequest& request) const
@@ -462,15 +509,16 @@ void DynamoDBClient::CreateTableAsync(const CreateTableRequest& request, const C
 
 DeleteBackupOutcome DynamoDBClient::DeleteBackup(const DeleteBackupRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DeleteBackup", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -480,9 +528,11 @@ DeleteBackupOutcome DynamoDBClient::DeleteBackup(const DeleteBackupRequest& requ
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DeleteBackup", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -490,7 +540,11 @@ DeleteBackupOutcome DynamoDBClient::DeleteBackup(const DeleteBackupRequest& requ
       }
     }
   }
-  return DeleteBackupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteBackupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBackupOutcomeCallable DynamoDBClient::DeleteBackupCallable(const DeleteBackupRequest& request) const
@@ -511,15 +565,16 @@ void DynamoDBClient::DeleteBackupAsync(const DeleteBackupRequest& request, const
 
 DeleteItemOutcome DynamoDBClient::DeleteItem(const DeleteItemRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DeleteItem", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -529,9 +584,11 @@ DeleteItemOutcome DynamoDBClient::DeleteItem(const DeleteItemRequest& request) c
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DeleteItem", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -539,7 +596,11 @@ DeleteItemOutcome DynamoDBClient::DeleteItem(const DeleteItemRequest& request) c
       }
     }
   }
-  return DeleteItemOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteItemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteItemOutcomeCallable DynamoDBClient::DeleteItemCallable(const DeleteItemRequest& request) const
@@ -560,15 +621,16 @@ void DynamoDBClient::DeleteItemAsync(const DeleteItemRequest& request, const Del
 
 DeleteTableOutcome DynamoDBClient::DeleteTable(const DeleteTableRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DeleteTable", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -578,9 +640,11 @@ DeleteTableOutcome DynamoDBClient::DeleteTable(const DeleteTableRequest& request
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DeleteTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -588,7 +652,11 @@ DeleteTableOutcome DynamoDBClient::DeleteTable(const DeleteTableRequest& request
       }
     }
   }
-  return DeleteTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTableOutcomeCallable DynamoDBClient::DeleteTableCallable(const DeleteTableRequest& request) const
@@ -609,15 +677,16 @@ void DynamoDBClient::DeleteTableAsync(const DeleteTableRequest& request, const D
 
 DescribeBackupOutcome DynamoDBClient::DescribeBackup(const DescribeBackupRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeBackup", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -627,9 +696,11 @@ DescribeBackupOutcome DynamoDBClient::DescribeBackup(const DescribeBackupRequest
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DescribeBackup", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -637,7 +708,11 @@ DescribeBackupOutcome DynamoDBClient::DescribeBackup(const DescribeBackupRequest
       }
     }
   }
-  return DescribeBackupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeBackupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeBackupOutcomeCallable DynamoDBClient::DescribeBackupCallable(const DescribeBackupRequest& request) const
@@ -658,15 +733,16 @@ void DynamoDBClient::DescribeBackupAsync(const DescribeBackupRequest& request, c
 
 DescribeContinuousBackupsOutcome DynamoDBClient::DescribeContinuousBackups(const DescribeContinuousBackupsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeContinuousBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeContinuousBackups", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -676,9 +752,11 @@ DescribeContinuousBackupsOutcome DynamoDBClient::DescribeContinuousBackups(const
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DescribeContinuousBackups", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -686,7 +764,11 @@ DescribeContinuousBackupsOutcome DynamoDBClient::DescribeContinuousBackups(const
       }
     }
   }
-  return DescribeContinuousBackupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeContinuousBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeContinuousBackupsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeContinuousBackupsOutcomeCallable DynamoDBClient::DescribeContinuousBackupsCallable(const DescribeContinuousBackupsRequest& request) const
@@ -707,8 +789,10 @@ void DynamoDBClient::DescribeContinuousBackupsAsync(const DescribeContinuousBack
 
 DescribeContributorInsightsOutcome DynamoDBClient::DescribeContributorInsights(const DescribeContributorInsightsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return DescribeContributorInsightsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeContributorInsights, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeContributorInsights, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeContributorInsightsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeContributorInsightsOutcomeCallable DynamoDBClient::DescribeContributorInsightsCallable(const DescribeContributorInsightsRequest& request) const
@@ -729,8 +813,10 @@ void DynamoDBClient::DescribeContributorInsightsAsync(const DescribeContributorI
 
 DescribeEndpointsOutcome DynamoDBClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return DescribeEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeEndpoints, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeEndpointsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEndpointsOutcomeCallable DynamoDBClient::DescribeEndpointsCallable(const DescribeEndpointsRequest& request) const
@@ -751,8 +837,10 @@ void DynamoDBClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& requ
 
 DescribeExportOutcome DynamoDBClient::DescribeExport(const DescribeExportRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return DescribeExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeExport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeExportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeExportOutcomeCallable DynamoDBClient::DescribeExportCallable(const DescribeExportRequest& request) const
@@ -773,15 +861,16 @@ void DynamoDBClient::DescribeExportAsync(const DescribeExportRequest& request, c
 
 DescribeGlobalTableOutcome DynamoDBClient::DescribeGlobalTable(const DescribeGlobalTableRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGlobalTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeGlobalTable", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -791,9 +880,11 @@ DescribeGlobalTableOutcome DynamoDBClient::DescribeGlobalTable(const DescribeGlo
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DescribeGlobalTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -801,7 +892,11 @@ DescribeGlobalTableOutcome DynamoDBClient::DescribeGlobalTable(const DescribeGlo
       }
     }
   }
-  return DescribeGlobalTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeGlobalTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeGlobalTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeGlobalTableOutcomeCallable DynamoDBClient::DescribeGlobalTableCallable(const DescribeGlobalTableRequest& request) const
@@ -822,15 +917,16 @@ void DynamoDBClient::DescribeGlobalTableAsync(const DescribeGlobalTableRequest& 
 
 DescribeGlobalTableSettingsOutcome DynamoDBClient::DescribeGlobalTableSettings(const DescribeGlobalTableSettingsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeGlobalTableSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeGlobalTableSettings", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -840,9 +936,11 @@ DescribeGlobalTableSettingsOutcome DynamoDBClient::DescribeGlobalTableSettings(c
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DescribeGlobalTableSettings", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -850,7 +948,11 @@ DescribeGlobalTableSettingsOutcome DynamoDBClient::DescribeGlobalTableSettings(c
       }
     }
   }
-  return DescribeGlobalTableSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeGlobalTableSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeGlobalTableSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeGlobalTableSettingsOutcomeCallable DynamoDBClient::DescribeGlobalTableSettingsCallable(const DescribeGlobalTableSettingsRequest& request) const
@@ -871,8 +973,10 @@ void DynamoDBClient::DescribeGlobalTableSettingsAsync(const DescribeGlobalTableS
 
 DescribeImportOutcome DynamoDBClient::DescribeImport(const DescribeImportRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return DescribeImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeImport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeImport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeImportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeImportOutcomeCallable DynamoDBClient::DescribeImportCallable(const DescribeImportRequest& request) const
@@ -893,15 +997,16 @@ void DynamoDBClient::DescribeImportAsync(const DescribeImportRequest& request, c
 
 DescribeKinesisStreamingDestinationOutcome DynamoDBClient::DescribeKinesisStreamingDestination(const DescribeKinesisStreamingDestinationRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeKinesisStreamingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeKinesisStreamingDestination", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -911,9 +1016,11 @@ DescribeKinesisStreamingDestinationOutcome DynamoDBClient::DescribeKinesisStream
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DescribeKinesisStreamingDestination", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -921,7 +1028,11 @@ DescribeKinesisStreamingDestinationOutcome DynamoDBClient::DescribeKinesisStream
       }
     }
   }
-  return DescribeKinesisStreamingDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeKinesisStreamingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeKinesisStreamingDestinationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeKinesisStreamingDestinationOutcomeCallable DynamoDBClient::DescribeKinesisStreamingDestinationCallable(const DescribeKinesisStreamingDestinationRequest& request) const
@@ -942,15 +1053,16 @@ void DynamoDBClient::DescribeKinesisStreamingDestinationAsync(const DescribeKine
 
 DescribeLimitsOutcome DynamoDBClient::DescribeLimits(const DescribeLimitsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeLimits", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -960,9 +1072,11 @@ DescribeLimitsOutcome DynamoDBClient::DescribeLimits(const DescribeLimitsRequest
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DescribeLimits", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -970,7 +1084,11 @@ DescribeLimitsOutcome DynamoDBClient::DescribeLimits(const DescribeLimitsRequest
       }
     }
   }
-  return DescribeLimitsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeLimits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeLimitsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeLimitsOutcomeCallable DynamoDBClient::DescribeLimitsCallable(const DescribeLimitsRequest& request) const
@@ -991,15 +1109,16 @@ void DynamoDBClient::DescribeLimitsAsync(const DescribeLimitsRequest& request, c
 
 DescribeTableOutcome DynamoDBClient::DescribeTable(const DescribeTableRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeTable", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1009,9 +1128,11 @@ DescribeTableOutcome DynamoDBClient::DescribeTable(const DescribeTableRequest& r
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DescribeTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1019,7 +1140,11 @@ DescribeTableOutcome DynamoDBClient::DescribeTable(const DescribeTableRequest& r
       }
     }
   }
-  return DescribeTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTableOutcomeCallable DynamoDBClient::DescribeTableCallable(const DescribeTableRequest& request) const
@@ -1040,8 +1165,10 @@ void DynamoDBClient::DescribeTableAsync(const DescribeTableRequest& request, con
 
 DescribeTableReplicaAutoScalingOutcome DynamoDBClient::DescribeTableReplicaAutoScaling(const DescribeTableReplicaAutoScalingRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return DescribeTableReplicaAutoScalingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTableReplicaAutoScaling, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTableReplicaAutoScaling, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeTableReplicaAutoScalingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTableReplicaAutoScalingOutcomeCallable DynamoDBClient::DescribeTableReplicaAutoScalingCallable(const DescribeTableReplicaAutoScalingRequest& request) const
@@ -1062,15 +1189,16 @@ void DynamoDBClient::DescribeTableReplicaAutoScalingAsync(const DescribeTableRep
 
 DescribeTimeToLiveOutcome DynamoDBClient::DescribeTimeToLive(const DescribeTimeToLiveRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTimeToLive, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeTimeToLive", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1080,9 +1208,11 @@ DescribeTimeToLiveOutcome DynamoDBClient::DescribeTimeToLive(const DescribeTimeT
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DescribeTimeToLive", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1090,7 +1220,11 @@ DescribeTimeToLiveOutcome DynamoDBClient::DescribeTimeToLive(const DescribeTimeT
       }
     }
   }
-  return DescribeTimeToLiveOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeTimeToLive, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeTimeToLiveOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTimeToLiveOutcomeCallable DynamoDBClient::DescribeTimeToLiveCallable(const DescribeTimeToLiveRequest& request) const
@@ -1111,15 +1245,16 @@ void DynamoDBClient::DescribeTimeToLiveAsync(const DescribeTimeToLiveRequest& re
 
 DisableKinesisStreamingDestinationOutcome DynamoDBClient::DisableKinesisStreamingDestination(const DisableKinesisStreamingDestinationRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisableKinesisStreamingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DisableKinesisStreamingDestination", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1129,9 +1264,11 @@ DisableKinesisStreamingDestinationOutcome DynamoDBClient::DisableKinesisStreamin
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("DisableKinesisStreamingDestination", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1139,7 +1276,11 @@ DisableKinesisStreamingDestinationOutcome DynamoDBClient::DisableKinesisStreamin
       }
     }
   }
-  return DisableKinesisStreamingDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisableKinesisStreamingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DisableKinesisStreamingDestinationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisableKinesisStreamingDestinationOutcomeCallable DynamoDBClient::DisableKinesisStreamingDestinationCallable(const DisableKinesisStreamingDestinationRequest& request) const
@@ -1160,15 +1301,16 @@ void DynamoDBClient::DisableKinesisStreamingDestinationAsync(const DisableKinesi
 
 EnableKinesisStreamingDestinationOutcome DynamoDBClient::EnableKinesisStreamingDestination(const EnableKinesisStreamingDestinationRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, EnableKinesisStreamingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("EnableKinesisStreamingDestination", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1178,9 +1320,11 @@ EnableKinesisStreamingDestinationOutcome DynamoDBClient::EnableKinesisStreamingD
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("EnableKinesisStreamingDestination", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1188,7 +1332,11 @@ EnableKinesisStreamingDestinationOutcome DynamoDBClient::EnableKinesisStreamingD
       }
     }
   }
-  return EnableKinesisStreamingDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, EnableKinesisStreamingDestination, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return EnableKinesisStreamingDestinationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EnableKinesisStreamingDestinationOutcomeCallable DynamoDBClient::EnableKinesisStreamingDestinationCallable(const EnableKinesisStreamingDestinationRequest& request) const
@@ -1209,8 +1357,10 @@ void DynamoDBClient::EnableKinesisStreamingDestinationAsync(const EnableKinesisS
 
 ExecuteStatementOutcome DynamoDBClient::ExecuteStatement(const ExecuteStatementRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return ExecuteStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExecuteStatement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteStatement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ExecuteStatementOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExecuteStatementOutcomeCallable DynamoDBClient::ExecuteStatementCallable(const ExecuteStatementRequest& request) const
@@ -1231,8 +1381,10 @@ void DynamoDBClient::ExecuteStatementAsync(const ExecuteStatementRequest& reques
 
 ExecuteTransactionOutcome DynamoDBClient::ExecuteTransaction(const ExecuteTransactionRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return ExecuteTransactionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExecuteTransaction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExecuteTransaction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ExecuteTransactionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExecuteTransactionOutcomeCallable DynamoDBClient::ExecuteTransactionCallable(const ExecuteTransactionRequest& request) const
@@ -1253,8 +1405,10 @@ void DynamoDBClient::ExecuteTransactionAsync(const ExecuteTransactionRequest& re
 
 ExportTableToPointInTimeOutcome DynamoDBClient::ExportTableToPointInTime(const ExportTableToPointInTimeRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return ExportTableToPointInTimeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ExportTableToPointInTime, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ExportTableToPointInTime, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ExportTableToPointInTimeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ExportTableToPointInTimeOutcomeCallable DynamoDBClient::ExportTableToPointInTimeCallable(const ExportTableToPointInTimeRequest& request) const
@@ -1275,15 +1429,16 @@ void DynamoDBClient::ExportTableToPointInTimeAsync(const ExportTableToPointInTim
 
 GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("GetItem", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1293,9 +1448,11 @@ GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("GetItem", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1303,7 +1460,11 @@ GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const
       }
     }
   }
-  return GetItemOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetItemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetItemOutcomeCallable DynamoDBClient::GetItemCallable(const GetItemRequest& request) const
@@ -1324,8 +1485,10 @@ void DynamoDBClient::GetItemAsync(const GetItemRequest& request, const GetItemRe
 
 ImportTableOutcome DynamoDBClient::ImportTable(const ImportTableRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return ImportTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ImportTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ImportTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ImportTableOutcomeCallable DynamoDBClient::ImportTableCallable(const ImportTableRequest& request) const
@@ -1346,15 +1509,16 @@ void DynamoDBClient::ImportTableAsync(const ImportTableRequest& request, const I
 
 ListBackupsOutcome DynamoDBClient::ListBackups(const ListBackupsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListBackups", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1364,9 +1528,11 @@ ListBackupsOutcome DynamoDBClient::ListBackups(const ListBackupsRequest& request
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("ListBackups", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1374,7 +1540,11 @@ ListBackupsOutcome DynamoDBClient::ListBackups(const ListBackupsRequest& request
       }
     }
   }
-  return ListBackupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListBackupsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListBackupsOutcomeCallable DynamoDBClient::ListBackupsCallable(const ListBackupsRequest& request) const
@@ -1395,8 +1565,10 @@ void DynamoDBClient::ListBackupsAsync(const ListBackupsRequest& request, const L
 
 ListContributorInsightsOutcome DynamoDBClient::ListContributorInsights(const ListContributorInsightsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return ListContributorInsightsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListContributorInsights, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListContributorInsights, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListContributorInsightsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListContributorInsightsOutcomeCallable DynamoDBClient::ListContributorInsightsCallable(const ListContributorInsightsRequest& request) const
@@ -1417,8 +1589,10 @@ void DynamoDBClient::ListContributorInsightsAsync(const ListContributorInsightsR
 
 ListExportsOutcome DynamoDBClient::ListExports(const ListExportsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return ListExportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListExports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListExports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListExportsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListExportsOutcomeCallable DynamoDBClient::ListExportsCallable(const ListExportsRequest& request) const
@@ -1439,15 +1613,16 @@ void DynamoDBClient::ListExportsAsync(const ListExportsRequest& request, const L
 
 ListGlobalTablesOutcome DynamoDBClient::ListGlobalTables(const ListGlobalTablesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGlobalTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListGlobalTables", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1457,9 +1632,11 @@ ListGlobalTablesOutcome DynamoDBClient::ListGlobalTables(const ListGlobalTablesR
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("ListGlobalTables", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1467,7 +1644,11 @@ ListGlobalTablesOutcome DynamoDBClient::ListGlobalTables(const ListGlobalTablesR
       }
     }
   }
-  return ListGlobalTablesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListGlobalTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListGlobalTablesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGlobalTablesOutcomeCallable DynamoDBClient::ListGlobalTablesCallable(const ListGlobalTablesRequest& request) const
@@ -1488,8 +1669,10 @@ void DynamoDBClient::ListGlobalTablesAsync(const ListGlobalTablesRequest& reques
 
 ListImportsOutcome DynamoDBClient::ListImports(const ListImportsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return ListImportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImports, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListImportsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListImportsOutcomeCallable DynamoDBClient::ListImportsCallable(const ListImportsRequest& request) const
@@ -1510,15 +1693,16 @@ void DynamoDBClient::ListImportsAsync(const ListImportsRequest& request, const L
 
 ListTablesOutcome DynamoDBClient::ListTables(const ListTablesRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListTables", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1528,9 +1712,11 @@ ListTablesOutcome DynamoDBClient::ListTables(const ListTablesRequest& request) c
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("ListTables", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1538,7 +1724,11 @@ ListTablesOutcome DynamoDBClient::ListTables(const ListTablesRequest& request) c
       }
     }
   }
-  return ListTablesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTables, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTablesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTablesOutcomeCallable DynamoDBClient::ListTablesCallable(const ListTablesRequest& request) const
@@ -1559,15 +1749,16 @@ void DynamoDBClient::ListTablesAsync(const ListTablesRequest& request, const Lis
 
 ListTagsOfResourceOutcome DynamoDBClient::ListTagsOfResource(const ListTagsOfResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsOfResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListTagsOfResource", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1577,9 +1768,11 @@ ListTagsOfResourceOutcome DynamoDBClient::ListTagsOfResource(const ListTagsOfRes
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("ListTagsOfResource", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1587,7 +1780,11 @@ ListTagsOfResourceOutcome DynamoDBClient::ListTagsOfResource(const ListTagsOfRes
       }
     }
   }
-  return ListTagsOfResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsOfResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListTagsOfResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsOfResourceOutcomeCallable DynamoDBClient::ListTagsOfResourceCallable(const ListTagsOfResourceRequest& request) const
@@ -1608,15 +1805,16 @@ void DynamoDBClient::ListTagsOfResourceAsync(const ListTagsOfResourceRequest& re
 
 PutItemOutcome DynamoDBClient::PutItem(const PutItemRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("PutItem", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1626,9 +1824,11 @@ PutItemOutcome DynamoDBClient::PutItem(const PutItemRequest& request) const
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("PutItem", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1636,7 +1836,11 @@ PutItemOutcome DynamoDBClient::PutItem(const PutItemRequest& request) const
       }
     }
   }
-  return PutItemOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return PutItemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutItemOutcomeCallable DynamoDBClient::PutItemCallable(const PutItemRequest& request) const
@@ -1657,15 +1861,16 @@ void DynamoDBClient::PutItemAsync(const PutItemRequest& request, const PutItemRe
 
 QueryOutcome DynamoDBClient::Query(const QueryRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, Query, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("Query", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1675,9 +1880,11 @@ QueryOutcome DynamoDBClient::Query(const QueryRequest& request) const
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("Query", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1685,7 +1892,11 @@ QueryOutcome DynamoDBClient::Query(const QueryRequest& request) const
       }
     }
   }
-  return QueryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Query, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return QueryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 QueryOutcomeCallable DynamoDBClient::QueryCallable(const QueryRequest& request) const
@@ -1706,15 +1917,16 @@ void DynamoDBClient::QueryAsync(const QueryRequest& request, const QueryResponse
 
 RestoreTableFromBackupOutcome DynamoDBClient::RestoreTableFromBackup(const RestoreTableFromBackupRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestoreTableFromBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("RestoreTableFromBackup", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1724,9 +1936,11 @@ RestoreTableFromBackupOutcome DynamoDBClient::RestoreTableFromBackup(const Resto
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("RestoreTableFromBackup", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1734,7 +1948,11 @@ RestoreTableFromBackupOutcome DynamoDBClient::RestoreTableFromBackup(const Resto
       }
     }
   }
-  return RestoreTableFromBackupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RestoreTableFromBackup, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return RestoreTableFromBackupOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RestoreTableFromBackupOutcomeCallable DynamoDBClient::RestoreTableFromBackupCallable(const RestoreTableFromBackupRequest& request) const
@@ -1755,15 +1973,16 @@ void DynamoDBClient::RestoreTableFromBackupAsync(const RestoreTableFromBackupReq
 
 RestoreTableToPointInTimeOutcome DynamoDBClient::RestoreTableToPointInTime(const RestoreTableToPointInTimeRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestoreTableToPointInTime, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("RestoreTableToPointInTime", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1773,9 +1992,11 @@ RestoreTableToPointInTimeOutcome DynamoDBClient::RestoreTableToPointInTime(const
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("RestoreTableToPointInTime", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1783,7 +2004,11 @@ RestoreTableToPointInTimeOutcome DynamoDBClient::RestoreTableToPointInTime(const
       }
     }
   }
-  return RestoreTableToPointInTimeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RestoreTableToPointInTime, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return RestoreTableToPointInTimeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RestoreTableToPointInTimeOutcomeCallable DynamoDBClient::RestoreTableToPointInTimeCallable(const RestoreTableToPointInTimeRequest& request) const
@@ -1804,15 +2029,16 @@ void DynamoDBClient::RestoreTableToPointInTimeAsync(const RestoreTableToPointInT
 
 ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, Scan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("Scan", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1822,9 +2048,11 @@ ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("Scan", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1832,7 +2060,11 @@ ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const
       }
     }
   }
-  return ScanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, Scan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ScanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ScanOutcomeCallable DynamoDBClient::ScanCallable(const ScanRequest& request) const
@@ -1853,15 +2085,16 @@ void DynamoDBClient::ScanAsync(const ScanRequest& request, const ScanResponseRec
 
 TagResourceOutcome DynamoDBClient::TagResource(const TagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("TagResource", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1871,9 +2104,11 @@ TagResourceOutcome DynamoDBClient::TagResource(const TagResourceRequest& request
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("TagResource", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1881,7 +2116,11 @@ TagResourceOutcome DynamoDBClient::TagResource(const TagResourceRequest& request
       }
     }
   }
-  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable DynamoDBClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1902,15 +2141,16 @@ void DynamoDBClient::TagResourceAsync(const TagResourceRequest& request, const T
 
 TransactGetItemsOutcome DynamoDBClient::TransactGetItems(const TransactGetItemsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TransactGetItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("TransactGetItems", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1920,9 +2160,11 @@ TransactGetItemsOutcome DynamoDBClient::TransactGetItems(const TransactGetItemsR
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("TransactGetItems", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1930,7 +2172,11 @@ TransactGetItemsOutcome DynamoDBClient::TransactGetItems(const TransactGetItemsR
       }
     }
   }
-  return TransactGetItemsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TransactGetItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TransactGetItemsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TransactGetItemsOutcomeCallable DynamoDBClient::TransactGetItemsCallable(const TransactGetItemsRequest& request) const
@@ -1951,15 +2197,16 @@ void DynamoDBClient::TransactGetItemsAsync(const TransactGetItemsRequest& reques
 
 TransactWriteItemsOutcome DynamoDBClient::TransactWriteItems(const TransactWriteItemsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TransactWriteItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("TransactWriteItems", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -1969,9 +2216,11 @@ TransactWriteItemsOutcome DynamoDBClient::TransactWriteItems(const TransactWrite
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("TransactWriteItems", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -1979,7 +2228,11 @@ TransactWriteItemsOutcome DynamoDBClient::TransactWriteItems(const TransactWrite
       }
     }
   }
-  return TransactWriteItemsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TransactWriteItems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TransactWriteItemsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TransactWriteItemsOutcomeCallable DynamoDBClient::TransactWriteItemsCallable(const TransactWriteItemsRequest& request) const
@@ -2000,15 +2253,16 @@ void DynamoDBClient::TransactWriteItemsAsync(const TransactWriteItemsRequest& re
 
 UntagResourceOutcome DynamoDBClient::UntagResource(const UntagResourceRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UntagResource", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -2018,9 +2272,11 @@ UntagResourceOutcome DynamoDBClient::UntagResource(const UntagResourceRequest& r
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("UntagResource", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -2028,7 +2284,11 @@ UntagResourceOutcome DynamoDBClient::UntagResource(const UntagResourceRequest& r
       }
     }
   }
-  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UntagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable DynamoDBClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -2049,15 +2309,16 @@ void DynamoDBClient::UntagResourceAsync(const UntagResourceRequest& request, con
 
 UpdateContinuousBackupsOutcome DynamoDBClient::UpdateContinuousBackups(const UpdateContinuousBackupsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContinuousBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateContinuousBackups", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -2067,9 +2328,11 @@ UpdateContinuousBackupsOutcome DynamoDBClient::UpdateContinuousBackups(const Upd
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("UpdateContinuousBackups", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -2077,7 +2340,11 @@ UpdateContinuousBackupsOutcome DynamoDBClient::UpdateContinuousBackups(const Upd
       }
     }
   }
-  return UpdateContinuousBackupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateContinuousBackups, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateContinuousBackupsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateContinuousBackupsOutcomeCallable DynamoDBClient::UpdateContinuousBackupsCallable(const UpdateContinuousBackupsRequest& request) const
@@ -2098,8 +2365,10 @@ void DynamoDBClient::UpdateContinuousBackupsAsync(const UpdateContinuousBackupsR
 
 UpdateContributorInsightsOutcome DynamoDBClient::UpdateContributorInsights(const UpdateContributorInsightsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return UpdateContributorInsightsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateContributorInsights, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateContributorInsights, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateContributorInsightsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateContributorInsightsOutcomeCallable DynamoDBClient::UpdateContributorInsightsCallable(const UpdateContributorInsightsRequest& request) const
@@ -2120,15 +2389,16 @@ void DynamoDBClient::UpdateContributorInsightsAsync(const UpdateContributorInsig
 
 UpdateGlobalTableOutcome DynamoDBClient::UpdateGlobalTable(const UpdateGlobalTableRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGlobalTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateGlobalTable", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -2138,9 +2408,11 @@ UpdateGlobalTableOutcome DynamoDBClient::UpdateGlobalTable(const UpdateGlobalTab
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("UpdateGlobalTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -2148,7 +2420,11 @@ UpdateGlobalTableOutcome DynamoDBClient::UpdateGlobalTable(const UpdateGlobalTab
       }
     }
   }
-  return UpdateGlobalTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGlobalTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateGlobalTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGlobalTableOutcomeCallable DynamoDBClient::UpdateGlobalTableCallable(const UpdateGlobalTableRequest& request) const
@@ -2169,15 +2445,16 @@ void DynamoDBClient::UpdateGlobalTableAsync(const UpdateGlobalTableRequest& requ
 
 UpdateGlobalTableSettingsOutcome DynamoDBClient::UpdateGlobalTableSettings(const UpdateGlobalTableSettingsRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateGlobalTableSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateGlobalTableSettings", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -2187,9 +2464,11 @@ UpdateGlobalTableSettingsOutcome DynamoDBClient::UpdateGlobalTableSettings(const
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("UpdateGlobalTableSettings", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -2197,7 +2476,11 @@ UpdateGlobalTableSettingsOutcome DynamoDBClient::UpdateGlobalTableSettings(const
       }
     }
   }
-  return UpdateGlobalTableSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateGlobalTableSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateGlobalTableSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGlobalTableSettingsOutcomeCallable DynamoDBClient::UpdateGlobalTableSettingsCallable(const UpdateGlobalTableSettingsRequest& request) const
@@ -2218,15 +2501,16 @@ void DynamoDBClient::UpdateGlobalTableSettingsAsync(const UpdateGlobalTableSetti
 
 UpdateItemOutcome DynamoDBClient::UpdateItem(const UpdateItemRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateItem", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -2236,9 +2520,11 @@ UpdateItemOutcome DynamoDBClient::UpdateItem(const UpdateItemRequest& request) c
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("UpdateItem", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -2246,7 +2532,11 @@ UpdateItemOutcome DynamoDBClient::UpdateItem(const UpdateItemRequest& request) c
       }
     }
   }
-  return UpdateItemOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateItemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateItemOutcomeCallable DynamoDBClient::UpdateItemCallable(const UpdateItemRequest& request) const
@@ -2267,15 +2557,16 @@ void DynamoDBClient::UpdateItemAsync(const UpdateItemRequest& request, const Upd
 
 UpdateTableOutcome DynamoDBClient::UpdateTable(const UpdateTableRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateTable", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -2285,9 +2576,11 @@ UpdateTableOutcome DynamoDBClient::UpdateTable(const UpdateTableRequest& request
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("UpdateTable", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -2295,7 +2588,11 @@ UpdateTableOutcome DynamoDBClient::UpdateTable(const UpdateTableRequest& request
       }
     }
   }
-  return UpdateTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTableOutcomeCallable DynamoDBClient::UpdateTableCallable(const UpdateTableRequest& request) const
@@ -2316,8 +2613,10 @@ void DynamoDBClient::UpdateTableAsync(const UpdateTableRequest& request, const U
 
 UpdateTableReplicaAutoScalingOutcome DynamoDBClient::UpdateTableReplicaAutoScaling(const UpdateTableReplicaAutoScalingRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  return UpdateTableReplicaAutoScalingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTableReplicaAutoScaling, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTableReplicaAutoScaling, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateTableReplicaAutoScalingOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTableReplicaAutoScalingOutcomeCallable DynamoDBClient::UpdateTableReplicaAutoScalingCallable(const UpdateTableReplicaAutoScalingRequest& request) const
@@ -2338,15 +2637,16 @@ void DynamoDBClient::UpdateTableReplicaAutoScalingAsync(const UpdateTableReplica
 
 UpdateTimeToLiveOutcome DynamoDBClient::UpdateTimeToLive(const UpdateTimeToLiveRequest& request) const
 {
-  Aws::Http::URI uri = m_uri;
-  if (m_enableEndpointDiscovery)
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateTimeToLive, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+  if (m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value())
   {
     Aws::String endpointKey = "Shared";
     Aws::String endpoint;
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateTimeToLive", "Making request to cached endpoint: " << endpoint);
-      uri = m_configScheme + "://" + endpoint;
+      endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
     {
@@ -2356,9 +2656,11 @@ UpdateTimeToLiveOutcome DynamoDBClient::UpdateTimeToLive(const UpdateTimeToLiveR
       if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
       {
         const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
         m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
-        uri = m_configScheme + "://" + item.GetAddress();
+        endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
         AWS_LOGSTREAM_TRACE("UpdateTimeToLive", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+        endpointResolutionOutcome.GetResult().SetURI(endpoint);
       }
       else
       {
@@ -2366,7 +2668,11 @@ UpdateTimeToLiveOutcome DynamoDBClient::UpdateTimeToLive(const UpdateTimeToLiveR
       }
     }
   }
-  return UpdateTimeToLiveOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  if (endpointResolutionOutcome.GetResult().GetURL().empty()) {
+    endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  }
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateTimeToLive, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateTimeToLiveOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTimeToLiveOutcomeCallable DynamoDBClient::UpdateTimeToLiveCallable(const UpdateTimeToLiveRequest& request) const

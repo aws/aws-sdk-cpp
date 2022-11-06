@@ -104,7 +104,7 @@ ReplicaSettingsDescription& ReplicaSettingsDescription::operator =(JsonView json
 
   if(jsonValue.ValueExists("ReplicaGlobalSecondaryIndexSettings"))
   {
-    Array<JsonView> replicaGlobalSecondaryIndexSettingsJsonList = jsonValue.GetArray("ReplicaGlobalSecondaryIndexSettings");
+    Aws::Utils::Array<JsonView> replicaGlobalSecondaryIndexSettingsJsonList = jsonValue.GetArray("ReplicaGlobalSecondaryIndexSettings");
     for(unsigned replicaGlobalSecondaryIndexSettingsIndex = 0; replicaGlobalSecondaryIndexSettingsIndex < replicaGlobalSecondaryIndexSettingsJsonList.GetLength(); ++replicaGlobalSecondaryIndexSettingsIndex)
     {
       m_replicaGlobalSecondaryIndexSettings.push_back(replicaGlobalSecondaryIndexSettingsJsonList[replicaGlobalSecondaryIndexSettingsIndex].AsObject());
@@ -169,7 +169,7 @@ JsonValue ReplicaSettingsDescription::Jsonize() const
 
   if(m_replicaGlobalSecondaryIndexSettingsHasBeenSet)
   {
-   Array<JsonValue> replicaGlobalSecondaryIndexSettingsJsonList(m_replicaGlobalSecondaryIndexSettings.size());
+   Aws::Utils::Array<JsonValue> replicaGlobalSecondaryIndexSettingsJsonList(m_replicaGlobalSecondaryIndexSettings.size());
    for(unsigned replicaGlobalSecondaryIndexSettingsIndex = 0; replicaGlobalSecondaryIndexSettingsIndex < replicaGlobalSecondaryIndexSettingsJsonList.GetLength(); ++replicaGlobalSecondaryIndexSettingsIndex)
    {
      replicaGlobalSecondaryIndexSettingsJsonList[replicaGlobalSecondaryIndexSettingsIndex].AsObject(m_replicaGlobalSecondaryIndexSettings[replicaGlobalSecondaryIndexSettingsIndex].Jsonize());

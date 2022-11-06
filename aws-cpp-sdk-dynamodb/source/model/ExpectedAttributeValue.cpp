@@ -64,7 +64,7 @@ ExpectedAttributeValue& ExpectedAttributeValue::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AttributeValueList"))
   {
-    Array<JsonView> attributeValueListJsonList = jsonValue.GetArray("AttributeValueList");
+    Aws::Utils::Array<JsonView> attributeValueListJsonList = jsonValue.GetArray("AttributeValueList");
     for(unsigned attributeValueListIndex = 0; attributeValueListIndex < attributeValueListJsonList.GetLength(); ++attributeValueListIndex)
     {
       m_attributeValueList.push_back(attributeValueListJsonList[attributeValueListIndex].AsObject());
@@ -98,7 +98,7 @@ JsonValue ExpectedAttributeValue::Jsonize() const
 
   if(m_attributeValueListHasBeenSet)
   {
-   Array<JsonValue> attributeValueListJsonList(m_attributeValueList.size());
+   Aws::Utils::Array<JsonValue> attributeValueListJsonList(m_attributeValueList.size());
    for(unsigned attributeValueListIndex = 0; attributeValueListIndex < attributeValueListJsonList.GetLength(); ++attributeValueListIndex)
    {
      attributeValueListJsonList[attributeValueListIndex].AsObject(m_attributeValueList[attributeValueListIndex].Jsonize());

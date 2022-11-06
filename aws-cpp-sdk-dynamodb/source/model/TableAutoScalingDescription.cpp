@@ -53,7 +53,7 @@ TableAutoScalingDescription& TableAutoScalingDescription::operator =(JsonView js
 
   if(jsonValue.ValueExists("Replicas"))
   {
-    Array<JsonView> replicasJsonList = jsonValue.GetArray("Replicas");
+    Aws::Utils::Array<JsonView> replicasJsonList = jsonValue.GetArray("Replicas");
     for(unsigned replicasIndex = 0; replicasIndex < replicasJsonList.GetLength(); ++replicasIndex)
     {
       m_replicas.push_back(replicasJsonList[replicasIndex].AsObject());
@@ -81,7 +81,7 @@ JsonValue TableAutoScalingDescription::Jsonize() const
 
   if(m_replicasHasBeenSet)
   {
-   Array<JsonValue> replicasJsonList(m_replicas.size());
+   Aws::Utils::Array<JsonValue> replicasJsonList(m_replicas.size());
    for(unsigned replicasIndex = 0; replicasIndex < replicasJsonList.GetLength(); ++replicasIndex)
    {
      replicasJsonList[replicasIndex].AsObject(m_replicas[replicasIndex].Jsonize());

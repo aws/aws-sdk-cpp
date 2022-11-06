@@ -53,7 +53,7 @@ Aws::String UpdateGlobalTableSettingsRequest::SerializePayload() const
 
   if(m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet)
   {
-   Array<JsonValue> globalTableGlobalSecondaryIndexSettingsUpdateJsonList(m_globalTableGlobalSecondaryIndexSettingsUpdate.size());
+   Aws::Utils::Array<JsonValue> globalTableGlobalSecondaryIndexSettingsUpdateJsonList(m_globalTableGlobalSecondaryIndexSettingsUpdate.size());
    for(unsigned globalTableGlobalSecondaryIndexSettingsUpdateIndex = 0; globalTableGlobalSecondaryIndexSettingsUpdateIndex < globalTableGlobalSecondaryIndexSettingsUpdateJsonList.GetLength(); ++globalTableGlobalSecondaryIndexSettingsUpdateIndex)
    {
      globalTableGlobalSecondaryIndexSettingsUpdateJsonList[globalTableGlobalSecondaryIndexSettingsUpdateIndex].AsObject(m_globalTableGlobalSecondaryIndexSettingsUpdate[globalTableGlobalSecondaryIndexSettingsUpdateIndex].Jsonize());
@@ -64,7 +64,7 @@ Aws::String UpdateGlobalTableSettingsRequest::SerializePayload() const
 
   if(m_replicaSettingsUpdateHasBeenSet)
   {
-   Array<JsonValue> replicaSettingsUpdateJsonList(m_replicaSettingsUpdate.size());
+   Aws::Utils::Array<JsonValue> replicaSettingsUpdateJsonList(m_replicaSettingsUpdate.size());
    for(unsigned replicaSettingsUpdateIndex = 0; replicaSettingsUpdateIndex < replicaSettingsUpdateJsonList.GetLength(); ++replicaSettingsUpdateIndex)
    {
      replicaSettingsUpdateJsonList[replicaSettingsUpdateIndex].AsObject(m_replicaSettingsUpdate[replicaSettingsUpdateIndex].Jsonize());

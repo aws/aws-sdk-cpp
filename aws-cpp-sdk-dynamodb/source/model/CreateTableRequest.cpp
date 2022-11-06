@@ -35,7 +35,7 @@ Aws::String CreateTableRequest::SerializePayload() const
 
   if(m_attributeDefinitionsHasBeenSet)
   {
-   Array<JsonValue> attributeDefinitionsJsonList(m_attributeDefinitions.size());
+   Aws::Utils::Array<JsonValue> attributeDefinitionsJsonList(m_attributeDefinitions.size());
    for(unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength(); ++attributeDefinitionsIndex)
    {
      attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject(m_attributeDefinitions[attributeDefinitionsIndex].Jsonize());
@@ -52,7 +52,7 @@ Aws::String CreateTableRequest::SerializePayload() const
 
   if(m_keySchemaHasBeenSet)
   {
-   Array<JsonValue> keySchemaJsonList(m_keySchema.size());
+   Aws::Utils::Array<JsonValue> keySchemaJsonList(m_keySchema.size());
    for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
    {
      keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
@@ -63,7 +63,7 @@ Aws::String CreateTableRequest::SerializePayload() const
 
   if(m_localSecondaryIndexesHasBeenSet)
   {
-   Array<JsonValue> localSecondaryIndexesJsonList(m_localSecondaryIndexes.size());
+   Aws::Utils::Array<JsonValue> localSecondaryIndexesJsonList(m_localSecondaryIndexes.size());
    for(unsigned localSecondaryIndexesIndex = 0; localSecondaryIndexesIndex < localSecondaryIndexesJsonList.GetLength(); ++localSecondaryIndexesIndex)
    {
      localSecondaryIndexesJsonList[localSecondaryIndexesIndex].AsObject(m_localSecondaryIndexes[localSecondaryIndexesIndex].Jsonize());
@@ -74,7 +74,7 @@ Aws::String CreateTableRequest::SerializePayload() const
 
   if(m_globalSecondaryIndexesHasBeenSet)
   {
-   Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
+   Aws::Utils::Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
    for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
    {
      globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject(m_globalSecondaryIndexes[globalSecondaryIndexesIndex].Jsonize());
@@ -108,7 +108,7 @@ Aws::String CreateTableRequest::SerializePayload() const
 
   if(m_tagsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
    {
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());

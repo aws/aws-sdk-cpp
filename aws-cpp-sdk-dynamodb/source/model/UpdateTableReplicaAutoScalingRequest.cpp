@@ -26,7 +26,7 @@ Aws::String UpdateTableReplicaAutoScalingRequest::SerializePayload() const
 
   if(m_globalSecondaryIndexUpdatesHasBeenSet)
   {
-   Array<JsonValue> globalSecondaryIndexUpdatesJsonList(m_globalSecondaryIndexUpdates.size());
+   Aws::Utils::Array<JsonValue> globalSecondaryIndexUpdatesJsonList(m_globalSecondaryIndexUpdates.size());
    for(unsigned globalSecondaryIndexUpdatesIndex = 0; globalSecondaryIndexUpdatesIndex < globalSecondaryIndexUpdatesJsonList.GetLength(); ++globalSecondaryIndexUpdatesIndex)
    {
      globalSecondaryIndexUpdatesJsonList[globalSecondaryIndexUpdatesIndex].AsObject(m_globalSecondaryIndexUpdates[globalSecondaryIndexUpdatesIndex].Jsonize());
@@ -49,7 +49,7 @@ Aws::String UpdateTableReplicaAutoScalingRequest::SerializePayload() const
 
   if(m_replicaUpdatesHasBeenSet)
   {
-   Array<JsonValue> replicaUpdatesJsonList(m_replicaUpdates.size());
+   Aws::Utils::Array<JsonValue> replicaUpdatesJsonList(m_replicaUpdates.size());
    for(unsigned replicaUpdatesIndex = 0; replicaUpdatesIndex < replicaUpdatesJsonList.GetLength(); ++replicaUpdatesIndex)
    {
      replicaUpdatesJsonList[replicaUpdatesIndex].AsObject(m_replicaUpdates[replicaUpdatesIndex].Jsonize());

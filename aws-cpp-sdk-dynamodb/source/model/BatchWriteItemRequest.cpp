@@ -30,7 +30,7 @@ Aws::String BatchWriteItemRequest::SerializePayload() const
    JsonValue requestItemsJsonMap;
    for(auto& requestItemsItem : m_requestItems)
    {
-     Array<JsonValue> writeRequestsJsonList(requestItemsItem.second.size());
+     Aws::Utils::Array<JsonValue> writeRequestsJsonList(requestItemsItem.second.size());
      for(unsigned writeRequestsIndex = 0; writeRequestsIndex < writeRequestsJsonList.GetLength(); ++writeRequestsIndex)
      {
        writeRequestsJsonList[writeRequestsIndex].AsObject(requestItemsItem.second[writeRequestsIndex].Jsonize());

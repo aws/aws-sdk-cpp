@@ -62,7 +62,7 @@ Aws::String QueryRequest::SerializePayload() const
 
   if(m_attributesToGetHasBeenSet)
   {
-   Array<JsonValue> attributesToGetJsonList(m_attributesToGet.size());
+   Aws::Utils::Array<JsonValue> attributesToGetJsonList(m_attributesToGet.size());
    for(unsigned attributesToGetIndex = 0; attributesToGetIndex < attributesToGetJsonList.GetLength(); ++attributesToGetIndex)
    {
      attributesToGetJsonList[attributesToGetIndex].AsString(m_attributesToGet[attributesToGetIndex]);

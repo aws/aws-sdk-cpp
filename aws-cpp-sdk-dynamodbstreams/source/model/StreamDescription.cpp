@@ -95,7 +95,7 @@ StreamDescription& StreamDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("KeySchema"))
   {
-    Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
+    Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
     for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
     {
       m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());
@@ -105,7 +105,7 @@ StreamDescription& StreamDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Shards"))
   {
-    Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
+    Aws::Utils::Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
     for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
     {
       m_shards.push_back(shardsJsonList[shardsIndex].AsObject());
@@ -162,7 +162,7 @@ JsonValue StreamDescription::Jsonize() const
 
   if(m_keySchemaHasBeenSet)
   {
-   Array<JsonValue> keySchemaJsonList(m_keySchema.size());
+   Aws::Utils::Array<JsonValue> keySchemaJsonList(m_keySchema.size());
    for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
    {
      keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
@@ -173,7 +173,7 @@ JsonValue StreamDescription::Jsonize() const
 
   if(m_shardsHasBeenSet)
   {
-   Array<JsonValue> shardsJsonList(m_shards.size());
+   Aws::Utils::Array<JsonValue> shardsJsonList(m_shards.size());
    for(unsigned shardsIndex = 0; shardsIndex < shardsJsonList.GetLength(); ++shardsIndex)
    {
      shardsJsonList[shardsIndex].AsObject(m_shards[shardsIndex].Jsonize());

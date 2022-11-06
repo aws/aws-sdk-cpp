@@ -44,7 +44,7 @@ ReplicaAutoScalingUpdate& ReplicaAutoScalingUpdate::operator =(JsonView jsonValu
 
   if(jsonValue.ValueExists("ReplicaGlobalSecondaryIndexUpdates"))
   {
-    Array<JsonView> replicaGlobalSecondaryIndexUpdatesJsonList = jsonValue.GetArray("ReplicaGlobalSecondaryIndexUpdates");
+    Aws::Utils::Array<JsonView> replicaGlobalSecondaryIndexUpdatesJsonList = jsonValue.GetArray("ReplicaGlobalSecondaryIndexUpdates");
     for(unsigned replicaGlobalSecondaryIndexUpdatesIndex = 0; replicaGlobalSecondaryIndexUpdatesIndex < replicaGlobalSecondaryIndexUpdatesJsonList.GetLength(); ++replicaGlobalSecondaryIndexUpdatesIndex)
     {
       m_replicaGlobalSecondaryIndexUpdates.push_back(replicaGlobalSecondaryIndexUpdatesJsonList[replicaGlobalSecondaryIndexUpdatesIndex].AsObject());
@@ -74,7 +74,7 @@ JsonValue ReplicaAutoScalingUpdate::Jsonize() const
 
   if(m_replicaGlobalSecondaryIndexUpdatesHasBeenSet)
   {
-   Array<JsonValue> replicaGlobalSecondaryIndexUpdatesJsonList(m_replicaGlobalSecondaryIndexUpdates.size());
+   Aws::Utils::Array<JsonValue> replicaGlobalSecondaryIndexUpdatesJsonList(m_replicaGlobalSecondaryIndexUpdates.size());
    for(unsigned replicaGlobalSecondaryIndexUpdatesIndex = 0; replicaGlobalSecondaryIndexUpdatesIndex < replicaGlobalSecondaryIndexUpdatesJsonList.GetLength(); ++replicaGlobalSecondaryIndexUpdatesIndex)
    {
      replicaGlobalSecondaryIndexUpdatesJsonList[replicaGlobalSecondaryIndexUpdatesIndex].AsObject(m_replicaGlobalSecondaryIndexUpdates[replicaGlobalSecondaryIndexUpdatesIndex].Jsonize());

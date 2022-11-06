@@ -30,7 +30,7 @@ BatchExecuteStatementResult& BatchExecuteStatementResult::operator =(const Aws::
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Responses"))
   {
-    Array<JsonView> responsesJsonList = jsonValue.GetArray("Responses");
+    Aws::Utils::Array<JsonView> responsesJsonList = jsonValue.GetArray("Responses");
     for(unsigned responsesIndex = 0; responsesIndex < responsesJsonList.GetLength(); ++responsesIndex)
     {
       m_responses.push_back(responsesJsonList[responsesIndex].AsObject());
@@ -39,7 +39,7 @@ BatchExecuteStatementResult& BatchExecuteStatementResult::operator =(const Aws::
 
   if(jsonValue.ValueExists("ConsumedCapacity"))
   {
-    Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
+    Aws::Utils::Array<JsonView> consumedCapacityJsonList = jsonValue.GetArray("ConsumedCapacity");
     for(unsigned consumedCapacityIndex = 0; consumedCapacityIndex < consumedCapacityJsonList.GetLength(); ++consumedCapacityIndex)
     {
       m_consumedCapacity.push_back(consumedCapacityJsonList[consumedCapacityIndex].AsObject());

@@ -27,7 +27,7 @@ Aws::String ExecuteTransactionRequest::SerializePayload() const
 
   if(m_transactStatementsHasBeenSet)
   {
-   Array<JsonValue> transactStatementsJsonList(m_transactStatements.size());
+   Aws::Utils::Array<JsonValue> transactStatementsJsonList(m_transactStatements.size());
    for(unsigned transactStatementsIndex = 0; transactStatementsIndex < transactStatementsJsonList.GetLength(); ++transactStatementsIndex)
    {
      transactStatementsJsonList[transactStatementsIndex].AsObject(m_transactStatements[transactStatementsIndex].Jsonize());

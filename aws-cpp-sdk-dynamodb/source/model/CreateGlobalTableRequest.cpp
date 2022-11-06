@@ -30,7 +30,7 @@ Aws::String CreateGlobalTableRequest::SerializePayload() const
 
   if(m_replicationGroupHasBeenSet)
   {
-   Array<JsonValue> replicationGroupJsonList(m_replicationGroup.size());
+   Aws::Utils::Array<JsonValue> replicationGroupJsonList(m_replicationGroup.size());
    for(unsigned replicationGroupIndex = 0; replicationGroupIndex < replicationGroupJsonList.GetLength(); ++replicationGroupIndex)
    {
      replicationGroupJsonList[replicationGroupIndex].AsObject(m_replicationGroup[replicationGroupIndex].Jsonize());

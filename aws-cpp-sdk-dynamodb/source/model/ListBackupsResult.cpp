@@ -30,7 +30,7 @@ ListBackupsResult& ListBackupsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("BackupSummaries"))
   {
-    Array<JsonView> backupSummariesJsonList = jsonValue.GetArray("BackupSummaries");
+    Aws::Utils::Array<JsonView> backupSummariesJsonList = jsonValue.GetArray("BackupSummaries");
     for(unsigned backupSummariesIndex = 0; backupSummariesIndex < backupSummariesJsonList.GetLength(); ++backupSummariesIndex)
     {
       m_backupSummaries.push_back(backupSummariesJsonList[backupSummariesIndex].AsObject());
