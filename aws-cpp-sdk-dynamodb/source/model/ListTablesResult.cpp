@@ -30,7 +30,7 @@ ListTablesResult& ListTablesResult::operator =(const Aws::AmazonWebServiceResult
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("TableNames"))
   {
-    Array<JsonView> tableNamesJsonList = jsonValue.GetArray("TableNames");
+    Aws::Utils::Array<JsonView> tableNamesJsonList = jsonValue.GetArray("TableNames");
     for(unsigned tableNamesIndex = 0; tableNamesIndex < tableNamesJsonList.GetLength(); ++tableNamesIndex)
     {
       m_tableNames.push_back(tableNamesJsonList[tableNamesIndex].AsString());

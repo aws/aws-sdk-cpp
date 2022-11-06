@@ -30,7 +30,7 @@ ListImportsResult& ListImportsResult::operator =(const Aws::AmazonWebServiceResu
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("ImportSummaryList"))
   {
-    Array<JsonView> importSummaryListJsonList = jsonValue.GetArray("ImportSummaryList");
+    Aws::Utils::Array<JsonView> importSummaryListJsonList = jsonValue.GetArray("ImportSummaryList");
     for(unsigned importSummaryListIndex = 0; importSummaryListIndex < importSummaryListJsonList.GetLength(); ++importSummaryListIndex)
     {
       m_importSummaryList.push_back(importSummaryListJsonList[importSummaryListIndex].AsObject());

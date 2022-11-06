@@ -93,7 +93,7 @@ ReplicaDescription& ReplicaDescription::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
   {
-    Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
+    Aws::Utils::Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
     for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
     {
       m_globalSecondaryIndexes.push_back(globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject());
@@ -159,7 +159,7 @@ JsonValue ReplicaDescription::Jsonize() const
 
   if(m_globalSecondaryIndexesHasBeenSet)
   {
-   Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
+   Aws::Utils::Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
    for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
    {
      globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject(m_globalSecondaryIndexes[globalSecondaryIndexesIndex].Jsonize());

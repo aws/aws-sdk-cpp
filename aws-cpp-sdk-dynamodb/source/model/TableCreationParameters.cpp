@@ -54,7 +54,7 @@ TableCreationParameters& TableCreationParameters::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("AttributeDefinitions"))
   {
-    Array<JsonView> attributeDefinitionsJsonList = jsonValue.GetArray("AttributeDefinitions");
+    Aws::Utils::Array<JsonView> attributeDefinitionsJsonList = jsonValue.GetArray("AttributeDefinitions");
     for(unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength(); ++attributeDefinitionsIndex)
     {
       m_attributeDefinitions.push_back(attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject());
@@ -64,7 +64,7 @@ TableCreationParameters& TableCreationParameters::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("KeySchema"))
   {
-    Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
+    Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
     for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
     {
       m_keySchema.push_back(keySchemaJsonList[keySchemaIndex].AsObject());
@@ -95,7 +95,7 @@ TableCreationParameters& TableCreationParameters::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
   {
-    Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
+    Aws::Utils::Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
     for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
     {
       m_globalSecondaryIndexes.push_back(globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject());
@@ -118,7 +118,7 @@ JsonValue TableCreationParameters::Jsonize() const
 
   if(m_attributeDefinitionsHasBeenSet)
   {
-   Array<JsonValue> attributeDefinitionsJsonList(m_attributeDefinitions.size());
+   Aws::Utils::Array<JsonValue> attributeDefinitionsJsonList(m_attributeDefinitions.size());
    for(unsigned attributeDefinitionsIndex = 0; attributeDefinitionsIndex < attributeDefinitionsJsonList.GetLength(); ++attributeDefinitionsIndex)
    {
      attributeDefinitionsJsonList[attributeDefinitionsIndex].AsObject(m_attributeDefinitions[attributeDefinitionsIndex].Jsonize());
@@ -129,7 +129,7 @@ JsonValue TableCreationParameters::Jsonize() const
 
   if(m_keySchemaHasBeenSet)
   {
-   Array<JsonValue> keySchemaJsonList(m_keySchema.size());
+   Aws::Utils::Array<JsonValue> keySchemaJsonList(m_keySchema.size());
    for(unsigned keySchemaIndex = 0; keySchemaIndex < keySchemaJsonList.GetLength(); ++keySchemaIndex)
    {
      keySchemaJsonList[keySchemaIndex].AsObject(m_keySchema[keySchemaIndex].Jsonize());
@@ -157,7 +157,7 @@ JsonValue TableCreationParameters::Jsonize() const
 
   if(m_globalSecondaryIndexesHasBeenSet)
   {
-   Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
+   Aws::Utils::Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
    for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
    {
      globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject(m_globalSecondaryIndexes[globalSecondaryIndexesIndex].Jsonize());

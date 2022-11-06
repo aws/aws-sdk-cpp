@@ -41,7 +41,7 @@ SourceTableFeatureDetails& SourceTableFeatureDetails::operator =(JsonView jsonVa
 {
   if(jsonValue.ValueExists("LocalSecondaryIndexes"))
   {
-    Array<JsonView> localSecondaryIndexesJsonList = jsonValue.GetArray("LocalSecondaryIndexes");
+    Aws::Utils::Array<JsonView> localSecondaryIndexesJsonList = jsonValue.GetArray("LocalSecondaryIndexes");
     for(unsigned localSecondaryIndexesIndex = 0; localSecondaryIndexesIndex < localSecondaryIndexesJsonList.GetLength(); ++localSecondaryIndexesIndex)
     {
       m_localSecondaryIndexes.push_back(localSecondaryIndexesJsonList[localSecondaryIndexesIndex].AsObject());
@@ -51,7 +51,7 @@ SourceTableFeatureDetails& SourceTableFeatureDetails::operator =(JsonView jsonVa
 
   if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
   {
-    Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
+    Aws::Utils::Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
     for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
     {
       m_globalSecondaryIndexes.push_back(globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject());
@@ -89,7 +89,7 @@ JsonValue SourceTableFeatureDetails::Jsonize() const
 
   if(m_localSecondaryIndexesHasBeenSet)
   {
-   Array<JsonValue> localSecondaryIndexesJsonList(m_localSecondaryIndexes.size());
+   Aws::Utils::Array<JsonValue> localSecondaryIndexesJsonList(m_localSecondaryIndexes.size());
    for(unsigned localSecondaryIndexesIndex = 0; localSecondaryIndexesIndex < localSecondaryIndexesJsonList.GetLength(); ++localSecondaryIndexesIndex)
    {
      localSecondaryIndexesJsonList[localSecondaryIndexesIndex].AsObject(m_localSecondaryIndexes[localSecondaryIndexesIndex].Jsonize());
@@ -100,7 +100,7 @@ JsonValue SourceTableFeatureDetails::Jsonize() const
 
   if(m_globalSecondaryIndexesHasBeenSet)
   {
-   Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
+   Aws::Utils::Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
    for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
    {
      globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject(m_globalSecondaryIndexes[globalSecondaryIndexesIndex].Jsonize());

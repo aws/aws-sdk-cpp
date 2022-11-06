@@ -5,17 +5,18 @@
 
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
-#include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 namespace Aws
 {
-
 namespace SQS
 {
-namespace SQSEndpoint
+class SQSEndpointRules
 {
-AWS_SQS_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
-} // namespace SQSEndpoint
+public:
+    static Aws::String GetRulesAsString();
+    static const Aws::Vector<char> Rules; 
+};
 } // namespace SQS
 } // namespace Aws
